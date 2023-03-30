@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateJobExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateJobExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
+    pub fn builder() -> crate::output::update_job_execution_output::Builder {
+        crate::output::update_job_execution_output::Builder::default()
+    }
+}
+
 /// See [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
 pub mod update_job_execution_output {
     
@@ -79,12 +86,6 @@ pub mod update_job_execution_output {
     
     
 }
-impl UpdateJobExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
-    pub fn builder() -> crate::output::update_job_execution_output::Builder {
-        crate::output::update_job_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -106,6 +107,13 @@ impl aws_http::request_id::RequestId for StartNextPendingJobExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartNextPendingJobExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
+    pub fn builder() -> crate::output::start_next_pending_job_execution_output::Builder {
+        crate::output::start_next_pending_job_execution_output::Builder::default()
+    }
+}
+
 /// See [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
 pub mod start_next_pending_job_execution_output {
     
@@ -147,12 +155,6 @@ pub mod start_next_pending_job_execution_output {
     
     
 }
-impl StartNextPendingJobExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
-    pub fn builder() -> crate::output::start_next_pending_job_execution_output::Builder {
-        crate::output::start_next_pending_job_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -181,6 +183,13 @@ impl aws_http::request_id::RequestId for GetPendingJobExecutionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPendingJobExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
+    pub fn builder() -> crate::output::get_pending_job_executions_output::Builder {
+        crate::output::get_pending_job_executions_output::Builder::default()
+    }
+}
+
 /// See [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
 pub mod get_pending_job_executions_output {
     
@@ -246,12 +255,6 @@ pub mod get_pending_job_executions_output {
     
     
 }
-impl GetPendingJobExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
-    pub fn builder() -> crate::output::get_pending_job_executions_output::Builder {
-        crate::output::get_pending_job_executions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -273,6 +276,13 @@ impl aws_http::request_id::RequestId for DescribeJobExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeJobExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
+    pub fn builder() -> crate::output::describe_job_execution_output::Builder {
+        crate::output::describe_job_execution_output::Builder::default()
+    }
+}
+
 /// See [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
 pub mod describe_job_execution_output {
     
@@ -313,11 +323,5 @@ pub mod describe_job_execution_output {
     }
     
     
-}
-impl DescribeJobExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
-    pub fn builder() -> crate::output::describe_job_execution_output::Builder {
-        crate::output::describe_job_execution_output::Builder::default()
-    }
 }
 

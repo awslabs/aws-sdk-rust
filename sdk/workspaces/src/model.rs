@@ -21,6 +21,13 @@ impl IpRuleItem {
         self.rule_desc.as_deref()
     }
 }
+impl IpRuleItem {
+    /// Creates a new builder-style object to manufacture [`IpRuleItem`](crate::model::IpRuleItem).
+    pub fn builder() -> crate::model::ip_rule_item::Builder {
+        crate::model::ip_rule_item::Builder::default()
+    }
+}
+
 /// See [`IpRuleItem`](crate::model::IpRuleItem).
 pub mod ip_rule_item {
     
@@ -63,12 +70,6 @@ pub mod ip_rule_item {
     
     
 }
-impl IpRuleItem {
-    /// Creates a new builder-style object to manufacture [`IpRuleItem`](crate::model::IpRuleItem).
-    pub fn builder() -> crate::model::ip_rule_item::Builder {
-        crate::model::ip_rule_item::Builder::default()
-    }
-}
 
 /// <p>Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
@@ -91,6 +92,13 @@ impl ConnectionAliasPermission {
         self.allow_association
     }
 }
+impl ConnectionAliasPermission {
+    /// Creates a new builder-style object to manufacture [`ConnectionAliasPermission`](crate::model::ConnectionAliasPermission).
+    pub fn builder() -> crate::model::connection_alias_permission::Builder {
+        crate::model::connection_alias_permission::Builder::default()
+    }
+}
+
 /// See [`ConnectionAliasPermission`](crate::model::ConnectionAliasPermission).
 pub mod connection_alias_permission {
     
@@ -133,12 +141,6 @@ pub mod connection_alias_permission {
     
     
 }
-impl ConnectionAliasPermission {
-    /// Creates a new builder-style object to manufacture [`ConnectionAliasPermission`](crate::model::ConnectionAliasPermission).
-    pub fn builder() -> crate::model::connection_alias_permission::Builder {
-        crate::model::connection_alias_permission::Builder::default()
-    }
-}
 
 /// <p>Describes a WorkSpace that could not be rebooted. (<code>RebootWorkspaces</code>), rebuilt (<code>RebuildWorkspaces</code>), restored (<code>RestoreWorkspace</code>), terminated (<code>TerminateWorkspaces</code>), started (<code>StartWorkspaces</code>), or stopped (<code>StopWorkspaces</code>).</p>
 #[non_exhaustive]
@@ -168,6 +170,13 @@ impl FailedWorkspaceChangeRequest {
         self.error_message.as_deref()
     }
 }
+impl FailedWorkspaceChangeRequest {
+    /// Creates a new builder-style object to manufacture [`FailedWorkspaceChangeRequest`](crate::model::FailedWorkspaceChangeRequest).
+    pub fn builder() -> crate::model::failed_workspace_change_request::Builder {
+        crate::model::failed_workspace_change_request::Builder::default()
+    }
+}
+
 /// See [`FailedWorkspaceChangeRequest`](crate::model::FailedWorkspaceChangeRequest).
 pub mod failed_workspace_change_request {
     
@@ -222,12 +231,6 @@ pub mod failed_workspace_change_request {
     
     
 }
-impl FailedWorkspaceChangeRequest {
-    /// Creates a new builder-style object to manufacture [`FailedWorkspaceChangeRequest`](crate::model::FailedWorkspaceChangeRequest).
-    pub fn builder() -> crate::model::failed_workspace_change_request::Builder {
-        crate::model::failed_workspace_change_request::Builder::default()
-    }
-}
 
 /// <p>Describes the information used to terminate a WorkSpace.</p>
 #[non_exhaustive]
@@ -243,6 +246,13 @@ impl TerminateRequest {
         self.workspace_id.as_deref()
     }
 }
+impl TerminateRequest {
+    /// Creates a new builder-style object to manufacture [`TerminateRequest`](crate::model::TerminateRequest).
+    pub fn builder() -> crate::model::terminate_request::Builder {
+        crate::model::terminate_request::Builder::default()
+    }
+}
+
 /// See [`TerminateRequest`](crate::model::TerminateRequest).
 pub mod terminate_request {
     
@@ -273,12 +283,6 @@ pub mod terminate_request {
     
     
 }
-impl TerminateRequest {
-    /// Creates a new builder-style object to manufacture [`TerminateRequest`](crate::model::TerminateRequest).
-    pub fn builder() -> crate::model::terminate_request::Builder {
-        crate::model::terminate_request::Builder::default()
-    }
-}
 
 /// <p>Describes the information used to stop a WorkSpace.</p>
 #[non_exhaustive]
@@ -294,6 +298,13 @@ impl StopRequest {
         self.workspace_id.as_deref()
     }
 }
+impl StopRequest {
+    /// Creates a new builder-style object to manufacture [`StopRequest`](crate::model::StopRequest).
+    pub fn builder() -> crate::model::stop_request::Builder {
+        crate::model::stop_request::Builder::default()
+    }
+}
+
 /// See [`StopRequest`](crate::model::StopRequest).
 pub mod stop_request {
     
@@ -324,12 +335,6 @@ pub mod stop_request {
     
     
 }
-impl StopRequest {
-    /// Creates a new builder-style object to manufacture [`StopRequest`](crate::model::StopRequest).
-    pub fn builder() -> crate::model::stop_request::Builder {
-        crate::model::stop_request::Builder::default()
-    }
-}
 
 /// <p>Information used to start a WorkSpace.</p>
 #[non_exhaustive]
@@ -345,6 +350,13 @@ impl StartRequest {
         self.workspace_id.as_deref()
     }
 }
+impl StartRequest {
+    /// Creates a new builder-style object to manufacture [`StartRequest`](crate::model::StartRequest).
+    pub fn builder() -> crate::model::start_request::Builder {
+        crate::model::start_request::Builder::default()
+    }
+}
+
 /// See [`StartRequest`](crate::model::StartRequest).
 pub mod start_request {
     
@@ -375,12 +387,6 @@ pub mod start_request {
     
     
 }
-impl StartRequest {
-    /// Creates a new builder-style object to manufacture [`StartRequest`](crate::model::StartRequest).
-    pub fn builder() -> crate::model::start_request::Builder {
-        crate::model::start_request::Builder::default()
-    }
-}
 
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
@@ -403,6 +409,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -444,12 +457,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Tenancy`, it is important to ensure
@@ -548,6 +555,13 @@ impl RebuildRequest {
         self.workspace_id.as_deref()
     }
 }
+impl RebuildRequest {
+    /// Creates a new builder-style object to manufacture [`RebuildRequest`](crate::model::RebuildRequest).
+    pub fn builder() -> crate::model::rebuild_request::Builder {
+        crate::model::rebuild_request::Builder::default()
+    }
+}
+
 /// See [`RebuildRequest`](crate::model::RebuildRequest).
 pub mod rebuild_request {
     
@@ -578,12 +592,6 @@ pub mod rebuild_request {
     
     
 }
-impl RebuildRequest {
-    /// Creates a new builder-style object to manufacture [`RebuildRequest`](crate::model::RebuildRequest).
-    pub fn builder() -> crate::model::rebuild_request::Builder {
-        crate::model::rebuild_request::Builder::default()
-    }
-}
 
 /// <p>Describes the information used to reboot a WorkSpace.</p>
 #[non_exhaustive]
@@ -599,6 +607,13 @@ impl RebootRequest {
         self.workspace_id.as_deref()
     }
 }
+impl RebootRequest {
+    /// Creates a new builder-style object to manufacture [`RebootRequest`](crate::model::RebootRequest).
+    pub fn builder() -> crate::model::reboot_request::Builder {
+        crate::model::reboot_request::Builder::default()
+    }
+}
+
 /// See [`RebootRequest`](crate::model::RebootRequest).
 pub mod reboot_request {
     
@@ -628,12 +643,6 @@ pub mod reboot_request {
     }
     
     
-}
-impl RebootRequest {
-    /// Creates a new builder-style object to manufacture [`RebootRequest`](crate::model::RebootRequest).
-    pub fn builder() -> crate::model::reboot_request::Builder {
-        crate::model::reboot_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetWorkspaceState`, it is important to ensure
@@ -783,6 +792,13 @@ impl WorkspaceProperties {
         self.protocols.as_deref()
     }
 }
+impl WorkspaceProperties {
+    /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::model::WorkspaceProperties).
+    pub fn builder() -> crate::model::workspace_properties::Builder {
+        crate::model::workspace_properties::Builder::default()
+    }
+}
+
 /// See [`WorkspaceProperties`](crate::model::WorkspaceProperties).
 pub mod workspace_properties {
     
@@ -894,12 +910,6 @@ pub mod workspace_properties {
     }
     
     
-}
-impl WorkspaceProperties {
-    /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::model::WorkspaceProperties).
-    pub fn builder() -> crate::model::workspace_properties::Builder {
-        crate::model::workspace_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Protocol`, it is important to ensure
@@ -1253,6 +1263,13 @@ impl WorkspaceCreationProperties {
         self.enable_maintenance_mode
     }
 }
+impl WorkspaceCreationProperties {
+    /// Creates a new builder-style object to manufacture [`WorkspaceCreationProperties`](crate::model::WorkspaceCreationProperties).
+    pub fn builder() -> crate::model::workspace_creation_properties::Builder {
+        crate::model::workspace_creation_properties::Builder::default()
+    }
+}
+
 /// See [`WorkspaceCreationProperties`](crate::model::WorkspaceCreationProperties).
 pub mod workspace_creation_properties {
     
@@ -1359,12 +1376,6 @@ pub mod workspace_creation_properties {
     
     
 }
-impl WorkspaceCreationProperties {
-    /// Creates a new builder-style object to manufacture [`WorkspaceCreationProperties`](crate::model::WorkspaceCreationProperties).
-    pub fn builder() -> crate::model::workspace_creation_properties::Builder {
-        crate::model::workspace_creation_properties::Builder::default()
-    }
-}
 
 /// <p>The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>.</p>
 #[non_exhaustive]
@@ -1429,6 +1440,13 @@ impl WorkspaceAccessProperties {
         self.device_type_linux.as_ref()
     }
 }
+impl WorkspaceAccessProperties {
+    /// Creates a new builder-style object to manufacture [`WorkspaceAccessProperties`](crate::model::WorkspaceAccessProperties).
+    pub fn builder() -> crate::model::workspace_access_properties::Builder {
+        crate::model::workspace_access_properties::Builder::default()
+    }
+}
+
 /// See [`WorkspaceAccessProperties`](crate::model::WorkspaceAccessProperties).
 pub mod workspace_access_properties {
     
@@ -1542,12 +1560,6 @@ pub mod workspace_access_properties {
     }
     
     
-}
-impl WorkspaceAccessProperties {
-    /// Creates a new builder-style object to manufacture [`WorkspaceAccessProperties`](crate::model::WorkspaceAccessProperties).
-    pub fn builder() -> crate::model::workspace_access_properties::Builder {
-        crate::model::workspace_access_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessPropertyValue`, it is important to ensure
@@ -1674,6 +1686,13 @@ impl SelfservicePermissions {
         self.rebuild_workspace.as_ref()
     }
 }
+impl SelfservicePermissions {
+    /// Creates a new builder-style object to manufacture [`SelfservicePermissions`](crate::model::SelfservicePermissions).
+    pub fn builder() -> crate::model::selfservice_permissions::Builder {
+        crate::model::selfservice_permissions::Builder::default()
+    }
+}
+
 /// See [`SelfservicePermissions`](crate::model::SelfservicePermissions).
 pub mod selfservice_permissions {
     
@@ -1751,12 +1770,6 @@ pub mod selfservice_permissions {
     }
     
     
-}
-impl SelfservicePermissions {
-    /// Creates a new builder-style object to manufacture [`SelfservicePermissions`](crate::model::SelfservicePermissions).
-    pub fn builder() -> crate::model::selfservice_permissions::Builder {
-        crate::model::selfservice_permissions::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReconnectEnum`, it is important to ensure
@@ -1963,6 +1976,13 @@ impl SamlProperties {
         self.relay_state_parameter_name.as_deref()
     }
 }
+impl SamlProperties {
+    /// Creates a new builder-style object to manufacture [`SamlProperties`](crate::model::SamlProperties).
+    pub fn builder() -> crate::model::saml_properties::Builder {
+        crate::model::saml_properties::Builder::default()
+    }
+}
+
 /// See [`SamlProperties`](crate::model::SamlProperties).
 pub mod saml_properties {
     
@@ -2028,12 +2048,6 @@ pub mod saml_properties {
     }
     
     
-}
-impl SamlProperties {
-    /// Creates a new builder-style object to manufacture [`SamlProperties`](crate::model::SamlProperties).
-    pub fn builder() -> crate::model::saml_properties::Builder {
-        crate::model::saml_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SamlStatusEnum`, it is important to ensure
@@ -2144,6 +2158,13 @@ impl ClientProperties {
         self.log_upload_enabled.as_ref()
     }
 }
+impl ClientProperties {
+    /// Creates a new builder-style object to manufacture [`ClientProperties`](crate::model::ClientProperties).
+    pub fn builder() -> crate::model::client_properties::Builder {
+        crate::model::client_properties::Builder::default()
+    }
+}
+
 /// See [`ClientProperties`](crate::model::ClientProperties).
 pub mod client_properties {
     
@@ -2185,12 +2206,6 @@ pub mod client_properties {
     }
     
     
-}
-impl ClientProperties {
-    /// Creates a new builder-style object to manufacture [`ClientProperties`](crate::model::ClientProperties).
-    pub fn builder() -> crate::model::client_properties::Builder {
-        crate::model::client_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LogUploadEnum`, it is important to ensure
@@ -2373,6 +2388,13 @@ impl CertificateBasedAuthProperties {
         self.certificate_authority_arn.as_deref()
     }
 }
+impl CertificateBasedAuthProperties {
+    /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+    pub fn builder() -> crate::model::certificate_based_auth_properties::Builder {
+        crate::model::certificate_based_auth_properties::Builder::default()
+    }
+}
+
 /// See [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
 pub mod certificate_based_auth_properties {
     
@@ -2414,12 +2436,6 @@ pub mod certificate_based_auth_properties {
     }
     
     
-}
-impl CertificateBasedAuthProperties {
-    /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
-    pub fn builder() -> crate::model::certificate_based_auth_properties::Builder {
-        crate::model::certificate_based_auth_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CertificateBasedAuthStatusEnum`, it is important to ensure
@@ -2834,6 +2850,13 @@ impl DefaultClientBrandingAttributes {
         self.login_message.as_ref()
     }
 }
+impl DefaultClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes).
+    pub fn builder() -> crate::model::default_client_branding_attributes::Builder {
+        crate::model::default_client_branding_attributes::Builder::default()
+    }
+}
+
 /// See [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes).
 pub mod default_client_branding_attributes {
     
@@ -2938,12 +2961,6 @@ pub mod default_client_branding_attributes {
     
     
 }
-impl DefaultClientBrandingAttributes {
-    /// Creates a new builder-style object to manufacture [`DefaultClientBrandingAttributes`](crate::model::DefaultClientBrandingAttributes).
-    pub fn builder() -> crate::model::default_client_branding_attributes::Builder {
-        crate::model::default_client_branding_attributes::Builder::default()
-    }
-}
 
 /// <p>The client branding attributes for iOS device types. These attributes are displayed on the iOS client login screen only.</p> <important> 
 /// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p> 
@@ -3031,6 +3048,13 @@ impl IosClientBrandingAttributes {
         self.login_message.as_ref()
     }
 }
+impl IosClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes).
+    pub fn builder() -> crate::model::ios_client_branding_attributes::Builder {
+        crate::model::ios_client_branding_attributes::Builder::default()
+    }
+}
+
 /// See [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes).
 pub mod ios_client_branding_attributes {
     
@@ -3167,12 +3191,6 @@ pub mod ios_client_branding_attributes {
     
     
 }
-impl IosClientBrandingAttributes {
-    /// Creates a new builder-style object to manufacture [`IosClientBrandingAttributes`](crate::model::IosClientBrandingAttributes).
-    pub fn builder() -> crate::model::ios_client_branding_attributes::Builder {
-        crate::model::ios_client_branding_attributes::Builder::default()
-    }
-}
 
 /// <p>The default client branding attributes to be imported. These attributes display on the client login screen.</p> <important> 
 /// <p>Client branding attributes are public facing. Ensure that you do not include sensitive information.</p> 
@@ -3238,6 +3256,13 @@ impl DefaultImportClientBrandingAttributes {
         self.login_message.as_ref()
     }
 }
+impl DefaultImportClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes).
+    pub fn builder() -> crate::model::default_import_client_branding_attributes::Builder {
+        crate::model::default_import_client_branding_attributes::Builder::default()
+    }
+}
+
 /// See [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes).
 pub mod default_import_client_branding_attributes {
     
@@ -3342,12 +3367,6 @@ pub mod default_import_client_branding_attributes {
     
     
 }
-impl DefaultImportClientBrandingAttributes {
-    /// Creates a new builder-style object to manufacture [`DefaultImportClientBrandingAttributes`](crate::model::DefaultImportClientBrandingAttributes).
-    pub fn builder() -> crate::model::default_import_client_branding_attributes::Builder {
-        crate::model::default_import_client_branding_attributes::Builder::default()
-    }
-}
 
 /// <p>The client branding attributes to import for iOS device types. These attributes are displayed on the iOS client login screen.</p> <important> 
 /// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p> 
@@ -3435,6 +3454,13 @@ impl IosImportClientBrandingAttributes {
         self.login_message.as_ref()
     }
 }
+impl IosImportClientBrandingAttributes {
+    /// Creates a new builder-style object to manufacture [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes).
+    pub fn builder() -> crate::model::ios_import_client_branding_attributes::Builder {
+        crate::model::ios_import_client_branding_attributes::Builder::default()
+    }
+}
+
 /// See [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes).
 pub mod ios_import_client_branding_attributes {
     
@@ -3571,12 +3597,6 @@ pub mod ios_import_client_branding_attributes {
     
     
 }
-impl IosImportClientBrandingAttributes {
-    /// Creates a new builder-style object to manufacture [`IosImportClientBrandingAttributes`](crate::model::IosImportClientBrandingAttributes).
-    pub fn builder() -> crate::model::ios_import_client_branding_attributes::Builder {
-        crate::model::ios_import_client_branding_attributes::Builder::default()
-    }
-}
 
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
@@ -3592,6 +3612,13 @@ impl Snapshot {
         self.snapshot_time.as_ref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
     
@@ -3621,12 +3648,6 @@ pub mod snapshot {
     }
     
     
-}
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
-    }
 }
 
 /// <p>Describes the connection status of a WorkSpace.</p>
@@ -3664,6 +3685,13 @@ impl WorkspaceConnectionStatus {
         self.last_known_user_connection_timestamp.as_ref()
     }
 }
+impl WorkspaceConnectionStatus {
+    /// Creates a new builder-style object to manufacture [`WorkspaceConnectionStatus`](crate::model::WorkspaceConnectionStatus).
+    pub fn builder() -> crate::model::workspace_connection_status::Builder {
+        crate::model::workspace_connection_status::Builder::default()
+    }
+}
+
 /// See [`WorkspaceConnectionStatus`](crate::model::WorkspaceConnectionStatus).
 pub mod workspace_connection_status {
     
@@ -3729,12 +3757,6 @@ pub mod workspace_connection_status {
     }
     
     
-}
-impl WorkspaceConnectionStatus {
-    /// Creates a new builder-style object to manufacture [`WorkspaceConnectionStatus`](crate::model::WorkspaceConnectionStatus).
-    pub fn builder() -> crate::model::workspace_connection_status::Builder {
-        crate::model::workspace_connection_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionState`, it is important to ensure
@@ -3947,6 +3969,13 @@ impl Workspace {
         self.related_workspaces.as_deref()
     }
 }
+impl Workspace {
+    /// Creates a new builder-style object to manufacture [`Workspace`](crate::model::Workspace).
+    pub fn builder() -> crate::model::workspace::Builder {
+        crate::model::workspace::Builder::default()
+    }
+}
+
 /// See [`Workspace`](crate::model::Workspace).
 pub mod workspace {
     
@@ -4173,12 +4202,6 @@ pub mod workspace {
     
     
 }
-impl Workspace {
-    /// Creates a new builder-style object to manufacture [`Workspace`](crate::model::Workspace).
-    pub fn builder() -> crate::model::workspace::Builder {
-        crate::model::workspace::Builder::default()
-    }
-}
 
 /// <p>Describes the related WorkSpace. The related WorkSpace could be a Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.</p>
 #[non_exhaustive]
@@ -4215,6 +4238,13 @@ impl RelatedWorkspaceProperties {
         self.r#type.as_ref()
     }
 }
+impl RelatedWorkspaceProperties {
+    /// Creates a new builder-style object to manufacture [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
+    pub fn builder() -> crate::model::related_workspace_properties::Builder {
+        crate::model::related_workspace_properties::Builder::default()
+    }
+}
+
 /// See [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
 pub mod related_workspace_properties {
     
@@ -4280,12 +4310,6 @@ pub mod related_workspace_properties {
     }
     
     
-}
-impl RelatedWorkspaceProperties {
-    /// Creates a new builder-style object to manufacture [`RelatedWorkspaceProperties`](crate::model::RelatedWorkspaceProperties).
-    pub fn builder() -> crate::model::related_workspace_properties::Builder {
-        crate::model::related_workspace_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StandbyWorkspaceRelationshipType`, it is important to ensure
@@ -4548,6 +4572,13 @@ impl ModificationState {
         self.state.as_ref()
     }
 }
+impl ModificationState {
+    /// Creates a new builder-style object to manufacture [`ModificationState`](crate::model::ModificationState).
+    pub fn builder() -> crate::model::modification_state::Builder {
+        crate::model::modification_state::Builder::default()
+    }
+}
+
 /// See [`ModificationState`](crate::model::ModificationState).
 pub mod modification_state {
     
@@ -4589,12 +4620,6 @@ pub mod modification_state {
     }
     
     
-}
-impl ModificationState {
-    /// Creates a new builder-style object to manufacture [`ModificationState`](crate::model::ModificationState).
-    pub fn builder() -> crate::model::modification_state::Builder {
-        crate::model::modification_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ModificationStateEnum`, it is important to ensure
@@ -4850,6 +4875,13 @@ impl WorkspaceImage {
         self.updates.as_ref()
     }
 }
+impl WorkspaceImage {
+    /// Creates a new builder-style object to manufacture [`WorkspaceImage`](crate::model::WorkspaceImage).
+    pub fn builder() -> crate::model::workspace_image::Builder {
+        crate::model::workspace_image::Builder::default()
+    }
+}
+
 /// See [`WorkspaceImage`](crate::model::WorkspaceImage).
 pub mod workspace_image {
     
@@ -5000,12 +5032,6 @@ pub mod workspace_image {
     
     
 }
-impl WorkspaceImage {
-    /// Creates a new builder-style object to manufacture [`WorkspaceImage`](crate::model::WorkspaceImage).
-    pub fn builder() -> crate::model::workspace_image::Builder {
-        crate::model::workspace_image::Builder::default()
-    }
-}
 
 /// <p>Describes whether a WorkSpace image needs to be updated with the latest drivers and other components required by Amazon WorkSpaces.</p> <note> 
 /// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p> 
@@ -5030,6 +5056,13 @@ impl UpdateResult {
         self.description.as_deref()
     }
 }
+impl UpdateResult {
+    /// Creates a new builder-style object to manufacture [`UpdateResult`](crate::model::UpdateResult).
+    pub fn builder() -> crate::model::update_result::Builder {
+        crate::model::update_result::Builder::default()
+    }
+}
+
 /// See [`UpdateResult`](crate::model::UpdateResult).
 pub mod update_result {
     
@@ -5071,12 +5104,6 @@ pub mod update_result {
     }
     
     
-}
-impl UpdateResult {
-    /// Creates a new builder-style object to manufacture [`UpdateResult`](crate::model::UpdateResult).
-    pub fn builder() -> crate::model::update_result::Builder {
-        crate::model::update_result::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkspaceImageRequiredTenancy`, it is important to ensure
@@ -5262,6 +5289,13 @@ impl OperatingSystem {
         self.r#type.as_ref()
     }
 }
+impl OperatingSystem {
+    /// Creates a new builder-style object to manufacture [`OperatingSystem`](crate::model::OperatingSystem).
+    pub fn builder() -> crate::model::operating_system::Builder {
+        crate::model::operating_system::Builder::default()
+    }
+}
+
 /// See [`OperatingSystem`](crate::model::OperatingSystem).
 pub mod operating_system {
     
@@ -5291,12 +5325,6 @@ pub mod operating_system {
     }
     
     
-}
-impl OperatingSystem {
-    /// Creates a new builder-style object to manufacture [`OperatingSystem`](crate::model::OperatingSystem).
-    pub fn builder() -> crate::model::operating_system::Builder {
-        crate::model::operating_system::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperatingSystemType`, it is important to ensure
@@ -5477,6 +5505,13 @@ impl ImagePermission {
         self.shared_account_id.as_deref()
     }
 }
+impl ImagePermission {
+    /// Creates a new builder-style object to manufacture [`ImagePermission`](crate::model::ImagePermission).
+    pub fn builder() -> crate::model::image_permission::Builder {
+        crate::model::image_permission::Builder::default()
+    }
+}
+
 /// See [`ImagePermission`](crate::model::ImagePermission).
 pub mod image_permission {
     
@@ -5506,12 +5541,6 @@ pub mod image_permission {
     }
     
     
-}
-impl ImagePermission {
-    /// Creates a new builder-style object to manufacture [`ImagePermission`](crate::model::ImagePermission).
-    pub fn builder() -> crate::model::image_permission::Builder {
-        crate::model::image_permission::Builder::default()
-    }
 }
 
 /// <p>Describes a directory that is used with Amazon WorkSpaces.</p>
@@ -5647,6 +5676,13 @@ impl WorkspaceDirectory {
         self.certificate_based_auth_properties.as_ref()
     }
 }
+impl WorkspaceDirectory {
+    /// Creates a new builder-style object to manufacture [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
+    pub fn builder() -> crate::model::workspace_directory::Builder {
+        crate::model::workspace_directory::Builder::default()
+    }
+}
+
 /// See [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
 pub mod workspace_directory {
     
@@ -5899,12 +5935,6 @@ pub mod workspace_directory {
     
     
 }
-impl WorkspaceDirectory {
-    /// Creates a new builder-style object to manufacture [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
-    pub fn builder() -> crate::model::workspace_directory::Builder {
-        crate::model::workspace_directory::Builder::default()
-    }
-}
 
 /// <p>Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>.</p>
 #[non_exhaustive]
@@ -5955,6 +5985,13 @@ impl DefaultWorkspaceCreationProperties {
         self.enable_maintenance_mode
     }
 }
+impl DefaultWorkspaceCreationProperties {
+    /// Creates a new builder-style object to manufacture [`DefaultWorkspaceCreationProperties`](crate::model::DefaultWorkspaceCreationProperties).
+    pub fn builder() -> crate::model::default_workspace_creation_properties::Builder {
+        crate::model::default_workspace_creation_properties::Builder::default()
+    }
+}
+
 /// See [`DefaultWorkspaceCreationProperties`](crate::model::DefaultWorkspaceCreationProperties).
 pub mod default_workspace_creation_properties {
     
@@ -6044,12 +6081,6 @@ pub mod default_workspace_creation_properties {
     }
     
     
-}
-impl DefaultWorkspaceCreationProperties {
-    /// Creates a new builder-style object to manufacture [`DefaultWorkspaceCreationProperties`](crate::model::DefaultWorkspaceCreationProperties).
-    pub fn builder() -> crate::model::default_workspace_creation_properties::Builder {
-        crate::model::default_workspace_creation_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkspaceDirectoryState`, it is important to ensure
@@ -6322,6 +6353,13 @@ impl WorkspaceBundle {
         self.bundle_type.as_ref()
     }
 }
+impl WorkspaceBundle {
+    /// Creates a new builder-style object to manufacture [`WorkspaceBundle`](crate::model::WorkspaceBundle).
+    pub fn builder() -> crate::model::workspace_bundle::Builder {
+        crate::model::workspace_bundle::Builder::default()
+    }
+}
+
 /// See [`WorkspaceBundle`](crate::model::WorkspaceBundle).
 pub mod workspace_bundle {
     
@@ -6483,12 +6521,6 @@ pub mod workspace_bundle {
     }
     
     
-}
-impl WorkspaceBundle {
-    /// Creates a new builder-style object to manufacture [`WorkspaceBundle`](crate::model::WorkspaceBundle).
-    pub fn builder() -> crate::model::workspace_bundle::Builder {
-        crate::model::workspace_bundle::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BundleType`, it is important to ensure
@@ -6674,6 +6706,13 @@ impl ComputeType {
         self.name.as_ref()
     }
 }
+impl ComputeType {
+    /// Creates a new builder-style object to manufacture [`ComputeType`](crate::model::ComputeType).
+    pub fn builder() -> crate::model::compute_type::Builder {
+        crate::model::compute_type::Builder::default()
+    }
+}
+
 /// See [`ComputeType`](crate::model::ComputeType).
 pub mod compute_type {
     
@@ -6704,12 +6743,6 @@ pub mod compute_type {
     
     
 }
-impl ComputeType {
-    /// Creates a new builder-style object to manufacture [`ComputeType`](crate::model::ComputeType).
-    pub fn builder() -> crate::model::compute_type::Builder {
-        crate::model::compute_type::Builder::default()
-    }
-}
 
 /// <p>Describes the user volume for a WorkSpace bundle.</p>
 #[non_exhaustive]
@@ -6725,6 +6758,13 @@ impl UserStorage {
         self.capacity.as_deref()
     }
 }
+impl UserStorage {
+    /// Creates a new builder-style object to manufacture [`UserStorage`](crate::model::UserStorage).
+    pub fn builder() -> crate::model::user_storage::Builder {
+        crate::model::user_storage::Builder::default()
+    }
+}
+
 /// See [`UserStorage`](crate::model::UserStorage).
 pub mod user_storage {
     
@@ -6755,12 +6795,6 @@ pub mod user_storage {
     
     
 }
-impl UserStorage {
-    /// Creates a new builder-style object to manufacture [`UserStorage`](crate::model::UserStorage).
-    pub fn builder() -> crate::model::user_storage::Builder {
-        crate::model::user_storage::Builder::default()
-    }
-}
 
 /// <p>Describes the root volume for a WorkSpace bundle.</p>
 #[non_exhaustive]
@@ -6776,6 +6810,13 @@ impl RootStorage {
         self.capacity.as_deref()
     }
 }
+impl RootStorage {
+    /// Creates a new builder-style object to manufacture [`RootStorage`](crate::model::RootStorage).
+    pub fn builder() -> crate::model::root_storage::Builder {
+        crate::model::root_storage::Builder::default()
+    }
+}
+
 /// See [`RootStorage`](crate::model::RootStorage).
 pub mod root_storage {
     
@@ -6805,12 +6846,6 @@ pub mod root_storage {
     }
     
     
-}
-impl RootStorage {
-    /// Creates a new builder-style object to manufacture [`RootStorage`](crate::model::RootStorage).
-    pub fn builder() -> crate::model::root_storage::Builder {
-        crate::model::root_storage::Builder::default()
-    }
 }
 
 /// <p>Describes an IP access control group.</p>
@@ -6848,6 +6883,13 @@ impl WorkspacesIpGroup {
         self.user_rules.as_deref()
     }
 }
+impl WorkspacesIpGroup {
+    /// Creates a new builder-style object to manufacture [`WorkspacesIpGroup`](crate::model::WorkspacesIpGroup).
+    pub fn builder() -> crate::model::workspaces_ip_group::Builder {
+        crate::model::workspaces_ip_group::Builder::default()
+    }
+}
+
 /// See [`WorkspacesIpGroup`](crate::model::WorkspacesIpGroup).
 pub mod workspaces_ip_group {
     
@@ -6920,12 +6962,6 @@ pub mod workspaces_ip_group {
     
     
 }
-impl WorkspacesIpGroup {
-    /// Creates a new builder-style object to manufacture [`WorkspacesIpGroup`](crate::model::WorkspacesIpGroup).
-    pub fn builder() -> crate::model::workspaces_ip_group::Builder {
-        crate::model::workspaces_ip_group::Builder::default()
-    }
-}
 
 /// <p>Describes a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
@@ -6969,6 +7005,13 @@ impl ConnectionAlias {
         self.associations.as_deref()
     }
 }
+impl ConnectionAlias {
+    /// Creates a new builder-style object to manufacture [`ConnectionAlias`](crate::model::ConnectionAlias).
+    pub fn builder() -> crate::model::connection_alias::Builder {
+        crate::model::connection_alias::Builder::default()
+    }
+}
+
 /// See [`ConnectionAlias`](crate::model::ConnectionAlias).
 pub mod connection_alias {
     
@@ -7053,12 +7096,6 @@ pub mod connection_alias {
     
     
 }
-impl ConnectionAlias {
-    /// Creates a new builder-style object to manufacture [`ConnectionAlias`](crate::model::ConnectionAlias).
-    pub fn builder() -> crate::model::connection_alias::Builder {
-        crate::model::connection_alias::Builder::default()
-    }
-}
 
 /// <p>Describes a connection alias association that is used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
@@ -7095,6 +7132,13 @@ impl ConnectionAliasAssociation {
         self.connection_identifier.as_deref()
     }
 }
+impl ConnectionAliasAssociation {
+    /// Creates a new builder-style object to manufacture [`ConnectionAliasAssociation`](crate::model::ConnectionAliasAssociation).
+    pub fn builder() -> crate::model::connection_alias_association::Builder {
+        crate::model::connection_alias_association::Builder::default()
+    }
+}
+
 /// See [`ConnectionAliasAssociation`](crate::model::ConnectionAliasAssociation).
 pub mod connection_alias_association {
     
@@ -7160,12 +7204,6 @@ pub mod connection_alias_association {
     }
     
     
-}
-impl ConnectionAliasAssociation {
-    /// Creates a new builder-style object to manufacture [`ConnectionAliasAssociation`](crate::model::ConnectionAliasAssociation).
-    pub fn builder() -> crate::model::connection_alias_association::Builder {
-        crate::model::connection_alias_association::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssociationStatus`, it is important to ensure
@@ -7387,6 +7425,13 @@ impl ConnectClientAddIn {
         self.url.as_deref()
     }
 }
+impl ConnectClientAddIn {
+    /// Creates a new builder-style object to manufacture [`ConnectClientAddIn`](crate::model::ConnectClientAddIn).
+    pub fn builder() -> crate::model::connect_client_add_in::Builder {
+        crate::model::connect_client_add_in::Builder::default()
+    }
+}
+
 /// See [`ConnectClientAddIn`](crate::model::ConnectClientAddIn).
 pub mod connect_client_add_in {
     
@@ -7453,12 +7498,6 @@ pub mod connect_client_add_in {
     
     
 }
-impl ConnectClientAddIn {
-    /// Creates a new builder-style object to manufacture [`ConnectClientAddIn`](crate::model::ConnectClientAddIn).
-    pub fn builder() -> crate::model::connect_client_add_in::Builder {
-        crate::model::connect_client_add_in::Builder::default()
-    }
-}
 
 /// <p>Information about the Amazon WorkSpaces client.</p>
 #[non_exhaustive]
@@ -7481,6 +7520,13 @@ impl ClientPropertiesResult {
         self.client_properties.as_ref()
     }
 }
+impl ClientPropertiesResult {
+    /// Creates a new builder-style object to manufacture [`ClientPropertiesResult`](crate::model::ClientPropertiesResult).
+    pub fn builder() -> crate::model::client_properties_result::Builder {
+        crate::model::client_properties_result::Builder::default()
+    }
+}
+
 /// See [`ClientPropertiesResult`](crate::model::ClientPropertiesResult).
 pub mod client_properties_result {
     
@@ -7522,12 +7568,6 @@ pub mod client_properties_result {
     }
     
     
-}
-impl ClientPropertiesResult {
-    /// Creates a new builder-style object to manufacture [`ClientPropertiesResult`](crate::model::ClientPropertiesResult).
-    pub fn builder() -> crate::model::client_properties_result::Builder {
-        crate::model::client_properties_result::Builder::default()
-    }
 }
 
 /// <p>Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account. </p>
@@ -7579,6 +7619,13 @@ impl AccountModification {
         self.error_message.as_deref()
     }
 }
+impl AccountModification {
+    /// Creates a new builder-style object to manufacture [`AccountModification`](crate::model::AccountModification).
+    pub fn builder() -> crate::model::account_modification::Builder {
+        crate::model::account_modification::Builder::default()
+    }
+}
+
 /// See [`AccountModification`](crate::model::AccountModification).
 pub mod account_modification {
     
@@ -7668,12 +7715,6 @@ pub mod account_modification {
     }
     
     
-}
-impl AccountModification {
-    /// Creates a new builder-style object to manufacture [`AccountModification`](crate::model::AccountModification).
-    pub fn builder() -> crate::model::account_modification::Builder {
-        crate::model::account_modification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DedicatedTenancySupportResultEnum`, it is important to ensure
@@ -7975,6 +8016,13 @@ impl FailedCreateWorkspaceRequest {
         self.error_message.as_deref()
     }
 }
+impl FailedCreateWorkspaceRequest {
+    /// Creates a new builder-style object to manufacture [`FailedCreateWorkspaceRequest`](crate::model::FailedCreateWorkspaceRequest).
+    pub fn builder() -> crate::model::failed_create_workspace_request::Builder {
+        crate::model::failed_create_workspace_request::Builder::default()
+    }
+}
+
 /// See [`FailedCreateWorkspaceRequest`](crate::model::FailedCreateWorkspaceRequest).
 pub mod failed_create_workspace_request {
     
@@ -8028,12 +8076,6 @@ pub mod failed_create_workspace_request {
     }
     
     
-}
-impl FailedCreateWorkspaceRequest {
-    /// Creates a new builder-style object to manufacture [`FailedCreateWorkspaceRequest`](crate::model::FailedCreateWorkspaceRequest).
-    pub fn builder() -> crate::model::failed_create_workspace_request::Builder {
-        crate::model::failed_create_workspace_request::Builder::default()
-    }
 }
 
 /// <p>Describes the information used to create a WorkSpace.</p>
@@ -8099,6 +8141,13 @@ impl WorkspaceRequest {
         self.tags.as_deref()
     }
 }
+impl WorkspaceRequest {
+    /// Creates a new builder-style object to manufacture [`WorkspaceRequest`](crate::model::WorkspaceRequest).
+    pub fn builder() -> crate::model::workspace_request::Builder {
+        crate::model::workspace_request::Builder::default()
+    }
+}
+
 /// See [`WorkspaceRequest`](crate::model::WorkspaceRequest).
 pub mod workspace_request {
     
@@ -8219,12 +8268,6 @@ pub mod workspace_request {
     
     
 }
-impl WorkspaceRequest {
-    /// Creates a new builder-style object to manufacture [`WorkspaceRequest`](crate::model::WorkspaceRequest).
-    pub fn builder() -> crate::model::workspace_request::Builder {
-        crate::model::workspace_request::Builder::default()
-    }
-}
 
 /// <p>Information about the Standby WorkSpace.</p>
 #[non_exhaustive]
@@ -8263,6 +8306,13 @@ impl PendingCreateStandbyWorkspacesRequest {
         self.workspace_id.as_deref()
     }
 }
+impl PendingCreateStandbyWorkspacesRequest {
+    /// Creates a new builder-style object to manufacture [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
+    pub fn builder() -> crate::model::pending_create_standby_workspaces_request::Builder {
+        crate::model::pending_create_standby_workspaces_request::Builder::default()
+    }
+}
+
 /// See [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
 pub mod pending_create_standby_workspaces_request {
     
@@ -8331,12 +8381,6 @@ pub mod pending_create_standby_workspaces_request {
     
     
 }
-impl PendingCreateStandbyWorkspacesRequest {
-    /// Creates a new builder-style object to manufacture [`PendingCreateStandbyWorkspacesRequest`](crate::model::PendingCreateStandbyWorkspacesRequest).
-    pub fn builder() -> crate::model::pending_create_standby_workspaces_request::Builder {
-        crate::model::pending_create_standby_workspaces_request::Builder::default()
-    }
-}
 
 /// <p>Describes the Standby WorkSpace that could not be created.</p>
 #[non_exhaustive]
@@ -8366,6 +8410,13 @@ impl FailedCreateStandbyWorkspacesRequest {
         self.error_message.as_deref()
     }
 }
+impl FailedCreateStandbyWorkspacesRequest {
+    /// Creates a new builder-style object to manufacture [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
+    pub fn builder() -> crate::model::failed_create_standby_workspaces_request::Builder {
+        crate::model::failed_create_standby_workspaces_request::Builder::default()
+    }
+}
+
 /// See [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
 pub mod failed_create_standby_workspaces_request {
     
@@ -8420,12 +8471,6 @@ pub mod failed_create_standby_workspaces_request {
     
     
 }
-impl FailedCreateStandbyWorkspacesRequest {
-    /// Creates a new builder-style object to manufacture [`FailedCreateStandbyWorkspacesRequest`](crate::model::FailedCreateStandbyWorkspacesRequest).
-    pub fn builder() -> crate::model::failed_create_standby_workspaces_request::Builder {
-        crate::model::failed_create_standby_workspaces_request::Builder::default()
-    }
-}
 
 /// <p>Describes a Standby WorkSpace.</p>
 #[non_exhaustive]
@@ -8462,6 +8507,13 @@ impl StandbyWorkspace {
         self.tags.as_deref()
     }
 }
+impl StandbyWorkspace {
+    /// Creates a new builder-style object to manufacture [`StandbyWorkspace`](crate::model::StandbyWorkspace).
+    pub fn builder() -> crate::model::standby_workspace::Builder {
+        crate::model::standby_workspace::Builder::default()
+    }
+}
+
 /// See [`StandbyWorkspace`](crate::model::StandbyWorkspace).
 pub mod standby_workspace {
     
@@ -8533,11 +8585,5 @@ pub mod standby_workspace {
     }
     
     
-}
-impl StandbyWorkspace {
-    /// Creates a new builder-style object to manufacture [`StandbyWorkspace`](crate::model::StandbyWorkspace).
-    pub fn builder() -> crate::model::standby_workspace::Builder {
-        crate::model::standby_workspace::Builder::default()
-    }
 }
 

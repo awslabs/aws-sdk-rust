@@ -21,6 +21,13 @@ impl ConfigurationOverrides {
         self.monitoring_configuration.as_ref()
     }
 }
+impl ConfigurationOverrides {
+    /// Creates a new builder-style object to manufacture [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
+    pub fn builder() -> crate::model::configuration_overrides::Builder {
+        crate::model::configuration_overrides::Builder::default()
+    }
+}
+
 /// See [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
 pub mod configuration_overrides {
     
@@ -69,12 +76,6 @@ pub mod configuration_overrides {
     
     
 }
-impl ConfigurationOverrides {
-    /// Creates a new builder-style object to manufacture [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
-    pub fn builder() -> crate::model::configuration_overrides::Builder {
-        crate::model::configuration_overrides::Builder::default()
-    }
-}
 
 /// <p>Configuration setting for monitoring.</p>
 #[non_exhaustive]
@@ -104,6 +105,13 @@ impl MonitoringConfiguration {
         self.s3_monitoring_configuration.as_ref()
     }
 }
+impl MonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
+    pub fn builder() -> crate::model::monitoring_configuration::Builder {
+        crate::model::monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
 pub mod monitoring_configuration {
     
@@ -158,12 +166,6 @@ pub mod monitoring_configuration {
     
     
 }
-impl MonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
-    pub fn builder() -> crate::model::monitoring_configuration::Builder {
-        crate::model::monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p> Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
@@ -179,6 +181,13 @@ impl S3MonitoringConfiguration {
         self.log_uri.as_deref()
     }
 }
+impl S3MonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
+    pub fn builder() -> crate::model::s3_monitoring_configuration::Builder {
+        crate::model::s3_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
 pub mod s3_monitoring_configuration {
     
@@ -209,12 +218,6 @@ pub mod s3_monitoring_configuration {
     
     
 }
-impl S3MonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
-    pub fn builder() -> crate::model::s3_monitoring_configuration::Builder {
-        crate::model::s3_monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p>A configuration for CloudWatch monitoring. You can configure your jobs to send log information to CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -237,6 +240,13 @@ impl CloudWatchMonitoringConfiguration {
         self.log_stream_name_prefix.as_deref()
     }
 }
+impl CloudWatchMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchMonitoringConfiguration`](crate::model::CloudWatchMonitoringConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_monitoring_configuration::Builder {
+        crate::model::cloud_watch_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudWatchMonitoringConfiguration`](crate::model::CloudWatchMonitoringConfiguration).
 pub mod cloud_watch_monitoring_configuration {
     
@@ -278,12 +288,6 @@ pub mod cloud_watch_monitoring_configuration {
     }
     
     
-}
-impl CloudWatchMonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudWatchMonitoringConfiguration`](crate::model::CloudWatchMonitoringConfiguration).
-    pub fn builder() -> crate::model::cloud_watch_monitoring_configuration::Builder {
-        crate::model::cloud_watch_monitoring_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PersistentAppUi`, it is important to ensure
@@ -405,6 +409,13 @@ impl  std::fmt::Debug for Configuration  {
         formatter.finish()
     }
 }
+impl Configuration {
+    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
+    pub fn builder() -> crate::model::configuration::Builder {
+        crate::model::configuration::Builder::default()
+    }
+}
+
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
     
@@ -480,12 +491,6 @@ pub mod configuration {
     
     
 }
-impl Configuration {
-    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
-    pub fn builder() -> crate::model::configuration::Builder {
-        crate::model::configuration::Builder::default()
-    }
-}
 
 /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
 #[non_exhaustive]
@@ -508,6 +513,13 @@ impl JobDriver {
         self.spark_sql_job_driver.as_ref()
     }
 }
+impl JobDriver {
+    /// Creates a new builder-style object to manufacture [`JobDriver`](crate::model::JobDriver).
+    pub fn builder() -> crate::model::job_driver::Builder {
+        crate::model::job_driver::Builder::default()
+    }
+}
+
 /// See [`JobDriver`](crate::model::JobDriver).
 pub mod job_driver {
     
@@ -550,12 +562,6 @@ pub mod job_driver {
     
     
 }
-impl JobDriver {
-    /// Creates a new builder-style object to manufacture [`JobDriver`](crate::model::JobDriver).
-    pub fn builder() -> crate::model::job_driver::Builder {
-        crate::model::job_driver::Builder::default()
-    }
-}
 
 /// <p>The job driver for job type.</p>
 #[non_exhaustive]
@@ -586,6 +592,13 @@ impl  std::fmt::Debug for SparkSqlJobDriver  {
         formatter.finish()
     }
 }
+impl SparkSqlJobDriver {
+    /// Creates a new builder-style object to manufacture [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
+    pub fn builder() -> crate::model::spark_sql_job_driver::Builder {
+        crate::model::spark_sql_job_driver::Builder::default()
+    }
+}
+
 /// See [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
 pub mod spark_sql_job_driver {
     
@@ -636,12 +649,6 @@ pub mod spark_sql_job_driver {
     
     
 }
-impl SparkSqlJobDriver {
-    /// Creates a new builder-style object to manufacture [`SparkSqlJobDriver`](crate::model::SparkSqlJobDriver).
-    pub fn builder() -> crate::model::spark_sql_job_driver::Builder {
-        crate::model::spark_sql_job_driver::Builder::default()
-    }
-}
 
 /// <p>The information about job driver for Spark submit.</p>
 #[non_exhaustive]
@@ -680,6 +687,13 @@ impl  std::fmt::Debug for SparkSubmitJobDriver  {
         formatter.finish()
     }
 }
+impl SparkSubmitJobDriver {
+    /// Creates a new builder-style object to manufacture [`SparkSubmitJobDriver`](crate::model::SparkSubmitJobDriver).
+    pub fn builder() -> crate::model::spark_submit_job_driver::Builder {
+        crate::model::spark_submit_job_driver::Builder::default()
+    }
+}
+
 /// See [`SparkSubmitJobDriver`](crate::model::SparkSubmitJobDriver).
 pub mod spark_submit_job_driver {
     
@@ -749,12 +763,6 @@ pub mod spark_submit_job_driver {
     
     
 }
-impl SparkSubmitJobDriver {
-    /// Creates a new builder-style object to manufacture [`SparkSubmitJobDriver`](crate::model::SparkSubmitJobDriver).
-    pub fn builder() -> crate::model::spark_submit_job_driver::Builder {
-        crate::model::spark_submit_job_driver::Builder::default()
-    }
-}
 
 /// <p>This entity describes a virtual cluster. A virtual cluster is a Kubernetes namespace that Amazon EMR is registered with. Amazon EMR uses virtual clusters to run jobs and host endpoints. Multiple virtual clusters can be backed by the same physical cluster. However, each virtual cluster maps to one namespace on an EKS cluster. Virtual clusters do not create any active resources that contribute to your bill or that require lifecycle management outside the service.</p>
 #[non_exhaustive]
@@ -812,6 +820,13 @@ impl VirtualCluster {
         self.tags.as_ref()
     }
 }
+impl VirtualCluster {
+    /// Creates a new builder-style object to manufacture [`VirtualCluster`](crate::model::VirtualCluster).
+    pub fn builder() -> crate::model::virtual_cluster::Builder {
+        crate::model::virtual_cluster::Builder::default()
+    }
+}
+
 /// See [`VirtualCluster`](crate::model::VirtualCluster).
 pub mod virtual_cluster {
     
@@ -920,12 +935,6 @@ pub mod virtual_cluster {
     
     
 }
-impl VirtualCluster {
-    /// Creates a new builder-style object to manufacture [`VirtualCluster`](crate::model::VirtualCluster).
-    pub fn builder() -> crate::model::virtual_cluster::Builder {
-        crate::model::virtual_cluster::Builder::default()
-    }
-}
 
 /// <p>The information about the container provider.</p>
 #[non_exhaustive]
@@ -955,6 +964,13 @@ impl ContainerProvider {
         self.info.as_ref()
     }
 }
+impl ContainerProvider {
+    /// Creates a new builder-style object to manufacture [`ContainerProvider`](crate::model::ContainerProvider).
+    pub fn builder() -> crate::model::container_provider::Builder {
+        crate::model::container_provider::Builder::default()
+    }
+}
+
 /// See [`ContainerProvider`](crate::model::ContainerProvider).
 pub mod container_provider {
     
@@ -1009,12 +1025,6 @@ pub mod container_provider {
     
     
 }
-impl ContainerProvider {
-    /// Creates a new builder-style object to manufacture [`ContainerProvider`](crate::model::ContainerProvider).
-    pub fn builder() -> crate::model::container_provider::Builder {
-        crate::model::container_provider::Builder::default()
-    }
-}
 
 /// <p>The information about the container used for a job run or a managed endpoint.</p>
 #[non_exhaustive]
@@ -1063,6 +1073,13 @@ impl EksInfo {
         self.namespace.as_deref()
     }
 }
+impl EksInfo {
+    /// Creates a new builder-style object to manufacture [`EksInfo`](crate::model::EksInfo).
+    pub fn builder() -> crate::model::eks_info::Builder {
+        crate::model::eks_info::Builder::default()
+    }
+}
+
 /// See [`EksInfo`](crate::model::EksInfo).
 pub mod eks_info {
     
@@ -1092,12 +1109,6 @@ pub mod eks_info {
     }
     
     
-}
-impl EksInfo {
-    /// Creates a new builder-style object to manufacture [`EksInfo`](crate::model::EksInfo).
-    pub fn builder() -> crate::model::eks_info::Builder {
-        crate::model::eks_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContainerProviderType`, it is important to ensure
@@ -1404,6 +1415,13 @@ impl Endpoint {
         self.tags.as_ref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
     
@@ -1652,12 +1670,6 @@ pub mod endpoint {
     
     
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FailureReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1772,6 +1784,13 @@ impl Certificate {
         self.certificate_data.as_deref()
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
     
@@ -1813,12 +1832,6 @@ pub mod certificate {
     }
     
     
-}
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndpointState`, it is important to ensure
@@ -1988,6 +2001,13 @@ impl JobTemplate {
         self.decryption_error.as_deref()
     }
 }
+impl JobTemplate {
+    /// Creates a new builder-style object to manufacture [`JobTemplate`](crate::model::JobTemplate).
+    pub fn builder() -> crate::model::job_template::Builder {
+        crate::model::job_template::Builder::default()
+    }
+}
+
 /// See [`JobTemplate`](crate::model::JobTemplate).
 pub mod job_template {
     
@@ -2120,12 +2140,6 @@ pub mod job_template {
     
     
 }
-impl JobTemplate {
-    /// Creates a new builder-style object to manufacture [`JobTemplate`](crate::model::JobTemplate).
-    pub fn builder() -> crate::model::job_template::Builder {
-        crate::model::job_template::Builder::default()
-    }
-}
 
 /// <p>The values of StartJobRun API requests used in job runs started using the job template.</p>
 #[non_exhaustive]
@@ -2176,6 +2190,13 @@ impl JobTemplateData {
         self.job_tags.as_ref()
     }
 }
+impl JobTemplateData {
+    /// Creates a new builder-style object to manufacture [`JobTemplateData`](crate::model::JobTemplateData).
+    pub fn builder() -> crate::model::job_template_data::Builder {
+        crate::model::job_template_data::Builder::default()
+    }
+}
+
 /// See [`JobTemplateData`](crate::model::JobTemplateData).
 pub mod job_template_data {
     
@@ -2278,12 +2299,6 @@ pub mod job_template_data {
     
     
 }
-impl JobTemplateData {
-    /// Creates a new builder-style object to manufacture [`JobTemplateData`](crate::model::JobTemplateData).
-    pub fn builder() -> crate::model::job_template_data::Builder {
-        crate::model::job_template_data::Builder::default()
-    }
-}
 
 /// <p>The configuration of a job template parameter.</p>
 #[non_exhaustive]
@@ -2306,6 +2321,13 @@ impl TemplateParameterConfiguration {
         self.default_value.as_deref()
     }
 }
+impl TemplateParameterConfiguration {
+    /// Creates a new builder-style object to manufacture [`TemplateParameterConfiguration`](crate::model::TemplateParameterConfiguration).
+    pub fn builder() -> crate::model::template_parameter_configuration::Builder {
+        crate::model::template_parameter_configuration::Builder::default()
+    }
+}
+
 /// See [`TemplateParameterConfiguration`](crate::model::TemplateParameterConfiguration).
 pub mod template_parameter_configuration {
     
@@ -2347,12 +2369,6 @@ pub mod template_parameter_configuration {
     }
     
     
-}
-impl TemplateParameterConfiguration {
-    /// Creates a new builder-style object to manufacture [`TemplateParameterConfiguration`](crate::model::TemplateParameterConfiguration).
-    pub fn builder() -> crate::model::template_parameter_configuration::Builder {
-        crate::model::template_parameter_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TemplateParameterDataType`, it is important to ensure
@@ -2458,6 +2474,13 @@ impl ParametricConfigurationOverrides {
         self.monitoring_configuration.as_ref()
     }
 }
+impl ParametricConfigurationOverrides {
+    /// Creates a new builder-style object to manufacture [`ParametricConfigurationOverrides`](crate::model::ParametricConfigurationOverrides).
+    pub fn builder() -> crate::model::parametric_configuration_overrides::Builder {
+        crate::model::parametric_configuration_overrides::Builder::default()
+    }
+}
+
 /// See [`ParametricConfigurationOverrides`](crate::model::ParametricConfigurationOverrides).
 pub mod parametric_configuration_overrides {
     
@@ -2506,12 +2529,6 @@ pub mod parametric_configuration_overrides {
     
     
 }
-impl ParametricConfigurationOverrides {
-    /// Creates a new builder-style object to manufacture [`ParametricConfigurationOverrides`](crate::model::ParametricConfigurationOverrides).
-    pub fn builder() -> crate::model::parametric_configuration_overrides::Builder {
-        crate::model::parametric_configuration_overrides::Builder::default()
-    }
-}
 
 /// <p> Configuration setting for monitoring. This data type allows job template parameters to be specified within.</p>
 #[non_exhaustive]
@@ -2541,6 +2558,13 @@ impl ParametricMonitoringConfiguration {
         self.s3_monitoring_configuration.as_ref()
     }
 }
+impl ParametricMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`ParametricMonitoringConfiguration`](crate::model::ParametricMonitoringConfiguration).
+    pub fn builder() -> crate::model::parametric_monitoring_configuration::Builder {
+        crate::model::parametric_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`ParametricMonitoringConfiguration`](crate::model::ParametricMonitoringConfiguration).
 pub mod parametric_monitoring_configuration {
     
@@ -2595,12 +2619,6 @@ pub mod parametric_monitoring_configuration {
     
     
 }
-impl ParametricMonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`ParametricMonitoringConfiguration`](crate::model::ParametricMonitoringConfiguration).
-    pub fn builder() -> crate::model::parametric_monitoring_configuration::Builder {
-        crate::model::parametric_monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p> Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3. This data type allows job template parameters to be specified within.</p>
 #[non_exhaustive]
@@ -2616,6 +2634,13 @@ impl ParametricS3MonitoringConfiguration {
         self.log_uri.as_deref()
     }
 }
+impl ParametricS3MonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`ParametricS3MonitoringConfiguration`](crate::model::ParametricS3MonitoringConfiguration).
+    pub fn builder() -> crate::model::parametric_s3_monitoring_configuration::Builder {
+        crate::model::parametric_s3_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`ParametricS3MonitoringConfiguration`](crate::model::ParametricS3MonitoringConfiguration).
 pub mod parametric_s3_monitoring_configuration {
     
@@ -2646,12 +2671,6 @@ pub mod parametric_s3_monitoring_configuration {
     
     
 }
-impl ParametricS3MonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`ParametricS3MonitoringConfiguration`](crate::model::ParametricS3MonitoringConfiguration).
-    pub fn builder() -> crate::model::parametric_s3_monitoring_configuration::Builder {
-        crate::model::parametric_s3_monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p> A configuration for CloudWatch monitoring. You can configure your jobs to send log information to CloudWatch Logs. This data type allows job template parameters to be specified within.</p>
 #[non_exhaustive]
@@ -2674,6 +2693,13 @@ impl ParametricCloudWatchMonitoringConfiguration {
         self.log_stream_name_prefix.as_deref()
     }
 }
+impl ParametricCloudWatchMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`ParametricCloudWatchMonitoringConfiguration`](crate::model::ParametricCloudWatchMonitoringConfiguration).
+    pub fn builder() -> crate::model::parametric_cloud_watch_monitoring_configuration::Builder {
+        crate::model::parametric_cloud_watch_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`ParametricCloudWatchMonitoringConfiguration`](crate::model::ParametricCloudWatchMonitoringConfiguration).
 pub mod parametric_cloud_watch_monitoring_configuration {
     
@@ -2715,12 +2741,6 @@ pub mod parametric_cloud_watch_monitoring_configuration {
     }
     
     
-}
-impl ParametricCloudWatchMonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`ParametricCloudWatchMonitoringConfiguration`](crate::model::ParametricCloudWatchMonitoringConfiguration).
-    pub fn builder() -> crate::model::parametric_cloud_watch_monitoring_configuration::Builder {
-        crate::model::parametric_cloud_watch_monitoring_configuration::Builder::default()
-    }
 }
 
 /// <p>This entity describes a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS. </p>
@@ -2842,6 +2862,13 @@ impl JobRun {
         self.tags.as_ref()
     }
 }
+impl JobRun {
+    /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
+    pub fn builder() -> crate::model::job_run::Builder {
+        crate::model::job_run::Builder::default()
+    }
+}
+
 /// See [`JobRun`](crate::model::JobRun).
 pub mod job_run {
     
@@ -3057,12 +3084,6 @@ pub mod job_run {
     }
     
     
-}
-impl JobRun {
-    /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
-    pub fn builder() -> crate::model::job_run::Builder {
-        crate::model::job_run::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobRunState`, it is important to ensure

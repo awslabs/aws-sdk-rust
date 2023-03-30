@@ -153,6 +153,13 @@ impl Cors {
         self.max_age
     }
 }
+impl Cors {
+    /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors).
+    pub fn builder() -> crate::model::cors::Builder {
+        crate::model::cors::Builder::default()
+    }
+}
+
 /// See [`Cors`](crate::model::Cors).
 pub mod cors {
     
@@ -269,12 +276,6 @@ pub mod cors {
     
     
 }
-impl Cors {
-    /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors).
-    pub fn builder() -> crate::model::cors::Builder {
-        crate::model::cors::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FunctionUrlAuthType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -379,6 +380,13 @@ impl DestinationConfig {
         self.on_failure.as_ref()
     }
 }
+impl DestinationConfig {
+    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
+    pub fn builder() -> crate::model::destination_config::Builder {
+        crate::model::destination_config::Builder::default()
+    }
+}
+
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
 pub mod destination_config {
     
@@ -421,12 +429,6 @@ pub mod destination_config {
     
     
 }
-impl DestinationConfig {
-    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
-    pub fn builder() -> crate::model::destination_config::Builder {
-        crate::model::destination_config::Builder::default()
-    }
-}
 
 /// <p>A destination for events that failed processing.</p>
 #[non_exhaustive]
@@ -442,6 +444,13 @@ impl OnFailure {
         self.destination.as_deref()
     }
 }
+impl OnFailure {
+    /// Creates a new builder-style object to manufacture [`OnFailure`](crate::model::OnFailure).
+    pub fn builder() -> crate::model::on_failure::Builder {
+        crate::model::on_failure::Builder::default()
+    }
+}
+
 /// See [`OnFailure`](crate::model::OnFailure).
 pub mod on_failure {
     
@@ -472,12 +481,6 @@ pub mod on_failure {
     
     
 }
-impl OnFailure {
-    /// Creates a new builder-style object to manufacture [`OnFailure`](crate::model::OnFailure).
-    pub fn builder() -> crate::model::on_failure::Builder {
-        crate::model::on_failure::Builder::default()
-    }
-}
 
 /// <p>A destination for events that were processed successfully.</p>
 #[non_exhaustive]
@@ -493,6 +496,13 @@ impl OnSuccess {
         self.destination.as_deref()
     }
 }
+impl OnSuccess {
+    /// Creates a new builder-style object to manufacture [`OnSuccess`](crate::model::OnSuccess).
+    pub fn builder() -> crate::model::on_success::Builder {
+        crate::model::on_success::Builder::default()
+    }
+}
+
 /// See [`OnSuccess`](crate::model::OnSuccess).
 pub mod on_success {
     
@@ -523,12 +533,6 @@ pub mod on_success {
     
     
 }
-impl OnSuccess {
-    /// Creates a new builder-style object to manufacture [`OnSuccess`](crate::model::OnSuccess).
-    pub fn builder() -> crate::model::on_success::Builder {
-        crate::model::on_success::Builder::default()
-    }
-}
 
 /// <p>The ARN of the runtime and any errors that occured.</p>
 #[non_exhaustive]
@@ -551,6 +555,13 @@ impl RuntimeVersionConfig {
         self.error.as_ref()
     }
 }
+impl RuntimeVersionConfig {
+    /// Creates a new builder-style object to manufacture [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
+    pub fn builder() -> crate::model::runtime_version_config::Builder {
+        crate::model::runtime_version_config::Builder::default()
+    }
+}
+
 /// See [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
 pub mod runtime_version_config {
     
@@ -593,12 +604,6 @@ pub mod runtime_version_config {
     
     
 }
-impl RuntimeVersionConfig {
-    /// Creates a new builder-style object to manufacture [`RuntimeVersionConfig`](crate::model::RuntimeVersionConfig).
-    pub fn builder() -> crate::model::runtime_version_config::Builder {
-        crate::model::runtime_version_config::Builder::default()
-    }
-}
 
 /// <p>Any error returned when the runtime version information for the function could not be retrieved.</p>
 #[non_exhaustive]
@@ -629,6 +634,13 @@ impl  std::fmt::Debug for RuntimeVersionError  {
         formatter.finish()
     }
 }
+impl RuntimeVersionError {
+    /// Creates a new builder-style object to manufacture [`RuntimeVersionError`](crate::model::RuntimeVersionError).
+    pub fn builder() -> crate::model::runtime_version_error::Builder {
+        crate::model::runtime_version_error::Builder::default()
+    }
+}
+
 /// See [`RuntimeVersionError`](crate::model::RuntimeVersionError).
 pub mod runtime_version_error {
     
@@ -679,12 +691,6 @@ pub mod runtime_version_error {
     
     
 }
-impl RuntimeVersionError {
-    /// Creates a new builder-style object to manufacture [`RuntimeVersionError`](crate::model::RuntimeVersionError).
-    pub fn builder() -> crate::model::runtime_version_error::Builder {
-        crate::model::runtime_version_error::Builder::default()
-    }
-}
 
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
 #[non_exhaustive]
@@ -707,6 +713,13 @@ impl SnapStartResponse {
         self.optimization_status.as_ref()
     }
 }
+impl SnapStartResponse {
+    /// Creates a new builder-style object to manufacture [`SnapStartResponse`](crate::model::SnapStartResponse).
+    pub fn builder() -> crate::model::snap_start_response::Builder {
+        crate::model::snap_start_response::Builder::default()
+    }
+}
+
 /// See [`SnapStartResponse`](crate::model::SnapStartResponse).
 pub mod snap_start_response {
     
@@ -748,12 +761,6 @@ pub mod snap_start_response {
     }
     
     
-}
-impl SnapStartResponse {
-    /// Creates a new builder-style object to manufacture [`SnapStartResponse`](crate::model::SnapStartResponse).
-    pub fn builder() -> crate::model::snap_start_response::Builder {
-        crate::model::snap_start_response::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnapStartOptimizationStatus`, it is important to ensure
@@ -934,6 +941,13 @@ impl EphemeralStorage {
         self.size
     }
 }
+impl EphemeralStorage {
+    /// Creates a new builder-style object to manufacture [`EphemeralStorage`](crate::model::EphemeralStorage).
+    pub fn builder() -> crate::model::ephemeral_storage::Builder {
+        crate::model::ephemeral_storage::Builder::default()
+    }
+}
+
 /// See [`EphemeralStorage`](crate::model::EphemeralStorage).
 pub mod ephemeral_storage {
     
@@ -963,12 +977,6 @@ pub mod ephemeral_storage {
     }
     
     
-}
-impl EphemeralStorage {
-    /// Creates a new builder-style object to manufacture [`EphemeralStorage`](crate::model::EphemeralStorage).
-    pub fn builder() -> crate::model::ephemeral_storage::Builder {
-        crate::model::ephemeral_storage::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Architecture`, it is important to ensure
@@ -1074,6 +1082,13 @@ impl ImageConfigResponse {
         self.error.as_ref()
     }
 }
+impl ImageConfigResponse {
+    /// Creates a new builder-style object to manufacture [`ImageConfigResponse`](crate::model::ImageConfigResponse).
+    pub fn builder() -> crate::model::image_config_response::Builder {
+        crate::model::image_config_response::Builder::default()
+    }
+}
+
 /// See [`ImageConfigResponse`](crate::model::ImageConfigResponse).
 pub mod image_config_response {
     
@@ -1116,12 +1131,6 @@ pub mod image_config_response {
     
     
 }
-impl ImageConfigResponse {
-    /// Creates a new builder-style object to manufacture [`ImageConfigResponse`](crate::model::ImageConfigResponse).
-    pub fn builder() -> crate::model::image_config_response::Builder {
-        crate::model::image_config_response::Builder::default()
-    }
-}
 
 /// <p>Error response to <code>GetFunctionConfiguration</code>.</p>
 #[non_exhaustive]
@@ -1152,6 +1161,13 @@ impl  std::fmt::Debug for ImageConfigError  {
         formatter.finish()
     }
 }
+impl ImageConfigError {
+    /// Creates a new builder-style object to manufacture [`ImageConfigError`](crate::model::ImageConfigError).
+    pub fn builder() -> crate::model::image_config_error::Builder {
+        crate::model::image_config_error::Builder::default()
+    }
+}
+
 /// See [`ImageConfigError`](crate::model::ImageConfigError).
 pub mod image_config_error {
     
@@ -1202,12 +1218,6 @@ pub mod image_config_error {
     
     
 }
-impl ImageConfigError {
-    /// Creates a new builder-style object to manufacture [`ImageConfigError`](crate::model::ImageConfigError).
-    pub fn builder() -> crate::model::image_config_error::Builder {
-        crate::model::image_config_error::Builder::default()
-    }
-}
 
 /// <p>Configuration values that override the container image Dockerfile settings. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image settings</a>.</p>
 #[non_exhaustive]
@@ -1237,6 +1247,13 @@ impl ImageConfig {
         self.working_directory.as_deref()
     }
 }
+impl ImageConfig {
+    /// Creates a new builder-style object to manufacture [`ImageConfig`](crate::model::ImageConfig).
+    pub fn builder() -> crate::model::image_config::Builder {
+        crate::model::image_config::Builder::default()
+    }
+}
+
 /// See [`ImageConfig`](crate::model::ImageConfig).
 pub mod image_config {
     
@@ -1302,12 +1319,6 @@ pub mod image_config {
     }
     
     
-}
-impl ImageConfig {
-    /// Creates a new builder-style object to manufacture [`ImageConfig`](crate::model::ImageConfig).
-    pub fn builder() -> crate::model::image_config::Builder {
-        crate::model::image_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PackageType`, it is important to ensure
@@ -1413,6 +1424,13 @@ impl FileSystemConfig {
         self.local_mount_path.as_deref()
     }
 }
+impl FileSystemConfig {
+    /// Creates a new builder-style object to manufacture [`FileSystemConfig`](crate::model::FileSystemConfig).
+    pub fn builder() -> crate::model::file_system_config::Builder {
+        crate::model::file_system_config::Builder::default()
+    }
+}
+
 /// See [`FileSystemConfig`](crate::model::FileSystemConfig).
 pub mod file_system_config {
     
@@ -1454,12 +1472,6 @@ pub mod file_system_config {
     }
     
     
-}
-impl FileSystemConfig {
-    /// Creates a new builder-style object to manufacture [`FileSystemConfig`](crate::model::FileSystemConfig).
-    pub fn builder() -> crate::model::file_system_config::Builder {
-        crate::model::file_system_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LastUpdateStatusReasonCode`, it is important to ensure
@@ -2045,6 +2057,13 @@ impl Layer {
         self.signing_job_arn.as_deref()
     }
 }
+impl Layer {
+    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
+    pub fn builder() -> crate::model::layer::Builder {
+        crate::model::layer::Builder::default()
+    }
+}
+
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
     
@@ -2112,12 +2131,6 @@ pub mod layer {
     
     
 }
-impl Layer {
-    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
-    pub fn builder() -> crate::model::layer::Builder {
-        crate::model::layer::Builder::default()
-    }
-}
 
 /// <p>The function's X-Ray tracing configuration.</p>
 #[non_exhaustive]
@@ -2133,6 +2146,13 @@ impl TracingConfigResponse {
         self.mode.as_ref()
     }
 }
+impl TracingConfigResponse {
+    /// Creates a new builder-style object to manufacture [`TracingConfigResponse`](crate::model::TracingConfigResponse).
+    pub fn builder() -> crate::model::tracing_config_response::Builder {
+        crate::model::tracing_config_response::Builder::default()
+    }
+}
+
 /// See [`TracingConfigResponse`](crate::model::TracingConfigResponse).
 pub mod tracing_config_response {
     
@@ -2162,12 +2182,6 @@ pub mod tracing_config_response {
     }
     
     
-}
-impl TracingConfigResponse {
-    /// Creates a new builder-style object to manufacture [`TracingConfigResponse`](crate::model::TracingConfigResponse).
-    pub fn builder() -> crate::model::tracing_config_response::Builder {
-        crate::model::tracing_config_response::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TracingMode`, it is important to ensure
@@ -2281,6 +2295,13 @@ impl  std::fmt::Debug for EnvironmentResponse  {
         formatter.finish()
     }
 }
+impl EnvironmentResponse {
+    /// Creates a new builder-style object to manufacture [`EnvironmentResponse`](crate::model::EnvironmentResponse).
+    pub fn builder() -> crate::model::environment_response::Builder {
+        crate::model::environment_response::Builder::default()
+    }
+}
+
 /// See [`EnvironmentResponse`](crate::model::EnvironmentResponse).
 pub mod environment_response {
     
@@ -2337,12 +2358,6 @@ pub mod environment_response {
     
     
 }
-impl EnvironmentResponse {
-    /// Creates a new builder-style object to manufacture [`EnvironmentResponse`](crate::model::EnvironmentResponse).
-    pub fn builder() -> crate::model::environment_response::Builder {
-        crate::model::environment_response::Builder::default()
-    }
-}
 
 /// <p>Error messages for environment variables that couldn't be applied.</p>
 #[non_exhaustive]
@@ -2373,6 +2388,13 @@ impl  std::fmt::Debug for EnvironmentError  {
         formatter.finish()
     }
 }
+impl EnvironmentError {
+    /// Creates a new builder-style object to manufacture [`EnvironmentError`](crate::model::EnvironmentError).
+    pub fn builder() -> crate::model::environment_error::Builder {
+        crate::model::environment_error::Builder::default()
+    }
+}
+
 /// See [`EnvironmentError`](crate::model::EnvironmentError).
 pub mod environment_error {
     
@@ -2423,12 +2445,6 @@ pub mod environment_error {
     
     
 }
-impl EnvironmentError {
-    /// Creates a new builder-style object to manufacture [`EnvironmentError`](crate::model::EnvironmentError).
-    pub fn builder() -> crate::model::environment_error::Builder {
-        crate::model::environment_error::Builder::default()
-    }
-}
 
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations.</p>
 #[non_exhaustive]
@@ -2444,6 +2460,13 @@ impl DeadLetterConfig {
         self.target_arn.as_deref()
     }
 }
+impl DeadLetterConfig {
+    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
+    pub fn builder() -> crate::model::dead_letter_config::Builder {
+        crate::model::dead_letter_config::Builder::default()
+    }
+}
+
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
     
@@ -2474,12 +2497,6 @@ pub mod dead_letter_config {
     
     
 }
-impl DeadLetterConfig {
-    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
-    pub fn builder() -> crate::model::dead_letter_config::Builder {
-        crate::model::dead_letter_config::Builder::default()
-    }
-}
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function.</p>
 #[non_exhaustive]
@@ -2509,6 +2526,13 @@ impl VpcConfigResponse {
         self.vpc_id.as_deref()
     }
 }
+impl VpcConfigResponse {
+    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
+    pub fn builder() -> crate::model::vpc_config_response::Builder {
+        crate::model::vpc_config_response::Builder::default()
+    }
+}
+
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
 pub mod vpc_config_response {
     
@@ -2574,12 +2598,6 @@ pub mod vpc_config_response {
     }
     
     
-}
-impl VpcConfigResponse {
-    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
-    pub fn builder() -> crate::model::vpc_config_response::Builder {
-        crate::model::vpc_config_response::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Runtime`, it is important to ensure
@@ -2809,6 +2827,13 @@ impl SnapStart {
         self.apply_on.as_ref()
     }
 }
+impl SnapStart {
+    /// Creates a new builder-style object to manufacture [`SnapStart`](crate::model::SnapStart).
+    pub fn builder() -> crate::model::snap_start::Builder {
+        crate::model::snap_start::Builder::default()
+    }
+}
+
 /// See [`SnapStart`](crate::model::SnapStart).
 pub mod snap_start {
     
@@ -2839,12 +2864,6 @@ pub mod snap_start {
     
     
 }
-impl SnapStart {
-    /// Creates a new builder-style object to manufacture [`SnapStart`](crate::model::SnapStart).
-    pub fn builder() -> crate::model::snap_start::Builder {
-        crate::model::snap_start::Builder::default()
-    }
-}
 
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
 #[non_exhaustive]
@@ -2860,6 +2879,13 @@ impl TracingConfig {
         self.mode.as_ref()
     }
 }
+impl TracingConfig {
+    /// Creates a new builder-style object to manufacture [`TracingConfig`](crate::model::TracingConfig).
+    pub fn builder() -> crate::model::tracing_config::Builder {
+        crate::model::tracing_config::Builder::default()
+    }
+}
+
 /// See [`TracingConfig`](crate::model::TracingConfig).
 pub mod tracing_config {
     
@@ -2890,12 +2916,6 @@ pub mod tracing_config {
     
     
 }
-impl TracingConfig {
-    /// Creates a new builder-style object to manufacture [`TracingConfig`](crate::model::TracingConfig).
-    pub fn builder() -> crate::model::tracing_config::Builder {
-        crate::model::tracing_config::Builder::default()
-    }
-}
 
 /// <p>A function's environment variable settings. You can use environment variables to adjust your function's behavior without updating code. An environment variable is a pair of strings that are stored in a function's version-specific configuration.</p>
 #[non_exhaustive]
@@ -2918,6 +2938,13 @@ impl  std::fmt::Debug for Environment  {
         formatter.finish()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
     
@@ -2961,12 +2988,6 @@ pub mod environment {
     
     
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
 #[non_exhaustive]
@@ -2989,6 +3010,13 @@ impl VpcConfig {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
     
@@ -3043,12 +3071,6 @@ pub mod vpc_config {
     
     
 }
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
-    }
-}
 
 /// <p>(Amazon SQS only) The scaling configuration for the event source. To remove the configuration, pass an empty value.</p>
 #[non_exhaustive]
@@ -3064,6 +3086,13 @@ impl ScalingConfig {
         self.maximum_concurrency
     }
 }
+impl ScalingConfig {
+    /// Creates a new builder-style object to manufacture [`ScalingConfig`](crate::model::ScalingConfig).
+    pub fn builder() -> crate::model::scaling_config::Builder {
+        crate::model::scaling_config::Builder::default()
+    }
+}
+
 /// See [`ScalingConfig`](crate::model::ScalingConfig).
 pub mod scaling_config {
     
@@ -3094,12 +3123,6 @@ pub mod scaling_config {
     
     
 }
-impl ScalingConfig {
-    /// Creates a new builder-style object to manufacture [`ScalingConfig`](crate::model::ScalingConfig).
-    pub fn builder() -> crate::model::scaling_config::Builder {
-        crate::model::scaling_config::Builder::default()
-    }
-}
 
 /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
 #[non_exhaustive]
@@ -3115,6 +3138,13 @@ impl SelfManagedKafkaEventSourceConfig {
         self.consumer_group_id.as_deref()
     }
 }
+impl SelfManagedKafkaEventSourceConfig {
+    /// Creates a new builder-style object to manufacture [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
+    pub fn builder() -> crate::model::self_managed_kafka_event_source_config::Builder {
+        crate::model::self_managed_kafka_event_source_config::Builder::default()
+    }
+}
+
 /// See [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
 pub mod self_managed_kafka_event_source_config {
     
@@ -3145,12 +3175,6 @@ pub mod self_managed_kafka_event_source_config {
     
     
 }
-impl SelfManagedKafkaEventSourceConfig {
-    /// Creates a new builder-style object to manufacture [`SelfManagedKafkaEventSourceConfig`](crate::model::SelfManagedKafkaEventSourceConfig).
-    pub fn builder() -> crate::model::self_managed_kafka_event_source_config::Builder {
-        crate::model::self_managed_kafka_event_source_config::Builder::default()
-    }
-}
 
 /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
 #[non_exhaustive]
@@ -3166,6 +3190,13 @@ impl AmazonManagedKafkaEventSourceConfig {
         self.consumer_group_id.as_deref()
     }
 }
+impl AmazonManagedKafkaEventSourceConfig {
+    /// Creates a new builder-style object to manufacture [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
+    pub fn builder() -> crate::model::amazon_managed_kafka_event_source_config::Builder {
+        crate::model::amazon_managed_kafka_event_source_config::Builder::default()
+    }
+}
+
 /// See [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
 pub mod amazon_managed_kafka_event_source_config {
     
@@ -3195,12 +3226,6 @@ pub mod amazon_managed_kafka_event_source_config {
     }
     
     
-}
-impl AmazonManagedKafkaEventSourceConfig {
-    /// Creates a new builder-style object to manufacture [`AmazonManagedKafkaEventSourceConfig`](crate::model::AmazonManagedKafkaEventSourceConfig).
-    pub fn builder() -> crate::model::amazon_managed_kafka_event_source_config::Builder {
-        crate::model::amazon_managed_kafka_event_source_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FunctionResponseType`, it is important to ensure
@@ -3294,6 +3319,13 @@ impl SelfManagedEventSource {
         self.endpoints.as_ref()
     }
 }
+impl SelfManagedEventSource {
+    /// Creates a new builder-style object to manufacture [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
+    pub fn builder() -> crate::model::self_managed_event_source::Builder {
+        crate::model::self_managed_event_source::Builder::default()
+    }
+}
+
 /// See [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
 pub mod self_managed_event_source {
     
@@ -3329,12 +3361,6 @@ pub mod self_managed_event_source {
     }
     
     
-}
-impl SelfManagedEventSource {
-    /// Creates a new builder-style object to manufacture [`SelfManagedEventSource`](crate::model::SelfManagedEventSource).
-    pub fn builder() -> crate::model::self_managed_event_source::Builder {
-        crate::model::self_managed_event_source::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndPointType`, it is important to ensure
@@ -3457,6 +3483,13 @@ impl SourceAccessConfiguration {
         self.uri.as_deref()
     }
 }
+impl SourceAccessConfiguration {
+    /// Creates a new builder-style object to manufacture [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
+    pub fn builder() -> crate::model::source_access_configuration::Builder {
+        crate::model::source_access_configuration::Builder::default()
+    }
+}
+
 /// See [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
 pub mod source_access_configuration {
     
@@ -3520,12 +3553,6 @@ pub mod source_access_configuration {
     }
     
     
-}
-impl SourceAccessConfiguration {
-    /// Creates a new builder-style object to manufacture [`SourceAccessConfiguration`](crate::model::SourceAccessConfiguration).
-    pub fn builder() -> crate::model::source_access_configuration::Builder {
-        crate::model::source_access_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceAccessType`, it is important to ensure
@@ -3654,6 +3681,13 @@ impl FilterCriteria {
         self.filters.as_deref()
     }
 }
+impl FilterCriteria {
+    /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
+    pub fn builder() -> crate::model::filter_criteria::Builder {
+        crate::model::filter_criteria::Builder::default()
+    }
+}
+
 /// See [`FilterCriteria`](crate::model::FilterCriteria).
 pub mod filter_criteria {
     
@@ -3690,12 +3724,6 @@ pub mod filter_criteria {
     
     
 }
-impl FilterCriteria {
-    /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
-    pub fn builder() -> crate::model::filter_criteria::Builder {
-        crate::model::filter_criteria::Builder::default()
-    }
-}
 
 /// <p> A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern. </p>
 #[non_exhaustive]
@@ -3711,6 +3739,13 @@ impl Filter {
         self.pattern.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -3740,12 +3775,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventSourcePosition`, it is important to ensure
@@ -3884,6 +3913,13 @@ impl CodeSigningConfig {
         self.last_modified.as_deref()
     }
 }
+impl CodeSigningConfig {
+    /// Creates a new builder-style object to manufacture [`CodeSigningConfig`](crate::model::CodeSigningConfig).
+    pub fn builder() -> crate::model::code_signing_config::Builder {
+        crate::model::code_signing_config::Builder::default()
+    }
+}
+
 /// See [`CodeSigningConfig`](crate::model::CodeSigningConfig).
 pub mod code_signing_config {
     
@@ -3974,12 +4010,6 @@ pub mod code_signing_config {
     
     
 }
-impl CodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`CodeSigningConfig`](crate::model::CodeSigningConfig).
-    pub fn builder() -> crate::model::code_signing_config::Builder {
-        crate::model::code_signing_config::Builder::default()
-    }
-}
 
 /// <p>Code signing configuration <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies">policies</a> specify the validation failure action for signature mismatch or expiry.</p>
 #[non_exhaustive]
@@ -3997,6 +4027,13 @@ impl CodeSigningPolicies {
         self.untrusted_artifact_on_deployment.as_ref()
     }
 }
+impl CodeSigningPolicies {
+    /// Creates a new builder-style object to manufacture [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
+    pub fn builder() -> crate::model::code_signing_policies::Builder {
+        crate::model::code_signing_policies::Builder::default()
+    }
+}
+
 /// See [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
 pub mod code_signing_policies {
     
@@ -4028,12 +4065,6 @@ pub mod code_signing_policies {
     }
     
     
-}
-impl CodeSigningPolicies {
-    /// Creates a new builder-style object to manufacture [`CodeSigningPolicies`](crate::model::CodeSigningPolicies).
-    pub fn builder() -> crate::model::code_signing_policies::Builder {
-        crate::model::code_signing_policies::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CodeSigningPolicy`, it is important to ensure
@@ -4132,6 +4163,13 @@ impl AllowedPublishers {
         self.signing_profile_version_arns.as_deref()
     }
 }
+impl AllowedPublishers {
+    /// Creates a new builder-style object to manufacture [`AllowedPublishers`](crate::model::AllowedPublishers).
+    pub fn builder() -> crate::model::allowed_publishers::Builder {
+        crate::model::allowed_publishers::Builder::default()
+    }
+}
+
 /// See [`AllowedPublishers`](crate::model::AllowedPublishers).
 pub mod allowed_publishers {
     
@@ -4168,12 +4206,6 @@ pub mod allowed_publishers {
     
     
 }
-impl AllowedPublishers {
-    /// Creates a new builder-style object to manufacture [`AllowedPublishers`](crate::model::AllowedPublishers).
-    pub fn builder() -> crate::model::allowed_publishers::Builder {
-        crate::model::allowed_publishers::Builder::default()
-    }
-}
 
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a> configuration of a Lambda function alias.</p>
 #[non_exhaustive]
@@ -4189,6 +4221,13 @@ impl AliasRoutingConfiguration {
         self.additional_version_weights.as_ref()
     }
 }
+impl AliasRoutingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
+    pub fn builder() -> crate::model::alias_routing_configuration::Builder {
+        crate::model::alias_routing_configuration::Builder::default()
+    }
+}
+
 /// See [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
 pub mod alias_routing_configuration {
     
@@ -4224,12 +4263,6 @@ pub mod alias_routing_configuration {
     }
     
     
-}
-impl AliasRoutingConfiguration {
-    /// Creates a new builder-style object to manufacture [`AliasRoutingConfiguration`](crate::model::AliasRoutingConfiguration).
-    pub fn builder() -> crate::model::alias_routing_configuration::Builder {
-        crate::model::alias_routing_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UpdateRuntimeOn`, it is important to ensure
@@ -4448,6 +4481,13 @@ impl LayerVersionContentOutput {
         self.signing_job_arn.as_deref()
     }
 }
+impl LayerVersionContentOutput {
+    /// Creates a new builder-style object to manufacture [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
+    pub fn builder() -> crate::model::layer_version_content_output::Builder {
+        crate::model::layer_version_content_output::Builder::default()
+    }
+}
+
 /// See [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
 pub mod layer_version_content_output {
     
@@ -4527,12 +4567,6 @@ pub mod layer_version_content_output {
     
     
 }
-impl LayerVersionContentOutput {
-    /// Creates a new builder-style object to manufacture [`LayerVersionContentOutput`](crate::model::LayerVersionContentOutput).
-    pub fn builder() -> crate::model::layer_version_content_output::Builder {
-        crate::model::layer_version_content_output::Builder::default()
-    }
-}
 
 /// <p>A ZIP archive that contains the contents of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. You can specify either an Amazon S3 location, or upload a layer archive directly.</p>
 #[non_exhaustive]
@@ -4579,6 +4613,13 @@ impl  std::fmt::Debug for LayerVersionContentInput  {
         formatter.finish()
     }
 }
+impl LayerVersionContentInput {
+    /// Creates a new builder-style object to manufacture [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
+    pub fn builder() -> crate::model::layer_version_content_input::Builder {
+        crate::model::layer_version_content_input::Builder::default()
+    }
+}
+
 /// See [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
 pub mod layer_version_content_input {
     
@@ -4654,12 +4695,6 @@ pub mod layer_version_content_input {
     }
     
     
-}
-impl LayerVersionContentInput {
-    /// Creates a new builder-style object to manufacture [`LayerVersionContentInput`](crate::model::LayerVersionContentInput).
-    pub fn builder() -> crate::model::layer_version_content_input::Builder {
-        crate::model::layer_version_content_input::Builder::default()
-    }
 }
 
 /// <p>Details about a function's configuration.</p>
@@ -4914,6 +4949,13 @@ impl FunctionConfiguration {
         self.runtime_version_config.as_ref()
     }
 }
+impl FunctionConfiguration {
+    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
+    pub fn builder() -> crate::model::function_configuration::Builder {
+        crate::model::function_configuration::Builder::default()
+    }
+}
+
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
     
@@ -5371,12 +5413,6 @@ pub mod function_configuration {
     
     
 }
-impl FunctionConfiguration {
-    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
-    pub fn builder() -> crate::model::function_configuration::Builder {
-        crate::model::function_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about the provisioned concurrency configuration for a function alias or version.</p>
 #[non_exhaustive]
@@ -5434,6 +5470,13 @@ impl ProvisionedConcurrencyConfigListItem {
         self.last_modified.as_deref()
     }
 }
+impl ProvisionedConcurrencyConfigListItem {
+    /// Creates a new builder-style object to manufacture [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
+    pub fn builder() -> crate::model::provisioned_concurrency_config_list_item::Builder {
+        crate::model::provisioned_concurrency_config_list_item::Builder::default()
+    }
+}
+
 /// See [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
 pub mod provisioned_concurrency_config_list_item {
     
@@ -5536,12 +5579,6 @@ pub mod provisioned_concurrency_config_list_item {
     
     
 }
-impl ProvisionedConcurrencyConfigListItem {
-    /// Creates a new builder-style object to manufacture [`ProvisionedConcurrencyConfigListItem`](crate::model::ProvisionedConcurrencyConfigListItem).
-    pub fn builder() -> crate::model::provisioned_concurrency_config_list_item::Builder {
-        crate::model::provisioned_concurrency_config_list_item::Builder::default()
-    }
-}
 
 /// <p>Details about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
@@ -5599,6 +5636,13 @@ impl LayerVersionsListItem {
         self.compatible_architectures.as_deref()
     }
 }
+impl LayerVersionsListItem {
+    /// Creates a new builder-style object to manufacture [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
+    pub fn builder() -> crate::model::layer_versions_list_item::Builder {
+        crate::model::layer_versions_list_item::Builder::default()
+    }
+}
+
 /// See [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
 pub mod layer_versions_list_item {
     
@@ -5714,12 +5758,6 @@ pub mod layer_versions_list_item {
     
     
 }
-impl LayerVersionsListItem {
-    /// Creates a new builder-style object to manufacture [`LayerVersionsListItem`](crate::model::LayerVersionsListItem).
-    pub fn builder() -> crate::model::layer_versions_list_item::Builder {
-        crate::model::layer_versions_list_item::Builder::default()
-    }
-}
 
 /// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
@@ -5749,6 +5787,13 @@ impl LayersListItem {
         self.latest_matching_version.as_ref()
     }
 }
+impl LayersListItem {
+    /// Creates a new builder-style object to manufacture [`LayersListItem`](crate::model::LayersListItem).
+    pub fn builder() -> crate::model::layers_list_item::Builder {
+        crate::model::layers_list_item::Builder::default()
+    }
+}
+
 /// See [`LayersListItem`](crate::model::LayersListItem).
 pub mod layers_list_item {
     
@@ -5803,12 +5848,6 @@ pub mod layers_list_item {
     
     
 }
-impl LayersListItem {
-    /// Creates a new builder-style object to manufacture [`LayersListItem`](crate::model::LayersListItem).
-    pub fn builder() -> crate::model::layers_list_item::Builder {
-        crate::model::layers_list_item::Builder::default()
-    }
-}
 
 /// <p>Details about a Lambda function URL.</p>
 #[non_exhaustive]
@@ -5859,6 +5898,13 @@ impl FunctionUrlConfig {
         self.auth_type.as_ref()
     }
 }
+impl FunctionUrlConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
+    pub fn builder() -> crate::model::function_url_config::Builder {
+        crate::model::function_url_config::Builder::default()
+    }
+}
+
 /// See [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
 pub mod function_url_config {
     
@@ -5948,12 +5994,6 @@ pub mod function_url_config {
     }
     
     
-}
-impl FunctionUrlConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionUrlConfig`](crate::model::FunctionUrlConfig).
-    pub fn builder() -> crate::model::function_url_config::Builder {
-        crate::model::function_url_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FunctionVersion`, it is important to ensure
@@ -6089,6 +6129,13 @@ impl FunctionEventInvokeConfig {
         self.destination_config.as_ref()
     }
 }
+impl FunctionEventInvokeConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
+    pub fn builder() -> crate::model::function_event_invoke_config::Builder {
+        crate::model::function_event_invoke_config::Builder::default()
+    }
+}
+
 /// See [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
 pub mod function_event_invoke_config {
     
@@ -6180,12 +6227,6 @@ pub mod function_event_invoke_config {
     }
     
     
-}
-impl FunctionEventInvokeConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionEventInvokeConfig`](crate::model::FunctionEventInvokeConfig).
-    pub fn builder() -> crate::model::function_event_invoke_config::Builder {
-        crate::model::function_event_invoke_config::Builder::default()
-    }
 }
 
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
@@ -6385,6 +6426,13 @@ impl EventSourceMappingConfiguration {
         self.scaling_config.as_ref()
     }
 }
+impl EventSourceMappingConfiguration {
+    /// Creates a new builder-style object to manufacture [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
+    pub fn builder() -> crate::model::event_source_mapping_configuration::Builder {
+        crate::model::event_source_mapping_configuration::Builder::default()
+    }
+}
+
 /// See [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
 pub mod event_source_mapping_configuration {
     
@@ -6747,12 +6795,6 @@ pub mod event_source_mapping_configuration {
     
     
 }
-impl EventSourceMappingConfiguration {
-    /// Creates a new builder-style object to manufacture [`EventSourceMappingConfiguration`](crate::model::EventSourceMappingConfiguration).
-    pub fn builder() -> crate::model::event_source_mapping_configuration::Builder {
-        crate::model::event_source_mapping_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[non_exhaustive]
@@ -6803,6 +6845,13 @@ impl AliasConfiguration {
         self.revision_id.as_deref()
     }
 }
+impl AliasConfiguration {
+    /// Creates a new builder-style object to manufacture [`AliasConfiguration`](crate::model::AliasConfiguration).
+    pub fn builder() -> crate::model::alias_configuration::Builder {
+        crate::model::alias_configuration::Builder::default()
+    }
+}
+
 /// See [`AliasConfiguration`](crate::model::AliasConfiguration).
 pub mod alias_configuration {
     
@@ -6892,12 +6941,6 @@ pub mod alias_configuration {
     }
     
     
-}
-impl AliasConfiguration {
-    /// Creates a new builder-style object to manufacture [`AliasConfiguration`](crate::model::AliasConfiguration).
-    pub fn builder() -> crate::model::alias_configuration::Builder {
-        crate::model::alias_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LogType`, it is important to ensure
@@ -7083,6 +7126,13 @@ impl Concurrency {
         self.reserved_concurrent_executions
     }
 }
+impl Concurrency {
+    /// Creates a new builder-style object to manufacture [`Concurrency`](crate::model::Concurrency).
+    pub fn builder() -> crate::model::concurrency::Builder {
+        crate::model::concurrency::Builder::default()
+    }
+}
+
 /// See [`Concurrency`](crate::model::Concurrency).
 pub mod concurrency {
     
@@ -7112,12 +7162,6 @@ pub mod concurrency {
     }
     
     
-}
-impl Concurrency {
-    /// Creates a new builder-style object to manufacture [`Concurrency`](crate::model::Concurrency).
-    pub fn builder() -> crate::model::concurrency::Builder {
-        crate::model::concurrency::Builder::default()
-    }
 }
 
 /// <p>Details about a function's deployment package.</p>
@@ -7155,6 +7199,13 @@ impl FunctionCodeLocation {
         self.resolved_image_uri.as_deref()
     }
 }
+impl FunctionCodeLocation {
+    /// Creates a new builder-style object to manufacture [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
+    pub fn builder() -> crate::model::function_code_location::Builder {
+        crate::model::function_code_location::Builder::default()
+    }
+}
+
 /// See [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
 pub mod function_code_location {
     
@@ -7221,12 +7272,6 @@ pub mod function_code_location {
     
     
 }
-impl FunctionCodeLocation {
-    /// Creates a new builder-style object to manufacture [`FunctionCodeLocation`](crate::model::FunctionCodeLocation).
-    pub fn builder() -> crate::model::function_code_location::Builder {
-        crate::model::function_code_location::Builder::default()
-    }
-}
 
 /// <p>The number of functions and amount of storage in use.</p>
 #[non_exhaustive]
@@ -7249,6 +7294,13 @@ impl AccountUsage {
         self.function_count
     }
 }
+impl AccountUsage {
+    /// Creates a new builder-style object to manufacture [`AccountUsage`](crate::model::AccountUsage).
+    pub fn builder() -> crate::model::account_usage::Builder {
+        crate::model::account_usage::Builder::default()
+    }
+}
+
 /// See [`AccountUsage`](crate::model::AccountUsage).
 pub mod account_usage {
     
@@ -7293,12 +7345,6 @@ pub mod account_usage {
     
     
 }
-impl AccountUsage {
-    /// Creates a new builder-style object to manufacture [`AccountUsage`](crate::model::AccountUsage).
-    pub fn builder() -> crate::model::account_usage::Builder {
-        crate::model::account_usage::Builder::default()
-    }
-}
 
 /// <p>Limits that are related to concurrency and storage. All file and storage sizes are in bytes.</p>
 #[non_exhaustive]
@@ -7342,6 +7388,13 @@ impl AccountLimit {
         self.unreserved_concurrent_executions
     }
 }
+impl AccountLimit {
+    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
+    pub fn builder() -> crate::model::account_limit::Builder {
+        crate::model::account_limit::Builder::default()
+    }
+}
+
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
     
@@ -7424,12 +7477,6 @@ pub mod account_limit {
     
     
 }
-impl AccountLimit {
-    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
-    pub fn builder() -> crate::model::account_limit::Builder {
-        crate::model::account_limit::Builder::default()
-    }
-}
 
 /// <p>The code for the Lambda function. You can either specify an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.</p>
 #[non_exhaustive]
@@ -7484,6 +7531,13 @@ impl  std::fmt::Debug for FunctionCode  {
         formatter.finish()
     }
 }
+impl FunctionCode {
+    /// Creates a new builder-style object to manufacture [`FunctionCode`](crate::model::FunctionCode).
+    pub fn builder() -> crate::model::function_code::Builder {
+        crate::model::function_code::Builder::default()
+    }
+}
+
 /// See [`FunctionCode`](crate::model::FunctionCode).
 pub mod function_code {
     
@@ -7572,11 +7626,5 @@ pub mod function_code {
     }
     
     
-}
-impl FunctionCode {
-    /// Creates a new builder-style object to manufacture [`FunctionCode`](crate::model::FunctionCode).
-    pub fn builder() -> crate::model::function_code::Builder {
-        crate::model::function_code::Builder::default()
-    }
 }
 

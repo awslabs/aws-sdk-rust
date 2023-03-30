@@ -90,6 +90,13 @@ impl aws_http::request_id::RequestId for RecognizeUtteranceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RecognizeUtteranceOutput {
+    /// Creates a new builder-style object to manufacture [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput).
+    pub fn builder() -> crate::output::recognize_utterance_output::Builder {
+        crate::output::recognize_utterance_output::Builder::default()
+    }
+}
+
 /// See [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput).
 pub mod recognize_utterance_output {
     
@@ -244,12 +251,6 @@ pub mod recognize_utterance_output {
     
     
 }
-impl RecognizeUtteranceOutput {
-    /// Creates a new builder-style object to manufacture [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput).
-    pub fn builder() -> crate::output::recognize_utterance_output::Builder {
-        crate::output::recognize_utterance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -303,6 +304,13 @@ impl aws_http::request_id::RequestId for RecognizeTextOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RecognizeTextOutput {
+    /// Creates a new builder-style object to manufacture [`RecognizeTextOutput`](crate::output::RecognizeTextOutput).
+    pub fn builder() -> crate::output::recognize_text_output::Builder {
+        crate::output::recognize_text_output::Builder::default()
+    }
+}
+
 /// See [`RecognizeTextOutput`](crate::output::RecognizeTextOutput).
 pub mod recognize_text_output {
     
@@ -414,12 +422,6 @@ pub mod recognize_text_output {
     
     
 }
-impl RecognizeTextOutput {
-    /// Creates a new builder-style object to manufacture [`RecognizeTextOutput`](crate::output::RecognizeTextOutput).
-    pub fn builder() -> crate::output::recognize_text_output::Builder {
-        crate::output::recognize_text_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -477,6 +479,13 @@ impl aws_http::request_id::RequestId for PutSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutSessionOutput {
+    /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput).
+    pub fn builder() -> crate::output::put_session_output::Builder {
+        crate::output::put_session_output::Builder::default()
+    }
+}
+
 /// See [`PutSessionOutput`](crate::output::PutSessionOutput).
 pub mod put_session_output {
     
@@ -581,12 +590,6 @@ pub mod put_session_output {
     
     
 }
-impl PutSessionOutput {
-    /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput).
-    pub fn builder() -> crate::output::put_session_output::Builder {
-        crate::output::put_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -633,6 +636,13 @@ impl aws_http::request_id::RequestId for GetSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
+    pub fn builder() -> crate::output::get_session_output::Builder {
+        crate::output::get_session_output::Builder::default()
+    }
+}
+
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput).
 pub mod get_session_output {
     
@@ -726,12 +736,6 @@ pub mod get_session_output {
     
     
 }
-impl GetSessionOutput {
-    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
-    pub fn builder() -> crate::output::get_session_output::Builder {
-        crate::output::get_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -774,6 +778,13 @@ impl aws_http::request_id::RequestId for DeleteSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSessionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
+    pub fn builder() -> crate::output::delete_session_output::Builder {
+        crate::output::delete_session_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
 pub mod delete_session_output {
     
@@ -850,11 +861,5 @@ pub mod delete_session_output {
     }
     
     
-}
-impl DeleteSessionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
-    pub fn builder() -> crate::output::delete_session_output::Builder {
-        crate::output::delete_session_output::Builder::default()
-    }
 }
 

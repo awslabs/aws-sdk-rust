@@ -77,6 +77,13 @@ impl UpdateAddress {
         self.postal_code.as_deref()
     }
 }
+impl UpdateAddress {
+    /// Creates a new builder-style object to manufacture [`UpdateAddress`](crate::model::UpdateAddress).
+    pub fn builder() -> crate::model::update_address::Builder {
+        crate::model::update_address::Builder::default()
+    }
+}
+
 /// See [`UpdateAddress`](crate::model::UpdateAddress).
 pub mod update_address {
     
@@ -214,12 +221,6 @@ pub mod update_address {
     }
     
     
-}
-impl UpdateAddress {
-    /// Creates a new builder-style object to manufacture [`UpdateAddress`](crate::model::UpdateAddress).
-    pub fn builder() -> crate::model::update_address::Builder {
-        crate::model::update_address::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Gender`, it is important to ensure
@@ -431,6 +432,13 @@ impl MatchingResponse {
         self.exporting_config.as_ref()
     }
 }
+impl MatchingResponse {
+    /// Creates a new builder-style object to manufacture [`MatchingResponse`](crate::model::MatchingResponse).
+    pub fn builder() -> crate::model::matching_response::Builder {
+        crate::model::matching_response::Builder::default()
+    }
+}
+
 /// See [`MatchingResponse`](crate::model::MatchingResponse).
 pub mod matching_response {
     
@@ -497,12 +505,6 @@ pub mod matching_response {
     
     
 }
-impl MatchingResponse {
-    /// Creates a new builder-style object to manufacture [`MatchingResponse`](crate::model::MatchingResponse).
-    pub fn builder() -> crate::model::matching_response::Builder {
-        crate::model::matching_response::Builder::default()
-    }
-}
 
 /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files. </p> <note> 
 /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p> 
@@ -520,6 +522,13 @@ impl ExportingConfig {
         self.s3_exporting.as_ref()
     }
 }
+impl ExportingConfig {
+    /// Creates a new builder-style object to manufacture [`ExportingConfig`](crate::model::ExportingConfig).
+    pub fn builder() -> crate::model::exporting_config::Builder {
+        crate::model::exporting_config::Builder::default()
+    }
+}
+
 /// See [`ExportingConfig`](crate::model::ExportingConfig).
 pub mod exporting_config {
     
@@ -550,12 +559,6 @@ pub mod exporting_config {
     
     
 }
-impl ExportingConfig {
-    /// Creates a new builder-style object to manufacture [`ExportingConfig`](crate::model::ExportingConfig).
-    pub fn builder() -> crate::model::exporting_config::Builder {
-        crate::model::exporting_config::Builder::default()
-    }
-}
 
 /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
@@ -578,6 +581,13 @@ impl S3ExportingConfig {
         self.s3_key_name.as_deref()
     }
 }
+impl S3ExportingConfig {
+    /// Creates a new builder-style object to manufacture [`S3ExportingConfig`](crate::model::S3ExportingConfig).
+    pub fn builder() -> crate::model::s3_exporting_config::Builder {
+        crate::model::s3_exporting_config::Builder::default()
+    }
+}
+
 /// See [`S3ExportingConfig`](crate::model::S3ExportingConfig).
 pub mod s3_exporting_config {
     
@@ -620,12 +630,6 @@ pub mod s3_exporting_config {
     
     
 }
-impl S3ExportingConfig {
-    /// Creates a new builder-style object to manufacture [`S3ExportingConfig`](crate::model::S3ExportingConfig).
-    pub fn builder() -> crate::model::s3_exporting_config::Builder {
-        crate::model::s3_exporting_config::Builder::default()
-    }
-}
 
 /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
 #[non_exhaustive]
@@ -662,6 +666,13 @@ impl AutoMerging {
         self.min_allowed_confidence_score_for_merging
     }
 }
+impl AutoMerging {
+    /// Creates a new builder-style object to manufacture [`AutoMerging`](crate::model::AutoMerging).
+    pub fn builder() -> crate::model::auto_merging::Builder {
+        crate::model::auto_merging::Builder::default()
+    }
+}
+
 /// See [`AutoMerging`](crate::model::AutoMerging).
 pub mod auto_merging {
     
@@ -728,12 +739,6 @@ pub mod auto_merging {
     
     
 }
-impl AutoMerging {
-    /// Creates a new builder-style object to manufacture [`AutoMerging`](crate::model::AutoMerging).
-    pub fn builder() -> crate::model::auto_merging::Builder {
-        crate::model::auto_merging::Builder::default()
-    }
-}
 
 /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 #[non_exhaustive]
@@ -764,6 +769,13 @@ impl ConflictResolution {
         self.source_name.as_deref()
     }
 }
+impl ConflictResolution {
+    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution).
+    pub fn builder() -> crate::model::conflict_resolution::Builder {
+        crate::model::conflict_resolution::Builder::default()
+    }
+}
+
 /// See [`ConflictResolution`](crate::model::ConflictResolution).
 pub mod conflict_resolution {
     
@@ -813,12 +825,6 @@ pub mod conflict_resolution {
     }
     
     
-}
-impl ConflictResolution {
-    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution).
-    pub fn builder() -> crate::model::conflict_resolution::Builder {
-        crate::model::conflict_resolution::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConflictResolvingModel`, it is important to ensure
@@ -917,6 +923,13 @@ impl Consolidation {
         self.matching_attributes_list.as_deref()
     }
 }
+impl Consolidation {
+    /// Creates a new builder-style object to manufacture [`Consolidation`](crate::model::Consolidation).
+    pub fn builder() -> crate::model::consolidation::Builder {
+        crate::model::consolidation::Builder::default()
+    }
+}
+
 /// See [`Consolidation`](crate::model::Consolidation).
 pub mod consolidation {
     
@@ -953,12 +966,6 @@ pub mod consolidation {
     
     
 }
-impl Consolidation {
-    /// Creates a new builder-style object to manufacture [`Consolidation`](crate::model::Consolidation).
-    pub fn builder() -> crate::model::consolidation::Builder {
-        crate::model::consolidation::Builder::default()
-    }
-}
 
 /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
 #[non_exhaustive]
@@ -981,6 +988,13 @@ impl JobSchedule {
         self.time.as_deref()
     }
 }
+impl JobSchedule {
+    /// Creates a new builder-style object to manufacture [`JobSchedule`](crate::model::JobSchedule).
+    pub fn builder() -> crate::model::job_schedule::Builder {
+        crate::model::job_schedule::Builder::default()
+    }
+}
+
 /// See [`JobSchedule`](crate::model::JobSchedule).
 pub mod job_schedule {
     
@@ -1022,12 +1036,6 @@ pub mod job_schedule {
     }
     
     
-}
-impl JobSchedule {
-    /// Creates a new builder-style object to manufacture [`JobSchedule`](crate::model::JobSchedule).
-    pub fn builder() -> crate::model::job_schedule::Builder {
-        crate::model::job_schedule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobScheduleDayOfTheWeek`, it is important to ensure
@@ -1172,6 +1180,13 @@ impl MatchingRequest {
         self.exporting_config.as_ref()
     }
 }
+impl MatchingRequest {
+    /// Creates a new builder-style object to manufacture [`MatchingRequest`](crate::model::MatchingRequest).
+    pub fn builder() -> crate::model::matching_request::Builder {
+        crate::model::matching_request::Builder::default()
+    }
+}
+
 /// See [`MatchingRequest`](crate::model::MatchingRequest).
 pub mod matching_request {
     
@@ -1237,12 +1252,6 @@ pub mod matching_request {
     }
     
     
-}
-impl MatchingRequest {
-    /// Creates a new builder-style object to manufacture [`MatchingRequest`](crate::model::MatchingRequest).
-    pub fn builder() -> crate::model::matching_request::Builder {
-        crate::model::matching_request::Builder::default()
-    }
 }
 
 /// <p>The standard profile of a customer.</p>
@@ -1425,6 +1434,13 @@ impl Profile {
         self.found_by_items.as_deref()
     }
 }
+impl Profile {
+    /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
+    pub fn builder() -> crate::model::profile::Builder {
+        crate::model::profile::Builder::default()
+    }
+}
+
 /// See [`Profile`](crate::model::Profile).
 pub mod profile {
     
@@ -1743,12 +1759,6 @@ pub mod profile {
     
     
 }
-impl Profile {
-    /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
-    pub fn builder() -> crate::model::profile::Builder {
-        crate::model::profile::Builder::default()
-    }
-}
 
 /// <p>A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that were used to find a profile returned in response to a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a> request. </p>
 #[non_exhaustive]
@@ -1771,6 +1781,13 @@ impl FoundByKeyValue {
         self.values.as_deref()
     }
 }
+impl FoundByKeyValue {
+    /// Creates a new builder-style object to manufacture [`FoundByKeyValue`](crate::model::FoundByKeyValue).
+    pub fn builder() -> crate::model::found_by_key_value::Builder {
+        crate::model::found_by_key_value::Builder::default()
+    }
+}
+
 /// See [`FoundByKeyValue`](crate::model::FoundByKeyValue).
 pub mod found_by_key_value {
     
@@ -1818,12 +1835,6 @@ pub mod found_by_key_value {
     }
     
     
-}
-impl FoundByKeyValue {
-    /// Creates a new builder-style object to manufacture [`FoundByKeyValue`](crate::model::FoundByKeyValue).
-    pub fn builder() -> crate::model::found_by_key_value::Builder {
-        crate::model::found_by_key_value::Builder::default()
-    }
 }
 
 /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
@@ -1903,6 +1914,13 @@ impl Address {
         self.postal_code.as_deref()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
     
@@ -2041,12 +2059,6 @@ pub mod address {
     
     
 }
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
-}
 
 /// When writing a match expression against `LogicalOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2151,6 +2163,13 @@ impl AdditionalSearchKey {
         self.values.as_deref()
     }
 }
+impl AdditionalSearchKey {
+    /// Creates a new builder-style object to manufacture [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
+    pub fn builder() -> crate::model::additional_search_key::Builder {
+        crate::model::additional_search_key::Builder::default()
+    }
+}
+
 /// See [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
 pub mod additional_search_key {
     
@@ -2199,12 +2218,6 @@ pub mod additional_search_key {
     
     
 }
-impl AdditionalSearchKey {
-    /// Creates a new builder-style object to manufacture [`AdditionalSearchKey`](crate::model::AdditionalSearchKey).
-    pub fn builder() -> crate::model::additional_search_key::Builder {
-        crate::model::additional_search_key::Builder::default()
-    }
-}
 
 /// <p>An object that defines the Key element of a ProfileObject. A Key is a special element that can be used to search for a customer profile.</p>
 #[non_exhaustive]
@@ -2227,6 +2240,13 @@ impl ObjectTypeKey {
         self.field_names.as_deref()
     }
 }
+impl ObjectTypeKey {
+    /// Creates a new builder-style object to manufacture [`ObjectTypeKey`](crate::model::ObjectTypeKey).
+    pub fn builder() -> crate::model::object_type_key::Builder {
+        crate::model::object_type_key::Builder::default()
+    }
+}
+
 /// See [`ObjectTypeKey`](crate::model::ObjectTypeKey).
 pub mod object_type_key {
     
@@ -2280,12 +2300,6 @@ pub mod object_type_key {
     }
     
     
-}
-impl ObjectTypeKey {
-    /// Creates a new builder-style object to manufacture [`ObjectTypeKey`](crate::model::ObjectTypeKey).
-    pub fn builder() -> crate::model::object_type_key::Builder {
-        crate::model::object_type_key::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StandardIdentifier`, it is important to ensure
@@ -2428,6 +2442,13 @@ impl ObjectTypeField {
         self.content_type.as_ref()
     }
 }
+impl ObjectTypeField {
+    /// Creates a new builder-style object to manufacture [`ObjectTypeField`](crate::model::ObjectTypeField).
+    pub fn builder() -> crate::model::object_type_field::Builder {
+        crate::model::object_type_field::Builder::default()
+    }
+}
+
 /// See [`ObjectTypeField`](crate::model::ObjectTypeField).
 pub mod object_type_field {
     
@@ -2481,12 +2502,6 @@ pub mod object_type_field {
     }
     
     
-}
-impl ObjectTypeField {
-    /// Creates a new builder-style object to manufacture [`ObjectTypeField`](crate::model::ObjectTypeField).
-    pub fn builder() -> crate::model::object_type_field::Builder {
-        crate::model::object_type_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FieldContentType`, it is important to ensure
@@ -2635,6 +2650,13 @@ impl FlowDefinition {
         self.trigger_config.as_ref()
     }
 }
+impl FlowDefinition {
+    /// Creates a new builder-style object to manufacture [`FlowDefinition`](crate::model::FlowDefinition).
+    pub fn builder() -> crate::model::flow_definition::Builder {
+        crate::model::flow_definition::Builder::default()
+    }
+}
+
 /// See [`FlowDefinition`](crate::model::FlowDefinition).
 pub mod flow_definition {
     
@@ -2731,12 +2753,6 @@ pub mod flow_definition {
     
     
 }
-impl FlowDefinition {
-    /// Creates a new builder-style object to manufacture [`FlowDefinition`](crate::model::FlowDefinition).
-    pub fn builder() -> crate::model::flow_definition::Builder {
-        crate::model::flow_definition::Builder::default()
-    }
-}
 
 /// <p>The trigger settings that determine how and when Amazon AppFlow runs the specified flow.</p>
 #[non_exhaustive]
@@ -2759,6 +2775,13 @@ impl TriggerConfig {
         self.trigger_properties.as_ref()
     }
 }
+impl TriggerConfig {
+    /// Creates a new builder-style object to manufacture [`TriggerConfig`](crate::model::TriggerConfig).
+    pub fn builder() -> crate::model::trigger_config::Builder {
+        crate::model::trigger_config::Builder::default()
+    }
+}
+
 /// See [`TriggerConfig`](crate::model::TriggerConfig).
 pub mod trigger_config {
     
@@ -2801,12 +2824,6 @@ pub mod trigger_config {
     
     
 }
-impl TriggerConfig {
-    /// Creates a new builder-style object to manufacture [`TriggerConfig`](crate::model::TriggerConfig).
-    pub fn builder() -> crate::model::trigger_config::Builder {
-        crate::model::trigger_config::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the Scheduled trigger type.</p>
 #[non_exhaustive]
@@ -2822,6 +2839,13 @@ impl TriggerProperties {
         self.scheduled.as_ref()
     }
 }
+impl TriggerProperties {
+    /// Creates a new builder-style object to manufacture [`TriggerProperties`](crate::model::TriggerProperties).
+    pub fn builder() -> crate::model::trigger_properties::Builder {
+        crate::model::trigger_properties::Builder::default()
+    }
+}
+
 /// See [`TriggerProperties`](crate::model::TriggerProperties).
 pub mod trigger_properties {
     
@@ -2851,12 +2875,6 @@ pub mod trigger_properties {
     }
     
     
-}
-impl TriggerProperties {
-    /// Creates a new builder-style object to manufacture [`TriggerProperties`](crate::model::TriggerProperties).
-    pub fn builder() -> crate::model::trigger_properties::Builder {
-        crate::model::trigger_properties::Builder::default()
-    }
 }
 
 /// <p>Specifies the configuration details of a scheduled-trigger flow that you define. Currently, these settings only apply to the scheduled-trigger type.</p>
@@ -2915,6 +2933,13 @@ impl ScheduledTriggerProperties {
         self.first_execution_from.as_ref()
     }
 }
+impl ScheduledTriggerProperties {
+    /// Creates a new builder-style object to manufacture [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
+    pub fn builder() -> crate::model::scheduled_trigger_properties::Builder {
+        crate::model::scheduled_trigger_properties::Builder::default()
+    }
+}
+
 /// See [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
 pub mod scheduled_trigger_properties {
     
@@ -3016,12 +3041,6 @@ pub mod scheduled_trigger_properties {
     }
     
     
-}
-impl ScheduledTriggerProperties {
-    /// Creates a new builder-style object to manufacture [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
-    pub fn builder() -> crate::model::scheduled_trigger_properties::Builder {
-        crate::model::scheduled_trigger_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataPullMode`, it is important to ensure
@@ -3235,6 +3254,13 @@ impl Task {
         self.task_type.as_ref()
     }
 }
+impl Task {
+    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
+    pub fn builder() -> crate::model::task::Builder {
+        crate::model::task::Builder::default()
+    }
+}
+
 /// See [`Task`](crate::model::Task).
 pub mod task {
     
@@ -3324,12 +3350,6 @@ pub mod task {
     }
     
     
-}
-impl Task {
-    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
-    pub fn builder() -> crate::model::task::Builder {
-        crate::model::task::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TaskType`, it is important to ensure
@@ -3623,6 +3643,13 @@ impl ConnectorOperator {
         self.zendesk.as_ref()
     }
 }
+impl ConnectorOperator {
+    /// Creates a new builder-style object to manufacture [`ConnectorOperator`](crate::model::ConnectorOperator).
+    pub fn builder() -> crate::model::connector_operator::Builder {
+        crate::model::connector_operator::Builder::default()
+    }
+}
+
 /// See [`ConnectorOperator`](crate::model::ConnectorOperator).
 pub mod connector_operator {
     
@@ -3700,12 +3727,6 @@ pub mod connector_operator {
     }
     
     
-}
-impl ConnectorOperator {
-    /// Creates a new builder-style object to manufacture [`ConnectorOperator`](crate::model::ConnectorOperator).
-    pub fn builder() -> crate::model::connector_operator::Builder {
-        crate::model::connector_operator::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ZendeskConnectorOperator`, it is important to ensure
@@ -4563,6 +4584,13 @@ impl SourceFlowConfig {
         self.source_connector_properties.as_ref()
     }
 }
+impl SourceFlowConfig {
+    /// Creates a new builder-style object to manufacture [`SourceFlowConfig`](crate::model::SourceFlowConfig).
+    pub fn builder() -> crate::model::source_flow_config::Builder {
+        crate::model::source_flow_config::Builder::default()
+    }
+}
+
 /// See [`SourceFlowConfig`](crate::model::SourceFlowConfig).
 pub mod source_flow_config {
     
@@ -4629,12 +4657,6 @@ pub mod source_flow_config {
     
     
 }
-impl SourceFlowConfig {
-    /// Creates a new builder-style object to manufacture [`SourceFlowConfig`](crate::model::SourceFlowConfig).
-    pub fn builder() -> crate::model::source_flow_config::Builder {
-        crate::model::source_flow_config::Builder::default()
-    }
-}
 
 /// <p>Specifies the information that is required to query a particular Amazon AppFlow connector. Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.</p>
 #[non_exhaustive]
@@ -4678,6 +4700,13 @@ impl SourceConnectorProperties {
         self.zendesk.as_ref()
     }
 }
+impl SourceConnectorProperties {
+    /// Creates a new builder-style object to manufacture [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
+    pub fn builder() -> crate::model::source_connector_properties::Builder {
+        crate::model::source_connector_properties::Builder::default()
+    }
+}
+
 /// See [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
 pub mod source_connector_properties {
     
@@ -4756,12 +4785,6 @@ pub mod source_connector_properties {
     
     
 }
-impl SourceConnectorProperties {
-    /// Creates a new builder-style object to manufacture [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
-    pub fn builder() -> crate::model::source_connector_properties::Builder {
-        crate::model::source_connector_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when using Zendesk as a flow source.</p>
 #[non_exhaustive]
@@ -4777,6 +4800,13 @@ impl ZendeskSourceProperties {
         self.object.as_deref()
     }
 }
+impl ZendeskSourceProperties {
+    /// Creates a new builder-style object to manufacture [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
+    pub fn builder() -> crate::model::zendesk_source_properties::Builder {
+        crate::model::zendesk_source_properties::Builder::default()
+    }
+}
+
 /// See [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
 pub mod zendesk_source_properties {
     
@@ -4807,12 +4837,6 @@ pub mod zendesk_source_properties {
     
     
 }
-impl ZendeskSourceProperties {
-    /// Creates a new builder-style object to manufacture [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
-    pub fn builder() -> crate::model::zendesk_source_properties::Builder {
-        crate::model::zendesk_source_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
 #[non_exhaustive]
@@ -4828,6 +4852,13 @@ impl ServiceNowSourceProperties {
         self.object.as_deref()
     }
 }
+impl ServiceNowSourceProperties {
+    /// Creates a new builder-style object to manufacture [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
+    pub fn builder() -> crate::model::service_now_source_properties::Builder {
+        crate::model::service_now_source_properties::Builder::default()
+    }
+}
+
 /// See [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
 pub mod service_now_source_properties {
     
@@ -4858,12 +4889,6 @@ pub mod service_now_source_properties {
     
     
 }
-impl ServiceNowSourceProperties {
-    /// Creates a new builder-style object to manufacture [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
-    pub fn builder() -> crate::model::service_now_source_properties::Builder {
-        crate::model::service_now_source_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when Salesforce is being used as a source.</p>
 #[non_exhaustive]
@@ -4893,6 +4918,13 @@ impl SalesforceSourceProperties {
         self.include_deleted_records
     }
 }
+impl SalesforceSourceProperties {
+    /// Creates a new builder-style object to manufacture [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
+    pub fn builder() -> crate::model::salesforce_source_properties::Builder {
+        crate::model::salesforce_source_properties::Builder::default()
+    }
+}
+
 /// See [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
 pub mod salesforce_source_properties {
     
@@ -4949,12 +4981,6 @@ pub mod salesforce_source_properties {
     
     
 }
-impl SalesforceSourceProperties {
-    /// Creates a new builder-style object to manufacture [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
-    pub fn builder() -> crate::model::salesforce_source_properties::Builder {
-        crate::model::salesforce_source_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
 #[non_exhaustive]
@@ -4977,6 +5003,13 @@ impl S3SourceProperties {
         self.bucket_prefix.as_deref()
     }
 }
+impl S3SourceProperties {
+    /// Creates a new builder-style object to manufacture [`S3SourceProperties`](crate::model::S3SourceProperties).
+    pub fn builder() -> crate::model::s3_source_properties::Builder {
+        crate::model::s3_source_properties::Builder::default()
+    }
+}
+
 /// See [`S3SourceProperties`](crate::model::S3SourceProperties).
 pub mod s3_source_properties {
     
@@ -5019,12 +5052,6 @@ pub mod s3_source_properties {
     
     
 }
-impl S3SourceProperties {
-    /// Creates a new builder-style object to manufacture [`S3SourceProperties`](crate::model::S3SourceProperties).
-    pub fn builder() -> crate::model::s3_source_properties::Builder {
-        crate::model::s3_source_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when Marketo is being used as a source.</p>
 #[non_exhaustive]
@@ -5040,6 +5067,13 @@ impl MarketoSourceProperties {
         self.object.as_deref()
     }
 }
+impl MarketoSourceProperties {
+    /// Creates a new builder-style object to manufacture [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
+    pub fn builder() -> crate::model::marketo_source_properties::Builder {
+        crate::model::marketo_source_properties::Builder::default()
+    }
+}
+
 /// See [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
 pub mod marketo_source_properties {
     
@@ -5070,12 +5104,6 @@ pub mod marketo_source_properties {
     
     
 }
-impl MarketoSourceProperties {
-    /// Creates a new builder-style object to manufacture [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
-    pub fn builder() -> crate::model::marketo_source_properties::Builder {
-        crate::model::marketo_source_properties::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration used when importing incremental records from the source.</p>
 #[non_exhaustive]
@@ -5091,6 +5119,13 @@ impl IncrementalPullConfig {
         self.datetime_type_field_name.as_deref()
     }
 }
+impl IncrementalPullConfig {
+    /// Creates a new builder-style object to manufacture [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
+    pub fn builder() -> crate::model::incremental_pull_config::Builder {
+        crate::model::incremental_pull_config::Builder::default()
+    }
+}
+
 /// See [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
 pub mod incremental_pull_config {
     
@@ -5120,12 +5155,6 @@ pub mod incremental_pull_config {
     }
     
     
-}
-impl IncrementalPullConfig {
-    /// Creates a new builder-style object to manufacture [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
-    pub fn builder() -> crate::model::incremental_pull_config::Builder {
-        crate::model::incremental_pull_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceConnectorType`, it is important to ensure
@@ -5379,6 +5408,13 @@ impl FieldSourceProfileIds {
         self.attributes.as_ref()
     }
 }
+impl FieldSourceProfileIds {
+    /// Creates a new builder-style object to manufacture [`FieldSourceProfileIds`](crate::model::FieldSourceProfileIds).
+    pub fn builder() -> crate::model::field_source_profile_ids::Builder {
+        crate::model::field_source_profile_ids::Builder::default()
+    }
+}
+
 /// See [`FieldSourceProfileIds`](crate::model::FieldSourceProfileIds).
 pub mod field_source_profile_ids {
     
@@ -5655,12 +5691,6 @@ pub mod field_source_profile_ids {
     
     
 }
-impl FieldSourceProfileIds {
-    /// Creates a new builder-style object to manufacture [`FieldSourceProfileIds`](crate::model::FieldSourceProfileIds).
-    pub fn builder() -> crate::model::field_source_profile_ids::Builder {
-        crate::model::field_source_profile_ids::Builder::default()
-    }
-}
 
 /// <p>A workflow in list of workflows.</p>
 #[non_exhaustive]
@@ -5711,6 +5741,13 @@ impl ListWorkflowsItem {
         self.last_updated_at.as_ref()
     }
 }
+impl ListWorkflowsItem {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsItem`](crate::model::ListWorkflowsItem).
+    pub fn builder() -> crate::model::list_workflows_item::Builder {
+        crate::model::list_workflows_item::Builder::default()
+    }
+}
+
 /// See [`ListWorkflowsItem`](crate::model::ListWorkflowsItem).
 pub mod list_workflows_item {
     
@@ -5800,12 +5837,6 @@ pub mod list_workflows_item {
     }
     
     
-}
-impl ListWorkflowsItem {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowsItem`](crate::model::ListWorkflowsItem).
-    pub fn builder() -> crate::model::list_workflows_item::Builder {
-        crate::model::list_workflows_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Status`, it is important to ensure
@@ -6020,6 +6051,13 @@ impl ListProfileObjectTypeTemplateItem {
         self.source_object.as_deref()
     }
 }
+impl ListProfileObjectTypeTemplateItem {
+    /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplateItem`](crate::model::ListProfileObjectTypeTemplateItem).
+    pub fn builder() -> crate::model::list_profile_object_type_template_item::Builder {
+        crate::model::list_profile_object_type_template_item::Builder::default()
+    }
+}
+
 /// See [`ListProfileObjectTypeTemplateItem`](crate::model::ListProfileObjectTypeTemplateItem).
 pub mod list_profile_object_type_template_item {
     
@@ -6074,12 +6112,6 @@ pub mod list_profile_object_type_template_item {
     
     
 }
-impl ListProfileObjectTypeTemplateItem {
-    /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplateItem`](crate::model::ListProfileObjectTypeTemplateItem).
-    pub fn builder() -> crate::model::list_profile_object_type_template_item::Builder {
-        crate::model::list_profile_object_type_template_item::Builder::default()
-    }
-}
 
 /// <p>A ProfileObjectType instance.</p>
 #[non_exhaustive]
@@ -6123,6 +6155,13 @@ impl ListProfileObjectTypeItem {
         self.tags.as_ref()
     }
 }
+impl ListProfileObjectTypeItem {
+    /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeItem`](crate::model::ListProfileObjectTypeItem).
+    pub fn builder() -> crate::model::list_profile_object_type_item::Builder {
+        crate::model::list_profile_object_type_item::Builder::default()
+    }
+}
+
 /// See [`ListProfileObjectTypeItem`](crate::model::ListProfileObjectTypeItem).
 pub mod list_profile_object_type_item {
     
@@ -6207,12 +6246,6 @@ pub mod list_profile_object_type_item {
     
     
 }
-impl ListProfileObjectTypeItem {
-    /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeItem`](crate::model::ListProfileObjectTypeItem).
-    pub fn builder() -> crate::model::list_profile_object_type_item::Builder {
-        crate::model::list_profile_object_type_item::Builder::default()
-    }
-}
 
 /// <p>A ProfileObject in a list of ProfileObjects.</p>
 #[non_exhaustive]
@@ -6242,6 +6275,13 @@ impl ListProfileObjectsItem {
         self.object.as_deref()
     }
 }
+impl ListProfileObjectsItem {
+    /// Creates a new builder-style object to manufacture [`ListProfileObjectsItem`](crate::model::ListProfileObjectsItem).
+    pub fn builder() -> crate::model::list_profile_objects_item::Builder {
+        crate::model::list_profile_objects_item::Builder::default()
+    }
+}
+
 /// See [`ListProfileObjectsItem`](crate::model::ListProfileObjectsItem).
 pub mod list_profile_objects_item {
     
@@ -6296,12 +6336,6 @@ pub mod list_profile_objects_item {
     
     
 }
-impl ListProfileObjectsItem {
-    /// Creates a new builder-style object to manufacture [`ListProfileObjectsItem`](crate::model::ListProfileObjectsItem).
-    pub fn builder() -> crate::model::list_profile_objects_item::Builder {
-        crate::model::list_profile_objects_item::Builder::default()
-    }
-}
 
 /// <p>The filter applied to ListProfileObjects response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
 #[non_exhaustive]
@@ -6324,6 +6358,13 @@ impl ObjectFilter {
         self.values.as_deref()
     }
 }
+impl ObjectFilter {
+    /// Creates a new builder-style object to manufacture [`ObjectFilter`](crate::model::ObjectFilter).
+    pub fn builder() -> crate::model::object_filter::Builder {
+        crate::model::object_filter::Builder::default()
+    }
+}
+
 /// See [`ObjectFilter`](crate::model::ObjectFilter).
 pub mod object_filter {
     
@@ -6371,12 +6412,6 @@ pub mod object_filter {
     }
     
     
-}
-impl ObjectFilter {
-    /// Creates a new builder-style object to manufacture [`ObjectFilter`](crate::model::ObjectFilter).
-    pub fn builder() -> crate::model::object_filter::Builder {
-        crate::model::object_filter::Builder::default()
-    }
 }
 
 /// <p>An integration in list of integrations.</p>
@@ -6449,6 +6484,13 @@ impl ListIntegrationItem {
         self.is_unstructured
     }
 }
+impl ListIntegrationItem {
+    /// Creates a new builder-style object to manufacture [`ListIntegrationItem`](crate::model::ListIntegrationItem).
+    pub fn builder() -> crate::model::list_integration_item::Builder {
+        crate::model::list_integration_item::Builder::default()
+    }
+}
+
 /// See [`ListIntegrationItem`](crate::model::ListIntegrationItem).
 pub mod list_integration_item {
     
@@ -6587,12 +6629,6 @@ pub mod list_integration_item {
     
     
 }
-impl ListIntegrationItem {
-    /// Creates a new builder-style object to manufacture [`ListIntegrationItem`](crate::model::ListIntegrationItem).
-    pub fn builder() -> crate::model::list_integration_item::Builder {
-        crate::model::list_integration_item::Builder::default()
-    }
-}
 
 /// <p>Information about the Identity Resolution Job.</p>
 #[non_exhaustive]
@@ -6675,6 +6711,13 @@ impl IdentityResolutionJob {
         self.message.as_deref()
     }
 }
+impl IdentityResolutionJob {
+    /// Creates a new builder-style object to manufacture [`IdentityResolutionJob`](crate::model::IdentityResolutionJob).
+    pub fn builder() -> crate::model::identity_resolution_job::Builder {
+        crate::model::identity_resolution_job::Builder::default()
+    }
+}
+
 /// See [`IdentityResolutionJob`](crate::model::IdentityResolutionJob).
 pub mod identity_resolution_job {
     
@@ -6807,12 +6850,6 @@ pub mod identity_resolution_job {
     
     
 }
-impl IdentityResolutionJob {
-    /// Creates a new builder-style object to manufacture [`IdentityResolutionJob`](crate::model::IdentityResolutionJob).
-    pub fn builder() -> crate::model::identity_resolution_job::Builder {
-        crate::model::identity_resolution_job::Builder::default()
-    }
-}
 
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
@@ -6828,6 +6865,13 @@ impl ExportingLocation {
         self.s3_exporting.as_ref()
     }
 }
+impl ExportingLocation {
+    /// Creates a new builder-style object to manufacture [`ExportingLocation`](crate::model::ExportingLocation).
+    pub fn builder() -> crate::model::exporting_location::Builder {
+        crate::model::exporting_location::Builder::default()
+    }
+}
+
 /// See [`ExportingLocation`](crate::model::ExportingLocation).
 pub mod exporting_location {
     
@@ -6858,12 +6902,6 @@ pub mod exporting_location {
     
     
 }
-impl ExportingLocation {
-    /// Creates a new builder-style object to manufacture [`ExportingLocation`](crate::model::ExportingLocation).
-    pub fn builder() -> crate::model::exporting_location::Builder {
-        crate::model::exporting_location::Builder::default()
-    }
-}
 
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
@@ -6886,6 +6924,13 @@ impl S3ExportingLocation {
         self.s3_key_name.as_deref()
     }
 }
+impl S3ExportingLocation {
+    /// Creates a new builder-style object to manufacture [`S3ExportingLocation`](crate::model::S3ExportingLocation).
+    pub fn builder() -> crate::model::s3_exporting_location::Builder {
+        crate::model::s3_exporting_location::Builder::default()
+    }
+}
+
 /// See [`S3ExportingLocation`](crate::model::S3ExportingLocation).
 pub mod s3_exporting_location {
     
@@ -6928,12 +6973,6 @@ pub mod s3_exporting_location {
     
     
 }
-impl S3ExportingLocation {
-    /// Creates a new builder-style object to manufacture [`S3ExportingLocation`](crate::model::S3ExportingLocation).
-    pub fn builder() -> crate::model::s3_exporting_location::Builder {
-        crate::model::s3_exporting_location::Builder::default()
-    }
-}
 
 /// <p>Statistics about the Identity Resolution Job.</p>
 #[non_exhaustive]
@@ -6963,6 +7002,13 @@ impl JobStats {
         self.number_of_merges_done
     }
 }
+impl JobStats {
+    /// Creates a new builder-style object to manufacture [`JobStats`](crate::model::JobStats).
+    pub fn builder() -> crate::model::job_stats::Builder {
+        crate::model::job_stats::Builder::default()
+    }
+}
+
 /// See [`JobStats`](crate::model::JobStats).
 pub mod job_stats {
     
@@ -7019,12 +7065,6 @@ pub mod job_stats {
     }
     
     
-}
-impl JobStats {
-    /// Creates a new builder-style object to manufacture [`JobStats`](crate::model::JobStats).
-    pub fn builder() -> crate::model::job_stats::Builder {
-        crate::model::job_stats::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IdentityResolutionJobStatus`, it is important to ensure
@@ -7169,6 +7209,13 @@ impl ListDomainItem {
         self.tags.as_ref()
     }
 }
+impl ListDomainItem {
+    /// Creates a new builder-style object to manufacture [`ListDomainItem`](crate::model::ListDomainItem).
+    pub fn builder() -> crate::model::list_domain_item::Builder {
+        crate::model::list_domain_item::Builder::default()
+    }
+}
+
 /// See [`ListDomainItem`](crate::model::ListDomainItem).
 pub mod list_domain_item {
     
@@ -7241,12 +7288,6 @@ pub mod list_domain_item {
     
     
 }
-impl ListDomainItem {
-    /// Creates a new builder-style object to manufacture [`ListDomainItem`](crate::model::ListDomainItem).
-    pub fn builder() -> crate::model::list_domain_item::Builder {
-        crate::model::list_domain_item::Builder::default()
-    }
-}
 
 /// <p>List containing steps in workflow.</p>
 #[non_exhaustive]
@@ -7262,6 +7303,13 @@ impl WorkflowStepItem {
         self.appflow_integration.as_ref()
     }
 }
+impl WorkflowStepItem {
+    /// Creates a new builder-style object to manufacture [`WorkflowStepItem`](crate::model::WorkflowStepItem).
+    pub fn builder() -> crate::model::workflow_step_item::Builder {
+        crate::model::workflow_step_item::Builder::default()
+    }
+}
+
 /// See [`WorkflowStepItem`](crate::model::WorkflowStepItem).
 pub mod workflow_step_item {
     
@@ -7291,12 +7339,6 @@ pub mod workflow_step_item {
     }
     
     
-}
-impl WorkflowStepItem {
-    /// Creates a new builder-style object to manufacture [`WorkflowStepItem`](crate::model::WorkflowStepItem).
-    pub fn builder() -> crate::model::workflow_step_item::Builder {
-        crate::model::workflow_step_item::Builder::default()
-    }
 }
 
 /// <p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>
@@ -7362,6 +7404,13 @@ impl AppflowIntegrationWorkflowStep {
         self.last_updated_at.as_ref()
     }
 }
+impl AppflowIntegrationWorkflowStep {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep).
+    pub fn builder() -> crate::model::appflow_integration_workflow_step::Builder {
+        crate::model::appflow_integration_workflow_step::Builder::default()
+    }
+}
+
 /// See [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep).
 pub mod appflow_integration_workflow_step {
     
@@ -7477,12 +7526,6 @@ pub mod appflow_integration_workflow_step {
     
     
 }
-impl AppflowIntegrationWorkflowStep {
-    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep).
-    pub fn builder() -> crate::model::appflow_integration_workflow_step::Builder {
-        crate::model::appflow_integration_workflow_step::Builder::default()
-    }
-}
 
 /// <p>Generic object containing workflow execution metrics.</p>
 #[non_exhaustive]
@@ -7498,6 +7541,13 @@ impl WorkflowMetrics {
         self.appflow_integration.as_ref()
     }
 }
+impl WorkflowMetrics {
+    /// Creates a new builder-style object to manufacture [`WorkflowMetrics`](crate::model::WorkflowMetrics).
+    pub fn builder() -> crate::model::workflow_metrics::Builder {
+        crate::model::workflow_metrics::Builder::default()
+    }
+}
+
 /// See [`WorkflowMetrics`](crate::model::WorkflowMetrics).
 pub mod workflow_metrics {
     
@@ -7528,12 +7578,6 @@ pub mod workflow_metrics {
     
     
 }
-impl WorkflowMetrics {
-    /// Creates a new builder-style object to manufacture [`WorkflowMetrics`](crate::model::WorkflowMetrics).
-    pub fn builder() -> crate::model::workflow_metrics::Builder {
-        crate::model::workflow_metrics::Builder::default()
-    }
-}
 
 /// <p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
@@ -7563,6 +7607,13 @@ impl AppflowIntegrationWorkflowMetrics {
         self.total_steps
     }
 }
+impl AppflowIntegrationWorkflowMetrics {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics).
+    pub fn builder() -> crate::model::appflow_integration_workflow_metrics::Builder {
+        crate::model::appflow_integration_workflow_metrics::Builder::default()
+    }
+}
+
 /// See [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics).
 pub mod appflow_integration_workflow_metrics {
     
@@ -7620,12 +7671,6 @@ pub mod appflow_integration_workflow_metrics {
     
     
 }
-impl AppflowIntegrationWorkflowMetrics {
-    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics).
-    pub fn builder() -> crate::model::appflow_integration_workflow_metrics::Builder {
-        crate::model::appflow_integration_workflow_metrics::Builder::default()
-    }
-}
 
 /// <p>Structure to hold workflow attributes.</p>
 #[non_exhaustive]
@@ -7641,6 +7686,13 @@ impl WorkflowAttributes {
         self.appflow_integration.as_ref()
     }
 }
+impl WorkflowAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowAttributes`](crate::model::WorkflowAttributes).
+    pub fn builder() -> crate::model::workflow_attributes::Builder {
+        crate::model::workflow_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowAttributes`](crate::model::WorkflowAttributes).
 pub mod workflow_attributes {
     
@@ -7671,12 +7723,6 @@ pub mod workflow_attributes {
     
     
 }
-impl WorkflowAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowAttributes`](crate::model::WorkflowAttributes).
-    pub fn builder() -> crate::model::workflow_attributes::Builder {
-        crate::model::workflow_attributes::Builder::default()
-    }
-}
 
 /// <p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>
 #[non_exhaustive]
@@ -7706,6 +7752,13 @@ impl AppflowIntegrationWorkflowAttributes {
         self.role_arn.as_deref()
     }
 }
+impl AppflowIntegrationWorkflowAttributes {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes).
+    pub fn builder() -> crate::model::appflow_integration_workflow_attributes::Builder {
+        crate::model::appflow_integration_workflow_attributes::Builder::default()
+    }
+}
+
 /// See [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes).
 pub mod appflow_integration_workflow_attributes {
     
@@ -7760,12 +7813,6 @@ pub mod appflow_integration_workflow_attributes {
     
     
 }
-impl AppflowIntegrationWorkflowAttributes {
-    /// Creates a new builder-style object to manufacture [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes).
-    pub fn builder() -> crate::model::appflow_integration_workflow_attributes::Builder {
-        crate::model::appflow_integration_workflow_attributes::Builder::default()
-    }
-}
 
 /// <p>The Match group object.</p>
 #[non_exhaustive]
@@ -7795,6 +7842,13 @@ impl MatchItem {
         self.confidence_score
     }
 }
+impl MatchItem {
+    /// Creates a new builder-style object to manufacture [`MatchItem`](crate::model::MatchItem).
+    pub fn builder() -> crate::model::match_item::Builder {
+        crate::model::match_item::Builder::default()
+    }
+}
+
 /// See [`MatchItem`](crate::model::MatchItem).
 pub mod match_item {
     
@@ -7855,12 +7909,6 @@ pub mod match_item {
     
     
 }
-impl MatchItem {
-    /// Creates a new builder-style object to manufacture [`MatchItem`](crate::model::MatchItem).
-    pub fn builder() -> crate::model::match_item::Builder {
-        crate::model::match_item::Builder::default()
-    }
-}
 
 /// <p>Usage-specific statistics about the domain.</p>
 #[non_exhaustive]
@@ -7897,6 +7945,13 @@ impl DomainStats {
         self.total_size
     }
 }
+impl DomainStats {
+    /// Creates a new builder-style object to manufacture [`DomainStats`](crate::model::DomainStats).
+    pub fn builder() -> crate::model::domain_stats::Builder {
+        crate::model::domain_stats::Builder::default()
+    }
+}
+
 /// See [`DomainStats`](crate::model::DomainStats).
 pub mod domain_stats {
     
@@ -7967,12 +8022,6 @@ pub mod domain_stats {
     
     
 }
-impl DomainStats {
-    /// Creates a new builder-style object to manufacture [`DomainStats`](crate::model::DomainStats).
-    pub fn builder() -> crate::model::domain_stats::Builder {
-        crate::model::domain_stats::Builder::default()
-    }
-}
 
 /// <p>Configuration data for integration workflow.</p>
 #[non_exhaustive]
@@ -7988,6 +8037,13 @@ impl IntegrationConfig {
         self.appflow_integration.as_ref()
     }
 }
+impl IntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`IntegrationConfig`](crate::model::IntegrationConfig).
+    pub fn builder() -> crate::model::integration_config::Builder {
+        crate::model::integration_config::Builder::default()
+    }
+}
+
 /// See [`IntegrationConfig`](crate::model::IntegrationConfig).
 pub mod integration_config {
     
@@ -8018,12 +8074,6 @@ pub mod integration_config {
     
     
 }
-impl IntegrationConfig {
-    /// Creates a new builder-style object to manufacture [`IntegrationConfig`](crate::model::IntegrationConfig).
-    pub fn builder() -> crate::model::integration_config::Builder {
-        crate::model::integration_config::Builder::default()
-    }
-}
 
 /// <p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
 #[non_exhaustive]
@@ -8046,6 +8096,13 @@ impl AppflowIntegration {
         self.batches.as_deref()
     }
 }
+impl AppflowIntegration {
+    /// Creates a new builder-style object to manufacture [`AppflowIntegration`](crate::model::AppflowIntegration).
+    pub fn builder() -> crate::model::appflow_integration::Builder {
+        crate::model::appflow_integration::Builder::default()
+    }
+}
+
 /// See [`AppflowIntegration`](crate::model::AppflowIntegration).
 pub mod appflow_integration {
     
@@ -8094,12 +8151,6 @@ pub mod appflow_integration {
     
     
 }
-impl AppflowIntegration {
-    /// Creates a new builder-style object to manufacture [`AppflowIntegration`](crate::model::AppflowIntegration).
-    pub fn builder() -> crate::model::appflow_integration::Builder {
-        crate::model::appflow_integration::Builder::default()
-    }
-}
 
 /// <p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>
 #[non_exhaustive]
@@ -8122,6 +8173,13 @@ impl Batch {
         self.end_time.as_ref()
     }
 }
+impl Batch {
+    /// Creates a new builder-style object to manufacture [`Batch`](crate::model::Batch).
+    pub fn builder() -> crate::model::batch::Builder {
+        crate::model::batch::Builder::default()
+    }
+}
+
 /// See [`Batch`](crate::model::Batch).
 pub mod batch {
     
@@ -8163,11 +8221,5 @@ pub mod batch {
     }
     
     
-}
-impl Batch {
-    /// Creates a new builder-style object to manufacture [`Batch`](crate::model::Batch).
-    pub fn builder() -> crate::model::batch::Builder {
-        crate::model::batch::Builder::default()
-    }
 }
 

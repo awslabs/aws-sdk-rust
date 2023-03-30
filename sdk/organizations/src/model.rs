@@ -470,6 +470,13 @@ impl Policy {
         self.content.as_deref()
     }
 }
+impl Policy {
+    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
+    pub fn builder() -> crate::model::policy::Builder {
+        crate::model::policy::Builder::default()
+    }
+}
+
 /// See [`Policy`](crate::model::Policy).
 pub mod policy {
     
@@ -511,12 +518,6 @@ pub mod policy {
     }
     
     
-}
-impl Policy {
-    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
-    pub fn builder() -> crate::model::policy::Builder {
-        crate::model::policy::Builder::default()
-    }
 }
 
 /// <p>Contains information about a policy, but does not include the content. To see the content of a policy, see <code>DescribePolicy</code>.</p>
@@ -574,6 +575,13 @@ impl PolicySummary {
         self.aws_managed
     }
 }
+impl PolicySummary {
+    /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary).
+    pub fn builder() -> crate::model::policy_summary::Builder {
+        crate::model::policy_summary::Builder::default()
+    }
+}
+
 /// See [`PolicySummary`](crate::model::PolicySummary).
 pub mod policy_summary {
     
@@ -670,12 +678,6 @@ pub mod policy_summary {
     }
     
     
-}
-impl PolicySummary {
-    /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary).
-    pub fn builder() -> crate::model::policy_summary::Builder {
-        crate::model::policy_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PolicyType`, it is important to ensure
@@ -804,6 +806,13 @@ impl OrganizationalUnit {
         self.name.as_deref()
     }
 }
+impl OrganizationalUnit {
+    /// Creates a new builder-style object to manufacture [`OrganizationalUnit`](crate::model::OrganizationalUnit).
+    pub fn builder() -> crate::model::organizational_unit::Builder {
+        crate::model::organizational_unit::Builder::default()
+    }
+}
+
 /// See [`OrganizationalUnit`](crate::model::OrganizationalUnit).
 pub mod organizational_unit {
     
@@ -864,12 +873,6 @@ pub mod organizational_unit {
     
     
 }
-impl OrganizationalUnit {
-    /// Creates a new builder-style object to manufacture [`OrganizationalUnit`](crate::model::OrganizationalUnit).
-    pub fn builder() -> crate::model::organizational_unit::Builder {
-        crate::model::organizational_unit::Builder::default()
-    }
-}
 
 /// <p>A custom key-value pair associated with a resource within your organization.</p> 
 /// <p>You can attach tags to any of the following organization resources.</p> 
@@ -899,6 +902,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -941,12 +951,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A structure that contains details about a resource policy.</p>
 #[non_exhaustive]
@@ -969,6 +973,13 @@ impl ResourcePolicy {
         self.content.as_deref()
     }
 }
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
     
@@ -1011,12 +1022,6 @@ pub mod resource_policy {
     
     
 }
-impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
-    pub fn builder() -> crate::model::resource_policy::Builder {
-        crate::model::resource_policy::Builder::default()
-    }
-}
 
 /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
@@ -1039,6 +1044,13 @@ impl ResourcePolicySummary {
         self.arn.as_deref()
     }
 }
+impl ResourcePolicySummary {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
+    pub fn builder() -> crate::model::resource_policy_summary::Builder {
+        crate::model::resource_policy_summary::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
 pub mod resource_policy_summary {
     
@@ -1080,12 +1092,6 @@ pub mod resource_policy_summary {
     }
     
     
-}
-impl ResourcePolicySummary {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
-    pub fn builder() -> crate::model::resource_policy_summary::Builder {
-        crate::model::resource_policy_summary::Builder::default()
-    }
 }
 
 /// <p>Contains information about a root, OU, or account that a policy is attached to.</p>
@@ -1139,6 +1145,13 @@ impl PolicyTargetSummary {
         self.r#type.as_ref()
     }
 }
+impl PolicyTargetSummary {
+    /// Creates a new builder-style object to manufacture [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
+    pub fn builder() -> crate::model::policy_target_summary::Builder {
+        crate::model::policy_target_summary::Builder::default()
+    }
+}
+
 /// See [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
 pub mod policy_target_summary {
     
@@ -1220,12 +1233,6 @@ pub mod policy_target_summary {
     }
     
     
-}
-impl PolicyTargetSummary {
-    /// Creates a new builder-style object to manufacture [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
-    pub fn builder() -> crate::model::policy_target_summary::Builder {
-        crate::model::policy_target_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetType`, it is important to ensure
@@ -1360,6 +1367,13 @@ impl Root {
         self.policy_types.as_deref()
     }
 }
+impl Root {
+    /// Creates a new builder-style object to manufacture [`Root`](crate::model::Root).
+    pub fn builder() -> crate::model::root::Builder {
+        crate::model::root::Builder::default()
+    }
+}
+
 /// See [`Root`](crate::model::Root).
 pub mod root {
     
@@ -1442,12 +1456,6 @@ pub mod root {
     
     
 }
-impl Root {
-    /// Creates a new builder-style object to manufacture [`Root`](crate::model::Root).
-    pub fn builder() -> crate::model::root::Builder {
-        crate::model::root::Builder::default()
-    }
-}
 
 /// <p>Contains information about a policy type and its status in the associated root.</p>
 #[non_exhaustive]
@@ -1470,6 +1478,13 @@ impl PolicyTypeSummary {
         self.status.as_ref()
     }
 }
+impl PolicyTypeSummary {
+    /// Creates a new builder-style object to manufacture [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
+    pub fn builder() -> crate::model::policy_type_summary::Builder {
+        crate::model::policy_type_summary::Builder::default()
+    }
+}
+
 /// See [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
 pub mod policy_type_summary {
     
@@ -1511,12 +1526,6 @@ pub mod policy_type_summary {
     }
     
     
-}
-impl PolicyTypeSummary {
-    /// Creates a new builder-style object to manufacture [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
-    pub fn builder() -> crate::model::policy_type_summary::Builder {
-        crate::model::policy_type_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PolicyTypeStatus`, it is important to ensure
@@ -1637,6 +1646,13 @@ impl Parent {
         self.r#type.as_ref()
     }
 }
+impl Parent {
+    /// Creates a new builder-style object to manufacture [`Parent`](crate::model::Parent).
+    pub fn builder() -> crate::model::parent::Builder {
+        crate::model::parent::Builder::default()
+    }
+}
+
 /// See [`Parent`](crate::model::Parent).
 pub mod parent {
     
@@ -1688,12 +1704,6 @@ pub mod parent {
     }
     
     
-}
-impl Parent {
-    /// Creates a new builder-style object to manufacture [`Parent`](crate::model::Parent).
-    pub fn builder() -> crate::model::parent::Builder {
-        crate::model::parent::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ParentType`, it is important to ensure
@@ -1872,6 +1882,13 @@ impl Handshake {
         self.resources.as_deref()
     }
 }
+impl Handshake {
+    /// Creates a new builder-style object to manufacture [`Handshake`](crate::model::Handshake).
+    pub fn builder() -> crate::model::handshake::Builder {
+        crate::model::handshake::Builder::default()
+    }
+}
+
 /// See [`Handshake`](crate::model::Handshake).
 pub mod handshake {
     
@@ -2028,12 +2045,6 @@ pub mod handshake {
     
     
 }
-impl Handshake {
-    /// Creates a new builder-style object to manufacture [`Handshake`](crate::model::Handshake).
-    pub fn builder() -> crate::model::handshake::Builder {
-        crate::model::handshake::Builder::default()
-    }
-}
 
 /// <p>Contains additional data that is needed to process a handshake.</p>
 #[non_exhaustive]
@@ -2088,6 +2099,13 @@ impl  std::fmt::Debug for HandshakeResource  {
         formatter.finish()
     }
 }
+impl HandshakeResource {
+    /// Creates a new builder-style object to manufacture [`HandshakeResource`](crate::model::HandshakeResource).
+    pub fn builder() -> crate::model::handshake_resource::Builder {
+        crate::model::handshake_resource::Builder::default()
+    }
+}
+
 /// See [`HandshakeResource`](crate::model::HandshakeResource).
 pub mod handshake_resource {
     
@@ -2172,12 +2190,6 @@ pub mod handshake_resource {
     }
     
     
-}
-impl HandshakeResource {
-    /// Creates a new builder-style object to manufacture [`HandshakeResource`](crate::model::HandshakeResource).
-    pub fn builder() -> crate::model::handshake_resource::Builder {
-        crate::model::handshake_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HandshakeResourceType`, it is important to ensure
@@ -2517,6 +2529,13 @@ impl  std::fmt::Debug for HandshakeParty  {
         formatter.finish()
     }
 }
+impl HandshakeParty {
+    /// Creates a new builder-style object to manufacture [`HandshakeParty`](crate::model::HandshakeParty).
+    pub fn builder() -> crate::model::handshake_party::Builder {
+        crate::model::handshake_party::Builder::default()
+    }
+}
+
 /// See [`HandshakeParty`](crate::model::HandshakeParty).
 pub mod handshake_party {
     
@@ -2568,12 +2587,6 @@ pub mod handshake_party {
     }
     
     
-}
-impl HandshakeParty {
-    /// Creates a new builder-style object to manufacture [`HandshakeParty`](crate::model::HandshakeParty).
-    pub fn builder() -> crate::model::handshake_party::Builder {
-        crate::model::handshake_party::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HandshakePartyType`, it is important to ensure
@@ -2690,6 +2703,13 @@ impl HandshakeFilter {
         self.parent_handshake_id.as_deref()
     }
 }
+impl HandshakeFilter {
+    /// Creates a new builder-style object to manufacture [`HandshakeFilter`](crate::model::HandshakeFilter).
+    pub fn builder() -> crate::model::handshake_filter::Builder {
+        crate::model::handshake_filter::Builder::default()
+    }
+}
+
 /// See [`HandshakeFilter`](crate::model::HandshakeFilter).
 pub mod handshake_filter {
     
@@ -2738,12 +2758,6 @@ pub mod handshake_filter {
     
     
 }
-impl HandshakeFilter {
-    /// Creates a new builder-style object to manufacture [`HandshakeFilter`](crate::model::HandshakeFilter).
-    pub fn builder() -> crate::model::handshake_filter::Builder {
-        crate::model::handshake_filter::Builder::default()
-    }
-}
 
 /// <p>Contains information about the Amazon Web Services service for which the account is a delegated administrator.</p>
 #[non_exhaustive]
@@ -2766,6 +2780,13 @@ impl DelegatedService {
         self.delegation_enabled_date.as_ref()
     }
 }
+impl DelegatedService {
+    /// Creates a new builder-style object to manufacture [`DelegatedService`](crate::model::DelegatedService).
+    pub fn builder() -> crate::model::delegated_service::Builder {
+        crate::model::delegated_service::Builder::default()
+    }
+}
+
 /// See [`DelegatedService`](crate::model::DelegatedService).
 pub mod delegated_service {
     
@@ -2807,12 +2828,6 @@ pub mod delegated_service {
     }
     
     
-}
-impl DelegatedService {
-    /// Creates a new builder-style object to manufacture [`DelegatedService`](crate::model::DelegatedService).
-    pub fn builder() -> crate::model::delegated_service::Builder {
-        crate::model::delegated_service::Builder::default()
-    }
 }
 
 /// <p>Contains information about the delegated administrator.</p>
@@ -2892,6 +2907,13 @@ impl  std::fmt::Debug for DelegatedAdministrator  {
         formatter.finish()
     }
 }
+impl DelegatedAdministrator {
+    /// Creates a new builder-style object to manufacture [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
+    pub fn builder() -> crate::model::delegated_administrator::Builder {
+        crate::model::delegated_administrator::Builder::default()
+    }
+}
+
 /// See [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
 pub mod delegated_administrator {
     
@@ -3019,12 +3041,6 @@ pub mod delegated_administrator {
     }
     
     
-}
-impl DelegatedAdministrator {
-    /// Creates a new builder-style object to manufacture [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
-    pub fn builder() -> crate::model::delegated_administrator::Builder {
-        crate::model::delegated_administrator::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccountJoinedMethod`, it is important to ensure
@@ -3309,6 +3325,13 @@ impl  std::fmt::Debug for CreateAccountStatus  {
         formatter.finish()
     }
 }
+impl CreateAccountStatus {
+    /// Creates a new builder-style object to manufacture [`CreateAccountStatus`](crate::model::CreateAccountStatus).
+    pub fn builder() -> crate::model::create_account_status::Builder {
+        crate::model::create_account_status::Builder::default()
+    }
+}
+
 /// See [`CreateAccountStatus`](crate::model::CreateAccountStatus).
 pub mod create_account_status {
     
@@ -3472,12 +3495,6 @@ pub mod create_account_status {
     }
     
     
-}
-impl CreateAccountStatus {
-    /// Creates a new builder-style object to manufacture [`CreateAccountStatus`](crate::model::CreateAccountStatus).
-    pub fn builder() -> crate::model::create_account_status::Builder {
-        crate::model::create_account_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CreateAccountFailureReason`, it is important to ensure
@@ -3745,6 +3762,13 @@ impl Child {
         self.r#type.as_ref()
     }
 }
+impl Child {
+    /// Creates a new builder-style object to manufacture [`Child`](crate::model::Child).
+    pub fn builder() -> crate::model::child::Builder {
+        crate::model::child::Builder::default()
+    }
+}
+
 /// See [`Child`](crate::model::Child).
 pub mod child {
     
@@ -3796,12 +3820,6 @@ pub mod child {
     }
     
     
-}
-impl Child {
-    /// Creates a new builder-style object to manufacture [`Child`](crate::model::Child).
-    pub fn builder() -> crate::model::child::Builder {
-        crate::model::child::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChildType`, it is important to ensure
@@ -3907,6 +3925,13 @@ impl EnabledServicePrincipal {
         self.date_enabled.as_ref()
     }
 }
+impl EnabledServicePrincipal {
+    /// Creates a new builder-style object to manufacture [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
+    pub fn builder() -> crate::model::enabled_service_principal::Builder {
+        crate::model::enabled_service_principal::Builder::default()
+    }
+}
+
 /// See [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
 pub mod enabled_service_principal {
     
@@ -3948,12 +3973,6 @@ pub mod enabled_service_principal {
     }
     
     
-}
-impl EnabledServicePrincipal {
-    /// Creates a new builder-style object to manufacture [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
-    pub fn builder() -> crate::model::enabled_service_principal::Builder {
-        crate::model::enabled_service_principal::Builder::default()
-    }
 }
 
 /// <p>Contains information about an Amazon Web Services account that is a member of an organization.</p>
@@ -4033,6 +4052,13 @@ impl  std::fmt::Debug for Account  {
         formatter.finish()
     }
 }
+impl Account {
+    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
+    pub fn builder() -> crate::model::account::Builder {
+        crate::model::account::Builder::default()
+    }
+}
+
 /// See [`Account`](crate::model::Account).
 pub mod account {
     
@@ -4155,12 +4181,6 @@ pub mod account {
     }
     
     
-}
-impl Account {
-    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
-    pub fn builder() -> crate::model::account::Builder {
-        crate::model::account::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HandshakeConstraintViolationExceptionReason`, it is important to ensure
@@ -4368,6 +4388,13 @@ impl  std::fmt::Debug for Organization  {
         formatter.finish()
     }
 }
+impl Organization {
+    /// Creates a new builder-style object to manufacture [`Organization`](crate::model::Organization).
+    pub fn builder() -> crate::model::organization::Builder {
+        crate::model::organization::Builder::default()
+    }
+}
+
 /// See [`Organization`](crate::model::Organization).
 pub mod organization {
     
@@ -4503,12 +4530,6 @@ pub mod organization {
     
     
 }
-impl Organization {
-    /// Creates a new builder-style object to manufacture [`Organization`](crate::model::Organization).
-    pub fn builder() -> crate::model::organization::Builder {
-        crate::model::organization::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OrganizationFeatureSet`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4627,6 +4648,13 @@ impl EffectivePolicy {
         self.policy_type.as_ref()
     }
 }
+impl EffectivePolicy {
+    /// Creates a new builder-style object to manufacture [`EffectivePolicy`](crate::model::EffectivePolicy).
+    pub fn builder() -> crate::model::effective_policy::Builder {
+        crate::model::effective_policy::Builder::default()
+    }
+}
+
 /// See [`EffectivePolicy`](crate::model::EffectivePolicy).
 pub mod effective_policy {
     
@@ -4692,12 +4720,6 @@ pub mod effective_policy {
     }
     
     
-}
-impl EffectivePolicy {
-    /// Creates a new builder-style object to manufacture [`EffectivePolicy`](crate::model::EffectivePolicy).
-    pub fn builder() -> crate::model::effective_policy::Builder {
-        crate::model::effective_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EffectivePolicyType`, it is important to ensure

@@ -225,55 +225,6 @@ pub struct TooManyRequestsException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyRequestsException {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
-        crate::error::too_many_requests_exception::Builder::default()
-    }
-}
-/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-pub mod too_many_requests_exception {
-    
-    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// Placeholder documentation for __string
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// Placeholder documentation for __string
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-        pub fn build(self) -> crate::error::TooManyRequestsException {
-            crate::error::TooManyRequestsException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TooManyRequestsException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -298,26 +249,17 @@ impl aws_http::request_id::RequestId for crate::error::TooManyRequestsException 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for NotFoundException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl NotFoundException {
-    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
-    pub fn builder() -> crate::error::not_found_exception::Builder {
-        crate::error::not_found_exception::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
-/// See [`NotFoundException`](crate::error::NotFoundException).
-pub mod not_found_exception {
+
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+pub mod too_many_requests_exception {
     
-    /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -335,19 +277,19 @@ pub mod not_found_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
-        pub fn build(self) -> crate::error::NotFoundException {
-            crate::error::NotFoundException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -356,6 +298,16 @@ pub mod not_found_exception {
     }
     
     
+}
+
+/// Placeholder documentation for NotFoundException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NotFoundException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotFoundException {
     /// Returns the error message.
@@ -382,26 +334,17 @@ impl aws_http::request_id::RequestId for crate::error::NotFoundException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for InternalServerErrorException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerErrorException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InternalServerErrorException {
-    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
-    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
-        crate::error::internal_server_error_exception::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
-/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
-pub mod internal_server_error_exception {
+
+/// See [`NotFoundException`](crate::error::NotFoundException).
+pub mod not_found_exception {
     
-    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -419,19 +362,19 @@ pub mod internal_server_error_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
-        pub fn build(self) -> crate::error::InternalServerErrorException {
-            crate::error::InternalServerErrorException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -440,6 +383,16 @@ pub mod internal_server_error_exception {
     }
     
     
+}
+
+/// Placeholder documentation for InternalServerErrorException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InternalServerErrorException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerErrorException {
     /// Returns the error message.
@@ -466,26 +419,17 @@ impl aws_http::request_id::RequestId for crate::error::InternalServerErrorExcept
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for GatewayTimeoutException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayTimeoutException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl GatewayTimeoutException {
-    /// Creates a new builder-style object to manufacture [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
-    pub fn builder() -> crate::error::gateway_timeout_exception::Builder {
-        crate::error::gateway_timeout_exception::Builder::default()
+impl InternalServerErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
+        crate::error::internal_server_error_exception::Builder::default()
     }
 }
-/// See [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
-pub mod gateway_timeout_exception {
+
+/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+pub mod internal_server_error_exception {
     
-    /// A builder for [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
+    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -503,19 +447,19 @@ pub mod gateway_timeout_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
-        pub fn build(self) -> crate::error::GatewayTimeoutException {
-            crate::error::GatewayTimeoutException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+        pub fn build(self) -> crate::error::InternalServerErrorException {
+            crate::error::InternalServerErrorException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -524,6 +468,16 @@ pub mod gateway_timeout_exception {
     }
     
     
+}
+
+/// Placeholder documentation for GatewayTimeoutException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct GatewayTimeoutException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl GatewayTimeoutException {
     /// Returns the error message.
@@ -550,26 +504,17 @@ impl aws_http::request_id::RequestId for crate::error::GatewayTimeoutException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GatewayTimeoutException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for ForbiddenException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ForbiddenException {
-    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
-    pub fn builder() -> crate::error::forbidden_exception::Builder {
-        crate::error::forbidden_exception::Builder::default()
+impl GatewayTimeoutException {
+    /// Creates a new builder-style object to manufacture [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
+    pub fn builder() -> crate::error::gateway_timeout_exception::Builder {
+        crate::error::gateway_timeout_exception::Builder::default()
     }
 }
-/// See [`ForbiddenException`](crate::error::ForbiddenException).
-pub mod forbidden_exception {
+
+/// See [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
+pub mod gateway_timeout_exception {
     
-    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
+    /// A builder for [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -587,19 +532,19 @@ pub mod forbidden_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
-        pub fn build(self) -> crate::error::ForbiddenException {
-            crate::error::ForbiddenException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`GatewayTimeoutException`](crate::error::GatewayTimeoutException).
+        pub fn build(self) -> crate::error::GatewayTimeoutException {
+            crate::error::GatewayTimeoutException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -608,6 +553,16 @@ pub mod forbidden_exception {
     }
     
     
+}
+
+/// Placeholder documentation for ForbiddenException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ForbiddenException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ForbiddenException {
     /// Returns the error message.
@@ -634,26 +589,17 @@ impl aws_http::request_id::RequestId for crate::error::ForbiddenException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ForbiddenException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for ConflictException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
+impl ForbiddenException {
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
+    pub fn builder() -> crate::error::forbidden_exception::Builder {
+        crate::error::forbidden_exception::Builder::default()
     }
 }
-/// See [`ConflictException`](crate::error::ConflictException).
-pub mod conflict_exception {
+
+/// See [`ForbiddenException`](crate::error::ForbiddenException).
+pub mod forbidden_exception {
     
-    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -671,19 +617,19 @@ pub mod conflict_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
+        pub fn build(self) -> crate::error::ForbiddenException {
+            crate::error::ForbiddenException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -692,6 +638,16 @@ pub mod conflict_exception {
     }
     
     
+}
+
+/// Placeholder documentation for ConflictException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ConflictException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
     /// Returns the error message.
@@ -718,26 +674,17 @@ impl aws_http::request_id::RequestId for crate::error::ConflictException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for BadRequestException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl BadRequestException {
-    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
-    pub fn builder() -> crate::error::bad_request_exception::Builder {
-        crate::error::bad_request_exception::Builder::default()
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }
-/// See [`BadRequestException`](crate::error::BadRequestException).
-pub mod bad_request_exception {
+
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
     
-    /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,19 +702,19 @@ pub mod bad_request_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
-        pub fn build(self) -> crate::error::BadRequestException {
-            crate::error::BadRequestException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -776,6 +723,16 @@ pub mod bad_request_exception {
     }
     
     
+}
+
+/// Placeholder documentation for BadRequestException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BadRequestException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BadRequestException {
     /// Returns the error message.
@@ -802,26 +759,17 @@ impl aws_http::request_id::RequestId for crate::error::BadRequestException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BadRequestException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Placeholder documentation for BadGatewayException
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadGatewayException  {
-    /// Placeholder documentation for __string
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl BadGatewayException {
-    /// Creates a new builder-style object to manufacture [`BadGatewayException`](crate::error::BadGatewayException).
-    pub fn builder() -> crate::error::bad_gateway_exception::Builder {
-        crate::error::bad_gateway_exception::Builder::default()
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
     }
 }
-/// See [`BadGatewayException`](crate::error::BadGatewayException).
-pub mod bad_gateway_exception {
+
+/// See [`BadRequestException`](crate::error::BadRequestException).
+pub mod bad_request_exception {
     
-    /// A builder for [`BadGatewayException`](crate::error::BadGatewayException).
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -839,19 +787,19 @@ pub mod bad_gateway_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`BadGatewayException`](crate::error::BadGatewayException).
-        pub fn build(self) -> crate::error::BadGatewayException {
-            crate::error::BadGatewayException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -860,6 +808,16 @@ pub mod bad_gateway_exception {
     }
     
     
+}
+
+/// Placeholder documentation for BadGatewayException
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BadGatewayException  {
+    /// Placeholder documentation for __string
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BadGatewayException {
     /// Returns the error message.
@@ -885,6 +843,56 @@ impl aws_http::request_id::RequestId for crate::error::BadGatewayException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BadGatewayException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl BadGatewayException {
+    /// Creates a new builder-style object to manufacture [`BadGatewayException`](crate::error::BadGatewayException).
+    pub fn builder() -> crate::error::bad_gateway_exception::Builder {
+        crate::error::bad_gateway_exception::Builder::default()
+    }
+}
+
+/// See [`BadGatewayException`](crate::error::BadGatewayException).
+pub mod bad_gateway_exception {
+    
+    /// A builder for [`BadGatewayException`](crate::error::BadGatewayException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// Placeholder documentation for __string
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// Placeholder documentation for __string
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`BadGatewayException`](crate::error::BadGatewayException).
+        pub fn build(self) -> crate::error::BadGatewayException {
+            crate::error::BadGatewayException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1122,11 +1130,37 @@ impl UnprocessableEntityException {
     }
 }
 impl UnprocessableEntityException {
+    /// Returns the error message.
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+}
+impl std::fmt::Display for UnprocessableEntityException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnprocessableEntityException")?;
+        if let Some(inner_9) = &self.message {
+             {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnprocessableEntityException {}
+impl aws_http::request_id::RequestId for crate::error::UnprocessableEntityException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnprocessableEntityException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl UnprocessableEntityException {
     /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
     pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
         crate::error::unprocessable_entity_exception::Builder::default()
     }
 }
+
 /// See [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
 pub mod unprocessable_entity_exception {
     
@@ -1164,16 +1198,16 @@ pub mod unprocessable_entity_exception {
             self.validation_errors = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
         /// Consumes the builder and constructs a [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
         pub fn build(self) -> crate::error::UnprocessableEntityException {
             crate::error::UnprocessableEntityException {
@@ -1187,31 +1221,6 @@ pub mod unprocessable_entity_exception {
     }
     
     
-}
-impl UnprocessableEntityException {
-    /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
-}
-impl std::fmt::Display for UnprocessableEntityException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnprocessableEntityException")?;
-        if let Some(inner_9) = &self.message {
-             {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnprocessableEntityException {}
-impl aws_http::request_id::RequestId for crate::error::UnprocessableEntityException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnprocessableEntityException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 
 /// Do not use this.

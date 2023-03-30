@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -211,6 +212,13 @@ impl WorkspaceSummary {
         self.tags.as_ref()
     }
 }
+impl WorkspaceSummary {
+    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
+    pub fn builder() -> crate::model::workspace_summary::Builder {
+        crate::model::workspace_summary::Builder::default()
+    }
+}
+
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
     
@@ -307,12 +315,6 @@ pub mod workspace_summary {
     
     
 }
-impl WorkspaceSummary {
-    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
-    pub fn builder() -> crate::model::workspace_summary::Builder {
-        crate::model::workspace_summary::Builder::default()
-    }
-}
 
 /// Represents the status of a workspace.
 #[non_exhaustive]
@@ -328,6 +330,13 @@ impl WorkspaceStatus {
         self.status_code.as_ref()
     }
 }
+impl WorkspaceStatus {
+    /// Creates a new builder-style object to manufacture [`WorkspaceStatus`](crate::model::WorkspaceStatus).
+    pub fn builder() -> crate::model::workspace_status::Builder {
+        crate::model::workspace_status::Builder::default()
+    }
+}
+
 /// See [`WorkspaceStatus`](crate::model::WorkspaceStatus).
 pub mod workspace_status {
     
@@ -357,12 +366,6 @@ pub mod workspace_status {
     }
     
     
-}
-impl WorkspaceStatus {
-    /// Creates a new builder-style object to manufacture [`WorkspaceStatus`](crate::model::WorkspaceStatus).
-    pub fn builder() -> crate::model::workspace_status::Builder {
-        crate::model::workspace_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkspaceStatusCode`, it is important to ensure
@@ -518,6 +521,13 @@ impl WorkspaceDescription {
         self.tags.as_ref()
     }
 }
+impl WorkspaceDescription {
+    /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
+    pub fn builder() -> crate::model::workspace_description::Builder {
+        crate::model::workspace_description::Builder::default()
+    }
+}
+
 /// See [`WorkspaceDescription`](crate::model::WorkspaceDescription).
 pub mod workspace_description {
     
@@ -626,12 +636,6 @@ pub mod workspace_description {
     
     
 }
-impl WorkspaceDescription {
-    /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
-    pub fn builder() -> crate::model::workspace_description::Builder {
-        crate::model::workspace_description::Builder::default()
-    }
-}
 
 /// Represents a summary of the rule groups namespace.
 #[non_exhaustive]
@@ -682,6 +686,13 @@ impl RuleGroupsNamespaceSummary {
         self.tags.as_ref()
     }
 }
+impl RuleGroupsNamespaceSummary {
+    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
+    pub fn builder() -> crate::model::rule_groups_namespace_summary::Builder {
+        crate::model::rule_groups_namespace_summary::Builder::default()
+    }
+}
+
 /// See [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
 pub mod rule_groups_namespace_summary {
     
@@ -778,12 +789,6 @@ pub mod rule_groups_namespace_summary {
     
     
 }
-impl RuleGroupsNamespaceSummary {
-    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
-    pub fn builder() -> crate::model::rule_groups_namespace_summary::Builder {
-        crate::model::rule_groups_namespace_summary::Builder::default()
-    }
-}
 
 /// Represents the status of a namespace.
 #[non_exhaustive]
@@ -806,6 +811,13 @@ impl RuleGroupsNamespaceStatus {
         self.status_reason.as_deref()
     }
 }
+impl RuleGroupsNamespaceStatus {
+    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
+    pub fn builder() -> crate::model::rule_groups_namespace_status::Builder {
+        crate::model::rule_groups_namespace_status::Builder::default()
+    }
+}
+
 /// See [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
 pub mod rule_groups_namespace_status {
     
@@ -847,12 +859,6 @@ pub mod rule_groups_namespace_status {
     }
     
     
-}
-impl RuleGroupsNamespaceStatus {
-    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
-    pub fn builder() -> crate::model::rule_groups_namespace_status::Builder {
-        crate::model::rule_groups_namespace_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RuleGroupsNamespaceStatusCode`, it is important to ensure
@@ -1013,6 +1019,13 @@ impl RuleGroupsNamespaceDescription {
         self.tags.as_ref()
     }
 }
+impl RuleGroupsNamespaceDescription {
+    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
+    pub fn builder() -> crate::model::rule_groups_namespace_description::Builder {
+        crate::model::rule_groups_namespace_description::Builder::default()
+    }
+}
+
 /// See [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
 pub mod rule_groups_namespace_description {
     
@@ -1121,12 +1134,6 @@ pub mod rule_groups_namespace_description {
     
     
 }
-impl RuleGroupsNamespaceDescription {
-    /// Creates a new builder-style object to manufacture [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
-    pub fn builder() -> crate::model::rule_groups_namespace_description::Builder {
-        crate::model::rule_groups_namespace_description::Builder::default()
-    }
-}
 
 /// Represents the status of a logging configuration.
 #[non_exhaustive]
@@ -1149,6 +1156,13 @@ impl LoggingConfigurationStatus {
         self.status_reason.as_deref()
     }
 }
+impl LoggingConfigurationStatus {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
+    pub fn builder() -> crate::model::logging_configuration_status::Builder {
+        crate::model::logging_configuration_status::Builder::default()
+    }
+}
+
 /// See [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
 pub mod logging_configuration_status {
     
@@ -1190,12 +1204,6 @@ pub mod logging_configuration_status {
     }
     
     
-}
-impl LoggingConfigurationStatus {
-    /// Creates a new builder-style object to manufacture [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
-    pub fn builder() -> crate::model::logging_configuration_status::Builder {
-        crate::model::logging_configuration_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoggingConfigurationStatusCode`, it is important to ensure
@@ -1342,6 +1350,13 @@ impl LoggingConfigurationMetadata {
         self.modified_at.as_ref()
     }
 }
+impl LoggingConfigurationMetadata {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
+    pub fn builder() -> crate::model::logging_configuration_metadata::Builder {
+        crate::model::logging_configuration_metadata::Builder::default()
+    }
+}
+
 /// See [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
 pub mod logging_configuration_metadata {
     
@@ -1420,12 +1435,6 @@ pub mod logging_configuration_metadata {
     
     
 }
-impl LoggingConfigurationMetadata {
-    /// Creates a new builder-style object to manufacture [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
-    pub fn builder() -> crate::model::logging_configuration_metadata::Builder {
-        crate::model::logging_configuration_metadata::Builder::default()
-    }
-}
 
 /// Represents the status of a definition.
 #[non_exhaustive]
@@ -1448,6 +1457,13 @@ impl AlertManagerDefinitionStatus {
         self.status_reason.as_deref()
     }
 }
+impl AlertManagerDefinitionStatus {
+    /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
+    pub fn builder() -> crate::model::alert_manager_definition_status::Builder {
+        crate::model::alert_manager_definition_status::Builder::default()
+    }
+}
+
 /// See [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
 pub mod alert_manager_definition_status {
     
@@ -1489,12 +1505,6 @@ pub mod alert_manager_definition_status {
     }
     
     
-}
-impl AlertManagerDefinitionStatus {
-    /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
-    pub fn builder() -> crate::model::alert_manager_definition_status::Builder {
-        crate::model::alert_manager_definition_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlertManagerDefinitionStatusCode`, it is important to ensure
@@ -1634,6 +1644,13 @@ impl AlertManagerDefinitionDescription {
         self.modified_at.as_ref()
     }
 }
+impl AlertManagerDefinitionDescription {
+    /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
+    pub fn builder() -> crate::model::alert_manager_definition_description::Builder {
+        crate::model::alert_manager_definition_description::Builder::default()
+    }
+}
+
 /// See [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
 pub mod alert_manager_definition_description {
     
@@ -1699,11 +1716,5 @@ pub mod alert_manager_definition_description {
     }
     
     
-}
-impl AlertManagerDefinitionDescription {
-    /// Creates a new builder-style object to manufacture [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).
-    pub fn builder() -> crate::model::alert_manager_definition_description::Builder {
-        crate::model::alert_manager_definition_description::Builder::default()
-    }
 }
 

@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateCostCategoryDefinitionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateCostCategoryDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
+    pub fn builder() -> crate::output::update_cost_category_definition_output::Builder {
+        crate::output::update_cost_category_definition_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
 pub mod update_cost_category_definition_output {
     
@@ -79,12 +86,6 @@ pub mod update_cost_category_definition_output {
     
     
 }
-impl UpdateCostCategoryDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::output::update_cost_category_definition_output::Builder {
-        crate::output::update_cost_category_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -106,6 +107,13 @@ impl aws_http::request_id::RequestId for UpdateCostAllocationTagsStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateCostAllocationTagsStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
+    pub fn builder() -> crate::output::update_cost_allocation_tags_status_output::Builder {
+        crate::output::update_cost_allocation_tags_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
 pub mod update_cost_allocation_tags_status_output {
     
@@ -153,12 +161,6 @@ pub mod update_cost_allocation_tags_status_output {
     
     
 }
-impl UpdateCostAllocationTagsStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
-    pub fn builder() -> crate::output::update_cost_allocation_tags_status_output::Builder {
-        crate::output::update_cost_allocation_tags_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -180,6 +182,13 @@ impl aws_http::request_id::RequestId for UpdateAnomalySubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAnomalySubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
+    pub fn builder() -> crate::output::update_anomaly_subscription_output::Builder {
+        crate::output::update_anomaly_subscription_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
 pub mod update_anomaly_subscription_output {
     
@@ -221,12 +230,6 @@ pub mod update_anomaly_subscription_output {
     
     
 }
-impl UpdateAnomalySubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
-    pub fn builder() -> crate::output::update_anomaly_subscription_output::Builder {
-        crate::output::update_anomaly_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -248,6 +251,13 @@ impl aws_http::request_id::RequestId for UpdateAnomalyMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAnomalyMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
+    pub fn builder() -> crate::output::update_anomaly_monitor_output::Builder {
+        crate::output::update_anomaly_monitor_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
 pub mod update_anomaly_monitor_output {
     
@@ -289,12 +299,6 @@ pub mod update_anomaly_monitor_output {
     
     
 }
-impl UpdateAnomalyMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
-    pub fn builder() -> crate::output::update_anomaly_monitor_output::Builder {
-        crate::output::update_anomaly_monitor_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -307,6 +311,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -336,12 +347,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -354,6 +359,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -382,12 +394,6 @@ pub mod tag_resource_output {
     }
     
     
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -424,6 +430,13 @@ impl aws_http::request_id::RequestId for StartSavingsPlansPurchaseRecommendation
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
+    pub fn builder() -> crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder {
+        crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder::default()
+    }
+}
+
 /// See [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
 pub mod start_savings_plans_purchase_recommendation_generation_output {
     
@@ -489,12 +502,6 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
     
     
 }
-impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
-    /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn builder() -> crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder {
-        crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -516,6 +523,13 @@ impl aws_http::request_id::RequestId for ProvideAnomalyFeedbackOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ProvideAnomalyFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
+    pub fn builder() -> crate::output::provide_anomaly_feedback_output::Builder {
+        crate::output::provide_anomaly_feedback_output::Builder::default()
+    }
+}
+
 /// See [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
 pub mod provide_anomaly_feedback_output {
     
@@ -557,12 +571,6 @@ pub mod provide_anomaly_feedback_output {
     
     
 }
-impl ProvideAnomalyFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
-    pub fn builder() -> crate::output::provide_anomaly_feedback_output::Builder {
-        crate::output::provide_anomaly_feedback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -584,6 +592,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -631,12 +646,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -665,6 +674,13 @@ impl aws_http::request_id::RequestId for ListSavingsPlansPurchaseRecommendationG
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
+    /// Creates a new builder-style object to manufacture [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
+    pub fn builder() -> crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder {
+        crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder::default()
+    }
+}
+
 /// See [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
 pub mod list_savings_plans_purchase_recommendation_generation_output {
     
@@ -724,12 +740,6 @@ pub mod list_savings_plans_purchase_recommendation_generation_output {
     
     
 }
-impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
-    /// Creates a new builder-style object to manufacture [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn builder() -> crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder {
-        crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -758,6 +768,13 @@ impl aws_http::request_id::RequestId for ListCostCategoryDefinitionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCostCategoryDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
+    pub fn builder() -> crate::output::list_cost_category_definitions_output::Builder {
+        crate::output::list_cost_category_definitions_output::Builder::default()
+    }
+}
+
 /// See [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
 pub mod list_cost_category_definitions_output {
     
@@ -817,12 +834,6 @@ pub mod list_cost_category_definitions_output {
     
     
 }
-impl ListCostCategoryDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
-    pub fn builder() -> crate::output::list_cost_category_definitions_output::Builder {
-        crate::output::list_cost_category_definitions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -851,6 +862,13 @@ impl aws_http::request_id::RequestId for ListCostAllocationTagsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCostAllocationTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
+    pub fn builder() -> crate::output::list_cost_allocation_tags_output::Builder {
+        crate::output::list_cost_allocation_tags_output::Builder::default()
+    }
+}
+
 /// See [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
 pub mod list_cost_allocation_tags_output {
     
@@ -910,12 +928,6 @@ pub mod list_cost_allocation_tags_output {
     
     
 }
-impl ListCostAllocationTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
-    pub fn builder() -> crate::output::list_cost_allocation_tags_output::Builder {
-        crate::output::list_cost_allocation_tags_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -944,6 +956,13 @@ impl aws_http::request_id::RequestId for GetUsageForecastOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetUsageForecastOutput {
+    /// Creates a new builder-style object to manufacture [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
+    pub fn builder() -> crate::output::get_usage_forecast_output::Builder {
+        crate::output::get_usage_forecast_output::Builder::default()
+    }
+}
+
 /// See [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
 pub mod get_usage_forecast_output {
     
@@ -1003,12 +1022,6 @@ pub mod get_usage_forecast_output {
     
     
 }
-impl GetUsageForecastOutput {
-    /// Creates a new builder-style object to manufacture [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
-    pub fn builder() -> crate::output::get_usage_forecast_output::Builder {
-        crate::output::get_usage_forecast_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1051,6 +1064,13 @@ impl aws_http::request_id::RequestId for GetTagsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetTagsOutput {
+    /// Creates a new builder-style object to manufacture [`GetTagsOutput`](crate::output::GetTagsOutput).
+    pub fn builder() -> crate::output::get_tags_output::Builder {
+        crate::output::get_tags_output::Builder::default()
+    }
+}
+
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
 pub mod get_tags_output {
     
@@ -1134,12 +1154,6 @@ pub mod get_tags_output {
     
     
 }
-impl GetTagsOutput {
-    /// Creates a new builder-style object to manufacture [`GetTagsOutput`](crate::output::GetTagsOutput).
-    pub fn builder() -> crate::output::get_tags_output::Builder {
-        crate::output::get_tags_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1182,6 +1196,13 @@ impl aws_http::request_id::RequestId for GetSavingsPlansUtilizationDetailsOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSavingsPlansUtilizationDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
+    pub fn builder() -> crate::output::get_savings_plans_utilization_details_output::Builder {
+        crate::output::get_savings_plans_utilization_details_output::Builder::default()
+    }
+}
+
 /// See [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
 pub mod get_savings_plans_utilization_details_output {
     
@@ -1265,12 +1286,6 @@ pub mod get_savings_plans_utilization_details_output {
     
     
 }
-impl GetSavingsPlansUtilizationDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
-    pub fn builder() -> crate::output::get_savings_plans_utilization_details_output::Builder {
-        crate::output::get_savings_plans_utilization_details_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1299,6 +1314,13 @@ impl aws_http::request_id::RequestId for GetSavingsPlansUtilizationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSavingsPlansUtilizationOutput {
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
+    pub fn builder() -> crate::output::get_savings_plans_utilization_output::Builder {
+        crate::output::get_savings_plans_utilization_output::Builder::default()
+    }
+}
+
 /// See [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
 pub mod get_savings_plans_utilization_output {
     
@@ -1358,12 +1380,6 @@ pub mod get_savings_plans_utilization_output {
     
     
 }
-impl GetSavingsPlansUtilizationOutput {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
-    pub fn builder() -> crate::output::get_savings_plans_utilization_output::Builder {
-        crate::output::get_savings_plans_utilization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1399,6 +1415,13 @@ impl aws_http::request_id::RequestId for GetSavingsPlansPurchaseRecommendationOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSavingsPlansPurchaseRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
+    pub fn builder() -> crate::output::get_savings_plans_purchase_recommendation_output::Builder {
+        crate::output::get_savings_plans_purchase_recommendation_output::Builder::default()
+    }
+}
+
 /// See [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
 pub mod get_savings_plans_purchase_recommendation_output {
     
@@ -1464,12 +1487,6 @@ pub mod get_savings_plans_purchase_recommendation_output {
     
     
 }
-impl GetSavingsPlansPurchaseRecommendationOutput {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
-    pub fn builder() -> crate::output::get_savings_plans_purchase_recommendation_output::Builder {
-        crate::output::get_savings_plans_purchase_recommendation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1498,6 +1515,13 @@ impl aws_http::request_id::RequestId for GetSavingsPlansCoverageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSavingsPlansCoverageOutput {
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
+    pub fn builder() -> crate::output::get_savings_plans_coverage_output::Builder {
+        crate::output::get_savings_plans_coverage_output::Builder::default()
+    }
+}
+
 /// See [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
 pub mod get_savings_plans_coverage_output {
     
@@ -1557,12 +1581,6 @@ pub mod get_savings_plans_coverage_output {
     
     
 }
-impl GetSavingsPlansCoverageOutput {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
-    pub fn builder() -> crate::output::get_savings_plans_coverage_output::Builder {
-        crate::output::get_savings_plans_coverage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1612,6 +1630,13 @@ impl aws_http::request_id::RequestId for GetRightsizingRecommendationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRightsizingRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
+    pub fn builder() -> crate::output::get_rightsizing_recommendation_output::Builder {
+        crate::output::get_rightsizing_recommendation_output::Builder::default()
+    }
+}
+
 /// See [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
 pub mod get_rightsizing_recommendation_output {
     
@@ -1707,12 +1732,6 @@ pub mod get_rightsizing_recommendation_output {
     
     
 }
-impl GetRightsizingRecommendationOutput {
-    /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
-    pub fn builder() -> crate::output::get_rightsizing_recommendation_output::Builder {
-        crate::output::get_rightsizing_recommendation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1748,6 +1767,13 @@ impl aws_http::request_id::RequestId for GetReservationUtilizationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetReservationUtilizationOutput {
+    /// Creates a new builder-style object to manufacture [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
+    pub fn builder() -> crate::output::get_reservation_utilization_output::Builder {
+        crate::output::get_reservation_utilization_output::Builder::default()
+    }
+}
+
 /// See [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
 pub mod get_reservation_utilization_output {
     
@@ -1819,12 +1845,6 @@ pub mod get_reservation_utilization_output {
     
     
 }
-impl GetReservationUtilizationOutput {
-    /// Creates a new builder-style object to manufacture [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
-    pub fn builder() -> crate::output::get_reservation_utilization_output::Builder {
-        crate::output::get_reservation_utilization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1860,6 +1880,13 @@ impl aws_http::request_id::RequestId for GetReservationPurchaseRecommendationOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetReservationPurchaseRecommendationOutput {
+    /// Creates a new builder-style object to manufacture [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
+    pub fn builder() -> crate::output::get_reservation_purchase_recommendation_output::Builder {
+        crate::output::get_reservation_purchase_recommendation_output::Builder::default()
+    }
+}
+
 /// See [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
 pub mod get_reservation_purchase_recommendation_output {
     
@@ -1931,12 +1958,6 @@ pub mod get_reservation_purchase_recommendation_output {
     
     
 }
-impl GetReservationPurchaseRecommendationOutput {
-    /// Creates a new builder-style object to manufacture [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
-    pub fn builder() -> crate::output::get_reservation_purchase_recommendation_output::Builder {
-        crate::output::get_reservation_purchase_recommendation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1972,6 +1993,13 @@ impl aws_http::request_id::RequestId for GetReservationCoverageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetReservationCoverageOutput {
+    /// Creates a new builder-style object to manufacture [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
+    pub fn builder() -> crate::output::get_reservation_coverage_output::Builder {
+        crate::output::get_reservation_coverage_output::Builder::default()
+    }
+}
+
 /// See [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
 pub mod get_reservation_coverage_output {
     
@@ -2042,12 +2070,6 @@ pub mod get_reservation_coverage_output {
     }
     
     
-}
-impl GetReservationCoverageOutput {
-    /// Creates a new builder-style object to manufacture [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
-    pub fn builder() -> crate::output::get_reservation_coverage_output::Builder {
-        crate::output::get_reservation_coverage_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -2169,6 +2191,13 @@ impl aws_http::request_id::RequestId for GetDimensionValuesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDimensionValuesOutput {
+    /// Creates a new builder-style object to manufacture [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
+    pub fn builder() -> crate::output::get_dimension_values_output::Builder {
+        crate::output::get_dimension_values_output::Builder::default()
+    }
+}
+
 /// See [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
 pub mod get_dimension_values_output {
     
@@ -2330,12 +2359,6 @@ pub mod get_dimension_values_output {
     
     
 }
-impl GetDimensionValuesOutput {
-    /// Creates a new builder-style object to manufacture [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
-    pub fn builder() -> crate::output::get_dimension_values_output::Builder {
-        crate::output::get_dimension_values_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2364,6 +2387,13 @@ impl aws_http::request_id::RequestId for GetCostForecastOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCostForecastOutput {
+    /// Creates a new builder-style object to manufacture [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
+    pub fn builder() -> crate::output::get_cost_forecast_output::Builder {
+        crate::output::get_cost_forecast_output::Builder::default()
+    }
+}
+
 /// See [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
 pub mod get_cost_forecast_output {
     
@@ -2423,12 +2453,6 @@ pub mod get_cost_forecast_output {
     
     
 }
-impl GetCostForecastOutput {
-    /// Creates a new builder-style object to manufacture [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
-    pub fn builder() -> crate::output::get_cost_forecast_output::Builder {
-        crate::output::get_cost_forecast_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2480,6 +2504,13 @@ impl aws_http::request_id::RequestId for GetCostCategoriesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCostCategoriesOutput {
+    /// Creates a new builder-style object to manufacture [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
+    pub fn builder() -> crate::output::get_cost_categories_output::Builder {
+        crate::output::get_cost_categories_output::Builder::default()
+    }
+}
+
 /// See [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
 pub mod get_cost_categories_output {
     
@@ -2583,12 +2614,6 @@ pub mod get_cost_categories_output {
     
     
 }
-impl GetCostCategoriesOutput {
-    /// Creates a new builder-style object to manufacture [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
-    pub fn builder() -> crate::output::get_cost_categories_output::Builder {
-        crate::output::get_cost_categories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2631,6 +2656,13 @@ impl aws_http::request_id::RequestId for GetCostAndUsageWithResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCostAndUsageWithResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
+    pub fn builder() -> crate::output::get_cost_and_usage_with_resources_output::Builder {
+        crate::output::get_cost_and_usage_with_resources_output::Builder::default()
+    }
+}
+
 /// See [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
 pub mod get_cost_and_usage_with_resources_output {
     
@@ -2726,12 +2758,6 @@ pub mod get_cost_and_usage_with_resources_output {
     
     
 }
-impl GetCostAndUsageWithResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
-    pub fn builder() -> crate::output::get_cost_and_usage_with_resources_output::Builder {
-        crate::output::get_cost_and_usage_with_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2774,6 +2800,13 @@ impl aws_http::request_id::RequestId for GetCostAndUsageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCostAndUsageOutput {
+    /// Creates a new builder-style object to manufacture [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
+    pub fn builder() -> crate::output::get_cost_and_usage_output::Builder {
+        crate::output::get_cost_and_usage_output::Builder::default()
+    }
+}
+
 /// See [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
 pub mod get_cost_and_usage_output {
     
@@ -2869,12 +2902,6 @@ pub mod get_cost_and_usage_output {
     
     
 }
-impl GetCostAndUsageOutput {
-    /// Creates a new builder-style object to manufacture [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
-    pub fn builder() -> crate::output::get_cost_and_usage_output::Builder {
-        crate::output::get_cost_and_usage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2903,6 +2930,13 @@ impl aws_http::request_id::RequestId for GetAnomalySubscriptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAnomalySubscriptionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
+    pub fn builder() -> crate::output::get_anomaly_subscriptions_output::Builder {
+        crate::output::get_anomaly_subscriptions_output::Builder::default()
+    }
+}
+
 /// See [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
 pub mod get_anomaly_subscriptions_output {
     
@@ -2962,12 +2996,6 @@ pub mod get_anomaly_subscriptions_output {
     
     
 }
-impl GetAnomalySubscriptionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
-    pub fn builder() -> crate::output::get_anomaly_subscriptions_output::Builder {
-        crate::output::get_anomaly_subscriptions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2996,6 +3024,13 @@ impl aws_http::request_id::RequestId for GetAnomalyMonitorsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAnomalyMonitorsOutput {
+    /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
+    pub fn builder() -> crate::output::get_anomaly_monitors_output::Builder {
+        crate::output::get_anomaly_monitors_output::Builder::default()
+    }
+}
+
 /// See [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
 pub mod get_anomaly_monitors_output {
     
@@ -3055,12 +3090,6 @@ pub mod get_anomaly_monitors_output {
     
     
 }
-impl GetAnomalyMonitorsOutput {
-    /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
-    pub fn builder() -> crate::output::get_anomaly_monitors_output::Builder {
-        crate::output::get_anomaly_monitors_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3089,6 +3118,13 @@ impl aws_http::request_id::RequestId for GetAnomaliesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAnomaliesOutput {
+    /// Creates a new builder-style object to manufacture [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
+    pub fn builder() -> crate::output::get_anomalies_output::Builder {
+        crate::output::get_anomalies_output::Builder::default()
+    }
+}
+
 /// See [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
 pub mod get_anomalies_output {
     
@@ -3148,12 +3184,6 @@ pub mod get_anomalies_output {
     
     
 }
-impl GetAnomaliesOutput {
-    /// Creates a new builder-style object to manufacture [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
-    pub fn builder() -> crate::output::get_anomalies_output::Builder {
-        crate::output::get_anomalies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3175,6 +3205,13 @@ impl aws_http::request_id::RequestId for DescribeCostCategoryDefinitionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCostCategoryDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
+    pub fn builder() -> crate::output::describe_cost_category_definition_output::Builder {
+        crate::output::describe_cost_category_definition_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
 pub mod describe_cost_category_definition_output {
     
@@ -3216,12 +3253,6 @@ pub mod describe_cost_category_definition_output {
     
     
 }
-impl DescribeCostCategoryDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::output::describe_cost_category_definition_output::Builder {
-        crate::output::describe_cost_category_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3250,6 +3281,13 @@ impl aws_http::request_id::RequestId for DeleteCostCategoryDefinitionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCostCategoryDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
+    pub fn builder() -> crate::output::delete_cost_category_definition_output::Builder {
+        crate::output::delete_cost_category_definition_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
 pub mod delete_cost_category_definition_output {
     
@@ -3303,12 +3341,6 @@ pub mod delete_cost_category_definition_output {
     
     
 }
-impl DeleteCostCategoryDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::output::delete_cost_category_definition_output::Builder {
-        crate::output::delete_cost_category_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3321,6 +3353,13 @@ impl aws_http::request_id::RequestId for DeleteAnomalySubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAnomalySubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
+    pub fn builder() -> crate::output::delete_anomaly_subscription_output::Builder {
+        crate::output::delete_anomaly_subscription_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
 pub mod delete_anomaly_subscription_output {
     
@@ -3350,12 +3389,6 @@ pub mod delete_anomaly_subscription_output {
     
     
 }
-impl DeleteAnomalySubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
-    pub fn builder() -> crate::output::delete_anomaly_subscription_output::Builder {
-        crate::output::delete_anomaly_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3368,6 +3401,13 @@ impl aws_http::request_id::RequestId for DeleteAnomalyMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAnomalyMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
+    pub fn builder() -> crate::output::delete_anomaly_monitor_output::Builder {
+        crate::output::delete_anomaly_monitor_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
 pub mod delete_anomaly_monitor_output {
     
@@ -3397,12 +3437,6 @@ pub mod delete_anomaly_monitor_output {
     
     
 }
-impl DeleteAnomalyMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
-    pub fn builder() -> crate::output::delete_anomaly_monitor_output::Builder {
-        crate::output::delete_anomaly_monitor_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3431,6 +3465,13 @@ impl aws_http::request_id::RequestId for CreateCostCategoryDefinitionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCostCategoryDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
+    pub fn builder() -> crate::output::create_cost_category_definition_output::Builder {
+        crate::output::create_cost_category_definition_output::Builder::default()
+    }
+}
+
 /// See [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
 pub mod create_cost_category_definition_output {
     
@@ -3484,12 +3525,6 @@ pub mod create_cost_category_definition_output {
     
     
 }
-impl CreateCostCategoryDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::output::create_cost_category_definition_output::Builder {
-        crate::output::create_cost_category_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3511,6 +3546,13 @@ impl aws_http::request_id::RequestId for CreateAnomalySubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAnomalySubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
+    pub fn builder() -> crate::output::create_anomaly_subscription_output::Builder {
+        crate::output::create_anomaly_subscription_output::Builder::default()
+    }
+}
+
 /// See [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
 pub mod create_anomaly_subscription_output {
     
@@ -3552,12 +3594,6 @@ pub mod create_anomaly_subscription_output {
     
     
 }
-impl CreateAnomalySubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
-    pub fn builder() -> crate::output::create_anomaly_subscription_output::Builder {
-        crate::output::create_anomaly_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3579,6 +3615,13 @@ impl aws_http::request_id::RequestId for CreateAnomalyMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAnomalyMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
+    pub fn builder() -> crate::output::create_anomaly_monitor_output::Builder {
+        crate::output::create_anomaly_monitor_output::Builder::default()
+    }
+}
+
 /// See [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
 pub mod create_anomaly_monitor_output {
     
@@ -3619,11 +3662,5 @@ pub mod create_anomaly_monitor_output {
     }
     
     
-}
-impl CreateAnomalyMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
-    pub fn builder() -> crate::output::create_anomaly_monitor_output::Builder {
-        crate::output::create_anomaly_monitor_output::Builder::default()
-    }
 }
 

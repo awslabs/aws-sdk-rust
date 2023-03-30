@@ -35,6 +35,13 @@ impl TemplateSummary {
         self.status.as_ref()
     }
 }
+impl TemplateSummary {
+    /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
+    pub fn builder() -> crate::model::template_summary::Builder {
+        crate::model::template_summary::Builder::default()
+    }
+}
+
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
     
@@ -100,12 +107,6 @@ pub mod template_summary {
     }
     
     
-}
-impl TemplateSummary {
-    /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
-    pub fn builder() -> crate::model::template_summary::Builder {
-        crate::model::template_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TemplateStatus`, it is important to ensure
@@ -204,6 +205,13 @@ impl RequiredField {
         self.field_id.as_deref()
     }
 }
+impl RequiredField {
+    /// Creates a new builder-style object to manufacture [`RequiredField`](crate::model::RequiredField).
+    pub fn builder() -> crate::model::required_field::Builder {
+        crate::model::required_field::Builder::default()
+    }
+}
+
 /// See [`RequiredField`](crate::model::RequiredField).
 pub mod required_field {
     
@@ -234,12 +242,6 @@ pub mod required_field {
     
     
 }
-impl RequiredField {
-    /// Creates a new builder-style object to manufacture [`RequiredField`](crate::model::RequiredField).
-    pub fn builder() -> crate::model::required_field::Builder {
-        crate::model::required_field::Builder::default()
-    }
-}
 
 /// <p>Object to store configuration of layouts associated to the template.</p>
 #[non_exhaustive]
@@ -255,6 +257,13 @@ impl LayoutConfiguration {
         self.default_layout.as_deref()
     }
 }
+impl LayoutConfiguration {
+    /// Creates a new builder-style object to manufacture [`LayoutConfiguration`](crate::model::LayoutConfiguration).
+    pub fn builder() -> crate::model::layout_configuration::Builder {
+        crate::model::layout_configuration::Builder::default()
+    }
+}
+
 /// See [`LayoutConfiguration`](crate::model::LayoutConfiguration).
 pub mod layout_configuration {
     
@@ -285,12 +294,6 @@ pub mod layout_configuration {
     
     
 }
-impl LayoutConfiguration {
-    /// Creates a new builder-style object to manufacture [`LayoutConfiguration`](crate::model::LayoutConfiguration).
-    pub fn builder() -> crate::model::layout_configuration::Builder {
-        crate::model::layout_configuration::Builder::default()
-    }
-}
 
 /// <p>Object for the summarized details of the layout.</p>
 #[non_exhaustive]
@@ -320,6 +323,13 @@ impl LayoutSummary {
         self.name.as_deref()
     }
 }
+impl LayoutSummary {
+    /// Creates a new builder-style object to manufacture [`LayoutSummary`](crate::model::LayoutSummary).
+    pub fn builder() -> crate::model::layout_summary::Builder {
+        crate::model::layout_summary::Builder::default()
+    }
+}
+
 /// See [`LayoutSummary`](crate::model::LayoutSummary).
 pub mod layout_summary {
     
@@ -373,12 +383,6 @@ pub mod layout_summary {
     }
     
     
-}
-impl LayoutSummary {
-    /// Creates a new builder-style object to manufacture [`LayoutSummary`](crate::model::LayoutSummary).
-    pub fn builder() -> crate::model::layout_summary::Builder {
-        crate::model::layout_summary::Builder::default()
-    }
 }
 
 /// <p>Object to store union of different versions of layout content.</p>
@@ -435,6 +439,13 @@ impl BasicLayout {
         self.more_info.as_ref()
     }
 }
+impl BasicLayout {
+    /// Creates a new builder-style object to manufacture [`BasicLayout`](crate::model::BasicLayout).
+    pub fn builder() -> crate::model::basic_layout::Builder {
+        crate::model::basic_layout::Builder::default()
+    }
+}
+
 /// See [`BasicLayout`](crate::model::BasicLayout).
 pub mod basic_layout {
     
@@ -477,12 +488,6 @@ pub mod basic_layout {
     
     
 }
-impl BasicLayout {
-    /// Creates a new builder-style object to manufacture [`BasicLayout`](crate::model::BasicLayout).
-    pub fn builder() -> crate::model::basic_layout::Builder {
-        crate::model::basic_layout::Builder::default()
-    }
-}
 
 /// <p>Ordered list containing different kinds of sections that can be added. A LayoutSections object can only contain one section.</p>
 #[non_exhaustive]
@@ -498,6 +503,13 @@ impl LayoutSections {
         self.sections.as_deref()
     }
 }
+impl LayoutSections {
+    /// Creates a new builder-style object to manufacture [`LayoutSections`](crate::model::LayoutSections).
+    pub fn builder() -> crate::model::layout_sections::Builder {
+        crate::model::layout_sections::Builder::default()
+    }
+}
+
 /// See [`LayoutSections`](crate::model::LayoutSections).
 pub mod layout_sections {
     
@@ -533,12 +545,6 @@ pub mod layout_sections {
     }
     
     
-}
-impl LayoutSections {
-    /// Creates a new builder-style object to manufacture [`LayoutSections`](crate::model::LayoutSections).
-    pub fn builder() -> crate::model::layout_sections::Builder {
-        crate::model::layout_sections::Builder::default()
-    }
 }
 
 /// <p>This represents a sections within a panel or tab of the page layout.</p>
@@ -595,6 +601,13 @@ impl FieldGroup {
         self.fields.as_deref()
     }
 }
+impl FieldGroup {
+    /// Creates a new builder-style object to manufacture [`FieldGroup`](crate::model::FieldGroup).
+    pub fn builder() -> crate::model::field_group::Builder {
+        crate::model::field_group::Builder::default()
+    }
+}
+
 /// See [`FieldGroup`](crate::model::FieldGroup).
 pub mod field_group {
     
@@ -643,12 +656,6 @@ pub mod field_group {
     
     
 }
-impl FieldGroup {
-    /// Creates a new builder-style object to manufacture [`FieldGroup`](crate::model::FieldGroup).
-    pub fn builder() -> crate::model::field_group::Builder {
-        crate::model::field_group::Builder::default()
-    }
-}
 
 /// <p>Object for field related information.</p>
 #[non_exhaustive]
@@ -664,6 +671,13 @@ impl FieldItem {
         self.id.as_deref()
     }
 }
+impl FieldItem {
+    /// Creates a new builder-style object to manufacture [`FieldItem`](crate::model::FieldItem).
+    pub fn builder() -> crate::model::field_item::Builder {
+        crate::model::field_item::Builder::default()
+    }
+}
+
 /// See [`FieldItem`](crate::model::FieldItem).
 pub mod field_item {
     
@@ -694,12 +708,6 @@ pub mod field_item {
     
     
 }
-impl FieldItem {
-    /// Creates a new builder-style object to manufacture [`FieldItem`](crate::model::FieldItem).
-    pub fn builder() -> crate::model::field_item::Builder {
-        crate::model::field_item::Builder::default()
-    }
-}
 
 /// <p>Object for field Options information.</p>
 #[non_exhaustive]
@@ -729,6 +737,13 @@ impl FieldOption {
         self.active
     }
 }
+impl FieldOption {
+    /// Creates a new builder-style object to manufacture [`FieldOption`](crate::model::FieldOption).
+    pub fn builder() -> crate::model::field_option::Builder {
+        crate::model::field_option::Builder::default()
+    }
+}
+
 /// See [`FieldOption`](crate::model::FieldOption).
 pub mod field_option {
     
@@ -783,12 +798,6 @@ pub mod field_option {
     
     
 }
-impl FieldOption {
-    /// Creates a new builder-style object to manufacture [`FieldOption`](crate::model::FieldOption).
-    pub fn builder() -> crate::model::field_option::Builder {
-        crate::model::field_option::Builder::default()
-    }
-}
 
 /// <p>Object for field Options errors.</p>
 #[non_exhaustive]
@@ -818,6 +827,13 @@ impl FieldOptionError {
         self.value.as_deref()
     }
 }
+impl FieldOptionError {
+    /// Creates a new builder-style object to manufacture [`FieldOptionError`](crate::model::FieldOptionError).
+    pub fn builder() -> crate::model::field_option_error::Builder {
+        crate::model::field_option_error::Builder::default()
+    }
+}
+
 /// See [`FieldOptionError`](crate::model::FieldOptionError).
 pub mod field_option_error {
     
@@ -872,12 +888,6 @@ pub mod field_option_error {
     
     
 }
-impl FieldOptionError {
-    /// Creates a new builder-style object to manufacture [`FieldOptionError`](crate::model::FieldOptionError).
-    pub fn builder() -> crate::model::field_option_error::Builder {
-        crate::model::field_option_error::Builder::default()
-    }
-}
 
 /// <p>Object for errors on fields.</p>
 #[non_exhaustive]
@@ -907,6 +917,13 @@ impl FieldError {
         self.message.as_deref()
     }
 }
+impl FieldError {
+    /// Creates a new builder-style object to manufacture [`FieldError`](crate::model::FieldError).
+    pub fn builder() -> crate::model::field_error::Builder {
+        crate::model::field_error::Builder::default()
+    }
+}
+
 /// See [`FieldError`](crate::model::FieldError).
 pub mod field_error {
     
@@ -960,12 +977,6 @@ pub mod field_error {
     }
     
     
-}
-impl FieldError {
-    /// Creates a new builder-style object to manufacture [`FieldError`](crate::model::FieldError).
-    pub fn builder() -> crate::model::field_error::Builder {
-        crate::model::field_error::Builder::default()
-    }
 }
 
 /// <p>Object to store detailed field information.</p>
@@ -1024,6 +1035,13 @@ impl GetFieldResponse {
         self.tags.as_ref()
     }
 }
+impl GetFieldResponse {
+    /// Creates a new builder-style object to manufacture [`GetFieldResponse`](crate::model::GetFieldResponse).
+    pub fn builder() -> crate::model::get_field_response::Builder {
+        crate::model::get_field_response::Builder::default()
+    }
+}
+
 /// See [`GetFieldResponse`](crate::model::GetFieldResponse).
 pub mod get_field_response {
     
@@ -1131,12 +1149,6 @@ pub mod get_field_response {
     }
     
     
-}
-impl GetFieldResponse {
-    /// Creates a new builder-style object to manufacture [`GetFieldResponse`](crate::model::GetFieldResponse).
-    pub fn builder() -> crate::model::get_field_response::Builder {
-        crate::model::get_field_response::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FieldNamespace`, it is important to ensure
@@ -1332,6 +1344,13 @@ impl FieldIdentifier {
         self.id.as_deref()
     }
 }
+impl FieldIdentifier {
+    /// Creates a new builder-style object to manufacture [`FieldIdentifier`](crate::model::FieldIdentifier).
+    pub fn builder() -> crate::model::field_identifier::Builder {
+        crate::model::field_identifier::Builder::default()
+    }
+}
+
 /// See [`FieldIdentifier`](crate::model::FieldIdentifier).
 pub mod field_identifier {
     
@@ -1361,12 +1380,6 @@ pub mod field_identifier {
     }
     
     
-}
-impl FieldIdentifier {
-    /// Creates a new builder-style object to manufacture [`FieldIdentifier`](crate::model::FieldIdentifier).
-    pub fn builder() -> crate::model::field_identifier::Builder {
-        crate::model::field_identifier::Builder::default()
-    }
 }
 
 /// <p>Object for the summarized details of the field.</p>
@@ -1411,6 +1424,13 @@ impl FieldSummary {
         self.namespace.as_ref()
     }
 }
+impl FieldSummary {
+    /// Creates a new builder-style object to manufacture [`FieldSummary`](crate::model::FieldSummary).
+    pub fn builder() -> crate::model::field_summary::Builder {
+        crate::model::field_summary::Builder::default()
+    }
+}
+
 /// See [`FieldSummary`](crate::model::FieldSummary).
 pub mod field_summary {
     
@@ -1489,12 +1509,6 @@ pub mod field_summary {
     
     
 }
-impl FieldSummary {
-    /// Creates a new builder-style object to manufacture [`FieldSummary`](crate::model::FieldSummary).
-    pub fn builder() -> crate::model::field_summary::Builder {
-        crate::model::field_summary::Builder::default()
-    }
-}
 
 /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
 #[non_exhaustive]
@@ -1517,6 +1531,13 @@ impl EventBridgeConfiguration {
         self.included_data.as_ref()
     }
 }
+impl EventBridgeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
+    pub fn builder() -> crate::model::event_bridge_configuration::Builder {
+        crate::model::event_bridge_configuration::Builder::default()
+    }
+}
+
 /// See [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
 pub mod event_bridge_configuration {
     
@@ -1559,12 +1580,6 @@ pub mod event_bridge_configuration {
     
     
 }
-impl EventBridgeConfiguration {
-    /// Creates a new builder-style object to manufacture [`EventBridgeConfiguration`](crate::model::EventBridgeConfiguration).
-    pub fn builder() -> crate::model::event_bridge_configuration::Builder {
-        crate::model::event_bridge_configuration::Builder::default()
-    }
-}
 
 /// <p>Details of what case and related item data is published through the case event stream.</p>
 #[non_exhaustive]
@@ -1587,6 +1602,13 @@ impl EventIncludedData {
         self.related_item_data.as_ref()
     }
 }
+impl EventIncludedData {
+    /// Creates a new builder-style object to manufacture [`EventIncludedData`](crate::model::EventIncludedData).
+    pub fn builder() -> crate::model::event_included_data::Builder {
+        crate::model::event_included_data::Builder::default()
+    }
+}
+
 /// See [`EventIncludedData`](crate::model::EventIncludedData).
 pub mod event_included_data {
     
@@ -1629,12 +1651,6 @@ pub mod event_included_data {
     
     
 }
-impl EventIncludedData {
-    /// Creates a new builder-style object to manufacture [`EventIncludedData`](crate::model::EventIncludedData).
-    pub fn builder() -> crate::model::event_included_data::Builder {
-        crate::model::event_included_data::Builder::default()
-    }
-}
 
 /// <p>Details of what related item data is published through the case event stream.</p>
 #[non_exhaustive]
@@ -1650,6 +1666,13 @@ impl RelatedItemEventIncludedData {
         self.include_content
     }
 }
+impl RelatedItemEventIncludedData {
+    /// Creates a new builder-style object to manufacture [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
+    pub fn builder() -> crate::model::related_item_event_included_data::Builder {
+        crate::model::related_item_event_included_data::Builder::default()
+    }
+}
+
 /// See [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
 pub mod related_item_event_included_data {
     
@@ -1680,12 +1703,6 @@ pub mod related_item_event_included_data {
     
     
 }
-impl RelatedItemEventIncludedData {
-    /// Creates a new builder-style object to manufacture [`RelatedItemEventIncludedData`](crate::model::RelatedItemEventIncludedData).
-    pub fn builder() -> crate::model::related_item_event_included_data::Builder {
-        crate::model::related_item_event_included_data::Builder::default()
-    }
-}
 
 /// <p>Details of what case data is published through the case event stream.</p>
 #[non_exhaustive]
@@ -1701,6 +1718,13 @@ impl CaseEventIncludedData {
         self.fields.as_deref()
     }
 }
+impl CaseEventIncludedData {
+    /// Creates a new builder-style object to manufacture [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
+    pub fn builder() -> crate::model::case_event_included_data::Builder {
+        crate::model::case_event_included_data::Builder::default()
+    }
+}
+
 /// See [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
 pub mod case_event_included_data {
     
@@ -1737,12 +1761,6 @@ pub mod case_event_included_data {
     
     
 }
-impl CaseEventIncludedData {
-    /// Creates a new builder-style object to manufacture [`CaseEventIncludedData`](crate::model::CaseEventIncludedData).
-    pub fn builder() -> crate::model::case_event_included_data::Builder {
-        crate::model::case_event_included_data::Builder::default()
-    }
-}
 
 /// <p>Object for the summarized details of the domain.</p>
 #[non_exhaustive]
@@ -1772,6 +1790,13 @@ impl DomainSummary {
         self.name.as_deref()
     }
 }
+impl DomainSummary {
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
+    pub fn builder() -> crate::model::domain_summary::Builder {
+        crate::model::domain_summary::Builder::default()
+    }
+}
+
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
     
@@ -1825,12 +1850,6 @@ pub mod domain_summary {
     }
     
     
-}
-impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
-    pub fn builder() -> crate::model::domain_summary::Builder {
-        crate::model::domain_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DomainStatus`, it is important to ensure
@@ -1955,6 +1974,13 @@ impl SearchCasesResponseItem {
         self.tags.as_ref()
     }
 }
+impl SearchCasesResponseItem {
+    /// Creates a new builder-style object to manufacture [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
+    pub fn builder() -> crate::model::search_cases_response_item::Builder {
+        crate::model::search_cases_response_item::Builder::default()
+    }
+}
+
 /// See [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
 pub mod search_cases_response_item {
     
@@ -2033,12 +2059,6 @@ pub mod search_cases_response_item {
     
     
 }
-impl SearchCasesResponseItem {
-    /// Creates a new builder-style object to manufacture [`SearchCasesResponseItem`](crate::model::SearchCasesResponseItem).
-    pub fn builder() -> crate::model::search_cases_response_item::Builder {
-        crate::model::search_cases_response_item::Builder::default()
-    }
-}
 
 /// <p>Object for case field values.</p>
 #[non_exhaustive]
@@ -2061,6 +2081,13 @@ impl FieldValue {
         self.value.as_ref()
     }
 }
+impl FieldValue {
+    /// Creates a new builder-style object to manufacture [`FieldValue`](crate::model::FieldValue).
+    pub fn builder() -> crate::model::field_value::Builder {
+        crate::model::field_value::Builder::default()
+    }
+}
+
 /// See [`FieldValue`](crate::model::FieldValue).
 pub mod field_value {
     
@@ -2102,12 +2129,6 @@ pub mod field_value {
     }
     
     
-}
-impl FieldValue {
-    /// Creates a new builder-style object to manufacture [`FieldValue`](crate::model::FieldValue).
-    pub fn builder() -> crate::model::field_value::Builder {
-        crate::model::field_value::Builder::default()
-    }
 }
 
 /// <p>Object to store union of Field values.</p>
@@ -2185,6 +2206,13 @@ impl Sort {
         self.sort_order.as_ref()
     }
 }
+impl Sort {
+    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
+    pub fn builder() -> crate::model::sort::Builder {
+        crate::model::sort::Builder::default()
+    }
+}
+
 /// See [`Sort`](crate::model::Sort).
 pub mod sort {
     
@@ -2226,12 +2254,6 @@ pub mod sort {
     }
     
     
-}
-impl Sort {
-    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
-    pub fn builder() -> crate::model::sort::Builder {
-        crate::model::sort::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Order`, it is important to ensure
@@ -2478,6 +2500,13 @@ impl CaseSummary {
         self.template_id.as_deref()
     }
 }
+impl CaseSummary {
+    /// Creates a new builder-style object to manufacture [`CaseSummary`](crate::model::CaseSummary).
+    pub fn builder() -> crate::model::case_summary::Builder {
+        crate::model::case_summary::Builder::default()
+    }
+}
+
 /// See [`CaseSummary`](crate::model::CaseSummary).
 pub mod case_summary {
     
@@ -2519,12 +2548,6 @@ pub mod case_summary {
     }
     
     
-}
-impl CaseSummary {
-    /// Creates a new builder-style object to manufacture [`CaseSummary`](crate::model::CaseSummary).
-    pub fn builder() -> crate::model::case_summary::Builder {
-        crate::model::case_summary::Builder::default()
-    }
 }
 
 /// <p>A list of items that represent RelatedItems.</p>
@@ -2569,6 +2592,13 @@ impl SearchRelatedItemsResponseItem {
         self.tags.as_ref()
     }
 }
+impl SearchRelatedItemsResponseItem {
+    /// Creates a new builder-style object to manufacture [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
+    pub fn builder() -> crate::model::search_related_items_response_item::Builder {
+        crate::model::search_related_items_response_item::Builder::default()
+    }
+}
+
 /// See [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
 pub mod search_related_items_response_item {
     
@@ -2653,12 +2683,6 @@ pub mod search_related_items_response_item {
     
     
 }
-impl SearchRelatedItemsResponseItem {
-    /// Creates a new builder-style object to manufacture [`SearchRelatedItemsResponseItem`](crate::model::SearchRelatedItemsResponseItem).
-    pub fn builder() -> crate::model::search_related_items_response_item::Builder {
-        crate::model::search_related_items_response_item::Builder::default()
-    }
-}
 
 /// <p>Represents the content of a particular type of related item.</p>
 #[non_exhaustive]
@@ -2724,6 +2748,13 @@ impl CommentContent {
         self.content_type.as_ref()
     }
 }
+impl CommentContent {
+    /// Creates a new builder-style object to manufacture [`CommentContent`](crate::model::CommentContent).
+    pub fn builder() -> crate::model::comment_content::Builder {
+        crate::model::comment_content::Builder::default()
+    }
+}
+
 /// See [`CommentContent`](crate::model::CommentContent).
 pub mod comment_content {
     
@@ -2765,12 +2796,6 @@ pub mod comment_content {
     }
     
     
-}
-impl CommentContent {
-    /// Creates a new builder-style object to manufacture [`CommentContent`](crate::model::CommentContent).
-    pub fn builder() -> crate::model::comment_content::Builder {
-        crate::model::comment_content::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CommentBodyTextType`, it is important to ensure
@@ -2878,6 +2903,13 @@ impl ContactContent {
         self.connected_to_system_time.as_ref()
     }
 }
+impl ContactContent {
+    /// Creates a new builder-style object to manufacture [`ContactContent`](crate::model::ContactContent).
+    pub fn builder() -> crate::model::contact_content::Builder {
+        crate::model::contact_content::Builder::default()
+    }
+}
+
 /// See [`ContactContent`](crate::model::ContactContent).
 pub mod contact_content {
     
@@ -2931,12 +2963,6 @@ pub mod contact_content {
     }
     
     
-}
-impl ContactContent {
-    /// Creates a new builder-style object to manufacture [`ContactContent`](crate::model::ContactContent).
-    pub fn builder() -> crate::model::contact_content::Builder {
-        crate::model::contact_content::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RelatedItemType`, it is important to ensure
@@ -3069,6 +3095,13 @@ impl RelatedItemTypeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentFilter  {
 }
+impl CommentFilter {
+    /// Creates a new builder-style object to manufacture [`CommentFilter`](crate::model::CommentFilter).
+    pub fn builder() -> crate::model::comment_filter::Builder {
+        crate::model::comment_filter::Builder::default()
+    }
+}
+
 /// See [`CommentFilter`](crate::model::CommentFilter).
 pub mod comment_filter {
     
@@ -3086,12 +3119,6 @@ pub mod comment_filter {
     }
     
     
-}
-impl CommentFilter {
-    /// Creates a new builder-style object to manufacture [`CommentFilter`](crate::model::CommentFilter).
-    pub fn builder() -> crate::model::comment_filter::Builder {
-        crate::model::comment_filter::Builder::default()
-    }
 }
 
 /// <p>A filter for related items of type <code>Contact</code>.</p>
@@ -3115,6 +3142,13 @@ impl ContactFilter {
         self.contact_arn.as_deref()
     }
 }
+impl ContactFilter {
+    /// Creates a new builder-style object to manufacture [`ContactFilter`](crate::model::ContactFilter).
+    pub fn builder() -> crate::model::contact_filter::Builder {
+        crate::model::contact_filter::Builder::default()
+    }
+}
+
 /// See [`ContactFilter`](crate::model::ContactFilter).
 pub mod contact_filter {
     
@@ -3162,12 +3196,6 @@ pub mod contact_filter {
     }
     
     
-}
-impl ContactFilter {
-    /// Creates a new builder-style object to manufacture [`ContactFilter`](crate::model::ContactFilter).
-    pub fn builder() -> crate::model::contact_filter::Builder {
-        crate::model::contact_filter::Builder::default()
-    }
 }
 
 /// <p>Represents the content of a related item to be created.</p>
@@ -3227,6 +3255,13 @@ impl Contact {
         self.contact_arn.as_deref()
     }
 }
+impl Contact {
+    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
+    pub fn builder() -> crate::model::contact::Builder {
+        crate::model::contact::Builder::default()
+    }
+}
+
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
     
@@ -3256,11 +3291,5 @@ pub mod contact {
     }
     
     
-}
-impl Contact {
-    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
-    pub fn builder() -> crate::model::contact::Builder {
-        crate::model::contact::Builder::default()
-    }
 }
 

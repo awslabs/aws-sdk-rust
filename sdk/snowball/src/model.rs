@@ -312,6 +312,13 @@ impl OnDeviceServiceConfiguration {
         self.tgw_on_device_service.as_ref()
     }
 }
+impl OnDeviceServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
+    pub fn builder() -> crate::model::on_device_service_configuration::Builder {
+        crate::model::on_device_service_configuration::Builder::default()
+    }
+}
+
 /// See [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
 pub mod on_device_service_configuration {
     
@@ -354,12 +361,6 @@ pub mod on_device_service_configuration {
     
     
 }
-impl OnDeviceServiceConfiguration {
-    /// Creates a new builder-style object to manufacture [`OnDeviceServiceConfiguration`](crate::model::OnDeviceServiceConfiguration).
-    pub fn builder() -> crate::model::on_device_service_configuration::Builder {
-        crate::model::on_device_service_configuration::Builder::default()
-    }
-}
 
 /// <p>An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
@@ -382,6 +383,13 @@ impl TgwOnDeviceServiceConfiguration {
         self.storage_unit.as_ref()
     }
 }
+impl TgwOnDeviceServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
+    pub fn builder() -> crate::model::tgw_on_device_service_configuration::Builder {
+        crate::model::tgw_on_device_service_configuration::Builder::default()
+    }
+}
+
 /// See [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
 pub mod tgw_on_device_service_configuration {
     
@@ -424,12 +432,6 @@ pub mod tgw_on_device_service_configuration {
     }
     
     
-}
-impl TgwOnDeviceServiceConfiguration {
-    /// Creates a new builder-style object to manufacture [`TgwOnDeviceServiceConfiguration`](crate::model::TgwOnDeviceServiceConfiguration).
-    pub fn builder() -> crate::model::tgw_on_device_service_configuration::Builder {
-        crate::model::tgw_on_device_service_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StorageUnit`, it is important to ensure
@@ -532,6 +534,13 @@ impl NfsOnDeviceServiceConfiguration {
         self.storage_unit.as_ref()
     }
 }
+impl NfsOnDeviceServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
+    pub fn builder() -> crate::model::nfs_on_device_service_configuration::Builder {
+        crate::model::nfs_on_device_service_configuration::Builder::default()
+    }
+}
+
 /// See [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
 pub mod nfs_on_device_service_configuration {
     
@@ -577,12 +586,6 @@ pub mod nfs_on_device_service_configuration {
     
     
 }
-impl NfsOnDeviceServiceConfiguration {
-    /// Creates a new builder-style object to manufacture [`NfsOnDeviceServiceConfiguration`](crate::model::NfsOnDeviceServiceConfiguration).
-    pub fn builder() -> crate::model::nfs_on_device_service_configuration::Builder {
-        crate::model::nfs_on_device_service_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.</p>
 #[non_exhaustive]
@@ -612,6 +615,13 @@ impl JobResource {
         self.ec2_ami_resources.as_deref()
     }
 }
+impl JobResource {
+    /// Creates a new builder-style object to manufacture [`JobResource`](crate::model::JobResource).
+    pub fn builder() -> crate::model::job_resource::Builder {
+        crate::model::job_resource::Builder::default()
+    }
+}
+
 /// See [`JobResource`](crate::model::JobResource).
 pub mod job_resource {
     
@@ -684,12 +694,6 @@ pub mod job_resource {
     
     
 }
-impl JobResource {
-    /// Creates a new builder-style object to manufacture [`JobResource`](crate::model::JobResource).
-    pub fn builder() -> crate::model::job_resource::Builder {
-        crate::model::job_resource::Builder::default()
-    }
-}
 
 /// <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.</p>
 #[non_exhaustive]
@@ -712,6 +716,13 @@ impl Ec2AmiResource {
         self.snowball_ami_id.as_deref()
     }
 }
+impl Ec2AmiResource {
+    /// Creates a new builder-style object to manufacture [`Ec2AmiResource`](crate::model::Ec2AmiResource).
+    pub fn builder() -> crate::model::ec2_ami_resource::Builder {
+        crate::model::ec2_ami_resource::Builder::default()
+    }
+}
+
 /// See [`Ec2AmiResource`](crate::model::Ec2AmiResource).
 pub mod ec2_ami_resource {
     
@@ -754,12 +765,6 @@ pub mod ec2_ami_resource {
     
     
 }
-impl Ec2AmiResource {
-    /// Creates a new builder-style object to manufacture [`Ec2AmiResource`](crate::model::Ec2AmiResource).
-    pub fn builder() -> crate::model::ec2_ami_resource::Builder {
-        crate::model::ec2_ami_resource::Builder::default()
-    }
-}
 
 /// <p>Identifies </p>
 #[non_exhaustive]
@@ -782,6 +787,13 @@ impl LambdaResource {
         self.event_triggers.as_deref()
     }
 }
+impl LambdaResource {
+    /// Creates a new builder-style object to manufacture [`LambdaResource`](crate::model::LambdaResource).
+    pub fn builder() -> crate::model::lambda_resource::Builder {
+        crate::model::lambda_resource::Builder::default()
+    }
+}
+
 /// See [`LambdaResource`](crate::model::LambdaResource).
 pub mod lambda_resource {
     
@@ -830,12 +842,6 @@ pub mod lambda_resource {
     
     
 }
-impl LambdaResource {
-    /// Creates a new builder-style object to manufacture [`LambdaResource`](crate::model::LambdaResource).
-    pub fn builder() -> crate::model::lambda_resource::Builder {
-        crate::model::lambda_resource::Builder::default()
-    }
-}
 
 /// <p>The container for the <code>EventTriggerDefinition$EventResourceARN</code>.</p>
 #[non_exhaustive]
@@ -851,6 +857,13 @@ impl EventTriggerDefinition {
         self.event_resource_arn.as_deref()
     }
 }
+impl EventTriggerDefinition {
+    /// Creates a new builder-style object to manufacture [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
+    pub fn builder() -> crate::model::event_trigger_definition::Builder {
+        crate::model::event_trigger_definition::Builder::default()
+    }
+}
+
 /// See [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
 pub mod event_trigger_definition {
     
@@ -881,12 +894,6 @@ pub mod event_trigger_definition {
     
     
 }
-impl EventTriggerDefinition {
-    /// Creates a new builder-style object to manufacture [`EventTriggerDefinition`](crate::model::EventTriggerDefinition).
-    pub fn builder() -> crate::model::event_trigger_definition::Builder {
-        crate::model::event_trigger_definition::Builder::default()
-    }
-}
 
 /// <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 #[non_exhaustive]
@@ -916,6 +923,13 @@ impl S3Resource {
         self.target_on_device_services.as_deref()
     }
 }
+impl S3Resource {
+    /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource).
+    pub fn builder() -> crate::model::s3_resource::Builder {
+        crate::model::s3_resource::Builder::default()
+    }
+}
+
 /// See [`S3Resource`](crate::model::S3Resource).
 pub mod s3_resource {
     
@@ -976,12 +990,6 @@ pub mod s3_resource {
     
     
 }
-impl S3Resource {
-    /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource).
-    pub fn builder() -> crate::model::s3_resource::Builder {
-        crate::model::s3_resource::Builder::default()
-    }
-}
 
 /// <p>An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).</p>
 #[non_exhaustive]
@@ -1004,6 +1012,13 @@ impl TargetOnDeviceService {
         self.transfer_option.as_ref()
     }
 }
+impl TargetOnDeviceService {
+    /// Creates a new builder-style object to manufacture [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
+    pub fn builder() -> crate::model::target_on_device_service::Builder {
+        crate::model::target_on_device_service::Builder::default()
+    }
+}
+
 /// See [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
 pub mod target_on_device_service {
     
@@ -1045,12 +1060,6 @@ pub mod target_on_device_service {
     }
     
     
-}
-impl TargetOnDeviceService {
-    /// Creates a new builder-style object to manufacture [`TargetOnDeviceService`](crate::model::TargetOnDeviceService).
-    pub fn builder() -> crate::model::target_on_device_service::Builder {
-        crate::model::target_on_device_service::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TransferOption`, it is important to ensure
@@ -1243,6 +1252,13 @@ impl KeyRange {
         self.end_marker.as_deref()
     }
 }
+impl KeyRange {
+    /// Creates a new builder-style object to manufacture [`KeyRange`](crate::model::KeyRange).
+    pub fn builder() -> crate::model::key_range::Builder {
+        crate::model::key_range::Builder::default()
+    }
+}
+
 /// See [`KeyRange`](crate::model::KeyRange).
 pub mod key_range {
     
@@ -1285,12 +1301,6 @@ pub mod key_range {
     
     
 }
-impl KeyRange {
-    /// Creates a new builder-style object to manufacture [`KeyRange`](crate::model::KeyRange).
-    pub fn builder() -> crate::model::key_range::Builder {
-        crate::model::key_range::Builder::default()
-    }
-}
 
 /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> 
 /// <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
@@ -1323,6 +1333,13 @@ impl Notification {
         self.notify_all
     }
 }
+impl Notification {
+    /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
+    pub fn builder() -> crate::model::notification::Builder {
+        crate::model::notification::Builder::default()
+    }
+}
+
 /// See [`Notification`](crate::model::Notification).
 pub mod notification {
     
@@ -1385,12 +1402,6 @@ pub mod notification {
     }
     
     
-}
-impl Notification {
-    /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
-    pub fn builder() -> crate::model::notification::Builder {
-        crate::model::notification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobState`, it is important to ensure
@@ -1607,6 +1618,13 @@ impl LongTermPricingListEntry {
         self.job_ids.as_deref()
     }
 }
+impl LongTermPricingListEntry {
+    /// Creates a new builder-style object to manufacture [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
+    pub fn builder() -> crate::model::long_term_pricing_list_entry::Builder {
+        crate::model::long_term_pricing_list_entry::Builder::default()
+    }
+}
+
 /// See [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
 pub mod long_term_pricing_list_entry {
     
@@ -1750,12 +1768,6 @@ pub mod long_term_pricing_list_entry {
     }
     
     
-}
-impl LongTermPricingListEntry {
-    /// Creates a new builder-style object to manufacture [`LongTermPricingListEntry`](crate::model::LongTermPricingListEntry).
-    pub fn builder() -> crate::model::long_term_pricing_list_entry::Builder {
-        crate::model::long_term_pricing_list_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnowballType`, it is important to ensure
@@ -2008,6 +2020,13 @@ impl JobListEntry {
         self.description.as_deref()
     }
 }
+impl JobListEntry {
+    /// Creates a new builder-style object to manufacture [`JobListEntry`](crate::model::JobListEntry).
+    pub fn builder() -> crate::model::job_list_entry::Builder {
+        crate::model::job_list_entry::Builder::default()
+    }
+}
+
 /// See [`JobListEntry`](crate::model::JobListEntry).
 pub mod job_list_entry {
     
@@ -2110,12 +2129,6 @@ pub mod job_list_entry {
     }
     
     
-}
-impl JobListEntry {
-    /// Creates a new builder-style object to manufacture [`JobListEntry`](crate::model::JobListEntry).
-    pub fn builder() -> crate::model::job_list_entry::Builder {
-        crate::model::job_list_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobType`, it is important to ensure
@@ -2226,6 +2239,13 @@ impl CompatibleImage {
         self.name.as_deref()
     }
 }
+impl CompatibleImage {
+    /// Creates a new builder-style object to manufacture [`CompatibleImage`](crate::model::CompatibleImage).
+    pub fn builder() -> crate::model::compatible_image::Builder {
+        crate::model::compatible_image::Builder::default()
+    }
+}
+
 /// See [`CompatibleImage`](crate::model::CompatibleImage).
 pub mod compatible_image {
     
@@ -2268,12 +2288,6 @@ pub mod compatible_image {
     
     
 }
-impl CompatibleImage {
-    /// Creates a new builder-style object to manufacture [`CompatibleImage`](crate::model::CompatibleImage).
-    pub fn builder() -> crate::model::compatible_image::Builder {
-        crate::model::compatible_image::Builder::default()
-    }
-}
 
 /// <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
 #[non_exhaustive]
@@ -2310,6 +2324,13 @@ impl ClusterListEntry {
         self.description.as_deref()
     }
 }
+impl ClusterListEntry {
+    /// Creates a new builder-style object to manufacture [`ClusterListEntry`](crate::model::ClusterListEntry).
+    pub fn builder() -> crate::model::cluster_list_entry::Builder {
+        crate::model::cluster_list_entry::Builder::default()
+    }
+}
+
 /// See [`ClusterListEntry`](crate::model::ClusterListEntry).
 pub mod cluster_list_entry {
     
@@ -2375,12 +2396,6 @@ pub mod cluster_list_entry {
     }
     
     
-}
-impl ClusterListEntry {
-    /// Creates a new builder-style object to manufacture [`ClusterListEntry`](crate::model::ClusterListEntry).
-    pub fn builder() -> crate::model::cluster_list_entry::Builder {
-        crate::model::cluster_list_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClusterState`, it is important to ensure
@@ -2735,6 +2750,13 @@ impl JobMetadata {
         self.on_device_service_configuration.as_ref()
     }
 }
+impl JobMetadata {
+    /// Creates a new builder-style object to manufacture [`JobMetadata`](crate::model::JobMetadata).
+    pub fn builder() -> crate::model::job_metadata::Builder {
+        crate::model::job_metadata::Builder::default()
+    }
+}
+
 /// See [`JobMetadata`](crate::model::JobMetadata).
 pub mod job_metadata {
     
@@ -3019,12 +3041,6 @@ pub mod job_metadata {
     
     
 }
-impl JobMetadata {
-    /// Creates a new builder-style object to manufacture [`JobMetadata`](crate::model::JobMetadata).
-    pub fn builder() -> crate::model::job_metadata::Builder {
-        crate::model::job_metadata::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RemoteManagement`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3122,6 +3138,13 @@ impl DeviceConfiguration {
         self.snowcone_device_configuration.as_ref()
     }
 }
+impl DeviceConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeviceConfiguration`](crate::model::DeviceConfiguration).
+    pub fn builder() -> crate::model::device_configuration::Builder {
+        crate::model::device_configuration::Builder::default()
+    }
+}
+
 /// See [`DeviceConfiguration`](crate::model::DeviceConfiguration).
 pub mod device_configuration {
     
@@ -3152,12 +3175,6 @@ pub mod device_configuration {
     
     
 }
-impl DeviceConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeviceConfiguration`](crate::model::DeviceConfiguration).
-    pub fn builder() -> crate::model::device_configuration::Builder {
-        crate::model::device_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the device configuration for an Snowcone job.</p>
 #[non_exhaustive]
@@ -3173,6 +3190,13 @@ impl SnowconeDeviceConfiguration {
         self.wireless_connection.as_ref()
     }
 }
+impl SnowconeDeviceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
+    pub fn builder() -> crate::model::snowcone_device_configuration::Builder {
+        crate::model::snowcone_device_configuration::Builder::default()
+    }
+}
+
 /// See [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
 pub mod snowcone_device_configuration {
     
@@ -3203,12 +3227,6 @@ pub mod snowcone_device_configuration {
     
     
 }
-impl SnowconeDeviceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SnowconeDeviceConfiguration`](crate::model::SnowconeDeviceConfiguration).
-    pub fn builder() -> crate::model::snowcone_device_configuration::Builder {
-        crate::model::snowcone_device_configuration::Builder::default()
-    }
-}
 
 /// <p>Configures the wireless connection on an Snowcone device.</p>
 #[non_exhaustive]
@@ -3224,6 +3242,13 @@ impl WirelessConnection {
         self.is_wifi_enabled
     }
 }
+impl WirelessConnection {
+    /// Creates a new builder-style object to manufacture [`WirelessConnection`](crate::model::WirelessConnection).
+    pub fn builder() -> crate::model::wireless_connection::Builder {
+        crate::model::wireless_connection::Builder::default()
+    }
+}
+
 /// See [`WirelessConnection`](crate::model::WirelessConnection).
 pub mod wireless_connection {
     
@@ -3255,12 +3280,6 @@ pub mod wireless_connection {
     
     
 }
-impl WirelessConnection {
-    /// Creates a new builder-style object to manufacture [`WirelessConnection`](crate::model::WirelessConnection).
-    pub fn builder() -> crate::model::wireless_connection::Builder {
-        crate::model::wireless_connection::Builder::default()
-    }
-}
 
 /// <p>The tax documents required in your Amazon Web Services Region.</p>
 #[non_exhaustive]
@@ -3276,6 +3295,13 @@ impl TaxDocuments {
         self.ind.as_ref()
     }
 }
+impl TaxDocuments {
+    /// Creates a new builder-style object to manufacture [`TaxDocuments`](crate::model::TaxDocuments).
+    pub fn builder() -> crate::model::tax_documents::Builder {
+        crate::model::tax_documents::Builder::default()
+    }
+}
+
 /// See [`TaxDocuments`](crate::model::TaxDocuments).
 pub mod tax_documents {
     
@@ -3306,12 +3332,6 @@ pub mod tax_documents {
     
     
 }
-impl TaxDocuments {
-    /// Creates a new builder-style object to manufacture [`TaxDocuments`](crate::model::TaxDocuments).
-    pub fn builder() -> crate::model::tax_documents::Builder {
-        crate::model::tax_documents::Builder::default()
-    }
-}
 
 /// <p>The tax documents required in Amazon Web Services Region in India.</p>
 #[non_exhaustive]
@@ -3327,6 +3347,13 @@ impl IndTaxDocuments {
         self.gstin.as_deref()
     }
 }
+impl IndTaxDocuments {
+    /// Creates a new builder-style object to manufacture [`IndTaxDocuments`](crate::model::IndTaxDocuments).
+    pub fn builder() -> crate::model::ind_tax_documents::Builder {
+        crate::model::ind_tax_documents::Builder::default()
+    }
+}
+
 /// See [`IndTaxDocuments`](crate::model::IndTaxDocuments).
 pub mod ind_tax_documents {
     
@@ -3356,12 +3383,6 @@ pub mod ind_tax_documents {
     }
     
     
-}
-impl IndTaxDocuments {
-    /// Creates a new builder-style object to manufacture [`IndTaxDocuments`](crate::model::IndTaxDocuments).
-    pub fn builder() -> crate::model::ind_tax_documents::Builder {
-        crate::model::ind_tax_documents::Builder::default()
-    }
 }
 
 /// <p>Contains job logs. Whenever a Snow device is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> 
@@ -3395,6 +3416,13 @@ impl JobLogs {
         self.job_failure_log_uri.as_deref()
     }
 }
+impl JobLogs {
+    /// Creates a new builder-style object to manufacture [`JobLogs`](crate::model::JobLogs).
+    pub fn builder() -> crate::model::job_logs::Builder {
+        crate::model::job_logs::Builder::default()
+    }
+}
+
 /// See [`JobLogs`](crate::model::JobLogs).
 pub mod job_logs {
     
@@ -3449,12 +3477,6 @@ pub mod job_logs {
     
     
 }
-impl JobLogs {
-    /// Creates a new builder-style object to manufacture [`JobLogs`](crate::model::JobLogs).
-    pub fn builder() -> crate::model::job_logs::Builder {
-        crate::model::job_logs::Builder::default()
-    }
-}
 
 /// <p>Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
 #[non_exhaustive]
@@ -3491,6 +3513,13 @@ impl DataTransfer {
         self.total_objects
     }
 }
+impl DataTransfer {
+    /// Creates a new builder-style object to manufacture [`DataTransfer`](crate::model::DataTransfer).
+    pub fn builder() -> crate::model::data_transfer::Builder {
+        crate::model::data_transfer::Builder::default()
+    }
+}
+
 /// See [`DataTransfer`](crate::model::DataTransfer).
 pub mod data_transfer {
     
@@ -3561,12 +3590,6 @@ pub mod data_transfer {
     
     
 }
-impl DataTransfer {
-    /// Creates a new builder-style object to manufacture [`DataTransfer`](crate::model::DataTransfer).
-    pub fn builder() -> crate::model::data_transfer::Builder {
-        crate::model::data_transfer::Builder::default()
-    }
-}
 
 /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
 #[non_exhaustive]
@@ -3608,6 +3631,13 @@ impl ShippingDetails {
         self.outbound_shipment.as_ref()
     }
 }
+impl ShippingDetails {
+    /// Creates a new builder-style object to manufacture [`ShippingDetails`](crate::model::ShippingDetails).
+    pub fn builder() -> crate::model::shipping_details::Builder {
+        crate::model::shipping_details::Builder::default()
+    }
+}
+
 /// See [`ShippingDetails`](crate::model::ShippingDetails).
 pub mod shipping_details {
     
@@ -3674,12 +3704,6 @@ pub mod shipping_details {
     
     
 }
-impl ShippingDetails {
-    /// Creates a new builder-style object to manufacture [`ShippingDetails`](crate::model::ShippingDetails).
-    pub fn builder() -> crate::model::shipping_details::Builder {
-        crate::model::shipping_details::Builder::default()
-    }
-}
 
 /// <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
 #[non_exhaustive]
@@ -3704,6 +3728,13 @@ impl Shipment {
         self.tracking_number.as_deref()
     }
 }
+impl Shipment {
+    /// Creates a new builder-style object to manufacture [`Shipment`](crate::model::Shipment).
+    pub fn builder() -> crate::model::shipment::Builder {
+        crate::model::shipment::Builder::default()
+    }
+}
+
 /// See [`Shipment`](crate::model::Shipment).
 pub mod shipment {
     
@@ -3747,12 +3778,6 @@ pub mod shipment {
     }
     
     
-}
-impl Shipment {
-    /// Creates a new builder-style object to manufacture [`Shipment`](crate::model::Shipment).
-    pub fn builder() -> crate::model::shipment::Builder {
-        crate::model::shipment::Builder::default()
-    }
 }
 
 /// <p>Contains metadata about a specific cluster.</p>
@@ -3883,6 +3908,13 @@ impl ClusterMetadata {
         self.on_device_service_configuration.as_ref()
     }
 }
+impl ClusterMetadata {
+    /// Creates a new builder-style object to manufacture [`ClusterMetadata`](crate::model::ClusterMetadata).
+    pub fn builder() -> crate::model::cluster_metadata::Builder {
+        crate::model::cluster_metadata::Builder::default()
+    }
+}
+
 /// See [`ClusterMetadata`](crate::model::ClusterMetadata).
 pub mod cluster_metadata {
     
@@ -4097,12 +4129,6 @@ pub mod cluster_metadata {
     
     
 }
-impl ClusterMetadata {
-    /// Creates a new builder-style object to manufacture [`ClusterMetadata`](crate::model::ClusterMetadata).
-    pub fn builder() -> crate::model::cluster_metadata::Builder {
-        crate::model::cluster_metadata::Builder::default()
-    }
-}
 
 /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
 #[non_exhaustive]
@@ -4209,6 +4235,13 @@ impl Address {
         self.is_restricted
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
     
@@ -4395,11 +4428,5 @@ pub mod address {
     }
     
     
-}
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
 }
 

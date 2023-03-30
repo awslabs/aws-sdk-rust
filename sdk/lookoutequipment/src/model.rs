@@ -21,6 +21,13 @@ impl InferenceOutputConfiguration {
         self.kms_key_id.as_deref()
     }
 }
+impl InferenceOutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
+    pub fn builder() -> crate::model::inference_output_configuration::Builder {
+        crate::model::inference_output_configuration::Builder::default()
+    }
+}
+
 /// See [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
 pub mod inference_output_configuration {
     
@@ -63,12 +70,6 @@ pub mod inference_output_configuration {
     
     
 }
-impl InferenceOutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InferenceOutputConfiguration`](crate::model::InferenceOutputConfiguration).
-    pub fn builder() -> crate::model::inference_output_configuration::Builder {
-        crate::model::inference_output_configuration::Builder::default()
-    }
-}
 
 /// <p> Specifies configuration information for the output results from the inference, including output S3 location. </p>
 #[non_exhaustive]
@@ -91,6 +92,13 @@ impl InferenceS3OutputConfiguration {
         self.prefix.as_deref()
     }
 }
+impl InferenceS3OutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
+    pub fn builder() -> crate::model::inference_s3_output_configuration::Builder {
+        crate::model::inference_s3_output_configuration::Builder::default()
+    }
+}
+
 /// See [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
 pub mod inference_s3_output_configuration {
     
@@ -133,12 +141,6 @@ pub mod inference_s3_output_configuration {
     
     
 }
-impl InferenceS3OutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InferenceS3OutputConfiguration`](crate::model::InferenceS3OutputConfiguration).
-    pub fn builder() -> crate::model::inference_s3_output_configuration::Builder {
-        crate::model::inference_s3_output_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies configuration information for the input data for the inference, including Amazon S3 location of input data.. </p>
 #[non_exhaustive]
@@ -168,6 +170,13 @@ impl InferenceInputConfiguration {
         self.inference_input_name_configuration.as_ref()
     }
 }
+impl InferenceInputConfiguration {
+    /// Creates a new builder-style object to manufacture [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
+    pub fn builder() -> crate::model::inference_input_configuration::Builder {
+        crate::model::inference_input_configuration::Builder::default()
+    }
+}
+
 /// See [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
 pub mod inference_input_configuration {
     
@@ -222,12 +231,6 @@ pub mod inference_input_configuration {
     
     
 }
-impl InferenceInputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InferenceInputConfiguration`](crate::model::InferenceInputConfiguration).
-    pub fn builder() -> crate::model::inference_input_configuration::Builder {
-        crate::model::inference_input_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
 #[non_exhaustive]
@@ -250,6 +253,13 @@ impl InferenceInputNameConfiguration {
         self.component_timestamp_delimiter.as_deref()
     }
 }
+impl InferenceInputNameConfiguration {
+    /// Creates a new builder-style object to manufacture [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
+    pub fn builder() -> crate::model::inference_input_name_configuration::Builder {
+        crate::model::inference_input_name_configuration::Builder::default()
+    }
+}
+
 /// See [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
 pub mod inference_input_name_configuration {
     
@@ -292,12 +302,6 @@ pub mod inference_input_name_configuration {
     
     
 }
-impl InferenceInputNameConfiguration {
-    /// Creates a new builder-style object to manufacture [`InferenceInputNameConfiguration`](crate::model::InferenceInputNameConfiguration).
-    pub fn builder() -> crate::model::inference_input_name_configuration::Builder {
-        crate::model::inference_input_name_configuration::Builder::default()
-    }
-}
 
 /// <p> Specifies configuration information for the input data for the inference, including input data S3 location. </p>
 #[non_exhaustive]
@@ -320,6 +324,13 @@ impl InferenceS3InputConfiguration {
         self.prefix.as_deref()
     }
 }
+impl InferenceS3InputConfiguration {
+    /// Creates a new builder-style object to manufacture [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
+    pub fn builder() -> crate::model::inference_s3_input_configuration::Builder {
+        crate::model::inference_s3_input_configuration::Builder::default()
+    }
+}
+
 /// See [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
 pub mod inference_s3_input_configuration {
     
@@ -361,12 +372,6 @@ pub mod inference_s3_input_configuration {
     }
     
     
-}
-impl InferenceS3InputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InferenceS3InputConfiguration`](crate::model::InferenceS3InputConfiguration).
-    pub fn builder() -> crate::model::inference_s3_input_configuration::Builder {
-        crate::model::inference_s3_input_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataUploadFrequency`, it is important to ensure
@@ -487,6 +492,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -528,12 +540,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InferenceSchedulerStatus`, it is important to ensure
@@ -729,6 +735,13 @@ impl IngestionInputConfiguration {
         self.s3_input_configuration.as_ref()
     }
 }
+impl IngestionInputConfiguration {
+    /// Creates a new builder-style object to manufacture [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
+    pub fn builder() -> crate::model::ingestion_input_configuration::Builder {
+        crate::model::ingestion_input_configuration::Builder::default()
+    }
+}
+
 /// See [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
 pub mod ingestion_input_configuration {
     
@@ -759,12 +772,6 @@ pub mod ingestion_input_configuration {
     
     
 }
-impl IngestionInputConfiguration {
-    /// Creates a new builder-style object to manufacture [`IngestionInputConfiguration`](crate::model::IngestionInputConfiguration).
-    pub fn builder() -> crate::model::ingestion_input_configuration::Builder {
-        crate::model::ingestion_input_configuration::Builder::default()
-    }
-}
 
 /// <p> Specifies S3 configuration information for the input data for the data ingestion job. </p>
 #[non_exhaustive]
@@ -794,6 +801,13 @@ impl IngestionS3InputConfiguration {
         self.key_pattern.as_deref()
     }
 }
+impl IngestionS3InputConfiguration {
+    /// Creates a new builder-style object to manufacture [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
+    pub fn builder() -> crate::model::ingestion_s3_input_configuration::Builder {
+        crate::model::ingestion_s3_input_configuration::Builder::default()
+    }
+}
+
 /// See [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
 pub mod ingestion_s3_input_configuration {
     
@@ -847,12 +861,6 @@ pub mod ingestion_s3_input_configuration {
     }
     
     
-}
-impl IngestionS3InputConfiguration {
-    /// Creates a new builder-style object to manufacture [`IngestionS3InputConfiguration`](crate::model::IngestionS3InputConfiguration).
-    pub fn builder() -> crate::model::ingestion_s3_input_configuration::Builder {
-        crate::model::ingestion_s3_input_configuration::Builder::default()
-    }
 }
 
 /// <p> Summary of ingestion statistics like whether data exists, number of missing values, number of invalid values and so on related to the particular sensor. </p>
@@ -953,6 +961,13 @@ impl SensorStatisticsSummary {
         self.data_end_time.as_ref()
     }
 }
+impl SensorStatisticsSummary {
+    /// Creates a new builder-style object to manufacture [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
+    pub fn builder() -> crate::model::sensor_statistics_summary::Builder {
+        crate::model::sensor_statistics_summary::Builder::default()
+    }
+}
+
 /// See [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
 pub mod sensor_statistics_summary {
     
@@ -1128,12 +1143,6 @@ pub mod sensor_statistics_summary {
     
     
 }
-impl SensorStatisticsSummary {
-    /// Creates a new builder-style object to manufacture [`SensorStatisticsSummary`](crate::model::SensorStatisticsSummary).
-    pub fn builder() -> crate::model::sensor_statistics_summary::Builder {
-        crate::model::sensor_statistics_summary::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information on monotonic values in the data. </p>
 #[non_exhaustive]
@@ -1156,6 +1165,13 @@ impl MonotonicValues {
         self.monotonicity.as_ref()
     }
 }
+impl MonotonicValues {
+    /// Creates a new builder-style object to manufacture [`MonotonicValues`](crate::model::MonotonicValues).
+    pub fn builder() -> crate::model::monotonic_values::Builder {
+        crate::model::monotonic_values::Builder::default()
+    }
+}
+
 /// See [`MonotonicValues`](crate::model::MonotonicValues).
 pub mod monotonic_values {
     
@@ -1197,12 +1213,6 @@ pub mod monotonic_values {
     }
     
     
-}
-impl MonotonicValues {
-    /// Creates a new builder-style object to manufacture [`MonotonicValues`](crate::model::MonotonicValues).
-    pub fn builder() -> crate::model::monotonic_values::Builder {
-        crate::model::monotonic_values::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Monotonicity`, it is important to ensure
@@ -1402,6 +1412,13 @@ impl LargeTimestampGaps {
         self.max_timestamp_gap_in_days
     }
 }
+impl LargeTimestampGaps {
+    /// Creates a new builder-style object to manufacture [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
+    pub fn builder() -> crate::model::large_timestamp_gaps::Builder {
+        crate::model::large_timestamp_gaps::Builder::default()
+    }
+}
+
 /// See [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
 pub mod large_timestamp_gaps {
     
@@ -1456,12 +1473,6 @@ pub mod large_timestamp_gaps {
     
     
 }
-impl LargeTimestampGaps {
-    /// Creates a new builder-style object to manufacture [`LargeTimestampGaps`](crate::model::LargeTimestampGaps).
-    pub fn builder() -> crate::model::large_timestamp_gaps::Builder {
-        crate::model::large_timestamp_gaps::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information on operating modes in data. </p>
 #[non_exhaustive]
@@ -1477,6 +1488,13 @@ impl MultipleOperatingModes {
         self.status.as_ref()
     }
 }
+impl MultipleOperatingModes {
+    /// Creates a new builder-style object to manufacture [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
+    pub fn builder() -> crate::model::multiple_operating_modes::Builder {
+        crate::model::multiple_operating_modes::Builder::default()
+    }
+}
+
 /// See [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
 pub mod multiple_operating_modes {
     
@@ -1507,12 +1525,6 @@ pub mod multiple_operating_modes {
     
     
 }
-impl MultipleOperatingModes {
-    /// Creates a new builder-style object to manufacture [`MultipleOperatingModes`](crate::model::MultipleOperatingModes).
-    pub fn builder() -> crate::model::multiple_operating_modes::Builder {
-        crate::model::multiple_operating_modes::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information on categorical values in data. </p>
 #[non_exhaustive]
@@ -1535,6 +1547,13 @@ impl CategoricalValues {
         self.number_of_category
     }
 }
+impl CategoricalValues {
+    /// Creates a new builder-style object to manufacture [`CategoricalValues`](crate::model::CategoricalValues).
+    pub fn builder() -> crate::model::categorical_values::Builder {
+        crate::model::categorical_values::Builder::default()
+    }
+}
+
 /// See [`CategoricalValues`](crate::model::CategoricalValues).
 pub mod categorical_values {
     
@@ -1577,12 +1596,6 @@ pub mod categorical_values {
     
     
 }
-impl CategoricalValues {
-    /// Creates a new builder-style object to manufacture [`CategoricalValues`](crate::model::CategoricalValues).
-    pub fn builder() -> crate::model::categorical_values::Builder {
-        crate::model::categorical_values::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information of count and percentage. </p>
 #[non_exhaustive]
@@ -1605,6 +1618,13 @@ impl CountPercent {
         self.percentage
     }
 }
+impl CountPercent {
+    /// Creates a new builder-style object to manufacture [`CountPercent`](crate::model::CountPercent).
+    pub fn builder() -> crate::model::count_percent::Builder {
+        crate::model::count_percent::Builder::default()
+    }
+}
+
 /// See [`CountPercent`](crate::model::CountPercent).
 pub mod count_percent {
     
@@ -1647,12 +1667,6 @@ pub mod count_percent {
     }
     
     
-}
-impl CountPercent {
-    /// Creates a new builder-style object to manufacture [`CountPercent`](crate::model::CountPercent).
-    pub fn builder() -> crate::model::count_percent::Builder {
-        crate::model::count_percent::Builder::default()
-    }
 }
 
 /// <p>Provides information about the specified ML model, including dataset and model names and ARNs, as well as status. </p>
@@ -1704,6 +1718,13 @@ impl ModelSummary {
         self.created_at.as_ref()
     }
 }
+impl ModelSummary {
+    /// Creates a new builder-style object to manufacture [`ModelSummary`](crate::model::ModelSummary).
+    pub fn builder() -> crate::model::model_summary::Builder {
+        crate::model::model_summary::Builder::default()
+    }
+}
+
 /// See [`ModelSummary`](crate::model::ModelSummary).
 pub mod model_summary {
     
@@ -1793,12 +1814,6 @@ pub mod model_summary {
     }
     
     
-}
-impl ModelSummary {
-    /// Creates a new builder-style object to manufacture [`ModelSummary`](crate::model::ModelSummary).
-    pub fn builder() -> crate::model::model_summary::Builder {
-        crate::model::model_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ModelStatus`, it is important to ensure
@@ -1960,6 +1975,13 @@ impl LabelSummary {
         self.created_at.as_ref()
     }
 }
+impl LabelSummary {
+    /// Creates a new builder-style object to manufacture [`LabelSummary`](crate::model::LabelSummary).
+    pub fn builder() -> crate::model::label_summary::Builder {
+        crate::model::label_summary::Builder::default()
+    }
+}
+
 /// See [`LabelSummary`](crate::model::LabelSummary).
 pub mod label_summary {
     
@@ -2088,12 +2110,6 @@ pub mod label_summary {
     
     
 }
-impl LabelSummary {
-    /// Creates a new builder-style object to manufacture [`LabelSummary`](crate::model::LabelSummary).
-    pub fn builder() -> crate::model::label_summary::Builder {
-        crate::model::label_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `LabelRating`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2217,6 +2233,13 @@ impl LabelGroupSummary {
         self.updated_at.as_ref()
     }
 }
+impl LabelGroupSummary {
+    /// Creates a new builder-style object to manufacture [`LabelGroupSummary`](crate::model::LabelGroupSummary).
+    pub fn builder() -> crate::model::label_group_summary::Builder {
+        crate::model::label_group_summary::Builder::default()
+    }
+}
+
 /// See [`LabelGroupSummary`](crate::model::LabelGroupSummary).
 pub mod label_group_summary {
     
@@ -2283,12 +2306,6 @@ pub mod label_group_summary {
     
     
 }
-impl LabelGroupSummary {
-    /// Creates a new builder-style object to manufacture [`LabelGroupSummary`](crate::model::LabelGroupSummary).
-    pub fn builder() -> crate::model::label_group_summary::Builder {
-        crate::model::label_group_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the specific inference scheduler, including data delay offset, model name and ARN, status, and so on. </p>
 #[non_exhaustive]
@@ -2353,6 +2370,13 @@ impl InferenceSchedulerSummary {
         self.latest_inference_result.as_ref()
     }
 }
+impl InferenceSchedulerSummary {
+    /// Creates a new builder-style object to manufacture [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
+    pub fn builder() -> crate::model::inference_scheduler_summary::Builder {
+        crate::model::inference_scheduler_summary::Builder::default()
+    }
+}
+
 /// See [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
 pub mod inference_scheduler_summary {
     
@@ -2466,12 +2490,6 @@ pub mod inference_scheduler_summary {
     }
     
     
-}
-impl InferenceSchedulerSummary {
-    /// Creates a new builder-style object to manufacture [`InferenceSchedulerSummary`](crate::model::InferenceSchedulerSummary).
-    pub fn builder() -> crate::model::inference_scheduler_summary::Builder {
-        crate::model::inference_scheduler_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LatestInferenceResult`, it is important to ensure
@@ -2647,6 +2665,13 @@ impl InferenceExecutionSummary {
         self.failed_reason.as_deref()
     }
 }
+impl InferenceExecutionSummary {
+    /// Creates a new builder-style object to manufacture [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
+    pub fn builder() -> crate::model::inference_execution_summary::Builder {
+        crate::model::inference_execution_summary::Builder::default()
+    }
+}
+
 /// See [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
 pub mod inference_execution_summary {
     
@@ -2809,12 +2834,6 @@ pub mod inference_execution_summary {
     
     
 }
-impl InferenceExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`InferenceExecutionSummary`](crate::model::InferenceExecutionSummary).
-    pub fn builder() -> crate::model::inference_execution_summary::Builder {
-        crate::model::inference_execution_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InferenceExecutionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2924,6 +2943,13 @@ impl S3Object {
         self.key.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
     
@@ -2965,12 +2991,6 @@ pub mod s3_object {
     }
     
     
-}
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
-    }
 }
 
 /// <p>Contains information about the specific inference event, including start and end time, diagnostics information, event duration and so on.</p>
@@ -3022,6 +3042,13 @@ impl InferenceEventSummary {
         self.event_duration_in_seconds
     }
 }
+impl InferenceEventSummary {
+    /// Creates a new builder-style object to manufacture [`InferenceEventSummary`](crate::model::InferenceEventSummary).
+    pub fn builder() -> crate::model::inference_event_summary::Builder {
+        crate::model::inference_event_summary::Builder::default()
+    }
+}
+
 /// See [`InferenceEventSummary`](crate::model::InferenceEventSummary).
 pub mod inference_event_summary {
     
@@ -3112,12 +3139,6 @@ pub mod inference_event_summary {
     
     
 }
-impl InferenceEventSummary {
-    /// Creates a new builder-style object to manufacture [`InferenceEventSummary`](crate::model::InferenceEventSummary).
-    pub fn builder() -> crate::model::inference_event_summary::Builder {
-        crate::model::inference_event_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the specific data set, including name, ARN, and status. </p>
 #[non_exhaustive]
@@ -3154,6 +3175,13 @@ impl DatasetSummary {
         self.created_at.as_ref()
     }
 }
+impl DatasetSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
+    pub fn builder() -> crate::model::dataset_summary::Builder {
+        crate::model::dataset_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
     
@@ -3219,12 +3247,6 @@ pub mod dataset_summary {
     }
     
     
-}
-impl DatasetSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
-    pub fn builder() -> crate::model::dataset_summary::Builder {
-        crate::model::dataset_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DatasetStatus`, it is important to ensure
@@ -3356,6 +3378,13 @@ impl DataIngestionJobSummary {
         self.status.as_ref()
     }
 }
+impl DataIngestionJobSummary {
+    /// Creates a new builder-style object to manufacture [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
+    pub fn builder() -> crate::model::data_ingestion_job_summary::Builder {
+        crate::model::data_ingestion_job_summary::Builder::default()
+    }
+}
+
 /// See [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
 pub mod data_ingestion_job_summary {
     
@@ -3434,12 +3463,6 @@ pub mod data_ingestion_job_summary {
     
     
 }
-impl DataIngestionJobSummary {
-    /// Creates a new builder-style object to manufacture [`DataIngestionJobSummary`](crate::model::DataIngestionJobSummary).
-    pub fn builder() -> crate::model::data_ingestion_job_summary::Builder {
-        crate::model::data_ingestion_job_summary::Builder::default()
-    }
-}
 
 /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
 /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
@@ -3458,6 +3481,13 @@ impl DataPreProcessingConfiguration {
         self.target_sampling_rate.as_ref()
     }
 }
+impl DataPreProcessingConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
+    pub fn builder() -> crate::model::data_pre_processing_configuration::Builder {
+        crate::model::data_pre_processing_configuration::Builder::default()
+    }
+}
+
 /// See [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
 pub mod data_pre_processing_configuration {
     
@@ -3489,12 +3519,6 @@ pub mod data_pre_processing_configuration {
     }
     
     
-}
-impl DataPreProcessingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataPreProcessingConfiguration`](crate::model::DataPreProcessingConfiguration).
-    pub fn builder() -> crate::model::data_pre_processing_configuration::Builder {
-        crate::model::data_pre_processing_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetSamplingRate`, it is important to ensure
@@ -3645,6 +3669,13 @@ impl LabelsInputConfiguration {
         self.label_group_name.as_deref()
     }
 }
+impl LabelsInputConfiguration {
+    /// Creates a new builder-style object to manufacture [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
+    pub fn builder() -> crate::model::labels_input_configuration::Builder {
+        crate::model::labels_input_configuration::Builder::default()
+    }
+}
+
 /// See [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
 pub mod labels_input_configuration {
     
@@ -3687,12 +3718,6 @@ pub mod labels_input_configuration {
     
     
 }
-impl LabelsInputConfiguration {
-    /// Creates a new builder-style object to manufacture [`LabelsInputConfiguration`](crate::model::LabelsInputConfiguration).
-    pub fn builder() -> crate::model::labels_input_configuration::Builder {
-        crate::model::labels_input_configuration::Builder::default()
-    }
-}
 
 /// <p>The location information (prefix and bucket name) for the s3 location being used for label data. </p>
 #[non_exhaustive]
@@ -3715,6 +3740,13 @@ impl LabelsS3InputConfiguration {
         self.prefix.as_deref()
     }
 }
+impl LabelsS3InputConfiguration {
+    /// Creates a new builder-style object to manufacture [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
+    pub fn builder() -> crate::model::labels_s3_input_configuration::Builder {
+        crate::model::labels_s3_input_configuration::Builder::default()
+    }
+}
+
 /// See [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
 pub mod labels_s3_input_configuration {
     
@@ -3757,12 +3789,6 @@ pub mod labels_s3_input_configuration {
     
     
 }
-impl LabelsS3InputConfiguration {
-    /// Creates a new builder-style object to manufacture [`LabelsS3InputConfiguration`](crate::model::LabelsS3InputConfiguration).
-    pub fn builder() -> crate::model::labels_s3_input_configuration::Builder {
-        crate::model::labels_s3_input_configuration::Builder::default()
-    }
-}
 
 /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
 #[non_exhaustive]
@@ -3792,6 +3818,13 @@ impl IngestedFilesSummary {
         self.discarded_files.as_deref()
     }
 }
+impl IngestedFilesSummary {
+    /// Creates a new builder-style object to manufacture [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
+    pub fn builder() -> crate::model::ingested_files_summary::Builder {
+        crate::model::ingested_files_summary::Builder::default()
+    }
+}
+
 /// See [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
 pub mod ingested_files_summary {
     
@@ -3852,12 +3885,6 @@ pub mod ingested_files_summary {
     
     
 }
-impl IngestedFilesSummary {
-    /// Creates a new builder-style object to manufacture [`IngestedFilesSummary`](crate::model::IngestedFilesSummary).
-    pub fn builder() -> crate::model::ingested_files_summary::Builder {
-        crate::model::ingested_files_summary::Builder::default()
-    }
-}
 
 /// <p> DataQualitySummary gives aggregated statistics over all the sensors about a completed ingestion job. It primarily gives more information about statistics over different incorrect data like MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, DuplicateTimeStamps. </p>
 #[non_exhaustive]
@@ -3901,6 +3928,13 @@ impl DataQualitySummary {
         self.duplicate_timestamps.as_ref()
     }
 }
+impl DataQualitySummary {
+    /// Creates a new builder-style object to manufacture [`DataQualitySummary`](crate::model::DataQualitySummary).
+    pub fn builder() -> crate::model::data_quality_summary::Builder {
+        crate::model::data_quality_summary::Builder::default()
+    }
+}
+
 /// See [`DataQualitySummary`](crate::model::DataQualitySummary).
 pub mod data_quality_summary {
     
@@ -3979,12 +4013,6 @@ pub mod data_quality_summary {
     
     
 }
-impl DataQualitySummary {
-    /// Creates a new builder-style object to manufacture [`DataQualitySummary`](crate::model::DataQualitySummary).
-    pub fn builder() -> crate::model::data_quality_summary::Builder {
-        crate::model::data_quality_summary::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information abount duplicate timestamps in the dataset. </p>
 #[non_exhaustive]
@@ -4000,6 +4028,13 @@ impl DuplicateTimestamps {
         self.total_number_of_duplicate_timestamps
     }
 }
+impl DuplicateTimestamps {
+    /// Creates a new builder-style object to manufacture [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
+    pub fn builder() -> crate::model::duplicate_timestamps::Builder {
+        crate::model::duplicate_timestamps::Builder::default()
+    }
+}
+
 /// See [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
 pub mod duplicate_timestamps {
     
@@ -4030,12 +4065,6 @@ pub mod duplicate_timestamps {
     
     
 }
-impl DuplicateTimestamps {
-    /// Creates a new builder-style object to manufacture [`DuplicateTimestamps`](crate::model::DuplicateTimestamps).
-    pub fn builder() -> crate::model::duplicate_timestamps::Builder {
-        crate::model::duplicate_timestamps::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information abount unsupported timestamps in the dataset. </p>
 #[non_exhaustive]
@@ -4051,6 +4080,13 @@ impl UnsupportedTimestamps {
         self.total_number_of_unsupported_timestamps
     }
 }
+impl UnsupportedTimestamps {
+    /// Creates a new builder-style object to manufacture [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
+    pub fn builder() -> crate::model::unsupported_timestamps::Builder {
+        crate::model::unsupported_timestamps::Builder::default()
+    }
+}
+
 /// See [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
 pub mod unsupported_timestamps {
     
@@ -4081,12 +4117,6 @@ pub mod unsupported_timestamps {
     
     
 }
-impl UnsupportedTimestamps {
-    /// Creates a new builder-style object to manufacture [`UnsupportedTimestamps`](crate::model::UnsupportedTimestamps).
-    pub fn builder() -> crate::model::unsupported_timestamps::Builder {
-        crate::model::unsupported_timestamps::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
@@ -4109,6 +4139,13 @@ impl InvalidSensorData {
         self.total_number_of_invalid_values
     }
 }
+impl InvalidSensorData {
+    /// Creates a new builder-style object to manufacture [`InvalidSensorData`](crate::model::InvalidSensorData).
+    pub fn builder() -> crate::model::invalid_sensor_data::Builder {
+        crate::model::invalid_sensor_data::Builder::default()
+    }
+}
+
 /// See [`InvalidSensorData`](crate::model::InvalidSensorData).
 pub mod invalid_sensor_data {
     
@@ -4151,12 +4188,6 @@ pub mod invalid_sensor_data {
     
     
 }
-impl InvalidSensorData {
-    /// Creates a new builder-style object to manufacture [`InvalidSensorData`](crate::model::InvalidSensorData).
-    pub fn builder() -> crate::model::invalid_sensor_data::Builder {
-        crate::model::invalid_sensor_data::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises aggregated information on sensors having missing data. </p>
 #[non_exhaustive]
@@ -4179,6 +4210,13 @@ impl MissingSensorData {
         self.total_number_of_missing_values
     }
 }
+impl MissingSensorData {
+    /// Creates a new builder-style object to manufacture [`MissingSensorData`](crate::model::MissingSensorData).
+    pub fn builder() -> crate::model::missing_sensor_data::Builder {
+        crate::model::missing_sensor_data::Builder::default()
+    }
+}
+
 /// See [`MissingSensorData`](crate::model::MissingSensorData).
 pub mod missing_sensor_data {
     
@@ -4221,12 +4259,6 @@ pub mod missing_sensor_data {
     
     
 }
-impl MissingSensorData {
-    /// Creates a new builder-style object to manufacture [`MissingSensorData`](crate::model::MissingSensorData).
-    pub fn builder() -> crate::model::missing_sensor_data::Builder {
-        crate::model::missing_sensor_data::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
@@ -4249,6 +4281,13 @@ impl InsufficientSensorData {
         self.sensors_with_short_date_range.as_ref()
     }
 }
+impl InsufficientSensorData {
+    /// Creates a new builder-style object to manufacture [`InsufficientSensorData`](crate::model::InsufficientSensorData).
+    pub fn builder() -> crate::model::insufficient_sensor_data::Builder {
+        crate::model::insufficient_sensor_data::Builder::default()
+    }
+}
+
 /// See [`InsufficientSensorData`](crate::model::InsufficientSensorData).
 pub mod insufficient_sensor_data {
     
@@ -4291,12 +4330,6 @@ pub mod insufficient_sensor_data {
     
     
 }
-impl InsufficientSensorData {
-    /// Creates a new builder-style object to manufacture [`InsufficientSensorData`](crate::model::InsufficientSensorData).
-    pub fn builder() -> crate::model::insufficient_sensor_data::Builder {
-        crate::model::insufficient_sensor_data::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information on sensors that have shorter date range. </p>
 #[non_exhaustive]
@@ -4312,6 +4345,13 @@ impl SensorsWithShortDateRange {
         self.affected_sensor_count
     }
 }
+impl SensorsWithShortDateRange {
+    /// Creates a new builder-style object to manufacture [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
+    pub fn builder() -> crate::model::sensors_with_short_date_range::Builder {
+        crate::model::sensors_with_short_date_range::Builder::default()
+    }
+}
+
 /// See [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
 pub mod sensors_with_short_date_range {
     
@@ -4342,12 +4382,6 @@ pub mod sensors_with_short_date_range {
     
     
 }
-impl SensorsWithShortDateRange {
-    /// Creates a new builder-style object to manufacture [`SensorsWithShortDateRange`](crate::model::SensorsWithShortDateRange).
-    pub fn builder() -> crate::model::sensors_with_short_date_range::Builder {
-        crate::model::sensors_with_short_date_range::Builder::default()
-    }
-}
 
 /// <p> Entity that comprises information on sensors that have sensor data completely missing. </p>
 #[non_exhaustive]
@@ -4363,6 +4397,13 @@ impl MissingCompleteSensorData {
         self.affected_sensor_count
     }
 }
+impl MissingCompleteSensorData {
+    /// Creates a new builder-style object to manufacture [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
+    pub fn builder() -> crate::model::missing_complete_sensor_data::Builder {
+        crate::model::missing_complete_sensor_data::Builder::default()
+    }
+}
+
 /// See [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
 pub mod missing_complete_sensor_data {
     
@@ -4393,12 +4434,6 @@ pub mod missing_complete_sensor_data {
     
     
 }
-impl MissingCompleteSensorData {
-    /// Creates a new builder-style object to manufacture [`MissingCompleteSensorData`](crate::model::MissingCompleteSensorData).
-    pub fn builder() -> crate::model::missing_complete_sensor_data::Builder {
-        crate::model::missing_complete_sensor_data::Builder::default()
-    }
-}
 
 /// <p>Provides information about the data schema used with the given dataset. </p>
 #[non_exhaustive]
@@ -4414,6 +4449,13 @@ impl DatasetSchema {
         self.inline_data_schema.as_deref()
     }
 }
+impl DatasetSchema {
+    /// Creates a new builder-style object to manufacture [`DatasetSchema`](crate::model::DatasetSchema).
+    pub fn builder() -> crate::model::dataset_schema::Builder {
+        crate::model::dataset_schema::Builder::default()
+    }
+}
+
 /// See [`DatasetSchema`](crate::model::DatasetSchema).
 pub mod dataset_schema {
     
@@ -4443,11 +4485,5 @@ pub mod dataset_schema {
     }
     
     
-}
-impl DatasetSchema {
-    /// Creates a new builder-style object to manufacture [`DatasetSchema`](crate::model::DatasetSchema).
-    pub fn builder() -> crate::model::dataset_schema::Builder {
-        crate::model::dataset_schema::Builder::default()
-    }
 }
 

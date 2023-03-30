@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -501,6 +502,13 @@ impl  std::fmt::Debug for ProtectedQuery  {
         formatter.finish()
     }
 }
+impl ProtectedQuery {
+    /// Creates a new builder-style object to manufacture [`ProtectedQuery`](crate::model::ProtectedQuery).
+    pub fn builder() -> crate::model::protected_query::Builder {
+        crate::model::protected_query::Builder::default()
+    }
+}
+
 /// See [`ProtectedQuery`](crate::model::ProtectedQuery).
 pub mod protected_query {
     
@@ -655,12 +663,6 @@ pub mod protected_query {
     
     
 }
-impl ProtectedQuery {
-    /// Creates a new builder-style object to manufacture [`ProtectedQuery`](crate::model::ProtectedQuery).
-    pub fn builder() -> crate::model::protected_query::Builder {
-        crate::model::protected_query::Builder::default()
-    }
-}
 
 /// <p>Details of errors thrown by the protected query.</p>
 #[non_exhaustive]
@@ -683,6 +685,13 @@ impl ProtectedQueryError {
         self.code.as_deref()
     }
 }
+impl ProtectedQueryError {
+    /// Creates a new builder-style object to manufacture [`ProtectedQueryError`](crate::model::ProtectedQueryError).
+    pub fn builder() -> crate::model::protected_query_error::Builder {
+        crate::model::protected_query_error::Builder::default()
+    }
+}
+
 /// See [`ProtectedQueryError`](crate::model::ProtectedQueryError).
 pub mod protected_query_error {
     
@@ -725,12 +734,6 @@ pub mod protected_query_error {
     
     
 }
-impl ProtectedQueryError {
-    /// Creates a new builder-style object to manufacture [`ProtectedQueryError`](crate::model::ProtectedQueryError).
-    pub fn builder() -> crate::model::protected_query_error::Builder {
-        crate::model::protected_query_error::Builder::default()
-    }
-}
 
 /// <p>Details about the query results.</p>
 #[non_exhaustive]
@@ -746,6 +749,13 @@ impl ProtectedQueryResult {
         self.output.as_ref()
     }
 }
+impl ProtectedQueryResult {
+    /// Creates a new builder-style object to manufacture [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
+    pub fn builder() -> crate::model::protected_query_result::Builder {
+        crate::model::protected_query_result::Builder::default()
+    }
+}
+
 /// See [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
 pub mod protected_query_result {
     
@@ -775,12 +785,6 @@ pub mod protected_query_result {
     }
     
     
-}
-impl ProtectedQueryResult {
-    /// Creates a new builder-style object to manufacture [`ProtectedQueryResult`](crate::model::ProtectedQueryResult).
-    pub fn builder() -> crate::model::protected_query_result::Builder {
-        crate::model::protected_query_result::Builder::default()
-    }
 }
 
 /// <p>Contains details about the protected query output.</p>
@@ -830,6 +834,13 @@ impl ProtectedQueryS3Output {
         self.location.as_deref()
     }
 }
+impl ProtectedQueryS3Output {
+    /// Creates a new builder-style object to manufacture [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
+    pub fn builder() -> crate::model::protected_query_s3_output::Builder {
+        crate::model::protected_query_s3_output::Builder::default()
+    }
+}
+
 /// See [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
 pub mod protected_query_s3_output {
     
@@ -860,12 +871,6 @@ pub mod protected_query_s3_output {
     
     
 }
-impl ProtectedQueryS3Output {
-    /// Creates a new builder-style object to manufacture [`ProtectedQueryS3Output`](crate::model::ProtectedQueryS3Output).
-    pub fn builder() -> crate::model::protected_query_s3_output::Builder {
-        crate::model::protected_query_s3_output::Builder::default()
-    }
-}
 
 /// <p>Contains statistics about the execution of the protected query.</p>
 #[non_exhaustive]
@@ -881,6 +886,13 @@ impl ProtectedQueryStatistics {
         self.total_duration_in_millis
     }
 }
+impl ProtectedQueryStatistics {
+    /// Creates a new builder-style object to manufacture [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
+    pub fn builder() -> crate::model::protected_query_statistics::Builder {
+        crate::model::protected_query_statistics::Builder::default()
+    }
+}
+
 /// See [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
 pub mod protected_query_statistics {
     
@@ -911,12 +923,6 @@ pub mod protected_query_statistics {
     
     
 }
-impl ProtectedQueryStatistics {
-    /// Creates a new builder-style object to manufacture [`ProtectedQueryStatistics`](crate::model::ProtectedQueryStatistics).
-    pub fn builder() -> crate::model::protected_query_statistics::Builder {
-        crate::model::protected_query_statistics::Builder::default()
-    }
-}
 
 /// <p>Contains configurations for protected query results.</p>
 #[non_exhaustive]
@@ -932,6 +938,13 @@ impl ProtectedQueryResultConfiguration {
         self.output_configuration.as_ref()
     }
 }
+impl ProtectedQueryResultConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
+    pub fn builder() -> crate::model::protected_query_result_configuration::Builder {
+        crate::model::protected_query_result_configuration::Builder::default()
+    }
+}
+
 /// See [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
 pub mod protected_query_result_configuration {
     
@@ -961,12 +974,6 @@ pub mod protected_query_result_configuration {
     }
     
     
-}
-impl ProtectedQueryResultConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProtectedQueryResultConfiguration`](crate::model::ProtectedQueryResultConfiguration).
-    pub fn builder() -> crate::model::protected_query_result_configuration::Builder {
-        crate::model::protected_query_result_configuration::Builder::default()
-    }
 }
 
 /// <p>Contains configuration details for protected query output.</p>
@@ -1030,6 +1037,13 @@ impl ProtectedQueryS3OutputConfiguration {
         self.key_prefix.as_deref()
     }
 }
+impl ProtectedQueryS3OutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
+    pub fn builder() -> crate::model::protected_query_s3_output_configuration::Builder {
+        crate::model::protected_query_s3_output_configuration::Builder::default()
+    }
+}
+
 /// See [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
 pub mod protected_query_s3_output_configuration {
     
@@ -1083,12 +1097,6 @@ pub mod protected_query_s3_output_configuration {
     }
     
     
-}
-impl ProtectedQueryS3OutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProtectedQueryS3OutputConfiguration`](crate::model::ProtectedQueryS3OutputConfiguration).
-    pub fn builder() -> crate::model::protected_query_s3_output_configuration::Builder {
-        crate::model::protected_query_s3_output_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResultFormat`, it is important to ensure
@@ -1301,6 +1309,13 @@ impl  std::fmt::Debug for ProtectedQuerySqlParameters  {
         formatter.finish()
     }
 }
+impl ProtectedQuerySqlParameters {
+    /// Creates a new builder-style object to manufacture [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
+    pub fn builder() -> crate::model::protected_query_sql_parameters::Builder {
+        crate::model::protected_query_sql_parameters::Builder::default()
+    }
+}
+
 /// See [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
 pub mod protected_query_sql_parameters {
     
@@ -1337,12 +1352,6 @@ pub mod protected_query_sql_parameters {
     }
     
     
-}
-impl ProtectedQuerySqlParameters {
-    /// Creates a new builder-style object to manufacture [`ProtectedQuerySqlParameters`](crate::model::ProtectedQuerySqlParameters).
-    pub fn builder() -> crate::model::protected_query_sql_parameters::Builder {
-        crate::model::protected_query_sql_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetProtectedQueryStatus`, it is important to ensure
@@ -1541,6 +1550,13 @@ impl ProtectedQuerySummary {
         self.status.as_ref()
     }
 }
+impl ProtectedQuerySummary {
+    /// Creates a new builder-style object to manufacture [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
+    pub fn builder() -> crate::model::protected_query_summary::Builder {
+        crate::model::protected_query_summary::Builder::default()
+    }
+}
+
 /// See [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
 pub mod protected_query_summary {
     
@@ -1618,12 +1634,6 @@ pub mod protected_query_summary {
     }
     
     
-}
-impl ProtectedQuerySummary {
-    /// Creates a new builder-style object to manufacture [`ProtectedQuerySummary`](crate::model::ProtectedQuerySummary).
-    pub fn builder() -> crate::model::protected_query_summary::Builder {
-        crate::model::protected_query_summary::Builder::default()
-    }
 }
 
 /// <p>The membership object listed by the request.</p>
@@ -1710,6 +1720,13 @@ impl MembershipSummary {
         self.member_abilities.as_deref()
     }
 }
+impl MembershipSummary {
+    /// Creates a new builder-style object to manufacture [`MembershipSummary`](crate::model::MembershipSummary).
+    pub fn builder() -> crate::model::membership_summary::Builder {
+        crate::model::membership_summary::Builder::default()
+    }
+}
+
 /// See [`MembershipSummary`](crate::model::MembershipSummary).
 pub mod membership_summary {
     
@@ -1865,12 +1882,6 @@ pub mod membership_summary {
     }
     
     
-}
-impl MembershipSummary {
-    /// Creates a new builder-style object to manufacture [`MembershipSummary`](crate::model::MembershipSummary).
-    pub fn builder() -> crate::model::membership_summary::Builder {
-        crate::model::membership_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MemberAbility`, it is important to ensure
@@ -2133,6 +2144,13 @@ impl Membership {
         self.query_log_status.as_ref()
     }
 }
+impl Membership {
+    /// Creates a new builder-style object to manufacture [`Membership`](crate::model::Membership).
+    pub fn builder() -> crate::model::membership::Builder {
+        crate::model::membership::Builder::default()
+    }
+}
+
 /// See [`Membership`](crate::model::Membership).
 pub mod membership {
     
@@ -2301,12 +2319,6 @@ pub mod membership {
     
     
 }
-impl Membership {
-    /// Creates a new builder-style object to manufacture [`Membership`](crate::model::Membership).
-    pub fn builder() -> crate::model::membership::Builder {
-        crate::model::membership::Builder::default()
-    }
-}
 
 /// When writing a match expression against `MembershipQueryLogStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2439,6 +2451,13 @@ impl ConfiguredTableAnalysisRule {
         self.update_time.as_ref()
     }
 }
+impl ConfiguredTableAnalysisRule {
+    /// Creates a new builder-style object to manufacture [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
+    pub fn builder() -> crate::model::configured_table_analysis_rule::Builder {
+        crate::model::configured_table_analysis_rule::Builder::default()
+    }
+}
+
 /// See [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
 pub mod configured_table_analysis_rule {
     
@@ -2528,12 +2547,6 @@ pub mod configured_table_analysis_rule {
     }
     
     
-}
-impl ConfiguredTableAnalysisRule {
-    /// Creates a new builder-style object to manufacture [`ConfiguredTableAnalysisRule`](crate::model::ConfiguredTableAnalysisRule).
-    pub fn builder() -> crate::model::configured_table_analysis_rule::Builder {
-        crate::model::configured_table_analysis_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfiguredTableAnalysisRuleType`, it is important to ensure
@@ -2743,6 +2756,13 @@ impl AnalysisRuleAggregation {
         self.output_constraints.as_deref()
     }
 }
+impl AnalysisRuleAggregation {
+    /// Creates a new builder-style object to manufacture [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
+    pub fn builder() -> crate::model::analysis_rule_aggregation::Builder {
+        crate::model::analysis_rule_aggregation::Builder::default()
+    }
+}
+
 /// See [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
 pub mod analysis_rule_aggregation {
     
@@ -2863,12 +2883,6 @@ pub mod analysis_rule_aggregation {
     
     
 }
-impl AnalysisRuleAggregation {
-    /// Creates a new builder-style object to manufacture [`AnalysisRuleAggregation`](crate::model::AnalysisRuleAggregation).
-    pub fn builder() -> crate::model::analysis_rule_aggregation::Builder {
-        crate::model::analysis_rule_aggregation::Builder::default()
-    }
-}
 
 /// <p>Constraint on query output removing output rows that do not meet a minimum number of distinct values of a specified column.</p>
 #[non_exhaustive]
@@ -2898,6 +2912,13 @@ impl AggregationConstraint {
         self.r#type.as_ref()
     }
 }
+impl AggregationConstraint {
+    /// Creates a new builder-style object to manufacture [`AggregationConstraint`](crate::model::AggregationConstraint).
+    pub fn builder() -> crate::model::aggregation_constraint::Builder {
+        crate::model::aggregation_constraint::Builder::default()
+    }
+}
+
 /// See [`AggregationConstraint`](crate::model::AggregationConstraint).
 pub mod aggregation_constraint {
     
@@ -2951,12 +2972,6 @@ pub mod aggregation_constraint {
     }
     
     
-}
-impl AggregationConstraint {
-    /// Creates a new builder-style object to manufacture [`AggregationConstraint`](crate::model::AggregationConstraint).
-    pub fn builder() -> crate::model::aggregation_constraint::Builder {
-        crate::model::aggregation_constraint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AggregationType`, it is important to ensure
@@ -3271,6 +3286,13 @@ impl AggregateColumn {
         self.function.as_ref()
     }
 }
+impl AggregateColumn {
+    /// Creates a new builder-style object to manufacture [`AggregateColumn`](crate::model::AggregateColumn).
+    pub fn builder() -> crate::model::aggregate_column::Builder {
+        crate::model::aggregate_column::Builder::default()
+    }
+}
+
 /// See [`AggregateColumn`](crate::model::AggregateColumn).
 pub mod aggregate_column {
     
@@ -3318,12 +3340,6 @@ pub mod aggregate_column {
     }
     
     
-}
-impl AggregateColumn {
-    /// Creates a new builder-style object to manufacture [`AggregateColumn`](crate::model::AggregateColumn).
-    pub fn builder() -> crate::model::aggregate_column::Builder {
-        crate::model::aggregate_column::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AggregateFunctionName`, it is important to ensure
@@ -3444,6 +3460,13 @@ impl AnalysisRuleList {
         self.list_columns.as_deref()
     }
 }
+impl AnalysisRuleList {
+    /// Creates a new builder-style object to manufacture [`AnalysisRuleList`](crate::model::AnalysisRuleList).
+    pub fn builder() -> crate::model::analysis_rule_list::Builder {
+        crate::model::analysis_rule_list::Builder::default()
+    }
+}
+
 /// See [`AnalysisRuleList`](crate::model::AnalysisRuleList).
 pub mod analysis_rule_list {
     
@@ -3497,12 +3520,6 @@ pub mod analysis_rule_list {
     }
     
     
-}
-impl AnalysisRuleList {
-    /// Creates a new builder-style object to manufacture [`AnalysisRuleList`](crate::model::AnalysisRuleList).
-    pub fn builder() -> crate::model::analysis_rule_list::Builder {
-        crate::model::analysis_rule_list::Builder::default()
-    }
 }
 
 /// <p>The configured table summary for the objects listed by the request.</p>
@@ -3561,6 +3578,13 @@ impl ConfiguredTableSummary {
         self.analysis_method.as_ref()
     }
 }
+impl ConfiguredTableSummary {
+    /// Creates a new builder-style object to manufacture [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
+    pub fn builder() -> crate::model::configured_table_summary::Builder {
+        crate::model::configured_table_summary::Builder::default()
+    }
+}
+
 /// See [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
 pub mod configured_table_summary {
     
@@ -3668,12 +3692,6 @@ pub mod configured_table_summary {
     }
     
     
-}
-impl ConfiguredTableSummary {
-    /// Creates a new builder-style object to manufacture [`ConfiguredTableSummary`](crate::model::ConfiguredTableSummary).
-    pub fn builder() -> crate::model::configured_table_summary::Builder {
-        crate::model::configured_table_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnalysisMethod`, it is important to ensure
@@ -3830,6 +3848,13 @@ impl ConfiguredTable {
         self.allowed_columns.as_deref()
     }
 }
+impl ConfiguredTable {
+    /// Creates a new builder-style object to manufacture [`ConfiguredTable`](crate::model::ConfiguredTable).
+    pub fn builder() -> crate::model::configured_table::Builder {
+        crate::model::configured_table::Builder::default()
+    }
+}
+
 /// See [`ConfiguredTable`](crate::model::ConfiguredTable).
 pub mod configured_table {
     
@@ -3980,12 +4005,6 @@ pub mod configured_table {
     
     
 }
-impl ConfiguredTable {
-    /// Creates a new builder-style object to manufacture [`ConfiguredTable`](crate::model::ConfiguredTable).
-    pub fn builder() -> crate::model::configured_table::Builder {
-        crate::model::configured_table::Builder::default()
-    }
-}
 
 /// <p>A pointer to the data set that underlies this table. Currently, this can only be an AWS Glue table.</p>
 #[non_exhaustive]
@@ -4041,6 +4060,13 @@ impl GlueTableReference {
         self.database_name.as_deref()
     }
 }
+impl GlueTableReference {
+    /// Creates a new builder-style object to manufacture [`GlueTableReference`](crate::model::GlueTableReference).
+    pub fn builder() -> crate::model::glue_table_reference::Builder {
+        crate::model::glue_table_reference::Builder::default()
+    }
+}
+
 /// See [`GlueTableReference`](crate::model::GlueTableReference).
 pub mod glue_table_reference {
     
@@ -4082,12 +4108,6 @@ pub mod glue_table_reference {
     }
     
     
-}
-impl GlueTableReference {
-    /// Creates a new builder-style object to manufacture [`GlueTableReference`](crate::model::GlueTableReference).
-    pub fn builder() -> crate::model::glue_table_reference::Builder {
-        crate::model::glue_table_reference::Builder::default()
-    }
 }
 
 /// <p>The configured table association summary for the objects listed by the request.</p>
@@ -4153,6 +4173,13 @@ impl ConfiguredTableAssociationSummary {
         self.arn.as_deref()
     }
 }
+impl ConfiguredTableAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
+    pub fn builder() -> crate::model::configured_table_association_summary::Builder {
+        crate::model::configured_table_association_summary::Builder::default()
+    }
+}
+
 /// See [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
 pub mod configured_table_association_summary {
     
@@ -4267,12 +4294,6 @@ pub mod configured_table_association_summary {
     
     
 }
-impl ConfiguredTableAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociationSummary`](crate::model::ConfiguredTableAssociationSummary).
-    pub fn builder() -> crate::model::configured_table_association_summary::Builder {
-        crate::model::configured_table_association_summary::Builder::default()
-    }
-}
 
 /// <p>A configured table association links a configured table to a collaboration.</p>
 #[non_exhaustive]
@@ -4358,6 +4379,13 @@ impl ConfiguredTableAssociation {
         self.update_time.as_ref()
     }
 }
+impl ConfiguredTableAssociation {
+    /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
+    pub fn builder() -> crate::model::configured_table_association::Builder {
+        crate::model::configured_table_association::Builder::default()
+    }
+}
+
 /// See [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
 pub mod configured_table_association {
     
@@ -4508,12 +4536,6 @@ pub mod configured_table_association {
     
     
 }
-impl ConfiguredTableAssociation {
-    /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociation`](crate::model::ConfiguredTableAssociation).
-    pub fn builder() -> crate::model::configured_table_association::Builder {
-        crate::model::configured_table_association::Builder::default()
-    }
-}
 
 /// <p>The schema summary for the objects listed by the request.</p>
 #[non_exhaustive]
@@ -4585,6 +4607,13 @@ impl SchemaSummary {
         self.analysis_method.as_ref()
     }
 }
+impl SchemaSummary {
+    /// Creates a new builder-style object to manufacture [`SchemaSummary`](crate::model::SchemaSummary).
+    pub fn builder() -> crate::model::schema_summary::Builder {
+        crate::model::schema_summary::Builder::default()
+    }
+}
+
 /// See [`SchemaSummary`](crate::model::SchemaSummary).
 pub mod schema_summary {
     
@@ -4716,12 +4745,6 @@ pub mod schema_summary {
     }
     
     
-}
-impl SchemaSummary {
-    /// Creates a new builder-style object to manufacture [`SchemaSummary`](crate::model::SchemaSummary).
-    pub fn builder() -> crate::model::schema_summary::Builder {
-        crate::model::schema_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnalysisRuleType`, it is important to ensure
@@ -4946,6 +4969,13 @@ impl MemberSummary {
         self.membership_arn.as_deref()
     }
 }
+impl MemberSummary {
+    /// Creates a new builder-style object to manufacture [`MemberSummary`](crate::model::MemberSummary).
+    pub fn builder() -> crate::model::member_summary::Builder {
+        crate::model::member_summary::Builder::default()
+    }
+}
+
 /// See [`MemberSummary`](crate::model::MemberSummary).
 pub mod member_summary {
     
@@ -5065,12 +5095,6 @@ pub mod member_summary {
     }
     
     
-}
-impl MemberSummary {
-    /// Creates a new builder-style object to manufacture [`MemberSummary`](crate::model::MemberSummary).
-    pub fn builder() -> crate::model::member_summary::Builder {
-        crate::model::member_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MemberStatus`, it is important to ensure
@@ -5214,6 +5238,13 @@ impl AnalysisRule {
         self.policy.as_ref()
     }
 }
+impl AnalysisRule {
+    /// Creates a new builder-style object to manufacture [`AnalysisRule`](crate::model::AnalysisRule).
+    pub fn builder() -> crate::model::analysis_rule::Builder {
+        crate::model::analysis_rule::Builder::default()
+    }
+}
+
 /// See [`AnalysisRule`](crate::model::AnalysisRule).
 pub mod analysis_rule {
     
@@ -5303,12 +5334,6 @@ pub mod analysis_rule {
     }
     
     
-}
-impl AnalysisRule {
-    /// Creates a new builder-style object to manufacture [`AnalysisRule`](crate::model::AnalysisRule).
-    pub fn builder() -> crate::model::analysis_rule::Builder {
-        crate::model::analysis_rule::Builder::default()
-    }
 }
 
 /// <p>Controls on the query specifications that can be run on configured table..</p>
@@ -5478,6 +5503,13 @@ impl Schema {
         self.r#type.as_ref()
     }
 }
+impl Schema {
+    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
+    pub fn builder() -> crate::model::schema::Builder {
+        crate::model::schema::Builder::default()
+    }
+}
+
 /// See [`Schema`](crate::model::Schema).
 pub mod schema {
     
@@ -5658,12 +5690,6 @@ pub mod schema {
     
     
 }
-impl Schema {
-    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
-    pub fn builder() -> crate::model::schema::Builder {
-        crate::model::schema::Builder::default()
-    }
-}
 
 /// <p>A column within a schema relation, derived from the underlying AWS Glue table.</p>
 #[non_exhaustive]
@@ -5686,6 +5712,13 @@ impl Column {
         self.r#type.as_deref()
     }
 }
+impl Column {
+    /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
+    pub fn builder() -> crate::model::column::Builder {
+        crate::model::column::Builder::default()
+    }
+}
+
 /// See [`Column`](crate::model::Column).
 pub mod column {
     
@@ -5728,12 +5761,6 @@ pub mod column {
     
     
 }
-impl Column {
-    /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
-    pub fn builder() -> crate::model::column::Builder {
-        crate::model::column::Builder::default()
-    }
-}
 
 /// <p>An error describing why a schema could not be fetched.</p>
 #[non_exhaustive]
@@ -5763,6 +5790,13 @@ impl BatchGetSchemaError {
         self.message.as_deref()
     }
 }
+impl BatchGetSchemaError {
+    /// Creates a new builder-style object to manufacture [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
+    pub fn builder() -> crate::model::batch_get_schema_error::Builder {
+        crate::model::batch_get_schema_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
 pub mod batch_get_schema_error {
     
@@ -5816,12 +5850,6 @@ pub mod batch_get_schema_error {
     }
     
     
-}
-impl BatchGetSchemaError {
-    /// Creates a new builder-style object to manufacture [`BatchGetSchemaError`](crate::model::BatchGetSchemaError).
-    pub fn builder() -> crate::model::batch_get_schema_error::Builder {
-        crate::model::batch_get_schema_error::Builder::default()
-    }
 }
 
 /// <p>The metadata of the collaboration.</p>
@@ -5901,6 +5929,13 @@ impl CollaborationSummary {
         self.membership_arn.as_deref()
     }
 }
+impl CollaborationSummary {
+    /// Creates a new builder-style object to manufacture [`CollaborationSummary`](crate::model::CollaborationSummary).
+    pub fn builder() -> crate::model::collaboration_summary::Builder {
+        crate::model::collaboration_summary::Builder::default()
+    }
+}
+
 /// See [`CollaborationSummary`](crate::model::CollaborationSummary).
 pub mod collaboration_summary {
     
@@ -6038,12 +6073,6 @@ pub mod collaboration_summary {
     }
     
     
-}
-impl CollaborationSummary {
-    /// Creates a new builder-style object to manufacture [`CollaborationSummary`](crate::model::CollaborationSummary).
-    pub fn builder() -> crate::model::collaboration_summary::Builder {
-        crate::model::collaboration_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FilterableMemberStatus`, it is important to ensure
@@ -6226,6 +6255,13 @@ impl Collaboration {
         self.query_log_status.as_ref()
     }
 }
+impl Collaboration {
+    /// Creates a new builder-style object to manufacture [`Collaboration`](crate::model::Collaboration).
+    pub fn builder() -> crate::model::collaboration::Builder {
+        crate::model::collaboration::Builder::default()
+    }
+}
+
 /// See [`Collaboration`](crate::model::Collaboration).
 pub mod collaboration {
     
@@ -6400,12 +6436,6 @@ pub mod collaboration {
     
     
 }
-impl Collaboration {
-    /// Creates a new builder-style object to manufacture [`Collaboration`](crate::model::Collaboration).
-    pub fn builder() -> crate::model::collaboration::Builder {
-        crate::model::collaboration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CollaborationQueryLogStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6524,6 +6554,13 @@ impl DataEncryptionMetadata {
         self.preserve_nulls
     }
 }
+impl DataEncryptionMetadata {
+    /// Creates a new builder-style object to manufacture [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
+    pub fn builder() -> crate::model::data_encryption_metadata::Builder {
+        crate::model::data_encryption_metadata::Builder::default()
+    }
+}
+
 /// See [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
 pub mod data_encryption_metadata {
     
@@ -6590,12 +6627,6 @@ pub mod data_encryption_metadata {
     
     
 }
-impl DataEncryptionMetadata {
-    /// Creates a new builder-style object to manufacture [`DataEncryptionMetadata`](crate::model::DataEncryptionMetadata).
-    pub fn builder() -> crate::model::data_encryption_metadata::Builder {
-        crate::model::data_encryption_metadata::Builder::default()
-    }
-}
 
 /// <p>Basic metadata used to construct a new member.</p>
 #[non_exhaustive]
@@ -6625,6 +6656,13 @@ impl MemberSpecification {
         self.display_name.as_deref()
     }
 }
+impl MemberSpecification {
+    /// Creates a new builder-style object to manufacture [`MemberSpecification`](crate::model::MemberSpecification).
+    pub fn builder() -> crate::model::member_specification::Builder {
+        crate::model::member_specification::Builder::default()
+    }
+}
+
 /// See [`MemberSpecification`](crate::model::MemberSpecification).
 pub mod member_specification {
     
@@ -6684,11 +6722,5 @@ pub mod member_specification {
     }
     
     
-}
-impl MemberSpecification {
-    /// Creates a new builder-style object to manufacture [`MemberSpecification`](crate::model::MemberSpecification).
-    pub fn builder() -> crate::model::member_specification::Builder {
-        crate::model::member_specification::Builder::default()
-    }
 }
 

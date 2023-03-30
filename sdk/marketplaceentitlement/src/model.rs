@@ -42,6 +42,13 @@ impl Entitlement {
         self.expiration_date.as_ref()
     }
 }
+impl Entitlement {
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
+    pub fn builder() -> crate::model::entitlement::Builder {
+        crate::model::entitlement::Builder::default()
+    }
+}
+
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
     
@@ -120,12 +127,6 @@ pub mod entitlement {
     
     
 }
-impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
-    pub fn builder() -> crate::model::entitlement::Builder {
-        crate::model::entitlement::Builder::default()
-    }
-}
 
 /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
 #[non_exhaustive]
@@ -162,6 +163,13 @@ impl EntitlementValue {
         self.string_value.as_deref()
     }
 }
+impl EntitlementValue {
+    /// Creates a new builder-style object to manufacture [`EntitlementValue`](crate::model::EntitlementValue).
+    pub fn builder() -> crate::model::entitlement_value::Builder {
+        crate::model::entitlement_value::Builder::default()
+    }
+}
+
 /// See [`EntitlementValue`](crate::model::EntitlementValue).
 pub mod entitlement_value {
     
@@ -227,12 +235,6 @@ pub mod entitlement_value {
     }
     
     
-}
-impl EntitlementValue {
-    /// Creates a new builder-style object to manufacture [`EntitlementValue`](crate::model::EntitlementValue).
-    pub fn builder() -> crate::model::entitlement_value::Builder {
-        crate::model::entitlement_value::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GetEntitlementFilterName`, it is important to ensure

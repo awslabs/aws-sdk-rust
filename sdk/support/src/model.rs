@@ -42,6 +42,13 @@ impl TrustedAdvisorCheckRefreshStatus {
         self.millis_until_next_refreshable
     }
 }
+impl TrustedAdvisorCheckRefreshStatus {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckRefreshStatus`](crate::model::TrustedAdvisorCheckRefreshStatus).
+    pub fn builder() -> crate::model::trusted_advisor_check_refresh_status::Builder {
+        crate::model::trusted_advisor_check_refresh_status::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorCheckRefreshStatus`](crate::model::TrustedAdvisorCheckRefreshStatus).
 pub mod trusted_advisor_check_refresh_status {
     
@@ -111,12 +118,6 @@ pub mod trusted_advisor_check_refresh_status {
     
     
 }
-impl TrustedAdvisorCheckRefreshStatus {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckRefreshStatus`](crate::model::TrustedAdvisorCheckRefreshStatus).
-    pub fn builder() -> crate::model::trusted_advisor_check_refresh_status::Builder {
-        crate::model::trusted_advisor_check_refresh_status::Builder::default()
-    }
-}
 
 /// <p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>
 #[non_exhaustive]
@@ -167,6 +168,13 @@ impl TrustedAdvisorCheckSummary {
         self.category_specific_summary.as_ref()
     }
 }
+impl TrustedAdvisorCheckSummary {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckSummary`](crate::model::TrustedAdvisorCheckSummary).
+    pub fn builder() -> crate::model::trusted_advisor_check_summary::Builder {
+        crate::model::trusted_advisor_check_summary::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorCheckSummary`](crate::model::TrustedAdvisorCheckSummary).
 pub mod trusted_advisor_check_summary {
     
@@ -258,12 +266,6 @@ pub mod trusted_advisor_check_summary {
     
     
 }
-impl TrustedAdvisorCheckSummary {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckSummary`](crate::model::TrustedAdvisorCheckSummary).
-    pub fn builder() -> crate::model::trusted_advisor_check_summary::Builder {
-        crate::model::trusted_advisor_check_summary::Builder::default()
-    }
-}
 
 /// <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
 #[non_exhaustive]
@@ -279,6 +281,13 @@ impl TrustedAdvisorCategorySpecificSummary {
         self.cost_optimizing.as_ref()
     }
 }
+impl TrustedAdvisorCategorySpecificSummary {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCategorySpecificSummary`](crate::model::TrustedAdvisorCategorySpecificSummary).
+    pub fn builder() -> crate::model::trusted_advisor_category_specific_summary::Builder {
+        crate::model::trusted_advisor_category_specific_summary::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorCategorySpecificSummary`](crate::model::TrustedAdvisorCategorySpecificSummary).
 pub mod trusted_advisor_category_specific_summary {
     
@@ -309,12 +318,6 @@ pub mod trusted_advisor_category_specific_summary {
     
     
 }
-impl TrustedAdvisorCategorySpecificSummary {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCategorySpecificSummary`](crate::model::TrustedAdvisorCategorySpecificSummary).
-    pub fn builder() -> crate::model::trusted_advisor_category_specific_summary::Builder {
-        crate::model::trusted_advisor_category_specific_summary::Builder::default()
-    }
-}
 
 /// <p>The estimated cost savings that might be realized if the recommended operations are taken.</p>
 #[non_exhaustive]
@@ -337,6 +340,13 @@ impl TrustedAdvisorCostOptimizingSummary {
         self.estimated_percent_monthly_savings
     }
 }
+impl TrustedAdvisorCostOptimizingSummary {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCostOptimizingSummary`](crate::model::TrustedAdvisorCostOptimizingSummary).
+    pub fn builder() -> crate::model::trusted_advisor_cost_optimizing_summary::Builder {
+        crate::model::trusted_advisor_cost_optimizing_summary::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorCostOptimizingSummary`](crate::model::TrustedAdvisorCostOptimizingSummary).
 pub mod trusted_advisor_cost_optimizing_summary {
     
@@ -381,12 +391,6 @@ pub mod trusted_advisor_cost_optimizing_summary {
     
     
 }
-impl TrustedAdvisorCostOptimizingSummary {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCostOptimizingSummary`](crate::model::TrustedAdvisorCostOptimizingSummary).
-    pub fn builder() -> crate::model::trusted_advisor_cost_optimizing_summary::Builder {
-        crate::model::trusted_advisor_cost_optimizing_summary::Builder::default()
-    }
-}
 
 /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
 #[non_exhaustive]
@@ -423,6 +427,13 @@ impl TrustedAdvisorResourcesSummary {
         self.resources_suppressed
     }
 }
+impl TrustedAdvisorResourcesSummary {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorResourcesSummary`](crate::model::TrustedAdvisorResourcesSummary).
+    pub fn builder() -> crate::model::trusted_advisor_resources_summary::Builder {
+        crate::model::trusted_advisor_resources_summary::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorResourcesSummary`](crate::model::TrustedAdvisorResourcesSummary).
 pub mod trusted_advisor_resources_summary {
     
@@ -493,12 +504,6 @@ pub mod trusted_advisor_resources_summary {
     
     
 }
-impl TrustedAdvisorResourcesSummary {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorResourcesSummary`](crate::model::TrustedAdvisorResourcesSummary).
-    pub fn builder() -> crate::model::trusted_advisor_resources_summary::Builder {
-        crate::model::trusted_advisor_resources_summary::Builder::default()
-    }
-}
 
 /// <p>The description and metadata for a Trusted Advisor check.</p>
 #[non_exhaustive]
@@ -542,6 +547,13 @@ impl TrustedAdvisorCheckDescription {
         self.metadata.as_deref()
     }
 }
+impl TrustedAdvisorCheckDescription {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckDescription`](crate::model::TrustedAdvisorCheckDescription).
+    pub fn builder() -> crate::model::trusted_advisor_check_description::Builder {
+        crate::model::trusted_advisor_check_description::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorCheckDescription`](crate::model::TrustedAdvisorCheckDescription).
 pub mod trusted_advisor_check_description {
     
@@ -626,12 +638,6 @@ pub mod trusted_advisor_check_description {
     
     
 }
-impl TrustedAdvisorCheckDescription {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckDescription`](crate::model::TrustedAdvisorCheckDescription).
-    pub fn builder() -> crate::model::trusted_advisor_check_description::Builder {
-        crate::model::trusted_advisor_check_description::Builder::default()
-    }
-}
 
 /// <p>The results of a Trusted Advisor check returned by <code>DescribeTrustedAdvisorCheckResult</code>.</p>
 #[non_exhaustive]
@@ -682,6 +688,13 @@ impl TrustedAdvisorCheckResult {
         self.flagged_resources.as_deref()
     }
 }
+impl TrustedAdvisorCheckResult {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckResult`](crate::model::TrustedAdvisorCheckResult).
+    pub fn builder() -> crate::model::trusted_advisor_check_result::Builder {
+        crate::model::trusted_advisor_check_result::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorCheckResult`](crate::model::TrustedAdvisorCheckResult).
 pub mod trusted_advisor_check_result {
     
@@ -778,12 +791,6 @@ pub mod trusted_advisor_check_result {
     
     
 }
-impl TrustedAdvisorCheckResult {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorCheckResult`](crate::model::TrustedAdvisorCheckResult).
-    pub fn builder() -> crate::model::trusted_advisor_check_result::Builder {
-        crate::model::trusted_advisor_check_result::Builder::default()
-    }
-}
 
 /// <p>Contains information about a resource identified by a Trusted Advisor check.</p>
 #[non_exhaustive]
@@ -827,6 +834,13 @@ impl TrustedAdvisorResourceDetail {
         self.metadata.as_deref()
     }
 }
+impl TrustedAdvisorResourceDetail {
+    /// Creates a new builder-style object to manufacture [`TrustedAdvisorResourceDetail`](crate::model::TrustedAdvisorResourceDetail).
+    pub fn builder() -> crate::model::trusted_advisor_resource_detail::Builder {
+        crate::model::trusted_advisor_resource_detail::Builder::default()
+    }
+}
+
 /// See [`TrustedAdvisorResourceDetail`](crate::model::TrustedAdvisorResourceDetail).
 pub mod trusted_advisor_resource_detail {
     
@@ -912,12 +926,6 @@ pub mod trusted_advisor_resource_detail {
     
     
 }
-impl TrustedAdvisorResourceDetail {
-    /// Creates a new builder-style object to manufacture [`TrustedAdvisorResourceDetail`](crate::model::TrustedAdvisorResourceDetail).
-    pub fn builder() -> crate::model::trusted_advisor_resource_detail::Builder {
-        crate::model::trusted_advisor_resource_detail::Builder::default()
-    }
-}
 
 /// <p>A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
 #[non_exhaustive]
@@ -964,6 +972,13 @@ impl SeverityLevel {
         self.name.as_deref()
     }
 }
+impl SeverityLevel {
+    /// Creates a new builder-style object to manufacture [`SeverityLevel`](crate::model::SeverityLevel).
+    pub fn builder() -> crate::model::severity_level::Builder {
+        crate::model::severity_level::Builder::default()
+    }
+}
+
 /// See [`SeverityLevel`](crate::model::SeverityLevel).
 pub mod severity_level {
     
@@ -1030,12 +1045,6 @@ pub mod severity_level {
     
     
 }
-impl SeverityLevel {
-    /// Creates a new builder-style object to manufacture [`SeverityLevel`](crate::model::SeverityLevel).
-    pub fn builder() -> crate::model::severity_level::Builder {
-        crate::model::severity_level::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon Web Services service returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
@@ -1065,6 +1074,13 @@ impl Service {
         self.categories.as_deref()
     }
 }
+impl Service {
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
+    pub fn builder() -> crate::model::service::Builder {
+        crate::model::service::Builder::default()
+    }
+}
+
 /// See [`Service`](crate::model::Service).
 pub mod service {
     
@@ -1125,12 +1141,6 @@ pub mod service {
     
     
 }
-impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
-    pub fn builder() -> crate::model::service::Builder {
-        crate::model::service::Builder::default()
-    }
-}
 
 /// <p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <code>DescribeServices</code> response for each Amazon Web Services service.</p>
 #[non_exhaustive]
@@ -1153,6 +1163,13 @@ impl Category {
         self.name.as_deref()
     }
 }
+impl Category {
+    /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category).
+    pub fn builder() -> crate::model::category::Builder {
+        crate::model::category::Builder::default()
+    }
+}
+
 /// See [`Category`](crate::model::Category).
 pub mod category {
     
@@ -1194,12 +1211,6 @@ pub mod category {
     }
     
     
-}
-impl Category {
-    /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category).
-    pub fn builder() -> crate::model::category::Builder {
-        crate::model::category::Builder::default()
-    }
 }
 
 /// <p>A communication associated with a support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
@@ -1248,6 +1259,13 @@ impl Communication {
         self.attachment_set.as_deref()
     }
 }
+impl Communication {
+    /// Creates a new builder-style object to manufacture [`Communication`](crate::model::Communication).
+    pub fn builder() -> crate::model::communication::Builder {
+        crate::model::communication::Builder::default()
+    }
+}
+
 /// See [`Communication`](crate::model::Communication).
 pub mod communication {
     
@@ -1336,12 +1354,6 @@ pub mod communication {
     
     
 }
-impl Communication {
-    /// Creates a new builder-style object to manufacture [`Communication`](crate::model::Communication).
-    pub fn builder() -> crate::model::communication::Builder {
-        crate::model::communication::Builder::default()
-    }
-}
 
 /// <p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
@@ -1364,6 +1376,13 @@ impl AttachmentDetails {
         self.file_name.as_deref()
     }
 }
+impl AttachmentDetails {
+    /// Creates a new builder-style object to manufacture [`AttachmentDetails`](crate::model::AttachmentDetails).
+    pub fn builder() -> crate::model::attachment_details::Builder {
+        crate::model::attachment_details::Builder::default()
+    }
+}
+
 /// See [`AttachmentDetails`](crate::model::AttachmentDetails).
 pub mod attachment_details {
     
@@ -1405,12 +1424,6 @@ pub mod attachment_details {
     }
     
     
-}
-impl AttachmentDetails {
-    /// Creates a new builder-style object to manufacture [`AttachmentDetails`](crate::model::AttachmentDetails).
-    pub fn builder() -> crate::model::attachment_details::Builder {
-        crate::model::attachment_details::Builder::default()
-    }
 }
 
 /// <p>A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a <code>DescribeCases</code> request. <b>CaseDetails</b> contains the following fields:</p> 
@@ -1544,6 +1557,13 @@ impl CaseDetails {
         self.language.as_deref()
     }
 }
+impl CaseDetails {
+    /// Creates a new builder-style object to manufacture [`CaseDetails`](crate::model::CaseDetails).
+    pub fn builder() -> crate::model::case_details::Builder {
+        crate::model::case_details::Builder::default()
+    }
+}
+
 /// See [`CaseDetails`](crate::model::CaseDetails).
 pub mod case_details {
     
@@ -1730,12 +1750,6 @@ pub mod case_details {
     
     
 }
-impl CaseDetails {
-    /// Creates a new builder-style object to manufacture [`CaseDetails`](crate::model::CaseDetails).
-    pub fn builder() -> crate::model::case_details::Builder {
-        crate::model::case_details::Builder::default()
-    }
-}
 
 /// <p>The five most recent communications associated with the case.</p>
 #[non_exhaustive]
@@ -1758,6 +1772,13 @@ impl RecentCaseCommunications {
         self.next_token.as_deref()
     }
 }
+impl RecentCaseCommunications {
+    /// Creates a new builder-style object to manufacture [`RecentCaseCommunications`](crate::model::RecentCaseCommunications).
+    pub fn builder() -> crate::model::recent_case_communications::Builder {
+        crate::model::recent_case_communications::Builder::default()
+    }
+}
+
 /// See [`RecentCaseCommunications`](crate::model::RecentCaseCommunications).
 pub mod recent_case_communications {
     
@@ -1806,12 +1827,6 @@ pub mod recent_case_communications {
     
     
 }
-impl RecentCaseCommunications {
-    /// Creates a new builder-style object to manufacture [`RecentCaseCommunications`](crate::model::RecentCaseCommunications).
-    pub fn builder() -> crate::model::recent_case_communications::Builder {
-        crate::model::recent_case_communications::Builder::default()
-    }
-}
 
 /// <p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
 #[non_exhaustive]
@@ -1834,6 +1849,13 @@ impl Attachment {
         self.data.as_ref()
     }
 }
+impl Attachment {
+    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
+    pub fn builder() -> crate::model::attachment::Builder {
+        crate::model::attachment::Builder::default()
+    }
+}
+
 /// See [`Attachment`](crate::model::Attachment).
 pub mod attachment {
     
@@ -1875,11 +1897,5 @@ pub mod attachment {
     }
     
     
-}
-impl Attachment {
-    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
-    pub fn builder() -> crate::model::attachment::Builder {
-        crate::model::attachment::Builder::default()
-    }
 }
 

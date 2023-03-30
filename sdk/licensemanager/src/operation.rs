@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`accept_grant`](crate::client::Client::accept_grant).
             ///
-            /// See [`crate::client::fluent_builders::AcceptGrant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AcceptGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptGrant {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptGrant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`check_in_license`](crate::client::Client::check_in_license).
             ///
-            /// See [`crate::client::fluent_builders::CheckInLicense`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CheckInLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckInLicense {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckInLicense {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`checkout_borrow_license`](crate::client::Client::checkout_borrow_license).
             ///
-            /// See [`crate::client::fluent_builders::CheckoutBorrowLicense`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CheckoutBorrowLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckoutBorrowLicense {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutBorrowLicense {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`checkout_license`](crate::client::Client::checkout_license).
             ///
-            /// See [`crate::client::fluent_builders::CheckoutLicense`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CheckoutLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CheckoutLicense {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutLicense {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_grant`](crate::client::Client::create_grant).
             ///
-            /// See [`crate::client::fluent_builders::CreateGrant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGrant {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_grant_version`](crate::client::Client::create_grant_version).
             ///
-            /// See [`crate::client::fluent_builders::CreateGrantVersion`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateGrantVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGrantVersion {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGrantVersion {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_license`](crate::client::Client::create_license).
             ///
-            /// See [`crate::client::fluent_builders::CreateLicense`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicense {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicense {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_license_configuration`](crate::client::Client::create_license_configuration).
             ///
-            /// See [`crate::client::fluent_builders::CreateLicenseConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLicenseConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseConfiguration {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConfigurati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_license_conversion_task_for_resource`](crate::client::Client::create_license_conversion_task_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::CreateLicenseConversionTaskForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLicenseConversionTaskForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResource {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConversionT
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_license_manager_report_generator`](crate::client::Client::create_license_manager_report_generator).
             ///
-            /// See [`crate::client::fluent_builders::CreateLicenseManagerReportGenerator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLicenseManagerReportGenerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGenerator {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseManagerRepo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_license_version`](crate::client::Client::create_license_version).
             ///
-            /// See [`crate::client::fluent_builders::CreateLicenseVersion`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLicenseVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLicenseVersion {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseVersion {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_token`](crate::client::Client::create_token).
             ///
-            /// See [`crate::client::fluent_builders::CreateToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateToken {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_grant`](crate::client::Client::delete_grant).
             ///
-            /// See [`crate::client::fluent_builders::DeleteGrant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGrant {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGrant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_license`](crate::client::Client::delete_license).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLicense`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLicense {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicense {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_license_configuration`](crate::client::Client::delete_license_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLicenseConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLicenseConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLicenseConfiguration {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseConfigurati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_license_manager_report_generator`](crate::client::Client::delete_license_manager_report_generator).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLicenseManagerReportGenerator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLicenseManagerReportGenerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGenerator {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLicenseManagerRepo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_token`](crate::client::Client::delete_token).
             ///
-            /// See [`crate::client::fluent_builders::DeleteToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteToken {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`extend_license_consumption`](crate::client::Client::extend_license_consumption).
             ///
-            /// See [`crate::client::fluent_builders::ExtendLicenseConsumption`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ExtendLicenseConsumption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExtendLicenseConsumption {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExtendLicenseConsumption
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_access_token`](crate::client::Client::get_access_token).
             ///
-            /// See [`crate::client::fluent_builders::GetAccessToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAccessToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccessToken {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_grant`](crate::client::Client::get_grant).
             ///
-            /// See [`crate::client::fluent_builders::GetGrant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGrant {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGrant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_license`](crate::client::Client::get_license).
             ///
-            /// See [`crate::client::fluent_builders::GetLicense`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLicense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicense {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicense {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_license_configuration`](crate::client::Client::get_license_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetLicenseConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLicenseConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseConfiguration {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConfiguration 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_license_conversion_task`](crate::client::Client::get_license_conversion_task).
             ///
-            /// See [`crate::client::fluent_builders::GetLicenseConversionTask`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLicenseConversionTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseConversionTask {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConversionTask
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_license_manager_report_generator`](crate::client::Client::get_license_manager_report_generator).
             ///
-            /// See [`crate::client::fluent_builders::GetLicenseManagerReportGenerator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLicenseManagerReportGenerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseManagerReportGenerator {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseManagerReportG
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_license_usage`](crate::client::Client::get_license_usage).
             ///
-            /// See [`crate::client::fluent_builders::GetLicenseUsage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLicenseUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLicenseUsage {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseUsage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_service_settings`](crate::client::Client::get_service_settings).
             ///
-            /// See [`crate::client::fluent_builders::GetServiceSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetServiceSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceSettings {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_associations_for_license_configuration`](crate::client::Client::list_associations_for_license_configuration).
             ///
-            /// See [`crate::client::fluent_builders::ListAssociationsForLicenseConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAssociationsForLicenseConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfiguration {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociationsForLicen
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_distributed_grants`](crate::client::Client::list_distributed_grants).
             ///
-            /// See [`crate::client::fluent_builders::ListDistributedGrants`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDistributedGrants`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDistributedGrants {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributedGrants {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_failures_for_license_configuration_operations`](crate::client::Client::list_failures_for_license_configuration_operations).
             ///
-            /// See [`crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFailuresForLicenseConfigurationOperations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperations {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFailuresForLicenseCo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_license_configurations`](crate::client::Client::list_license_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListLicenseConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLicenseConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseConfigurations {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConfiguration
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_license_conversion_tasks`](crate::client::Client::list_license_conversion_tasks).
             ///
-            /// See [`crate::client::fluent_builders::ListLicenseConversionTasks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLicenseConversionTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseConversionTasks {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseConversionTas
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_license_manager_report_generators`](crate::client::Client::list_license_manager_report_generators).
             ///
-            /// See [`crate::client::fluent_builders::ListLicenseManagerReportGenerators`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLicenseManagerReportGenerators`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseManagerReportGenerators {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseManagerReport
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_licenses`](crate::client::Client::list_licenses).
             ///
-            /// See [`crate::client::fluent_builders::ListLicenses`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLicenses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenses {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenses {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_license_specifications_for_resource`](crate::client::Client::list_license_specifications_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListLicenseSpecificationsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLicenseSpecificationsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResource {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseSpecification
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_license_versions`](crate::client::Client::list_license_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListLicenseVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLicenseVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseVersions {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLicenseVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_received_grants`](crate::client::Client::list_received_grants).
             ///
-            /// See [`crate::client::fluent_builders::ListReceivedGrants`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListReceivedGrants`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceivedGrants {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrants {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_received_grants_for_organization`](crate::client::Client::list_received_grants_for_organization).
             ///
-            /// See [`crate::client::fluent_builders::ListReceivedGrantsForOrganization`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListReceivedGrantsForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceivedGrantsForOrganization {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedGrantsForOrg
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_received_licenses`](crate::client::Client::list_received_licenses).
             ///
-            /// See [`crate::client::fluent_builders::ListReceivedLicenses`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListReceivedLicenses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceivedLicenses {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicenses {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_received_licenses_for_organization`](crate::client::Client::list_received_licenses_for_organization).
             ///
-            /// See [`crate::client::fluent_builders::ListReceivedLicensesForOrganization`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListReceivedLicensesForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReceivedLicensesForOrganization {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicensesForO
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resource_inventory`](crate::client::Client::list_resource_inventory).
             ///
-            /// See [`crate::client::fluent_builders::ListResourceInventory`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResourceInventory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceInventory {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceInventory {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tokens`](crate::client::Client::list_tokens).
             ///
-            /// See [`crate::client::fluent_builders::ListTokens`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTokens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTokens {
     _private: ()
@@ -1348,7 +1348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTokens {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_usage_for_license_configuration`](crate::client::Client::list_usage_for_license_configuration).
             ///
-            /// See [`crate::client::fluent_builders::ListUsageForLicenseConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListUsageForLicenseConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsageForLicenseConfiguration {
     _private: ()
@@ -1380,7 +1380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageForLicenseConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`reject_grant`](crate::client::Client::reject_grant).
             ///
-            /// See [`crate::client::fluent_builders::RejectGrant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RejectGrant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectGrant {
     _private: ()
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectGrant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1444,7 +1444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1476,7 +1476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_license_configuration`](crate::client::Client::update_license_configuration).
             ///
-            /// See [`crate::client::fluent_builders::UpdateLicenseConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateLicenseConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseConfiguration {
     _private: ()
@@ -1508,7 +1508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseConfigurati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_license_manager_report_generator`](crate::client::Client::update_license_manager_report_generator).
             ///
-            /// See [`crate::client::fluent_builders::UpdateLicenseManagerReportGenerator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateLicenseManagerReportGenerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGenerator {
     _private: ()
@@ -1540,7 +1540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseManagerRepo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_license_specifications_for_resource`](crate::client::Client::update_license_specifications_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::UpdateLicenseSpecificationsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateLicenseSpecificationsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResource {
     _private: ()
@@ -1572,7 +1572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLicenseSpecificati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_service_settings`](crate::client::Client::update_service_settings).
             ///
-            /// See [`crate::client::fluent_builders::UpdateServiceSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateServiceSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateServiceSettings {
     _private: ()

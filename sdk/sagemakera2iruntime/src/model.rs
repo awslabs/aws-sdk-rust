@@ -16,6 +16,13 @@ impl HumanLoopDataAttributes {
         self.content_classifiers.as_deref()
     }
 }
+impl HumanLoopDataAttributes {
+    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
+    pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
+        crate::model::human_loop_data_attributes::Builder::default()
+    }
+}
+
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
 pub mod human_loop_data_attributes {
     
@@ -53,12 +60,6 @@ pub mod human_loop_data_attributes {
     }
     
     
-}
-impl HumanLoopDataAttributes {
-    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
-    pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
-        crate::model::human_loop_data_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContentClassifier`, it is important to ensure
@@ -157,6 +158,13 @@ impl HumanLoopInput {
         self.input_content.as_deref()
     }
 }
+impl HumanLoopInput {
+    /// Creates a new builder-style object to manufacture [`HumanLoopInput`](crate::model::HumanLoopInput).
+    pub fn builder() -> crate::model::human_loop_input::Builder {
+        crate::model::human_loop_input::Builder::default()
+    }
+}
+
 /// See [`HumanLoopInput`](crate::model::HumanLoopInput).
 pub mod human_loop_input {
     
@@ -186,12 +194,6 @@ pub mod human_loop_input {
     }
     
     
-}
-impl HumanLoopInput {
-    /// Creates a new builder-style object to manufacture [`HumanLoopInput`](crate::model::HumanLoopInput).
-    pub fn builder() -> crate::model::human_loop_input::Builder {
-        crate::model::human_loop_input::Builder::default()
-    }
 }
 
 /// <p>Summary information about the human loop.</p>
@@ -236,6 +238,13 @@ impl HumanLoopSummary {
         self.flow_definition_arn.as_deref()
     }
 }
+impl HumanLoopSummary {
+    /// Creates a new builder-style object to manufacture [`HumanLoopSummary`](crate::model::HumanLoopSummary).
+    pub fn builder() -> crate::model::human_loop_summary::Builder {
+        crate::model::human_loop_summary::Builder::default()
+    }
+}
+
 /// See [`HumanLoopSummary`](crate::model::HumanLoopSummary).
 pub mod human_loop_summary {
     
@@ -313,12 +322,6 @@ pub mod human_loop_summary {
     }
     
     
-}
-impl HumanLoopSummary {
-    /// Creates a new builder-style object to manufacture [`HumanLoopSummary`](crate::model::HumanLoopSummary).
-    pub fn builder() -> crate::model::human_loop_summary::Builder {
-        crate::model::human_loop_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HumanLoopStatus`, it is important to ensure
@@ -514,6 +517,13 @@ impl HumanLoopOutput {
         self.output_s3_uri.as_deref()
     }
 }
+impl HumanLoopOutput {
+    /// Creates a new builder-style object to manufacture [`HumanLoopOutput`](crate::model::HumanLoopOutput).
+    pub fn builder() -> crate::model::human_loop_output::Builder {
+        crate::model::human_loop_output::Builder::default()
+    }
+}
+
 /// See [`HumanLoopOutput`](crate::model::HumanLoopOutput).
 pub mod human_loop_output {
     
@@ -543,11 +553,5 @@ pub mod human_loop_output {
     }
     
     
-}
-impl HumanLoopOutput {
-    /// Creates a new builder-style object to manufacture [`HumanLoopOutput`](crate::model::HumanLoopOutput).
-    pub fn builder() -> crate::model::human_loop_output::Builder {
-        crate::model::human_loop_output::Builder::default()
-    }
 }
 

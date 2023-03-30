@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
+    pub fn builder() -> crate::output::update_volume_output::Builder {
+        crate::output::update_volume_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
 pub mod update_volume_output {
     
@@ -60,12 +67,6 @@ pub mod update_volume_output {
     
     
 }
-impl UpdateVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput).
-    pub fn builder() -> crate::output::update_volume_output::Builder {
-        crate::output::update_volume_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for UpdateStorageVirtualMachineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateStorageVirtualMachineOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
+    pub fn builder() -> crate::output::update_storage_virtual_machine_output::Builder {
+        crate::output::update_storage_virtual_machine_output::Builder::default()
+    }
+}
+
 /// See [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
 pub mod update_storage_virtual_machine_output {
     
@@ -128,12 +136,6 @@ pub mod update_storage_virtual_machine_output {
     
     
 }
-impl UpdateStorageVirtualMachineOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput).
-    pub fn builder() -> crate::output::update_storage_virtual_machine_output::Builder {
-        crate::output::update_storage_virtual_machine_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for UpdateSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
+    pub fn builder() -> crate::output::update_snapshot_output::Builder {
+        crate::output::update_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
 pub mod update_snapshot_output {
     
@@ -196,12 +205,6 @@ pub mod update_snapshot_output {
     
     
 }
-impl UpdateSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput).
-    pub fn builder() -> crate::output::update_snapshot_output::Builder {
-        crate::output::update_snapshot_output::Builder::default()
-    }
-}
 
 /// <p>The response object for the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -223,6 +226,13 @@ impl aws_http::request_id::RequestId for UpdateFileSystemOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFileSystemOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
+    pub fn builder() -> crate::output::update_file_system_output::Builder {
+        crate::output::update_file_system_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
 pub mod update_file_system_output {
     
@@ -264,12 +274,6 @@ pub mod update_file_system_output {
     
     
 }
-impl UpdateFileSystemOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput).
-    pub fn builder() -> crate::output::update_file_system_output::Builder {
-        crate::output::update_file_system_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -291,6 +295,13 @@ impl aws_http::request_id::RequestId for UpdateFileCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFileCacheOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
+    pub fn builder() -> crate::output::update_file_cache_output::Builder {
+        crate::output::update_file_cache_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
 pub mod update_file_cache_output {
     
@@ -332,12 +343,6 @@ pub mod update_file_cache_output {
     
     
 }
-impl UpdateFileCacheOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFileCacheOutput`](crate::output::UpdateFileCacheOutput).
-    pub fn builder() -> crate::output::update_file_cache_output::Builder {
-        crate::output::update_file_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -359,6 +364,13 @@ impl aws_http::request_id::RequestId for UpdateDataRepositoryAssociationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDataRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
+    pub fn builder() -> crate::output::update_data_repository_association_output::Builder {
+        crate::output::update_data_repository_association_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
 pub mod update_data_repository_association_output {
     
@@ -400,12 +412,6 @@ pub mod update_data_repository_association_output {
     
     
 }
-impl UpdateDataRepositoryAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput).
-    pub fn builder() -> crate::output::update_data_repository_association_output::Builder {
-        crate::output::update_data_repository_association_output::Builder::default()
-    }
-}
 
 /// <p>The response object for <code>UntagResource</code> action.</p>
 #[non_exhaustive]
@@ -418,6 +424,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -447,12 +460,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 /// <p>The response object for the <code>TagResource</code> operation.</p>
 #[non_exhaustive]
@@ -465,6 +472,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -493,12 +507,6 @@ pub mod tag_resource_output {
     }
     
     
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -535,6 +543,13 @@ impl aws_http::request_id::RequestId for RestoreVolumeFromSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestoreVolumeFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
+    pub fn builder() -> crate::output::restore_volume_from_snapshot_output::Builder {
+        crate::output::restore_volume_from_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
 pub mod restore_volume_from_snapshot_output {
     
@@ -606,12 +621,6 @@ pub mod restore_volume_from_snapshot_output {
     
     
 }
-impl RestoreVolumeFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput).
-    pub fn builder() -> crate::output::restore_volume_from_snapshot_output::Builder {
-        crate::output::restore_volume_from_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -633,6 +642,13 @@ impl aws_http::request_id::RequestId for ReleaseFileSystemNfsV3LocksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReleaseFileSystemNfsV3LocksOutput {
+    /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
+    pub fn builder() -> crate::output::release_file_system_nfs_v3_locks_output::Builder {
+        crate::output::release_file_system_nfs_v3_locks_output::Builder::default()
+    }
+}
+
 /// See [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
 pub mod release_file_system_nfs_v3_locks_output {
     
@@ -674,12 +690,6 @@ pub mod release_file_system_nfs_v3_locks_output {
     
     
 }
-impl ReleaseFileSystemNfsV3LocksOutput {
-    /// Creates a new builder-style object to manufacture [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput).
-    pub fn builder() -> crate::output::release_file_system_nfs_v3_locks_output::Builder {
-        crate::output::release_file_system_nfs_v3_locks_output::Builder::default()
-    }
-}
 
 /// <p>The response object for <code>ListTagsForResource</code> operation.</p>
 #[non_exhaustive]
@@ -708,6 +718,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -767,12 +784,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is removing from the file system.</p>
 #[non_exhaustive]
@@ -794,6 +805,13 @@ impl aws_http::request_id::RequestId for DisassociateFileSystemAliasesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateFileSystemAliasesOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
+    pub fn builder() -> crate::output::disassociate_file_system_aliases_output::Builder {
+        crate::output::disassociate_file_system_aliases_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
 pub mod disassociate_file_system_aliases_output {
     
@@ -841,12 +859,6 @@ pub mod disassociate_file_system_aliases_output {
     
     
 }
-impl DisassociateFileSystemAliasesOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput).
-    pub fn builder() -> crate::output::disassociate_file_system_aliases_output::Builder {
-        crate::output::disassociate_file_system_aliases_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -875,6 +887,13 @@ impl aws_http::request_id::RequestId for DescribeVolumesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVolumesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
+    pub fn builder() -> crate::output::describe_volumes_output::Builder {
+        crate::output::describe_volumes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
 pub mod describe_volumes_output {
     
@@ -934,12 +953,6 @@ pub mod describe_volumes_output {
     
     
 }
-impl DescribeVolumesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput).
-    pub fn builder() -> crate::output::describe_volumes_output::Builder {
-        crate::output::describe_volumes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -968,6 +981,13 @@ impl aws_http::request_id::RequestId for DescribeStorageVirtualMachinesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeStorageVirtualMachinesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
+    pub fn builder() -> crate::output::describe_storage_virtual_machines_output::Builder {
+        crate::output::describe_storage_virtual_machines_output::Builder::default()
+    }
+}
+
 /// See [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
 pub mod describe_storage_virtual_machines_output {
     
@@ -1027,12 +1047,6 @@ pub mod describe_storage_virtual_machines_output {
     
     
 }
-impl DescribeStorageVirtualMachinesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput).
-    pub fn builder() -> crate::output::describe_storage_virtual_machines_output::Builder {
-        crate::output::describe_storage_virtual_machines_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1061,6 +1075,13 @@ impl aws_http::request_id::RequestId for DescribeSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
+    pub fn builder() -> crate::output::describe_snapshots_output::Builder {
+        crate::output::describe_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
 pub mod describe_snapshots_output {
     
@@ -1120,12 +1141,6 @@ pub mod describe_snapshots_output {
     
     
 }
-impl DescribeSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
-    pub fn builder() -> crate::output::describe_snapshots_output::Builder {
-        crate::output::describe_snapshots_output::Builder::default()
-    }
-}
 
 /// <p>The response object for <code>DescribeFileSystems</code> operation.</p>
 #[non_exhaustive]
@@ -1154,6 +1169,13 @@ impl aws_http::request_id::RequestId for DescribeFileSystemsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFileSystemsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
+    pub fn builder() -> crate::output::describe_file_systems_output::Builder {
+        crate::output::describe_file_systems_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
 pub mod describe_file_systems_output {
     
@@ -1213,12 +1235,6 @@ pub mod describe_file_systems_output {
     
     
 }
-impl DescribeFileSystemsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput).
-    pub fn builder() -> crate::output::describe_file_systems_output::Builder {
-        crate::output::describe_file_systems_output::Builder::default()
-    }
-}
 
 /// <p>The response object for <code>DescribeFileSystemAliases</code> operation.</p>
 #[non_exhaustive]
@@ -1247,6 +1263,13 @@ impl aws_http::request_id::RequestId for DescribeFileSystemAliasesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFileSystemAliasesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
+    pub fn builder() -> crate::output::describe_file_system_aliases_output::Builder {
+        crate::output::describe_file_system_aliases_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
 pub mod describe_file_system_aliases_output {
     
@@ -1306,12 +1329,6 @@ pub mod describe_file_system_aliases_output {
     
     
 }
-impl DescribeFileSystemAliasesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput).
-    pub fn builder() -> crate::output::describe_file_system_aliases_output::Builder {
-        crate::output::describe_file_system_aliases_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1340,6 +1357,13 @@ impl aws_http::request_id::RequestId for DescribeFileCachesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFileCachesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
+    pub fn builder() -> crate::output::describe_file_caches_output::Builder {
+        crate::output::describe_file_caches_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
 pub mod describe_file_caches_output {
     
@@ -1399,12 +1423,6 @@ pub mod describe_file_caches_output {
     
     
 }
-impl DescribeFileCachesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFileCachesOutput`](crate::output::DescribeFileCachesOutput).
-    pub fn builder() -> crate::output::describe_file_caches_output::Builder {
-        crate::output::describe_file_caches_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1433,6 +1451,13 @@ impl aws_http::request_id::RequestId for DescribeDataRepositoryTasksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDataRepositoryTasksOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
+    pub fn builder() -> crate::output::describe_data_repository_tasks_output::Builder {
+        crate::output::describe_data_repository_tasks_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
 pub mod describe_data_repository_tasks_output {
     
@@ -1492,12 +1517,6 @@ pub mod describe_data_repository_tasks_output {
     
     
 }
-impl DescribeDataRepositoryTasksOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput).
-    pub fn builder() -> crate::output::describe_data_repository_tasks_output::Builder {
-        crate::output::describe_data_repository_tasks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1526,6 +1545,13 @@ impl aws_http::request_id::RequestId for DescribeDataRepositoryAssociationsOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDataRepositoryAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
+    pub fn builder() -> crate::output::describe_data_repository_associations_output::Builder {
+        crate::output::describe_data_repository_associations_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
 pub mod describe_data_repository_associations_output {
     
@@ -1585,12 +1611,6 @@ pub mod describe_data_repository_associations_output {
     
     
 }
-impl DescribeDataRepositoryAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput).
-    pub fn builder() -> crate::output::describe_data_repository_associations_output::Builder {
-        crate::output::describe_data_repository_associations_output::Builder::default()
-    }
-}
 
 /// <p>Response object for the <code>DescribeBackups</code> operation.</p>
 #[non_exhaustive]
@@ -1619,6 +1639,13 @@ impl aws_http::request_id::RequestId for DescribeBackupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeBackupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
+    pub fn builder() -> crate::output::describe_backups_output::Builder {
+        crate::output::describe_backups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
 pub mod describe_backups_output {
     
@@ -1678,12 +1705,6 @@ pub mod describe_backups_output {
     
     
 }
-impl DescribeBackupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput).
-    pub fn builder() -> crate::output::describe_backups_output::Builder {
-        crate::output::describe_backups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1719,6 +1740,13 @@ impl aws_http::request_id::RequestId for DeleteVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
+    pub fn builder() -> crate::output::delete_volume_output::Builder {
+        crate::output::delete_volume_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
 pub mod delete_volume_output {
     
@@ -1784,12 +1812,6 @@ pub mod delete_volume_output {
     
     
 }
-impl DeleteVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
-    pub fn builder() -> crate::output::delete_volume_output::Builder {
-        crate::output::delete_volume_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1818,6 +1840,13 @@ impl aws_http::request_id::RequestId for DeleteStorageVirtualMachineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteStorageVirtualMachineOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
+    pub fn builder() -> crate::output::delete_storage_virtual_machine_output::Builder {
+        crate::output::delete_storage_virtual_machine_output::Builder::default()
+    }
+}
+
 /// See [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
 pub mod delete_storage_virtual_machine_output {
     
@@ -1871,12 +1900,6 @@ pub mod delete_storage_virtual_machine_output {
     
     
 }
-impl DeleteStorageVirtualMachineOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput).
-    pub fn builder() -> crate::output::delete_storage_virtual_machine_output::Builder {
-        crate::output::delete_storage_virtual_machine_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1905,6 +1928,13 @@ impl aws_http::request_id::RequestId for DeleteSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
+    pub fn builder() -> crate::output::delete_snapshot_output::Builder {
+        crate::output::delete_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
 pub mod delete_snapshot_output {
     
@@ -1958,12 +1988,6 @@ pub mod delete_snapshot_output {
     
     
 }
-impl DeleteSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
-    pub fn builder() -> crate::output::delete_snapshot_output::Builder {
-        crate::output::delete_snapshot_output::Builder::default()
-    }
-}
 
 /// <p>The response object for the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -2013,6 +2037,13 @@ impl aws_http::request_id::RequestId for DeleteFileSystemOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFileSystemOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
+    pub fn builder() -> crate::output::delete_file_system_output::Builder {
+        crate::output::delete_file_system_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
 pub mod delete_file_system_output {
     
@@ -2102,12 +2133,6 @@ pub mod delete_file_system_output {
     
     
 }
-impl DeleteFileSystemOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput).
-    pub fn builder() -> crate::output::delete_file_system_output::Builder {
-        crate::output::delete_file_system_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2136,6 +2161,13 @@ impl aws_http::request_id::RequestId for DeleteFileCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFileCacheOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
+    pub fn builder() -> crate::output::delete_file_cache_output::Builder {
+        crate::output::delete_file_cache_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
 pub mod delete_file_cache_output {
     
@@ -2189,12 +2221,6 @@ pub mod delete_file_cache_output {
     
     
 }
-impl DeleteFileCacheOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFileCacheOutput`](crate::output::DeleteFileCacheOutput).
-    pub fn builder() -> crate::output::delete_file_cache_output::Builder {
-        crate::output::delete_file_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2230,6 +2256,13 @@ impl aws_http::request_id::RequestId for DeleteDataRepositoryAssociationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDataRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
+    pub fn builder() -> crate::output::delete_data_repository_association_output::Builder {
+        crate::output::delete_data_repository_association_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
 pub mod delete_data_repository_association_output {
     
@@ -2295,12 +2328,6 @@ pub mod delete_data_repository_association_output {
     
     
 }
-impl DeleteDataRepositoryAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput).
-    pub fn builder() -> crate::output::delete_data_repository_association_output::Builder {
-        crate::output::delete_data_repository_association_output::Builder::default()
-    }
-}
 
 /// <p>The response object for the <code>DeleteBackup</code> operation.</p>
 #[non_exhaustive]
@@ -2329,6 +2356,13 @@ impl aws_http::request_id::RequestId for DeleteBackupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBackupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
+    pub fn builder() -> crate::output::delete_backup_output::Builder {
+        crate::output::delete_backup_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
 pub mod delete_backup_output {
     
@@ -2382,12 +2416,6 @@ pub mod delete_backup_output {
     
     
 }
-impl DeleteBackupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBackupOutput`](crate::output::DeleteBackupOutput).
-    pub fn builder() -> crate::output::delete_backup_output::Builder {
-        crate::output::delete_backup_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2409,6 +2437,13 @@ impl aws_http::request_id::RequestId for CreateVolumeFromBackupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateVolumeFromBackupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
+    pub fn builder() -> crate::output::create_volume_from_backup_output::Builder {
+        crate::output::create_volume_from_backup_output::Builder::default()
+    }
+}
+
 /// See [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
 pub mod create_volume_from_backup_output {
     
@@ -2450,12 +2485,6 @@ pub mod create_volume_from_backup_output {
     
     
 }
-impl CreateVolumeFromBackupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput).
-    pub fn builder() -> crate::output::create_volume_from_backup_output::Builder {
-        crate::output::create_volume_from_backup_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2477,6 +2506,13 @@ impl aws_http::request_id::RequestId for CreateVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
+    pub fn builder() -> crate::output::create_volume_output::Builder {
+        crate::output::create_volume_output::Builder::default()
+    }
+}
+
 /// See [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
 pub mod create_volume_output {
     
@@ -2518,12 +2554,6 @@ pub mod create_volume_output {
     
     
 }
-impl CreateVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVolumeOutput`](crate::output::CreateVolumeOutput).
-    pub fn builder() -> crate::output::create_volume_output::Builder {
-        crate::output::create_volume_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2545,6 +2575,13 @@ impl aws_http::request_id::RequestId for CreateStorageVirtualMachineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateStorageVirtualMachineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
+    pub fn builder() -> crate::output::create_storage_virtual_machine_output::Builder {
+        crate::output::create_storage_virtual_machine_output::Builder::default()
+    }
+}
+
 /// See [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
 pub mod create_storage_virtual_machine_output {
     
@@ -2586,12 +2623,6 @@ pub mod create_storage_virtual_machine_output {
     
     
 }
-impl CreateStorageVirtualMachineOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput).
-    pub fn builder() -> crate::output::create_storage_virtual_machine_output::Builder {
-        crate::output::create_storage_virtual_machine_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2613,6 +2644,13 @@ impl aws_http::request_id::RequestId for CreateSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
+    pub fn builder() -> crate::output::create_snapshot_output::Builder {
+        crate::output::create_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
 pub mod create_snapshot_output {
     
@@ -2654,12 +2692,6 @@ pub mod create_snapshot_output {
     
     
 }
-impl CreateSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    pub fn builder() -> crate::output::create_snapshot_output::Builder {
-        crate::output::create_snapshot_output::Builder::default()
-    }
-}
 
 /// <p>The response object for the <code>CreateFileSystemFromBackup</code> operation.</p>
 #[non_exhaustive]
@@ -2681,6 +2713,13 @@ impl aws_http::request_id::RequestId for CreateFileSystemFromBackupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFileSystemFromBackupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
+    pub fn builder() -> crate::output::create_file_system_from_backup_output::Builder {
+        crate::output::create_file_system_from_backup_output::Builder::default()
+    }
+}
+
 /// See [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
 pub mod create_file_system_from_backup_output {
     
@@ -2722,12 +2761,6 @@ pub mod create_file_system_from_backup_output {
     
     
 }
-impl CreateFileSystemFromBackupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput).
-    pub fn builder() -> crate::output::create_file_system_from_backup_output::Builder {
-        crate::output::create_file_system_from_backup_output::Builder::default()
-    }
-}
 
 /// <p>The response object returned after the file system is created.</p>
 #[non_exhaustive]
@@ -2749,6 +2782,13 @@ impl aws_http::request_id::RequestId for CreateFileSystemOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFileSystemOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
+    pub fn builder() -> crate::output::create_file_system_output::Builder {
+        crate::output::create_file_system_output::Builder::default()
+    }
+}
+
 /// See [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
 pub mod create_file_system_output {
     
@@ -2790,12 +2830,6 @@ pub mod create_file_system_output {
     
     
 }
-impl CreateFileSystemOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput).
-    pub fn builder() -> crate::output::create_file_system_output::Builder {
-        crate::output::create_file_system_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2817,6 +2851,13 @@ impl aws_http::request_id::RequestId for CreateFileCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFileCacheOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
+    pub fn builder() -> crate::output::create_file_cache_output::Builder {
+        crate::output::create_file_cache_output::Builder::default()
+    }
+}
+
 /// See [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
 pub mod create_file_cache_output {
     
@@ -2858,12 +2899,6 @@ pub mod create_file_cache_output {
     
     
 }
-impl CreateFileCacheOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFileCacheOutput`](crate::output::CreateFileCacheOutput).
-    pub fn builder() -> crate::output::create_file_cache_output::Builder {
-        crate::output::create_file_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2885,6 +2920,13 @@ impl aws_http::request_id::RequestId for CreateDataRepositoryTaskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDataRepositoryTaskOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
+    pub fn builder() -> crate::output::create_data_repository_task_output::Builder {
+        crate::output::create_data_repository_task_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
 pub mod create_data_repository_task_output {
     
@@ -2926,12 +2968,6 @@ pub mod create_data_repository_task_output {
     
     
 }
-impl CreateDataRepositoryTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput).
-    pub fn builder() -> crate::output::create_data_repository_task_output::Builder {
-        crate::output::create_data_repository_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2953,6 +2989,13 @@ impl aws_http::request_id::RequestId for CreateDataRepositoryAssociationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDataRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
+    pub fn builder() -> crate::output::create_data_repository_association_output::Builder {
+        crate::output::create_data_repository_association_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
 pub mod create_data_repository_association_output {
     
@@ -2994,12 +3037,6 @@ pub mod create_data_repository_association_output {
     
     
 }
-impl CreateDataRepositoryAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput).
-    pub fn builder() -> crate::output::create_data_repository_association_output::Builder {
-        crate::output::create_data_repository_association_output::Builder::default()
-    }
-}
 
 /// <p>The response object for the <code>CreateBackup</code> operation.</p>
 #[non_exhaustive]
@@ -3021,6 +3058,13 @@ impl aws_http::request_id::RequestId for CreateBackupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBackupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackupOutput`](crate::output::CreateBackupOutput).
+    pub fn builder() -> crate::output::create_backup_output::Builder {
+        crate::output::create_backup_output::Builder::default()
+    }
+}
+
 /// See [`CreateBackupOutput`](crate::output::CreateBackupOutput).
 pub mod create_backup_output {
     
@@ -3062,12 +3106,6 @@ pub mod create_backup_output {
     
     
 }
-impl CreateBackupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBackupOutput`](crate::output::CreateBackupOutput).
-    pub fn builder() -> crate::output::create_backup_output::Builder {
-        crate::output::create_backup_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3089,6 +3127,13 @@ impl aws_http::request_id::RequestId for CopyBackupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CopyBackupOutput {
+    /// Creates a new builder-style object to manufacture [`CopyBackupOutput`](crate::output::CopyBackupOutput).
+    pub fn builder() -> crate::output::copy_backup_output::Builder {
+        crate::output::copy_backup_output::Builder::default()
+    }
+}
+
 /// See [`CopyBackupOutput`](crate::output::CopyBackupOutput).
 pub mod copy_backup_output {
     
@@ -3129,12 +3174,6 @@ pub mod copy_backup_output {
     }
     
     
-}
-impl CopyBackupOutput {
-    /// Creates a new builder-style object to manufacture [`CopyBackupOutput`](crate::output::CopyBackupOutput).
-    pub fn builder() -> crate::output::copy_backup_output::Builder {
-        crate::output::copy_backup_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -3180,6 +3219,13 @@ impl aws_http::request_id::RequestId for CancelDataRepositoryTaskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelDataRepositoryTaskOutput {
+    /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
+    pub fn builder() -> crate::output::cancel_data_repository_task_output::Builder {
+        crate::output::cancel_data_repository_task_output::Builder::default()
+    }
+}
+
 /// See [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
 pub mod cancel_data_repository_task_output {
     
@@ -3249,12 +3295,6 @@ pub mod cancel_data_repository_task_output {
     
     
 }
-impl CancelDataRepositoryTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput).
-    pub fn builder() -> crate::output::cancel_data_repository_task_output::Builder {
-        crate::output::cancel_data_repository_task_output::Builder::default()
-    }
-}
 
 /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to associate with the file system. Use the API operation to monitor the status of the aliases Amazon FSx is associating with the file system. It can take up to 2.5 minutes for the alias status to change from <code>CREATING</code> to <code>AVAILABLE</code>. </p>
 #[non_exhaustive]
@@ -3276,6 +3316,13 @@ impl aws_http::request_id::RequestId for AssociateFileSystemAliasesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateFileSystemAliasesOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
+    pub fn builder() -> crate::output::associate_file_system_aliases_output::Builder {
+        crate::output::associate_file_system_aliases_output::Builder::default()
+    }
+}
+
 /// See [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
 pub mod associate_file_system_aliases_output {
     
@@ -3322,11 +3369,5 @@ pub mod associate_file_system_aliases_output {
     }
     
     
-}
-impl AssociateFileSystemAliasesOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput).
-    pub fn builder() -> crate::output::associate_file_system_aliases_output::Builder {
-        crate::output::associate_file_system_aliases_output::Builder::default()
-    }
 }
 

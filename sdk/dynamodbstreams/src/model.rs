@@ -40,6 +40,13 @@ impl Stream {
         self.stream_label.as_deref()
     }
 }
+impl Stream {
+    /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream).
+    pub fn builder() -> crate::model::stream::Builder {
+        crate::model::stream::Builder::default()
+    }
+}
+
 /// See [`Stream`](crate::model::Stream).
 pub mod stream {
     
@@ -105,12 +112,6 @@ pub mod stream {
     }
     
     
-}
-impl Stream {
-    /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream).
-    pub fn builder() -> crate::model::stream::Builder {
-        crate::model::stream::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ShardIteratorType`, it is important to ensure
@@ -281,6 +282,13 @@ impl Record {
         self.user_identity.as_ref()
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
     
@@ -403,12 +411,6 @@ pub mod record {
     
     
 }
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
-    }
-}
 
 /// <p>Contains details about the type of identity that made the request.</p>
 #[non_exhaustive]
@@ -431,6 +433,13 @@ impl Identity {
         self.r#type.as_deref()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
     
@@ -472,12 +481,6 @@ pub mod identity {
     }
     
     
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
 }
 
 /// <p>A description of a single data modification that was performed on an item in a DynamoDB table.</p>
@@ -548,6 +551,13 @@ impl StreamRecord {
         self.stream_view_type.as_ref()
     }
 }
+impl StreamRecord {
+    /// Creates a new builder-style object to manufacture [`StreamRecord`](crate::model::StreamRecord).
+    pub fn builder() -> crate::model::stream_record::Builder {
+        crate::model::stream_record::Builder::default()
+    }
+}
+
 /// See [`StreamRecord`](crate::model::StreamRecord).
 pub mod stream_record {
     
@@ -679,12 +689,6 @@ pub mod stream_record {
     }
     
     
-}
-impl StreamRecord {
-    /// Creates a new builder-style object to manufacture [`StreamRecord`](crate::model::StreamRecord).
-    pub fn builder() -> crate::model::stream_record::Builder {
-        crate::model::stream_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StreamViewType`, it is important to ensure
@@ -1121,6 +1125,13 @@ impl StreamDescription {
         self.last_evaluated_shard_id.as_deref()
     }
 }
+impl StreamDescription {
+    /// Creates a new builder-style object to manufacture [`StreamDescription`](crate::model::StreamDescription).
+    pub fn builder() -> crate::model::stream_description::Builder {
+        crate::model::stream_description::Builder::default()
+    }
+}
+
 /// See [`StreamDescription`](crate::model::StreamDescription).
 pub mod stream_description {
     
@@ -1299,12 +1310,6 @@ pub mod stream_description {
     
     
 }
-impl StreamDescription {
-    /// Creates a new builder-style object to manufacture [`StreamDescription`](crate::model::StreamDescription).
-    pub fn builder() -> crate::model::stream_description::Builder {
-        crate::model::stream_description::Builder::default()
-    }
-}
 
 /// <p>A uniquely identified group of stream records within a stream.</p>
 #[non_exhaustive]
@@ -1334,6 +1339,13 @@ impl Shard {
         self.parent_shard_id.as_deref()
     }
 }
+impl Shard {
+    /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
+    pub fn builder() -> crate::model::shard::Builder {
+        crate::model::shard::Builder::default()
+    }
+}
+
 /// See [`Shard`](crate::model::Shard).
 pub mod shard {
     
@@ -1388,12 +1400,6 @@ pub mod shard {
     
     
 }
-impl Shard {
-    /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
-    pub fn builder() -> crate::model::shard::Builder {
-        crate::model::shard::Builder::default()
-    }
-}
 
 /// <p>The beginning and ending sequence numbers for the stream records contained within a shard.</p>
 #[non_exhaustive]
@@ -1416,6 +1422,13 @@ impl SequenceNumberRange {
         self.ending_sequence_number.as_deref()
     }
 }
+impl SequenceNumberRange {
+    /// Creates a new builder-style object to manufacture [`SequenceNumberRange`](crate::model::SequenceNumberRange).
+    pub fn builder() -> crate::model::sequence_number_range::Builder {
+        crate::model::sequence_number_range::Builder::default()
+    }
+}
+
 /// See [`SequenceNumberRange`](crate::model::SequenceNumberRange).
 pub mod sequence_number_range {
     
@@ -1458,12 +1471,6 @@ pub mod sequence_number_range {
     
     
 }
-impl SequenceNumberRange {
-    /// Creates a new builder-style object to manufacture [`SequenceNumberRange`](crate::model::SequenceNumberRange).
-    pub fn builder() -> crate::model::sequence_number_range::Builder {
-        crate::model::sequence_number_range::Builder::default()
-    }
-}
 
 /// <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> 
 /// <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> 
@@ -1502,6 +1509,13 @@ impl KeySchemaElement {
         self.key_type.as_ref()
     }
 }
+impl KeySchemaElement {
+    /// Creates a new builder-style object to manufacture [`KeySchemaElement`](crate::model::KeySchemaElement).
+    pub fn builder() -> crate::model::key_schema_element::Builder {
+        crate::model::key_schema_element::Builder::default()
+    }
+}
+
 /// See [`KeySchemaElement`](crate::model::KeySchemaElement).
 pub mod key_schema_element {
     
@@ -1557,12 +1571,6 @@ pub mod key_schema_element {
     }
     
     
-}
-impl KeySchemaElement {
-    /// Creates a new builder-style object to manufacture [`KeySchemaElement`](crate::model::KeySchemaElement).
-    pub fn builder() -> crate::model::key_schema_element::Builder {
-        crate::model::key_schema_element::Builder::default()
-    }
 }
 
 /// When writing a match expression against `KeyType`, it is important to ensure

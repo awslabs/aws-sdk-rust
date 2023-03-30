@@ -99,6 +99,13 @@ impl aws_http::request_id::RequestId for StartSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
+    pub fn builder() -> crate::output::start_snapshot_output::Builder {
+        crate::output::start_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
 pub mod start_snapshot_output {
     
@@ -271,12 +278,6 @@ pub mod start_snapshot_output {
     
     
 }
-impl StartSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
-    pub fn builder() -> crate::output::start_snapshot_output::Builder {
-        crate::output::start_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -305,6 +306,13 @@ impl aws_http::request_id::RequestId for PutSnapshotBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutSnapshotBlockOutput {
+    /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
+    pub fn builder() -> crate::output::put_snapshot_block_output::Builder {
+        crate::output::put_snapshot_block_output::Builder::default()
+    }
+}
+
 /// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
 pub mod put_snapshot_block_output {
     
@@ -357,12 +365,6 @@ pub mod put_snapshot_block_output {
     }
     
     
-}
-impl PutSnapshotBlockOutput {
-    /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
-    pub fn builder() -> crate::output::put_snapshot_block_output::Builder {
-        crate::output::put_snapshot_block_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -425,6 +427,13 @@ impl aws_http::request_id::RequestId for ListSnapshotBlocksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSnapshotBlocksOutput {
+    /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
+    pub fn builder() -> crate::output::list_snapshot_blocks_output::Builder {
+        crate::output::list_snapshot_blocks_output::Builder::default()
+    }
+}
+
 /// See [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
 pub mod list_snapshot_blocks_output {
     
@@ -532,12 +541,6 @@ pub mod list_snapshot_blocks_output {
     
     
 }
-impl ListSnapshotBlocksOutput {
-    /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
-    pub fn builder() -> crate::output::list_snapshot_blocks_output::Builder {
-        crate::output::list_snapshot_blocks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -587,6 +590,13 @@ impl aws_http::request_id::RequestId for ListChangedBlocksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListChangedBlocksOutput {
+    /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
+    pub fn builder() -> crate::output::list_changed_blocks_output::Builder {
+        crate::output::list_changed_blocks_output::Builder::default()
+    }
+}
+
 /// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
 pub mod list_changed_blocks_output {
     
@@ -682,12 +692,6 @@ pub mod list_changed_blocks_output {
     
     
 }
-impl ListChangedBlocksOutput {
-    /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
-    pub fn builder() -> crate::output::list_changed_blocks_output::Builder {
-        crate::output::list_changed_blocks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -739,6 +743,13 @@ impl aws_http::request_id::RequestId for GetSnapshotBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSnapshotBlockOutput {
+    /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
+    pub fn builder() -> crate::output::get_snapshot_block_output::Builder {
+        crate::output::get_snapshot_block_output::Builder::default()
+    }
+}
+
 /// See [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
 pub mod get_snapshot_block_output {
     
@@ -828,12 +839,6 @@ pub mod get_snapshot_block_output {
     
     
 }
-impl GetSnapshotBlockOutput {
-    /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
-    pub fn builder() -> crate::output::get_snapshot_block_output::Builder {
-        crate::output::get_snapshot_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -855,6 +860,13 @@ impl aws_http::request_id::RequestId for CompleteSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CompleteSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
+    pub fn builder() -> crate::output::complete_snapshot_output::Builder {
+        crate::output::complete_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
 pub mod complete_snapshot_output {
     
@@ -895,11 +907,5 @@ pub mod complete_snapshot_output {
     }
     
     
-}
-impl CompleteSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
-    pub fn builder() -> crate::output::complete_snapshot_output::Builder {
-        crate::output::complete_snapshot_output::Builder::default()
-    }
 }
 

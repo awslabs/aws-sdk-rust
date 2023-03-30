@@ -61,6 +61,13 @@ impl aws_http::request_id::RequestId for UpdatePackagingGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePackagingGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
+    pub fn builder() -> crate::output::update_packaging_group_output::Builder {
+        crate::output::update_packaging_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
 pub mod update_packaging_group_output {
     
@@ -181,12 +188,6 @@ pub mod update_packaging_group_output {
     
     
 }
-impl UpdatePackagingGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput).
-    pub fn builder() -> crate::output::update_packaging_group_output::Builder {
-        crate::output::update_packaging_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -199,6 +200,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -228,12 +236,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -246,6 +248,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -275,12 +284,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -302,6 +305,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -349,12 +359,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -383,6 +387,13 @@ impl aws_http::request_id::RequestId for ListPackagingGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPackagingGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
+    pub fn builder() -> crate::output::list_packaging_groups_output::Builder {
+        crate::output::list_packaging_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
 pub mod list_packaging_groups_output {
     
@@ -442,12 +453,6 @@ pub mod list_packaging_groups_output {
     
     
 }
-impl ListPackagingGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput).
-    pub fn builder() -> crate::output::list_packaging_groups_output::Builder {
-        crate::output::list_packaging_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -476,6 +481,13 @@ impl aws_http::request_id::RequestId for ListPackagingConfigurationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPackagingConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
+    pub fn builder() -> crate::output::list_packaging_configurations_output::Builder {
+        crate::output::list_packaging_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
 pub mod list_packaging_configurations_output {
     
@@ -535,12 +547,6 @@ pub mod list_packaging_configurations_output {
     
     
 }
-impl ListPackagingConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput).
-    pub fn builder() -> crate::output::list_packaging_configurations_output::Builder {
-        crate::output::list_packaging_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -569,6 +575,13 @@ impl aws_http::request_id::RequestId for ListAssetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssetsOutput`](crate::output::ListAssetsOutput).
+    pub fn builder() -> crate::output::list_assets_output::Builder {
+        crate::output::list_assets_output::Builder::default()
+    }
+}
+
 /// See [`ListAssetsOutput`](crate::output::ListAssetsOutput).
 pub mod list_assets_output {
     
@@ -627,12 +640,6 @@ pub mod list_assets_output {
     }
     
     
-}
-impl ListAssetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssetsOutput`](crate::output::ListAssetsOutput).
-    pub fn builder() -> crate::output::list_assets_output::Builder {
-        crate::output::list_assets_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -697,6 +704,13 @@ impl aws_http::request_id::RequestId for DescribePackagingGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribePackagingGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
+    pub fn builder() -> crate::output::describe_packaging_group_output::Builder {
+        crate::output::describe_packaging_group_output::Builder::default()
+    }
+}
+
 /// See [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
 pub mod describe_packaging_group_output {
     
@@ -817,12 +831,6 @@ pub mod describe_packaging_group_output {
     
     
 }
-impl DescribePackagingGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput).
-    pub fn builder() -> crate::output::describe_packaging_group_output::Builder {
-        crate::output::describe_packaging_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -893,6 +901,13 @@ impl aws_http::request_id::RequestId for DescribePackagingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribePackagingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
+    pub fn builder() -> crate::output::describe_packaging_configuration_output::Builder {
+        crate::output::describe_packaging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
 pub mod describe_packaging_configuration_output {
     
@@ -1024,12 +1039,6 @@ pub mod describe_packaging_configuration_output {
     
     
 }
-impl DescribePackagingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput).
-    pub fn builder() -> crate::output::describe_packaging_configuration_output::Builder {
-        crate::output::describe_packaging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1107,6 +1116,13 @@ impl aws_http::request_id::RequestId for DescribeAssetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAssetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
+    pub fn builder() -> crate::output::describe_asset_output::Builder {
+        crate::output::describe_asset_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
 pub mod describe_asset_output {
     
@@ -1256,12 +1272,6 @@ pub mod describe_asset_output {
     
     
 }
-impl DescribeAssetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAssetOutput`](crate::output::DescribeAssetOutput).
-    pub fn builder() -> crate::output::describe_asset_output::Builder {
-        crate::output::describe_asset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1274,6 +1284,13 @@ impl aws_http::request_id::RequestId for DeletePackagingGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePackagingGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
+    pub fn builder() -> crate::output::delete_packaging_group_output::Builder {
+        crate::output::delete_packaging_group_output::Builder::default()
+    }
+}
+
 /// See [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
 pub mod delete_packaging_group_output {
     
@@ -1303,12 +1320,6 @@ pub mod delete_packaging_group_output {
     
     
 }
-impl DeletePackagingGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput).
-    pub fn builder() -> crate::output::delete_packaging_group_output::Builder {
-        crate::output::delete_packaging_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1321,6 +1332,13 @@ impl aws_http::request_id::RequestId for DeletePackagingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePackagingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
+    pub fn builder() -> crate::output::delete_packaging_configuration_output::Builder {
+        crate::output::delete_packaging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
 pub mod delete_packaging_configuration_output {
     
@@ -1350,12 +1368,6 @@ pub mod delete_packaging_configuration_output {
     
     
 }
-impl DeletePackagingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput).
-    pub fn builder() -> crate::output::delete_packaging_configuration_output::Builder {
-        crate::output::delete_packaging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1368,6 +1380,13 @@ impl aws_http::request_id::RequestId for DeleteAssetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAssetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
+    pub fn builder() -> crate::output::delete_asset_output::Builder {
+        crate::output::delete_asset_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
 pub mod delete_asset_output {
     
@@ -1396,12 +1415,6 @@ pub mod delete_asset_output {
     }
     
     
-}
-impl DeleteAssetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
-    pub fn builder() -> crate::output::delete_asset_output::Builder {
-        crate::output::delete_asset_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1459,6 +1472,13 @@ impl aws_http::request_id::RequestId for CreatePackagingGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePackagingGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
+    pub fn builder() -> crate::output::create_packaging_group_output::Builder {
+        crate::output::create_packaging_group_output::Builder::default()
+    }
+}
+
 /// See [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
 pub mod create_packaging_group_output {
     
@@ -1566,12 +1586,6 @@ pub mod create_packaging_group_output {
     
     
 }
-impl CreatePackagingGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput).
-    pub fn builder() -> crate::output::create_packaging_group_output::Builder {
-        crate::output::create_packaging_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1642,6 +1656,13 @@ impl aws_http::request_id::RequestId for CreatePackagingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePackagingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
+    pub fn builder() -> crate::output::create_packaging_configuration_output::Builder {
+        crate::output::create_packaging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
 pub mod create_packaging_configuration_output {
     
@@ -1773,12 +1794,6 @@ pub mod create_packaging_configuration_output {
     
     
 }
-impl CreatePackagingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput).
-    pub fn builder() -> crate::output::create_packaging_configuration_output::Builder {
-        crate::output::create_packaging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1856,6 +1871,13 @@ impl aws_http::request_id::RequestId for CreateAssetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAssetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAssetOutput`](crate::output::CreateAssetOutput).
+    pub fn builder() -> crate::output::create_asset_output::Builder {
+        crate::output::create_asset_output::Builder::default()
+    }
+}
+
 /// See [`CreateAssetOutput`](crate::output::CreateAssetOutput).
 pub mod create_asset_output {
     
@@ -2005,12 +2027,6 @@ pub mod create_asset_output {
     
     
 }
-impl CreateAssetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAssetOutput`](crate::output::CreateAssetOutput).
-    pub fn builder() -> crate::output::create_asset_output::Builder {
-        crate::output::create_asset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2067,6 +2083,13 @@ impl aws_http::request_id::RequestId for ConfigureLogsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ConfigureLogsOutput {
+    /// Creates a new builder-style object to manufacture [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
+    pub fn builder() -> crate::output::configure_logs_output::Builder {
+        crate::output::configure_logs_output::Builder::default()
+    }
+}
+
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
 pub mod configure_logs_output {
     
@@ -2173,11 +2196,5 @@ pub mod configure_logs_output {
     }
     
     
-}
-impl ConfigureLogsOutput {
-    /// Creates a new builder-style object to manufacture [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
-    pub fn builder() -> crate::output::configure_logs_output::Builder {
-        crate::output::configure_logs_output::Builder::default()
-    }
 }
 

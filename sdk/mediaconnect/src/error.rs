@@ -193,55 +193,6 @@ pub struct TooManyRequestsException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyRequestsException {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
-        crate::error::too_many_requests_exception::Builder::default()
-    }
-}
-/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-pub mod too_many_requests_exception {
-    
-    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
-        pub fn build(self) -> crate::error::TooManyRequestsException {
-            crate::error::TooManyRequestsException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TooManyRequestsException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -266,26 +217,17 @@ impl aws_http::request_id::RequestId for crate::error::TooManyRequestsException 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException  {
-    /// The error message returned by AWS Elemental MediaConnect.
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ServiceUnavailableException {
-    /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
-    pub fn builder() -> crate::error::service_unavailable_exception::Builder {
-        crate::error::service_unavailable_exception::Builder::default()
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
     }
 }
-/// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
-pub mod service_unavailable_exception {
+
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+pub mod too_many_requests_exception {
     
-    /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -303,19 +245,19 @@ pub mod service_unavailable_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
-        pub fn build(self) -> crate::error::ServiceUnavailableException {
-            crate::error::ServiceUnavailableException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -324,6 +266,16 @@ pub mod service_unavailable_exception {
     }
     
     
+}
+
+/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceUnavailableException  {
+    /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
@@ -350,26 +302,17 @@ impl aws_http::request_id::RequestId for crate::error::ServiceUnavailableExcepti
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceUnavailableException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException  {
-    /// The error message returned by AWS Elemental MediaConnect.
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl NotFoundException {
-    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
-    pub fn builder() -> crate::error::not_found_exception::Builder {
-        crate::error::not_found_exception::Builder::default()
+impl ServiceUnavailableException {
+    /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+    pub fn builder() -> crate::error::service_unavailable_exception::Builder {
+        crate::error::service_unavailable_exception::Builder::default()
     }
 }
-/// See [`NotFoundException`](crate::error::NotFoundException).
-pub mod not_found_exception {
+
+/// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+pub mod service_unavailable_exception {
     
-    /// A builder for [`NotFoundException`](crate::error::NotFoundException).
+    /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -387,19 +330,19 @@ pub mod not_found_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
-        pub fn build(self) -> crate::error::NotFoundException {
-            crate::error::NotFoundException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
+        pub fn build(self) -> crate::error::ServiceUnavailableException {
+            crate::error::ServiceUnavailableException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -408,6 +351,16 @@ pub mod not_found_exception {
     }
     
     
+}
+
+/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NotFoundException  {
+    /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotFoundException {
     /// Returns the error message.
@@ -434,26 +387,17 @@ impl aws_http::request_id::RequestId for crate::error::NotFoundException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerErrorException  {
-    /// The error message returned by AWS Elemental MediaConnect.
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InternalServerErrorException {
-    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
-    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
-        crate::error::internal_server_error_exception::Builder::default()
+impl NotFoundException {
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
+    pub fn builder() -> crate::error::not_found_exception::Builder {
+        crate::error::not_found_exception::Builder::default()
     }
 }
-/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
-pub mod internal_server_error_exception {
+
+/// See [`NotFoundException`](crate::error::NotFoundException).
+pub mod not_found_exception {
     
-    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -471,19 +415,19 @@ pub mod internal_server_error_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
-        pub fn build(self) -> crate::error::InternalServerErrorException {
-            crate::error::InternalServerErrorException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
+        pub fn build(self) -> crate::error::NotFoundException {
+            crate::error::NotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -492,6 +436,16 @@ pub mod internal_server_error_exception {
     }
     
     
+}
+
+/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InternalServerErrorException  {
+    /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerErrorException {
     /// Returns the error message.
@@ -518,26 +472,17 @@ impl aws_http::request_id::RequestId for crate::error::InternalServerErrorExcept
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException  {
-    /// The error message returned by AWS Elemental MediaConnect.
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ForbiddenException {
-    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
-    pub fn builder() -> crate::error::forbidden_exception::Builder {
-        crate::error::forbidden_exception::Builder::default()
+impl InternalServerErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+    pub fn builder() -> crate::error::internal_server_error_exception::Builder {
+        crate::error::internal_server_error_exception::Builder::default()
     }
 }
-/// See [`ForbiddenException`](crate::error::ForbiddenException).
-pub mod forbidden_exception {
+
+/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+pub mod internal_server_error_exception {
     
-    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
+    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -555,19 +500,19 @@ pub mod forbidden_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
-        pub fn build(self) -> crate::error::ForbiddenException {
-            crate::error::ForbiddenException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
+        pub fn build(self) -> crate::error::InternalServerErrorException {
+            crate::error::InternalServerErrorException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -576,6 +521,16 @@ pub mod forbidden_exception {
     }
     
     
+}
+
+/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ForbiddenException  {
+    /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ForbiddenException {
     /// Returns the error message.
@@ -602,26 +557,17 @@ impl aws_http::request_id::RequestId for crate::error::ForbiddenException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ForbiddenException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException  {
-    /// The error message returned by AWS Elemental MediaConnect.
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl BadRequestException {
-    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
-    pub fn builder() -> crate::error::bad_request_exception::Builder {
-        crate::error::bad_request_exception::Builder::default()
+impl ForbiddenException {
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
+    pub fn builder() -> crate::error::forbidden_exception::Builder {
+        crate::error::forbidden_exception::Builder::default()
     }
 }
-/// See [`BadRequestException`](crate::error::BadRequestException).
-pub mod bad_request_exception {
+
+/// See [`ForbiddenException`](crate::error::ForbiddenException).
+pub mod forbidden_exception {
     
-    /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -639,19 +585,19 @@ pub mod bad_request_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
-        pub fn build(self) -> crate::error::BadRequestException {
-            crate::error::BadRequestException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
+        pub fn build(self) -> crate::error::ForbiddenException {
+            crate::error::ForbiddenException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -660,6 +606,16 @@ pub mod bad_request_exception {
     }
     
     
+}
+
+/// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BadRequestException  {
+    /// The error message returned by AWS Elemental MediaConnect.
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BadRequestException {
     /// Returns the error message.
@@ -685,6 +641,56 @@ impl aws_http::request_id::RequestId for crate::error::BadRequestException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BadRequestException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl BadRequestException {
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
+    pub fn builder() -> crate::error::bad_request_exception::Builder {
+        crate::error::bad_request_exception::Builder::default()
+    }
+}
+
+/// See [`BadRequestException`](crate::error::BadRequestException).
+pub mod bad_request_exception {
+    
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
+        pub fn build(self) -> crate::error::BadRequestException {
+            crate::error::BadRequestException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -4121,55 +4127,6 @@ pub struct GrantFlowEntitlements420Exception  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl GrantFlowEntitlements420Exception {
-    /// Creates a new builder-style object to manufacture [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
-    pub fn builder() -> crate::error::grant_flow_entitlements420_exception::Builder {
-        crate::error::grant_flow_entitlements420_exception::Builder::default()
-    }
-}
-/// See [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
-pub mod grant_flow_entitlements420_exception {
-    
-    /// A builder for [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
-        pub fn build(self) -> crate::error::GrantFlowEntitlements420Exception {
-            crate::error::GrantFlowEntitlements420Exception {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl GrantFlowEntitlements420Exception {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -4193,6 +4150,56 @@ impl aws_http::request_id::RequestId for crate::error::GrantFlowEntitlements420E
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GrantFlowEntitlements420Exception {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl GrantFlowEntitlements420Exception {
+    /// Creates a new builder-style object to manufacture [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
+    pub fn builder() -> crate::error::grant_flow_entitlements420_exception::Builder {
+        crate::error::grant_flow_entitlements420_exception::Builder::default()
+    }
+}
+
+/// See [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
+pub mod grant_flow_entitlements420_exception {
+    
+    /// A builder for [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`GrantFlowEntitlements420Exception`](crate::error::GrantFlowEntitlements420Exception).
+        pub fn build(self) -> crate::error::GrantFlowEntitlements420Exception {
+            crate::error::GrantFlowEntitlements420Exception {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -5093,55 +5100,6 @@ pub struct CreateFlow420Exception  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CreateFlow420Exception {
-    /// Creates a new builder-style object to manufacture [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
-    pub fn builder() -> crate::error::create_flow420_exception::Builder {
-        crate::error::create_flow420_exception::Builder::default()
-    }
-}
-/// See [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
-pub mod create_flow420_exception {
-    
-    /// A builder for [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
-        pub fn build(self) -> crate::error::CreateFlow420Exception {
-            crate::error::CreateFlow420Exception {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl CreateFlow420Exception {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -5165,6 +5123,56 @@ impl aws_http::request_id::RequestId for crate::error::CreateFlow420Exception {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateFlow420Exception {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl CreateFlow420Exception {
+    /// Creates a new builder-style object to manufacture [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
+    pub fn builder() -> crate::error::create_flow420_exception::Builder {
+        crate::error::create_flow420_exception::Builder::default()
+    }
+}
+
+/// See [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
+pub mod create_flow420_exception {
+    
+    /// A builder for [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`CreateFlow420Exception`](crate::error::CreateFlow420Exception).
+        pub fn build(self) -> crate::error::CreateFlow420Exception {
+            crate::error::CreateFlow420Exception {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -5745,55 +5753,6 @@ pub struct AddFlowOutputs420Exception  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AddFlowOutputs420Exception {
-    /// Creates a new builder-style object to manufacture [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
-    pub fn builder() -> crate::error::add_flow_outputs420_exception::Builder {
-        crate::error::add_flow_outputs420_exception::Builder::default()
-    }
-}
-/// See [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
-pub mod add_flow_outputs420_exception {
-    
-    /// A builder for [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// The error message returned by AWS Elemental MediaConnect.
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
-        pub fn build(self) -> crate::error::AddFlowOutputs420Exception {
-            crate::error::AddFlowOutputs420Exception {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl AddFlowOutputs420Exception {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -5817,6 +5776,56 @@ impl aws_http::request_id::RequestId for crate::error::AddFlowOutputs420Exceptio
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AddFlowOutputs420Exception {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AddFlowOutputs420Exception {
+    /// Creates a new builder-style object to manufacture [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
+    pub fn builder() -> crate::error::add_flow_outputs420_exception::Builder {
+        crate::error::add_flow_outputs420_exception::Builder::default()
+    }
+}
+
+/// See [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
+pub mod add_flow_outputs420_exception {
+    
+    /// A builder for [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// The error message returned by AWS Elemental MediaConnect.
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AddFlowOutputs420Exception`](crate::error::AddFlowOutputs420Exception).
+        pub fn build(self) -> crate::error::AddFlowOutputs420Exception {
+            crate::error::AddFlowOutputs420Exception {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

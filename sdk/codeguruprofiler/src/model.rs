@@ -173,6 +173,13 @@ impl NotificationConfiguration {
         self.channels.as_deref()
     }
 }
+impl NotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    pub fn builder() -> crate::model::notification_configuration::Builder {
+        crate::model::notification_configuration::Builder::default()
+    }
+}
+
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
     
@@ -209,12 +216,6 @@ pub mod notification_configuration {
     
     
 }
-impl NotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    pub fn builder() -> crate::model::notification_configuration::Builder {
-        crate::model::notification_configuration::Builder::default()
-    }
-}
 
 /// <p>Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.</p>
 #[non_exhaustive]
@@ -244,6 +245,13 @@ impl Channel {
         self.event_publishers.as_deref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
     
@@ -303,12 +311,6 @@ pub mod channel {
     }
     
     
-}
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventPublisher`, it is important to ensure
@@ -402,6 +404,13 @@ impl ProfileTime {
         self.start.as_ref()
     }
 }
+impl ProfileTime {
+    /// Creates a new builder-style object to manufacture [`ProfileTime`](crate::model::ProfileTime).
+    pub fn builder() -> crate::model::profile_time::Builder {
+        crate::model::profile_time::Builder::default()
+    }
+}
+
 /// See [`ProfileTime`](crate::model::ProfileTime).
 pub mod profile_time {
     
@@ -431,12 +440,6 @@ pub mod profile_time {
     }
     
     
-}
-impl ProfileTime {
-    /// Creates a new builder-style object to manufacture [`ProfileTime`](crate::model::ProfileTime).
-    pub fn builder() -> crate::model::profile_time::Builder {
-        crate::model::profile_time::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OrderBy`, it is important to ensure
@@ -650,6 +653,13 @@ impl FindingsReportSummary {
         self.total_number_of_findings
     }
 }
+impl FindingsReportSummary {
+    /// Creates a new builder-style object to manufacture [`FindingsReportSummary`](crate::model::FindingsReportSummary).
+    pub fn builder() -> crate::model::findings_report_summary::Builder {
+        crate::model::findings_report_summary::Builder::default()
+    }
+}
+
 /// See [`FindingsReportSummary`](crate::model::FindingsReportSummary).
 pub mod findings_report_summary {
     
@@ -728,12 +738,6 @@ pub mod findings_report_summary {
     
     
 }
-impl FindingsReportSummary {
-    /// Creates a new builder-style object to manufacture [`FindingsReportSummary`](crate::model::FindingsReportSummary).
-    pub fn builder() -> crate::model::findings_report_summary::Builder {
-        crate::model::findings_report_summary::Builder::default()
-    }
-}
 
 /// <p> Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time. </p>
 #[non_exhaustive]
@@ -763,6 +767,13 @@ impl Anomaly {
         self.instances.as_deref()
     }
 }
+impl Anomaly {
+    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
+    pub fn builder() -> crate::model::anomaly::Builder {
+        crate::model::anomaly::Builder::default()
+    }
+}
+
 /// See [`Anomaly`](crate::model::Anomaly).
 pub mod anomaly {
     
@@ -823,12 +834,6 @@ pub mod anomaly {
     
     
 }
-impl Anomaly {
-    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
-    pub fn builder() -> crate::model::anomaly::Builder {
-        crate::model::anomaly::Builder::default()
-    }
-}
 
 /// <p>The specific duration in which the metric is flagged as anomalous.</p>
 #[non_exhaustive]
@@ -865,6 +870,13 @@ impl AnomalyInstance {
         self.user_feedback.as_ref()
     }
 }
+impl AnomalyInstance {
+    /// Creates a new builder-style object to manufacture [`AnomalyInstance`](crate::model::AnomalyInstance).
+    pub fn builder() -> crate::model::anomaly_instance::Builder {
+        crate::model::anomaly_instance::Builder::default()
+    }
+}
+
 /// See [`AnomalyInstance`](crate::model::AnomalyInstance).
 pub mod anomaly_instance {
     
@@ -931,12 +943,6 @@ pub mod anomaly_instance {
     
     
 }
-impl AnomalyInstance {
-    /// Creates a new builder-style object to manufacture [`AnomalyInstance`](crate::model::AnomalyInstance).
-    pub fn builder() -> crate::model::anomaly_instance::Builder {
-        crate::model::anomaly_instance::Builder::default()
-    }
-}
 
 /// <p>Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.</p>
 #[non_exhaustive]
@@ -952,6 +958,13 @@ impl UserFeedback {
         self.r#type.as_ref()
     }
 }
+impl UserFeedback {
+    /// Creates a new builder-style object to manufacture [`UserFeedback`](crate::model::UserFeedback).
+    pub fn builder() -> crate::model::user_feedback::Builder {
+        crate::model::user_feedback::Builder::default()
+    }
+}
+
 /// See [`UserFeedback`](crate::model::UserFeedback).
 pub mod user_feedback {
     
@@ -982,12 +995,6 @@ pub mod user_feedback {
     
     
 }
-impl UserFeedback {
-    /// Creates a new builder-style object to manufacture [`UserFeedback`](crate::model::UserFeedback).
-    pub fn builder() -> crate::model::user_feedback::Builder {
-        crate::model::user_feedback::Builder::default()
-    }
-}
 
 /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame. </p>
 #[non_exhaustive]
@@ -1017,6 +1024,13 @@ impl Metric {
         self.thread_states.as_deref()
     }
 }
+impl Metric {
+    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
+    pub fn builder() -> crate::model::metric::Builder {
+        crate::model::metric::Builder::default()
+    }
+}
+
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
     
@@ -1076,12 +1090,6 @@ pub mod metric {
     }
     
     
-}
-impl Metric {
-    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
-    pub fn builder() -> crate::model::metric::Builder {
-        crate::model::metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetricType`, it is important to ensure
@@ -1210,6 +1218,13 @@ impl Recommendation {
         self.end_time.as_ref()
     }
 }
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
     
@@ -1306,12 +1321,6 @@ pub mod recommendation {
     
     
 }
-impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
-    pub fn builder() -> crate::model::recommendation::Builder {
-        crate::model::recommendation::Builder::default()
-    }
-}
 
 /// <p>The part of a profile that contains a recommendation found during analysis.</p>
 #[non_exhaustive]
@@ -1341,6 +1350,13 @@ impl Match {
         self.threshold_breach_value
     }
 }
+impl Match {
+    /// Creates a new builder-style object to manufacture [`Match`](crate::model::Match).
+    pub fn builder() -> crate::model::r#match::Builder {
+        crate::model::r#match::Builder::default()
+    }
+}
+
 /// See [`Match`](crate::model::Match).
 pub mod r#match {
     
@@ -1394,12 +1410,6 @@ pub mod r#match {
     }
     
     
-}
-impl Match {
-    /// Creates a new builder-style object to manufacture [`Match`](crate::model::Match).
-    pub fn builder() -> crate::model::r#match::Builder {
-        crate::model::r#match::Builder::default()
-    }
 }
 
 /// <p> A set of rules used to make a recommendation during an analysis. </p>
@@ -1458,6 +1468,13 @@ impl Pattern {
         self.counters_to_aggregate.as_deref()
     }
 }
+impl Pattern {
+    /// Creates a new builder-style object to manufacture [`Pattern`](crate::model::Pattern).
+    pub fn builder() -> crate::model::pattern::Builder {
+        crate::model::pattern::Builder::default()
+    }
+}
+
 /// See [`Pattern`](crate::model::Pattern).
 pub mod pattern {
     
@@ -1573,12 +1590,6 @@ pub mod pattern {
     
     
 }
-impl Pattern {
-    /// Creates a new builder-style object to manufacture [`Pattern`](crate::model::Pattern).
-    pub fn builder() -> crate::model::pattern::Builder {
-        crate::model::pattern::Builder::default()
-    }
-}
 
 /// <p> The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data. </p>
 #[non_exhaustive]
@@ -1622,6 +1633,13 @@ impl AgentConfiguration {
         self.agent_parameters.as_ref()
     }
 }
+impl AgentConfiguration {
+    /// Creates a new builder-style object to manufacture [`AgentConfiguration`](crate::model::AgentConfiguration).
+    pub fn builder() -> crate::model::agent_configuration::Builder {
+        crate::model::agent_configuration::Builder::default()
+    }
+}
+
 /// See [`AgentConfiguration`](crate::model::AgentConfiguration).
 pub mod agent_configuration {
     
@@ -1695,12 +1713,6 @@ pub mod agent_configuration {
     }
     
     
-}
-impl AgentConfiguration {
-    /// Creates a new builder-style object to manufacture [`AgentConfiguration`](crate::model::AgentConfiguration).
-    pub fn builder() -> crate::model::agent_configuration::Builder {
-        crate::model::agent_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AgentParameterField`, it is important to ensure
@@ -1938,6 +1950,13 @@ impl FrameMetricDatum {
         self.values.as_deref()
     }
 }
+impl FrameMetricDatum {
+    /// Creates a new builder-style object to manufacture [`FrameMetricDatum`](crate::model::FrameMetricDatum).
+    pub fn builder() -> crate::model::frame_metric_datum::Builder {
+        crate::model::frame_metric_datum::Builder::default()
+    }
+}
+
 /// See [`FrameMetricDatum`](crate::model::FrameMetricDatum).
 pub mod frame_metric_datum {
     
@@ -1986,12 +2005,6 @@ pub mod frame_metric_datum {
     
     
 }
-impl FrameMetricDatum {
-    /// Creates a new builder-style object to manufacture [`FrameMetricDatum`](crate::model::FrameMetricDatum).
-    pub fn builder() -> crate::model::frame_metric_datum::Builder {
-        crate::model::frame_metric_datum::Builder::default()
-    }
-}
 
 /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
 #[non_exhaustive]
@@ -2021,6 +2034,13 @@ impl FrameMetric {
         self.thread_states.as_deref()
     }
 }
+impl FrameMetric {
+    /// Creates a new builder-style object to manufacture [`FrameMetric`](crate::model::FrameMetric).
+    pub fn builder() -> crate::model::frame_metric::Builder {
+        crate::model::frame_metric::Builder::default()
+    }
+}
+
 /// See [`FrameMetric`](crate::model::FrameMetric).
 pub mod frame_metric {
     
@@ -2081,12 +2101,6 @@ pub mod frame_metric {
     
     
 }
-impl FrameMetric {
-    /// Creates a new builder-style object to manufacture [`FrameMetric`](crate::model::FrameMetric).
-    pub fn builder() -> crate::model::frame_metric::Builder {
-        crate::model::frame_metric::Builder::default()
-    }
-}
 
 /// <p> A data type that contains a <code>Timestamp</code> object. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
 #[non_exhaustive]
@@ -2102,6 +2116,13 @@ impl TimestampStructure {
         self.value.as_ref()
     }
 }
+impl TimestampStructure {
+    /// Creates a new builder-style object to manufacture [`TimestampStructure`](crate::model::TimestampStructure).
+    pub fn builder() -> crate::model::timestamp_structure::Builder {
+        crate::model::timestamp_structure::Builder::default()
+    }
+}
+
 /// See [`TimestampStructure`](crate::model::TimestampStructure).
 pub mod timestamp_structure {
     
@@ -2131,12 +2152,6 @@ pub mod timestamp_structure {
     }
     
     
-}
-impl TimestampStructure {
-    /// Creates a new builder-style object to manufacture [`TimestampStructure`](crate::model::TimestampStructure).
-    pub fn builder() -> crate::model::timestamp_structure::Builder {
-        crate::model::timestamp_structure::Builder::default()
-    }
 }
 
 /// <p> Contains information about a profiling group. </p>
@@ -2202,6 +2217,13 @@ impl ProfilingGroupDescription {
         self.tags.as_ref()
     }
 }
+impl ProfilingGroupDescription {
+    /// Creates a new builder-style object to manufacture [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
+    pub fn builder() -> crate::model::profiling_group_description::Builder {
+        crate::model::profiling_group_description::Builder::default()
+    }
+}
+
 /// See [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
 pub mod profiling_group_description {
     
@@ -2322,12 +2344,6 @@ pub mod profiling_group_description {
     
     
 }
-impl ProfilingGroupDescription {
-    /// Creates a new builder-style object to manufacture [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
-    pub fn builder() -> crate::model::profiling_group_description::Builder {
-        crate::model::profiling_group_description::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ComputePlatform`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2439,6 +2455,13 @@ impl ProfilingStatus {
         self.latest_agent_orchestrated_at.as_ref()
     }
 }
+impl ProfilingStatus {
+    /// Creates a new builder-style object to manufacture [`ProfilingStatus`](crate::model::ProfilingStatus).
+    pub fn builder() -> crate::model::profiling_status::Builder {
+        crate::model::profiling_status::Builder::default()
+    }
+}
+
 /// See [`ProfilingStatus`](crate::model::ProfilingStatus).
 pub mod profiling_status {
     
@@ -2493,12 +2516,6 @@ pub mod profiling_status {
     
     
 }
-impl ProfilingStatus {
-    /// Creates a new builder-style object to manufacture [`ProfilingStatus`](crate::model::ProfilingStatus).
-    pub fn builder() -> crate::model::profiling_status::Builder {
-        crate::model::profiling_status::Builder::default()
-    }
-}
 
 /// <p> Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes). </p>
 #[non_exhaustive]
@@ -2533,6 +2550,13 @@ impl AggregatedProfileTime {
         self.period.as_ref()
     }
 }
+impl AggregatedProfileTime {
+    /// Creates a new builder-style object to manufacture [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
+    pub fn builder() -> crate::model::aggregated_profile_time::Builder {
+        crate::model::aggregated_profile_time::Builder::default()
+    }
+}
+
 /// See [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
 pub mod aggregated_profile_time {
     
@@ -2587,12 +2611,6 @@ pub mod aggregated_profile_time {
     
     
 }
-impl AggregatedProfileTime {
-    /// Creates a new builder-style object to manufacture [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
-    pub fn builder() -> crate::model::aggregated_profile_time::Builder {
-        crate::model::aggregated_profile_time::Builder::default()
-    }
-}
 
 /// <p> Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group. </p>
 #[non_exhaustive]
@@ -2608,6 +2626,13 @@ impl AgentOrchestrationConfig {
         self.profiling_enabled
     }
 }
+impl AgentOrchestrationConfig {
+    /// Creates a new builder-style object to manufacture [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
+    pub fn builder() -> crate::model::agent_orchestration_config::Builder {
+        crate::model::agent_orchestration_config::Builder::default()
+    }
+}
+
 /// See [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
 pub mod agent_orchestration_config {
     
@@ -2637,11 +2662,5 @@ pub mod agent_orchestration_config {
     }
     
     
-}
-impl AgentOrchestrationConfig {
-    /// Creates a new builder-style object to manufacture [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
-    pub fn builder() -> crate::model::agent_orchestration_config::Builder {
-        crate::model::agent_orchestration_config::Builder::default()
-    }
 }
 

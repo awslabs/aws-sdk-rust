@@ -128,6 +128,13 @@ impl RevocationConfiguration {
         self.ocsp_configuration.as_ref()
     }
 }
+impl RevocationConfiguration {
+    /// Creates a new builder-style object to manufacture [`RevocationConfiguration`](crate::model::RevocationConfiguration).
+    pub fn builder() -> crate::model::revocation_configuration::Builder {
+        crate::model::revocation_configuration::Builder::default()
+    }
+}
+
 /// See [`RevocationConfiguration`](crate::model::RevocationConfiguration).
 pub mod revocation_configuration {
     
@@ -170,12 +177,6 @@ pub mod revocation_configuration {
     
     
 }
-impl RevocationConfiguration {
-    /// Creates a new builder-style object to manufacture [`RevocationConfiguration`](crate::model::RevocationConfiguration).
-    pub fn builder() -> crate::model::revocation_configuration::Builder {
-        crate::model::revocation_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains information to enable and configure Online Certificate Status Protocol (OCSP) for validating certificate revocation status.</p> 
 /// <p>When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.</p>
@@ -205,6 +206,13 @@ impl OcspConfiguration {
         self.ocsp_custom_cname.as_deref()
     }
 }
+impl OcspConfiguration {
+    /// Creates a new builder-style object to manufacture [`OcspConfiguration`](crate::model::OcspConfiguration).
+    pub fn builder() -> crate::model::ocsp_configuration::Builder {
+        crate::model::ocsp_configuration::Builder::default()
+    }
+}
+
 /// See [`OcspConfiguration`](crate::model::OcspConfiguration).
 pub mod ocsp_configuration {
     
@@ -252,12 +260,6 @@ pub mod ocsp_configuration {
     }
     
     
-}
-impl OcspConfiguration {
-    /// Creates a new builder-style object to manufacture [`OcspConfiguration`](crate::model::OcspConfiguration).
-    pub fn builder() -> crate::model::ocsp_configuration::Builder {
-        crate::model::ocsp_configuration::Builder::default()
-    }
 }
 
 /// <p>Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate it issues. Your S3 bucket policy must give write permission to Amazon Web Services Private CA. </p> 
@@ -346,6 +348,13 @@ impl CrlConfiguration {
         self.s3_object_acl.as_ref()
     }
 }
+impl CrlConfiguration {
+    /// Creates a new builder-style object to manufacture [`CrlConfiguration`](crate::model::CrlConfiguration).
+    pub fn builder() -> crate::model::crl_configuration::Builder {
+        crate::model::crl_configuration::Builder::default()
+    }
+}
+
 /// See [`CrlConfiguration`](crate::model::CrlConfiguration).
 pub mod crl_configuration {
     
@@ -437,12 +446,6 @@ pub mod crl_configuration {
     }
     
     
-}
-impl CrlConfiguration {
-    /// Creates a new builder-style object to manufacture [`CrlConfiguration`](crate::model::CrlConfiguration).
-    pub fn builder() -> crate::model::crl_configuration::Builder {
-        crate::model::crl_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3ObjectAcl`, it is important to ensure
@@ -548,6 +551,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -589,12 +599,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RevocationReason`, it is important to ensure
@@ -758,6 +762,13 @@ impl Permission {
         self.policy.as_deref()
     }
 }
+impl Permission {
+    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
+    pub fn builder() -> crate::model::permission::Builder {
+        crate::model::permission::Builder::default()
+    }
+}
+
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
     
@@ -853,12 +864,6 @@ pub mod permission {
     }
     
     
-}
-impl Permission {
-    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
-    pub fn builder() -> crate::model::permission::Builder {
-        crate::model::permission::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActionType`, it is important to ensure
@@ -1066,6 +1071,13 @@ impl CertificateAuthority {
         self.usage_mode.as_ref()
     }
 }
+impl CertificateAuthority {
+    /// Creates a new builder-style object to manufacture [`CertificateAuthority`](crate::model::CertificateAuthority).
+    pub fn builder() -> crate::model::certificate_authority::Builder {
+        crate::model::certificate_authority::Builder::default()
+    }
+}
+
 /// See [`CertificateAuthority`](crate::model::CertificateAuthority).
 pub mod certificate_authority {
     
@@ -1270,12 +1282,6 @@ pub mod certificate_authority {
     
     
 }
-impl CertificateAuthority {
-    /// Creates a new builder-style object to manufacture [`CertificateAuthority`](crate::model::CertificateAuthority).
-    pub fn builder() -> crate::model::certificate_authority::Builder {
-        crate::model::certificate_authority::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CertificateAuthorityUsageMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1478,6 +1484,13 @@ impl CertificateAuthorityConfiguration {
         self.csr_extensions.as_ref()
     }
 }
+impl CertificateAuthorityConfiguration {
+    /// Creates a new builder-style object to manufacture [`CertificateAuthorityConfiguration`](crate::model::CertificateAuthorityConfiguration).
+    pub fn builder() -> crate::model::certificate_authority_configuration::Builder {
+        crate::model::certificate_authority_configuration::Builder::default()
+    }
+}
+
 /// See [`CertificateAuthorityConfiguration`](crate::model::CertificateAuthorityConfiguration).
 pub mod certificate_authority_configuration {
     
@@ -1546,12 +1559,6 @@ pub mod certificate_authority_configuration {
     
     
 }
-impl CertificateAuthorityConfiguration {
-    /// Creates a new builder-style object to manufacture [`CertificateAuthorityConfiguration`](crate::model::CertificateAuthorityConfiguration).
-    pub fn builder() -> crate::model::certificate_authority_configuration::Builder {
-        crate::model::certificate_authority_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the certificate extensions to be added to the certificate signing request (CSR).</p>
 #[non_exhaustive]
@@ -1574,6 +1581,13 @@ impl CsrExtensions {
         self.subject_information_access.as_deref()
     }
 }
+impl CsrExtensions {
+    /// Creates a new builder-style object to manufacture [`CsrExtensions`](crate::model::CsrExtensions).
+    pub fn builder() -> crate::model::csr_extensions::Builder {
+        crate::model::csr_extensions::Builder::default()
+    }
+}
+
 /// See [`CsrExtensions`](crate::model::CsrExtensions).
 pub mod csr_extensions {
     
@@ -1622,12 +1636,6 @@ pub mod csr_extensions {
     
     
 }
-impl CsrExtensions {
-    /// Creates a new builder-style object to manufacture [`CsrExtensions`](crate::model::CsrExtensions).
-    pub fn builder() -> crate::model::csr_extensions::Builder {
-        crate::model::csr_extensions::Builder::default()
-    }
-}
 
 /// <p>Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p>
 #[non_exhaustive]
@@ -1650,6 +1658,13 @@ impl AccessDescription {
         self.access_location.as_ref()
     }
 }
+impl AccessDescription {
+    /// Creates a new builder-style object to manufacture [`AccessDescription`](crate::model::AccessDescription).
+    pub fn builder() -> crate::model::access_description::Builder {
+        crate::model::access_description::Builder::default()
+    }
+}
+
 /// See [`AccessDescription`](crate::model::AccessDescription).
 pub mod access_description {
     
@@ -1691,12 +1706,6 @@ pub mod access_description {
     }
     
     
-}
-impl AccessDescription {
-    /// Creates a new builder-style object to manufacture [`AccessDescription`](crate::model::AccessDescription).
-    pub fn builder() -> crate::model::access_description::Builder {
-        crate::model::access_description::Builder::default()
-    }
 }
 
 /// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.</p>
@@ -1762,6 +1771,13 @@ impl GeneralName {
         self.registered_id.as_deref()
     }
 }
+impl GeneralName {
+    /// Creates a new builder-style object to manufacture [`GeneralName`](crate::model::GeneralName).
+    pub fn builder() -> crate::model::general_name::Builder {
+        crate::model::general_name::Builder::default()
+    }
+}
+
 /// See [`GeneralName`](crate::model::GeneralName).
 pub mod general_name {
     
@@ -1876,12 +1892,6 @@ pub mod general_name {
     
     
 }
-impl GeneralName {
-    /// Creates a new builder-style object to manufacture [`GeneralName`](crate::model::GeneralName).
-    pub fn builder() -> crate::model::general_name::Builder {
-        crate::model::general_name::Builder::default()
-    }
-}
 
 /// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
 #[non_exhaustive]
@@ -1904,6 +1914,13 @@ impl EdiPartyName {
         self.name_assigner.as_deref()
     }
 }
+impl EdiPartyName {
+    /// Creates a new builder-style object to manufacture [`EdiPartyName`](crate::model::EdiPartyName).
+    pub fn builder() -> crate::model::edi_party_name::Builder {
+        crate::model::edi_party_name::Builder::default()
+    }
+}
+
 /// See [`EdiPartyName`](crate::model::EdiPartyName).
 pub mod edi_party_name {
     
@@ -1945,12 +1962,6 @@ pub mod edi_party_name {
     }
     
     
-}
-impl EdiPartyName {
-    /// Creates a new builder-style object to manufacture [`EdiPartyName`](crate::model::EdiPartyName).
-    pub fn builder() -> crate::model::edi_party_name::Builder {
-        crate::model::edi_party_name::Builder::default()
-    }
 }
 
 /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
@@ -2073,6 +2084,13 @@ impl Asn1Subject {
         self.custom_attributes.as_deref()
     }
 }
+impl Asn1Subject {
+    /// Creates a new builder-style object to manufacture [`Asn1Subject`](crate::model::Asn1Subject).
+    pub fn builder() -> crate::model::asn1_subject::Builder {
+        crate::model::asn1_subject::Builder::default()
+    }
+}
+
 /// See [`Asn1Subject`](crate::model::Asn1Subject).
 pub mod asn1_subject {
     
@@ -2285,12 +2303,6 @@ pub mod asn1_subject {
     
     
 }
-impl Asn1Subject {
-    /// Creates a new builder-style object to manufacture [`Asn1Subject`](crate::model::Asn1Subject).
-    pub fn builder() -> crate::model::asn1_subject::Builder {
-        crate::model::asn1_subject::Builder::default()
-    }
-}
 
 /// <p>Defines the X.500 relative distinguished name (RDN).</p>
 #[non_exhaustive]
@@ -2315,6 +2327,13 @@ impl CustomAttribute {
         self.value.as_deref()
     }
 }
+impl CustomAttribute {
+    /// Creates a new builder-style object to manufacture [`CustomAttribute`](crate::model::CustomAttribute).
+    pub fn builder() -> crate::model::custom_attribute::Builder {
+        crate::model::custom_attribute::Builder::default()
+    }
+}
+
 /// See [`CustomAttribute`](crate::model::CustomAttribute).
 pub mod custom_attribute {
     
@@ -2359,12 +2378,6 @@ pub mod custom_attribute {
     
     
 }
-impl CustomAttribute {
-    /// Creates a new builder-style object to manufacture [`CustomAttribute`](crate::model::CustomAttribute).
-    pub fn builder() -> crate::model::custom_attribute::Builder {
-        crate::model::custom_attribute::Builder::default()
-    }
-}
 
 /// <p>Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
 #[non_exhaustive]
@@ -2387,6 +2400,13 @@ impl OtherName {
         self.value.as_deref()
     }
 }
+impl OtherName {
+    /// Creates a new builder-style object to manufacture [`OtherName`](crate::model::OtherName).
+    pub fn builder() -> crate::model::other_name::Builder {
+        crate::model::other_name::Builder::default()
+    }
+}
+
 /// See [`OtherName`](crate::model::OtherName).
 pub mod other_name {
     
@@ -2429,12 +2449,6 @@ pub mod other_name {
     
     
 }
-impl OtherName {
-    /// Creates a new builder-style object to manufacture [`OtherName`](crate::model::OtherName).
-    pub fn builder() -> crate::model::other_name::Builder {
-        crate::model::other_name::Builder::default()
-    }
-}
 
 /// <p>Describes the type and format of extension access. Only one of <code>CustomObjectIdentifier</code> or <code>AccessMethodType</code> may be provided. Providing both results in <code>InvalidArgsException</code>.</p>
 #[non_exhaustive]
@@ -2457,6 +2471,13 @@ impl AccessMethod {
         self.access_method_type.as_ref()
     }
 }
+impl AccessMethod {
+    /// Creates a new builder-style object to manufacture [`AccessMethod`](crate::model::AccessMethod).
+    pub fn builder() -> crate::model::access_method::Builder {
+        crate::model::access_method::Builder::default()
+    }
+}
+
 /// See [`AccessMethod`](crate::model::AccessMethod).
 pub mod access_method {
     
@@ -2498,12 +2519,6 @@ pub mod access_method {
     }
     
     
-}
-impl AccessMethod {
-    /// Creates a new builder-style object to manufacture [`AccessMethod`](crate::model::AccessMethod).
-    pub fn builder() -> crate::model::access_method::Builder {
-        crate::model::access_method::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessMethodType`, it is important to ensure
@@ -2663,6 +2678,13 @@ impl KeyUsage {
         self.decipher_only
     }
 }
+impl KeyUsage {
+    /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::model::KeyUsage).
+    pub fn builder() -> crate::model::key_usage::Builder {
+        crate::model::key_usage::Builder::default()
+    }
+}
+
 /// See [`KeyUsage`](crate::model::KeyUsage).
 pub mod key_usage {
     
@@ -2797,12 +2819,6 @@ pub mod key_usage {
     }
     
     
-}
-impl KeyUsage {
-    /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::model::KeyUsage).
-    pub fn builder() -> crate::model::key_usage::Builder {
-        crate::model::key_usage::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SigningAlgorithm`, it is important to ensure
@@ -3306,6 +3322,13 @@ impl Validity {
         self.r#type.as_ref()
     }
 }
+impl Validity {
+    /// Creates a new builder-style object to manufacture [`Validity`](crate::model::Validity).
+    pub fn builder() -> crate::model::validity::Builder {
+        crate::model::validity::Builder::default()
+    }
+}
+
 /// See [`Validity`](crate::model::Validity).
 pub mod validity {
     
@@ -3381,12 +3404,6 @@ pub mod validity {
     }
     
     
-}
-impl Validity {
-    /// Creates a new builder-style object to manufacture [`Validity`](crate::model::Validity).
-    pub fn builder() -> crate::model::validity::Builder {
-        crate::model::validity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidityPeriodType`, it is important to ensure
@@ -3508,6 +3525,13 @@ impl ApiPassthrough {
         self.subject.as_ref()
     }
 }
+impl ApiPassthrough {
+    /// Creates a new builder-style object to manufacture [`ApiPassthrough`](crate::model::ApiPassthrough).
+    pub fn builder() -> crate::model::api_passthrough::Builder {
+        crate::model::api_passthrough::Builder::default()
+    }
+}
+
 /// See [`ApiPassthrough`](crate::model::ApiPassthrough).
 pub mod api_passthrough {
     
@@ -3549,12 +3573,6 @@ pub mod api_passthrough {
     }
     
     
-}
-impl ApiPassthrough {
-    /// Creates a new builder-style object to manufacture [`ApiPassthrough`](crate::model::ApiPassthrough).
-    pub fn builder() -> crate::model::api_passthrough::Builder {
-        crate::model::api_passthrough::Builder::default()
-    }
 }
 
 /// <p>Contains X.509 extension information for a certificate.</p>
@@ -3603,6 +3621,13 @@ impl Extensions {
         self.custom_extensions.as_deref()
     }
 }
+impl Extensions {
+    /// Creates a new builder-style object to manufacture [`Extensions`](crate::model::Extensions).
+    pub fn builder() -> crate::model::extensions::Builder {
+        crate::model::extensions::Builder::default()
+    }
+}
+
 /// See [`Extensions`](crate::model::Extensions).
 pub mod extensions {
     
@@ -3709,12 +3734,6 @@ pub mod extensions {
     
     
 }
-impl Extensions {
-    /// Creates a new builder-style object to manufacture [`Extensions`](crate::model::Extensions).
-    pub fn builder() -> crate::model::extensions::Builder {
-        crate::model::extensions::Builder::default()
-    }
-}
 
 /// <p></p> 
 /// <p>Specifies the X.509 extension information for a certificate.</p> 
@@ -3752,6 +3771,13 @@ impl CustomExtension {
         self.critical
     }
 }
+impl CustomExtension {
+    /// Creates a new builder-style object to manufacture [`CustomExtension`](crate::model::CustomExtension).
+    pub fn builder() -> crate::model::custom_extension::Builder {
+        crate::model::custom_extension::Builder::default()
+    }
+}
+
 /// See [`CustomExtension`](crate::model::CustomExtension).
 pub mod custom_extension {
     
@@ -3812,12 +3838,6 @@ pub mod custom_extension {
     
     
 }
-impl CustomExtension {
-    /// Creates a new builder-style object to manufacture [`CustomExtension`](crate::model::CustomExtension).
-    pub fn builder() -> crate::model::custom_extension::Builder {
-        crate::model::custom_extension::Builder::default()
-    }
-}
 
 /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
 #[non_exhaustive]
@@ -3840,6 +3860,13 @@ impl ExtendedKeyUsage {
         self.extended_key_usage_object_identifier.as_deref()
     }
 }
+impl ExtendedKeyUsage {
+    /// Creates a new builder-style object to manufacture [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
+    pub fn builder() -> crate::model::extended_key_usage::Builder {
+        crate::model::extended_key_usage::Builder::default()
+    }
+}
+
 /// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
 pub mod extended_key_usage {
     
@@ -3881,12 +3908,6 @@ pub mod extended_key_usage {
     }
     
     
-}
-impl ExtendedKeyUsage {
-    /// Creates a new builder-style object to manufacture [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
-    pub fn builder() -> crate::model::extended_key_usage::Builder {
-        crate::model::extended_key_usage::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExtendedKeyUsageType`, it is important to ensure
@@ -4027,6 +4048,13 @@ impl PolicyInformation {
         self.policy_qualifiers.as_deref()
     }
 }
+impl PolicyInformation {
+    /// Creates a new builder-style object to manufacture [`PolicyInformation`](crate::model::PolicyInformation).
+    pub fn builder() -> crate::model::policy_information::Builder {
+        crate::model::policy_information::Builder::default()
+    }
+}
+
 /// See [`PolicyInformation`](crate::model::PolicyInformation).
 pub mod policy_information {
     
@@ -4075,12 +4103,6 @@ pub mod policy_information {
     
     
 }
-impl PolicyInformation {
-    /// Creates a new builder-style object to manufacture [`PolicyInformation`](crate::model::PolicyInformation).
-    pub fn builder() -> crate::model::policy_information::Builder {
-        crate::model::policy_information::Builder::default()
-    }
-}
 
 /// <p>Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. Amazon Web Services Private CA supports the certification practice statement (CPS) qualifier.</p>
 #[non_exhaustive]
@@ -4103,6 +4125,13 @@ impl PolicyQualifierInfo {
         self.qualifier.as_ref()
     }
 }
+impl PolicyQualifierInfo {
+    /// Creates a new builder-style object to manufacture [`PolicyQualifierInfo`](crate::model::PolicyQualifierInfo).
+    pub fn builder() -> crate::model::policy_qualifier_info::Builder {
+        crate::model::policy_qualifier_info::Builder::default()
+    }
+}
+
 /// See [`PolicyQualifierInfo`](crate::model::PolicyQualifierInfo).
 pub mod policy_qualifier_info {
     
@@ -4145,12 +4174,6 @@ pub mod policy_qualifier_info {
     
     
 }
-impl PolicyQualifierInfo {
-    /// Creates a new builder-style object to manufacture [`PolicyQualifierInfo`](crate::model::PolicyQualifierInfo).
-    pub fn builder() -> crate::model::policy_qualifier_info::Builder {
-        crate::model::policy_qualifier_info::Builder::default()
-    }
-}
 
 /// <p>Defines a <code>PolicyInformation</code> qualifier. Amazon Web Services Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
 #[non_exhaustive]
@@ -4166,6 +4189,13 @@ impl Qualifier {
         self.cps_uri.as_deref()
     }
 }
+impl Qualifier {
+    /// Creates a new builder-style object to manufacture [`Qualifier`](crate::model::Qualifier).
+    pub fn builder() -> crate::model::qualifier::Builder {
+        crate::model::qualifier::Builder::default()
+    }
+}
+
 /// See [`Qualifier`](crate::model::Qualifier).
 pub mod qualifier {
     
@@ -4195,12 +4225,6 @@ pub mod qualifier {
     }
     
     
-}
-impl Qualifier {
-    /// Creates a new builder-style object to manufacture [`Qualifier`](crate::model::Qualifier).
-    pub fn builder() -> crate::model::qualifier::Builder {
-        crate::model::qualifier::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PolicyQualifierId`, it is important to ensure

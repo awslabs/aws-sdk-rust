@@ -28,6 +28,13 @@ impl Forecast {
         self.predictions.as_ref()
     }
 }
+impl Forecast {
+    /// Creates a new builder-style object to manufacture [`Forecast`](crate::model::Forecast).
+    pub fn builder() -> crate::model::forecast::Builder {
+        crate::model::forecast::Builder::default()
+    }
+}
+
 /// See [`Forecast`](crate::model::Forecast).
 pub mod forecast {
     
@@ -78,12 +85,6 @@ pub mod forecast {
     
     
 }
-impl Forecast {
-    /// Creates a new builder-style object to manufacture [`Forecast`](crate::model::Forecast).
-    pub fn builder() -> crate::model::forecast::Builder {
-        crate::model::forecast::Builder::default()
-    }
-}
 
 /// <p>The forecast value for a specific date. Part of the <code>Forecast</code> object.</p>
 #[non_exhaustive]
@@ -106,6 +107,13 @@ impl DataPoint {
         self.value
     }
 }
+impl DataPoint {
+    /// Creates a new builder-style object to manufacture [`DataPoint`](crate::model::DataPoint).
+    pub fn builder() -> crate::model::data_point::Builder {
+        crate::model::data_point::Builder::default()
+    }
+}
+
 /// See [`DataPoint`](crate::model::DataPoint).
 pub mod data_point {
     
@@ -147,11 +155,5 @@ pub mod data_point {
     }
     
     
-}
-impl DataPoint {
-    /// Creates a new builder-style object to manufacture [`DataPoint`](crate::model::DataPoint).
-    pub fn builder() -> crate::model::data_point::Builder {
-        crate::model::data_point::Builder::default()
-    }
 }
 

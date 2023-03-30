@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for RollbackTransactionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RollbackTransactionOutput {
+    /// Creates a new builder-style object to manufacture [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
+    pub fn builder() -> crate::output::rollback_transaction_output::Builder {
+        crate::output::rollback_transaction_output::Builder::default()
+    }
+}
+
 /// See [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
 pub mod rollback_transaction_output {
     
@@ -60,12 +67,6 @@ pub mod rollback_transaction_output {
     }
     
     
-}
-impl RollbackTransactionOutput {
-    /// Creates a new builder-style object to manufacture [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput).
-    pub fn builder() -> crate::output::rollback_transaction_output::Builder {
-        crate::output::rollback_transaction_output::Builder::default()
-    }
 }
 
 /// <p>The response elements represent the output of a request to run a SQL statement against a database.</p>
@@ -122,6 +123,13 @@ impl aws_http::request_id::RequestId for ExecuteStatementOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ExecuteStatementOutput {
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
+    pub fn builder() -> crate::output::execute_statement_output::Builder {
+        crate::output::execute_statement_output::Builder::default()
+    }
+}
+
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
     
@@ -236,12 +244,6 @@ pub mod execute_statement_output {
     
     
 }
-impl ExecuteStatementOutput {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
-    pub fn builder() -> crate::output::execute_statement_output::Builder {
-        crate::output::execute_statement_output::Builder::default()
-    }
-}
 
 /// <p>The response elements represent the output of a request to run one or more SQL statements.</p>
 #[non_exhaustive]
@@ -263,6 +265,13 @@ impl aws_http::request_id::RequestId for ExecuteSqlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ExecuteSqlOutput {
+    /// Creates a new builder-style object to manufacture [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
+    pub fn builder() -> crate::output::execute_sql_output::Builder {
+        crate::output::execute_sql_output::Builder::default()
+    }
+}
+
 /// See [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
 pub mod execute_sql_output {
     
@@ -310,12 +319,6 @@ pub mod execute_sql_output {
     
     
 }
-impl ExecuteSqlOutput {
-    /// Creates a new builder-style object to manufacture [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput).
-    pub fn builder() -> crate::output::execute_sql_output::Builder {
-        crate::output::execute_sql_output::Builder::default()
-    }
-}
 
 /// <p>The response elements represent the output of a commit transaction request.</p>
 #[non_exhaustive]
@@ -337,6 +340,13 @@ impl aws_http::request_id::RequestId for CommitTransactionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CommitTransactionOutput {
+    /// Creates a new builder-style object to manufacture [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
+    pub fn builder() -> crate::output::commit_transaction_output::Builder {
+        crate::output::commit_transaction_output::Builder::default()
+    }
+}
+
 /// See [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
 pub mod commit_transaction_output {
     
@@ -378,12 +388,6 @@ pub mod commit_transaction_output {
     
     
 }
-impl CommitTransactionOutput {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionOutput`](crate::output::CommitTransactionOutput).
-    pub fn builder() -> crate::output::commit_transaction_output::Builder {
-        crate::output::commit_transaction_output::Builder::default()
-    }
-}
 
 /// <p>The response elements represent the output of a request to start a SQL transaction.</p>
 #[non_exhaustive]
@@ -405,6 +409,13 @@ impl aws_http::request_id::RequestId for BeginTransactionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BeginTransactionOutput {
+    /// Creates a new builder-style object to manufacture [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
+    pub fn builder() -> crate::output::begin_transaction_output::Builder {
+        crate::output::begin_transaction_output::Builder::default()
+    }
+}
+
 /// See [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
 pub mod begin_transaction_output {
     
@@ -446,12 +457,6 @@ pub mod begin_transaction_output {
     
     
 }
-impl BeginTransactionOutput {
-    /// Creates a new builder-style object to manufacture [`BeginTransactionOutput`](crate::output::BeginTransactionOutput).
-    pub fn builder() -> crate::output::begin_transaction_output::Builder {
-        crate::output::begin_transaction_output::Builder::default()
-    }
-}
 
 /// <p>The response elements represent the output of a SQL statement over an array of data.</p>
 #[non_exhaustive]
@@ -473,6 +478,13 @@ impl aws_http::request_id::RequestId for BatchExecuteStatementOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchExecuteStatementOutput {
+    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
+    pub fn builder() -> crate::output::batch_execute_statement_output::Builder {
+        crate::output::batch_execute_statement_output::Builder::default()
+    }
+}
+
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
     
@@ -519,11 +531,5 @@ pub mod batch_execute_statement_output {
     }
     
     
-}
-impl BatchExecuteStatementOutput {
-    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
-    pub fn builder() -> crate::output::batch_execute_statement_output::Builder {
-        crate::output::batch_execute_statement_output::Builder::default()
-    }
 }
 

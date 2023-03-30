@@ -24,6 +24,13 @@ impl aws_http::request_id::RequestId for GetSessionTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSessionTokenOutput {
+    /// Creates a new builder-style object to manufacture [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
+    pub fn builder() -> crate::output::get_session_token_output::Builder {
+        crate::output::get_session_token_output::Builder::default()
+    }
+}
+
 /// See [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
 pub mod get_session_token_output {
     
@@ -69,12 +76,6 @@ pub mod get_session_token_output {
     
     
 }
-impl GetSessionTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
-    pub fn builder() -> crate::output::get_session_token_output::Builder {
-        crate::output::get_session_token_output::Builder::default()
-    }
-}
 
 /// <p>Contains the response to a successful <code>GetFederationToken</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
@@ -114,6 +115,13 @@ impl aws_http::request_id::RequestId for GetFederationTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFederationTokenOutput {
+    /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
+    pub fn builder() -> crate::output::get_federation_token_output::Builder {
+        crate::output::get_federation_token_output::Builder::default()
+    }
+}
+
 /// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
 pub mod get_federation_token_output {
     
@@ -183,12 +191,6 @@ pub mod get_federation_token_output {
     
     
 }
-impl GetFederationTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
-    pub fn builder() -> crate::output::get_federation_token_output::Builder {
-        crate::output::get_federation_token_output::Builder::default()
-    }
-}
 
 /// <p>Contains the response to a successful <code>GetCallerIdentity</code> request, including information about the entity making the request.</p>
 #[non_exhaustive]
@@ -224,6 +226,13 @@ impl aws_http::request_id::RequestId for GetCallerIdentityOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCallerIdentityOutput {
+    /// Creates a new builder-style object to manufacture [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
+    pub fn builder() -> crate::output::get_caller_identity_output::Builder {
+        crate::output::get_caller_identity_output::Builder::default()
+    }
+}
+
 /// See [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
 pub mod get_caller_identity_output {
     
@@ -289,12 +298,6 @@ pub mod get_caller_identity_output {
     
     
 }
-impl GetCallerIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
-    pub fn builder() -> crate::output::get_caller_identity_output::Builder {
-        crate::output::get_caller_identity_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -316,6 +319,13 @@ impl aws_http::request_id::RequestId for GetAccessKeyInfoOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessKeyInfoOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
+    pub fn builder() -> crate::output::get_access_key_info_output::Builder {
+        crate::output::get_access_key_info_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
 pub mod get_access_key_info_output {
     
@@ -357,12 +367,6 @@ pub mod get_access_key_info_output {
     
     
 }
-impl GetAccessKeyInfoOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
-    pub fn builder() -> crate::output::get_access_key_info_output::Builder {
-        crate::output::get_access_key_info_output::Builder::default()
-    }
-}
 
 /// <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an Amazon Web Services request.</p>
 #[non_exhaustive]
@@ -384,6 +388,13 @@ impl aws_http::request_id::RequestId for DecodeAuthorizationMessageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DecodeAuthorizationMessageOutput {
+    /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
+    pub fn builder() -> crate::output::decode_authorization_message_output::Builder {
+        crate::output::decode_authorization_message_output::Builder::default()
+    }
+}
+
 /// See [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
 pub mod decode_authorization_message_output {
     
@@ -424,12 +435,6 @@ pub mod decode_authorization_message_output {
     }
     
     
-}
-impl DecodeAuthorizationMessageOutput {
-    /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
-    pub fn builder() -> crate::output::decode_authorization_message_output::Builder {
-        crate::output::decode_authorization_message_output::Builder::default()
-    }
 }
 
 /// <p>Contains the response to a successful <code>AssumeRoleWithWebIdentity</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
@@ -502,6 +507,13 @@ impl aws_http::request_id::RequestId for AssumeRoleWithWebIdentityOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssumeRoleWithWebIdentityOutput {
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
+    pub fn builder() -> crate::output::assume_role_with_web_identity_output::Builder {
+        crate::output::assume_role_with_web_identity_output::Builder::default()
+    }
+}
+
 /// See [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
 pub mod assume_role_with_web_identity_output {
     
@@ -623,12 +635,6 @@ pub mod assume_role_with_web_identity_output {
     
     
 }
-impl AssumeRoleWithWebIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
-    pub fn builder() -> crate::output::assume_role_with_web_identity_output::Builder {
-        crate::output::assume_role_with_web_identity_output::Builder::default()
-    }
-}
 
 /// <p>Contains the response to a successful <code>AssumeRoleWithSAML</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
@@ -732,6 +738,13 @@ impl aws_http::request_id::RequestId for AssumeRoleWithSamlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssumeRoleWithSamlOutput {
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
+    pub fn builder() -> crate::output::assume_role_with_saml_output::Builder {
+        crate::output::assume_role_with_saml_output::Builder::default()
+    }
+}
+
 /// See [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
 pub mod assume_role_with_saml_output {
     
@@ -895,12 +908,6 @@ pub mod assume_role_with_saml_output {
     
     
 }
-impl AssumeRoleWithSamlOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
-    pub fn builder() -> crate::output::assume_role_with_saml_output::Builder {
-        crate::output::assume_role_with_saml_output::Builder::default()
-    }
-}
 
 /// <p>Contains the response to a successful <code>AssumeRole</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
@@ -951,6 +958,13 @@ impl aws_http::request_id::RequestId for AssumeRoleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssumeRoleOutput {
+    /// Creates a new builder-style object to manufacture [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
+    pub fn builder() -> crate::output::assume_role_output::Builder {
+        crate::output::assume_role_output::Builder::default()
+    }
+}
+
 /// See [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
 pub mod assume_role_output {
     
@@ -1035,11 +1049,5 @@ pub mod assume_role_output {
     }
     
     
-}
-impl AssumeRoleOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
-    pub fn builder() -> crate::output::assume_role_output::Builder {
-        crate::output::assume_role_output::Builder::default()
-    }
 }
 

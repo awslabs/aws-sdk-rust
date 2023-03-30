@@ -52,6 +52,13 @@ impl EnvironmentMember {
         self.last_access.as_ref()
     }
 }
+impl EnvironmentMember {
+    /// Creates a new builder-style object to manufacture [`EnvironmentMember`](crate::model::EnvironmentMember).
+    pub fn builder() -> crate::model::environment_member::Builder {
+        crate::model::environment_member::Builder::default()
+    }
+}
+
 /// See [`EnvironmentMember`](crate::model::EnvironmentMember).
 pub mod environment_member {
     
@@ -139,12 +146,6 @@ pub mod environment_member {
     }
     
     
-}
-impl EnvironmentMember {
-    /// Creates a new builder-style object to manufacture [`EnvironmentMember`](crate::model::EnvironmentMember).
-    pub fn builder() -> crate::model::environment_member::Builder {
-        crate::model::environment_member::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Permissions`, it is important to ensure
@@ -427,6 +428,13 @@ impl  std::fmt::Debug for Tag  {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -476,12 +484,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentStatus`, it is important to ensure
@@ -708,6 +710,13 @@ impl  std::fmt::Debug for Environment  {
         formatter.finish()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
     
@@ -881,12 +890,6 @@ pub mod environment {
     
     
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ManagedCredentialsStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1057,6 +1060,13 @@ impl EnvironmentLifecycle {
         self.failure_resource.as_deref()
     }
 }
+impl EnvironmentLifecycle {
+    /// Creates a new builder-style object to manufacture [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
+    pub fn builder() -> crate::model::environment_lifecycle::Builder {
+        crate::model::environment_lifecycle::Builder::default()
+    }
+}
+
 /// See [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
 pub mod environment_lifecycle {
     
@@ -1124,12 +1134,6 @@ pub mod environment_lifecycle {
     }
     
     
-}
-impl EnvironmentLifecycle {
-    /// Creates a new builder-style object to manufacture [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
-    pub fn builder() -> crate::model::environment_lifecycle::Builder {
-        crate::model::environment_lifecycle::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentLifecycleStatus`, it is important to ensure

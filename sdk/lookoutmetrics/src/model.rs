@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -183,6 +184,13 @@ impl MetricSetDimensionFilter {
         self.filter_list.as_deref()
     }
 }
+impl MetricSetDimensionFilter {
+    /// Creates a new builder-style object to manufacture [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
+    pub fn builder() -> crate::model::metric_set_dimension_filter::Builder {
+        crate::model::metric_set_dimension_filter::Builder::default()
+    }
+}
+
 /// See [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
 pub mod metric_set_dimension_filter {
     
@@ -231,12 +239,6 @@ pub mod metric_set_dimension_filter {
     
     
 }
-impl MetricSetDimensionFilter {
-    /// Creates a new builder-style object to manufacture [`MetricSetDimensionFilter`](crate::model::MetricSetDimensionFilter).
-    pub fn builder() -> crate::model::metric_set_dimension_filter::Builder {
-        crate::model::metric_set_dimension_filter::Builder::default()
-    }
-}
 
 /// <p>Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.</p>
 #[non_exhaustive]
@@ -259,6 +261,13 @@ impl Filter {
         self.filter_operation.as_ref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -300,12 +309,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FilterOperation`, it is important to ensure
@@ -434,6 +437,13 @@ impl MetricSource {
         self.athena_source_config.as_ref()
     }
 }
+impl MetricSource {
+    /// Creates a new builder-style object to manufacture [`MetricSource`](crate::model::MetricSource).
+    pub fn builder() -> crate::model::metric_source::Builder {
+        crate::model::metric_source::Builder::default()
+    }
+}
+
 /// See [`MetricSource`](crate::model::MetricSource).
 pub mod metric_source {
     
@@ -524,12 +534,6 @@ pub mod metric_source {
     
     
 }
-impl MetricSource {
-    /// Creates a new builder-style object to manufacture [`MetricSource`](crate::model::MetricSource).
-    pub fn builder() -> crate::model::metric_source::Builder {
-        crate::model::metric_source::Builder::default()
-    }
-}
 
 /// <p>Details about an Amazon Athena datasource.</p>
 #[non_exhaustive]
@@ -587,6 +591,13 @@ impl AthenaSourceConfig {
         self.back_test_configuration.as_ref()
     }
 }
+impl AthenaSourceConfig {
+    /// Creates a new builder-style object to manufacture [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
+    pub fn builder() -> crate::model::athena_source_config::Builder {
+        crate::model::athena_source_config::Builder::default()
+    }
+}
+
 /// See [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
 pub mod athena_source_config {
     
@@ -689,12 +700,6 @@ pub mod athena_source_config {
     
     
 }
-impl AthenaSourceConfig {
-    /// Creates a new builder-style object to manufacture [`AthenaSourceConfig`](crate::model::AthenaSourceConfig).
-    pub fn builder() -> crate::model::athena_source_config::Builder {
-        crate::model::athena_source_config::Builder::default()
-    }
-}
 
 /// <p>Settings for backtest mode.</p>
 #[non_exhaustive]
@@ -710,6 +715,13 @@ impl BackTestConfiguration {
         self.run_back_test_mode
     }
 }
+impl BackTestConfiguration {
+    /// Creates a new builder-style object to manufacture [`BackTestConfiguration`](crate::model::BackTestConfiguration).
+    pub fn builder() -> crate::model::back_test_configuration::Builder {
+        crate::model::back_test_configuration::Builder::default()
+    }
+}
+
 /// See [`BackTestConfiguration`](crate::model::BackTestConfiguration).
 pub mod back_test_configuration {
     
@@ -739,12 +751,6 @@ pub mod back_test_configuration {
     }
     
     
-}
-impl BackTestConfiguration {
-    /// Creates a new builder-style object to manufacture [`BackTestConfiguration`](crate::model::BackTestConfiguration).
-    pub fn builder() -> crate::model::back_test_configuration::Builder {
-        crate::model::back_test_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides information about the Amazon Redshift database configuration.</p>
@@ -810,6 +816,13 @@ impl RedshiftSourceConfig {
         self.vpc_configuration.as_ref()
     }
 }
+impl RedshiftSourceConfig {
+    /// Creates a new builder-style object to manufacture [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
+    pub fn builder() -> crate::model::redshift_source_config::Builder {
+        crate::model::redshift_source_config::Builder::default()
+    }
+}
+
 /// See [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
 pub mod redshift_source_config {
     
@@ -924,12 +937,6 @@ pub mod redshift_source_config {
     
     
 }
-impl RedshiftSourceConfig {
-    /// Creates a new builder-style object to manufacture [`RedshiftSourceConfig`](crate::model::RedshiftSourceConfig).
-    pub fn builder() -> crate::model::redshift_source_config::Builder {
-        crate::model::redshift_source_config::Builder::default()
-    }
-}
 
 /// <p>Contains configuration information about the Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
@@ -952,6 +959,13 @@ impl VpcConfiguration {
         self.security_group_id_list.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
     
@@ -1005,12 +1019,6 @@ pub mod vpc_configuration {
     }
     
     
-}
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
 }
 
 /// <p>Contains information about the Amazon Relational Database Service (RDS) configuration.</p>
@@ -1076,6 +1084,13 @@ impl RdsSourceConfig {
         self.vpc_configuration.as_ref()
     }
 }
+impl RdsSourceConfig {
+    /// Creates a new builder-style object to manufacture [`RdsSourceConfig`](crate::model::RdsSourceConfig).
+    pub fn builder() -> crate::model::rds_source_config::Builder {
+        crate::model::rds_source_config::Builder::default()
+    }
+}
+
 /// See [`RdsSourceConfig`](crate::model::RdsSourceConfig).
 pub mod rds_source_config {
     
@@ -1190,12 +1205,6 @@ pub mod rds_source_config {
     
     
 }
-impl RdsSourceConfig {
-    /// Creates a new builder-style object to manufacture [`RdsSourceConfig`](crate::model::RdsSourceConfig).
-    pub fn builder() -> crate::model::rds_source_config::Builder {
-        crate::model::rds_source_config::Builder::default()
-    }
-}
 
 /// <p>Details about an Amazon CloudWatch datasource.</p>
 #[non_exhaustive]
@@ -1218,6 +1227,13 @@ impl CloudWatchConfig {
         self.back_test_configuration.as_ref()
     }
 }
+impl CloudWatchConfig {
+    /// Creates a new builder-style object to manufacture [`CloudWatchConfig`](crate::model::CloudWatchConfig).
+    pub fn builder() -> crate::model::cloud_watch_config::Builder {
+        crate::model::cloud_watch_config::Builder::default()
+    }
+}
+
 /// See [`CloudWatchConfig`](crate::model::CloudWatchConfig).
 pub mod cloud_watch_config {
     
@@ -1260,12 +1276,6 @@ pub mod cloud_watch_config {
     
     
 }
-impl CloudWatchConfig {
-    /// Creates a new builder-style object to manufacture [`CloudWatchConfig`](crate::model::CloudWatchConfig).
-    pub fn builder() -> crate::model::cloud_watch_config::Builder {
-        crate::model::cloud_watch_config::Builder::default()
-    }
-}
 
 /// <p>Details about an Amazon AppFlow flow datasource.</p>
 #[non_exhaustive]
@@ -1288,6 +1298,13 @@ impl AppFlowConfig {
         self.flow_name.as_deref()
     }
 }
+impl AppFlowConfig {
+    /// Creates a new builder-style object to manufacture [`AppFlowConfig`](crate::model::AppFlowConfig).
+    pub fn builder() -> crate::model::app_flow_config::Builder {
+        crate::model::app_flow_config::Builder::default()
+    }
+}
+
 /// See [`AppFlowConfig`](crate::model::AppFlowConfig).
 pub mod app_flow_config {
     
@@ -1330,12 +1347,6 @@ pub mod app_flow_config {
     
     
 }
-impl AppFlowConfig {
-    /// Creates a new builder-style object to manufacture [`AppFlowConfig`](crate::model::AppFlowConfig).
-    pub fn builder() -> crate::model::app_flow_config::Builder {
-        crate::model::app_flow_config::Builder::default()
-    }
-}
 
 /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
 #[non_exhaustive]
@@ -1372,6 +1383,13 @@ impl S3SourceConfig {
         self.file_format_descriptor.as_ref()
     }
 }
+impl S3SourceConfig {
+    /// Creates a new builder-style object to manufacture [`S3SourceConfig`](crate::model::S3SourceConfig).
+    pub fn builder() -> crate::model::s3_source_config::Builder {
+        crate::model::s3_source_config::Builder::default()
+    }
+}
+
 /// See [`S3SourceConfig`](crate::model::S3SourceConfig).
 pub mod s3_source_config {
     
@@ -1450,12 +1468,6 @@ pub mod s3_source_config {
     
     
 }
-impl S3SourceConfig {
-    /// Creates a new builder-style object to manufacture [`S3SourceConfig`](crate::model::S3SourceConfig).
-    pub fn builder() -> crate::model::s3_source_config::Builder {
-        crate::model::s3_source_config::Builder::default()
-    }
-}
 
 /// <p>Contains information about a source file's formatting.</p>
 #[non_exhaustive]
@@ -1478,6 +1490,13 @@ impl FileFormatDescriptor {
         self.json_format_descriptor.as_ref()
     }
 }
+impl FileFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
+    pub fn builder() -> crate::model::file_format_descriptor::Builder {
+        crate::model::file_format_descriptor::Builder::default()
+    }
+}
+
 /// See [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
 pub mod file_format_descriptor {
     
@@ -1520,12 +1539,6 @@ pub mod file_format_descriptor {
     
     
 }
-impl FileFormatDescriptor {
-    /// Creates a new builder-style object to manufacture [`FileFormatDescriptor`](crate::model::FileFormatDescriptor).
-    pub fn builder() -> crate::model::file_format_descriptor::Builder {
-        crate::model::file_format_descriptor::Builder::default()
-    }
-}
 
 /// <p>Contains information about how a source JSON data file should be analyzed.</p>
 #[non_exhaustive]
@@ -1548,6 +1561,13 @@ impl JsonFormatDescriptor {
         self.charset.as_deref()
     }
 }
+impl JsonFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
+    pub fn builder() -> crate::model::json_format_descriptor::Builder {
+        crate::model::json_format_descriptor::Builder::default()
+    }
+}
+
 /// See [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
 pub mod json_format_descriptor {
     
@@ -1589,12 +1609,6 @@ pub mod json_format_descriptor {
     }
     
     
-}
-impl JsonFormatDescriptor {
-    /// Creates a new builder-style object to manufacture [`JsonFormatDescriptor`](crate::model::JsonFormatDescriptor).
-    pub fn builder() -> crate::model::json_format_descriptor::Builder {
-        crate::model::json_format_descriptor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JsonFileCompression`, it is important to ensure
@@ -1728,6 +1742,13 @@ impl CsvFormatDescriptor {
         self.quote_symbol.as_deref()
     }
 }
+impl CsvFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
+    pub fn builder() -> crate::model::csv_format_descriptor::Builder {
+        crate::model::csv_format_descriptor::Builder::default()
+    }
+}
+
 /// See [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
 pub mod csv_format_descriptor {
     
@@ -1823,12 +1844,6 @@ pub mod csv_format_descriptor {
     }
     
     
-}
-impl CsvFormatDescriptor {
-    /// Creates a new builder-style object to manufacture [`CsvFormatDescriptor`](crate::model::CsvFormatDescriptor).
-    pub fn builder() -> crate::model::csv_format_descriptor::Builder {
-        crate::model::csv_format_descriptor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CsvFileCompression`, it is important to ensure
@@ -2026,6 +2041,13 @@ impl TimestampColumn {
         self.column_format.as_deref()
     }
 }
+impl TimestampColumn {
+    /// Creates a new builder-style object to manufacture [`TimestampColumn`](crate::model::TimestampColumn).
+    pub fn builder() -> crate::model::timestamp_column::Builder {
+        crate::model::timestamp_column::Builder::default()
+    }
+}
+
 /// See [`TimestampColumn`](crate::model::TimestampColumn).
 pub mod timestamp_column {
     
@@ -2068,12 +2090,6 @@ pub mod timestamp_column {
     
     
 }
-impl TimestampColumn {
-    /// Creates a new builder-style object to manufacture [`TimestampColumn`](crate::model::TimestampColumn).
-    pub fn builder() -> crate::model::timestamp_column::Builder {
-        crate::model::timestamp_column::Builder::default()
-    }
-}
 
 /// <p>A calculation made by contrasting a measure and a dimension from your source data.</p>
 #[non_exhaustive]
@@ -2103,6 +2119,13 @@ impl Metric {
         self.namespace.as_deref()
     }
 }
+impl Metric {
+    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
+    pub fn builder() -> crate::model::metric::Builder {
+        crate::model::metric::Builder::default()
+    }
+}
+
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
     
@@ -2156,12 +2179,6 @@ pub mod metric {
     }
     
     
-}
-impl Metric {
-    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
-    pub fn builder() -> crate::model::metric::Builder {
-        crate::model::metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AggregationFunction`, it is important to ensure
@@ -2260,6 +2277,13 @@ impl AnomalyDetectorConfig {
         self.anomaly_detector_frequency.as_ref()
     }
 }
+impl AnomalyDetectorConfig {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
+    pub fn builder() -> crate::model::anomaly_detector_config::Builder {
+        crate::model::anomaly_detector_config::Builder::default()
+    }
+}
+
 /// See [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
 pub mod anomaly_detector_config {
     
@@ -2290,12 +2314,6 @@ pub mod anomaly_detector_config {
     
     
 }
-impl AnomalyDetectorConfig {
-    /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfig`](crate::model::AnomalyDetectorConfig).
-    pub fn builder() -> crate::model::anomaly_detector_config::Builder {
-        crate::model::anomaly_detector_config::Builder::default()
-    }
-}
 
 /// <p>The configuration of the alert filters.</p>
 #[non_exhaustive]
@@ -2318,6 +2336,13 @@ impl AlertFilters {
         self.dimension_filter_list.as_deref()
     }
 }
+impl AlertFilters {
+    /// Creates a new builder-style object to manufacture [`AlertFilters`](crate::model::AlertFilters).
+    pub fn builder() -> crate::model::alert_filters::Builder {
+        crate::model::alert_filters::Builder::default()
+    }
+}
+
 /// See [`AlertFilters`](crate::model::AlertFilters).
 pub mod alert_filters {
     
@@ -2372,12 +2397,6 @@ pub mod alert_filters {
     
     
 }
-impl AlertFilters {
-    /// Creates a new builder-style object to manufacture [`AlertFilters`](crate::model::AlertFilters).
-    pub fn builder() -> crate::model::alert_filters::Builder {
-        crate::model::alert_filters::Builder::default()
-    }
-}
 
 /// <p>The dimension filter, containing DimensionName and DimensionValueList.</p>
 #[non_exhaustive]
@@ -2400,6 +2419,13 @@ impl DimensionFilter {
         self.dimension_value_list.as_deref()
     }
 }
+impl DimensionFilter {
+    /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter).
+    pub fn builder() -> crate::model::dimension_filter::Builder {
+        crate::model::dimension_filter::Builder::default()
+    }
+}
+
 /// See [`DimensionFilter`](crate::model::DimensionFilter).
 pub mod dimension_filter {
     
@@ -2448,12 +2474,6 @@ pub mod dimension_filter {
     
     
 }
-impl DimensionFilter {
-    /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter).
-    pub fn builder() -> crate::model::dimension_filter::Builder {
-        crate::model::dimension_filter::Builder::default()
-    }
-}
 
 /// <p>A configuration that specifies the action to perform when anomalies are detected.</p>
 #[non_exhaustive]
@@ -2476,6 +2496,13 @@ impl Action {
         self.lambda_configuration.as_ref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
     
@@ -2518,12 +2545,6 @@ pub mod action {
     
     
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p>Contains information about a Lambda configuration.</p>
 #[non_exhaustive]
@@ -2546,6 +2567,13 @@ impl LambdaConfiguration {
         self.lambda_arn.as_deref()
     }
 }
+impl LambdaConfiguration {
+    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration).
+    pub fn builder() -> crate::model::lambda_configuration::Builder {
+        crate::model::lambda_configuration::Builder::default()
+    }
+}
+
 /// See [`LambdaConfiguration`](crate::model::LambdaConfiguration).
 pub mod lambda_configuration {
     
@@ -2588,12 +2616,6 @@ pub mod lambda_configuration {
     
     
 }
-impl LambdaConfiguration {
-    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration).
-    pub fn builder() -> crate::model::lambda_configuration::Builder {
-        crate::model::lambda_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
 #[non_exhaustive]
@@ -2633,6 +2655,13 @@ impl SnsConfiguration {
         self.sns_format.as_ref()
     }
 }
+impl SnsConfiguration {
+    /// Creates a new builder-style object to manufacture [`SnsConfiguration`](crate::model::SnsConfiguration).
+    pub fn builder() -> crate::model::sns_configuration::Builder {
+        crate::model::sns_configuration::Builder::default()
+    }
+}
+
 /// See [`SnsConfiguration`](crate::model::SnsConfiguration).
 pub mod sns_configuration {
     
@@ -2696,12 +2725,6 @@ pub mod sns_configuration {
     }
     
     
-}
-impl SnsConfiguration {
-    /// Creates a new builder-style object to manufacture [`SnsConfiguration`](crate::model::SnsConfiguration).
-    pub fn builder() -> crate::model::sns_configuration::Builder {
-        crate::model::sns_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnsFormat`, it is important to ensure
@@ -2819,6 +2842,13 @@ impl AnomalyGroupTimeSeriesFeedback {
         self.is_anomaly
     }
 }
+impl AnomalyGroupTimeSeriesFeedback {
+    /// Creates a new builder-style object to manufacture [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
+    pub fn builder() -> crate::model::anomaly_group_time_series_feedback::Builder {
+        crate::model::anomaly_group_time_series_feedback::Builder::default()
+    }
+}
+
 /// See [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
 pub mod anomaly_group_time_series_feedback {
     
@@ -2872,12 +2902,6 @@ pub mod anomaly_group_time_series_feedback {
     }
     
     
-}
-impl AnomalyGroupTimeSeriesFeedback {
-    /// Creates a new builder-style object to manufacture [`AnomalyGroupTimeSeriesFeedback`](crate::model::AnomalyGroupTimeSeriesFeedback).
-    pub fn builder() -> crate::model::anomaly_group_time_series_feedback::Builder {
-        crate::model::anomaly_group_time_series_feedback::Builder::default()
-    }
 }
 
 /// <p>Contains information about a dataset.</p>
@@ -2936,6 +2960,13 @@ impl MetricSetSummary {
         self.tags.as_ref()
     }
 }
+impl MetricSetSummary {
+    /// Creates a new builder-style object to manufacture [`MetricSetSummary`](crate::model::MetricSetSummary).
+    pub fn builder() -> crate::model::metric_set_summary::Builder {
+        crate::model::metric_set_summary::Builder::default()
+    }
+}
+
 /// See [`MetricSetSummary`](crate::model::MetricSetSummary).
 pub mod metric_set_summary {
     
@@ -3044,12 +3075,6 @@ pub mod metric_set_summary {
     
     
 }
-impl MetricSetSummary {
-    /// Creates a new builder-style object to manufacture [`MetricSetSummary`](crate::model::MetricSetSummary).
-    pub fn builder() -> crate::model::metric_set_summary::Builder {
-        crate::model::metric_set_summary::Builder::default()
-    }
-}
 
 /// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.</p>
 #[non_exhaustive]
@@ -3079,6 +3104,13 @@ impl TimeSeries {
         self.metric_value_list.as_deref()
     }
 }
+impl TimeSeries {
+    /// Creates a new builder-style object to manufacture [`TimeSeries`](crate::model::TimeSeries).
+    pub fn builder() -> crate::model::time_series::Builder {
+        crate::model::time_series::Builder::default()
+    }
+}
+
 /// See [`TimeSeries`](crate::model::TimeSeries).
 pub mod time_series {
     
@@ -3145,12 +3177,6 @@ pub mod time_series {
     
     
 }
-impl TimeSeries {
-    /// Creates a new builder-style object to manufacture [`TimeSeries`](crate::model::TimeSeries).
-    pub fn builder() -> crate::model::time_series::Builder {
-        crate::model::time_series::Builder::default()
-    }
-}
 
 /// <p>A dimension name and value.</p>
 #[non_exhaustive]
@@ -3173,6 +3199,13 @@ impl DimensionNameValue {
         self.dimension_value.as_deref()
     }
 }
+impl DimensionNameValue {
+    /// Creates a new builder-style object to manufacture [`DimensionNameValue`](crate::model::DimensionNameValue).
+    pub fn builder() -> crate::model::dimension_name_value::Builder {
+        crate::model::dimension_name_value::Builder::default()
+    }
+}
+
 /// See [`DimensionNameValue`](crate::model::DimensionNameValue).
 pub mod dimension_name_value {
     
@@ -3215,12 +3248,6 @@ pub mod dimension_name_value {
     
     
 }
-impl DimensionNameValue {
-    /// Creates a new builder-style object to manufacture [`DimensionNameValue`](crate::model::DimensionNameValue).
-    pub fn builder() -> crate::model::dimension_name_value::Builder {
-        crate::model::dimension_name_value::Builder::default()
-    }
-}
 
 /// <p>Aggregated statistics for a group of anomalous metrics.</p>
 #[non_exhaustive]
@@ -3250,6 +3277,13 @@ impl AnomalyGroupStatistics {
         self.itemized_metric_stats_list.as_deref()
     }
 }
+impl AnomalyGroupStatistics {
+    /// Creates a new builder-style object to manufacture [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
+    pub fn builder() -> crate::model::anomaly_group_statistics::Builder {
+        crate::model::anomaly_group_statistics::Builder::default()
+    }
+}
+
 /// See [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
 pub mod anomaly_group_statistics {
     
@@ -3311,12 +3345,6 @@ pub mod anomaly_group_statistics {
     
     
 }
-impl AnomalyGroupStatistics {
-    /// Creates a new builder-style object to manufacture [`AnomalyGroupStatistics`](crate::model::AnomalyGroupStatistics).
-    pub fn builder() -> crate::model::anomaly_group_statistics::Builder {
-        crate::model::anomaly_group_statistics::Builder::default()
-    }
-}
 
 /// <p>Aggregated statistics about a measure affected by an anomaly.</p>
 #[non_exhaustive]
@@ -3339,6 +3367,13 @@ impl ItemizedMetricStats {
         self.occurrence_count
     }
 }
+impl ItemizedMetricStats {
+    /// Creates a new builder-style object to manufacture [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
+    pub fn builder() -> crate::model::itemized_metric_stats::Builder {
+        crate::model::itemized_metric_stats::Builder::default()
+    }
+}
+
 /// See [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
 pub mod itemized_metric_stats {
     
@@ -3381,12 +3416,6 @@ pub mod itemized_metric_stats {
     }
     
     
-}
-impl ItemizedMetricStats {
-    /// Creates a new builder-style object to manufacture [`ItemizedMetricStats`](crate::model::ItemizedMetricStats).
-    pub fn builder() -> crate::model::itemized_metric_stats::Builder {
-        crate::model::itemized_metric_stats::Builder::default()
-    }
 }
 
 /// <p>Details about a group of anomalous metrics.</p>
@@ -3431,6 +3460,13 @@ impl AnomalyGroupSummary {
         self.primary_metric_name.as_deref()
     }
 }
+impl AnomalyGroupSummary {
+    /// Creates a new builder-style object to manufacture [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
+    pub fn builder() -> crate::model::anomaly_group_summary::Builder {
+        crate::model::anomaly_group_summary::Builder::default()
+    }
+}
+
 /// See [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
 pub mod anomaly_group_summary {
     
@@ -3509,12 +3545,6 @@ pub mod anomaly_group_summary {
     
     
 }
-impl AnomalyGroupSummary {
-    /// Creates a new builder-style object to manufacture [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary).
-    pub fn builder() -> crate::model::anomaly_group_summary::Builder {
-        crate::model::anomaly_group_summary::Builder::default()
-    }
-}
 
 /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p> 
 /// <p></p>
@@ -3552,6 +3582,13 @@ impl InterMetricImpactDetails {
         self.contribution_percentage
     }
 }
+impl InterMetricImpactDetails {
+    /// Creates a new builder-style object to manufacture [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
+    pub fn builder() -> crate::model::inter_metric_impact_details::Builder {
+        crate::model::inter_metric_impact_details::Builder::default()
+    }
+}
+
 /// See [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
 pub mod inter_metric_impact_details {
     
@@ -3617,12 +3654,6 @@ pub mod inter_metric_impact_details {
     }
     
     
-}
-impl InterMetricImpactDetails {
-    /// Creates a new builder-style object to manufacture [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails).
-    pub fn builder() -> crate::model::inter_metric_impact_details::Builder {
-        crate::model::inter_metric_impact_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RelationshipType`, it is important to ensure
@@ -3763,6 +3794,13 @@ impl AnomalyDetectorSummary {
         self.tags.as_ref()
     }
 }
+impl AnomalyDetectorSummary {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
+    pub fn builder() -> crate::model::anomaly_detector_summary::Builder {
+        crate::model::anomaly_detector_summary::Builder::default()
+    }
+}
+
 /// See [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
 pub mod anomaly_detector_summary {
     
@@ -3870,12 +3908,6 @@ pub mod anomaly_detector_summary {
     }
     
     
-}
-impl AnomalyDetectorSummary {
-    /// Creates a new builder-style object to manufacture [`AnomalyDetectorSummary`](crate::model::AnomalyDetectorSummary).
-    pub fn builder() -> crate::model::anomaly_detector_summary::Builder {
-        crate::model::anomaly_detector_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnomalyDetectorStatus`, it is important to ensure
@@ -4075,6 +4107,13 @@ impl AlertSummary {
         self.tags.as_ref()
     }
 }
+impl AlertSummary {
+    /// Creates a new builder-style object to manufacture [`AlertSummary`](crate::model::AlertSummary).
+    pub fn builder() -> crate::model::alert_summary::Builder {
+        crate::model::alert_summary::Builder::default()
+    }
+}
+
 /// See [`AlertSummary`](crate::model::AlertSummary).
 pub mod alert_summary {
     
@@ -4207,12 +4246,6 @@ pub mod alert_summary {
     }
     
     
-}
-impl AlertSummary {
-    /// Creates a new builder-style object to manufacture [`AlertSummary`](crate::model::AlertSummary).
-    pub fn builder() -> crate::model::alert_summary::Builder {
-        crate::model::alert_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlertStatus`, it is important to ensure
@@ -4414,6 +4447,13 @@ impl SampleDataS3SourceConfig {
         self.file_format_descriptor.as_ref()
     }
 }
+impl SampleDataS3SourceConfig {
+    /// Creates a new builder-style object to manufacture [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
+    pub fn builder() -> crate::model::sample_data_s3_source_config::Builder {
+        crate::model::sample_data_s3_source_config::Builder::default()
+    }
+}
+
 /// See [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
 pub mod sample_data_s3_source_config {
     
@@ -4492,12 +4532,6 @@ pub mod sample_data_s3_source_config {
     
     
 }
-impl SampleDataS3SourceConfig {
-    /// Creates a new builder-style object to manufacture [`SampleDataS3SourceConfig`](crate::model::SampleDataS3SourceConfig).
-    pub fn builder() -> crate::model::sample_data_s3_source_config::Builder {
-        crate::model::sample_data_s3_source_config::Builder::default()
-    }
-}
 
 /// <p>Details about feedback submitted for an anomalous metric.</p>
 #[non_exhaustive]
@@ -4520,6 +4554,13 @@ impl TimeSeriesFeedback {
         self.is_anomaly
     }
 }
+impl TimeSeriesFeedback {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
+    pub fn builder() -> crate::model::time_series_feedback::Builder {
+        crate::model::time_series_feedback::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
 pub mod time_series_feedback {
     
@@ -4562,12 +4603,6 @@ pub mod time_series_feedback {
     
     
 }
-impl TimeSeriesFeedback {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesFeedback`](crate::model::TimeSeriesFeedback).
-    pub fn builder() -> crate::model::time_series_feedback::Builder {
-        crate::model::time_series_feedback::Builder::default()
-    }
-}
 
 /// <p>An anomalous metric in an anomaly group.</p>
 #[non_exhaustive]
@@ -4590,6 +4625,13 @@ impl AnomalyGroupTimeSeries {
         self.time_series_id.as_deref()
     }
 }
+impl AnomalyGroupTimeSeries {
+    /// Creates a new builder-style object to manufacture [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
+    pub fn builder() -> crate::model::anomaly_group_time_series::Builder {
+        crate::model::anomaly_group_time_series::Builder::default()
+    }
+}
+
 /// See [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
 pub mod anomaly_group_time_series {
     
@@ -4632,12 +4674,6 @@ pub mod anomaly_group_time_series {
     
     
 }
-impl AnomalyGroupTimeSeries {
-    /// Creates a new builder-style object to manufacture [`AnomalyGroupTimeSeries`](crate::model::AnomalyGroupTimeSeries).
-    pub fn builder() -> crate::model::anomaly_group_time_series::Builder {
-        crate::model::anomaly_group_time_series::Builder::default()
-    }
-}
 
 /// <p>Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <code>GetDataQualityMetrics</code> object.</p>
 #[non_exhaustive]
@@ -4660,6 +4696,13 @@ impl AnomalyDetectorDataQualityMetric {
         self.metric_set_data_quality_metric_list.as_deref()
     }
 }
+impl AnomalyDetectorDataQualityMetric {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
+    pub fn builder() -> crate::model::anomaly_detector_data_quality_metric::Builder {
+        crate::model::anomaly_detector_data_quality_metric::Builder::default()
+    }
+}
+
 /// See [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
 pub mod anomaly_detector_data_quality_metric {
     
@@ -4708,12 +4751,6 @@ pub mod anomaly_detector_data_quality_metric {
     
     
 }
-impl AnomalyDetectorDataQualityMetric {
-    /// Creates a new builder-style object to manufacture [`AnomalyDetectorDataQualityMetric`](crate::model::AnomalyDetectorDataQualityMetric).
-    pub fn builder() -> crate::model::anomaly_detector_data_quality_metric::Builder {
-        crate::model::anomaly_detector_data_quality_metric::Builder::default()
-    }
-}
 
 /// <p>An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.</p>
 #[non_exhaustive]
@@ -4736,6 +4773,13 @@ impl MetricSetDataQualityMetric {
         self.data_quality_metric_list.as_deref()
     }
 }
+impl MetricSetDataQualityMetric {
+    /// Creates a new builder-style object to manufacture [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
+    pub fn builder() -> crate::model::metric_set_data_quality_metric::Builder {
+        crate::model::metric_set_data_quality_metric::Builder::default()
+    }
+}
+
 /// See [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
 pub mod metric_set_data_quality_metric {
     
@@ -4784,12 +4828,6 @@ pub mod metric_set_data_quality_metric {
     
     
 }
-impl MetricSetDataQualityMetric {
-    /// Creates a new builder-style object to manufacture [`MetricSetDataQualityMetric`](crate::model::MetricSetDataQualityMetric).
-    pub fn builder() -> crate::model::metric_set_data_quality_metric::Builder {
-        crate::model::metric_set_data_quality_metric::Builder::default()
-    }
-}
 
 /// <p>An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.</p>
 #[non_exhaustive]
@@ -4826,6 +4864,13 @@ impl DataQualityMetric {
         self.metric_value
     }
 }
+impl DataQualityMetric {
+    /// Creates a new builder-style object to manufacture [`DataQualityMetric`](crate::model::DataQualityMetric).
+    pub fn builder() -> crate::model::data_quality_metric::Builder {
+        crate::model::data_quality_metric::Builder::default()
+    }
+}
+
 /// See [`DataQualityMetric`](crate::model::DataQualityMetric).
 pub mod data_quality_metric {
     
@@ -4891,12 +4936,6 @@ pub mod data_quality_metric {
     }
     
     
-}
-impl DataQualityMetric {
-    /// Creates a new builder-style object to manufacture [`DataQualityMetric`](crate::model::DataQualityMetric).
-    pub fn builder() -> crate::model::data_quality_metric::Builder {
-        crate::model::data_quality_metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataQualityMetricType`, it is important to ensure
@@ -5070,6 +5109,13 @@ impl AnomalyGroup {
         self.metric_level_impact_list.as_deref()
     }
 }
+impl AnomalyGroup {
+    /// Creates a new builder-style object to manufacture [`AnomalyGroup`](crate::model::AnomalyGroup).
+    pub fn builder() -> crate::model::anomaly_group::Builder {
+        crate::model::anomaly_group::Builder::default()
+    }
+}
+
 /// See [`AnomalyGroup`](crate::model::AnomalyGroup).
 pub mod anomaly_group {
     
@@ -5166,12 +5212,6 @@ pub mod anomaly_group {
     
     
 }
-impl AnomalyGroup {
-    /// Creates a new builder-style object to manufacture [`AnomalyGroup`](crate::model::AnomalyGroup).
-    pub fn builder() -> crate::model::anomaly_group::Builder {
-        crate::model::anomaly_group::Builder::default()
-    }
-}
 
 /// <p>Details about a measure affected by an anomaly.</p>
 #[non_exhaustive]
@@ -5201,6 +5241,13 @@ impl MetricLevelImpact {
         self.contribution_matrix.as_ref()
     }
 }
+impl MetricLevelImpact {
+    /// Creates a new builder-style object to manufacture [`MetricLevelImpact`](crate::model::MetricLevelImpact).
+    pub fn builder() -> crate::model::metric_level_impact::Builder {
+        crate::model::metric_level_impact::Builder::default()
+    }
+}
+
 /// See [`MetricLevelImpact`](crate::model::MetricLevelImpact).
 pub mod metric_level_impact {
     
@@ -5256,12 +5303,6 @@ pub mod metric_level_impact {
     
     
 }
-impl MetricLevelImpact {
-    /// Creates a new builder-style object to manufacture [`MetricLevelImpact`](crate::model::MetricLevelImpact).
-    pub fn builder() -> crate::model::metric_level_impact::Builder {
-        crate::model::metric_level_impact::Builder::default()
-    }
-}
 
 /// <p>Details about dimensions that contributed to an anomaly.</p>
 #[non_exhaustive]
@@ -5277,6 +5318,13 @@ impl ContributionMatrix {
         self.dimension_contribution_list.as_deref()
     }
 }
+impl ContributionMatrix {
+    /// Creates a new builder-style object to manufacture [`ContributionMatrix`](crate::model::ContributionMatrix).
+    pub fn builder() -> crate::model::contribution_matrix::Builder {
+        crate::model::contribution_matrix::Builder::default()
+    }
+}
+
 /// See [`ContributionMatrix`](crate::model::ContributionMatrix).
 pub mod contribution_matrix {
     
@@ -5313,12 +5361,6 @@ pub mod contribution_matrix {
     
     
 }
-impl ContributionMatrix {
-    /// Creates a new builder-style object to manufacture [`ContributionMatrix`](crate::model::ContributionMatrix).
-    pub fn builder() -> crate::model::contribution_matrix::Builder {
-        crate::model::contribution_matrix::Builder::default()
-    }
-}
 
 /// <p>Details about a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
@@ -5341,6 +5383,13 @@ impl DimensionContribution {
         self.dimension_value_contribution_list.as_deref()
     }
 }
+impl DimensionContribution {
+    /// Creates a new builder-style object to manufacture [`DimensionContribution`](crate::model::DimensionContribution).
+    pub fn builder() -> crate::model::dimension_contribution::Builder {
+        crate::model::dimension_contribution::Builder::default()
+    }
+}
+
 /// See [`DimensionContribution`](crate::model::DimensionContribution).
 pub mod dimension_contribution {
     
@@ -5389,12 +5438,6 @@ pub mod dimension_contribution {
     
     
 }
-impl DimensionContribution {
-    /// Creates a new builder-style object to manufacture [`DimensionContribution`](crate::model::DimensionContribution).
-    pub fn builder() -> crate::model::dimension_contribution::Builder {
-        crate::model::dimension_contribution::Builder::default()
-    }
-}
 
 /// <p>The severity of a value of a dimension that contributed to an anomaly.</p>
 #[non_exhaustive]
@@ -5417,6 +5460,13 @@ impl DimensionValueContribution {
         self.contribution_score
     }
 }
+impl DimensionValueContribution {
+    /// Creates a new builder-style object to manufacture [`DimensionValueContribution`](crate::model::DimensionValueContribution).
+    pub fn builder() -> crate::model::dimension_value_contribution::Builder {
+        crate::model::dimension_value_contribution::Builder::default()
+    }
+}
+
 /// See [`DimensionValueContribution`](crate::model::DimensionValueContribution).
 pub mod dimension_value_contribution {
     
@@ -5459,12 +5509,6 @@ pub mod dimension_value_contribution {
     
     
 }
-impl DimensionValueContribution {
-    /// Creates a new builder-style object to manufacture [`DimensionValueContribution`](crate::model::DimensionValueContribution).
-    pub fn builder() -> crate::model::dimension_value_contribution::Builder {
-        crate::model::dimension_value_contribution::Builder::default()
-    }
-}
 
 /// <p>An inferred dataset configuration.</p>
 #[non_exhaustive]
@@ -5494,6 +5538,13 @@ impl DetectedMetricSetConfig {
         self.metric_source.as_ref()
     }
 }
+impl DetectedMetricSetConfig {
+    /// Creates a new builder-style object to manufacture [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
+    pub fn builder() -> crate::model::detected_metric_set_config::Builder {
+        crate::model::detected_metric_set_config::Builder::default()
+    }
+}
+
 /// See [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
 pub mod detected_metric_set_config {
     
@@ -5548,12 +5599,6 @@ pub mod detected_metric_set_config {
     
     
 }
-impl DetectedMetricSetConfig {
-    /// Creates a new builder-style object to manufacture [`DetectedMetricSetConfig`](crate::model::DetectedMetricSetConfig).
-    pub fn builder() -> crate::model::detected_metric_set_config::Builder {
-        crate::model::detected_metric_set_config::Builder::default()
-    }
-}
 
 /// <p>An inferred data source.</p>
 #[non_exhaustive]
@@ -5569,6 +5614,13 @@ impl DetectedMetricSource {
         self.s3_source_config.as_ref()
     }
 }
+impl DetectedMetricSource {
+    /// Creates a new builder-style object to manufacture [`DetectedMetricSource`](crate::model::DetectedMetricSource).
+    pub fn builder() -> crate::model::detected_metric_source::Builder {
+        crate::model::detected_metric_source::Builder::default()
+    }
+}
+
 /// See [`DetectedMetricSource`](crate::model::DetectedMetricSource).
 pub mod detected_metric_source {
     
@@ -5599,12 +5651,6 @@ pub mod detected_metric_source {
     
     
 }
-impl DetectedMetricSource {
-    /// Creates a new builder-style object to manufacture [`DetectedMetricSource`](crate::model::DetectedMetricSource).
-    pub fn builder() -> crate::model::detected_metric_source::Builder {
-        crate::model::detected_metric_source::Builder::default()
-    }
-}
 
 /// <p>An inferred source configuration.</p>
 #[non_exhaustive]
@@ -5620,6 +5666,13 @@ impl DetectedS3SourceConfig {
         self.file_format_descriptor.as_ref()
     }
 }
+impl DetectedS3SourceConfig {
+    /// Creates a new builder-style object to manufacture [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
+    pub fn builder() -> crate::model::detected_s3_source_config::Builder {
+        crate::model::detected_s3_source_config::Builder::default()
+    }
+}
+
 /// See [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
 pub mod detected_s3_source_config {
     
@@ -5650,12 +5703,6 @@ pub mod detected_s3_source_config {
     
     
 }
-impl DetectedS3SourceConfig {
-    /// Creates a new builder-style object to manufacture [`DetectedS3SourceConfig`](crate::model::DetectedS3SourceConfig).
-    pub fn builder() -> crate::model::detected_s3_source_config::Builder {
-        crate::model::detected_s3_source_config::Builder::default()
-    }
-}
 
 /// <p>Properties of an inferred data format.</p>
 #[non_exhaustive]
@@ -5678,6 +5725,13 @@ impl DetectedFileFormatDescriptor {
         self.json_format_descriptor.as_ref()
     }
 }
+impl DetectedFileFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
+    pub fn builder() -> crate::model::detected_file_format_descriptor::Builder {
+        crate::model::detected_file_format_descriptor::Builder::default()
+    }
+}
+
 /// See [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
 pub mod detected_file_format_descriptor {
     
@@ -5720,12 +5774,6 @@ pub mod detected_file_format_descriptor {
     
     
 }
-impl DetectedFileFormatDescriptor {
-    /// Creates a new builder-style object to manufacture [`DetectedFileFormatDescriptor`](crate::model::DetectedFileFormatDescriptor).
-    pub fn builder() -> crate::model::detected_file_format_descriptor::Builder {
-        crate::model::detected_file_format_descriptor::Builder::default()
-    }
-}
 
 /// <p>A detected JSON format descriptor.</p>
 #[non_exhaustive]
@@ -5748,6 +5796,13 @@ impl DetectedJsonFormatDescriptor {
         self.charset.as_ref()
     }
 }
+impl DetectedJsonFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
+    pub fn builder() -> crate::model::detected_json_format_descriptor::Builder {
+        crate::model::detected_json_format_descriptor::Builder::default()
+    }
+}
+
 /// See [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
 pub mod detected_json_format_descriptor {
     
@@ -5790,12 +5845,6 @@ pub mod detected_json_format_descriptor {
     
     
 }
-impl DetectedJsonFormatDescriptor {
-    /// Creates a new builder-style object to manufacture [`DetectedJsonFormatDescriptor`](crate::model::DetectedJsonFormatDescriptor).
-    pub fn builder() -> crate::model::detected_json_format_descriptor::Builder {
-        crate::model::detected_json_format_descriptor::Builder::default()
-    }
-}
 
 /// <p>An inferred field.</p>
 #[non_exhaustive]
@@ -5825,6 +5874,13 @@ impl DetectedField {
         self.message.as_deref()
     }
 }
+impl DetectedField {
+    /// Creates a new builder-style object to manufacture [`DetectedField`](crate::model::DetectedField).
+    pub fn builder() -> crate::model::detected_field::Builder {
+        crate::model::detected_field::Builder::default()
+    }
+}
+
 /// See [`DetectedField`](crate::model::DetectedField).
 pub mod detected_field {
     
@@ -5878,12 +5934,6 @@ pub mod detected_field {
     }
     
     
-}
-impl DetectedField {
-    /// Creates a new builder-style object to manufacture [`DetectedField`](crate::model::DetectedField).
-    pub fn builder() -> crate::model::detected_field::Builder {
-        crate::model::detected_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Confidence`, it is important to ensure
@@ -6022,6 +6072,13 @@ impl AttributeValue {
         self.bs.as_deref()
     }
 }
+impl AttributeValue {
+    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
+    pub fn builder() -> crate::model::attribute_value::Builder {
+        crate::model::attribute_value::Builder::default()
+    }
+}
+
 /// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
     
@@ -6130,12 +6187,6 @@ pub mod attribute_value {
     
     
 }
-impl AttributeValue {
-    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
-    pub fn builder() -> crate::model::attribute_value::Builder {
-        crate::model::attribute_value::Builder::default()
-    }
-}
 
 /// <p>Properties of an inferred CSV format.</p>
 #[non_exhaustive]
@@ -6186,6 +6237,13 @@ impl DetectedCsvFormatDescriptor {
         self.quote_symbol.as_ref()
     }
 }
+impl DetectedCsvFormatDescriptor {
+    /// Creates a new builder-style object to manufacture [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
+    pub fn builder() -> crate::model::detected_csv_format_descriptor::Builder {
+        crate::model::detected_csv_format_descriptor::Builder::default()
+    }
+}
+
 /// See [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
 pub mod detected_csv_format_descriptor {
     
@@ -6276,12 +6334,6 @@ pub mod detected_csv_format_descriptor {
     
     
 }
-impl DetectedCsvFormatDescriptor {
-    /// Creates a new builder-style object to manufacture [`DetectedCsvFormatDescriptor`](crate::model::DetectedCsvFormatDescriptor).
-    pub fn builder() -> crate::model::detected_csv_format_descriptor::Builder {
-        crate::model::detected_csv_format_descriptor::Builder::default()
-    }
-}
 
 /// <p>An auto detection metric source.</p>
 #[non_exhaustive]
@@ -6297,6 +6349,13 @@ impl AutoDetectionMetricSource {
         self.s3_source_config.as_ref()
     }
 }
+impl AutoDetectionMetricSource {
+    /// Creates a new builder-style object to manufacture [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
+    pub fn builder() -> crate::model::auto_detection_metric_source::Builder {
+        crate::model::auto_detection_metric_source::Builder::default()
+    }
+}
+
 /// See [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
 pub mod auto_detection_metric_source {
     
@@ -6327,12 +6386,6 @@ pub mod auto_detection_metric_source {
     
     
 }
-impl AutoDetectionMetricSource {
-    /// Creates a new builder-style object to manufacture [`AutoDetectionMetricSource`](crate::model::AutoDetectionMetricSource).
-    pub fn builder() -> crate::model::auto_detection_metric_source::Builder {
-        crate::model::auto_detection_metric_source::Builder::default()
-    }
-}
 
 /// <p>An auto detection source config.</p>
 #[non_exhaustive]
@@ -6355,6 +6408,13 @@ impl AutoDetectionS3SourceConfig {
         self.historical_data_path_list.as_deref()
     }
 }
+impl AutoDetectionS3SourceConfig {
+    /// Creates a new builder-style object to manufacture [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
+    pub fn builder() -> crate::model::auto_detection_s3_source_config::Builder {
+        crate::model::auto_detection_s3_source_config::Builder::default()
+    }
+}
+
 /// See [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
 pub mod auto_detection_s3_source_config {
     
@@ -6408,12 +6468,6 @@ pub mod auto_detection_s3_source_config {
     }
     
     
-}
-impl AutoDetectionS3SourceConfig {
-    /// Creates a new builder-style object to manufacture [`AutoDetectionS3SourceConfig`](crate::model::AutoDetectionS3SourceConfig).
-    pub fn builder() -> crate::model::auto_detection_s3_source_config::Builder {
-        crate::model::auto_detection_s3_source_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnomalyDetectorFailureType`, it is important to ensure
@@ -6522,6 +6576,13 @@ impl AnomalyDetectorConfigSummary {
         self.anomaly_detector_frequency.as_ref()
     }
 }
+impl AnomalyDetectorConfigSummary {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
+    pub fn builder() -> crate::model::anomaly_detector_config_summary::Builder {
+        crate::model::anomaly_detector_config_summary::Builder::default()
+    }
+}
+
 /// See [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
 pub mod anomaly_detector_config_summary {
     
@@ -6552,12 +6613,6 @@ pub mod anomaly_detector_config_summary {
     
     
 }
-impl AnomalyDetectorConfigSummary {
-    /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfigSummary`](crate::model::AnomalyDetectorConfigSummary).
-    pub fn builder() -> crate::model::anomaly_detector_config_summary::Builder {
-        crate::model::anomaly_detector_config_summary::Builder::default()
-    }
-}
 
 /// <p>The status of an anomaly detector run.</p>
 #[non_exhaustive]
@@ -6587,6 +6642,13 @@ impl ExecutionStatus {
         self.failure_reason.as_deref()
     }
 }
+impl ExecutionStatus {
+    /// Creates a new builder-style object to manufacture [`ExecutionStatus`](crate::model::ExecutionStatus).
+    pub fn builder() -> crate::model::execution_status::Builder {
+        crate::model::execution_status::Builder::default()
+    }
+}
+
 /// See [`ExecutionStatus`](crate::model::ExecutionStatus).
 pub mod execution_status {
     
@@ -6640,12 +6702,6 @@ pub mod execution_status {
     }
     
     
-}
-impl ExecutionStatus {
-    /// Creates a new builder-style object to manufacture [`ExecutionStatus`](crate::model::ExecutionStatus).
-    pub fn builder() -> crate::model::execution_status::Builder {
-        crate::model::execution_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnomalyDetectionTaskStatus`, it is important to ensure
@@ -6829,6 +6885,13 @@ impl Alert {
         self.alert_filters.as_ref()
     }
 }
+impl Alert {
+    /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert).
+    pub fn builder() -> crate::model::alert::Builder {
+        crate::model::alert::Builder::default()
+    }
+}
+
 /// See [`Alert`](crate::model::Alert).
 pub mod alert {
     
@@ -6979,11 +7042,5 @@ pub mod alert {
     }
     
     
-}
-impl Alert {
-    /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert).
-    pub fn builder() -> crate::model::alert::Builder {
-        crate::model::alert::Builder::default()
-    }
 }
 

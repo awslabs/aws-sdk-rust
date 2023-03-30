@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_clip`](crate::client::Client::get_clip).
             ///
-            /// See [`crate::client::fluent_builders::GetClip`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetClip`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetClip {
     _private: ()
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetClip {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_dash_streaming_session_url`](crate::client::Client::get_dash_streaming_session_url).
             ///
-            /// See [`crate::client::fluent_builders::GetDASHStreamingSessionURL`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDASHStreamingSessionURL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDASHStreamingSessionURL {
     _private: ()
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDASHStreamingSessionU
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_hls_streaming_session_url`](crate::client::Client::get_hls_streaming_session_url).
             ///
-            /// See [`crate::client::fluent_builders::GetHLSStreamingSessionURL`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetHLSStreamingSessionURL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHLSStreamingSessionURL {
     _private: ()
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionUR
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_images`](crate::client::Client::get_images).
             ///
-            /// See [`crate::client::fluent_builders::GetImages`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetImages {
     _private: ()
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImages {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_media_for_fragment_list`](crate::client::Client::get_media_for_fragment_list).
             ///
-            /// See [`crate::client::fluent_builders::GetMediaForFragmentList`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMediaForFragmentList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMediaForFragmentList {
     _private: ()
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetMediaForFragmentList {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_fragments`](crate::client::Client::list_fragments).
             ///
-            /// See [`crate::client::fluent_builders::ListFragments`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFragments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFragments {
     _private: ()

@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateResourceShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateResourceShareOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
+    pub fn builder() -> crate::output::update_resource_share_output::Builder {
+        crate::output::update_resource_share_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
 pub mod update_resource_share_output {
     
@@ -79,12 +86,6 @@ pub mod update_resource_share_output {
     
     
 }
-impl UpdateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
-    pub fn builder() -> crate::output::update_resource_share_output::Builder {
-        crate::output::update_resource_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -97,6 +98,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -126,12 +134,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -144,6 +146,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -173,12 +182,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -207,6 +210,13 @@ impl aws_http::request_id::RequestId for RejectResourceShareInvitationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RejectResourceShareInvitationOutput {
+    /// Creates a new builder-style object to manufacture [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
+    pub fn builder() -> crate::output::reject_resource_share_invitation_output::Builder {
+        crate::output::reject_resource_share_invitation_output::Builder::default()
+    }
+}
+
 /// See [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
 pub mod reject_resource_share_invitation_output {
     
@@ -260,12 +270,6 @@ pub mod reject_resource_share_invitation_output {
     
     
 }
-impl RejectResourceShareInvitationOutput {
-    /// Creates a new builder-style object to manufacture [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
-    pub fn builder() -> crate::output::reject_resource_share_invitation_output::Builder {
-        crate::output::reject_resource_share_invitation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -287,6 +291,13 @@ impl aws_http::request_id::RequestId for PromoteResourceShareCreatedFromPolicyOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl PromoteResourceShareCreatedFromPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
+    pub fn builder() -> crate::output::promote_resource_share_created_from_policy_output::Builder {
+        crate::output::promote_resource_share_created_from_policy_output::Builder::default()
+    }
+}
+
 /// See [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
 pub mod promote_resource_share_created_from_policy_output {
     
@@ -328,12 +339,6 @@ pub mod promote_resource_share_created_from_policy_output {
     
     
 }
-impl PromoteResourceShareCreatedFromPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
-    pub fn builder() -> crate::output::promote_resource_share_created_from_policy_output::Builder {
-        crate::output::promote_resource_share_created_from_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -362,6 +367,13 @@ impl aws_http::request_id::RequestId for ListResourceTypesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
+    pub fn builder() -> crate::output::list_resource_types_output::Builder {
+        crate::output::list_resource_types_output::Builder::default()
+    }
+}
+
 /// See [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
 pub mod list_resource_types_output {
     
@@ -421,12 +433,6 @@ pub mod list_resource_types_output {
     
     
 }
-impl ListResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
-    pub fn builder() -> crate::output::list_resource_types_output::Builder {
-        crate::output::list_resource_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -455,6 +461,13 @@ impl aws_http::request_id::RequestId for ListResourceSharePermissionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResourceSharePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
+    pub fn builder() -> crate::output::list_resource_share_permissions_output::Builder {
+        crate::output::list_resource_share_permissions_output::Builder::default()
+    }
+}
+
 /// See [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
 pub mod list_resource_share_permissions_output {
     
@@ -514,12 +527,6 @@ pub mod list_resource_share_permissions_output {
     
     
 }
-impl ListResourceSharePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
-    pub fn builder() -> crate::output::list_resource_share_permissions_output::Builder {
-        crate::output::list_resource_share_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -548,6 +555,13 @@ impl aws_http::request_id::RequestId for ListResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
+    pub fn builder() -> crate::output::list_resources_output::Builder {
+        crate::output::list_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
     
@@ -607,12 +621,6 @@ pub mod list_resources_output {
     
     
 }
-impl ListResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
-    pub fn builder() -> crate::output::list_resources_output::Builder {
-        crate::output::list_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -641,6 +649,13 @@ impl aws_http::request_id::RequestId for ListPrincipalsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPrincipalsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
+    pub fn builder() -> crate::output::list_principals_output::Builder {
+        crate::output::list_principals_output::Builder::default()
+    }
+}
+
 /// See [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
 pub mod list_principals_output {
     
@@ -700,12 +715,6 @@ pub mod list_principals_output {
     
     
 }
-impl ListPrincipalsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
-    pub fn builder() -> crate::output::list_principals_output::Builder {
-        crate::output::list_principals_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -734,6 +743,13 @@ impl aws_http::request_id::RequestId for ListPermissionVersionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPermissionVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
+    pub fn builder() -> crate::output::list_permission_versions_output::Builder {
+        crate::output::list_permission_versions_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
 pub mod list_permission_versions_output {
     
@@ -793,12 +809,6 @@ pub mod list_permission_versions_output {
     
     
 }
-impl ListPermissionVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
-    pub fn builder() -> crate::output::list_permission_versions_output::Builder {
-        crate::output::list_permission_versions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -827,6 +837,13 @@ impl aws_http::request_id::RequestId for ListPermissionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
+    pub fn builder() -> crate::output::list_permissions_output::Builder {
+        crate::output::list_permissions_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
 pub mod list_permissions_output {
     
@@ -886,12 +903,6 @@ pub mod list_permissions_output {
     
     
 }
-impl ListPermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
-    pub fn builder() -> crate::output::list_permissions_output::Builder {
-        crate::output::list_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -920,6 +931,13 @@ impl aws_http::request_id::RequestId for ListPendingInvitationResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPendingInvitationResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
+    pub fn builder() -> crate::output::list_pending_invitation_resources_output::Builder {
+        crate::output::list_pending_invitation_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
 pub mod list_pending_invitation_resources_output {
     
@@ -979,12 +997,6 @@ pub mod list_pending_invitation_resources_output {
     
     
 }
-impl ListPendingInvitationResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
-    pub fn builder() -> crate::output::list_pending_invitation_resources_output::Builder {
-        crate::output::list_pending_invitation_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1013,6 +1025,13 @@ impl aws_http::request_id::RequestId for GetResourceSharesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourceSharesOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
+    pub fn builder() -> crate::output::get_resource_shares_output::Builder {
+        crate::output::get_resource_shares_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
 pub mod get_resource_shares_output {
     
@@ -1072,12 +1091,6 @@ pub mod get_resource_shares_output {
     
     
 }
-impl GetResourceSharesOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
-    pub fn builder() -> crate::output::get_resource_shares_output::Builder {
-        crate::output::get_resource_shares_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1106,6 +1119,13 @@ impl aws_http::request_id::RequestId for GetResourceShareInvitationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourceShareInvitationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
+    pub fn builder() -> crate::output::get_resource_share_invitations_output::Builder {
+        crate::output::get_resource_share_invitations_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
 pub mod get_resource_share_invitations_output {
     
@@ -1165,12 +1185,6 @@ pub mod get_resource_share_invitations_output {
     
     
 }
-impl GetResourceShareInvitationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
-    pub fn builder() -> crate::output::get_resource_share_invitations_output::Builder {
-        crate::output::get_resource_share_invitations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1199,6 +1213,13 @@ impl aws_http::request_id::RequestId for GetResourceShareAssociationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourceShareAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
+    pub fn builder() -> crate::output::get_resource_share_associations_output::Builder {
+        crate::output::get_resource_share_associations_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
 pub mod get_resource_share_associations_output {
     
@@ -1258,12 +1279,6 @@ pub mod get_resource_share_associations_output {
     
     
 }
-impl GetResourceShareAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
-    pub fn builder() -> crate::output::get_resource_share_associations_output::Builder {
-        crate::output::get_resource_share_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1292,6 +1307,13 @@ impl aws_http::request_id::RequestId for GetResourcePoliciesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourcePoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
+    pub fn builder() -> crate::output::get_resource_policies_output::Builder {
+        crate::output::get_resource_policies_output::Builder::default()
+    }
+}
+
 /// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
 pub mod get_resource_policies_output {
     
@@ -1351,12 +1373,6 @@ pub mod get_resource_policies_output {
     
     
 }
-impl GetResourcePoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
-    pub fn builder() -> crate::output::get_resource_policies_output::Builder {
-        crate::output::get_resource_policies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1378,6 +1394,13 @@ impl aws_http::request_id::RequestId for GetPermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPermissionOutput {
+    /// Creates a new builder-style object to manufacture [`GetPermissionOutput`](crate::output::GetPermissionOutput).
+    pub fn builder() -> crate::output::get_permission_output::Builder {
+        crate::output::get_permission_output::Builder::default()
+    }
+}
+
 /// See [`GetPermissionOutput`](crate::output::GetPermissionOutput).
 pub mod get_permission_output {
     
@@ -1419,12 +1442,6 @@ pub mod get_permission_output {
     
     
 }
-impl GetPermissionOutput {
-    /// Creates a new builder-style object to manufacture [`GetPermissionOutput`](crate::output::GetPermissionOutput).
-    pub fn builder() -> crate::output::get_permission_output::Builder {
-        crate::output::get_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1446,6 +1463,13 @@ impl aws_http::request_id::RequestId for EnableSharingWithAwsOrganizationOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl EnableSharingWithAwsOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
+    pub fn builder() -> crate::output::enable_sharing_with_aws_organization_output::Builder {
+        crate::output::enable_sharing_with_aws_organization_output::Builder::default()
+    }
+}
+
 /// See [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
 pub mod enable_sharing_with_aws_organization_output {
     
@@ -1487,12 +1511,6 @@ pub mod enable_sharing_with_aws_organization_output {
     
     
 }
-impl EnableSharingWithAwsOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
-    pub fn builder() -> crate::output::enable_sharing_with_aws_organization_output::Builder {
-        crate::output::enable_sharing_with_aws_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1521,6 +1539,13 @@ impl aws_http::request_id::RequestId for DisassociateResourceSharePermissionOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateResourceSharePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
+    pub fn builder() -> crate::output::disassociate_resource_share_permission_output::Builder {
+        crate::output::disassociate_resource_share_permission_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
 pub mod disassociate_resource_share_permission_output {
     
@@ -1574,12 +1599,6 @@ pub mod disassociate_resource_share_permission_output {
     
     
 }
-impl DisassociateResourceSharePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
-    pub fn builder() -> crate::output::disassociate_resource_share_permission_output::Builder {
-        crate::output::disassociate_resource_share_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1608,6 +1627,13 @@ impl aws_http::request_id::RequestId for DisassociateResourceShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateResourceShareOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
+    pub fn builder() -> crate::output::disassociate_resource_share_output::Builder {
+        crate::output::disassociate_resource_share_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
 pub mod disassociate_resource_share_output {
     
@@ -1667,12 +1693,6 @@ pub mod disassociate_resource_share_output {
     
     
 }
-impl DisassociateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
-    pub fn builder() -> crate::output::disassociate_resource_share_output::Builder {
-        crate::output::disassociate_resource_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1701,6 +1721,13 @@ impl aws_http::request_id::RequestId for DeleteResourceShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteResourceShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
+    pub fn builder() -> crate::output::delete_resource_share_output::Builder {
+        crate::output::delete_resource_share_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
 pub mod delete_resource_share_output {
     
@@ -1754,12 +1781,6 @@ pub mod delete_resource_share_output {
     
     
 }
-impl DeleteResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
-    pub fn builder() -> crate::output::delete_resource_share_output::Builder {
-        crate::output::delete_resource_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1788,6 +1809,13 @@ impl aws_http::request_id::RequestId for CreateResourceShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateResourceShareOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
+    pub fn builder() -> crate::output::create_resource_share_output::Builder {
+        crate::output::create_resource_share_output::Builder::default()
+    }
+}
+
 /// See [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
 pub mod create_resource_share_output {
     
@@ -1841,12 +1869,6 @@ pub mod create_resource_share_output {
     
     
 }
-impl CreateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
-    pub fn builder() -> crate::output::create_resource_share_output::Builder {
-        crate::output::create_resource_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1875,6 +1897,13 @@ impl aws_http::request_id::RequestId for AssociateResourceSharePermissionOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateResourceSharePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
+    pub fn builder() -> crate::output::associate_resource_share_permission_output::Builder {
+        crate::output::associate_resource_share_permission_output::Builder::default()
+    }
+}
+
 /// See [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
 pub mod associate_resource_share_permission_output {
     
@@ -1928,12 +1957,6 @@ pub mod associate_resource_share_permission_output {
     
     
 }
-impl AssociateResourceSharePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
-    pub fn builder() -> crate::output::associate_resource_share_permission_output::Builder {
-        crate::output::associate_resource_share_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1962,6 +1985,13 @@ impl aws_http::request_id::RequestId for AssociateResourceShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateResourceShareOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
+    pub fn builder() -> crate::output::associate_resource_share_output::Builder {
+        crate::output::associate_resource_share_output::Builder::default()
+    }
+}
+
 /// See [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
 pub mod associate_resource_share_output {
     
@@ -2021,12 +2051,6 @@ pub mod associate_resource_share_output {
     
     
 }
-impl AssociateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
-    pub fn builder() -> crate::output::associate_resource_share_output::Builder {
-        crate::output::associate_resource_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2055,6 +2079,13 @@ impl aws_http::request_id::RequestId for AcceptResourceShareInvitationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AcceptResourceShareInvitationOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
+    pub fn builder() -> crate::output::accept_resource_share_invitation_output::Builder {
+        crate::output::accept_resource_share_invitation_output::Builder::default()
+    }
+}
+
 /// See [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
 pub mod accept_resource_share_invitation_output {
     
@@ -2107,11 +2138,5 @@ pub mod accept_resource_share_invitation_output {
     }
     
     
-}
-impl AcceptResourceShareInvitationOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
-    pub fn builder() -> crate::output::accept_resource_share_invitation_output::Builder {
-        crate::output::accept_resource_share_invitation_output::Builder::default()
-    }
 }
 

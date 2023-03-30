@@ -197,6 +197,13 @@ impl Administrator {
         self.delegation_time.as_ref()
     }
 }
+impl Administrator {
+    /// Creates a new builder-style object to manufacture [`Administrator`](crate::model::Administrator).
+    pub fn builder() -> crate::model::administrator::Builder {
+        crate::model::administrator::Builder::default()
+    }
+}
+
 /// See [`Administrator`](crate::model::Administrator).
 pub mod administrator {
     
@@ -250,12 +257,6 @@ pub mod administrator {
     }
     
     
-}
-impl Administrator {
-    /// Creates a new builder-style object to manufacture [`Administrator`](crate::model::Administrator).
-    pub fn builder() -> crate::model::administrator::Builder {
-        crate::model::administrator::Builder::default()
-    }
 }
 
 /// <p>Details about a member account in a behavior graph.</p>
@@ -421,6 +422,13 @@ impl MemberDetail {
         self.datasource_package_ingest_states.as_ref()
     }
 }
+impl MemberDetail {
+    /// Creates a new builder-style object to manufacture [`MemberDetail`](crate::model::MemberDetail).
+    pub fn builder() -> crate::model::member_detail::Builder {
+        crate::model::member_detail::Builder::default()
+    }
+}
+
 /// See [`MemberDetail`](crate::model::MemberDetail).
 pub mod member_detail {
     
@@ -687,12 +695,6 @@ pub mod member_detail {
     
     
 }
-impl MemberDetail {
-    /// Creates a new builder-style object to manufacture [`MemberDetail`](crate::model::MemberDetail).
-    pub fn builder() -> crate::model::member_detail::Builder {
-        crate::model::member_detail::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DatasourcePackageIngestState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -802,6 +804,13 @@ impl DatasourcePackageUsageInfo {
         self.volume_usage_update_time.as_ref()
     }
 }
+impl DatasourcePackageUsageInfo {
+    /// Creates a new builder-style object to manufacture [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
+    pub fn builder() -> crate::model::datasource_package_usage_info::Builder {
+        crate::model::datasource_package_usage_info::Builder::default()
+    }
+}
+
 /// See [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
 pub mod datasource_package_usage_info {
     
@@ -843,12 +852,6 @@ pub mod datasource_package_usage_info {
     }
     
     
-}
-impl DatasourcePackageUsageInfo {
-    /// Creates a new builder-style object to manufacture [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
-    pub fn builder() -> crate::model::datasource_package_usage_info::Builder {
-        crate::model::datasource_package_usage_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InvitationType`, it is important to ensure
@@ -1133,6 +1136,13 @@ impl Graph {
         self.created_time.as_ref()
     }
 }
+impl Graph {
+    /// Creates a new builder-style object to manufacture [`Graph`](crate::model::Graph).
+    pub fn builder() -> crate::model::graph::Builder {
+        crate::model::graph::Builder::default()
+    }
+}
+
 /// See [`Graph`](crate::model::Graph).
 pub mod graph {
     
@@ -1175,12 +1185,6 @@ pub mod graph {
     
     
 }
-impl Graph {
-    /// Creates a new builder-style object to manufacture [`Graph`](crate::model::Graph).
-    pub fn builder() -> crate::model::graph::Builder {
-        crate::model::graph::Builder::default()
-    }
-}
 
 /// <p>Details about the data source packages ingested by your behavior graph.</p>
 #[non_exhaustive]
@@ -1203,6 +1207,13 @@ impl DatasourcePackageIngestDetail {
         self.last_ingest_state_change.as_ref()
     }
 }
+impl DatasourcePackageIngestDetail {
+    /// Creates a new builder-style object to manufacture [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
+    pub fn builder() -> crate::model::datasource_package_ingest_detail::Builder {
+        crate::model::datasource_package_ingest_detail::Builder::default()
+    }
+}
+
 /// See [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
 pub mod datasource_package_ingest_detail {
     
@@ -1251,12 +1262,6 @@ pub mod datasource_package_ingest_detail {
     
     
 }
-impl DatasourcePackageIngestDetail {
-    /// Creates a new builder-style object to manufacture [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
-    pub fn builder() -> crate::model::datasource_package_ingest_detail::Builder {
-        crate::model::datasource_package_ingest_detail::Builder::default()
-    }
-}
 
 /// <p>Details on when data collection began for a source package.</p>
 #[non_exhaustive]
@@ -1272,6 +1277,13 @@ impl TimestampForCollection {
         self.timestamp.as_ref()
     }
 }
+impl TimestampForCollection {
+    /// Creates a new builder-style object to manufacture [`TimestampForCollection`](crate::model::TimestampForCollection).
+    pub fn builder() -> crate::model::timestamp_for_collection::Builder {
+        crate::model::timestamp_for_collection::Builder::default()
+    }
+}
+
 /// See [`TimestampForCollection`](crate::model::TimestampForCollection).
 pub mod timestamp_for_collection {
     
@@ -1302,12 +1314,6 @@ pub mod timestamp_for_collection {
     
     
 }
-impl TimestampForCollection {
-    /// Creates a new builder-style object to manufacture [`TimestampForCollection`](crate::model::TimestampForCollection).
-    pub fn builder() -> crate::model::timestamp_for_collection::Builder {
-        crate::model::timestamp_for_collection::Builder::default()
-    }
-}
 
 /// <p>A member account that was included in a request but for which the request could not be processed.</p>
 #[non_exhaustive]
@@ -1330,6 +1336,13 @@ impl UnprocessedAccount {
         self.reason.as_deref()
     }
 }
+impl UnprocessedAccount {
+    /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount).
+    pub fn builder() -> crate::model::unprocessed_account::Builder {
+        crate::model::unprocessed_account::Builder::default()
+    }
+}
+
 /// See [`UnprocessedAccount`](crate::model::UnprocessedAccount).
 pub mod unprocessed_account {
     
@@ -1372,12 +1385,6 @@ pub mod unprocessed_account {
     
     
 }
-impl UnprocessedAccount {
-    /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount).
-    pub fn builder() -> crate::model::unprocessed_account::Builder {
-        crate::model::unprocessed_account::Builder::default()
-    }
-}
 
 /// <p>An Amazon Web Services account that is the administrator account of or a member of a behavior graph.</p>
 #[non_exhaustive]
@@ -1400,6 +1407,13 @@ impl Account {
         self.email_address.as_deref()
     }
 }
+impl Account {
+    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
+    pub fn builder() -> crate::model::account::Builder {
+        crate::model::account::Builder::default()
+    }
+}
+
 /// See [`Account`](crate::model::Account).
 pub mod account {
     
@@ -1442,12 +1456,6 @@ pub mod account {
     
     
 }
-impl Account {
-    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
-    pub fn builder() -> crate::model::account::Builder {
-        crate::model::account::Builder::default()
-    }
-}
 
 /// <p>Behavior graphs that could not be processed in the request.</p>
 #[non_exhaustive]
@@ -1470,6 +1478,13 @@ impl UnprocessedGraph {
         self.reason.as_deref()
     }
 }
+impl UnprocessedGraph {
+    /// Creates a new builder-style object to manufacture [`UnprocessedGraph`](crate::model::UnprocessedGraph).
+    pub fn builder() -> crate::model::unprocessed_graph::Builder {
+        crate::model::unprocessed_graph::Builder::default()
+    }
+}
+
 /// See [`UnprocessedGraph`](crate::model::UnprocessedGraph).
 pub mod unprocessed_graph {
     
@@ -1512,12 +1527,6 @@ pub mod unprocessed_graph {
     
     
 }
-impl UnprocessedGraph {
-    /// Creates a new builder-style object to manufacture [`UnprocessedGraph`](crate::model::UnprocessedGraph).
-    pub fn builder() -> crate::model::unprocessed_graph::Builder {
-        crate::model::unprocessed_graph::Builder::default()
-    }
-}
 
 /// <p>Details on data source packages for members of the behavior graph.</p>
 #[non_exhaustive]
@@ -1547,6 +1556,13 @@ impl MembershipDatasources {
         self.datasource_package_ingest_history.as_ref()
     }
 }
+impl MembershipDatasources {
+    /// Creates a new builder-style object to manufacture [`MembershipDatasources`](crate::model::MembershipDatasources).
+    pub fn builder() -> crate::model::membership_datasources::Builder {
+        crate::model::membership_datasources::Builder::default()
+    }
+}
+
 /// See [`MembershipDatasources`](crate::model::MembershipDatasources).
 pub mod membership_datasources {
     
@@ -1606,11 +1622,5 @@ pub mod membership_datasources {
     }
     
     
-}
-impl MembershipDatasources {
-    /// Creates a new builder-style object to manufacture [`MembershipDatasources`](crate::model::MembershipDatasources).
-    pub fn builder() -> crate::model::membership_datasources::Builder {
-        crate::model::membership_datasources::Builder::default()
-    }
 }
 

@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateMetricSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateMetricSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
+    pub fn builder() -> crate::output::update_metric_set_output::Builder {
+        crate::output::update_metric_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
 pub mod update_metric_set_output {
     
@@ -60,12 +67,6 @@ pub mod update_metric_set_output {
     
     
 }
-impl UpdateMetricSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
-    pub fn builder() -> crate::output::update_metric_set_output::Builder {
-        crate::output::update_metric_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for UpdateAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::update_anomaly_detector_output::Builder {
+        crate::output::update_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
 pub mod update_anomaly_detector_output {
     
@@ -128,12 +136,6 @@ pub mod update_anomaly_detector_output {
     
     
 }
-impl UpdateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::update_anomaly_detector_output::Builder {
-        crate::output::update_anomaly_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for UpdateAlertOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAlertOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
+    pub fn builder() -> crate::output::update_alert_output::Builder {
+        crate::output::update_alert_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
 pub mod update_alert_output {
     
@@ -196,12 +205,6 @@ pub mod update_alert_output {
     
     
 }
-impl UpdateAlertOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
-    pub fn builder() -> crate::output::update_alert_output::Builder {
-        crate::output::update_alert_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -214,6 +217,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -243,12 +253,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -261,6 +265,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -290,12 +301,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -308,6 +313,13 @@ impl aws_http::request_id::RequestId for PutFeedbackOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
+    pub fn builder() -> crate::output::put_feedback_output::Builder {
+        crate::output::put_feedback_output::Builder::default()
+    }
+}
+
 /// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
 pub mod put_feedback_output {
     
@@ -337,12 +349,6 @@ pub mod put_feedback_output {
     
     
 }
-impl PutFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
-    pub fn builder() -> crate::output::put_feedback_output::Builder {
-        crate::output::put_feedback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -364,6 +370,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -411,12 +424,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -445,6 +452,13 @@ impl aws_http::request_id::RequestId for ListMetricSetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListMetricSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
+    pub fn builder() -> crate::output::list_metric_sets_output::Builder {
+        crate::output::list_metric_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
 pub mod list_metric_sets_output {
     
@@ -504,12 +518,6 @@ pub mod list_metric_sets_output {
     
     
 }
-impl ListMetricSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
-    pub fn builder() -> crate::output::list_metric_sets_output::Builder {
-        crate::output::list_metric_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -559,6 +567,13 @@ impl aws_http::request_id::RequestId for ListAnomalyGroupTimeSeriesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAnomalyGroupTimeSeriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
+    pub fn builder() -> crate::output::list_anomaly_group_time_series_output::Builder {
+        crate::output::list_anomaly_group_time_series_output::Builder::default()
+    }
+}
+
 /// See [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
 pub mod list_anomaly_group_time_series_output {
     
@@ -660,12 +675,6 @@ pub mod list_anomaly_group_time_series_output {
     
     
 }
-impl ListAnomalyGroupTimeSeriesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
-    pub fn builder() -> crate::output::list_anomaly_group_time_series_output::Builder {
-        crate::output::list_anomaly_group_time_series_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -701,6 +710,13 @@ impl aws_http::request_id::RequestId for ListAnomalyGroupSummariesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAnomalyGroupSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
+    pub fn builder() -> crate::output::list_anomaly_group_summaries_output::Builder {
+        crate::output::list_anomaly_group_summaries_output::Builder::default()
+    }
+}
+
 /// See [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
 pub mod list_anomaly_group_summaries_output {
     
@@ -772,12 +788,6 @@ pub mod list_anomaly_group_summaries_output {
     
     
 }
-impl ListAnomalyGroupSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
-    pub fn builder() -> crate::output::list_anomaly_group_summaries_output::Builder {
-        crate::output::list_anomaly_group_summaries_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -806,6 +816,13 @@ impl aws_http::request_id::RequestId for ListAnomalyGroupRelatedMetricsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAnomalyGroupRelatedMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
+    pub fn builder() -> crate::output::list_anomaly_group_related_metrics_output::Builder {
+        crate::output::list_anomaly_group_related_metrics_output::Builder::default()
+    }
+}
+
 /// See [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
 pub mod list_anomaly_group_related_metrics_output {
     
@@ -865,12 +882,6 @@ pub mod list_anomaly_group_related_metrics_output {
     
     
 }
-impl ListAnomalyGroupRelatedMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
-    pub fn builder() -> crate::output::list_anomaly_group_related_metrics_output::Builder {
-        crate::output::list_anomaly_group_related_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -899,6 +910,13 @@ impl aws_http::request_id::RequestId for ListAnomalyDetectorsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAnomalyDetectorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
+    pub fn builder() -> crate::output::list_anomaly_detectors_output::Builder {
+        crate::output::list_anomaly_detectors_output::Builder::default()
+    }
+}
+
 /// See [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
 pub mod list_anomaly_detectors_output {
     
@@ -958,12 +976,6 @@ pub mod list_anomaly_detectors_output {
     
     
 }
-impl ListAnomalyDetectorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
-    pub fn builder() -> crate::output::list_anomaly_detectors_output::Builder {
-        crate::output::list_anomaly_detectors_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -992,6 +1004,13 @@ impl aws_http::request_id::RequestId for ListAlertsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAlertsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput).
+    pub fn builder() -> crate::output::list_alerts_output::Builder {
+        crate::output::list_alerts_output::Builder::default()
+    }
+}
+
 /// See [`ListAlertsOutput`](crate::output::ListAlertsOutput).
 pub mod list_alerts_output {
     
@@ -1051,12 +1070,6 @@ pub mod list_alerts_output {
     
     
 }
-impl ListAlertsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput).
-    pub fn builder() -> crate::output::list_alerts_output::Builder {
-        crate::output::list_alerts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1085,6 +1098,13 @@ impl aws_http::request_id::RequestId for GetSampleDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSampleDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
+    pub fn builder() -> crate::output::get_sample_data_output::Builder {
+        crate::output::get_sample_data_output::Builder::default()
+    }
+}
+
 /// See [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
 pub mod get_sample_data_output {
     
@@ -1150,12 +1170,6 @@ pub mod get_sample_data_output {
     
     
 }
-impl GetSampleDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
-    pub fn builder() -> crate::output::get_sample_data_output::Builder {
-        crate::output::get_sample_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1184,6 +1198,13 @@ impl aws_http::request_id::RequestId for GetFeedbackOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
+    pub fn builder() -> crate::output::get_feedback_output::Builder {
+        crate::output::get_feedback_output::Builder::default()
+    }
+}
+
 /// See [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
 pub mod get_feedback_output {
     
@@ -1243,12 +1264,6 @@ pub mod get_feedback_output {
     
     
 }
-impl GetFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
-    pub fn builder() -> crate::output::get_feedback_output::Builder {
-        crate::output::get_feedback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1270,6 +1285,13 @@ impl aws_http::request_id::RequestId for GetDataQualityMetricsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDataQualityMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
+    pub fn builder() -> crate::output::get_data_quality_metrics_output::Builder {
+        crate::output::get_data_quality_metrics_output::Builder::default()
+    }
+}
+
 /// See [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
 pub mod get_data_quality_metrics_output {
     
@@ -1317,12 +1339,6 @@ pub mod get_data_quality_metrics_output {
     
     
 }
-impl GetDataQualityMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsOutput`](crate::output::GetDataQualityMetricsOutput).
-    pub fn builder() -> crate::output::get_data_quality_metrics_output::Builder {
-        crate::output::get_data_quality_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1344,6 +1360,13 @@ impl aws_http::request_id::RequestId for GetAnomalyGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAnomalyGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
+    pub fn builder() -> crate::output::get_anomaly_group_output::Builder {
+        crate::output::get_anomaly_group_output::Builder::default()
+    }
+}
+
 /// See [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
 pub mod get_anomaly_group_output {
     
@@ -1385,12 +1408,6 @@ pub mod get_anomaly_group_output {
     
     
 }
-impl GetAnomalyGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
-    pub fn builder() -> crate::output::get_anomaly_group_output::Builder {
-        crate::output::get_anomaly_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1412,6 +1429,13 @@ impl aws_http::request_id::RequestId for DetectMetricSetConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetectMetricSetConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
+    pub fn builder() -> crate::output::detect_metric_set_config_output::Builder {
+        crate::output::detect_metric_set_config_output::Builder::default()
+    }
+}
+
 /// See [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
 pub mod detect_metric_set_config_output {
     
@@ -1452,12 +1476,6 @@ pub mod detect_metric_set_config_output {
     }
     
     
-}
-impl DetectMetricSetConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
-    pub fn builder() -> crate::output::detect_metric_set_config_output::Builder {
-        crate::output::detect_metric_set_config_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1571,6 +1589,13 @@ impl aws_http::request_id::RequestId for DescribeMetricSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeMetricSetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
+    pub fn builder() -> crate::output::describe_metric_set_output::Builder {
+        crate::output::describe_metric_set_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
 pub mod describe_metric_set_output {
     
@@ -1786,12 +1811,6 @@ pub mod describe_metric_set_output {
     
     
 }
-impl DescribeMetricSetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
-    pub fn builder() -> crate::output::describe_metric_set_output::Builder {
-        crate::output::describe_metric_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1876,6 +1895,13 @@ impl aws_http::request_id::RequestId for DescribeAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::describe_anomaly_detector_output::Builder {
+        crate::output::describe_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
 pub mod describe_anomaly_detector_output {
     
@@ -2025,12 +2051,6 @@ pub mod describe_anomaly_detector_output {
     
     
 }
-impl DescribeAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::describe_anomaly_detector_output::Builder {
-        crate::output::describe_anomaly_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2059,6 +2079,13 @@ impl aws_http::request_id::RequestId for DescribeAnomalyDetectionExecutionsOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAnomalyDetectionExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
+    pub fn builder() -> crate::output::describe_anomaly_detection_executions_output::Builder {
+        crate::output::describe_anomaly_detection_executions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
 pub mod describe_anomaly_detection_executions_output {
     
@@ -2118,12 +2145,6 @@ pub mod describe_anomaly_detection_executions_output {
     
     
 }
-impl DescribeAnomalyDetectionExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
-    pub fn builder() -> crate::output::describe_anomaly_detection_executions_output::Builder {
-        crate::output::describe_anomaly_detection_executions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2145,6 +2166,13 @@ impl aws_http::request_id::RequestId for DescribeAlertOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAlertOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
+    pub fn builder() -> crate::output::describe_alert_output::Builder {
+        crate::output::describe_alert_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
 pub mod describe_alert_output {
     
@@ -2186,12 +2214,6 @@ pub mod describe_alert_output {
     
     
 }
-impl DescribeAlertOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
-    pub fn builder() -> crate::output::describe_alert_output::Builder {
-        crate::output::describe_alert_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2204,6 +2226,13 @@ impl aws_http::request_id::RequestId for DeleteAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::delete_anomaly_detector_output::Builder {
+        crate::output::delete_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
 pub mod delete_anomaly_detector_output {
     
@@ -2233,12 +2262,6 @@ pub mod delete_anomaly_detector_output {
     
     
 }
-impl DeleteAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::delete_anomaly_detector_output::Builder {
-        crate::output::delete_anomaly_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2251,6 +2274,13 @@ impl aws_http::request_id::RequestId for DeleteAlertOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAlertOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
+    pub fn builder() -> crate::output::delete_alert_output::Builder {
+        crate::output::delete_alert_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
 pub mod delete_alert_output {
     
@@ -2280,12 +2310,6 @@ pub mod delete_alert_output {
     
     
 }
-impl DeleteAlertOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
-    pub fn builder() -> crate::output::delete_alert_output::Builder {
-        crate::output::delete_alert_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2298,6 +2322,13 @@ impl aws_http::request_id::RequestId for DeactivateAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeactivateAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::deactivate_anomaly_detector_output::Builder {
+        crate::output::deactivate_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
 pub mod deactivate_anomaly_detector_output {
     
@@ -2327,12 +2358,6 @@ pub mod deactivate_anomaly_detector_output {
     
     
 }
-impl DeactivateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::deactivate_anomaly_detector_output::Builder {
-        crate::output::deactivate_anomaly_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2354,6 +2379,13 @@ impl aws_http::request_id::RequestId for CreateMetricSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateMetricSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
+    pub fn builder() -> crate::output::create_metric_set_output::Builder {
+        crate::output::create_metric_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
 pub mod create_metric_set_output {
     
@@ -2395,12 +2427,6 @@ pub mod create_metric_set_output {
     
     
 }
-impl CreateMetricSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
-    pub fn builder() -> crate::output::create_metric_set_output::Builder {
-        crate::output::create_metric_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2422,6 +2448,13 @@ impl aws_http::request_id::RequestId for CreateAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::create_anomaly_detector_output::Builder {
+        crate::output::create_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
 pub mod create_anomaly_detector_output {
     
@@ -2463,12 +2496,6 @@ pub mod create_anomaly_detector_output {
     
     
 }
-impl CreateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::create_anomaly_detector_output::Builder {
-        crate::output::create_anomaly_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2490,6 +2517,13 @@ impl aws_http::request_id::RequestId for CreateAlertOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAlertOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAlertOutput`](crate::output::CreateAlertOutput).
+    pub fn builder() -> crate::output::create_alert_output::Builder {
+        crate::output::create_alert_output::Builder::default()
+    }
+}
+
 /// See [`CreateAlertOutput`](crate::output::CreateAlertOutput).
 pub mod create_alert_output {
     
@@ -2531,12 +2565,6 @@ pub mod create_alert_output {
     
     
 }
-impl CreateAlertOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAlertOutput`](crate::output::CreateAlertOutput).
-    pub fn builder() -> crate::output::create_alert_output::Builder {
-        crate::output::create_alert_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2549,6 +2577,13 @@ impl aws_http::request_id::RequestId for BackTestAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BackTestAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::back_test_anomaly_detector_output::Builder {
+        crate::output::back_test_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
 pub mod back_test_anomaly_detector_output {
     
@@ -2578,12 +2613,6 @@ pub mod back_test_anomaly_detector_output {
     
     
 }
-impl BackTestAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::back_test_anomaly_detector_output::Builder {
-        crate::output::back_test_anomaly_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2596,6 +2625,13 @@ impl aws_http::request_id::RequestId for ActivateAnomalyDetectorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ActivateAnomalyDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
+    pub fn builder() -> crate::output::activate_anomaly_detector_output::Builder {
+        crate::output::activate_anomaly_detector_output::Builder::default()
+    }
+}
+
 /// See [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
 pub mod activate_anomaly_detector_output {
     
@@ -2624,11 +2660,5 @@ pub mod activate_anomaly_detector_output {
     }
     
     
-}
-impl ActivateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
-    pub fn builder() -> crate::output::activate_anomaly_detector_output::Builder {
-        crate::output::activate_anomaly_detector_output::Builder::default()
-    }
 }
 

@@ -113,55 +113,6 @@ pub struct ResourceLimitExceeded  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
-    pub fn builder() -> crate::error::resource_limit_exceeded::Builder {
-        crate::error::resource_limit_exceeded::Builder::default()
-    }
-}
-/// See [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
-pub mod resource_limit_exceeded {
-    
-    /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
-        pub fn build(self) -> crate::error::ResourceLimitExceeded {
-            crate::error::ResourceLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ResourceLimitExceeded {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -185,6 +136,56 @@ impl aws_http::request_id::RequestId for crate::error::ResourceLimitExceeded {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ResourceLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
+    pub fn builder() -> crate::error::resource_limit_exceeded::Builder {
+        crate::error::resource_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
+pub mod resource_limit_exceeded {
+    
+    /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
+        pub fn build(self) -> crate::error::ResourceLimitExceeded {
+            crate::error::ResourceLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -301,55 +302,6 @@ pub struct ConflictException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
-    }
-}
-/// See [`ConflictException`](crate::error::ConflictException).
-pub mod conflict_exception {
-    
-    /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ConflictException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -373,6 +325,56 @@ impl aws_http::request_id::RequestId for crate::error::ConflictException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
+    }
+}
+
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
+    
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -521,55 +523,6 @@ pub struct ResourceNotFound  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFound {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound).
-    pub fn builder() -> crate::error::resource_not_found::Builder {
-        crate::error::resource_not_found::Builder::default()
-    }
-}
-/// See [`ResourceNotFound`](crate::error::ResourceNotFound).
-pub mod resource_not_found {
-    
-    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound).
-        pub fn build(self) -> crate::error::ResourceNotFound {
-            crate::error::ResourceNotFound {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ResourceNotFound {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -594,26 +547,17 @@ impl aws_http::request_id::RequestId for crate::error::ResourceNotFound {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFound {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Resource being accessed is in use.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInUse  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ResourceInUse {
-    /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse).
-    pub fn builder() -> crate::error::resource_in_use::Builder {
-        crate::error::resource_in_use::Builder::default()
+impl ResourceNotFound {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound).
+    pub fn builder() -> crate::error::resource_not_found::Builder {
+        crate::error::resource_not_found::Builder::default()
     }
 }
-/// See [`ResourceInUse`](crate::error::ResourceInUse).
-pub mod resource_in_use {
+
+/// See [`ResourceNotFound`](crate::error::ResourceNotFound).
+pub mod resource_not_found {
     
-    /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
+    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -631,19 +575,19 @@ pub mod resource_in_use {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse).
-        pub fn build(self) -> crate::error::ResourceInUse {
-            crate::error::ResourceInUse {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound).
+        pub fn build(self) -> crate::error::ResourceNotFound {
+            crate::error::ResourceNotFound {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -652,6 +596,16 @@ pub mod resource_in_use {
     }
     
     
+}
+
+/// <p>Resource being accessed is in use.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ResourceInUse  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceInUse {
     /// Returns the error message.
@@ -677,6 +631,56 @@ impl aws_http::request_id::RequestId for crate::error::ResourceInUse {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceInUse {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ResourceInUse {
+    /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse).
+    pub fn builder() -> crate::error::resource_in_use::Builder {
+        crate::error::resource_in_use::Builder::default()
+    }
+}
+
+/// See [`ResourceInUse`](crate::error::ResourceInUse).
+pub mod resource_in_use {
+    
+    /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse).
+        pub fn build(self) -> crate::error::ResourceInUse {
+            crate::error::ResourceInUse {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

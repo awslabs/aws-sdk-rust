@@ -237,6 +237,13 @@ impl Options {
         self.object_tags.as_ref()
     }
 }
+impl Options {
+    /// Creates a new builder-style object to manufacture [`Options`](crate::model::Options).
+    pub fn builder() -> crate::model::options::Builder {
+        crate::model::options::Builder::default()
+    }
+}
+
 /// See [`Options`](crate::model::Options).
 pub mod options {
     
@@ -558,12 +565,6 @@ pub mod options {
     }
     
     
-}
-impl Options {
-    /// Creates a new builder-style object to manufacture [`Options`](crate::model::Options).
-    pub fn builder() -> crate::model::options::Builder {
-        crate::model::options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ObjectTags`, it is important to ensure
@@ -1772,6 +1773,13 @@ impl FilterRule {
         self.value.as_deref()
     }
 }
+impl FilterRule {
+    /// Creates a new builder-style object to manufacture [`FilterRule`](crate::model::FilterRule).
+    pub fn builder() -> crate::model::filter_rule::Builder {
+        crate::model::filter_rule::Builder::default()
+    }
+}
+
 /// See [`FilterRule`](crate::model::FilterRule).
 pub mod filter_rule {
     
@@ -1815,12 +1823,6 @@ pub mod filter_rule {
     }
     
     
-}
-impl FilterRule {
-    /// Creates a new builder-style object to manufacture [`FilterRule`](crate::model::FilterRule).
-    pub fn builder() -> crate::model::filter_rule::Builder {
-        crate::model::filter_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FilterType`, it is important to ensure
@@ -1914,6 +1916,13 @@ impl TaskSchedule {
         self.schedule_expression.as_deref()
     }
 }
+impl TaskSchedule {
+    /// Creates a new builder-style object to manufacture [`TaskSchedule`](crate::model::TaskSchedule).
+    pub fn builder() -> crate::model::task_schedule::Builder {
+        crate::model::task_schedule::Builder::default()
+    }
+}
+
 /// See [`TaskSchedule`](crate::model::TaskSchedule).
 pub mod task_schedule {
     
@@ -1944,12 +1953,6 @@ pub mod task_schedule {
     
     
 }
-impl TaskSchedule {
-    /// Creates a new builder-style object to manufacture [`TaskSchedule`](crate::model::TaskSchedule).
-    pub fn builder() -> crate::model::task_schedule::Builder {
-        crate::model::task_schedule::Builder::default()
-    }
-}
 
 /// <p>Specifies how DataSync can access a location using the SMB protocol.</p>
 #[non_exhaustive]
@@ -1965,6 +1968,13 @@ impl SmbMountOptions {
         self.version.as_ref()
     }
 }
+impl SmbMountOptions {
+    /// Creates a new builder-style object to manufacture [`SmbMountOptions`](crate::model::SmbMountOptions).
+    pub fn builder() -> crate::model::smb_mount_options::Builder {
+        crate::model::smb_mount_options::Builder::default()
+    }
+}
+
 /// See [`SmbMountOptions`](crate::model::SmbMountOptions).
 pub mod smb_mount_options {
     
@@ -1994,12 +2004,6 @@ pub mod smb_mount_options {
     }
     
     
-}
-impl SmbMountOptions {
-    /// Creates a new builder-style object to manufacture [`SmbMountOptions`](crate::model::SmbMountOptions).
-    pub fn builder() -> crate::model::smb_mount_options::Builder {
-        crate::model::smb_mount_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SmbVersion`, it is important to ensure
@@ -2203,6 +2207,13 @@ impl NfsMountOptions {
         self.version.as_ref()
     }
 }
+impl NfsMountOptions {
+    /// Creates a new builder-style object to manufacture [`NfsMountOptions`](crate::model::NfsMountOptions).
+    pub fn builder() -> crate::model::nfs_mount_options::Builder {
+        crate::model::nfs_mount_options::Builder::default()
+    }
+}
+
 /// See [`NfsMountOptions`](crate::model::NfsMountOptions).
 pub mod nfs_mount_options {
     
@@ -2250,12 +2261,6 @@ pub mod nfs_mount_options {
     }
     
     
-}
-impl NfsMountOptions {
-    /// Creates a new builder-style object to manufacture [`NfsMountOptions`](crate::model::NfsMountOptions).
-    pub fn builder() -> crate::model::nfs_mount_options::Builder {
-        crate::model::nfs_mount_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NfsVersion`, it is important to ensure
@@ -2364,6 +2369,13 @@ impl OnPremConfig {
         self.agent_arns.as_deref()
     }
 }
+impl OnPremConfig {
+    /// Creates a new builder-style object to manufacture [`OnPremConfig`](crate::model::OnPremConfig).
+    pub fn builder() -> crate::model::on_prem_config::Builder {
+        crate::model::on_prem_config::Builder::default()
+    }
+}
+
 /// See [`OnPremConfig`](crate::model::OnPremConfig).
 pub mod on_prem_config {
     
@@ -2399,12 +2411,6 @@ pub mod on_prem_config {
     }
     
     
-}
-impl OnPremConfig {
-    /// Creates a new builder-style object to manufacture [`OnPremConfig`](crate::model::OnPremConfig).
-    pub fn builder() -> crate::model::on_prem_config::Builder {
-        crate::model::on_prem_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HdfsAuthenticationType`, it is important to ensure
@@ -2510,6 +2516,13 @@ impl QopConfiguration {
         self.data_transfer_protection.as_ref()
     }
 }
+impl QopConfiguration {
+    /// Creates a new builder-style object to manufacture [`QopConfiguration`](crate::model::QopConfiguration).
+    pub fn builder() -> crate::model::qop_configuration::Builder {
+        crate::model::qop_configuration::Builder::default()
+    }
+}
+
 /// See [`QopConfiguration`](crate::model::QopConfiguration).
 pub mod qop_configuration {
     
@@ -2551,12 +2564,6 @@ pub mod qop_configuration {
     }
     
     
-}
-impl QopConfiguration {
-    /// Creates a new builder-style object to manufacture [`QopConfiguration`](crate::model::QopConfiguration).
-    pub fn builder() -> crate::model::qop_configuration::Builder {
-        crate::model::qop_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HdfsDataTransferProtection`, it is important to ensure
@@ -2764,6 +2771,13 @@ impl HdfsNameNode {
         self.port
     }
 }
+impl HdfsNameNode {
+    /// Creates a new builder-style object to manufacture [`HdfsNameNode`](crate::model::HdfsNameNode).
+    pub fn builder() -> crate::model::hdfs_name_node::Builder {
+        crate::model::hdfs_name_node::Builder::default()
+    }
+}
+
 /// See [`HdfsNameNode`](crate::model::HdfsNameNode).
 pub mod hdfs_name_node {
     
@@ -2806,12 +2820,6 @@ pub mod hdfs_name_node {
     
     
 }
-impl HdfsNameNode {
-    /// Creates a new builder-style object to manufacture [`HdfsNameNode`](crate::model::HdfsNameNode).
-    pub fn builder() -> crate::model::hdfs_name_node::Builder {
-        crate::model::hdfs_name_node::Builder::default()
-    }
-}
 
 /// <p>A key-value pair representing a single tag that's been applied to an Amazon Web Services resource.</p>
 #[non_exhaustive]
@@ -2834,6 +2842,13 @@ impl TagListEntry {
         self.value.as_deref()
     }
 }
+impl TagListEntry {
+    /// Creates a new builder-style object to manufacture [`TagListEntry`](crate::model::TagListEntry).
+    pub fn builder() -> crate::model::tag_list_entry::Builder {
+        crate::model::tag_list_entry::Builder::default()
+    }
+}
+
 /// See [`TagListEntry`](crate::model::TagListEntry).
 pub mod tag_list_entry {
     
@@ -2876,12 +2891,6 @@ pub mod tag_list_entry {
     
     
 }
-impl TagListEntry {
-    /// Creates a new builder-style object to manufacture [`TagListEntry`](crate::model::TagListEntry).
-    pub fn builder() -> crate::model::tag_list_entry::Builder {
-        crate::model::tag_list_entry::Builder::default()
-    }
-}
 
 /// <p>Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html">ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.</p>
 #[non_exhaustive]
@@ -2911,6 +2920,13 @@ impl TaskListEntry {
         self.name.as_deref()
     }
 }
+impl TaskListEntry {
+    /// Creates a new builder-style object to manufacture [`TaskListEntry`](crate::model::TaskListEntry).
+    pub fn builder() -> crate::model::task_list_entry::Builder {
+        crate::model::task_list_entry::Builder::default()
+    }
+}
+
 /// See [`TaskListEntry`](crate::model::TaskListEntry).
 pub mod task_list_entry {
     
@@ -2964,12 +2980,6 @@ pub mod task_list_entry {
     }
     
     
-}
-impl TaskListEntry {
-    /// Creates a new builder-style object to manufacture [`TaskListEntry`](crate::model::TaskListEntry).
-    pub fn builder() -> crate::model::task_list_entry::Builder {
-        crate::model::task_list_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TaskStatus`, it is important to ensure
@@ -3098,6 +3108,13 @@ impl TaskFilter {
         self.operator.as_ref()
     }
 }
+impl TaskFilter {
+    /// Creates a new builder-style object to manufacture [`TaskFilter`](crate::model::TaskFilter).
+    pub fn builder() -> crate::model::task_filter::Builder {
+        crate::model::task_filter::Builder::default()
+    }
+}
+
 /// See [`TaskFilter`](crate::model::TaskFilter).
 pub mod task_filter {
     
@@ -3157,12 +3174,6 @@ pub mod task_filter {
     }
     
     
-}
-impl TaskFilter {
-    /// Creates a new builder-style object to manufacture [`TaskFilter`](crate::model::TaskFilter).
-    pub fn builder() -> crate::model::task_filter::Builder {
-        crate::model::task_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Operator`, it is important to ensure
@@ -3390,6 +3401,13 @@ impl TaskExecutionListEntry {
         self.status.as_ref()
     }
 }
+impl TaskExecutionListEntry {
+    /// Creates a new builder-style object to manufacture [`TaskExecutionListEntry`](crate::model::TaskExecutionListEntry).
+    pub fn builder() -> crate::model::task_execution_list_entry::Builder {
+        crate::model::task_execution_list_entry::Builder::default()
+    }
+}
+
 /// See [`TaskExecutionListEntry`](crate::model::TaskExecutionListEntry).
 pub mod task_execution_list_entry {
     
@@ -3431,12 +3449,6 @@ pub mod task_execution_list_entry {
     }
     
     
-}
-impl TaskExecutionListEntry {
-    /// Creates a new builder-style object to manufacture [`TaskExecutionListEntry`](crate::model::TaskExecutionListEntry).
-    pub fn builder() -> crate::model::task_execution_list_entry::Builder {
-        crate::model::task_execution_list_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TaskExecutionStatus`, it is important to ensure
@@ -3577,6 +3589,13 @@ impl LocationListEntry {
         self.location_uri.as_deref()
     }
 }
+impl LocationListEntry {
+    /// Creates a new builder-style object to manufacture [`LocationListEntry`](crate::model::LocationListEntry).
+    pub fn builder() -> crate::model::location_list_entry::Builder {
+        crate::model::location_list_entry::Builder::default()
+    }
+}
+
 /// See [`LocationListEntry`](crate::model::LocationListEntry).
 pub mod location_list_entry {
     
@@ -3629,12 +3648,6 @@ pub mod location_list_entry {
     
     
 }
-impl LocationListEntry {
-    /// Creates a new builder-style object to manufacture [`LocationListEntry`](crate::model::LocationListEntry).
-    pub fn builder() -> crate::model::location_list_entry::Builder {
-        crate::model::location_list_entry::Builder::default()
-    }
-}
 
 /// <p>Narrow down the list of resources returned by <code>ListLocations</code>. For example, to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>, <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering resources</a>.</p>
@@ -3665,6 +3678,13 @@ impl LocationFilter {
         self.operator.as_ref()
     }
 }
+impl LocationFilter {
+    /// Creates a new builder-style object to manufacture [`LocationFilter`](crate::model::LocationFilter).
+    pub fn builder() -> crate::model::location_filter::Builder {
+        crate::model::location_filter::Builder::default()
+    }
+}
+
 /// See [`LocationFilter`](crate::model::LocationFilter).
 pub mod location_filter {
     
@@ -3724,12 +3744,6 @@ pub mod location_filter {
     }
     
     
-}
-impl LocationFilter {
-    /// Creates a new builder-style object to manufacture [`LocationFilter`](crate::model::LocationFilter).
-    pub fn builder() -> crate::model::location_filter::Builder {
-        crate::model::location_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LocationFilterName`, it is important to ensure
@@ -3847,6 +3861,13 @@ impl AgentListEntry {
         self.status.as_ref()
     }
 }
+impl AgentListEntry {
+    /// Creates a new builder-style object to manufacture [`AgentListEntry`](crate::model::AgentListEntry).
+    pub fn builder() -> crate::model::agent_list_entry::Builder {
+        crate::model::agent_list_entry::Builder::default()
+    }
+}
+
 /// See [`AgentListEntry`](crate::model::AgentListEntry).
 pub mod agent_list_entry {
     
@@ -3900,12 +3921,6 @@ pub mod agent_list_entry {
     }
     
     
-}
-impl AgentListEntry {
-    /// Creates a new builder-style object to manufacture [`AgentListEntry`](crate::model::AgentListEntry).
-    pub fn builder() -> crate::model::agent_list_entry::Builder {
-        crate::model::agent_list_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AgentStatus`, it is important to ensure
@@ -4060,6 +4075,13 @@ impl TaskExecutionResultDetail {
         self.error_detail.as_deref()
     }
 }
+impl TaskExecutionResultDetail {
+    /// Creates a new builder-style object to manufacture [`TaskExecutionResultDetail`](crate::model::TaskExecutionResultDetail).
+    pub fn builder() -> crate::model::task_execution_result_detail::Builder {
+        crate::model::task_execution_result_detail::Builder::default()
+    }
+}
+
 /// See [`TaskExecutionResultDetail`](crate::model::TaskExecutionResultDetail).
 pub mod task_execution_result_detail {
     
@@ -4186,12 +4208,6 @@ pub mod task_execution_result_detail {
     
     
 }
-impl TaskExecutionResultDetail {
-    /// Creates a new builder-style object to manufacture [`TaskExecutionResultDetail`](crate::model::TaskExecutionResultDetail).
-    pub fn builder() -> crate::model::task_execution_result_detail::Builder {
-        crate::model::task_execution_result_detail::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PhaseStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4295,6 +4311,13 @@ impl S3Config {
         self.bucket_access_role_arn.as_deref()
     }
 }
+impl S3Config {
+    /// Creates a new builder-style object to manufacture [`S3Config`](crate::model::S3Config).
+    pub fn builder() -> crate::model::s3_config::Builder {
+        crate::model::s3_config::Builder::default()
+    }
+}
+
 /// See [`S3Config`](crate::model::S3Config).
 pub mod s3_config {
     
@@ -4324,12 +4347,6 @@ pub mod s3_config {
     }
     
     
-}
-impl S3Config {
-    /// Creates a new builder-style object to manufacture [`S3Config`](crate::model::S3Config).
-    pub fn builder() -> crate::model::s3_config::Builder {
-        crate::model::s3_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3StorageClass`, it is important to ensure
@@ -4465,6 +4482,13 @@ impl FsxProtocol {
         self.smb.as_ref()
     }
 }
+impl FsxProtocol {
+    /// Creates a new builder-style object to manufacture [`FsxProtocol`](crate::model::FsxProtocol).
+    pub fn builder() -> crate::model::fsx_protocol::Builder {
+        crate::model::fsx_protocol::Builder::default()
+    }
+}
+
 /// See [`FsxProtocol`](crate::model::FsxProtocol).
 pub mod fsx_protocol {
     
@@ -4506,12 +4530,6 @@ pub mod fsx_protocol {
     }
     
     
-}
-impl FsxProtocol {
-    /// Creates a new builder-style object to manufacture [`FsxProtocol`](crate::model::FsxProtocol).
-    pub fn builder() -> crate::model::fsx_protocol::Builder {
-        crate::model::fsx_protocol::Builder::default()
-    }
 }
 
 /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your Amazon FSx for NetApp ONTAP file system. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Accessing FSx for ONTAP file systems</a>.</p>
@@ -4579,6 +4597,13 @@ impl  std::fmt::Debug for FsxProtocolSmb  {
         formatter.finish()
     }
 }
+impl FsxProtocolSmb {
+    /// Creates a new builder-style object to manufacture [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
+    pub fn builder() -> crate::model::fsx_protocol_smb::Builder {
+        crate::model::fsx_protocol_smb::Builder::default()
+    }
+}
+
 /// See [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
 pub mod fsx_protocol_smb {
     
@@ -4675,12 +4700,6 @@ pub mod fsx_protocol_smb {
     
     
 }
-impl FsxProtocolSmb {
-    /// Creates a new builder-style object to manufacture [`FsxProtocolSmb`](crate::model::FsxProtocolSmb).
-    pub fn builder() -> crate::model::fsx_protocol_smb::Builder {
-        crate::model::fsx_protocol_smb::Builder::default()
-    }
-}
 
 /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
@@ -4696,6 +4715,13 @@ impl FsxProtocolNfs {
         self.mount_options.as_ref()
     }
 }
+impl FsxProtocolNfs {
+    /// Creates a new builder-style object to manufacture [`FsxProtocolNfs`](crate::model::FsxProtocolNfs).
+    pub fn builder() -> crate::model::fsx_protocol_nfs::Builder {
+        crate::model::fsx_protocol_nfs::Builder::default()
+    }
+}
+
 /// See [`FsxProtocolNfs`](crate::model::FsxProtocolNfs).
 pub mod fsx_protocol_nfs {
     
@@ -4725,12 +4751,6 @@ pub mod fsx_protocol_nfs {
     }
     
     
-}
-impl FsxProtocolNfs {
-    /// Creates a new builder-style object to manufacture [`FsxProtocolNfs`](crate::model::FsxProtocolNfs).
-    pub fn builder() -> crate::model::fsx_protocol_nfs::Builder {
-        crate::model::fsx_protocol_nfs::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EfsInTransitEncryption`, it is important to ensure
@@ -4850,6 +4870,13 @@ impl Ec2Config {
         self.security_group_arns.as_deref()
     }
 }
+impl Ec2Config {
+    /// Creates a new builder-style object to manufacture [`Ec2Config`](crate::model::Ec2Config).
+    pub fn builder() -> crate::model::ec2_config::Builder {
+        crate::model::ec2_config::Builder::default()
+    }
+}
+
 /// See [`Ec2Config`](crate::model::Ec2Config).
 pub mod ec2_config {
     
@@ -4912,12 +4939,6 @@ pub mod ec2_config {
     
     
 }
-impl Ec2Config {
-    /// Creates a new builder-style object to manufacture [`Ec2Config`](crate::model::Ec2Config).
-    pub fn builder() -> crate::model::ec2_config::Builder {
-        crate::model::ec2_config::Builder::default()
-    }
-}
 
 /// <p>The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private Cloud).</p>
 #[non_exhaustive]
@@ -4954,6 +4975,13 @@ impl PrivateLinkConfig {
         self.security_group_arns.as_deref()
     }
 }
+impl PrivateLinkConfig {
+    /// Creates a new builder-style object to manufacture [`PrivateLinkConfig`](crate::model::PrivateLinkConfig).
+    pub fn builder() -> crate::model::private_link_config::Builder {
+        crate::model::private_link_config::Builder::default()
+    }
+}
+
 /// See [`PrivateLinkConfig`](crate::model::PrivateLinkConfig).
 pub mod private_link_config {
     
@@ -5031,12 +5059,6 @@ pub mod private_link_config {
     }
     
     
-}
-impl PrivateLinkConfig {
-    /// Creates a new builder-style object to manufacture [`PrivateLinkConfig`](crate::model::PrivateLinkConfig).
-    pub fn builder() -> crate::model::private_link_config::Builder {
-        crate::model::private_link_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndpointType`, it is important to ensure

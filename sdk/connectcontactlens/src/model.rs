@@ -21,6 +21,13 @@ impl RealtimeContactAnalysisSegment {
         self.categories.as_ref()
     }
 }
+impl RealtimeContactAnalysisSegment {
+    /// Creates a new builder-style object to manufacture [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
+    pub fn builder() -> crate::model::realtime_contact_analysis_segment::Builder {
+        crate::model::realtime_contact_analysis_segment::Builder::default()
+    }
+}
+
 /// See [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
 pub mod realtime_contact_analysis_segment {
     
@@ -63,12 +70,6 @@ pub mod realtime_contact_analysis_segment {
     
     
 }
-impl RealtimeContactAnalysisSegment {
-    /// Creates a new builder-style object to manufacture [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
-    pub fn builder() -> crate::model::realtime_contact_analysis_segment::Builder {
-        crate::model::realtime_contact_analysis_segment::Builder::default()
-    }
-}
 
 /// <p>Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.</p>
 #[non_exhaustive]
@@ -91,6 +92,13 @@ impl Categories {
         self.matched_details.as_ref()
     }
 }
+impl Categories {
+    /// Creates a new builder-style object to manufacture [`Categories`](crate::model::Categories).
+    pub fn builder() -> crate::model::categories::Builder {
+        crate::model::categories::Builder::default()
+    }
+}
+
 /// See [`Categories`](crate::model::Categories).
 pub mod categories {
     
@@ -145,12 +153,6 @@ pub mod categories {
     
     
 }
-impl Categories {
-    /// Creates a new builder-style object to manufacture [`Categories`](crate::model::Categories).
-    pub fn builder() -> crate::model::categories::Builder {
-        crate::model::categories::Builder::default()
-    }
-}
 
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
@@ -166,6 +168,13 @@ impl CategoryDetails {
         self.points_of_interest.as_deref()
     }
 }
+impl CategoryDetails {
+    /// Creates a new builder-style object to manufacture [`CategoryDetails`](crate::model::CategoryDetails).
+    pub fn builder() -> crate::model::category_details::Builder {
+        crate::model::category_details::Builder::default()
+    }
+}
+
 /// See [`CategoryDetails`](crate::model::CategoryDetails).
 pub mod category_details {
     
@@ -202,12 +211,6 @@ pub mod category_details {
     
     
 }
-impl CategoryDetails {
-    /// Creates a new builder-style object to manufacture [`CategoryDetails`](crate::model::CategoryDetails).
-    pub fn builder() -> crate::model::category_details::Builder {
-        crate::model::category_details::Builder::default()
-    }
-}
 
 /// <p>The section of the contact audio where that category rule was detected.</p>
 #[non_exhaustive]
@@ -230,6 +233,13 @@ impl PointOfInterest {
         self.end_offset_millis
     }
 }
+impl PointOfInterest {
+    /// Creates a new builder-style object to manufacture [`PointOfInterest`](crate::model::PointOfInterest).
+    pub fn builder() -> crate::model::point_of_interest::Builder {
+        crate::model::point_of_interest::Builder::default()
+    }
+}
+
 /// See [`PointOfInterest`](crate::model::PointOfInterest).
 pub mod point_of_interest {
     
@@ -273,12 +283,6 @@ pub mod point_of_interest {
     }
     
     
-}
-impl PointOfInterest {
-    /// Creates a new builder-style object to manufacture [`PointOfInterest`](crate::model::PointOfInterest).
-    pub fn builder() -> crate::model::point_of_interest::Builder {
-        crate::model::point_of_interest::Builder::default()
-    }
 }
 
 /// <p>A list of messages in the session.</p>
@@ -344,6 +348,13 @@ impl Transcript {
         self.issues_detected.as_deref()
     }
 }
+impl Transcript {
+    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
+    pub fn builder() -> crate::model::transcript::Builder {
+        crate::model::transcript::Builder::default()
+    }
+}
+
 /// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
     
@@ -466,12 +477,6 @@ pub mod transcript {
     
     
 }
-impl Transcript {
-    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
-    pub fn builder() -> crate::model::transcript::Builder {
-        crate::model::transcript::Builder::default()
-    }
-}
 
 /// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
@@ -487,6 +492,13 @@ impl IssueDetected {
         self.character_offsets.as_ref()
     }
 }
+impl IssueDetected {
+    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
+    pub fn builder() -> crate::model::issue_detected::Builder {
+        crate::model::issue_detected::Builder::default()
+    }
+}
+
 /// See [`IssueDetected`](crate::model::IssueDetected).
 pub mod issue_detected {
     
@@ -517,12 +529,6 @@ pub mod issue_detected {
     
     
 }
-impl IssueDetected {
-    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
-    pub fn builder() -> crate::model::issue_detected::Builder {
-        crate::model::issue_detected::Builder::default()
-    }
-}
 
 /// <p>For characters that were detected as issues, where they occur in the transcript.</p>
 #[non_exhaustive]
@@ -545,6 +551,13 @@ impl CharacterOffsets {
         self.end_offset_char
     }
 }
+impl CharacterOffsets {
+    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
+    pub fn builder() -> crate::model::character_offsets::Builder {
+        crate::model::character_offsets::Builder::default()
+    }
+}
+
 /// See [`CharacterOffsets`](crate::model::CharacterOffsets).
 pub mod character_offsets {
     
@@ -588,12 +601,6 @@ pub mod character_offsets {
     }
     
     
-}
-impl CharacterOffsets {
-    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
-    pub fn builder() -> crate::model::character_offsets::Builder {
-        crate::model::character_offsets::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SentimentValue`, it is important to ensure

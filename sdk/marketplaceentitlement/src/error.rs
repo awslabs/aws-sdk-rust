@@ -145,55 +145,6 @@ pub struct ThrottlingException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
-    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
-    pub fn builder() -> crate::error::throttling_exception::Builder {
-        crate::error::throttling_exception::Builder::default()
-    }
-}
-/// See [`ThrottlingException`](crate::error::ThrottlingException).
-pub mod throttling_exception {
-    
-    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
-        pub fn build(self) -> crate::error::ThrottlingException {
-            crate::error::ThrottlingException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ThrottlingException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -218,26 +169,17 @@ impl aws_http::request_id::RequestId for crate::error::ThrottlingException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>One or more parameters in your request was invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidParameterException {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
-    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
-        crate::error::invalid_parameter_exception::Builder::default()
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }
-/// See [`InvalidParameterException`](crate::error::InvalidParameterException).
-pub mod invalid_parameter_exception {
+
+/// See [`ThrottlingException`](crate::error::ThrottlingException).
+pub mod throttling_exception {
     
-    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -255,19 +197,19 @@ pub mod invalid_parameter_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
-        pub fn build(self) -> crate::error::InvalidParameterException {
-            crate::error::InvalidParameterException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -276,6 +218,16 @@ pub mod invalid_parameter_exception {
     }
     
     
+}
+
+/// <p>One or more parameters in your request was invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidParameterException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
     /// Returns the error message.
@@ -302,26 +254,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidParameterException
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceErrorException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InternalServiceErrorException {
-    /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
-    pub fn builder() -> crate::error::internal_service_error_exception::Builder {
-        crate::error::internal_service_error_exception::Builder::default()
+impl InvalidParameterException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
+    pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
+        crate::error::invalid_parameter_exception::Builder::default()
     }
 }
-/// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
-pub mod internal_service_error_exception {
+
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException).
+pub mod invalid_parameter_exception {
     
-    /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -339,19 +282,19 @@ pub mod internal_service_error_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
-        pub fn build(self) -> crate::error::InternalServiceErrorException {
-            crate::error::InternalServiceErrorException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
+        pub fn build(self) -> crate::error::InvalidParameterException {
+            crate::error::InvalidParameterException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -360,6 +303,16 @@ pub mod internal_service_error_exception {
     }
     
     
+}
+
+/// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InternalServiceErrorException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServiceErrorException {
     /// Returns the error message.
@@ -385,5 +338,55 @@ impl aws_http::request_id::RequestId for crate::error::InternalServiceErrorExcep
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServiceErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InternalServiceErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    pub fn builder() -> crate::error::internal_service_error_exception::Builder {
+        crate::error::internal_service_error_exception::Builder::default()
+    }
+}
+
+/// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+pub mod internal_service_error_exception {
+    
+    /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
+        pub fn build(self) -> crate::error::InternalServiceErrorException {
+            crate::error::InternalServiceErrorException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 

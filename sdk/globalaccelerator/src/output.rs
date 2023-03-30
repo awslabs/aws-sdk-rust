@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for WithdrawByoipCidrOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl WithdrawByoipCidrOutput {
+    /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
+    pub fn builder() -> crate::output::withdraw_byoip_cidr_output::Builder {
+        crate::output::withdraw_byoip_cidr_output::Builder::default()
+    }
+}
+
 /// See [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
 pub mod withdraw_byoip_cidr_output {
     
@@ -60,12 +67,6 @@ pub mod withdraw_byoip_cidr_output {
     
     
 }
-impl WithdrawByoipCidrOutput {
-    /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
-    pub fn builder() -> crate::output::withdraw_byoip_cidr_output::Builder {
-        crate::output::withdraw_byoip_cidr_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for UpdateListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateListenerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
+    pub fn builder() -> crate::output::update_listener_output::Builder {
+        crate::output::update_listener_output::Builder::default()
+    }
+}
+
 /// See [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
 pub mod update_listener_output {
     
@@ -128,12 +136,6 @@ pub mod update_listener_output {
     
     
 }
-impl UpdateListenerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
-    pub fn builder() -> crate::output::update_listener_output::Builder {
-        crate::output::update_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for UpdateEndpointGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
+    pub fn builder() -> crate::output::update_endpoint_group_output::Builder {
+        crate::output::update_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
 pub mod update_endpoint_group_output {
     
@@ -196,12 +205,6 @@ pub mod update_endpoint_group_output {
     
     
 }
-impl UpdateEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
-    pub fn builder() -> crate::output::update_endpoint_group_output::Builder {
-        crate::output::update_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -223,6 +226,13 @@ impl aws_http::request_id::RequestId for UpdateCustomRoutingListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateCustomRoutingListenerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
+    pub fn builder() -> crate::output::update_custom_routing_listener_output::Builder {
+        crate::output::update_custom_routing_listener_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
 pub mod update_custom_routing_listener_output {
     
@@ -264,12 +274,6 @@ pub mod update_custom_routing_listener_output {
     
     
 }
-impl UpdateCustomRoutingListenerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
-    pub fn builder() -> crate::output::update_custom_routing_listener_output::Builder {
-        crate::output::update_custom_routing_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -291,6 +295,13 @@ impl aws_http::request_id::RequestId for UpdateCustomRoutingAcceleratorAttribute
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateCustomRoutingAcceleratorAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
+    pub fn builder() -> crate::output::update_custom_routing_accelerator_attributes_output::Builder {
+        crate::output::update_custom_routing_accelerator_attributes_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
 pub mod update_custom_routing_accelerator_attributes_output {
     
@@ -332,12 +343,6 @@ pub mod update_custom_routing_accelerator_attributes_output {
     
     
 }
-impl UpdateCustomRoutingAcceleratorAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
-    pub fn builder() -> crate::output::update_custom_routing_accelerator_attributes_output::Builder {
-        crate::output::update_custom_routing_accelerator_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -359,6 +364,13 @@ impl aws_http::request_id::RequestId for UpdateCustomRoutingAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateCustomRoutingAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
+    pub fn builder() -> crate::output::update_custom_routing_accelerator_output::Builder {
+        crate::output::update_custom_routing_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
 pub mod update_custom_routing_accelerator_output {
     
@@ -400,12 +412,6 @@ pub mod update_custom_routing_accelerator_output {
     
     
 }
-impl UpdateCustomRoutingAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
-    pub fn builder() -> crate::output::update_custom_routing_accelerator_output::Builder {
-        crate::output::update_custom_routing_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -427,6 +433,13 @@ impl aws_http::request_id::RequestId for UpdateAcceleratorAttributesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAcceleratorAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
+    pub fn builder() -> crate::output::update_accelerator_attributes_output::Builder {
+        crate::output::update_accelerator_attributes_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
 pub mod update_accelerator_attributes_output {
     
@@ -468,12 +481,6 @@ pub mod update_accelerator_attributes_output {
     
     
 }
-impl UpdateAcceleratorAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
-    pub fn builder() -> crate::output::update_accelerator_attributes_output::Builder {
-        crate::output::update_accelerator_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -495,6 +502,13 @@ impl aws_http::request_id::RequestId for UpdateAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
+    pub fn builder() -> crate::output::update_accelerator_output::Builder {
+        crate::output::update_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
 pub mod update_accelerator_output {
     
@@ -536,12 +550,6 @@ pub mod update_accelerator_output {
     
     
 }
-impl UpdateAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
-    pub fn builder() -> crate::output::update_accelerator_output::Builder {
-        crate::output::update_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -554,6 +562,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -583,12 +598,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -601,6 +610,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -630,12 +646,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -648,6 +658,13 @@ impl aws_http::request_id::RequestId for RemoveEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
+    pub fn builder() -> crate::output::remove_endpoints_output::Builder {
+        crate::output::remove_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
 pub mod remove_endpoints_output {
     
@@ -677,12 +694,6 @@ pub mod remove_endpoints_output {
     
     
 }
-impl RemoveEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
-    pub fn builder() -> crate::output::remove_endpoints_output::Builder {
-        crate::output::remove_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -695,6 +706,13 @@ impl aws_http::request_id::RequestId for RemoveCustomRoutingEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveCustomRoutingEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
+    pub fn builder() -> crate::output::remove_custom_routing_endpoints_output::Builder {
+        crate::output::remove_custom_routing_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
 pub mod remove_custom_routing_endpoints_output {
     
@@ -724,12 +742,6 @@ pub mod remove_custom_routing_endpoints_output {
     
     
 }
-impl RemoveCustomRoutingEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
-    pub fn builder() -> crate::output::remove_custom_routing_endpoints_output::Builder {
-        crate::output::remove_custom_routing_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -751,6 +763,13 @@ impl aws_http::request_id::RequestId for ProvisionByoipCidrOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ProvisionByoipCidrOutput {
+    /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
+    pub fn builder() -> crate::output::provision_byoip_cidr_output::Builder {
+        crate::output::provision_byoip_cidr_output::Builder::default()
+    }
+}
+
 /// See [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
 pub mod provision_byoip_cidr_output {
     
@@ -792,12 +811,6 @@ pub mod provision_byoip_cidr_output {
     
     
 }
-impl ProvisionByoipCidrOutput {
-    /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
-    pub fn builder() -> crate::output::provision_byoip_cidr_output::Builder {
-        crate::output::provision_byoip_cidr_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -819,6 +832,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -866,12 +886,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -900,6 +914,13 @@ impl aws_http::request_id::RequestId for ListListenersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListListenersOutput {
+    /// Creates a new builder-style object to manufacture [`ListListenersOutput`](crate::output::ListListenersOutput).
+    pub fn builder() -> crate::output::list_listeners_output::Builder {
+        crate::output::list_listeners_output::Builder::default()
+    }
+}
+
 /// See [`ListListenersOutput`](crate::output::ListListenersOutput).
 pub mod list_listeners_output {
     
@@ -959,12 +980,6 @@ pub mod list_listeners_output {
     
     
 }
-impl ListListenersOutput {
-    /// Creates a new builder-style object to manufacture [`ListListenersOutput`](crate::output::ListListenersOutput).
-    pub fn builder() -> crate::output::list_listeners_output::Builder {
-        crate::output::list_listeners_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -993,6 +1008,13 @@ impl aws_http::request_id::RequestId for ListEndpointGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListEndpointGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
+    pub fn builder() -> crate::output::list_endpoint_groups_output::Builder {
+        crate::output::list_endpoint_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
 pub mod list_endpoint_groups_output {
     
@@ -1052,12 +1074,6 @@ pub mod list_endpoint_groups_output {
     
     
 }
-impl ListEndpointGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
-    pub fn builder() -> crate::output::list_endpoint_groups_output::Builder {
-        crate::output::list_endpoint_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1086,6 +1102,13 @@ impl aws_http::request_id::RequestId for ListCustomRoutingPortMappingsByDestinat
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCustomRoutingPortMappingsByDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
+    pub fn builder() -> crate::output::list_custom_routing_port_mappings_by_destination_output::Builder {
+        crate::output::list_custom_routing_port_mappings_by_destination_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
 pub mod list_custom_routing_port_mappings_by_destination_output {
     
@@ -1145,12 +1168,6 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
     
     
 }
-impl ListCustomRoutingPortMappingsByDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
-    pub fn builder() -> crate::output::list_custom_routing_port_mappings_by_destination_output::Builder {
-        crate::output::list_custom_routing_port_mappings_by_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1179,6 +1196,13 @@ impl aws_http::request_id::RequestId for ListCustomRoutingPortMappingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCustomRoutingPortMappingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
+    pub fn builder() -> crate::output::list_custom_routing_port_mappings_output::Builder {
+        crate::output::list_custom_routing_port_mappings_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
 pub mod list_custom_routing_port_mappings_output {
     
@@ -1238,12 +1262,6 @@ pub mod list_custom_routing_port_mappings_output {
     
     
 }
-impl ListCustomRoutingPortMappingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
-    pub fn builder() -> crate::output::list_custom_routing_port_mappings_output::Builder {
-        crate::output::list_custom_routing_port_mappings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1272,6 +1290,13 @@ impl aws_http::request_id::RequestId for ListCustomRoutingListenersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCustomRoutingListenersOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
+    pub fn builder() -> crate::output::list_custom_routing_listeners_output::Builder {
+        crate::output::list_custom_routing_listeners_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
 pub mod list_custom_routing_listeners_output {
     
@@ -1331,12 +1356,6 @@ pub mod list_custom_routing_listeners_output {
     
     
 }
-impl ListCustomRoutingListenersOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
-    pub fn builder() -> crate::output::list_custom_routing_listeners_output::Builder {
-        crate::output::list_custom_routing_listeners_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1365,6 +1384,13 @@ impl aws_http::request_id::RequestId for ListCustomRoutingEndpointGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCustomRoutingEndpointGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
+    pub fn builder() -> crate::output::list_custom_routing_endpoint_groups_output::Builder {
+        crate::output::list_custom_routing_endpoint_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
 pub mod list_custom_routing_endpoint_groups_output {
     
@@ -1424,12 +1450,6 @@ pub mod list_custom_routing_endpoint_groups_output {
     
     
 }
-impl ListCustomRoutingEndpointGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
-    pub fn builder() -> crate::output::list_custom_routing_endpoint_groups_output::Builder {
-        crate::output::list_custom_routing_endpoint_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1458,6 +1478,13 @@ impl aws_http::request_id::RequestId for ListCustomRoutingAcceleratorsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListCustomRoutingAcceleratorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
+    pub fn builder() -> crate::output::list_custom_routing_accelerators_output::Builder {
+        crate::output::list_custom_routing_accelerators_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
 pub mod list_custom_routing_accelerators_output {
     
@@ -1517,12 +1544,6 @@ pub mod list_custom_routing_accelerators_output {
     
     
 }
-impl ListCustomRoutingAcceleratorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
-    pub fn builder() -> crate::output::list_custom_routing_accelerators_output::Builder {
-        crate::output::list_custom_routing_accelerators_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1551,6 +1572,13 @@ impl aws_http::request_id::RequestId for ListByoipCidrsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListByoipCidrsOutput {
+    /// Creates a new builder-style object to manufacture [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
+    pub fn builder() -> crate::output::list_byoip_cidrs_output::Builder {
+        crate::output::list_byoip_cidrs_output::Builder::default()
+    }
+}
+
 /// See [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
 pub mod list_byoip_cidrs_output {
     
@@ -1610,12 +1638,6 @@ pub mod list_byoip_cidrs_output {
     
     
 }
-impl ListByoipCidrsOutput {
-    /// Creates a new builder-style object to manufacture [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
-    pub fn builder() -> crate::output::list_byoip_cidrs_output::Builder {
-        crate::output::list_byoip_cidrs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1644,6 +1666,13 @@ impl aws_http::request_id::RequestId for ListAcceleratorsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAcceleratorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
+    pub fn builder() -> crate::output::list_accelerators_output::Builder {
+        crate::output::list_accelerators_output::Builder::default()
+    }
+}
+
 /// See [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
 pub mod list_accelerators_output {
     
@@ -1703,12 +1732,6 @@ pub mod list_accelerators_output {
     
     
 }
-impl ListAcceleratorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
-    pub fn builder() -> crate::output::list_accelerators_output::Builder {
-        crate::output::list_accelerators_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1730,6 +1753,13 @@ impl aws_http::request_id::RequestId for DescribeListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeListenerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
+    pub fn builder() -> crate::output::describe_listener_output::Builder {
+        crate::output::describe_listener_output::Builder::default()
+    }
+}
+
 /// See [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
 pub mod describe_listener_output {
     
@@ -1771,12 +1801,6 @@ pub mod describe_listener_output {
     
     
 }
-impl DescribeListenerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
-    pub fn builder() -> crate::output::describe_listener_output::Builder {
-        crate::output::describe_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1798,6 +1822,13 @@ impl aws_http::request_id::RequestId for DescribeEndpointGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
+    pub fn builder() -> crate::output::describe_endpoint_group_output::Builder {
+        crate::output::describe_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
 pub mod describe_endpoint_group_output {
     
@@ -1839,12 +1870,6 @@ pub mod describe_endpoint_group_output {
     
     
 }
-impl DescribeEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
-    pub fn builder() -> crate::output::describe_endpoint_group_output::Builder {
-        crate::output::describe_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1866,6 +1891,13 @@ impl aws_http::request_id::RequestId for DescribeCustomRoutingListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCustomRoutingListenerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
+    pub fn builder() -> crate::output::describe_custom_routing_listener_output::Builder {
+        crate::output::describe_custom_routing_listener_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
 pub mod describe_custom_routing_listener_output {
     
@@ -1907,12 +1939,6 @@ pub mod describe_custom_routing_listener_output {
     
     
 }
-impl DescribeCustomRoutingListenerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
-    pub fn builder() -> crate::output::describe_custom_routing_listener_output::Builder {
-        crate::output::describe_custom_routing_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1934,6 +1960,13 @@ impl aws_http::request_id::RequestId for DescribeCustomRoutingEndpointGroupOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCustomRoutingEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
+    pub fn builder() -> crate::output::describe_custom_routing_endpoint_group_output::Builder {
+        crate::output::describe_custom_routing_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
 pub mod describe_custom_routing_endpoint_group_output {
     
@@ -1975,12 +2008,6 @@ pub mod describe_custom_routing_endpoint_group_output {
     
     
 }
-impl DescribeCustomRoutingEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
-    pub fn builder() -> crate::output::describe_custom_routing_endpoint_group_output::Builder {
-        crate::output::describe_custom_routing_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2002,6 +2029,13 @@ impl aws_http::request_id::RequestId for DescribeCustomRoutingAcceleratorAttribu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCustomRoutingAcceleratorAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
+    pub fn builder() -> crate::output::describe_custom_routing_accelerator_attributes_output::Builder {
+        crate::output::describe_custom_routing_accelerator_attributes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
 pub mod describe_custom_routing_accelerator_attributes_output {
     
@@ -2043,12 +2077,6 @@ pub mod describe_custom_routing_accelerator_attributes_output {
     
     
 }
-impl DescribeCustomRoutingAcceleratorAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
-    pub fn builder() -> crate::output::describe_custom_routing_accelerator_attributes_output::Builder {
-        crate::output::describe_custom_routing_accelerator_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2070,6 +2098,13 @@ impl aws_http::request_id::RequestId for DescribeCustomRoutingAcceleratorOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCustomRoutingAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
+    pub fn builder() -> crate::output::describe_custom_routing_accelerator_output::Builder {
+        crate::output::describe_custom_routing_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
 pub mod describe_custom_routing_accelerator_output {
     
@@ -2111,12 +2146,6 @@ pub mod describe_custom_routing_accelerator_output {
     
     
 }
-impl DescribeCustomRoutingAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
-    pub fn builder() -> crate::output::describe_custom_routing_accelerator_output::Builder {
-        crate::output::describe_custom_routing_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2138,6 +2167,13 @@ impl aws_http::request_id::RequestId for DescribeAcceleratorAttributesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAcceleratorAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
+    pub fn builder() -> crate::output::describe_accelerator_attributes_output::Builder {
+        crate::output::describe_accelerator_attributes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
 pub mod describe_accelerator_attributes_output {
     
@@ -2179,12 +2215,6 @@ pub mod describe_accelerator_attributes_output {
     
     
 }
-impl DescribeAcceleratorAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
-    pub fn builder() -> crate::output::describe_accelerator_attributes_output::Builder {
-        crate::output::describe_accelerator_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2206,6 +2236,13 @@ impl aws_http::request_id::RequestId for DescribeAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
+    pub fn builder() -> crate::output::describe_accelerator_output::Builder {
+        crate::output::describe_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
 pub mod describe_accelerator_output {
     
@@ -2247,12 +2284,6 @@ pub mod describe_accelerator_output {
     
     
 }
-impl DescribeAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
-    pub fn builder() -> crate::output::describe_accelerator_output::Builder {
-        crate::output::describe_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2274,6 +2305,13 @@ impl aws_http::request_id::RequestId for DeprovisionByoipCidrOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeprovisionByoipCidrOutput {
+    /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
+    pub fn builder() -> crate::output::deprovision_byoip_cidr_output::Builder {
+        crate::output::deprovision_byoip_cidr_output::Builder::default()
+    }
+}
+
 /// See [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
 pub mod deprovision_byoip_cidr_output {
     
@@ -2315,12 +2353,6 @@ pub mod deprovision_byoip_cidr_output {
     
     
 }
-impl DeprovisionByoipCidrOutput {
-    /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
-    pub fn builder() -> crate::output::deprovision_byoip_cidr_output::Builder {
-        crate::output::deprovision_byoip_cidr_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2333,6 +2365,13 @@ impl aws_http::request_id::RequestId for DenyCustomRoutingTrafficOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DenyCustomRoutingTrafficOutput {
+    /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
+    pub fn builder() -> crate::output::deny_custom_routing_traffic_output::Builder {
+        crate::output::deny_custom_routing_traffic_output::Builder::default()
+    }
+}
+
 /// See [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
 pub mod deny_custom_routing_traffic_output {
     
@@ -2362,12 +2401,6 @@ pub mod deny_custom_routing_traffic_output {
     
     
 }
-impl DenyCustomRoutingTrafficOutput {
-    /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
-    pub fn builder() -> crate::output::deny_custom_routing_traffic_output::Builder {
-        crate::output::deny_custom_routing_traffic_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2380,6 +2413,13 @@ impl aws_http::request_id::RequestId for DeleteListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteListenerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
+    pub fn builder() -> crate::output::delete_listener_output::Builder {
+        crate::output::delete_listener_output::Builder::default()
+    }
+}
+
 /// See [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
 pub mod delete_listener_output {
     
@@ -2409,12 +2449,6 @@ pub mod delete_listener_output {
     
     
 }
-impl DeleteListenerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
-    pub fn builder() -> crate::output::delete_listener_output::Builder {
-        crate::output::delete_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2427,6 +2461,13 @@ impl aws_http::request_id::RequestId for DeleteEndpointGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
+    pub fn builder() -> crate::output::delete_endpoint_group_output::Builder {
+        crate::output::delete_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
 pub mod delete_endpoint_group_output {
     
@@ -2456,12 +2497,6 @@ pub mod delete_endpoint_group_output {
     
     
 }
-impl DeleteEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
-    pub fn builder() -> crate::output::delete_endpoint_group_output::Builder {
-        crate::output::delete_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2474,6 +2509,13 @@ impl aws_http::request_id::RequestId for DeleteCustomRoutingListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCustomRoutingListenerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
+    pub fn builder() -> crate::output::delete_custom_routing_listener_output::Builder {
+        crate::output::delete_custom_routing_listener_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
 pub mod delete_custom_routing_listener_output {
     
@@ -2503,12 +2545,6 @@ pub mod delete_custom_routing_listener_output {
     
     
 }
-impl DeleteCustomRoutingListenerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
-    pub fn builder() -> crate::output::delete_custom_routing_listener_output::Builder {
-        crate::output::delete_custom_routing_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2521,6 +2557,13 @@ impl aws_http::request_id::RequestId for DeleteCustomRoutingEndpointGroupOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCustomRoutingEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
+    pub fn builder() -> crate::output::delete_custom_routing_endpoint_group_output::Builder {
+        crate::output::delete_custom_routing_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
 pub mod delete_custom_routing_endpoint_group_output {
     
@@ -2550,12 +2593,6 @@ pub mod delete_custom_routing_endpoint_group_output {
     
     
 }
-impl DeleteCustomRoutingEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
-    pub fn builder() -> crate::output::delete_custom_routing_endpoint_group_output::Builder {
-        crate::output::delete_custom_routing_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2568,6 +2605,13 @@ impl aws_http::request_id::RequestId for DeleteCustomRoutingAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCustomRoutingAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
+    pub fn builder() -> crate::output::delete_custom_routing_accelerator_output::Builder {
+        crate::output::delete_custom_routing_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
 pub mod delete_custom_routing_accelerator_output {
     
@@ -2597,12 +2641,6 @@ pub mod delete_custom_routing_accelerator_output {
     
     
 }
-impl DeleteCustomRoutingAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
-    pub fn builder() -> crate::output::delete_custom_routing_accelerator_output::Builder {
-        crate::output::delete_custom_routing_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2615,6 +2653,13 @@ impl aws_http::request_id::RequestId for DeleteAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
+    pub fn builder() -> crate::output::delete_accelerator_output::Builder {
+        crate::output::delete_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
 pub mod delete_accelerator_output {
     
@@ -2644,12 +2689,6 @@ pub mod delete_accelerator_output {
     
     
 }
-impl DeleteAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
-    pub fn builder() -> crate::output::delete_accelerator_output::Builder {
-        crate::output::delete_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2671,6 +2710,13 @@ impl aws_http::request_id::RequestId for CreateListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateListenerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateListenerOutput`](crate::output::CreateListenerOutput).
+    pub fn builder() -> crate::output::create_listener_output::Builder {
+        crate::output::create_listener_output::Builder::default()
+    }
+}
+
 /// See [`CreateListenerOutput`](crate::output::CreateListenerOutput).
 pub mod create_listener_output {
     
@@ -2712,12 +2758,6 @@ pub mod create_listener_output {
     
     
 }
-impl CreateListenerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateListenerOutput`](crate::output::CreateListenerOutput).
-    pub fn builder() -> crate::output::create_listener_output::Builder {
-        crate::output::create_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2739,6 +2779,13 @@ impl aws_http::request_id::RequestId for CreateEndpointGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
+    pub fn builder() -> crate::output::create_endpoint_group_output::Builder {
+        crate::output::create_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
 pub mod create_endpoint_group_output {
     
@@ -2780,12 +2827,6 @@ pub mod create_endpoint_group_output {
     
     
 }
-impl CreateEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
-    pub fn builder() -> crate::output::create_endpoint_group_output::Builder {
-        crate::output::create_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2807,6 +2848,13 @@ impl aws_http::request_id::RequestId for CreateCustomRoutingListenerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCustomRoutingListenerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
+    pub fn builder() -> crate::output::create_custom_routing_listener_output::Builder {
+        crate::output::create_custom_routing_listener_output::Builder::default()
+    }
+}
+
 /// See [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
 pub mod create_custom_routing_listener_output {
     
@@ -2848,12 +2896,6 @@ pub mod create_custom_routing_listener_output {
     
     
 }
-impl CreateCustomRoutingListenerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
-    pub fn builder() -> crate::output::create_custom_routing_listener_output::Builder {
-        crate::output::create_custom_routing_listener_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2875,6 +2917,13 @@ impl aws_http::request_id::RequestId for CreateCustomRoutingEndpointGroupOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCustomRoutingEndpointGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
+    pub fn builder() -> crate::output::create_custom_routing_endpoint_group_output::Builder {
+        crate::output::create_custom_routing_endpoint_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
 pub mod create_custom_routing_endpoint_group_output {
     
@@ -2916,12 +2965,6 @@ pub mod create_custom_routing_endpoint_group_output {
     
     
 }
-impl CreateCustomRoutingEndpointGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
-    pub fn builder() -> crate::output::create_custom_routing_endpoint_group_output::Builder {
-        crate::output::create_custom_routing_endpoint_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2943,6 +2986,13 @@ impl aws_http::request_id::RequestId for CreateCustomRoutingAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCustomRoutingAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
+    pub fn builder() -> crate::output::create_custom_routing_accelerator_output::Builder {
+        crate::output::create_custom_routing_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
 pub mod create_custom_routing_accelerator_output {
     
@@ -2984,12 +3034,6 @@ pub mod create_custom_routing_accelerator_output {
     
     
 }
-impl CreateCustomRoutingAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
-    pub fn builder() -> crate::output::create_custom_routing_accelerator_output::Builder {
-        crate::output::create_custom_routing_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3011,6 +3055,13 @@ impl aws_http::request_id::RequestId for CreateAcceleratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAcceleratorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
+    pub fn builder() -> crate::output::create_accelerator_output::Builder {
+        crate::output::create_accelerator_output::Builder::default()
+    }
+}
+
 /// See [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
 pub mod create_accelerator_output {
     
@@ -3052,12 +3103,6 @@ pub mod create_accelerator_output {
     
     
 }
-impl CreateAcceleratorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
-    pub fn builder() -> crate::output::create_accelerator_output::Builder {
-        crate::output::create_accelerator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3070,6 +3115,13 @@ impl aws_http::request_id::RequestId for AllowCustomRoutingTrafficOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllowCustomRoutingTrafficOutput {
+    /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
+    pub fn builder() -> crate::output::allow_custom_routing_traffic_output::Builder {
+        crate::output::allow_custom_routing_traffic_output::Builder::default()
+    }
+}
+
 /// See [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
 pub mod allow_custom_routing_traffic_output {
     
@@ -3099,12 +3151,6 @@ pub mod allow_custom_routing_traffic_output {
     
     
 }
-impl AllowCustomRoutingTrafficOutput {
-    /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
-    pub fn builder() -> crate::output::allow_custom_routing_traffic_output::Builder {
-        crate::output::allow_custom_routing_traffic_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3126,6 +3172,13 @@ impl aws_http::request_id::RequestId for AdvertiseByoipCidrOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AdvertiseByoipCidrOutput {
+    /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
+    pub fn builder() -> crate::output::advertise_byoip_cidr_output::Builder {
+        crate::output::advertise_byoip_cidr_output::Builder::default()
+    }
+}
+
 /// See [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
 pub mod advertise_byoip_cidr_output {
     
@@ -3167,12 +3220,6 @@ pub mod advertise_byoip_cidr_output {
     
     
 }
-impl AdvertiseByoipCidrOutput {
-    /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
-    pub fn builder() -> crate::output::advertise_byoip_cidr_output::Builder {
-        crate::output::advertise_byoip_cidr_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3201,6 +3248,13 @@ impl aws_http::request_id::RequestId for AddEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
+    pub fn builder() -> crate::output::add_endpoints_output::Builder {
+        crate::output::add_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
 pub mod add_endpoints_output {
     
@@ -3260,12 +3314,6 @@ pub mod add_endpoints_output {
     
     
 }
-impl AddEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
-    pub fn builder() -> crate::output::add_endpoints_output::Builder {
-        crate::output::add_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3294,6 +3342,13 @@ impl aws_http::request_id::RequestId for AddCustomRoutingEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddCustomRoutingEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
+    pub fn builder() -> crate::output::add_custom_routing_endpoints_output::Builder {
+        crate::output::add_custom_routing_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
 pub mod add_custom_routing_endpoints_output {
     
@@ -3352,11 +3407,5 @@ pub mod add_custom_routing_endpoints_output {
     }
     
     
-}
-impl AddCustomRoutingEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
-    pub fn builder() -> crate::output::add_custom_routing_endpoints_output::Builder {
-        crate::output::add_custom_routing_endpoints_output::Builder::default()
-    }
 }
 

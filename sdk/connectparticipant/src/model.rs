@@ -28,6 +28,13 @@ impl UploadMetadata {
         self.headers_to_include.as_ref()
     }
 }
+impl UploadMetadata {
+    /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
+    pub fn builder() -> crate::model::upload_metadata::Builder {
+        crate::model::upload_metadata::Builder::default()
+    }
+}
+
 /// See [`UploadMetadata`](crate::model::UploadMetadata).
 pub mod upload_metadata {
     
@@ -87,12 +94,6 @@ pub mod upload_metadata {
     }
     
     
-}
-impl UploadMetadata {
-    /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
-    pub fn builder() -> crate::model::upload_metadata::Builder {
-        crate::model::upload_metadata::Builder::default()
-    }
 }
 
 /// <p>An item - message or event - that has been sent. </p>
@@ -188,6 +189,13 @@ impl Item {
         self.contact_id.as_deref()
     }
 }
+impl Item {
+    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
+    pub fn builder() -> crate::model::item::Builder {
+        crate::model::item::Builder::default()
+    }
+}
+
 /// See [`Item`](crate::model::Item).
 pub mod item {
     
@@ -358,12 +366,6 @@ pub mod item {
     
     
 }
-impl Item {
-    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
-    pub fn builder() -> crate::model::item::Builder {
-        crate::model::item::Builder::default()
-    }
-}
 
 /// <p>Contains metadata related to a message.</p>
 #[non_exhaustive]
@@ -386,6 +388,13 @@ impl MessageMetadata {
         self.receipts.as_deref()
     }
 }
+impl MessageMetadata {
+    /// Creates a new builder-style object to manufacture [`MessageMetadata`](crate::model::MessageMetadata).
+    pub fn builder() -> crate::model::message_metadata::Builder {
+        crate::model::message_metadata::Builder::default()
+    }
+}
+
 /// See [`MessageMetadata`](crate::model::MessageMetadata).
 pub mod message_metadata {
     
@@ -434,12 +443,6 @@ pub mod message_metadata {
     
     
 }
-impl MessageMetadata {
-    /// Creates a new builder-style object to manufacture [`MessageMetadata`](crate::model::MessageMetadata).
-    pub fn builder() -> crate::model::message_metadata::Builder {
-        crate::model::message_metadata::Builder::default()
-    }
-}
 
 /// <p>The receipt for the message delivered to the recipient.</p>
 #[non_exhaustive]
@@ -469,6 +472,13 @@ impl Receipt {
         self.recipient_participant_id.as_deref()
     }
 }
+impl Receipt {
+    /// Creates a new builder-style object to manufacture [`Receipt`](crate::model::Receipt).
+    pub fn builder() -> crate::model::receipt::Builder {
+        crate::model::receipt::Builder::default()
+    }
+}
+
 /// See [`Receipt`](crate::model::Receipt).
 pub mod receipt {
     
@@ -523,12 +533,6 @@ pub mod receipt {
     
     
 }
-impl Receipt {
-    /// Creates a new builder-style object to manufacture [`Receipt`](crate::model::Receipt).
-    pub fn builder() -> crate::model::receipt::Builder {
-        crate::model::receipt::Builder::default()
-    }
-}
 
 /// <p>The case-insensitive input to indicate standard MIME type that describes the format of the file that will be uploaded.</p>
 #[non_exhaustive]
@@ -565,6 +569,13 @@ impl AttachmentItem {
         self.status.as_ref()
     }
 }
+impl AttachmentItem {
+    /// Creates a new builder-style object to manufacture [`AttachmentItem`](crate::model::AttachmentItem).
+    pub fn builder() -> crate::model::attachment_item::Builder {
+        crate::model::attachment_item::Builder::default()
+    }
+}
+
 /// See [`AttachmentItem`](crate::model::AttachmentItem).
 pub mod attachment_item {
     
@@ -630,12 +641,6 @@ pub mod attachment_item {
     }
     
     
-}
-impl AttachmentItem {
-    /// Creates a new builder-style object to manufacture [`AttachmentItem`](crate::model::AttachmentItem).
-    pub fn builder() -> crate::model::attachment_item::Builder {
-        crate::model::attachment_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ArtifactStatus`, it is important to ensure
@@ -974,6 +979,13 @@ impl StartPosition {
         self.most_recent
     }
 }
+impl StartPosition {
+    /// Creates a new builder-style object to manufacture [`StartPosition`](crate::model::StartPosition).
+    pub fn builder() -> crate::model::start_position::Builder {
+        crate::model::start_position::Builder::default()
+    }
+}
+
 /// See [`StartPosition`](crate::model::StartPosition).
 pub mod start_position {
     
@@ -1030,12 +1042,6 @@ pub mod start_position {
     }
     
     
-}
-impl StartPosition {
-    /// Creates a new builder-style object to manufacture [`StartPosition`](crate::model::StartPosition).
-    pub fn builder() -> crate::model::start_position::Builder {
-        crate::model::start_position::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortKey`, it is important to ensure
@@ -1225,6 +1231,13 @@ impl ConnectionCredentials {
         self.expiry.as_deref()
     }
 }
+impl ConnectionCredentials {
+    /// Creates a new builder-style object to manufacture [`ConnectionCredentials`](crate::model::ConnectionCredentials).
+    pub fn builder() -> crate::model::connection_credentials::Builder {
+        crate::model::connection_credentials::Builder::default()
+    }
+}
+
 /// See [`ConnectionCredentials`](crate::model::ConnectionCredentials).
 pub mod connection_credentials {
     
@@ -1269,12 +1282,6 @@ pub mod connection_credentials {
     
     
 }
-impl ConnectionCredentials {
-    /// Creates a new builder-style object to manufacture [`ConnectionCredentials`](crate::model::ConnectionCredentials).
-    pub fn builder() -> crate::model::connection_credentials::Builder {
-        crate::model::connection_credentials::Builder::default()
-    }
-}
 
 /// <p>The websocket for the participant's connection.</p>
 #[non_exhaustive]
@@ -1299,6 +1306,13 @@ impl Websocket {
         self.connection_expiry.as_deref()
     }
 }
+impl Websocket {
+    /// Creates a new builder-style object to manufacture [`Websocket`](crate::model::Websocket).
+    pub fn builder() -> crate::model::websocket::Builder {
+        crate::model::websocket::Builder::default()
+    }
+}
+
 /// See [`Websocket`](crate::model::Websocket).
 pub mod websocket {
     
@@ -1342,12 +1356,6 @@ pub mod websocket {
     }
     
     
-}
-impl Websocket {
-    /// Creates a new builder-style object to manufacture [`Websocket`](crate::model::Websocket).
-    pub fn builder() -> crate::model::websocket::Builder {
-        crate::model::websocket::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionType`, it is important to ensure

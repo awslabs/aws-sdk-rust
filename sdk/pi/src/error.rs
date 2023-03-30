@@ -145,55 +145,6 @@ pub struct NotAuthorizedException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotAuthorizedException {
-    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-    pub fn builder() -> crate::error::not_authorized_exception::Builder {
-        crate::error::not_authorized_exception::Builder::default()
-    }
-}
-/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-pub mod not_authorized_exception {
-    
-    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-        pub fn build(self) -> crate::error::NotAuthorizedException {
-            crate::error::NotAuthorizedException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl NotAuthorizedException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -218,26 +169,17 @@ impl aws_http::request_id::RequestId for crate::error::NotAuthorizedException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotAuthorizedException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>One of the arguments provided is invalid for this request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgumentException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidArgumentException {
-    /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-    pub fn builder() -> crate::error::invalid_argument_exception::Builder {
-        crate::error::invalid_argument_exception::Builder::default()
+impl NotAuthorizedException {
+    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    pub fn builder() -> crate::error::not_authorized_exception::Builder {
+        crate::error::not_authorized_exception::Builder::default()
     }
 }
-/// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-pub mod invalid_argument_exception {
+
+/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+pub mod not_authorized_exception {
     
-    /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -255,19 +197,19 @@ pub mod invalid_argument_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-        pub fn build(self) -> crate::error::InvalidArgumentException {
-            crate::error::InvalidArgumentException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+        pub fn build(self) -> crate::error::NotAuthorizedException {
+            crate::error::NotAuthorizedException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -276,6 +218,16 @@ pub mod invalid_argument_exception {
     }
     
     
+}
+
+/// <p>One of the arguments provided is invalid for this request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidArgumentException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidArgumentException {
     /// Returns the error message.
@@ -302,26 +254,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidArgumentException 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgumentException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The request failed due to an unknown error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceError  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InternalServiceError {
-    /// Creates a new builder-style object to manufacture [`InternalServiceError`](crate::error::InternalServiceError).
-    pub fn builder() -> crate::error::internal_service_error::Builder {
-        crate::error::internal_service_error::Builder::default()
+impl InvalidArgumentException {
+    /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+    pub fn builder() -> crate::error::invalid_argument_exception::Builder {
+        crate::error::invalid_argument_exception::Builder::default()
     }
 }
-/// See [`InternalServiceError`](crate::error::InternalServiceError).
-pub mod internal_service_error {
+
+/// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+pub mod invalid_argument_exception {
     
-    /// A builder for [`InternalServiceError`](crate::error::InternalServiceError).
+    /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -339,19 +282,19 @@ pub mod internal_service_error {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError).
-        pub fn build(self) -> crate::error::InternalServiceError {
-            crate::error::InternalServiceError {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+        pub fn build(self) -> crate::error::InvalidArgumentException {
+            crate::error::InvalidArgumentException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -360,6 +303,16 @@ pub mod internal_service_error {
     }
     
     
+}
+
+/// <p>The request failed due to an unknown error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InternalServiceError  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServiceError {
     /// Returns the error message.
@@ -385,6 +338,56 @@ impl aws_http::request_id::RequestId for crate::error::InternalServiceError {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServiceError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InternalServiceError {
+    /// Creates a new builder-style object to manufacture [`InternalServiceError`](crate::error::InternalServiceError).
+    pub fn builder() -> crate::error::internal_service_error::Builder {
+        crate::error::internal_service_error::Builder::default()
+    }
+}
+
+/// See [`InternalServiceError`](crate::error::InternalServiceError).
+pub mod internal_service_error {
+    
+    /// A builder for [`InternalServiceError`](crate::error::InternalServiceError).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError).
+        pub fn build(self) -> crate::error::InternalServiceError {
+            crate::error::InternalServiceError {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

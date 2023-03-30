@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_pipe`](crate::client::Client::create_pipe).
             ///
-            /// See [`crate::client::fluent_builders::CreatePipe`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreatePipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePipe {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePipe {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_pipe`](crate::client::Client::delete_pipe).
             ///
-            /// See [`crate::client::fluent_builders::DeletePipe`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePipe {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePipe {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_pipe`](crate::client::Client::describe_pipe).
             ///
-            /// See [`crate::client::fluent_builders::DescribePipe`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribePipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePipe {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePipe {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_pipes`](crate::client::Client::list_pipes).
             ///
-            /// See [`crate::client::fluent_builders::ListPipes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPipes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPipes {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPipes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_pipe`](crate::client::Client::start_pipe).
             ///
-            /// See [`crate::client::fluent_builders::StartPipe`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartPipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartPipe {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartPipe {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`stop_pipe`](crate::client::Client::stop_pipe).
             ///
-            /// See [`crate::client::fluent_builders::StopPipe`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StopPipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopPipe {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPipe {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_pipe`](crate::client::Client::update_pipe).
             ///
-            /// See [`crate::client::fluent_builders::UpdatePipe`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdatePipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePipe {
     _private: ()

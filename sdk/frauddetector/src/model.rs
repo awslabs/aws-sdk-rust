@@ -28,6 +28,13 @@ impl Rule {
         self.rule_version.as_deref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
     
@@ -82,12 +89,6 @@ pub mod rule {
     
     
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <p>A key and value pair. </p>
 #[non_exhaustive]
@@ -110,6 +111,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -151,12 +159,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Language`, it is important to ensure
@@ -424,6 +426,13 @@ impl IngestedEventsDetail {
         self.ingested_events_time_window.as_ref()
     }
 }
+impl IngestedEventsDetail {
+    /// Creates a new builder-style object to manufacture [`IngestedEventsDetail`](crate::model::IngestedEventsDetail).
+    pub fn builder() -> crate::model::ingested_events_detail::Builder {
+        crate::model::ingested_events_detail::Builder::default()
+    }
+}
+
 /// See [`IngestedEventsDetail`](crate::model::IngestedEventsDetail).
 pub mod ingested_events_detail {
     
@@ -454,12 +463,6 @@ pub mod ingested_events_detail {
     
     
 }
-impl IngestedEventsDetail {
-    /// Creates a new builder-style object to manufacture [`IngestedEventsDetail`](crate::model::IngestedEventsDetail).
-    pub fn builder() -> crate::model::ingested_events_detail::Builder {
-        crate::model::ingested_events_detail::Builder::default()
-    }
-}
 
 /// <p>The start and stop time of the ingested events.</p>
 #[non_exhaustive]
@@ -482,6 +485,13 @@ impl IngestedEventsTimeWindow {
         self.end_time.as_deref()
     }
 }
+impl IngestedEventsTimeWindow {
+    /// Creates a new builder-style object to manufacture [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow).
+    pub fn builder() -> crate::model::ingested_events_time_window::Builder {
+        crate::model::ingested_events_time_window::Builder::default()
+    }
+}
+
 /// See [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow).
 pub mod ingested_events_time_window {
     
@@ -524,12 +534,6 @@ pub mod ingested_events_time_window {
     
     
 }
-impl IngestedEventsTimeWindow {
-    /// Creates a new builder-style object to manufacture [`IngestedEventsTimeWindow`](crate::model::IngestedEventsTimeWindow).
-    pub fn builder() -> crate::model::ingested_events_time_window::Builder {
-        crate::model::ingested_events_time_window::Builder::default()
-    }
-}
 
 /// <p>Details for the external events data used for model version training.</p>
 #[non_exhaustive]
@@ -552,6 +556,13 @@ impl ExternalEventsDetail {
         self.data_access_role_arn.as_deref()
     }
 }
+impl ExternalEventsDetail {
+    /// Creates a new builder-style object to manufacture [`ExternalEventsDetail`](crate::model::ExternalEventsDetail).
+    pub fn builder() -> crate::model::external_events_detail::Builder {
+        crate::model::external_events_detail::Builder::default()
+    }
+}
+
 /// See [`ExternalEventsDetail`](crate::model::ExternalEventsDetail).
 pub mod external_events_detail {
     
@@ -593,12 +604,6 @@ pub mod external_events_detail {
     }
     
     
-}
-impl ExternalEventsDetail {
-    /// Creates a new builder-style object to manufacture [`ExternalEventsDetail`](crate::model::ExternalEventsDetail).
-    pub fn builder() -> crate::model::external_events_detail::Builder {
-        crate::model::external_events_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DetectorVersionStatus`, it is important to ensure
@@ -805,6 +810,13 @@ impl ModelVersion {
         self.arn.as_deref()
     }
 }
+impl ModelVersion {
+    /// Creates a new builder-style object to manufacture [`ModelVersion`](crate::model::ModelVersion).
+    pub fn builder() -> crate::model::model_version::Builder {
+        crate::model::model_version::Builder::default()
+    }
+}
+
 /// See [`ModelVersion`](crate::model::ModelVersion).
 pub mod model_version {
     
@@ -871,12 +883,6 @@ pub mod model_version {
     
     
 }
-impl ModelVersion {
-    /// Creates a new builder-style object to manufacture [`ModelVersion`](crate::model::ModelVersion).
-    pub fn builder() -> crate::model::model_version::Builder {
-        crate::model::model_version::Builder::default()
-    }
-}
 
 /// <p>The entity details. </p>
 #[non_exhaustive]
@@ -907,6 +913,13 @@ impl  std::fmt::Debug for Entity  {
         formatter.finish()
     }
 }
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
+    }
+}
+
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
     
@@ -956,12 +969,6 @@ pub mod entity {
     }
     
     
-}
-impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
-    pub fn builder() -> crate::model::entity::Builder {
-        crate::model::entity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ModelEndpointStatus`, it is important to ensure
@@ -1074,6 +1081,13 @@ impl ModelOutputConfiguration {
         self.csv_index_to_variable_map.as_ref()
     }
 }
+impl ModelOutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`ModelOutputConfiguration`](crate::model::ModelOutputConfiguration).
+    pub fn builder() -> crate::model::model_output_configuration::Builder {
+        crate::model::model_output_configuration::Builder::default()
+    }
+}
+
 /// See [`ModelOutputConfiguration`](crate::model::ModelOutputConfiguration).
 pub mod model_output_configuration {
     
@@ -1139,12 +1153,6 @@ pub mod model_output_configuration {
     }
     
     
-}
-impl ModelOutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`ModelOutputConfiguration`](crate::model::ModelOutputConfiguration).
-    pub fn builder() -> crate::model::model_output_configuration::Builder {
-        crate::model::model_output_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ModelOutputDataFormat`, it is important to ensure
@@ -1271,6 +1279,13 @@ impl ModelInputConfiguration {
         self.csv_input_template.as_deref()
     }
 }
+impl ModelInputConfiguration {
+    /// Creates a new builder-style object to manufacture [`ModelInputConfiguration`](crate::model::ModelInputConfiguration).
+    pub fn builder() -> crate::model::model_input_configuration::Builder {
+        crate::model::model_input_configuration::Builder::default()
+    }
+}
+
 /// See [`ModelInputConfiguration`](crate::model::ModelInputConfiguration).
 pub mod model_input_configuration {
     
@@ -1348,12 +1363,6 @@ pub mod model_input_configuration {
     }
     
     
-}
-impl ModelInputConfiguration {
-    /// Creates a new builder-style object to manufacture [`ModelInputConfiguration`](crate::model::ModelInputConfiguration).
-    pub fn builder() -> crate::model::model_input_configuration::Builder {
-        crate::model::model_input_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ModelInputDataFormat`, it is important to ensure
@@ -1646,6 +1655,13 @@ impl EventPredictionSummary {
         self.detector_version_id.as_deref()
     }
 }
+impl EventPredictionSummary {
+    /// Creates a new builder-style object to manufacture [`EventPredictionSummary`](crate::model::EventPredictionSummary).
+    pub fn builder() -> crate::model::event_prediction_summary::Builder {
+        crate::model::event_prediction_summary::Builder::default()
+    }
+}
+
 /// See [`EventPredictionSummary`](crate::model::EventPredictionSummary).
 pub mod event_prediction_summary {
     
@@ -1736,12 +1752,6 @@ pub mod event_prediction_summary {
     
     
 }
-impl EventPredictionSummary {
-    /// Creates a new builder-style object to manufacture [`EventPredictionSummary`](crate::model::EventPredictionSummary).
-    pub fn builder() -> crate::model::event_prediction_summary::Builder {
-        crate::model::event_prediction_summary::Builder::default()
-    }
-}
 
 /// <p> The time period for when the predictions were generated. </p>
 #[non_exhaustive]
@@ -1764,6 +1774,13 @@ impl PredictionTimeRange {
         self.end_time.as_deref()
     }
 }
+impl PredictionTimeRange {
+    /// Creates a new builder-style object to manufacture [`PredictionTimeRange`](crate::model::PredictionTimeRange).
+    pub fn builder() -> crate::model::prediction_time_range::Builder {
+        crate::model::prediction_time_range::Builder::default()
+    }
+}
+
 /// See [`PredictionTimeRange`](crate::model::PredictionTimeRange).
 pub mod prediction_time_range {
     
@@ -1806,12 +1823,6 @@ pub mod prediction_time_range {
     
     
 }
-impl PredictionTimeRange {
-    /// Creates a new builder-style object to manufacture [`PredictionTimeRange`](crate::model::PredictionTimeRange).
-    pub fn builder() -> crate::model::prediction_time_range::Builder {
-        crate::model::prediction_time_range::Builder::default()
-    }
-}
 
 /// <p> A conditional statement for filtering a list of past predictions. </p>
 #[non_exhaustive]
@@ -1827,6 +1838,13 @@ impl FilterCondition {
         self.value.as_deref()
     }
 }
+impl FilterCondition {
+    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
+    pub fn builder() -> crate::model::filter_condition::Builder {
+        crate::model::filter_condition::Builder::default()
+    }
+}
+
 /// See [`FilterCondition`](crate::model::FilterCondition).
 pub mod filter_condition {
     
@@ -1856,12 +1874,6 @@ pub mod filter_condition {
     }
     
     
-}
-impl FilterCondition {
-    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
-    pub fn builder() -> crate::model::filter_condition::Builder {
-        crate::model::filter_condition::Builder::default()
-    }
 }
 
 /// <p>The variable.</p>
@@ -1936,6 +1948,13 @@ impl Variable {
         self.arn.as_deref()
     }
 }
+impl Variable {
+    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
+    pub fn builder() -> crate::model::variable::Builder {
+        crate::model::variable::Builder::default()
+    }
+}
+
 /// See [`Variable`](crate::model::Variable).
 pub mod variable {
     
@@ -2063,12 +2082,6 @@ pub mod variable {
     }
     
     
-}
-impl Variable {
-    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
-    pub fn builder() -> crate::model::variable::Builder {
-        crate::model::variable::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataSource`, it is important to ensure
@@ -2343,6 +2356,13 @@ impl  std::fmt::Debug for RuleDetail  {
         formatter.finish()
     }
 }
+impl RuleDetail {
+    /// Creates a new builder-style object to manufacture [`RuleDetail`](crate::model::RuleDetail).
+    pub fn builder() -> crate::model::rule_detail::Builder {
+        crate::model::rule_detail::Builder::default()
+    }
+}
+
 /// See [`RuleDetail`](crate::model::RuleDetail).
 pub mod rule_detail {
     
@@ -2503,12 +2523,6 @@ pub mod rule_detail {
     
     
 }
-impl RuleDetail {
-    /// Creates a new builder-style object to manufacture [`RuleDetail`](crate::model::RuleDetail).
-    pub fn builder() -> crate::model::rule_detail::Builder {
-        crate::model::rule_detail::Builder::default()
-    }
-}
 
 /// <p>The outcome.</p>
 #[non_exhaustive]
@@ -2552,6 +2566,13 @@ impl Outcome {
         self.arn.as_deref()
     }
 }
+impl Outcome {
+    /// Creates a new builder-style object to manufacture [`Outcome`](crate::model::Outcome).
+    pub fn builder() -> crate::model::outcome::Builder {
+        crate::model::outcome::Builder::default()
+    }
+}
+
 /// See [`Outcome`](crate::model::Outcome).
 pub mod outcome {
     
@@ -2630,12 +2651,6 @@ pub mod outcome {
     
     
 }
-impl Outcome {
-    /// Creates a new builder-style object to manufacture [`Outcome`](crate::model::Outcome).
-    pub fn builder() -> crate::model::outcome::Builder {
-        crate::model::outcome::Builder::default()
-    }
-}
 
 /// <p>The training data schema.</p>
 #[non_exhaustive]
@@ -2658,6 +2673,13 @@ impl TrainingDataSchema {
         self.label_schema.as_ref()
     }
 }
+impl TrainingDataSchema {
+    /// Creates a new builder-style object to manufacture [`TrainingDataSchema`](crate::model::TrainingDataSchema).
+    pub fn builder() -> crate::model::training_data_schema::Builder {
+        crate::model::training_data_schema::Builder::default()
+    }
+}
+
 /// See [`TrainingDataSchema`](crate::model::TrainingDataSchema).
 pub mod training_data_schema {
     
@@ -2706,12 +2728,6 @@ pub mod training_data_schema {
     
     
 }
-impl TrainingDataSchema {
-    /// Creates a new builder-style object to manufacture [`TrainingDataSchema`](crate::model::TrainingDataSchema).
-    pub fn builder() -> crate::model::training_data_schema::Builder {
-        crate::model::training_data_schema::Builder::default()
-    }
-}
 
 /// <p>The label schema.</p>
 #[non_exhaustive]
@@ -2734,6 +2750,13 @@ impl LabelSchema {
         self.unlabeled_events_treatment.as_ref()
     }
 }
+impl LabelSchema {
+    /// Creates a new builder-style object to manufacture [`LabelSchema`](crate::model::LabelSchema).
+    pub fn builder() -> crate::model::label_schema::Builder {
+        crate::model::label_schema::Builder::default()
+    }
+}
+
 /// See [`LabelSchema`](crate::model::LabelSchema).
 pub mod label_schema {
     
@@ -2781,12 +2804,6 @@ pub mod label_schema {
     }
     
     
-}
-impl LabelSchema {
-    /// Creates a new builder-style object to manufacture [`LabelSchema`](crate::model::LabelSchema).
-    pub fn builder() -> crate::model::label_schema::Builder {
-        crate::model::label_schema::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UnlabeledEventsTreatment`, it is important to ensure
@@ -3014,6 +3031,13 @@ impl Model {
         self.arn.as_deref()
     }
 }
+impl Model {
+    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
+    pub fn builder() -> crate::model::model::Builder {
+        crate::model::model::Builder::default()
+    }
+}
+
 /// See [`Model`](crate::model::Model).
 pub mod model {
     
@@ -3116,12 +3140,6 @@ pub mod model {
     
     
 }
-impl Model {
-    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
-    pub fn builder() -> crate::model::model::Builder {
-        crate::model::model::Builder::default()
-    }
-}
 
 /// <p>The label details.</p>
 #[non_exhaustive]
@@ -3165,6 +3183,13 @@ impl Label {
         self.arn.as_deref()
     }
 }
+impl Label {
+    /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
+    pub fn builder() -> crate::model::label::Builder {
+        crate::model::label::Builder::default()
+    }
+}
+
 /// See [`Label`](crate::model::Label).
 pub mod label {
     
@@ -3243,12 +3268,6 @@ pub mod label {
     
     
 }
-impl Label {
-    /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
-    pub fn builder() -> crate::model::label::Builder {
-        crate::model::label::Builder::default()
-    }
-}
 
 /// <p>The KMS key details.</p>
 #[non_exhaustive]
@@ -3264,6 +3283,13 @@ impl KmsKey {
         self.kms_encryption_key_arn.as_deref()
     }
 }
+impl KmsKey {
+    /// Creates a new builder-style object to manufacture [`KmsKey`](crate::model::KmsKey).
+    pub fn builder() -> crate::model::kms_key::Builder {
+        crate::model::kms_key::Builder::default()
+    }
+}
+
 /// See [`KmsKey`](crate::model::KmsKey).
 pub mod kms_key {
     
@@ -3293,12 +3319,6 @@ pub mod kms_key {
     }
     
     
-}
-impl KmsKey {
-    /// Creates a new builder-style object to manufacture [`KmsKey`](crate::model::KmsKey).
-    pub fn builder() -> crate::model::kms_key::Builder {
-        crate::model::kms_key::Builder::default()
-    }
 }
 
 /// <p>The Amazon SageMaker model.</p>
@@ -3371,6 +3391,13 @@ impl ExternalModel {
         self.arn.as_deref()
     }
 }
+impl ExternalModel {
+    /// Creates a new builder-style object to manufacture [`ExternalModel`](crate::model::ExternalModel).
+    pub fn builder() -> crate::model::external_model::Builder {
+        crate::model::external_model::Builder::default()
+    }
+}
+
 /// See [`ExternalModel`](crate::model::ExternalModel).
 pub mod external_model {
     
@@ -3497,12 +3524,6 @@ pub mod external_model {
     
     
 }
-impl ExternalModel {
-    /// Creates a new builder-style object to manufacture [`ExternalModel`](crate::model::ExternalModel).
-    pub fn builder() -> crate::model::external_model::Builder {
-        crate::model::external_model::Builder::default()
-    }
-}
 
 /// <p>The event type details.</p>
 #[non_exhaustive]
@@ -3597,6 +3618,13 @@ impl  std::fmt::Debug for EventType  {
         formatter.finish()
     }
 }
+impl EventType {
+    /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType).
+    pub fn builder() -> crate::model::event_type::Builder {
+        crate::model::event_type::Builder::default()
+    }
+}
+
 /// See [`EventType`](crate::model::EventType).
 pub mod event_type {
     
@@ -3769,12 +3797,6 @@ pub mod event_type {
     
     
 }
-impl EventType {
-    /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType).
-    pub fn builder() -> crate::model::event_type::Builder {
-        crate::model::event_type::Builder::default()
-    }
-}
 
 /// <p>Data about the stored events.</p>
 #[non_exhaustive]
@@ -3818,6 +3840,13 @@ impl IngestedEventStatistics {
         self.last_updated_time.as_deref()
     }
 }
+impl IngestedEventStatistics {
+    /// Creates a new builder-style object to manufacture [`IngestedEventStatistics`](crate::model::IngestedEventStatistics).
+    pub fn builder() -> crate::model::ingested_event_statistics::Builder {
+        crate::model::ingested_event_statistics::Builder::default()
+    }
+}
+
 /// See [`IngestedEventStatistics`](crate::model::IngestedEventStatistics).
 pub mod ingested_event_statistics {
     
@@ -3896,12 +3925,6 @@ pub mod ingested_event_statistics {
     
     
 }
-impl IngestedEventStatistics {
-    /// Creates a new builder-style object to manufacture [`IngestedEventStatistics`](crate::model::IngestedEventStatistics).
-    pub fn builder() -> crate::model::ingested_event_statistics::Builder {
-        crate::model::ingested_event_statistics::Builder::default()
-    }
-}
 
 /// <p> The details of the external (Amazon Sagemaker) model evaluated for generating predictions. </p>
 #[non_exhaustive]
@@ -3948,6 +3971,13 @@ impl  std::fmt::Debug for EvaluatedExternalModel  {
         formatter.finish()
     }
 }
+impl EvaluatedExternalModel {
+    /// Creates a new builder-style object to manufacture [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel).
+    pub fn builder() -> crate::model::evaluated_external_model::Builder {
+        crate::model::evaluated_external_model::Builder::default()
+    }
+}
+
 /// See [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel).
 pub mod evaluated_external_model {
     
@@ -4036,12 +4066,6 @@ pub mod evaluated_external_model {
     
     
 }
-impl EvaluatedExternalModel {
-    /// Creates a new builder-style object to manufacture [`EvaluatedExternalModel`](crate::model::EvaluatedExternalModel).
-    pub fn builder() -> crate::model::evaluated_external_model::Builder {
-        crate::model::evaluated_external_model::Builder::default()
-    }
-}
 
 /// <p> The model version evaluated for generating prediction. </p>
 #[non_exhaustive]
@@ -4080,6 +4104,13 @@ impl EvaluatedModelVersion {
         self.evaluations.as_deref()
     }
 }
+impl EvaluatedModelVersion {
+    /// Creates a new builder-style object to manufacture [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion).
+    pub fn builder() -> crate::model::evaluated_model_version::Builder {
+        crate::model::evaluated_model_version::Builder::default()
+    }
+}
+
 /// See [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion).
 pub mod evaluated_model_version {
     
@@ -4154,12 +4185,6 @@ pub mod evaluated_model_version {
     
     
 }
-impl EvaluatedModelVersion {
-    /// Creates a new builder-style object to manufacture [`EvaluatedModelVersion`](crate::model::EvaluatedModelVersion).
-    pub fn builder() -> crate::model::evaluated_model_version::Builder {
-        crate::model::evaluated_model_version::Builder::default()
-    }
-}
 
 /// <p> The model version evalutions. </p>
 #[non_exhaustive]
@@ -4189,6 +4214,13 @@ impl ModelVersionEvaluation {
         self.prediction_explanations.as_ref()
     }
 }
+impl ModelVersionEvaluation {
+    /// Creates a new builder-style object to manufacture [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation).
+    pub fn builder() -> crate::model::model_version_evaluation::Builder {
+        crate::model::model_version_evaluation::Builder::default()
+    }
+}
+
 /// See [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation).
 pub mod model_version_evaluation {
     
@@ -4243,12 +4275,6 @@ pub mod model_version_evaluation {
     
     
 }
-impl ModelVersionEvaluation {
-    /// Creates a new builder-style object to manufacture [`ModelVersionEvaluation`](crate::model::ModelVersionEvaluation).
-    pub fn builder() -> crate::model::model_version_evaluation::Builder {
-        crate::model::model_version_evaluation::Builder::default()
-    }
-}
 
 /// <p> The prediction explanations that provide insight into how each event variable impacted the model version's fraud prediction score. </p>
 #[non_exhaustive]
@@ -4273,6 +4299,13 @@ impl PredictionExplanations {
         self.aggregated_variables_impact_explanations.as_deref()
     }
 }
+impl PredictionExplanations {
+    /// Creates a new builder-style object to manufacture [`PredictionExplanations`](crate::model::PredictionExplanations).
+    pub fn builder() -> crate::model::prediction_explanations::Builder {
+        crate::model::prediction_explanations::Builder::default()
+    }
+}
+
 /// See [`PredictionExplanations`](crate::model::PredictionExplanations).
 pub mod prediction_explanations {
     
@@ -4329,12 +4362,6 @@ pub mod prediction_explanations {
     
     
 }
-impl PredictionExplanations {
-    /// Creates a new builder-style object to manufacture [`PredictionExplanations`](crate::model::PredictionExplanations).
-    pub fn builder() -> crate::model::prediction_explanations::Builder {
-        crate::model::prediction_explanations::Builder::default()
-    }
-}
 
 /// <p> The details of the impact of aggregated variables on the prediction score. </p> 
 /// <p>Account Takeover Insights (ATI) model uses the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, the model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
@@ -4373,6 +4400,13 @@ impl AggregatedVariablesImpactExplanation {
         self.log_odds_impact
     }
 }
+impl AggregatedVariablesImpactExplanation {
+    /// Creates a new builder-style object to manufacture [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
+    pub fn builder() -> crate::model::aggregated_variables_impact_explanation::Builder {
+        crate::model::aggregated_variables_impact_explanation::Builder::default()
+    }
+}
+
 /// See [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
 pub mod aggregated_variables_impact_explanation {
     
@@ -4441,12 +4475,6 @@ pub mod aggregated_variables_impact_explanation {
     
     
 }
-impl AggregatedVariablesImpactExplanation {
-    /// Creates a new builder-style object to manufacture [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
-    pub fn builder() -> crate::model::aggregated_variables_impact_explanation::Builder {
-        crate::model::aggregated_variables_impact_explanation::Builder::default()
-    }
-}
 
 /// <p> The details of the event variable's impact on the prediction score. </p>
 #[non_exhaustive]
@@ -4484,6 +4512,13 @@ impl VariableImpactExplanation {
         self.log_odds_impact
     }
 }
+impl VariableImpactExplanation {
+    /// Creates a new builder-style object to manufacture [`VariableImpactExplanation`](crate::model::VariableImpactExplanation).
+    pub fn builder() -> crate::model::variable_impact_explanation::Builder {
+        crate::model::variable_impact_explanation::Builder::default()
+    }
+}
+
 /// See [`VariableImpactExplanation`](crate::model::VariableImpactExplanation).
 pub mod variable_impact_explanation {
     
@@ -4545,12 +4580,6 @@ pub mod variable_impact_explanation {
     }
     
     
-}
-impl VariableImpactExplanation {
-    /// Creates a new builder-style object to manufacture [`VariableImpactExplanation`](crate::model::VariableImpactExplanation).
-    pub fn builder() -> crate::model::variable_impact_explanation::Builder {
-        crate::model::variable_impact_explanation::Builder::default()
-    }
 }
 
 /// <p> The details of the rule used for evaluating variable values. </p>
@@ -4622,6 +4651,13 @@ impl  std::fmt::Debug for EvaluatedRule  {
         formatter.finish()
     }
 }
+impl EvaluatedRule {
+    /// Creates a new builder-style object to manufacture [`EvaluatedRule`](crate::model::EvaluatedRule).
+    pub fn builder() -> crate::model::evaluated_rule::Builder {
+        crate::model::evaluated_rule::Builder::default()
+    }
+}
+
 /// See [`EvaluatedRule`](crate::model::EvaluatedRule).
 pub mod evaluated_rule {
     
@@ -4743,12 +4779,6 @@ pub mod evaluated_rule {
     
     
 }
-impl EvaluatedRule {
-    /// Creates a new builder-style object to manufacture [`EvaluatedRule`](crate::model::EvaluatedRule).
-    pub fn builder() -> crate::model::evaluated_rule::Builder {
-        crate::model::evaluated_rule::Builder::default()
-    }
-}
 
 /// <p> Information about the summary of an event variable that was evaluated for generating prediction. </p>
 #[non_exhaustive]
@@ -4787,6 +4817,13 @@ impl  std::fmt::Debug for EventVariableSummary  {
         formatter.finish()
     }
 }
+impl EventVariableSummary {
+    /// Creates a new builder-style object to manufacture [`EventVariableSummary`](crate::model::EventVariableSummary).
+    pub fn builder() -> crate::model::event_variable_summary::Builder {
+        crate::model::event_variable_summary::Builder::default()
+    }
+}
+
 /// See [`EventVariableSummary`](crate::model::EventVariableSummary).
 pub mod event_variable_summary {
     
@@ -4850,12 +4887,6 @@ pub mod event_variable_summary {
     
     
 }
-impl EventVariableSummary {
-    /// Creates a new builder-style object to manufacture [`EventVariableSummary`](crate::model::EventVariableSummary).
-    pub fn builder() -> crate::model::event_variable_summary::Builder {
-        crate::model::event_variable_summary::Builder::default()
-    }
-}
 
 /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
 #[non_exhaustive]
@@ -4878,6 +4909,13 @@ impl ExternalModelOutputs {
         self.outputs.as_ref()
     }
 }
+impl ExternalModelOutputs {
+    /// Creates a new builder-style object to manufacture [`ExternalModelOutputs`](crate::model::ExternalModelOutputs).
+    pub fn builder() -> crate::model::external_model_outputs::Builder {
+        crate::model::external_model_outputs::Builder::default()
+    }
+}
+
 /// See [`ExternalModelOutputs`](crate::model::ExternalModelOutputs).
 pub mod external_model_outputs {
     
@@ -4926,12 +4964,6 @@ pub mod external_model_outputs {
     
     
 }
-impl ExternalModelOutputs {
-    /// Creates a new builder-style object to manufacture [`ExternalModelOutputs`](crate::model::ExternalModelOutputs).
-    pub fn builder() -> crate::model::external_model_outputs::Builder {
-        crate::model::external_model_outputs::Builder::default()
-    }
-}
 
 /// <p>The Amazon SageMaker model.</p>
 #[non_exhaustive]
@@ -4954,6 +4986,13 @@ impl ExternalModelSummary {
         self.model_source.as_ref()
     }
 }
+impl ExternalModelSummary {
+    /// Creates a new builder-style object to manufacture [`ExternalModelSummary`](crate::model::ExternalModelSummary).
+    pub fn builder() -> crate::model::external_model_summary::Builder {
+        crate::model::external_model_summary::Builder::default()
+    }
+}
+
 /// See [`ExternalModelSummary`](crate::model::ExternalModelSummary).
 pub mod external_model_summary {
     
@@ -4996,12 +5035,6 @@ pub mod external_model_summary {
     
     
 }
-impl ExternalModelSummary {
-    /// Creates a new builder-style object to manufacture [`ExternalModelSummary`](crate::model::ExternalModelSummary).
-    pub fn builder() -> crate::model::external_model_summary::Builder {
-        crate::model::external_model_summary::Builder::default()
-    }
-}
 
 /// <p>The rule results.</p>
 #[non_exhaustive]
@@ -5024,6 +5057,13 @@ impl RuleResult {
         self.outcomes.as_deref()
     }
 }
+impl RuleResult {
+    /// Creates a new builder-style object to manufacture [`RuleResult`](crate::model::RuleResult).
+    pub fn builder() -> crate::model::rule_result::Builder {
+        crate::model::rule_result::Builder::default()
+    }
+}
+
 /// See [`RuleResult`](crate::model::RuleResult).
 pub mod rule_result {
     
@@ -5072,12 +5112,6 @@ pub mod rule_result {
     
     
 }
-impl RuleResult {
-    /// Creates a new builder-style object to manufacture [`RuleResult`](crate::model::RuleResult).
-    pub fn builder() -> crate::model::rule_result::Builder {
-        crate::model::rule_result::Builder::default()
-    }
-}
 
 /// <p>The fraud prediction scores.</p>
 #[non_exhaustive]
@@ -5100,6 +5134,13 @@ impl ModelScores {
         self.scores.as_ref()
     }
 }
+impl ModelScores {
+    /// Creates a new builder-style object to manufacture [`ModelScores`](crate::model::ModelScores).
+    pub fn builder() -> crate::model::model_scores::Builder {
+        crate::model::model_scores::Builder::default()
+    }
+}
+
 /// See [`ModelScores`](crate::model::ModelScores).
 pub mod model_scores {
     
@@ -5148,12 +5189,6 @@ pub mod model_scores {
     
     
 }
-impl ModelScores {
-    /// Creates a new builder-style object to manufacture [`ModelScores`](crate::model::ModelScores).
-    pub fn builder() -> crate::model::model_scores::Builder {
-        crate::model::model_scores::Builder::default()
-    }
-}
 
 /// <p>A pre-formed Amazon SageMaker model input you can include if your detector version includes an imported Amazon SageMaker model endpoint with pass-through input configuration.</p>
 #[non_exhaustive]
@@ -5176,6 +5211,13 @@ impl ModelEndpointDataBlob {
         self.content_type.as_deref()
     }
 }
+impl ModelEndpointDataBlob {
+    /// Creates a new builder-style object to manufacture [`ModelEndpointDataBlob`](crate::model::ModelEndpointDataBlob).
+    pub fn builder() -> crate::model::model_endpoint_data_blob::Builder {
+        crate::model::model_endpoint_data_blob::Builder::default()
+    }
+}
+
 /// See [`ModelEndpointDataBlob`](crate::model::ModelEndpointDataBlob).
 pub mod model_endpoint_data_blob {
     
@@ -5217,12 +5259,6 @@ pub mod model_endpoint_data_blob {
     }
     
     
-}
-impl ModelEndpointDataBlob {
-    /// Creates a new builder-style object to manufacture [`ModelEndpointDataBlob`](crate::model::ModelEndpointDataBlob).
-    pub fn builder() -> crate::model::model_endpoint_data_blob::Builder {
-        crate::model::model_endpoint_data_blob::Builder::default()
-    }
 }
 
 /// <p>The event details.</p>
@@ -5281,6 +5317,13 @@ impl Event {
         self.entities.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -5395,12 +5438,6 @@ pub mod event {
     
     
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p>The entity type details.</p>
 #[non_exhaustive]
@@ -5444,6 +5481,13 @@ impl EntityType {
         self.arn.as_deref()
     }
 }
+impl EntityType {
+    /// Creates a new builder-style object to manufacture [`EntityType`](crate::model::EntityType).
+    pub fn builder() -> crate::model::entity_type::Builder {
+        crate::model::entity_type::Builder::default()
+    }
+}
+
 /// See [`EntityType`](crate::model::EntityType).
 pub mod entity_type {
     
@@ -5522,12 +5566,6 @@ pub mod entity_type {
     
     
 }
-impl EntityType {
-    /// Creates a new builder-style object to manufacture [`EntityType`](crate::model::EntityType).
-    pub fn builder() -> crate::model::entity_type::Builder {
-        crate::model::entity_type::Builder::default()
-    }
-}
 
 /// <p>The detector.</p>
 #[non_exhaustive]
@@ -5578,6 +5616,13 @@ impl Detector {
         self.arn.as_deref()
     }
 }
+impl Detector {
+    /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector).
+    pub fn builder() -> crate::model::detector::Builder {
+        crate::model::detector::Builder::default()
+    }
+}
+
 /// See [`Detector`](crate::model::Detector).
 pub mod detector {
     
@@ -5667,12 +5712,6 @@ pub mod detector {
     }
     
     
-}
-impl Detector {
-    /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector).
-    pub fn builder() -> crate::model::detector::Builder {
-        crate::model::detector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AsyncJobStatus`, it is important to ensure
@@ -5889,6 +5928,13 @@ impl BatchPrediction {
         self.total_records_count
     }
 }
+impl BatchPrediction {
+    /// Creates a new builder-style object to manufacture [`BatchPrediction`](crate::model::BatchPrediction).
+    pub fn builder() -> crate::model::batch_prediction::Builder {
+        crate::model::batch_prediction::Builder::default()
+    }
+}
+
 /// See [`BatchPrediction`](crate::model::BatchPrediction).
 pub mod batch_prediction {
     
@@ -6087,12 +6133,6 @@ pub mod batch_prediction {
     
     
 }
-impl BatchPrediction {
-    /// Creates a new builder-style object to manufacture [`BatchPrediction`](crate::model::BatchPrediction).
-    pub fn builder() -> crate::model::batch_prediction::Builder {
-        crate::model::batch_prediction::Builder::default()
-    }
-}
 
 /// <p>The batch import job details.</p>
 #[non_exhaustive]
@@ -6192,6 +6232,13 @@ impl BatchImport {
         self.total_records_count
     }
 }
+impl BatchImport {
+    /// Creates a new builder-style object to manufacture [`BatchImport`](crate::model::BatchImport).
+    pub fn builder() -> crate::model::batch_import::Builder {
+        crate::model::batch_import::Builder::default()
+    }
+}
+
 /// See [`BatchImport`](crate::model::BatchImport).
 pub mod batch_import {
     
@@ -6366,12 +6413,6 @@ pub mod batch_import {
     
     
 }
-impl BatchImport {
-    /// Creates a new builder-style object to manufacture [`BatchImport`](crate::model::BatchImport).
-    pub fn builder() -> crate::model::batch_import::Builder {
-        crate::model::batch_import::Builder::default()
-    }
-}
 
 /// <p>The details of the model version.</p>
 #[non_exhaustive]
@@ -6471,6 +6512,13 @@ impl ModelVersionDetail {
         self.training_result_v2.as_ref()
     }
 }
+impl ModelVersionDetail {
+    /// Creates a new builder-style object to manufacture [`ModelVersionDetail`](crate::model::ModelVersionDetail).
+    pub fn builder() -> crate::model::model_version_detail::Builder {
+        crate::model::model_version_detail::Builder::default()
+    }
+}
+
 /// See [`ModelVersionDetail`](crate::model::ModelVersionDetail).
 pub mod model_version_detail {
     
@@ -6645,12 +6693,6 @@ pub mod model_version_detail {
     
     
 }
-impl ModelVersionDetail {
-    /// Creates a new builder-style object to manufacture [`ModelVersionDetail`](crate::model::ModelVersionDetail).
-    pub fn builder() -> crate::model::model_version_detail::Builder {
-        crate::model::model_version_detail::Builder::default()
-    }
-}
 
 /// <p> The training result details. </p>
 #[non_exhaustive]
@@ -6689,6 +6731,13 @@ impl TrainingResultV2 {
         self.aggregated_variables_importance_metrics.as_ref()
     }
 }
+impl TrainingResultV2 {
+    /// Creates a new builder-style object to manufacture [`TrainingResultV2`](crate::model::TrainingResultV2).
+    pub fn builder() -> crate::model::training_result_v2::Builder {
+        crate::model::training_result_v2::Builder::default()
+    }
+}
+
 /// See [`TrainingResultV2`](crate::model::TrainingResultV2).
 pub mod training_result_v2 {
     
@@ -6757,12 +6806,6 @@ pub mod training_result_v2 {
     
     
 }
-impl TrainingResultV2 {
-    /// Creates a new builder-style object to manufacture [`TrainingResultV2`](crate::model::TrainingResultV2).
-    pub fn builder() -> crate::model::training_result_v2::Builder {
-        crate::model::training_result_v2::Builder::default()
-    }
-}
 
 /// <p>The details of the relative importance of the aggregated variables.</p> 
 /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
@@ -6779,6 +6822,13 @@ impl AggregatedVariablesImportanceMetrics {
         self.log_odds_metrics.as_deref()
     }
 }
+impl AggregatedVariablesImportanceMetrics {
+    /// Creates a new builder-style object to manufacture [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
+    pub fn builder() -> crate::model::aggregated_variables_importance_metrics::Builder {
+        crate::model::aggregated_variables_importance_metrics::Builder::default()
+    }
+}
+
 /// See [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
 pub mod aggregated_variables_importance_metrics {
     
@@ -6815,12 +6865,6 @@ pub mod aggregated_variables_importance_metrics {
     
     
 }
-impl AggregatedVariablesImportanceMetrics {
-    /// Creates a new builder-style object to manufacture [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
-    pub fn builder() -> crate::model::aggregated_variables_importance_metrics::Builder {
-        crate::model::aggregated_variables_importance_metrics::Builder::default()
-    }
-}
 
 /// <p>The log odds metric details.</p> 
 /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
@@ -6844,6 +6888,13 @@ impl AggregatedLogOddsMetric {
         self.aggregated_variables_importance
     }
 }
+impl AggregatedLogOddsMetric {
+    /// Creates a new builder-style object to manufacture [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
+    pub fn builder() -> crate::model::aggregated_log_odds_metric::Builder {
+        crate::model::aggregated_log_odds_metric::Builder::default()
+    }
+}
+
 /// See [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
 pub mod aggregated_log_odds_metric {
     
@@ -6892,12 +6943,6 @@ pub mod aggregated_log_odds_metric {
     
     
 }
-impl AggregatedLogOddsMetric {
-    /// Creates a new builder-style object to manufacture [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
-    pub fn builder() -> crate::model::aggregated_log_odds_metric::Builder {
-        crate::model::aggregated_log_odds_metric::Builder::default()
-    }
-}
 
 /// <p>The variable importance metrics details.</p>
 #[non_exhaustive]
@@ -6913,6 +6958,13 @@ impl VariableImportanceMetrics {
         self.log_odds_metrics.as_deref()
     }
 }
+impl VariableImportanceMetrics {
+    /// Creates a new builder-style object to manufacture [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics).
+    pub fn builder() -> crate::model::variable_importance_metrics::Builder {
+        crate::model::variable_importance_metrics::Builder::default()
+    }
+}
+
 /// See [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics).
 pub mod variable_importance_metrics {
     
@@ -6949,12 +7001,6 @@ pub mod variable_importance_metrics {
     
     
 }
-impl VariableImportanceMetrics {
-    /// Creates a new builder-style object to manufacture [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics).
-    pub fn builder() -> crate::model::variable_importance_metrics::Builder {
-        crate::model::variable_importance_metrics::Builder::default()
-    }
-}
 
 /// <p>The log odds metric details.</p>
 #[non_exhaustive]
@@ -6984,6 +7030,13 @@ impl LogOddsMetric {
         self.variable_importance
     }
 }
+impl LogOddsMetric {
+    /// Creates a new builder-style object to manufacture [`LogOddsMetric`](crate::model::LogOddsMetric).
+    pub fn builder() -> crate::model::log_odds_metric::Builder {
+        crate::model::log_odds_metric::Builder::default()
+    }
+}
+
 /// See [`LogOddsMetric`](crate::model::LogOddsMetric).
 pub mod log_odds_metric {
     
@@ -7038,12 +7091,6 @@ pub mod log_odds_metric {
     
     
 }
-impl LogOddsMetric {
-    /// Creates a new builder-style object to manufacture [`LogOddsMetric`](crate::model::LogOddsMetric).
-    pub fn builder() -> crate::model::log_odds_metric::Builder {
-        crate::model::log_odds_metric::Builder::default()
-    }
-}
 
 /// <p> The training metrics details. </p>
 #[non_exhaustive]
@@ -7073,6 +7120,13 @@ impl TrainingMetricsV2 {
         self.ati.as_ref()
     }
 }
+impl TrainingMetricsV2 {
+    /// Creates a new builder-style object to manufacture [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
+    pub fn builder() -> crate::model::training_metrics_v2::Builder {
+        crate::model::training_metrics_v2::Builder::default()
+    }
+}
+
 /// See [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
 pub mod training_metrics_v2 {
     
@@ -7127,12 +7181,6 @@ pub mod training_metrics_v2 {
     
     
 }
-impl TrainingMetricsV2 {
-    /// Creates a new builder-style object to manufacture [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
-    pub fn builder() -> crate::model::training_metrics_v2::Builder {
-        crate::model::training_metrics_v2::Builder::default()
-    }
-}
 
 /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
 #[non_exhaustive]
@@ -7155,6 +7203,13 @@ impl AtiTrainingMetricsValue {
         self.model_performance.as_ref()
     }
 }
+impl AtiTrainingMetricsValue {
+    /// Creates a new builder-style object to manufacture [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
+    pub fn builder() -> crate::model::ati_training_metrics_value::Builder {
+        crate::model::ati_training_metrics_value::Builder::default()
+    }
+}
+
 /// See [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
 pub mod ati_training_metrics_value {
     
@@ -7203,12 +7258,6 @@ pub mod ati_training_metrics_value {
     
     
 }
-impl AtiTrainingMetricsValue {
-    /// Creates a new builder-style object to manufacture [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
-    pub fn builder() -> crate::model::ati_training_metrics_value::Builder {
-        crate::model::ati_training_metrics_value::Builder::default()
-    }
-}
 
 /// <p> The Account Takeover Insights (ATI) model performance score. </p>
 #[non_exhaustive]
@@ -7224,6 +7273,13 @@ impl AtiModelPerformance {
         self.asi
     }
 }
+impl AtiModelPerformance {
+    /// Creates a new builder-style object to manufacture [`AtiModelPerformance`](crate::model::AtiModelPerformance).
+    pub fn builder() -> crate::model::ati_model_performance::Builder {
+        crate::model::ati_model_performance::Builder::default()
+    }
+}
+
 /// See [`AtiModelPerformance`](crate::model::AtiModelPerformance).
 pub mod ati_model_performance {
     
@@ -7253,12 +7309,6 @@ pub mod ati_model_performance {
     }
     
     
-}
-impl AtiModelPerformance {
-    /// Creates a new builder-style object to manufacture [`AtiModelPerformance`](crate::model::AtiModelPerformance).
-    pub fn builder() -> crate::model::ati_model_performance::Builder {
-        crate::model::ati_model_performance::Builder::default()
-    }
 }
 
 /// <p> The Account Takeover Insights (ATI) model performance metrics data points. </p>
@@ -7296,6 +7346,13 @@ impl AtiMetricDataPoint {
         self.atodr
     }
 }
+impl AtiMetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
+    pub fn builder() -> crate::model::ati_metric_data_point::Builder {
+        crate::model::ati_metric_data_point::Builder::default()
+    }
+}
+
 /// See [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
 pub mod ati_metric_data_point {
     
@@ -7362,12 +7419,6 @@ pub mod ati_metric_data_point {
     
     
 }
-impl AtiMetricDataPoint {
-    /// Creates a new builder-style object to manufacture [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
-    pub fn builder() -> crate::model::ati_metric_data_point::Builder {
-        crate::model::ati_metric_data_point::Builder::default()
-    }
-}
 
 /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
 #[non_exhaustive]
@@ -7390,6 +7441,13 @@ impl TfiTrainingMetricsValue {
         self.model_performance.as_ref()
     }
 }
+impl TfiTrainingMetricsValue {
+    /// Creates a new builder-style object to manufacture [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
+    pub fn builder() -> crate::model::tfi_training_metrics_value::Builder {
+        crate::model::tfi_training_metrics_value::Builder::default()
+    }
+}
+
 /// See [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
 pub mod tfi_training_metrics_value {
     
@@ -7438,12 +7496,6 @@ pub mod tfi_training_metrics_value {
     
     
 }
-impl TfiTrainingMetricsValue {
-    /// Creates a new builder-style object to manufacture [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
-    pub fn builder() -> crate::model::tfi_training_metrics_value::Builder {
-        crate::model::tfi_training_metrics_value::Builder::default()
-    }
-}
 
 /// <p> The Transaction Fraud Insights (TFI) model performance score. </p>
 #[non_exhaustive]
@@ -7459,6 +7511,13 @@ impl TfiModelPerformance {
         self.auc
     }
 }
+impl TfiModelPerformance {
+    /// Creates a new builder-style object to manufacture [`TfiModelPerformance`](crate::model::TfiModelPerformance).
+    pub fn builder() -> crate::model::tfi_model_performance::Builder {
+        crate::model::tfi_model_performance::Builder::default()
+    }
+}
+
 /// See [`TfiModelPerformance`](crate::model::TfiModelPerformance).
 pub mod tfi_model_performance {
     
@@ -7488,12 +7547,6 @@ pub mod tfi_model_performance {
     }
     
     
-}
-impl TfiModelPerformance {
-    /// Creates a new builder-style object to manufacture [`TfiModelPerformance`](crate::model::TfiModelPerformance).
-    pub fn builder() -> crate::model::tfi_model_performance::Builder {
-        crate::model::tfi_model_performance::Builder::default()
-    }
 }
 
 /// <p> The performance metrics data points for Transaction Fraud Insights (TFI) model. </p>
@@ -7531,6 +7584,13 @@ impl TfiMetricDataPoint {
         self.threshold
     }
 }
+impl TfiMetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
+    pub fn builder() -> crate::model::tfi_metric_data_point::Builder {
+        crate::model::tfi_metric_data_point::Builder::default()
+    }
+}
+
 /// See [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
 pub mod tfi_metric_data_point {
     
@@ -7597,12 +7657,6 @@ pub mod tfi_metric_data_point {
     
     
 }
-impl TfiMetricDataPoint {
-    /// Creates a new builder-style object to manufacture [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
-    pub fn builder() -> crate::model::tfi_metric_data_point::Builder {
-        crate::model::tfi_metric_data_point::Builder::default()
-    }
-}
 
 /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
 #[non_exhaustive]
@@ -7625,6 +7679,13 @@ impl OfiTrainingMetricsValue {
         self.model_performance.as_ref()
     }
 }
+impl OfiTrainingMetricsValue {
+    /// Creates a new builder-style object to manufacture [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
+    pub fn builder() -> crate::model::ofi_training_metrics_value::Builder {
+        crate::model::ofi_training_metrics_value::Builder::default()
+    }
+}
+
 /// See [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
 pub mod ofi_training_metrics_value {
     
@@ -7673,12 +7734,6 @@ pub mod ofi_training_metrics_value {
     
     
 }
-impl OfiTrainingMetricsValue {
-    /// Creates a new builder-style object to manufacture [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
-    pub fn builder() -> crate::model::ofi_training_metrics_value::Builder {
-        crate::model::ofi_training_metrics_value::Builder::default()
-    }
-}
 
 /// <p> The Online Fraud Insights (OFI) model performance score. </p>
 #[non_exhaustive]
@@ -7694,6 +7749,13 @@ impl OfiModelPerformance {
         self.auc
     }
 }
+impl OfiModelPerformance {
+    /// Creates a new builder-style object to manufacture [`OfiModelPerformance`](crate::model::OfiModelPerformance).
+    pub fn builder() -> crate::model::ofi_model_performance::Builder {
+        crate::model::ofi_model_performance::Builder::default()
+    }
+}
+
 /// See [`OfiModelPerformance`](crate::model::OfiModelPerformance).
 pub mod ofi_model_performance {
     
@@ -7723,12 +7785,6 @@ pub mod ofi_model_performance {
     }
     
     
-}
-impl OfiModelPerformance {
-    /// Creates a new builder-style object to manufacture [`OfiModelPerformance`](crate::model::OfiModelPerformance).
-    pub fn builder() -> crate::model::ofi_model_performance::Builder {
-        crate::model::ofi_model_performance::Builder::default()
-    }
 }
 
 /// <p> The Online Fraud Insights (OFI) model performance metrics data points. </p>
@@ -7766,6 +7822,13 @@ impl OfiMetricDataPoint {
         self.threshold
     }
 }
+impl OfiMetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
+    pub fn builder() -> crate::model::ofi_metric_data_point::Builder {
+        crate::model::ofi_metric_data_point::Builder::default()
+    }
+}
+
 /// See [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
 pub mod ofi_metric_data_point {
     
@@ -7832,12 +7895,6 @@ pub mod ofi_metric_data_point {
     
     
 }
-impl OfiMetricDataPoint {
-    /// Creates a new builder-style object to manufacture [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
-    pub fn builder() -> crate::model::ofi_metric_data_point::Builder {
-        crate::model::ofi_metric_data_point::Builder::default()
-    }
-}
 
 /// <p>The model training data validation metrics.</p>
 #[non_exhaustive]
@@ -7860,6 +7917,13 @@ impl DataValidationMetrics {
         self.field_level_messages.as_deref()
     }
 }
+impl DataValidationMetrics {
+    /// Creates a new builder-style object to manufacture [`DataValidationMetrics`](crate::model::DataValidationMetrics).
+    pub fn builder() -> crate::model::data_validation_metrics::Builder {
+        crate::model::data_validation_metrics::Builder::default()
+    }
+}
+
 /// See [`DataValidationMetrics`](crate::model::DataValidationMetrics).
 pub mod data_validation_metrics {
     
@@ -7914,12 +7978,6 @@ pub mod data_validation_metrics {
     
     
 }
-impl DataValidationMetrics {
-    /// Creates a new builder-style object to manufacture [`DataValidationMetrics`](crate::model::DataValidationMetrics).
-    pub fn builder() -> crate::model::data_validation_metrics::Builder {
-        crate::model::data_validation_metrics::Builder::default()
-    }
-}
 
 /// <p>The message details.</p>
 #[non_exhaustive]
@@ -7963,6 +8021,13 @@ impl FieldValidationMessage {
         self.r#type.as_deref()
     }
 }
+impl FieldValidationMessage {
+    /// Creates a new builder-style object to manufacture [`FieldValidationMessage`](crate::model::FieldValidationMessage).
+    pub fn builder() -> crate::model::field_validation_message::Builder {
+        crate::model::field_validation_message::Builder::default()
+    }
+}
+
 /// See [`FieldValidationMessage`](crate::model::FieldValidationMessage).
 pub mod field_validation_message {
     
@@ -8041,12 +8106,6 @@ pub mod field_validation_message {
     
     
 }
-impl FieldValidationMessage {
-    /// Creates a new builder-style object to manufacture [`FieldValidationMessage`](crate::model::FieldValidationMessage).
-    pub fn builder() -> crate::model::field_validation_message::Builder {
-        crate::model::field_validation_message::Builder::default()
-    }
-}
 
 /// <p>The message details.</p>
 #[non_exhaustive]
@@ -8076,6 +8135,13 @@ impl FileValidationMessage {
         self.r#type.as_deref()
     }
 }
+impl FileValidationMessage {
+    /// Creates a new builder-style object to manufacture [`FileValidationMessage`](crate::model::FileValidationMessage).
+    pub fn builder() -> crate::model::file_validation_message::Builder {
+        crate::model::file_validation_message::Builder::default()
+    }
+}
+
 /// See [`FileValidationMessage`](crate::model::FileValidationMessage).
 pub mod file_validation_message {
     
@@ -8130,12 +8196,6 @@ pub mod file_validation_message {
     
     
 }
-impl FileValidationMessage {
-    /// Creates a new builder-style object to manufacture [`FileValidationMessage`](crate::model::FileValidationMessage).
-    pub fn builder() -> crate::model::file_validation_message::Builder {
-        crate::model::file_validation_message::Builder::default()
-    }
-}
 
 /// <p>The training result details.</p>
 #[non_exhaustive]
@@ -8165,6 +8225,13 @@ impl TrainingResult {
         self.variable_importance_metrics.as_ref()
     }
 }
+impl TrainingResult {
+    /// Creates a new builder-style object to manufacture [`TrainingResult`](crate::model::TrainingResult).
+    pub fn builder() -> crate::model::training_result::Builder {
+        crate::model::training_result::Builder::default()
+    }
+}
+
 /// See [`TrainingResult`](crate::model::TrainingResult).
 pub mod training_result {
     
@@ -8219,12 +8286,6 @@ pub mod training_result {
     
     
 }
-impl TrainingResult {
-    /// Creates a new builder-style object to manufacture [`TrainingResult`](crate::model::TrainingResult).
-    pub fn builder() -> crate::model::training_result::Builder {
-        crate::model::training_result::Builder::default()
-    }
-}
 
 /// <p>The training metric details.</p>
 #[non_exhaustive]
@@ -8247,6 +8308,13 @@ impl TrainingMetrics {
         self.metric_data_points.as_deref()
     }
 }
+impl TrainingMetrics {
+    /// Creates a new builder-style object to manufacture [`TrainingMetrics`](crate::model::TrainingMetrics).
+    pub fn builder() -> crate::model::training_metrics::Builder {
+        crate::model::training_metrics::Builder::default()
+    }
+}
+
 /// See [`TrainingMetrics`](crate::model::TrainingMetrics).
 pub mod training_metrics {
     
@@ -8295,12 +8363,6 @@ pub mod training_metrics {
     
     
 }
-impl TrainingMetrics {
-    /// Creates a new builder-style object to manufacture [`TrainingMetrics`](crate::model::TrainingMetrics).
-    pub fn builder() -> crate::model::training_metrics::Builder {
-        crate::model::training_metrics::Builder::default()
-    }
-}
 
 /// <p>Model performance metrics data points.</p>
 #[non_exhaustive]
@@ -8337,6 +8399,13 @@ impl MetricDataPoint {
         self.threshold
     }
 }
+impl MetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`MetricDataPoint`](crate::model::MetricDataPoint).
+    pub fn builder() -> crate::model::metric_data_point::Builder {
+        crate::model::metric_data_point::Builder::default()
+    }
+}
+
 /// See [`MetricDataPoint`](crate::model::MetricDataPoint).
 pub mod metric_data_point {
     
@@ -8403,12 +8472,6 @@ pub mod metric_data_point {
     
     
 }
-impl MetricDataPoint {
-    /// Creates a new builder-style object to manufacture [`MetricDataPoint`](crate::model::MetricDataPoint).
-    pub fn builder() -> crate::model::metric_data_point::Builder {
-        crate::model::metric_data_point::Builder::default()
-    }
-}
 
 /// <p>The summary of the detector version.</p>
 #[non_exhaustive]
@@ -8445,6 +8508,13 @@ impl DetectorVersionSummary {
         self.last_updated_time.as_deref()
     }
 }
+impl DetectorVersionSummary {
+    /// Creates a new builder-style object to manufacture [`DetectorVersionSummary`](crate::model::DetectorVersionSummary).
+    pub fn builder() -> crate::model::detector_version_summary::Builder {
+        crate::model::detector_version_summary::Builder::default()
+    }
+}
+
 /// See [`DetectorVersionSummary`](crate::model::DetectorVersionSummary).
 pub mod detector_version_summary {
     
@@ -8511,12 +8581,6 @@ pub mod detector_version_summary {
     
     
 }
-impl DetectorVersionSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorVersionSummary`](crate::model::DetectorVersionSummary).
-    pub fn builder() -> crate::model::detector_version_summary::Builder {
-        crate::model::detector_version_summary::Builder::default()
-    }
-}
 
 /// <p>Provides the error of the batch get variable API.</p>
 #[non_exhaustive]
@@ -8546,6 +8610,13 @@ impl BatchGetVariableError {
         self.message.as_deref()
     }
 }
+impl BatchGetVariableError {
+    /// Creates a new builder-style object to manufacture [`BatchGetVariableError`](crate::model::BatchGetVariableError).
+    pub fn builder() -> crate::model::batch_get_variable_error::Builder {
+        crate::model::batch_get_variable_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetVariableError`](crate::model::BatchGetVariableError).
 pub mod batch_get_variable_error {
     
@@ -8601,12 +8672,6 @@ pub mod batch_get_variable_error {
     
     
 }
-impl BatchGetVariableError {
-    /// Creates a new builder-style object to manufacture [`BatchGetVariableError`](crate::model::BatchGetVariableError).
-    pub fn builder() -> crate::model::batch_get_variable_error::Builder {
-        crate::model::batch_get_variable_error::Builder::default()
-    }
-}
 
 /// <p>Provides the error of the batch create variable API.</p>
 #[non_exhaustive]
@@ -8636,6 +8701,13 @@ impl BatchCreateVariableError {
         self.message.as_deref()
     }
 }
+impl BatchCreateVariableError {
+    /// Creates a new builder-style object to manufacture [`BatchCreateVariableError`](crate::model::BatchCreateVariableError).
+    pub fn builder() -> crate::model::batch_create_variable_error::Builder {
+        crate::model::batch_create_variable_error::Builder::default()
+    }
+}
+
 /// See [`BatchCreateVariableError`](crate::model::BatchCreateVariableError).
 pub mod batch_create_variable_error {
     
@@ -8691,12 +8763,6 @@ pub mod batch_create_variable_error {
     
     
 }
-impl BatchCreateVariableError {
-    /// Creates a new builder-style object to manufacture [`BatchCreateVariableError`](crate::model::BatchCreateVariableError).
-    pub fn builder() -> crate::model::batch_create_variable_error::Builder {
-        crate::model::batch_create_variable_error::Builder::default()
-    }
-}
 
 /// <p>A variable in the list of variables for the batch create variable request.</p>
 #[non_exhaustive]
@@ -8749,6 +8815,13 @@ impl VariableEntry {
         self.variable_type.as_deref()
     }
 }
+impl VariableEntry {
+    /// Creates a new builder-style object to manufacture [`VariableEntry`](crate::model::VariableEntry).
+    pub fn builder() -> crate::model::variable_entry::Builder {
+        crate::model::variable_entry::Builder::default()
+    }
+}
+
 /// See [`VariableEntry`](crate::model::VariableEntry).
 pub mod variable_entry {
     
@@ -8840,11 +8913,5 @@ pub mod variable_entry {
     }
     
     
-}
-impl VariableEntry {
-    /// Creates a new builder-style object to manufacture [`VariableEntry`](crate::model::VariableEntry).
-    pub fn builder() -> crate::model::variable_entry::Builder {
-        crate::model::variable_entry::Builder::default()
-    }
 }
 

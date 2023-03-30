@@ -333,6 +333,13 @@ impl  std::fmt::Debug for ServiceSummary  {
         formatter.finish()
     }
 }
+impl ServiceSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
+    pub fn builder() -> crate::model::service_summary::Builder {
+        crate::model::service_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
     
@@ -584,12 +591,6 @@ pub mod service_summary {
     
     
 }
-impl ServiceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
-    pub fn builder() -> crate::model::service_summary::Builder {
-        crate::model::service_summary::Builder::default()
-    }
-}
 
 /// <p>Error associated with a resource returned for a Get or List resource response. </p>
 #[non_exhaustive]
@@ -640,6 +641,13 @@ impl ErrorResponse {
         self.additional_details.as_ref()
     }
 }
+impl ErrorResponse {
+    /// Creates a new builder-style object to manufacture [`ErrorResponse`](crate::model::ErrorResponse).
+    pub fn builder() -> crate::model::error_response::Builder {
+        crate::model::error_response::Builder::default()
+    }
+}
+
 /// See [`ErrorResponse`](crate::model::ErrorResponse).
 pub mod error_response {
     
@@ -735,12 +743,6 @@ pub mod error_response {
     }
     
     
-}
-impl ErrorResponse {
-    /// Creates a new builder-style object to manufacture [`ErrorResponse`](crate::model::ErrorResponse).
-    pub fn builder() -> crate::model::error_response::Builder {
-        crate::model::error_response::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorResourceType`, it is important to ensure
@@ -1148,6 +1150,13 @@ impl LambdaEndpointSummary {
         self.arn.as_deref()
     }
 }
+impl LambdaEndpointSummary {
+    /// Creates a new builder-style object to manufacture [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
+    pub fn builder() -> crate::model::lambda_endpoint_summary::Builder {
+        crate::model::lambda_endpoint_summary::Builder::default()
+    }
+}
+
 /// See [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
 pub mod lambda_endpoint_summary {
     
@@ -1178,12 +1187,6 @@ pub mod lambda_endpoint_summary {
     
     
 }
-impl LambdaEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
-    pub fn builder() -> crate::model::lambda_endpoint_summary::Builder {
-        crate::model::lambda_endpoint_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the configuration for the URL endpoint type. </p>
 #[non_exhaustive]
@@ -1206,6 +1209,13 @@ impl UrlEndpointSummary {
         self.health_url.as_deref()
     }
 }
+impl UrlEndpointSummary {
+    /// Creates a new builder-style object to manufacture [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
+    pub fn builder() -> crate::model::url_endpoint_summary::Builder {
+        crate::model::url_endpoint_summary::Builder::default()
+    }
+}
+
 /// See [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
 pub mod url_endpoint_summary {
     
@@ -1247,12 +1257,6 @@ pub mod url_endpoint_summary {
     }
     
     
-}
-impl UrlEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
-    pub fn builder() -> crate::model::url_endpoint_summary::Builder {
-        crate::model::url_endpoint_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceEndpointType`, it is important to ensure
@@ -1486,6 +1490,13 @@ impl  std::fmt::Debug for RouteSummary  {
         formatter.finish()
     }
 }
+impl RouteSummary {
+    /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::model::RouteSummary).
+    pub fn builder() -> crate::model::route_summary::Builder {
+        crate::model::route_summary::Builder::default()
+    }
+}
+
 /// See [`RouteSummary`](crate::model::RouteSummary).
 pub mod route_summary {
     
@@ -1749,12 +1760,6 @@ pub mod route_summary {
     
     
 }
-impl RouteSummary {
-    /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::model::RouteSummary).
-    pub fn builder() -> crate::model::route_summary::Builder {
-        crate::model::route_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `HttpMethod`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2001,6 +2006,13 @@ impl EnvironmentVpc {
         self.created_time.as_ref()
     }
 }
+impl EnvironmentVpc {
+    /// Creates a new builder-style object to manufacture [`EnvironmentVpc`](crate::model::EnvironmentVpc).
+    pub fn builder() -> crate::model::environment_vpc::Builder {
+        crate::model::environment_vpc::Builder::default()
+    }
+}
+
 /// See [`EnvironmentVpc`](crate::model::EnvironmentVpc).
 pub mod environment_vpc {
     
@@ -2108,12 +2120,6 @@ pub mod environment_vpc {
     }
     
     
-}
-impl EnvironmentVpc {
-    /// Creates a new builder-style object to manufacture [`EnvironmentVpc`](crate::model::EnvironmentVpc).
-    pub fn builder() -> crate::model::environment_vpc::Builder {
-        crate::model::environment_vpc::Builder::default()
-    }
 }
 
 /// <p>The summary information for environments as a response to <code>ListEnvironments</code>. </p>
@@ -2225,6 +2231,13 @@ impl  std::fmt::Debug for EnvironmentSummary  {
         formatter.finish()
     }
 }
+impl EnvironmentSummary {
+    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
+    pub fn builder() -> crate::model::environment_summary::Builder {
+        crate::model::environment_summary::Builder::default()
+    }
+}
+
 /// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
 pub mod environment_summary {
     
@@ -2410,12 +2423,6 @@ pub mod environment_summary {
     }
     
     
-}
-impl EnvironmentSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
-    pub fn builder() -> crate::model::environment_summary::Builder {
-        crate::model::environment_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentState`, it is important to ensure
@@ -2712,6 +2719,13 @@ impl  std::fmt::Debug for ApplicationSummary  {
         formatter.finish()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
     
@@ -2924,12 +2938,6 @@ pub mod application_summary {
     
     
 }
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ApplicationState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3084,6 +3092,13 @@ impl ApiGatewayProxySummary {
         self.stage_name.as_deref()
     }
 }
+impl ApiGatewayProxySummary {
+    /// Creates a new builder-style object to manufacture [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
+    pub fn builder() -> crate::model::api_gateway_proxy_summary::Builder {
+        crate::model::api_gateway_proxy_summary::Builder::default()
+    }
+}
+
 /// See [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
 pub mod api_gateway_proxy_summary {
     
@@ -3185,12 +3200,6 @@ pub mod api_gateway_proxy_summary {
     }
     
     
-}
-impl ApiGatewayProxySummary {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
-    pub fn builder() -> crate::model::api_gateway_proxy_summary::Builder {
-        crate::model::api_gateway_proxy_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ApiGatewayEndpointType`, it is important to ensure
@@ -3366,6 +3375,13 @@ impl LambdaEndpointConfig {
         self.arn.as_deref()
     }
 }
+impl LambdaEndpointConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
+    pub fn builder() -> crate::model::lambda_endpoint_config::Builder {
+        crate::model::lambda_endpoint_config::Builder::default()
+    }
+}
+
 /// See [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
 pub mod lambda_endpoint_config {
     
@@ -3396,12 +3412,6 @@ pub mod lambda_endpoint_config {
     
     
 }
-impl LambdaEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
-    pub fn builder() -> crate::model::lambda_endpoint_config::Builder {
-        crate::model::lambda_endpoint_config::Builder::default()
-    }
-}
 
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
@@ -3424,6 +3434,13 @@ impl UrlEndpointConfig {
         self.health_url.as_deref()
     }
 }
+impl UrlEndpointConfig {
+    /// Creates a new builder-style object to manufacture [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
+    pub fn builder() -> crate::model::url_endpoint_config::Builder {
+        crate::model::url_endpoint_config::Builder::default()
+    }
+}
+
 /// See [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
 pub mod url_endpoint_config {
     
@@ -3465,12 +3482,6 @@ pub mod url_endpoint_config {
     }
     
     
-}
-impl UrlEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
-    pub fn builder() -> crate::model::url_endpoint_config::Builder {
-        crate::model::url_endpoint_config::Builder::default()
-    }
 }
 
 /// <p>A wrapper object holding the Amazon API Gateway proxy configuration. </p>
@@ -3529,6 +3540,13 @@ impl ApiGatewayProxyConfig {
         self.stage_name.as_deref()
     }
 }
+impl ApiGatewayProxyConfig {
+    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
+    pub fn builder() -> crate::model::api_gateway_proxy_config::Builder {
+        crate::model::api_gateway_proxy_config::Builder::default()
+    }
+}
+
 /// See [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
 pub mod api_gateway_proxy_config {
     
@@ -3631,12 +3649,6 @@ pub mod api_gateway_proxy_config {
     
     
 }
-impl ApiGatewayProxyConfig {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
-    pub fn builder() -> crate::model::api_gateway_proxy_config::Builder {
-        crate::model::api_gateway_proxy_config::Builder::default()
-    }
-}
 
 /// <p>The input for the Lambda endpoint type. </p>
 #[non_exhaustive]
@@ -3652,6 +3664,13 @@ impl LambdaEndpointInput {
         self.arn.as_deref()
     }
 }
+impl LambdaEndpointInput {
+    /// Creates a new builder-style object to manufacture [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
+    pub fn builder() -> crate::model::lambda_endpoint_input::Builder {
+        crate::model::lambda_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
 pub mod lambda_endpoint_input {
     
@@ -3682,12 +3701,6 @@ pub mod lambda_endpoint_input {
     
     
 }
-impl LambdaEndpointInput {
-    /// Creates a new builder-style object to manufacture [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
-    pub fn builder() -> crate::model::lambda_endpoint_input::Builder {
-        crate::model::lambda_endpoint_input::Builder::default()
-    }
-}
 
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
@@ -3710,6 +3723,13 @@ impl UrlEndpointInput {
         self.health_url.as_deref()
     }
 }
+impl UrlEndpointInput {
+    /// Creates a new builder-style object to manufacture [`UrlEndpointInput`](crate::model::UrlEndpointInput).
+    pub fn builder() -> crate::model::url_endpoint_input::Builder {
+        crate::model::url_endpoint_input::Builder::default()
+    }
+}
+
 /// See [`UrlEndpointInput`](crate::model::UrlEndpointInput).
 pub mod url_endpoint_input {
     
@@ -3752,12 +3772,6 @@ pub mod url_endpoint_input {
     
     
 }
-impl UrlEndpointInput {
-    /// Creates a new builder-style object to manufacture [`UrlEndpointInput`](crate::model::UrlEndpointInput).
-    pub fn builder() -> crate::model::url_endpoint_input::Builder {
-        crate::model::url_endpoint_input::Builder::default()
-    }
-}
 
 /// <p>The configuration for the URI path route type. </p>
 #[non_exhaustive]
@@ -3794,6 +3808,13 @@ impl UriPathRouteInput {
         self.include_child_paths
     }
 }
+impl UriPathRouteInput {
+    /// Creates a new builder-style object to manufacture [`UriPathRouteInput`](crate::model::UriPathRouteInput).
+    pub fn builder() -> crate::model::uri_path_route_input::Builder {
+        crate::model::uri_path_route_input::Builder::default()
+    }
+}
+
 /// See [`UriPathRouteInput`](crate::model::UriPathRouteInput).
 pub mod uri_path_route_input {
     
@@ -3866,12 +3887,6 @@ pub mod uri_path_route_input {
     
     
 }
-impl UriPathRouteInput {
-    /// Creates a new builder-style object to manufacture [`UriPathRouteInput`](crate::model::UriPathRouteInput).
-    pub fn builder() -> crate::model::uri_path_route_input::Builder {
-        crate::model::uri_path_route_input::Builder::default()
-    }
-}
 
 /// <p> The configuration for the default route type. </p>
 #[non_exhaustive]
@@ -3887,6 +3902,13 @@ impl DefaultRouteInput {
         self.activation_state.as_ref()
     }
 }
+impl DefaultRouteInput {
+    /// Creates a new builder-style object to manufacture [`DefaultRouteInput`](crate::model::DefaultRouteInput).
+    pub fn builder() -> crate::model::default_route_input::Builder {
+        crate::model::default_route_input::Builder::default()
+    }
+}
+
 /// See [`DefaultRouteInput`](crate::model::DefaultRouteInput).
 pub mod default_route_input {
     
@@ -3917,12 +3939,6 @@ pub mod default_route_input {
     
     
 }
-impl DefaultRouteInput {
-    /// Creates a new builder-style object to manufacture [`DefaultRouteInput`](crate::model::DefaultRouteInput).
-    pub fn builder() -> crate::model::default_route_input::Builder {
-        crate::model::default_route_input::Builder::default()
-    }
-}
 
 /// <p>A wrapper object holding the Amazon API Gateway endpoint input. </p>
 #[non_exhaustive]
@@ -3947,6 +3963,13 @@ impl ApiGatewayProxyInput {
         self.stage_name.as_deref()
     }
 }
+impl ApiGatewayProxyInput {
+    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
+    pub fn builder() -> crate::model::api_gateway_proxy_input::Builder {
+        crate::model::api_gateway_proxy_input::Builder::default()
+    }
+}
+
 /// See [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
 pub mod api_gateway_proxy_input {
     
@@ -3990,11 +4013,5 @@ pub mod api_gateway_proxy_input {
     }
     
     
-}
-impl ApiGatewayProxyInput {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
-    pub fn builder() -> crate::model::api_gateway_proxy_input::Builder {
-        crate::model::api_gateway_proxy_input::Builder::default()
-    }
 }
 

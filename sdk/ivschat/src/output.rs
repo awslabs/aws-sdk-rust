@@ -82,6 +82,13 @@ impl aws_http::request_id::RequestId for UpdateRoomOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRoomOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRoomOutput`](crate::output::UpdateRoomOutput).
+    pub fn builder() -> crate::output::update_room_output::Builder {
+        crate::output::update_room_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRoomOutput`](crate::output::UpdateRoomOutput).
 pub mod update_room_output {
     
@@ -245,12 +252,6 @@ pub mod update_room_output {
     
     
 }
-impl UpdateRoomOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRoomOutput`](crate::output::UpdateRoomOutput).
-    pub fn builder() -> crate::output::update_room_output::Builder {
-        crate::output::update_room_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -321,6 +322,13 @@ impl aws_http::request_id::RequestId for UpdateLoggingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::update_logging_configuration_output::Builder {
+        crate::output::update_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
 pub mod update_logging_configuration_output {
     
@@ -452,12 +460,6 @@ pub mod update_logging_configuration_output {
     
     
 }
-impl UpdateLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::update_logging_configuration_output::Builder {
-        crate::output::update_logging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -470,6 +472,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -499,12 +508,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -517,6 +520,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -546,12 +556,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -573,6 +577,13 @@ impl aws_http::request_id::RequestId for SendEventOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendEventOutput {
+    /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::output::SendEventOutput).
+    pub fn builder() -> crate::output::send_event_output::Builder {
+        crate::output::send_event_output::Builder::default()
+    }
+}
+
 /// See [`SendEventOutput`](crate::output::SendEventOutput).
 pub mod send_event_output {
     
@@ -614,12 +625,6 @@ pub mod send_event_output {
     
     
 }
-impl SendEventOutput {
-    /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::output::SendEventOutput).
-    pub fn builder() -> crate::output::send_event_output::Builder {
-        crate::output::send_event_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -641,6 +646,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -688,12 +700,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -722,6 +728,13 @@ impl aws_http::request_id::RequestId for ListRoomsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRoomsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRoomsOutput`](crate::output::ListRoomsOutput).
+    pub fn builder() -> crate::output::list_rooms_output::Builder {
+        crate::output::list_rooms_output::Builder::default()
+    }
+}
+
 /// See [`ListRoomsOutput`](crate::output::ListRoomsOutput).
 pub mod list_rooms_output {
     
@@ -781,12 +794,6 @@ pub mod list_rooms_output {
     
     
 }
-impl ListRoomsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRoomsOutput`](crate::output::ListRoomsOutput).
-    pub fn builder() -> crate::output::list_rooms_output::Builder {
-        crate::output::list_rooms_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -815,6 +822,13 @@ impl aws_http::request_id::RequestId for ListLoggingConfigurationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListLoggingConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
+    pub fn builder() -> crate::output::list_logging_configurations_output::Builder {
+        crate::output::list_logging_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
 pub mod list_logging_configurations_output {
     
@@ -873,12 +887,6 @@ pub mod list_logging_configurations_output {
     }
     
     
-}
-impl ListLoggingConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
-    pub fn builder() -> crate::output::list_logging_configurations_output::Builder {
-        crate::output::list_logging_configurations_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -964,6 +972,13 @@ impl aws_http::request_id::RequestId for GetRoomOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRoomOutput {
+    /// Creates a new builder-style object to manufacture [`GetRoomOutput`](crate::output::GetRoomOutput).
+    pub fn builder() -> crate::output::get_room_output::Builder {
+        crate::output::get_room_output::Builder::default()
+    }
+}
+
 /// See [`GetRoomOutput`](crate::output::GetRoomOutput).
 pub mod get_room_output {
     
@@ -1127,12 +1142,6 @@ pub mod get_room_output {
     
     
 }
-impl GetRoomOutput {
-    /// Creates a new builder-style object to manufacture [`GetRoomOutput`](crate::output::GetRoomOutput).
-    pub fn builder() -> crate::output::get_room_output::Builder {
-        crate::output::get_room_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1203,6 +1212,13 @@ impl aws_http::request_id::RequestId for GetLoggingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::get_logging_configuration_output::Builder {
+        crate::output::get_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
 pub mod get_logging_configuration_output {
     
@@ -1334,12 +1350,6 @@ pub mod get_logging_configuration_output {
     
     
 }
-impl GetLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::get_logging_configuration_output::Builder {
-        crate::output::get_logging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1352,6 +1362,13 @@ impl aws_http::request_id::RequestId for DisconnectUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisconnectUserOutput {
+    /// Creates a new builder-style object to manufacture [`DisconnectUserOutput`](crate::output::DisconnectUserOutput).
+    pub fn builder() -> crate::output::disconnect_user_output::Builder {
+        crate::output::disconnect_user_output::Builder::default()
+    }
+}
+
 /// See [`DisconnectUserOutput`](crate::output::DisconnectUserOutput).
 pub mod disconnect_user_output {
     
@@ -1381,12 +1398,6 @@ pub mod disconnect_user_output {
     
     
 }
-impl DisconnectUserOutput {
-    /// Creates a new builder-style object to manufacture [`DisconnectUserOutput`](crate::output::DisconnectUserOutput).
-    pub fn builder() -> crate::output::disconnect_user_output::Builder {
-        crate::output::disconnect_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1399,6 +1410,13 @@ impl aws_http::request_id::RequestId for DeleteRoomOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRoomOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
+    pub fn builder() -> crate::output::delete_room_output::Builder {
+        crate::output::delete_room_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
 pub mod delete_room_output {
     
@@ -1428,12 +1446,6 @@ pub mod delete_room_output {
     
     
 }
-impl DeleteRoomOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRoomOutput`](crate::output::DeleteRoomOutput).
-    pub fn builder() -> crate::output::delete_room_output::Builder {
-        crate::output::delete_room_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1455,6 +1467,13 @@ impl aws_http::request_id::RequestId for DeleteMessageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMessageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
+    pub fn builder() -> crate::output::delete_message_output::Builder {
+        crate::output::delete_message_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
 pub mod delete_message_output {
     
@@ -1496,12 +1515,6 @@ pub mod delete_message_output {
     
     
 }
-impl DeleteMessageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
-    pub fn builder() -> crate::output::delete_message_output::Builder {
-        crate::output::delete_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1514,6 +1527,13 @@ impl aws_http::request_id::RequestId for DeleteLoggingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::delete_logging_configuration_output::Builder {
+        crate::output::delete_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
     
@@ -1542,12 +1562,6 @@ pub mod delete_logging_configuration_output {
     }
     
     
-}
-impl DeleteLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::delete_logging_configuration_output::Builder {
-        crate::output::delete_logging_configuration_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1633,6 +1647,13 @@ impl aws_http::request_id::RequestId for CreateRoomOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRoomOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRoomOutput`](crate::output::CreateRoomOutput).
+    pub fn builder() -> crate::output::create_room_output::Builder {
+        crate::output::create_room_output::Builder::default()
+    }
+}
+
 /// See [`CreateRoomOutput`](crate::output::CreateRoomOutput).
 pub mod create_room_output {
     
@@ -1796,12 +1817,6 @@ pub mod create_room_output {
     
     
 }
-impl CreateRoomOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRoomOutput`](crate::output::CreateRoomOutput).
-    pub fn builder() -> crate::output::create_room_output::Builder {
-        crate::output::create_room_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1872,6 +1887,13 @@ impl aws_http::request_id::RequestId for CreateLoggingConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::create_logging_configuration_output::Builder {
+        crate::output::create_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
 pub mod create_logging_configuration_output {
     
@@ -2003,12 +2025,6 @@ pub mod create_logging_configuration_output {
     
     
 }
-impl CreateLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::create_logging_configuration_output::Builder {
-        crate::output::create_logging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2044,6 +2060,13 @@ impl aws_http::request_id::RequestId for CreateChatTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateChatTokenOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput).
+    pub fn builder() -> crate::output::create_chat_token_output::Builder {
+        crate::output::create_chat_token_output::Builder::default()
+    }
+}
+
 /// See [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput).
 pub mod create_chat_token_output {
     
@@ -2108,11 +2131,5 @@ pub mod create_chat_token_output {
     }
     
     
-}
-impl CreateChatTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput).
-    pub fn builder() -> crate::output::create_chat_token_output::Builder {
-        crate::output::create_chat_token_output::Builder::default()
-    }
 }
 

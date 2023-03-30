@@ -20,6 +20,13 @@ impl InvalidRequestDetail {
         self.reason.as_ref()
     }
 }
+impl InvalidRequestDetail {
+    /// Creates a new builder-style object to manufacture [`InvalidRequestDetail`](crate::model::InvalidRequestDetail).
+    pub fn builder() -> crate::model::invalid_request_detail::Builder {
+        crate::model::invalid_request_detail::Builder::default()
+    }
+}
+
 /// See [`InvalidRequestDetail`](crate::model::InvalidRequestDetail).
 pub mod invalid_request_detail {
     
@@ -49,12 +56,6 @@ pub mod invalid_request_detail {
     }
     
     
-}
-impl InvalidRequestDetail {
-    /// Creates a new builder-style object to manufacture [`InvalidRequestDetail`](crate::model::InvalidRequestDetail).
-    pub fn builder() -> crate::model::invalid_request_detail::Builder {
-        crate::model::invalid_request_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InvalidRequestDetailReason`, it is important to ensure
@@ -247,6 +248,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -288,12 +296,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobStatus`, it is important to ensure
@@ -419,6 +421,13 @@ impl VpcConfig {
         self.subnets.as_deref()
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
     
@@ -473,12 +482,6 @@ pub mod vpc_config {
     
     
 }
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
-    }
-}
 
 /// <p>Provides configuration parameters for the output of inference jobs.</p> 
 /// <p></p>
@@ -518,6 +521,13 @@ impl OutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
+impl OutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
+    pub fn builder() -> crate::model::output_data_config::Builder {
+        crate::model::output_data_config::Builder::default()
+    }
+}
+
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
     
@@ -576,12 +586,6 @@ pub mod output_data_config {
     
     
 }
-impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
-    pub fn builder() -> crate::model::output_data_config::Builder {
-        crate::model::output_data_config::Builder::default()
-    }
-}
 
 /// <p>The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.</p>
 #[non_exhaustive]
@@ -621,6 +625,13 @@ impl InputDataConfig {
         self.document_reader_config.as_ref()
     }
 }
+impl InputDataConfig {
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
+    pub fn builder() -> crate::model::input_data_config::Builder {
+        crate::model::input_data_config::Builder::default()
+    }
+}
+
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
     
@@ -685,12 +696,6 @@ pub mod input_data_config {
     
     
 }
-impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
-    pub fn builder() -> crate::model::input_data_config::Builder {
-        crate::model::input_data_config::Builder::default()
-    }
-}
 
 /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. </p> 
 /// <p> By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: </p> 
@@ -752,6 +757,13 @@ impl DocumentReaderConfig {
         self.feature_types.as_deref()
     }
 }
+impl DocumentReaderConfig {
+    /// Creates a new builder-style object to manufacture [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
+    pub fn builder() -> crate::model::document_reader_config::Builder {
+        crate::model::document_reader_config::Builder::default()
+    }
+}
+
 /// See [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
 pub mod document_reader_config {
     
@@ -835,12 +847,6 @@ pub mod document_reader_config {
     }
     
     
-}
-impl DocumentReaderConfig {
-    /// Creates a new builder-style object to manufacture [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
-    pub fn builder() -> crate::model::document_reader_config::Builder {
-        crate::model::document_reader_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DocumentReadFeatureTypes`, it is important to ensure
@@ -1342,6 +1348,13 @@ impl RedactionConfig {
         self.mask_character.as_deref()
     }
 }
+impl RedactionConfig {
+    /// Creates a new builder-style object to manufacture [`RedactionConfig`](crate::model::RedactionConfig).
+    pub fn builder() -> crate::model::redaction_config::Builder {
+        crate::model::redaction_config::Builder::default()
+    }
+}
+
 /// See [`RedactionConfig`](crate::model::RedactionConfig).
 pub mod redaction_config {
     
@@ -1401,12 +1414,6 @@ pub mod redaction_config {
     }
     
     
-}
-impl RedactionConfig {
-    /// Creates a new builder-style object to manufacture [`RedactionConfig`](crate::model::RedactionConfig).
-    pub fn builder() -> crate::model::redaction_config::Builder {
-        crate::model::redaction_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PiiEntitiesDetectionMaskMode`, it is important to ensure
@@ -1962,6 +1969,13 @@ impl TopicsDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl TopicsDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
+    pub fn builder() -> crate::model::topics_detection_job_properties::Builder {
+        crate::model::topics_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
 pub mod topics_detection_job_properties {
     
@@ -2170,12 +2184,6 @@ pub mod topics_detection_job_properties {
     
     
 }
-impl TopicsDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
-    pub fn builder() -> crate::model::topics_detection_job_properties::Builder {
-        crate::model::topics_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering topic detection jobs. For more information, see .</p>
 #[non_exhaustive]
@@ -2212,6 +2220,13 @@ impl TopicsDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl TopicsDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
+    pub fn builder() -> crate::model::topics_detection_job_filter::Builder {
+        crate::model::topics_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
 pub mod topics_detection_job_filter {
     
@@ -2277,12 +2292,6 @@ pub mod topics_detection_job_filter {
     }
     
     
-}
-impl TopicsDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
-    pub fn builder() -> crate::model::topics_detection_job_filter::Builder {
-        crate::model::topics_detection_job_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about a targeted sentiment detection job.</p>
@@ -2419,6 +2428,13 @@ impl TargetedSentimentDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl TargetedSentimentDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
+    pub fn builder() -> crate::model::targeted_sentiment_detection_job_properties::Builder {
+        crate::model::targeted_sentiment_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
 pub mod targeted_sentiment_detection_job_properties {
     
@@ -2629,12 +2645,6 @@ pub mod targeted_sentiment_detection_job_properties {
     
     
 }
-impl TargetedSentimentDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
-    pub fn builder() -> crate::model::targeted_sentiment_detection_job_properties::Builder {
-        crate::model::targeted_sentiment_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
@@ -2671,6 +2681,13 @@ impl TargetedSentimentDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl TargetedSentimentDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
+    pub fn builder() -> crate::model::targeted_sentiment_detection_job_filter::Builder {
+        crate::model::targeted_sentiment_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
 pub mod targeted_sentiment_detection_job_filter {
     
@@ -2736,12 +2753,6 @@ pub mod targeted_sentiment_detection_job_filter {
     }
     
     
-}
-impl TargetedSentimentDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
-    pub fn builder() -> crate::model::targeted_sentiment_detection_job_filter::Builder {
-        crate::model::targeted_sentiment_detection_job_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about a sentiment detection job.</p>
@@ -2876,6 +2887,13 @@ impl SentimentDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl SentimentDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
+    pub fn builder() -> crate::model::sentiment_detection_job_properties::Builder {
+        crate::model::sentiment_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
 pub mod sentiment_detection_job_properties {
     
@@ -3084,12 +3102,6 @@ pub mod sentiment_detection_job_properties {
     
     
 }
-impl SentimentDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
-    pub fn builder() -> crate::model::sentiment_detection_job_properties::Builder {
-        crate::model::sentiment_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
@@ -3126,6 +3138,13 @@ impl SentimentDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl SentimentDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
+    pub fn builder() -> crate::model::sentiment_detection_job_filter::Builder {
+        crate::model::sentiment_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
 pub mod sentiment_detection_job_filter {
     
@@ -3191,12 +3210,6 @@ pub mod sentiment_detection_job_filter {
     }
     
     
-}
-impl SentimentDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
-    pub fn builder() -> crate::model::sentiment_detection_job_filter::Builder {
-        crate::model::sentiment_detection_job_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about a PII entities detection job.</p>
@@ -3325,6 +3338,13 @@ impl PiiEntitiesDetectionJobProperties {
         self.mode.as_ref()
     }
 }
+impl PiiEntitiesDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
+    pub fn builder() -> crate::model::pii_entities_detection_job_properties::Builder {
+        crate::model::pii_entities_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
 pub mod pii_entities_detection_job_properties {
     
@@ -3527,12 +3547,6 @@ pub mod pii_entities_detection_job_properties {
     
     
 }
-impl PiiEntitiesDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
-    pub fn builder() -> crate::model::pii_entities_detection_job_properties::Builder {
-        crate::model::pii_entities_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides configuration parameters for the output of PII entity detection jobs.</p>
 #[non_exhaustive]
@@ -3557,6 +3571,13 @@ impl PiiOutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
+impl PiiOutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
+    pub fn builder() -> crate::model::pii_output_data_config::Builder {
+        crate::model::pii_output_data_config::Builder::default()
+    }
+}
+
 /// See [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
 pub mod pii_output_data_config {
     
@@ -3601,12 +3622,6 @@ pub mod pii_output_data_config {
     
     
 }
-impl PiiOutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
-    pub fn builder() -> crate::model::pii_output_data_config::Builder {
-        crate::model::pii_output_data_config::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of PII entity detection jobs.</p>
 #[non_exhaustive]
@@ -3643,6 +3658,13 @@ impl PiiEntitiesDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl PiiEntitiesDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
+    pub fn builder() -> crate::model::pii_entities_detection_job_filter::Builder {
+        crate::model::pii_entities_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
 pub mod pii_entities_detection_job_filter {
     
@@ -3708,12 +3730,6 @@ pub mod pii_entities_detection_job_filter {
     }
     
     
-}
-impl PiiEntitiesDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
-    pub fn builder() -> crate::model::pii_entities_detection_job_filter::Builder {
-        crate::model::pii_entities_detection_job_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about a key phrases detection job.</p>
@@ -3848,6 +3864,13 @@ impl KeyPhrasesDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl KeyPhrasesDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
+    pub fn builder() -> crate::model::key_phrases_detection_job_properties::Builder {
+        crate::model::key_phrases_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
 pub mod key_phrases_detection_job_properties {
     
@@ -4056,12 +4079,6 @@ pub mod key_phrases_detection_job_properties {
     
     
 }
-impl KeyPhrasesDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
-    pub fn builder() -> crate::model::key_phrases_detection_job_properties::Builder {
-        crate::model::key_phrases_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
@@ -4098,6 +4115,13 @@ impl KeyPhrasesDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl KeyPhrasesDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
+    pub fn builder() -> crate::model::key_phrases_detection_job_filter::Builder {
+        crate::model::key_phrases_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
 pub mod key_phrases_detection_job_filter {
     
@@ -4163,12 +4187,6 @@ pub mod key_phrases_detection_job_filter {
     }
     
     
-}
-impl KeyPhrasesDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
-    pub fn builder() -> crate::model::key_phrases_detection_job_filter::Builder {
-        crate::model::key_phrases_detection_job_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about an events detection job.</p>
@@ -4288,6 +4306,13 @@ impl EventsDetectionJobProperties {
         self.target_event_types.as_deref()
     }
 }
+impl EventsDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
+    pub fn builder() -> crate::model::events_detection_job_properties::Builder {
+        crate::model::events_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
 pub mod events_detection_job_properties {
     
@@ -4482,12 +4507,6 @@ pub mod events_detection_job_properties {
     
     
 }
-impl EventsDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
-    pub fn builder() -> crate::model::events_detection_job_properties::Builder {
-        crate::model::events_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of event detection jobs.</p>
 #[non_exhaustive]
@@ -4524,6 +4543,13 @@ impl EventsDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl EventsDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
+    pub fn builder() -> crate::model::events_detection_job_filter::Builder {
+        crate::model::events_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
 pub mod events_detection_job_filter {
     
@@ -4590,12 +4616,6 @@ pub mod events_detection_job_filter {
     
     
 }
-impl EventsDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
-    pub fn builder() -> crate::model::events_detection_job_filter::Builder {
-        crate::model::events_detection_job_filter::Builder::default()
-    }
-}
 
 /// <p> Describes the information about an entity recognizer and its versions.</p>
 #[non_exhaustive]
@@ -4639,6 +4659,13 @@ impl EntityRecognizerSummary {
         self.latest_version_status.as_ref()
     }
 }
+impl EntityRecognizerSummary {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
+    pub fn builder() -> crate::model::entity_recognizer_summary::Builder {
+        crate::model::entity_recognizer_summary::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
 pub mod entity_recognizer_summary {
     
@@ -4716,12 +4743,6 @@ pub mod entity_recognizer_summary {
     }
     
     
-}
-impl EntityRecognizerSummary {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
-    pub fn builder() -> crate::model::entity_recognizer_summary::Builder {
-        crate::model::entity_recognizer_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ModelStatus`, it is important to ensure
@@ -4988,6 +5009,13 @@ impl  std::fmt::Debug for EntityRecognizerProperties  {
         formatter.finish()
     }
 }
+impl EntityRecognizerProperties {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
+    pub fn builder() -> crate::model::entity_recognizer_properties::Builder {
+        crate::model::entity_recognizer_properties::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
 pub mod entity_recognizer_properties {
     
@@ -5236,12 +5264,6 @@ pub mod entity_recognizer_properties {
     
     
 }
-impl EntityRecognizerProperties {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
-    pub fn builder() -> crate::model::entity_recognizer_properties::Builder {
-        crate::model::entity_recognizer_properties::Builder::default()
-    }
-}
 
 /// <p>Detailed information about an entity recognizer.</p>
 #[non_exhaustive]
@@ -5288,6 +5310,13 @@ impl  std::fmt::Debug for EntityRecognizerMetadata  {
         formatter.finish()
     }
 }
+impl EntityRecognizerMetadata {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
+    pub fn builder() -> crate::model::entity_recognizer_metadata::Builder {
+        crate::model::entity_recognizer_metadata::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
 pub mod entity_recognizer_metadata {
     
@@ -5370,12 +5399,6 @@ pub mod entity_recognizer_metadata {
     
     
 }
-impl EntityRecognizerMetadata {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
-    pub fn builder() -> crate::model::entity_recognizer_metadata::Builder {
-        crate::model::entity_recognizer_metadata::Builder::default()
-    }
-}
 
 /// <p>Individual item from the list of entity types in the metadata of an entity recognizer.</p>
 #[non_exhaustive]
@@ -5405,6 +5428,13 @@ impl EntityRecognizerMetadataEntityTypesListItem {
         self.number_of_train_mentions
     }
 }
+impl EntityRecognizerMetadataEntityTypesListItem {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
+    pub fn builder() -> crate::model::entity_recognizer_metadata_entity_types_list_item::Builder {
+        crate::model::entity_recognizer_metadata_entity_types_list_item::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
 pub mod entity_recognizer_metadata_entity_types_list_item {
     
@@ -5459,12 +5489,6 @@ pub mod entity_recognizer_metadata_entity_types_list_item {
     
     
 }
-impl EntityRecognizerMetadataEntityTypesListItem {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
-    pub fn builder() -> crate::model::entity_recognizer_metadata_entity_types_list_item::Builder {
-        crate::model::entity_recognizer_metadata_entity_types_list_item::Builder::default()
-    }
-}
 
 /// <p>Detailed information about the accuracy of an entity recognizer for a specific entity type. </p>
 #[non_exhaustive]
@@ -5494,6 +5518,13 @@ impl EntityTypesEvaluationMetrics {
         self.f1_score
     }
 }
+impl EntityTypesEvaluationMetrics {
+    /// Creates a new builder-style object to manufacture [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
+    pub fn builder() -> crate::model::entity_types_evaluation_metrics::Builder {
+        crate::model::entity_types_evaluation_metrics::Builder::default()
+    }
+}
+
 /// See [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
 pub mod entity_types_evaluation_metrics {
     
@@ -5548,12 +5579,6 @@ pub mod entity_types_evaluation_metrics {
     
     
 }
-impl EntityTypesEvaluationMetrics {
-    /// Creates a new builder-style object to manufacture [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
-    pub fn builder() -> crate::model::entity_types_evaluation_metrics::Builder {
-        crate::model::entity_types_evaluation_metrics::Builder::default()
-    }
-}
 
 /// <p>Detailed information about the accuracy of an entity recognizer. </p>
 #[non_exhaustive]
@@ -5583,6 +5608,13 @@ impl EntityRecognizerEvaluationMetrics {
         self.f1_score
     }
 }
+impl EntityRecognizerEvaluationMetrics {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
+    pub fn builder() -> crate::model::entity_recognizer_evaluation_metrics::Builder {
+        crate::model::entity_recognizer_evaluation_metrics::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
 pub mod entity_recognizer_evaluation_metrics {
     
@@ -5636,12 +5668,6 @@ pub mod entity_recognizer_evaluation_metrics {
     }
     
     
-}
-impl EntityRecognizerEvaluationMetrics {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
-    pub fn builder() -> crate::model::entity_recognizer_evaluation_metrics::Builder {
-        crate::model::entity_recognizer_evaluation_metrics::Builder::default()
-    }
 }
 
 /// <p>Specifies the format and location of the input data.</p>
@@ -5709,6 +5735,13 @@ impl EntityRecognizerInputDataConfig {
         self.augmented_manifests.as_deref()
     }
 }
+impl EntityRecognizerInputDataConfig {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
+    pub fn builder() -> crate::model::entity_recognizer_input_data_config::Builder {
+        crate::model::entity_recognizer_input_data_config::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
 pub mod entity_recognizer_input_data_config {
     
@@ -5827,12 +5860,6 @@ pub mod entity_recognizer_input_data_config {
     
     
 }
-impl EntityRecognizerInputDataConfig {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
-    pub fn builder() -> crate::model::entity_recognizer_input_data_config::Builder {
-        crate::model::entity_recognizer_input_data_config::Builder::default()
-    }
-}
 
 /// <p>An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
 #[non_exhaustive]
@@ -5899,6 +5926,13 @@ impl AugmentedManifestsListItem {
         self.document_type.as_ref()
     }
 }
+impl AugmentedManifestsListItem {
+    /// Creates a new builder-style object to manufacture [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
+    pub fn builder() -> crate::model::augmented_manifests_list_item::Builder {
+        crate::model::augmented_manifests_list_item::Builder::default()
+    }
+}
+
 /// See [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
 pub mod augmented_manifests_list_item {
     
@@ -6010,12 +6044,6 @@ pub mod augmented_manifests_list_item {
     }
     
     
-}
-impl AugmentedManifestsListItem {
-    /// Creates a new builder-style object to manufacture [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
-    pub fn builder() -> crate::model::augmented_manifests_list_item::Builder {
-        crate::model::augmented_manifests_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AugmentedManifestsDocumentTypeFormat`, it is important to ensure
@@ -6196,6 +6224,13 @@ impl EntityRecognizerEntityList {
         self.s3_uri.as_deref()
     }
 }
+impl EntityRecognizerEntityList {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
+    pub fn builder() -> crate::model::entity_recognizer_entity_list::Builder {
+        crate::model::entity_recognizer_entity_list::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
 pub mod entity_recognizer_entity_list {
     
@@ -6226,12 +6261,6 @@ pub mod entity_recognizer_entity_list {
     
     
 }
-impl EntityRecognizerEntityList {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
-    pub fn builder() -> crate::model::entity_recognizer_entity_list::Builder {
-        crate::model::entity_recognizer_entity_list::Builder::default()
-    }
-}
 
 /// <p>Describes the annotations associated with a entity recognizer.</p>
 #[non_exhaustive]
@@ -6254,6 +6283,13 @@ impl EntityRecognizerAnnotations {
         self.test_s3_uri.as_deref()
     }
 }
+impl EntityRecognizerAnnotations {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
+    pub fn builder() -> crate::model::entity_recognizer_annotations::Builder {
+        crate::model::entity_recognizer_annotations::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
 pub mod entity_recognizer_annotations {
     
@@ -6296,12 +6332,6 @@ pub mod entity_recognizer_annotations {
     
     
 }
-impl EntityRecognizerAnnotations {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
-    pub fn builder() -> crate::model::entity_recognizer_annotations::Builder {
-        crate::model::entity_recognizer_annotations::Builder::default()
-    }
-}
 
 /// <p>Describes the training documents submitted with an entity recognizer.</p>
 #[non_exhaustive]
@@ -6331,6 +6361,13 @@ impl EntityRecognizerDocuments {
         self.input_format.as_ref()
     }
 }
+impl EntityRecognizerDocuments {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
+    pub fn builder() -> crate::model::entity_recognizer_documents::Builder {
+        crate::model::entity_recognizer_documents::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
 pub mod entity_recognizer_documents {
     
@@ -6385,12 +6422,6 @@ pub mod entity_recognizer_documents {
     
     
 }
-impl EntityRecognizerDocuments {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
-    pub fn builder() -> crate::model::entity_recognizer_documents::Builder {
-        crate::model::entity_recognizer_documents::Builder::default()
-    }
-}
 
 /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
 #[non_exhaustive]
@@ -6408,6 +6439,13 @@ impl EntityTypesListItem {
         self.r#type.as_deref()
     }
 }
+impl EntityTypesListItem {
+    /// Creates a new builder-style object to manufacture [`EntityTypesListItem`](crate::model::EntityTypesListItem).
+    pub fn builder() -> crate::model::entity_types_list_item::Builder {
+        crate::model::entity_types_list_item::Builder::default()
+    }
+}
+
 /// See [`EntityTypesListItem`](crate::model::EntityTypesListItem).
 pub mod entity_types_list_item {
     
@@ -6439,12 +6477,6 @@ pub mod entity_types_list_item {
     }
     
     
-}
-impl EntityTypesListItem {
-    /// Creates a new builder-style object to manufacture [`EntityTypesListItem`](crate::model::EntityTypesListItem).
-    pub fn builder() -> crate::model::entity_types_list_item::Builder {
-        crate::model::entity_types_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntityRecognizerDataFormat`, it is important to ensure
@@ -6564,6 +6596,13 @@ impl EntityRecognizerFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl EntityRecognizerFilter {
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
+    pub fn builder() -> crate::model::entity_recognizer_filter::Builder {
+        crate::model::entity_recognizer_filter::Builder::default()
+    }
+}
+
 /// See [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
 pub mod entity_recognizer_filter {
     
@@ -6629,12 +6668,6 @@ pub mod entity_recognizer_filter {
     }
     
     
-}
-impl EntityRecognizerFilter {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
-    pub fn builder() -> crate::model::entity_recognizer_filter::Builder {
-        crate::model::entity_recognizer_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about an entities detection job.</p>
@@ -6776,6 +6809,13 @@ impl EntitiesDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl EntitiesDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
+    pub fn builder() -> crate::model::entities_detection_job_properties::Builder {
+        crate::model::entities_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
 pub mod entities_detection_job_properties {
     
@@ -6996,12 +7036,6 @@ pub mod entities_detection_job_properties {
     
     
 }
-impl EntitiesDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
-    pub fn builder() -> crate::model::entities_detection_job_properties::Builder {
-        crate::model::entities_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
@@ -7038,6 +7072,13 @@ impl EntitiesDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl EntitiesDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
+    pub fn builder() -> crate::model::entities_detection_job_filter::Builder {
+        crate::model::entities_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
 pub mod entities_detection_job_filter {
     
@@ -7103,12 +7144,6 @@ pub mod entities_detection_job_filter {
     }
     
     
-}
-impl EntitiesDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
-    pub fn builder() -> crate::model::entities_detection_job_filter::Builder {
-        crate::model::entities_detection_job_filter::Builder::default()
-    }
 }
 
 /// <p>Specifies information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
@@ -7195,6 +7230,13 @@ impl EndpointProperties {
         self.desired_data_access_role_arn.as_deref()
     }
 }
+impl EndpointProperties {
+    /// Creates a new builder-style object to manufacture [`EndpointProperties`](crate::model::EndpointProperties).
+    pub fn builder() -> crate::model::endpoint_properties::Builder {
+        crate::model::endpoint_properties::Builder::default()
+    }
+}
+
 /// See [`EndpointProperties`](crate::model::EndpointProperties).
 pub mod endpoint_properties {
     
@@ -7345,12 +7387,6 @@ pub mod endpoint_properties {
     
     
 }
-impl EndpointProperties {
-    /// Creates a new builder-style object to manufacture [`EndpointProperties`](crate::model::EndpointProperties).
-    pub fn builder() -> crate::model::endpoint_properties::Builder {
-        crate::model::endpoint_properties::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EndpointStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7484,6 +7520,13 @@ impl EndpointFilter {
         self.creation_time_after.as_ref()
     }
 }
+impl EndpointFilter {
+    /// Creates a new builder-style object to manufacture [`EndpointFilter`](crate::model::EndpointFilter).
+    pub fn builder() -> crate::model::endpoint_filter::Builder {
+        crate::model::endpoint_filter::Builder::default()
+    }
+}
+
 /// See [`EndpointFilter`](crate::model::EndpointFilter).
 pub mod endpoint_filter {
     
@@ -7549,12 +7592,6 @@ pub mod endpoint_filter {
     }
     
     
-}
-impl EndpointFilter {
-    /// Creates a new builder-style object to manufacture [`EndpointFilter`](crate::model::EndpointFilter).
-    pub fn builder() -> crate::model::endpoint_filter::Builder {
-        crate::model::endpoint_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about a dominant language detection job.</p>
@@ -7682,6 +7719,13 @@ impl DominantLanguageDetectionJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl DominantLanguageDetectionJobProperties {
+    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
+    pub fn builder() -> crate::model::dominant_language_detection_job_properties::Builder {
+        crate::model::dominant_language_detection_job_properties::Builder::default()
+    }
+}
+
 /// See [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
 pub mod dominant_language_detection_job_properties {
     
@@ -7878,12 +7922,6 @@ pub mod dominant_language_detection_job_properties {
     
     
 }
-impl DominantLanguageDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
-    pub fn builder() -> crate::model::dominant_language_detection_job_properties::Builder {
-        crate::model::dominant_language_detection_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.</p>
 #[non_exhaustive]
@@ -7920,6 +7958,13 @@ impl DominantLanguageDetectionJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl DominantLanguageDetectionJobFilter {
+    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
+    pub fn builder() -> crate::model::dominant_language_detection_job_filter::Builder {
+        crate::model::dominant_language_detection_job_filter::Builder::default()
+    }
+}
+
 /// See [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
 pub mod dominant_language_detection_job_filter {
     
@@ -7986,12 +8031,6 @@ pub mod dominant_language_detection_job_filter {
     
     
 }
-impl DominantLanguageDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
-    pub fn builder() -> crate::model::dominant_language_detection_job_filter::Builder {
-        crate::model::dominant_language_detection_job_filter::Builder::default()
-    }
-}
 
 /// <p>Describes information about a document classifier and its versions.</p>
 #[non_exhaustive]
@@ -8035,6 +8074,13 @@ impl DocumentClassifierSummary {
         self.latest_version_status.as_ref()
     }
 }
+impl DocumentClassifierSummary {
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
+    pub fn builder() -> crate::model::document_classifier_summary::Builder {
+        crate::model::document_classifier_summary::Builder::default()
+    }
+}
+
 /// See [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
 pub mod document_classifier_summary {
     
@@ -8112,12 +8158,6 @@ pub mod document_classifier_summary {
     }
     
     
-}
-impl DocumentClassifierSummary {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
-    pub fn builder() -> crate::model::document_classifier_summary::Builder {
-        crate::model::document_classifier_summary::Builder::default()
-    }
 }
 
 /// <p>Provides information about a document classifier.</p>
@@ -8293,6 +8333,13 @@ impl  std::fmt::Debug for DocumentClassifierProperties  {
         formatter.finish()
     }
 }
+impl DocumentClassifierProperties {
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
+    pub fn builder() -> crate::model::document_classifier_properties::Builder {
+        crate::model::document_classifier_properties::Builder::default()
+    }
+}
+
 /// See [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
 pub mod document_classifier_properties {
     
@@ -8567,12 +8614,6 @@ pub mod document_classifier_properties {
     
     
 }
-impl DocumentClassifierProperties {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
-    pub fn builder() -> crate::model::document_classifier_properties::Builder {
-        crate::model::document_classifier_properties::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DocumentClassifierMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8701,6 +8742,13 @@ impl  std::fmt::Debug for ClassifierMetadata  {
         formatter.finish()
     }
 }
+impl ClassifierMetadata {
+    /// Creates a new builder-style object to manufacture [`ClassifierMetadata`](crate::model::ClassifierMetadata).
+    pub fn builder() -> crate::model::classifier_metadata::Builder {
+        crate::model::classifier_metadata::Builder::default()
+    }
+}
+
 /// See [`ClassifierMetadata`](crate::model::ClassifierMetadata).
 pub mod classifier_metadata {
     
@@ -8777,12 +8825,6 @@ pub mod classifier_metadata {
     
     
 }
-impl ClassifierMetadata {
-    /// Creates a new builder-style object to manufacture [`ClassifierMetadata`](crate::model::ClassifierMetadata).
-    pub fn builder() -> crate::model::classifier_metadata::Builder {
-        crate::model::classifier_metadata::Builder::default()
-    }
-}
 
 /// <p>Describes the result metrics for the test data associated with an documentation classifier.</p>
 #[non_exhaustive]
@@ -8847,6 +8889,13 @@ impl ClassifierEvaluationMetrics {
         self.hamming_loss
     }
 }
+impl ClassifierEvaluationMetrics {
+    /// Creates a new builder-style object to manufacture [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
+    pub fn builder() -> crate::model::classifier_evaluation_metrics::Builder {
+        crate::model::classifier_evaluation_metrics::Builder::default()
+    }
+}
+
 /// See [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
 pub mod classifier_evaluation_metrics {
     
@@ -8961,12 +9010,6 @@ pub mod classifier_evaluation_metrics {
     
     
 }
-impl ClassifierEvaluationMetrics {
-    /// Creates a new builder-style object to manufacture [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
-    pub fn builder() -> crate::model::classifier_evaluation_metrics::Builder {
-        crate::model::classifier_evaluation_metrics::Builder::default()
-    }
-}
 
 /// <p>Provides output results configuration parameters for custom classifier jobs. </p>
 #[non_exhaustive]
@@ -9003,6 +9046,13 @@ impl DocumentClassifierOutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
+impl DocumentClassifierOutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
+    pub fn builder() -> crate::model::document_classifier_output_data_config::Builder {
+        crate::model::document_classifier_output_data_config::Builder::default()
+    }
+}
+
 /// See [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
 pub mod document_classifier_output_data_config {
     
@@ -9058,12 +9108,6 @@ pub mod document_classifier_output_data_config {
     }
     
     
-}
-impl DocumentClassifierOutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
-    pub fn builder() -> crate::model::document_classifier_output_data_config::Builder {
-        crate::model::document_classifier_output_data_config::Builder::default()
-    }
 }
 
 /// <p>The input properties for training a document classifier. </p> 
@@ -9125,6 +9169,13 @@ impl DocumentClassifierInputDataConfig {
         self.augmented_manifests.as_deref()
     }
 }
+impl DocumentClassifierInputDataConfig {
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
+    pub fn builder() -> crate::model::document_classifier_input_data_config::Builder {
+        crate::model::document_classifier_input_data_config::Builder::default()
+    }
+}
+
 /// See [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
 pub mod document_classifier_input_data_config {
     
@@ -9224,12 +9275,6 @@ pub mod document_classifier_input_data_config {
     }
     
     
-}
-impl DocumentClassifierInputDataConfig {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
-    pub fn builder() -> crate::model::document_classifier_input_data_config::Builder {
-        crate::model::document_classifier_input_data_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DocumentClassifierDataFormat`, it is important to ensure
@@ -9349,6 +9394,13 @@ impl DocumentClassifierFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl DocumentClassifierFilter {
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
+    pub fn builder() -> crate::model::document_classifier_filter::Builder {
+        crate::model::document_classifier_filter::Builder::default()
+    }
+}
+
 /// See [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
 pub mod document_classifier_filter {
     
@@ -9414,12 +9466,6 @@ pub mod document_classifier_filter {
     }
     
     
-}
-impl DocumentClassifierFilter {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
-    pub fn builder() -> crate::model::document_classifier_filter::Builder {
-        crate::model::document_classifier_filter::Builder::default()
-    }
 }
 
 /// <p>Provides information about a document classification job.</p>
@@ -9554,6 +9600,13 @@ impl DocumentClassificationJobProperties {
         self.vpc_config.as_ref()
     }
 }
+impl DocumentClassificationJobProperties {
+    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
+    pub fn builder() -> crate::model::document_classification_job_properties::Builder {
+        crate::model::document_classification_job_properties::Builder::default()
+    }
+}
+
 /// See [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
 pub mod document_classification_job_properties {
     
@@ -9762,12 +9815,6 @@ pub mod document_classification_job_properties {
     
     
 }
-impl DocumentClassificationJobProperties {
-    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
-    pub fn builder() -> crate::model::document_classification_job_properties::Builder {
-        crate::model::document_classification_job_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.</p>
 #[non_exhaustive]
@@ -9804,6 +9851,13 @@ impl DocumentClassificationJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl DocumentClassificationJobFilter {
+    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
+    pub fn builder() -> crate::model::document_classification_job_filter::Builder {
+        crate::model::document_classification_job_filter::Builder::default()
+    }
+}
+
 /// See [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
 pub mod document_classification_job_filter {
     
@@ -9870,12 +9924,6 @@ pub mod document_classification_job_filter {
     
     
 }
-impl DocumentClassificationJobFilter {
-    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
-    pub fn builder() -> crate::model::document_classification_job_filter::Builder {
-        crate::model::document_classification_job_filter::Builder::default()
-    }
-}
 
 /// <p>Information about one of the entities found by targeted sentiment analysis.</p> 
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
@@ -9899,6 +9947,13 @@ impl TargetedSentimentEntity {
         self.mentions.as_deref()
     }
 }
+impl TargetedSentimentEntity {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
+    pub fn builder() -> crate::model::targeted_sentiment_entity::Builder {
+        crate::model::targeted_sentiment_entity::Builder::default()
+    }
+}
+
 /// See [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
 pub mod targeted_sentiment_entity {
     
@@ -9952,12 +10007,6 @@ pub mod targeted_sentiment_entity {
     }
     
     
-}
-impl TargetedSentimentEntity {
-    /// Creates a new builder-style object to manufacture [`TargetedSentimentEntity`](crate::model::TargetedSentimentEntity).
-    pub fn builder() -> crate::model::targeted_sentiment_entity::Builder {
-        crate::model::targeted_sentiment_entity::Builder::default()
-    }
 }
 
 /// <p>Information about one mention of an entity. The mention information includes the location of the mention in the text and the sentiment of the mention.</p> 
@@ -10017,6 +10066,13 @@ impl TargetedSentimentMention {
         self.end_offset
     }
 }
+impl TargetedSentimentMention {
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
+    pub fn builder() -> crate::model::targeted_sentiment_mention::Builder {
+        crate::model::targeted_sentiment_mention::Builder::default()
+    }
+}
+
 /// See [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
 pub mod targeted_sentiment_mention {
     
@@ -10119,12 +10175,6 @@ pub mod targeted_sentiment_mention {
     
     
 }
-impl TargetedSentimentMention {
-    /// Creates a new builder-style object to manufacture [`TargetedSentimentMention`](crate::model::TargetedSentimentMention).
-    pub fn builder() -> crate::model::targeted_sentiment_mention::Builder {
-        crate::model::targeted_sentiment_mention::Builder::default()
-    }
-}
 
 /// <p>Contains the sentiment and sentiment score for one mention of an entity.</p> 
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
@@ -10148,6 +10198,13 @@ impl MentionSentiment {
         self.sentiment_score.as_ref()
     }
 }
+impl MentionSentiment {
+    /// Creates a new builder-style object to manufacture [`MentionSentiment`](crate::model::MentionSentiment).
+    pub fn builder() -> crate::model::mention_sentiment::Builder {
+        crate::model::mention_sentiment::Builder::default()
+    }
+}
+
 /// See [`MentionSentiment`](crate::model::MentionSentiment).
 pub mod mention_sentiment {
     
@@ -10190,12 +10247,6 @@ pub mod mention_sentiment {
     
     
 }
-impl MentionSentiment {
-    /// Creates a new builder-style object to manufacture [`MentionSentiment`](crate::model::MentionSentiment).
-    pub fn builder() -> crate::model::mention_sentiment::Builder {
-        crate::model::mention_sentiment::Builder::default()
-    }
-}
 
 /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
 #[non_exhaustive]
@@ -10232,6 +10283,13 @@ impl SentimentScore {
         self.mixed
     }
 }
+impl SentimentScore {
+    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
+    pub fn builder() -> crate::model::sentiment_score::Builder {
+        crate::model::sentiment_score::Builder::default()
+    }
+}
+
 /// See [`SentimentScore`](crate::model::SentimentScore).
 pub mod sentiment_score {
     
@@ -10297,12 +10355,6 @@ pub mod sentiment_score {
     }
     
     
-}
-impl SentimentScore {
-    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
-    pub fn builder() -> crate::model::sentiment_score::Builder {
-        crate::model::sentiment_score::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SentimentType`, it is important to ensure
@@ -10596,6 +10648,13 @@ impl SyntaxToken {
         self.part_of_speech.as_ref()
     }
 }
+impl SyntaxToken {
+    /// Creates a new builder-style object to manufacture [`SyntaxToken`](crate::model::SyntaxToken).
+    pub fn builder() -> crate::model::syntax_token::Builder {
+        crate::model::syntax_token::Builder::default()
+    }
+}
+
 /// See [`SyntaxToken`](crate::model::SyntaxToken).
 pub mod syntax_token {
     
@@ -10674,12 +10733,6 @@ pub mod syntax_token {
     
     
 }
-impl SyntaxToken {
-    /// Creates a new builder-style object to manufacture [`SyntaxToken`](crate::model::SyntaxToken).
-    pub fn builder() -> crate::model::syntax_token::Builder {
-        crate::model::syntax_token::Builder::default()
-    }
-}
 
 /// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
@@ -10702,6 +10755,13 @@ impl PartOfSpeechTag {
         self.score
     }
 }
+impl PartOfSpeechTag {
+    /// Creates a new builder-style object to manufacture [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
+    pub fn builder() -> crate::model::part_of_speech_tag::Builder {
+        crate::model::part_of_speech_tag::Builder::default()
+    }
+}
+
 /// See [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
 pub mod part_of_speech_tag {
     
@@ -10743,12 +10803,6 @@ pub mod part_of_speech_tag {
     }
     
     
-}
-impl PartOfSpeechTag {
-    /// Creates a new builder-style object to manufacture [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
-    pub fn builder() -> crate::model::part_of_speech_tag::Builder {
-        crate::model::part_of_speech_tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PartOfSpeechTagType`, it is important to ensure
@@ -11050,6 +11104,13 @@ impl PiiEntity {
         self.end_offset
     }
 }
+impl PiiEntity {
+    /// Creates a new builder-style object to manufacture [`PiiEntity`](crate::model::PiiEntity).
+    pub fn builder() -> crate::model::pii_entity::Builder {
+        crate::model::pii_entity::Builder::default()
+    }
+}
+
 /// See [`PiiEntity`](crate::model::PiiEntity).
 pub mod pii_entity {
     
@@ -11116,12 +11177,6 @@ pub mod pii_entity {
     
     
 }
-impl PiiEntity {
-    /// Creates a new builder-style object to manufacture [`PiiEntity`](crate::model::PiiEntity).
-    pub fn builder() -> crate::model::pii_entity::Builder {
-        crate::model::pii_entity::Builder::default()
-    }
-}
 
 /// <p>Describes a key noun phrase.</p>
 #[non_exhaustive]
@@ -11158,6 +11213,13 @@ impl KeyPhrase {
         self.end_offset
     }
 }
+impl KeyPhrase {
+    /// Creates a new builder-style object to manufacture [`KeyPhrase`](crate::model::KeyPhrase).
+    pub fn builder() -> crate::model::key_phrase::Builder {
+        crate::model::key_phrase::Builder::default()
+    }
+}
+
 /// See [`KeyPhrase`](crate::model::KeyPhrase).
 pub mod key_phrase {
     
@@ -11224,12 +11286,6 @@ pub mod key_phrase {
     
     
 }
-impl KeyPhrase {
-    /// Creates a new builder-style object to manufacture [`KeyPhrase`](crate::model::KeyPhrase).
-    pub fn builder() -> crate::model::key_phrase::Builder {
-        crate::model::key_phrase::Builder::default()
-    }
-}
 
 /// <p>Text extraction encountered one or more page-level errors in the input document.</p> 
 /// <p>The <code>ErrorCode</code> contains one of the following values:</p> 
@@ -11267,6 +11323,13 @@ impl ErrorsListItem {
         self.error_message.as_deref()
     }
 }
+impl ErrorsListItem {
+    /// Creates a new builder-style object to manufacture [`ErrorsListItem`](crate::model::ErrorsListItem).
+    pub fn builder() -> crate::model::errors_list_item::Builder {
+        crate::model::errors_list_item::Builder::default()
+    }
+}
+
 /// See [`ErrorsListItem`](crate::model::ErrorsListItem).
 pub mod errors_list_item {
     
@@ -11320,12 +11383,6 @@ pub mod errors_list_item {
     }
     
     
-}
-impl ErrorsListItem {
-    /// Creates a new builder-style object to manufacture [`ErrorsListItem`](crate::model::ErrorsListItem).
-    pub fn builder() -> crate::model::errors_list_item::Builder {
-        crate::model::errors_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PageBasedErrorCode`, it is important to ensure
@@ -11483,6 +11540,13 @@ impl Block {
         self.relationships.as_deref()
     }
 }
+impl Block {
+    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
+    pub fn builder() -> crate::model::block::Builder {
+        crate::model::block::Builder::default()
+    }
+}
+
 /// See [`Block`](crate::model::Block).
 pub mod block {
     
@@ -11587,12 +11651,6 @@ pub mod block {
     
     
 }
-impl Block {
-    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
-    pub fn builder() -> crate::model::block::Builder {
-        crate::model::block::Builder::default()
-    }
-}
 
 /// <p>List of child blocks for the current block.</p>
 #[non_exhaustive]
@@ -11615,6 +11673,13 @@ impl RelationshipsListItem {
         self.r#type.as_ref()
     }
 }
+impl RelationshipsListItem {
+    /// Creates a new builder-style object to manufacture [`RelationshipsListItem`](crate::model::RelationshipsListItem).
+    pub fn builder() -> crate::model::relationships_list_item::Builder {
+        crate::model::relationships_list_item::Builder::default()
+    }
+}
+
 /// See [`RelationshipsListItem`](crate::model::RelationshipsListItem).
 pub mod relationships_list_item {
     
@@ -11662,12 +11727,6 @@ pub mod relationships_list_item {
     }
     
     
-}
-impl RelationshipsListItem {
-    /// Creates a new builder-style object to manufacture [`RelationshipsListItem`](crate::model::RelationshipsListItem).
-    pub fn builder() -> crate::model::relationships_list_item::Builder {
-        crate::model::relationships_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RelationshipType`, it is important to ensure
@@ -11769,6 +11828,13 @@ impl Geometry {
         self.polygon.as_deref()
     }
 }
+impl Geometry {
+    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
+    pub fn builder() -> crate::model::geometry::Builder {
+        crate::model::geometry::Builder::default()
+    }
+}
+
 /// See [`Geometry`](crate::model::Geometry).
 pub mod geometry {
     
@@ -11817,12 +11883,6 @@ pub mod geometry {
     
     
 }
-impl Geometry {
-    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
-    pub fn builder() -> crate::model::geometry::Builder {
-        crate::model::geometry::Builder::default()
-    }
-}
 
 /// <p>The X and Y coordinates of a point on a document page.</p> 
 /// <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Point.html">Point</a> in the Amazon Textract API reference.</p>
@@ -11846,6 +11906,13 @@ impl Point {
         self.y
     }
 }
+impl Point {
+    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
+    pub fn builder() -> crate::model::point::Builder {
+        crate::model::point::Builder::default()
+    }
+}
+
 /// See [`Point`](crate::model::Point).
 pub mod point {
     
@@ -11888,12 +11955,6 @@ pub mod point {
     
     
 }
-impl Point {
-    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
-    pub fn builder() -> crate::model::point::Builder {
-        crate::model::point::Builder::default()
-    }
-}
 
 /// <p>The bounding box around the detected page or around an element on a document page. The left (x-coordinate) and top (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> 
 /// <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_BoundingBox.html">BoundingBox</a> in the Amazon Textract API reference.</p>
@@ -11931,6 +11992,13 @@ impl BoundingBox {
         self.width
     }
 }
+impl BoundingBox {
+    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
+    pub fn builder() -> crate::model::bounding_box::Builder {
+        crate::model::bounding_box::Builder::default()
+    }
+}
+
 /// See [`BoundingBox`](crate::model::BoundingBox).
 pub mod bounding_box {
     
@@ -11996,12 +12064,6 @@ pub mod bounding_box {
     }
     
     
-}
-impl BoundingBox {
-    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
-    pub fn builder() -> crate::model::bounding_box::Builder {
-        crate::model::bounding_box::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BlockType`, it is important to ensure
@@ -12107,6 +12169,13 @@ impl DocumentTypeListItem {
         self.r#type.as_ref()
     }
 }
+impl DocumentTypeListItem {
+    /// Creates a new builder-style object to manufacture [`DocumentTypeListItem`](crate::model::DocumentTypeListItem).
+    pub fn builder() -> crate::model::document_type_list_item::Builder {
+        crate::model::document_type_list_item::Builder::default()
+    }
+}
+
 /// See [`DocumentTypeListItem`](crate::model::DocumentTypeListItem).
 pub mod document_type_list_item {
     
@@ -12148,12 +12217,6 @@ pub mod document_type_list_item {
     }
     
     
-}
-impl DocumentTypeListItem {
-    /// Creates a new builder-style object to manufacture [`DocumentTypeListItem`](crate::model::DocumentTypeListItem).
-    pub fn builder() -> crate::model::document_type_list_item::Builder {
-        crate::model::document_type_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DocumentType`, it is important to ensure
@@ -12284,6 +12347,13 @@ impl DocumentMetadata {
         self.extracted_characters.as_deref()
     }
 }
+impl DocumentMetadata {
+    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
+    pub fn builder() -> crate::model::document_metadata::Builder {
+        crate::model::document_metadata::Builder::default()
+    }
+}
+
 /// See [`DocumentMetadata`](crate::model::DocumentMetadata).
 pub mod document_metadata {
     
@@ -12332,12 +12402,6 @@ pub mod document_metadata {
     
     
 }
-impl DocumentMetadata {
-    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
-    pub fn builder() -> crate::model::document_metadata::Builder {
-        crate::model::document_metadata::Builder::default()
-    }
-}
 
 /// <p>Array of the number of characters extracted from each page.</p>
 #[non_exhaustive]
@@ -12360,6 +12424,13 @@ impl ExtractedCharactersListItem {
         self.count
     }
 }
+impl ExtractedCharactersListItem {
+    /// Creates a new builder-style object to manufacture [`ExtractedCharactersListItem`](crate::model::ExtractedCharactersListItem).
+    pub fn builder() -> crate::model::extracted_characters_list_item::Builder {
+        crate::model::extracted_characters_list_item::Builder::default()
+    }
+}
+
 /// See [`ExtractedCharactersListItem`](crate::model::ExtractedCharactersListItem).
 pub mod extracted_characters_list_item {
     
@@ -12401,12 +12472,6 @@ pub mod extracted_characters_list_item {
     }
     
     
-}
-impl ExtractedCharactersListItem {
-    /// Creates a new builder-style object to manufacture [`ExtractedCharactersListItem`](crate::model::ExtractedCharactersListItem).
-    pub fn builder() -> crate::model::extracted_characters_list_item::Builder {
-        crate::model::extracted_characters_list_item::Builder::default()
-    }
 }
 
 /// <p>Provides information about an entity. </p> 
@@ -12465,6 +12530,13 @@ impl Entity {
         self.block_references.as_deref()
     }
 }
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
+    }
+}
+
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
     
@@ -12567,12 +12639,6 @@ pub mod entity {
     
     
 }
-impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
-    pub fn builder() -> crate::model::entity::Builder {
-        crate::model::entity::Builder::default()
-    }
-}
 
 /// <p>A reference to a block. </p>
 #[non_exhaustive]
@@ -12609,6 +12675,13 @@ impl BlockReference {
         self.child_blocks.as_deref()
     }
 }
+impl BlockReference {
+    /// Creates a new builder-style object to manufacture [`BlockReference`](crate::model::BlockReference).
+    pub fn builder() -> crate::model::block_reference::Builder {
+        crate::model::block_reference::Builder::default()
+    }
+}
+
 /// See [`BlockReference`](crate::model::BlockReference).
 pub mod block_reference {
     
@@ -12681,12 +12754,6 @@ pub mod block_reference {
     
     
 }
-impl BlockReference {
-    /// Creates a new builder-style object to manufacture [`BlockReference`](crate::model::BlockReference).
-    pub fn builder() -> crate::model::block_reference::Builder {
-        crate::model::block_reference::Builder::default()
-    }
-}
 
 /// <p>Nested block contained within a block.</p>
 #[non_exhaustive]
@@ -12716,6 +12783,13 @@ impl ChildBlock {
         self.end_offset
     }
 }
+impl ChildBlock {
+    /// Creates a new builder-style object to manufacture [`ChildBlock`](crate::model::ChildBlock).
+    pub fn builder() -> crate::model::child_block::Builder {
+        crate::model::child_block::Builder::default()
+    }
+}
+
 /// See [`ChildBlock`](crate::model::ChildBlock).
 pub mod child_block {
     
@@ -12769,12 +12843,6 @@ pub mod child_block {
     }
     
     
-}
-impl ChildBlock {
-    /// Creates a new builder-style object to manufacture [`ChildBlock`](crate::model::ChildBlock).
-    pub fn builder() -> crate::model::child_block::Builder {
-        crate::model::child_block::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntityType`, it is important to ensure
@@ -12915,6 +12983,13 @@ impl DominantLanguage {
         self.score
     }
 }
+impl DominantLanguage {
+    /// Creates a new builder-style object to manufacture [`DominantLanguage`](crate::model::DominantLanguage).
+    pub fn builder() -> crate::model::dominant_language::Builder {
+        crate::model::dominant_language::Builder::default()
+    }
+}
+
 /// See [`DominantLanguage`](crate::model::DominantLanguage).
 pub mod dominant_language {
     
@@ -12957,12 +13032,6 @@ pub mod dominant_language {
     
     
 }
-impl DominantLanguage {
-    /// Creates a new builder-style object to manufacture [`DominantLanguage`](crate::model::DominantLanguage).
-    pub fn builder() -> crate::model::dominant_language::Builder {
-        crate::model::dominant_language::Builder::default()
-    }
-}
 
 /// <p>Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.</p>
 #[non_exhaustive]
@@ -12985,6 +13054,13 @@ impl EntityLabel {
         self.score
     }
 }
+impl EntityLabel {
+    /// Creates a new builder-style object to manufacture [`EntityLabel`](crate::model::EntityLabel).
+    pub fn builder() -> crate::model::entity_label::Builder {
+        crate::model::entity_label::Builder::default()
+    }
+}
+
 /// See [`EntityLabel`](crate::model::EntityLabel).
 pub mod entity_label {
     
@@ -13027,12 +13103,6 @@ pub mod entity_label {
     
     
 }
-impl EntityLabel {
-    /// Creates a new builder-style object to manufacture [`EntityLabel`](crate::model::EntityLabel).
-    pub fn builder() -> crate::model::entity_label::Builder {
-        crate::model::entity_label::Builder::default()
-    }
-}
 
 /// <p>Specifies one of the label or labels that categorize the document being analyzed.</p>
 #[non_exhaustive]
@@ -13062,6 +13132,13 @@ impl DocumentLabel {
         self.page
     }
 }
+impl DocumentLabel {
+    /// Creates a new builder-style object to manufacture [`DocumentLabel`](crate::model::DocumentLabel).
+    pub fn builder() -> crate::model::document_label::Builder {
+        crate::model::document_label::Builder::default()
+    }
+}
+
 /// See [`DocumentLabel`](crate::model::DocumentLabel).
 pub mod document_label {
     
@@ -13116,12 +13193,6 @@ pub mod document_label {
     
     
 }
-impl DocumentLabel {
-    /// Creates a new builder-style object to manufacture [`DocumentLabel`](crate::model::DocumentLabel).
-    pub fn builder() -> crate::model::document_label::Builder {
-        crate::model::document_label::Builder::default()
-    }
-}
 
 /// <p>Specifies the class that categorizes the document being analyzed</p>
 #[non_exhaustive]
@@ -13151,6 +13222,13 @@ impl DocumentClass {
         self.page
     }
 }
+impl DocumentClass {
+    /// Creates a new builder-style object to manufacture [`DocumentClass`](crate::model::DocumentClass).
+    pub fn builder() -> crate::model::document_class::Builder {
+        crate::model::document_class::Builder::default()
+    }
+}
+
 /// See [`DocumentClass`](crate::model::DocumentClass).
 pub mod document_class {
     
@@ -13205,12 +13283,6 @@ pub mod document_class {
     
     
 }
-impl DocumentClass {
-    /// Creates a new builder-style object to manufacture [`DocumentClass`](crate::model::DocumentClass).
-    pub fn builder() -> crate::model::document_class::Builder {
-        crate::model::document_class::Builder::default()
-    }
-}
 
 /// <p>Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.</p>
 #[non_exhaustive]
@@ -13240,6 +13312,13 @@ impl BatchItemError {
         self.error_message.as_deref()
     }
 }
+impl BatchItemError {
+    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
+    pub fn builder() -> crate::model::batch_item_error::Builder {
+        crate::model::batch_item_error::Builder::default()
+    }
+}
+
 /// See [`BatchItemError`](crate::model::BatchItemError).
 pub mod batch_item_error {
     
@@ -13294,12 +13373,6 @@ pub mod batch_item_error {
     
     
 }
-impl BatchItemError {
-    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
-    pub fn builder() -> crate::model::batch_item_error::Builder {
-        crate::model::batch_item_error::Builder::default()
-    }
-}
 
 /// <p>Analysis results for one of the documents in the batch.</p>
 #[non_exhaustive]
@@ -13322,6 +13395,13 @@ impl BatchDetectTargetedSentimentItemResult {
         self.entities.as_deref()
     }
 }
+impl BatchDetectTargetedSentimentItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
+    pub fn builder() -> crate::model::batch_detect_targeted_sentiment_item_result::Builder {
+        crate::model::batch_detect_targeted_sentiment_item_result::Builder::default()
+    }
+}
+
 /// See [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
 pub mod batch_detect_targeted_sentiment_item_result {
     
@@ -13370,12 +13450,6 @@ pub mod batch_detect_targeted_sentiment_item_result {
     
     
 }
-impl BatchDetectTargetedSentimentItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentItemResult`](crate::model::BatchDetectTargetedSentimentItemResult).
-    pub fn builder() -> crate::model::batch_detect_targeted_sentiment_item_result::Builder {
-        crate::model::batch_detect_targeted_sentiment_item_result::Builder::default()
-    }
-}
 
 /// <p>The result of calling the operation. The operation returns one object that is successfully processed by the operation.</p>
 #[non_exhaustive]
@@ -13398,6 +13472,13 @@ impl BatchDetectSyntaxItemResult {
         self.syntax_tokens.as_deref()
     }
 }
+impl BatchDetectSyntaxItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
+    pub fn builder() -> crate::model::batch_detect_syntax_item_result::Builder {
+        crate::model::batch_detect_syntax_item_result::Builder::default()
+    }
+}
+
 /// See [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
 pub mod batch_detect_syntax_item_result {
     
@@ -13446,12 +13527,6 @@ pub mod batch_detect_syntax_item_result {
     
     
 }
-impl BatchDetectSyntaxItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
-    pub fn builder() -> crate::model::batch_detect_syntax_item_result::Builder {
-        crate::model::batch_detect_syntax_item_result::Builder::default()
-    }
-}
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
@@ -13481,6 +13556,13 @@ impl BatchDetectSentimentItemResult {
         self.sentiment_score.as_ref()
     }
 }
+impl BatchDetectSentimentItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
+    pub fn builder() -> crate::model::batch_detect_sentiment_item_result::Builder {
+        crate::model::batch_detect_sentiment_item_result::Builder::default()
+    }
+}
+
 /// See [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
 pub mod batch_detect_sentiment_item_result {
     
@@ -13535,12 +13617,6 @@ pub mod batch_detect_sentiment_item_result {
     
     
 }
-impl BatchDetectSentimentItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
-    pub fn builder() -> crate::model::batch_detect_sentiment_item_result::Builder {
-        crate::model::batch_detect_sentiment_item_result::Builder::default()
-    }
-}
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
@@ -13563,6 +13639,13 @@ impl BatchDetectKeyPhrasesItemResult {
         self.key_phrases.as_deref()
     }
 }
+impl BatchDetectKeyPhrasesItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
+    pub fn builder() -> crate::model::batch_detect_key_phrases_item_result::Builder {
+        crate::model::batch_detect_key_phrases_item_result::Builder::default()
+    }
+}
+
 /// See [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
 pub mod batch_detect_key_phrases_item_result {
     
@@ -13611,12 +13694,6 @@ pub mod batch_detect_key_phrases_item_result {
     
     
 }
-impl BatchDetectKeyPhrasesItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
-    pub fn builder() -> crate::model::batch_detect_key_phrases_item_result::Builder {
-        crate::model::batch_detect_key_phrases_item_result::Builder::default()
-    }
-}
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
@@ -13639,6 +13716,13 @@ impl BatchDetectEntitiesItemResult {
         self.entities.as_deref()
     }
 }
+impl BatchDetectEntitiesItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
+    pub fn builder() -> crate::model::batch_detect_entities_item_result::Builder {
+        crate::model::batch_detect_entities_item_result::Builder::default()
+    }
+}
+
 /// See [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
 pub mod batch_detect_entities_item_result {
     
@@ -13687,12 +13771,6 @@ pub mod batch_detect_entities_item_result {
     
     
 }
-impl BatchDetectEntitiesItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
-    pub fn builder() -> crate::model::batch_detect_entities_item_result::Builder {
-        crate::model::batch_detect_entities_item_result::Builder::default()
-    }
-}
 
 /// <p>The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.</p>
 #[non_exhaustive]
@@ -13715,6 +13793,13 @@ impl BatchDetectDominantLanguageItemResult {
         self.languages.as_deref()
     }
 }
+impl BatchDetectDominantLanguageItemResult {
+    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
+    pub fn builder() -> crate::model::batch_detect_dominant_language_item_result::Builder {
+        crate::model::batch_detect_dominant_language_item_result::Builder::default()
+    }
+}
+
 /// See [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
 pub mod batch_detect_dominant_language_item_result {
     
@@ -13762,11 +13847,5 @@ pub mod batch_detect_dominant_language_item_result {
     }
     
     
-}
-impl BatchDetectDominantLanguageItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
-    pub fn builder() -> crate::model::batch_detect_dominant_language_item_result::Builder {
-        crate::model::batch_detect_dominant_language_item_result::Builder::default()
-    }
 }
 

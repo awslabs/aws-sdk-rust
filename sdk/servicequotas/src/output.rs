@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -113,6 +115,13 @@ impl aws_http::request_id::RequestId for RequestServiceQuotaIncreaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RequestServiceQuotaIncreaseOutput {
+    /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
+    pub fn builder() -> crate::output::request_service_quota_increase_output::Builder {
+        crate::output::request_service_quota_increase_output::Builder::default()
+    }
+}
+
 /// See [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
 pub mod request_service_quota_increase_output {
     
@@ -154,12 +163,6 @@ pub mod request_service_quota_increase_output {
     
     
 }
-impl RequestServiceQuotaIncreaseOutput {
-    /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
-    pub fn builder() -> crate::output::request_service_quota_increase_output::Builder {
-        crate::output::request_service_quota_increase_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -181,6 +184,13 @@ impl aws_http::request_id::RequestId for PutServiceQuotaIncreaseRequestIntoTempl
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
+    pub fn builder() -> crate::output::put_service_quota_increase_request_into_template_output::Builder {
+        crate::output::put_service_quota_increase_request_into_template_output::Builder::default()
+    }
+}
+
 /// See [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
 pub mod put_service_quota_increase_request_into_template_output {
     
@@ -222,12 +232,6 @@ pub mod put_service_quota_increase_request_into_template_output {
     
     
 }
-impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
-    pub fn builder() -> crate::output::put_service_quota_increase_request_into_template_output::Builder {
-        crate::output::put_service_quota_increase_request_into_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -249,6 +253,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -296,12 +307,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -330,6 +335,13 @@ impl aws_http::request_id::RequestId for ListServicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListServicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
+    pub fn builder() -> crate::output::list_services_output::Builder {
+        crate::output::list_services_output::Builder::default()
+    }
+}
+
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
     
@@ -389,12 +401,6 @@ pub mod list_services_output {
     
     
 }
-impl ListServicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
-    pub fn builder() -> crate::output::list_services_output::Builder {
-        crate::output::list_services_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -423,6 +429,13 @@ impl aws_http::request_id::RequestId for ListServiceQuotasOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListServiceQuotasOutput {
+    /// Creates a new builder-style object to manufacture [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
+    pub fn builder() -> crate::output::list_service_quotas_output::Builder {
+        crate::output::list_service_quotas_output::Builder::default()
+    }
+}
+
 /// See [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
 pub mod list_service_quotas_output {
     
@@ -482,12 +495,6 @@ pub mod list_service_quotas_output {
     
     
 }
-impl ListServiceQuotasOutput {
-    /// Creates a new builder-style object to manufacture [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
-    pub fn builder() -> crate::output::list_service_quotas_output::Builder {
-        crate::output::list_service_quotas_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -516,6 +523,13 @@ impl aws_http::request_id::RequestId for ListServiceQuotaIncreaseRequestsInTempl
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
+    pub fn builder() -> crate::output::list_service_quota_increase_requests_in_template_output::Builder {
+        crate::output::list_service_quota_increase_requests_in_template_output::Builder::default()
+    }
+}
+
 /// See [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
 pub mod list_service_quota_increase_requests_in_template_output {
     
@@ -575,12 +589,6 @@ pub mod list_service_quota_increase_requests_in_template_output {
     
     
 }
-impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
-    pub fn builder() -> crate::output::list_service_quota_increase_requests_in_template_output::Builder {
-        crate::output::list_service_quota_increase_requests_in_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -609,6 +617,13 @@ impl aws_http::request_id::RequestId for ListRequestedServiceQuotaChangeHistoryB
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
+    pub fn builder() -> crate::output::list_requested_service_quota_change_history_by_quota_output::Builder {
+        crate::output::list_requested_service_quota_change_history_by_quota_output::Builder::default()
+    }
+}
+
 /// See [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
 pub mod list_requested_service_quota_change_history_by_quota_output {
     
@@ -668,12 +683,6 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
     
     
 }
-impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
-    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
-    pub fn builder() -> crate::output::list_requested_service_quota_change_history_by_quota_output::Builder {
-        crate::output::list_requested_service_quota_change_history_by_quota_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -702,6 +711,13 @@ impl aws_http::request_id::RequestId for ListRequestedServiceQuotaChangeHistoryO
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRequestedServiceQuotaChangeHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
+    pub fn builder() -> crate::output::list_requested_service_quota_change_history_output::Builder {
+        crate::output::list_requested_service_quota_change_history_output::Builder::default()
+    }
+}
+
 /// See [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
 pub mod list_requested_service_quota_change_history_output {
     
@@ -761,12 +777,6 @@ pub mod list_requested_service_quota_change_history_output {
     
     
 }
-impl ListRequestedServiceQuotaChangeHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
-    pub fn builder() -> crate::output::list_requested_service_quota_change_history_output::Builder {
-        crate::output::list_requested_service_quota_change_history_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -795,6 +805,13 @@ impl aws_http::request_id::RequestId for ListAwsDefaultServiceQuotasOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAwsDefaultServiceQuotasOutput {
+    /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
+    pub fn builder() -> crate::output::list_aws_default_service_quotas_output::Builder {
+        crate::output::list_aws_default_service_quotas_output::Builder::default()
+    }
+}
+
 /// See [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
 pub mod list_aws_default_service_quotas_output {
     
@@ -854,12 +871,6 @@ pub mod list_aws_default_service_quotas_output {
     
     
 }
-impl ListAwsDefaultServiceQuotasOutput {
-    /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
-    pub fn builder() -> crate::output::list_aws_default_service_quotas_output::Builder {
-        crate::output::list_aws_default_service_quotas_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -881,6 +892,13 @@ impl aws_http::request_id::RequestId for GetServiceQuotaIncreaseRequestFromTempl
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
+    pub fn builder() -> crate::output::get_service_quota_increase_request_from_template_output::Builder {
+        crate::output::get_service_quota_increase_request_from_template_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
 pub mod get_service_quota_increase_request_from_template_output {
     
@@ -922,12 +940,6 @@ pub mod get_service_quota_increase_request_from_template_output {
     
     
 }
-impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn builder() -> crate::output::get_service_quota_increase_request_from_template_output::Builder {
-        crate::output::get_service_quota_increase_request_from_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -949,6 +961,13 @@ impl aws_http::request_id::RequestId for GetServiceQuotaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetServiceQuotaOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
+    pub fn builder() -> crate::output::get_service_quota_output::Builder {
+        crate::output::get_service_quota_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
 pub mod get_service_quota_output {
     
@@ -990,12 +1009,6 @@ pub mod get_service_quota_output {
     
     
 }
-impl GetServiceQuotaOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
-    pub fn builder() -> crate::output::get_service_quota_output::Builder {
-        crate::output::get_service_quota_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1017,6 +1030,13 @@ impl aws_http::request_id::RequestId for GetRequestedServiceQuotaChangeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRequestedServiceQuotaChangeOutput {
+    /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
+    pub fn builder() -> crate::output::get_requested_service_quota_change_output::Builder {
+        crate::output::get_requested_service_quota_change_output::Builder::default()
+    }
+}
+
 /// See [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
 pub mod get_requested_service_quota_change_output {
     
@@ -1058,12 +1078,6 @@ pub mod get_requested_service_quota_change_output {
     
     
 }
-impl GetRequestedServiceQuotaChangeOutput {
-    /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
-    pub fn builder() -> crate::output::get_requested_service_quota_change_output::Builder {
-        crate::output::get_requested_service_quota_change_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1085,6 +1099,13 @@ impl aws_http::request_id::RequestId for GetAwsDefaultServiceQuotaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAwsDefaultServiceQuotaOutput {
+    /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
+    pub fn builder() -> crate::output::get_aws_default_service_quota_output::Builder {
+        crate::output::get_aws_default_service_quota_output::Builder::default()
+    }
+}
+
 /// See [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
 pub mod get_aws_default_service_quota_output {
     
@@ -1126,12 +1147,6 @@ pub mod get_aws_default_service_quota_output {
     
     
 }
-impl GetAwsDefaultServiceQuotaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
-    pub fn builder() -> crate::output::get_aws_default_service_quota_output::Builder {
-        crate::output::get_aws_default_service_quota_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1153,6 +1168,13 @@ impl aws_http::request_id::RequestId for GetAssociationForServiceQuotaTemplateOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAssociationForServiceQuotaTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
+    pub fn builder() -> crate::output::get_association_for_service_quota_template_output::Builder {
+        crate::output::get_association_for_service_quota_template_output::Builder::default()
+    }
+}
+
 /// See [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
 pub mod get_association_for_service_quota_template_output {
     
@@ -1194,12 +1216,6 @@ pub mod get_association_for_service_quota_template_output {
     
     
 }
-impl GetAssociationForServiceQuotaTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
-    pub fn builder() -> crate::output::get_association_for_service_quota_template_output::Builder {
-        crate::output::get_association_for_service_quota_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1212,6 +1228,13 @@ impl aws_http::request_id::RequestId for DisassociateServiceQuotaTemplateOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateServiceQuotaTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
+    pub fn builder() -> crate::output::disassociate_service_quota_template_output::Builder {
+        crate::output::disassociate_service_quota_template_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
 pub mod disassociate_service_quota_template_output {
     
@@ -1241,12 +1264,6 @@ pub mod disassociate_service_quota_template_output {
     
     
 }
-impl DisassociateServiceQuotaTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
-    pub fn builder() -> crate::output::disassociate_service_quota_template_output::Builder {
-        crate::output::disassociate_service_quota_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1259,6 +1276,13 @@ impl aws_http::request_id::RequestId for DeleteServiceQuotaIncreaseRequestFromTe
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
+    pub fn builder() -> crate::output::delete_service_quota_increase_request_from_template_output::Builder {
+        crate::output::delete_service_quota_increase_request_from_template_output::Builder::default()
+    }
+}
+
 /// See [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
 pub mod delete_service_quota_increase_request_from_template_output {
     
@@ -1288,12 +1312,6 @@ pub mod delete_service_quota_increase_request_from_template_output {
     
     
 }
-impl DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn builder() -> crate::output::delete_service_quota_increase_request_from_template_output::Builder {
-        crate::output::delete_service_quota_increase_request_from_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1306,6 +1324,13 @@ impl aws_http::request_id::RequestId for AssociateServiceQuotaTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateServiceQuotaTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
+    pub fn builder() -> crate::output::associate_service_quota_template_output::Builder {
+        crate::output::associate_service_quota_template_output::Builder::default()
+    }
+}
+
 /// See [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
 pub mod associate_service_quota_template_output {
     
@@ -1334,11 +1359,5 @@ pub mod associate_service_quota_template_output {
     }
     
     
-}
-impl AssociateServiceQuotaTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
-    pub fn builder() -> crate::output::associate_service_quota_template_output::Builder {
-        crate::output::associate_service_quota_template_output::Builder::default()
-    }
 }
 

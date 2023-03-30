@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_call_analytics_stream_transcription`](crate::client::Client::start_call_analytics_stream_transcription).
             ///
-            /// See [`crate::client::fluent_builders::StartCallAnalyticsStreamTranscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartCallAnalyticsStreamTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartCallAnalyticsStreamTranscription {
     _private: ()
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseHttpResponse for StartCallAnalyticsStreamTr
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_medical_stream_transcription`](crate::client::Client::start_medical_stream_transcription).
             ///
-            /// See [`crate::client::fluent_builders::StartMedicalStreamTranscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartMedicalStreamTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMedicalStreamTranscription {
     _private: ()
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseHttpResponse for StartMedicalStreamTranscri
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_stream_transcription`](crate::client::Client::start_stream_transcription).
             ///
-            /// See [`crate::client::fluent_builders::StartStreamTranscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartStreamTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartStreamTranscription {
     _private: ()

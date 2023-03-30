@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
@@ -134,6 +135,13 @@ impl RepositoryCatalogData {
         self.marketplace_certified
     }
 }
+impl RepositoryCatalogData {
+    /// Creates a new builder-style object to manufacture [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
+    pub fn builder() -> crate::model::repository_catalog_data::Builder {
+        crate::model::repository_catalog_data::Builder::default()
+    }
+}
+
 /// See [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
 pub mod repository_catalog_data {
     
@@ -256,12 +264,6 @@ pub mod repository_catalog_data {
     
     
 }
-impl RepositoryCatalogData {
-    /// Creates a new builder-style object to manufacture [`RepositoryCatalogData`](crate::model::RepositoryCatalogData).
-    pub fn builder() -> crate::model::repository_catalog_data::Builder {
-        crate::model::repository_catalog_data::Builder::default()
-    }
-}
 
 /// <p>An object that contains the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
@@ -344,6 +346,13 @@ impl RepositoryCatalogDataInput {
         self.usage_text.as_deref()
     }
 }
+impl RepositoryCatalogDataInput {
+    /// Creates a new builder-style object to manufacture [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
+    pub fn builder() -> crate::model::repository_catalog_data_input::Builder {
+        crate::model::repository_catalog_data_input::Builder::default()
+    }
+}
+
 /// See [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
 pub mod repository_catalog_data_input {
     
@@ -478,12 +487,6 @@ pub mod repository_catalog_data_input {
     
     
 }
-impl RepositoryCatalogDataInput {
-    /// Creates a new builder-style object to manufacture [`RepositoryCatalogDataInput`](crate::model::RepositoryCatalogDataInput).
-    pub fn builder() -> crate::model::repository_catalog_data_input::Builder {
-        crate::model::repository_catalog_data_input::Builder::default()
-    }
-}
 
 /// <p>The metadata for a public registry.</p>
 #[non_exhaustive]
@@ -503,6 +506,13 @@ impl RegistryCatalogData {
         self.display_name.as_deref()
     }
 }
+impl RegistryCatalogData {
+    /// Creates a new builder-style object to manufacture [`RegistryCatalogData`](crate::model::RegistryCatalogData).
+    pub fn builder() -> crate::model::registry_catalog_data::Builder {
+        crate::model::registry_catalog_data::Builder::default()
+    }
+}
+
 /// See [`RegistryCatalogData`](crate::model::RegistryCatalogData).
 pub mod registry_catalog_data {
     
@@ -536,12 +546,6 @@ pub mod registry_catalog_data {
     }
     
     
-}
-impl RegistryCatalogData {
-    /// Creates a new builder-style object to manufacture [`RegistryCatalogData`](crate::model::RegistryCatalogData).
-    pub fn builder() -> crate::model::registry_catalog_data::Builder {
-        crate::model::registry_catalog_data::Builder::default()
-    }
 }
 
 /// <p>An object that represents an Amazon ECR image.</p>
@@ -586,6 +590,13 @@ impl Image {
         self.image_manifest_media_type.as_deref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
     
@@ -664,12 +675,6 @@ pub mod image {
     
     
 }
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
-}
 
 /// <p>An object with identifying information for an Amazon ECR image.</p>
 #[non_exhaustive]
@@ -692,6 +697,13 @@ impl ImageIdentifier {
         self.image_tag.as_deref()
     }
 }
+impl ImageIdentifier {
+    /// Creates a new builder-style object to manufacture [`ImageIdentifier`](crate::model::ImageIdentifier).
+    pub fn builder() -> crate::model::image_identifier::Builder {
+        crate::model::image_identifier::Builder::default()
+    }
+}
+
 /// See [`ImageIdentifier`](crate::model::ImageIdentifier).
 pub mod image_identifier {
     
@@ -734,12 +746,6 @@ pub mod image_identifier {
     
     
 }
-impl ImageIdentifier {
-    /// Creates a new builder-style object to manufacture [`ImageIdentifier`](crate::model::ImageIdentifier).
-    pub fn builder() -> crate::model::image_identifier::Builder {
-        crate::model::image_identifier::Builder::default()
-    }
-}
 
 /// <p>An authorization token data object that corresponds to a public registry.</p>
 #[non_exhaustive]
@@ -762,6 +768,13 @@ impl AuthorizationData {
         self.expires_at.as_ref()
     }
 }
+impl AuthorizationData {
+    /// Creates a new builder-style object to manufacture [`AuthorizationData`](crate::model::AuthorizationData).
+    pub fn builder() -> crate::model::authorization_data::Builder {
+        crate::model::authorization_data::Builder::default()
+    }
+}
+
 /// See [`AuthorizationData`](crate::model::AuthorizationData).
 pub mod authorization_data {
     
@@ -803,12 +816,6 @@ pub mod authorization_data {
     }
     
     
-}
-impl AuthorizationData {
-    /// Creates a new builder-style object to manufacture [`AuthorizationData`](crate::model::AuthorizationData).
-    pub fn builder() -> crate::model::authorization_data::Builder {
-        crate::model::authorization_data::Builder::default()
-    }
 }
 
 /// <p>An object representing a repository.</p>
@@ -853,6 +860,13 @@ impl Repository {
         self.created_at.as_ref()
     }
 }
+impl Repository {
+    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
+    pub fn builder() -> crate::model::repository::Builder {
+        crate::model::repository::Builder::default()
+    }
+}
+
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
     
@@ -931,12 +945,6 @@ pub mod repository {
     
     
 }
-impl Repository {
-    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
-    pub fn builder() -> crate::model::repository::Builder {
-        crate::model::repository::Builder::default()
-    }
-}
 
 /// <p>The details of a public registry.</p>
 #[non_exhaustive]
@@ -980,6 +988,13 @@ impl Registry {
         self.aliases.as_deref()
     }
 }
+impl Registry {
+    /// Creates a new builder-style object to manufacture [`Registry`](crate::model::Registry).
+    pub fn builder() -> crate::model::registry::Builder {
+        crate::model::registry::Builder::default()
+    }
+}
+
 /// See [`Registry`](crate::model::Registry).
 pub mod registry {
     
@@ -1064,12 +1079,6 @@ pub mod registry {
     
     
 }
-impl Registry {
-    /// Creates a new builder-style object to manufacture [`Registry`](crate::model::Registry).
-    pub fn builder() -> crate::model::registry::Builder {
-        crate::model::registry::Builder::default()
-    }
-}
 
 /// <p>An object representing the aliases for a public registry. A public registry is given an alias when it's created. However, a custom alias can be set using the Amazon ECR console. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html">Registries</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
@@ -1110,6 +1119,13 @@ impl RegistryAlias {
         self.default_registry_alias
     }
 }
+impl RegistryAlias {
+    /// Creates a new builder-style object to manufacture [`RegistryAlias`](crate::model::RegistryAlias).
+    pub fn builder() -> crate::model::registry_alias::Builder {
+        crate::model::registry_alias::Builder::default()
+    }
+}
+
 /// See [`RegistryAlias`](crate::model::RegistryAlias).
 pub mod registry_alias {
     
@@ -1181,12 +1197,6 @@ pub mod registry_alias {
     }
     
     
-}
-impl RegistryAlias {
-    /// Creates a new builder-style object to manufacture [`RegistryAlias`](crate::model::RegistryAlias).
-    pub fn builder() -> crate::model::registry_alias::Builder {
-        crate::model::registry_alias::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RegistryAliasStatus`, it is important to ensure
@@ -1304,6 +1314,13 @@ impl ImageTagDetail {
         self.image_detail.as_ref()
     }
 }
+impl ImageTagDetail {
+    /// Creates a new builder-style object to manufacture [`ImageTagDetail`](crate::model::ImageTagDetail).
+    pub fn builder() -> crate::model::image_tag_detail::Builder {
+        crate::model::image_tag_detail::Builder::default()
+    }
+}
+
 /// See [`ImageTagDetail`](crate::model::ImageTagDetail).
 pub mod image_tag_detail {
     
@@ -1358,12 +1375,6 @@ pub mod image_tag_detail {
     
     
 }
-impl ImageTagDetail {
-    /// Creates a new builder-style object to manufacture [`ImageTagDetail`](crate::model::ImageTagDetail).
-    pub fn builder() -> crate::model::image_tag_detail::Builder {
-        crate::model::image_tag_detail::Builder::default()
-    }
-}
 
 /// <p>An object that describes the image tag details that are returned by a <code>DescribeImageTags</code> action.</p>
 #[non_exhaustive]
@@ -1413,6 +1424,13 @@ impl ReferencedImageDetail {
         self.artifact_media_type.as_deref()
     }
 }
+impl ReferencedImageDetail {
+    /// Creates a new builder-style object to manufacture [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
+    pub fn builder() -> crate::model::referenced_image_detail::Builder {
+        crate::model::referenced_image_detail::Builder::default()
+    }
+}
+
 /// See [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
 pub mod referenced_image_detail {
     
@@ -1497,12 +1515,6 @@ pub mod referenced_image_detail {
     
     
 }
-impl ReferencedImageDetail {
-    /// Creates a new builder-style object to manufacture [`ReferencedImageDetail`](crate::model::ReferencedImageDetail).
-    pub fn builder() -> crate::model::referenced_image_detail::Builder {
-        crate::model::referenced_image_detail::Builder::default()
-    }
-}
 
 /// <p>An object that describes an image that's returned by a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
@@ -1573,6 +1585,13 @@ impl ImageDetail {
         self.artifact_media_type.as_deref()
     }
 }
+impl ImageDetail {
+    /// Creates a new builder-style object to manufacture [`ImageDetail`](crate::model::ImageDetail).
+    pub fn builder() -> crate::model::image_detail::Builder {
+        crate::model::image_detail::Builder::default()
+    }
+}
+
 /// See [`ImageDetail`](crate::model::ImageDetail).
 pub mod image_detail {
     
@@ -1699,12 +1718,6 @@ pub mod image_detail {
     
     
 }
-impl ImageDetail {
-    /// Creates a new builder-style object to manufacture [`ImageDetail`](crate::model::ImageDetail).
-    pub fn builder() -> crate::model::image_detail::Builder {
-        crate::model::image_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents an Amazon ECR image failure.</p>
 #[non_exhaustive]
@@ -1734,6 +1747,13 @@ impl ImageFailure {
         self.failure_reason.as_deref()
     }
 }
+impl ImageFailure {
+    /// Creates a new builder-style object to manufacture [`ImageFailure`](crate::model::ImageFailure).
+    pub fn builder() -> crate::model::image_failure::Builder {
+        crate::model::image_failure::Builder::default()
+    }
+}
+
 /// See [`ImageFailure`](crate::model::ImageFailure).
 pub mod image_failure {
     
@@ -1787,12 +1807,6 @@ pub mod image_failure {
     }
     
     
-}
-impl ImageFailure {
-    /// Creates a new builder-style object to manufacture [`ImageFailure`](crate::model::ImageFailure).
-    pub fn builder() -> crate::model::image_failure::Builder {
-        crate::model::image_failure::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImageFailureCode`, it is important to ensure
@@ -1930,6 +1944,13 @@ impl LayerFailure {
         self.failure_reason.as_deref()
     }
 }
+impl LayerFailure {
+    /// Creates a new builder-style object to manufacture [`LayerFailure`](crate::model::LayerFailure).
+    pub fn builder() -> crate::model::layer_failure::Builder {
+        crate::model::layer_failure::Builder::default()
+    }
+}
+
 /// See [`LayerFailure`](crate::model::LayerFailure).
 pub mod layer_failure {
     
@@ -1983,12 +2004,6 @@ pub mod layer_failure {
     }
     
     
-}
-impl LayerFailure {
-    /// Creates a new builder-style object to manufacture [`LayerFailure`](crate::model::LayerFailure).
-    pub fn builder() -> crate::model::layer_failure::Builder {
-        crate::model::layer_failure::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LayerFailureCode`, it is important to ensure
@@ -2108,6 +2123,13 @@ impl Layer {
         self.media_type.as_deref()
     }
 }
+impl Layer {
+    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
+    pub fn builder() -> crate::model::layer::Builder {
+        crate::model::layer::Builder::default()
+    }
+}
+
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
     
@@ -2173,12 +2195,6 @@ pub mod layer {
     }
     
     
-}
-impl Layer {
-    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
-    pub fn builder() -> crate::model::layer::Builder {
-        crate::model::layer::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LayerAvailability`, it is important to ensure

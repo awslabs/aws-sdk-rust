@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -63,12 +70,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Gives a detailed description of failed messages in the batch.</p>
 #[non_exhaustive]
@@ -105,6 +106,13 @@ impl BatchResultErrorEntry {
         self.sender_fault
     }
 }
+impl BatchResultErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
+    pub fn builder() -> crate::model::batch_result_error_entry::Builder {
+        crate::model::batch_result_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
 pub mod batch_result_error_entry {
     
@@ -172,12 +180,6 @@ pub mod batch_result_error_entry {
     
     
 }
-impl BatchResultErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
-    pub fn builder() -> crate::model::batch_result_error_entry::Builder {
-        crate::model::batch_result_error_entry::Builder::default()
-    }
-}
 
 /// <p>Encloses data related to a successful message in a batch request for topic.</p>
 #[non_exhaustive]
@@ -211,6 +213,13 @@ impl PublishBatchResultEntry {
         self.sequence_number.as_deref()
     }
 }
+impl PublishBatchResultEntry {
+    /// Creates a new builder-style object to manufacture [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry).
+    pub fn builder() -> crate::model::publish_batch_result_entry::Builder {
+        crate::model::publish_batch_result_entry::Builder::default()
+    }
+}
+
 /// See [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry).
 pub mod publish_batch_result_entry {
     
@@ -268,12 +277,6 @@ pub mod publish_batch_result_entry {
     }
     
     
-}
-impl PublishBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`PublishBatchResultEntry`](crate::model::PublishBatchResultEntry).
-    pub fn builder() -> crate::model::publish_batch_result_entry::Builder {
-        crate::model::publish_batch_result_entry::Builder::default()
-    }
 }
 
 /// <p>Contains the details of a single Amazon SNS message along with an <code>Id</code> that identifies a message within the batch. </p>
@@ -396,6 +399,13 @@ impl PublishBatchRequestEntry {
         self.message_group_id.as_deref()
     }
 }
+impl PublishBatchRequestEntry {
+    /// Creates a new builder-style object to manufacture [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry).
+    pub fn builder() -> crate::model::publish_batch_request_entry::Builder {
+        crate::model::publish_batch_request_entry::Builder::default()
+    }
+}
+
 /// See [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry).
 pub mod publish_batch_request_entry {
     
@@ -568,12 +578,6 @@ pub mod publish_batch_request_entry {
     
     
 }
-impl PublishBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`PublishBatchRequestEntry`](crate::model::PublishBatchRequestEntry).
-    pub fn builder() -> crate::model::publish_batch_request_entry::Builder {
-        crate::model::publish_batch_request_entry::Builder::default()
-    }
-}
 
 /// <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p> 
 /// <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i> </p>
@@ -604,6 +608,13 @@ impl MessageAttributeValue {
         self.binary_value.as_ref()
     }
 }
+impl MessageAttributeValue {
+    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
+    pub fn builder() -> crate::model::message_attribute_value::Builder {
+        crate::model::message_attribute_value::Builder::default()
+    }
+}
+
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
 pub mod message_attribute_value {
     
@@ -658,12 +669,6 @@ pub mod message_attribute_value {
     
     
 }
-impl MessageAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
-    pub fn builder() -> crate::model::message_attribute_value::Builder {
-        crate::model::message_attribute_value::Builder::default()
-    }
-}
 
 /// <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>
 #[non_exhaustive]
@@ -679,6 +684,13 @@ impl Topic {
         self.topic_arn.as_deref()
     }
 }
+impl Topic {
+    /// Creates a new builder-style object to manufacture [`Topic`](crate::model::Topic).
+    pub fn builder() -> crate::model::topic::Builder {
+        crate::model::topic::Builder::default()
+    }
+}
+
 /// See [`Topic`](crate::model::Topic).
 pub mod topic {
     
@@ -708,12 +720,6 @@ pub mod topic {
     }
     
     
-}
-impl Topic {
-    /// Creates a new builder-style object to manufacture [`Topic`](crate::model::Topic).
-    pub fn builder() -> crate::model::topic::Builder {
-        crate::model::topic::Builder::default()
-    }
 }
 
 /// <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
@@ -758,6 +764,13 @@ impl Subscription {
         self.topic_arn.as_deref()
     }
 }
+impl Subscription {
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
+    pub fn builder() -> crate::model::subscription::Builder {
+        crate::model::subscription::Builder::default()
+    }
+}
+
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
     
@@ -836,12 +849,6 @@ pub mod subscription {
     
     
 }
-impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
-    pub fn builder() -> crate::model::subscription::Builder {
-        crate::model::subscription::Builder::default()
-    }
-}
 
 /// <p>A verified or pending destination phone number in the SMS sandbox.</p> 
 /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
@@ -865,6 +872,13 @@ impl SmsSandboxPhoneNumber {
         self.status.as_ref()
     }
 }
+impl SmsSandboxPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber).
+    pub fn builder() -> crate::model::sms_sandbox_phone_number::Builder {
+        crate::model::sms_sandbox_phone_number::Builder::default()
+    }
+}
+
 /// See [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber).
 pub mod sms_sandbox_phone_number {
     
@@ -906,12 +920,6 @@ pub mod sms_sandbox_phone_number {
     }
     
     
-}
-impl SmsSandboxPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`SmsSandboxPhoneNumber`](crate::model::SmsSandboxPhoneNumber).
-    pub fn builder() -> crate::model::sms_sandbox_phone_number::Builder {
-        crate::model::sms_sandbox_phone_number::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SmsSandboxPhoneNumberVerificationStatus`, it is important to ensure
@@ -1020,6 +1028,13 @@ impl PlatformApplication {
         self.attributes.as_ref()
     }
 }
+impl PlatformApplication {
+    /// Creates a new builder-style object to manufacture [`PlatformApplication`](crate::model::PlatformApplication).
+    pub fn builder() -> crate::model::platform_application::Builder {
+        crate::model::platform_application::Builder::default()
+    }
+}
+
 /// See [`PlatformApplication`](crate::model::PlatformApplication).
 pub mod platform_application {
     
@@ -1067,12 +1082,6 @@ pub mod platform_application {
     }
     
     
-}
-impl PlatformApplication {
-    /// Creates a new builder-style object to manufacture [`PlatformApplication`](crate::model::PlatformApplication).
-    pub fn builder() -> crate::model::platform_application::Builder {
-        crate::model::platform_application::Builder::default()
-    }
 }
 
 /// <p>A list of phone numbers and their metadata.</p>
@@ -1124,6 +1133,13 @@ impl PhoneNumberInformation {
         self.number_capabilities.as_deref()
     }
 }
+impl PhoneNumberInformation {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
+    pub fn builder() -> crate::model::phone_number_information::Builder {
+        crate::model::phone_number_information::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
 pub mod phone_number_information {
     
@@ -1219,12 +1235,6 @@ pub mod phone_number_information {
     }
     
     
-}
-impl PhoneNumberInformation {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
-    pub fn builder() -> crate::model::phone_number_information::Builder {
-        crate::model::phone_number_information::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NumberCapability`, it is important to ensure
@@ -1425,6 +1435,13 @@ impl Endpoint {
         self.attributes.as_ref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
     
@@ -1472,12 +1489,6 @@ pub mod endpoint {
     }
     
     
-}
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LanguageCodeString`, it is important to ensure

@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.validation_issue.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// <p>A view is a structure that defines a set of filters that provide a view into the information in the Amazon Web Services Resource Explorer index. The filters specify which information from the index is visible to the users of the view. For example, you can specify filters that include only resources that are tagged with the key "ENV" and the value "DEVELOPMENT" in the results returned by this view. You could also create a second view that includes only resources that are tagged with "ENV" and "PRODUCTION".</p>
@@ -133,6 +134,13 @@ impl  std::fmt::Debug for View  {
         formatter.finish()
     }
 }
+impl View {
+    /// Creates a new builder-style object to manufacture [`View`](crate::model::View).
+    pub fn builder() -> crate::model::view::Builder {
+        crate::model::view::Builder::default()
+    }
+}
+
 /// See [`View`](crate::model::View).
 pub mod view {
     
@@ -243,12 +251,6 @@ pub mod view {
     
     
 }
-impl View {
-    /// Creates a new builder-style object to manufacture [`View`](crate::model::View).
-    pub fn builder() -> crate::model::view::Builder {
-        crate::model::view::Builder::default()
-    }
-}
 
 /// <p>A search filter defines which resources can be part of a search query result set.</p>
 #[non_exhaustive]
@@ -271,6 +273,13 @@ impl  std::fmt::Debug for SearchFilter  {
         formatter.finish()
     }
 }
+impl SearchFilter {
+    /// Creates a new builder-style object to manufacture [`SearchFilter`](crate::model::SearchFilter).
+    pub fn builder() -> crate::model::search_filter::Builder {
+        crate::model::search_filter::Builder::default()
+    }
+}
+
 /// See [`SearchFilter`](crate::model::SearchFilter).
 pub mod search_filter {
     
@@ -308,12 +317,6 @@ pub mod search_filter {
     
     
 }
-impl SearchFilter {
-    /// Creates a new builder-style object to manufacture [`SearchFilter`](crate::model::SearchFilter).
-    pub fn builder() -> crate::model::search_filter::Builder {
-        crate::model::search_filter::Builder::default()
-    }
-}
 
 /// <p>Information about an additional property that describes a resource, that you can optionally include in the view. This lets you view that property in search results, and filter your search results based on the value of the property.</p>
 #[non_exhaustive]
@@ -337,6 +340,13 @@ impl IncludedProperty {
         self.name.as_deref()
     }
 }
+impl IncludedProperty {
+    /// Creates a new builder-style object to manufacture [`IncludedProperty`](crate::model::IncludedProperty).
+    pub fn builder() -> crate::model::included_property::Builder {
+        crate::model::included_property::Builder::default()
+    }
+}
+
 /// See [`IncludedProperty`](crate::model::IncludedProperty).
 pub mod included_property {
     
@@ -374,12 +384,6 @@ pub mod included_property {
     }
     
     
-}
-impl IncludedProperty {
-    /// Creates a new builder-style object to manufacture [`IncludedProperty`](crate::model::IncludedProperty).
-    pub fn builder() -> crate::model::included_property::Builder {
-        crate::model::included_property::Builder::default()
-    }
 }
 
 /// <p>An index is the data store used by Amazon Web Services Resource Explorer to hold information about your Amazon Web Services resources that the service discovers. Creating an index in an Amazon Web Services Region turns on Resource Explorer and lets it discover your resources.</p> 
@@ -419,6 +423,13 @@ impl Index {
         self.r#type.as_ref()
     }
 }
+impl Index {
+    /// Creates a new builder-style object to manufacture [`Index`](crate::model::Index).
+    pub fn builder() -> crate::model::index::Builder {
+        crate::model::index::Builder::default()
+    }
+}
+
 /// See [`Index`](crate::model::Index).
 pub mod index {
     
@@ -480,12 +491,6 @@ pub mod index {
     }
     
     
-}
-impl Index {
-    /// Creates a new builder-style object to manufacture [`Index`](crate::model::Index).
-    pub fn builder() -> crate::model::index::Builder {
-        crate::model::index::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IndexType`, it is important to ensure
@@ -697,6 +702,13 @@ impl ResourceCount {
         self.complete
     }
 }
+impl ResourceCount {
+    /// Creates a new builder-style object to manufacture [`ResourceCount`](crate::model::ResourceCount).
+    pub fn builder() -> crate::model::resource_count::Builder {
+        crate::model::resource_count::Builder::default()
+    }
+}
+
 /// See [`ResourceCount`](crate::model::ResourceCount).
 pub mod resource_count {
     
@@ -746,12 +758,6 @@ pub mod resource_count {
     }
     
     
-}
-impl ResourceCount {
-    /// Creates a new builder-style object to manufacture [`ResourceCount`](crate::model::ResourceCount).
-    pub fn builder() -> crate::model::resource_count::Builder {
-        crate::model::resource_count::Builder::default()
-    }
 }
 
 /// <p>A resource in Amazon Web Services that Amazon Web Services Resource Explorer has discovered, and for which it has stored information in the index of the Amazon Web Services Region that contains the resource.</p>
@@ -810,6 +816,13 @@ impl Resource {
         self.properties.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -918,12 +931,6 @@ pub mod resource {
     
     
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>A structure that describes a property of a resource.</p>
 #[non_exhaustive]
@@ -953,6 +960,13 @@ impl ResourceProperty {
         self.data.as_ref()
     }
 }
+impl ResourceProperty {
+    /// Creates a new builder-style object to manufacture [`ResourceProperty`](crate::model::ResourceProperty).
+    pub fn builder() -> crate::model::resource_property::Builder {
+        crate::model::resource_property::Builder::default()
+    }
+}
+
 /// See [`ResourceProperty`](crate::model::ResourceProperty).
 pub mod resource_property {
     
@@ -1007,12 +1021,6 @@ pub mod resource_property {
     
     
 }
-impl ResourceProperty {
-    /// Creates a new builder-style object to manufacture [`ResourceProperty`](crate::model::ResourceProperty).
-    pub fn builder() -> crate::model::resource_property::Builder {
-        crate::model::resource_property::Builder::default()
-    }
-}
 
 /// <p>A structure that describes a resource type supported by Amazon Web Services Resource Explorer.</p>
 #[non_exhaustive]
@@ -1035,6 +1043,13 @@ impl SupportedResourceType {
         self.resource_type.as_deref()
     }
 }
+impl SupportedResourceType {
+    /// Creates a new builder-style object to manufacture [`SupportedResourceType`](crate::model::SupportedResourceType).
+    pub fn builder() -> crate::model::supported_resource_type::Builder {
+        crate::model::supported_resource_type::Builder::default()
+    }
+}
+
 /// See [`SupportedResourceType`](crate::model::SupportedResourceType).
 pub mod supported_resource_type {
     
@@ -1077,12 +1092,6 @@ pub mod supported_resource_type {
     
     
 }
-impl SupportedResourceType {
-    /// Creates a new builder-style object to manufacture [`SupportedResourceType`](crate::model::SupportedResourceType).
-    pub fn builder() -> crate::model::supported_resource_type::Builder {
-        crate::model::supported_resource_type::Builder::default()
-    }
-}
 
 /// <p>A collection of error messages for any views that Amazon Web Services Resource Explorer couldn't retrieve details.</p>
 #[non_exhaustive]
@@ -1105,6 +1114,13 @@ impl BatchGetViewError {
         self.error_message.as_deref()
     }
 }
+impl BatchGetViewError {
+    /// Creates a new builder-style object to manufacture [`BatchGetViewError`](crate::model::BatchGetViewError).
+    pub fn builder() -> crate::model::batch_get_view_error::Builder {
+        crate::model::batch_get_view_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetViewError`](crate::model::BatchGetViewError).
 pub mod batch_get_view_error {
     
@@ -1146,11 +1162,5 @@ pub mod batch_get_view_error {
     }
     
     
-}
-impl BatchGetViewError {
-    /// Creates a new builder-style object to manufacture [`BatchGetViewError`](crate::model::BatchGetViewError).
-    pub fn builder() -> crate::model::batch_get_view_error::Builder {
-        crate::model::batch_get_view_error::Builder::default()
-    }
 }
 

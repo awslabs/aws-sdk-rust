@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateAttendeeCapabilitiesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAttendeeCapabilitiesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
+    pub fn builder() -> crate::output::update_attendee_capabilities_output::Builder {
+        crate::output::update_attendee_capabilities_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
 pub mod update_attendee_capabilities_output {
     
@@ -60,12 +67,6 @@ pub mod update_attendee_capabilities_output {
     
     
 }
-impl UpdateAttendeeCapabilitiesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput).
-    pub fn builder() -> crate::output::update_attendee_capabilities_output::Builder {
-        crate::output::update_attendee_capabilities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -78,6 +79,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -107,12 +115,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -125,6 +127,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -154,12 +163,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -172,6 +175,13 @@ impl aws_http::request_id::RequestId for StopMeetingTranscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopMeetingTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
+    pub fn builder() -> crate::output::stop_meeting_transcription_output::Builder {
+        crate::output::stop_meeting_transcription_output::Builder::default()
+    }
+}
+
 /// See [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
 pub mod stop_meeting_transcription_output {
     
@@ -201,12 +211,6 @@ pub mod stop_meeting_transcription_output {
     
     
 }
-impl StopMeetingTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput).
-    pub fn builder() -> crate::output::stop_meeting_transcription_output::Builder {
-        crate::output::stop_meeting_transcription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -219,6 +223,13 @@ impl aws_http::request_id::RequestId for StartMeetingTranscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartMeetingTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
+    pub fn builder() -> crate::output::start_meeting_transcription_output::Builder {
+        crate::output::start_meeting_transcription_output::Builder::default()
+    }
+}
+
 /// See [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
 pub mod start_meeting_transcription_output {
     
@@ -248,12 +259,6 @@ pub mod start_meeting_transcription_output {
     
     
 }
-impl StartMeetingTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
-    pub fn builder() -> crate::output::start_meeting_transcription_output::Builder {
-        crate::output::start_meeting_transcription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -275,6 +280,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -322,12 +334,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -356,6 +362,13 @@ impl aws_http::request_id::RequestId for ListAttendeesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAttendeesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
+    pub fn builder() -> crate::output::list_attendees_output::Builder {
+        crate::output::list_attendees_output::Builder::default()
+    }
+}
+
 /// See [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
 pub mod list_attendees_output {
     
@@ -415,12 +428,6 @@ pub mod list_attendees_output {
     
     
 }
-impl ListAttendeesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAttendeesOutput`](crate::output::ListAttendeesOutput).
-    pub fn builder() -> crate::output::list_attendees_output::Builder {
-        crate::output::list_attendees_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -442,6 +449,13 @@ impl aws_http::request_id::RequestId for GetMeetingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMeetingOutput {
+    /// Creates a new builder-style object to manufacture [`GetMeetingOutput`](crate::output::GetMeetingOutput).
+    pub fn builder() -> crate::output::get_meeting_output::Builder {
+        crate::output::get_meeting_output::Builder::default()
+    }
+}
+
 /// See [`GetMeetingOutput`](crate::output::GetMeetingOutput).
 pub mod get_meeting_output {
     
@@ -483,12 +497,6 @@ pub mod get_meeting_output {
     
     
 }
-impl GetMeetingOutput {
-    /// Creates a new builder-style object to manufacture [`GetMeetingOutput`](crate::output::GetMeetingOutput).
-    pub fn builder() -> crate::output::get_meeting_output::Builder {
-        crate::output::get_meeting_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -510,6 +518,13 @@ impl aws_http::request_id::RequestId for GetAttendeeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAttendeeOutput {
+    /// Creates a new builder-style object to manufacture [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
+    pub fn builder() -> crate::output::get_attendee_output::Builder {
+        crate::output::get_attendee_output::Builder::default()
+    }
+}
+
 /// See [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
 pub mod get_attendee_output {
     
@@ -551,12 +566,6 @@ pub mod get_attendee_output {
     
     
 }
-impl GetAttendeeOutput {
-    /// Creates a new builder-style object to manufacture [`GetAttendeeOutput`](crate::output::GetAttendeeOutput).
-    pub fn builder() -> crate::output::get_attendee_output::Builder {
-        crate::output::get_attendee_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -569,6 +578,13 @@ impl aws_http::request_id::RequestId for DeleteMeetingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMeetingOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
+    pub fn builder() -> crate::output::delete_meeting_output::Builder {
+        crate::output::delete_meeting_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
 pub mod delete_meeting_output {
     
@@ -598,12 +614,6 @@ pub mod delete_meeting_output {
     
     
 }
-impl DeleteMeetingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput).
-    pub fn builder() -> crate::output::delete_meeting_output::Builder {
-        crate::output::delete_meeting_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -616,6 +626,13 @@ impl aws_http::request_id::RequestId for DeleteAttendeeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAttendeeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
+    pub fn builder() -> crate::output::delete_attendee_output::Builder {
+        crate::output::delete_attendee_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
 pub mod delete_attendee_output {
     
@@ -644,12 +661,6 @@ pub mod delete_attendee_output {
     }
     
     
-}
-impl DeleteAttendeeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput).
-    pub fn builder() -> crate::output::delete_attendee_output::Builder {
-        crate::output::delete_attendee_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -686,6 +697,13 @@ impl aws_http::request_id::RequestId for CreateMeetingWithAttendeesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateMeetingWithAttendeesOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
+    pub fn builder() -> crate::output::create_meeting_with_attendees_output::Builder {
+        crate::output::create_meeting_with_attendees_output::Builder::default()
+    }
+}
+
 /// See [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
 pub mod create_meeting_with_attendees_output {
     
@@ -763,12 +781,6 @@ pub mod create_meeting_with_attendees_output {
     
     
 }
-impl CreateMeetingWithAttendeesOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput).
-    pub fn builder() -> crate::output::create_meeting_with_attendees_output::Builder {
-        crate::output::create_meeting_with_attendees_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -790,6 +802,13 @@ impl aws_http::request_id::RequestId for CreateMeetingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateMeetingOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
+    pub fn builder() -> crate::output::create_meeting_output::Builder {
+        crate::output::create_meeting_output::Builder::default()
+    }
+}
+
 /// See [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
 pub mod create_meeting_output {
     
@@ -831,12 +850,6 @@ pub mod create_meeting_output {
     
     
 }
-impl CreateMeetingOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMeetingOutput`](crate::output::CreateMeetingOutput).
-    pub fn builder() -> crate::output::create_meeting_output::Builder {
-        crate::output::create_meeting_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -858,6 +871,13 @@ impl aws_http::request_id::RequestId for CreateAttendeeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAttendeeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
+    pub fn builder() -> crate::output::create_attendee_output::Builder {
+        crate::output::create_attendee_output::Builder::default()
+    }
+}
+
 /// See [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
 pub mod create_attendee_output {
     
@@ -899,12 +919,6 @@ pub mod create_attendee_output {
     
     
 }
-impl CreateAttendeeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput).
-    pub fn builder() -> crate::output::create_attendee_output::Builder {
-        crate::output::create_attendee_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -917,6 +931,13 @@ impl aws_http::request_id::RequestId for BatchUpdateAttendeeCapabilitiesExceptOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchUpdateAttendeeCapabilitiesExceptOutput {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
+    pub fn builder() -> crate::output::batch_update_attendee_capabilities_except_output::Builder {
+        crate::output::batch_update_attendee_capabilities_except_output::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
 pub mod batch_update_attendee_capabilities_except_output {
     
@@ -946,12 +967,6 @@ pub mod batch_update_attendee_capabilities_except_output {
     
     
 }
-impl BatchUpdateAttendeeCapabilitiesExceptOutput {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput).
-    pub fn builder() -> crate::output::batch_update_attendee_capabilities_except_output::Builder {
-        crate::output::batch_update_attendee_capabilities_except_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -980,6 +995,13 @@ impl aws_http::request_id::RequestId for BatchCreateAttendeeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchCreateAttendeeOutput {
+    /// Creates a new builder-style object to manufacture [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
+    pub fn builder() -> crate::output::batch_create_attendee_output::Builder {
+        crate::output::batch_create_attendee_output::Builder::default()
+    }
+}
+
 /// See [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
 pub mod batch_create_attendee_output {
     
@@ -1044,11 +1066,5 @@ pub mod batch_create_attendee_output {
     }
     
     
-}
-impl BatchCreateAttendeeOutput {
-    /// Creates a new builder-style object to manufacture [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput).
-    pub fn builder() -> crate::output::batch_create_attendee_output::Builder {
-        crate::output::batch_create_attendee_output::Builder::default()
-    }
 }
 

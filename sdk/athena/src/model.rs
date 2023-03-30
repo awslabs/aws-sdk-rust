@@ -166,6 +166,13 @@ impl WorkGroupConfigurationUpdates {
         self.customer_content_encryption_configuration.as_ref()
     }
 }
+impl WorkGroupConfigurationUpdates {
+    /// Creates a new builder-style object to manufacture [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
+    pub fn builder() -> crate::model::work_group_configuration_updates::Builder {
+        crate::model::work_group_configuration_updates::Builder::default()
+    }
+}
+
 /// See [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
 pub mod work_group_configuration_updates {
     
@@ -316,12 +323,6 @@ pub mod work_group_configuration_updates {
     
     
 }
-impl WorkGroupConfigurationUpdates {
-    /// Creates a new builder-style object to manufacture [`WorkGroupConfigurationUpdates`](crate::model::WorkGroupConfigurationUpdates).
-    pub fn builder() -> crate::model::work_group_configuration_updates::Builder {
-        crate::model::work_group_configuration_updates::Builder::default()
-    }
-}
 
 /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
 #[non_exhaustive]
@@ -337,6 +338,13 @@ impl CustomerContentEncryptionConfiguration {
         self.kms_key.as_deref()
     }
 }
+impl CustomerContentEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
+    pub fn builder() -> crate::model::customer_content_encryption_configuration::Builder {
+        crate::model::customer_content_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
 pub mod customer_content_encryption_configuration {
     
@@ -367,12 +375,6 @@ pub mod customer_content_encryption_configuration {
     
     
 }
-impl CustomerContentEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`CustomerContentEncryptionConfiguration`](crate::model::CustomerContentEncryptionConfiguration).
-    pub fn builder() -> crate::model::customer_content_encryption_configuration::Builder {
-        crate::model::customer_content_encryption_configuration::Builder::default()
-    }
-}
 
 /// <p>The Athena engine version for running queries, or the PySpark engine version for running sessions.</p>
 #[non_exhaustive]
@@ -395,6 +397,13 @@ impl EngineVersion {
         self.effective_engine_version.as_deref()
     }
 }
+impl EngineVersion {
+    /// Creates a new builder-style object to manufacture [`EngineVersion`](crate::model::EngineVersion).
+    pub fn builder() -> crate::model::engine_version::Builder {
+        crate::model::engine_version::Builder::default()
+    }
+}
+
 /// See [`EngineVersion`](crate::model::EngineVersion).
 pub mod engine_version {
     
@@ -436,12 +445,6 @@ pub mod engine_version {
     }
     
     
-}
-impl EngineVersion {
-    /// Creates a new builder-style object to manufacture [`EngineVersion`](crate::model::EngineVersion).
-    pub fn builder() -> crate::model::engine_version::Builder {
-        crate::model::engine_version::Builder::default()
-    }
 }
 
 /// <p>The information about the updates in the query results, such as output location and encryption configuration for the query results.</p>
@@ -509,6 +512,13 @@ impl ResultConfigurationUpdates {
         self.remove_acl_configuration
     }
 }
+impl ResultConfigurationUpdates {
+    /// Creates a new builder-style object to manufacture [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates).
+    pub fn builder() -> crate::model::result_configuration_updates::Builder {
+        crate::model::result_configuration_updates::Builder::default()
+    }
+}
+
 /// See [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates).
 pub mod result_configuration_updates {
     
@@ -625,12 +635,6 @@ pub mod result_configuration_updates {
     
     
 }
-impl ResultConfigurationUpdates {
-    /// Creates a new builder-style object to manufacture [`ResultConfigurationUpdates`](crate::model::ResultConfigurationUpdates).
-    pub fn builder() -> crate::model::result_configuration_updates::Builder {
-        crate::model::result_configuration_updates::Builder::default()
-    }
-}
 
 /// <p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
@@ -646,6 +650,13 @@ impl AclConfiguration {
         self.s3_acl_option.as_ref()
     }
 }
+impl AclConfiguration {
+    /// Creates a new builder-style object to manufacture [`AclConfiguration`](crate::model::AclConfiguration).
+    pub fn builder() -> crate::model::acl_configuration::Builder {
+        crate::model::acl_configuration::Builder::default()
+    }
+}
+
 /// See [`AclConfiguration`](crate::model::AclConfiguration).
 pub mod acl_configuration {
     
@@ -675,12 +686,6 @@ pub mod acl_configuration {
     }
     
     
-}
-impl AclConfiguration {
-    /// Creates a new builder-style object to manufacture [`AclConfiguration`](crate::model::AclConfiguration).
-    pub fn builder() -> crate::model::acl_configuration::Builder {
-        crate::model::acl_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3AclOption`, it is important to ensure
@@ -783,6 +788,13 @@ impl EncryptionConfiguration {
         self.kms_key.as_deref()
     }
 }
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
     
@@ -826,12 +838,6 @@ pub mod encryption_configuration {
     }
     
     
-}
-impl EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    pub fn builder() -> crate::model::encryption_configuration::Builder {
-        crate::model::encryption_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EncryptionOption`, it is important to ensure
@@ -1296,6 +1302,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1337,12 +1350,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CalculationExecutionState`, it is important to ensure
@@ -1494,6 +1501,13 @@ impl EngineConfiguration {
         self.additional_configs.as_ref()
     }
 }
+impl EngineConfiguration {
+    /// Creates a new builder-style object to manufacture [`EngineConfiguration`](crate::model::EngineConfiguration).
+    pub fn builder() -> crate::model::engine_configuration::Builder {
+        crate::model::engine_configuration::Builder::default()
+    }
+}
+
 /// See [`EngineConfiguration`](crate::model::EngineConfiguration).
 pub mod engine_configuration {
     
@@ -1571,12 +1585,6 @@ pub mod engine_configuration {
     
     
 }
-impl EngineConfiguration {
-    /// Creates a new builder-style object to manufacture [`EngineConfiguration`](crate::model::EngineConfiguration).
-    pub fn builder() -> crate::model::engine_configuration::Builder {
-        crate::model::engine_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the query result reuse behavior for the query.</p>
 #[non_exhaustive]
@@ -1592,6 +1600,13 @@ impl ResultReuseConfiguration {
         self.result_reuse_by_age_configuration.as_ref()
     }
 }
+impl ResultReuseConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
+    pub fn builder() -> crate::model::result_reuse_configuration::Builder {
+        crate::model::result_reuse_configuration::Builder::default()
+    }
+}
+
 /// See [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
 pub mod result_reuse_configuration {
     
@@ -1622,12 +1637,6 @@ pub mod result_reuse_configuration {
     
     
 }
-impl ResultReuseConfiguration {
-    /// Creates a new builder-style object to manufacture [`ResultReuseConfiguration`](crate::model::ResultReuseConfiguration).
-    pub fn builder() -> crate::model::result_reuse_configuration::Builder {
-        crate::model::result_reuse_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
 #[non_exhaustive]
@@ -1650,6 +1659,13 @@ impl ResultReuseByAgeConfiguration {
         self.max_age_in_minutes
     }
 }
+impl ResultReuseByAgeConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
+    pub fn builder() -> crate::model::result_reuse_by_age_configuration::Builder {
+        crate::model::result_reuse_by_age_configuration::Builder::default()
+    }
+}
+
 /// See [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
 pub mod result_reuse_by_age_configuration {
     
@@ -1693,12 +1709,6 @@ pub mod result_reuse_by_age_configuration {
     
     
 }
-impl ResultReuseByAgeConfiguration {
-    /// Creates a new builder-style object to manufacture [`ResultReuseByAgeConfiguration`](crate::model::ResultReuseByAgeConfiguration).
-    pub fn builder() -> crate::model::result_reuse_by_age_configuration::Builder {
-        crate::model::result_reuse_by_age_configuration::Builder::default()
-    }
-}
 
 /// <p>The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the workgroup settings.</p>
 #[non_exhaustive]
@@ -1737,6 +1747,13 @@ impl ResultConfiguration {
         self.acl_configuration.as_ref()
     }
 }
+impl ResultConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResultConfiguration`](crate::model::ResultConfiguration).
+    pub fn builder() -> crate::model::result_configuration::Builder {
+        crate::model::result_configuration::Builder::default()
+    }
+}
+
 /// See [`ResultConfiguration`](crate::model::ResultConfiguration).
 pub mod result_configuration {
     
@@ -1805,12 +1822,6 @@ pub mod result_configuration {
     
     
 }
-impl ResultConfiguration {
-    /// Creates a new builder-style object to manufacture [`ResultConfiguration`](crate::model::ResultConfiguration).
-    pub fn builder() -> crate::model::result_configuration::Builder {
-        crate::model::result_configuration::Builder::default()
-    }
-}
 
 /// <p>The database and data catalog context in which the query execution occurs.</p>
 #[non_exhaustive]
@@ -1833,6 +1844,13 @@ impl QueryExecutionContext {
         self.catalog.as_deref()
     }
 }
+impl QueryExecutionContext {
+    /// Creates a new builder-style object to manufacture [`QueryExecutionContext`](crate::model::QueryExecutionContext).
+    pub fn builder() -> crate::model::query_execution_context::Builder {
+        crate::model::query_execution_context::Builder::default()
+    }
+}
+
 /// See [`QueryExecutionContext`](crate::model::QueryExecutionContext).
 pub mod query_execution_context {
     
@@ -1875,12 +1893,6 @@ pub mod query_execution_context {
     
     
 }
-impl QueryExecutionContext {
-    /// Creates a new builder-style object to manufacture [`QueryExecutionContext`](crate::model::QueryExecutionContext).
-    pub fn builder() -> crate::model::query_execution_context::Builder {
-        crate::model::query_execution_context::Builder::default()
-    }
-}
 
 /// <p>Contains configuration information for the calculation.</p>
 #[non_exhaustive]
@@ -1896,6 +1908,13 @@ impl CalculationConfiguration {
         self.code_block.as_deref()
     }
 }
+impl CalculationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CalculationConfiguration`](crate::model::CalculationConfiguration).
+    pub fn builder() -> crate::model::calculation_configuration::Builder {
+        crate::model::calculation_configuration::Builder::default()
+    }
+}
+
 /// See [`CalculationConfiguration`](crate::model::CalculationConfiguration).
 pub mod calculation_configuration {
     
@@ -1925,12 +1944,6 @@ pub mod calculation_configuration {
     }
     
     
-}
-impl CalculationConfiguration {
-    /// Creates a new builder-style object to manufacture [`CalculationConfiguration`](crate::model::CalculationConfiguration).
-    pub fn builder() -> crate::model::calculation_configuration::Builder {
-        crate::model::calculation_configuration::Builder::default()
-    }
 }
 
 /// <p>The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.</p>
@@ -1975,6 +1988,13 @@ impl WorkGroupSummary {
         self.engine_version.as_ref()
     }
 }
+impl WorkGroupSummary {
+    /// Creates a new builder-style object to manufacture [`WorkGroupSummary`](crate::model::WorkGroupSummary).
+    pub fn builder() -> crate::model::work_group_summary::Builder {
+        crate::model::work_group_summary::Builder::default()
+    }
+}
+
 /// See [`WorkGroupSummary`](crate::model::WorkGroupSummary).
 pub mod work_group_summary {
     
@@ -2053,12 +2073,6 @@ pub mod work_group_summary {
     
     
 }
-impl WorkGroupSummary {
-    /// Creates a new builder-style object to manufacture [`WorkGroupSummary`](crate::model::WorkGroupSummary).
-    pub fn builder() -> crate::model::work_group_summary::Builder {
-        crate::model::work_group_summary::Builder::default()
-    }
-}
 
 /// <p>Contains metadata for a table.</p>
 #[non_exhaustive]
@@ -2116,6 +2130,13 @@ impl TableMetadata {
         self.parameters.as_ref()
     }
 }
+impl TableMetadata {
+    /// Creates a new builder-style object to manufacture [`TableMetadata`](crate::model::TableMetadata).
+    pub fn builder() -> crate::model::table_metadata::Builder {
+        crate::model::table_metadata::Builder::default()
+    }
+}
+
 /// See [`TableMetadata`](crate::model::TableMetadata).
 pub mod table_metadata {
     
@@ -2236,12 +2257,6 @@ pub mod table_metadata {
     
     
 }
-impl TableMetadata {
-    /// Creates a new builder-style object to manufacture [`TableMetadata`](crate::model::TableMetadata).
-    pub fn builder() -> crate::model::table_metadata::Builder {
-        crate::model::table_metadata::Builder::default()
-    }
-}
 
 /// <p>Contains metadata for a column in a table.</p>
 #[non_exhaustive]
@@ -2271,6 +2286,13 @@ impl Column {
         self.comment.as_deref()
     }
 }
+impl Column {
+    /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
+    pub fn builder() -> crate::model::column::Builder {
+        crate::model::column::Builder::default()
+    }
+}
+
 /// See [`Column`](crate::model::Column).
 pub mod column {
     
@@ -2325,12 +2347,6 @@ pub mod column {
     
     
 }
-impl Column {
-    /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
-    pub fn builder() -> crate::model::column::Builder {
-        crate::model::column::Builder::default()
-    }
-}
 
 /// <p>Contains summary information about a notebook session.</p>
 #[non_exhaustive]
@@ -2374,6 +2390,13 @@ impl SessionSummary {
         self.status.as_ref()
     }
 }
+impl SessionSummary {
+    /// Creates a new builder-style object to manufacture [`SessionSummary`](crate::model::SessionSummary).
+    pub fn builder() -> crate::model::session_summary::Builder {
+        crate::model::session_summary::Builder::default()
+    }
+}
+
 /// See [`SessionSummary`](crate::model::SessionSummary).
 pub mod session_summary {
     
@@ -2452,12 +2475,6 @@ pub mod session_summary {
     
     
 }
-impl SessionSummary {
-    /// Creates a new builder-style object to manufacture [`SessionSummary`](crate::model::SessionSummary).
-    pub fn builder() -> crate::model::session_summary::Builder {
-        crate::model::session_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the status of a notebook session.</p>
 #[non_exhaustive]
@@ -2524,6 +2541,13 @@ impl SessionStatus {
         self.state_change_reason.as_deref()
     }
 }
+impl SessionStatus {
+    /// Creates a new builder-style object to manufacture [`SessionStatus`](crate::model::SessionStatus).
+    pub fn builder() -> crate::model::session_status::Builder {
+        crate::model::session_status::Builder::default()
+    }
+}
+
 /// See [`SessionStatus`](crate::model::SessionStatus).
 pub mod session_status {
     
@@ -2630,12 +2654,6 @@ pub mod session_status {
     
     
 }
-impl SessionStatus {
-    /// Creates a new builder-style object to manufacture [`SessionStatus`](crate::model::SessionStatus).
-    pub fn builder() -> crate::model::session_status::Builder {
-        crate::model::session_status::Builder::default()
-    }
-}
 
 /// <p>The name and last modified time of the prepared statement.</p>
 #[non_exhaustive]
@@ -2658,6 +2676,13 @@ impl PreparedStatementSummary {
         self.last_modified_time.as_ref()
     }
 }
+impl PreparedStatementSummary {
+    /// Creates a new builder-style object to manufacture [`PreparedStatementSummary`](crate::model::PreparedStatementSummary).
+    pub fn builder() -> crate::model::prepared_statement_summary::Builder {
+        crate::model::prepared_statement_summary::Builder::default()
+    }
+}
+
 /// See [`PreparedStatementSummary`](crate::model::PreparedStatementSummary).
 pub mod prepared_statement_summary {
     
@@ -2700,12 +2725,6 @@ pub mod prepared_statement_summary {
     
     
 }
-impl PreparedStatementSummary {
-    /// Creates a new builder-style object to manufacture [`PreparedStatementSummary`](crate::model::PreparedStatementSummary).
-    pub fn builder() -> crate::model::prepared_statement_summary::Builder {
-        crate::model::prepared_statement_summary::Builder::default()
-    }
-}
 
 /// <p>Contains the notebook session ID and notebook session creation time.</p>
 #[non_exhaustive]
@@ -2728,6 +2747,13 @@ impl NotebookSessionSummary {
         self.creation_time.as_ref()
     }
 }
+impl NotebookSessionSummary {
+    /// Creates a new builder-style object to manufacture [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
+    pub fn builder() -> crate::model::notebook_session_summary::Builder {
+        crate::model::notebook_session_summary::Builder::default()
+    }
+}
+
 /// See [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
 pub mod notebook_session_summary {
     
@@ -2769,12 +2795,6 @@ pub mod notebook_session_summary {
     }
     
     
-}
-impl NotebookSessionSummary {
-    /// Creates a new builder-style object to manufacture [`NotebookSessionSummary`](crate::model::NotebookSessionSummary).
-    pub fn builder() -> crate::model::notebook_session_summary::Builder {
-        crate::model::notebook_session_summary::Builder::default()
-    }
 }
 
 /// <p>Contains metadata for notebook, including the notebook name, ID, workgroup, and time created.</p>
@@ -2826,6 +2846,13 @@ impl NotebookMetadata {
         self.last_modified_time.as_ref()
     }
 }
+impl NotebookMetadata {
+    /// Creates a new builder-style object to manufacture [`NotebookMetadata`](crate::model::NotebookMetadata).
+    pub fn builder() -> crate::model::notebook_metadata::Builder {
+        crate::model::notebook_metadata::Builder::default()
+    }
+}
+
 /// See [`NotebookMetadata`](crate::model::NotebookMetadata).
 pub mod notebook_metadata {
     
@@ -2916,12 +2943,6 @@ pub mod notebook_metadata {
     
     
 }
-impl NotebookMetadata {
-    /// Creates a new builder-style object to manufacture [`NotebookMetadata`](crate::model::NotebookMetadata).
-    pub fn builder() -> crate::model::notebook_metadata::Builder {
-        crate::model::notebook_metadata::Builder::default()
-    }
-}
 
 /// <p>A string for searching notebook names.</p>
 #[non_exhaustive]
@@ -2937,6 +2958,13 @@ impl FilterDefinition {
         self.name.as_deref()
     }
 }
+impl FilterDefinition {
+    /// Creates a new builder-style object to manufacture [`FilterDefinition`](crate::model::FilterDefinition).
+    pub fn builder() -> crate::model::filter_definition::Builder {
+        crate::model::filter_definition::Builder::default()
+    }
+}
+
 /// See [`FilterDefinition`](crate::model::FilterDefinition).
 pub mod filter_definition {
     
@@ -2966,12 +2994,6 @@ pub mod filter_definition {
     }
     
     
-}
-impl FilterDefinition {
-    /// Creates a new builder-style object to manufacture [`FilterDefinition`](crate::model::FilterDefinition).
-    pub fn builder() -> crate::model::filter_definition::Builder {
-        crate::model::filter_definition::Builder::default()
-    }
 }
 
 /// <p>Contains summary information about an executor.</p>
@@ -3035,6 +3057,13 @@ impl ExecutorsSummary {
         self.executor_size
     }
 }
+impl ExecutorsSummary {
+    /// Creates a new builder-style object to manufacture [`ExecutorsSummary`](crate::model::ExecutorsSummary).
+    pub fn builder() -> crate::model::executors_summary::Builder {
+        crate::model::executors_summary::Builder::default()
+    }
+}
+
 /// See [`ExecutorsSummary`](crate::model::ExecutorsSummary).
 pub mod executors_summary {
     
@@ -3136,12 +3165,6 @@ pub mod executors_summary {
     }
     
     
-}
-impl ExecutorsSummary {
-    /// Creates a new builder-style object to manufacture [`ExecutorsSummary`](crate::model::ExecutorsSummary).
-    pub fn builder() -> crate::model::executors_summary::Builder {
-        crate::model::executors_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExecutorState`, it is important to ensure
@@ -3354,6 +3377,13 @@ impl DataCatalogSummary {
         self.r#type.as_ref()
     }
 }
+impl DataCatalogSummary {
+    /// Creates a new builder-style object to manufacture [`DataCatalogSummary`](crate::model::DataCatalogSummary).
+    pub fn builder() -> crate::model::data_catalog_summary::Builder {
+        crate::model::data_catalog_summary::Builder::default()
+    }
+}
+
 /// See [`DataCatalogSummary`](crate::model::DataCatalogSummary).
 pub mod data_catalog_summary {
     
@@ -3396,12 +3426,6 @@ pub mod data_catalog_summary {
     
     
 }
-impl DataCatalogSummary {
-    /// Creates a new builder-style object to manufacture [`DataCatalogSummary`](crate::model::DataCatalogSummary).
-    pub fn builder() -> crate::model::data_catalog_summary::Builder {
-        crate::model::data_catalog_summary::Builder::default()
-    }
-}
 
 /// <p>Contains metadata information for a database in a data catalog.</p>
 #[non_exhaustive]
@@ -3431,6 +3455,13 @@ impl Database {
         self.parameters.as_ref()
     }
 }
+impl Database {
+    /// Creates a new builder-style object to manufacture [`Database`](crate::model::Database).
+    pub fn builder() -> crate::model::database::Builder {
+        crate::model::database::Builder::default()
+    }
+}
+
 /// See [`Database`](crate::model::Database).
 pub mod database {
     
@@ -3491,12 +3522,6 @@ pub mod database {
     
     
 }
-impl Database {
-    /// Creates a new builder-style object to manufacture [`Database`](crate::model::Database).
-    pub fn builder() -> crate::model::database::Builder {
-        crate::model::database::Builder::default()
-    }
-}
 
 /// <p>Summary information for a notebook calculation.</p>
 #[non_exhaustive]
@@ -3526,6 +3551,13 @@ impl CalculationSummary {
         self.status.as_ref()
     }
 }
+impl CalculationSummary {
+    /// Creates a new builder-style object to manufacture [`CalculationSummary`](crate::model::CalculationSummary).
+    pub fn builder() -> crate::model::calculation_summary::Builder {
+        crate::model::calculation_summary::Builder::default()
+    }
+}
+
 /// See [`CalculationSummary`](crate::model::CalculationSummary).
 pub mod calculation_summary {
     
@@ -3580,12 +3612,6 @@ pub mod calculation_summary {
     
     
 }
-impl CalculationSummary {
-    /// Creates a new builder-style object to manufacture [`CalculationSummary`](crate::model::CalculationSummary).
-    pub fn builder() -> crate::model::calculation_summary::Builder {
-        crate::model::calculation_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the status of a notebook calculation.</p>
 #[non_exhaustive]
@@ -3638,6 +3664,13 @@ impl CalculationStatus {
         self.state_change_reason.as_deref()
     }
 }
+impl CalculationStatus {
+    /// Creates a new builder-style object to manufacture [`CalculationStatus`](crate::model::CalculationStatus).
+    pub fn builder() -> crate::model::calculation_status::Builder {
+        crate::model::calculation_status::Builder::default()
+    }
+}
+
 /// See [`CalculationStatus`](crate::model::CalculationStatus).
 pub mod calculation_status {
     
@@ -3720,12 +3753,6 @@ pub mod calculation_status {
     
     
 }
-impl CalculationStatus {
-    /// Creates a new builder-style object to manufacture [`CalculationStatus`](crate::model::CalculationStatus).
-    pub fn builder() -> crate::model::calculation_status::Builder {
-        crate::model::calculation_status::Builder::default()
-    }
-}
 
 /// <p>Contains the application runtime IDs and their supported DPU sizes.</p>
 #[non_exhaustive]
@@ -3748,6 +3775,13 @@ impl ApplicationDpuSizes {
         self.supported_dpu_sizes.as_deref()
     }
 }
+impl ApplicationDpuSizes {
+    /// Creates a new builder-style object to manufacture [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
+    pub fn builder() -> crate::model::application_dpu_sizes::Builder {
+        crate::model::application_dpu_sizes::Builder::default()
+    }
+}
+
 /// See [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
 pub mod application_dpu_sizes {
     
@@ -3796,12 +3830,6 @@ pub mod application_dpu_sizes {
     
     
 }
-impl ApplicationDpuSizes {
-    /// Creates a new builder-style object to manufacture [`ApplicationDpuSizes`](crate::model::ApplicationDpuSizes).
-    pub fn builder() -> crate::model::application_dpu_sizes::Builder {
-        crate::model::application_dpu_sizes::Builder::default()
-    }
-}
 
 /// <p>A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <code>WorkGroup$Configuration</code>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
 #[non_exhaustive]
@@ -3845,6 +3873,13 @@ impl WorkGroup {
         self.creation_time.as_ref()
     }
 }
+impl WorkGroup {
+    /// Creates a new builder-style object to manufacture [`WorkGroup`](crate::model::WorkGroup).
+    pub fn builder() -> crate::model::work_group::Builder {
+        crate::model::work_group::Builder::default()
+    }
+}
+
 /// See [`WorkGroup`](crate::model::WorkGroup).
 pub mod work_group {
     
@@ -3923,12 +3958,6 @@ pub mod work_group {
     
     
 }
-impl WorkGroup {
-    /// Creates a new builder-style object to manufacture [`WorkGroup`](crate::model::WorkGroup).
-    pub fn builder() -> crate::model::work_group::Builder {
-        crate::model::work_group::Builder::default()
-    }
-}
 
 /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>. </p>
 #[non_exhaustive]
@@ -4000,6 +4029,13 @@ impl WorkGroupConfiguration {
         self.customer_content_encryption_configuration.as_ref()
     }
 }
+impl WorkGroupConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
+    pub fn builder() -> crate::model::work_group_configuration::Builder {
+        crate::model::work_group_configuration::Builder::default()
+    }
+}
+
 /// See [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
 pub mod work_group_configuration {
     
@@ -4126,12 +4162,6 @@ pub mod work_group_configuration {
     
     
 }
-impl WorkGroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkGroupConfiguration`](crate::model::WorkGroupConfiguration).
-    pub fn builder() -> crate::model::work_group_configuration::Builder {
-        crate::model::work_group_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains statistics for a notebook session.</p>
 #[non_exhaustive]
@@ -4147,6 +4177,13 @@ impl SessionStatistics {
         self.dpu_execution_in_millis
     }
 }
+impl SessionStatistics {
+    /// Creates a new builder-style object to manufacture [`SessionStatistics`](crate::model::SessionStatistics).
+    pub fn builder() -> crate::model::session_statistics::Builder {
+        crate::model::session_statistics::Builder::default()
+    }
+}
+
 /// See [`SessionStatistics`](crate::model::SessionStatistics).
 pub mod session_statistics {
     
@@ -4176,12 +4213,6 @@ pub mod session_statistics {
     }
     
     
-}
-impl SessionStatistics {
-    /// Creates a new builder-style object to manufacture [`SessionStatistics`](crate::model::SessionStatistics).
-    pub fn builder() -> crate::model::session_statistics::Builder {
-        crate::model::session_statistics::Builder::default()
-    }
 }
 
 /// <p>Contains session configuration information.</p>
@@ -4219,6 +4250,13 @@ impl SessionConfiguration {
         self.encryption_configuration.as_ref()
     }
 }
+impl SessionConfiguration {
+    /// Creates a new builder-style object to manufacture [`SessionConfiguration`](crate::model::SessionConfiguration).
+    pub fn builder() -> crate::model::session_configuration::Builder {
+        crate::model::session_configuration::Builder::default()
+    }
+}
+
 /// See [`SessionConfiguration`](crate::model::SessionConfiguration).
 pub mod session_configuration {
     
@@ -4285,12 +4323,6 @@ pub mod session_configuration {
     
     
 }
-impl SessionConfiguration {
-    /// Creates a new builder-style object to manufacture [`SessionConfiguration`](crate::model::SessionConfiguration).
-    pub fn builder() -> crate::model::session_configuration::Builder {
-        crate::model::session_configuration::Builder::default()
-    }
-}
 
 /// <p>The query execution timeline, statistics on input and output rows and bytes, and the different query stages that form the query execution plan.</p>
 #[non_exhaustive]
@@ -4320,6 +4352,13 @@ impl QueryRuntimeStatistics {
         self.output_stage.as_ref()
     }
 }
+impl QueryRuntimeStatistics {
+    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
+    pub fn builder() -> crate::model::query_runtime_statistics::Builder {
+        crate::model::query_runtime_statistics::Builder::default()
+    }
+}
+
 /// See [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
 pub mod query_runtime_statistics {
     
@@ -4373,12 +4412,6 @@ pub mod query_runtime_statistics {
     }
     
     
-}
-impl QueryRuntimeStatistics {
-    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
-    pub fn builder() -> crate::model::query_runtime_statistics::Builder {
-        crate::model::query_runtime_statistics::Builder::default()
-    }
 }
 
 /// <p>Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.</p>
@@ -4451,6 +4484,13 @@ impl QueryStage {
         self.sub_stages.as_deref()
     }
 }
+impl QueryStage {
+    /// Creates a new builder-style object to manufacture [`QueryStage`](crate::model::QueryStage).
+    pub fn builder() -> crate::model::query_stage::Builder {
+        crate::model::query_stage::Builder::default()
+    }
+}
+
 /// See [`QueryStage`](crate::model::QueryStage).
 pub mod query_stage {
     
@@ -4583,12 +4623,6 @@ pub mod query_stage {
     
     
 }
-impl QueryStage {
-    /// Creates a new builder-style object to manufacture [`QueryStage`](crate::model::QueryStage).
-    pub fn builder() -> crate::model::query_stage::Builder {
-        crate::model::query_stage::Builder::default()
-    }
-}
 
 /// <p>Stage plan information such as name, identifier, sub plans, and remote sources.</p>
 #[non_exhaustive]
@@ -4625,6 +4659,13 @@ impl QueryStagePlanNode {
         self.remote_sources.as_deref()
     }
 }
+impl QueryStagePlanNode {
+    /// Creates a new builder-style object to manufacture [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
+    pub fn builder() -> crate::model::query_stage_plan_node::Builder {
+        crate::model::query_stage_plan_node::Builder::default()
+    }
+}
+
 /// See [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
 pub mod query_stage_plan_node {
     
@@ -4703,12 +4744,6 @@ pub mod query_stage_plan_node {
     
     
 }
-impl QueryStagePlanNode {
-    /// Creates a new builder-style object to manufacture [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
-    pub fn builder() -> crate::model::query_stage_plan_node::Builder {
-        crate::model::query_stage_plan_node::Builder::default()
-    }
-}
 
 /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
 #[non_exhaustive]
@@ -4745,6 +4780,13 @@ impl QueryRuntimeStatisticsRows {
         self.output_rows
     }
 }
+impl QueryRuntimeStatisticsRows {
+    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
+    pub fn builder() -> crate::model::query_runtime_statistics_rows::Builder {
+        crate::model::query_runtime_statistics_rows::Builder::default()
+    }
+}
+
 /// See [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
 pub mod query_runtime_statistics_rows {
     
@@ -4811,12 +4853,6 @@ pub mod query_runtime_statistics_rows {
     
     
 }
-impl QueryRuntimeStatisticsRows {
-    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
-    pub fn builder() -> crate::model::query_runtime_statistics_rows::Builder {
-        crate::model::query_runtime_statistics_rows::Builder::default()
-    }
-}
 
 /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
 #[non_exhaustive]
@@ -4860,6 +4896,13 @@ impl QueryRuntimeStatisticsTimeline {
         self.total_execution_time_in_millis
     }
 }
+impl QueryRuntimeStatisticsTimeline {
+    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
+    pub fn builder() -> crate::model::query_runtime_statistics_timeline::Builder {
+        crate::model::query_runtime_statistics_timeline::Builder::default()
+    }
+}
+
 /// See [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
 pub mod query_runtime_statistics_timeline {
     
@@ -4938,12 +4981,6 @@ pub mod query_runtime_statistics_timeline {
     
     
 }
-impl QueryRuntimeStatisticsTimeline {
-    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
-    pub fn builder() -> crate::model::query_runtime_statistics_timeline::Builder {
-        crate::model::query_runtime_statistics_timeline::Builder::default()
-    }
-}
 
 /// <p>The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
@@ -4966,6 +5003,13 @@ impl ResultSet {
         self.result_set_metadata.as_ref()
     }
 }
+impl ResultSet {
+    /// Creates a new builder-style object to manufacture [`ResultSet`](crate::model::ResultSet).
+    pub fn builder() -> crate::model::result_set::Builder {
+        crate::model::result_set::Builder::default()
+    }
+}
+
 /// See [`ResultSet`](crate::model::ResultSet).
 pub mod result_set {
     
@@ -5014,12 +5058,6 @@ pub mod result_set {
     
     
 }
-impl ResultSet {
-    /// Creates a new builder-style object to manufacture [`ResultSet`](crate::model::ResultSet).
-    pub fn builder() -> crate::model::result_set::Builder {
-        crate::model::result_set::Builder::default()
-    }
-}
 
 /// <p>The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
@@ -5035,6 +5073,13 @@ impl ResultSetMetadata {
         self.column_info.as_deref()
     }
 }
+impl ResultSetMetadata {
+    /// Creates a new builder-style object to manufacture [`ResultSetMetadata`](crate::model::ResultSetMetadata).
+    pub fn builder() -> crate::model::result_set_metadata::Builder {
+        crate::model::result_set_metadata::Builder::default()
+    }
+}
+
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata).
 pub mod result_set_metadata {
     
@@ -5070,12 +5115,6 @@ pub mod result_set_metadata {
     }
     
     
-}
-impl ResultSetMetadata {
-    /// Creates a new builder-style object to manufacture [`ResultSetMetadata`](crate::model::ResultSetMetadata).
-    pub fn builder() -> crate::model::result_set_metadata::Builder {
-        crate::model::result_set_metadata::Builder::default()
-    }
 }
 
 /// <p>Information about the columns in a query execution result.</p>
@@ -5155,6 +5194,13 @@ impl ColumnInfo {
         self.case_sensitive
     }
 }
+impl ColumnInfo {
+    /// Creates a new builder-style object to manufacture [`ColumnInfo`](crate::model::ColumnInfo).
+    pub fn builder() -> crate::model::column_info::Builder {
+        crate::model::column_info::Builder::default()
+    }
+}
+
 /// See [`ColumnInfo`](crate::model::ColumnInfo).
 pub mod column_info {
     
@@ -5296,12 +5342,6 @@ pub mod column_info {
     
     
 }
-impl ColumnInfo {
-    /// Creates a new builder-style object to manufacture [`ColumnInfo`](crate::model::ColumnInfo).
-    pub fn builder() -> crate::model::column_info::Builder {
-        crate::model::column_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ColumnNullable`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5404,6 +5444,13 @@ impl Row {
         self.data.as_deref()
     }
 }
+impl Row {
+    /// Creates a new builder-style object to manufacture [`Row`](crate::model::Row).
+    pub fn builder() -> crate::model::row::Builder {
+        crate::model::row::Builder::default()
+    }
+}
+
 /// See [`Row`](crate::model::Row).
 pub mod row {
     
@@ -5440,12 +5487,6 @@ pub mod row {
     
     
 }
-impl Row {
-    /// Creates a new builder-style object to manufacture [`Row`](crate::model::Row).
-    pub fn builder() -> crate::model::row::Builder {
-        crate::model::row::Builder::default()
-    }
-}
 
 /// <p>A piece of data (a field in the table).</p>
 #[non_exhaustive]
@@ -5461,6 +5502,13 @@ impl Datum {
         self.var_char_value.as_deref()
     }
 }
+impl Datum {
+    /// Creates a new builder-style object to manufacture [`Datum`](crate::model::Datum).
+    pub fn builder() -> crate::model::datum::Builder {
+        crate::model::datum::Builder::default()
+    }
+}
+
 /// See [`Datum`](crate::model::Datum).
 pub mod datum {
     
@@ -5490,12 +5538,6 @@ pub mod datum {
     }
     
     
-}
-impl Datum {
-    /// Creates a new builder-style object to manufacture [`Datum`](crate::model::Datum).
-    pub fn builder() -> crate::model::datum::Builder {
-        crate::model::datum::Builder::default()
-    }
 }
 
 /// <p>Information about a single instance of a query execution.</p>
@@ -5582,6 +5624,13 @@ impl QueryExecution {
         self.execution_parameters.as_deref()
     }
 }
+impl QueryExecution {
+    /// Creates a new builder-style object to manufacture [`QueryExecution`](crate::model::QueryExecution).
+    pub fn builder() -> crate::model::query_execution::Builder {
+        crate::model::query_execution::Builder::default()
+    }
+}
+
 /// See [`QueryExecution`](crate::model::QueryExecution).
 pub mod query_execution {
     
@@ -5738,12 +5787,6 @@ pub mod query_execution {
     
     
 }
-impl QueryExecution {
-    /// Creates a new builder-style object to manufacture [`QueryExecution`](crate::model::QueryExecution).
-    pub fn builder() -> crate::model::query_execution::Builder {
-        crate::model::query_execution::Builder::default()
-    }
-}
 
 /// <p>The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.</p>
 #[non_exhaustive]
@@ -5808,6 +5851,13 @@ impl QueryExecutionStatistics {
         self.result_reuse_information.as_ref()
     }
 }
+impl QueryExecutionStatistics {
+    /// Creates a new builder-style object to manufacture [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
+    pub fn builder() -> crate::model::query_execution_statistics::Builder {
+        crate::model::query_execution_statistics::Builder::default()
+    }
+}
+
 /// See [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
 pub mod query_execution_statistics {
     
@@ -5922,12 +5972,6 @@ pub mod query_execution_statistics {
     
     
 }
-impl QueryExecutionStatistics {
-    /// Creates a new builder-style object to manufacture [`QueryExecutionStatistics`](crate::model::QueryExecutionStatistics).
-    pub fn builder() -> crate::model::query_execution_statistics::Builder {
-        crate::model::query_execution_statistics::Builder::default()
-    }
-}
 
 /// <p>Contains information about whether the result of a previous query was reused.</p>
 #[non_exhaustive]
@@ -5943,6 +5987,13 @@ impl ResultReuseInformation {
         self.reused_previous_result
     }
 }
+impl ResultReuseInformation {
+    /// Creates a new builder-style object to manufacture [`ResultReuseInformation`](crate::model::ResultReuseInformation).
+    pub fn builder() -> crate::model::result_reuse_information::Builder {
+        crate::model::result_reuse_information::Builder::default()
+    }
+}
+
 /// See [`ResultReuseInformation`](crate::model::ResultReuseInformation).
 pub mod result_reuse_information {
     
@@ -5973,12 +6024,6 @@ pub mod result_reuse_information {
     }
     
     
-}
-impl ResultReuseInformation {
-    /// Creates a new builder-style object to manufacture [`ResultReuseInformation`](crate::model::ResultReuseInformation).
-    pub fn builder() -> crate::model::result_reuse_information::Builder {
-        crate::model::result_reuse_information::Builder::default()
-    }
 }
 
 /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
@@ -6027,6 +6072,13 @@ impl QueryExecutionStatus {
         self.athena_error.as_ref()
     }
 }
+impl QueryExecutionStatus {
+    /// Creates a new builder-style object to manufacture [`QueryExecutionStatus`](crate::model::QueryExecutionStatus).
+    pub fn builder() -> crate::model::query_execution_status::Builder {
+        crate::model::query_execution_status::Builder::default()
+    }
+}
+
 /// See [`QueryExecutionStatus`](crate::model::QueryExecutionStatus).
 pub mod query_execution_status {
     
@@ -6109,12 +6161,6 @@ pub mod query_execution_status {
     
     
 }
-impl QueryExecutionStatus {
-    /// Creates a new builder-style object to manufacture [`QueryExecutionStatus`](crate::model::QueryExecutionStatus).
-    pub fn builder() -> crate::model::query_execution_status::Builder {
-        crate::model::query_execution_status::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error.</p>
 #[non_exhaustive]
@@ -6157,6 +6203,13 @@ impl AthenaError {
         self.error_message.as_deref()
     }
 }
+impl AthenaError {
+    /// Creates a new builder-style object to manufacture [`AthenaError`](crate::model::AthenaError).
+    pub fn builder() -> crate::model::athena_error::Builder {
+        crate::model::athena_error::Builder::default()
+    }
+}
+
 /// See [`AthenaError`](crate::model::AthenaError).
 pub mod athena_error {
     
@@ -6229,12 +6282,6 @@ pub mod athena_error {
     }
     
     
-}
-impl AthenaError {
-    /// Creates a new builder-style object to manufacture [`AthenaError`](crate::model::AthenaError).
-    pub fn builder() -> crate::model::athena_error::Builder {
-        crate::model::athena_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryExecutionState`, it is important to ensure
@@ -6463,6 +6510,13 @@ impl PreparedStatement {
         self.last_modified_time.as_ref()
     }
 }
+impl PreparedStatement {
+    /// Creates a new builder-style object to manufacture [`PreparedStatement`](crate::model::PreparedStatement).
+    pub fn builder() -> crate::model::prepared_statement::Builder {
+        crate::model::prepared_statement::Builder::default()
+    }
+}
+
 /// See [`PreparedStatement`](crate::model::PreparedStatement).
 pub mod prepared_statement {
     
@@ -6541,12 +6595,6 @@ pub mod prepared_statement {
     
     
 }
-impl PreparedStatement {
-    /// Creates a new builder-style object to manufacture [`PreparedStatement`](crate::model::PreparedStatement).
-    pub fn builder() -> crate::model::prepared_statement::Builder {
-        crate::model::prepared_statement::Builder::default()
-    }
-}
 
 /// <p>A query, where <code>QueryString</code> contains the SQL statements that make up the query.</p>
 #[non_exhaustive]
@@ -6597,6 +6645,13 @@ impl NamedQuery {
         self.work_group.as_deref()
     }
 }
+impl NamedQuery {
+    /// Creates a new builder-style object to manufacture [`NamedQuery`](crate::model::NamedQuery).
+    pub fn builder() -> crate::model::named_query::Builder {
+        crate::model::named_query::Builder::default()
+    }
+}
+
 /// See [`NamedQuery`](crate::model::NamedQuery).
 pub mod named_query {
     
@@ -6687,12 +6742,6 @@ pub mod named_query {
     
     
 }
-impl NamedQuery {
-    /// Creates a new builder-style object to manufacture [`NamedQuery`](crate::model::NamedQuery).
-    pub fn builder() -> crate::model::named_query::Builder {
-        crate::model::named_query::Builder::default()
-    }
-}
 
 /// <p>Contains information about a data catalog in an Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -6755,6 +6804,13 @@ impl DataCatalog {
         self.parameters.as_ref()
     }
 }
+impl DataCatalog {
+    /// Creates a new builder-style object to manufacture [`DataCatalog`](crate::model::DataCatalog).
+    pub fn builder() -> crate::model::data_catalog::Builder {
+        crate::model::data_catalog::Builder::default()
+    }
+}
+
 /// See [`DataCatalog`](crate::model::DataCatalog).
 pub mod data_catalog {
     
@@ -6853,12 +6909,6 @@ pub mod data_catalog {
     
     
 }
-impl DataCatalog {
-    /// Creates a new builder-style object to manufacture [`DataCatalog`](crate::model::DataCatalog).
-    pub fn builder() -> crate::model::data_catalog::Builder {
-        crate::model::data_catalog::Builder::default()
-    }
-}
 
 /// <p>Contains statistics for a notebook calculation.</p>
 #[non_exhaustive]
@@ -6881,6 +6931,13 @@ impl CalculationStatistics {
         self.progress.as_deref()
     }
 }
+impl CalculationStatistics {
+    /// Creates a new builder-style object to manufacture [`CalculationStatistics`](crate::model::CalculationStatistics).
+    pub fn builder() -> crate::model::calculation_statistics::Builder {
+        crate::model::calculation_statistics::Builder::default()
+    }
+}
+
 /// See [`CalculationStatistics`](crate::model::CalculationStatistics).
 pub mod calculation_statistics {
     
@@ -6923,12 +6980,6 @@ pub mod calculation_statistics {
     
     
 }
-impl CalculationStatistics {
-    /// Creates a new builder-style object to manufacture [`CalculationStatistics`](crate::model::CalculationStatistics).
-    pub fn builder() -> crate::model::calculation_statistics::Builder {
-        crate::model::calculation_statistics::Builder::default()
-    }
-}
 
 /// <p>Contains information about an application-specific calculation result.</p>
 #[non_exhaustive]
@@ -6965,6 +7016,13 @@ impl CalculationResult {
         self.result_type.as_deref()
     }
 }
+impl CalculationResult {
+    /// Creates a new builder-style object to manufacture [`CalculationResult`](crate::model::CalculationResult).
+    pub fn builder() -> crate::model::calculation_result::Builder {
+        crate::model::calculation_result::Builder::default()
+    }
+}
+
 /// See [`CalculationResult`](crate::model::CalculationResult).
 pub mod calculation_result {
     
@@ -7031,12 +7089,6 @@ pub mod calculation_result {
     
     
 }
-impl CalculationResult {
-    /// Creates a new builder-style object to manufacture [`CalculationResult`](crate::model::CalculationResult).
-    pub fn builder() -> crate::model::calculation_result::Builder {
-        crate::model::calculation_result::Builder::default()
-    }
-}
 
 /// <p>Describes a query execution that failed to process.</p>
 #[non_exhaustive]
@@ -7066,6 +7118,13 @@ impl UnprocessedQueryExecutionId {
         self.error_message.as_deref()
     }
 }
+impl UnprocessedQueryExecutionId {
+    /// Creates a new builder-style object to manufacture [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId).
+    pub fn builder() -> crate::model::unprocessed_query_execution_id::Builder {
+        crate::model::unprocessed_query_execution_id::Builder::default()
+    }
+}
+
 /// See [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId).
 pub mod unprocessed_query_execution_id {
     
@@ -7120,12 +7179,6 @@ pub mod unprocessed_query_execution_id {
     
     
 }
-impl UnprocessedQueryExecutionId {
-    /// Creates a new builder-style object to manufacture [`UnprocessedQueryExecutionId`](crate::model::UnprocessedQueryExecutionId).
-    pub fn builder() -> crate::model::unprocessed_query_execution_id::Builder {
-        crate::model::unprocessed_query_execution_id::Builder::default()
-    }
-}
 
 /// <p>The name of a prepared statement that could not be returned.</p>
 #[non_exhaustive]
@@ -7165,6 +7218,13 @@ impl UnprocessedPreparedStatementName {
         self.error_message.as_deref()
     }
 }
+impl UnprocessedPreparedStatementName {
+    /// Creates a new builder-style object to manufacture [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
+    pub fn builder() -> crate::model::unprocessed_prepared_statement_name::Builder {
+        crate::model::unprocessed_prepared_statement_name::Builder::default()
+    }
+}
+
 /// See [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
 pub mod unprocessed_prepared_statement_name {
     
@@ -7229,12 +7289,6 @@ pub mod unprocessed_prepared_statement_name {
     
     
 }
-impl UnprocessedPreparedStatementName {
-    /// Creates a new builder-style object to manufacture [`UnprocessedPreparedStatementName`](crate::model::UnprocessedPreparedStatementName).
-    pub fn builder() -> crate::model::unprocessed_prepared_statement_name::Builder {
-        crate::model::unprocessed_prepared_statement_name::Builder::default()
-    }
-}
 
 /// <p>Information about a named query ID that could not be processed.</p>
 #[non_exhaustive]
@@ -7264,6 +7318,13 @@ impl UnprocessedNamedQueryId {
         self.error_message.as_deref()
     }
 }
+impl UnprocessedNamedQueryId {
+    /// Creates a new builder-style object to manufacture [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId).
+    pub fn builder() -> crate::model::unprocessed_named_query_id::Builder {
+        crate::model::unprocessed_named_query_id::Builder::default()
+    }
+}
+
 /// See [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId).
 pub mod unprocessed_named_query_id {
     
@@ -7317,11 +7378,5 @@ pub mod unprocessed_named_query_id {
     }
     
     
-}
-impl UnprocessedNamedQueryId {
-    /// Creates a new builder-style object to manufacture [`UnprocessedNamedQueryId`](crate::model::UnprocessedNamedQueryId).
-    pub fn builder() -> crate::model::unprocessed_named_query_id::Builder {
-        crate::model::unprocessed_named_query_id::Builder::default()
-    }
 }
 

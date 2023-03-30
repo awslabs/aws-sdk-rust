@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -85,12 +93,6 @@ pub mod tag_resource_output {
     }
     
     
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -127,6 +129,13 @@ impl aws_http::request_id::RequestId for StartFhirImportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartFhirImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
+    pub fn builder() -> crate::output::start_fhir_import_job_output::Builder {
+        crate::output::start_fhir_import_job_output::Builder::default()
+    }
+}
+
 /// See [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
 pub mod start_fhir_import_job_output {
     
@@ -192,12 +201,6 @@ pub mod start_fhir_import_job_output {
     
     
 }
-impl StartFhirImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
-    pub fn builder() -> crate::output::start_fhir_import_job_output::Builder {
-        crate::output::start_fhir_import_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -233,6 +236,13 @@ impl aws_http::request_id::RequestId for StartFhirExportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartFhirExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
+    pub fn builder() -> crate::output::start_fhir_export_job_output::Builder {
+        crate::output::start_fhir_export_job_output::Builder::default()
+    }
+}
+
 /// See [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
 pub mod start_fhir_export_job_output {
     
@@ -298,12 +308,6 @@ pub mod start_fhir_export_job_output {
     
     
 }
-impl StartFhirExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
-    pub fn builder() -> crate::output::start_fhir_export_job_output::Builder {
-        crate::output::start_fhir_export_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -325,6 +329,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -372,12 +383,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -406,6 +411,13 @@ impl aws_http::request_id::RequestId for ListFhirImportJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFhirImportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
+    pub fn builder() -> crate::output::list_fhir_import_jobs_output::Builder {
+        crate::output::list_fhir_import_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
 pub mod list_fhir_import_jobs_output {
     
@@ -465,12 +477,6 @@ pub mod list_fhir_import_jobs_output {
     
     
 }
-impl ListFhirImportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
-    pub fn builder() -> crate::output::list_fhir_import_jobs_output::Builder {
-        crate::output::list_fhir_import_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -499,6 +505,13 @@ impl aws_http::request_id::RequestId for ListFhirExportJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFhirExportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
+    pub fn builder() -> crate::output::list_fhir_export_jobs_output::Builder {
+        crate::output::list_fhir_export_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
 pub mod list_fhir_export_jobs_output {
     
@@ -558,12 +571,6 @@ pub mod list_fhir_export_jobs_output {
     
     
 }
-impl ListFhirExportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
-    pub fn builder() -> crate::output::list_fhir_export_jobs_output::Builder {
-        crate::output::list_fhir_export_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -592,6 +599,13 @@ impl aws_http::request_id::RequestId for ListFhirDatastoresOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFhirDatastoresOutput {
+    /// Creates a new builder-style object to manufacture [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
+    pub fn builder() -> crate::output::list_fhir_datastores_output::Builder {
+        crate::output::list_fhir_datastores_output::Builder::default()
+    }
+}
+
 /// See [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
 pub mod list_fhir_datastores_output {
     
@@ -651,12 +665,6 @@ pub mod list_fhir_datastores_output {
     
     
 }
-impl ListFhirDatastoresOutput {
-    /// Creates a new builder-style object to manufacture [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
-    pub fn builder() -> crate::output::list_fhir_datastores_output::Builder {
-        crate::output::list_fhir_datastores_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -678,6 +686,13 @@ impl aws_http::request_id::RequestId for DescribeFhirImportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFhirImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
+    pub fn builder() -> crate::output::describe_fhir_import_job_output::Builder {
+        crate::output::describe_fhir_import_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
 pub mod describe_fhir_import_job_output {
     
@@ -719,12 +734,6 @@ pub mod describe_fhir_import_job_output {
     
     
 }
-impl DescribeFhirImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
-    pub fn builder() -> crate::output::describe_fhir_import_job_output::Builder {
-        crate::output::describe_fhir_import_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -746,6 +755,13 @@ impl aws_http::request_id::RequestId for DescribeFhirExportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFhirExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
+    pub fn builder() -> crate::output::describe_fhir_export_job_output::Builder {
+        crate::output::describe_fhir_export_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
 pub mod describe_fhir_export_job_output {
     
@@ -787,12 +803,6 @@ pub mod describe_fhir_export_job_output {
     
     
 }
-impl DescribeFhirExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
-    pub fn builder() -> crate::output::describe_fhir_export_job_output::Builder {
-        crate::output::describe_fhir_export_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -814,6 +824,13 @@ impl aws_http::request_id::RequestId for DescribeFhirDatastoreOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFhirDatastoreOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
+    pub fn builder() -> crate::output::describe_fhir_datastore_output::Builder {
+        crate::output::describe_fhir_datastore_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
 pub mod describe_fhir_datastore_output {
     
@@ -854,12 +871,6 @@ pub mod describe_fhir_datastore_output {
     }
     
     
-}
-impl DescribeFhirDatastoreOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
-    pub fn builder() -> crate::output::describe_fhir_datastore_output::Builder {
-        crate::output::describe_fhir_datastore_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -903,6 +914,13 @@ impl aws_http::request_id::RequestId for DeleteFhirDatastoreOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFhirDatastoreOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
+    pub fn builder() -> crate::output::delete_fhir_datastore_output::Builder {
+        crate::output::delete_fhir_datastore_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
 pub mod delete_fhir_datastore_output {
     
@@ -980,12 +998,6 @@ pub mod delete_fhir_datastore_output {
     
     
 }
-impl DeleteFhirDatastoreOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
-    pub fn builder() -> crate::output::delete_fhir_datastore_output::Builder {
-        crate::output::delete_fhir_datastore_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1028,6 +1040,13 @@ impl aws_http::request_id::RequestId for CreateFhirDatastoreOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFhirDatastoreOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
+    pub fn builder() -> crate::output::create_fhir_datastore_output::Builder {
+        crate::output::create_fhir_datastore_output::Builder::default()
+    }
+}
+
 /// See [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
 pub mod create_fhir_datastore_output {
     
@@ -1104,11 +1123,5 @@ pub mod create_fhir_datastore_output {
     }
     
     
-}
-impl CreateFhirDatastoreOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
-    pub fn builder() -> crate::output::create_fhir_datastore_output::Builder {
-        crate::output::create_fhir_datastore_output::Builder::default()
-    }
 }
 

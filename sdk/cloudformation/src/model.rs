@@ -122,6 +122,13 @@ impl TemplateParameter {
         self.description.as_deref()
     }
 }
+impl TemplateParameter {
+    /// Creates a new builder-style object to manufacture [`TemplateParameter`](crate::model::TemplateParameter).
+    pub fn builder() -> crate::model::template_parameter::Builder {
+        crate::model::template_parameter::Builder::default()
+    }
+}
+
 /// See [`TemplateParameter`](crate::model::TemplateParameter).
 pub mod template_parameter {
     
@@ -188,12 +195,6 @@ pub mod template_parameter {
     
     
 }
-impl TemplateParameter {
-    /// Creates a new builder-style object to manufacture [`TemplateParameter`](crate::model::TemplateParameter).
-    pub fn builder() -> crate::model::template_parameter::Builder {
-        crate::model::template_parameter::Builder::default()
-    }
-}
 
 /// <p>Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.</p>
 #[non_exhaustive]
@@ -217,6 +218,13 @@ impl ManagedExecution {
         self.active
     }
 }
+impl ManagedExecution {
+    /// Creates a new builder-style object to manufacture [`ManagedExecution`](crate::model::ManagedExecution).
+    pub fn builder() -> crate::model::managed_execution::Builder {
+        crate::model::managed_execution::Builder::default()
+    }
+}
+
 /// See [`ManagedExecution`](crate::model::ManagedExecution).
 pub mod managed_execution {
     
@@ -254,12 +262,6 @@ pub mod managed_execution {
     }
     
     
-}
-impl ManagedExecution {
-    /// Creates a new builder-style object to manufacture [`ManagedExecution`](crate::model::ManagedExecution).
-    pub fn builder() -> crate::model::managed_execution::Builder {
-        crate::model::managed_execution::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CallAs`, it is important to ensure
@@ -365,6 +367,13 @@ impl AutoDeployment {
         self.retain_stacks_on_account_removal
     }
 }
+impl AutoDeployment {
+    /// Creates a new builder-style object to manufacture [`AutoDeployment`](crate::model::AutoDeployment).
+    pub fn builder() -> crate::model::auto_deployment::Builder {
+        crate::model::auto_deployment::Builder::default()
+    }
+}
+
 /// See [`AutoDeployment`](crate::model::AutoDeployment).
 pub mod auto_deployment {
     
@@ -406,12 +415,6 @@ pub mod auto_deployment {
     }
     
     
-}
-impl AutoDeployment {
-    /// Creates a new builder-style object to manufacture [`AutoDeployment`](crate::model::AutoDeployment).
-    pub fn builder() -> crate::model::auto_deployment::Builder {
-        crate::model::auto_deployment::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PermissionModels`, it is important to ensure
@@ -546,6 +549,13 @@ impl DeploymentTargets {
         self.account_filter_type.as_ref()
     }
 }
+impl DeploymentTargets {
+    /// Creates a new builder-style object to manufacture [`DeploymentTargets`](crate::model::DeploymentTargets).
+    pub fn builder() -> crate::model::deployment_targets::Builder {
+        crate::model::deployment_targets::Builder::default()
+    }
+}
+
 /// See [`DeploymentTargets`](crate::model::DeploymentTargets).
 pub mod deployment_targets {
     
@@ -637,12 +647,6 @@ pub mod deployment_targets {
     }
     
     
-}
-impl DeploymentTargets {
-    /// Creates a new builder-style object to manufacture [`DeploymentTargets`](crate::model::DeploymentTargets).
-    pub fn builder() -> crate::model::deployment_targets::Builder {
-        crate::model::deployment_targets::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccountFilterType`, it is important to ensure
@@ -811,6 +815,13 @@ impl StackSetOperationPreferences {
         self.max_concurrent_percentage
     }
 }
+impl StackSetOperationPreferences {
+    /// Creates a new builder-style object to manufacture [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences).
+    pub fn builder() -> crate::model::stack_set_operation_preferences::Builder {
+        crate::model::stack_set_operation_preferences::Builder::default()
+    }
+}
+
 /// See [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences).
 pub mod stack_set_operation_preferences {
     
@@ -931,12 +942,6 @@ pub mod stack_set_operation_preferences {
     
     
 }
-impl StackSetOperationPreferences {
-    /// Creates a new builder-style object to manufacture [`StackSetOperationPreferences`](crate::model::StackSetOperationPreferences).
-    pub fn builder() -> crate::model::stack_set_operation_preferences::Builder {
-        crate::model::stack_set_operation_preferences::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RegionConcurrencyType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1041,6 +1046,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1083,12 +1095,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The Parameter data type.</p>
 #[non_exhaustive]
@@ -1125,6 +1131,13 @@ impl Parameter {
         self.resolved_value.as_deref()
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
     
@@ -1191,12 +1204,6 @@ pub mod parameter {
     
     
 }
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
-    }
-}
 
 /// <p>Structure containing the rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p> 
 /// <p>Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p>
@@ -1240,6 +1247,13 @@ impl RollbackConfiguration {
         self.monitoring_time_in_minutes
     }
 }
+impl RollbackConfiguration {
+    /// Creates a new builder-style object to manufacture [`RollbackConfiguration`](crate::model::RollbackConfiguration).
+    pub fn builder() -> crate::model::rollback_configuration::Builder {
+        crate::model::rollback_configuration::Builder::default()
+    }
+}
+
 /// See [`RollbackConfiguration`](crate::model::RollbackConfiguration).
 pub mod rollback_configuration {
     
@@ -1308,12 +1322,6 @@ pub mod rollback_configuration {
     
     
 }
-impl RollbackConfiguration {
-    /// Creates a new builder-style object to manufacture [`RollbackConfiguration`](crate::model::RollbackConfiguration).
-    pub fn builder() -> crate::model::rollback_configuration::Builder {
-        crate::model::rollback_configuration::Builder::default()
-    }
-}
 
 /// <p>A rollback trigger CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.</p>
 #[non_exhaustive]
@@ -1338,6 +1346,13 @@ impl RollbackTrigger {
         self.r#type.as_deref()
     }
 }
+impl RollbackTrigger {
+    /// Creates a new builder-style object to manufacture [`RollbackTrigger`](crate::model::RollbackTrigger).
+    pub fn builder() -> crate::model::rollback_trigger::Builder {
+        crate::model::rollback_trigger::Builder::default()
+    }
+}
+
 /// See [`RollbackTrigger`](crate::model::RollbackTrigger).
 pub mod rollback_trigger {
     
@@ -1381,12 +1396,6 @@ pub mod rollback_trigger {
     }
     
     
-}
-impl RollbackTrigger {
-    /// Creates a new builder-style object to manufacture [`RollbackTrigger`](crate::model::RollbackTrigger).
-    pub fn builder() -> crate::model::rollback_trigger::Builder {
-        crate::model::rollback_trigger::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ThirdPartyType`, it is important to ensure
@@ -1666,6 +1675,13 @@ impl LoggingConfig {
         self.log_group_name.as_deref()
     }
 }
+impl LoggingConfig {
+    /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
+    pub fn builder() -> crate::model::logging_config::Builder {
+        crate::model::logging_config::Builder::default()
+    }
+}
+
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
 pub mod logging_config {
     
@@ -1707,12 +1723,6 @@ pub mod logging_config {
     }
     
     
-}
-impl LoggingConfig {
-    /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
-    pub fn builder() -> crate::model::logging_config::Builder {
-        crate::model::logging_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HandlerErrorCode`, it is important to ensure
@@ -2041,6 +2051,13 @@ impl TypeVersionSummary {
         self.public_version_number.as_deref()
     }
 }
+impl TypeVersionSummary {
+    /// Creates a new builder-style object to manufacture [`TypeVersionSummary`](crate::model::TypeVersionSummary).
+    pub fn builder() -> crate::model::type_version_summary::Builder {
+        crate::model::type_version_summary::Builder::default()
+    }
+}
+
 /// See [`TypeVersionSummary`](crate::model::TypeVersionSummary).
 pub mod type_version_summary {
     
@@ -2158,12 +2175,6 @@ pub mod type_version_summary {
     }
     
     
-}
-impl TypeVersionSummary {
-    /// Creates a new builder-style object to manufacture [`TypeVersionSummary`](crate::model::TypeVersionSummary).
-    pub fn builder() -> crate::model::type_version_summary::Builder {
-        crate::model::type_version_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeprecatedStatus`, it is important to ensure
@@ -2372,6 +2383,13 @@ impl TypeSummary {
         self.is_activated
     }
 }
+impl TypeSummary {
+    /// Creates a new builder-style object to manufacture [`TypeSummary`](crate::model::TypeSummary).
+    pub fn builder() -> crate::model::type_summary::Builder {
+        crate::model::type_summary::Builder::default()
+    }
+}
+
 /// See [`TypeSummary`](crate::model::TypeSummary).
 pub mod type_summary {
     
@@ -2572,12 +2590,6 @@ pub mod type_summary {
     
     
 }
-impl TypeSummary {
-    /// Creates a new builder-style object to manufacture [`TypeSummary`](crate::model::TypeSummary).
-    pub fn builder() -> crate::model::type_summary::Builder {
-        crate::model::type_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `IdentityProvider`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2716,6 +2728,13 @@ impl TypeFilters {
         self.type_name_prefix.as_deref()
     }
 }
+impl TypeFilters {
+    /// Creates a new builder-style object to manufacture [`TypeFilters`](crate::model::TypeFilters).
+    pub fn builder() -> crate::model::type_filters::Builder {
+        crate::model::type_filters::Builder::default()
+    }
+}
+
 /// See [`TypeFilters`](crate::model::TypeFilters).
 pub mod type_filters {
     
@@ -2791,12 +2810,6 @@ pub mod type_filters {
     }
     
     
-}
-impl TypeFilters {
-    /// Creates a new builder-style object to manufacture [`TypeFilters`](crate::model::TypeFilters).
-    pub fn builder() -> crate::model::type_filters::Builder {
-        crate::model::type_filters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Category`, it is important to ensure
@@ -3237,6 +3250,13 @@ impl StackSetSummary {
         self.managed_execution.as_ref()
     }
 }
+impl StackSetSummary {
+    /// Creates a new builder-style object to manufacture [`StackSetSummary`](crate::model::StackSetSummary).
+    pub fn builder() -> crate::model::stack_set_summary::Builder {
+        crate::model::stack_set_summary::Builder::default()
+    }
+}
+
 /// See [`StackSetSummary`](crate::model::StackSetSummary).
 pub mod stack_set_summary {
     
@@ -3382,12 +3402,6 @@ pub mod stack_set_summary {
     }
     
     
-}
-impl StackSetSummary {
-    /// Creates a new builder-style object to manufacture [`StackSetSummary`](crate::model::StackSetSummary).
-    pub fn builder() -> crate::model::stack_set_summary::Builder {
-        crate::model::stack_set_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackDriftStatus`, it is important to ensure
@@ -3645,6 +3659,13 @@ impl StackSetOperationSummary {
         self.operation_preferences.as_ref()
     }
 }
+impl StackSetOperationSummary {
+    /// Creates a new builder-style object to manufacture [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
+    pub fn builder() -> crate::model::stack_set_operation_summary::Builder {
+        crate::model::stack_set_operation_summary::Builder::default()
+    }
+}
+
 /// See [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
 pub mod stack_set_operation_summary {
     
@@ -3777,12 +3798,6 @@ pub mod stack_set_operation_summary {
     
     
 }
-impl StackSetOperationSummary {
-    /// Creates a new builder-style object to manufacture [`StackSetOperationSummary`](crate::model::StackSetOperationSummary).
-    pub fn builder() -> crate::model::stack_set_operation_summary::Builder {
-        crate::model::stack_set_operation_summary::Builder::default()
-    }
-}
 
 /// <p>Detailed information about the StackSet operation.</p>
 #[non_exhaustive]
@@ -3798,6 +3813,13 @@ impl StackSetOperationStatusDetails {
         self.failed_stack_instances_count
     }
 }
+impl StackSetOperationStatusDetails {
+    /// Creates a new builder-style object to manufacture [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
+    pub fn builder() -> crate::model::stack_set_operation_status_details::Builder {
+        crate::model::stack_set_operation_status_details::Builder::default()
+    }
+}
+
 /// See [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
 pub mod stack_set_operation_status_details {
     
@@ -3828,12 +3850,6 @@ pub mod stack_set_operation_status_details {
     }
     
     
-}
-impl StackSetOperationStatusDetails {
-    /// Creates a new builder-style object to manufacture [`StackSetOperationStatusDetails`](crate::model::StackSetOperationStatusDetails).
-    pub fn builder() -> crate::model::stack_set_operation_status_details::Builder {
-        crate::model::stack_set_operation_status_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackSetOperationStatus`, it is important to ensure
@@ -4093,6 +4109,13 @@ impl StackSetOperationResultSummary {
         self.organizational_unit_id.as_deref()
     }
 }
+impl StackSetOperationResultSummary {
+    /// Creates a new builder-style object to manufacture [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary).
+    pub fn builder() -> crate::model::stack_set_operation_result_summary::Builder {
+        crate::model::stack_set_operation_result_summary::Builder::default()
+    }
+}
+
 /// See [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary).
 pub mod stack_set_operation_result_summary {
     
@@ -4197,12 +4220,6 @@ pub mod stack_set_operation_result_summary {
     
     
 }
-impl StackSetOperationResultSummary {
-    /// Creates a new builder-style object to manufacture [`StackSetOperationResultSummary`](crate::model::StackSetOperationResultSummary).
-    pub fn builder() -> crate::model::stack_set_operation_result_summary::Builder {
-        crate::model::stack_set_operation_result_summary::Builder::default()
-    }
-}
 
 /// <p>Structure that contains the results of the account gate function which CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region.</p> 
 /// <p>For each account and Region, CloudFormation lets you specify a Lambda function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p> 
@@ -4247,6 +4264,13 @@ impl AccountGateResult {
         self.status_reason.as_deref()
     }
 }
+impl AccountGateResult {
+    /// Creates a new builder-style object to manufacture [`AccountGateResult`](crate::model::AccountGateResult).
+    pub fn builder() -> crate::model::account_gate_result::Builder {
+        crate::model::account_gate_result::Builder::default()
+    }
+}
+
 /// See [`AccountGateResult`](crate::model::AccountGateResult).
 pub mod account_gate_result {
     
@@ -4308,12 +4332,6 @@ pub mod account_gate_result {
     }
     
     
-}
-impl AccountGateResult {
-    /// Creates a new builder-style object to manufacture [`AccountGateResult`](crate::model::AccountGateResult).
-    pub fn builder() -> crate::model::account_gate_result::Builder {
-        crate::model::account_gate_result::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccountGateStatus`, it is important to ensure
@@ -4521,6 +4539,13 @@ impl OperationResultFilter {
         self.values.as_deref()
     }
 }
+impl OperationResultFilter {
+    /// Creates a new builder-style object to manufacture [`OperationResultFilter`](crate::model::OperationResultFilter).
+    pub fn builder() -> crate::model::operation_result_filter::Builder {
+        crate::model::operation_result_filter::Builder::default()
+    }
+}
+
 /// See [`OperationResultFilter`](crate::model::OperationResultFilter).
 pub mod operation_result_filter {
     
@@ -4562,12 +4587,6 @@ pub mod operation_result_filter {
     }
     
     
-}
-impl OperationResultFilter {
-    /// Creates a new builder-style object to manufacture [`OperationResultFilter`](crate::model::OperationResultFilter).
-    pub fn builder() -> crate::model::operation_result_filter::Builder {
-        crate::model::operation_result_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperationResultFilterName`, it is important to ensure
@@ -4735,6 +4754,13 @@ impl StackSummary {
         self.drift_information.as_ref()
     }
 }
+impl StackSummary {
+    /// Creates a new builder-style object to manufacture [`StackSummary`](crate::model::StackSummary).
+    pub fn builder() -> crate::model::stack_summary::Builder {
+        crate::model::stack_summary::Builder::default()
+    }
+}
+
 /// See [`StackSummary`](crate::model::StackSummary).
 pub mod stack_summary {
     
@@ -4889,12 +4915,6 @@ pub mod stack_summary {
     
     
 }
-impl StackSummary {
-    /// Creates a new builder-style object to manufacture [`StackSummary`](crate::model::StackSummary).
-    pub fn builder() -> crate::model::stack_summary::Builder {
-        crate::model::stack_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
@@ -4929,6 +4949,13 @@ impl StackDriftInformationSummary {
         self.last_check_timestamp.as_ref()
     }
 }
+impl StackDriftInformationSummary {
+    /// Creates a new builder-style object to manufacture [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary).
+    pub fn builder() -> crate::model::stack_drift_information_summary::Builder {
+        crate::model::stack_drift_information_summary::Builder::default()
+    }
+}
+
 /// See [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary).
 pub mod stack_drift_information_summary {
     
@@ -4982,12 +5009,6 @@ pub mod stack_drift_information_summary {
     }
     
     
-}
-impl StackDriftInformationSummary {
-    /// Creates a new builder-style object to manufacture [`StackDriftInformationSummary`](crate::model::StackDriftInformationSummary).
-    pub fn builder() -> crate::model::stack_drift_information_summary::Builder {
-        crate::model::stack_drift_information_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackStatus`, it is important to ensure
@@ -5240,6 +5261,13 @@ impl StackResourceSummary {
         self.module_info.as_ref()
     }
 }
+impl StackResourceSummary {
+    /// Creates a new builder-style object to manufacture [`StackResourceSummary`](crate::model::StackResourceSummary).
+    pub fn builder() -> crate::model::stack_resource_summary::Builder {
+        crate::model::stack_resource_summary::Builder::default()
+    }
+}
+
 /// See [`StackResourceSummary`](crate::model::StackResourceSummary).
 pub mod stack_resource_summary {
     
@@ -5354,12 +5382,6 @@ pub mod stack_resource_summary {
     
     
 }
-impl StackResourceSummary {
-    /// Creates a new builder-style object to manufacture [`StackResourceSummary`](crate::model::StackResourceSummary).
-    pub fn builder() -> crate::model::stack_resource_summary::Builder {
-        crate::model::stack_resource_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p> 
 /// <p>For more information about modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -5393,6 +5415,13 @@ impl ModuleInfo {
         self.logical_id_hierarchy.as_deref()
     }
 }
+impl ModuleInfo {
+    /// Creates a new builder-style object to manufacture [`ModuleInfo`](crate::model::ModuleInfo).
+    pub fn builder() -> crate::model::module_info::Builder {
+        crate::model::module_info::Builder::default()
+    }
+}
+
 /// See [`ModuleInfo`](crate::model::ModuleInfo).
 pub mod module_info {
     
@@ -5445,12 +5474,6 @@ pub mod module_info {
     
     
 }
-impl ModuleInfo {
-    /// Creates a new builder-style object to manufacture [`ModuleInfo`](crate::model::ModuleInfo).
-    pub fn builder() -> crate::model::module_info::Builder {
-        crate::model::module_info::Builder::default()
-    }
-}
 
 /// <p>Summarizes information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
@@ -5485,6 +5508,13 @@ impl StackResourceDriftInformationSummary {
         self.last_check_timestamp.as_ref()
     }
 }
+impl StackResourceDriftInformationSummary {
+    /// Creates a new builder-style object to manufacture [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary).
+    pub fn builder() -> crate::model::stack_resource_drift_information_summary::Builder {
+        crate::model::stack_resource_drift_information_summary::Builder::default()
+    }
+}
+
 /// See [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary).
 pub mod stack_resource_drift_information_summary {
     
@@ -5538,12 +5568,6 @@ pub mod stack_resource_drift_information_summary {
     }
     
     
-}
-impl StackResourceDriftInformationSummary {
-    /// Creates a new builder-style object to manufacture [`StackResourceDriftInformationSummary`](crate::model::StackResourceDriftInformationSummary).
-    pub fn builder() -> crate::model::stack_resource_drift_information_summary::Builder {
-        crate::model::stack_resource_drift_information_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackResourceDriftStatus`, it is important to ensure
@@ -5934,6 +5958,13 @@ impl StackInstanceSummary {
         self.last_operation_id.as_deref()
     }
 }
+impl StackInstanceSummary {
+    /// Creates a new builder-style object to manufacture [`StackInstanceSummary`](crate::model::StackInstanceSummary).
+    pub fn builder() -> crate::model::stack_instance_summary::Builder {
+        crate::model::stack_instance_summary::Builder::default()
+    }
+}
+
 /// See [`StackInstanceSummary`](crate::model::StackInstanceSummary).
 pub mod stack_instance_summary {
     
@@ -6114,12 +6145,6 @@ pub mod stack_instance_summary {
     
     
 }
-impl StackInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`StackInstanceSummary`](crate::model::StackInstanceSummary).
-    pub fn builder() -> crate::model::stack_instance_summary::Builder {
-        crate::model::stack_instance_summary::Builder::default()
-    }
-}
 
 /// <p>The detailed status of the stack instance.</p>
 #[non_exhaustive]
@@ -6149,6 +6174,13 @@ impl StackInstanceComprehensiveStatus {
         self.detailed_status.as_ref()
     }
 }
+impl StackInstanceComprehensiveStatus {
+    /// Creates a new builder-style object to manufacture [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus).
+    pub fn builder() -> crate::model::stack_instance_comprehensive_status::Builder {
+        crate::model::stack_instance_comprehensive_status::Builder::default()
+    }
+}
+
 /// See [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus).
 pub mod stack_instance_comprehensive_status {
     
@@ -6192,12 +6224,6 @@ pub mod stack_instance_comprehensive_status {
     }
     
     
-}
-impl StackInstanceComprehensiveStatus {
-    /// Creates a new builder-style object to manufacture [`StackInstanceComprehensiveStatus`](crate::model::StackInstanceComprehensiveStatus).
-    pub fn builder() -> crate::model::stack_instance_comprehensive_status::Builder {
-        crate::model::stack_instance_comprehensive_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackInstanceDetailedStatus`, it is important to ensure
@@ -6410,6 +6436,13 @@ impl StackInstanceFilter {
         self.values.as_deref()
     }
 }
+impl StackInstanceFilter {
+    /// Creates a new builder-style object to manufacture [`StackInstanceFilter`](crate::model::StackInstanceFilter).
+    pub fn builder() -> crate::model::stack_instance_filter::Builder {
+        crate::model::stack_instance_filter::Builder::default()
+    }
+}
+
 /// See [`StackInstanceFilter`](crate::model::StackInstanceFilter).
 pub mod stack_instance_filter {
     
@@ -6451,12 +6484,6 @@ pub mod stack_instance_filter {
     }
     
     
-}
-impl StackInstanceFilter {
-    /// Creates a new builder-style object to manufacture [`StackInstanceFilter`](crate::model::StackInstanceFilter).
-    pub fn builder() -> crate::model::stack_instance_filter::Builder {
-        crate::model::stack_instance_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackInstanceFilterName`, it is important to ensure
@@ -6569,6 +6596,13 @@ impl Export {
         self.value.as_deref()
     }
 }
+impl Export {
+    /// Creates a new builder-style object to manufacture [`Export`](crate::model::Export).
+    pub fn builder() -> crate::model::export::Builder {
+        crate::model::export::Builder::default()
+    }
+}
+
 /// See [`Export`](crate::model::Export).
 pub mod export {
     
@@ -6622,12 +6656,6 @@ pub mod export {
     }
     
     
-}
-impl Export {
-    /// Creates a new builder-style object to manufacture [`Export`](crate::model::Export).
-    pub fn builder() -> crate::model::export::Builder {
-        crate::model::export::Builder::default()
-    }
 }
 
 /// <p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.</p>
@@ -6721,6 +6749,13 @@ impl ChangeSetSummary {
         self.root_change_set_id.as_deref()
     }
 }
+impl ChangeSetSummary {
+    /// Creates a new builder-style object to manufacture [`ChangeSetSummary`](crate::model::ChangeSetSummary).
+    pub fn builder() -> crate::model::change_set_summary::Builder {
+        crate::model::change_set_summary::Builder::default()
+    }
+}
+
 /// See [`ChangeSetSummary`](crate::model::ChangeSetSummary).
 pub mod change_set_summary {
     
@@ -6882,12 +6917,6 @@ pub mod change_set_summary {
     }
     
     
-}
-impl ChangeSetSummary {
-    /// Creates a new builder-style object to manufacture [`ChangeSetSummary`](crate::model::ChangeSetSummary).
-    pub fn builder() -> crate::model::change_set_summary::Builder {
-        crate::model::change_set_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeSetStatus`, it is important to ensure
@@ -7132,6 +7161,13 @@ impl ResourceIdentifierSummary {
         self.resource_identifiers.as_deref()
     }
 }
+impl ResourceIdentifierSummary {
+    /// Creates a new builder-style object to manufacture [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary).
+    pub fn builder() -> crate::model::resource_identifier_summary::Builder {
+        crate::model::resource_identifier_summary::Builder::default()
+    }
+}
+
 /// See [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary).
 pub mod resource_identifier_summary {
     
@@ -7198,12 +7234,6 @@ pub mod resource_identifier_summary {
     
     
 }
-impl ResourceIdentifierSummary {
-    /// Creates a new builder-style object to manufacture [`ResourceIdentifierSummary`](crate::model::ResourceIdentifierSummary).
-    pub fn builder() -> crate::model::resource_identifier_summary::Builder {
-        crate::model::resource_identifier_summary::Builder::default()
-    }
-}
 
 /// <p>The ParameterDeclaration data type.</p>
 #[non_exhaustive]
@@ -7254,6 +7284,13 @@ impl ParameterDeclaration {
         self.parameter_constraints.as_ref()
     }
 }
+impl ParameterDeclaration {
+    /// Creates a new builder-style object to manufacture [`ParameterDeclaration`](crate::model::ParameterDeclaration).
+    pub fn builder() -> crate::model::parameter_declaration::Builder {
+        crate::model::parameter_declaration::Builder::default()
+    }
+}
+
 /// See [`ParameterDeclaration`](crate::model::ParameterDeclaration).
 pub mod parameter_declaration {
     
@@ -7344,12 +7381,6 @@ pub mod parameter_declaration {
     
     
 }
-impl ParameterDeclaration {
-    /// Creates a new builder-style object to manufacture [`ParameterDeclaration`](crate::model::ParameterDeclaration).
-    pub fn builder() -> crate::model::parameter_declaration::Builder {
-        crate::model::parameter_declaration::Builder::default()
-    }
-}
 
 /// <p>A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.</p>
 #[non_exhaustive]
@@ -7365,6 +7396,13 @@ impl ParameterConstraints {
         self.allowed_values.as_deref()
     }
 }
+impl ParameterConstraints {
+    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
+    pub fn builder() -> crate::model::parameter_constraints::Builder {
+        crate::model::parameter_constraints::Builder::default()
+    }
+}
+
 /// See [`ParameterConstraints`](crate::model::ParameterConstraints).
 pub mod parameter_constraints {
     
@@ -7400,12 +7438,6 @@ pub mod parameter_constraints {
     }
     
     
-}
-impl ParameterConstraints {
-    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
-    pub fn builder() -> crate::model::parameter_constraints::Builder {
-        crate::model::parameter_constraints::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TemplateStage`, it is important to ensure
@@ -7592,6 +7624,13 @@ impl StackResourceDrift {
         self.module_info.as_ref()
     }
 }
+impl StackResourceDrift {
+    /// Creates a new builder-style object to manufacture [`StackResourceDrift`](crate::model::StackResourceDrift).
+    pub fn builder() -> crate::model::stack_resource_drift::Builder {
+        crate::model::stack_resource_drift::Builder::default()
+    }
+}
+
 /// See [`StackResourceDrift`](crate::model::StackResourceDrift).
 pub mod stack_resource_drift {
     
@@ -7770,12 +7809,6 @@ pub mod stack_resource_drift {
     
     
 }
-impl StackResourceDrift {
-    /// Creates a new builder-style object to manufacture [`StackResourceDrift`](crate::model::StackResourceDrift).
-    pub fn builder() -> crate::model::stack_resource_drift::Builder {
-        crate::model::stack_resource_drift::Builder::default()
-    }
-}
 
 /// <p>Information about a resource property whose actual value differs from its expected value, as defined in the stack template and any values specified as template parameters. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
 #[non_exhaustive]
@@ -7822,6 +7855,13 @@ impl PropertyDifference {
         self.difference_type.as_ref()
     }
 }
+impl PropertyDifference {
+    /// Creates a new builder-style object to manufacture [`PropertyDifference`](crate::model::PropertyDifference).
+    pub fn builder() -> crate::model::property_difference::Builder {
+        crate::model::property_difference::Builder::default()
+    }
+}
+
 /// See [`PropertyDifference`](crate::model::PropertyDifference).
 pub mod property_difference {
     
@@ -7897,12 +7937,6 @@ pub mod property_difference {
     }
     
     
-}
-impl PropertyDifference {
-    /// Creates a new builder-style object to manufacture [`PropertyDifference`](crate::model::PropertyDifference).
-    pub fn builder() -> crate::model::property_difference::Builder {
-        crate::model::property_difference::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DifferenceType`, it is important to ensure
@@ -8013,6 +8047,13 @@ impl PhysicalResourceIdContextKeyValuePair {
         self.value.as_deref()
     }
 }
+impl PhysicalResourceIdContextKeyValuePair {
+    /// Creates a new builder-style object to manufacture [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair).
+    pub fn builder() -> crate::model::physical_resource_id_context_key_value_pair::Builder {
+        crate::model::physical_resource_id_context_key_value_pair::Builder::default()
+    }
+}
+
 /// See [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair).
 pub mod physical_resource_id_context_key_value_pair {
     
@@ -8055,12 +8096,6 @@ pub mod physical_resource_id_context_key_value_pair {
     
     
 }
-impl PhysicalResourceIdContextKeyValuePair {
-    /// Creates a new builder-style object to manufacture [`PhysicalResourceIdContextKeyValuePair`](crate::model::PhysicalResourceIdContextKeyValuePair).
-    pub fn builder() -> crate::model::physical_resource_id_context_key_value_pair::Builder {
-        crate::model::physical_resource_id_context_key_value_pair::Builder::default()
-    }
-}
 
 /// <p>For extensions that are modules, a public third-party extension that must be activated in your account in order for the module itself to be activated.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating public modules for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -8100,6 +8135,13 @@ impl RequiredActivatedType {
         self.supported_major_versions.as_deref()
     }
 }
+impl RequiredActivatedType {
+    /// Creates a new builder-style object to manufacture [`RequiredActivatedType`](crate::model::RequiredActivatedType).
+    pub fn builder() -> crate::model::required_activated_type::Builder {
+        crate::model::required_activated_type::Builder::default()
+    }
+}
+
 /// See [`RequiredActivatedType`](crate::model::RequiredActivatedType).
 pub mod required_activated_type {
     
@@ -8173,12 +8215,6 @@ pub mod required_activated_type {
     }
     
     
-}
-impl RequiredActivatedType {
-    /// Creates a new builder-style object to manufacture [`RequiredActivatedType`](crate::model::RequiredActivatedType).
-    pub fn builder() -> crate::model::required_activated_type::Builder {
-        crate::model::required_activated_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TypeTestsStatus`, it is important to ensure
@@ -8402,6 +8438,13 @@ impl StackSetOperation {
         self.status_details.as_ref()
     }
 }
+impl StackSetOperation {
+    /// Creates a new builder-style object to manufacture [`StackSetOperation`](crate::model::StackSetOperation).
+    pub fn builder() -> crate::model::stack_set_operation::Builder {
+        crate::model::stack_set_operation::Builder::default()
+    }
+}
+
 /// See [`StackSetOperation`](crate::model::StackSetOperation).
 pub mod stack_set_operation {
     
@@ -8612,12 +8655,6 @@ pub mod stack_set_operation {
     
     
 }
-impl StackSetOperation {
-    /// Creates a new builder-style object to manufacture [`StackSetOperation`](crate::model::StackSetOperation).
-    pub fn builder() -> crate::model::stack_set_operation::Builder {
-        crate::model::stack_set_operation::Builder::default()
-    }
-}
 
 /// <p>Detailed information about the drift status of the stack set.</p> 
 /// <p>For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress isn't included.</p> 
@@ -8723,6 +8760,13 @@ impl StackSetDriftDetectionDetails {
         self.failed_stack_instances_count
     }
 }
+impl StackSetDriftDetectionDetails {
+    /// Creates a new builder-style object to manufacture [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails).
+    pub fn builder() -> crate::model::stack_set_drift_detection_details::Builder {
+        crate::model::stack_set_drift_detection_details::Builder::default()
+    }
+}
+
 /// See [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails).
 pub mod stack_set_drift_detection_details {
     
@@ -8879,12 +8923,6 @@ pub mod stack_set_drift_detection_details {
     }
     
     
-}
-impl StackSetDriftDetectionDetails {
-    /// Creates a new builder-style object to manufacture [`StackSetDriftDetectionDetails`](crate::model::StackSetDriftDetectionDetails).
-    pub fn builder() -> crate::model::stack_set_drift_detection_details::Builder {
-        crate::model::stack_set_drift_detection_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackSetDriftDetectionStatus`, it is important to ensure
@@ -9204,6 +9242,13 @@ impl StackSet {
         self.managed_execution.as_ref()
     }
 }
+impl StackSet {
+    /// Creates a new builder-style object to manufacture [`StackSet`](crate::model::StackSet).
+    pub fn builder() -> crate::model::stack_set::Builder {
+        crate::model::stack_set::Builder::default()
+    }
+}
+
 /// See [`StackSet`](crate::model::StackSet).
 pub mod stack_set {
     
@@ -9452,12 +9497,6 @@ pub mod stack_set {
     
     
 }
-impl StackSet {
-    /// Creates a new builder-style object to manufacture [`StackSet`](crate::model::StackSet).
-    pub fn builder() -> crate::model::stack_set::Builder {
-        crate::model::stack_set::Builder::default()
-    }
-}
 
 /// <p>The Stack data type.</p>
 #[non_exhaustive]
@@ -9634,6 +9673,13 @@ impl Stack {
         self.drift_information.as_ref()
     }
 }
+impl Stack {
+    /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
+    pub fn builder() -> crate::model::stack::Builder {
+        crate::model::stack::Builder::default()
+    }
+}
+
 /// See [`Stack`](crate::model::Stack).
 pub mod stack {
     
@@ -9960,12 +10006,6 @@ pub mod stack {
     
     
 }
-impl Stack {
-    /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
-    pub fn builder() -> crate::model::stack::Builder {
-        crate::model::stack::Builder::default()
-    }
-}
 
 /// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
@@ -10000,6 +10040,13 @@ impl StackDriftInformation {
         self.last_check_timestamp.as_ref()
     }
 }
+impl StackDriftInformation {
+    /// Creates a new builder-style object to manufacture [`StackDriftInformation`](crate::model::StackDriftInformation).
+    pub fn builder() -> crate::model::stack_drift_information::Builder {
+        crate::model::stack_drift_information::Builder::default()
+    }
+}
+
 /// See [`StackDriftInformation`](crate::model::StackDriftInformation).
 pub mod stack_drift_information {
     
@@ -10054,12 +10101,6 @@ pub mod stack_drift_information {
     
     
 }
-impl StackDriftInformation {
-    /// Creates a new builder-style object to manufacture [`StackDriftInformation`](crate::model::StackDriftInformation).
-    pub fn builder() -> crate::model::stack_drift_information::Builder {
-        crate::model::stack_drift_information::Builder::default()
-    }
-}
 
 /// <p>The Output data type.</p>
 #[non_exhaustive]
@@ -10096,6 +10137,13 @@ impl Output {
         self.export_name.as_deref()
     }
 }
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
 /// See [`Output`](crate::model::Output).
 pub mod output {
     
@@ -10161,12 +10209,6 @@ pub mod output {
     }
     
     
-}
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
-    }
 }
 
 /// <p>The StackResource data type.</p>
@@ -10253,6 +10295,13 @@ impl StackResource {
         self.module_info.as_ref()
     }
 }
+impl StackResource {
+    /// Creates a new builder-style object to manufacture [`StackResource`](crate::model::StackResource).
+    pub fn builder() -> crate::model::stack_resource::Builder {
+        crate::model::stack_resource::Builder::default()
+    }
+}
+
 /// See [`StackResource`](crate::model::StackResource).
 pub mod stack_resource {
     
@@ -10403,12 +10452,6 @@ pub mod stack_resource {
     
     
 }
-impl StackResource {
-    /// Creates a new builder-style object to manufacture [`StackResource`](crate::model::StackResource).
-    pub fn builder() -> crate::model::stack_resource::Builder {
-        crate::model::stack_resource::Builder::default()
-    }
-}
 
 /// <p>Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
@@ -10443,6 +10486,13 @@ impl StackResourceDriftInformation {
         self.last_check_timestamp.as_ref()
     }
 }
+impl StackResourceDriftInformation {
+    /// Creates a new builder-style object to manufacture [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation).
+    pub fn builder() -> crate::model::stack_resource_drift_information::Builder {
+        crate::model::stack_resource_drift_information::Builder::default()
+    }
+}
+
 /// See [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation).
 pub mod stack_resource_drift_information {
     
@@ -10496,12 +10546,6 @@ pub mod stack_resource_drift_information {
     }
     
     
-}
-impl StackResourceDriftInformation {
-    /// Creates a new builder-style object to manufacture [`StackResourceDriftInformation`](crate::model::StackResourceDriftInformation).
-    pub fn builder() -> crate::model::stack_resource_drift_information::Builder {
-        crate::model::stack_resource_drift_information::Builder::default()
-    }
 }
 
 /// <p>Contains detailed information about the specified stack resource.</p>
@@ -10595,6 +10639,13 @@ impl StackResourceDetail {
         self.module_info.as_ref()
     }
 }
+impl StackResourceDetail {
+    /// Creates a new builder-style object to manufacture [`StackResourceDetail`](crate::model::StackResourceDetail).
+    pub fn builder() -> crate::model::stack_resource_detail::Builder {
+        crate::model::stack_resource_detail::Builder::default()
+    }
+}
+
 /// See [`StackResourceDetail`](crate::model::StackResourceDetail).
 pub mod stack_resource_detail {
     
@@ -10757,12 +10808,6 @@ pub mod stack_resource_detail {
     
     
 }
-impl StackResourceDetail {
-    /// Creates a new builder-style object to manufacture [`StackResourceDetail`](crate::model::StackResourceDetail).
-    pub fn builder() -> crate::model::stack_resource_detail::Builder {
-        crate::model::stack_resource_detail::Builder::default()
-    }
-}
 
 /// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, in addition to the ID of the actual stack and the stack status.</p>
 #[non_exhaustive]
@@ -10885,6 +10930,13 @@ impl StackInstance {
         self.last_operation_id.as_deref()
     }
 }
+impl StackInstance {
+    /// Creates a new builder-style object to manufacture [`StackInstance`](crate::model::StackInstance).
+    pub fn builder() -> crate::model::stack_instance::Builder {
+        crate::model::stack_instance::Builder::default()
+    }
+}
+
 /// See [`StackInstance`](crate::model::StackInstance).
 pub mod stack_instance {
     
@@ -11083,12 +11135,6 @@ pub mod stack_instance {
     
     
 }
-impl StackInstance {
-    /// Creates a new builder-style object to manufacture [`StackInstance`](crate::model::StackInstance).
-    pub fn builder() -> crate::model::stack_instance::Builder {
-        crate::model::stack_instance::Builder::default()
-    }
-}
 
 /// <p>The StackEvent data type.</p>
 #[non_exhaustive]
@@ -11221,6 +11267,13 @@ impl StackEvent {
         self.hook_failure_mode.as_ref()
     }
 }
+impl StackEvent {
+    /// Creates a new builder-style object to manufacture [`StackEvent`](crate::model::StackEvent).
+    pub fn builder() -> crate::model::stack_event::Builder {
+        crate::model::stack_event::Builder::default()
+    }
+}
+
 /// See [`StackEvent`](crate::model::StackEvent).
 pub mod stack_event {
     
@@ -11442,12 +11495,6 @@ pub mod stack_event {
     }
     
     
-}
-impl StackEvent {
-    /// Creates a new builder-style object to manufacture [`StackEvent`](crate::model::StackEvent).
-    pub fn builder() -> crate::model::stack_event::Builder {
-        crate::model::stack_event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HookFailureMode`, it is important to ensure
@@ -12036,6 +12083,13 @@ impl ChangeSetHook {
         self.target_details.as_ref()
     }
 }
+impl ChangeSetHook {
+    /// Creates a new builder-style object to manufacture [`ChangeSetHook`](crate::model::ChangeSetHook).
+    pub fn builder() -> crate::model::change_set_hook::Builder {
+        crate::model::change_set_hook::Builder::default()
+    }
+}
+
 /// See [`ChangeSetHook`](crate::model::ChangeSetHook).
 pub mod change_set_hook {
     
@@ -12156,12 +12210,6 @@ pub mod change_set_hook {
     
     
 }
-impl ChangeSetHook {
-    /// Creates a new builder-style object to manufacture [`ChangeSetHook`](crate::model::ChangeSetHook).
-    pub fn builder() -> crate::model::change_set_hook::Builder {
-        crate::model::change_set_hook::Builder::default()
-    }
-}
 
 /// <p>Specifies target details for an activated hook.</p>
 #[non_exhaustive]
@@ -12184,6 +12232,13 @@ impl ChangeSetHookTargetDetails {
         self.resource_target_details.as_ref()
     }
 }
+impl ChangeSetHookTargetDetails {
+    /// Creates a new builder-style object to manufacture [`ChangeSetHookTargetDetails`](crate::model::ChangeSetHookTargetDetails).
+    pub fn builder() -> crate::model::change_set_hook_target_details::Builder {
+        crate::model::change_set_hook_target_details::Builder::default()
+    }
+}
+
 /// See [`ChangeSetHookTargetDetails`](crate::model::ChangeSetHookTargetDetails).
 pub mod change_set_hook_target_details {
     
@@ -12226,12 +12281,6 @@ pub mod change_set_hook_target_details {
     
     
 }
-impl ChangeSetHookTargetDetails {
-    /// Creates a new builder-style object to manufacture [`ChangeSetHookTargetDetails`](crate::model::ChangeSetHookTargetDetails).
-    pub fn builder() -> crate::model::change_set_hook_target_details::Builder {
-        crate::model::change_set_hook_target_details::Builder::default()
-    }
-}
 
 /// <p>Specifies <code>RESOURCE</code> type target details for activated hooks.</p>
 #[non_exhaustive]
@@ -12261,6 +12310,13 @@ impl ChangeSetHookResourceTargetDetails {
         self.resource_action.as_ref()
     }
 }
+impl ChangeSetHookResourceTargetDetails {
+    /// Creates a new builder-style object to manufacture [`ChangeSetHookResourceTargetDetails`](crate::model::ChangeSetHookResourceTargetDetails).
+    pub fn builder() -> crate::model::change_set_hook_resource_target_details::Builder {
+        crate::model::change_set_hook_resource_target_details::Builder::default()
+    }
+}
+
 /// See [`ChangeSetHookResourceTargetDetails`](crate::model::ChangeSetHookResourceTargetDetails).
 pub mod change_set_hook_resource_target_details {
     
@@ -12314,12 +12370,6 @@ pub mod change_set_hook_resource_target_details {
     }
     
     
-}
-impl ChangeSetHookResourceTargetDetails {
-    /// Creates a new builder-style object to manufacture [`ChangeSetHookResourceTargetDetails`](crate::model::ChangeSetHookResourceTargetDetails).
-    pub fn builder() -> crate::model::change_set_hook_resource_target_details::Builder {
-        crate::model::change_set_hook_resource_target_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeAction`, it is important to ensure
@@ -12524,6 +12574,13 @@ impl Change {
         self.resource_change.as_ref()
     }
 }
+impl Change {
+    /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
+    pub fn builder() -> crate::model::change::Builder {
+        crate::model::change::Builder::default()
+    }
+}
+
 /// See [`Change`](crate::model::Change).
 pub mod change {
     
@@ -12577,12 +12634,6 @@ pub mod change {
     }
     
     
-}
-impl Change {
-    /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
-    pub fn builder() -> crate::model::change::Builder {
-        crate::model::change::Builder::default()
-    }
 }
 
 /// <p>The <code>ResourceChange</code> structure describes the resource and the action that CloudFormation will perform on it if you execute this change set.</p>
@@ -12657,6 +12708,13 @@ impl ResourceChange {
         self.module_info.as_ref()
     }
 }
+impl ResourceChange {
+    /// Creates a new builder-style object to manufacture [`ResourceChange`](crate::model::ResourceChange).
+    pub fn builder() -> crate::model::resource_change::Builder {
+        crate::model::resource_change::Builder::default()
+    }
+}
+
 /// See [`ResourceChange`](crate::model::ResourceChange).
 pub mod resource_change {
     
@@ -12797,12 +12855,6 @@ pub mod resource_change {
     
     
 }
-impl ResourceChange {
-    /// Creates a new builder-style object to manufacture [`ResourceChange`](crate::model::ResourceChange).
-    pub fn builder() -> crate::model::resource_change::Builder {
-        crate::model::resource_change::Builder::default()
-    }
-}
 
 /// <p>For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes CloudFormation will make to that resource.</p>
 #[non_exhaustive]
@@ -12859,6 +12911,13 @@ impl ResourceChangeDetail {
         self.causing_entity.as_deref()
     }
 }
+impl ResourceChangeDetail {
+    /// Creates a new builder-style object to manufacture [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
+    pub fn builder() -> crate::model::resource_change_detail::Builder {
+        crate::model::resource_change_detail::Builder::default()
+    }
+}
+
 /// See [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
 pub mod resource_change_detail {
     
@@ -12944,12 +13003,6 @@ pub mod resource_change_detail {
     }
     
     
-}
-impl ResourceChangeDetail {
-    /// Creates a new builder-style object to manufacture [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
-    pub fn builder() -> crate::model::resource_change_detail::Builder {
-        crate::model::resource_change_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeSource`, it is important to ensure
@@ -13159,6 +13212,13 @@ impl ResourceTargetDefinition {
         self.requires_recreation.as_ref()
     }
 }
+impl ResourceTargetDefinition {
+    /// Creates a new builder-style object to manufacture [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
+    pub fn builder() -> crate::model::resource_target_definition::Builder {
+        crate::model::resource_target_definition::Builder::default()
+    }
+}
+
 /// See [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
 pub mod resource_target_definition {
     
@@ -13212,12 +13272,6 @@ pub mod resource_target_definition {
     }
     
     
-}
-impl ResourceTargetDefinition {
-    /// Creates a new builder-style object to manufacture [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
-    pub fn builder() -> crate::model::resource_target_definition::Builder {
-        crate::model::resource_target_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequiresRecreation`, it is important to ensure
@@ -13603,6 +13657,13 @@ impl AccountLimit {
         self.value
     }
 }
+impl AccountLimit {
+    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
+    pub fn builder() -> crate::model::account_limit::Builder {
+        crate::model::account_limit::Builder::default()
+    }
+}
+
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
     
@@ -13646,12 +13707,6 @@ pub mod account_limit {
     }
     
     
-}
-impl AccountLimit {
-    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
-    pub fn builder() -> crate::model::account_limit::Builder {
-        crate::model::account_limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OnFailure`, it is important to ensure
@@ -13769,6 +13824,13 @@ impl ResourceToImport {
         self.resource_identifier.as_ref()
     }
 }
+impl ResourceToImport {
+    /// Creates a new builder-style object to manufacture [`ResourceToImport`](crate::model::ResourceToImport).
+    pub fn builder() -> crate::model::resource_to_import::Builder {
+        crate::model::resource_to_import::Builder::default()
+    }
+}
+
 /// See [`ResourceToImport`](crate::model::ResourceToImport).
 pub mod resource_to_import {
     
@@ -13828,12 +13890,6 @@ pub mod resource_to_import {
     }
     
     
-}
-impl ResourceToImport {
-    /// Creates a new builder-style object to manufacture [`ResourceToImport`](crate::model::ResourceToImport).
-    pub fn builder() -> crate::model::resource_to_import::Builder {
-        crate::model::resource_to_import::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeSetType`, it is important to ensure
@@ -13986,6 +14042,13 @@ impl TypeConfigurationDetails {
         self.is_default_configuration
     }
 }
+impl TypeConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails).
+    pub fn builder() -> crate::model::type_configuration_details::Builder {
+        crate::model::type_configuration_details::Builder::default()
+    }
+}
+
 /// See [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails).
 pub mod type_configuration_details {
     
@@ -14094,12 +14157,6 @@ pub mod type_configuration_details {
     
     
 }
-impl TypeConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`TypeConfigurationDetails`](crate::model::TypeConfigurationDetails).
-    pub fn builder() -> crate::model::type_configuration_details::Builder {
-        crate::model::type_configuration_details::Builder::default()
-    }
-}
 
 /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
 #[non_exhaustive]
@@ -14145,6 +14202,13 @@ impl TypeConfigurationIdentifier {
         self.type_name.as_deref()
     }
 }
+impl TypeConfigurationIdentifier {
+    /// Creates a new builder-style object to manufacture [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier).
+    pub fn builder() -> crate::model::type_configuration_identifier::Builder {
+        crate::model::type_configuration_identifier::Builder::default()
+    }
+}
+
 /// See [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier).
 pub mod type_configuration_identifier {
     
@@ -14225,12 +14289,6 @@ pub mod type_configuration_identifier {
     
     
 }
-impl TypeConfigurationIdentifier {
-    /// Creates a new builder-style object to manufacture [`TypeConfigurationIdentifier`](crate::model::TypeConfigurationIdentifier).
-    pub fn builder() -> crate::model::type_configuration_identifier::Builder {
-        crate::model::type_configuration_identifier::Builder::default()
-    }
-}
 
 /// <p>Detailed information concerning an error generated during the setting of configuration data for a CloudFormation extension.</p>
 #[non_exhaustive]
@@ -14260,6 +14318,13 @@ impl BatchDescribeTypeConfigurationsError {
         self.type_configuration_identifier.as_ref()
     }
 }
+impl BatchDescribeTypeConfigurationsError {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError).
+    pub fn builder() -> crate::model::batch_describe_type_configurations_error::Builder {
+        crate::model::batch_describe_type_configurations_error::Builder::default()
+    }
+}
+
 /// See [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError).
 pub mod batch_describe_type_configurations_error {
     
@@ -14313,12 +14378,6 @@ pub mod batch_describe_type_configurations_error {
     }
     
     
-}
-impl BatchDescribeTypeConfigurationsError {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeTypeConfigurationsError`](crate::model::BatchDescribeTypeConfigurationsError).
-    pub fn builder() -> crate::model::batch_describe_type_configurations_error::Builder {
-        crate::model::batch_describe_type_configurations_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VersionBump`, it is important to ensure

@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_external_connection`](crate::client::Client::associate_external_connection).
             ///
-            /// See [`crate::client::fluent_builders::AssociateExternalConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateExternalConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateExternalConnection {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateExternalConnect
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`copy_package_versions`](crate::client::Client::copy_package_versions).
             ///
-            /// See [`crate::client::fluent_builders::CopyPackageVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CopyPackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CopyPackageVersions {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyPackageVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_domain`](crate::client::Client::create_domain).
             ///
-            /// See [`crate::client::fluent_builders::CreateDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDomain {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_repository`](crate::client::Client::create_repository).
             ///
-            /// See [`crate::client::fluent_builders::CreateRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRepository {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_domain`](crate::client::Client::delete_domain).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDomain {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_domain_permissions_policy`](crate::client::Client::delete_domain_permissions_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDomainPermissionsPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDomainPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDomainPermissionsPolicy {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomainPermissionsP
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_package_versions`](crate::client::Client::delete_package_versions).
             ///
-            /// See [`crate::client::fluent_builders::DeletePackageVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePackageVersions {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackageVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_repository`](crate::client::Client::delete_repository).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepository {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_repository_permissions_policy`](crate::client::Client::delete_repository_permissions_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRepositoryPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicy {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPermissi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_domain`](crate::client::Client::describe_domain).
             ///
-            /// See [`crate::client::fluent_builders::DescribeDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomain {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_package`](crate::client::Client::describe_package).
             ///
-            /// See [`crate::client::fluent_builders::DescribePackage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePackage {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_package_version`](crate::client::Client::describe_package_version).
             ///
-            /// See [`crate::client::fluent_builders::DescribePackageVersion`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribePackageVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePackageVersion {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackageVersion {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_repository`](crate::client::Client::describe_repository).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRepository {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_external_connection`](crate::client::Client::disassociate_external_connection).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateExternalConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateExternalConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateExternalConnection {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateExternalConn
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`dispose_package_versions`](crate::client::Client::dispose_package_versions).
             ///
-            /// See [`crate::client::fluent_builders::DisposePackageVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisposePackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisposePackageVersions {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisposePackageVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_authorization_token`](crate::client::Client::get_authorization_token).
             ///
-            /// See [`crate::client::fluent_builders::GetAuthorizationToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAuthorizationToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAuthorizationToken {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_domain_permissions_policy`](crate::client::Client::get_domain_permissions_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetDomainPermissionsPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDomainPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicy {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainPermissionsPoli
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_package_version_asset`](crate::client::Client::get_package_version_asset).
             ///
-            /// See [`crate::client::fluent_builders::GetPackageVersionAsset`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPackageVersionAsset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPackageVersionAsset {
     _private: ()
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetPackageVersionAsset {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_package_version_readme`](crate::client::Client::get_package_version_readme).
             ///
-            /// See [`crate::client::fluent_builders::GetPackageVersionReadme`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPackageVersionReadme`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPackageVersionReadme {
     _private: ()
@@ -615,7 +615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionReadme 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_repository_endpoint`](crate::client::Client::get_repository_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::GetRepositoryEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRepositoryEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepositoryEndpoint {
     _private: ()
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_repository_permissions_policy`](crate::client::Client::get_repository_permissions_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetRepositoryPermissionsPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRepositoryPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepositoryPermissionsPolicy {
     _private: ()
@@ -679,7 +679,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryPermissions
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_domains`](crate::client::Client::list_domains).
             ///
-            /// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: ()
@@ -711,7 +711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_packages`](crate::client::Client::list_packages).
             ///
-            /// See [`crate::client::fluent_builders::ListPackages`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPackages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackages {
     _private: ()
@@ -743,7 +743,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackages {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_package_version_assets`](crate::client::Client::list_package_version_assets).
             ///
-            /// See [`crate::client::fluent_builders::ListPackageVersionAssets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPackageVersionAssets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackageVersionAssets {
     _private: ()
@@ -775,7 +775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersionAssets
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_package_version_dependencies`](crate::client::Client::list_package_version_dependencies).
             ///
-            /// See [`crate::client::fluent_builders::ListPackageVersionDependencies`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPackageVersionDependencies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackageVersionDependencies {
     _private: ()
@@ -807,7 +807,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersionDepend
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_package_versions`](crate::client::Client::list_package_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListPackageVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPackageVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPackageVersions {
     _private: ()
@@ -839,7 +839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_repositories`](crate::client::Client::list_repositories).
             ///
-            /// See [`crate::client::fluent_builders::ListRepositories`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRepositories {
     _private: ()
@@ -871,7 +871,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositories {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_repositories_in_domain`](crate::client::Client::list_repositories_in_domain).
             ///
-            /// See [`crate::client::fluent_builders::ListRepositoriesInDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRepositoriesInDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRepositoriesInDomain {
     _private: ()
@@ -903,7 +903,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoriesInDomain
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -935,7 +935,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_domain_permissions_policy`](crate::client::Client::put_domain_permissions_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutDomainPermissionsPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutDomainPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicy {
     _private: ()
@@ -967,7 +967,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDomainPermissionsPoli
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_package_origin_configuration`](crate::client::Client::put_package_origin_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutPackageOriginConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutPackageOriginConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPackageOriginConfiguration {
     _private: ()
@@ -999,7 +999,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPackageOriginConfigur
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_repository_permissions_policy`](crate::client::Client::put_repository_permissions_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutRepositoryPermissionsPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutRepositoryPermissionsPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicy {
     _private: ()
@@ -1031,7 +1031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryPermissions
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1063,7 +1063,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1095,7 +1095,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_package_versions_status`](crate::client::Client::update_package_versions_status).
             ///
-            /// See [`crate::client::fluent_builders::UpdatePackageVersionsStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdatePackageVersionsStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatus {
     _private: ()
@@ -1127,7 +1127,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackageVersionsSta
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_repository`](crate::client::Client::update_repository).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRepository {
     _private: ()

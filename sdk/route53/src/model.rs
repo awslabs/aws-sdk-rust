@@ -110,6 +110,13 @@ impl TrafficPolicyInstance {
         self.traffic_policy_type.as_ref()
     }
 }
+impl TrafficPolicyInstance {
+    /// Creates a new builder-style object to manufacture [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
+    pub fn builder() -> crate::model::traffic_policy_instance::Builder {
+        crate::model::traffic_policy_instance::Builder::default()
+    }
+}
+
 /// See [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
 pub mod traffic_policy_instance {
     
@@ -275,12 +282,6 @@ pub mod traffic_policy_instance {
     }
     
     
-}
-impl TrafficPolicyInstance {
-    /// Creates a new builder-style object to manufacture [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
-    pub fn builder() -> crate::model::traffic_policy_instance::Builder {
-        crate::model::traffic_policy_instance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RrType`, it is important to ensure
@@ -469,6 +470,13 @@ impl TrafficPolicy {
         self.comment.as_deref()
     }
 }
+impl TrafficPolicy {
+    /// Creates a new builder-style object to manufacture [`TrafficPolicy`](crate::model::TrafficPolicy).
+    pub fn builder() -> crate::model::traffic_policy::Builder {
+        crate::model::traffic_policy::Builder::default()
+    }
+}
+
 /// See [`TrafficPolicy`](crate::model::TrafficPolicy).
 pub mod traffic_policy {
     
@@ -559,12 +567,6 @@ pub mod traffic_policy {
     
     
 }
-impl TrafficPolicy {
-    /// Creates a new builder-style object to manufacture [`TrafficPolicy`](crate::model::TrafficPolicy).
-    pub fn builder() -> crate::model::traffic_policy::Builder {
-        crate::model::traffic_policy::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains general information about the hosted zone.</p>
 #[non_exhaustive]
@@ -617,6 +619,13 @@ impl HostedZone {
         self.linked_service.as_ref()
     }
 }
+impl HostedZone {
+    /// Creates a new builder-style object to manufacture [`HostedZone`](crate::model::HostedZone).
+    pub fn builder() -> crate::model::hosted_zone::Builder {
+        crate::model::hosted_zone::Builder::default()
+    }
+}
+
 /// See [`HostedZone`](crate::model::HostedZone).
 pub mod hosted_zone {
     
@@ -709,12 +718,6 @@ pub mod hosted_zone {
     
     
 }
-impl HostedZone {
-    /// Creates a new builder-style object to manufacture [`HostedZone`](crate::model::HostedZone).
-    pub fn builder() -> crate::model::hosted_zone::Builder {
-        crate::model::hosted_zone::Builder::default()
-    }
-}
 
 /// <p>If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
 #[non_exhaustive]
@@ -737,6 +740,13 @@ impl LinkedService {
         self.description.as_deref()
     }
 }
+impl LinkedService {
+    /// Creates a new builder-style object to manufacture [`LinkedService`](crate::model::LinkedService).
+    pub fn builder() -> crate::model::linked_service::Builder {
+        crate::model::linked_service::Builder::default()
+    }
+}
+
 /// See [`LinkedService`](crate::model::LinkedService).
 pub mod linked_service {
     
@@ -779,12 +789,6 @@ pub mod linked_service {
     
     
 }
-impl LinkedService {
-    /// Creates a new builder-style object to manufacture [`LinkedService`](crate::model::LinkedService).
-    pub fn builder() -> crate::model::linked_service::Builder {
-        crate::model::linked_service::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
 #[non_exhaustive]
@@ -807,6 +811,13 @@ impl HostedZoneConfig {
         self.private_zone
     }
 }
+impl HostedZoneConfig {
+    /// Creates a new builder-style object to manufacture [`HostedZoneConfig`](crate::model::HostedZoneConfig).
+    pub fn builder() -> crate::model::hosted_zone_config::Builder {
+        crate::model::hosted_zone_config::Builder::default()
+    }
+}
+
 /// See [`HostedZoneConfig`](crate::model::HostedZoneConfig).
 pub mod hosted_zone_config {
     
@@ -849,12 +860,6 @@ pub mod hosted_zone_config {
     }
     
     
-}
-impl HostedZoneConfig {
-    /// Creates a new builder-style object to manufacture [`HostedZoneConfig`](crate::model::HostedZoneConfig).
-    pub fn builder() -> crate::model::hosted_zone_config::Builder {
-        crate::model::hosted_zone_config::Builder::default()
-    }
 }
 
 /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
@@ -906,6 +911,13 @@ impl HealthCheck {
         self.cloud_watch_alarm_configuration.as_ref()
     }
 }
+impl HealthCheck {
+    /// Creates a new builder-style object to manufacture [`HealthCheck`](crate::model::HealthCheck).
+    pub fn builder() -> crate::model::health_check::Builder {
+        crate::model::health_check::Builder::default()
+    }
+}
+
 /// See [`HealthCheck`](crate::model::HealthCheck).
 pub mod health_check {
     
@@ -996,12 +1008,6 @@ pub mod health_check {
     
     
 }
-impl HealthCheck {
-    /// Creates a new builder-style object to manufacture [`HealthCheck`](crate::model::HealthCheck).
-    pub fn builder() -> crate::model::health_check::Builder {
-        crate::model::health_check::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
 #[non_exhaustive]
@@ -1066,6 +1072,13 @@ impl CloudWatchAlarmConfiguration {
         self.dimensions.as_deref()
     }
 }
+impl CloudWatchAlarmConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_alarm_configuration::Builder {
+        crate::model::cloud_watch_alarm_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
 pub mod cloud_watch_alarm_configuration {
     
@@ -1186,12 +1199,6 @@ pub mod cloud_watch_alarm_configuration {
     
     
 }
-impl CloudWatchAlarmConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
-    pub fn builder() -> crate::model::cloud_watch_alarm_configuration::Builder {
-        crate::model::cloud_watch_alarm_configuration::Builder::default()
-    }
-}
 
 /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.</p>
 #[non_exhaustive]
@@ -1214,6 +1221,13 @@ impl Dimension {
         self.value.as_deref()
     }
 }
+impl Dimension {
+    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
+    pub fn builder() -> crate::model::dimension::Builder {
+        crate::model::dimension::Builder::default()
+    }
+}
+
 /// See [`Dimension`](crate::model::Dimension).
 pub mod dimension {
     
@@ -1255,12 +1269,6 @@ pub mod dimension {
     }
     
     
-}
-impl Dimension {
-    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
-    pub fn builder() -> crate::model::dimension::Builder {
-        crate::model::dimension::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Statistic`, it is important to ensure
@@ -1741,6 +1749,13 @@ impl HealthCheckConfig {
         self.routing_control_arn.as_deref()
     }
 }
+impl HealthCheckConfig {
+    /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig).
+    pub fn builder() -> crate::model::health_check_config::Builder {
+        crate::model::health_check_config::Builder::default()
+    }
+}
+
 /// See [`HealthCheckConfig`](crate::model::HealthCheckConfig).
 pub mod health_check_config {
     
@@ -2143,12 +2158,6 @@ pub mod health_check_config {
     
     
 }
-impl HealthCheckConfig {
-    /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig).
-    pub fn builder() -> crate::model::health_check_config::Builder {
-        crate::model::health_check_config::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InsufficientDataHealthStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2272,6 +2281,13 @@ impl AlarmIdentifier {
         self.name.as_deref()
     }
 }
+impl AlarmIdentifier {
+    /// Creates a new builder-style object to manufacture [`AlarmIdentifier`](crate::model::AlarmIdentifier).
+    pub fn builder() -> crate::model::alarm_identifier::Builder {
+        crate::model::alarm_identifier::Builder::default()
+    }
+}
+
 /// See [`AlarmIdentifier`](crate::model::AlarmIdentifier).
 pub mod alarm_identifier {
     
@@ -2327,12 +2343,6 @@ pub mod alarm_identifier {
     }
     
     
-}
-impl AlarmIdentifier {
-    /// Creates a new builder-style object to manufacture [`AlarmIdentifier`](crate::model::AlarmIdentifier).
-    pub fn builder() -> crate::model::alarm_identifier::Builder {
-        crate::model::alarm_identifier::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloudWatchRegion`, it is important to ensure
@@ -2915,6 +2925,13 @@ impl Vpc {
         self.vpc_id.as_deref()
     }
 }
+impl Vpc {
+    /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc).
+    pub fn builder() -> crate::model::vpc::Builder {
+        crate::model::vpc::Builder::default()
+    }
+}
+
 /// See [`Vpc`](crate::model::Vpc).
 pub mod vpc {
     
@@ -2956,12 +2973,6 @@ pub mod vpc {
     }
     
     
-}
-impl Vpc {
-    /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc).
-    pub fn builder() -> crate::model::vpc::Builder {
-        crate::model::vpc::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VpcRegion`, it is important to ensure
@@ -3243,6 +3254,13 @@ impl TrafficPolicySummary {
         self.traffic_policy_count
     }
 }
+impl TrafficPolicySummary {
+    /// Creates a new builder-style object to manufacture [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
+    pub fn builder() -> crate::model::traffic_policy_summary::Builder {
+        crate::model::traffic_policy_summary::Builder::default()
+    }
+}
+
 /// See [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
 pub mod traffic_policy_summary {
     
@@ -3321,12 +3339,6 @@ pub mod traffic_policy_summary {
     
     
 }
-impl TrafficPolicySummary {
-    /// Creates a new builder-style object to manufacture [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
-    pub fn builder() -> crate::model::traffic_policy_summary::Builder {
-        crate::model::traffic_policy_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type containing a resource and its associated tags.</p>
 #[non_exhaustive]
@@ -3364,6 +3376,13 @@ impl ResourceTagSet {
         self.tags.as_deref()
     }
 }
+impl ResourceTagSet {
+    /// Creates a new builder-style object to manufacture [`ResourceTagSet`](crate::model::ResourceTagSet).
+    pub fn builder() -> crate::model::resource_tag_set::Builder {
+        crate::model::resource_tag_set::Builder::default()
+    }
+}
+
 /// See [`ResourceTagSet`](crate::model::ResourceTagSet).
 pub mod resource_tag_set {
     
@@ -3432,12 +3451,6 @@ pub mod resource_tag_set {
     
     
 }
-impl ResourceTagSet {
-    /// Creates a new builder-style object to manufacture [`ResourceTagSet`](crate::model::ResourceTagSet).
-    pub fn builder() -> crate::model::resource_tag_set::Builder {
-        crate::model::resource_tag_set::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.</p>
 #[non_exhaustive]
@@ -3480,6 +3493,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -3541,12 +3561,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TagResourceType`, it is important to ensure
@@ -3659,6 +3673,13 @@ impl DelegationSet {
         self.name_servers.as_deref()
     }
 }
+impl DelegationSet {
+    /// Creates a new builder-style object to manufacture [`DelegationSet`](crate::model::DelegationSet).
+    pub fn builder() -> crate::model::delegation_set::Builder {
+        crate::model::delegation_set::Builder::default()
+    }
+}
+
 /// See [`DelegationSet`](crate::model::DelegationSet).
 pub mod delegation_set {
     
@@ -3718,12 +3739,6 @@ pub mod delegation_set {
     }
     
     
-}
-impl DelegationSet {
-    /// Creates a new builder-style object to manufacture [`DelegationSet`](crate::model::DelegationSet).
-    pub fn builder() -> crate::model::delegation_set::Builder {
-        crate::model::delegation_set::Builder::default()
-    }
 }
 
 /// <p>Information about the resource record set to create or delete.</p>
@@ -4099,6 +4114,13 @@ impl ResourceRecordSet {
         self.cidr_routing_config.as_ref()
     }
 }
+impl ResourceRecordSet {
+    /// Creates a new builder-style object to manufacture [`ResourceRecordSet`](crate::model::ResourceRecordSet).
+    pub fn builder() -> crate::model::resource_record_set::Builder {
+        crate::model::resource_record_set::Builder::default()
+    }
+}
+
 /// See [`ResourceRecordSet`](crate::model::ResourceRecordSet).
 pub mod resource_record_set {
     
@@ -4559,12 +4581,6 @@ pub mod resource_record_set {
     
     
 }
-impl ResourceRecordSet {
-    /// Creates a new builder-style object to manufacture [`ResourceRecordSet`](crate::model::ResourceRecordSet).
-    pub fn builder() -> crate::model::resource_record_set::Builder {
-        crate::model::resource_record_set::Builder::default()
-    }
-}
 
 /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> 
 /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
@@ -4588,6 +4604,13 @@ impl CidrRoutingConfig {
         self.location_name.as_deref()
     }
 }
+impl CidrRoutingConfig {
+    /// Creates a new builder-style object to manufacture [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
+    pub fn builder() -> crate::model::cidr_routing_config::Builder {
+        crate::model::cidr_routing_config::Builder::default()
+    }
+}
+
 /// See [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
 pub mod cidr_routing_config {
     
@@ -4629,12 +4652,6 @@ pub mod cidr_routing_config {
     }
     
     
-}
-impl CidrRoutingConfig {
-    /// Creates a new builder-style object to manufacture [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
-    pub fn builder() -> crate::model::cidr_routing_config::Builder {
-        crate::model::cidr_routing_config::Builder::default()
-    }
 }
 
 /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> 
@@ -5073,6 +5090,13 @@ impl AliasTarget {
         self.evaluate_target_health
     }
 }
+impl AliasTarget {
+    /// Creates a new builder-style object to manufacture [`AliasTarget`](crate::model::AliasTarget).
+    pub fn builder() -> crate::model::alias_target::Builder {
+        crate::model::alias_target::Builder::default()
+    }
+}
+
 /// See [`AliasTarget`](crate::model::AliasTarget).
 pub mod alias_target {
     
@@ -5532,12 +5556,6 @@ pub mod alias_target {
     
     
 }
-impl AliasTarget {
-    /// Creates a new builder-style object to manufacture [`AliasTarget`](crate::model::AliasTarget).
-    pub fn builder() -> crate::model::alias_target::Builder {
-        crate::model::alias_target::Builder::default()
-    }
-}
 
 /// <p>Information specific to the resource record.</p> <note> 
 /// <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> 
@@ -5561,6 +5579,13 @@ impl ResourceRecord {
         self.value.as_deref()
     }
 }
+impl ResourceRecord {
+    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
+    pub fn builder() -> crate::model::resource_record::Builder {
+        crate::model::resource_record::Builder::default()
+    }
+}
+
 /// See [`ResourceRecord`](crate::model::ResourceRecord).
 pub mod resource_record {
     
@@ -5596,12 +5621,6 @@ pub mod resource_record {
     }
     
     
-}
-impl ResourceRecord {
-    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
-    pub fn builder() -> crate::model::resource_record::Builder {
-        crate::model::resource_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceRecordSetFailover`, it is important to ensure
@@ -5740,6 +5759,13 @@ impl GeoLocation {
         self.subdivision_code.as_deref()
     }
 }
+impl GeoLocation {
+    /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation).
+    pub fn builder() -> crate::model::geo_location::Builder {
+        crate::model::geo_location::Builder::default()
+    }
+}
+
 /// See [`GeoLocation`](crate::model::GeoLocation).
 pub mod geo_location {
     
@@ -5819,12 +5845,6 @@ pub mod geo_location {
     }
     
     
-}
-impl GeoLocation {
-    /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation).
-    pub fn builder() -> crate::model::geo_location::Builder {
-        crate::model::geo_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceRecordSetRegion`, it is important to ensure
@@ -6072,6 +6092,13 @@ impl QueryLoggingConfig {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
 }
+impl QueryLoggingConfig {
+    /// Creates a new builder-style object to manufacture [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
+    pub fn builder() -> crate::model::query_logging_config::Builder {
+        crate::model::query_logging_config::Builder::default()
+    }
+}
+
 /// See [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
 pub mod query_logging_config {
     
@@ -6126,12 +6153,6 @@ pub mod query_logging_config {
     
     
 }
-impl QueryLoggingConfig {
-    /// Creates a new builder-style object to manufacture [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
-    pub fn builder() -> crate::model::query_logging_config::Builder {
-        crate::model::query_logging_config::Builder::default()
-    }
-}
 
 /// <p>In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
 #[non_exhaustive]
@@ -6161,6 +6182,13 @@ impl HostedZoneSummary {
         self.owner.as_ref()
     }
 }
+impl HostedZoneSummary {
+    /// Creates a new builder-style object to manufacture [`HostedZoneSummary`](crate::model::HostedZoneSummary).
+    pub fn builder() -> crate::model::hosted_zone_summary::Builder {
+        crate::model::hosted_zone_summary::Builder::default()
+    }
+}
+
 /// See [`HostedZoneSummary`](crate::model::HostedZoneSummary).
 pub mod hosted_zone_summary {
     
@@ -6215,12 +6243,6 @@ pub mod hosted_zone_summary {
     
     
 }
-impl HostedZoneSummary {
-    /// Creates a new builder-style object to manufacture [`HostedZoneSummary`](crate::model::HostedZoneSummary).
-    pub fn builder() -> crate::model::hosted_zone_summary::Builder {
-        crate::model::hosted_zone_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa. </p>
 #[non_exhaustive]
@@ -6243,6 +6265,13 @@ impl HostedZoneOwner {
         self.owning_service.as_deref()
     }
 }
+impl HostedZoneOwner {
+    /// Creates a new builder-style object to manufacture [`HostedZoneOwner`](crate::model::HostedZoneOwner).
+    pub fn builder() -> crate::model::hosted_zone_owner::Builder {
+        crate::model::hosted_zone_owner::Builder::default()
+    }
+}
+
 /// See [`HostedZoneOwner`](crate::model::HostedZoneOwner).
 pub mod hosted_zone_owner {
     
@@ -6284,12 +6313,6 @@ pub mod hosted_zone_owner {
     }
     
     
-}
-impl HostedZoneOwner {
-    /// Creates a new builder-style object to manufacture [`HostedZoneOwner`](crate::model::HostedZoneOwner).
-    pub fn builder() -> crate::model::hosted_zone_owner::Builder {
-        crate::model::hosted_zone_owner::Builder::default()
-    }
 }
 
 /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.</p>
@@ -6341,6 +6364,13 @@ impl GeoLocationDetails {
         self.subdivision_name.as_deref()
     }
 }
+impl GeoLocationDetails {
+    /// Creates a new builder-style object to manufacture [`GeoLocationDetails`](crate::model::GeoLocationDetails).
+    pub fn builder() -> crate::model::geo_location_details::Builder {
+        crate::model::geo_location_details::Builder::default()
+    }
+}
+
 /// See [`GeoLocationDetails`](crate::model::GeoLocationDetails).
 pub mod geo_location_details {
     
@@ -6431,12 +6461,6 @@ pub mod geo_location_details {
     
     
 }
-impl GeoLocationDetails {
-    /// Creates a new builder-style object to manufacture [`GeoLocationDetails`](crate::model::GeoLocationDetails).
-    pub fn builder() -> crate::model::geo_location_details::Builder {
-        crate::model::geo_location_details::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the CIDR location.</p>
 #[non_exhaustive]
@@ -6452,6 +6476,13 @@ impl LocationSummary {
         self.location_name.as_deref()
     }
 }
+impl LocationSummary {
+    /// Creates a new builder-style object to manufacture [`LocationSummary`](crate::model::LocationSummary).
+    pub fn builder() -> crate::model::location_summary::Builder {
+        crate::model::location_summary::Builder::default()
+    }
+}
+
 /// See [`LocationSummary`](crate::model::LocationSummary).
 pub mod location_summary {
     
@@ -6481,12 +6512,6 @@ pub mod location_summary {
     }
     
     
-}
-impl LocationSummary {
-    /// Creates a new builder-style object to manufacture [`LocationSummary`](crate::model::LocationSummary).
-    pub fn builder() -> crate::model::location_summary::Builder {
-        crate::model::location_summary::Builder::default()
-    }
 }
 
 /// <p>A complex type that is an entry in an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html">CidrCollection</a> array.</p>
@@ -6524,6 +6549,13 @@ impl CollectionSummary {
         self.version
     }
 }
+impl CollectionSummary {
+    /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary).
+    pub fn builder() -> crate::model::collection_summary::Builder {
+        crate::model::collection_summary::Builder::default()
+    }
+}
+
 /// See [`CollectionSummary`](crate::model::CollectionSummary).
 pub mod collection_summary {
     
@@ -6590,12 +6622,6 @@ pub mod collection_summary {
     
     
 }
-impl CollectionSummary {
-    /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary).
-    pub fn builder() -> crate::model::collection_summary::Builder {
-        crate::model::collection_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type that lists the CIDR blocks.</p>
 #[non_exhaustive]
@@ -6618,6 +6644,13 @@ impl CidrBlockSummary {
         self.location_name.as_deref()
     }
 }
+impl CidrBlockSummary {
+    /// Creates a new builder-style object to manufacture [`CidrBlockSummary`](crate::model::CidrBlockSummary).
+    pub fn builder() -> crate::model::cidr_block_summary::Builder {
+        crate::model::cidr_block_summary::Builder::default()
+    }
+}
+
 /// See [`CidrBlockSummary`](crate::model::CidrBlockSummary).
 pub mod cidr_block_summary {
     
@@ -6660,12 +6693,6 @@ pub mod cidr_block_summary {
     
     
 }
-impl CidrBlockSummary {
-    /// Creates a new builder-style object to manufacture [`CidrBlockSummary`](crate::model::CidrBlockSummary).
-    pub fn builder() -> crate::model::cidr_block_summary::Builder {
-        crate::model::cidr_block_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
@@ -6688,6 +6715,13 @@ impl ReusableDelegationSetLimit {
         self.value
     }
 }
+impl ReusableDelegationSetLimit {
+    /// Creates a new builder-style object to manufacture [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
+    pub fn builder() -> crate::model::reusable_delegation_set_limit::Builder {
+        crate::model::reusable_delegation_set_limit::Builder::default()
+    }
+}
+
 /// See [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
 pub mod reusable_delegation_set_limit {
     
@@ -6730,12 +6764,6 @@ pub mod reusable_delegation_set_limit {
     }
     
     
-}
-impl ReusableDelegationSetLimit {
-    /// Creates a new builder-style object to manufacture [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
-    pub fn builder() -> crate::model::reusable_delegation_set_limit::Builder {
-        crate::model::reusable_delegation_set_limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReusableDelegationSetLimitType`, it is important to ensure
@@ -6844,6 +6872,13 @@ impl HostedZoneLimit {
         self.value
     }
 }
+impl HostedZoneLimit {
+    /// Creates a new builder-style object to manufacture [`HostedZoneLimit`](crate::model::HostedZoneLimit).
+    pub fn builder() -> crate::model::hosted_zone_limit::Builder {
+        crate::model::hosted_zone_limit::Builder::default()
+    }
+}
+
 /// See [`HostedZoneLimit`](crate::model::HostedZoneLimit).
 pub mod hosted_zone_limit {
     
@@ -6894,12 +6929,6 @@ pub mod hosted_zone_limit {
     }
     
     
-}
-impl HostedZoneLimit {
-    /// Creates a new builder-style object to manufacture [`HostedZoneLimit`](crate::model::HostedZoneLimit).
-    pub fn builder() -> crate::model::hosted_zone_limit::Builder {
-        crate::model::hosted_zone_limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HostedZoneLimitType`, it is important to ensure
@@ -7012,6 +7041,13 @@ impl HealthCheckObservation {
         self.status_report.as_ref()
     }
 }
+impl HealthCheckObservation {
+    /// Creates a new builder-style object to manufacture [`HealthCheckObservation`](crate::model::HealthCheckObservation).
+    pub fn builder() -> crate::model::health_check_observation::Builder {
+        crate::model::health_check_observation::Builder::default()
+    }
+}
+
 /// See [`HealthCheckObservation`](crate::model::HealthCheckObservation).
 pub mod health_check_observation {
     
@@ -7066,12 +7102,6 @@ pub mod health_check_observation {
     
     
 }
-impl HealthCheckObservation {
-    /// Creates a new builder-style object to manufacture [`HealthCheckObservation`](crate::model::HealthCheckObservation).
-    pub fn builder() -> crate::model::health_check_observation::Builder {
-        crate::model::health_check_observation::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.</p>
 #[non_exhaustive]
@@ -7094,6 +7124,13 @@ impl StatusReport {
         self.checked_time.as_ref()
     }
 }
+impl StatusReport {
+    /// Creates a new builder-style object to manufacture [`StatusReport`](crate::model::StatusReport).
+    pub fn builder() -> crate::model::status_report::Builder {
+        crate::model::status_report::Builder::default()
+    }
+}
+
 /// See [`StatusReport`](crate::model::StatusReport).
 pub mod status_report {
     
@@ -7135,12 +7172,6 @@ pub mod status_report {
     }
     
     
-}
-impl StatusReport {
-    /// Creates a new builder-style object to manufacture [`StatusReport`](crate::model::StatusReport).
-    pub fn builder() -> crate::model::status_report::Builder {
-        crate::model::status_report::Builder::default()
-    }
 }
 
 /// <p>A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.</p>
@@ -7402,6 +7433,13 @@ impl KeySigningKey {
         self.last_modified_date.as_ref()
     }
 }
+impl KeySigningKey {
+    /// Creates a new builder-style object to manufacture [`KeySigningKey`](crate::model::KeySigningKey).
+    pub fn builder() -> crate::model::key_signing_key::Builder {
+        crate::model::key_signing_key::Builder::default()
+    }
+}
+
 /// See [`KeySigningKey`](crate::model::KeySigningKey).
 pub mod key_signing_key {
     
@@ -7756,12 +7794,6 @@ pub mod key_signing_key {
     
     
 }
-impl KeySigningKey {
-    /// Creates a new builder-style object to manufacture [`KeySigningKey`](crate::model::KeySigningKey).
-    pub fn builder() -> crate::model::key_signing_key::Builder {
-        crate::model::key_signing_key::Builder::default()
-    }
-}
 
 /// <p>A string repesenting the status of DNSSEC signing.</p>
 #[non_exhaustive]
@@ -7850,6 +7882,13 @@ impl DnssecStatus {
         self.status_message.as_deref()
     }
 }
+impl DnssecStatus {
+    /// Creates a new builder-style object to manufacture [`DnssecStatus`](crate::model::DnssecStatus).
+    pub fn builder() -> crate::model::dnssec_status::Builder {
+        crate::model::dnssec_status::Builder::default()
+    }
+}
+
 /// See [`DnssecStatus`](crate::model::DnssecStatus).
 pub mod dnssec_status {
     
@@ -7958,12 +7997,6 @@ pub mod dnssec_status {
     
     
 }
-impl DnssecStatus {
-    /// Creates a new builder-style object to manufacture [`DnssecStatus`](crate::model::DnssecStatus).
-    pub fn builder() -> crate::model::dnssec_status::Builder {
-        crate::model::dnssec_status::Builder::default()
-    }
-}
 
 /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
 #[non_exhaustive]
@@ -8000,6 +8033,13 @@ impl ChangeInfo {
         self.comment.as_deref()
     }
 }
+impl ChangeInfo {
+    /// Creates a new builder-style object to manufacture [`ChangeInfo`](crate::model::ChangeInfo).
+    pub fn builder() -> crate::model::change_info::Builder {
+        crate::model::change_info::Builder::default()
+    }
+}
+
 /// See [`ChangeInfo`](crate::model::ChangeInfo).
 pub mod change_info {
     
@@ -8065,12 +8105,6 @@ pub mod change_info {
     }
     
     
-}
-impl ChangeInfo {
-    /// Creates a new builder-style object to manufacture [`ChangeInfo`](crate::model::ChangeInfo).
-    pub fn builder() -> crate::model::change_info::Builder {
-        crate::model::change_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeStatus`, it is important to ensure
@@ -8190,6 +8224,13 @@ impl AccountLimit {
         self.value
     }
 }
+impl AccountLimit {
+    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
+    pub fn builder() -> crate::model::account_limit::Builder {
+        crate::model::account_limit::Builder::default()
+    }
+}
+
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
     
@@ -8246,12 +8287,6 @@ pub mod account_limit {
     }
     
     
-}
-impl AccountLimit {
-    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
-    pub fn builder() -> crate::model::account_limit::Builder {
-        crate::model::account_limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccountLimitType`, it is important to ensure
@@ -8386,6 +8421,13 @@ impl CidrCollection {
         self.version
     }
 }
+impl CidrCollection {
+    /// Creates a new builder-style object to manufacture [`CidrCollection`](crate::model::CidrCollection).
+    pub fn builder() -> crate::model::cidr_collection::Builder {
+        crate::model::cidr_collection::Builder::default()
+    }
+}
+
 /// See [`CidrCollection`](crate::model::CidrCollection).
 pub mod cidr_collection {
     
@@ -8452,12 +8494,6 @@ pub mod cidr_collection {
     
     
 }
-impl CidrCollection {
-    /// Creates a new builder-style object to manufacture [`CidrCollection`](crate::model::CidrCollection).
-    pub fn builder() -> crate::model::cidr_collection::Builder {
-        crate::model::cidr_collection::Builder::default()
-    }
-}
 
 /// <p>The information for a change request.</p>
 #[non_exhaustive]
@@ -8480,6 +8516,13 @@ impl ChangeBatch {
         self.changes.as_deref()
     }
 }
+impl ChangeBatch {
+    /// Creates a new builder-style object to manufacture [`ChangeBatch`](crate::model::ChangeBatch).
+    pub fn builder() -> crate::model::change_batch::Builder {
+        crate::model::change_batch::Builder::default()
+    }
+}
+
 /// See [`ChangeBatch`](crate::model::ChangeBatch).
 pub mod change_batch {
     
@@ -8528,12 +8571,6 @@ pub mod change_batch {
     
     
 }
-impl ChangeBatch {
-    /// Creates a new builder-style object to manufacture [`ChangeBatch`](crate::model::ChangeBatch).
-    pub fn builder() -> crate::model::change_batch::Builder {
-        crate::model::change_batch::Builder::default()
-    }
-}
 
 /// <p>The information for each resource record set that you want to change.</p>
 #[non_exhaustive]
@@ -8570,6 +8607,13 @@ impl Change {
         self.resource_record_set.as_ref()
     }
 }
+impl Change {
+    /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
+    pub fn builder() -> crate::model::change::Builder {
+        crate::model::change::Builder::default()
+    }
+}
+
 /// See [`Change`](crate::model::Change).
 pub mod change {
     
@@ -8625,12 +8669,6 @@ pub mod change {
     }
     
     
-}
-impl Change {
-    /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
-    pub fn builder() -> crate::model::change::Builder {
-        crate::model::change::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeAction`, it is important to ensure
@@ -8748,6 +8786,13 @@ impl CidrCollectionChange {
         self.cidr_list.as_deref()
     }
 }
+impl CidrCollectionChange {
+    /// Creates a new builder-style object to manufacture [`CidrCollectionChange`](crate::model::CidrCollectionChange).
+    pub fn builder() -> crate::model::cidr_collection_change::Builder {
+        crate::model::cidr_collection_change::Builder::default()
+    }
+}
+
 /// See [`CidrCollectionChange`](crate::model::CidrCollectionChange).
 pub mod cidr_collection_change {
     
@@ -8807,12 +8852,6 @@ pub mod cidr_collection_change {
     }
     
     
-}
-impl CidrCollectionChange {
-    /// Creates a new builder-style object to manufacture [`CidrCollectionChange`](crate::model::CidrCollectionChange).
-    pub fn builder() -> crate::model::cidr_collection_change::Builder {
-        crate::model::cidr_collection_change::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CidrCollectionChangeAction`, it is important to ensure

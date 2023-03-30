@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_byte_match_set`](crate::client::Client::create_byte_match_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateByteMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateByteMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateByteMatchSet {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateByteMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_geo_match_set`](crate::client::Client::create_geo_match_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateGeoMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateGeoMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGeoMatchSet {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGeoMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_ip_set`](crate::client::Client::create_ip_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateIPSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateIPSet {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIPSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_rate_based_rule`](crate::client::Client::create_rate_based_rule).
             ///
-            /// See [`crate::client::fluent_builders::CreateRateBasedRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRateBasedRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRateBasedRule {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRateBasedRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_regex_match_set`](crate::client::Client::create_regex_match_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateRegexMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRegexMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRegexMatchSet {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRegexMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_regex_pattern_set`](crate::client::Client::create_regex_pattern_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateRegexPatternSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRegexPatternSet {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRegexPatternSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_rule`](crate::client::Client::create_rule).
             ///
-            /// See [`crate::client::fluent_builders::CreateRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRule {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_rule_group`](crate::client::Client::create_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::CreateRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRuleGroup {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_size_constraint_set`](crate::client::Client::create_size_constraint_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateSizeConstraintSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSizeConstraintSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSizeConstraintSet {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSizeConstraintSet 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_sql_injection_match_set`](crate::client::Client::create_sql_injection_match_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateSqlInjectionMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSqlInjectionMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSet {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSqlInjectionMatchS
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_web_acl`](crate::client::Client::create_web_acl).
             ///
-            /// See [`crate::client::fluent_builders::CreateWebACL`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWebACL {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebACL {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_web_acl_migration_stack`](crate::client::Client::create_web_acl_migration_stack).
             ///
-            /// See [`crate::client::fluent_builders::CreateWebACLMigrationStack`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateWebACLMigrationStack`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWebACLMigrationStack {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebACLMigrationSta
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_xss_match_set`](crate::client::Client::create_xss_match_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateXssMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateXssMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateXssMatchSet {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateXssMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_byte_match_set`](crate::client::Client::delete_byte_match_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteByteMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteByteMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteByteMatchSet {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteByteMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_geo_match_set`](crate::client::Client::delete_geo_match_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteGeoMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteGeoMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGeoMatchSet {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGeoMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_ip_set`](crate::client::Client::delete_ip_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteIPSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIPSet {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIPSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLoggingConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLoggingConfiguration {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_permission_policy`](crate::client::Client::delete_permission_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeletePermissionPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePermissionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePermissionPolicy {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_rate_based_rule`](crate::client::Client::delete_rate_based_rule).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRateBasedRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRateBasedRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRateBasedRule {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRateBasedRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_regex_match_set`](crate::client::Client::delete_regex_match_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRegexMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRegexMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRegexMatchSet {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegexMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_regex_pattern_set`](crate::client::Client::delete_regex_pattern_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRegexPatternSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRegexPatternSet {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegexPatternSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_rule`](crate::client::Client::delete_rule).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRule {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_rule_group`](crate::client::Client::delete_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRuleGroup {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRuleGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_size_constraint_set`](crate::client::Client::delete_size_constraint_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSizeConstraintSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSizeConstraintSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSizeConstraintSet {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSizeConstraintSet 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_sql_injection_match_set`](crate::client::Client::delete_sql_injection_match_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSqlInjectionMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSqlInjectionMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSet {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSqlInjectionMatchS
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_web_acl`](crate::client::Client::delete_web_acl).
             ///
-            /// See [`crate::client::fluent_builders::DeleteWebACL`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWebACL {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWebACL {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_xss_match_set`](crate::client::Client::delete_xss_match_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteXssMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteXssMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteXssMatchSet {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteXssMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_byte_match_set`](crate::client::Client::get_byte_match_set).
             ///
-            /// See [`crate::client::fluent_builders::GetByteMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetByteMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetByteMatchSet {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetByteMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_change_token`](crate::client::Client::get_change_token).
             ///
-            /// See [`crate::client::fluent_builders::GetChangeToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetChangeToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChangeToken {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChangeToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_change_token_status`](crate::client::Client::get_change_token_status).
             ///
-            /// See [`crate::client::fluent_builders::GetChangeTokenStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetChangeTokenStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChangeTokenStatus {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChangeTokenStatus {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_geo_match_set`](crate::client::Client::get_geo_match_set).
             ///
-            /// See [`crate::client::fluent_builders::GetGeoMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGeoMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGeoMatchSet {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeoMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_ip_set`](crate::client::Client::get_ip_set).
             ///
-            /// See [`crate::client::fluent_builders::GetIPSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIPSet {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIPSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_logging_configuration`](crate::client::Client::get_logging_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetLoggingConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLoggingConfiguration {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoggingConfiguration 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_permission_policy`](crate::client::Client::get_permission_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetPermissionPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPermissionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPermissionPolicy {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_rate_based_rule`](crate::client::Client::get_rate_based_rule).
             ///
-            /// See [`crate::client::fluent_builders::GetRateBasedRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRateBasedRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRateBasedRule {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRateBasedRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_rate_based_rule_managed_keys`](crate::client::Client::get_rate_based_rule_managed_keys).
             ///
-            /// See [`crate::client::fluent_builders::GetRateBasedRuleManagedKeys`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRateBasedRuleManagedKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeys {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRateBasedRuleManagedK
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_regex_match_set`](crate::client::Client::get_regex_match_set).
             ///
-            /// See [`crate::client::fluent_builders::GetRegexMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRegexMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRegexMatchSet {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegexMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_regex_pattern_set`](crate::client::Client::get_regex_pattern_set).
             ///
-            /// See [`crate::client::fluent_builders::GetRegexPatternSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRegexPatternSet {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegexPatternSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_rule`](crate::client::Client::get_rule).
             ///
-            /// See [`crate::client::fluent_builders::GetRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRule {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_rule_group`](crate::client::Client::get_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::GetRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRuleGroup {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRuleGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_sampled_requests`](crate::client::Client::get_sampled_requests).
             ///
-            /// See [`crate::client::fluent_builders::GetSampledRequests`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSampledRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSampledRequests {
     _private: ()
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSampledRequests {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_size_constraint_set`](crate::client::Client::get_size_constraint_set).
             ///
-            /// See [`crate::client::fluent_builders::GetSizeConstraintSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSizeConstraintSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSizeConstraintSet {
     _private: ()
@@ -1348,7 +1348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSizeConstraintSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_sql_injection_match_set`](crate::client::Client::get_sql_injection_match_set).
             ///
-            /// See [`crate::client::fluent_builders::GetSqlInjectionMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSqlInjectionMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSet {
     _private: ()
@@ -1380,7 +1380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSqlInjectionMatchSet 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_web_acl`](crate::client::Client::get_web_acl).
             ///
-            /// See [`crate::client::fluent_builders::GetWebACL`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWebACL {
     _private: ()
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebACL {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_xss_match_set`](crate::client::Client::get_xss_match_set).
             ///
-            /// See [`crate::client::fluent_builders::GetXssMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetXssMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetXssMatchSet {
     _private: ()
@@ -1444,7 +1444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetXssMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_activated_rules_in_rule_group`](crate::client::Client::list_activated_rules_in_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::ListActivatedRulesInRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListActivatedRulesInRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroup {
     _private: ()
@@ -1476,7 +1476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActivatedRulesInRule
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_byte_match_sets`](crate::client::Client::list_byte_match_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListByteMatchSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListByteMatchSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListByteMatchSets {
     _private: ()
@@ -1508,7 +1508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListByteMatchSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_geo_match_sets`](crate::client::Client::list_geo_match_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListGeoMatchSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGeoMatchSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeoMatchSets {
     _private: ()
@@ -1540,7 +1540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeoMatchSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_ip_sets`](crate::client::Client::list_ip_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListIPSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListIPSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIPSets {
     _private: ()
@@ -1572,7 +1572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIPSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_logging_configurations`](crate::client::Client::list_logging_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListLoggingConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLoggingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLoggingConfigurations {
     _private: ()
@@ -1604,7 +1604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLoggingConfiguration
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_rate_based_rules`](crate::client::Client::list_rate_based_rules).
             ///
-            /// See [`crate::client::fluent_builders::ListRateBasedRules`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRateBasedRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRateBasedRules {
     _private: ()
@@ -1636,7 +1636,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRateBasedRules {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_regex_match_sets`](crate::client::Client::list_regex_match_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListRegexMatchSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRegexMatchSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRegexMatchSets {
     _private: ()
@@ -1668,7 +1668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegexMatchSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_regex_pattern_sets`](crate::client::Client::list_regex_pattern_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListRegexPatternSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRegexPatternSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRegexPatternSets {
     _private: ()
@@ -1700,7 +1700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegexPatternSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_rule_groups`](crate::client::Client::list_rule_groups).
             ///
-            /// See [`crate::client::fluent_builders::ListRuleGroups`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRuleGroups {
     _private: ()
@@ -1732,7 +1732,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroups {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_rules`](crate::client::Client::list_rules).
             ///
-            /// See [`crate::client::fluent_builders::ListRules`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRules {
     _private: ()
@@ -1764,7 +1764,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRules {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_size_constraint_sets`](crate::client::Client::list_size_constraint_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListSizeConstraintSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSizeConstraintSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSizeConstraintSets {
     _private: ()
@@ -1796,7 +1796,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSizeConstraintSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_sql_injection_match_sets`](crate::client::Client::list_sql_injection_match_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListSqlInjectionMatchSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSqlInjectionMatchSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSets {
     _private: ()
@@ -1828,7 +1828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSqlInjectionMatchSet
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_subscribed_rule_groups`](crate::client::Client::list_subscribed_rule_groups).
             ///
-            /// See [`crate::client::fluent_builders::ListSubscribedRuleGroups`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSubscribedRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSubscribedRuleGroups {
     _private: ()
@@ -1860,7 +1860,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscribedRuleGroups
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -1892,7 +1892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_web_ac_ls`](crate::client::Client::list_web_ac_ls).
             ///
-            /// See [`crate::client::fluent_builders::ListWebACLs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListWebACLs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWebACLs {
     _private: ()
@@ -1924,7 +1924,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebACLs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_xss_match_sets`](crate::client::Client::list_xss_match_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListXssMatchSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListXssMatchSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListXssMatchSets {
     _private: ()
@@ -1956,7 +1956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListXssMatchSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_logging_configuration`](crate::client::Client::put_logging_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutLoggingConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLoggingConfiguration {
     _private: ()
@@ -1988,7 +1988,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLoggingConfiguration 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_permission_policy`](crate::client::Client::put_permission_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutPermissionPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutPermissionPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPermissionPolicy {
     _private: ()
@@ -2020,7 +2020,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermissionPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -2052,7 +2052,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -2084,7 +2084,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_byte_match_set`](crate::client::Client::update_byte_match_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateByteMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateByteMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateByteMatchSet {
     _private: ()
@@ -2116,7 +2116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateByteMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_geo_match_set`](crate::client::Client::update_geo_match_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateGeoMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateGeoMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGeoMatchSet {
     _private: ()
@@ -2148,7 +2148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGeoMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_ip_set`](crate::client::Client::update_ip_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateIPSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateIPSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIPSet {
     _private: ()
@@ -2180,7 +2180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIPSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_rate_based_rule`](crate::client::Client::update_rate_based_rule).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRateBasedRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRateBasedRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRateBasedRule {
     _private: ()
@@ -2212,7 +2212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRateBasedRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_regex_match_set`](crate::client::Client::update_regex_match_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRegexMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRegexMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRegexMatchSet {
     _private: ()
@@ -2244,7 +2244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegexMatchSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_regex_pattern_set`](crate::client::Client::update_regex_pattern_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRegexPatternSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRegexPatternSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRegexPatternSet {
     _private: ()
@@ -2276,7 +2276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegexPatternSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_rule`](crate::client::Client::update_rule).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRule {
     _private: ()
@@ -2308,7 +2308,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_rule_group`](crate::client::Client::update_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRuleGroup {
     _private: ()
@@ -2340,7 +2340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRuleGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_size_constraint_set`](crate::client::Client::update_size_constraint_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateSizeConstraintSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateSizeConstraintSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSizeConstraintSet {
     _private: ()
@@ -2372,7 +2372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSizeConstraintSet 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_sql_injection_match_set`](crate::client::Client::update_sql_injection_match_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateSqlInjectionMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateSqlInjectionMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSet {
     _private: ()
@@ -2404,7 +2404,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSqlInjectionMatchS
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_web_acl`](crate::client::Client::update_web_acl).
             ///
-            /// See [`crate::client::fluent_builders::UpdateWebACL`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateWebACL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWebACL {
     _private: ()
@@ -2436,7 +2436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWebACL {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_xss_match_set`](crate::client::Client::update_xss_match_set).
             ///
-            /// See [`crate::client::fluent_builders::UpdateXssMatchSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateXssMatchSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateXssMatchSet {
     _private: ()

@@ -21,6 +21,13 @@ impl DefinitionDocument {
         self.text.as_deref()
     }
 }
+impl DefinitionDocument {
+    /// Creates a new builder-style object to manufacture [`DefinitionDocument`](crate::model::DefinitionDocument).
+    pub fn builder() -> crate::model::definition_document::Builder {
+        crate::model::definition_document::Builder::default()
+    }
+}
+
 /// See [`DefinitionDocument`](crate::model::DefinitionDocument).
 pub mod definition_document {
     
@@ -62,12 +69,6 @@ pub mod definition_document {
     }
     
     
-}
-impl DefinitionDocument {
-    /// Creates a new builder-style object to manufacture [`DefinitionDocument`](crate::model::DefinitionDocument).
-    pub fn builder() -> crate::model::definition_document::Builder {
-        crate::model::definition_document::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DefinitionLanguage`, it is important to ensure
@@ -182,6 +183,13 @@ impl SystemTemplateSummary {
         self.created_at.as_ref()
     }
 }
+impl SystemTemplateSummary {
+    /// Creates a new builder-style object to manufacture [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
+    pub fn builder() -> crate::model::system_template_summary::Builder {
+        crate::model::system_template_summary::Builder::default()
+    }
+}
+
 /// See [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
 pub mod system_template_summary {
     
@@ -248,12 +256,6 @@ pub mod system_template_summary {
     
     
 }
-impl SystemTemplateSummary {
-    /// Creates a new builder-style object to manufacture [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
-    pub fn builder() -> crate::model::system_template_summary::Builder {
-        crate::model::system_template_summary::Builder::default()
-    }
-}
 
 /// <p>An object that contains summary information about a workflow.</p>
 #[non_exhaustive]
@@ -290,6 +292,13 @@ impl FlowTemplateSummary {
         self.created_at.as_ref()
     }
 }
+impl FlowTemplateSummary {
+    /// Creates a new builder-style object to manufacture [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
+    pub fn builder() -> crate::model::flow_template_summary::Builder {
+        crate::model::flow_template_summary::Builder::default()
+    }
+}
+
 /// See [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
 pub mod flow_template_summary {
     
@@ -355,12 +364,6 @@ pub mod flow_template_summary {
     }
     
     
-}
-impl FlowTemplateSummary {
-    /// Creates a new builder-style object to manufacture [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
-    pub fn builder() -> crate::model::flow_template_summary::Builder {
-        crate::model::flow_template_summary::Builder::default()
-    }
 }
 
 /// <p>An object that contains summary information about a system instance.</p>
@@ -433,6 +436,13 @@ impl SystemInstanceSummary {
         self.greengrass_group_version_id.as_deref()
     }
 }
+impl SystemInstanceSummary {
+    /// Creates a new builder-style object to manufacture [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
+    pub fn builder() -> crate::model::system_instance_summary::Builder {
+        crate::model::system_instance_summary::Builder::default()
+    }
+}
+
 /// See [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
 pub mod system_instance_summary {
     
@@ -558,12 +568,6 @@ pub mod system_instance_summary {
     }
     
     
-}
-impl SystemInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
-    pub fn builder() -> crate::model::system_instance_summary::Builder {
-        crate::model::system_instance_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentTarget`, it is important to ensure
@@ -781,6 +785,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -823,12 +834,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>An AWS IoT thing.</p>
 #[non_exhaustive]
@@ -851,6 +856,13 @@ impl Thing {
         self.thing_name.as_deref()
     }
 }
+impl Thing {
+    /// Creates a new builder-style object to manufacture [`Thing`](crate::model::Thing).
+    pub fn builder() -> crate::model::thing::Builder {
+        crate::model::thing::Builder::default()
+    }
+}
+
 /// See [`Thing`](crate::model::Thing).
 pub mod thing {
     
@@ -893,12 +905,6 @@ pub mod thing {
     
     
 }
-impl Thing {
-    /// Creates a new builder-style object to manufacture [`Thing`](crate::model::Thing).
-    pub fn builder() -> crate::model::thing::Builder {
-        crate::model::thing::Builder::default()
-    }
-}
 
 /// <p>An object that filters a system search.</p>
 #[non_exhaustive]
@@ -921,6 +927,13 @@ impl SystemTemplateFilter {
         self.value.as_deref()
     }
 }
+impl SystemTemplateFilter {
+    /// Creates a new builder-style object to manufacture [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
+    pub fn builder() -> crate::model::system_template_filter::Builder {
+        crate::model::system_template_filter::Builder::default()
+    }
+}
+
 /// See [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
 pub mod system_template_filter {
     
@@ -968,12 +981,6 @@ pub mod system_template_filter {
     }
     
     
-}
-impl SystemTemplateFilter {
-    /// Creates a new builder-style object to manufacture [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
-    pub fn builder() -> crate::model::system_template_filter::Builder {
-        crate::model::system_template_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SystemTemplateFilterName`, it is important to ensure
@@ -1074,6 +1081,13 @@ impl SystemInstanceFilter {
         self.value.as_deref()
     }
 }
+impl SystemInstanceFilter {
+    /// Creates a new builder-style object to manufacture [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
+    pub fn builder() -> crate::model::system_instance_filter::Builder {
+        crate::model::system_instance_filter::Builder::default()
+    }
+}
+
 /// See [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
 pub mod system_instance_filter {
     
@@ -1121,12 +1135,6 @@ pub mod system_instance_filter {
     }
     
     
-}
-impl SystemInstanceFilter {
-    /// Creates a new builder-style object to manufacture [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
-    pub fn builder() -> crate::model::system_instance_filter::Builder {
-        crate::model::system_instance_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SystemInstanceFilterName`, it is important to ensure
@@ -1237,6 +1245,13 @@ impl FlowTemplateFilter {
         self.value.as_deref()
     }
 }
+impl FlowTemplateFilter {
+    /// Creates a new builder-style object to manufacture [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
+    pub fn builder() -> crate::model::flow_template_filter::Builder {
+        crate::model::flow_template_filter::Builder::default()
+    }
+}
+
 /// See [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
 pub mod flow_template_filter {
     
@@ -1284,12 +1299,6 @@ pub mod flow_template_filter {
     }
     
     
-}
-impl FlowTemplateFilter {
-    /// Creates a new builder-style object to manufacture [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
-    pub fn builder() -> crate::model::flow_template_filter::Builder {
-        crate::model::flow_template_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FlowTemplateFilterName`, it is important to ensure
@@ -1418,6 +1427,13 @@ impl FlowExecutionSummary {
         self.updated_at.as_ref()
     }
 }
+impl FlowExecutionSummary {
+    /// Creates a new builder-style object to manufacture [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
+    pub fn builder() -> crate::model::flow_execution_summary::Builder {
+        crate::model::flow_execution_summary::Builder::default()
+    }
+}
+
 /// See [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
 pub mod flow_execution_summary {
     
@@ -1507,12 +1523,6 @@ pub mod flow_execution_summary {
     }
     
     
-}
-impl FlowExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
-    pub fn builder() -> crate::model::flow_execution_summary::Builder {
-        crate::model::flow_execution_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FlowExecutionStatus`, it is important to ensure
@@ -1649,6 +1659,13 @@ impl EntityDescription {
         self.definition.as_ref()
     }
 }
+impl EntityDescription {
+    /// Creates a new builder-style object to manufacture [`EntityDescription`](crate::model::EntityDescription).
+    pub fn builder() -> crate::model::entity_description::Builder {
+        crate::model::entity_description::Builder::default()
+    }
+}
+
 /// See [`EntityDescription`](crate::model::EntityDescription).
 pub mod entity_description {
     
@@ -1726,12 +1743,6 @@ pub mod entity_description {
     }
     
     
-}
-impl EntityDescription {
-    /// Creates a new builder-style object to manufacture [`EntityDescription`](crate::model::EntityDescription).
-    pub fn builder() -> crate::model::entity_description::Builder {
-        crate::model::entity_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntityType`, it is important to ensure
@@ -1877,6 +1888,13 @@ impl EntityFilter {
         self.value.as_deref()
     }
 }
+impl EntityFilter {
+    /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter).
+    pub fn builder() -> crate::model::entity_filter::Builder {
+        crate::model::entity_filter::Builder::default()
+    }
+}
+
 /// See [`EntityFilter`](crate::model::EntityFilter).
 pub mod entity_filter {
     
@@ -1924,12 +1942,6 @@ pub mod entity_filter {
     }
     
     
-}
-impl EntityFilter {
-    /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter).
-    pub fn builder() -> crate::model::entity_filter::Builder {
-        crate::model::entity_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntityFilterName`, it is important to ensure
@@ -2059,6 +2071,13 @@ impl FlowExecutionMessage {
         self.payload.as_deref()
     }
 }
+impl FlowExecutionMessage {
+    /// Creates a new builder-style object to manufacture [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
+    pub fn builder() -> crate::model::flow_execution_message::Builder {
+        crate::model::flow_execution_message::Builder::default()
+    }
+}
+
 /// See [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
 pub mod flow_execution_message {
     
@@ -2124,12 +2143,6 @@ pub mod flow_execution_message {
     }
     
     
-}
-impl FlowExecutionMessage {
-    /// Creates a new builder-style object to manufacture [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
-    pub fn builder() -> crate::model::flow_execution_message::Builder {
-        crate::model::flow_execution_message::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FlowExecutionEventType`, it is important to ensure
@@ -2404,6 +2417,13 @@ impl SystemTemplateDescription {
         self.validated_namespace_version
     }
 }
+impl SystemTemplateDescription {
+    /// Creates a new builder-style object to manufacture [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
+    pub fn builder() -> crate::model::system_template_description::Builder {
+        crate::model::system_template_description::Builder::default()
+    }
+}
+
 /// See [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
 pub mod system_template_description {
     
@@ -2457,12 +2477,6 @@ pub mod system_template_description {
     }
     
     
-}
-impl SystemTemplateDescription {
-    /// Creates a new builder-style object to manufacture [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
-    pub fn builder() -> crate::model::system_template_description::Builder {
-        crate::model::system_template_description::Builder::default()
-    }
 }
 
 /// <p>An object that contains a system instance definition and summary information.</p>
@@ -2521,6 +2535,13 @@ impl SystemInstanceDescription {
         self.flow_actions_role_arn.as_deref()
     }
 }
+impl SystemInstanceDescription {
+    /// Creates a new builder-style object to manufacture [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
+    pub fn builder() -> crate::model::system_instance_description::Builder {
+        crate::model::system_instance_description::Builder::default()
+    }
+}
+
 /// See [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
 pub mod system_instance_description {
     
@@ -2629,12 +2650,6 @@ pub mod system_instance_description {
     
     
 }
-impl SystemInstanceDescription {
-    /// Creates a new builder-style object to manufacture [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
-    pub fn builder() -> crate::model::system_instance_description::Builder {
-        crate::model::system_instance_description::Builder::default()
-    }
-}
 
 /// <p>An object that contains the ID and revision number of a workflow or system that is part of a deployment.</p>
 #[non_exhaustive]
@@ -2657,6 +2672,13 @@ impl DependencyRevision {
         self.revision_number
     }
 }
+impl DependencyRevision {
+    /// Creates a new builder-style object to manufacture [`DependencyRevision`](crate::model::DependencyRevision).
+    pub fn builder() -> crate::model::dependency_revision::Builder {
+        crate::model::dependency_revision::Builder::default()
+    }
+}
+
 /// See [`DependencyRevision`](crate::model::DependencyRevision).
 pub mod dependency_revision {
     
@@ -2699,12 +2721,6 @@ pub mod dependency_revision {
     
     
 }
-impl DependencyRevision {
-    /// Creates a new builder-style object to manufacture [`DependencyRevision`](crate::model::DependencyRevision).
-    pub fn builder() -> crate::model::dependency_revision::Builder {
-        crate::model::dependency_revision::Builder::default()
-    }
-}
 
 /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
 #[non_exhaustive]
@@ -2727,6 +2743,13 @@ impl MetricsConfiguration {
         self.metric_rule_role_arn.as_deref()
     }
 }
+impl MetricsConfiguration {
+    /// Creates a new builder-style object to manufacture [`MetricsConfiguration`](crate::model::MetricsConfiguration).
+    pub fn builder() -> crate::model::metrics_configuration::Builder {
+        crate::model::metrics_configuration::Builder::default()
+    }
+}
+
 /// See [`MetricsConfiguration`](crate::model::MetricsConfiguration).
 pub mod metrics_configuration {
     
@@ -2769,12 +2792,6 @@ pub mod metrics_configuration {
     }
     
     
-}
-impl MetricsConfiguration {
-    /// Creates a new builder-style object to manufacture [`MetricsConfiguration`](crate::model::MetricsConfiguration).
-    pub fn builder() -> crate::model::metrics_configuration::Builder {
-        crate::model::metrics_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NamespaceDeletionStatusErrorCodes`, it is important to ensure
@@ -2969,6 +2986,13 @@ impl FlowTemplateDescription {
         self.validated_namespace_version
     }
 }
+impl FlowTemplateDescription {
+    /// Creates a new builder-style object to manufacture [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
+    pub fn builder() -> crate::model::flow_template_description::Builder {
+        crate::model::flow_template_description::Builder::default()
+    }
+}
+
 /// See [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
 pub mod flow_template_description {
     
@@ -3022,11 +3046,5 @@ pub mod flow_template_description {
     }
     
     
-}
-impl FlowTemplateDescription {
-    /// Creates a new builder-style object to manufacture [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
-    pub fn builder() -> crate::model::flow_template_description::Builder {
-        crate::model::flow_template_description::Builder::default()
-    }
 }
 

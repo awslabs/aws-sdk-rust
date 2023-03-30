@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`send_command`](crate::client::Client::send_command).
             ///
-            /// See [`crate::client::fluent_builders::SendCommand`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SendCommand`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendCommand {
     _private: ()

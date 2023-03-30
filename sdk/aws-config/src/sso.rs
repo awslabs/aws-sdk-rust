@@ -211,7 +211,7 @@ async fn load_sso_credentials(
     let config = aws_sdk_sso::Config::builder()
         .region(sso_config.region.clone())
         .build();
-    let operation = aws_sdk_sso::operation::GetRoleCredentials::builder()
+    let operation = aws_sdk_sso::input::GetRoleCredentialsInput::builder()
         .role_name(&sso_config.role_name)
         .access_token(&*token.access_token)
         .account_id(&sso_config.account_id)

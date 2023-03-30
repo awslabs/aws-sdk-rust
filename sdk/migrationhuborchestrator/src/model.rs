@@ -49,6 +49,13 @@ impl WorkflowStepGroupSummary {
         self.next.as_deref()
     }
 }
+impl WorkflowStepGroupSummary {
+    /// Creates a new builder-style object to manufacture [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
+    pub fn builder() -> crate::model::workflow_step_group_summary::Builder {
+        crate::model::workflow_step_group_summary::Builder::default()
+    }
+}
+
 /// See [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
 pub mod workflow_step_group_summary {
     
@@ -150,12 +157,6 @@ pub mod workflow_step_group_summary {
     }
     
     
-}
-impl WorkflowStepGroupSummary {
-    /// Creates a new builder-style object to manufacture [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
-    pub fn builder() -> crate::model::workflow_step_group_summary::Builder {
-        crate::model::workflow_step_group_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StepGroupStatus`, it is important to ensure
@@ -373,6 +374,13 @@ impl Tool {
         self.url.as_deref()
     }
 }
+impl Tool {
+    /// Creates a new builder-style object to manufacture [`Tool`](crate::model::Tool).
+    pub fn builder() -> crate::model::tool::Builder {
+        crate::model::tool::Builder::default()
+    }
+}
+
 /// See [`Tool`](crate::model::Tool).
 pub mod tool {
     
@@ -414,12 +422,6 @@ pub mod tool {
     }
     
     
-}
-impl Tool {
-    /// Creates a new builder-style object to manufacture [`Tool`](crate::model::Tool).
-    pub fn builder() -> crate::model::tool::Builder {
-        crate::model::tool::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StepStatus`, it is important to ensure
@@ -627,6 +629,13 @@ impl WorkflowStepSummary {
         self.script_location.as_deref()
     }
 }
+impl WorkflowStepSummary {
+    /// Creates a new builder-style object to manufacture [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
+    pub fn builder() -> crate::model::workflow_step_summary::Builder {
+        crate::model::workflow_step_summary::Builder::default()
+    }
+}
+
 /// See [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
 pub mod workflow_step_summary {
     
@@ -813,12 +822,6 @@ pub mod workflow_step_summary {
     
     
 }
-impl WorkflowStepSummary {
-    /// Creates a new builder-style object to manufacture [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
-    pub fn builder() -> crate::model::workflow_step_summary::Builder {
-        crate::model::workflow_step_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `StepActionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -937,6 +940,13 @@ impl WorkflowStepOutput {
         self.value.as_ref()
     }
 }
+impl WorkflowStepOutput {
+    /// Creates a new builder-style object to manufacture [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
+    pub fn builder() -> crate::model::workflow_step_output::Builder {
+        crate::model::workflow_step_output::Builder::default()
+    }
+}
+
 /// See [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
 pub mod workflow_step_output {
     
@@ -1002,12 +1012,6 @@ pub mod workflow_step_output {
     }
     
     
-}
-impl WorkflowStepOutput {
-    /// Creates a new builder-style object to manufacture [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
-    pub fn builder() -> crate::model::workflow_step_output::Builder {
-        crate::model::workflow_step_output::Builder::default()
-    }
 }
 
 /// <p>A structure to hold multiple values of an output.</p>
@@ -1198,6 +1202,13 @@ impl WorkflowStepAutomationConfiguration {
         self.target_type.as_ref()
     }
 }
+impl WorkflowStepAutomationConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
+    pub fn builder() -> crate::model::workflow_step_automation_configuration::Builder {
+        crate::model::workflow_step_automation_configuration::Builder::default()
+    }
+}
+
 /// See [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
 pub mod workflow_step_automation_configuration {
     
@@ -1275,12 +1286,6 @@ pub mod workflow_step_automation_configuration {
     }
     
     
-}
-impl WorkflowStepAutomationConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
-    pub fn builder() -> crate::model::workflow_step_automation_configuration::Builder {
-        crate::model::workflow_step_automation_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetType`, it is important to ensure
@@ -1473,6 +1478,13 @@ impl PlatformCommand {
         self.windows.as_deref()
     }
 }
+impl PlatformCommand {
+    /// Creates a new builder-style object to manufacture [`PlatformCommand`](crate::model::PlatformCommand).
+    pub fn builder() -> crate::model::platform_command::Builder {
+        crate::model::platform_command::Builder::default()
+    }
+}
+
 /// See [`PlatformCommand`](crate::model::PlatformCommand).
 pub mod platform_command {
     
@@ -1515,12 +1527,6 @@ pub mod platform_command {
     
     
 }
-impl PlatformCommand {
-    /// Creates a new builder-style object to manufacture [`PlatformCommand`](crate::model::PlatformCommand).
-    pub fn builder() -> crate::model::platform_command::Builder {
-        crate::model::platform_command::Builder::default()
-    }
-}
 
 /// <p>The script location for a particular operating system.</p>
 #[non_exhaustive]
@@ -1543,6 +1549,13 @@ impl PlatformScriptKey {
         self.windows.as_deref()
     }
 }
+impl PlatformScriptKey {
+    /// Creates a new builder-style object to manufacture [`PlatformScriptKey`](crate::model::PlatformScriptKey).
+    pub fn builder() -> crate::model::platform_script_key::Builder {
+        crate::model::platform_script_key::Builder::default()
+    }
+}
+
 /// See [`PlatformScriptKey`](crate::model::PlatformScriptKey).
 pub mod platform_script_key {
     
@@ -1585,12 +1598,6 @@ pub mod platform_script_key {
     
     
 }
-impl PlatformScriptKey {
-    /// Creates a new builder-style object to manufacture [`PlatformScriptKey`](crate::model::PlatformScriptKey).
-    pub fn builder() -> crate::model::platform_script_key::Builder {
-        crate::model::platform_script_key::Builder::default()
-    }
-}
 
 /// <p>The summary of the step group in the template.</p>
 #[non_exhaustive]
@@ -1627,6 +1634,13 @@ impl TemplateStepGroupSummary {
         self.next.as_deref()
     }
 }
+impl TemplateStepGroupSummary {
+    /// Creates a new builder-style object to manufacture [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
+    pub fn builder() -> crate::model::template_step_group_summary::Builder {
+        crate::model::template_step_group_summary::Builder::default()
+    }
+}
+
 /// See [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
 pub mod template_step_group_summary {
     
@@ -1705,12 +1719,6 @@ pub mod template_step_group_summary {
     
     
 }
-impl TemplateStepGroupSummary {
-    /// Creates a new builder-style object to manufacture [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
-    pub fn builder() -> crate::model::template_step_group_summary::Builder {
-        crate::model::template_step_group_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the step.</p>
 #[non_exhaustive]
@@ -1782,6 +1790,13 @@ impl TemplateStepSummary {
         self.next.as_deref()
     }
 }
+impl TemplateStepSummary {
+    /// Creates a new builder-style object to manufacture [`TemplateStepSummary`](crate::model::TemplateStepSummary).
+    pub fn builder() -> crate::model::template_step_summary::Builder {
+        crate::model::template_step_summary::Builder::default()
+    }
+}
+
 /// See [`TemplateStepSummary`](crate::model::TemplateStepSummary).
 pub mod template_step_summary {
     
@@ -1920,12 +1935,6 @@ pub mod template_step_summary {
     
     
 }
-impl TemplateStepSummary {
-    /// Creates a new builder-style object to manufacture [`TemplateStepSummary`](crate::model::TemplateStepSummary).
-    pub fn builder() -> crate::model::template_step_summary::Builder {
-        crate::model::template_step_summary::Builder::default()
-    }
-}
 
 /// <p>The custom script to run tests on source or target environments.</p>
 #[non_exhaustive]
@@ -1969,6 +1978,13 @@ impl StepAutomationConfiguration {
         self.target_type.as_ref()
     }
 }
+impl StepAutomationConfiguration {
+    /// Creates a new builder-style object to manufacture [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
+    pub fn builder() -> crate::model::step_automation_configuration::Builder {
+        crate::model::step_automation_configuration::Builder::default()
+    }
+}
+
 /// See [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
 pub mod step_automation_configuration {
     
@@ -2047,12 +2063,6 @@ pub mod step_automation_configuration {
     
     
 }
-impl StepAutomationConfiguration {
-    /// Creates a new builder-style object to manufacture [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
-    pub fn builder() -> crate::model::step_automation_configuration::Builder {
-        crate::model::step_automation_configuration::Builder::default()
-    }
-}
 
 /// <p>The output of the step.</p>
 #[non_exhaustive]
@@ -2082,6 +2092,13 @@ impl StepOutput {
         self.required
     }
 }
+impl StepOutput {
+    /// Creates a new builder-style object to manufacture [`StepOutput`](crate::model::StepOutput).
+    pub fn builder() -> crate::model::step_output::Builder {
+        crate::model::step_output::Builder::default()
+    }
+}
+
 /// See [`StepOutput`](crate::model::StepOutput).
 pub mod step_output {
     
@@ -2136,12 +2153,6 @@ pub mod step_output {
     
     
 }
-impl StepOutput {
-    /// Creates a new builder-style object to manufacture [`StepOutput`](crate::model::StepOutput).
-    pub fn builder() -> crate::model::step_output::Builder {
-        crate::model::step_output::Builder::default()
-    }
-}
 
 /// <p>The summary of the Migration Hub Orchestrator plugin.</p>
 #[non_exhaustive]
@@ -2192,6 +2203,13 @@ impl PluginSummary {
         self.registered_time.as_deref()
     }
 }
+impl PluginSummary {
+    /// Creates a new builder-style object to manufacture [`PluginSummary`](crate::model::PluginSummary).
+    pub fn builder() -> crate::model::plugin_summary::Builder {
+        crate::model::plugin_summary::Builder::default()
+    }
+}
+
 /// See [`PluginSummary`](crate::model::PluginSummary).
 pub mod plugin_summary {
     
@@ -2281,12 +2299,6 @@ pub mod plugin_summary {
     }
     
     
-}
-impl PluginSummary {
-    /// Creates a new builder-style object to manufacture [`PluginSummary`](crate::model::PluginSummary).
-    pub fn builder() -> crate::model::plugin_summary::Builder {
-        crate::model::plugin_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PluginHealth`, it is important to ensure
@@ -2406,6 +2418,13 @@ impl TemplateSummary {
         self.description.as_deref()
     }
 }
+impl TemplateSummary {
+    /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
+    pub fn builder() -> crate::model::template_summary::Builder {
+        crate::model::template_summary::Builder::default()
+    }
+}
+
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
     
@@ -2471,12 +2490,6 @@ pub mod template_summary {
     }
     
     
-}
-impl TemplateSummary {
-    /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
-    pub fn builder() -> crate::model::template_summary::Builder {
-        crate::model::template_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TemplateStatus`, it is important to ensure
@@ -2584,6 +2597,13 @@ impl TemplateInput {
         self.required
     }
 }
+impl TemplateInput {
+    /// Creates a new builder-style object to manufacture [`TemplateInput`](crate::model::TemplateInput).
+    pub fn builder() -> crate::model::template_input::Builder {
+        crate::model::template_input::Builder::default()
+    }
+}
+
 /// See [`TemplateInput`](crate::model::TemplateInput).
 pub mod template_input {
     
@@ -2637,12 +2657,6 @@ pub mod template_input {
     }
     
     
-}
-impl TemplateInput {
-    /// Creates a new builder-style object to manufacture [`TemplateInput`](crate::model::TemplateInput).
-    pub fn builder() -> crate::model::template_input::Builder {
-        crate::model::template_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MigrationWorkflowStatusEnum`, it is important to ensure
@@ -2864,6 +2878,13 @@ impl MigrationWorkflowSummary {
         self.total_steps
     }
 }
+impl MigrationWorkflowSummary {
+    /// Creates a new builder-style object to manufacture [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
+    pub fn builder() -> crate::model::migration_workflow_summary::Builder {
+        crate::model::migration_workflow_summary::Builder::default()
+    }
+}
+
 /// See [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
 pub mod migration_workflow_summary {
     
@@ -3001,12 +3022,6 @@ pub mod migration_workflow_summary {
     }
     
     
-}
-impl MigrationWorkflowSummary {
-    /// Creates a new builder-style object to manufacture [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
-    pub fn builder() -> crate::model::migration_workflow_summary::Builder {
-        crate::model::migration_workflow_summary::Builder::default()
-    }
 }
 
 /// <p>A map of key value pairs that is generated when you create a migration workflow. The key value pairs will differ based on your selection of the template.</p>

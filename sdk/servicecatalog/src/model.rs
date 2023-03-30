@@ -42,6 +42,13 @@ impl TagOptionDetail {
         self.owner.as_deref()
     }
 }
+impl TagOptionDetail {
+    /// Creates a new builder-style object to manufacture [`TagOptionDetail`](crate::model::TagOptionDetail).
+    pub fn builder() -> crate::model::tag_option_detail::Builder {
+        crate::model::tag_option_detail::Builder::default()
+    }
+}
+
 /// See [`TagOptionDetail`](crate::model::TagOptionDetail).
 pub mod tag_option_detail {
     
@@ -120,12 +127,6 @@ pub mod tag_option_detail {
     
     
 }
-impl TagOptionDetail {
-    /// Creates a new builder-style object to manufacture [`TagOptionDetail`](crate::model::TagOptionDetail).
-    pub fn builder() -> crate::model::tag_option_detail::Builder {
-        crate::model::tag_option_detail::Builder::default()
-    }
-}
 
 /// <p>An object containing detailed information about the self-service action.</p>
 #[non_exhaustive]
@@ -148,6 +149,13 @@ impl ServiceActionDetail {
         self.definition.as_ref()
     }
 }
+impl ServiceActionDetail {
+    /// Creates a new builder-style object to manufacture [`ServiceActionDetail`](crate::model::ServiceActionDetail).
+    pub fn builder() -> crate::model::service_action_detail::Builder {
+        crate::model::service_action_detail::Builder::default()
+    }
+}
+
 /// See [`ServiceActionDetail`](crate::model::ServiceActionDetail).
 pub mod service_action_detail {
     
@@ -195,12 +203,6 @@ pub mod service_action_detail {
     }
     
     
-}
-impl ServiceActionDetail {
-    /// Creates a new builder-style object to manufacture [`ServiceActionDetail`](crate::model::ServiceActionDetail).
-    pub fn builder() -> crate::model::service_action_detail::Builder {
-        crate::model::service_action_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceActionDefinitionKey`, it is important to ensure
@@ -330,6 +332,13 @@ impl ServiceActionSummary {
         self.definition_type.as_ref()
     }
 }
+impl ServiceActionSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceActionSummary`](crate::model::ServiceActionSummary).
+    pub fn builder() -> crate::model::service_action_summary::Builder {
+        crate::model::service_action_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceActionSummary`](crate::model::ServiceActionSummary).
 pub mod service_action_summary {
     
@@ -395,12 +404,6 @@ pub mod service_action_summary {
     }
     
     
-}
-impl ServiceActionSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceActionSummary`](crate::model::ServiceActionSummary).
-    pub fn builder() -> crate::model::service_action_summary::Builder {
-        crate::model::service_action_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceActionDefinitionType`, it is important to ensure
@@ -642,6 +645,13 @@ impl ProvisioningArtifactDetail {
         self.source_revision.as_deref()
     }
 }
+impl ProvisioningArtifactDetail {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactDetail`](crate::model::ProvisioningArtifactDetail).
+    pub fn builder() -> crate::model::provisioning_artifact_detail::Builder {
+        crate::model::provisioning_artifact_detail::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactDetail`](crate::model::ProvisioningArtifactDetail).
 pub mod provisioning_artifact_detail {
     
@@ -767,12 +777,6 @@ pub mod provisioning_artifact_detail {
     }
     
     
-}
-impl ProvisioningArtifactDetail {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactDetail`](crate::model::ProvisioningArtifactDetail).
-    pub fn builder() -> crate::model::provisioning_artifact_detail::Builder {
-        crate::model::provisioning_artifact_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProvisioningArtifactGuidance`, it is important to ensure
@@ -1252,6 +1256,13 @@ impl RecordDetail {
         self.launch_role_arn.as_deref()
     }
 }
+impl RecordDetail {
+    /// Creates a new builder-style object to manufacture [`RecordDetail`](crate::model::RecordDetail).
+    pub fn builder() -> crate::model::record_detail::Builder {
+        crate::model::record_detail::Builder::default()
+    }
+}
+
 /// See [`RecordDetail`](crate::model::RecordDetail).
 pub mod record_detail {
     
@@ -1474,12 +1485,6 @@ pub mod record_detail {
     
     
 }
-impl RecordDetail {
-    /// Creates a new builder-style object to manufacture [`RecordDetail`](crate::model::RecordDetail).
-    pub fn builder() -> crate::model::record_detail::Builder {
-        crate::model::record_detail::Builder::default()
-    }
-}
 
 /// <p>Information about a tag, which is a key-value pair.</p>
 #[non_exhaustive]
@@ -1502,6 +1507,13 @@ impl RecordTag {
         self.value.as_deref()
     }
 }
+impl RecordTag {
+    /// Creates a new builder-style object to manufacture [`RecordTag`](crate::model::RecordTag).
+    pub fn builder() -> crate::model::record_tag::Builder {
+        crate::model::record_tag::Builder::default()
+    }
+}
+
 /// See [`RecordTag`](crate::model::RecordTag).
 pub mod record_tag {
     
@@ -1544,12 +1556,6 @@ pub mod record_tag {
     
     
 }
-impl RecordTag {
-    /// Creates a new builder-style object to manufacture [`RecordTag`](crate::model::RecordTag).
-    pub fn builder() -> crate::model::record_tag::Builder {
-        crate::model::record_tag::Builder::default()
-    }
-}
 
 /// <p>The error code and description resulting from an operation.</p>
 #[non_exhaustive]
@@ -1572,6 +1578,13 @@ impl RecordError {
         self.description.as_deref()
     }
 }
+impl RecordError {
+    /// Creates a new builder-style object to manufacture [`RecordError`](crate::model::RecordError).
+    pub fn builder() -> crate::model::record_error::Builder {
+        crate::model::record_error::Builder::default()
+    }
+}
+
 /// See [`RecordError`](crate::model::RecordError).
 pub mod record_error {
     
@@ -1614,12 +1627,6 @@ pub mod record_error {
     
     
 }
-impl RecordError {
-    /// Creates a new builder-style object to manufacture [`RecordError`](crate::model::RecordError).
-    pub fn builder() -> crate::model::record_error::Builder {
-        crate::model::record_error::Builder::default()
-    }
-}
 
 /// <p>Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.</p>
 #[non_exhaustive]
@@ -1642,6 +1649,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1683,12 +1697,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.</p>
@@ -1827,6 +1835,13 @@ impl UpdateProvisioningPreferences {
         self.stack_set_operation_type.as_ref()
     }
 }
+impl UpdateProvisioningPreferences {
+    /// Creates a new builder-style object to manufacture [`UpdateProvisioningPreferences`](crate::model::UpdateProvisioningPreferences).
+    pub fn builder() -> crate::model::update_provisioning_preferences::Builder {
+        crate::model::update_provisioning_preferences::Builder::default()
+    }
+}
+
 /// See [`UpdateProvisioningPreferences`](crate::model::UpdateProvisioningPreferences).
 pub mod update_provisioning_preferences {
     
@@ -2021,12 +2036,6 @@ pub mod update_provisioning_preferences {
     
     
 }
-impl UpdateProvisioningPreferences {
-    /// Creates a new builder-style object to manufacture [`UpdateProvisioningPreferences`](crate::model::UpdateProvisioningPreferences).
-    pub fn builder() -> crate::model::update_provisioning_preferences::Builder {
-        crate::model::update_provisioning_preferences::Builder::default()
-    }
-}
 
 /// When writing a match expression against `StackSetOperationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2143,6 +2152,13 @@ impl UpdateProvisioningParameter {
         self.use_previous_value
     }
 }
+impl UpdateProvisioningParameter {
+    /// Creates a new builder-style object to manufacture [`UpdateProvisioningParameter`](crate::model::UpdateProvisioningParameter).
+    pub fn builder() -> crate::model::update_provisioning_parameter::Builder {
+        crate::model::update_provisioning_parameter::Builder::default()
+    }
+}
+
 /// See [`UpdateProvisioningParameter`](crate::model::UpdateProvisioningParameter).
 pub mod update_provisioning_parameter {
     
@@ -2198,12 +2214,6 @@ pub mod update_provisioning_parameter {
     
     
 }
-impl UpdateProvisioningParameter {
-    /// Creates a new builder-style object to manufacture [`UpdateProvisioningParameter`](crate::model::UpdateProvisioningParameter).
-    pub fn builder() -> crate::model::update_provisioning_parameter::Builder {
-        crate::model::update_provisioning_parameter::Builder::default()
-    }
-}
 
 /// <p>Information about a product view.</p>
 #[non_exhaustive]
@@ -2257,6 +2267,13 @@ impl ProductViewDetail {
         self.source_connection.as_ref()
     }
 }
+impl ProductViewDetail {
+    /// Creates a new builder-style object to manufacture [`ProductViewDetail`](crate::model::ProductViewDetail).
+    pub fn builder() -> crate::model::product_view_detail::Builder {
+        crate::model::product_view_detail::Builder::default()
+    }
+}
+
 /// See [`ProductViewDetail`](crate::model::ProductViewDetail).
 pub mod product_view_detail {
     
@@ -2345,12 +2362,6 @@ pub mod product_view_detail {
     
     
 }
-impl ProductViewDetail {
-    /// Creates a new builder-style object to manufacture [`ProductViewDetail`](crate::model::ProductViewDetail).
-    pub fn builder() -> crate::model::product_view_detail::Builder {
-        crate::model::product_view_detail::Builder::default()
-    }
-}
 
 /// <p>Provides details about the configured <code>SourceConnection</code>. </p>
 #[non_exhaustive]
@@ -2394,6 +2405,13 @@ impl SourceConnectionDetail {
         self.last_sync.as_ref()
     }
 }
+impl SourceConnectionDetail {
+    /// Creates a new builder-style object to manufacture [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
+    pub fn builder() -> crate::model::source_connection_detail::Builder {
+        crate::model::source_connection_detail::Builder::default()
+    }
+}
+
 /// See [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
 pub mod source_connection_detail {
     
@@ -2462,12 +2480,6 @@ pub mod source_connection_detail {
     
     
 }
-impl SourceConnectionDetail {
-    /// Creates a new builder-style object to manufacture [`SourceConnectionDetail`](crate::model::SourceConnectionDetail).
-    pub fn builder() -> crate::model::source_connection_detail::Builder {
-        crate::model::source_connection_detail::Builder::default()
-    }
-}
 
 /// <p>Provides details about the product's connection sync and contains the following sub-fields. </p> 
 /// <ul> 
@@ -2518,6 +2530,13 @@ impl LastSync {
         self.last_successful_sync_provisioning_artifact_id.as_deref()
     }
 }
+impl LastSync {
+    /// Creates a new builder-style object to manufacture [`LastSync`](crate::model::LastSync).
+    pub fn builder() -> crate::model::last_sync::Builder {
+        crate::model::last_sync::Builder::default()
+    }
+}
+
 /// See [`LastSync`](crate::model::LastSync).
 pub mod last_sync {
     
@@ -2595,12 +2614,6 @@ pub mod last_sync {
     }
     
     
-}
-impl LastSync {
-    /// Creates a new builder-style object to manufacture [`LastSync`](crate::model::LastSync).
-    pub fn builder() -> crate::model::last_sync::Builder {
-        crate::model::last_sync::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LastSyncStatus`, it is important to ensure
@@ -2699,6 +2712,13 @@ impl SourceConnectionParameters {
         self.code_star.as_ref()
     }
 }
+impl SourceConnectionParameters {
+    /// Creates a new builder-style object to manufacture [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
+    pub fn builder() -> crate::model::source_connection_parameters::Builder {
+        crate::model::source_connection_parameters::Builder::default()
+    }
+}
+
 /// See [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
 pub mod source_connection_parameters {
     
@@ -2728,12 +2748,6 @@ pub mod source_connection_parameters {
     }
     
     
-}
-impl SourceConnectionParameters {
-    /// Creates a new builder-style object to manufacture [`SourceConnectionParameters`](crate::model::SourceConnectionParameters).
-    pub fn builder() -> crate::model::source_connection_parameters::Builder {
-        crate::model::source_connection_parameters::Builder::default()
-    }
 }
 
 /// <p>The subtype containing details about the Codestar connection <code>Type</code>. </p>
@@ -2771,6 +2785,13 @@ impl CodeStarParameters {
         self.artifact_path.as_deref()
     }
 }
+impl CodeStarParameters {
+    /// Creates a new builder-style object to manufacture [`CodeStarParameters`](crate::model::CodeStarParameters).
+    pub fn builder() -> crate::model::code_star_parameters::Builder {
+        crate::model::code_star_parameters::Builder::default()
+    }
+}
+
 /// See [`CodeStarParameters`](crate::model::CodeStarParameters).
 pub mod code_star_parameters {
     
@@ -2836,12 +2857,6 @@ pub mod code_star_parameters {
     }
     
     
-}
-impl CodeStarParameters {
-    /// Creates a new builder-style object to manufacture [`CodeStarParameters`](crate::model::CodeStarParameters).
-    pub fn builder() -> crate::model::code_star_parameters::Builder {
-        crate::model::code_star_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceType`, it is important to ensure
@@ -3005,6 +3020,13 @@ impl ProductViewSummary {
         self.support_url.as_deref()
     }
 }
+impl ProductViewSummary {
+    /// Creates a new builder-style object to manufacture [`ProductViewSummary`](crate::model::ProductViewSummary).
+    pub fn builder() -> crate::model::product_view_summary::Builder {
+        crate::model::product_view_summary::Builder::default()
+    }
+}
+
 /// See [`ProductViewSummary`](crate::model::ProductViewSummary).
 pub mod product_view_summary {
     
@@ -3156,12 +3178,6 @@ pub mod product_view_summary {
     
     
 }
-impl ProductViewSummary {
-    /// Creates a new builder-style object to manufacture [`ProductViewSummary`](crate::model::ProductViewSummary).
-    pub fn builder() -> crate::model::product_view_summary::Builder {
-        crate::model::product_view_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ProductType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3266,6 +3282,13 @@ impl SourceConnection {
         self.connection_parameters.as_ref()
     }
 }
+impl SourceConnection {
+    /// Creates a new builder-style object to manufacture [`SourceConnection`](crate::model::SourceConnection).
+    pub fn builder() -> crate::model::source_connection::Builder {
+        crate::model::source_connection::Builder::default()
+    }
+}
+
 /// See [`SourceConnection`](crate::model::SourceConnection).
 pub mod source_connection {
     
@@ -3307,12 +3330,6 @@ pub mod source_connection {
     }
     
     
-}
-impl SourceConnection {
-    /// Creates a new builder-style object to manufacture [`SourceConnection`](crate::model::SourceConnection).
-    pub fn builder() -> crate::model::source_connection::Builder {
-        crate::model::source_connection::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ShareStatus`, it is important to ensure
@@ -3433,6 +3450,13 @@ impl OrganizationNode {
         self.value.as_deref()
     }
 }
+impl OrganizationNode {
+    /// Creates a new builder-style object to manufacture [`OrganizationNode`](crate::model::OrganizationNode).
+    pub fn builder() -> crate::model::organization_node::Builder {
+        crate::model::organization_node::Builder::default()
+    }
+}
+
 /// See [`OrganizationNode`](crate::model::OrganizationNode).
 pub mod organization_node {
     
@@ -3474,12 +3498,6 @@ pub mod organization_node {
     }
     
     
-}
-impl OrganizationNode {
-    /// Creates a new builder-style object to manufacture [`OrganizationNode`](crate::model::OrganizationNode).
-    pub fn builder() -> crate::model::organization_node::Builder {
-        crate::model::organization_node::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OrganizationNodeType`, it is important to ensure
@@ -3618,6 +3636,13 @@ impl PortfolioDetail {
         self.provider_name.as_deref()
     }
 }
+impl PortfolioDetail {
+    /// Creates a new builder-style object to manufacture [`PortfolioDetail`](crate::model::PortfolioDetail).
+    pub fn builder() -> crate::model::portfolio_detail::Builder {
+        crate::model::portfolio_detail::Builder::default()
+    }
+}
+
 /// See [`PortfolioDetail`](crate::model::PortfolioDetail).
 pub mod portfolio_detail {
     
@@ -3708,12 +3733,6 @@ pub mod portfolio_detail {
     
     
 }
-impl PortfolioDetail {
-    /// Creates a new builder-style object to manufacture [`PortfolioDetail`](crate::model::PortfolioDetail).
-    pub fn builder() -> crate::model::portfolio_detail::Builder {
-        crate::model::portfolio_detail::Builder::default()
-    }
-}
 
 /// <p>Information about a constraint.</p>
 #[non_exhaustive]
@@ -3776,6 +3795,13 @@ impl ConstraintDetail {
         self.portfolio_id.as_deref()
     }
 }
+impl ConstraintDetail {
+    /// Creates a new builder-style object to manufacture [`ConstraintDetail`](crate::model::ConstraintDetail).
+    pub fn builder() -> crate::model::constraint_detail::Builder {
+        crate::model::constraint_detail::Builder::default()
+    }
+}
+
 /// See [`ConstraintDetail`](crate::model::ConstraintDetail).
 pub mod constraint_detail {
     
@@ -3877,12 +3903,6 @@ pub mod constraint_detail {
     }
     
     
-}
-impl ConstraintDetail {
-    /// Creates a new builder-style object to manufacture [`ConstraintDetail`](crate::model::ConstraintDetail).
-    pub fn builder() -> crate::model::constraint_detail::Builder {
-        crate::model::constraint_detail::Builder::default()
-    }
 }
 
 /// <p>Information about a provisioned product.</p>
@@ -4063,6 +4083,13 @@ impl ProvisionedProductAttribute {
         self.user_arn_session.as_deref()
     }
 }
+impl ProvisionedProductAttribute {
+    /// Creates a new builder-style object to manufacture [`ProvisionedProductAttribute`](crate::model::ProvisionedProductAttribute).
+    pub fn builder() -> crate::model::provisioned_product_attribute::Builder {
+        crate::model::provisioned_product_attribute::Builder::default()
+    }
+}
+
 /// See [`ProvisionedProductAttribute`](crate::model::ProvisionedProductAttribute).
 pub mod provisioned_product_attribute {
     
@@ -4353,12 +4380,6 @@ pub mod provisioned_product_attribute {
     
     
 }
-impl ProvisionedProductAttribute {
-    /// Creates a new builder-style object to manufacture [`ProvisionedProductAttribute`](crate::model::ProvisionedProductAttribute).
-    pub fn builder() -> crate::model::provisioned_product_attribute::Builder {
-        crate::model::provisioned_product_attribute::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ProvisionedProductStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4647,6 +4668,13 @@ impl AccessLevelFilter {
         self.value.as_deref()
     }
 }
+impl AccessLevelFilter {
+    /// Creates a new builder-style object to manufacture [`AccessLevelFilter`](crate::model::AccessLevelFilter).
+    pub fn builder() -> crate::model::access_level_filter::Builder {
+        crate::model::access_level_filter::Builder::default()
+    }
+}
+
 /// See [`AccessLevelFilter`](crate::model::AccessLevelFilter).
 pub mod access_level_filter {
     
@@ -4698,12 +4726,6 @@ pub mod access_level_filter {
     }
     
     
-}
-impl AccessLevelFilter {
-    /// Creates a new builder-style object to manufacture [`AccessLevelFilter`](crate::model::AccessLevelFilter).
-    pub fn builder() -> crate::model::access_level_filter::Builder {
-        crate::model::access_level_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessLevelFilterKey`, it is important to ensure
@@ -5070,6 +5092,13 @@ impl ProductViewAggregationValue {
         self.approximate_count
     }
 }
+impl ProductViewAggregationValue {
+    /// Creates a new builder-style object to manufacture [`ProductViewAggregationValue`](crate::model::ProductViewAggregationValue).
+    pub fn builder() -> crate::model::product_view_aggregation_value::Builder {
+        crate::model::product_view_aggregation_value::Builder::default()
+    }
+}
+
 /// See [`ProductViewAggregationValue`](crate::model::ProductViewAggregationValue).
 pub mod product_view_aggregation_value {
     
@@ -5112,12 +5141,6 @@ pub mod product_view_aggregation_value {
     }
     
     
-}
-impl ProductViewAggregationValue {
-    /// Creates a new builder-style object to manufacture [`ProductViewAggregationValue`](crate::model::ProductViewAggregationValue).
-    pub fn builder() -> crate::model::product_view_aggregation_value::Builder {
-        crate::model::product_view_aggregation_value::Builder::default()
-    }
 }
 
 /// <p>Information about a provisioned product.</p>
@@ -5263,6 +5286,13 @@ impl ProvisionedProductDetail {
         self.launch_role_arn.as_deref()
     }
 }
+impl ProvisionedProductDetail {
+    /// Creates a new builder-style object to manufacture [`ProvisionedProductDetail`](crate::model::ProvisionedProductDetail).
+    pub fn builder() -> crate::model::provisioned_product_detail::Builder {
+        crate::model::provisioned_product_detail::Builder::default()
+    }
+}
+
 /// See [`ProvisionedProductDetail`](crate::model::ProvisionedProductDetail).
 pub mod provisioned_product_detail {
     
@@ -5487,12 +5517,6 @@ pub mod provisioned_product_detail {
     
     
 }
-impl ProvisionedProductDetail {
-    /// Creates a new builder-style object to manufacture [`ProvisionedProductDetail`](crate::model::ProvisionedProductDetail).
-    pub fn builder() -> crate::model::provisioned_product_detail::Builder {
-        crate::model::provisioned_product_detail::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PortfolioShareType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5672,6 +5696,13 @@ impl ProvisioningPreferences {
         self.stack_set_max_concurrency_percentage
     }
 }
+impl ProvisioningPreferences {
+    /// Creates a new builder-style object to manufacture [`ProvisioningPreferences`](crate::model::ProvisioningPreferences).
+    pub fn builder() -> crate::model::provisioning_preferences::Builder {
+        crate::model::provisioning_preferences::Builder::default()
+    }
+}
+
 /// See [`ProvisioningPreferences`](crate::model::ProvisioningPreferences).
 pub mod provisioning_preferences {
     
@@ -5812,12 +5843,6 @@ pub mod provisioning_preferences {
     
     
 }
-impl ProvisioningPreferences {
-    /// Creates a new builder-style object to manufacture [`ProvisioningPreferences`](crate::model::ProvisioningPreferences).
-    pub fn builder() -> crate::model::provisioning_preferences::Builder {
-        crate::model::provisioning_preferences::Builder::default()
-    }
-}
 
 /// <p>Information about a parameter used to provision a product.</p>
 #[non_exhaustive]
@@ -5840,6 +5865,13 @@ impl ProvisioningParameter {
         self.value.as_deref()
     }
 }
+impl ProvisioningParameter {
+    /// Creates a new builder-style object to manufacture [`ProvisioningParameter`](crate::model::ProvisioningParameter).
+    pub fn builder() -> crate::model::provisioning_parameter::Builder {
+        crate::model::provisioning_parameter::Builder::default()
+    }
+}
+
 /// See [`ProvisioningParameter`](crate::model::ProvisioningParameter).
 pub mod provisioning_parameter {
     
@@ -5882,12 +5914,6 @@ pub mod provisioning_parameter {
     
     
 }
-impl ProvisioningParameter {
-    /// Creates a new builder-style object to manufacture [`ProvisioningParameter`](crate::model::ProvisioningParameter).
-    pub fn builder() -> crate::model::provisioning_parameter::Builder {
-        crate::model::provisioning_parameter::Builder::default()
-    }
-}
 
 /// <p>Filters to use when listing TagOptions.</p>
 #[non_exhaustive]
@@ -5917,6 +5943,13 @@ impl ListTagOptionsFilters {
         self.active
     }
 }
+impl ListTagOptionsFilters {
+    /// Creates a new builder-style object to manufacture [`ListTagOptionsFilters`](crate::model::ListTagOptionsFilters).
+    pub fn builder() -> crate::model::list_tag_options_filters::Builder {
+        crate::model::list_tag_options_filters::Builder::default()
+    }
+}
+
 /// See [`ListTagOptionsFilters`](crate::model::ListTagOptionsFilters).
 pub mod list_tag_options_filters {
     
@@ -5971,12 +6004,6 @@ pub mod list_tag_options_filters {
     
     
 }
-impl ListTagOptionsFilters {
-    /// Creates a new builder-style object to manufacture [`ListTagOptionsFilters`](crate::model::ListTagOptionsFilters).
-    pub fn builder() -> crate::model::list_tag_options_filters::Builder {
-        crate::model::list_tag_options_filters::Builder::default()
-    }
-}
 
 /// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status. </p>
 #[non_exhaustive]
@@ -6016,6 +6043,13 @@ impl StackInstance {
         self.stack_instance_status.as_ref()
     }
 }
+impl StackInstance {
+    /// Creates a new builder-style object to manufacture [`StackInstance`](crate::model::StackInstance).
+    pub fn builder() -> crate::model::stack_instance::Builder {
+        crate::model::stack_instance::Builder::default()
+    }
+}
+
 /// See [`StackInstance`](crate::model::StackInstance).
 pub mod stack_instance {
     
@@ -6079,12 +6113,6 @@ pub mod stack_instance {
     }
     
     
-}
-impl StackInstance {
-    /// Creates a new builder-style object to manufacture [`StackInstance`](crate::model::StackInstance).
-    pub fn builder() -> crate::model::stack_instance::Builder {
-        crate::model::stack_instance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackInstanceStatus`, it is important to ensure
@@ -6216,6 +6244,13 @@ impl ResourceDetail {
         self.created_time.as_ref()
     }
 }
+impl ResourceDetail {
+    /// Creates a new builder-style object to manufacture [`ResourceDetail`](crate::model::ResourceDetail).
+    pub fn builder() -> crate::model::resource_detail::Builder {
+        crate::model::resource_detail::Builder::default()
+    }
+}
+
 /// See [`ResourceDetail`](crate::model::ResourceDetail).
 pub mod resource_detail {
     
@@ -6294,12 +6329,6 @@ pub mod resource_detail {
     
     
 }
-impl ResourceDetail {
-    /// Creates a new builder-style object to manufacture [`ResourceDetail`](crate::model::ResourceDetail).
-    pub fn builder() -> crate::model::resource_detail::Builder {
-        crate::model::resource_detail::Builder::default()
-    }
-}
 
 /// <p>The search filter to use when listing history records.</p>
 #[non_exhaustive]
@@ -6330,6 +6359,13 @@ impl ListRecordHistorySearchFilter {
         self.value.as_deref()
     }
 }
+impl ListRecordHistorySearchFilter {
+    /// Creates a new builder-style object to manufacture [`ListRecordHistorySearchFilter`](crate::model::ListRecordHistorySearchFilter).
+    pub fn builder() -> crate::model::list_record_history_search_filter::Builder {
+        crate::model::list_record_history_search_filter::Builder::default()
+    }
+}
+
 /// See [`ListRecordHistorySearchFilter`](crate::model::ListRecordHistorySearchFilter).
 pub mod list_record_history_search_filter {
     
@@ -6380,12 +6416,6 @@ pub mod list_record_history_search_filter {
     
     
 }
-impl ListRecordHistorySearchFilter {
-    /// Creates a new builder-style object to manufacture [`ListRecordHistorySearchFilter`](crate::model::ListRecordHistorySearchFilter).
-    pub fn builder() -> crate::model::list_record_history_search_filter::Builder {
-        crate::model::list_record_history_search_filter::Builder::default()
-    }
-}
 
 /// <p>An object that contains summary information about a product view and a provisioning artifact.</p>
 #[non_exhaustive]
@@ -6408,6 +6438,13 @@ impl ProvisioningArtifactView {
         self.provisioning_artifact.as_ref()
     }
 }
+impl ProvisioningArtifactView {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactView`](crate::model::ProvisioningArtifactView).
+    pub fn builder() -> crate::model::provisioning_artifact_view::Builder {
+        crate::model::provisioning_artifact_view::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactView`](crate::model::ProvisioningArtifactView).
 pub mod provisioning_artifact_view {
     
@@ -6449,12 +6486,6 @@ pub mod provisioning_artifact_view {
     }
     
     
-}
-impl ProvisioningArtifactView {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactView`](crate::model::ProvisioningArtifactView).
-    pub fn builder() -> crate::model::provisioning_artifact_view::Builder {
-        crate::model::provisioning_artifact_view::Builder::default()
-    }
 }
 
 /// <p>Information about a provisioning artifact. A provisioning artifact is also known as a product version.</p>
@@ -6499,6 +6530,13 @@ impl ProvisioningArtifact {
         self.guidance.as_ref()
     }
 }
+impl ProvisioningArtifact {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifact`](crate::model::ProvisioningArtifact).
+    pub fn builder() -> crate::model::provisioning_artifact::Builder {
+        crate::model::provisioning_artifact::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifact`](crate::model::ProvisioningArtifact).
 pub mod provisioning_artifact {
     
@@ -6577,12 +6615,6 @@ pub mod provisioning_artifact {
     
     
 }
-impl ProvisioningArtifact {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifact`](crate::model::ProvisioningArtifact).
-    pub fn builder() -> crate::model::provisioning_artifact::Builder {
-        crate::model::provisioning_artifact::Builder::default()
-    }
-}
 
 /// <p>Summary information about a plan.</p>
 #[non_exhaustive]
@@ -6633,6 +6665,13 @@ impl ProvisionedProductPlanSummary {
         self.provisioning_artifact_id.as_deref()
     }
 }
+impl ProvisionedProductPlanSummary {
+    /// Creates a new builder-style object to manufacture [`ProvisionedProductPlanSummary`](crate::model::ProvisionedProductPlanSummary).
+    pub fn builder() -> crate::model::provisioned_product_plan_summary::Builder {
+        crate::model::provisioned_product_plan_summary::Builder::default()
+    }
+}
+
 /// See [`ProvisionedProductPlanSummary`](crate::model::ProvisionedProductPlanSummary).
 pub mod provisioned_product_plan_summary {
     
@@ -6722,12 +6761,6 @@ pub mod provisioned_product_plan_summary {
     }
     
     
-}
-impl ProvisionedProductPlanSummary {
-    /// Creates a new builder-style object to manufacture [`ProvisionedProductPlanSummary`](crate::model::ProvisionedProductPlanSummary).
-    pub fn builder() -> crate::model::provisioned_product_plan_summary::Builder {
-        crate::model::provisioned_product_plan_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProvisionedProductPlanType`, it is important to ensure
@@ -6828,6 +6861,13 @@ impl Principal {
         self.principal_type.as_ref()
     }
 }
+impl Principal {
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
+    pub fn builder() -> crate::model::principal::Builder {
+        crate::model::principal::Builder::default()
+    }
+}
+
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
     
@@ -6869,12 +6909,6 @@ pub mod principal {
     }
     
     
-}
-impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
-    pub fn builder() -> crate::model::principal::Builder {
-        crate::model::principal::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PrincipalType`, it is important to ensure
@@ -6994,6 +7028,13 @@ impl LaunchPathSummary {
         self.name.as_deref()
     }
 }
+impl LaunchPathSummary {
+    /// Creates a new builder-style object to manufacture [`LaunchPathSummary`](crate::model::LaunchPathSummary).
+    pub fn builder() -> crate::model::launch_path_summary::Builder {
+        crate::model::launch_path_summary::Builder::default()
+    }
+}
+
 /// See [`LaunchPathSummary`](crate::model::LaunchPathSummary).
 pub mod launch_path_summary {
     
@@ -7072,12 +7113,6 @@ pub mod launch_path_summary {
     
     
 }
-impl LaunchPathSummary {
-    /// Creates a new builder-style object to manufacture [`LaunchPathSummary`](crate::model::LaunchPathSummary).
-    pub fn builder() -> crate::model::launch_path_summary::Builder {
-        crate::model::launch_path_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about a constraint.</p>
 #[non_exhaustive]
@@ -7112,6 +7147,13 @@ impl ConstraintSummary {
         self.description.as_deref()
     }
 }
+impl ConstraintSummary {
+    /// Creates a new builder-style object to manufacture [`ConstraintSummary`](crate::model::ConstraintSummary).
+    pub fn builder() -> crate::model::constraint_summary::Builder {
+        crate::model::constraint_summary::Builder::default()
+    }
+}
+
 /// See [`ConstraintSummary`](crate::model::ConstraintSummary).
 pub mod constraint_summary {
     
@@ -7166,12 +7208,6 @@ pub mod constraint_summary {
     
     
 }
-impl ConstraintSummary {
-    /// Creates a new builder-style object to manufacture [`ConstraintSummary`](crate::model::ConstraintSummary).
-    pub fn builder() -> crate::model::constraint_summary::Builder {
-        crate::model::constraint_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a budget.</p>
 #[non_exhaustive]
@@ -7187,6 +7223,13 @@ impl BudgetDetail {
         self.budget_name.as_deref()
     }
 }
+impl BudgetDetail {
+    /// Creates a new builder-style object to manufacture [`BudgetDetail`](crate::model::BudgetDetail).
+    pub fn builder() -> crate::model::budget_detail::Builder {
+        crate::model::budget_detail::Builder::default()
+    }
+}
+
 /// See [`BudgetDetail`](crate::model::BudgetDetail).
 pub mod budget_detail {
     
@@ -7217,12 +7260,6 @@ pub mod budget_detail {
     
     
 }
-impl BudgetDetail {
-    /// Creates a new builder-style object to manufacture [`BudgetDetail`](crate::model::BudgetDetail).
-    pub fn builder() -> crate::model::budget_detail::Builder {
-        crate::model::budget_detail::Builder::default()
-    }
-}
 
 /// <p>The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
 #[non_exhaustive]
@@ -7252,6 +7289,13 @@ impl RecordOutput {
         self.description.as_deref()
     }
 }
+impl RecordOutput {
+    /// Creates a new builder-style object to manufacture [`RecordOutput`](crate::model::RecordOutput).
+    pub fn builder() -> crate::model::record_output::Builder {
+        crate::model::record_output::Builder::default()
+    }
+}
+
 /// See [`RecordOutput`](crate::model::RecordOutput).
 pub mod record_output {
     
@@ -7305,12 +7349,6 @@ pub mod record_output {
     }
     
     
-}
-impl RecordOutput {
-    /// Creates a new builder-style object to manufacture [`RecordOutput`](crate::model::RecordOutput).
-    pub fn builder() -> crate::model::record_output::Builder {
-        crate::model::record_output::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessStatus`, it is important to ensure
@@ -7428,6 +7466,13 @@ impl ExecutionParameter {
         self.default_values.as_deref()
     }
 }
+impl ExecutionParameter {
+    /// Creates a new builder-style object to manufacture [`ExecutionParameter`](crate::model::ExecutionParameter).
+    pub fn builder() -> crate::model::execution_parameter::Builder {
+        crate::model::execution_parameter::Builder::default()
+    }
+}
+
 /// See [`ExecutionParameter`](crate::model::ExecutionParameter).
 pub mod execution_parameter {
     
@@ -7488,12 +7533,6 @@ pub mod execution_parameter {
     
     
 }
-impl ExecutionParameter {
-    /// Creates a new builder-style object to manufacture [`ExecutionParameter`](crate::model::ExecutionParameter).
-    pub fn builder() -> crate::model::execution_parameter::Builder {
-        crate::model::execution_parameter::Builder::default()
-    }
-}
 
 /// <p>Provisioning artifact output.</p>
 #[non_exhaustive]
@@ -7516,6 +7555,13 @@ impl ProvisioningArtifactOutput {
         self.description.as_deref()
     }
 }
+impl ProvisioningArtifactOutput {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactOutput`](crate::model::ProvisioningArtifactOutput).
+    pub fn builder() -> crate::model::provisioning_artifact_output::Builder {
+        crate::model::provisioning_artifact_output::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactOutput`](crate::model::ProvisioningArtifactOutput).
 pub mod provisioning_artifact_output {
     
@@ -7558,12 +7604,6 @@ pub mod provisioning_artifact_output {
     
     
 }
-impl ProvisioningArtifactOutput {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactOutput`](crate::model::ProvisioningArtifactOutput).
-    pub fn builder() -> crate::model::provisioning_artifact_output::Builder {
-        crate::model::provisioning_artifact_output::Builder::default()
-    }
-}
 
 /// <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> 
 /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -7591,6 +7631,13 @@ impl ProvisioningArtifactPreferences {
         self.stack_set_regions.as_deref()
     }
 }
+impl ProvisioningArtifactPreferences {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactPreferences`](crate::model::ProvisioningArtifactPreferences).
+    pub fn builder() -> crate::model::provisioning_artifact_preferences::Builder {
+        crate::model::provisioning_artifact_preferences::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactPreferences`](crate::model::ProvisioningArtifactPreferences).
 pub mod provisioning_artifact_preferences {
     
@@ -7649,12 +7696,6 @@ pub mod provisioning_artifact_preferences {
     
     
 }
-impl ProvisioningArtifactPreferences {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactPreferences`](crate::model::ProvisioningArtifactPreferences).
-    pub fn builder() -> crate::model::provisioning_artifact_preferences::Builder {
-        crate::model::provisioning_artifact_preferences::Builder::default()
-    }
-}
 
 /// <p>Summary information about a TagOption.</p>
 #[non_exhaustive]
@@ -7677,6 +7718,13 @@ impl TagOptionSummary {
         self.values.as_deref()
     }
 }
+impl TagOptionSummary {
+    /// Creates a new builder-style object to manufacture [`TagOptionSummary`](crate::model::TagOptionSummary).
+    pub fn builder() -> crate::model::tag_option_summary::Builder {
+        crate::model::tag_option_summary::Builder::default()
+    }
+}
+
 /// See [`TagOptionSummary`](crate::model::TagOptionSummary).
 pub mod tag_option_summary {
     
@@ -7725,12 +7773,6 @@ pub mod tag_option_summary {
     
     
 }
-impl TagOptionSummary {
-    /// Creates a new builder-style object to manufacture [`TagOptionSummary`](crate::model::TagOptionSummary).
-    pub fn builder() -> crate::model::tag_option_summary::Builder {
-        crate::model::tag_option_summary::Builder::default()
-    }
-}
 
 /// <p>Additional information provided by the administrator.</p>
 #[non_exhaustive]
@@ -7753,6 +7795,13 @@ impl UsageInstruction {
         self.value.as_deref()
     }
 }
+impl UsageInstruction {
+    /// Creates a new builder-style object to manufacture [`UsageInstruction`](crate::model::UsageInstruction).
+    pub fn builder() -> crate::model::usage_instruction::Builder {
+        crate::model::usage_instruction::Builder::default()
+    }
+}
+
 /// See [`UsageInstruction`](crate::model::UsageInstruction).
 pub mod usage_instruction {
     
@@ -7794,12 +7843,6 @@ pub mod usage_instruction {
     }
     
     
-}
-impl UsageInstruction {
-    /// Creates a new builder-style object to manufacture [`UsageInstruction`](crate::model::UsageInstruction).
-    pub fn builder() -> crate::model::usage_instruction::Builder {
-        crate::model::usage_instruction::Builder::default()
-    }
 }
 
 /// <p>Information about a parameter used to provision a product.</p>
@@ -7851,6 +7894,13 @@ impl ProvisioningArtifactParameter {
         self.parameter_constraints.as_ref()
     }
 }
+impl ProvisioningArtifactParameter {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactParameter`](crate::model::ProvisioningArtifactParameter).
+    pub fn builder() -> crate::model::provisioning_artifact_parameter::Builder {
+        crate::model::provisioning_artifact_parameter::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactParameter`](crate::model::ProvisioningArtifactParameter).
 pub mod provisioning_artifact_parameter {
     
@@ -7942,12 +7992,6 @@ pub mod provisioning_artifact_parameter {
     
     
 }
-impl ProvisioningArtifactParameter {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactParameter`](crate::model::ProvisioningArtifactParameter).
-    pub fn builder() -> crate::model::provisioning_artifact_parameter::Builder {
-        crate::model::provisioning_artifact_parameter::Builder::default()
-    }
-}
 
 /// <p>The constraints that the administrator has put on the parameter.</p>
 #[non_exhaustive]
@@ -8011,6 +8055,13 @@ impl ParameterConstraints {
         self.min_value.as_deref()
     }
 }
+impl ParameterConstraints {
+    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
+    pub fn builder() -> crate::model::parameter_constraints::Builder {
+        crate::model::parameter_constraints::Builder::default()
+    }
+}
+
 /// See [`ParameterConstraints`](crate::model::ParameterConstraints).
 pub mod parameter_constraints {
     
@@ -8125,12 +8176,6 @@ pub mod parameter_constraints {
     
     
 }
-impl ParameterConstraints {
-    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
-    pub fn builder() -> crate::model::parameter_constraints::Builder {
-        crate::model::parameter_constraints::Builder::default()
-    }
-}
 
 /// <p>Information about a resource change that will occur when a plan is executed.</p>
 #[non_exhaustive]
@@ -8188,6 +8233,13 @@ impl ResourceChange {
         self.details.as_deref()
     }
 }
+impl ResourceChange {
+    /// Creates a new builder-style object to manufacture [`ResourceChange`](crate::model::ResourceChange).
+    pub fn builder() -> crate::model::resource_change::Builder {
+        crate::model::resource_change::Builder::default()
+    }
+}
+
 /// See [`ResourceChange`](crate::model::ResourceChange).
 pub mod resource_change {
     
@@ -8302,12 +8354,6 @@ pub mod resource_change {
     
     
 }
-impl ResourceChange {
-    /// Creates a new builder-style object to manufacture [`ResourceChange`](crate::model::ResourceChange).
-    pub fn builder() -> crate::model::resource_change::Builder {
-        crate::model::resource_change::Builder::default()
-    }
-}
 
 /// <p>Information about a change to a resource attribute.</p>
 #[non_exhaustive]
@@ -8337,6 +8383,13 @@ impl ResourceChangeDetail {
         self.causing_entity.as_deref()
     }
 }
+impl ResourceChangeDetail {
+    /// Creates a new builder-style object to manufacture [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
+    pub fn builder() -> crate::model::resource_change_detail::Builder {
+        crate::model::resource_change_detail::Builder::default()
+    }
+}
+
 /// See [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
 pub mod resource_change_detail {
     
@@ -8390,12 +8443,6 @@ pub mod resource_change_detail {
     }
     
     
-}
-impl ResourceChangeDetail {
-    /// Creates a new builder-style object to manufacture [`ResourceChangeDetail`](crate::model::ResourceChangeDetail).
-    pub fn builder() -> crate::model::resource_change_detail::Builder {
-        crate::model::resource_change_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EvaluationType`, it is important to ensure
@@ -8508,6 +8555,13 @@ impl ResourceTargetDefinition {
         self.requires_recreation.as_ref()
     }
 }
+impl ResourceTargetDefinition {
+    /// Creates a new builder-style object to manufacture [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
+    pub fn builder() -> crate::model::resource_target_definition::Builder {
+        crate::model::resource_target_definition::Builder::default()
+    }
+}
+
 /// See [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
 pub mod resource_target_definition {
     
@@ -8561,12 +8615,6 @@ pub mod resource_target_definition {
     }
     
     
-}
-impl ResourceTargetDefinition {
-    /// Creates a new builder-style object to manufacture [`ResourceTargetDefinition`](crate::model::ResourceTargetDefinition).
-    pub fn builder() -> crate::model::resource_target_definition::Builder {
-        crate::model::resource_target_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequiresRecreation`, it is important to ensure
@@ -9044,6 +9092,13 @@ impl ProvisionedProductPlanDetails {
         self.status_message.as_deref()
     }
 }
+impl ProvisionedProductPlanDetails {
+    /// Creates a new builder-style object to manufacture [`ProvisionedProductPlanDetails`](crate::model::ProvisionedProductPlanDetails).
+    pub fn builder() -> crate::model::provisioned_product_plan_details::Builder {
+        crate::model::provisioned_product_plan_details::Builder::default()
+    }
+}
+
 /// See [`ProvisionedProductPlanDetails`](crate::model::ProvisionedProductPlanDetails).
 pub mod provisioned_product_plan_details {
     
@@ -9260,12 +9315,6 @@ pub mod provisioned_product_plan_details {
     
     
 }
-impl ProvisionedProductPlanDetails {
-    /// Creates a new builder-style object to manufacture [`ProvisionedProductPlanDetails`](crate::model::ProvisionedProductPlanDetails).
-    pub fn builder() -> crate::model::provisioned_product_plan_details::Builder {
-        crate::model::provisioned_product_plan_details::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ProvisionedProductPlanStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9383,6 +9432,13 @@ impl CloudWatchDashboard {
         self.name.as_deref()
     }
 }
+impl CloudWatchDashboard {
+    /// Creates a new builder-style object to manufacture [`CloudWatchDashboard`](crate::model::CloudWatchDashboard).
+    pub fn builder() -> crate::model::cloud_watch_dashboard::Builder {
+        crate::model::cloud_watch_dashboard::Builder::default()
+    }
+}
+
 /// See [`CloudWatchDashboard`](crate::model::CloudWatchDashboard).
 pub mod cloud_watch_dashboard {
     
@@ -9412,12 +9468,6 @@ pub mod cloud_watch_dashboard {
     }
     
     
-}
-impl CloudWatchDashboard {
-    /// Creates a new builder-style object to manufacture [`CloudWatchDashboard`](crate::model::CloudWatchDashboard).
-    pub fn builder() -> crate::model::cloud_watch_dashboard::Builder {
-        crate::model::cloud_watch_dashboard::Builder::default()
-    }
 }
 
 /// <p>Summary information about a provisioning artifact (also known as a version) for a product.</p>
@@ -9462,6 +9512,13 @@ impl ProvisioningArtifactSummary {
         self.provisioning_artifact_metadata.as_ref()
     }
 }
+impl ProvisioningArtifactSummary {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactSummary`](crate::model::ProvisioningArtifactSummary).
+    pub fn builder() -> crate::model::provisioning_artifact_summary::Builder {
+        crate::model::provisioning_artifact_summary::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactSummary`](crate::model::ProvisioningArtifactSummary).
 pub mod provisioning_artifact_summary {
     
@@ -9546,12 +9603,6 @@ pub mod provisioning_artifact_summary {
     
     
 }
-impl ProvisioningArtifactSummary {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactSummary`](crate::model::ProvisioningArtifactSummary).
-    pub fn builder() -> crate::model::provisioning_artifact_summary::Builder {
-        crate::model::provisioning_artifact_summary::Builder::default()
-    }
-}
 
 /// <p>A launch path object.</p>
 #[non_exhaustive]
@@ -9574,6 +9625,13 @@ impl LaunchPath {
         self.name.as_deref()
     }
 }
+impl LaunchPath {
+    /// Creates a new builder-style object to manufacture [`LaunchPath`](crate::model::LaunchPath).
+    pub fn builder() -> crate::model::launch_path::Builder {
+        crate::model::launch_path::Builder::default()
+    }
+}
+
 /// See [`LaunchPath`](crate::model::LaunchPath).
 pub mod launch_path {
     
@@ -9616,12 +9674,6 @@ pub mod launch_path {
     
     
 }
-impl LaunchPath {
-    /// Creates a new builder-style object to manufacture [`LaunchPath`](crate::model::LaunchPath).
-    pub fn builder() -> crate::model::launch_path::Builder {
-        crate::model::launch_path::Builder::default()
-    }
-}
 
 /// <p>Information about the portfolio share operation.</p>
 #[non_exhaustive]
@@ -9644,6 +9696,13 @@ impl ShareDetails {
         self.share_errors.as_deref()
     }
 }
+impl ShareDetails {
+    /// Creates a new builder-style object to manufacture [`ShareDetails`](crate::model::ShareDetails).
+    pub fn builder() -> crate::model::share_details::Builder {
+        crate::model::share_details::Builder::default()
+    }
+}
+
 /// See [`ShareDetails`](crate::model::ShareDetails).
 pub mod share_details {
     
@@ -9698,12 +9757,6 @@ pub mod share_details {
     
     
 }
-impl ShareDetails {
-    /// Creates a new builder-style object to manufacture [`ShareDetails`](crate::model::ShareDetails).
-    pub fn builder() -> crate::model::share_details::Builder {
-        crate::model::share_details::Builder::default()
-    }
-}
 
 /// <p>Errors that occurred during the portfolio share operation.</p>
 #[non_exhaustive]
@@ -9733,6 +9786,13 @@ impl ShareError {
         self.error.as_deref()
     }
 }
+impl ShareError {
+    /// Creates a new builder-style object to manufacture [`ShareError`](crate::model::ShareError).
+    pub fn builder() -> crate::model::share_error::Builder {
+        crate::model::share_error::Builder::default()
+    }
+}
+
 /// See [`ShareError`](crate::model::ShareError).
 pub mod share_error {
     
@@ -9793,12 +9853,6 @@ pub mod share_error {
     
     
 }
-impl ShareError {
-    /// Creates a new builder-style object to manufacture [`ShareError`](crate::model::ShareError).
-    pub fn builder() -> crate::model::share_error::Builder {
-        crate::model::share_error::Builder::default()
-    }
-}
 
 /// <p>Information about the portfolio share.</p>
 #[non_exhaustive]
@@ -9850,6 +9904,13 @@ impl PortfolioShareDetail {
         self.share_principals
     }
 }
+impl PortfolioShareDetail {
+    /// Creates a new builder-style object to manufacture [`PortfolioShareDetail`](crate::model::PortfolioShareDetail).
+    pub fn builder() -> crate::model::portfolio_share_detail::Builder {
+        crate::model::portfolio_share_detail::Builder::default()
+    }
+}
+
 /// See [`PortfolioShareDetail`](crate::model::PortfolioShareDetail).
 pub mod portfolio_share_detail {
     
@@ -9938,12 +9999,6 @@ pub mod portfolio_share_detail {
     }
     
     
-}
-impl PortfolioShareDetail {
-    /// Creates a new builder-style object to manufacture [`PortfolioShareDetail`](crate::model::PortfolioShareDetail).
-    pub fn builder() -> crate::model::portfolio_share_detail::Builder {
-        crate::model::portfolio_share_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DescribePortfolioShareType`, it is important to ensure
@@ -10183,6 +10238,13 @@ impl ProvisioningArtifactProperties {
         self.disable_template_validation
     }
 }
+impl ProvisioningArtifactProperties {
+    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactProperties`](crate::model::ProvisioningArtifactProperties).
+    pub fn builder() -> crate::model::provisioning_artifact_properties::Builder {
+        crate::model::provisioning_artifact_properties::Builder::default()
+    }
+}
+
 /// See [`ProvisioningArtifactProperties`](crate::model::ProvisioningArtifactProperties).
 pub mod provisioning_artifact_properties {
     
@@ -10283,12 +10345,6 @@ pub mod provisioning_artifact_properties {
     }
     
     
-}
-impl ProvisioningArtifactProperties {
-    /// Creates a new builder-style object to manufacture [`ProvisioningArtifactProperties`](crate::model::ProvisioningArtifactProperties).
-    pub fn builder() -> crate::model::provisioning_artifact_properties::Builder {
-        crate::model::provisioning_artifact_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CopyOption`, it is important to ensure
@@ -10487,6 +10543,13 @@ impl FailedServiceActionAssociation {
         self.error_message.as_deref()
     }
 }
+impl FailedServiceActionAssociation {
+    /// Creates a new builder-style object to manufacture [`FailedServiceActionAssociation`](crate::model::FailedServiceActionAssociation).
+    pub fn builder() -> crate::model::failed_service_action_association::Builder {
+        crate::model::failed_service_action_association::Builder::default()
+    }
+}
+
 /// See [`FailedServiceActionAssociation`](crate::model::FailedServiceActionAssociation).
 pub mod failed_service_action_association {
     
@@ -10564,12 +10627,6 @@ pub mod failed_service_action_association {
     }
     
     
-}
-impl FailedServiceActionAssociation {
-    /// Creates a new builder-style object to manufacture [`FailedServiceActionAssociation`](crate::model::FailedServiceActionAssociation).
-    pub fn builder() -> crate::model::failed_service_action_association::Builder {
-        crate::model::failed_service_action_association::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceActionAssociationErrorCode`, it is important to ensure
@@ -10697,6 +10754,13 @@ impl ServiceActionAssociation {
         self.provisioning_artifact_id.as_deref()
     }
 }
+impl ServiceActionAssociation {
+    /// Creates a new builder-style object to manufacture [`ServiceActionAssociation`](crate::model::ServiceActionAssociation).
+    pub fn builder() -> crate::model::service_action_association::Builder {
+        crate::model::service_action_association::Builder::default()
+    }
+}
+
 /// See [`ServiceActionAssociation`](crate::model::ServiceActionAssociation).
 pub mod service_action_association {
     
@@ -10750,11 +10814,5 @@ pub mod service_action_association {
     }
     
     
-}
-impl ServiceActionAssociation {
-    /// Creates a new builder-style object to manufacture [`ServiceActionAssociation`](crate::model::ServiceActionAssociation).
-    pub fn builder() -> crate::model::service_action_association::Builder {
-        crate::model::service_action_association::Builder::default()
-    }
 }
 

@@ -78,6 +78,13 @@ impl Channel {
         self.tags.as_ref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
     
@@ -218,12 +225,6 @@ pub mod channel {
     }
     
     
-}
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChannelType`, it is important to ensure
@@ -425,6 +426,13 @@ impl StreamSessionSummary {
         self.has_error_event
     }
 }
+impl StreamSessionSummary {
+    /// Creates a new builder-style object to manufacture [`StreamSessionSummary`](crate::model::StreamSessionSummary).
+    pub fn builder() -> crate::model::stream_session_summary::Builder {
+        crate::model::stream_session_summary::Builder::default()
+    }
+}
+
 /// See [`StreamSessionSummary`](crate::model::StreamSessionSummary).
 pub mod stream_session_summary {
     
@@ -492,12 +500,6 @@ pub mod stream_session_summary {
     
     
 }
-impl StreamSessionSummary {
-    /// Creates a new builder-style object to manufacture [`StreamSessionSummary`](crate::model::StreamSessionSummary).
-    pub fn builder() -> crate::model::stream_session_summary::Builder {
-        crate::model::stream_session_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about a stream.</p>
 #[non_exhaustive]
@@ -548,6 +550,13 @@ impl StreamSummary {
         self.start_time.as_ref()
     }
 }
+impl StreamSummary {
+    /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
+    pub fn builder() -> crate::model::stream_summary::Builder {
+        crate::model::stream_summary::Builder::default()
+    }
+}
+
 /// See [`StreamSummary`](crate::model::StreamSummary).
 pub mod stream_summary {
     
@@ -638,12 +647,6 @@ pub mod stream_summary {
     }
     
     
-}
-impl StreamSummary {
-    /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
-    pub fn builder() -> crate::model::stream_summary::Builder {
-        crate::model::stream_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StreamHealth`, it is important to ensure
@@ -829,6 +832,13 @@ impl StreamFilters {
         self.health.as_ref()
     }
 }
+impl StreamFilters {
+    /// Creates a new builder-style object to manufacture [`StreamFilters`](crate::model::StreamFilters).
+    pub fn builder() -> crate::model::stream_filters::Builder {
+        crate::model::stream_filters::Builder::default()
+    }
+}
+
 /// See [`StreamFilters`](crate::model::StreamFilters).
 pub mod stream_filters {
     
@@ -859,12 +869,6 @@ pub mod stream_filters {
     
     
 }
-impl StreamFilters {
-    /// Creates a new builder-style object to manufacture [`StreamFilters`](crate::model::StreamFilters).
-    pub fn builder() -> crate::model::stream_filters::Builder {
-        crate::model::stream_filters::Builder::default()
-    }
-}
 
 /// <p>Summary information about a stream key.</p>
 #[non_exhaustive]
@@ -894,6 +898,13 @@ impl StreamKeySummary {
         self.tags.as_ref()
     }
 }
+impl StreamKeySummary {
+    /// Creates a new builder-style object to manufacture [`StreamKeySummary`](crate::model::StreamKeySummary).
+    pub fn builder() -> crate::model::stream_key_summary::Builder {
+        crate::model::stream_key_summary::Builder::default()
+    }
+}
+
 /// See [`StreamKeySummary`](crate::model::StreamKeySummary).
 pub mod stream_key_summary {
     
@@ -954,12 +965,6 @@ pub mod stream_key_summary {
     
     
 }
-impl StreamKeySummary {
-    /// Creates a new builder-style object to manufacture [`StreamKeySummary`](crate::model::StreamKeySummary).
-    pub fn builder() -> crate::model::stream_key_summary::Builder {
-        crate::model::stream_key_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about a RecordingConfiguration.</p>
 #[non_exhaustive]
@@ -1003,6 +1008,13 @@ impl RecordingConfigurationSummary {
         self.tags.as_ref()
     }
 }
+impl RecordingConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
+    pub fn builder() -> crate::model::recording_configuration_summary::Builder {
+        crate::model::recording_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
 pub mod recording_configuration_summary {
     
@@ -1086,12 +1098,6 @@ pub mod recording_configuration_summary {
     }
     
     
-}
-impl RecordingConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`RecordingConfigurationSummary`](crate::model::RecordingConfigurationSummary).
-    pub fn builder() -> crate::model::recording_configuration_summary::Builder {
-        crate::model::recording_configuration_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecordingConfigurationState`, it is important to ensure
@@ -1195,6 +1201,13 @@ impl DestinationConfiguration {
         self.s3.as_ref()
     }
 }
+impl DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
+    pub fn builder() -> crate::model::destination_configuration::Builder {
+        crate::model::destination_configuration::Builder::default()
+    }
+}
+
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
 pub mod destination_configuration {
     
@@ -1225,12 +1238,6 @@ pub mod destination_configuration {
     
     
 }
-impl DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
-    pub fn builder() -> crate::model::destination_configuration::Builder {
-        crate::model::destination_configuration::Builder::default()
-    }
-}
 
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
@@ -1246,6 +1253,13 @@ impl S3DestinationConfiguration {
         self.bucket_name.as_deref()
     }
 }
+impl S3DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
+        crate::model::s3_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
     
@@ -1276,12 +1290,6 @@ pub mod s3_destination_configuration {
     
     
 }
-impl S3DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
-        crate::model::s3_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Summary information about a playback key pair.</p>
 #[non_exhaustive]
@@ -1311,6 +1319,13 @@ impl PlaybackKeyPairSummary {
         self.tags.as_ref()
     }
 }
+impl PlaybackKeyPairSummary {
+    /// Creates a new builder-style object to manufacture [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
+    pub fn builder() -> crate::model::playback_key_pair_summary::Builder {
+        crate::model::playback_key_pair_summary::Builder::default()
+    }
+}
+
 /// See [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
 pub mod playback_key_pair_summary {
     
@@ -1371,12 +1386,6 @@ pub mod playback_key_pair_summary {
     
     
 }
-impl PlaybackKeyPairSummary {
-    /// Creates a new builder-style object to manufacture [`PlaybackKeyPairSummary`](crate::model::PlaybackKeyPairSummary).
-    pub fn builder() -> crate::model::playback_key_pair_summary::Builder {
-        crate::model::playback_key_pair_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about a channel.</p>
 #[non_exhaustive]
@@ -1427,6 +1436,13 @@ impl ChannelSummary {
         self.tags.as_ref()
     }
 }
+impl ChannelSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
+    pub fn builder() -> crate::model::channel_summary::Builder {
+        crate::model::channel_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
     
@@ -1524,12 +1540,6 @@ pub mod channel_summary {
     
     
 }
-impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
-    pub fn builder() -> crate::model::channel_summary::Builder {
-        crate::model::channel_summary::Builder::default()
-    }
-}
 
 /// <p>A key pair used to sign and validate a playback authorization token.</p>
 #[non_exhaustive]
@@ -1566,6 +1576,13 @@ impl PlaybackKeyPair {
         self.tags.as_ref()
     }
 }
+impl PlaybackKeyPair {
+    /// Creates a new builder-style object to manufacture [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
+    pub fn builder() -> crate::model::playback_key_pair::Builder {
+        crate::model::playback_key_pair::Builder::default()
+    }
+}
+
 /// See [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
 pub mod playback_key_pair {
     
@@ -1638,12 +1655,6 @@ pub mod playback_key_pair {
     
     
 }
-impl PlaybackKeyPair {
-    /// Creates a new builder-style object to manufacture [`PlaybackKeyPair`](crate::model::PlaybackKeyPair).
-    pub fn builder() -> crate::model::playback_key_pair::Builder {
-        crate::model::playback_key_pair::Builder::default()
-    }
-}
 
 /// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 #[non_exhaustive]
@@ -1701,6 +1712,13 @@ impl StreamSession {
         self.truncated_events.as_deref()
     }
 }
+impl StreamSession {
+    /// Creates a new builder-style object to manufacture [`StreamSession`](crate::model::StreamSession).
+    pub fn builder() -> crate::model::stream_session::Builder {
+        crate::model::stream_session::Builder::default()
+    }
+}
+
 /// See [`StreamSession`](crate::model::StreamSession).
 pub mod stream_session {
     
@@ -1809,12 +1827,6 @@ pub mod stream_session {
     
     
 }
-impl StreamSession {
-    /// Creates a new builder-style object to manufacture [`StreamSession`](crate::model::StreamSession).
-    pub fn builder() -> crate::model::stream_session::Builder {
-        crate::model::stream_session::Builder::default()
-    }
-}
 
 /// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
 #[non_exhaustive]
@@ -1844,6 +1856,13 @@ impl StreamEvent {
         self.event_time.as_ref()
     }
 }
+impl StreamEvent {
+    /// Creates a new builder-style object to manufacture [`StreamEvent`](crate::model::StreamEvent).
+    pub fn builder() -> crate::model::stream_event::Builder {
+        crate::model::stream_event::Builder::default()
+    }
+}
+
 /// See [`StreamEvent`](crate::model::StreamEvent).
 pub mod stream_event {
     
@@ -1897,12 +1916,6 @@ pub mod stream_event {
     }
     
     
-}
-impl StreamEvent {
-    /// Creates a new builder-style object to manufacture [`StreamEvent`](crate::model::StreamEvent).
-    pub fn builder() -> crate::model::stream_event::Builder {
-        crate::model::stream_event::Builder::default()
-    }
 }
 
 /// <p>An object representing a configuration to record a channel stream.</p>
@@ -1961,6 +1974,13 @@ impl RecordingConfiguration {
         self.recording_reconnect_window_seconds
     }
 }
+impl RecordingConfiguration {
+    /// Creates a new builder-style object to manufacture [`RecordingConfiguration`](crate::model::RecordingConfiguration).
+    pub fn builder() -> crate::model::recording_configuration::Builder {
+        crate::model::recording_configuration::Builder::default()
+    }
+}
+
 /// See [`RecordingConfiguration`](crate::model::RecordingConfiguration).
 pub mod recording_configuration {
     
@@ -2070,12 +2090,6 @@ pub mod recording_configuration {
     
     
 }
-impl RecordingConfiguration {
-    /// Creates a new builder-style object to manufacture [`RecordingConfiguration`](crate::model::RecordingConfiguration).
-    pub fn builder() -> crate::model::recording_configuration::Builder {
-        crate::model::recording_configuration::Builder::default()
-    }
-}
 
 /// <p>An object representing a configuration of thumbnails for recorded video.</p>
 #[non_exhaustive]
@@ -2100,6 +2114,13 @@ impl ThumbnailConfiguration {
         self.target_interval_seconds
     }
 }
+impl ThumbnailConfiguration {
+    /// Creates a new builder-style object to manufacture [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
+    pub fn builder() -> crate::model::thumbnail_configuration::Builder {
+        crate::model::thumbnail_configuration::Builder::default()
+    }
+}
+
 /// See [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
 pub mod thumbnail_configuration {
     
@@ -2144,12 +2165,6 @@ pub mod thumbnail_configuration {
     }
     
     
-}
-impl ThumbnailConfiguration {
-    /// Creates a new builder-style object to manufacture [`ThumbnailConfiguration`](crate::model::ThumbnailConfiguration).
-    pub fn builder() -> crate::model::thumbnail_configuration::Builder {
-        crate::model::thumbnail_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecordingMode`, it is important to ensure
@@ -2255,6 +2270,13 @@ impl IngestConfiguration {
         self.audio.as_ref()
     }
 }
+impl IngestConfiguration {
+    /// Creates a new builder-style object to manufacture [`IngestConfiguration`](crate::model::IngestConfiguration).
+    pub fn builder() -> crate::model::ingest_configuration::Builder {
+        crate::model::ingest_configuration::Builder::default()
+    }
+}
+
 /// See [`IngestConfiguration`](crate::model::IngestConfiguration).
 pub mod ingest_configuration {
     
@@ -2297,12 +2319,6 @@ pub mod ingest_configuration {
     
     
 }
-impl IngestConfiguration {
-    /// Creates a new builder-style object to manufacture [`IngestConfiguration`](crate::model::IngestConfiguration).
-    pub fn builder() -> crate::model::ingest_configuration::Builder {
-        crate::model::ingest_configuration::Builder::default()
-    }
-}
 
 /// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
@@ -2339,6 +2355,13 @@ impl AudioConfiguration {
         self.channels
     }
 }
+impl AudioConfiguration {
+    /// Creates a new builder-style object to manufacture [`AudioConfiguration`](crate::model::AudioConfiguration).
+    pub fn builder() -> crate::model::audio_configuration::Builder {
+        crate::model::audio_configuration::Builder::default()
+    }
+}
+
 /// See [`AudioConfiguration`](crate::model::AudioConfiguration).
 pub mod audio_configuration {
     
@@ -2408,12 +2431,6 @@ pub mod audio_configuration {
     
     
 }
-impl AudioConfiguration {
-    /// Creates a new builder-style object to manufacture [`AudioConfiguration`](crate::model::AudioConfiguration).
-    pub fn builder() -> crate::model::audio_configuration::Builder {
-        crate::model::audio_configuration::Builder::default()
-    }
-}
 
 /// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
@@ -2478,6 +2495,13 @@ impl VideoConfiguration {
         self.video_width
     }
 }
+impl VideoConfiguration {
+    /// Creates a new builder-style object to manufacture [`VideoConfiguration`](crate::model::VideoConfiguration).
+    pub fn builder() -> crate::model::video_configuration::Builder {
+        crate::model::video_configuration::Builder::default()
+    }
+}
+
 /// See [`VideoConfiguration`](crate::model::VideoConfiguration).
 pub mod video_configuration {
     
@@ -2596,12 +2620,6 @@ pub mod video_configuration {
     
     
 }
-impl VideoConfiguration {
-    /// Creates a new builder-style object to manufacture [`VideoConfiguration`](crate::model::VideoConfiguration).
-    pub fn builder() -> crate::model::video_configuration::Builder {
-        crate::model::video_configuration::Builder::default()
-    }
-}
 
 /// <p>Object specifying a stream key.</p>
 #[non_exhaustive]
@@ -2648,6 +2666,13 @@ impl  std::fmt::Debug for StreamKey  {
         formatter.finish()
     }
 }
+impl StreamKey {
+    /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey).
+    pub fn builder() -> crate::model::stream_key::Builder {
+        crate::model::stream_key::Builder::default()
+    }
+}
+
 /// See [`StreamKey`](crate::model::StreamKey).
 pub mod stream_key {
     
@@ -2730,12 +2755,6 @@ pub mod stream_key {
     
     
 }
-impl StreamKey {
-    /// Creates a new builder-style object to manufacture [`StreamKey`](crate::model::StreamKey).
-    pub fn builder() -> crate::model::stream_key::Builder {
-        crate::model::stream_key::Builder::default()
-    }
-}
 
 /// <p>Specifies a live video stream that has been ingested and distributed.</p>
 #[non_exhaustive]
@@ -2793,6 +2812,13 @@ impl Stream {
         self.viewer_count
     }
 }
+impl Stream {
+    /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream).
+    pub fn builder() -> crate::model::stream::Builder {
+        crate::model::stream::Builder::default()
+    }
+}
+
 /// See [`Stream`](crate::model::Stream).
 pub mod stream {
     
@@ -2896,12 +2922,6 @@ pub mod stream {
     
     
 }
-impl Stream {
-    /// Creates a new builder-style object to manufacture [`Stream`](crate::model::Stream).
-    pub fn builder() -> crate::model::stream::Builder {
-        crate::model::stream::Builder::default()
-    }
-}
 
 /// <p>Error related to a specific channel, specified by its ARN.</p>
 #[non_exhaustive]
@@ -2931,6 +2951,13 @@ impl BatchError {
         self.message.as_deref()
     }
 }
+impl BatchError {
+    /// Creates a new builder-style object to manufacture [`BatchError`](crate::model::BatchError).
+    pub fn builder() -> crate::model::batch_error::Builder {
+        crate::model::batch_error::Builder::default()
+    }
+}
+
 /// See [`BatchError`](crate::model::BatchError).
 pub mod batch_error {
     
@@ -2984,11 +3011,5 @@ pub mod batch_error {
     }
     
     
-}
-impl BatchError {
-    /// Creates a new builder-style object to manufacture [`BatchError`](crate::model::BatchError).
-    pub fn builder() -> crate::model::batch_error::Builder {
-        crate::model::batch_error::Builder::default()
-    }
 }
 

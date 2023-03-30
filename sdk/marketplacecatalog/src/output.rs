@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -120,6 +122,13 @@ impl aws_http::request_id::RequestId for StartChangeSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartChangeSetOutput {
+    /// Creates a new builder-style object to manufacture [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
+    pub fn builder() -> crate::output::start_change_set_output::Builder {
+        crate::output::start_change_set_output::Builder::default()
+    }
+}
+
 /// See [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
 pub mod start_change_set_output {
     
@@ -173,12 +182,6 @@ pub mod start_change_set_output {
     
     
 }
-impl StartChangeSetOutput {
-    /// Creates a new builder-style object to manufacture [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
-    pub fn builder() -> crate::output::start_change_set_output::Builder {
-        crate::output::start_change_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -207,6 +210,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -266,12 +276,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -300,6 +304,13 @@ impl aws_http::request_id::RequestId for ListEntitiesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
+    pub fn builder() -> crate::output::list_entities_output::Builder {
+        crate::output::list_entities_output::Builder::default()
+    }
+}
+
 /// See [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
 pub mod list_entities_output {
     
@@ -359,12 +370,6 @@ pub mod list_entities_output {
     
     
 }
-impl ListEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
-    pub fn builder() -> crate::output::list_entities_output::Builder {
-        crate::output::list_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -393,6 +398,13 @@ impl aws_http::request_id::RequestId for ListChangeSetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListChangeSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
+    pub fn builder() -> crate::output::list_change_sets_output::Builder {
+        crate::output::list_change_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
 pub mod list_change_sets_output {
     
@@ -452,12 +464,6 @@ pub mod list_change_sets_output {
     
     
 }
-impl ListChangeSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
-    pub fn builder() -> crate::output::list_change_sets_output::Builder {
-        crate::output::list_change_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -507,6 +513,13 @@ impl aws_http::request_id::RequestId for DescribeEntityOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEntityOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
+    pub fn builder() -> crate::output::describe_entity_output::Builder {
+        crate::output::describe_entity_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
 pub mod describe_entity_output {
     
@@ -596,12 +609,6 @@ pub mod describe_entity_output {
     
     
 }
-impl DescribeEntityOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
-    pub fn builder() -> crate::output::describe_entity_output::Builder {
-        crate::output::describe_entity_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -679,6 +686,13 @@ impl aws_http::request_id::RequestId for DescribeChangeSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeChangeSetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
+    pub fn builder() -> crate::output::describe_change_set_output::Builder {
+        crate::output::describe_change_set_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
 pub mod describe_change_set_output {
     
@@ -822,12 +836,6 @@ pub mod describe_change_set_output {
     
     
 }
-impl DescribeChangeSetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
-    pub fn builder() -> crate::output::describe_change_set_output::Builder {
-        crate::output::describe_change_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -856,6 +864,13 @@ impl aws_http::request_id::RequestId for CancelChangeSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelChangeSetOutput {
+    /// Creates a new builder-style object to manufacture [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
+    pub fn builder() -> crate::output::cancel_change_set_output::Builder {
+        crate::output::cancel_change_set_output::Builder::default()
+    }
+}
+
 /// See [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
 pub mod cancel_change_set_output {
     
@@ -908,11 +923,5 @@ pub mod cancel_change_set_output {
     }
     
     
-}
-impl CancelChangeSetOutput {
-    /// Creates a new builder-style object to manufacture [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
-    pub fn builder() -> crate::output::cancel_change_set_output::Builder {
-        crate::output::cancel_change_set_output::Builder::default()
-    }
 }
 

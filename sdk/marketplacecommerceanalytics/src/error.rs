@@ -113,55 +113,6 @@ pub struct MarketplaceCommerceAnalyticsException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MarketplaceCommerceAnalyticsException {
-    /// Creates a new builder-style object to manufacture [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
-    pub fn builder() -> crate::error::marketplace_commerce_analytics_exception::Builder {
-        crate::error::marketplace_commerce_analytics_exception::Builder::default()
-    }
-}
-/// See [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
-pub mod marketplace_commerce_analytics_exception {
-    
-    /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// This message describes details of the error.
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// This message describes details of the error.
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
-        pub fn build(self) -> crate::error::MarketplaceCommerceAnalyticsException {
-            crate::error::MarketplaceCommerceAnalyticsException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl MarketplaceCommerceAnalyticsException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -185,6 +136,56 @@ impl aws_http::request_id::RequestId for crate::error::MarketplaceCommerceAnalyt
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MarketplaceCommerceAnalyticsException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl MarketplaceCommerceAnalyticsException {
+    /// Creates a new builder-style object to manufacture [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
+    pub fn builder() -> crate::error::marketplace_commerce_analytics_exception::Builder {
+        crate::error::marketplace_commerce_analytics_exception::Builder::default()
+    }
+}
+
+/// See [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
+pub mod marketplace_commerce_analytics_exception {
+    
+    /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// This message describes details of the error.
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// This message describes details of the error.
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
+        pub fn build(self) -> crate::error::MarketplaceCommerceAnalyticsException {
+            crate::error::MarketplaceCommerceAnalyticsException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

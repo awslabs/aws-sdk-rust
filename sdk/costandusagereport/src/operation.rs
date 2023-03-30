@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_report_definition`](crate::client::Client::delete_report_definition).
             ///
-            /// See [`crate::client::fluent_builders::DeleteReportDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReportDefinition {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_report_definitions`](crate::client::Client::describe_report_definitions).
             ///
-            /// See [`crate::client::fluent_builders::DescribeReportDefinitions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeReportDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReportDefinitions {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportDefinition
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`modify_report_definition`](crate::client::Client::modify_report_definition).
             ///
-            /// See [`crate::client::fluent_builders::ModifyReportDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ModifyReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ModifyReportDefinition {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReportDefinition {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_report_definition`](crate::client::Client::put_report_definition).
             ///
-            /// See [`crate::client::fluent_builders::PutReportDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutReportDefinition {
     _private: ()

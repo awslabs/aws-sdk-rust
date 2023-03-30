@@ -33,6 +33,13 @@ impl aws_http::request_id::RequestId for UpdateLedgerPermissionsModeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateLedgerPermissionsModeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
+    pub fn builder() -> crate::output::update_ledger_permissions_mode_output::Builder {
+        crate::output::update_ledger_permissions_mode_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
 pub mod update_ledger_permissions_mode_output {
     
@@ -98,12 +105,6 @@ pub mod update_ledger_permissions_mode_output {
     
     
 }
-impl UpdateLedgerPermissionsModeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
-    pub fn builder() -> crate::output::update_ledger_permissions_mode_output::Builder {
-        crate::output::update_ledger_permissions_mode_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -162,6 +163,13 @@ impl aws_http::request_id::RequestId for UpdateLedgerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateLedgerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
+    pub fn builder() -> crate::output::update_ledger_output::Builder {
+        crate::output::update_ledger_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
 pub mod update_ledger_output {
     
@@ -265,12 +273,6 @@ pub mod update_ledger_output {
     
     
 }
-impl UpdateLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
-    pub fn builder() -> crate::output::update_ledger_output::Builder {
-        crate::output::update_ledger_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -283,6 +285,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -312,12 +321,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -330,6 +333,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -359,12 +369,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -386,6 +390,13 @@ impl aws_http::request_id::RequestId for StreamJournalToKinesisOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StreamJournalToKinesisOutput {
+    /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
+    pub fn builder() -> crate::output::stream_journal_to_kinesis_output::Builder {
+        crate::output::stream_journal_to_kinesis_output::Builder::default()
+    }
+}
+
 /// See [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
 pub mod stream_journal_to_kinesis_output {
     
@@ -427,12 +438,6 @@ pub mod stream_journal_to_kinesis_output {
     
     
 }
-impl StreamJournalToKinesisOutput {
-    /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
-    pub fn builder() -> crate::output::stream_journal_to_kinesis_output::Builder {
-        crate::output::stream_journal_to_kinesis_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -454,6 +459,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -501,12 +513,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -543,6 +549,13 @@ impl aws_http::request_id::RequestId for ListLedgersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListLedgersOutput {
+    /// Creates a new builder-style object to manufacture [`ListLedgersOutput`](crate::output::ListLedgersOutput).
+    pub fn builder() -> crate::output::list_ledgers_output::Builder {
+        crate::output::list_ledgers_output::Builder::default()
+    }
+}
+
 /// See [`ListLedgersOutput`](crate::output::ListLedgersOutput).
 pub mod list_ledgers_output {
     
@@ -610,12 +623,6 @@ pub mod list_ledgers_output {
     
     
 }
-impl ListLedgersOutput {
-    /// Creates a new builder-style object to manufacture [`ListLedgersOutput`](crate::output::ListLedgersOutput).
-    pub fn builder() -> crate::output::list_ledgers_output::Builder {
-        crate::output::list_ledgers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -650,6 +657,13 @@ impl aws_http::request_id::RequestId for ListJournalS3ExportsForLedgerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListJournalS3ExportsForLedgerOutput {
+    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
+    pub fn builder() -> crate::output::list_journal_s3_exports_for_ledger_output::Builder {
+        crate::output::list_journal_s3_exports_for_ledger_output::Builder::default()
+    }
+}
+
 /// See [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
 pub mod list_journal_s3_exports_for_ledger_output {
     
@@ -715,12 +729,6 @@ pub mod list_journal_s3_exports_for_ledger_output {
     
     
 }
-impl ListJournalS3ExportsForLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
-    pub fn builder() -> crate::output::list_journal_s3_exports_for_ledger_output::Builder {
-        crate::output::list_journal_s3_exports_for_ledger_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -755,6 +763,13 @@ impl aws_http::request_id::RequestId for ListJournalS3ExportsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListJournalS3ExportsOutput {
+    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
+    pub fn builder() -> crate::output::list_journal_s3_exports_output::Builder {
+        crate::output::list_journal_s3_exports_output::Builder::default()
+    }
+}
+
 /// See [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
 pub mod list_journal_s3_exports_output {
     
@@ -820,12 +835,6 @@ pub mod list_journal_s3_exports_output {
     
     
 }
-impl ListJournalS3ExportsOutput {
-    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
-    pub fn builder() -> crate::output::list_journal_s3_exports_output::Builder {
-        crate::output::list_journal_s3_exports_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -860,6 +869,13 @@ impl aws_http::request_id::RequestId for ListJournalKinesisStreamsForLedgerOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListJournalKinesisStreamsForLedgerOutput {
+    /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
+    pub fn builder() -> crate::output::list_journal_kinesis_streams_for_ledger_output::Builder {
+        crate::output::list_journal_kinesis_streams_for_ledger_output::Builder::default()
+    }
+}
+
 /// See [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
 pub mod list_journal_kinesis_streams_for_ledger_output {
     
@@ -925,12 +941,6 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
     
     
 }
-impl ListJournalKinesisStreamsForLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
-    pub fn builder() -> crate::output::list_journal_kinesis_streams_for_ledger_output::Builder {
-        crate::output::list_journal_kinesis_streams_for_ledger_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -968,6 +978,13 @@ impl aws_http::request_id::RequestId for GetRevisionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRevisionOutput {
+    /// Creates a new builder-style object to manufacture [`GetRevisionOutput`](crate::output::GetRevisionOutput).
+    pub fn builder() -> crate::output::get_revision_output::Builder {
+        crate::output::get_revision_output::Builder::default()
+    }
+}
+
 /// See [`GetRevisionOutput`](crate::output::GetRevisionOutput).
 pub mod get_revision_output {
     
@@ -1030,12 +1047,6 @@ pub mod get_revision_output {
     
     
 }
-impl GetRevisionOutput {
-    /// Creates a new builder-style object to manufacture [`GetRevisionOutput`](crate::output::GetRevisionOutput).
-    pub fn builder() -> crate::output::get_revision_output::Builder {
-        crate::output::get_revision_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1073,6 +1084,13 @@ impl aws_http::request_id::RequestId for GetDigestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDigestOutput {
+    /// Creates a new builder-style object to manufacture [`GetDigestOutput`](crate::output::GetDigestOutput).
+    pub fn builder() -> crate::output::get_digest_output::Builder {
+        crate::output::get_digest_output::Builder::default()
+    }
+}
+
 /// See [`GetDigestOutput`](crate::output::GetDigestOutput).
 pub mod get_digest_output {
     
@@ -1135,12 +1153,6 @@ pub mod get_digest_output {
     
     
 }
-impl GetDigestOutput {
-    /// Creates a new builder-style object to manufacture [`GetDigestOutput`](crate::output::GetDigestOutput).
-    pub fn builder() -> crate::output::get_digest_output::Builder {
-        crate::output::get_digest_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1178,6 +1190,13 @@ impl aws_http::request_id::RequestId for GetBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBlockOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlockOutput`](crate::output::GetBlockOutput).
+    pub fn builder() -> crate::output::get_block_output::Builder {
+        crate::output::get_block_output::Builder::default()
+    }
+}
+
 /// See [`GetBlockOutput`](crate::output::GetBlockOutput).
 pub mod get_block_output {
     
@@ -1240,12 +1259,6 @@ pub mod get_block_output {
     
     
 }
-impl GetBlockOutput {
-    /// Creates a new builder-style object to manufacture [`GetBlockOutput`](crate::output::GetBlockOutput).
-    pub fn builder() -> crate::output::get_block_output::Builder {
-        crate::output::get_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1269,6 +1282,13 @@ impl aws_http::request_id::RequestId for ExportJournalToS3Output {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ExportJournalToS3Output {
+    /// Creates a new builder-style object to manufacture [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
+    pub fn builder() -> crate::output::export_journal_to_s3_output::Builder {
+        crate::output::export_journal_to_s3_output::Builder::default()
+    }
+}
+
 /// See [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
 pub mod export_journal_to_s3_output {
     
@@ -1311,12 +1331,6 @@ pub mod export_journal_to_s3_output {
     }
     
     
-}
-impl ExportJournalToS3Output {
-    /// Creates a new builder-style object to manufacture [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
-    pub fn builder() -> crate::output::export_journal_to_s3_output::Builder {
-        crate::output::export_journal_to_s3_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1383,6 +1397,13 @@ impl aws_http::request_id::RequestId for DescribeLedgerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeLedgerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
+    pub fn builder() -> crate::output::describe_ledger_output::Builder {
+        crate::output::describe_ledger_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
 pub mod describe_ledger_output {
     
@@ -1498,12 +1519,6 @@ pub mod describe_ledger_output {
     
     
 }
-impl DescribeLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
-    pub fn builder() -> crate::output::describe_ledger_output::Builder {
-        crate::output::describe_ledger_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1525,6 +1540,13 @@ impl aws_http::request_id::RequestId for DescribeJournalS3ExportOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeJournalS3ExportOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
+    pub fn builder() -> crate::output::describe_journal_s3_export_output::Builder {
+        crate::output::describe_journal_s3_export_output::Builder::default()
+    }
+}
+
 /// See [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
 pub mod describe_journal_s3_export_output {
     
@@ -1566,12 +1588,6 @@ pub mod describe_journal_s3_export_output {
     
     
 }
-impl DescribeJournalS3ExportOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
-    pub fn builder() -> crate::output::describe_journal_s3_export_output::Builder {
-        crate::output::describe_journal_s3_export_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1593,6 +1609,13 @@ impl aws_http::request_id::RequestId for DescribeJournalKinesisStreamOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeJournalKinesisStreamOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
+    pub fn builder() -> crate::output::describe_journal_kinesis_stream_output::Builder {
+        crate::output::describe_journal_kinesis_stream_output::Builder::default()
+    }
+}
+
 /// See [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
 pub mod describe_journal_kinesis_stream_output {
     
@@ -1634,12 +1657,6 @@ pub mod describe_journal_kinesis_stream_output {
     
     
 }
-impl DescribeJournalKinesisStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
-    pub fn builder() -> crate::output::describe_journal_kinesis_stream_output::Builder {
-        crate::output::describe_journal_kinesis_stream_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1652,6 +1669,13 @@ impl aws_http::request_id::RequestId for DeleteLedgerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLedgerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
+    pub fn builder() -> crate::output::delete_ledger_output::Builder {
+        crate::output::delete_ledger_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
 pub mod delete_ledger_output {
     
@@ -1680,12 +1704,6 @@ pub mod delete_ledger_output {
     }
     
     
-}
-impl DeleteLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
-    pub fn builder() -> crate::output::delete_ledger_output::Builder {
-        crate::output::delete_ledger_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1752,6 +1770,13 @@ impl aws_http::request_id::RequestId for CreateLedgerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLedgerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
+    pub fn builder() -> crate::output::create_ledger_output::Builder {
+        crate::output::create_ledger_output::Builder::default()
+    }
+}
+
 /// See [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
 pub mod create_ledger_output {
     
@@ -1867,12 +1892,6 @@ pub mod create_ledger_output {
     
     
 }
-impl CreateLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
-    pub fn builder() -> crate::output::create_ledger_output::Builder {
-        crate::output::create_ledger_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1894,6 +1913,13 @@ impl aws_http::request_id::RequestId for CancelJournalKinesisStreamOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelJournalKinesisStreamOutput {
+    /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
+    pub fn builder() -> crate::output::cancel_journal_kinesis_stream_output::Builder {
+        crate::output::cancel_journal_kinesis_stream_output::Builder::default()
+    }
+}
+
 /// See [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
 pub mod cancel_journal_kinesis_stream_output {
     
@@ -1934,11 +1960,5 @@ pub mod cancel_journal_kinesis_stream_output {
     }
     
     
-}
-impl CancelJournalKinesisStreamOutput {
-    /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
-    pub fn builder() -> crate::output::cancel_journal_kinesis_stream_output::Builder {
-        crate::output::cancel_journal_kinesis_stream_output::Builder::default()
-    }
 }
 

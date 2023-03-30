@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_team_member`](crate::client::Client::associate_team_member).
             ///
-            /// See [`crate::client::fluent_builders::AssociateTeamMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateTeamMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateTeamMember {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTeamMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_project`](crate::client::Client::create_project).
             ///
-            /// See [`crate::client::fluent_builders::CreateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProject {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_user_profile`](crate::client::Client::create_user_profile).
             ///
-            /// See [`crate::client::fluent_builders::CreateUserProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUserProfile {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserProfile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_project`](crate::client::Client::delete_project).
             ///
-            /// See [`crate::client::fluent_builders::DeleteProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProject {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_user_profile`](crate::client::Client::delete_user_profile).
             ///
-            /// See [`crate::client::fluent_builders::DeleteUserProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUserProfile {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserProfile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_project`](crate::client::Client::describe_project).
             ///
-            /// See [`crate::client::fluent_builders::DescribeProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProject {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_user_profile`](crate::client::Client::describe_user_profile).
             ///
-            /// See [`crate::client::fluent_builders::DescribeUserProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeUserProfile {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserProfile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_team_member`](crate::client::Client::disassociate_team_member).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateTeamMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateTeamMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateTeamMember {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTeamMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_projects`](crate::client::Client::list_projects).
             ///
-            /// See [`crate::client::fluent_builders::ListProjects`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProjects {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resources`](crate::client::Client::list_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResources {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_project`](crate::client::Client::list_tags_for_project).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForProject {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_team_members`](crate::client::Client::list_team_members).
             ///
-            /// See [`crate::client::fluent_builders::ListTeamMembers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTeamMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTeamMembers {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTeamMembers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_user_profiles`](crate::client::Client::list_user_profiles).
             ///
-            /// See [`crate::client::fluent_builders::ListUserProfiles`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListUserProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUserProfiles {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserProfiles {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_project`](crate::client::Client::tag_project).
             ///
-            /// See [`crate::client::fluent_builders::TagProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagProject {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_project`](crate::client::Client::untag_project).
             ///
-            /// See [`crate::client::fluent_builders::UntagProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagProject {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_project`](crate::client::Client::update_project).
             ///
-            /// See [`crate::client::fluent_builders::UpdateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProject {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_team_member`](crate::client::Client::update_team_member).
             ///
-            /// See [`crate::client::fluent_builders::UpdateTeamMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateTeamMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTeamMember {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTeamMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_user_profile`](crate::client::Client::update_user_profile).
             ///
-            /// See [`crate::client::fluent_builders::UpdateUserProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserProfile {
     _private: ()

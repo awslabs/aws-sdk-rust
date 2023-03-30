@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_job_execution`](crate::client::Client::describe_job_execution).
             ///
-            /// See [`crate::client::fluent_builders::DescribeJobExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeJobExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeJobExecution {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobExecution {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_pending_job_executions`](crate::client::Client::get_pending_job_executions).
             ///
-            /// See [`crate::client::fluent_builders::GetPendingJobExecutions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPendingJobExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPendingJobExecutions {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPendingJobExecutions 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_next_pending_job_execution`](crate::client::Client::start_next_pending_job_execution).
             ///
-            /// See [`crate::client::fluent_builders::StartNextPendingJobExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartNextPendingJobExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartNextPendingJobExecution {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNextPendingJobExecu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_job_execution`](crate::client::Client::update_job_execution).
             ///
-            /// See [`crate::client::fluent_builders::UpdateJobExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateJobExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateJobExecution {
     _private: ()

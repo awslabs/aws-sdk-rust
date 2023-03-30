@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`invoke_endpoint`](crate::client::Client::invoke_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::InvokeEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `InvokeEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InvokeEndpoint {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`invoke_endpoint_async`](crate::client::Client::invoke_endpoint_async).
             ///
-            /// See [`crate::client::fluent_builders::InvokeEndpointAsync`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `InvokeEndpointAsync`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InvokeEndpointAsync {
     _private: ()

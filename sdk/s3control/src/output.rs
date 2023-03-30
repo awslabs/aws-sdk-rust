@@ -33,6 +33,13 @@ impl aws_http::request_id::RequestId for UpdateJobStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateJobStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
+    pub fn builder() -> crate::output::update_job_status_output::Builder {
+        crate::output::update_job_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
 pub mod update_job_status_output {
     
@@ -98,12 +105,6 @@ pub mod update_job_status_output {
     
     
 }
-impl UpdateJobStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
-    pub fn builder() -> crate::output::update_job_status_output::Builder {
-        crate::output::update_job_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -132,6 +133,13 @@ impl aws_http::request_id::RequestId for UpdateJobPriorityOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateJobPriorityOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
+    pub fn builder() -> crate::output::update_job_priority_output::Builder {
+        crate::output::update_job_priority_output::Builder::default()
+    }
+}
+
 /// See [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
 pub mod update_job_priority_output {
     
@@ -186,12 +194,6 @@ pub mod update_job_priority_output {
     
     
 }
-impl UpdateJobPriorityOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
-    pub fn builder() -> crate::output::update_job_priority_output::Builder {
-        crate::output::update_job_priority_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -204,6 +206,13 @@ impl aws_http::request_id::RequestId for SubmitMultiRegionAccessPointRoutesOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl SubmitMultiRegionAccessPointRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
+    pub fn builder() -> crate::output::submit_multi_region_access_point_routes_output::Builder {
+        crate::output::submit_multi_region_access_point_routes_output::Builder::default()
+    }
+}
+
 /// See [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
 pub mod submit_multi_region_access_point_routes_output {
     
@@ -233,12 +242,6 @@ pub mod submit_multi_region_access_point_routes_output {
     
     
 }
-impl SubmitMultiRegionAccessPointRoutesOutput {
-    /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesOutput`](crate::output::SubmitMultiRegionAccessPointRoutesOutput).
-    pub fn builder() -> crate::output::submit_multi_region_access_point_routes_output::Builder {
-        crate::output::submit_multi_region_access_point_routes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -251,6 +254,13 @@ impl aws_http::request_id::RequestId for PutStorageLensConfigurationTaggingOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutStorageLensConfigurationTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
+    pub fn builder() -> crate::output::put_storage_lens_configuration_tagging_output::Builder {
+        crate::output::put_storage_lens_configuration_tagging_output::Builder::default()
+    }
+}
+
 /// See [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
 pub mod put_storage_lens_configuration_tagging_output {
     
@@ -280,12 +290,6 @@ pub mod put_storage_lens_configuration_tagging_output {
     
     
 }
-impl PutStorageLensConfigurationTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::output::put_storage_lens_configuration_tagging_output::Builder {
-        crate::output::put_storage_lens_configuration_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -298,6 +302,13 @@ impl aws_http::request_id::RequestId for PutStorageLensConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutStorageLensConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
+    pub fn builder() -> crate::output::put_storage_lens_configuration_output::Builder {
+        crate::output::put_storage_lens_configuration_output::Builder::default()
+    }
+}
+
 /// See [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
 pub mod put_storage_lens_configuration_output {
     
@@ -327,12 +338,6 @@ pub mod put_storage_lens_configuration_output {
     
     
 }
-impl PutStorageLensConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
-    pub fn builder() -> crate::output::put_storage_lens_configuration_output::Builder {
-        crate::output::put_storage_lens_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -345,6 +350,13 @@ impl aws_http::request_id::RequestId for PutPublicAccessBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutPublicAccessBlockOutput {
+    /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
+    pub fn builder() -> crate::output::put_public_access_block_output::Builder {
+        crate::output::put_public_access_block_output::Builder::default()
+    }
+}
+
 /// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
 pub mod put_public_access_block_output {
     
@@ -374,12 +386,6 @@ pub mod put_public_access_block_output {
     
     
 }
-impl PutPublicAccessBlockOutput {
-    /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
-    pub fn builder() -> crate::output::put_public_access_block_output::Builder {
-        crate::output::put_public_access_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -401,6 +407,13 @@ impl aws_http::request_id::RequestId for PutMultiRegionAccessPointPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutMultiRegionAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
+    pub fn builder() -> crate::output::put_multi_region_access_point_policy_output::Builder {
+        crate::output::put_multi_region_access_point_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
 pub mod put_multi_region_access_point_policy_output {
     
@@ -442,12 +455,6 @@ pub mod put_multi_region_access_point_policy_output {
     
     
 }
-impl PutMultiRegionAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
-    pub fn builder() -> crate::output::put_multi_region_access_point_policy_output::Builder {
-        crate::output::put_multi_region_access_point_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -460,6 +467,13 @@ impl aws_http::request_id::RequestId for PutJobTaggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutJobTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
+    pub fn builder() -> crate::output::put_job_tagging_output::Builder {
+        crate::output::put_job_tagging_output::Builder::default()
+    }
+}
+
 /// See [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
 pub mod put_job_tagging_output {
     
@@ -489,12 +503,6 @@ pub mod put_job_tagging_output {
     
     
 }
-impl PutJobTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
-    pub fn builder() -> crate::output::put_job_tagging_output::Builder {
-        crate::output::put_job_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -507,6 +515,13 @@ impl aws_http::request_id::RequestId for PutBucketVersioningOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutBucketVersioningOutput {
+    /// Creates a new builder-style object to manufacture [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
+    pub fn builder() -> crate::output::put_bucket_versioning_output::Builder {
+        crate::output::put_bucket_versioning_output::Builder::default()
+    }
+}
+
 /// See [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
 pub mod put_bucket_versioning_output {
     
@@ -536,12 +551,6 @@ pub mod put_bucket_versioning_output {
     
     
 }
-impl PutBucketVersioningOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketVersioningOutput`](crate::output::PutBucketVersioningOutput).
-    pub fn builder() -> crate::output::put_bucket_versioning_output::Builder {
-        crate::output::put_bucket_versioning_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -554,6 +563,13 @@ impl aws_http::request_id::RequestId for PutBucketTaggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutBucketTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
+    pub fn builder() -> crate::output::put_bucket_tagging_output::Builder {
+        crate::output::put_bucket_tagging_output::Builder::default()
+    }
+}
+
 /// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
 pub mod put_bucket_tagging_output {
     
@@ -583,12 +599,6 @@ pub mod put_bucket_tagging_output {
     
     
 }
-impl PutBucketTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
-    pub fn builder() -> crate::output::put_bucket_tagging_output::Builder {
-        crate::output::put_bucket_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -601,6 +611,13 @@ impl aws_http::request_id::RequestId for PutBucketPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutBucketPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
+    pub fn builder() -> crate::output::put_bucket_policy_output::Builder {
+        crate::output::put_bucket_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
 pub mod put_bucket_policy_output {
     
@@ -630,12 +647,6 @@ pub mod put_bucket_policy_output {
     
     
 }
-impl PutBucketPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
-    pub fn builder() -> crate::output::put_bucket_policy_output::Builder {
-        crate::output::put_bucket_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -648,6 +659,13 @@ impl aws_http::request_id::RequestId for PutBucketLifecycleConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutBucketLifecycleConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
+    pub fn builder() -> crate::output::put_bucket_lifecycle_configuration_output::Builder {
+        crate::output::put_bucket_lifecycle_configuration_output::Builder::default()
+    }
+}
+
 /// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
 pub mod put_bucket_lifecycle_configuration_output {
     
@@ -677,12 +695,6 @@ pub mod put_bucket_lifecycle_configuration_output {
     
     
 }
-impl PutBucketLifecycleConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
-    pub fn builder() -> crate::output::put_bucket_lifecycle_configuration_output::Builder {
-        crate::output::put_bucket_lifecycle_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -695,6 +707,13 @@ impl aws_http::request_id::RequestId for PutAccessPointPolicyForObjectLambdaOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutAccessPointPolicyForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
+    pub fn builder() -> crate::output::put_access_point_policy_for_object_lambda_output::Builder {
+        crate::output::put_access_point_policy_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
 pub mod put_access_point_policy_for_object_lambda_output {
     
@@ -724,12 +743,6 @@ pub mod put_access_point_policy_for_object_lambda_output {
     
     
 }
-impl PutAccessPointPolicyForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::output::put_access_point_policy_for_object_lambda_output::Builder {
-        crate::output::put_access_point_policy_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -742,6 +755,13 @@ impl aws_http::request_id::RequestId for PutAccessPointPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
+    pub fn builder() -> crate::output::put_access_point_policy_output::Builder {
+        crate::output::put_access_point_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
 pub mod put_access_point_policy_output {
     
@@ -771,12 +791,6 @@ pub mod put_access_point_policy_output {
     
     
 }
-impl PutAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
-    pub fn builder() -> crate::output::put_access_point_policy_output::Builder {
-        crate::output::put_access_point_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -789,6 +803,13 @@ impl aws_http::request_id::RequestId for PutAccessPointConfigurationForObjectLam
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutAccessPointConfigurationForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
+    pub fn builder() -> crate::output::put_access_point_configuration_for_object_lambda_output::Builder {
+        crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
 pub mod put_access_point_configuration_for_object_lambda_output {
     
@@ -818,12 +839,6 @@ pub mod put_access_point_configuration_for_object_lambda_output {
     
     
 }
-impl PutAccessPointConfigurationForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder() -> crate::output::put_access_point_configuration_for_object_lambda_output::Builder {
-        crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -852,6 +867,13 @@ impl aws_http::request_id::RequestId for ListStorageLensConfigurationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListStorageLensConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
+    pub fn builder() -> crate::output::list_storage_lens_configurations_output::Builder {
+        crate::output::list_storage_lens_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
 pub mod list_storage_lens_configurations_output {
     
@@ -911,12 +933,6 @@ pub mod list_storage_lens_configurations_output {
     
     
 }
-impl ListStorageLensConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
-    pub fn builder() -> crate::output::list_storage_lens_configurations_output::Builder {
-        crate::output::list_storage_lens_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -945,6 +961,13 @@ impl aws_http::request_id::RequestId for ListRegionalBucketsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRegionalBucketsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
+    pub fn builder() -> crate::output::list_regional_buckets_output::Builder {
+        crate::output::list_regional_buckets_output::Builder::default()
+    }
+}
+
 /// See [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
 pub mod list_regional_buckets_output {
     
@@ -1004,12 +1027,6 @@ pub mod list_regional_buckets_output {
     
     
 }
-impl ListRegionalBucketsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
-    pub fn builder() -> crate::output::list_regional_buckets_output::Builder {
-        crate::output::list_regional_buckets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1038,6 +1055,13 @@ impl aws_http::request_id::RequestId for ListMultiRegionAccessPointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListMultiRegionAccessPointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
+    pub fn builder() -> crate::output::list_multi_region_access_points_output::Builder {
+        crate::output::list_multi_region_access_points_output::Builder::default()
+    }
+}
+
 /// See [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
 pub mod list_multi_region_access_points_output {
     
@@ -1097,12 +1121,6 @@ pub mod list_multi_region_access_points_output {
     
     
 }
-impl ListMultiRegionAccessPointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
-    pub fn builder() -> crate::output::list_multi_region_access_points_output::Builder {
-        crate::output::list_multi_region_access_points_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1131,6 +1149,13 @@ impl aws_http::request_id::RequestId for ListJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
+    pub fn builder() -> crate::output::list_jobs_output::Builder {
+        crate::output::list_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
     
@@ -1190,12 +1215,6 @@ pub mod list_jobs_output {
     
     
 }
-impl ListJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
-    pub fn builder() -> crate::output::list_jobs_output::Builder {
-        crate::output::list_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1224,6 +1243,13 @@ impl aws_http::request_id::RequestId for ListAccessPointsForObjectLambdaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAccessPointsForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
+    pub fn builder() -> crate::output::list_access_points_for_object_lambda_output::Builder {
+        crate::output::list_access_points_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
 pub mod list_access_points_for_object_lambda_output {
     
@@ -1283,12 +1309,6 @@ pub mod list_access_points_for_object_lambda_output {
     
     
 }
-impl ListAccessPointsForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
-    pub fn builder() -> crate::output::list_access_points_for_object_lambda_output::Builder {
-        crate::output::list_access_points_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1317,6 +1337,13 @@ impl aws_http::request_id::RequestId for ListAccessPointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAccessPointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
+    pub fn builder() -> crate::output::list_access_points_output::Builder {
+        crate::output::list_access_points_output::Builder::default()
+    }
+}
+
 /// See [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
 pub mod list_access_points_output {
     
@@ -1376,12 +1403,6 @@ pub mod list_access_points_output {
     
     
 }
-impl ListAccessPointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
-    pub fn builder() -> crate::output::list_access_points_output::Builder {
-        crate::output::list_access_points_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1403,6 +1424,13 @@ impl aws_http::request_id::RequestId for GetStorageLensConfigurationTaggingOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetStorageLensConfigurationTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
+    pub fn builder() -> crate::output::get_storage_lens_configuration_tagging_output::Builder {
+        crate::output::get_storage_lens_configuration_tagging_output::Builder::default()
+    }
+}
+
 /// See [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
 pub mod get_storage_lens_configuration_tagging_output {
     
@@ -1450,12 +1478,6 @@ pub mod get_storage_lens_configuration_tagging_output {
     
     
 }
-impl GetStorageLensConfigurationTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::output::get_storage_lens_configuration_tagging_output::Builder {
-        crate::output::get_storage_lens_configuration_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1477,6 +1499,13 @@ impl aws_http::request_id::RequestId for GetStorageLensConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetStorageLensConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
+    pub fn builder() -> crate::output::get_storage_lens_configuration_output::Builder {
+        crate::output::get_storage_lens_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
 pub mod get_storage_lens_configuration_output {
     
@@ -1518,12 +1547,6 @@ pub mod get_storage_lens_configuration_output {
     
     
 }
-impl GetStorageLensConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
-    pub fn builder() -> crate::output::get_storage_lens_configuration_output::Builder {
-        crate::output::get_storage_lens_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1545,6 +1568,13 @@ impl aws_http::request_id::RequestId for GetPublicAccessBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPublicAccessBlockOutput {
+    /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
+    pub fn builder() -> crate::output::get_public_access_block_output::Builder {
+        crate::output::get_public_access_block_output::Builder::default()
+    }
+}
+
 /// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
 pub mod get_public_access_block_output {
     
@@ -1586,12 +1616,6 @@ pub mod get_public_access_block_output {
     
     
 }
-impl GetPublicAccessBlockOutput {
-    /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
-    pub fn builder() -> crate::output::get_public_access_block_output::Builder {
-        crate::output::get_public_access_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1620,6 +1644,13 @@ impl aws_http::request_id::RequestId for GetMultiRegionAccessPointRoutesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMultiRegionAccessPointRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
+    pub fn builder() -> crate::output::get_multi_region_access_point_routes_output::Builder {
+        crate::output::get_multi_region_access_point_routes_output::Builder::default()
+    }
+}
+
 /// See [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
 pub mod get_multi_region_access_point_routes_output {
     
@@ -1679,12 +1710,6 @@ pub mod get_multi_region_access_point_routes_output {
     
     
 }
-impl GetMultiRegionAccessPointRoutesOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointRoutesOutput`](crate::output::GetMultiRegionAccessPointRoutesOutput).
-    pub fn builder() -> crate::output::get_multi_region_access_point_routes_output::Builder {
-        crate::output::get_multi_region_access_point_routes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1706,6 +1731,13 @@ impl aws_http::request_id::RequestId for GetMultiRegionAccessPointPolicyStatusOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMultiRegionAccessPointPolicyStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
+    pub fn builder() -> crate::output::get_multi_region_access_point_policy_status_output::Builder {
+        crate::output::get_multi_region_access_point_policy_status_output::Builder::default()
+    }
+}
+
 /// See [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
 pub mod get_multi_region_access_point_policy_status_output {
     
@@ -1747,12 +1779,6 @@ pub mod get_multi_region_access_point_policy_status_output {
     
     
 }
-impl GetMultiRegionAccessPointPolicyStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
-    pub fn builder() -> crate::output::get_multi_region_access_point_policy_status_output::Builder {
-        crate::output::get_multi_region_access_point_policy_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1774,6 +1800,13 @@ impl aws_http::request_id::RequestId for GetMultiRegionAccessPointPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMultiRegionAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
+    pub fn builder() -> crate::output::get_multi_region_access_point_policy_output::Builder {
+        crate::output::get_multi_region_access_point_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
 pub mod get_multi_region_access_point_policy_output {
     
@@ -1815,12 +1848,6 @@ pub mod get_multi_region_access_point_policy_output {
     
     
 }
-impl GetMultiRegionAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
-    pub fn builder() -> crate::output::get_multi_region_access_point_policy_output::Builder {
-        crate::output::get_multi_region_access_point_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1842,6 +1869,13 @@ impl aws_http::request_id::RequestId for GetMultiRegionAccessPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMultiRegionAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
+    pub fn builder() -> crate::output::get_multi_region_access_point_output::Builder {
+        crate::output::get_multi_region_access_point_output::Builder::default()
+    }
+}
+
 /// See [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
 pub mod get_multi_region_access_point_output {
     
@@ -1883,12 +1917,6 @@ pub mod get_multi_region_access_point_output {
     
     
 }
-impl GetMultiRegionAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
-    pub fn builder() -> crate::output::get_multi_region_access_point_output::Builder {
-        crate::output::get_multi_region_access_point_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1910,6 +1938,13 @@ impl aws_http::request_id::RequestId for GetJobTaggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetJobTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
+    pub fn builder() -> crate::output::get_job_tagging_output::Builder {
+        crate::output::get_job_tagging_output::Builder::default()
+    }
+}
+
 /// See [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
 pub mod get_job_tagging_output {
     
@@ -1957,12 +1992,6 @@ pub mod get_job_tagging_output {
     
     
 }
-impl GetJobTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
-    pub fn builder() -> crate::output::get_job_tagging_output::Builder {
-        crate::output::get_job_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1991,6 +2020,13 @@ impl aws_http::request_id::RequestId for GetBucketVersioningOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketVersioningOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
+    pub fn builder() -> crate::output::get_bucket_versioning_output::Builder {
+        crate::output::get_bucket_versioning_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
 pub mod get_bucket_versioning_output {
     
@@ -2044,12 +2080,6 @@ pub mod get_bucket_versioning_output {
     
     
 }
-impl GetBucketVersioningOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketVersioningOutput`](crate::output::GetBucketVersioningOutput).
-    pub fn builder() -> crate::output::get_bucket_versioning_output::Builder {
-        crate::output::get_bucket_versioning_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2071,6 +2101,13 @@ impl aws_http::request_id::RequestId for GetBucketTaggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
+    pub fn builder() -> crate::output::get_bucket_tagging_output::Builder {
+        crate::output::get_bucket_tagging_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
 pub mod get_bucket_tagging_output {
     
@@ -2118,12 +2155,6 @@ pub mod get_bucket_tagging_output {
     
     
 }
-impl GetBucketTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
-    pub fn builder() -> crate::output::get_bucket_tagging_output::Builder {
-        crate::output::get_bucket_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2145,6 +2176,13 @@ impl aws_http::request_id::RequestId for GetBucketPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
+    pub fn builder() -> crate::output::get_bucket_policy_output::Builder {
+        crate::output::get_bucket_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
 pub mod get_bucket_policy_output {
     
@@ -2186,12 +2224,6 @@ pub mod get_bucket_policy_output {
     
     
 }
-impl GetBucketPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
-    pub fn builder() -> crate::output::get_bucket_policy_output::Builder {
-        crate::output::get_bucket_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2213,6 +2245,13 @@ impl aws_http::request_id::RequestId for GetBucketLifecycleConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketLifecycleConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
+    pub fn builder() -> crate::output::get_bucket_lifecycle_configuration_output::Builder {
+        crate::output::get_bucket_lifecycle_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
 pub mod get_bucket_lifecycle_configuration_output {
     
@@ -2260,12 +2299,6 @@ pub mod get_bucket_lifecycle_configuration_output {
     
     
 }
-impl GetBucketLifecycleConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
-    pub fn builder() -> crate::output::get_bucket_lifecycle_configuration_output::Builder {
-        crate::output::get_bucket_lifecycle_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2301,6 +2334,13 @@ impl aws_http::request_id::RequestId for GetBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketOutput`](crate::output::GetBucketOutput).
+    pub fn builder() -> crate::output::get_bucket_output::Builder {
+        crate::output::get_bucket_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketOutput`](crate::output::GetBucketOutput).
 pub mod get_bucket_output {
     
@@ -2367,12 +2407,6 @@ pub mod get_bucket_output {
     
     
 }
-impl GetBucketOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketOutput`](crate::output::GetBucketOutput).
-    pub fn builder() -> crate::output::get_bucket_output::Builder {
-        crate::output::get_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2394,6 +2428,13 @@ impl aws_http::request_id::RequestId for GetAccessPointPolicyStatusForObjectLamb
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointPolicyStatusForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
+    pub fn builder() -> crate::output::get_access_point_policy_status_for_object_lambda_output::Builder {
+        crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
 pub mod get_access_point_policy_status_for_object_lambda_output {
     
@@ -2435,12 +2476,6 @@ pub mod get_access_point_policy_status_for_object_lambda_output {
     
     
 }
-impl GetAccessPointPolicyStatusForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
-    pub fn builder() -> crate::output::get_access_point_policy_status_for_object_lambda_output::Builder {
-        crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2462,6 +2497,13 @@ impl aws_http::request_id::RequestId for GetAccessPointPolicyStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointPolicyStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
+    pub fn builder() -> crate::output::get_access_point_policy_status_output::Builder {
+        crate::output::get_access_point_policy_status_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
 pub mod get_access_point_policy_status_output {
     
@@ -2503,12 +2545,6 @@ pub mod get_access_point_policy_status_output {
     
     
 }
-impl GetAccessPointPolicyStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
-    pub fn builder() -> crate::output::get_access_point_policy_status_output::Builder {
-        crate::output::get_access_point_policy_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2530,6 +2566,13 @@ impl aws_http::request_id::RequestId for GetAccessPointPolicyForObjectLambdaOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointPolicyForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
+    pub fn builder() -> crate::output::get_access_point_policy_for_object_lambda_output::Builder {
+        crate::output::get_access_point_policy_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
 pub mod get_access_point_policy_for_object_lambda_output {
     
@@ -2571,12 +2614,6 @@ pub mod get_access_point_policy_for_object_lambda_output {
     
     
 }
-impl GetAccessPointPolicyForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::output::get_access_point_policy_for_object_lambda_output::Builder {
-        crate::output::get_access_point_policy_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2598,6 +2635,13 @@ impl aws_http::request_id::RequestId for GetAccessPointPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
+    pub fn builder() -> crate::output::get_access_point_policy_output::Builder {
+        crate::output::get_access_point_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
 pub mod get_access_point_policy_output {
     
@@ -2639,12 +2683,6 @@ pub mod get_access_point_policy_output {
     
     
 }
-impl GetAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
-    pub fn builder() -> crate::output::get_access_point_policy_output::Builder {
-        crate::output::get_access_point_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2680,6 +2718,13 @@ impl aws_http::request_id::RequestId for GetAccessPointForObjectLambdaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
+    pub fn builder() -> crate::output::get_access_point_for_object_lambda_output::Builder {
+        crate::output::get_access_point_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
 pub mod get_access_point_for_object_lambda_output {
     
@@ -2745,12 +2790,6 @@ pub mod get_access_point_for_object_lambda_output {
     
     
 }
-impl GetAccessPointForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
-    pub fn builder() -> crate::output::get_access_point_for_object_lambda_output::Builder {
-        crate::output::get_access_point_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2772,6 +2811,13 @@ impl aws_http::request_id::RequestId for GetAccessPointConfigurationForObjectLam
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointConfigurationForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
+    pub fn builder() -> crate::output::get_access_point_configuration_for_object_lambda_output::Builder {
+        crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
 pub mod get_access_point_configuration_for_object_lambda_output {
     
@@ -2812,12 +2858,6 @@ pub mod get_access_point_configuration_for_object_lambda_output {
     }
     
     
-}
-impl GetAccessPointConfigurationForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
-    pub fn builder() -> crate::output::get_access_point_configuration_for_object_lambda_output::Builder {
-        crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -2911,6 +2951,13 @@ impl aws_http::request_id::RequestId for GetAccessPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
+    pub fn builder() -> crate::output::get_access_point_output::Builder {
+        crate::output::get_access_point_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
 pub mod get_access_point_output {
     
@@ -3074,12 +3121,6 @@ pub mod get_access_point_output {
     
     
 }
-impl GetAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
-    pub fn builder() -> crate::output::get_access_point_output::Builder {
-        crate::output::get_access_point_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3101,6 +3142,13 @@ impl aws_http::request_id::RequestId for DescribeMultiRegionAccessPointOperation
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeMultiRegionAccessPointOperationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
+    pub fn builder() -> crate::output::describe_multi_region_access_point_operation_output::Builder {
+        crate::output::describe_multi_region_access_point_operation_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
 pub mod describe_multi_region_access_point_operation_output {
     
@@ -3142,12 +3190,6 @@ pub mod describe_multi_region_access_point_operation_output {
     
     
 }
-impl DescribeMultiRegionAccessPointOperationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
-    pub fn builder() -> crate::output::describe_multi_region_access_point_operation_output::Builder {
-        crate::output::describe_multi_region_access_point_operation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3169,6 +3211,13 @@ impl aws_http::request_id::RequestId for DescribeJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
+    pub fn builder() -> crate::output::describe_job_output::Builder {
+        crate::output::describe_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
     
@@ -3210,12 +3259,6 @@ pub mod describe_job_output {
     
     
 }
-impl DescribeJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
-    pub fn builder() -> crate::output::describe_job_output::Builder {
-        crate::output::describe_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3228,6 +3271,13 @@ impl aws_http::request_id::RequestId for DeleteStorageLensConfigurationTaggingOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteStorageLensConfigurationTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
+    pub fn builder() -> crate::output::delete_storage_lens_configuration_tagging_output::Builder {
+        crate::output::delete_storage_lens_configuration_tagging_output::Builder::default()
+    }
+}
+
 /// See [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
 pub mod delete_storage_lens_configuration_tagging_output {
     
@@ -3257,12 +3307,6 @@ pub mod delete_storage_lens_configuration_tagging_output {
     
     
 }
-impl DeleteStorageLensConfigurationTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::output::delete_storage_lens_configuration_tagging_output::Builder {
-        crate::output::delete_storage_lens_configuration_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3275,6 +3319,13 @@ impl aws_http::request_id::RequestId for DeleteStorageLensConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteStorageLensConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
+    pub fn builder() -> crate::output::delete_storage_lens_configuration_output::Builder {
+        crate::output::delete_storage_lens_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
 pub mod delete_storage_lens_configuration_output {
     
@@ -3304,12 +3355,6 @@ pub mod delete_storage_lens_configuration_output {
     
     
 }
-impl DeleteStorageLensConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
-    pub fn builder() -> crate::output::delete_storage_lens_configuration_output::Builder {
-        crate::output::delete_storage_lens_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3322,6 +3367,13 @@ impl aws_http::request_id::RequestId for DeletePublicAccessBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePublicAccessBlockOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
+    pub fn builder() -> crate::output::delete_public_access_block_output::Builder {
+        crate::output::delete_public_access_block_output::Builder::default()
+    }
+}
+
 /// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
 pub mod delete_public_access_block_output {
     
@@ -3351,12 +3403,6 @@ pub mod delete_public_access_block_output {
     
     
 }
-impl DeletePublicAccessBlockOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
-    pub fn builder() -> crate::output::delete_public_access_block_output::Builder {
-        crate::output::delete_public_access_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3378,6 +3424,13 @@ impl aws_http::request_id::RequestId for DeleteMultiRegionAccessPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMultiRegionAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
+    pub fn builder() -> crate::output::delete_multi_region_access_point_output::Builder {
+        crate::output::delete_multi_region_access_point_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
 pub mod delete_multi_region_access_point_output {
     
@@ -3419,12 +3472,6 @@ pub mod delete_multi_region_access_point_output {
     
     
 }
-impl DeleteMultiRegionAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
-    pub fn builder() -> crate::output::delete_multi_region_access_point_output::Builder {
-        crate::output::delete_multi_region_access_point_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3437,6 +3484,13 @@ impl aws_http::request_id::RequestId for DeleteJobTaggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteJobTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
+    pub fn builder() -> crate::output::delete_job_tagging_output::Builder {
+        crate::output::delete_job_tagging_output::Builder::default()
+    }
+}
+
 /// See [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
 pub mod delete_job_tagging_output {
     
@@ -3466,12 +3520,6 @@ pub mod delete_job_tagging_output {
     
     
 }
-impl DeleteJobTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
-    pub fn builder() -> crate::output::delete_job_tagging_output::Builder {
-        crate::output::delete_job_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3484,6 +3532,13 @@ impl aws_http::request_id::RequestId for DeleteBucketTaggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBucketTaggingOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
+    pub fn builder() -> crate::output::delete_bucket_tagging_output::Builder {
+        crate::output::delete_bucket_tagging_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
 pub mod delete_bucket_tagging_output {
     
@@ -3513,12 +3568,6 @@ pub mod delete_bucket_tagging_output {
     
     
 }
-impl DeleteBucketTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
-    pub fn builder() -> crate::output::delete_bucket_tagging_output::Builder {
-        crate::output::delete_bucket_tagging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3531,6 +3580,13 @@ impl aws_http::request_id::RequestId for DeleteBucketPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBucketPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
+    pub fn builder() -> crate::output::delete_bucket_policy_output::Builder {
+        crate::output::delete_bucket_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
 pub mod delete_bucket_policy_output {
     
@@ -3560,12 +3616,6 @@ pub mod delete_bucket_policy_output {
     
     
 }
-impl DeleteBucketPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
-    pub fn builder() -> crate::output::delete_bucket_policy_output::Builder {
-        crate::output::delete_bucket_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3578,6 +3628,13 @@ impl aws_http::request_id::RequestId for DeleteBucketLifecycleConfigurationOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBucketLifecycleConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
+    pub fn builder() -> crate::output::delete_bucket_lifecycle_configuration_output::Builder {
+        crate::output::delete_bucket_lifecycle_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
 pub mod delete_bucket_lifecycle_configuration_output {
     
@@ -3607,12 +3664,6 @@ pub mod delete_bucket_lifecycle_configuration_output {
     
     
 }
-impl DeleteBucketLifecycleConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
-    pub fn builder() -> crate::output::delete_bucket_lifecycle_configuration_output::Builder {
-        crate::output::delete_bucket_lifecycle_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3625,6 +3676,13 @@ impl aws_http::request_id::RequestId for DeleteBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBucketOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
+    pub fn builder() -> crate::output::delete_bucket_output::Builder {
+        crate::output::delete_bucket_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
 pub mod delete_bucket_output {
     
@@ -3654,12 +3712,6 @@ pub mod delete_bucket_output {
     
     
 }
-impl DeleteBucketOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
-    pub fn builder() -> crate::output::delete_bucket_output::Builder {
-        crate::output::delete_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3672,6 +3724,13 @@ impl aws_http::request_id::RequestId for DeleteAccessPointPolicyForObjectLambdaO
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAccessPointPolicyForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
+    pub fn builder() -> crate::output::delete_access_point_policy_for_object_lambda_output::Builder {
+        crate::output::delete_access_point_policy_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
 pub mod delete_access_point_policy_for_object_lambda_output {
     
@@ -3701,12 +3760,6 @@ pub mod delete_access_point_policy_for_object_lambda_output {
     
     
 }
-impl DeleteAccessPointPolicyForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::output::delete_access_point_policy_for_object_lambda_output::Builder {
-        crate::output::delete_access_point_policy_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3719,6 +3772,13 @@ impl aws_http::request_id::RequestId for DeleteAccessPointPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAccessPointPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
+    pub fn builder() -> crate::output::delete_access_point_policy_output::Builder {
+        crate::output::delete_access_point_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
 pub mod delete_access_point_policy_output {
     
@@ -3748,12 +3808,6 @@ pub mod delete_access_point_policy_output {
     
     
 }
-impl DeleteAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
-    pub fn builder() -> crate::output::delete_access_point_policy_output::Builder {
-        crate::output::delete_access_point_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3766,6 +3820,13 @@ impl aws_http::request_id::RequestId for DeleteAccessPointForObjectLambdaOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAccessPointForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
+    pub fn builder() -> crate::output::delete_access_point_for_object_lambda_output::Builder {
+        crate::output::delete_access_point_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
 pub mod delete_access_point_for_object_lambda_output {
     
@@ -3795,12 +3856,6 @@ pub mod delete_access_point_for_object_lambda_output {
     
     
 }
-impl DeleteAccessPointForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
-    pub fn builder() -> crate::output::delete_access_point_for_object_lambda_output::Builder {
-        crate::output::delete_access_point_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3813,6 +3868,13 @@ impl aws_http::request_id::RequestId for DeleteAccessPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
+    pub fn builder() -> crate::output::delete_access_point_output::Builder {
+        crate::output::delete_access_point_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
 pub mod delete_access_point_output {
     
@@ -3842,12 +3904,6 @@ pub mod delete_access_point_output {
     
     
 }
-impl DeleteAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
-    pub fn builder() -> crate::output::delete_access_point_output::Builder {
-        crate::output::delete_access_point_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3869,6 +3925,13 @@ impl aws_http::request_id::RequestId for CreateMultiRegionAccessPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateMultiRegionAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
+    pub fn builder() -> crate::output::create_multi_region_access_point_output::Builder {
+        crate::output::create_multi_region_access_point_output::Builder::default()
+    }
+}
+
 /// See [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
 pub mod create_multi_region_access_point_output {
     
@@ -3910,12 +3973,6 @@ pub mod create_multi_region_access_point_output {
     
     
 }
-impl CreateMultiRegionAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
-    pub fn builder() -> crate::output::create_multi_region_access_point_output::Builder {
-        crate::output::create_multi_region_access_point_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3937,6 +3994,13 @@ impl aws_http::request_id::RequestId for CreateJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
+    pub fn builder() -> crate::output::create_job_output::Builder {
+        crate::output::create_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
     
@@ -3977,12 +4041,6 @@ pub mod create_job_output {
     }
     
     
-}
-impl CreateJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
-    pub fn builder() -> crate::output::create_job_output::Builder {
-        crate::output::create_job_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -4036,6 +4094,13 @@ impl aws_http::request_id::RequestId for CreateBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBucketOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
+    pub fn builder() -> crate::output::create_bucket_output::Builder {
+        crate::output::create_bucket_output::Builder::default()
+    }
+}
+
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput).
 pub mod create_bucket_output {
     
@@ -4113,12 +4178,6 @@ pub mod create_bucket_output {
     
     
 }
-impl CreateBucketOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
-    pub fn builder() -> crate::output::create_bucket_output::Builder {
-        crate::output::create_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4140,6 +4199,13 @@ impl aws_http::request_id::RequestId for CreateAccessPointForObjectLambdaOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAccessPointForObjectLambdaOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
+    pub fn builder() -> crate::output::create_access_point_for_object_lambda_output::Builder {
+        crate::output::create_access_point_for_object_lambda_output::Builder::default()
+    }
+}
+
 /// See [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
 pub mod create_access_point_for_object_lambda_output {
     
@@ -4181,12 +4247,6 @@ pub mod create_access_point_for_object_lambda_output {
     
     
 }
-impl CreateAccessPointForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
-    pub fn builder() -> crate::output::create_access_point_for_object_lambda_output::Builder {
-        crate::output::create_access_point_for_object_lambda_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4219,6 +4279,13 @@ impl aws_http::request_id::RequestId for CreateAccessPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
+    pub fn builder() -> crate::output::create_access_point_output::Builder {
+        crate::output::create_access_point_output::Builder::default()
+    }
+}
+
 /// See [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
 pub mod create_access_point_output {
     
@@ -4275,11 +4342,5 @@ pub mod create_access_point_output {
     }
     
     
-}
-impl CreateAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
-    pub fn builder() -> crate::output::create_access_point_output::Builder {
-        crate::output::create_access_point_output::Builder::default()
-    }
 }
 

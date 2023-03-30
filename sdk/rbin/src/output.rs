@@ -80,6 +80,13 @@ impl aws_http::request_id::RequestId for UpdateRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+    pub fn builder() -> crate::output::update_rule_output::Builder {
+        crate::output::update_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
     
@@ -223,12 +230,6 @@ pub mod update_rule_output {
     
     
 }
-impl UpdateRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
-    pub fn builder() -> crate::output::update_rule_output::Builder {
-        crate::output::update_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -241,6 +242,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -269,12 +277,6 @@ pub mod untag_resource_output {
     }
     
     
-}
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -365,6 +367,13 @@ impl aws_http::request_id::RequestId for UnlockRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UnlockRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UnlockRuleOutput`](crate::output::UnlockRuleOutput).
+    pub fn builder() -> crate::output::unlock_rule_output::Builder {
+        crate::output::unlock_rule_output::Builder::default()
+    }
+}
+
 /// See [`UnlockRuleOutput`](crate::output::UnlockRuleOutput).
 pub mod unlock_rule_output {
     
@@ -520,12 +529,6 @@ pub mod unlock_rule_output {
     
     
 }
-impl UnlockRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UnlockRuleOutput`](crate::output::UnlockRuleOutput).
-    pub fn builder() -> crate::output::unlock_rule_output::Builder {
-        crate::output::unlock_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -538,6 +541,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -566,12 +576,6 @@ pub mod tag_resource_output {
     }
     
     
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -655,6 +659,13 @@ impl aws_http::request_id::RequestId for LockRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl LockRuleOutput {
+    /// Creates a new builder-style object to manufacture [`LockRuleOutput`](crate::output::LockRuleOutput).
+    pub fn builder() -> crate::output::lock_rule_output::Builder {
+        crate::output::lock_rule_output::Builder::default()
+    }
+}
+
 /// See [`LockRuleOutput`](crate::output::LockRuleOutput).
 pub mod lock_rule_output {
     
@@ -798,12 +809,6 @@ pub mod lock_rule_output {
     
     
 }
-impl LockRuleOutput {
-    /// Creates a new builder-style object to manufacture [`LockRuleOutput`](crate::output::LockRuleOutput).
-    pub fn builder() -> crate::output::lock_rule_output::Builder {
-        crate::output::lock_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -825,6 +830,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -872,12 +884,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -906,6 +912,13 @@ impl aws_http::request_id::RequestId for ListRulesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
+    pub fn builder() -> crate::output::list_rules_output::Builder {
+        crate::output::list_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
     
@@ -964,12 +977,6 @@ pub mod list_rules_output {
     }
     
     
-}
-impl ListRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
-    pub fn builder() -> crate::output::list_rules_output::Builder {
-        crate::output::list_rules_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1060,6 +1067,13 @@ impl aws_http::request_id::RequestId for GetRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRuleOutput {
+    /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput).
+    pub fn builder() -> crate::output::get_rule_output::Builder {
+        crate::output::get_rule_output::Builder::default()
+    }
+}
+
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
     
@@ -1215,12 +1229,6 @@ pub mod get_rule_output {
     
     
 }
-impl GetRuleOutput {
-    /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput).
-    pub fn builder() -> crate::output::get_rule_output::Builder {
-        crate::output::get_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1233,6 +1241,13 @@ impl aws_http::request_id::RequestId for DeleteRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+    pub fn builder() -> crate::output::delete_rule_output::Builder {
+        crate::output::delete_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
     
@@ -1261,12 +1276,6 @@ pub mod delete_rule_output {
     }
     
     
-}
-impl DeleteRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
-    pub fn builder() -> crate::output::delete_rule_output::Builder {
-        crate::output::delete_rule_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1357,6 +1366,13 @@ impl aws_http::request_id::RequestId for CreateRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+    pub fn builder() -> crate::output::create_rule_output::Builder {
+        crate::output::create_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
     
@@ -1517,11 +1533,5 @@ pub mod create_rule_output {
     }
     
     
-}
-impl CreateRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
-    pub fn builder() -> crate::output::create_rule_output::Builder {
-        crate::output::create_rule_output::Builder::default()
-    }
 }
 

@@ -77,6 +77,13 @@ impl ExperimentTemplate {
         self.log_configuration.as_ref()
     }
 }
+impl ExperimentTemplate {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplate`](crate::model::ExperimentTemplate).
+    pub fn builder() -> crate::model::experiment_template::Builder {
+        crate::model::experiment_template::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplate`](crate::model::ExperimentTemplate).
 pub mod experiment_template {
     
@@ -239,12 +246,6 @@ pub mod experiment_template {
     
     
 }
-impl ExperimentTemplate {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplate`](crate::model::ExperimentTemplate).
-    pub fn builder() -> crate::model::experiment_template::Builder {
-        crate::model::experiment_template::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
@@ -274,6 +275,13 @@ impl ExperimentTemplateLogConfiguration {
         self.log_schema_version
     }
 }
+impl ExperimentTemplateLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
+    pub fn builder() -> crate::model::experiment_template_log_configuration::Builder {
+        crate::model::experiment_template_log_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
 pub mod experiment_template_log_configuration {
     
@@ -328,12 +336,6 @@ pub mod experiment_template_log_configuration {
     
     
 }
-impl ExperimentTemplateLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateLogConfiguration`](crate::model::ExperimentTemplateLogConfiguration).
-    pub fn builder() -> crate::model::experiment_template_log_configuration::Builder {
-        crate::model::experiment_template_log_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
@@ -356,6 +358,13 @@ impl ExperimentTemplateS3LogConfiguration {
         self.prefix.as_deref()
     }
 }
+impl ExperimentTemplateS3LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
+    pub fn builder() -> crate::model::experiment_template_s3_log_configuration::Builder {
+        crate::model::experiment_template_s3_log_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
 pub mod experiment_template_s3_log_configuration {
     
@@ -398,12 +407,6 @@ pub mod experiment_template_s3_log_configuration {
     
     
 }
-impl ExperimentTemplateS3LogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfiguration`](crate::model::ExperimentTemplateS3LogConfiguration).
-    pub fn builder() -> crate::model::experiment_template_s3_log_configuration::Builder {
-        crate::model::experiment_template_s3_log_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -419,6 +422,13 @@ impl ExperimentTemplateCloudWatchLogsLogConfiguration {
         self.log_group_arn.as_deref()
     }
 }
+impl ExperimentTemplateCloudWatchLogsLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
+    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder {
+        crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
 pub mod experiment_template_cloud_watch_logs_log_configuration {
     
@@ -449,12 +459,6 @@ pub mod experiment_template_cloud_watch_logs_log_configuration {
     
     
 }
-impl ExperimentTemplateCloudWatchLogsLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfiguration`](crate::model::ExperimentTemplateCloudWatchLogsLogConfiguration).
-    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder {
-        crate::model::experiment_template_cloud_watch_logs_log_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a stop condition for an experiment template.</p>
 #[non_exhaustive]
@@ -477,6 +481,13 @@ impl ExperimentTemplateStopCondition {
         self.value.as_deref()
     }
 }
+impl ExperimentTemplateStopCondition {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
+    pub fn builder() -> crate::model::experiment_template_stop_condition::Builder {
+        crate::model::experiment_template_stop_condition::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
 pub mod experiment_template_stop_condition {
     
@@ -518,12 +529,6 @@ pub mod experiment_template_stop_condition {
     }
     
     
-}
-impl ExperimentTemplateStopCondition {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateStopCondition`](crate::model::ExperimentTemplateStopCondition).
-    pub fn builder() -> crate::model::experiment_template_stop_condition::Builder {
-        crate::model::experiment_template_stop_condition::Builder::default()
-    }
 }
 
 /// <p>Describes an action for an experiment template.</p>
@@ -568,6 +573,13 @@ impl ExperimentTemplateAction {
         self.start_after.as_deref()
     }
 }
+impl ExperimentTemplateAction {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
+    pub fn builder() -> crate::model::experiment_template_action::Builder {
+        crate::model::experiment_template_action::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
 pub mod experiment_template_action {
     
@@ -664,12 +676,6 @@ pub mod experiment_template_action {
     
     
 }
-impl ExperimentTemplateAction {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateAction`](crate::model::ExperimentTemplateAction).
-    pub fn builder() -> crate::model::experiment_template_action::Builder {
-        crate::model::experiment_template_action::Builder::default()
-    }
-}
 
 /// <p>Describes a target for an experiment template.</p>
 #[non_exhaustive]
@@ -720,6 +726,13 @@ impl ExperimentTemplateTarget {
         self.parameters.as_ref()
     }
 }
+impl ExperimentTemplateTarget {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
+    pub fn builder() -> crate::model::experiment_template_target::Builder {
+        crate::model::experiment_template_target::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
 pub mod experiment_template_target {
     
@@ -834,12 +847,6 @@ pub mod experiment_template_target {
     
     
 }
-impl ExperimentTemplateTarget {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateTarget`](crate::model::ExperimentTemplateTarget).
-    pub fn builder() -> crate::model::experiment_template_target::Builder {
-        crate::model::experiment_template_target::Builder::default()
-    }
-}
 
 /// <p>Describes a filter used for the target resources in an experiment template.</p>
 #[non_exhaustive]
@@ -862,6 +869,13 @@ impl ExperimentTemplateTargetFilter {
         self.values.as_deref()
     }
 }
+impl ExperimentTemplateTargetFilter {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
+    pub fn builder() -> crate::model::experiment_template_target_filter::Builder {
+        crate::model::experiment_template_target_filter::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
 pub mod experiment_template_target_filter {
     
@@ -910,12 +924,6 @@ pub mod experiment_template_target_filter {
     
     
 }
-impl ExperimentTemplateTargetFilter {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetFilter`](crate::model::ExperimentTemplateTargetFilter).
-    pub fn builder() -> crate::model::experiment_template_target_filter::Builder {
-        crate::model::experiment_template_target_filter::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
@@ -945,6 +953,13 @@ impl UpdateExperimentTemplateLogConfigurationInput {
         self.log_schema_version
     }
 }
+impl UpdateExperimentTemplateLogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
+    pub fn builder() -> crate::model::update_experiment_template_log_configuration_input::Builder {
+        crate::model::update_experiment_template_log_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
 pub mod update_experiment_template_log_configuration_input {
     
@@ -999,12 +1014,6 @@ pub mod update_experiment_template_log_configuration_input {
     
     
 }
-impl UpdateExperimentTemplateLogConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateLogConfigurationInput`](crate::model::UpdateExperimentTemplateLogConfigurationInput).
-    pub fn builder() -> crate::model::update_experiment_template_log_configuration_input::Builder {
-        crate::model::update_experiment_template_log_configuration_input::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
@@ -1027,6 +1036,13 @@ impl ExperimentTemplateS3LogConfigurationInput {
         self.prefix.as_deref()
     }
 }
+impl ExperimentTemplateS3LogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
+    pub fn builder() -> crate::model::experiment_template_s3_log_configuration_input::Builder {
+        crate::model::experiment_template_s3_log_configuration_input::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
 pub mod experiment_template_s3_log_configuration_input {
     
@@ -1069,12 +1085,6 @@ pub mod experiment_template_s3_log_configuration_input {
     
     
 }
-impl ExperimentTemplateS3LogConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateS3LogConfigurationInput`](crate::model::ExperimentTemplateS3LogConfigurationInput).
-    pub fn builder() -> crate::model::experiment_template_s3_log_configuration_input::Builder {
-        crate::model::experiment_template_s3_log_configuration_input::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -1090,6 +1100,13 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
         self.log_group_arn.as_deref()
     }
 }
+impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
+    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder {
+        crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
 pub mod experiment_template_cloud_watch_logs_log_configuration_input {
     
@@ -1119,12 +1136,6 @@ pub mod experiment_template_cloud_watch_logs_log_configuration_input {
     }
     
     
-}
-impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::model::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
-    pub fn builder() -> crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder {
-        crate::model::experiment_template_cloud_watch_logs_log_configuration_input::Builder::default()
-    }
 }
 
 /// <p>Specifies an action for an experiment template.</p>
@@ -1169,6 +1180,13 @@ impl UpdateExperimentTemplateActionInputItem {
         self.start_after.as_deref()
     }
 }
+impl UpdateExperimentTemplateActionInputItem {
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
+    pub fn builder() -> crate::model::update_experiment_template_action_input_item::Builder {
+        crate::model::update_experiment_template_action_input_item::Builder::default()
+    }
+}
+
 /// See [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
 pub mod update_experiment_template_action_input_item {
     
@@ -1265,12 +1283,6 @@ pub mod update_experiment_template_action_input_item {
     
     
 }
-impl UpdateExperimentTemplateActionInputItem {
-    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateActionInputItem`](crate::model::UpdateExperimentTemplateActionInputItem).
-    pub fn builder() -> crate::model::update_experiment_template_action_input_item::Builder {
-        crate::model::update_experiment_template_action_input_item::Builder::default()
-    }
-}
 
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both.</p>
 #[non_exhaustive]
@@ -1321,6 +1333,13 @@ impl UpdateExperimentTemplateTargetInput {
         self.parameters.as_ref()
     }
 }
+impl UpdateExperimentTemplateTargetInput {
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
+    pub fn builder() -> crate::model::update_experiment_template_target_input::Builder {
+        crate::model::update_experiment_template_target_input::Builder::default()
+    }
+}
+
 /// See [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
 pub mod update_experiment_template_target_input {
     
@@ -1435,12 +1454,6 @@ pub mod update_experiment_template_target_input {
     
     
 }
-impl UpdateExperimentTemplateTargetInput {
-    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateTargetInput`](crate::model::UpdateExperimentTemplateTargetInput).
-    pub fn builder() -> crate::model::update_experiment_template_target_input::Builder {
-        crate::model::update_experiment_template_target_input::Builder::default()
-    }
-}
 
 /// <p>Specifies a filter used for the target resource input in an experiment template.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource filters</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
@@ -1464,6 +1477,13 @@ impl ExperimentTemplateTargetInputFilter {
         self.values.as_deref()
     }
 }
+impl ExperimentTemplateTargetInputFilter {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
+    pub fn builder() -> crate::model::experiment_template_target_input_filter::Builder {
+        crate::model::experiment_template_target_input_filter::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
 pub mod experiment_template_target_input_filter {
     
@@ -1512,12 +1532,6 @@ pub mod experiment_template_target_input_filter {
     
     
 }
-impl ExperimentTemplateTargetInputFilter {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateTargetInputFilter`](crate::model::ExperimentTemplateTargetInputFilter).
-    pub fn builder() -> crate::model::experiment_template_target_input_filter::Builder {
-        crate::model::experiment_template_target_input_filter::Builder::default()
-    }
-}
 
 /// <p>Specifies a stop condition for an experiment. You can define a stop condition as a CloudWatch alarm.</p>
 #[non_exhaustive]
@@ -1540,6 +1554,13 @@ impl UpdateExperimentTemplateStopConditionInput {
         self.value.as_deref()
     }
 }
+impl UpdateExperimentTemplateStopConditionInput {
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
+    pub fn builder() -> crate::model::update_experiment_template_stop_condition_input::Builder {
+        crate::model::update_experiment_template_stop_condition_input::Builder::default()
+    }
+}
+
 /// See [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
 pub mod update_experiment_template_stop_condition_input {
     
@@ -1581,12 +1602,6 @@ pub mod update_experiment_template_stop_condition_input {
     }
     
     
-}
-impl UpdateExperimentTemplateStopConditionInput {
-    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateStopConditionInput`](crate::model::UpdateExperimentTemplateStopConditionInput).
-    pub fn builder() -> crate::model::update_experiment_template_stop_condition_input::Builder {
-        crate::model::update_experiment_template_stop_condition_input::Builder::default()
-    }
 }
 
 /// <p>Describes an experiment.</p>
@@ -1680,6 +1695,13 @@ impl Experiment {
         self.log_configuration.as_ref()
     }
 }
+impl Experiment {
+    /// Creates a new builder-style object to manufacture [`Experiment`](crate::model::Experiment).
+    pub fn builder() -> crate::model::experiment::Builder {
+        crate::model::experiment::Builder::default()
+    }
+}
+
 /// See [`Experiment`](crate::model::Experiment).
 pub mod experiment {
     
@@ -1866,12 +1888,6 @@ pub mod experiment {
     
     
 }
-impl Experiment {
-    /// Creates a new builder-style object to manufacture [`Experiment`](crate::model::Experiment).
-    pub fn builder() -> crate::model::experiment::Builder {
-        crate::model::experiment::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
@@ -1901,6 +1917,13 @@ impl ExperimentLogConfiguration {
         self.log_schema_version
     }
 }
+impl ExperimentLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
+    pub fn builder() -> crate::model::experiment_log_configuration::Builder {
+        crate::model::experiment_log_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
 pub mod experiment_log_configuration {
     
@@ -1955,12 +1978,6 @@ pub mod experiment_log_configuration {
     
     
 }
-impl ExperimentLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperimentLogConfiguration`](crate::model::ExperimentLogConfiguration).
-    pub fn builder() -> crate::model::experiment_log_configuration::Builder {
-        crate::model::experiment_log_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for experiment logging to Amazon S3.</p>
 #[non_exhaustive]
@@ -1983,6 +2000,13 @@ impl ExperimentS3LogConfiguration {
         self.prefix.as_deref()
     }
 }
+impl ExperimentS3LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
+    pub fn builder() -> crate::model::experiment_s3_log_configuration::Builder {
+        crate::model::experiment_s3_log_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
 pub mod experiment_s3_log_configuration {
     
@@ -2025,12 +2049,6 @@ pub mod experiment_s3_log_configuration {
     
     
 }
-impl ExperimentS3LogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperimentS3LogConfiguration`](crate::model::ExperimentS3LogConfiguration).
-    pub fn builder() -> crate::model::experiment_s3_log_configuration::Builder {
-        crate::model::experiment_s3_log_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -2046,6 +2064,13 @@ impl ExperimentCloudWatchLogsLogConfiguration {
         self.log_group_arn.as_deref()
     }
 }
+impl ExperimentCloudWatchLogsLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
+    pub fn builder() -> crate::model::experiment_cloud_watch_logs_log_configuration::Builder {
+        crate::model::experiment_cloud_watch_logs_log_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
 pub mod experiment_cloud_watch_logs_log_configuration {
     
@@ -2076,12 +2101,6 @@ pub mod experiment_cloud_watch_logs_log_configuration {
     
     
 }
-impl ExperimentCloudWatchLogsLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperimentCloudWatchLogsLogConfiguration`](crate::model::ExperimentCloudWatchLogsLogConfiguration).
-    pub fn builder() -> crate::model::experiment_cloud_watch_logs_log_configuration::Builder {
-        crate::model::experiment_cloud_watch_logs_log_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the stop condition for an experiment.</p>
 #[non_exhaustive]
@@ -2104,6 +2123,13 @@ impl ExperimentStopCondition {
         self.value.as_deref()
     }
 }
+impl ExperimentStopCondition {
+    /// Creates a new builder-style object to manufacture [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
+    pub fn builder() -> crate::model::experiment_stop_condition::Builder {
+        crate::model::experiment_stop_condition::Builder::default()
+    }
+}
+
 /// See [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
 pub mod experiment_stop_condition {
     
@@ -2145,12 +2171,6 @@ pub mod experiment_stop_condition {
     }
     
     
-}
-impl ExperimentStopCondition {
-    /// Creates a new builder-style object to manufacture [`ExperimentStopCondition`](crate::model::ExperimentStopCondition).
-    pub fn builder() -> crate::model::experiment_stop_condition::Builder {
-        crate::model::experiment_stop_condition::Builder::default()
-    }
 }
 
 /// <p>Describes the action for an experiment.</p>
@@ -2216,6 +2236,13 @@ impl ExperimentAction {
         self.end_time.as_ref()
     }
 }
+impl ExperimentAction {
+    /// Creates a new builder-style object to manufacture [`ExperimentAction`](crate::model::ExperimentAction).
+    pub fn builder() -> crate::model::experiment_action::Builder {
+        crate::model::experiment_action::Builder::default()
+    }
+}
+
 /// See [`ExperimentAction`](crate::model::ExperimentAction).
 pub mod experiment_action {
     
@@ -2348,12 +2375,6 @@ pub mod experiment_action {
     
     
 }
-impl ExperimentAction {
-    /// Creates a new builder-style object to manufacture [`ExperimentAction`](crate::model::ExperimentAction).
-    pub fn builder() -> crate::model::experiment_action::Builder {
-        crate::model::experiment_action::Builder::default()
-    }
-}
 
 /// <p>Describes the state of an action.</p>
 #[non_exhaustive]
@@ -2376,6 +2397,13 @@ impl ExperimentActionState {
         self.reason.as_deref()
     }
 }
+impl ExperimentActionState {
+    /// Creates a new builder-style object to manufacture [`ExperimentActionState`](crate::model::ExperimentActionState).
+    pub fn builder() -> crate::model::experiment_action_state::Builder {
+        crate::model::experiment_action_state::Builder::default()
+    }
+}
+
 /// See [`ExperimentActionState`](crate::model::ExperimentActionState).
 pub mod experiment_action_state {
     
@@ -2417,12 +2445,6 @@ pub mod experiment_action_state {
     }
     
     
-}
-impl ExperimentActionState {
-    /// Creates a new builder-style object to manufacture [`ExperimentActionState`](crate::model::ExperimentActionState).
-    pub fn builder() -> crate::model::experiment_action_state::Builder {
-        crate::model::experiment_action_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentActionStatus`, it is important to ensure
@@ -2586,6 +2608,13 @@ impl ExperimentTarget {
         self.parameters.as_ref()
     }
 }
+impl ExperimentTarget {
+    /// Creates a new builder-style object to manufacture [`ExperimentTarget`](crate::model::ExperimentTarget).
+    pub fn builder() -> crate::model::experiment_target::Builder {
+        crate::model::experiment_target::Builder::default()
+    }
+}
+
 /// See [`ExperimentTarget`](crate::model::ExperimentTarget).
 pub mod experiment_target {
     
@@ -2700,12 +2729,6 @@ pub mod experiment_target {
     
     
 }
-impl ExperimentTarget {
-    /// Creates a new builder-style object to manufacture [`ExperimentTarget`](crate::model::ExperimentTarget).
-    pub fn builder() -> crate::model::experiment_target::Builder {
-        crate::model::experiment_target::Builder::default()
-    }
-}
 
 /// <p>Describes a filter used for the target resources in an experiment.</p>
 #[non_exhaustive]
@@ -2728,6 +2751,13 @@ impl ExperimentTargetFilter {
         self.values.as_deref()
     }
 }
+impl ExperimentTargetFilter {
+    /// Creates a new builder-style object to manufacture [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
+    pub fn builder() -> crate::model::experiment_target_filter::Builder {
+        crate::model::experiment_target_filter::Builder::default()
+    }
+}
+
 /// See [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
 pub mod experiment_target_filter {
     
@@ -2776,12 +2806,6 @@ pub mod experiment_target_filter {
     
     
 }
-impl ExperimentTargetFilter {
-    /// Creates a new builder-style object to manufacture [`ExperimentTargetFilter`](crate::model::ExperimentTargetFilter).
-    pub fn builder() -> crate::model::experiment_target_filter::Builder {
-        crate::model::experiment_target_filter::Builder::default()
-    }
-}
 
 /// <p>Describes the state of an experiment.</p>
 #[non_exhaustive]
@@ -2804,6 +2828,13 @@ impl ExperimentState {
         self.reason.as_deref()
     }
 }
+impl ExperimentState {
+    /// Creates a new builder-style object to manufacture [`ExperimentState`](crate::model::ExperimentState).
+    pub fn builder() -> crate::model::experiment_state::Builder {
+        crate::model::experiment_state::Builder::default()
+    }
+}
+
 /// See [`ExperimentState`](crate::model::ExperimentState).
 pub mod experiment_state {
     
@@ -2845,12 +2876,6 @@ pub mod experiment_state {
     }
     
     
-}
-impl ExperimentState {
-    /// Creates a new builder-style object to manufacture [`ExperimentState`](crate::model::ExperimentState).
-    pub fn builder() -> crate::model::experiment_state::Builder {
-        crate::model::experiment_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentStatus`, it is important to ensure
@@ -2981,6 +3006,13 @@ impl TargetResourceTypeSummary {
         self.description.as_deref()
     }
 }
+impl TargetResourceTypeSummary {
+    /// Creates a new builder-style object to manufacture [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
+    pub fn builder() -> crate::model::target_resource_type_summary::Builder {
+        crate::model::target_resource_type_summary::Builder::default()
+    }
+}
+
 /// See [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
 pub mod target_resource_type_summary {
     
@@ -3022,12 +3054,6 @@ pub mod target_resource_type_summary {
     }
     
     
-}
-impl TargetResourceTypeSummary {
-    /// Creates a new builder-style object to manufacture [`TargetResourceTypeSummary`](crate::model::TargetResourceTypeSummary).
-    pub fn builder() -> crate::model::target_resource_type_summary::Builder {
-        crate::model::target_resource_type_summary::Builder::default()
-    }
 }
 
 /// <p>Provides a summary of an experiment template.</p>
@@ -3072,6 +3098,13 @@ impl ExperimentTemplateSummary {
         self.tags.as_ref()
     }
 }
+impl ExperimentTemplateSummary {
+    /// Creates a new builder-style object to manufacture [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
+    pub fn builder() -> crate::model::experiment_template_summary::Builder {
+        crate::model::experiment_template_summary::Builder::default()
+    }
+}
+
 /// See [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
 pub mod experiment_template_summary {
     
@@ -3156,12 +3189,6 @@ pub mod experiment_template_summary {
     
     
 }
-impl ExperimentTemplateSummary {
-    /// Creates a new builder-style object to manufacture [`ExperimentTemplateSummary`](crate::model::ExperimentTemplateSummary).
-    pub fn builder() -> crate::model::experiment_template_summary::Builder {
-        crate::model::experiment_template_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of an experiment.</p>
 #[non_exhaustive]
@@ -3205,6 +3232,13 @@ impl ExperimentSummary {
         self.tags.as_ref()
     }
 }
+impl ExperimentSummary {
+    /// Creates a new builder-style object to manufacture [`ExperimentSummary`](crate::model::ExperimentSummary).
+    pub fn builder() -> crate::model::experiment_summary::Builder {
+        crate::model::experiment_summary::Builder::default()
+    }
+}
+
 /// See [`ExperimentSummary`](crate::model::ExperimentSummary).
 pub mod experiment_summary {
     
@@ -3289,12 +3323,6 @@ pub mod experiment_summary {
     
     
 }
-impl ExperimentSummary {
-    /// Creates a new builder-style object to manufacture [`ExperimentSummary`](crate::model::ExperimentSummary).
-    pub fn builder() -> crate::model::experiment_summary::Builder {
-        crate::model::experiment_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of an action.</p>
 #[non_exhaustive]
@@ -3331,6 +3359,13 @@ impl ActionSummary {
         self.tags.as_ref()
     }
 }
+impl ActionSummary {
+    /// Creates a new builder-style object to manufacture [`ActionSummary`](crate::model::ActionSummary).
+    pub fn builder() -> crate::model::action_summary::Builder {
+        crate::model::action_summary::Builder::default()
+    }
+}
+
 /// See [`ActionSummary`](crate::model::ActionSummary).
 pub mod action_summary {
     
@@ -3409,12 +3444,6 @@ pub mod action_summary {
     
     
 }
-impl ActionSummary {
-    /// Creates a new builder-style object to manufacture [`ActionSummary`](crate::model::ActionSummary).
-    pub fn builder() -> crate::model::action_summary::Builder {
-        crate::model::action_summary::Builder::default()
-    }
-}
 
 /// <p>Describes a target for an action.</p>
 #[non_exhaustive]
@@ -3430,6 +3459,13 @@ impl ActionTarget {
         self.resource_type.as_deref()
     }
 }
+impl ActionTarget {
+    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
+    pub fn builder() -> crate::model::action_target::Builder {
+        crate::model::action_target::Builder::default()
+    }
+}
+
 /// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
     
@@ -3460,12 +3496,6 @@ pub mod action_target {
     
     
 }
-impl ActionTarget {
-    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
-    pub fn builder() -> crate::model::action_target::Builder {
-        crate::model::action_target::Builder::default()
-    }
-}
 
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
@@ -3495,6 +3525,13 @@ impl TargetResourceType {
         self.parameters.as_ref()
     }
 }
+impl TargetResourceType {
+    /// Creates a new builder-style object to manufacture [`TargetResourceType`](crate::model::TargetResourceType).
+    pub fn builder() -> crate::model::target_resource_type::Builder {
+        crate::model::target_resource_type::Builder::default()
+    }
+}
+
 /// See [`TargetResourceType`](crate::model::TargetResourceType).
 pub mod target_resource_type {
     
@@ -3555,12 +3592,6 @@ pub mod target_resource_type {
     
     
 }
-impl TargetResourceType {
-    /// Creates a new builder-style object to manufacture [`TargetResourceType`](crate::model::TargetResourceType).
-    pub fn builder() -> crate::model::target_resource_type::Builder {
-        crate::model::target_resource_type::Builder::default()
-    }
-}
 
 /// <p>Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.</p>
 #[non_exhaustive]
@@ -3583,6 +3614,13 @@ impl TargetResourceTypeParameter {
         self.required
     }
 }
+impl TargetResourceTypeParameter {
+    /// Creates a new builder-style object to manufacture [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
+    pub fn builder() -> crate::model::target_resource_type_parameter::Builder {
+        crate::model::target_resource_type_parameter::Builder::default()
+    }
+}
+
 /// See [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
 pub mod target_resource_type_parameter {
     
@@ -3624,12 +3662,6 @@ pub mod target_resource_type_parameter {
     }
     
     
-}
-impl TargetResourceTypeParameter {
-    /// Creates a new builder-style object to manufacture [`TargetResourceTypeParameter`](crate::model::TargetResourceTypeParameter).
-    pub fn builder() -> crate::model::target_resource_type_parameter::Builder {
-        crate::model::target_resource_type_parameter::Builder::default()
-    }
 }
 
 /// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
@@ -3674,6 +3706,13 @@ impl Action {
         self.tags.as_ref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
     
@@ -3770,12 +3809,6 @@ pub mod action {
     
     
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p>Describes a parameter for an action.</p>
 #[non_exhaustive]
@@ -3798,6 +3831,13 @@ impl ActionParameter {
         self.required
     }
 }
+impl ActionParameter {
+    /// Creates a new builder-style object to manufacture [`ActionParameter`](crate::model::ActionParameter).
+    pub fn builder() -> crate::model::action_parameter::Builder {
+        crate::model::action_parameter::Builder::default()
+    }
+}
+
 /// See [`ActionParameter`](crate::model::ActionParameter).
 pub mod action_parameter {
     
@@ -3840,12 +3880,6 @@ pub mod action_parameter {
     
     
 }
-impl ActionParameter {
-    /// Creates a new builder-style object to manufacture [`ActionParameter`](crate::model::ActionParameter).
-    pub fn builder() -> crate::model::action_parameter::Builder {
-        crate::model::action_parameter::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration for experiment logging.</p>
 #[non_exhaustive]
@@ -3875,6 +3909,13 @@ impl CreateExperimentTemplateLogConfigurationInput {
         self.log_schema_version
     }
 }
+impl CreateExperimentTemplateLogConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
+    pub fn builder() -> crate::model::create_experiment_template_log_configuration_input::Builder {
+        crate::model::create_experiment_template_log_configuration_input::Builder::default()
+    }
+}
+
 /// See [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
 pub mod create_experiment_template_log_configuration_input {
     
@@ -3929,12 +3970,6 @@ pub mod create_experiment_template_log_configuration_input {
     
     
 }
-impl CreateExperimentTemplateLogConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateLogConfigurationInput`](crate::model::CreateExperimentTemplateLogConfigurationInput).
-    pub fn builder() -> crate::model::create_experiment_template_log_configuration_input::Builder {
-        crate::model::create_experiment_template_log_configuration_input::Builder::default()
-    }
-}
 
 /// <p>Specifies an action for an experiment template.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
@@ -3979,6 +4014,13 @@ impl CreateExperimentTemplateActionInput {
         self.start_after.as_deref()
     }
 }
+impl CreateExperimentTemplateActionInput {
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
+    pub fn builder() -> crate::model::create_experiment_template_action_input::Builder {
+        crate::model::create_experiment_template_action_input::Builder::default()
+    }
+}
+
 /// See [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
 pub mod create_experiment_template_action_input {
     
@@ -4075,12 +4117,6 @@ pub mod create_experiment_template_action_input {
     
     
 }
-impl CreateExperimentTemplateActionInput {
-    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateActionInput`](crate::model::CreateExperimentTemplateActionInput).
-    pub fn builder() -> crate::model::create_experiment_template_action_input::Builder {
-        crate::model::create_experiment_template_action_input::Builder::default()
-    }
-}
 
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
@@ -4142,6 +4178,13 @@ impl CreateExperimentTemplateTargetInput {
         self.parameters.as_ref()
     }
 }
+impl CreateExperimentTemplateTargetInput {
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
+    pub fn builder() -> crate::model::create_experiment_template_target_input::Builder {
+        crate::model::create_experiment_template_target_input::Builder::default()
+    }
+}
+
 /// See [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
 pub mod create_experiment_template_target_input {
     
@@ -4266,12 +4309,6 @@ pub mod create_experiment_template_target_input {
     
     
 }
-impl CreateExperimentTemplateTargetInput {
-    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateTargetInput`](crate::model::CreateExperimentTemplateTargetInput).
-    pub fn builder() -> crate::model::create_experiment_template_target_input::Builder {
-        crate::model::create_experiment_template_target_input::Builder::default()
-    }
-}
 
 /// <p>Specifies a stop condition for an experiment template.</p>
 #[non_exhaustive]
@@ -4294,6 +4331,13 @@ impl CreateExperimentTemplateStopConditionInput {
         self.value.as_deref()
     }
 }
+impl CreateExperimentTemplateStopConditionInput {
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
+    pub fn builder() -> crate::model::create_experiment_template_stop_condition_input::Builder {
+        crate::model::create_experiment_template_stop_condition_input::Builder::default()
+    }
+}
+
 /// See [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
 pub mod create_experiment_template_stop_condition_input {
     
@@ -4335,11 +4379,5 @@ pub mod create_experiment_template_stop_condition_input {
     }
     
     
-}
-impl CreateExperimentTemplateStopConditionInput {
-    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateStopConditionInput`](crate::model::CreateExperimentTemplateStopConditionInput).
-    pub fn builder() -> crate::model::create_experiment_template_stop_condition_input::Builder {
-        crate::model::create_experiment_template_stop_condition_input::Builder::default()
-    }
 }
 

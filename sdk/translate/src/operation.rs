@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_parallel_data`](crate::client::Client::create_parallel_data).
             ///
-            /// See [`crate::client::fluent_builders::CreateParallelData`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateParallelData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateParallelData {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParallelData {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_parallel_data`](crate::client::Client::delete_parallel_data).
             ///
-            /// See [`crate::client::fluent_builders::DeleteParallelData`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteParallelData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteParallelData {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteParallelData {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_terminology`](crate::client::Client::delete_terminology).
             ///
-            /// See [`crate::client::fluent_builders::DeleteTerminology`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteTerminology`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTerminology {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTerminology {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_text_translation_job`](crate::client::Client::describe_text_translation_job).
             ///
-            /// See [`crate::client::fluent_builders::DescribeTextTranslationJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeTextTranslationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTextTranslationJob {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTextTranslationJ
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_parallel_data`](crate::client::Client::get_parallel_data).
             ///
-            /// See [`crate::client::fluent_builders::GetParallelData`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetParallelData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetParallelData {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParallelData {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_terminology`](crate::client::Client::get_terminology).
             ///
-            /// See [`crate::client::fluent_builders::GetTerminology`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetTerminology`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTerminology {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTerminology {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`import_terminology`](crate::client::Client::import_terminology).
             ///
-            /// See [`crate::client::fluent_builders::ImportTerminology`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ImportTerminology`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportTerminology {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportTerminology {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_languages`](crate::client::Client::list_languages).
             ///
-            /// See [`crate::client::fluent_builders::ListLanguages`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLanguages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLanguages {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLanguages {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_parallel_data`](crate::client::Client::list_parallel_data).
             ///
-            /// See [`crate::client::fluent_builders::ListParallelData`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListParallelData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListParallelData {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListParallelData {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_terminologies`](crate::client::Client::list_terminologies).
             ///
-            /// See [`crate::client::fluent_builders::ListTerminologies`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTerminologies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTerminologies {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTerminologies {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_text_translation_jobs`](crate::client::Client::list_text_translation_jobs).
             ///
-            /// See [`crate::client::fluent_builders::ListTextTranslationJobs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTextTranslationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTextTranslationJobs {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTextTranslationJobs 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_text_translation_job`](crate::client::Client::start_text_translation_job).
             ///
-            /// See [`crate::client::fluent_builders::StartTextTranslationJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartTextTranslationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartTextTranslationJob {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTextTranslationJob 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`stop_text_translation_job`](crate::client::Client::stop_text_translation_job).
             ///
-            /// See [`crate::client::fluent_builders::StopTextTranslationJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StopTextTranslationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopTextTranslationJob {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTextTranslationJob {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`translate_text`](crate::client::Client::translate_text).
             ///
-            /// See [`crate::client::fluent_builders::TranslateText`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TranslateText`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TranslateText {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TranslateText {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_parallel_data`](crate::client::Client::update_parallel_data).
             ///
-            /// See [`crate::client::fluent_builders::UpdateParallelData`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateParallelData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateParallelData {
     _private: ()

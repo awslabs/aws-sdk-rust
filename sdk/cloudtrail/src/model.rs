@@ -30,6 +30,13 @@ impl AdvancedEventSelector {
         self.field_selectors.as_deref()
     }
 }
+impl AdvancedEventSelector {
+    /// Creates a new builder-style object to manufacture [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
+    pub fn builder() -> crate::model::advanced_event_selector::Builder {
+        crate::model::advanced_event_selector::Builder::default()
+    }
+}
+
 /// See [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
 pub mod advanced_event_selector {
     
@@ -77,12 +84,6 @@ pub mod advanced_event_selector {
     }
     
     
-}
-impl AdvancedEventSelector {
-    /// Creates a new builder-style object to manufacture [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
-    pub fn builder() -> crate::model::advanced_event_selector::Builder {
-        crate::model::advanced_event_selector::Builder::default()
-    }
 }
 
 /// <p>A single selector statement in an advanced event selector.</p>
@@ -487,6 +488,13 @@ impl AdvancedFieldSelector {
         self.not_ends_with.as_deref()
     }
 }
+impl AdvancedFieldSelector {
+    /// Creates a new builder-style object to manufacture [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
+    pub fn builder() -> crate::model::advanced_field_selector::Builder {
+        crate::model::advanced_field_selector::Builder::default()
+    }
+}
+
 /// See [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
 pub mod advanced_field_selector {
     
@@ -971,12 +979,6 @@ pub mod advanced_field_selector {
     
     
 }
-impl AdvancedFieldSelector {
-    /// Creates a new builder-style object to manufacture [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
-    pub fn builder() -> crate::model::advanced_field_selector::Builder {
-        crate::model::advanced_field_selector::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EventDataStoreStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1107,6 +1109,13 @@ impl ImportStatistics {
         self.failed_entries
     }
 }
+impl ImportStatistics {
+    /// Creates a new builder-style object to manufacture [`ImportStatistics`](crate::model::ImportStatistics).
+    pub fn builder() -> crate::model::import_statistics::Builder {
+        crate::model::import_statistics::Builder::default()
+    }
+}
+
 /// See [`ImportStatistics`](crate::model::ImportStatistics).
 pub mod import_statistics {
     
@@ -1184,12 +1193,6 @@ pub mod import_statistics {
     }
     
     
-}
-impl ImportStatistics {
-    /// Creates a new builder-style object to manufacture [`ImportStatistics`](crate::model::ImportStatistics).
-    pub fn builder() -> crate::model::import_statistics::Builder {
-        crate::model::import_statistics::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportStatus`, it is important to ensure
@@ -1303,6 +1306,13 @@ impl ImportSource {
         self.s3.as_ref()
     }
 }
+impl ImportSource {
+    /// Creates a new builder-style object to manufacture [`ImportSource`](crate::model::ImportSource).
+    pub fn builder() -> crate::model::import_source::Builder {
+        crate::model::import_source::Builder::default()
+    }
+}
+
 /// See [`ImportSource`](crate::model::ImportSource).
 pub mod import_source {
     
@@ -1333,12 +1343,6 @@ pub mod import_source {
     
     
 }
-impl ImportSource {
-    /// Creates a new builder-style object to manufacture [`ImportSource`](crate::model::ImportSource).
-    pub fn builder() -> crate::model::import_source::Builder {
-        crate::model::import_source::Builder::default()
-    }
-}
 
 /// <p> The settings for the source S3 bucket. </p>
 #[non_exhaustive]
@@ -1368,6 +1372,13 @@ impl S3ImportSource {
         self.s3_bucket_access_role_arn.as_deref()
     }
 }
+impl S3ImportSource {
+    /// Creates a new builder-style object to manufacture [`S3ImportSource`](crate::model::S3ImportSource).
+    pub fn builder() -> crate::model::s3_import_source::Builder {
+        crate::model::s3_import_source::Builder::default()
+    }
+}
+
 /// See [`S3ImportSource`](crate::model::S3ImportSource).
 pub mod s3_import_source {
     
@@ -1422,12 +1433,6 @@ pub mod s3_import_source {
     
     
 }
-impl S3ImportSource {
-    /// Creates a new builder-style object to manufacture [`S3ImportSource`](crate::model::S3ImportSource).
-    pub fn builder() -> crate::model::s3_import_source::Builder {
-        crate::model::s3_import_source::Builder::default()
-    }
-}
 
 /// <p>A custom key-value pair associated with a resource such as a CloudTrail trail.</p>
 #[non_exhaustive]
@@ -1450,6 +1455,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1492,12 +1504,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A JSON string that contains a list of insight types that are logged on a trail.</p>
 #[non_exhaustive]
@@ -1513,6 +1519,13 @@ impl InsightSelector {
         self.insight_type.as_ref()
     }
 }
+impl InsightSelector {
+    /// Creates a new builder-style object to manufacture [`InsightSelector`](crate::model::InsightSelector).
+    pub fn builder() -> crate::model::insight_selector::Builder {
+        crate::model::insight_selector::Builder::default()
+    }
+}
+
 /// See [`InsightSelector`](crate::model::InsightSelector).
 pub mod insight_selector {
     
@@ -1542,12 +1555,6 @@ pub mod insight_selector {
     }
     
     
-}
-impl InsightSelector {
-    /// Creates a new builder-style object to manufacture [`InsightSelector`](crate::model::InsightSelector).
-    pub fn builder() -> crate::model::insight_selector::Builder {
-        crate::model::insight_selector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InsightType`, it is important to ensure
@@ -1679,6 +1686,13 @@ impl EventSelector {
         self.exclude_management_event_sources.as_deref()
     }
 }
+impl EventSelector {
+    /// Creates a new builder-style object to manufacture [`EventSelector`](crate::model::EventSelector).
+    pub fn builder() -> crate::model::event_selector::Builder {
+        crate::model::event_selector::Builder::default()
+    }
+}
+
 /// See [`EventSelector`](crate::model::EventSelector).
 pub mod event_selector {
     
@@ -1766,12 +1780,6 @@ pub mod event_selector {
     }
     
     
-}
-impl EventSelector {
-    /// Creates a new builder-style object to manufacture [`EventSelector`](crate::model::EventSelector).
-    pub fn builder() -> crate::model::event_selector::Builder {
-        crate::model::event_selector::Builder::default()
-    }
 }
 
 /// <p>The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note> 
@@ -1869,6 +1877,13 @@ impl DataResource {
         self.values.as_deref()
     }
 }
+impl DataResource {
+    /// Creates a new builder-style object to manufacture [`DataResource`](crate::model::DataResource).
+    pub fn builder() -> crate::model::data_resource::Builder {
+        crate::model::data_resource::Builder::default()
+    }
+}
+
 /// See [`DataResource`](crate::model::DataResource).
 pub mod data_resource {
     
@@ -1974,12 +1989,6 @@ pub mod data_resource {
     }
     
     
-}
-impl DataResource {
-    /// Creates a new builder-style object to manufacture [`DataResource`](crate::model::DataResource).
-    pub fn builder() -> crate::model::data_resource::Builder {
-        crate::model::data_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReadWriteType`, it is important to ensure
@@ -2139,6 +2148,13 @@ impl Event {
         self.cloud_trail_event.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -2271,12 +2287,6 @@ pub mod event {
     
     
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p>Specifies the type and name of a resource referenced by an event.</p>
 #[non_exhaustive]
@@ -2299,6 +2309,13 @@ impl Resource {
         self.resource_name.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -2340,12 +2357,6 @@ pub mod resource {
     }
     
     
-}
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventCategory`, it is important to ensure
@@ -2446,6 +2457,13 @@ impl LookupAttribute {
         self.attribute_value.as_deref()
     }
 }
+impl LookupAttribute {
+    /// Creates a new builder-style object to manufacture [`LookupAttribute`](crate::model::LookupAttribute).
+    pub fn builder() -> crate::model::lookup_attribute::Builder {
+        crate::model::lookup_attribute::Builder::default()
+    }
+}
+
 /// See [`LookupAttribute`](crate::model::LookupAttribute).
 pub mod lookup_attribute {
     
@@ -2487,12 +2505,6 @@ pub mod lookup_attribute {
     }
     
     
-}
-impl LookupAttribute {
-    /// Creates a new builder-style object to manufacture [`LookupAttribute`](crate::model::LookupAttribute).
-    pub fn builder() -> crate::model::lookup_attribute::Builder {
-        crate::model::lookup_attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LookupAttributeKey`, it is important to ensure
@@ -2635,6 +2647,13 @@ impl TrailInfo {
         self.home_region.as_deref()
     }
 }
+impl TrailInfo {
+    /// Creates a new builder-style object to manufacture [`TrailInfo`](crate::model::TrailInfo).
+    pub fn builder() -> crate::model::trail_info::Builder {
+        crate::model::trail_info::Builder::default()
+    }
+}
+
 /// See [`TrailInfo`](crate::model::TrailInfo).
 pub mod trail_info {
     
@@ -2689,12 +2708,6 @@ pub mod trail_info {
     
     
 }
-impl TrailInfo {
-    /// Creates a new builder-style object to manufacture [`TrailInfo`](crate::model::TrailInfo).
-    pub fn builder() -> crate::model::trail_info::Builder {
-        crate::model::trail_info::Builder::default()
-    }
-}
 
 /// <p>A resource tag.</p>
 #[non_exhaustive]
@@ -2717,6 +2730,13 @@ impl ResourceTag {
         self.tags_list.as_deref()
     }
 }
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
     
@@ -2765,12 +2785,6 @@ pub mod resource_tag {
     
     
 }
-impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
-    pub fn builder() -> crate::model::resource_tag::Builder {
-        crate::model::resource_tag::Builder::default()
-    }
-}
 
 /// <p>A SQL string of criteria about events that you want to collect in an event data store.</p>
 #[non_exhaustive]
@@ -2800,6 +2814,13 @@ impl Query {
         self.creation_time.as_ref()
     }
 }
+impl Query {
+    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
+    pub fn builder() -> crate::model::query::Builder {
+        crate::model::query::Builder::default()
+    }
+}
+
 /// See [`Query`](crate::model::Query).
 pub mod query {
     
@@ -2853,12 +2874,6 @@ pub mod query {
     }
     
     
-}
-impl Query {
-    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
-    pub fn builder() -> crate::model::query::Builder {
-        crate::model::query::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryStatus`, it is important to ensure
@@ -2998,6 +3013,13 @@ impl PublicKey {
         self.fingerprint.as_deref()
     }
 }
+impl PublicKey {
+    /// Creates a new builder-style object to manufacture [`PublicKey`](crate::model::PublicKey).
+    pub fn builder() -> crate::model::public_key::Builder {
+        crate::model::public_key::Builder::default()
+    }
+}
+
 /// See [`PublicKey`](crate::model::PublicKey).
 pub mod public_key {
     
@@ -3064,12 +3086,6 @@ pub mod public_key {
     
     
 }
-impl PublicKey {
-    /// Creates a new builder-style object to manufacture [`PublicKey`](crate::model::PublicKey).
-    pub fn builder() -> crate::model::public_key::Builder {
-        crate::model::public_key::Builder::default()
-    }
-}
 
 /// <p> Contains information about an import that was returned by a lookup request. </p>
 #[non_exhaustive]
@@ -3113,6 +3129,13 @@ impl ImportsListItem {
         self.updated_timestamp.as_ref()
     }
 }
+impl ImportsListItem {
+    /// Creates a new builder-style object to manufacture [`ImportsListItem`](crate::model::ImportsListItem).
+    pub fn builder() -> crate::model::imports_list_item::Builder {
+        crate::model::imports_list_item::Builder::default()
+    }
+}
+
 /// See [`ImportsListItem`](crate::model::ImportsListItem).
 pub mod imports_list_item {
     
@@ -3197,12 +3220,6 @@ pub mod imports_list_item {
     
     
 }
-impl ImportsListItem {
-    /// Creates a new builder-style object to manufacture [`ImportsListItem`](crate::model::ImportsListItem).
-    pub fn builder() -> crate::model::imports_list_item::Builder {
-        crate::model::imports_list_item::Builder::default()
-    }
-}
 
 /// <p> Provides information about an import failure. </p>
 #[non_exhaustive]
@@ -3246,6 +3263,13 @@ impl ImportFailureListItem {
         self.last_updated_time.as_ref()
     }
 }
+impl ImportFailureListItem {
+    /// Creates a new builder-style object to manufacture [`ImportFailureListItem`](crate::model::ImportFailureListItem).
+    pub fn builder() -> crate::model::import_failure_list_item::Builder {
+        crate::model::import_failure_list_item::Builder::default()
+    }
+}
+
 /// See [`ImportFailureListItem`](crate::model::ImportFailureListItem).
 pub mod import_failure_list_item {
     
@@ -3323,12 +3347,6 @@ pub mod import_failure_list_item {
     }
     
     
-}
-impl ImportFailureListItem {
-    /// Creates a new builder-style object to manufacture [`ImportFailureListItem`](crate::model::ImportFailureListItem).
-    pub fn builder() -> crate::model::import_failure_list_item::Builder {
-        crate::model::import_failure_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportFailureStatus`, it is important to ensure
@@ -3511,6 +3529,13 @@ impl EventDataStore {
         self.updated_timestamp.as_ref()
     }
 }
+impl EventDataStore {
+    /// Creates a new builder-style object to manufacture [`EventDataStore`](crate::model::EventDataStore).
+    pub fn builder() -> crate::model::event_data_store::Builder {
+        crate::model::event_data_store::Builder::default()
+    }
+}
+
 /// See [`EventDataStore`](crate::model::EventDataStore).
 pub mod event_data_store {
     
@@ -3671,12 +3696,6 @@ pub mod event_data_store {
     
     
 }
-impl EventDataStore {
-    /// Creates a new builder-style object to manufacture [`EventDataStore`](crate::model::EventDataStore).
-    pub fn builder() -> crate::model::event_data_store::Builder {
-        crate::model::event_data_store::Builder::default()
-    }
-}
 
 /// <p>Contains information about a returned CloudTrail channel.</p>
 #[non_exhaustive]
@@ -3699,6 +3718,13 @@ impl Channel {
         self.name.as_deref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
     
@@ -3740,12 +3766,6 @@ pub mod channel {
     }
     
     
-}
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
 }
 
 /// <p>The settings for a trail.</p>
@@ -3875,6 +3895,13 @@ impl Trail {
         self.is_organization_trail
     }
 }
+impl Trail {
+    /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail).
+    pub fn builder() -> crate::model::trail::Builder {
+        crate::model::trail::Builder::default()
+    }
+}
+
 /// See [`Trail`](crate::model::Trail).
 pub mod trail {
     
@@ -4093,12 +4120,6 @@ pub mod trail {
     
     
 }
-impl Trail {
-    /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail).
-    pub fn builder() -> crate::model::trail::Builder {
-        crate::model::trail::Builder::default()
-    }
-}
 
 /// <p>Metadata about a query, such as the number of results.</p>
 #[non_exhaustive]
@@ -4128,6 +4149,13 @@ impl QueryStatistics {
         self.bytes_scanned
     }
 }
+impl QueryStatistics {
+    /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
+    pub fn builder() -> crate::model::query_statistics::Builder {
+        crate::model::query_statistics::Builder::default()
+    }
+}
+
 /// See [`QueryStatistics`](crate::model::QueryStatistics).
 pub mod query_statistics {
     
@@ -4182,12 +4210,6 @@ pub mod query_statistics {
     
     
 }
-impl QueryStatistics {
-    /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
-    pub fn builder() -> crate::model::query_statistics::Builder {
-        crate::model::query_statistics::Builder::default()
-    }
-}
 
 /// <p>Contains information about the service where CloudTrail delivers events.</p>
 #[non_exhaustive]
@@ -4210,6 +4232,13 @@ impl Destination {
         self.location.as_deref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
     
@@ -4251,12 +4280,6 @@ pub mod destination {
     }
     
     
-}
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DestinationType`, it is important to ensure
@@ -4362,6 +4385,13 @@ impl SourceConfig {
         self.advanced_event_selectors.as_deref()
     }
 }
+impl SourceConfig {
+    /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
+    pub fn builder() -> crate::model::source_config::Builder {
+        crate::model::source_config::Builder::default()
+    }
+}
+
 /// See [`SourceConfig`](crate::model::SourceConfig).
 pub mod source_config {
     
@@ -4409,12 +4439,6 @@ pub mod source_config {
     }
     
     
-}
-impl SourceConfig {
-    /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
-    pub fn builder() -> crate::model::source_config::Builder {
-        crate::model::source_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeliveryStatus`, it is important to ensure
@@ -4576,6 +4600,13 @@ impl QueryStatisticsForDescribeQuery {
         self.creation_time.as_ref()
     }
 }
+impl QueryStatisticsForDescribeQuery {
+    /// Creates a new builder-style object to manufacture [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
+    pub fn builder() -> crate::model::query_statistics_for_describe_query::Builder {
+        crate::model::query_statistics_for_describe_query::Builder::default()
+    }
+}
+
 /// See [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
 pub mod query_statistics_for_describe_query {
     
@@ -4653,11 +4684,5 @@ pub mod query_statistics_for_describe_query {
     }
     
     
-}
-impl QueryStatisticsForDescribeQuery {
-    /// Creates a new builder-style object to manufacture [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
-    pub fn builder() -> crate::model::query_statistics_for_describe_query::Builder {
-        crate::model::query_statistics_for_describe_query::Builder::default()
-    }
 }
 

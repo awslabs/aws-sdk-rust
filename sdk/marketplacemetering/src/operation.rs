@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_meter_usage`](crate::client::Client::batch_meter_usage).
             ///
-            /// See [`crate::client::fluent_builders::BatchMeterUsage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchMeterUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchMeterUsage {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchMeterUsage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`meter_usage`](crate::client::Client::meter_usage).
             ///
-            /// See [`crate::client::fluent_builders::MeterUsage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `MeterUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MeterUsage {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MeterUsage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`register_usage`](crate::client::Client::register_usage).
             ///
-            /// See [`crate::client::fluent_builders::RegisterUsage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RegisterUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterUsage {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterUsage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`resolve_customer`](crate::client::Client::resolve_customer).
             ///
-            /// See [`crate::client::fluent_builders::ResolveCustomer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ResolveCustomer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResolveCustomer {
     _private: ()

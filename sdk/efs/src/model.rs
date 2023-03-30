@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ThroughputMode`, it is important to ensure
@@ -274,6 +275,13 @@ impl FileSystemSize {
         self.value_in_standard
     }
 }
+impl FileSystemSize {
+    /// Creates a new builder-style object to manufacture [`FileSystemSize`](crate::model::FileSystemSize).
+    pub fn builder() -> crate::model::file_system_size::Builder {
+        crate::model::file_system_size::Builder::default()
+    }
+}
+
 /// See [`FileSystemSize`](crate::model::FileSystemSize).
 pub mod file_system_size {
     
@@ -340,12 +348,6 @@ pub mod file_system_size {
     }
     
     
-}
-impl FileSystemSize {
-    /// Creates a new builder-style object to manufacture [`FileSystemSize`](crate::model::FileSystemSize).
-    pub fn builder() -> crate::model::file_system_size::Builder {
-        crate::model::file_system_size::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LifeCycleState`, it is important to ensure
@@ -473,6 +475,13 @@ impl LifecyclePolicy {
         self.transition_to_primary_storage_class.as_ref()
     }
 }
+impl LifecyclePolicy {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicy`](crate::model::LifecyclePolicy).
+    pub fn builder() -> crate::model::lifecycle_policy::Builder {
+        crate::model::lifecycle_policy::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicy`](crate::model::LifecyclePolicy).
 pub mod lifecycle_policy {
     
@@ -514,12 +523,6 @@ pub mod lifecycle_policy {
     }
     
     
-}
-impl LifecyclePolicy {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicy`](crate::model::LifecyclePolicy).
-    pub fn builder() -> crate::model::lifecycle_policy::Builder {
-        crate::model::lifecycle_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TransitionToPrimaryStorageClassRules`, it is important to ensure
@@ -727,6 +730,13 @@ impl BackupPolicy {
         self.status.as_ref()
     }
 }
+impl BackupPolicy {
+    /// Creates a new builder-style object to manufacture [`BackupPolicy`](crate::model::BackupPolicy).
+    pub fn builder() -> crate::model::backup_policy::Builder {
+        crate::model::backup_policy::Builder::default()
+    }
+}
+
 /// See [`BackupPolicy`](crate::model::BackupPolicy).
 pub mod backup_policy {
     
@@ -768,12 +778,6 @@ pub mod backup_policy {
     }
     
     
-}
-impl BackupPolicy {
-    /// Creates a new builder-style object to manufacture [`BackupPolicy`](crate::model::BackupPolicy).
-    pub fn builder() -> crate::model::backup_policy::Builder {
-        crate::model::backup_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Status`, it is important to ensure
@@ -889,6 +893,13 @@ impl ResourceIdPreference {
         self.resources.as_deref()
     }
 }
+impl ResourceIdPreference {
+    /// Creates a new builder-style object to manufacture [`ResourceIdPreference`](crate::model::ResourceIdPreference).
+    pub fn builder() -> crate::model::resource_id_preference::Builder {
+        crate::model::resource_id_preference::Builder::default()
+    }
+}
+
 /// See [`ResourceIdPreference`](crate::model::ResourceIdPreference).
 pub mod resource_id_preference {
     
@@ -936,12 +947,6 @@ pub mod resource_id_preference {
     }
     
     
-}
-impl ResourceIdPreference {
-    /// Creates a new builder-style object to manufacture [`ResourceIdPreference`](crate::model::ResourceIdPreference).
-    pub fn builder() -> crate::model::resource_id_preference::Builder {
-        crate::model::resource_id_preference::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Resource`, it is important to ensure
@@ -1157,6 +1162,13 @@ impl ReplicationConfigurationDescription {
         self.destinations.as_deref()
     }
 }
+impl ReplicationConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
+    pub fn builder() -> crate::model::replication_configuration_description::Builder {
+        crate::model::replication_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
 pub mod replication_configuration_description {
     
@@ -1253,12 +1265,6 @@ pub mod replication_configuration_description {
     
     
 }
-impl ReplicationConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationDescription`](crate::model::ReplicationConfigurationDescription).
-    pub fn builder() -> crate::model::replication_configuration_description::Builder {
-        crate::model::replication_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes the destination file system in the replication configuration.</p>
 #[non_exhaustive]
@@ -1295,6 +1301,13 @@ impl Destination {
         self.last_replicated_timestamp.as_ref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
     
@@ -1360,12 +1373,6 @@ pub mod destination {
     }
     
     
-}
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationStatus`, it is important to ensure
@@ -1537,6 +1544,13 @@ impl MountTargetDescription {
         self.vpc_id.as_deref()
     }
 }
+impl MountTargetDescription {
+    /// Creates a new builder-style object to manufacture [`MountTargetDescription`](crate::model::MountTargetDescription).
+    pub fn builder() -> crate::model::mount_target_description::Builder {
+        crate::model::mount_target_description::Builder::default()
+    }
+}
+
 /// See [`MountTargetDescription`](crate::model::MountTargetDescription).
 pub mod mount_target_description {
     
@@ -1675,12 +1689,6 @@ pub mod mount_target_description {
     
     
 }
-impl MountTargetDescription {
-    /// Creates a new builder-style object to manufacture [`MountTargetDescription`](crate::model::MountTargetDescription).
-    pub fn builder() -> crate::model::mount_target_description::Builder {
-        crate::model::mount_target_description::Builder::default()
-    }
-}
 
 /// <p>A description of the file system.</p>
 #[non_exhaustive]
@@ -1808,6 +1816,13 @@ impl FileSystemDescription {
         self.tags.as_deref()
     }
 }
+impl FileSystemDescription {
+    /// Creates a new builder-style object to manufacture [`FileSystemDescription`](crate::model::FileSystemDescription).
+    pub fn builder() -> crate::model::file_system_description::Builder {
+        crate::model::file_system_description::Builder::default()
+    }
+}
+
 /// See [`FileSystemDescription`](crate::model::FileSystemDescription).
 pub mod file_system_description {
     
@@ -2037,12 +2052,6 @@ pub mod file_system_description {
     
     
 }
-impl FileSystemDescription {
-    /// Creates a new builder-style object to manufacture [`FileSystemDescription`](crate::model::FileSystemDescription).
-    pub fn builder() -> crate::model::file_system_description::Builder {
-        crate::model::file_system_description::Builder::default()
-    }
-}
 
 /// <p>Provides a description of an EFS file system access point.</p>
 #[non_exhaustive]
@@ -2121,6 +2130,13 @@ impl AccessPointDescription {
         self.life_cycle_state.as_ref()
     }
 }
+impl AccessPointDescription {
+    /// Creates a new builder-style object to manufacture [`AccessPointDescription`](crate::model::AccessPointDescription).
+    pub fn builder() -> crate::model::access_point_description::Builder {
+        crate::model::access_point_description::Builder::default()
+    }
+}
+
 /// See [`AccessPointDescription`](crate::model::AccessPointDescription).
 pub mod access_point_description {
     
@@ -2265,12 +2281,6 @@ pub mod access_point_description {
     
     
 }
-impl AccessPointDescription {
-    /// Creates a new builder-style object to manufacture [`AccessPointDescription`](crate::model::AccessPointDescription).
-    pub fn builder() -> crate::model::access_point_description::Builder {
-        crate::model::access_point_description::Builder::default()
-    }
-}
 
 /// <p>Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories.</p>
 #[non_exhaustive]
@@ -2297,6 +2307,13 @@ impl RootDirectory {
         self.creation_info.as_ref()
     }
 }
+impl RootDirectory {
+    /// Creates a new builder-style object to manufacture [`RootDirectory`](crate::model::RootDirectory).
+    pub fn builder() -> crate::model::root_directory::Builder {
+        crate::model::root_directory::Builder::default()
+    }
+}
+
 /// See [`RootDirectory`](crate::model::RootDirectory).
 pub mod root_directory {
     
@@ -2343,12 +2360,6 @@ pub mod root_directory {
     
     
 }
-impl RootDirectory {
-    /// Creates a new builder-style object to manufacture [`RootDirectory`](crate::model::RootDirectory).
-    pub fn builder() -> crate::model::root_directory::Builder {
-        crate::model::root_directory::Builder::default()
-    }
-}
 
 /// <p>Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates it with these settings when a client connects to the access point. When specifying <code>CreationInfo</code>, you must include values for all properties. </p> 
 /// <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p> <important> 
@@ -2381,6 +2392,13 @@ impl CreationInfo {
         self.permissions.as_deref()
     }
 }
+impl CreationInfo {
+    /// Creates a new builder-style object to manufacture [`CreationInfo`](crate::model::CreationInfo).
+    pub fn builder() -> crate::model::creation_info::Builder {
+        crate::model::creation_info::Builder::default()
+    }
+}
+
 /// See [`CreationInfo`](crate::model::CreationInfo).
 pub mod creation_info {
     
@@ -2435,12 +2453,6 @@ pub mod creation_info {
     
     
 }
-impl CreationInfo {
-    /// Creates a new builder-style object to manufacture [`CreationInfo`](crate::model::CreationInfo).
-    pub fn builder() -> crate::model::creation_info::Builder {
-        crate::model::creation_info::Builder::default()
-    }
-}
 
 /// <p>The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.</p>
 #[non_exhaustive]
@@ -2470,6 +2482,13 @@ impl PosixUser {
         self.secondary_gids.as_deref()
     }
 }
+impl PosixUser {
+    /// Creates a new builder-style object to manufacture [`PosixUser`](crate::model::PosixUser).
+    pub fn builder() -> crate::model::posix_user::Builder {
+        crate::model::posix_user::Builder::default()
+    }
+}
+
 /// See [`PosixUser`](crate::model::PosixUser).
 pub mod posix_user {
     
@@ -2530,12 +2549,6 @@ pub mod posix_user {
     
     
 }
-impl PosixUser {
-    /// Creates a new builder-style object to manufacture [`PosixUser`](crate::model::PosixUser).
-    pub fn builder() -> crate::model::posix_user::Builder {
-        crate::model::posix_user::Builder::default()
-    }
-}
 
 /// <p>Describes the destination file system to create in the replication configuration.</p>
 #[non_exhaustive]
@@ -2577,6 +2590,13 @@ impl DestinationToCreate {
         self.kms_key_id.as_deref()
     }
 }
+impl DestinationToCreate {
+    /// Creates a new builder-style object to manufacture [`DestinationToCreate`](crate::model::DestinationToCreate).
+    pub fn builder() -> crate::model::destination_to_create::Builder {
+        crate::model::destination_to_create::Builder::default()
+    }
+}
+
 /// See [`DestinationToCreate`](crate::model::DestinationToCreate).
 pub mod destination_to_create {
     
@@ -2642,11 +2662,5 @@ pub mod destination_to_create {
     }
     
     
-}
-impl DestinationToCreate {
-    /// Creates a new builder-style object to manufacture [`DestinationToCreate`](crate::model::DestinationToCreate).
-    pub fn builder() -> crate::model::destination_to_create::Builder {
-        crate::model::destination_to_create::Builder::default()
-    }
 }
 

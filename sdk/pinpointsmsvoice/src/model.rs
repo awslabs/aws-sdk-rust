@@ -42,6 +42,13 @@ impl EventDestinationDefinition {
         self.sns_destination.as_ref()
     }
 }
+impl EventDestinationDefinition {
+    /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
+    pub fn builder() -> crate::model::event_destination_definition::Builder {
+        crate::model::event_destination_definition::Builder::default()
+    }
+}
+
 /// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
 pub mod event_destination_definition {
     
@@ -127,12 +134,6 @@ pub mod event_destination_definition {
     
     
 }
-impl EventDestinationDefinition {
-    /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
-    pub fn builder() -> crate::model::event_destination_definition::Builder {
-        crate::model::event_destination_definition::Builder::default()
-    }
-}
 
 /// An object that contains information about an event destination that sends data to Amazon SNS.
 #[non_exhaustive]
@@ -148,6 +149,13 @@ impl SnsDestination {
         self.topic_arn.as_deref()
     }
 }
+impl SnsDestination {
+    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
+    pub fn builder() -> crate::model::sns_destination::Builder {
+        crate::model::sns_destination::Builder::default()
+    }
+}
+
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
     
@@ -177,12 +185,6 @@ pub mod sns_destination {
     }
     
     
-}
-impl SnsDestination {
-    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
-    pub fn builder() -> crate::model::sns_destination::Builder {
-        crate::model::sns_destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventType`, it is important to ensure
@@ -313,6 +315,13 @@ impl KinesisFirehoseDestination {
         self.iam_role_arn.as_deref()
     }
 }
+impl KinesisFirehoseDestination {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
+    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
+        crate::model::kinesis_firehose_destination::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
     
@@ -355,12 +364,6 @@ pub mod kinesis_firehose_destination {
     
     
 }
-impl KinesisFirehoseDestination {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
-    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
-        crate::model::kinesis_firehose_destination::Builder::default()
-    }
-}
 
 /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
 #[non_exhaustive]
@@ -383,6 +386,13 @@ impl CloudWatchLogsDestination {
         self.log_group_arn.as_deref()
     }
 }
+impl CloudWatchLogsDestination {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
+        crate::model::cloud_watch_logs_destination::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
     
@@ -425,12 +435,6 @@ pub mod cloud_watch_logs_destination {
     
     
 }
-impl CloudWatchLogsDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
-    pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
-        crate::model::cloud_watch_logs_destination::Builder::default()
-    }
-}
 
 /// An object that contains a voice message and information about the recipient that you want to send it to.
 #[non_exhaustive]
@@ -460,6 +464,13 @@ impl VoiceMessageContent {
         self.ssml_message.as_ref()
     }
 }
+impl VoiceMessageContent {
+    /// Creates a new builder-style object to manufacture [`VoiceMessageContent`](crate::model::VoiceMessageContent).
+    pub fn builder() -> crate::model::voice_message_content::Builder {
+        crate::model::voice_message_content::Builder::default()
+    }
+}
+
 /// See [`VoiceMessageContent`](crate::model::VoiceMessageContent).
 pub mod voice_message_content {
     
@@ -514,12 +525,6 @@ pub mod voice_message_content {
     
     
 }
-impl VoiceMessageContent {
-    /// Creates a new builder-style object to manufacture [`VoiceMessageContent`](crate::model::VoiceMessageContent).
-    pub fn builder() -> crate::model::voice_message_content::Builder {
-        crate::model::voice_message_content::Builder::default()
-    }
-}
 
 /// An object that defines a message that contains SSML-formatted text.
 #[non_exhaustive]
@@ -549,6 +554,13 @@ impl SsmlMessageType {
         self.voice_id.as_deref()
     }
 }
+impl SsmlMessageType {
+    /// Creates a new builder-style object to manufacture [`SsmlMessageType`](crate::model::SsmlMessageType).
+    pub fn builder() -> crate::model::ssml_message_type::Builder {
+        crate::model::ssml_message_type::Builder::default()
+    }
+}
+
 /// See [`SsmlMessageType`](crate::model::SsmlMessageType).
 pub mod ssml_message_type {
     
@@ -603,12 +615,6 @@ pub mod ssml_message_type {
     
     
 }
-impl SsmlMessageType {
-    /// Creates a new builder-style object to manufacture [`SsmlMessageType`](crate::model::SsmlMessageType).
-    pub fn builder() -> crate::model::ssml_message_type::Builder {
-        crate::model::ssml_message_type::Builder::default()
-    }
-}
 
 /// An object that defines a message that contains unformatted text.
 #[non_exhaustive]
@@ -638,6 +644,13 @@ impl PlainTextMessageType {
         self.voice_id.as_deref()
     }
 }
+impl PlainTextMessageType {
+    /// Creates a new builder-style object to manufacture [`PlainTextMessageType`](crate::model::PlainTextMessageType).
+    pub fn builder() -> crate::model::plain_text_message_type::Builder {
+        crate::model::plain_text_message_type::Builder::default()
+    }
+}
+
 /// See [`PlainTextMessageType`](crate::model::PlainTextMessageType).
 pub mod plain_text_message_type {
     
@@ -692,12 +705,6 @@ pub mod plain_text_message_type {
     
     
 }
-impl PlainTextMessageType {
-    /// Creates a new builder-style object to manufacture [`PlainTextMessageType`](crate::model::PlainTextMessageType).
-    pub fn builder() -> crate::model::plain_text_message_type::Builder {
-        crate::model::plain_text_message_type::Builder::default()
-    }
-}
 
 /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
 #[non_exhaustive]
@@ -713,6 +720,13 @@ impl CallInstructionsMessageType {
         self.text.as_deref()
     }
 }
+impl CallInstructionsMessageType {
+    /// Creates a new builder-style object to manufacture [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
+    pub fn builder() -> crate::model::call_instructions_message_type::Builder {
+        crate::model::call_instructions_message_type::Builder::default()
+    }
+}
+
 /// See [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
 pub mod call_instructions_message_type {
     
@@ -742,12 +756,6 @@ pub mod call_instructions_message_type {
     }
     
     
-}
-impl CallInstructionsMessageType {
-    /// Creates a new builder-style object to manufacture [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
-    pub fn builder() -> crate::model::call_instructions_message_type::Builder {
-        crate::model::call_instructions_message_type::Builder::default()
-    }
 }
 
 /// An object that defines an event destination.
@@ -799,6 +807,13 @@ impl EventDestination {
         self.sns_destination.as_ref()
     }
 }
+impl EventDestination {
+    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
+    pub fn builder() -> crate::model::event_destination::Builder {
+        crate::model::event_destination::Builder::default()
+    }
+}
+
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
     
@@ -895,11 +910,5 @@ pub mod event_destination {
     }
     
     
-}
-impl EventDestination {
-    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
-    pub fn builder() -> crate::model::event_destination::Builder {
-        crate::model::event_destination::Builder::default()
-    }
 }
 

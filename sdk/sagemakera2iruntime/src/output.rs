@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for StopHumanLoopOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopHumanLoopOutput {
+    /// Creates a new builder-style object to manufacture [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
+    pub fn builder() -> crate::output::stop_human_loop_output::Builder {
+        crate::output::stop_human_loop_output::Builder::default()
+    }
+}
+
 /// See [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
 pub mod stop_human_loop_output {
     
@@ -39,12 +46,6 @@ pub mod stop_human_loop_output {
     
     
 }
-impl StopHumanLoopOutput {
-    /// Creates a new builder-style object to manufacture [`StopHumanLoopOutput`](crate::output::StopHumanLoopOutput).
-    pub fn builder() -> crate::output::stop_human_loop_output::Builder {
-        crate::output::stop_human_loop_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -66,6 +67,13 @@ impl aws_http::request_id::RequestId for StartHumanLoopOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartHumanLoopOutput {
+    /// Creates a new builder-style object to manufacture [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
+    pub fn builder() -> crate::output::start_human_loop_output::Builder {
+        crate::output::start_human_loop_output::Builder::default()
+    }
+}
+
 /// See [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
 pub mod start_human_loop_output {
     
@@ -107,12 +115,6 @@ pub mod start_human_loop_output {
     
     
 }
-impl StartHumanLoopOutput {
-    /// Creates a new builder-style object to manufacture [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput).
-    pub fn builder() -> crate::output::start_human_loop_output::Builder {
-        crate::output::start_human_loop_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -141,6 +143,13 @@ impl aws_http::request_id::RequestId for ListHumanLoopsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListHumanLoopsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
+    pub fn builder() -> crate::output::list_human_loops_output::Builder {
+        crate::output::list_human_loops_output::Builder::default()
+    }
+}
+
 /// See [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
 pub mod list_human_loops_output {
     
@@ -199,12 +208,6 @@ pub mod list_human_loops_output {
     }
     
     
-}
-impl ListHumanLoopsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput).
-    pub fn builder() -> crate::output::list_human_loops_output::Builder {
-        crate::output::list_human_loops_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -278,6 +281,13 @@ impl aws_http::request_id::RequestId for DescribeHumanLoopOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeHumanLoopOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
+    pub fn builder() -> crate::output::describe_human_loop_output::Builder {
+        crate::output::describe_human_loop_output::Builder::default()
+    }
+}
+
 /// See [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
 pub mod describe_human_loop_output {
     
@@ -405,12 +415,6 @@ pub mod describe_human_loop_output {
     
     
 }
-impl DescribeHumanLoopOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput).
-    pub fn builder() -> crate::output::describe_human_loop_output::Builder {
-        crate::output::describe_human_loop_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -423,6 +427,13 @@ impl aws_http::request_id::RequestId for DeleteHumanLoopOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteHumanLoopOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
+    pub fn builder() -> crate::output::delete_human_loop_output::Builder {
+        crate::output::delete_human_loop_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
 pub mod delete_human_loop_output {
     
@@ -451,11 +462,5 @@ pub mod delete_human_loop_output {
     }
     
     
-}
-impl DeleteHumanLoopOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHumanLoopOutput`](crate::output::DeleteHumanLoopOutput).
-    pub fn builder() -> crate::output::delete_human_loop_output::Builder {
-        crate::output::delete_human_loop_output::Builder::default()
-    }
 }
 

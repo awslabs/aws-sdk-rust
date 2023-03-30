@@ -153,6 +153,13 @@ impl Source {
         self.revision.as_deref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
     
@@ -264,12 +271,6 @@ pub mod source {
     }
     
     
-}
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceType`, it is important to ensure
@@ -385,6 +386,13 @@ impl ChefConfiguration {
         self.berkshelf_version.as_deref()
     }
 }
+impl ChefConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChefConfiguration`](crate::model::ChefConfiguration).
+    pub fn builder() -> crate::model::chef_configuration::Builder {
+        crate::model::chef_configuration::Builder::default()
+    }
+}
+
 /// See [`ChefConfiguration`](crate::model::ChefConfiguration).
 pub mod chef_configuration {
     
@@ -427,12 +435,6 @@ pub mod chef_configuration {
     
     
 }
-impl ChefConfiguration {
-    /// Creates a new builder-style object to manufacture [`ChefConfiguration`](crate::model::ChefConfiguration).
-    pub fn builder() -> crate::model::chef_configuration::Builder {
-        crate::model::chef_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration manager.</p>
 #[non_exhaustive]
@@ -455,6 +457,13 @@ impl StackConfigurationManager {
         self.version.as_deref()
     }
 }
+impl StackConfigurationManager {
+    /// Creates a new builder-style object to manufacture [`StackConfigurationManager`](crate::model::StackConfigurationManager).
+    pub fn builder() -> crate::model::stack_configuration_manager::Builder {
+        crate::model::stack_configuration_manager::Builder::default()
+    }
+}
+
 /// See [`StackConfigurationManager`](crate::model::StackConfigurationManager).
 pub mod stack_configuration_manager {
     
@@ -496,12 +505,6 @@ pub mod stack_configuration_manager {
     }
     
     
-}
-impl StackConfigurationManager {
-    /// Creates a new builder-style object to manufacture [`StackConfigurationManager`](crate::model::StackConfigurationManager).
-    pub fn builder() -> crate::model::stack_configuration_manager::Builder {
-        crate::model::stack_configuration_manager::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StackAttributesKeys`, it is important to ensure
@@ -595,6 +598,13 @@ impl LifecycleEventConfiguration {
         self.shutdown.as_ref()
     }
 }
+impl LifecycleEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
+    pub fn builder() -> crate::model::lifecycle_event_configuration::Builder {
+        crate::model::lifecycle_event_configuration::Builder::default()
+    }
+}
+
 /// See [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
 pub mod lifecycle_event_configuration {
     
@@ -625,12 +635,6 @@ pub mod lifecycle_event_configuration {
     
     
 }
-impl LifecycleEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`LifecycleEventConfiguration`](crate::model::LifecycleEventConfiguration).
-    pub fn builder() -> crate::model::lifecycle_event_configuration::Builder {
-        crate::model::lifecycle_event_configuration::Builder::default()
-    }
-}
 
 /// <p>The Shutdown event configuration.</p>
 #[non_exhaustive]
@@ -653,6 +657,13 @@ impl ShutdownEventConfiguration {
         self.delay_until_elb_connections_drained
     }
 }
+impl ShutdownEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
+    pub fn builder() -> crate::model::shutdown_event_configuration::Builder {
+        crate::model::shutdown_event_configuration::Builder::default()
+    }
+}
+
 /// See [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
 pub mod shutdown_event_configuration {
     
@@ -694,12 +705,6 @@ pub mod shutdown_event_configuration {
     }
     
     
-}
-impl ShutdownEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`ShutdownEventConfiguration`](crate::model::ShutdownEventConfiguration).
-    pub fn builder() -> crate::model::shutdown_event_configuration::Builder {
-        crate::model::shutdown_event_configuration::Builder::default()
-    }
 }
 
 /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events. </p> 
@@ -745,6 +750,13 @@ impl Recipes {
         self.shutdown.as_deref()
     }
 }
+impl Recipes {
+    /// Creates a new builder-style object to manufacture [`Recipes`](crate::model::Recipes).
+    pub fn builder() -> crate::model::recipes::Builder {
+        crate::model::recipes::Builder::default()
+    }
+}
+
 /// See [`Recipes`](crate::model::Recipes).
 pub mod recipes {
     
@@ -853,12 +865,6 @@ pub mod recipes {
     
     
 }
-impl Recipes {
-    /// Creates a new builder-style object to manufacture [`Recipes`](crate::model::Recipes).
-    pub fn builder() -> crate::model::recipes::Builder {
-        crate::model::recipes::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon EBS volume configuration.</p>
 #[non_exhaustive]
@@ -930,6 +936,13 @@ impl VolumeConfiguration {
         self.encrypted
     }
 }
+impl VolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    pub fn builder() -> crate::model::volume_configuration::Builder {
+        crate::model::volume_configuration::Builder::default()
+    }
+}
+
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
 pub mod volume_configuration {
     
@@ -1046,12 +1059,6 @@ pub mod volume_configuration {
     
     
 }
-impl VolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
-    pub fn builder() -> crate::model::volume_configuration::Builder {
-        crate::model::volume_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer.</p>
 #[non_exhaustive]
@@ -1074,6 +1081,13 @@ impl CloudWatchLogsConfiguration {
         self.log_streams.as_deref()
     }
 }
+impl CloudWatchLogsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_logs_configuration::Builder {
+        crate::model::cloud_watch_logs_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
 pub mod cloud_watch_logs_configuration {
     
@@ -1121,12 +1135,6 @@ pub mod cloud_watch_logs_configuration {
     }
     
     
-}
-impl CloudWatchLogsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsConfiguration`](crate::model::CloudWatchLogsConfiguration).
-    pub fn builder() -> crate::model::cloud_watch_logs_configuration::Builder {
-        crate::model::cloud_watch_logs_configuration::Builder::default()
-    }
 }
 
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
@@ -1217,6 +1225,13 @@ impl CloudWatchLogsLogStream {
         self.batch_size
     }
 }
+impl CloudWatchLogsLogStream {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
+    pub fn builder() -> crate::model::cloud_watch_logs_log_stream::Builder {
+        crate::model::cloud_watch_logs_log_stream::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
 pub mod cloud_watch_logs_log_stream {
     
@@ -1370,12 +1385,6 @@ pub mod cloud_watch_logs_log_stream {
     }
     
     
-}
-impl CloudWatchLogsLogStream {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogStream`](crate::model::CloudWatchLogsLogStream).
-    pub fn builder() -> crate::model::cloud_watch_logs_log_stream::Builder {
-        crate::model::cloud_watch_logs_log_stream::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloudWatchLogsEncoding`, it is important to ensure
@@ -2463,6 +2472,13 @@ impl EnvironmentVariable {
         self.secure
     }
 }
+impl EnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`EnvironmentVariable`](crate::model::EnvironmentVariable).
+    pub fn builder() -> crate::model::environment_variable::Builder {
+        crate::model::environment_variable::Builder::default()
+    }
+}
+
 /// See [`EnvironmentVariable`](crate::model::EnvironmentVariable).
 pub mod environment_variable {
     
@@ -2516,12 +2532,6 @@ pub mod environment_variable {
     }
     
     
-}
-impl EnvironmentVariable {
-    /// Creates a new builder-style object to manufacture [`EnvironmentVariable`](crate::model::EnvironmentVariable).
-    pub fn builder() -> crate::model::environment_variable::Builder {
-        crate::model::environment_variable::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AppAttributesKeys`, it is important to ensure
@@ -2644,6 +2654,13 @@ impl SslConfiguration {
         self.chain.as_deref()
     }
 }
+impl SslConfiguration {
+    /// Creates a new builder-style object to manufacture [`SslConfiguration`](crate::model::SslConfiguration).
+    pub fn builder() -> crate::model::ssl_configuration::Builder {
+        crate::model::ssl_configuration::Builder::default()
+    }
+}
+
 /// See [`SslConfiguration`](crate::model::SslConfiguration).
 pub mod ssl_configuration {
     
@@ -2697,12 +2714,6 @@ pub mod ssl_configuration {
     }
     
     
-}
-impl SslConfiguration {
-    /// Creates a new builder-style object to manufacture [`SslConfiguration`](crate::model::SslConfiguration).
-    pub fn builder() -> crate::model::ssl_configuration::Builder {
-        crate::model::ssl_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AppType`, it is important to ensure
@@ -2840,6 +2851,13 @@ impl DataSource {
         self.database_name.as_deref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
     
@@ -2893,12 +2911,6 @@ pub mod data_source {
     }
     
     
-}
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
-    }
 }
 
 /// <p>Describes a time-based instance's auto scaling schedule. The schedule consists of a set of key-value pairs.</p> 
@@ -2964,6 +2976,13 @@ impl WeeklyAutoScalingSchedule {
         self.sunday.as_ref()
     }
 }
+impl WeeklyAutoScalingSchedule {
+    /// Creates a new builder-style object to manufacture [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
+    pub fn builder() -> crate::model::weekly_auto_scaling_schedule::Builder {
+        crate::model::weekly_auto_scaling_schedule::Builder::default()
+    }
+}
+
 /// See [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
 pub mod weekly_auto_scaling_schedule {
     
@@ -3108,12 +3127,6 @@ pub mod weekly_auto_scaling_schedule {
     
     
 }
-impl WeeklyAutoScalingSchedule {
-    /// Creates a new builder-style object to manufacture [`WeeklyAutoScalingSchedule`](crate::model::WeeklyAutoScalingSchedule).
-    pub fn builder() -> crate::model::weekly_auto_scaling_schedule::Builder {
-        crate::model::weekly_auto_scaling_schedule::Builder::default()
-    }
-}
 
 /// <p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.</p>
 #[non_exhaustive]
@@ -3175,6 +3188,13 @@ impl AutoScalingThresholds {
         self.alarms.as_deref()
     }
 }
+impl AutoScalingThresholds {
+    /// Creates a new builder-style object to manufacture [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
+    pub fn builder() -> crate::model::auto_scaling_thresholds::Builder {
+        crate::model::auto_scaling_thresholds::Builder::default()
+    }
+}
+
 /// See [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
 pub mod auto_scaling_thresholds {
     
@@ -3287,12 +3307,6 @@ pub mod auto_scaling_thresholds {
     
     
 }
-impl AutoScalingThresholds {
-    /// Creates a new builder-style object to manufacture [`AutoScalingThresholds`](crate::model::AutoScalingThresholds).
-    pub fn builder() -> crate::model::auto_scaling_thresholds::Builder {
-        crate::model::auto_scaling_thresholds::Builder::default()
-    }
-}
 
 /// <p>Contains a description of an Amazon EC2 instance from the Amazon EC2 metadata service. For more information, see <a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/Index.html">Instance Metadata and User Data</a>.</p>
 #[non_exhaustive]
@@ -3315,6 +3329,13 @@ impl InstanceIdentity {
         self.signature.as_deref()
     }
 }
+impl InstanceIdentity {
+    /// Creates a new builder-style object to manufacture [`InstanceIdentity`](crate::model::InstanceIdentity).
+    pub fn builder() -> crate::model::instance_identity::Builder {
+        crate::model::instance_identity::Builder::default()
+    }
+}
+
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
 pub mod instance_identity {
     
@@ -3357,12 +3378,6 @@ pub mod instance_identity {
     
     
 }
-impl InstanceIdentity {
-    /// Creates a new builder-style object to manufacture [`InstanceIdentity`](crate::model::InstanceIdentity).
-    pub fn builder() -> crate::model::instance_identity::Builder {
-        crate::model::instance_identity::Builder::default()
-    }
-}
 
 /// <p>Contains the data needed by RDP clients such as the Microsoft Remote Desktop Connection to log in to the instance.</p>
 #[non_exhaustive]
@@ -3399,6 +3414,13 @@ impl TemporaryCredential {
         self.instance_id.as_deref()
     }
 }
+impl TemporaryCredential {
+    /// Creates a new builder-style object to manufacture [`TemporaryCredential`](crate::model::TemporaryCredential).
+    pub fn builder() -> crate::model::temporary_credential::Builder {
+        crate::model::temporary_credential::Builder::default()
+    }
+}
+
 /// See [`TemporaryCredential`](crate::model::TemporaryCredential).
 pub mod temporary_credential {
     
@@ -3464,12 +3486,6 @@ pub mod temporary_credential {
     }
     
     
-}
-impl TemporaryCredential {
-    /// Creates a new builder-style object to manufacture [`TemporaryCredential`](crate::model::TemporaryCredential).
-    pub fn builder() -> crate::model::temporary_credential::Builder {
-        crate::model::temporary_credential::Builder::default()
-    }
 }
 
 /// <p>Describes an instance's Amazon EBS volume.</p>
@@ -3591,6 +3607,13 @@ impl Volume {
         self.encrypted
     }
 }
+impl Volume {
+    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
+    pub fn builder() -> crate::model::volume::Builder {
+        crate::model::volume::Builder::default()
+    }
+}
+
 /// See [`Volume`](crate::model::Volume).
 pub mod volume {
     
@@ -3791,12 +3814,6 @@ pub mod volume {
     
     
 }
-impl Volume {
-    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
-    pub fn builder() -> crate::model::volume::Builder {
-        crate::model::volume::Builder::default()
-    }
-}
 
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
@@ -3840,6 +3857,13 @@ impl UserProfile {
         self.allow_self_management
     }
 }
+impl UserProfile {
+    /// Creates a new builder-style object to manufacture [`UserProfile`](crate::model::UserProfile).
+    pub fn builder() -> crate::model::user_profile::Builder {
+        crate::model::user_profile::Builder::default()
+    }
+}
+
 /// See [`UserProfile`](crate::model::UserProfile).
 pub mod user_profile {
     
@@ -3918,12 +3942,6 @@ pub mod user_profile {
     
     
 }
-impl UserProfile {
-    /// Creates a new builder-style object to manufacture [`UserProfile`](crate::model::UserProfile).
-    pub fn builder() -> crate::model::user_profile::Builder {
-        crate::model::user_profile::Builder::default()
-    }
-}
 
 /// <p>Describes an instance's time-based auto scaling configuration.</p>
 #[non_exhaustive]
@@ -3946,6 +3964,13 @@ impl TimeBasedAutoScalingConfiguration {
         self.auto_scaling_schedule.as_ref()
     }
 }
+impl TimeBasedAutoScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
+    pub fn builder() -> crate::model::time_based_auto_scaling_configuration::Builder {
+        crate::model::time_based_auto_scaling_configuration::Builder::default()
+    }
+}
+
 /// See [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
 pub mod time_based_auto_scaling_configuration {
     
@@ -3987,12 +4012,6 @@ pub mod time_based_auto_scaling_configuration {
     }
     
     
-}
-impl TimeBasedAutoScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`TimeBasedAutoScalingConfiguration`](crate::model::TimeBasedAutoScalingConfiguration).
-    pub fn builder() -> crate::model::time_based_auto_scaling_configuration::Builder {
-        crate::model::time_based_auto_scaling_configuration::Builder::default()
-    }
 }
 
 /// <p>Summarizes the number of layers, instances, and apps in a stack.</p>
@@ -4044,6 +4063,13 @@ impl StackSummary {
         self.instances_count.as_ref()
     }
 }
+impl StackSummary {
+    /// Creates a new builder-style object to manufacture [`StackSummary`](crate::model::StackSummary).
+    pub fn builder() -> crate::model::stack_summary::Builder {
+        crate::model::stack_summary::Builder::default()
+    }
+}
+
 /// See [`StackSummary`](crate::model::StackSummary).
 pub mod stack_summary {
     
@@ -4133,12 +4159,6 @@ pub mod stack_summary {
     }
     
     
-}
-impl StackSummary {
-    /// Creates a new builder-style object to manufacture [`StackSummary`](crate::model::StackSummary).
-    pub fn builder() -> crate::model::stack_summary::Builder {
-        crate::model::stack_summary::Builder::default()
-    }
 }
 
 /// <p>Describes how many instances a stack has for each status.</p>
@@ -4288,6 +4308,13 @@ impl InstancesCount {
         self.unassigning
     }
 }
+impl InstancesCount {
+    /// Creates a new builder-style object to manufacture [`InstancesCount`](crate::model::InstancesCount).
+    pub fn builder() -> crate::model::instances_count::Builder {
+        crate::model::instances_count::Builder::default()
+    }
+}
+
 /// See [`InstancesCount`](crate::model::InstancesCount).
 pub mod instances_count {
     
@@ -4546,12 +4573,6 @@ pub mod instances_count {
     
     
 }
-impl InstancesCount {
-    /// Creates a new builder-style object to manufacture [`InstancesCount`](crate::model::InstancesCount).
-    pub fn builder() -> crate::model::instances_count::Builder {
-        crate::model::instances_count::Builder::default()
-    }
-}
 
 /// <p>Describes a stack.</p>
 #[non_exhaustive]
@@ -4718,6 +4739,13 @@ impl Stack {
         self.agent_version.as_deref()
     }
 }
+impl Stack {
+    /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
+    pub fn builder() -> crate::model::stack::Builder {
+        crate::model::stack::Builder::default()
+    }
+}
+
 /// See [`Stack`](crate::model::Stack).
 pub mod stack {
     
@@ -5010,12 +5038,6 @@ pub mod stack {
     
     
 }
-impl Stack {
-    /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
-    pub fn builder() -> crate::model::stack::Builder {
-        crate::model::stack::Builder::default()
-    }
-}
 
 /// <p>Describes an AWS OpsWorks Stacks service error.</p>
 #[non_exhaustive]
@@ -5066,6 +5088,13 @@ impl ServiceError {
         self.created_at.as_deref()
     }
 }
+impl ServiceError {
+    /// Creates a new builder-style object to manufacture [`ServiceError`](crate::model::ServiceError).
+    pub fn builder() -> crate::model::service_error::Builder {
+        crate::model::service_error::Builder::default()
+    }
+}
+
 /// See [`ServiceError`](crate::model::ServiceError).
 pub mod service_error {
     
@@ -5156,12 +5185,6 @@ pub mod service_error {
     
     
 }
-impl ServiceError {
-    /// Creates a new builder-style object to manufacture [`ServiceError`](crate::model::ServiceError).
-    pub fn builder() -> crate::model::service_error::Builder {
-        crate::model::service_error::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon RDS instance.</p>
 #[non_exhaustive]
@@ -5233,6 +5256,13 @@ impl RdsDbInstance {
         self.missing_on_rds
     }
 }
+impl RdsDbInstance {
+    /// Creates a new builder-style object to manufacture [`RdsDbInstance`](crate::model::RdsDbInstance).
+    pub fn builder() -> crate::model::rds_db_instance::Builder {
+        crate::model::rds_db_instance::Builder::default()
+    }
+}
+
 /// See [`RdsDbInstance`](crate::model::RdsDbInstance).
 pub mod rds_db_instance {
     
@@ -5359,12 +5389,6 @@ pub mod rds_db_instance {
     
     
 }
-impl RdsDbInstance {
-    /// Creates a new builder-style object to manufacture [`RdsDbInstance`](crate::model::RdsDbInstance).
-    pub fn builder() -> crate::model::rds_db_instance::Builder {
-        crate::model::rds_db_instance::Builder::default()
-    }
-}
 
 /// <p>Describes an instance's RAID array.</p>
 #[non_exhaustive]
@@ -5464,6 +5488,13 @@ impl RaidArray {
         self.iops
     }
 }
+impl RaidArray {
+    /// Creates a new builder-style object to manufacture [`RaidArray`](crate::model::RaidArray).
+    pub fn builder() -> crate::model::raid_array::Builder {
+        crate::model::raid_array::Builder::default()
+    }
+}
+
 /// See [`RaidArray`](crate::model::RaidArray).
 pub mod raid_array {
     
@@ -5638,12 +5669,6 @@ pub mod raid_array {
     
     
 }
-impl RaidArray {
-    /// Creates a new builder-style object to manufacture [`RaidArray`](crate::model::RaidArray).
-    pub fn builder() -> crate::model::raid_array::Builder {
-        crate::model::raid_array::Builder::default()
-    }
-}
 
 /// <p>Describes stack or user permissions.</p>
 #[non_exhaustive]
@@ -5703,6 +5728,13 @@ impl Permission {
         self.level.as_deref()
     }
 }
+impl Permission {
+    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
+    pub fn builder() -> crate::model::permission::Builder {
+        crate::model::permission::Builder::default()
+    }
+}
+
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
     
@@ -5797,12 +5829,6 @@ pub mod permission {
     
     
 }
-impl Permission {
-    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
-    pub fn builder() -> crate::model::permission::Builder {
-        crate::model::permission::Builder::default()
-    }
-}
 
 /// <p>Describes supported operating systems in AWS OpsWorks Stacks.</p>
 #[non_exhaustive]
@@ -5860,6 +5886,13 @@ impl OperatingSystem {
         self.supported
     }
 }
+impl OperatingSystem {
+    /// Creates a new builder-style object to manufacture [`OperatingSystem`](crate::model::OperatingSystem).
+    pub fn builder() -> crate::model::operating_system::Builder {
+        crate::model::operating_system::Builder::default()
+    }
+}
+
 /// See [`OperatingSystem`](crate::model::OperatingSystem).
 pub mod operating_system {
     
@@ -5968,12 +6001,6 @@ pub mod operating_system {
     
     
 }
-impl OperatingSystem {
-    /// Creates a new builder-style object to manufacture [`OperatingSystem`](crate::model::OperatingSystem).
-    pub fn builder() -> crate::model::operating_system::Builder {
-        crate::model::operating_system::Builder::default()
-    }
-}
 
 /// <p>A block that contains information about the configuration manager (Chef) and the versions of the configuration manager that are supported for an operating system.</p>
 #[non_exhaustive]
@@ -5996,6 +6023,13 @@ impl OperatingSystemConfigurationManager {
         self.version.as_deref()
     }
 }
+impl OperatingSystemConfigurationManager {
+    /// Creates a new builder-style object to manufacture [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
+    pub fn builder() -> crate::model::operating_system_configuration_manager::Builder {
+        crate::model::operating_system_configuration_manager::Builder::default()
+    }
+}
+
 /// See [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
 pub mod operating_system_configuration_manager {
     
@@ -6038,12 +6072,6 @@ pub mod operating_system_configuration_manager {
     
     
 }
-impl OperatingSystemConfigurationManager {
-    /// Creates a new builder-style object to manufacture [`OperatingSystemConfigurationManager`](crate::model::OperatingSystemConfigurationManager).
-    pub fn builder() -> crate::model::operating_system_configuration_manager::Builder {
-        crate::model::operating_system_configuration_manager::Builder::default()
-    }
-}
 
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
@@ -6080,6 +6108,13 @@ impl SelfUserProfile {
         self.ssh_public_key.as_deref()
     }
 }
+impl SelfUserProfile {
+    /// Creates a new builder-style object to manufacture [`SelfUserProfile`](crate::model::SelfUserProfile).
+    pub fn builder() -> crate::model::self_user_profile::Builder {
+        crate::model::self_user_profile::Builder::default()
+    }
+}
+
 /// See [`SelfUserProfile`](crate::model::SelfUserProfile).
 pub mod self_user_profile {
     
@@ -6146,12 +6181,6 @@ pub mod self_user_profile {
     
     
 }
-impl SelfUserProfile {
-    /// Creates a new builder-style object to manufacture [`SelfUserProfile`](crate::model::SelfUserProfile).
-    pub fn builder() -> crate::model::self_user_profile::Builder {
-        crate::model::self_user_profile::Builder::default()
-    }
-}
 
 /// <p>Describes a layer's load-based auto scaling configuration.</p>
 #[non_exhaustive]
@@ -6188,6 +6217,13 @@ impl LoadBasedAutoScalingConfiguration {
         self.down_scaling.as_ref()
     }
 }
+impl LoadBasedAutoScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
+    pub fn builder() -> crate::model::load_based_auto_scaling_configuration::Builder {
+        crate::model::load_based_auto_scaling_configuration::Builder::default()
+    }
+}
+
 /// See [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
 pub mod load_based_auto_scaling_configuration {
     
@@ -6253,12 +6289,6 @@ pub mod load_based_auto_scaling_configuration {
     }
     
     
-}
-impl LoadBasedAutoScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoadBasedAutoScalingConfiguration`](crate::model::LoadBasedAutoScalingConfiguration).
-    pub fn builder() -> crate::model::load_based_auto_scaling_configuration::Builder {
-        crate::model::load_based_auto_scaling_configuration::Builder::default()
-    }
 }
 
 /// <p>Describes a layer.</p>
@@ -6439,6 +6469,13 @@ impl Layer {
         self.lifecycle_event_configuration.as_ref()
     }
 }
+impl Layer {
+    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
+    pub fn builder() -> crate::model::layer::Builder {
+        crate::model::layer::Builder::default()
+    }
+}
+
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
     
@@ -6772,12 +6809,6 @@ pub mod layer {
     }
     
     
-}
-impl Layer {
-    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
-    pub fn builder() -> crate::model::layer::Builder {
-        crate::model::layer::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LayerType`, it is important to ensure
@@ -7244,6 +7275,13 @@ impl Instance {
         self.virtualization_type.as_ref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -7810,12 +7848,6 @@ pub mod instance {
     
     
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// When writing a match expression against `VirtualizationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7927,6 +7959,13 @@ impl ReportedOs {
         self.version.as_deref()
     }
 }
+impl ReportedOs {
+    /// Creates a new builder-style object to manufacture [`ReportedOs`](crate::model::ReportedOs).
+    pub fn builder() -> crate::model::reported_os::Builder {
+        crate::model::reported_os::Builder::default()
+    }
+}
+
 /// See [`ReportedOs`](crate::model::ReportedOs).
 pub mod reported_os {
     
@@ -7981,12 +8020,6 @@ pub mod reported_os {
     
     
 }
-impl ReportedOs {
-    /// Creates a new builder-style object to manufacture [`ReportedOs`](crate::model::ReportedOs).
-    pub fn builder() -> crate::model::reported_os::Builder {
-        crate::model::reported_os::Builder::default()
-    }
-}
 
 /// <p>Describes a block device mapping. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a> data type. </p>
 #[non_exhaustive]
@@ -8023,6 +8056,13 @@ impl BlockDeviceMapping {
         self.ebs.as_ref()
     }
 }
+impl BlockDeviceMapping {
+    /// Creates a new builder-style object to manufacture [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
+    pub fn builder() -> crate::model::block_device_mapping::Builder {
+        crate::model::block_device_mapping::Builder::default()
+    }
+}
+
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
 pub mod block_device_mapping {
     
@@ -8089,12 +8129,6 @@ pub mod block_device_mapping {
     
     
 }
-impl BlockDeviceMapping {
-    /// Creates a new builder-style object to manufacture [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
-    pub fn builder() -> crate::model::block_device_mapping::Builder {
-        crate::model::block_device_mapping::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.</p>
 #[non_exhaustive]
@@ -8140,6 +8174,13 @@ impl EbsBlockDevice {
         self.delete_on_termination
     }
 }
+impl EbsBlockDevice {
+    /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::model::EbsBlockDevice).
+    pub fn builder() -> crate::model::ebs_block_device::Builder {
+        crate::model::ebs_block_device::Builder::default()
+    }
+}
+
 /// See [`EbsBlockDevice`](crate::model::EbsBlockDevice).
 pub mod ebs_block_device {
     
@@ -8219,12 +8260,6 @@ pub mod ebs_block_device {
     }
     
     
-}
-impl EbsBlockDevice {
-    /// Creates a new builder-style object to manufacture [`EbsBlockDevice`](crate::model::EbsBlockDevice).
-    pub fn builder() -> crate::model::ebs_block_device::Builder {
-        crate::model::ebs_block_device::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VolumeType`, it is important to ensure
@@ -8384,6 +8419,13 @@ impl ElasticLoadBalancer {
         self.ec2_instance_ids.as_deref()
     }
 }
+impl ElasticLoadBalancer {
+    /// Creates a new builder-style object to manufacture [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
+    pub fn builder() -> crate::model::elastic_load_balancer::Builder {
+        crate::model::elastic_load_balancer::Builder::default()
+    }
+}
+
 /// See [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
 pub mod elastic_load_balancer {
     
@@ -8528,12 +8570,6 @@ pub mod elastic_load_balancer {
     
     
 }
-impl ElasticLoadBalancer {
-    /// Creates a new builder-style object to manufacture [`ElasticLoadBalancer`](crate::model::ElasticLoadBalancer).
-    pub fn builder() -> crate::model::elastic_load_balancer::Builder {
-        crate::model::elastic_load_balancer::Builder::default()
-    }
-}
 
 /// <p>Describes an Elastic IP address.</p>
 #[non_exhaustive]
@@ -8577,6 +8613,13 @@ impl ElasticIp {
         self.instance_id.as_deref()
     }
 }
+impl ElasticIp {
+    /// Creates a new builder-style object to manufacture [`ElasticIp`](crate::model::ElasticIp).
+    pub fn builder() -> crate::model::elastic_ip::Builder {
+        crate::model::elastic_ip::Builder::default()
+    }
+}
+
 /// See [`ElasticIp`](crate::model::ElasticIp).
 pub mod elastic_ip {
     
@@ -8655,12 +8698,6 @@ pub mod elastic_ip {
     
     
 }
-impl ElasticIp {
-    /// Creates a new builder-style object to manufacture [`ElasticIp`](crate::model::ElasticIp).
-    pub fn builder() -> crate::model::elastic_ip::Builder {
-        crate::model::elastic_ip::Builder::default()
-    }
-}
 
 /// <p>Describes a registered Amazon ECS cluster.</p>
 #[non_exhaustive]
@@ -8697,6 +8734,13 @@ impl EcsCluster {
         self.registered_at.as_deref()
     }
 }
+impl EcsCluster {
+    /// Creates a new builder-style object to manufacture [`EcsCluster`](crate::model::EcsCluster).
+    pub fn builder() -> crate::model::ecs_cluster::Builder {
+        crate::model::ecs_cluster::Builder::default()
+    }
+}
+
 /// See [`EcsCluster`](crate::model::EcsCluster).
 pub mod ecs_cluster {
     
@@ -8762,12 +8806,6 @@ pub mod ecs_cluster {
     }
     
     
-}
-impl EcsCluster {
-    /// Creates a new builder-style object to manufacture [`EcsCluster`](crate::model::EcsCluster).
-    pub fn builder() -> crate::model::ecs_cluster::Builder {
-        crate::model::ecs_cluster::Builder::default()
-    }
 }
 
 /// <p>Describes a deployment of a stack or app.</p>
@@ -8875,6 +8913,13 @@ impl Deployment {
         self.instance_ids.as_deref()
     }
 }
+impl Deployment {
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
+    pub fn builder() -> crate::model::deployment::Builder {
+        crate::model::deployment::Builder::default()
+    }
+}
+
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
     
@@ -9057,12 +9102,6 @@ pub mod deployment {
     
     
 }
-impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
-    pub fn builder() -> crate::model::deployment::Builder {
-        crate::model::deployment::Builder::default()
-    }
-}
 
 /// <p>Used to specify a stack or deployment command.</p>
 #[non_exhaustive]
@@ -9137,6 +9176,13 @@ impl DeploymentCommand {
         self.args.as_ref()
     }
 }
+impl DeploymentCommand {
+    /// Creates a new builder-style object to manufacture [`DeploymentCommand`](crate::model::DeploymentCommand).
+    pub fn builder() -> crate::model::deployment_command::Builder {
+        crate::model::deployment_command::Builder::default()
+    }
+}
+
 /// See [`DeploymentCommand`](crate::model::DeploymentCommand).
 pub mod deployment_command {
     
@@ -9236,12 +9282,6 @@ pub mod deployment_command {
     }
     
     
-}
-impl DeploymentCommand {
-    /// Creates a new builder-style object to manufacture [`DeploymentCommand`](crate::model::DeploymentCommand).
-    pub fn builder() -> crate::model::deployment_command::Builder {
-        crate::model::deployment_command::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentCommandName`, it is important to ensure
@@ -9493,6 +9533,13 @@ impl Command {
         self.r#type.as_deref()
     }
 }
+impl Command {
+    /// Creates a new builder-style object to manufacture [`Command`](crate::model::Command).
+    pub fn builder() -> crate::model::command::Builder {
+        crate::model::command::Builder::default()
+    }
+}
+
 /// See [`Command`](crate::model::Command).
 pub mod command {
     
@@ -9671,12 +9718,6 @@ pub mod command {
     
     
 }
-impl Command {
-    /// Creates a new builder-style object to manufacture [`Command`](crate::model::Command).
-    pub fn builder() -> crate::model::command::Builder {
-        crate::model::command::Builder::default()
-    }
-}
 
 /// <p>A description of the app.</p>
 #[non_exhaustive]
@@ -9787,6 +9828,13 @@ impl App {
         self.environment.as_deref()
     }
 }
+impl App {
+    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
+    pub fn builder() -> crate::model::app::Builder {
+        crate::model::app::Builder::default()
+    }
+}
+
 /// See [`App`](crate::model::App).
 pub mod app {
     
@@ -10001,12 +10049,6 @@ pub mod app {
     
     
 }
-impl App {
-    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
-    pub fn builder() -> crate::model::app::Builder {
-        crate::model::app::Builder::default()
-    }
-}
 
 /// <p>Describes an agent version.</p>
 #[non_exhaustive]
@@ -10029,6 +10071,13 @@ impl AgentVersion {
         self.configuration_manager.as_ref()
     }
 }
+impl AgentVersion {
+    /// Creates a new builder-style object to manufacture [`AgentVersion`](crate::model::AgentVersion).
+    pub fn builder() -> crate::model::agent_version::Builder {
+        crate::model::agent_version::Builder::default()
+    }
+}
+
 /// See [`AgentVersion`](crate::model::AgentVersion).
 pub mod agent_version {
     
@@ -10070,11 +10119,5 @@ pub mod agent_version {
     }
     
     
-}
-impl AgentVersion {
-    /// Creates a new builder-style object to manufacture [`AgentVersion`](crate::model::AgentVersion).
-    pub fn builder() -> crate::model::agent_version::Builder {
-        crate::model::agent_version::Builder::default()
-    }
 }
 

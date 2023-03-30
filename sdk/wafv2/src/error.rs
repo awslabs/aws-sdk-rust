@@ -297,55 +297,6 @@ pub struct WafUnavailableEntityException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafUnavailableEntityException {
-    /// Creates a new builder-style object to manufacture [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
-    pub fn builder() -> crate::error::waf_unavailable_entity_exception::Builder {
-        crate::error::waf_unavailable_entity_exception::Builder::default()
-    }
-}
-/// See [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
-pub mod waf_unavailable_entity_exception {
-    
-    /// A builder for [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
-        pub fn build(self) -> crate::error::WafUnavailableEntityException {
-            crate::error::WafUnavailableEntityException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl WafUnavailableEntityException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -370,26 +321,17 @@ impl aws_http::request_id::RequestId for crate::error::WafUnavailableEntityExcep
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafUnavailableEntityException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafSubscriptionNotFoundException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafSubscriptionNotFoundException {
-    /// Creates a new builder-style object to manufacture [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
-    pub fn builder() -> crate::error::waf_subscription_not_found_exception::Builder {
-        crate::error::waf_subscription_not_found_exception::Builder::default()
+impl WafUnavailableEntityException {
+    /// Creates a new builder-style object to manufacture [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
+    pub fn builder() -> crate::error::waf_unavailable_entity_exception::Builder {
+        crate::error::waf_unavailable_entity_exception::Builder::default()
     }
 }
-/// See [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
-pub mod waf_subscription_not_found_exception {
+
+/// See [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
+pub mod waf_unavailable_entity_exception {
     
-    /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
+    /// A builder for [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -407,19 +349,19 @@ pub mod waf_subscription_not_found_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
-        pub fn build(self) -> crate::error::WafSubscriptionNotFoundException {
-            crate::error::WafSubscriptionNotFoundException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
+        pub fn build(self) -> crate::error::WafUnavailableEntityException {
+            crate::error::WafUnavailableEntityException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -428,6 +370,16 @@ pub mod waf_subscription_not_found_exception {
     }
     
     
+}
+
+/// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafSubscriptionNotFoundException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafSubscriptionNotFoundException {
     /// Returns the error message.
@@ -454,26 +406,17 @@ impl aws_http::request_id::RequestId for crate::error::WafSubscriptionNotFoundEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafSubscriptionNotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafOptimisticLockException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafOptimisticLockException {
-    /// Creates a new builder-style object to manufacture [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
-    pub fn builder() -> crate::error::waf_optimistic_lock_exception::Builder {
-        crate::error::waf_optimistic_lock_exception::Builder::default()
+impl WafSubscriptionNotFoundException {
+    /// Creates a new builder-style object to manufacture [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
+    pub fn builder() -> crate::error::waf_subscription_not_found_exception::Builder {
+        crate::error::waf_subscription_not_found_exception::Builder::default()
     }
 }
-/// See [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
-pub mod waf_optimistic_lock_exception {
+
+/// See [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
+pub mod waf_subscription_not_found_exception {
     
-    /// A builder for [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
+    /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -491,19 +434,19 @@ pub mod waf_optimistic_lock_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
-        pub fn build(self) -> crate::error::WafOptimisticLockException {
-            crate::error::WafOptimisticLockException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
+        pub fn build(self) -> crate::error::WafSubscriptionNotFoundException {
+            crate::error::WafSubscriptionNotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -512,6 +455,16 @@ pub mod waf_optimistic_lock_exception {
     }
     
     
+}
+
+/// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafOptimisticLockException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafOptimisticLockException {
     /// Returns the error message.
@@ -538,26 +491,17 @@ impl aws_http::request_id::RequestId for crate::error::WafOptimisticLockExceptio
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafOptimisticLockException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafNonexistentItemException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafNonexistentItemException {
-    /// Creates a new builder-style object to manufacture [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
-    pub fn builder() -> crate::error::waf_nonexistent_item_exception::Builder {
-        crate::error::waf_nonexistent_item_exception::Builder::default()
+impl WafOptimisticLockException {
+    /// Creates a new builder-style object to manufacture [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
+    pub fn builder() -> crate::error::waf_optimistic_lock_exception::Builder {
+        crate::error::waf_optimistic_lock_exception::Builder::default()
     }
 }
-/// See [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
-pub mod waf_nonexistent_item_exception {
+
+/// See [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
+pub mod waf_optimistic_lock_exception {
     
-    /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
+    /// A builder for [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -575,19 +519,19 @@ pub mod waf_nonexistent_item_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
-        pub fn build(self) -> crate::error::WafNonexistentItemException {
-            crate::error::WafNonexistentItemException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
+        pub fn build(self) -> crate::error::WafOptimisticLockException {
+            crate::error::WafOptimisticLockException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -596,6 +540,16 @@ pub mod waf_nonexistent_item_exception {
     }
     
     
+}
+
+/// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafNonexistentItemException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafNonexistentItemException {
     /// Returns the error message.
@@ -622,26 +576,17 @@ impl aws_http::request_id::RequestId for crate::error::WafNonexistentItemExcepti
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafNonexistentItemException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafLimitsExceededException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafLimitsExceededException {
-    /// Creates a new builder-style object to manufacture [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
-    pub fn builder() -> crate::error::waf_limits_exceeded_exception::Builder {
-        crate::error::waf_limits_exceeded_exception::Builder::default()
+impl WafNonexistentItemException {
+    /// Creates a new builder-style object to manufacture [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
+    pub fn builder() -> crate::error::waf_nonexistent_item_exception::Builder {
+        crate::error::waf_nonexistent_item_exception::Builder::default()
     }
 }
-/// See [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
-pub mod waf_limits_exceeded_exception {
+
+/// See [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
+pub mod waf_nonexistent_item_exception {
     
-    /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
+    /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -659,19 +604,19 @@ pub mod waf_limits_exceeded_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
-        pub fn build(self) -> crate::error::WafLimitsExceededException {
-            crate::error::WafLimitsExceededException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
+        pub fn build(self) -> crate::error::WafNonexistentItemException {
+            crate::error::WafNonexistentItemException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -680,6 +625,16 @@ pub mod waf_limits_exceeded_exception {
     }
     
     
+}
+
+/// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafLimitsExceededException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafLimitsExceededException {
     /// Returns the error message.
@@ -706,26 +661,17 @@ impl aws_http::request_id::RequestId for crate::error::WafLimitsExceededExceptio
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafLimitsExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInvalidResourceException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafInvalidResourceException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
-    pub fn builder() -> crate::error::waf_invalid_resource_exception::Builder {
-        crate::error::waf_invalid_resource_exception::Builder::default()
+impl WafLimitsExceededException {
+    /// Creates a new builder-style object to manufacture [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
+    pub fn builder() -> crate::error::waf_limits_exceeded_exception::Builder {
+        crate::error::waf_limits_exceeded_exception::Builder::default()
     }
 }
-/// See [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
-pub mod waf_invalid_resource_exception {
+
+/// See [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
+pub mod waf_limits_exceeded_exception {
     
-    /// A builder for [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
+    /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -743,19 +689,19 @@ pub mod waf_invalid_resource_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
-        pub fn build(self) -> crate::error::WafInvalidResourceException {
-            crate::error::WafInvalidResourceException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
+        pub fn build(self) -> crate::error::WafLimitsExceededException {
+            crate::error::WafLimitsExceededException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -764,6 +710,16 @@ pub mod waf_invalid_resource_exception {
     }
     
     
+}
+
+/// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafInvalidResourceException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafInvalidResourceException {
     /// Returns the error message.
@@ -789,6 +745,56 @@ impl aws_http::request_id::RequestId for crate::error::WafInvalidResourceExcepti
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidResourceException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafInvalidResourceException {
+    /// Creates a new builder-style object to manufacture [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
+    pub fn builder() -> crate::error::waf_invalid_resource_exception::Builder {
+        crate::error::waf_invalid_resource_exception::Builder::default()
+    }
+}
+
+/// See [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
+pub mod waf_invalid_resource_exception {
+    
+    /// A builder for [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
+        pub fn build(self) -> crate::error::WafInvalidResourceException {
+            crate::error::WafInvalidResourceException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p> 
@@ -830,11 +836,37 @@ impl WafInvalidParameterException {
     }
 }
 impl WafInvalidParameterException {
+    /// Returns the error message.
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+}
+impl std::fmt::Display for WafInvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "WafInvalidParameterException [WAFInvalidParameterException]")?;
+        if let Some(inner_7) = &self.message {
+             {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for WafInvalidParameterException {}
+impl aws_http::request_id::RequestId for crate::error::WafInvalidParameterException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidParameterException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafInvalidParameterException {
     /// Creates a new builder-style object to manufacture [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
     pub fn builder() -> crate::error::waf_invalid_parameter_exception::Builder {
         crate::error::waf_invalid_parameter_exception::Builder::default()
     }
 }
+
 /// See [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
 pub mod waf_invalid_parameter_exception {
     
@@ -886,16 +918,16 @@ pub mod waf_invalid_parameter_exception {
             self.reason = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
         /// Consumes the builder and constructs a [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
         pub fn build(self) -> crate::error::WafInvalidParameterException {
             crate::error::WafInvalidParameterException {
@@ -914,31 +946,6 @@ pub mod waf_invalid_parameter_exception {
     
     
 }
-impl WafInvalidParameterException {
-    /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
-}
-impl std::fmt::Display for WafInvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "WafInvalidParameterException [WAFInvalidParameterException]")?;
-        if let Some(inner_7) = &self.message {
-             {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for WafInvalidParameterException {}
-impl aws_http::request_id::RequestId for crate::error::WafInvalidParameterException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidParameterException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
-}
 
 /// <p>The operation isn't valid. </p>
 #[non_exhaustive]
@@ -948,55 +955,6 @@ pub struct WafInvalidOperationException  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafInvalidOperationException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
-    pub fn builder() -> crate::error::waf_invalid_operation_exception::Builder {
-        crate::error::waf_invalid_operation_exception::Builder::default()
-    }
-}
-/// See [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
-pub mod waf_invalid_operation_exception {
-    
-    /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
-        pub fn build(self) -> crate::error::WafInvalidOperationException {
-            crate::error::WafInvalidOperationException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl WafInvalidOperationException {
     /// Returns the error message.
@@ -1023,26 +981,17 @@ impl aws_http::request_id::RequestId for crate::error::WafInvalidOperationExcept
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidOperationException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafInternalErrorException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafInternalErrorException {
-    /// Creates a new builder-style object to manufacture [`WafInternalErrorException`](crate::error::WafInternalErrorException).
-    pub fn builder() -> crate::error::waf_internal_error_exception::Builder {
-        crate::error::waf_internal_error_exception::Builder::default()
+impl WafInvalidOperationException {
+    /// Creates a new builder-style object to manufacture [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
+    pub fn builder() -> crate::error::waf_invalid_operation_exception::Builder {
+        crate::error::waf_invalid_operation_exception::Builder::default()
     }
 }
-/// See [`WafInternalErrorException`](crate::error::WafInternalErrorException).
-pub mod waf_internal_error_exception {
+
+/// See [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
+pub mod waf_invalid_operation_exception {
     
-    /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException).
+    /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1060,19 +1009,19 @@ pub mod waf_internal_error_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafInternalErrorException`](crate::error::WafInternalErrorException).
-        pub fn build(self) -> crate::error::WafInternalErrorException {
-            crate::error::WafInternalErrorException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
+        pub fn build(self) -> crate::error::WafInvalidOperationException {
+            crate::error::WafInvalidOperationException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1081,6 +1030,16 @@ pub mod waf_internal_error_exception {
     }
     
     
+}
+
+/// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafInternalErrorException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafInternalErrorException {
     /// Returns the error message.
@@ -1107,26 +1066,17 @@ impl aws_http::request_id::RequestId for crate::error::WafInternalErrorException
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInternalErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafExpiredManagedRuleGroupVersionException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafExpiredManagedRuleGroupVersionException {
-    /// Creates a new builder-style object to manufacture [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
-    pub fn builder() -> crate::error::waf_expired_managed_rule_group_version_exception::Builder {
-        crate::error::waf_expired_managed_rule_group_version_exception::Builder::default()
+impl WafInternalErrorException {
+    /// Creates a new builder-style object to manufacture [`WafInternalErrorException`](crate::error::WafInternalErrorException).
+    pub fn builder() -> crate::error::waf_internal_error_exception::Builder {
+        crate::error::waf_internal_error_exception::Builder::default()
     }
 }
-/// See [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
-pub mod waf_expired_managed_rule_group_version_exception {
+
+/// See [`WafInternalErrorException`](crate::error::WafInternalErrorException).
+pub mod waf_internal_error_exception {
     
-    /// A builder for [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
+    /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1144,19 +1094,19 @@ pub mod waf_expired_managed_rule_group_version_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
-        pub fn build(self) -> crate::error::WafExpiredManagedRuleGroupVersionException {
-            crate::error::WafExpiredManagedRuleGroupVersionException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafInternalErrorException`](crate::error::WafInternalErrorException).
+        pub fn build(self) -> crate::error::WafInternalErrorException {
+            crate::error::WafInternalErrorException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1165,6 +1115,16 @@ pub mod waf_expired_managed_rule_group_version_exception {
     }
     
     
+}
+
+/// <p>The operation failed because the specified version for the managed rule group has expired. You can retrieve the available versions for the managed rule group by calling <code>ListAvailableManagedRuleGroupVersions</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafExpiredManagedRuleGroupVersionException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafExpiredManagedRuleGroupVersionException {
     /// Returns the error message.
@@ -1191,26 +1151,17 @@ impl aws_http::request_id::RequestId for crate::error::WafExpiredManagedRuleGrou
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafExpiredManagedRuleGroupVersionException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafDuplicateItemException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafDuplicateItemException {
-    /// Creates a new builder-style object to manufacture [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
-    pub fn builder() -> crate::error::waf_duplicate_item_exception::Builder {
-        crate::error::waf_duplicate_item_exception::Builder::default()
+impl WafExpiredManagedRuleGroupVersionException {
+    /// Creates a new builder-style object to manufacture [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
+    pub fn builder() -> crate::error::waf_expired_managed_rule_group_version_exception::Builder {
+        crate::error::waf_expired_managed_rule_group_version_exception::Builder::default()
     }
 }
-/// See [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
-pub mod waf_duplicate_item_exception {
+
+/// See [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
+pub mod waf_expired_managed_rule_group_version_exception {
     
-    /// A builder for [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
+    /// A builder for [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1228,19 +1179,19 @@ pub mod waf_duplicate_item_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
-        pub fn build(self) -> crate::error::WafDuplicateItemException {
-            crate::error::WafDuplicateItemException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
+        pub fn build(self) -> crate::error::WafExpiredManagedRuleGroupVersionException {
+            crate::error::WafExpiredManagedRuleGroupVersionException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1249,6 +1200,16 @@ pub mod waf_duplicate_item_exception {
     }
     
     
+}
+
+/// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafDuplicateItemException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafDuplicateItemException {
     /// Returns the error message.
@@ -1275,28 +1236,17 @@ impl aws_http::request_id::RequestId for crate::error::WafDuplicateItemException
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafDuplicateItemException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p> 
-/// <p>Provide the handling configuration and retry your operation.</p> 
-/// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafConfigurationWarningException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafConfigurationWarningException {
-    /// Creates a new builder-style object to manufacture [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
-    pub fn builder() -> crate::error::waf_configuration_warning_exception::Builder {
-        crate::error::waf_configuration_warning_exception::Builder::default()
+impl WafDuplicateItemException {
+    /// Creates a new builder-style object to manufacture [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
+    pub fn builder() -> crate::error::waf_duplicate_item_exception::Builder {
+        crate::error::waf_duplicate_item_exception::Builder::default()
     }
 }
-/// See [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
-pub mod waf_configuration_warning_exception {
+
+/// See [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
+pub mod waf_duplicate_item_exception {
     
-    /// A builder for [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
+    /// A builder for [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1314,19 +1264,19 @@ pub mod waf_configuration_warning_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
-        pub fn build(self) -> crate::error::WafConfigurationWarningException {
-            crate::error::WafConfigurationWarningException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
+        pub fn build(self) -> crate::error::WafDuplicateItemException {
+            crate::error::WafDuplicateItemException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1335,6 +1285,18 @@ pub mod waf_configuration_warning_exception {
     }
     
     
+}
+
+/// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p> 
+/// <p>Provide the handling configuration and retry your operation.</p> 
+/// <p>Alternately, you can suppress this warning by adding the following tag to the resource that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:<code>true</code>).</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafConfigurationWarningException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafConfigurationWarningException {
     /// Returns the error message.
@@ -1360,6 +1322,56 @@ impl aws_http::request_id::RequestId for crate::error::WafConfigurationWarningEx
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafConfigurationWarningException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafConfigurationWarningException {
+    /// Creates a new builder-style object to manufacture [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
+    pub fn builder() -> crate::error::waf_configuration_warning_exception::Builder {
+        crate::error::waf_configuration_warning_exception::Builder::default()
+    }
+}
+
+/// See [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
+pub mod waf_configuration_warning_exception {
+    
+    /// A builder for [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
+        pub fn build(self) -> crate::error::WafConfigurationWarningException {
+            crate::error::WafConfigurationWarningException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2404,55 +2416,6 @@ pub struct WafTagOperationInternalErrorException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafTagOperationInternalErrorException {
-    /// Creates a new builder-style object to manufacture [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
-    pub fn builder() -> crate::error::waf_tag_operation_internal_error_exception::Builder {
-        crate::error::waf_tag_operation_internal_error_exception::Builder::default()
-    }
-}
-/// See [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
-pub mod waf_tag_operation_internal_error_exception {
-    
-    /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
-        pub fn build(self) -> crate::error::WafTagOperationInternalErrorException {
-            crate::error::WafTagOperationInternalErrorException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl WafTagOperationInternalErrorException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2477,26 +2440,17 @@ impl aws_http::request_id::RequestId for crate::error::WafTagOperationInternalEr
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafTagOperationInternalErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An error occurred during the tagging operation. Retry your request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafTagOperationException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafTagOperationException {
-    /// Creates a new builder-style object to manufacture [`WafTagOperationException`](crate::error::WafTagOperationException).
-    pub fn builder() -> crate::error::waf_tag_operation_exception::Builder {
-        crate::error::waf_tag_operation_exception::Builder::default()
+impl WafTagOperationInternalErrorException {
+    /// Creates a new builder-style object to manufacture [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
+    pub fn builder() -> crate::error::waf_tag_operation_internal_error_exception::Builder {
+        crate::error::waf_tag_operation_internal_error_exception::Builder::default()
     }
 }
-/// See [`WafTagOperationException`](crate::error::WafTagOperationException).
-pub mod waf_tag_operation_exception {
+
+/// See [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
+pub mod waf_tag_operation_internal_error_exception {
     
-    /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException).
+    /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2514,19 +2468,19 @@ pub mod waf_tag_operation_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafTagOperationException`](crate::error::WafTagOperationException).
-        pub fn build(self) -> crate::error::WafTagOperationException {
-            crate::error::WafTagOperationException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
+        pub fn build(self) -> crate::error::WafTagOperationInternalErrorException {
+            crate::error::WafTagOperationInternalErrorException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2535,6 +2489,16 @@ pub mod waf_tag_operation_exception {
     }
     
     
+}
+
+/// <p>An error occurred during the tagging operation. Retry your request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafTagOperationException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafTagOperationException {
     /// Returns the error message.
@@ -2560,6 +2524,56 @@ impl aws_http::request_id::RequestId for crate::error::WafTagOperationException 
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafTagOperationException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafTagOperationException {
+    /// Creates a new builder-style object to manufacture [`WafTagOperationException`](crate::error::WafTagOperationException).
+    pub fn builder() -> crate::error::waf_tag_operation_exception::Builder {
+        crate::error::waf_tag_operation_exception::Builder::default()
+    }
+}
+
+/// See [`WafTagOperationException`](crate::error::WafTagOperationException).
+pub mod waf_tag_operation_exception {
+    
+    /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafTagOperationException`](crate::error::WafTagOperationException).
+        pub fn build(self) -> crate::error::WafTagOperationException {
+            crate::error::WafTagOperationException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2954,55 +2968,6 @@ pub struct WafInvalidPermissionPolicyException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafInvalidPermissionPolicyException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
-    pub fn builder() -> crate::error::waf_invalid_permission_policy_exception::Builder {
-        crate::error::waf_invalid_permission_policy_exception::Builder::default()
-    }
-}
-/// See [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
-pub mod waf_invalid_permission_policy_exception {
-    
-    /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
-        pub fn build(self) -> crate::error::WafInvalidPermissionPolicyException {
-            crate::error::WafInvalidPermissionPolicyException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl WafInvalidPermissionPolicyException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -3026,6 +2991,56 @@ impl aws_http::request_id::RequestId for crate::error::WafInvalidPermissionPolic
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidPermissionPolicyException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafInvalidPermissionPolicyException {
+    /// Creates a new builder-style object to manufacture [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
+    pub fn builder() -> crate::error::waf_invalid_permission_policy_exception::Builder {
+        crate::error::waf_invalid_permission_policy_exception::Builder::default()
+    }
+}
+
+/// See [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
+pub mod waf_invalid_permission_policy_exception {
+    
+    /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
+        pub fn build(self) -> crate::error::WafInvalidPermissionPolicyException {
+            crate::error::WafInvalidPermissionPolicyException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -3434,55 +3449,6 @@ pub struct WafServiceLinkedRoleErrorException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafServiceLinkedRoleErrorException {
-    /// Creates a new builder-style object to manufacture [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
-    pub fn builder() -> crate::error::waf_service_linked_role_error_exception::Builder {
-        crate::error::waf_service_linked_role_error_exception::Builder::default()
-    }
-}
-/// See [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
-pub mod waf_service_linked_role_error_exception {
-    
-    /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
-        pub fn build(self) -> crate::error::WafServiceLinkedRoleErrorException {
-            crate::error::WafServiceLinkedRoleErrorException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl WafServiceLinkedRoleErrorException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -3507,26 +3473,17 @@ impl aws_http::request_id::RequestId for crate::error::WafServiceLinkedRoleError
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafServiceLinkedRoleErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafLogDestinationPermissionIssueException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl WafLogDestinationPermissionIssueException {
-    /// Creates a new builder-style object to manufacture [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
-    pub fn builder() -> crate::error::waf_log_destination_permission_issue_exception::Builder {
-        crate::error::waf_log_destination_permission_issue_exception::Builder::default()
+impl WafServiceLinkedRoleErrorException {
+    /// Creates a new builder-style object to manufacture [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
+    pub fn builder() -> crate::error::waf_service_linked_role_error_exception::Builder {
+        crate::error::waf_service_linked_role_error_exception::Builder::default()
     }
 }
-/// See [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
-pub mod waf_log_destination_permission_issue_exception {
+
+/// See [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
+pub mod waf_service_linked_role_error_exception {
     
-    /// A builder for [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
+    /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3544,19 +3501,19 @@ pub mod waf_log_destination_permission_issue_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
-        pub fn build(self) -> crate::error::WafLogDestinationPermissionIssueException {
-            crate::error::WafLogDestinationPermissionIssueException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
+        pub fn build(self) -> crate::error::WafServiceLinkedRoleErrorException {
+            crate::error::WafServiceLinkedRoleErrorException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3565,6 +3522,16 @@ pub mod waf_log_destination_permission_issue_exception {
     }
     
     
+}
+
+/// <p>The operation failed because you don't have the permissions that your logging configuration requires. For information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct WafLogDestinationPermissionIssueException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafLogDestinationPermissionIssueException {
     /// Returns the error message.
@@ -3590,6 +3557,56 @@ impl aws_http::request_id::RequestId for crate::error::WafLogDestinationPermissi
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafLogDestinationPermissionIssueException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafLogDestinationPermissionIssueException {
+    /// Creates a new builder-style object to manufacture [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
+    pub fn builder() -> crate::error::waf_log_destination_permission_issue_exception::Builder {
+        crate::error::waf_log_destination_permission_issue_exception::Builder::default()
+    }
+}
+
+/// See [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
+pub mod waf_log_destination_permission_issue_exception {
+    
+    /// A builder for [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
+        pub fn build(self) -> crate::error::WafLogDestinationPermissionIssueException {
+            crate::error::WafLogDestinationPermissionIssueException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -7694,55 +7711,6 @@ pub struct WafAssociatedItemException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WafAssociatedItemException {
-    /// Creates a new builder-style object to manufacture [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
-    pub fn builder() -> crate::error::waf_associated_item_exception::Builder {
-        crate::error::waf_associated_item_exception::Builder::default()
-    }
-}
-/// See [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
-pub mod waf_associated_item_exception {
-    
-    /// A builder for [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
-        pub fn build(self) -> crate::error::WafAssociatedItemException {
-            crate::error::WafAssociatedItemException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl WafAssociatedItemException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -7766,6 +7734,56 @@ impl aws_http::request_id::RequestId for crate::error::WafAssociatedItemExceptio
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafAssociatedItemException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl WafAssociatedItemException {
+    /// Creates a new builder-style object to manufacture [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
+    pub fn builder() -> crate::error::waf_associated_item_exception::Builder {
+        crate::error::waf_associated_item_exception::Builder::default()
+    }
+}
+
+/// See [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
+pub mod waf_associated_item_exception {
+    
+    /// A builder for [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
+        pub fn build(self) -> crate::error::WafAssociatedItemException {
+            crate::error::WafAssociatedItemException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

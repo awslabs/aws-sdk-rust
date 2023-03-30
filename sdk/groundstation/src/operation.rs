@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`cancel_contact`](crate::client::Client::cancel_contact).
             ///
-            /// See [`crate::client::fluent_builders::CancelContact`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CancelContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelContact {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelContact {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_config`](crate::client::Client::create_config).
             ///
-            /// See [`crate::client::fluent_builders::CreateConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfig {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_dataflow_endpoint_group`](crate::client::Client::create_dataflow_endpoint_group).
             ///
-            /// See [`crate::client::fluent_builders::CreateDataflowEndpointGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDataflowEndpointGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroup {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataflowEndpointGr
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_ephemeris`](crate::client::Client::create_ephemeris).
             ///
-            /// See [`crate::client::fluent_builders::CreateEphemeris`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEphemeris {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEphemeris {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_mission_profile`](crate::client::Client::create_mission_profile).
             ///
-            /// See [`crate::client::fluent_builders::CreateMissionProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMissionProfile {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMissionProfile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_config`](crate::client::Client::delete_config).
             ///
-            /// See [`crate::client::fluent_builders::DeleteConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfig {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_dataflow_endpoint_group`](crate::client::Client::delete_dataflow_endpoint_group).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDataflowEndpointGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDataflowEndpointGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroup {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataflowEndpointGr
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_ephemeris`](crate::client::Client::delete_ephemeris).
             ///
-            /// See [`crate::client::fluent_builders::DeleteEphemeris`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEphemeris {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEphemeris {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_mission_profile`](crate::client::Client::delete_mission_profile).
             ///
-            /// See [`crate::client::fluent_builders::DeleteMissionProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMissionProfile {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMissionProfile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_contact`](crate::client::Client::describe_contact).
             ///
-            /// See [`crate::client::fluent_builders::DescribeContact`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeContact {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContact {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_ephemeris`](crate::client::Client::describe_ephemeris).
             ///
-            /// See [`crate::client::fluent_builders::DescribeEphemeris`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEphemeris {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEphemeris {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_config`](crate::client::Client::get_config).
             ///
-            /// See [`crate::client::fluent_builders::GetConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConfig {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_dataflow_endpoint_group`](crate::client::Client::get_dataflow_endpoint_group).
             ///
-            /// See [`crate::client::fluent_builders::GetDataflowEndpointGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDataflowEndpointGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDataflowEndpointGroup {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataflowEndpointGroup
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_minute_usage`](crate::client::Client::get_minute_usage).
             ///
-            /// See [`crate::client::fluent_builders::GetMinuteUsage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMinuteUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMinuteUsage {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMinuteUsage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_mission_profile`](crate::client::Client::get_mission_profile).
             ///
-            /// See [`crate::client::fluent_builders::GetMissionProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMissionProfile {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMissionProfile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_satellite`](crate::client::Client::get_satellite).
             ///
-            /// See [`crate::client::fluent_builders::GetSatellite`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSatellite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSatellite {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSatellite {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_configs`](crate::client::Client::list_configs).
             ///
-            /// See [`crate::client::fluent_builders::ListConfigs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigs {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_contacts`](crate::client::Client::list_contacts).
             ///
-            /// See [`crate::client::fluent_builders::ListContacts`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListContacts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListContacts {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContacts {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_dataflow_endpoint_groups`](crate::client::Client::list_dataflow_endpoint_groups).
             ///
-            /// See [`crate::client::fluent_builders::ListDataflowEndpointGroups`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDataflowEndpointGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDataflowEndpointGroups {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataflowEndpointGrou
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_ephemerides`](crate::client::Client::list_ephemerides).
             ///
-            /// See [`crate::client::fluent_builders::ListEphemerides`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListEphemerides`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEphemerides {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEphemerides {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_ground_stations`](crate::client::Client::list_ground_stations).
             ///
-            /// See [`crate::client::fluent_builders::ListGroundStations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGroundStations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGroundStations {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroundStations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_mission_profiles`](crate::client::Client::list_mission_profiles).
             ///
-            /// See [`crate::client::fluent_builders::ListMissionProfiles`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMissionProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMissionProfiles {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMissionProfiles {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_satellites`](crate::client::Client::list_satellites).
             ///
-            /// See [`crate::client::fluent_builders::ListSatellites`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSatellites`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSatellites {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSatellites {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`reserve_contact`](crate::client::Client::reserve_contact).
             ///
-            /// See [`crate::client::fluent_builders::ReserveContact`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ReserveContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReserveContact {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReserveContact {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_config`](crate::client::Client::update_config).
             ///
-            /// See [`crate::client::fluent_builders::UpdateConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfig {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_ephemeris`](crate::client::Client::update_ephemeris).
             ///
-            /// See [`crate::client::fluent_builders::UpdateEphemeris`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEphemeris {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEphemeris {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_mission_profile`](crate::client::Client::update_mission_profile).
             ///
-            /// See [`crate::client::fluent_builders::UpdateMissionProfile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMissionProfile {
     _private: ()

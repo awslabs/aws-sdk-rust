@@ -21,6 +21,13 @@ impl AccessPoliciesStatus {
         self.status.as_ref()
     }
 }
+impl AccessPoliciesStatus {
+    /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
+    pub fn builder() -> crate::model::access_policies_status::Builder {
+        crate::model::access_policies_status::Builder::default()
+    }
+}
+
 /// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
 pub mod access_policies_status {
     
@@ -62,12 +69,6 @@ pub mod access_policies_status {
     }
     
     
-}
-impl AccessPoliciesStatus {
-    /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
-    pub fn builder() -> crate::model::access_policies_status::Builder {
-        crate::model::access_policies_status::Builder::default()
-    }
 }
 
 /// <p>The status of domain configuration option.</p>
@@ -124,6 +125,13 @@ impl OptionStatus {
         self.pending_deletion
     }
 }
+impl OptionStatus {
+    /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus).
+    pub fn builder() -> crate::model::option_status::Builder {
+        crate::model::option_status::Builder::default()
+    }
+}
+
 /// See [`OptionStatus`](crate::model::OptionStatus).
 pub mod option_status {
     
@@ -214,12 +222,6 @@ pub mod option_status {
     }
     
     
-}
-impl OptionStatus {
-    /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus).
-    pub fn builder() -> crate::model::option_status::Builder {
-        crate::model::option_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OptionState`, it is important to ensure
@@ -341,6 +343,13 @@ impl ScalingParametersStatus {
         self.status.as_ref()
     }
 }
+impl ScalingParametersStatus {
+    /// Creates a new builder-style object to manufacture [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
+    pub fn builder() -> crate::model::scaling_parameters_status::Builder {
+        crate::model::scaling_parameters_status::Builder::default()
+    }
+}
+
 /// See [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
 pub mod scaling_parameters_status {
     
@@ -383,12 +392,6 @@ pub mod scaling_parameters_status {
     
     
 }
-impl ScalingParametersStatus {
-    /// Creates a new builder-style object to manufacture [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
-    pub fn builder() -> crate::model::scaling_parameters_status::Builder {
-        crate::model::scaling_parameters_status::Builder::default()
-    }
-}
 
 /// <p>The desired instance type and desired number of replicas of each index partition.</p>
 #[non_exhaustive]
@@ -418,6 +421,13 @@ impl ScalingParameters {
         self.desired_partition_count
     }
 }
+impl ScalingParameters {
+    /// Creates a new builder-style object to manufacture [`ScalingParameters`](crate::model::ScalingParameters).
+    pub fn builder() -> crate::model::scaling_parameters::Builder {
+        crate::model::scaling_parameters::Builder::default()
+    }
+}
+
 /// See [`ScalingParameters`](crate::model::ScalingParameters).
 pub mod scaling_parameters {
     
@@ -473,12 +483,6 @@ pub mod scaling_parameters {
     }
     
     
-}
-impl ScalingParameters {
-    /// Creates a new builder-style object to manufacture [`ScalingParameters`](crate::model::ScalingParameters).
-    pub fn builder() -> crate::model::scaling_parameters::Builder {
-        crate::model::scaling_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PartitionInstanceType`, it is important to ensure
@@ -659,6 +663,13 @@ impl DomainEndpointOptionsStatus {
         self.status.as_ref()
     }
 }
+impl DomainEndpointOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
+    pub fn builder() -> crate::model::domain_endpoint_options_status::Builder {
+        crate::model::domain_endpoint_options_status::Builder::default()
+    }
+}
+
 /// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
 pub mod domain_endpoint_options_status {
     
@@ -701,12 +712,6 @@ pub mod domain_endpoint_options_status {
     
     
 }
-impl DomainEndpointOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
-    pub fn builder() -> crate::model::domain_endpoint_options_status::Builder {
-        crate::model::domain_endpoint_options_status::Builder::default()
-    }
-}
 
 /// <p>The domain's endpoint options.</p>
 #[non_exhaustive]
@@ -729,6 +734,13 @@ impl DomainEndpointOptions {
         self.tls_security_policy.as_ref()
     }
 }
+impl DomainEndpointOptions {
+    /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
+    pub fn builder() -> crate::model::domain_endpoint_options::Builder {
+        crate::model::domain_endpoint_options::Builder::default()
+    }
+}
+
 /// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
 pub mod domain_endpoint_options {
     
@@ -770,12 +782,6 @@ pub mod domain_endpoint_options {
     }
     
     
-}
-impl DomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
-    pub fn builder() -> crate::model::domain_endpoint_options::Builder {
-        crate::model::domain_endpoint_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TlsSecurityPolicy`, it is important to ensure
@@ -881,6 +887,13 @@ impl AvailabilityOptionsStatus {
         self.status.as_ref()
     }
 }
+impl AvailabilityOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
+    pub fn builder() -> crate::model::availability_options_status::Builder {
+        crate::model::availability_options_status::Builder::default()
+    }
+}
+
 /// See [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
 pub mod availability_options_status {
     
@@ -924,12 +937,6 @@ pub mod availability_options_status {
     
     
 }
-impl AvailabilityOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
-    pub fn builder() -> crate::model::availability_options_status::Builder {
-        crate::model::availability_options_status::Builder::default()
-    }
-}
 
 /// <p>The value of a <code>Suggester</code> and its current status.</p>
 #[non_exhaustive]
@@ -952,6 +959,13 @@ impl SuggesterStatus {
         self.status.as_ref()
     }
 }
+impl SuggesterStatus {
+    /// Creates a new builder-style object to manufacture [`SuggesterStatus`](crate::model::SuggesterStatus).
+    pub fn builder() -> crate::model::suggester_status::Builder {
+        crate::model::suggester_status::Builder::default()
+    }
+}
+
 /// See [`SuggesterStatus`](crate::model::SuggesterStatus).
 pub mod suggester_status {
     
@@ -994,12 +1008,6 @@ pub mod suggester_status {
     
     
 }
-impl SuggesterStatus {
-    /// Creates a new builder-style object to manufacture [`SuggesterStatus`](crate::model::SuggesterStatus).
-    pub fn builder() -> crate::model::suggester_status::Builder {
-        crate::model::suggester_status::Builder::default()
-    }
-}
 
 /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
 #[non_exhaustive]
@@ -1022,6 +1030,13 @@ impl Suggester {
         self.document_suggester_options.as_ref()
     }
 }
+impl Suggester {
+    /// Creates a new builder-style object to manufacture [`Suggester`](crate::model::Suggester).
+    pub fn builder() -> crate::model::suggester::Builder {
+        crate::model::suggester::Builder::default()
+    }
+}
+
 /// See [`Suggester`](crate::model::Suggester).
 pub mod suggester {
     
@@ -1064,12 +1079,6 @@ pub mod suggester {
     
     
 }
-impl Suggester {
-    /// Creates a new builder-style object to manufacture [`Suggester`](crate::model::Suggester).
-    pub fn builder() -> crate::model::suggester::Builder {
-        crate::model::suggester::Builder::default()
-    }
-}
 
 /// <p>Options for a search suggester.</p>
 #[non_exhaustive]
@@ -1099,6 +1108,13 @@ impl DocumentSuggesterOptions {
         self.sort_expression.as_deref()
     }
 }
+impl DocumentSuggesterOptions {
+    /// Creates a new builder-style object to manufacture [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
+    pub fn builder() -> crate::model::document_suggester_options::Builder {
+        crate::model::document_suggester_options::Builder::default()
+    }
+}
+
 /// See [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
 pub mod document_suggester_options {
     
@@ -1152,12 +1168,6 @@ pub mod document_suggester_options {
     }
     
     
-}
-impl DocumentSuggesterOptions {
-    /// Creates a new builder-style object to manufacture [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
-    pub fn builder() -> crate::model::document_suggester_options::Builder {
-        crate::model::document_suggester_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SuggesterFuzzyMatching`, it is important to ensure
@@ -1268,6 +1278,13 @@ impl IndexFieldStatus {
         self.status.as_ref()
     }
 }
+impl IndexFieldStatus {
+    /// Creates a new builder-style object to manufacture [`IndexFieldStatus`](crate::model::IndexFieldStatus).
+    pub fn builder() -> crate::model::index_field_status::Builder {
+        crate::model::index_field_status::Builder::default()
+    }
+}
+
 /// See [`IndexFieldStatus`](crate::model::IndexFieldStatus).
 pub mod index_field_status {
     
@@ -1309,12 +1326,6 @@ pub mod index_field_status {
     }
     
     
-}
-impl IndexFieldStatus {
-    /// Creates a new builder-style object to manufacture [`IndexFieldStatus`](crate::model::IndexFieldStatus).
-    pub fn builder() -> crate::model::index_field_status::Builder {
-        crate::model::index_field_status::Builder::default()
-    }
 }
 
 /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><code>IndexFieldType</code></code>.</p>
@@ -1419,6 +1430,13 @@ impl IndexField {
         self.date_array_options.as_ref()
     }
 }
+impl IndexField {
+    /// Creates a new builder-style object to manufacture [`IndexField`](crate::model::IndexField).
+    pub fn builder() -> crate::model::index_field::Builder {
+        crate::model::index_field::Builder::default()
+    }
+}
+
 /// See [`IndexField`](crate::model::IndexField).
 pub mod index_field {
     
@@ -1597,12 +1615,6 @@ pub mod index_field {
     
     
 }
-impl IndexField {
-    /// Creates a new builder-style object to manufacture [`IndexField`](crate::model::IndexField).
-    pub fn builder() -> crate::model::index_field::Builder {
-        crate::model::index_field::Builder::default()
-    }
-}
 
 /// <p>Options for a field that contains an array of dates. Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -1646,6 +1658,13 @@ impl DateArrayOptions {
         self.return_enabled
     }
 }
+impl DateArrayOptions {
+    /// Creates a new builder-style object to manufacture [`DateArrayOptions`](crate::model::DateArrayOptions).
+    pub fn builder() -> crate::model::date_array_options::Builder {
+        crate::model::date_array_options::Builder::default()
+    }
+}
+
 /// See [`DateArrayOptions`](crate::model::DateArrayOptions).
 pub mod date_array_options {
     
@@ -1724,12 +1743,6 @@ pub mod date_array_options {
     
     
 }
-impl DateArrayOptions {
-    /// Creates a new builder-style object to manufacture [`DateArrayOptions`](crate::model::DateArrayOptions).
-    pub fn builder() -> crate::model::date_array_options::Builder {
-        crate::model::date_array_options::Builder::default()
-    }
-}
 
 /// <p>Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -1773,6 +1786,13 @@ impl TextArrayOptions {
         self.analysis_scheme.as_deref()
     }
 }
+impl TextArrayOptions {
+    /// Creates a new builder-style object to manufacture [`TextArrayOptions`](crate::model::TextArrayOptions).
+    pub fn builder() -> crate::model::text_array_options::Builder {
+        crate::model::text_array_options::Builder::default()
+    }
+}
+
 /// See [`TextArrayOptions`](crate::model::TextArrayOptions).
 pub mod text_array_options {
     
@@ -1851,12 +1871,6 @@ pub mod text_array_options {
     
     
 }
-impl TextArrayOptions {
-    /// Creates a new builder-style object to manufacture [`TextArrayOptions`](crate::model::TextArrayOptions).
-    pub fn builder() -> crate::model::text_array_options::Builder {
-        crate::model::text_array_options::Builder::default()
-    }
-}
 
 /// <p>Options for a field that contains an array of literal strings. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -1900,6 +1914,13 @@ impl LiteralArrayOptions {
         self.return_enabled
     }
 }
+impl LiteralArrayOptions {
+    /// Creates a new builder-style object to manufacture [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
+    pub fn builder() -> crate::model::literal_array_options::Builder {
+        crate::model::literal_array_options::Builder::default()
+    }
+}
+
 /// See [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
 pub mod literal_array_options {
     
@@ -1978,12 +1999,6 @@ pub mod literal_array_options {
     
     
 }
-impl LiteralArrayOptions {
-    /// Creates a new builder-style object to manufacture [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
-    pub fn builder() -> crate::model::literal_array_options::Builder {
-        crate::model::literal_array_options::Builder::default()
-    }
-}
 
 /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2027,6 +2042,13 @@ impl DoubleArrayOptions {
         self.return_enabled
     }
 }
+impl DoubleArrayOptions {
+    /// Creates a new builder-style object to manufacture [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
+    pub fn builder() -> crate::model::double_array_options::Builder {
+        crate::model::double_array_options::Builder::default()
+    }
+}
+
 /// See [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
 pub mod double_array_options {
     
@@ -2105,12 +2127,6 @@ pub mod double_array_options {
     
     
 }
-impl DoubleArrayOptions {
-    /// Creates a new builder-style object to manufacture [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
-    pub fn builder() -> crate::model::double_array_options::Builder {
-        crate::model::double_array_options::Builder::default()
-    }
-}
 
 /// <p>Options for a field that contains an array of 64-bit signed integers. Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2154,6 +2170,13 @@ impl IntArrayOptions {
         self.return_enabled
     }
 }
+impl IntArrayOptions {
+    /// Creates a new builder-style object to manufacture [`IntArrayOptions`](crate::model::IntArrayOptions).
+    pub fn builder() -> crate::model::int_array_options::Builder {
+        crate::model::int_array_options::Builder::default()
+    }
+}
+
 /// See [`IntArrayOptions`](crate::model::IntArrayOptions).
 pub mod int_array_options {
     
@@ -2232,12 +2255,6 @@ pub mod int_array_options {
     
     
 }
-impl IntArrayOptions {
-    /// Creates a new builder-style object to manufacture [`IntArrayOptions`](crate::model::IntArrayOptions).
-    pub fn builder() -> crate::model::int_array_options::Builder {
-        crate::model::int_array_options::Builder::default()
-    }
-}
 
 /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2292,6 +2309,13 @@ impl LatLonOptions {
         self.sort_enabled
     }
 }
+impl LatLonOptions {
+    /// Creates a new builder-style object to manufacture [`LatLonOptions`](crate::model::LatLonOptions).
+    pub fn builder() -> crate::model::lat_lon_options::Builder {
+        crate::model::lat_lon_options::Builder::default()
+    }
+}
+
 /// See [`LatLonOptions`](crate::model::LatLonOptions).
 pub mod lat_lon_options {
     
@@ -2386,12 +2410,6 @@ pub mod lat_lon_options {
     
     
 }
-impl LatLonOptions {
-    /// Creates a new builder-style object to manufacture [`LatLonOptions`](crate::model::LatLonOptions).
-    pub fn builder() -> crate::model::lat_lon_options::Builder {
-        crate::model::lat_lon_options::Builder::default()
-    }
-}
 
 /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z. Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2446,6 +2464,13 @@ impl DateOptions {
         self.sort_enabled
     }
 }
+impl DateOptions {
+    /// Creates a new builder-style object to manufacture [`DateOptions`](crate::model::DateOptions).
+    pub fn builder() -> crate::model::date_options::Builder {
+        crate::model::date_options::Builder::default()
+    }
+}
+
 /// See [`DateOptions`](crate::model::DateOptions).
 pub mod date_options {
     
@@ -2540,12 +2565,6 @@ pub mod date_options {
     
     
 }
-impl DateOptions {
-    /// Creates a new builder-style object to manufacture [`DateOptions`](crate::model::DateOptions).
-    pub fn builder() -> crate::model::date_options::Builder {
-        crate::model::date_options::Builder::default()
-    }
-}
 
 /// <p>Options for text field. Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2600,6 +2619,13 @@ impl TextOptions {
         self.analysis_scheme.as_deref()
     }
 }
+impl TextOptions {
+    /// Creates a new builder-style object to manufacture [`TextOptions`](crate::model::TextOptions).
+    pub fn builder() -> crate::model::text_options::Builder {
+        crate::model::text_options::Builder::default()
+    }
+}
+
 /// See [`TextOptions`](crate::model::TextOptions).
 pub mod text_options {
     
@@ -2694,12 +2720,6 @@ pub mod text_options {
     
     
 }
-impl TextOptions {
-    /// Creates a new builder-style object to manufacture [`TextOptions`](crate::model::TextOptions).
-    pub fn builder() -> crate::model::text_options::Builder {
-        crate::model::text_options::Builder::default()
-    }
-}
 
 /// <p>Options for literal field. Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2754,6 +2774,13 @@ impl LiteralOptions {
         self.sort_enabled
     }
 }
+impl LiteralOptions {
+    /// Creates a new builder-style object to manufacture [`LiteralOptions`](crate::model::LiteralOptions).
+    pub fn builder() -> crate::model::literal_options::Builder {
+        crate::model::literal_options::Builder::default()
+    }
+}
+
 /// See [`LiteralOptions`](crate::model::LiteralOptions).
 pub mod literal_options {
     
@@ -2848,12 +2875,6 @@ pub mod literal_options {
     
     
 }
-impl LiteralOptions {
-    /// Creates a new builder-style object to manufacture [`LiteralOptions`](crate::model::LiteralOptions).
-    pub fn builder() -> crate::model::literal_options::Builder {
-        crate::model::literal_options::Builder::default()
-    }
-}
 
 /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -2904,6 +2925,13 @@ impl DoubleOptions {
         self.sort_enabled
     }
 }
+impl DoubleOptions {
+    /// Creates a new builder-style object to manufacture [`DoubleOptions`](crate::model::DoubleOptions).
+    pub fn builder() -> crate::model::double_options::Builder {
+        crate::model::double_options::Builder::default()
+    }
+}
+
 /// See [`DoubleOptions`](crate::model::DoubleOptions).
 pub mod double_options {
     
@@ -2994,12 +3022,6 @@ pub mod double_options {
     
     
 }
-impl DoubleOptions {
-    /// Creates a new builder-style object to manufacture [`DoubleOptions`](crate::model::DoubleOptions).
-    pub fn builder() -> crate::model::double_options::Builder {
-        crate::model::double_options::Builder::default()
-    }
-}
 
 /// <p>Options for a 64-bit signed integer field. Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
 #[non_exhaustive]
@@ -3050,6 +3072,13 @@ impl IntOptions {
         self.sort_enabled
     }
 }
+impl IntOptions {
+    /// Creates a new builder-style object to manufacture [`IntOptions`](crate::model::IntOptions).
+    pub fn builder() -> crate::model::int_options::Builder {
+        crate::model::int_options::Builder::default()
+    }
+}
+
 /// See [`IntOptions`](crate::model::IntOptions).
 pub mod int_options {
     
@@ -3139,12 +3168,6 @@ pub mod int_options {
     }
     
     
-}
-impl IntOptions {
-    /// Creates a new builder-style object to manufacture [`IntOptions`](crate::model::IntOptions).
-    pub fn builder() -> crate::model::int_options::Builder {
-        crate::model::int_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IndexFieldType`, it is important to ensure
@@ -3295,6 +3318,13 @@ impl ExpressionStatus {
         self.status.as_ref()
     }
 }
+impl ExpressionStatus {
+    /// Creates a new builder-style object to manufacture [`ExpressionStatus`](crate::model::ExpressionStatus).
+    pub fn builder() -> crate::model::expression_status::Builder {
+        crate::model::expression_status::Builder::default()
+    }
+}
+
 /// See [`ExpressionStatus`](crate::model::ExpressionStatus).
 pub mod expression_status {
     
@@ -3337,12 +3367,6 @@ pub mod expression_status {
     
     
 }
-impl ExpressionStatus {
-    /// Creates a new builder-style object to manufacture [`ExpressionStatus`](crate::model::ExpressionStatus).
-    pub fn builder() -> crate::model::expression_status::Builder {
-        crate::model::expression_status::Builder::default()
-    }
-}
 
 /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
 #[non_exhaustive]
@@ -3365,6 +3389,13 @@ impl Expression {
         self.expression_value.as_deref()
     }
 }
+impl Expression {
+    /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
+    pub fn builder() -> crate::model::expression::Builder {
+        crate::model::expression::Builder::default()
+    }
+}
+
 /// See [`Expression`](crate::model::Expression).
 pub mod expression {
     
@@ -3406,12 +3437,6 @@ pub mod expression {
     }
     
     
-}
-impl Expression {
-    /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
-    pub fn builder() -> crate::model::expression::Builder {
-        crate::model::expression::Builder::default()
-    }
 }
 
 /// <p>The current status of the search domain.</p>
@@ -3512,6 +3537,13 @@ impl DomainStatus {
         self.limits.as_ref()
     }
 }
+impl DomainStatus {
+    /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus).
+    pub fn builder() -> crate::model::domain_status::Builder {
+        crate::model::domain_status::Builder::default()
+    }
+}
+
 /// See [`DomainStatus`](crate::model::DomainStatus).
 pub mod domain_status {
     
@@ -3688,12 +3720,6 @@ pub mod domain_status {
     
     
 }
-impl DomainStatus {
-    /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus).
-    pub fn builder() -> crate::model::domain_status::Builder {
-        crate::model::domain_status::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3716,6 +3742,13 @@ impl Limits {
         self.maximum_partition_count
     }
 }
+impl Limits {
+    /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits).
+    pub fn builder() -> crate::model::limits::Builder {
+        crate::model::limits::Builder::default()
+    }
+}
+
 /// See [`Limits`](crate::model::Limits).
 pub mod limits {
     
@@ -3760,12 +3793,6 @@ pub mod limits {
     
     
 }
-impl Limits {
-    /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits).
-    pub fn builder() -> crate::model::limits::Builder {
-        crate::model::limits::Builder::default()
-    }
-}
 
 /// <p>The endpoint to which service requests can be submitted.</p>
 #[non_exhaustive]
@@ -3781,6 +3808,13 @@ impl ServiceEndpoint {
         self.endpoint.as_deref()
     }
 }
+impl ServiceEndpoint {
+    /// Creates a new builder-style object to manufacture [`ServiceEndpoint`](crate::model::ServiceEndpoint).
+    pub fn builder() -> crate::model::service_endpoint::Builder {
+        crate::model::service_endpoint::Builder::default()
+    }
+}
+
 /// See [`ServiceEndpoint`](crate::model::ServiceEndpoint).
 pub mod service_endpoint {
     
@@ -3811,12 +3845,6 @@ pub mod service_endpoint {
     
     
 }
-impl ServiceEndpoint {
-    /// Creates a new builder-style object to manufacture [`ServiceEndpoint`](crate::model::ServiceEndpoint).
-    pub fn builder() -> crate::model::service_endpoint::Builder {
-        crate::model::service_endpoint::Builder::default()
-    }
-}
 
 /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
 #[non_exhaustive]
@@ -3839,6 +3867,13 @@ impl AnalysisSchemeStatus {
         self.status.as_ref()
     }
 }
+impl AnalysisSchemeStatus {
+    /// Creates a new builder-style object to manufacture [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
+    pub fn builder() -> crate::model::analysis_scheme_status::Builder {
+        crate::model::analysis_scheme_status::Builder::default()
+    }
+}
+
 /// See [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
 pub mod analysis_scheme_status {
     
@@ -3881,12 +3916,6 @@ pub mod analysis_scheme_status {
     
     
 }
-impl AnalysisSchemeStatus {
-    /// Creates a new builder-style object to manufacture [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
-    pub fn builder() -> crate::model::analysis_scheme_status::Builder {
-        crate::model::analysis_scheme_status::Builder::default()
-    }
-}
 
 /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
 #[non_exhaustive]
@@ -3916,6 +3945,13 @@ impl AnalysisScheme {
         self.analysis_options.as_ref()
     }
 }
+impl AnalysisScheme {
+    /// Creates a new builder-style object to manufacture [`AnalysisScheme`](crate::model::AnalysisScheme).
+    pub fn builder() -> crate::model::analysis_scheme::Builder {
+        crate::model::analysis_scheme::Builder::default()
+    }
+}
+
 /// See [`AnalysisScheme`](crate::model::AnalysisScheme).
 pub mod analysis_scheme {
     
@@ -3970,12 +4006,6 @@ pub mod analysis_scheme {
     
     
 }
-impl AnalysisScheme {
-    /// Creates a new builder-style object to manufacture [`AnalysisScheme`](crate::model::AnalysisScheme).
-    pub fn builder() -> crate::model::analysis_scheme::Builder {
-        crate::model::analysis_scheme::Builder::default()
-    }
-}
 
 /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
 #[non_exhaustive]
@@ -4019,6 +4049,13 @@ impl AnalysisOptions {
         self.algorithmic_stemming.as_ref()
     }
 }
+impl AnalysisOptions {
+    /// Creates a new builder-style object to manufacture [`AnalysisOptions`](crate::model::AnalysisOptions).
+    pub fn builder() -> crate::model::analysis_options::Builder {
+        crate::model::analysis_options::Builder::default()
+    }
+}
+
 /// See [`AnalysisOptions`](crate::model::AnalysisOptions).
 pub mod analysis_options {
     
@@ -4096,12 +4133,6 @@ pub mod analysis_options {
     }
     
     
-}
-impl AnalysisOptions {
-    /// Creates a new builder-style object to manufacture [`AnalysisOptions`](crate::model::AnalysisOptions).
-    pub fn builder() -> crate::model::analysis_options::Builder {
-        crate::model::analysis_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlgorithmicStemming`, it is important to ensure

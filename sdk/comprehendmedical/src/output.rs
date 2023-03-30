@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for StopSnomedctInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopSnomedctInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
+    pub fn builder() -> crate::output::stop_snomedct_inference_job_output::Builder {
+        crate::output::stop_snomedct_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
 pub mod stop_snomedct_inference_job_output {
     
@@ -60,12 +67,6 @@ pub mod stop_snomedct_inference_job_output {
     
     
 }
-impl StopSnomedctInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
-    pub fn builder() -> crate::output::stop_snomedct_inference_job_output::Builder {
-        crate::output::stop_snomedct_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for StopRxNormInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopRxNormInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
+    pub fn builder() -> crate::output::stop_rx_norm_inference_job_output::Builder {
+        crate::output::stop_rx_norm_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
 pub mod stop_rx_norm_inference_job_output {
     
@@ -128,12 +136,6 @@ pub mod stop_rx_norm_inference_job_output {
     
     
 }
-impl StopRxNormInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
-    pub fn builder() -> crate::output::stop_rx_norm_inference_job_output::Builder {
-        crate::output::stop_rx_norm_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for StopPhiDetectionJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopPhiDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_phi_detection_job_output::Builder {
+        crate::output::stop_phi_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
 pub mod stop_phi_detection_job_output {
     
@@ -196,12 +205,6 @@ pub mod stop_phi_detection_job_output {
     
     
 }
-impl StopPhiDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_phi_detection_job_output::Builder {
-        crate::output::stop_phi_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -223,6 +226,13 @@ impl aws_http::request_id::RequestId for StopIcd10CmInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopIcd10CmInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
+    pub fn builder() -> crate::output::stop_icd10_cm_inference_job_output::Builder {
+        crate::output::stop_icd10_cm_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
 pub mod stop_icd10_cm_inference_job_output {
     
@@ -264,12 +274,6 @@ pub mod stop_icd10_cm_inference_job_output {
     
     
 }
-impl StopIcd10CmInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
-    pub fn builder() -> crate::output::stop_icd10_cm_inference_job_output::Builder {
-        crate::output::stop_icd10_cm_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -291,6 +295,13 @@ impl aws_http::request_id::RequestId for StopEntitiesDetectionV2JobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopEntitiesDetectionV2JobOutput {
+    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
+    pub fn builder() -> crate::output::stop_entities_detection_v2_job_output::Builder {
+        crate::output::stop_entities_detection_v2_job_output::Builder::default()
+    }
+}
+
 /// See [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
 pub mod stop_entities_detection_v2_job_output {
     
@@ -332,12 +343,6 @@ pub mod stop_entities_detection_v2_job_output {
     
     
 }
-impl StopEntitiesDetectionV2JobOutput {
-    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
-    pub fn builder() -> crate::output::stop_entities_detection_v2_job_output::Builder {
-        crate::output::stop_entities_detection_v2_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -359,6 +364,13 @@ impl aws_http::request_id::RequestId for StartSnomedctInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartSnomedctInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
+    pub fn builder() -> crate::output::start_snomedct_inference_job_output::Builder {
+        crate::output::start_snomedct_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
 pub mod start_snomedct_inference_job_output {
     
@@ -400,12 +412,6 @@ pub mod start_snomedct_inference_job_output {
     
     
 }
-impl StartSnomedctInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
-    pub fn builder() -> crate::output::start_snomedct_inference_job_output::Builder {
-        crate::output::start_snomedct_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -427,6 +433,13 @@ impl aws_http::request_id::RequestId for StartRxNormInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartRxNormInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
+    pub fn builder() -> crate::output::start_rx_norm_inference_job_output::Builder {
+        crate::output::start_rx_norm_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
 pub mod start_rx_norm_inference_job_output {
     
@@ -468,12 +481,6 @@ pub mod start_rx_norm_inference_job_output {
     
     
 }
-impl StartRxNormInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
-    pub fn builder() -> crate::output::start_rx_norm_inference_job_output::Builder {
-        crate::output::start_rx_norm_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -495,6 +502,13 @@ impl aws_http::request_id::RequestId for StartPhiDetectionJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartPhiDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
+    pub fn builder() -> crate::output::start_phi_detection_job_output::Builder {
+        crate::output::start_phi_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
 pub mod start_phi_detection_job_output {
     
@@ -536,12 +550,6 @@ pub mod start_phi_detection_job_output {
     
     
 }
-impl StartPhiDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
-    pub fn builder() -> crate::output::start_phi_detection_job_output::Builder {
-        crate::output::start_phi_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -563,6 +571,13 @@ impl aws_http::request_id::RequestId for StartIcd10CmInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartIcd10CmInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
+    pub fn builder() -> crate::output::start_icd10_cm_inference_job_output::Builder {
+        crate::output::start_icd10_cm_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
 pub mod start_icd10_cm_inference_job_output {
     
@@ -604,12 +619,6 @@ pub mod start_icd10_cm_inference_job_output {
     
     
 }
-impl StartIcd10CmInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
-    pub fn builder() -> crate::output::start_icd10_cm_inference_job_output::Builder {
-        crate::output::start_icd10_cm_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -631,6 +640,13 @@ impl aws_http::request_id::RequestId for StartEntitiesDetectionV2JobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartEntitiesDetectionV2JobOutput {
+    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
+    pub fn builder() -> crate::output::start_entities_detection_v2_job_output::Builder {
+        crate::output::start_entities_detection_v2_job_output::Builder::default()
+    }
+}
+
 /// See [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
 pub mod start_entities_detection_v2_job_output {
     
@@ -672,12 +688,6 @@ pub mod start_entities_detection_v2_job_output {
     
     
 }
-impl StartEntitiesDetectionV2JobOutput {
-    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
-    pub fn builder() -> crate::output::start_entities_detection_v2_job_output::Builder {
-        crate::output::start_entities_detection_v2_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -706,6 +716,13 @@ impl aws_http::request_id::RequestId for ListSnomedctInferenceJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSnomedctInferenceJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
+    pub fn builder() -> crate::output::list_snomedct_inference_jobs_output::Builder {
+        crate::output::list_snomedct_inference_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
 pub mod list_snomedct_inference_jobs_output {
     
@@ -765,12 +782,6 @@ pub mod list_snomedct_inference_jobs_output {
     
     
 }
-impl ListSnomedctInferenceJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
-    pub fn builder() -> crate::output::list_snomedct_inference_jobs_output::Builder {
-        crate::output::list_snomedct_inference_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -799,6 +810,13 @@ impl aws_http::request_id::RequestId for ListRxNormInferenceJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRxNormInferenceJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
+    pub fn builder() -> crate::output::list_rx_norm_inference_jobs_output::Builder {
+        crate::output::list_rx_norm_inference_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
 pub mod list_rx_norm_inference_jobs_output {
     
@@ -858,12 +876,6 @@ pub mod list_rx_norm_inference_jobs_output {
     
     
 }
-impl ListRxNormInferenceJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
-    pub fn builder() -> crate::output::list_rx_norm_inference_jobs_output::Builder {
-        crate::output::list_rx_norm_inference_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -892,6 +904,13 @@ impl aws_http::request_id::RequestId for ListPhiDetectionJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPhiDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_phi_detection_jobs_output::Builder {
+        crate::output::list_phi_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
 pub mod list_phi_detection_jobs_output {
     
@@ -951,12 +970,6 @@ pub mod list_phi_detection_jobs_output {
     
     
 }
-impl ListPhiDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_phi_detection_jobs_output::Builder {
-        crate::output::list_phi_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -985,6 +998,13 @@ impl aws_http::request_id::RequestId for ListIcd10CmInferenceJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListIcd10CmInferenceJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
+    pub fn builder() -> crate::output::list_icd10_cm_inference_jobs_output::Builder {
+        crate::output::list_icd10_cm_inference_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
 pub mod list_icd10_cm_inference_jobs_output {
     
@@ -1044,12 +1064,6 @@ pub mod list_icd10_cm_inference_jobs_output {
     
     
 }
-impl ListIcd10CmInferenceJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
-    pub fn builder() -> crate::output::list_icd10_cm_inference_jobs_output::Builder {
-        crate::output::list_icd10_cm_inference_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1078,6 +1092,13 @@ impl aws_http::request_id::RequestId for ListEntitiesDetectionV2JobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListEntitiesDetectionV2JobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
+    pub fn builder() -> crate::output::list_entities_detection_v2_jobs_output::Builder {
+        crate::output::list_entities_detection_v2_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
 pub mod list_entities_detection_v2_jobs_output {
     
@@ -1137,12 +1158,6 @@ pub mod list_entities_detection_v2_jobs_output {
     
     
 }
-impl ListEntitiesDetectionV2JobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
-    pub fn builder() -> crate::output::list_entities_detection_v2_jobs_output::Builder {
-        crate::output::list_entities_detection_v2_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1192,6 +1207,13 @@ impl aws_http::request_id::RequestId for InferSnomedctOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl InferSnomedctOutput {
+    /// Creates a new builder-style object to manufacture [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
+    pub fn builder() -> crate::output::infer_snomedct_output::Builder {
+        crate::output::infer_snomedct_output::Builder::default()
+    }
+}
+
 /// See [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
 pub mod infer_snomedct_output {
     
@@ -1287,12 +1309,6 @@ pub mod infer_snomedct_output {
     
     
 }
-impl InferSnomedctOutput {
-    /// Creates a new builder-style object to manufacture [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
-    pub fn builder() -> crate::output::infer_snomedct_output::Builder {
-        crate::output::infer_snomedct_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1328,6 +1344,13 @@ impl aws_http::request_id::RequestId for InferRxNormOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl InferRxNormOutput {
+    /// Creates a new builder-style object to manufacture [`InferRxNormOutput`](crate::output::InferRxNormOutput).
+    pub fn builder() -> crate::output::infer_rx_norm_output::Builder {
+        crate::output::infer_rx_norm_output::Builder::default()
+    }
+}
+
 /// See [`InferRxNormOutput`](crate::output::InferRxNormOutput).
 pub mod infer_rx_norm_output {
     
@@ -1399,12 +1422,6 @@ pub mod infer_rx_norm_output {
     
     
 }
-impl InferRxNormOutput {
-    /// Creates a new builder-style object to manufacture [`InferRxNormOutput`](crate::output::InferRxNormOutput).
-    pub fn builder() -> crate::output::infer_rx_norm_output::Builder {
-        crate::output::infer_rx_norm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1440,6 +1457,13 @@ impl aws_http::request_id::RequestId for InferIcd10CmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl InferIcd10CmOutput {
+    /// Creates a new builder-style object to manufacture [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
+    pub fn builder() -> crate::output::infer_icd10_cm_output::Builder {
+        crate::output::infer_icd10_cm_output::Builder::default()
+    }
+}
+
 /// See [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
 pub mod infer_icd10_cm_output {
     
@@ -1511,12 +1535,6 @@ pub mod infer_icd10_cm_output {
     
     
 }
-impl InferIcd10CmOutput {
-    /// Creates a new builder-style object to manufacture [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
-    pub fn builder() -> crate::output::infer_icd10_cm_output::Builder {
-        crate::output::infer_icd10_cm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1552,6 +1570,13 @@ impl aws_http::request_id::RequestId for DetectPhiOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetectPhiOutput {
+    /// Creates a new builder-style object to manufacture [`DetectPhiOutput`](crate::output::DetectPhiOutput).
+    pub fn builder() -> crate::output::detect_phi_output::Builder {
+        crate::output::detect_phi_output::Builder::default()
+    }
+}
+
 /// See [`DetectPhiOutput`](crate::output::DetectPhiOutput).
 pub mod detect_phi_output {
     
@@ -1623,12 +1648,6 @@ pub mod detect_phi_output {
     
     
 }
-impl DetectPhiOutput {
-    /// Creates a new builder-style object to manufacture [`DetectPhiOutput`](crate::output::DetectPhiOutput).
-    pub fn builder() -> crate::output::detect_phi_output::Builder {
-        crate::output::detect_phi_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1671,6 +1690,13 @@ impl aws_http::request_id::RequestId for DetectEntitiesV2Output {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetectEntitiesV2Output {
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
+    pub fn builder() -> crate::output::detect_entities_v2_output::Builder {
+        crate::output::detect_entities_v2_output::Builder::default()
+    }
+}
+
 /// See [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
 pub mod detect_entities_v2_output {
     
@@ -1760,12 +1786,6 @@ pub mod detect_entities_v2_output {
     
     
 }
-impl DetectEntitiesV2Output {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
-    pub fn builder() -> crate::output::detect_entities_v2_output::Builder {
-        crate::output::detect_entities_v2_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1808,6 +1828,13 @@ impl aws_http::request_id::RequestId for DetectEntitiesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetectEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
+    pub fn builder() -> crate::output::detect_entities_output::Builder {
+        crate::output::detect_entities_output::Builder::default()
+    }
+}
+
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
     
@@ -1897,12 +1924,6 @@ pub mod detect_entities_output {
     
     
 }
-impl DetectEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
-    pub fn builder() -> crate::output::detect_entities_output::Builder {
-        crate::output::detect_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1924,6 +1945,13 @@ impl aws_http::request_id::RequestId for DescribeSnomedctInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSnomedctInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
+    pub fn builder() -> crate::output::describe_snomedct_inference_job_output::Builder {
+        crate::output::describe_snomedct_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
 pub mod describe_snomedct_inference_job_output {
     
@@ -1965,12 +1993,6 @@ pub mod describe_snomedct_inference_job_output {
     
     
 }
-impl DescribeSnomedctInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
-    pub fn builder() -> crate::output::describe_snomedct_inference_job_output::Builder {
-        crate::output::describe_snomedct_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1992,6 +2014,13 @@ impl aws_http::request_id::RequestId for DescribeRxNormInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRxNormInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
+    pub fn builder() -> crate::output::describe_rx_norm_inference_job_output::Builder {
+        crate::output::describe_rx_norm_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
 pub mod describe_rx_norm_inference_job_output {
     
@@ -2033,12 +2062,6 @@ pub mod describe_rx_norm_inference_job_output {
     
     
 }
-impl DescribeRxNormInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
-    pub fn builder() -> crate::output::describe_rx_norm_inference_job_output::Builder {
-        crate::output::describe_rx_norm_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2060,6 +2083,13 @@ impl aws_http::request_id::RequestId for DescribePhiDetectionJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribePhiDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_phi_detection_job_output::Builder {
+        crate::output::describe_phi_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
 pub mod describe_phi_detection_job_output {
     
@@ -2101,12 +2131,6 @@ pub mod describe_phi_detection_job_output {
     
     
 }
-impl DescribePhiDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_phi_detection_job_output::Builder {
-        crate::output::describe_phi_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2128,6 +2152,13 @@ impl aws_http::request_id::RequestId for DescribeIcd10CmInferenceJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeIcd10CmInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
+    pub fn builder() -> crate::output::describe_icd10_cm_inference_job_output::Builder {
+        crate::output::describe_icd10_cm_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
 pub mod describe_icd10_cm_inference_job_output {
     
@@ -2169,12 +2200,6 @@ pub mod describe_icd10_cm_inference_job_output {
     
     
 }
-impl DescribeIcd10CmInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
-    pub fn builder() -> crate::output::describe_icd10_cm_inference_job_output::Builder {
-        crate::output::describe_icd10_cm_inference_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2196,6 +2221,13 @@ impl aws_http::request_id::RequestId for DescribeEntitiesDetectionV2JobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEntitiesDetectionV2JobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
+    pub fn builder() -> crate::output::describe_entities_detection_v2_job_output::Builder {
+        crate::output::describe_entities_detection_v2_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
 pub mod describe_entities_detection_v2_job_output {
     
@@ -2236,11 +2268,5 @@ pub mod describe_entities_detection_v2_job_output {
     }
     
     
-}
-impl DescribeEntitiesDetectionV2JobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
-    pub fn builder() -> crate::output::describe_entities_detection_v2_job_output::Builder {
-        crate::output::describe_entities_detection_v2_job_output::Builder::default()
-    }
 }
 

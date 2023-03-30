@@ -242,55 +242,6 @@ pub struct TextLengthExceededException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TextLengthExceededException {
-    /// Creates a new builder-style object to manufacture [`TextLengthExceededException`](crate::error::TextLengthExceededException).
-    pub fn builder() -> crate::error::text_length_exceeded_exception::Builder {
-        crate::error::text_length_exceeded_exception::Builder::default()
-    }
-}
-/// See [`TextLengthExceededException`](crate::error::TextLengthExceededException).
-pub mod text_length_exceeded_exception {
-    
-    /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TextLengthExceededException`](crate::error::TextLengthExceededException).
-        pub fn build(self) -> crate::error::TextLengthExceededException {
-            crate::error::TextLengthExceededException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TextLengthExceededException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -315,26 +266,17 @@ impl aws_http::request_id::RequestId for crate::error::TextLengthExceededExcepti
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TextLengthExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>SSML speech marks are not supported for plain text-type input.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmlMarksNotSupportedForTextTypeException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SsmlMarksNotSupportedForTextTypeException {
-    /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
-    pub fn builder() -> crate::error::ssml_marks_not_supported_for_text_type_exception::Builder {
-        crate::error::ssml_marks_not_supported_for_text_type_exception::Builder::default()
+impl TextLengthExceededException {
+    /// Creates a new builder-style object to manufacture [`TextLengthExceededException`](crate::error::TextLengthExceededException).
+    pub fn builder() -> crate::error::text_length_exceeded_exception::Builder {
+        crate::error::text_length_exceeded_exception::Builder::default()
     }
 }
-/// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
-pub mod ssml_marks_not_supported_for_text_type_exception {
+
+/// See [`TextLengthExceededException`](crate::error::TextLengthExceededException).
+pub mod text_length_exceeded_exception {
     
-    /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
+    /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -352,19 +294,19 @@ pub mod ssml_marks_not_supported_for_text_type_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
-        pub fn build(self) -> crate::error::SsmlMarksNotSupportedForTextTypeException {
-            crate::error::SsmlMarksNotSupportedForTextTypeException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TextLengthExceededException`](crate::error::TextLengthExceededException).
+        pub fn build(self) -> crate::error::TextLengthExceededException {
+            crate::error::TextLengthExceededException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -373,6 +315,16 @@ pub mod ssml_marks_not_supported_for_text_type_exception {
     }
     
     
+}
+
+/// <p>SSML speech marks are not supported for plain text-type input.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SsmlMarksNotSupportedForTextTypeException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SsmlMarksNotSupportedForTextTypeException {
     /// Returns the error message.
@@ -399,26 +351,17 @@ impl aws_http::request_id::RequestId for crate::error::SsmlMarksNotSupportedForT
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SsmlMarksNotSupportedForTextTypeException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An unknown condition has caused a service failure.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceFailureException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ServiceFailureException {
-    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
-    pub fn builder() -> crate::error::service_failure_exception::Builder {
-        crate::error::service_failure_exception::Builder::default()
+impl SsmlMarksNotSupportedForTextTypeException {
+    /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
+    pub fn builder() -> crate::error::ssml_marks_not_supported_for_text_type_exception::Builder {
+        crate::error::ssml_marks_not_supported_for_text_type_exception::Builder::default()
     }
 }
-/// See [`ServiceFailureException`](crate::error::ServiceFailureException).
-pub mod service_failure_exception {
+
+/// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
+pub mod ssml_marks_not_supported_for_text_type_exception {
     
-    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
+    /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -436,19 +379,19 @@ pub mod service_failure_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
-        pub fn build(self) -> crate::error::ServiceFailureException {
-            crate::error::ServiceFailureException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
+        pub fn build(self) -> crate::error::SsmlMarksNotSupportedForTextTypeException {
+            crate::error::SsmlMarksNotSupportedForTextTypeException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -457,6 +400,16 @@ pub mod service_failure_exception {
     }
     
     
+}
+
+/// <p>An unknown condition has caused a service failure.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceFailureException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceFailureException {
     /// Returns the error message.
@@ -483,26 +436,17 @@ impl aws_http::request_id::RequestId for crate::error::ServiceFailureException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceFailureException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MarksNotSupportedForFormatException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl MarksNotSupportedForFormatException {
-    /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
-    pub fn builder() -> crate::error::marks_not_supported_for_format_exception::Builder {
-        crate::error::marks_not_supported_for_format_exception::Builder::default()
+impl ServiceFailureException {
+    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
+    pub fn builder() -> crate::error::service_failure_exception::Builder {
+        crate::error::service_failure_exception::Builder::default()
     }
 }
-/// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
-pub mod marks_not_supported_for_format_exception {
+
+/// See [`ServiceFailureException`](crate::error::ServiceFailureException).
+pub mod service_failure_exception {
     
-    /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
+    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -520,19 +464,19 @@ pub mod marks_not_supported_for_format_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
-        pub fn build(self) -> crate::error::MarksNotSupportedForFormatException {
-            crate::error::MarksNotSupportedForFormatException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
+        pub fn build(self) -> crate::error::ServiceFailureException {
+            crate::error::ServiceFailureException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -541,6 +485,16 @@ pub mod marks_not_supported_for_format_exception {
     }
     
     
+}
+
+/// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MarksNotSupportedForFormatException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MarksNotSupportedForFormatException {
     /// Returns the error message.
@@ -567,27 +521,17 @@ impl aws_http::request_id::RequestId for crate::error::MarksNotSupportedForForma
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MarksNotSupportedForFormatException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
-/// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexiconNotFoundException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl LexiconNotFoundException {
-    /// Creates a new builder-style object to manufacture [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
-    pub fn builder() -> crate::error::lexicon_not_found_exception::Builder {
-        crate::error::lexicon_not_found_exception::Builder::default()
+impl MarksNotSupportedForFormatException {
+    /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
+    pub fn builder() -> crate::error::marks_not_supported_for_format_exception::Builder {
+        crate::error::marks_not_supported_for_format_exception::Builder::default()
     }
 }
-/// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
-pub mod lexicon_not_found_exception {
+
+/// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
+pub mod marks_not_supported_for_format_exception {
     
-    /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
+    /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -605,19 +549,19 @@ pub mod lexicon_not_found_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
-        pub fn build(self) -> crate::error::LexiconNotFoundException {
-            crate::error::LexiconNotFoundException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
+        pub fn build(self) -> crate::error::MarksNotSupportedForFormatException {
+            crate::error::MarksNotSupportedForFormatException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -626,6 +570,17 @@ pub mod lexicon_not_found_exception {
     }
     
     
+}
+
+/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
+/// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LexiconNotFoundException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl LexiconNotFoundException {
     /// Returns the error message.
@@ -652,26 +607,17 @@ impl aws_http::request_id::RequestId for crate::error::LexiconNotFoundException 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LexiconNotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LanguageNotSupportedException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl LanguageNotSupportedException {
-    /// Creates a new builder-style object to manufacture [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
-    pub fn builder() -> crate::error::language_not_supported_exception::Builder {
-        crate::error::language_not_supported_exception::Builder::default()
+impl LexiconNotFoundException {
+    /// Creates a new builder-style object to manufacture [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
+    pub fn builder() -> crate::error::lexicon_not_found_exception::Builder {
+        crate::error::lexicon_not_found_exception::Builder::default()
     }
 }
-/// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
-pub mod language_not_supported_exception {
+
+/// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
+pub mod lexicon_not_found_exception {
     
-    /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
+    /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -689,19 +635,19 @@ pub mod language_not_supported_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
-        pub fn build(self) -> crate::error::LanguageNotSupportedException {
-            crate::error::LanguageNotSupportedException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
+        pub fn build(self) -> crate::error::LexiconNotFoundException {
+            crate::error::LexiconNotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -710,6 +656,16 @@ pub mod language_not_supported_exception {
     }
     
     
+}
+
+/// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LanguageNotSupportedException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl LanguageNotSupportedException {
     /// Returns the error message.
@@ -736,26 +692,17 @@ impl aws_http::request_id::RequestId for crate::error::LanguageNotSupportedExcep
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LanguageNotSupportedException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSsmlException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidSsmlException {
-    /// Creates a new builder-style object to manufacture [`InvalidSsmlException`](crate::error::InvalidSsmlException).
-    pub fn builder() -> crate::error::invalid_ssml_exception::Builder {
-        crate::error::invalid_ssml_exception::Builder::default()
+impl LanguageNotSupportedException {
+    /// Creates a new builder-style object to manufacture [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
+    pub fn builder() -> crate::error::language_not_supported_exception::Builder {
+        crate::error::language_not_supported_exception::Builder::default()
     }
 }
-/// See [`InvalidSsmlException`](crate::error::InvalidSsmlException).
-pub mod invalid_ssml_exception {
+
+/// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
+pub mod language_not_supported_exception {
     
-    /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException).
+    /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -773,19 +720,19 @@ pub mod invalid_ssml_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidSsmlException`](crate::error::InvalidSsmlException).
-        pub fn build(self) -> crate::error::InvalidSsmlException {
-            crate::error::InvalidSsmlException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
+        pub fn build(self) -> crate::error::LanguageNotSupportedException {
+            crate::error::LanguageNotSupportedException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -794,6 +741,16 @@ pub mod invalid_ssml_exception {
     }
     
     
+}
+
+/// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidSsmlException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSsmlException {
     /// Returns the error message.
@@ -820,26 +777,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidSsmlException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSsmlException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified sample rate is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSampleRateException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidSampleRateException {
-    /// Creates a new builder-style object to manufacture [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
-    pub fn builder() -> crate::error::invalid_sample_rate_exception::Builder {
-        crate::error::invalid_sample_rate_exception::Builder::default()
+impl InvalidSsmlException {
+    /// Creates a new builder-style object to manufacture [`InvalidSsmlException`](crate::error::InvalidSsmlException).
+    pub fn builder() -> crate::error::invalid_ssml_exception::Builder {
+        crate::error::invalid_ssml_exception::Builder::default()
     }
 }
-/// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
-pub mod invalid_sample_rate_exception {
+
+/// See [`InvalidSsmlException`](crate::error::InvalidSsmlException).
+pub mod invalid_ssml_exception {
     
-    /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
+    /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -857,19 +805,19 @@ pub mod invalid_sample_rate_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
-        pub fn build(self) -> crate::error::InvalidSampleRateException {
-            crate::error::InvalidSampleRateException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidSsmlException`](crate::error::InvalidSsmlException).
+        pub fn build(self) -> crate::error::InvalidSsmlException {
+            crate::error::InvalidSsmlException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -878,6 +826,16 @@ pub mod invalid_sample_rate_exception {
     }
     
     
+}
+
+/// <p>The specified sample rate is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidSampleRateException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSampleRateException {
     /// Returns the error message.
@@ -904,26 +862,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidSampleRateExceptio
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSampleRateException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineNotSupportedException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EngineNotSupportedException {
-    /// Creates a new builder-style object to manufacture [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
-    pub fn builder() -> crate::error::engine_not_supported_exception::Builder {
-        crate::error::engine_not_supported_exception::Builder::default()
+impl InvalidSampleRateException {
+    /// Creates a new builder-style object to manufacture [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
+    pub fn builder() -> crate::error::invalid_sample_rate_exception::Builder {
+        crate::error::invalid_sample_rate_exception::Builder::default()
     }
 }
-/// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
-pub mod engine_not_supported_exception {
+
+/// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
+pub mod invalid_sample_rate_exception {
     
-    /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
+    /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -941,19 +890,19 @@ pub mod engine_not_supported_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
-        pub fn build(self) -> crate::error::EngineNotSupportedException {
-            crate::error::EngineNotSupportedException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
+        pub fn build(self) -> crate::error::InvalidSampleRateException {
+            crate::error::InvalidSampleRateException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -962,6 +911,16 @@ pub mod engine_not_supported_exception {
     }
     
     
+}
+
+/// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EngineNotSupportedException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EngineNotSupportedException {
     /// Returns the error message.
@@ -987,6 +946,56 @@ impl aws_http::request_id::RequestId for crate::error::EngineNotSupportedExcepti
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EngineNotSupportedException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl EngineNotSupportedException {
+    /// Creates a new builder-style object to manufacture [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
+    pub fn builder() -> crate::error::engine_not_supported_exception::Builder {
+        crate::error::engine_not_supported_exception::Builder::default()
+    }
+}
+
+/// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
+pub mod engine_not_supported_exception {
+    
+    /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
+        pub fn build(self) -> crate::error::EngineNotSupportedException {
+            crate::error::EngineNotSupportedException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1280,55 +1289,6 @@ pub struct InvalidSnsTopicArnException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSnsTopicArnException {
-    /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
-    pub fn builder() -> crate::error::invalid_sns_topic_arn_exception::Builder {
-        crate::error::invalid_sns_topic_arn_exception::Builder::default()
-    }
-}
-/// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
-pub mod invalid_sns_topic_arn_exception {
-    
-    /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
-        pub fn build(self) -> crate::error::InvalidSnsTopicArnException {
-            crate::error::InvalidSnsTopicArnException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidSnsTopicArnException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1353,26 +1313,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidSnsTopicArnExcepti
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSnsTopicArnException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key name.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidS3KeyException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidS3KeyException {
-    /// Creates a new builder-style object to manufacture [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
-    pub fn builder() -> crate::error::invalid_s3_key_exception::Builder {
-        crate::error::invalid_s3_key_exception::Builder::default()
+impl InvalidSnsTopicArnException {
+    /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
+    pub fn builder() -> crate::error::invalid_sns_topic_arn_exception::Builder {
+        crate::error::invalid_sns_topic_arn_exception::Builder::default()
     }
 }
-/// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
-pub mod invalid_s3_key_exception {
+
+/// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
+pub mod invalid_sns_topic_arn_exception {
     
-    /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
+    /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1390,19 +1341,19 @@ pub mod invalid_s3_key_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
-        pub fn build(self) -> crate::error::InvalidS3KeyException {
-            crate::error::InvalidS3KeyException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
+        pub fn build(self) -> crate::error::InvalidSnsTopicArnException {
+            crate::error::InvalidSnsTopicArnException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1411,6 +1362,16 @@ pub mod invalid_s3_key_exception {
     }
     
     
+}
+
+/// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key name.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidS3KeyException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidS3KeyException {
     /// Returns the error message.
@@ -1437,26 +1398,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidS3KeyException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidS3KeyException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidS3BucketException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidS3BucketException {
-    /// Creates a new builder-style object to manufacture [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
-    pub fn builder() -> crate::error::invalid_s3_bucket_exception::Builder {
-        crate::error::invalid_s3_bucket_exception::Builder::default()
+impl InvalidS3KeyException {
+    /// Creates a new builder-style object to manufacture [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
+    pub fn builder() -> crate::error::invalid_s3_key_exception::Builder {
+        crate::error::invalid_s3_key_exception::Builder::default()
     }
 }
-/// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
-pub mod invalid_s3_bucket_exception {
+
+/// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
+pub mod invalid_s3_key_exception {
     
-    /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
+    /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1474,19 +1426,19 @@ pub mod invalid_s3_bucket_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
-        pub fn build(self) -> crate::error::InvalidS3BucketException {
-            crate::error::InvalidS3BucketException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
+        pub fn build(self) -> crate::error::InvalidS3KeyException {
+            crate::error::InvalidS3KeyException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1495,6 +1447,16 @@ pub mod invalid_s3_bucket_exception {
     }
     
     
+}
+
+/// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidS3BucketException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidS3BucketException {
     /// Returns the error message.
@@ -1520,6 +1482,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidS3BucketException 
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidS3BucketException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidS3BucketException {
+    /// Creates a new builder-style object to manufacture [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
+    pub fn builder() -> crate::error::invalid_s3_bucket_exception::Builder {
+        crate::error::invalid_s3_bucket_exception::Builder::default()
+    }
+}
+
+/// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
+pub mod invalid_s3_bucket_exception {
+    
+    /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
+        pub fn build(self) -> crate::error::InvalidS3BucketException {
+            crate::error::InvalidS3BucketException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1732,55 +1744,6 @@ pub struct UnsupportedPlsLanguageException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedPlsLanguageException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
-    pub fn builder() -> crate::error::unsupported_pls_language_exception::Builder {
-        crate::error::unsupported_pls_language_exception::Builder::default()
-    }
-}
-/// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
-pub mod unsupported_pls_language_exception {
-    
-    /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
-        pub fn build(self) -> crate::error::UnsupportedPlsLanguageException {
-            crate::error::UnsupportedPlsLanguageException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnsupportedPlsLanguageException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1805,26 +1768,17 @@ impl aws_http::request_id::RequestId for crate::error::UnsupportedPlsLanguageExc
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedPlsLanguageException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedPlsAlphabetException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl UnsupportedPlsAlphabetException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
-    pub fn builder() -> crate::error::unsupported_pls_alphabet_exception::Builder {
-        crate::error::unsupported_pls_alphabet_exception::Builder::default()
+impl UnsupportedPlsLanguageException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
+    pub fn builder() -> crate::error::unsupported_pls_language_exception::Builder {
+        crate::error::unsupported_pls_language_exception::Builder::default()
     }
 }
-/// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
-pub mod unsupported_pls_alphabet_exception {
+
+/// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
+pub mod unsupported_pls_language_exception {
     
-    /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
+    /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1842,19 +1796,19 @@ pub mod unsupported_pls_alphabet_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
-        pub fn build(self) -> crate::error::UnsupportedPlsAlphabetException {
-            crate::error::UnsupportedPlsAlphabetException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
+        pub fn build(self) -> crate::error::UnsupportedPlsLanguageException {
+            crate::error::UnsupportedPlsLanguageException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1863,6 +1817,16 @@ pub mod unsupported_pls_alphabet_exception {
     }
     
     
+}
+
+/// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct UnsupportedPlsAlphabetException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedPlsAlphabetException {
     /// Returns the error message.
@@ -1889,26 +1853,17 @@ impl aws_http::request_id::RequestId for crate::error::UnsupportedPlsAlphabetExc
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedPlsAlphabetException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The maximum number of lexicons would be exceeded by this operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxLexiconsNumberExceededException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl MaxLexiconsNumberExceededException {
-    /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
-    pub fn builder() -> crate::error::max_lexicons_number_exceeded_exception::Builder {
-        crate::error::max_lexicons_number_exceeded_exception::Builder::default()
+impl UnsupportedPlsAlphabetException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
+    pub fn builder() -> crate::error::unsupported_pls_alphabet_exception::Builder {
+        crate::error::unsupported_pls_alphabet_exception::Builder::default()
     }
 }
-/// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
-pub mod max_lexicons_number_exceeded_exception {
+
+/// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
+pub mod unsupported_pls_alphabet_exception {
     
-    /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
+    /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1926,19 +1881,19 @@ pub mod max_lexicons_number_exceeded_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
-        pub fn build(self) -> crate::error::MaxLexiconsNumberExceededException {
-            crate::error::MaxLexiconsNumberExceededException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
+        pub fn build(self) -> crate::error::UnsupportedPlsAlphabetException {
+            crate::error::UnsupportedPlsAlphabetException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1947,6 +1902,16 @@ pub mod max_lexicons_number_exceeded_exception {
     }
     
     
+}
+
+/// <p>The maximum number of lexicons would be exceeded by this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MaxLexiconsNumberExceededException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MaxLexiconsNumberExceededException {
     /// Returns the error message.
@@ -1973,26 +1938,17 @@ impl aws_http::request_id::RequestId for crate::error::MaxLexiconsNumberExceeded
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MaxLexiconsNumberExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxLexemeLengthExceededException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl MaxLexemeLengthExceededException {
-    /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
-    pub fn builder() -> crate::error::max_lexeme_length_exceeded_exception::Builder {
-        crate::error::max_lexeme_length_exceeded_exception::Builder::default()
+impl MaxLexiconsNumberExceededException {
+    /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
+    pub fn builder() -> crate::error::max_lexicons_number_exceeded_exception::Builder {
+        crate::error::max_lexicons_number_exceeded_exception::Builder::default()
     }
 }
-/// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
-pub mod max_lexeme_length_exceeded_exception {
+
+/// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
+pub mod max_lexicons_number_exceeded_exception {
     
-    /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
+    /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2010,19 +1966,19 @@ pub mod max_lexeme_length_exceeded_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
-        pub fn build(self) -> crate::error::MaxLexemeLengthExceededException {
-            crate::error::MaxLexemeLengthExceededException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
+        pub fn build(self) -> crate::error::MaxLexiconsNumberExceededException {
+            crate::error::MaxLexiconsNumberExceededException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2031,6 +1987,16 @@ pub mod max_lexeme_length_exceeded_exception {
     }
     
     
+}
+
+/// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MaxLexemeLengthExceededException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MaxLexemeLengthExceededException {
     /// Returns the error message.
@@ -2057,26 +2023,17 @@ impl aws_http::request_id::RequestId for crate::error::MaxLexemeLengthExceededEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MaxLexemeLengthExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The maximum size of the specified lexicon would be exceeded by this operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexiconSizeExceededException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl LexiconSizeExceededException {
-    /// Creates a new builder-style object to manufacture [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
-    pub fn builder() -> crate::error::lexicon_size_exceeded_exception::Builder {
-        crate::error::lexicon_size_exceeded_exception::Builder::default()
+impl MaxLexemeLengthExceededException {
+    /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
+    pub fn builder() -> crate::error::max_lexeme_length_exceeded_exception::Builder {
+        crate::error::max_lexeme_length_exceeded_exception::Builder::default()
     }
 }
-/// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
-pub mod lexicon_size_exceeded_exception {
+
+/// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
+pub mod max_lexeme_length_exceeded_exception {
     
-    /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
+    /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2094,19 +2051,19 @@ pub mod lexicon_size_exceeded_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
-        pub fn build(self) -> crate::error::LexiconSizeExceededException {
-            crate::error::LexiconSizeExceededException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
+        pub fn build(self) -> crate::error::MaxLexemeLengthExceededException {
+            crate::error::MaxLexemeLengthExceededException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2115,6 +2072,16 @@ pub mod lexicon_size_exceeded_exception {
     }
     
     
+}
+
+/// <p>The maximum size of the specified lexicon would be exceeded by this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LexiconSizeExceededException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl LexiconSizeExceededException {
     /// Returns the error message.
@@ -2141,26 +2108,17 @@ impl aws_http::request_id::RequestId for crate::error::LexiconSizeExceededExcept
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LexiconSizeExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLexiconException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidLexiconException {
-    /// Creates a new builder-style object to manufacture [`InvalidLexiconException`](crate::error::InvalidLexiconException).
-    pub fn builder() -> crate::error::invalid_lexicon_exception::Builder {
-        crate::error::invalid_lexicon_exception::Builder::default()
+impl LexiconSizeExceededException {
+    /// Creates a new builder-style object to manufacture [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
+    pub fn builder() -> crate::error::lexicon_size_exceeded_exception::Builder {
+        crate::error::lexicon_size_exceeded_exception::Builder::default()
     }
 }
-/// See [`InvalidLexiconException`](crate::error::InvalidLexiconException).
-pub mod invalid_lexicon_exception {
+
+/// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
+pub mod lexicon_size_exceeded_exception {
     
-    /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException).
+    /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2178,19 +2136,19 @@ pub mod invalid_lexicon_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidLexiconException`](crate::error::InvalidLexiconException).
-        pub fn build(self) -> crate::error::InvalidLexiconException {
-            crate::error::InvalidLexiconException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
+        pub fn build(self) -> crate::error::LexiconSizeExceededException {
+            crate::error::LexiconSizeExceededException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2199,6 +2157,16 @@ pub mod invalid_lexicon_exception {
     }
     
     
+}
+
+/// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidLexiconException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidLexiconException {
     /// Returns the error message.
@@ -2224,6 +2192,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidLexiconException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLexiconException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidLexiconException {
+    /// Creates a new builder-style object to manufacture [`InvalidLexiconException`](crate::error::InvalidLexiconException).
+    pub fn builder() -> crate::error::invalid_lexicon_exception::Builder {
+        crate::error::invalid_lexicon_exception::Builder::default()
+    }
+}
+
+/// See [`InvalidLexiconException`](crate::error::InvalidLexiconException).
+pub mod invalid_lexicon_exception {
+    
+    /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidLexiconException`](crate::error::InvalidLexiconException).
+        pub fn build(self) -> crate::error::InvalidLexiconException {
+            crate::error::InvalidLexiconException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2356,55 +2374,6 @@ pub struct InvalidNextTokenException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidNextTokenException {
-    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-    pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
-        crate::error::invalid_next_token_exception::Builder::default()
-    }
-}
-/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-pub mod invalid_next_token_exception {
-    
-    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
-        pub fn build(self) -> crate::error::InvalidNextTokenException {
-            crate::error::InvalidNextTokenException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidNextTokenException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2428,6 +2397,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidNextTokenException
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidNextTokenException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidNextTokenException {
+    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+    pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
+        crate::error::invalid_next_token_exception::Builder::default()
+    }
+}
+
+/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+pub mod invalid_next_token_exception {
+    
+    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
+        pub fn build(self) -> crate::error::InvalidNextTokenException {
+            crate::error::InvalidNextTokenException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2696,55 +2715,6 @@ pub struct SynthesisTaskNotFoundException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SynthesisTaskNotFoundException {
-    /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
-    pub fn builder() -> crate::error::synthesis_task_not_found_exception::Builder {
-        crate::error::synthesis_task_not_found_exception::Builder::default()
-    }
-}
-/// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
-pub mod synthesis_task_not_found_exception {
-    
-    /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
-        pub fn build(self) -> crate::error::SynthesisTaskNotFoundException {
-            crate::error::SynthesisTaskNotFoundException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SynthesisTaskNotFoundException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2769,26 +2739,17 @@ impl aws_http::request_id::RequestId for crate::error::SynthesisTaskNotFoundExce
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SynthesisTaskNotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTaskIdException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidTaskIdException {
-    /// Creates a new builder-style object to manufacture [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
-    pub fn builder() -> crate::error::invalid_task_id_exception::Builder {
-        crate::error::invalid_task_id_exception::Builder::default()
+impl SynthesisTaskNotFoundException {
+    /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
+    pub fn builder() -> crate::error::synthesis_task_not_found_exception::Builder {
+        crate::error::synthesis_task_not_found_exception::Builder::default()
     }
 }
-/// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
-pub mod invalid_task_id_exception {
+
+/// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
+pub mod synthesis_task_not_found_exception {
     
-    /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
+    /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2806,19 +2767,19 @@ pub mod invalid_task_id_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
-        pub fn build(self) -> crate::error::InvalidTaskIdException {
-            crate::error::InvalidTaskIdException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
+        pub fn build(self) -> crate::error::SynthesisTaskNotFoundException {
+            crate::error::SynthesisTaskNotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2827,6 +2788,16 @@ pub mod invalid_task_id_exception {
     }
     
     
+}
+
+/// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidTaskIdException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidTaskIdException {
     /// Returns the error message.
@@ -2852,6 +2823,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidTaskIdException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTaskIdException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidTaskIdException {
+    /// Creates a new builder-style object to manufacture [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
+    pub fn builder() -> crate::error::invalid_task_id_exception::Builder {
+        crate::error::invalid_task_id_exception::Builder::default()
+    }
+}
+
+/// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
+pub mod invalid_task_id_exception {
+    
+    /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
+        pub fn build(self) -> crate::error::InvalidTaskIdException {
+            crate::error::InvalidTaskIdException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

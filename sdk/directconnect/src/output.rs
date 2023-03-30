@@ -219,6 +219,13 @@ impl aws_http::request_id::RequestId for UpdateVirtualInterfaceAttributesOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVirtualInterfaceAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
+    pub fn builder() -> crate::output::update_virtual_interface_attributes_output::Builder {
+        crate::output::update_virtual_interface_attributes_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
 pub mod update_virtual_interface_attributes_output {
     
@@ -604,12 +611,6 @@ pub mod update_virtual_interface_attributes_output {
     
     
 }
-impl UpdateVirtualInterfaceAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
-    pub fn builder() -> crate::output::update_virtual_interface_attributes_output::Builder {
-        crate::output::update_virtual_interface_attributes_output::Builder::default()
-    }
-}
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
@@ -791,6 +792,13 @@ impl aws_http::request_id::RequestId for UpdateLagOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateLagOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLagOutput`](crate::output::UpdateLagOutput).
+    pub fn builder() -> crate::output::update_lag_output::Builder {
+        crate::output::update_lag_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLagOutput`](crate::output::UpdateLagOutput).
 pub mod update_lag_output {
     
@@ -1113,12 +1121,6 @@ pub mod update_lag_output {
     
     
 }
-impl UpdateLagOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLagOutput`](crate::output::UpdateLagOutput).
-    pub fn builder() -> crate::output::update_lag_output::Builder {
-        crate::output::update_lag_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1140,6 +1142,13 @@ impl aws_http::request_id::RequestId for UpdateDirectConnectGatewayAssociationOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDirectConnectGatewayAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
+    pub fn builder() -> crate::output::update_direct_connect_gateway_association_output::Builder {
+        crate::output::update_direct_connect_gateway_association_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
 pub mod update_direct_connect_gateway_association_output {
     
@@ -1181,12 +1190,6 @@ pub mod update_direct_connect_gateway_association_output {
     
     
 }
-impl UpdateDirectConnectGatewayAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
-    pub fn builder() -> crate::output::update_direct_connect_gateway_association_output::Builder {
-        crate::output::update_direct_connect_gateway_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1208,6 +1211,13 @@ impl aws_http::request_id::RequestId for UpdateDirectConnectGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDirectConnectGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
+    pub fn builder() -> crate::output::update_direct_connect_gateway_output::Builder {
+        crate::output::update_direct_connect_gateway_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
 pub mod update_direct_connect_gateway_output {
     
@@ -1248,12 +1258,6 @@ pub mod update_direct_connect_gateway_output {
     }
     
     
-}
-impl UpdateDirectConnectGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
-    pub fn builder() -> crate::output::update_direct_connect_gateway_output::Builder {
-        crate::output::update_direct_connect_gateway_output::Builder::default()
-    }
 }
 
 /// <p>Information about an Direct Connect connection.</p>
@@ -1449,6 +1453,13 @@ impl aws_http::request_id::RequestId for UpdateConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
+    pub fn builder() -> crate::output::update_connection_output::Builder {
+        crate::output::update_connection_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
 pub mod update_connection_output {
     
@@ -1781,12 +1792,6 @@ pub mod update_connection_output {
     
     
 }
-impl UpdateConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
-    pub fn builder() -> crate::output::update_connection_output::Builder {
-        crate::output::update_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1799,6 +1804,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -1828,12 +1840,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1846,6 +1852,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -1875,12 +1888,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1902,6 +1909,13 @@ impl aws_http::request_id::RequestId for StopBgpFailoverTestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopBgpFailoverTestOutput {
+    /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
+    pub fn builder() -> crate::output::stop_bgp_failover_test_output::Builder {
+        crate::output::stop_bgp_failover_test_output::Builder::default()
+    }
+}
+
 /// See [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
 pub mod stop_bgp_failover_test_output {
     
@@ -1943,12 +1957,6 @@ pub mod stop_bgp_failover_test_output {
     
     
 }
-impl StopBgpFailoverTestOutput {
-    /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
-    pub fn builder() -> crate::output::stop_bgp_failover_test_output::Builder {
-        crate::output::stop_bgp_failover_test_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1970,6 +1978,13 @@ impl aws_http::request_id::RequestId for StartBgpFailoverTestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartBgpFailoverTestOutput {
+    /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
+    pub fn builder() -> crate::output::start_bgp_failover_test_output::Builder {
+        crate::output::start_bgp_failover_test_output::Builder::default()
+    }
+}
+
 /// See [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
 pub mod start_bgp_failover_test_output {
     
@@ -2011,12 +2026,6 @@ pub mod start_bgp_failover_test_output {
     
     
 }
-impl StartBgpFailoverTestOutput {
-    /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
-    pub fn builder() -> crate::output::start_bgp_failover_test_output::Builder {
-        crate::output::start_bgp_failover_test_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2045,6 +2054,13 @@ impl aws_http::request_id::RequestId for ListVirtualInterfaceTestHistoryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVirtualInterfaceTestHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
+    pub fn builder() -> crate::output::list_virtual_interface_test_history_output::Builder {
+        crate::output::list_virtual_interface_test_history_output::Builder::default()
+    }
+}
+
 /// See [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
 pub mod list_virtual_interface_test_history_output {
     
@@ -2104,12 +2120,6 @@ pub mod list_virtual_interface_test_history_output {
     
     
 }
-impl ListVirtualInterfaceTestHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
-    pub fn builder() -> crate::output::list_virtual_interface_test_history_output::Builder {
-        crate::output::list_virtual_interface_test_history_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2138,6 +2148,13 @@ impl aws_http::request_id::RequestId for DisassociateMacSecKeyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateMacSecKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
+    pub fn builder() -> crate::output::disassociate_mac_sec_key_output::Builder {
+        crate::output::disassociate_mac_sec_key_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
 pub mod disassociate_mac_sec_key_output {
     
@@ -2196,12 +2213,6 @@ pub mod disassociate_mac_sec_key_output {
     }
     
     
-}
-impl DisassociateMacSecKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
-    pub fn builder() -> crate::output::disassociate_mac_sec_key_output::Builder {
-        crate::output::disassociate_mac_sec_key_output::Builder::default()
-    }
 }
 
 /// <p>Information about an Direct Connect connection.</p>
@@ -2397,6 +2408,13 @@ impl aws_http::request_id::RequestId for DisassociateConnectionFromLagOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateConnectionFromLagOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
+    pub fn builder() -> crate::output::disassociate_connection_from_lag_output::Builder {
+        crate::output::disassociate_connection_from_lag_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
 pub mod disassociate_connection_from_lag_output {
     
@@ -2729,12 +2747,6 @@ pub mod disassociate_connection_from_lag_output {
     
     
 }
-impl DisassociateConnectionFromLagOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
-    pub fn builder() -> crate::output::disassociate_connection_from_lag_output::Builder {
-        crate::output::disassociate_connection_from_lag_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2756,6 +2768,13 @@ impl aws_http::request_id::RequestId for DescribeVirtualInterfacesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVirtualInterfacesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
+    pub fn builder() -> crate::output::describe_virtual_interfaces_output::Builder {
+        crate::output::describe_virtual_interfaces_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
 pub mod describe_virtual_interfaces_output {
     
@@ -2803,12 +2822,6 @@ pub mod describe_virtual_interfaces_output {
     
     
 }
-impl DescribeVirtualInterfacesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
-    pub fn builder() -> crate::output::describe_virtual_interfaces_output::Builder {
-        crate::output::describe_virtual_interfaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2830,6 +2843,13 @@ impl aws_http::request_id::RequestId for DescribeVirtualGatewaysOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVirtualGatewaysOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
+    pub fn builder() -> crate::output::describe_virtual_gateways_output::Builder {
+        crate::output::describe_virtual_gateways_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
 pub mod describe_virtual_gateways_output {
     
@@ -2877,12 +2897,6 @@ pub mod describe_virtual_gateways_output {
     
     
 }
-impl DescribeVirtualGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
-    pub fn builder() -> crate::output::describe_virtual_gateways_output::Builder {
-        crate::output::describe_virtual_gateways_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2904,6 +2918,13 @@ impl aws_http::request_id::RequestId for DescribeTagsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    pub fn builder() -> crate::output::describe_tags_output::Builder {
+        crate::output::describe_tags_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
     
@@ -2951,12 +2972,6 @@ pub mod describe_tags_output {
     
     
 }
-impl DescribeTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    pub fn builder() -> crate::output::describe_tags_output::Builder {
-        crate::output::describe_tags_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2999,6 +3014,13 @@ impl aws_http::request_id::RequestId for DescribeRouterConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRouterConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
+    pub fn builder() -> crate::output::describe_router_configuration_output::Builder {
+        crate::output::describe_router_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
 pub mod describe_router_configuration_output {
     
@@ -3076,12 +3098,6 @@ pub mod describe_router_configuration_output {
     
     
 }
-impl DescribeRouterConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
-    pub fn builder() -> crate::output::describe_router_configuration_output::Builder {
-        crate::output::describe_router_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3103,6 +3119,13 @@ impl aws_http::request_id::RequestId for DescribeLocationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeLocationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
+    pub fn builder() -> crate::output::describe_locations_output::Builder {
+        crate::output::describe_locations_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
 pub mod describe_locations_output {
     
@@ -3150,12 +3173,6 @@ pub mod describe_locations_output {
     
     
 }
-impl DescribeLocationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
-    pub fn builder() -> crate::output::describe_locations_output::Builder {
-        crate::output::describe_locations_output::Builder::default()
-    }
-}
 
 /// <p>Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>
 #[non_exhaustive]
@@ -3184,6 +3201,13 @@ impl aws_http::request_id::RequestId for DescribeLoaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeLoaOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
+    pub fn builder() -> crate::output::describe_loa_output::Builder {
+        crate::output::describe_loa_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
 pub mod describe_loa_output {
     
@@ -3237,12 +3261,6 @@ pub mod describe_loa_output {
     
     
 }
-impl DescribeLoaOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
-    pub fn builder() -> crate::output::describe_loa_output::Builder {
-        crate::output::describe_loa_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3264,6 +3282,13 @@ impl aws_http::request_id::RequestId for DescribeLagsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeLagsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
+    pub fn builder() -> crate::output::describe_lags_output::Builder {
+        crate::output::describe_lags_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
 pub mod describe_lags_output {
     
@@ -3311,12 +3336,6 @@ pub mod describe_lags_output {
     
     
 }
-impl DescribeLagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
-    pub fn builder() -> crate::output::describe_lags_output::Builder {
-        crate::output::describe_lags_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3338,6 +3357,13 @@ impl aws_http::request_id::RequestId for DescribeInterconnectsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeInterconnectsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
+    pub fn builder() -> crate::output::describe_interconnects_output::Builder {
+        crate::output::describe_interconnects_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
 pub mod describe_interconnects_output {
     
@@ -3385,12 +3411,6 @@ pub mod describe_interconnects_output {
     
     
 }
-impl DescribeInterconnectsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
-    pub fn builder() -> crate::output::describe_interconnects_output::Builder {
-        crate::output::describe_interconnects_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3412,6 +3432,13 @@ impl aws_http::request_id::RequestId for DescribeInterconnectLoaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeInterconnectLoaOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
+    pub fn builder() -> crate::output::describe_interconnect_loa_output::Builder {
+        crate::output::describe_interconnect_loa_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
 pub mod describe_interconnect_loa_output {
     
@@ -3453,12 +3480,6 @@ pub mod describe_interconnect_loa_output {
     
     
 }
-impl DescribeInterconnectLoaOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
-    pub fn builder() -> crate::output::describe_interconnect_loa_output::Builder {
-        crate::output::describe_interconnect_loa_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3480,6 +3501,13 @@ impl aws_http::request_id::RequestId for DescribeHostedConnectionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeHostedConnectionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
+    pub fn builder() -> crate::output::describe_hosted_connections_output::Builder {
+        crate::output::describe_hosted_connections_output::Builder::default()
+    }
+}
+
 /// See [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
 pub mod describe_hosted_connections_output {
     
@@ -3527,12 +3555,6 @@ pub mod describe_hosted_connections_output {
     
     
 }
-impl DescribeHostedConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
-    pub fn builder() -> crate::output::describe_hosted_connections_output::Builder {
-        crate::output::describe_hosted_connections_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3561,6 +3583,13 @@ impl aws_http::request_id::RequestId for DescribeDirectConnectGatewaysOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDirectConnectGatewaysOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
+    pub fn builder() -> crate::output::describe_direct_connect_gateways_output::Builder {
+        crate::output::describe_direct_connect_gateways_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
 pub mod describe_direct_connect_gateways_output {
     
@@ -3620,12 +3649,6 @@ pub mod describe_direct_connect_gateways_output {
     
     
 }
-impl DescribeDirectConnectGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
-    pub fn builder() -> crate::output::describe_direct_connect_gateways_output::Builder {
-        crate::output::describe_direct_connect_gateways_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3654,6 +3677,13 @@ impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAttachments
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDirectConnectGatewayAttachmentsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
+    pub fn builder() -> crate::output::describe_direct_connect_gateway_attachments_output::Builder {
+        crate::output::describe_direct_connect_gateway_attachments_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
 pub mod describe_direct_connect_gateway_attachments_output {
     
@@ -3713,12 +3743,6 @@ pub mod describe_direct_connect_gateway_attachments_output {
     
     
 }
-impl DescribeDirectConnectGatewayAttachmentsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
-    pub fn builder() -> crate::output::describe_direct_connect_gateway_attachments_output::Builder {
-        crate::output::describe_direct_connect_gateway_attachments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3747,6 +3771,13 @@ impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAssociation
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDirectConnectGatewayAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
+    pub fn builder() -> crate::output::describe_direct_connect_gateway_associations_output::Builder {
+        crate::output::describe_direct_connect_gateway_associations_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
 pub mod describe_direct_connect_gateway_associations_output {
     
@@ -3806,12 +3837,6 @@ pub mod describe_direct_connect_gateway_associations_output {
     
     
 }
-impl DescribeDirectConnectGatewayAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
-    pub fn builder() -> crate::output::describe_direct_connect_gateway_associations_output::Builder {
-        crate::output::describe_direct_connect_gateway_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3840,6 +3865,13 @@ impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAssociation
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDirectConnectGatewayAssociationProposalsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
+    pub fn builder() -> crate::output::describe_direct_connect_gateway_association_proposals_output::Builder {
+        crate::output::describe_direct_connect_gateway_association_proposals_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
 pub mod describe_direct_connect_gateway_association_proposals_output {
     
@@ -3899,12 +3931,6 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
     
     
 }
-impl DescribeDirectConnectGatewayAssociationProposalsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
-    pub fn builder() -> crate::output::describe_direct_connect_gateway_association_proposals_output::Builder {
-        crate::output::describe_direct_connect_gateway_association_proposals_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3943,6 +3969,13 @@ impl aws_http::request_id::RequestId for DescribeCustomerMetadataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCustomerMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
+    pub fn builder() -> crate::output::describe_customer_metadata_output::Builder {
+        crate::output::describe_customer_metadata_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
 pub mod describe_customer_metadata_output {
     
@@ -4012,12 +4045,6 @@ pub mod describe_customer_metadata_output {
     
     
 }
-impl DescribeCustomerMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
-    pub fn builder() -> crate::output::describe_customer_metadata_output::Builder {
-        crate::output::describe_customer_metadata_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4039,6 +4066,13 @@ impl aws_http::request_id::RequestId for DescribeConnectionsOnInterconnectOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeConnectionsOnInterconnectOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
+    pub fn builder() -> crate::output::describe_connections_on_interconnect_output::Builder {
+        crate::output::describe_connections_on_interconnect_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
 pub mod describe_connections_on_interconnect_output {
     
@@ -4086,12 +4120,6 @@ pub mod describe_connections_on_interconnect_output {
     
     
 }
-impl DescribeConnectionsOnInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
-    pub fn builder() -> crate::output::describe_connections_on_interconnect_output::Builder {
-        crate::output::describe_connections_on_interconnect_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4113,6 +4141,13 @@ impl aws_http::request_id::RequestId for DescribeConnectionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeConnectionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
+    pub fn builder() -> crate::output::describe_connections_output::Builder {
+        crate::output::describe_connections_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
 pub mod describe_connections_output {
     
@@ -4160,12 +4195,6 @@ pub mod describe_connections_output {
     
     
 }
-impl DescribeConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
-    pub fn builder() -> crate::output::describe_connections_output::Builder {
-        crate::output::describe_connections_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4187,6 +4216,13 @@ impl aws_http::request_id::RequestId for DescribeConnectionLoaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeConnectionLoaOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
+    pub fn builder() -> crate::output::describe_connection_loa_output::Builder {
+        crate::output::describe_connection_loa_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
 pub mod describe_connection_loa_output {
     
@@ -4227,12 +4263,6 @@ pub mod describe_connection_loa_output {
     }
     
     
-}
-impl DescribeConnectionLoaOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
-    pub fn builder() -> crate::output::describe_connection_loa_output::Builder {
-        crate::output::describe_connection_loa_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -4277,6 +4307,13 @@ impl aws_http::request_id::RequestId for DeleteVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::delete_virtual_interface_output::Builder {
+        crate::output::delete_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
 pub mod delete_virtual_interface_output {
     
@@ -4339,12 +4376,6 @@ pub mod delete_virtual_interface_output {
     }
     
     
-}
-impl DeleteVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::delete_virtual_interface_output::Builder {
-        crate::output::delete_virtual_interface_output::Builder::default()
-    }
 }
 
 /// <p>Information about a link aggregation group (LAG).</p>
@@ -4527,6 +4558,13 @@ impl aws_http::request_id::RequestId for DeleteLagOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLagOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLagOutput`](crate::output::DeleteLagOutput).
+    pub fn builder() -> crate::output::delete_lag_output::Builder {
+        crate::output::delete_lag_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLagOutput`](crate::output::DeleteLagOutput).
 pub mod delete_lag_output {
     
@@ -4849,12 +4887,6 @@ pub mod delete_lag_output {
     
     
 }
-impl DeleteLagOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLagOutput`](crate::output::DeleteLagOutput).
-    pub fn builder() -> crate::output::delete_lag_output::Builder {
-        crate::output::delete_lag_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4894,6 +4926,13 @@ impl aws_http::request_id::RequestId for DeleteInterconnectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteInterconnectOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
+    pub fn builder() -> crate::output::delete_interconnect_output::Builder {
+        crate::output::delete_interconnect_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
 pub mod delete_interconnect_output {
     
@@ -4953,12 +4992,6 @@ pub mod delete_interconnect_output {
     
     
 }
-impl DeleteInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
-    pub fn builder() -> crate::output::delete_interconnect_output::Builder {
-        crate::output::delete_interconnect_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4980,6 +5013,13 @@ impl aws_http::request_id::RequestId for DeleteDirectConnectGatewayAssociationPr
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDirectConnectGatewayAssociationProposalOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
+    pub fn builder() -> crate::output::delete_direct_connect_gateway_association_proposal_output::Builder {
+        crate::output::delete_direct_connect_gateway_association_proposal_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
 pub mod delete_direct_connect_gateway_association_proposal_output {
     
@@ -5021,12 +5061,6 @@ pub mod delete_direct_connect_gateway_association_proposal_output {
     
     
 }
-impl DeleteDirectConnectGatewayAssociationProposalOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder() -> crate::output::delete_direct_connect_gateway_association_proposal_output::Builder {
-        crate::output::delete_direct_connect_gateway_association_proposal_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5048,6 +5082,13 @@ impl aws_http::request_id::RequestId for DeleteDirectConnectGatewayAssociationOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDirectConnectGatewayAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
+    pub fn builder() -> crate::output::delete_direct_connect_gateway_association_output::Builder {
+        crate::output::delete_direct_connect_gateway_association_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
 pub mod delete_direct_connect_gateway_association_output {
     
@@ -5089,12 +5130,6 @@ pub mod delete_direct_connect_gateway_association_output {
     
     
 }
-impl DeleteDirectConnectGatewayAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
-    pub fn builder() -> crate::output::delete_direct_connect_gateway_association_output::Builder {
-        crate::output::delete_direct_connect_gateway_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5116,6 +5151,13 @@ impl aws_http::request_id::RequestId for DeleteDirectConnectGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDirectConnectGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
+    pub fn builder() -> crate::output::delete_direct_connect_gateway_output::Builder {
+        crate::output::delete_direct_connect_gateway_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
 pub mod delete_direct_connect_gateway_output {
     
@@ -5156,12 +5198,6 @@ pub mod delete_direct_connect_gateway_output {
     }
     
     
-}
-impl DeleteDirectConnectGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
-    pub fn builder() -> crate::output::delete_direct_connect_gateway_output::Builder {
-        crate::output::delete_direct_connect_gateway_output::Builder::default()
-    }
 }
 
 /// <p>Information about an Direct Connect connection.</p>
@@ -5357,6 +5393,13 @@ impl aws_http::request_id::RequestId for DeleteConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    pub fn builder() -> crate::output::delete_connection_output::Builder {
+        crate::output::delete_connection_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
     
@@ -5689,12 +5732,6 @@ pub mod delete_connection_output {
     
     
 }
-impl DeleteConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
-    pub fn builder() -> crate::output::delete_connection_output::Builder {
-        crate::output::delete_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5716,6 +5753,13 @@ impl aws_http::request_id::RequestId for DeleteBgpPeerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBgpPeerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
+    pub fn builder() -> crate::output::delete_bgp_peer_output::Builder {
+        crate::output::delete_bgp_peer_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
 pub mod delete_bgp_peer_output {
     
@@ -5757,12 +5801,6 @@ pub mod delete_bgp_peer_output {
     
     
 }
-impl DeleteBgpPeerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
-    pub fn builder() -> crate::output::delete_bgp_peer_output::Builder {
-        crate::output::delete_bgp_peer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5784,6 +5822,13 @@ impl aws_http::request_id::RequestId for CreateTransitVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateTransitVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::create_transit_virtual_interface_output::Builder {
+        crate::output::create_transit_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
 pub mod create_transit_virtual_interface_output {
     
@@ -5824,12 +5869,6 @@ pub mod create_transit_virtual_interface_output {
     }
     
     
-}
-impl CreateTransitVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::create_transit_virtual_interface_output::Builder {
-        crate::output::create_transit_virtual_interface_output::Builder::default()
-    }
 }
 
 /// <p>Information about a virtual interface.</p>
@@ -6051,6 +6090,13 @@ impl aws_http::request_id::RequestId for CreatePublicVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePublicVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::create_public_virtual_interface_output::Builder {
+        crate::output::create_public_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
 pub mod create_public_virtual_interface_output {
     
@@ -6436,12 +6482,6 @@ pub mod create_public_virtual_interface_output {
     
     
 }
-impl CreatePublicVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::create_public_virtual_interface_output::Builder {
-        crate::output::create_public_virtual_interface_output::Builder::default()
-    }
-}
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
@@ -6662,6 +6702,13 @@ impl aws_http::request_id::RequestId for CreatePrivateVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePrivateVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::create_private_virtual_interface_output::Builder {
+        crate::output::create_private_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
 pub mod create_private_virtual_interface_output {
     
@@ -7047,12 +7094,6 @@ pub mod create_private_virtual_interface_output {
     
     
 }
-impl CreatePrivateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::create_private_virtual_interface_output::Builder {
-        crate::output::create_private_virtual_interface_output::Builder::default()
-    }
-}
 
 /// <p>Information about a link aggregation group (LAG).</p>
 #[non_exhaustive]
@@ -7234,6 +7275,13 @@ impl aws_http::request_id::RequestId for CreateLagOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLagOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLagOutput`](crate::output::CreateLagOutput).
+    pub fn builder() -> crate::output::create_lag_output::Builder {
+        crate::output::create_lag_output::Builder::default()
+    }
+}
+
 /// See [`CreateLagOutput`](crate::output::CreateLagOutput).
 pub mod create_lag_output {
     
@@ -7556,12 +7604,6 @@ pub mod create_lag_output {
     
     
 }
-impl CreateLagOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLagOutput`](crate::output::CreateLagOutput).
-    pub fn builder() -> crate::output::create_lag_output::Builder {
-        crate::output::create_lag_output::Builder::default()
-    }
-}
 
 /// <p>Information about an interconnect.</p>
 #[non_exhaustive]
@@ -7699,6 +7741,13 @@ impl aws_http::request_id::RequestId for CreateInterconnectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateInterconnectOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
+    pub fn builder() -> crate::output::create_interconnect_output::Builder {
+        crate::output::create_interconnect_output::Builder::default()
+    }
+}
+
 /// See [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
 pub mod create_interconnect_output {
     
@@ -7932,12 +7981,6 @@ pub mod create_interconnect_output {
     
     
 }
-impl CreateInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
-    pub fn builder() -> crate::output::create_interconnect_output::Builder {
-        crate::output::create_interconnect_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7959,6 +8002,13 @@ impl aws_http::request_id::RequestId for CreateDirectConnectGatewayAssociationPr
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDirectConnectGatewayAssociationProposalOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
+    pub fn builder() -> crate::output::create_direct_connect_gateway_association_proposal_output::Builder {
+        crate::output::create_direct_connect_gateway_association_proposal_output::Builder::default()
+    }
+}
+
 /// See [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
 pub mod create_direct_connect_gateway_association_proposal_output {
     
@@ -8000,12 +8050,6 @@ pub mod create_direct_connect_gateway_association_proposal_output {
     
     
 }
-impl CreateDirectConnectGatewayAssociationProposalOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder() -> crate::output::create_direct_connect_gateway_association_proposal_output::Builder {
-        crate::output::create_direct_connect_gateway_association_proposal_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8027,6 +8071,13 @@ impl aws_http::request_id::RequestId for CreateDirectConnectGatewayAssociationOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDirectConnectGatewayAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
+    pub fn builder() -> crate::output::create_direct_connect_gateway_association_output::Builder {
+        crate::output::create_direct_connect_gateway_association_output::Builder::default()
+    }
+}
+
 /// See [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
 pub mod create_direct_connect_gateway_association_output {
     
@@ -8068,12 +8119,6 @@ pub mod create_direct_connect_gateway_association_output {
     
     
 }
-impl CreateDirectConnectGatewayAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
-    pub fn builder() -> crate::output::create_direct_connect_gateway_association_output::Builder {
-        crate::output::create_direct_connect_gateway_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8095,6 +8140,13 @@ impl aws_http::request_id::RequestId for CreateDirectConnectGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDirectConnectGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
+    pub fn builder() -> crate::output::create_direct_connect_gateway_output::Builder {
+        crate::output::create_direct_connect_gateway_output::Builder::default()
+    }
+}
+
 /// See [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
 pub mod create_direct_connect_gateway_output {
     
@@ -8135,12 +8187,6 @@ pub mod create_direct_connect_gateway_output {
     }
     
     
-}
-impl CreateDirectConnectGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
-    pub fn builder() -> crate::output::create_direct_connect_gateway_output::Builder {
-        crate::output::create_direct_connect_gateway_output::Builder::default()
-    }
 }
 
 /// <p>Information about an Direct Connect connection.</p>
@@ -8336,6 +8382,13 @@ impl aws_http::request_id::RequestId for CreateConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
+    pub fn builder() -> crate::output::create_connection_output::Builder {
+        crate::output::create_connection_output::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
     
@@ -8668,12 +8721,6 @@ pub mod create_connection_output {
     
     
 }
-impl CreateConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
-    pub fn builder() -> crate::output::create_connection_output::Builder {
-        crate::output::create_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8695,6 +8742,13 @@ impl aws_http::request_id::RequestId for CreateBgpPeerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBgpPeerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
+    pub fn builder() -> crate::output::create_bgp_peer_output::Builder {
+        crate::output::create_bgp_peer_output::Builder::default()
+    }
+}
+
 /// See [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
 pub mod create_bgp_peer_output {
     
@@ -8735,12 +8789,6 @@ pub mod create_bgp_peer_output {
     }
     
     
-}
-impl CreateBgpPeerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
-    pub fn builder() -> crate::output::create_bgp_peer_output::Builder {
-        crate::output::create_bgp_peer_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -8785,6 +8833,13 @@ impl aws_http::request_id::RequestId for ConfirmTransitVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ConfirmTransitVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::confirm_transit_virtual_interface_output::Builder {
+        crate::output::confirm_transit_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
 pub mod confirm_transit_virtual_interface_output {
     
@@ -8848,12 +8903,6 @@ pub mod confirm_transit_virtual_interface_output {
     
     
 }
-impl ConfirmTransitVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::confirm_transit_virtual_interface_output::Builder {
-        crate::output::confirm_transit_virtual_interface_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8897,6 +8946,13 @@ impl aws_http::request_id::RequestId for ConfirmPublicVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ConfirmPublicVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::confirm_public_virtual_interface_output::Builder {
+        crate::output::confirm_public_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
 pub mod confirm_public_virtual_interface_output {
     
@@ -8960,12 +9016,6 @@ pub mod confirm_public_virtual_interface_output {
     
     
 }
-impl ConfirmPublicVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::confirm_public_virtual_interface_output::Builder {
-        crate::output::confirm_public_virtual_interface_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9009,6 +9059,13 @@ impl aws_http::request_id::RequestId for ConfirmPrivateVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ConfirmPrivateVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::confirm_private_virtual_interface_output::Builder {
+        crate::output::confirm_private_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
 pub mod confirm_private_virtual_interface_output {
     
@@ -9072,12 +9129,6 @@ pub mod confirm_private_virtual_interface_output {
     
     
 }
-impl ConfirmPrivateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::confirm_private_virtual_interface_output::Builder {
-        crate::output::confirm_private_virtual_interface_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9099,6 +9150,13 @@ impl aws_http::request_id::RequestId for ConfirmCustomerAgreementOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ConfirmCustomerAgreementOutput {
+    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
+    pub fn builder() -> crate::output::confirm_customer_agreement_output::Builder {
+        crate::output::confirm_customer_agreement_output::Builder::default()
+    }
+}
+
 /// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
 pub mod confirm_customer_agreement_output {
     
@@ -9139,12 +9197,6 @@ pub mod confirm_customer_agreement_output {
     }
     
     
-}
-impl ConfirmCustomerAgreementOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
-    pub fn builder() -> crate::output::confirm_customer_agreement_output::Builder {
-        crate::output::confirm_customer_agreement_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -9189,6 +9241,13 @@ impl aws_http::request_id::RequestId for ConfirmConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ConfirmConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
+    pub fn builder() -> crate::output::confirm_connection_output::Builder {
+        crate::output::confirm_connection_output::Builder::default()
+    }
+}
+
 /// See [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
 pub mod confirm_connection_output {
     
@@ -9251,12 +9310,6 @@ pub mod confirm_connection_output {
     }
     
     
-}
-impl ConfirmConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
-    pub fn builder() -> crate::output::confirm_connection_output::Builder {
-        crate::output::confirm_connection_output::Builder::default()
-    }
 }
 
 /// <p>Information about a virtual interface.</p>
@@ -9478,6 +9531,13 @@ impl aws_http::request_id::RequestId for AssociateVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::associate_virtual_interface_output::Builder {
+        crate::output::associate_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
 pub mod associate_virtual_interface_output {
     
@@ -9863,12 +9923,6 @@ pub mod associate_virtual_interface_output {
     
     
 }
-impl AssociateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::associate_virtual_interface_output::Builder {
-        crate::output::associate_virtual_interface_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9897,6 +9951,13 @@ impl aws_http::request_id::RequestId for AssociateMacSecKeyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateMacSecKeyOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
+    pub fn builder() -> crate::output::associate_mac_sec_key_output::Builder {
+        crate::output::associate_mac_sec_key_output::Builder::default()
+    }
+}
+
 /// See [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
 pub mod associate_mac_sec_key_output {
     
@@ -9955,12 +10016,6 @@ pub mod associate_mac_sec_key_output {
     }
     
     
-}
-impl AssociateMacSecKeyOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
-    pub fn builder() -> crate::output::associate_mac_sec_key_output::Builder {
-        crate::output::associate_mac_sec_key_output::Builder::default()
-    }
 }
 
 /// <p>Information about an Direct Connect connection.</p>
@@ -10156,6 +10211,13 @@ impl aws_http::request_id::RequestId for AssociateHostedConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateHostedConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
+    pub fn builder() -> crate::output::associate_hosted_connection_output::Builder {
+        crate::output::associate_hosted_connection_output::Builder::default()
+    }
+}
+
 /// See [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
 pub mod associate_hosted_connection_output {
     
@@ -10488,12 +10550,6 @@ pub mod associate_hosted_connection_output {
     
     
 }
-impl AssociateHostedConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
-    pub fn builder() -> crate::output::associate_hosted_connection_output::Builder {
-        crate::output::associate_hosted_connection_output::Builder::default()
-    }
-}
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
@@ -10688,6 +10744,13 @@ impl aws_http::request_id::RequestId for AssociateConnectionWithLagOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateConnectionWithLagOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
+    pub fn builder() -> crate::output::associate_connection_with_lag_output::Builder {
+        crate::output::associate_connection_with_lag_output::Builder::default()
+    }
+}
+
 /// See [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
 pub mod associate_connection_with_lag_output {
     
@@ -11020,12 +11083,6 @@ pub mod associate_connection_with_lag_output {
     
     
 }
-impl AssociateConnectionWithLagOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
-    pub fn builder() -> crate::output::associate_connection_with_lag_output::Builder {
-        crate::output::associate_connection_with_lag_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11047,6 +11104,13 @@ impl aws_http::request_id::RequestId for AllocateTransitVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllocateTransitVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::allocate_transit_virtual_interface_output::Builder {
+        crate::output::allocate_transit_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
 pub mod allocate_transit_virtual_interface_output {
     
@@ -11087,12 +11151,6 @@ pub mod allocate_transit_virtual_interface_output {
     }
     
     
-}
-impl AllocateTransitVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::allocate_transit_virtual_interface_output::Builder {
-        crate::output::allocate_transit_virtual_interface_output::Builder::default()
-    }
 }
 
 /// <p>Information about a virtual interface.</p>
@@ -11314,6 +11372,13 @@ impl aws_http::request_id::RequestId for AllocatePublicVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllocatePublicVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::allocate_public_virtual_interface_output::Builder {
+        crate::output::allocate_public_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
 pub mod allocate_public_virtual_interface_output {
     
@@ -11699,12 +11764,6 @@ pub mod allocate_public_virtual_interface_output {
     
     
 }
-impl AllocatePublicVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::allocate_public_virtual_interface_output::Builder {
-        crate::output::allocate_public_virtual_interface_output::Builder::default()
-    }
-}
 
 /// <p>Information about a virtual interface.</p>
 #[non_exhaustive]
@@ -11925,6 +11984,13 @@ impl aws_http::request_id::RequestId for AllocatePrivateVirtualInterfaceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllocatePrivateVirtualInterfaceOutput {
+    /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
+    pub fn builder() -> crate::output::allocate_private_virtual_interface_output::Builder {
+        crate::output::allocate_private_virtual_interface_output::Builder::default()
+    }
+}
+
 /// See [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
 pub mod allocate_private_virtual_interface_output {
     
@@ -12310,12 +12376,6 @@ pub mod allocate_private_virtual_interface_output {
     
     
 }
-impl AllocatePrivateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
-    pub fn builder() -> crate::output::allocate_private_virtual_interface_output::Builder {
-        crate::output::allocate_private_virtual_interface_output::Builder::default()
-    }
-}
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
@@ -12510,6 +12570,13 @@ impl aws_http::request_id::RequestId for AllocateHostedConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllocateHostedConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
+    pub fn builder() -> crate::output::allocate_hosted_connection_output::Builder {
+        crate::output::allocate_hosted_connection_output::Builder::default()
+    }
+}
+
 /// See [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
 pub mod allocate_hosted_connection_output {
     
@@ -12842,12 +12909,6 @@ pub mod allocate_hosted_connection_output {
     
     
 }
-impl AllocateHostedConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
-    pub fn builder() -> crate::output::allocate_hosted_connection_output::Builder {
-        crate::output::allocate_hosted_connection_output::Builder::default()
-    }
-}
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
@@ -13042,6 +13103,13 @@ impl aws_http::request_id::RequestId for AllocateConnectionOnInterconnectOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllocateConnectionOnInterconnectOutput {
+    /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
+    pub fn builder() -> crate::output::allocate_connection_on_interconnect_output::Builder {
+        crate::output::allocate_connection_on_interconnect_output::Builder::default()
+    }
+}
+
 /// See [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
 pub mod allocate_connection_on_interconnect_output {
     
@@ -13374,12 +13442,6 @@ pub mod allocate_connection_on_interconnect_output {
     
     
 }
-impl AllocateConnectionOnInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
-    pub fn builder() -> crate::output::allocate_connection_on_interconnect_output::Builder {
-        crate::output::allocate_connection_on_interconnect_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -13401,6 +13463,13 @@ impl aws_http::request_id::RequestId for AcceptDirectConnectGatewayAssociationPr
                                     self._request_id.as_deref()
                                 }
                             }
+impl AcceptDirectConnectGatewayAssociationProposalOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
+    pub fn builder() -> crate::output::accept_direct_connect_gateway_association_proposal_output::Builder {
+        crate::output::accept_direct_connect_gateway_association_proposal_output::Builder::default()
+    }
+}
+
 /// See [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
 pub mod accept_direct_connect_gateway_association_proposal_output {
     
@@ -13441,11 +13510,5 @@ pub mod accept_direct_connect_gateway_association_proposal_output {
     }
     
     
-}
-impl AcceptDirectConnectGatewayAssociationProposalOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
-    pub fn builder() -> crate::output::accept_direct_connect_gateway_association_proposal_output::Builder {
-        crate::output::accept_direct_connect_gateway_association_proposal_output::Builder::default()
-    }
 }
 

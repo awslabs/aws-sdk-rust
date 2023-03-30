@@ -11,6 +11,13 @@ impl aws_http::request_id::RequestId for UpdateConfigurationSetEventDestinationO
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateConfigurationSetEventDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
+    pub fn builder() -> crate::output::update_configuration_set_event_destination_output::Builder {
+        crate::output::update_configuration_set_event_destination_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
     
@@ -40,12 +47,6 @@ pub mod update_configuration_set_event_destination_output {
     
     
 }
-impl UpdateConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::output::update_configuration_set_event_destination_output::Builder {
-        crate::output::update_configuration_set_event_destination_output::Builder::default()
-    }
-}
 
 /// An object that that contains the Message ID of a Voice message that was sent successfully.
 #[non_exhaustive]
@@ -67,6 +68,13 @@ impl aws_http::request_id::RequestId for SendVoiceMessageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendVoiceMessageOutput {
+    /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
+    pub fn builder() -> crate::output::send_voice_message_output::Builder {
+        crate::output::send_voice_message_output::Builder::default()
+    }
+}
+
 /// See [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
 pub mod send_voice_message_output {
     
@@ -108,12 +116,6 @@ pub mod send_voice_message_output {
     
     
 }
-impl SendVoiceMessageOutput {
-    /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
-    pub fn builder() -> crate::output::send_voice_message_output::Builder {
-        crate::output::send_voice_message_output::Builder::default()
-    }
-}
 
 /// An object that contains information about the configuration sets for your account in the current region.
 #[non_exhaustive]
@@ -142,6 +144,13 @@ impl aws_http::request_id::RequestId for ListConfigurationSetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListConfigurationSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
+    pub fn builder() -> crate::output::list_configuration_sets_output::Builder {
+        crate::output::list_configuration_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
 pub mod list_configuration_sets_output {
     
@@ -201,12 +210,6 @@ pub mod list_configuration_sets_output {
     
     
 }
-impl ListConfigurationSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
-    pub fn builder() -> crate::output::list_configuration_sets_output::Builder {
-        crate::output::list_configuration_sets_output::Builder::default()
-    }
-}
 
 /// An object that contains information about an event destination.
 #[non_exhaustive]
@@ -228,6 +231,13 @@ impl aws_http::request_id::RequestId for GetConfigurationSetEventDestinationsOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetConfigurationSetEventDestinationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
+    pub fn builder() -> crate::output::get_configuration_set_event_destinations_output::Builder {
+        crate::output::get_configuration_set_event_destinations_output::Builder::default()
+    }
+}
+
 /// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
 pub mod get_configuration_set_event_destinations_output {
     
@@ -275,12 +285,6 @@ pub mod get_configuration_set_event_destinations_output {
     
     
 }
-impl GetConfigurationSetEventDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
-    pub fn builder() -> crate::output::get_configuration_set_event_destinations_output::Builder {
-        crate::output::get_configuration_set_event_destinations_output::Builder::default()
-    }
-}
 
 /// An empty object that indicates that the event destination was deleted successfully.
 #[non_exhaustive]
@@ -293,6 +297,13 @@ impl aws_http::request_id::RequestId for DeleteConfigurationSetEventDestinationO
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteConfigurationSetEventDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
+    pub fn builder() -> crate::output::delete_configuration_set_event_destination_output::Builder {
+        crate::output::delete_configuration_set_event_destination_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
     
@@ -322,12 +333,6 @@ pub mod delete_configuration_set_event_destination_output {
     
     
 }
-impl DeleteConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::output::delete_configuration_set_event_destination_output::Builder {
-        crate::output::delete_configuration_set_event_destination_output::Builder::default()
-    }
-}
 
 /// An empty object that indicates that the configuration set was deleted successfully.
 #[non_exhaustive]
@@ -340,6 +345,13 @@ impl aws_http::request_id::RequestId for DeleteConfigurationSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteConfigurationSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
+    pub fn builder() -> crate::output::delete_configuration_set_output::Builder {
+        crate::output::delete_configuration_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
     
@@ -369,12 +381,6 @@ pub mod delete_configuration_set_output {
     
     
 }
-impl DeleteConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
-    pub fn builder() -> crate::output::delete_configuration_set_output::Builder {
-        crate::output::delete_configuration_set_output::Builder::default()
-    }
-}
 
 /// An empty object that indicates that the event destination was created successfully.
 #[non_exhaustive]
@@ -387,6 +393,13 @@ impl aws_http::request_id::RequestId for CreateConfigurationSetEventDestinationO
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateConfigurationSetEventDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
+    pub fn builder() -> crate::output::create_configuration_set_event_destination_output::Builder {
+        crate::output::create_configuration_set_event_destination_output::Builder::default()
+    }
+}
+
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
     
@@ -416,12 +429,6 @@ pub mod create_configuration_set_event_destination_output {
     
     
 }
-impl CreateConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::output::create_configuration_set_event_destination_output::Builder {
-        crate::output::create_configuration_set_event_destination_output::Builder::default()
-    }
-}
 
 /// An empty object that indicates that the configuration set was successfully created.
 #[non_exhaustive]
@@ -434,6 +441,13 @@ impl aws_http::request_id::RequestId for CreateConfigurationSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateConfigurationSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
+    pub fn builder() -> crate::output::create_configuration_set_output::Builder {
+        crate::output::create_configuration_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
     
@@ -462,11 +476,5 @@ pub mod create_configuration_set_output {
     }
     
     
-}
-impl CreateConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
-    pub fn builder() -> crate::output::create_configuration_set_output::Builder {
-        crate::output::create_configuration_set_output::Builder::default()
-    }
 }
 

@@ -14,6 +14,13 @@ impl AnswerMachineDetectionConfig {
         self.enable_answer_machine_detection
     }
 }
+impl AnswerMachineDetectionConfig {
+    /// Creates a new builder-style object to manufacture [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
+    pub fn builder() -> crate::model::answer_machine_detection_config::Builder {
+        crate::model::answer_machine_detection_config::Builder::default()
+    }
+}
+
 /// See [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
 pub mod answer_machine_detection_config {
     
@@ -43,12 +50,6 @@ pub mod answer_machine_detection_config {
     }
     
     
-}
-impl AnswerMachineDetectionConfig {
-    /// Creates a new builder-style object to manufacture [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
-    pub fn builder() -> crate::model::answer_machine_detection_config::Builder {
-        crate::model::answer_machine_detection_config::Builder::default()
-    }
 }
 
 /// The possible types of dialer config parameters
@@ -108,6 +109,13 @@ impl PredictiveDialerConfig {
         self.bandwidth_allocation
     }
 }
+impl PredictiveDialerConfig {
+    /// Creates a new builder-style object to manufacture [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
+    pub fn builder() -> crate::model::predictive_dialer_config::Builder {
+        crate::model::predictive_dialer_config::Builder::default()
+    }
+}
+
 /// See [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
 pub mod predictive_dialer_config {
     
@@ -138,12 +146,6 @@ pub mod predictive_dialer_config {
     
     
 }
-impl PredictiveDialerConfig {
-    /// Creates a new builder-style object to manufacture [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
-    pub fn builder() -> crate::model::predictive_dialer_config::Builder {
-        crate::model::predictive_dialer_config::Builder::default()
-    }
-}
 
 /// Progressive Dialer config
 #[non_exhaustive]
@@ -159,6 +161,13 @@ impl ProgressiveDialerConfig {
         self.bandwidth_allocation
     }
 }
+impl ProgressiveDialerConfig {
+    /// Creates a new builder-style object to manufacture [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
+    pub fn builder() -> crate::model::progressive_dialer_config::Builder {
+        crate::model::progressive_dialer_config::Builder::default()
+    }
+}
+
 /// See [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
 pub mod progressive_dialer_config {
     
@@ -188,12 +197,6 @@ pub mod progressive_dialer_config {
     }
     
     
-}
-impl ProgressiveDialerConfig {
-    /// Creates a new builder-style object to manufacture [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
-    pub fn builder() -> crate::model::progressive_dialer_config::Builder {
-        crate::model::progressive_dialer_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CampaignState`, it is important to ensure
@@ -321,6 +324,13 @@ impl InstanceOnboardingJobStatus {
         self.failure_code.as_ref()
     }
 }
+impl InstanceOnboardingJobStatus {
+    /// Creates a new builder-style object to manufacture [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
+    pub fn builder() -> crate::model::instance_onboarding_job_status::Builder {
+        crate::model::instance_onboarding_job_status::Builder::default()
+    }
+}
+
 /// See [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
 pub mod instance_onboarding_job_status {
     
@@ -374,12 +384,6 @@ pub mod instance_onboarding_job_status {
     }
     
     
-}
-impl InstanceOnboardingJobStatus {
-    /// Creates a new builder-style object to manufacture [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
-    pub fn builder() -> crate::model::instance_onboarding_job_status::Builder {
-        crate::model::instance_onboarding_job_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceOnboardingJobFailureCode`, it is important to ensure
@@ -599,6 +603,13 @@ impl EncryptionConfig {
         self.key_arn.as_deref()
     }
 }
+impl EncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
+    pub fn builder() -> crate::model::encryption_config::Builder {
+        crate::model::encryption_config::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
     
@@ -653,12 +664,6 @@ pub mod encryption_config {
     }
     
     
-}
-impl EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
-    pub fn builder() -> crate::model::encryption_config::Builder {
-        crate::model::encryption_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EncryptionType`, it is important to ensure
@@ -766,6 +771,13 @@ impl FailedRequest {
         self.failure_code.as_ref()
     }
 }
+impl FailedRequest {
+    /// Creates a new builder-style object to manufacture [`FailedRequest`](crate::model::FailedRequest).
+    pub fn builder() -> crate::model::failed_request::Builder {
+        crate::model::failed_request::Builder::default()
+    }
+}
+
 /// See [`FailedRequest`](crate::model::FailedRequest).
 pub mod failed_request {
     
@@ -819,12 +831,6 @@ pub mod failed_request {
     }
     
     
-}
-impl FailedRequest {
-    /// Creates a new builder-style object to manufacture [`FailedRequest`](crate::model::FailedRequest).
-    pub fn builder() -> crate::model::failed_request::Builder {
-        crate::model::failed_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FailureCode`, it is important to ensure
@@ -935,6 +941,13 @@ impl SuccessfulRequest {
         self.id.as_deref()
     }
 }
+impl SuccessfulRequest {
+    /// Creates a new builder-style object to manufacture [`SuccessfulRequest`](crate::model::SuccessfulRequest).
+    pub fn builder() -> crate::model::successful_request::Builder {
+        crate::model::successful_request::Builder::default()
+    }
+}
+
 /// See [`SuccessfulRequest`](crate::model::SuccessfulRequest).
 pub mod successful_request {
     
@@ -976,12 +989,6 @@ pub mod successful_request {
     }
     
     
-}
-impl SuccessfulRequest {
-    /// Creates a new builder-style object to manufacture [`SuccessfulRequest`](crate::model::SuccessfulRequest).
-    pub fn builder() -> crate::model::successful_request::Builder {
-        crate::model::successful_request::Builder::default()
-    }
 }
 
 /// A dial request for a campaign.
@@ -1029,6 +1036,13 @@ impl  std::fmt::Debug for DialRequest  {
         formatter.finish()
     }
 }
+impl DialRequest {
+    /// Creates a new builder-style object to manufacture [`DialRequest`](crate::model::DialRequest).
+    pub fn builder() -> crate::model::dial_request::Builder {
+        crate::model::dial_request::Builder::default()
+    }
+}
+
 /// See [`DialRequest`](crate::model::DialRequest).
 pub mod dial_request {
     
@@ -1111,12 +1125,6 @@ pub mod dial_request {
     
     
 }
-impl DialRequest {
-    /// Creates a new builder-style object to manufacture [`DialRequest`](crate::model::DialRequest).
-    pub fn builder() -> crate::model::dial_request::Builder {
-        crate::model::dial_request::Builder::default()
-    }
-}
 
 /// An Amazon Connect campaign summary.
 #[non_exhaustive]
@@ -1153,6 +1161,13 @@ impl CampaignSummary {
         self.connect_instance_id.as_deref()
     }
 }
+impl CampaignSummary {
+    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
+    pub fn builder() -> crate::model::campaign_summary::Builder {
+        crate::model::campaign_summary::Builder::default()
+    }
+}
+
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
     
@@ -1219,12 +1234,6 @@ pub mod campaign_summary {
     
     
 }
-impl CampaignSummary {
-    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
-    pub fn builder() -> crate::model::campaign_summary::Builder {
-        crate::model::campaign_summary::Builder::default()
-    }
-}
 
 /// Filter model by type
 #[non_exhaustive]
@@ -1240,6 +1249,13 @@ impl CampaignFilters {
         self.instance_id_filter.as_ref()
     }
 }
+impl CampaignFilters {
+    /// Creates a new builder-style object to manufacture [`CampaignFilters`](crate::model::CampaignFilters).
+    pub fn builder() -> crate::model::campaign_filters::Builder {
+        crate::model::campaign_filters::Builder::default()
+    }
+}
+
 /// See [`CampaignFilters`](crate::model::CampaignFilters).
 pub mod campaign_filters {
     
@@ -1270,12 +1286,6 @@ pub mod campaign_filters {
     
     
 }
-impl CampaignFilters {
-    /// Creates a new builder-style object to manufacture [`CampaignFilters`](crate::model::CampaignFilters).
-    pub fn builder() -> crate::model::campaign_filters::Builder {
-        crate::model::campaign_filters::Builder::default()
-    }
-}
 
 /// Connect instance identifier filter
 #[non_exhaustive]
@@ -1298,6 +1308,13 @@ impl InstanceIdFilter {
         self.operator.as_ref()
     }
 }
+impl InstanceIdFilter {
+    /// Creates a new builder-style object to manufacture [`InstanceIdFilter`](crate::model::InstanceIdFilter).
+    pub fn builder() -> crate::model::instance_id_filter::Builder {
+        crate::model::instance_id_filter::Builder::default()
+    }
+}
+
 /// See [`InstanceIdFilter`](crate::model::InstanceIdFilter).
 pub mod instance_id_filter {
     
@@ -1339,12 +1356,6 @@ pub mod instance_id_filter {
     }
     
     
-}
-impl InstanceIdFilter {
-    /// Creates a new builder-style object to manufacture [`InstanceIdFilter`](crate::model::InstanceIdFilter).
-    pub fn builder() -> crate::model::instance_id_filter::Builder {
-        crate::model::instance_id_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceIdFilterOperator`, it is important to ensure
@@ -1452,6 +1463,13 @@ impl InstanceConfig {
         self.encryption_config.as_ref()
     }
 }
+impl InstanceConfig {
+    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig).
+    pub fn builder() -> crate::model::instance_config::Builder {
+        crate::model::instance_config::Builder::default()
+    }
+}
+
 /// See [`InstanceConfig`](crate::model::InstanceConfig).
 pub mod instance_config {
     
@@ -1506,12 +1524,6 @@ pub mod instance_config {
     
     
 }
-impl InstanceConfig {
-    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig).
-    pub fn builder() -> crate::model::instance_config::Builder {
-        crate::model::instance_config::Builder::default()
-    }
-}
 
 /// Failed response of campaign state
 #[non_exhaustive]
@@ -1534,6 +1546,13 @@ impl FailedCampaignStateResponse {
         self.failure_code.as_ref()
     }
 }
+impl FailedCampaignStateResponse {
+    /// Creates a new builder-style object to manufacture [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
+    pub fn builder() -> crate::model::failed_campaign_state_response::Builder {
+        crate::model::failed_campaign_state_response::Builder::default()
+    }
+}
+
 /// See [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
 pub mod failed_campaign_state_response {
     
@@ -1575,12 +1594,6 @@ pub mod failed_campaign_state_response {
     }
     
     
-}
-impl FailedCampaignStateResponse {
-    /// Creates a new builder-style object to manufacture [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
-    pub fn builder() -> crate::model::failed_campaign_state_response::Builder {
-        crate::model::failed_campaign_state_response::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GetCampaignStateBatchFailureCode`, it is important to ensure
@@ -1686,6 +1699,13 @@ impl SuccessfulCampaignStateResponse {
         self.state.as_ref()
     }
 }
+impl SuccessfulCampaignStateResponse {
+    /// Creates a new builder-style object to manufacture [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
+    pub fn builder() -> crate::model::successful_campaign_state_response::Builder {
+        crate::model::successful_campaign_state_response::Builder::default()
+    }
+}
+
 /// See [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
 pub mod successful_campaign_state_response {
     
@@ -1727,12 +1747,6 @@ pub mod successful_campaign_state_response {
     }
     
     
-}
-impl SuccessfulCampaignStateResponse {
-    /// Creates a new builder-style object to manufacture [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
-    pub fn builder() -> crate::model::successful_campaign_state_response::Builder {
-        crate::model::successful_campaign_state_response::Builder::default()
-    }
 }
 
 /// An Amazon Connect campaign.
@@ -1791,6 +1805,13 @@ impl Campaign {
         self.tags.as_ref()
     }
 }
+impl Campaign {
+    /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign).
+    pub fn builder() -> crate::model::campaign::Builder {
+        crate::model::campaign::Builder::default()
+    }
+}
+
 /// See [`Campaign`](crate::model::Campaign).
 pub mod campaign {
     
@@ -1899,12 +1920,6 @@ pub mod campaign {
     
     
 }
-impl Campaign {
-    /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign).
-    pub fn builder() -> crate::model::campaign::Builder {
-        crate::model::campaign::Builder::default()
-    }
-}
 
 /// The configuration used for outbound calls.
 #[non_exhaustive]
@@ -1941,6 +1956,13 @@ impl OutboundCallConfig {
         self.answer_machine_detection_config.as_ref()
     }
 }
+impl OutboundCallConfig {
+    /// Creates a new builder-style object to manufacture [`OutboundCallConfig`](crate::model::OutboundCallConfig).
+    pub fn builder() -> crate::model::outbound_call_config::Builder {
+        crate::model::outbound_call_config::Builder::default()
+    }
+}
+
 /// See [`OutboundCallConfig`](crate::model::OutboundCallConfig).
 pub mod outbound_call_config {
     
@@ -2006,11 +2028,5 @@ pub mod outbound_call_config {
     }
     
     
-}
-impl OutboundCallConfig {
-    /// Creates a new builder-style object to manufacture [`OutboundCallConfig`](crate::model::OutboundCallConfig).
-    pub fn builder() -> crate::model::outbound_call_config::Builder {
-        crate::model::outbound_call_config::Builder::default()
-    }
 }
 

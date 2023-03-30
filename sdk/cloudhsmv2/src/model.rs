@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
@@ -154,6 +155,13 @@ impl Backup {
         self.tag_list.as_deref()
     }
 }
+impl Backup {
+    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
+    pub fn builder() -> crate::model::backup::Builder {
+        crate::model::backup::Builder::default()
+    }
+}
+
 /// See [`Backup`](crate::model::Backup).
 pub mod backup {
     
@@ -309,12 +317,6 @@ pub mod backup {
     }
     
     
-}
-impl Backup {
-    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
-    pub fn builder() -> crate::model::backup::Builder {
-        crate::model::backup::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BackupState`, it is important to ensure
@@ -521,6 +523,13 @@ impl Cluster {
         self.tag_list.as_deref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
     
@@ -737,12 +746,6 @@ pub mod cluster {
     
     
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
 #[non_exhaustive]
@@ -786,6 +789,13 @@ impl Certificates {
         self.cluster_certificate.as_deref()
     }
 }
+impl Certificates {
+    /// Creates a new builder-style object to manufacture [`Certificates`](crate::model::Certificates).
+    pub fn builder() -> crate::model::certificates::Builder {
+        crate::model::certificates::Builder::default()
+    }
+}
+
 /// See [`Certificates`](crate::model::Certificates).
 pub mod certificates {
     
@@ -863,12 +873,6 @@ pub mod certificates {
     }
     
     
-}
-impl Certificates {
-    /// Creates a new builder-style object to manufacture [`Certificates`](crate::model::Certificates).
-    pub fn builder() -> crate::model::certificates::Builder {
-        crate::model::certificates::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClusterState`, it is important to ensure
@@ -1051,6 +1055,13 @@ impl Hsm {
         self.state_message.as_deref()
     }
 }
+impl Hsm {
+    /// Creates a new builder-style object to manufacture [`Hsm`](crate::model::Hsm).
+    pub fn builder() -> crate::model::hsm::Builder {
+        crate::model::hsm::Builder::default()
+    }
+}
+
 /// See [`Hsm`](crate::model::Hsm).
 pub mod hsm {
     
@@ -1164,12 +1175,6 @@ pub mod hsm {
     }
     
     
-}
-impl Hsm {
-    /// Creates a new builder-style object to manufacture [`Hsm`](crate::model::Hsm).
-    pub fn builder() -> crate::model::hsm::Builder {
-        crate::model::hsm::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HsmState`, it is important to ensure
@@ -1290,6 +1295,13 @@ impl BackupRetentionPolicy {
         self.value.as_deref()
     }
 }
+impl BackupRetentionPolicy {
+    /// Creates a new builder-style object to manufacture [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
+    pub fn builder() -> crate::model::backup_retention_policy::Builder {
+        crate::model::backup_retention_policy::Builder::default()
+    }
+}
+
 /// See [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
 pub mod backup_retention_policy {
     
@@ -1331,12 +1343,6 @@ pub mod backup_retention_policy {
     }
     
     
-}
-impl BackupRetentionPolicy {
-    /// Creates a new builder-style object to manufacture [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
-    pub fn builder() -> crate::model::backup_retention_policy::Builder {
-        crate::model::backup_retention_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BackupRetentionType`, it is important to ensure
@@ -1528,6 +1534,13 @@ impl DestinationBackup {
         self.source_cluster.as_deref()
     }
 }
+impl DestinationBackup {
+    /// Creates a new builder-style object to manufacture [`DestinationBackup`](crate::model::DestinationBackup).
+    pub fn builder() -> crate::model::destination_backup::Builder {
+        crate::model::destination_backup::Builder::default()
+    }
+}
+
 /// See [`DestinationBackup`](crate::model::DestinationBackup).
 pub mod destination_backup {
     
@@ -1593,11 +1606,5 @@ pub mod destination_backup {
     }
     
     
-}
-impl DestinationBackup {
-    /// Creates a new builder-style object to manufacture [`DestinationBackup`](crate::model::DestinationBackup).
-    pub fn builder() -> crate::model::destination_backup::Builder {
-        crate::model::destination_backup::Builder::default()
-    }
 }
 

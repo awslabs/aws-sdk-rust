@@ -28,6 +28,13 @@ impl MetricFilterMatchRecord {
         self.extracted_values.as_ref()
     }
 }
+impl MetricFilterMatchRecord {
+    /// Creates a new builder-style object to manufacture [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
+    pub fn builder() -> crate::model::metric_filter_match_record::Builder {
+        crate::model::metric_filter_match_record::Builder::default()
+    }
+}
+
 /// See [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
 pub mod metric_filter_match_record {
     
@@ -89,12 +96,6 @@ pub mod metric_filter_match_record {
     
     
 }
-impl MetricFilterMatchRecord {
-    /// Creates a new builder-style object to manufacture [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
-    pub fn builder() -> crate::model::metric_filter_match_record::Builder {
-        crate::model::metric_filter_match_record::Builder::default()
-    }
-}
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
@@ -117,6 +118,13 @@ impl QueryCompileError {
         self.message.as_deref()
     }
 }
+impl QueryCompileError {
+    /// Creates a new builder-style object to manufacture [`QueryCompileError`](crate::model::QueryCompileError).
+    pub fn builder() -> crate::model::query_compile_error::Builder {
+        crate::model::query_compile_error::Builder::default()
+    }
+}
+
 /// See [`QueryCompileError`](crate::model::QueryCompileError).
 pub mod query_compile_error {
     
@@ -159,12 +167,6 @@ pub mod query_compile_error {
     
     
 }
-impl QueryCompileError {
-    /// Creates a new builder-style object to manufacture [`QueryCompileError`](crate::model::QueryCompileError).
-    pub fn builder() -> crate::model::query_compile_error::Builder {
-        crate::model::query_compile_error::Builder::default()
-    }
-}
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
@@ -187,6 +189,13 @@ impl QueryCompileErrorLocation {
         self.end_char_offset
     }
 }
+impl QueryCompileErrorLocation {
+    /// Creates a new builder-style object to manufacture [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
+    pub fn builder() -> crate::model::query_compile_error_location::Builder {
+        crate::model::query_compile_error_location::Builder::default()
+    }
+}
+
 /// See [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
 pub mod query_compile_error_location {
     
@@ -228,12 +237,6 @@ pub mod query_compile_error_location {
     }
     
     
-}
-impl QueryCompileErrorLocation {
-    /// Creates a new builder-style object to manufacture [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
-    pub fn builder() -> crate::model::query_compile_error_location::Builder {
-        crate::model::query_compile_error_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Distribution`, it is important to ensure
@@ -347,6 +350,13 @@ impl ResourcePolicy {
         self.last_updated_time
     }
 }
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
     
@@ -400,12 +410,6 @@ pub mod resource_policy {
     }
     
     
-}
-impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
-    pub fn builder() -> crate::model::resource_policy::Builder {
-        crate::model::resource_policy::Builder::default()
-    }
 }
 
 /// <p>Indicates how to transform ingested log events to metric data in a CloudWatch metric.</p>
@@ -465,6 +469,13 @@ impl MetricTransformation {
         self.unit.as_ref()
     }
 }
+impl MetricTransformation {
+    /// Creates a new builder-style object to manufacture [`MetricTransformation`](crate::model::MetricTransformation).
+    pub fn builder() -> crate::model::metric_transformation::Builder {
+        crate::model::metric_transformation::Builder::default()
+    }
+}
+
 /// See [`MetricTransformation`](crate::model::MetricTransformation).
 pub mod metric_transformation {
     
@@ -568,12 +579,6 @@ pub mod metric_transformation {
     }
     
     
-}
-impl MetricTransformation {
-    /// Creates a new builder-style object to manufacture [`MetricTransformation`](crate::model::MetricTransformation).
-    pub fn builder() -> crate::model::metric_transformation::Builder {
-        crate::model::metric_transformation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StandardUnit`, it is important to ensure
@@ -811,6 +816,13 @@ impl RejectedLogEventsInfo {
         self.expired_log_event_end_index
     }
 }
+impl RejectedLogEventsInfo {
+    /// Creates a new builder-style object to manufacture [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
+    pub fn builder() -> crate::model::rejected_log_events_info::Builder {
+        crate::model::rejected_log_events_info::Builder::default()
+    }
+}
+
 /// See [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
 pub mod rejected_log_events_info {
     
@@ -865,12 +877,6 @@ pub mod rejected_log_events_info {
     
     
 }
-impl RejectedLogEventsInfo {
-    /// Creates a new builder-style object to manufacture [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
-    pub fn builder() -> crate::model::rejected_log_events_info::Builder {
-        crate::model::rejected_log_events_info::Builder::default()
-    }
-}
 
 /// <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
 #[non_exhaustive]
@@ -893,6 +899,13 @@ impl InputLogEvent {
         self.message.as_deref()
     }
 }
+impl InputLogEvent {
+    /// Creates a new builder-style object to manufacture [`InputLogEvent`](crate::model::InputLogEvent).
+    pub fn builder() -> crate::model::input_log_event::Builder {
+        crate::model::input_log_event::Builder::default()
+    }
+}
+
 /// See [`InputLogEvent`](crate::model::InputLogEvent).
 pub mod input_log_event {
     
@@ -934,12 +947,6 @@ pub mod input_log_event {
     }
     
     
-}
-impl InputLogEvent {
-    /// Creates a new builder-style object to manufacture [`InputLogEvent`](crate::model::InputLogEvent).
-    pub fn builder() -> crate::model::input_log_event::Builder {
-        crate::model::input_log_event::Builder::default()
-    }
 }
 
 /// <p>Represents a cross-account destination that receives subscription log events.</p>
@@ -991,6 +998,13 @@ impl Destination {
         self.creation_time
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
     
@@ -1080,12 +1094,6 @@ pub mod destination {
     }
     
     
-}
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryStatus`, it is important to ensure
@@ -1223,6 +1231,13 @@ impl QueryStatistics {
         self.bytes_scanned
     }
 }
+impl QueryStatistics {
+    /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
+    pub fn builder() -> crate::model::query_statistics::Builder {
+        crate::model::query_statistics::Builder::default()
+    }
+}
+
 /// See [`QueryStatistics`](crate::model::QueryStatistics).
 pub mod query_statistics {
     
@@ -1280,12 +1295,6 @@ pub mod query_statistics {
     
     
 }
-impl QueryStatistics {
-    /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
-    pub fn builder() -> crate::model::query_statistics::Builder {
-        crate::model::query_statistics::Builder::default()
-    }
-}
 
 /// <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p> 
 /// <p>For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
@@ -1309,6 +1318,13 @@ impl ResultField {
         self.value.as_deref()
     }
 }
+impl ResultField {
+    /// Creates a new builder-style object to manufacture [`ResultField`](crate::model::ResultField).
+    pub fn builder() -> crate::model::result_field::Builder {
+        crate::model::result_field::Builder::default()
+    }
+}
+
 /// See [`ResultField`](crate::model::ResultField).
 pub mod result_field {
     
@@ -1351,12 +1367,6 @@ pub mod result_field {
     
     
 }
-impl ResultField {
-    /// Creates a new builder-style object to manufacture [`ResultField`](crate::model::ResultField).
-    pub fn builder() -> crate::model::result_field::Builder {
-        crate::model::result_field::Builder::default()
-    }
-}
 
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
@@ -1379,6 +1389,13 @@ impl LogGroupField {
         self.percent
     }
 }
+impl LogGroupField {
+    /// Creates a new builder-style object to manufacture [`LogGroupField`](crate::model::LogGroupField).
+    pub fn builder() -> crate::model::log_group_field::Builder {
+        crate::model::log_group_field::Builder::default()
+    }
+}
+
 /// See [`LogGroupField`](crate::model::LogGroupField).
 pub mod log_group_field {
     
@@ -1422,12 +1439,6 @@ pub mod log_group_field {
     
     
 }
-impl LogGroupField {
-    /// Creates a new builder-style object to manufacture [`LogGroupField`](crate::model::LogGroupField).
-    pub fn builder() -> crate::model::log_group_field::Builder {
-        crate::model::log_group_field::Builder::default()
-    }
-}
 
 /// <p>Represents a log event.</p>
 #[non_exhaustive]
@@ -1457,6 +1468,13 @@ impl OutputLogEvent {
         self.ingestion_time
     }
 }
+impl OutputLogEvent {
+    /// Creates a new builder-style object to manufacture [`OutputLogEvent`](crate::model::OutputLogEvent).
+    pub fn builder() -> crate::model::output_log_event::Builder {
+        crate::model::output_log_event::Builder::default()
+    }
+}
+
 /// See [`OutputLogEvent`](crate::model::OutputLogEvent).
 pub mod output_log_event {
     
@@ -1511,12 +1529,6 @@ pub mod output_log_event {
     
     
 }
-impl OutputLogEvent {
-    /// Creates a new builder-style object to manufacture [`OutputLogEvent`](crate::model::OutputLogEvent).
-    pub fn builder() -> crate::model::output_log_event::Builder {
-        crate::model::output_log_event::Builder::default()
-    }
-}
 
 /// <p>Represents the search status of a log stream.</p>
 #[non_exhaustive]
@@ -1539,6 +1551,13 @@ impl SearchedLogStream {
         self.searched_completely
     }
 }
+impl SearchedLogStream {
+    /// Creates a new builder-style object to manufacture [`SearchedLogStream`](crate::model::SearchedLogStream).
+    pub fn builder() -> crate::model::searched_log_stream::Builder {
+        crate::model::searched_log_stream::Builder::default()
+    }
+}
+
 /// See [`SearchedLogStream`](crate::model::SearchedLogStream).
 pub mod searched_log_stream {
     
@@ -1580,12 +1599,6 @@ pub mod searched_log_stream {
     }
     
     
-}
-impl SearchedLogStream {
-    /// Creates a new builder-style object to manufacture [`SearchedLogStream`](crate::model::SearchedLogStream).
-    pub fn builder() -> crate::model::searched_log_stream::Builder {
-        crate::model::searched_log_stream::Builder::default()
-    }
 }
 
 /// <p>Represents a matched event.</p>
@@ -1630,6 +1643,13 @@ impl FilteredLogEvent {
         self.event_id.as_deref()
     }
 }
+impl FilteredLogEvent {
+    /// Creates a new builder-style object to manufacture [`FilteredLogEvent`](crate::model::FilteredLogEvent).
+    pub fn builder() -> crate::model::filtered_log_event::Builder {
+        crate::model::filtered_log_event::Builder::default()
+    }
+}
+
 /// See [`FilteredLogEvent`](crate::model::FilteredLogEvent).
 pub mod filtered_log_event {
     
@@ -1708,12 +1728,6 @@ pub mod filtered_log_event {
     
     
 }
-impl FilteredLogEvent {
-    /// Creates a new builder-style object to manufacture [`FilteredLogEvent`](crate::model::FilteredLogEvent).
-    pub fn builder() -> crate::model::filtered_log_event::Builder {
-        crate::model::filtered_log_event::Builder::default()
-    }
-}
 
 /// <p>Represents a subscription filter.</p>
 #[non_exhaustive]
@@ -1771,6 +1785,13 @@ impl SubscriptionFilter {
         self.creation_time
     }
 }
+impl SubscriptionFilter {
+    /// Creates a new builder-style object to manufacture [`SubscriptionFilter`](crate::model::SubscriptionFilter).
+    pub fn builder() -> crate::model::subscription_filter::Builder {
+        crate::model::subscription_filter::Builder::default()
+    }
+}
+
 /// See [`SubscriptionFilter`](crate::model::SubscriptionFilter).
 pub mod subscription_filter {
     
@@ -1873,12 +1894,6 @@ pub mod subscription_filter {
     
     
 }
-impl SubscriptionFilter {
-    /// Creates a new builder-style object to manufacture [`SubscriptionFilter`](crate::model::SubscriptionFilter).
-    pub fn builder() -> crate::model::subscription_filter::Builder {
-        crate::model::subscription_filter::Builder::default()
-    }
-}
 
 /// <p>This structure contains details about a saved CloudWatch Logs Insights query definition.</p>
 #[non_exhaustive]
@@ -1922,6 +1937,13 @@ impl QueryDefinition {
         self.log_group_names.as_deref()
     }
 }
+impl QueryDefinition {
+    /// Creates a new builder-style object to manufacture [`QueryDefinition`](crate::model::QueryDefinition).
+    pub fn builder() -> crate::model::query_definition::Builder {
+        crate::model::query_definition::Builder::default()
+    }
+}
+
 /// See [`QueryDefinition`](crate::model::QueryDefinition).
 pub mod query_definition {
     
@@ -2006,12 +2028,6 @@ pub mod query_definition {
     
     
 }
-impl QueryDefinition {
-    /// Creates a new builder-style object to manufacture [`QueryDefinition`](crate::model::QueryDefinition).
-    pub fn builder() -> crate::model::query_definition::Builder {
-        crate::model::query_definition::Builder::default()
-    }
-}
 
 /// <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation. </p>
 #[non_exhaustive]
@@ -2055,6 +2071,13 @@ impl QueryInfo {
         self.log_group_name.as_deref()
     }
 }
+impl QueryInfo {
+    /// Creates a new builder-style object to manufacture [`QueryInfo`](crate::model::QueryInfo).
+    pub fn builder() -> crate::model::query_info::Builder {
+        crate::model::query_info::Builder::default()
+    }
+}
+
 /// See [`QueryInfo`](crate::model::QueryInfo).
 pub mod query_info {
     
@@ -2133,12 +2156,6 @@ pub mod query_info {
     
     
 }
-impl QueryInfo {
-    /// Creates a new builder-style object to manufacture [`QueryInfo`](crate::model::QueryInfo).
-    pub fn builder() -> crate::model::query_info::Builder {
-        crate::model::query_info::Builder::default()
-    }
-}
 
 /// <p>Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
@@ -2182,6 +2199,13 @@ impl MetricFilter {
         self.log_group_name.as_deref()
     }
 }
+impl MetricFilter {
+    /// Creates a new builder-style object to manufacture [`MetricFilter`](crate::model::MetricFilter).
+    pub fn builder() -> crate::model::metric_filter::Builder {
+        crate::model::metric_filter::Builder::default()
+    }
+}
+
 /// See [`MetricFilter`](crate::model::MetricFilter).
 pub mod metric_filter {
     
@@ -2266,12 +2290,6 @@ pub mod metric_filter {
     
     
 }
-impl MetricFilter {
-    /// Creates a new builder-style object to manufacture [`MetricFilter`](crate::model::MetricFilter).
-    pub fn builder() -> crate::model::metric_filter::Builder {
-        crate::model::metric_filter::Builder::default()
-    }
-}
 
 /// <p>Represents a log stream, which is a sequence of log events from a single emitter of logs.</p>
 #[non_exhaustive]
@@ -2344,6 +2362,13 @@ impl LogStream {
         self.stored_bytes
     }
 }
+impl LogStream {
+    /// Creates a new builder-style object to manufacture [`LogStream`](crate::model::LogStream).
+    pub fn builder() -> crate::model::log_stream::Builder {
+        crate::model::log_stream::Builder::default()
+    }
+}
+
 /// See [`LogStream`](crate::model::LogStream).
 pub mod log_stream {
     
@@ -2465,12 +2490,6 @@ pub mod log_stream {
     }
     
     
-}
-impl LogStream {
-    /// Creates a new builder-style object to manufacture [`LogStream`](crate::model::LogStream).
-    pub fn builder() -> crate::model::log_stream::Builder {
-        crate::model::log_stream::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OrderBy`, it is important to ensure
@@ -2620,6 +2639,13 @@ impl LogGroup {
         self.data_protection_status.as_ref()
     }
 }
+impl LogGroup {
+    /// Creates a new builder-style object to manufacture [`LogGroup`](crate::model::LogGroup).
+    pub fn builder() -> crate::model::log_group::Builder {
+        crate::model::log_group::Builder::default()
+    }
+}
+
 /// See [`LogGroup`](crate::model::LogGroup).
 pub mod log_group {
     
@@ -2735,12 +2761,6 @@ pub mod log_group {
     }
     
     
-}
-impl LogGroup {
-    /// Creates a new builder-style object to manufacture [`LogGroup`](crate::model::LogGroup).
-    pub fn builder() -> crate::model::log_group::Builder {
-        crate::model::log_group::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataProtectionStatus`, it is important to ensure
@@ -2905,6 +2925,13 @@ impl ExportTask {
         self.execution_info.as_ref()
     }
 }
+impl ExportTask {
+    /// Creates a new builder-style object to manufacture [`ExportTask`](crate::model::ExportTask).
+    pub fn builder() -> crate::model::export_task::Builder {
+        crate::model::export_task::Builder::default()
+    }
+}
+
 /// See [`ExportTask`](crate::model::ExportTask).
 pub mod export_task {
     
@@ -3031,12 +3058,6 @@ pub mod export_task {
     
     
 }
-impl ExportTask {
-    /// Creates a new builder-style object to manufacture [`ExportTask`](crate::model::ExportTask).
-    pub fn builder() -> crate::model::export_task::Builder {
-        crate::model::export_task::Builder::default()
-    }
-}
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
@@ -3059,6 +3080,13 @@ impl ExportTaskExecutionInfo {
         self.completion_time
     }
 }
+impl ExportTaskExecutionInfo {
+    /// Creates a new builder-style object to manufacture [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
+    pub fn builder() -> crate::model::export_task_execution_info::Builder {
+        crate::model::export_task_execution_info::Builder::default()
+    }
+}
+
 /// See [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
 pub mod export_task_execution_info {
     
@@ -3101,12 +3129,6 @@ pub mod export_task_execution_info {
     
     
 }
-impl ExportTaskExecutionInfo {
-    /// Creates a new builder-style object to manufacture [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
-    pub fn builder() -> crate::model::export_task_execution_info::Builder {
-        crate::model::export_task_execution_info::Builder::default()
-    }
-}
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
@@ -3129,6 +3151,13 @@ impl ExportTaskStatus {
         self.message.as_deref()
     }
 }
+impl ExportTaskStatus {
+    /// Creates a new builder-style object to manufacture [`ExportTaskStatus`](crate::model::ExportTaskStatus).
+    pub fn builder() -> crate::model::export_task_status::Builder {
+        crate::model::export_task_status::Builder::default()
+    }
+}
+
 /// See [`ExportTaskStatus`](crate::model::ExportTaskStatus).
 pub mod export_task_status {
     
@@ -3170,12 +3199,6 @@ pub mod export_task_status {
     }
     
     
-}
-impl ExportTaskStatus {
-    /// Creates a new builder-style object to manufacture [`ExportTaskStatus`](crate::model::ExportTaskStatus).
-    pub fn builder() -> crate::model::export_task_status::Builder {
-        crate::model::export_task_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExportTaskStatusCode`, it is important to ensure

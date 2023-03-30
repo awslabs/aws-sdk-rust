@@ -14,6 +14,13 @@ impl DocumentServiceWarning {
         self.message.as_deref()
     }
 }
+impl DocumentServiceWarning {
+    /// Creates a new builder-style object to manufacture [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
+    pub fn builder() -> crate::model::document_service_warning::Builder {
+        crate::model::document_service_warning::Builder::default()
+    }
+}
+
 /// See [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
 pub mod document_service_warning {
     
@@ -43,12 +50,6 @@ pub mod document_service_warning {
     }
     
     
-}
-impl DocumentServiceWarning {
-    /// Creates a new builder-style object to manufacture [`DocumentServiceWarning`](crate::model::DocumentServiceWarning).
-    pub fn builder() -> crate::model::document_service_warning::Builder {
-        crate::model::document_service_warning::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContentType`, it is important to ensure
@@ -161,6 +162,13 @@ impl SuggestModel {
         self.suggestions.as_deref()
     }
 }
+impl SuggestModel {
+    /// Creates a new builder-style object to manufacture [`SuggestModel`](crate::model::SuggestModel).
+    pub fn builder() -> crate::model::suggest_model::Builder {
+        crate::model::suggest_model::Builder::default()
+    }
+}
+
 /// See [`SuggestModel`](crate::model::SuggestModel).
 pub mod suggest_model {
     
@@ -222,12 +230,6 @@ pub mod suggest_model {
     
     
 }
-impl SuggestModel {
-    /// Creates a new builder-style object to manufacture [`SuggestModel`](crate::model::SuggestModel).
-    pub fn builder() -> crate::model::suggest_model::Builder {
-        crate::model::suggest_model::Builder::default()
-    }
-}
 
 /// <p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>
 #[non_exhaustive]
@@ -257,6 +259,13 @@ impl SuggestionMatch {
         self.id.as_deref()
     }
 }
+impl SuggestionMatch {
+    /// Creates a new builder-style object to manufacture [`SuggestionMatch`](crate::model::SuggestionMatch).
+    pub fn builder() -> crate::model::suggestion_match::Builder {
+        crate::model::suggestion_match::Builder::default()
+    }
+}
+
 /// See [`SuggestionMatch`](crate::model::SuggestionMatch).
 pub mod suggestion_match {
     
@@ -312,12 +321,6 @@ pub mod suggestion_match {
     
     
 }
-impl SuggestionMatch {
-    /// Creates a new builder-style object to manufacture [`SuggestionMatch`](crate::model::SuggestionMatch).
-    pub fn builder() -> crate::model::suggestion_match::Builder {
-        crate::model::suggestion_match::Builder::default()
-    }
-}
 
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
@@ -340,6 +343,13 @@ impl SuggestStatus {
         self.rid.as_deref()
     }
 }
+impl SuggestStatus {
+    /// Creates a new builder-style object to manufacture [`SuggestStatus`](crate::model::SuggestStatus).
+    pub fn builder() -> crate::model::suggest_status::Builder {
+        crate::model::suggest_status::Builder::default()
+    }
+}
+
 /// See [`SuggestStatus`](crate::model::SuggestStatus).
 pub mod suggest_status {
     
@@ -382,12 +392,6 @@ pub mod suggest_status {
     }
     
     
-}
-impl SuggestStatus {
-    /// Creates a new builder-style object to manufacture [`SuggestStatus`](crate::model::SuggestStatus).
-    pub fn builder() -> crate::model::suggest_status::Builder {
-        crate::model::suggest_status::Builder::default()
-    }
 }
 
 /// <p>The statistics for a field calculated in the request.</p>
@@ -459,6 +463,13 @@ impl FieldStats {
         self.stddev
     }
 }
+impl FieldStats {
+    /// Creates a new builder-style object to manufacture [`FieldStats`](crate::model::FieldStats).
+    pub fn builder() -> crate::model::field_stats::Builder {
+        crate::model::field_stats::Builder::default()
+    }
+}
+
 /// See [`FieldStats`](crate::model::FieldStats).
 pub mod field_stats {
     
@@ -584,12 +595,6 @@ pub mod field_stats {
     
     
 }
-impl FieldStats {
-    /// Creates a new builder-style object to manufacture [`FieldStats`](crate::model::FieldStats).
-    pub fn builder() -> crate::model::field_stats::Builder {
-        crate::model::field_stats::Builder::default()
-    }
-}
 
 /// <p>A container for the calculated facet values and counts.</p>
 #[non_exhaustive]
@@ -605,6 +610,13 @@ impl BucketInfo {
         self.buckets.as_deref()
     }
 }
+impl BucketInfo {
+    /// Creates a new builder-style object to manufacture [`BucketInfo`](crate::model::BucketInfo).
+    pub fn builder() -> crate::model::bucket_info::Builder {
+        crate::model::bucket_info::Builder::default()
+    }
+}
+
 /// See [`BucketInfo`](crate::model::BucketInfo).
 pub mod bucket_info {
     
@@ -641,12 +653,6 @@ pub mod bucket_info {
     
     
 }
-impl BucketInfo {
-    /// Creates a new builder-style object to manufacture [`BucketInfo`](crate::model::BucketInfo).
-    pub fn builder() -> crate::model::bucket_info::Builder {
-        crate::model::bucket_info::Builder::default()
-    }
-}
 
 /// <p>A container for facet information. </p>
 #[non_exhaustive]
@@ -669,6 +675,13 @@ impl Bucket {
         self.count
     }
 }
+impl Bucket {
+    /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket).
+    pub fn builder() -> crate::model::bucket::Builder {
+        crate::model::bucket::Builder::default()
+    }
+}
+
 /// See [`Bucket`](crate::model::Bucket).
 pub mod bucket {
     
@@ -712,12 +725,6 @@ pub mod bucket {
     
     
 }
-impl Bucket {
-    /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket).
-    pub fn builder() -> crate::model::bucket::Builder {
-        crate::model::bucket::Builder::default()
-    }
-}
 
 /// <p>The collection of documents that match the search request.</p>
 #[non_exhaustive]
@@ -754,6 +761,13 @@ impl Hits {
         self.hit.as_deref()
     }
 }
+impl Hits {
+    /// Creates a new builder-style object to manufacture [`Hits`](crate::model::Hits).
+    pub fn builder() -> crate::model::hits::Builder {
+        crate::model::hits::Builder::default()
+    }
+}
+
 /// See [`Hits`](crate::model::Hits).
 pub mod hits {
     
@@ -828,12 +842,6 @@ pub mod hits {
     
     
 }
-impl Hits {
-    /// Creates a new builder-style object to manufacture [`Hits`](crate::model::Hits).
-    pub fn builder() -> crate::model::hits::Builder {
-        crate::model::hits::Builder::default()
-    }
-}
 
 /// <p>Information about a document that matches the search request.</p>
 #[non_exhaustive]
@@ -870,6 +878,13 @@ impl Hit {
         self.highlights.as_ref()
     }
 }
+impl Hit {
+    /// Creates a new builder-style object to manufacture [`Hit`](crate::model::Hit).
+    pub fn builder() -> crate::model::hit::Builder {
+        crate::model::hit::Builder::default()
+    }
+}
+
 /// See [`Hit`](crate::model::Hit).
 pub mod hit {
     
@@ -954,12 +969,6 @@ pub mod hit {
     
     
 }
-impl Hit {
-    /// Creates a new builder-style object to manufacture [`Hit`](crate::model::Hit).
-    pub fn builder() -> crate::model::hit::Builder {
-        crate::model::hit::Builder::default()
-    }
-}
 
 /// <p>Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>).</p>
 #[non_exhaustive]
@@ -982,6 +991,13 @@ impl SearchStatus {
         self.rid.as_deref()
     }
 }
+impl SearchStatus {
+    /// Creates a new builder-style object to manufacture [`SearchStatus`](crate::model::SearchStatus).
+    pub fn builder() -> crate::model::search_status::Builder {
+        crate::model::search_status::Builder::default()
+    }
+}
+
 /// See [`SearchStatus`](crate::model::SearchStatus).
 pub mod search_status {
     
@@ -1024,12 +1040,6 @@ pub mod search_status {
     }
     
     
-}
-impl SearchStatus {
-    /// Creates a new builder-style object to manufacture [`SearchStatus`](crate::model::SearchStatus).
-    pub fn builder() -> crate::model::search_status::Builder {
-        crate::model::search_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryParser`, it is important to ensure

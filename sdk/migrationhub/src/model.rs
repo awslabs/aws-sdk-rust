@@ -50,6 +50,13 @@ impl ResourceAttribute {
         self.value.as_deref()
     }
 }
+impl ResourceAttribute {
+    /// Creates a new builder-style object to manufacture [`ResourceAttribute`](crate::model::ResourceAttribute).
+    pub fn builder() -> crate::model::resource_attribute::Builder {
+        crate::model::resource_attribute::Builder::default()
+    }
+}
+
 /// See [`ResourceAttribute`](crate::model::ResourceAttribute).
 pub mod resource_attribute {
     
@@ -91,12 +98,6 @@ pub mod resource_attribute {
     }
     
     
-}
-impl ResourceAttribute {
-    /// Creates a new builder-style object to manufacture [`ResourceAttribute`](crate::model::ResourceAttribute).
-    pub fn builder() -> crate::model::resource_attribute::Builder {
-        crate::model::resource_attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceAttributeType`, it is important to ensure
@@ -249,6 +250,13 @@ impl Task {
         self.progress_percent
     }
 }
+impl Task {
+    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
+    pub fn builder() -> crate::model::task::Builder {
+        crate::model::task::Builder::default()
+    }
+}
+
 /// See [`Task`](crate::model::Task).
 pub mod task {
     
@@ -302,12 +310,6 @@ pub mod task {
     }
     
     
-}
-impl Task {
-    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
-    pub fn builder() -> crate::model::task::Builder {
-        crate::model::task::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Status`, it is important to ensure
@@ -503,6 +505,13 @@ impl ProgressUpdateStreamSummary {
         self.progress_update_stream_name.as_deref()
     }
 }
+impl ProgressUpdateStreamSummary {
+    /// Creates a new builder-style object to manufacture [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
+    pub fn builder() -> crate::model::progress_update_stream_summary::Builder {
+        crate::model::progress_update_stream_summary::Builder::default()
+    }
+}
+
 /// See [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
 pub mod progress_update_stream_summary {
     
@@ -532,12 +541,6 @@ pub mod progress_update_stream_summary {
     }
     
     
-}
-impl ProgressUpdateStreamSummary {
-    /// Creates a new builder-style object to manufacture [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
-    pub fn builder() -> crate::model::progress_update_stream_summary::Builder {
-        crate::model::progress_update_stream_summary::Builder::default()
-    }
 }
 
 /// <p>MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code> for each task.</p>
@@ -589,6 +592,13 @@ impl MigrationTaskSummary {
         self.update_date_time.as_ref()
     }
 }
+impl MigrationTaskSummary {
+    /// Creates a new builder-style object to manufacture [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
+    pub fn builder() -> crate::model::migration_task_summary::Builder {
+        crate::model::migration_task_summary::Builder::default()
+    }
+}
+
 /// See [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
 pub mod migration_task_summary {
     
@@ -679,12 +689,6 @@ pub mod migration_task_summary {
     
     
 }
-impl MigrationTaskSummary {
-    /// Creates a new builder-style object to manufacture [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
-    pub fn builder() -> crate::model::migration_task_summary::Builder {
-        crate::model::migration_task_summary::Builder::default()
-    }
-}
 
 /// <p>Object representing the on-premises resource being migrated.</p>
 #[non_exhaustive]
@@ -707,6 +711,13 @@ impl DiscoveredResource {
         self.description.as_deref()
     }
 }
+impl DiscoveredResource {
+    /// Creates a new builder-style object to manufacture [`DiscoveredResource`](crate::model::DiscoveredResource).
+    pub fn builder() -> crate::model::discovered_resource::Builder {
+        crate::model::discovered_resource::Builder::default()
+    }
+}
+
 /// See [`DiscoveredResource`](crate::model::DiscoveredResource).
 pub mod discovered_resource {
     
@@ -749,12 +760,6 @@ pub mod discovered_resource {
     
     
 }
-impl DiscoveredResource {
-    /// Creates a new builder-style object to manufacture [`DiscoveredResource`](crate::model::DiscoveredResource).
-    pub fn builder() -> crate::model::discovered_resource::Builder {
-        crate::model::discovered_resource::Builder::default()
-    }
-}
 
 /// <p>An ARN of the AWS cloud resource target receiving the migration (e.g., AMI, EC2 instance, RDS instance, etc.).</p>
 #[non_exhaustive]
@@ -777,6 +782,13 @@ impl CreatedArtifact {
         self.description.as_deref()
     }
 }
+impl CreatedArtifact {
+    /// Creates a new builder-style object to manufacture [`CreatedArtifact`](crate::model::CreatedArtifact).
+    pub fn builder() -> crate::model::created_artifact::Builder {
+        crate::model::created_artifact::Builder::default()
+    }
+}
+
 /// See [`CreatedArtifact`](crate::model::CreatedArtifact).
 pub mod created_artifact {
     
@@ -819,12 +831,6 @@ pub mod created_artifact {
     
     
 }
-impl CreatedArtifact {
-    /// Creates a new builder-style object to manufacture [`CreatedArtifact`](crate::model::CreatedArtifact).
-    pub fn builder() -> crate::model::created_artifact::Builder {
-        crate::model::created_artifact::Builder::default()
-    }
-}
 
 /// <p>The state of an application discovered through Migration Hub import, the AWS Agentless Discovery Connector, or the AWS Application Discovery Agent.</p>
 #[non_exhaustive]
@@ -854,6 +860,13 @@ impl ApplicationState {
         self.last_updated_time.as_ref()
     }
 }
+impl ApplicationState {
+    /// Creates a new builder-style object to manufacture [`ApplicationState`](crate::model::ApplicationState).
+    pub fn builder() -> crate::model::application_state::Builder {
+        crate::model::application_state::Builder::default()
+    }
+}
+
 /// See [`ApplicationState`](crate::model::ApplicationState).
 pub mod application_state {
     
@@ -908,12 +921,6 @@ pub mod application_state {
     
     
 }
-impl ApplicationState {
-    /// Creates a new builder-style object to manufacture [`ApplicationState`](crate::model::ApplicationState).
-    pub fn builder() -> crate::model::application_state::Builder {
-        crate::model::application_state::Builder::default()
-    }
-}
 
 /// <p>Represents a migration task in a migration tool.</p>
 #[non_exhaustive]
@@ -957,6 +964,13 @@ impl MigrationTask {
         self.resource_attribute_list.as_deref()
     }
 }
+impl MigrationTask {
+    /// Creates a new builder-style object to manufacture [`MigrationTask`](crate::model::MigrationTask).
+    pub fn builder() -> crate::model::migration_task::Builder {
+        crate::model::migration_task::Builder::default()
+    }
+}
+
 /// See [`MigrationTask`](crate::model::MigrationTask).
 pub mod migration_task {
     
@@ -1040,11 +1054,5 @@ pub mod migration_task {
     }
     
     
-}
-impl MigrationTask {
-    /// Creates a new builder-style object to manufacture [`MigrationTask`](crate::model::MigrationTask).
-    pub fn builder() -> crate::model::migration_task::Builder {
-        crate::model::migration_task::Builder::default()
-    }
 }
 

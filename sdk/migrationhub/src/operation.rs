@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_created_artifact`](crate::client::Client::associate_created_artifact).
             ///
-            /// See [`crate::client::fluent_builders::AssociateCreatedArtifact`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateCreatedArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateCreatedArtifact {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateCreatedArtifact
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_discovered_resource`](crate::client::Client::associate_discovered_resource).
             ///
-            /// See [`crate::client::fluent_builders::AssociateDiscoveredResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateDiscoveredResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateDiscoveredResource {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDiscoveredResou
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_progress_update_stream`](crate::client::Client::create_progress_update_stream).
             ///
-            /// See [`crate::client::fluent_builders::CreateProgressUpdateStream`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateProgressUpdateStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProgressUpdateStream {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProgressUpdateStre
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_progress_update_stream`](crate::client::Client::delete_progress_update_stream).
             ///
-            /// See [`crate::client::fluent_builders::DeleteProgressUpdateStream`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteProgressUpdateStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProgressUpdateStream {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProgressUpdateStre
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_application_state`](crate::client::Client::describe_application_state).
             ///
-            /// See [`crate::client::fluent_builders::DescribeApplicationState`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeApplicationState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeApplicationState {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicationState
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_migration_task`](crate::client::Client::describe_migration_task).
             ///
-            /// See [`crate::client::fluent_builders::DescribeMigrationTask`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeMigrationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMigrationTask {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMigrationTask {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_created_artifact`](crate::client::Client::disassociate_created_artifact).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateCreatedArtifact`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateCreatedArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateCreatedArtifact {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCreatedArtif
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_discovered_resource`](crate::client::Client::disassociate_discovered_resource).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateDiscoveredResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateDiscoveredResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateDiscoveredResource {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDiscoveredRe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`import_migration_task`](crate::client::Client::import_migration_task).
             ///
-            /// See [`crate::client::fluent_builders::ImportMigrationTask`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ImportMigrationTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportMigrationTask {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportMigrationTask {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_application_states`](crate::client::Client::list_application_states).
             ///
-            /// See [`crate::client::fluent_builders::ListApplicationStates`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListApplicationStates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApplicationStates {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationStates {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_created_artifacts`](crate::client::Client::list_created_artifacts).
             ///
-            /// See [`crate::client::fluent_builders::ListCreatedArtifacts`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCreatedArtifacts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCreatedArtifacts {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCreatedArtifacts {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_discovered_resources`](crate::client::Client::list_discovered_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListDiscoveredResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDiscoveredResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDiscoveredResources {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDiscoveredResources 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_migration_tasks`](crate::client::Client::list_migration_tasks).
             ///
-            /// See [`crate::client::fluent_builders::ListMigrationTasks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMigrationTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMigrationTasks {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMigrationTasks {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_progress_update_streams`](crate::client::Client::list_progress_update_streams).
             ///
-            /// See [`crate::client::fluent_builders::ListProgressUpdateStreams`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProgressUpdateStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProgressUpdateStreams {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProgressUpdateStream
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`notify_application_state`](crate::client::Client::notify_application_state).
             ///
-            /// See [`crate::client::fluent_builders::NotifyApplicationState`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `NotifyApplicationState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyApplicationState {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyApplicationState {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`notify_migration_task_state`](crate::client::Client::notify_migration_task_state).
             ///
-            /// See [`crate::client::fluent_builders::NotifyMigrationTaskState`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `NotifyMigrationTaskState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyMigrationTaskState {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyMigrationTaskState
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_resource_attributes`](crate::client::Client::put_resource_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutResourceAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutResourceAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourceAttributes {
     _private: ()

@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ValidateResourcePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ValidateResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
+    pub fn builder() -> crate::output::validate_resource_policy_output::Builder {
+        crate::output::validate_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
 pub mod validate_resource_policy_output {
     
@@ -86,12 +93,6 @@ pub mod validate_resource_policy_output {
     
     
 }
-impl ValidateResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput).
-    pub fn builder() -> crate::output::validate_resource_policy_output::Builder {
-        crate::output::validate_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -120,6 +121,13 @@ impl aws_http::request_id::RequestId for UpdateSecretVersionStageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSecretVersionStageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
+    pub fn builder() -> crate::output::update_secret_version_stage_output::Builder {
+        crate::output::update_secret_version_stage_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
 pub mod update_secret_version_stage_output {
     
@@ -173,12 +181,6 @@ pub mod update_secret_version_stage_output {
     
     
 }
-impl UpdateSecretVersionStageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput).
-    pub fn builder() -> crate::output::update_secret_version_stage_output::Builder {
-        crate::output::update_secret_version_stage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -214,6 +216,13 @@ impl aws_http::request_id::RequestId for UpdateSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSecretOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
+    pub fn builder() -> crate::output::update_secret_output::Builder {
+        crate::output::update_secret_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
 pub mod update_secret_output {
     
@@ -279,12 +288,6 @@ pub mod update_secret_output {
     
     
 }
-impl UpdateSecretOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSecretOutput`](crate::output::UpdateSecretOutput).
-    pub fn builder() -> crate::output::update_secret_output::Builder {
-        crate::output::update_secret_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -297,6 +300,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -326,12 +336,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -344,6 +348,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -373,12 +384,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -400,6 +405,13 @@ impl aws_http::request_id::RequestId for StopReplicationToReplicaOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopReplicationToReplicaOutput {
+    /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
+    pub fn builder() -> crate::output::stop_replication_to_replica_output::Builder {
+        crate::output::stop_replication_to_replica_output::Builder::default()
+    }
+}
+
 /// See [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
 pub mod stop_replication_to_replica_output {
     
@@ -441,12 +453,6 @@ pub mod stop_replication_to_replica_output {
     
     
 }
-impl StopReplicationToReplicaOutput {
-    /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput).
-    pub fn builder() -> crate::output::stop_replication_to_replica_output::Builder {
-        crate::output::stop_replication_to_replica_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -482,6 +488,13 @@ impl aws_http::request_id::RequestId for RotateSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RotateSecretOutput {
+    /// Creates a new builder-style object to manufacture [`RotateSecretOutput`](crate::output::RotateSecretOutput).
+    pub fn builder() -> crate::output::rotate_secret_output::Builder {
+        crate::output::rotate_secret_output::Builder::default()
+    }
+}
+
 /// See [`RotateSecretOutput`](crate::output::RotateSecretOutput).
 pub mod rotate_secret_output {
     
@@ -547,12 +560,6 @@ pub mod rotate_secret_output {
     
     
 }
-impl RotateSecretOutput {
-    /// Creates a new builder-style object to manufacture [`RotateSecretOutput`](crate::output::RotateSecretOutput).
-    pub fn builder() -> crate::output::rotate_secret_output::Builder {
-        crate::output::rotate_secret_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -581,6 +588,13 @@ impl aws_http::request_id::RequestId for RestoreSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestoreSecretOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
+    pub fn builder() -> crate::output::restore_secret_output::Builder {
+        crate::output::restore_secret_output::Builder::default()
+    }
+}
+
 /// See [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
 pub mod restore_secret_output {
     
@@ -634,12 +648,6 @@ pub mod restore_secret_output {
     
     
 }
-impl RestoreSecretOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreSecretOutput`](crate::output::RestoreSecretOutput).
-    pub fn builder() -> crate::output::restore_secret_output::Builder {
-        crate::output::restore_secret_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -668,6 +676,13 @@ impl aws_http::request_id::RequestId for ReplicateSecretToRegionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReplicateSecretToRegionsOutput {
+    /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
+    pub fn builder() -> crate::output::replicate_secret_to_regions_output::Builder {
+        crate::output::replicate_secret_to_regions_output::Builder::default()
+    }
+}
+
 /// See [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
 pub mod replicate_secret_to_regions_output {
     
@@ -727,12 +742,6 @@ pub mod replicate_secret_to_regions_output {
     
     
 }
-impl ReplicateSecretToRegionsOutput {
-    /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput).
-    pub fn builder() -> crate::output::replicate_secret_to_regions_output::Builder {
-        crate::output::replicate_secret_to_regions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -761,6 +770,13 @@ impl aws_http::request_id::RequestId for RemoveRegionsFromReplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveRegionsFromReplicationOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
+    pub fn builder() -> crate::output::remove_regions_from_replication_output::Builder {
+        crate::output::remove_regions_from_replication_output::Builder::default()
+    }
+}
+
 /// See [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
 pub mod remove_regions_from_replication_output {
     
@@ -820,12 +836,6 @@ pub mod remove_regions_from_replication_output {
     
     
 }
-impl RemoveRegionsFromReplicationOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput).
-    pub fn builder() -> crate::output::remove_regions_from_replication_output::Builder {
-        crate::output::remove_regions_from_replication_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -868,6 +878,13 @@ impl aws_http::request_id::RequestId for PutSecretValueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutSecretValueOutput {
+    /// Creates a new builder-style object to manufacture [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
+    pub fn builder() -> crate::output::put_secret_value_output::Builder {
+        crate::output::put_secret_value_output::Builder::default()
+    }
+}
+
 /// See [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
 pub mod put_secret_value_output {
     
@@ -951,12 +968,6 @@ pub mod put_secret_value_output {
     
     
 }
-impl PutSecretValueOutput {
-    /// Creates a new builder-style object to manufacture [`PutSecretValueOutput`](crate::output::PutSecretValueOutput).
-    pub fn builder() -> crate::output::put_secret_value_output::Builder {
-        crate::output::put_secret_value_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -985,6 +996,13 @@ impl aws_http::request_id::RequestId for PutResourcePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
     
@@ -1038,12 +1056,6 @@ pub mod put_resource_policy_output {
     
     
 }
-impl PutResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
-    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
-        crate::output::put_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1086,6 +1098,13 @@ impl aws_http::request_id::RequestId for ListSecretVersionIdsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSecretVersionIdsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
+    pub fn builder() -> crate::output::list_secret_version_ids_output::Builder {
+        crate::output::list_secret_version_ids_output::Builder::default()
+    }
+}
+
 /// See [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
 pub mod list_secret_version_ids_output {
     
@@ -1169,12 +1188,6 @@ pub mod list_secret_version_ids_output {
     
     
 }
-impl ListSecretVersionIdsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput).
-    pub fn builder() -> crate::output::list_secret_version_ids_output::Builder {
-        crate::output::list_secret_version_ids_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1203,6 +1216,13 @@ impl aws_http::request_id::RequestId for ListSecretsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSecretsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSecretsOutput`](crate::output::ListSecretsOutput).
+    pub fn builder() -> crate::output::list_secrets_output::Builder {
+        crate::output::list_secrets_output::Builder::default()
+    }
+}
+
 /// See [`ListSecretsOutput`](crate::output::ListSecretsOutput).
 pub mod list_secrets_output {
     
@@ -1261,12 +1281,6 @@ pub mod list_secrets_output {
     }
     
     
-}
-impl ListSecretsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSecretsOutput`](crate::output::ListSecretsOutput).
-    pub fn builder() -> crate::output::list_secrets_output::Builder {
-        crate::output::list_secrets_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1349,6 +1363,13 @@ impl aws_http::request_id::RequestId for GetSecretValueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSecretValueOutput {
+    /// Creates a new builder-style object to manufacture [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
+    pub fn builder() -> crate::output::get_secret_value_output::Builder {
+        crate::output::get_secret_value_output::Builder::default()
+    }
+}
+
 /// See [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
 pub mod get_secret_value_output {
     
@@ -1486,12 +1507,6 @@ pub mod get_secret_value_output {
     
     
 }
-impl GetSecretValueOutput {
-    /// Creates a new builder-style object to manufacture [`GetSecretValueOutput`](crate::output::GetSecretValueOutput).
-    pub fn builder() -> crate::output::get_secret_value_output::Builder {
-        crate::output::get_secret_value_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1527,6 +1542,13 @@ impl aws_http::request_id::RequestId for GetResourcePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
+    pub fn builder() -> crate::output::get_resource_policy_output::Builder {
+        crate::output::get_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
 pub mod get_resource_policy_output {
     
@@ -1592,12 +1614,6 @@ pub mod get_resource_policy_output {
     
     
 }
-impl GetResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
-    pub fn builder() -> crate::output::get_resource_policy_output::Builder {
-        crate::output::get_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1627,6 +1643,13 @@ impl aws_http::request_id::RequestId for GetRandomPasswordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRandomPasswordOutput {
+    /// Creates a new builder-style object to manufacture [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
+    pub fn builder() -> crate::output::get_random_password_output::Builder {
+        crate::output::get_random_password_output::Builder::default()
+    }
+}
+
 /// See [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
 pub mod get_random_password_output {
     
@@ -1675,12 +1698,6 @@ pub mod get_random_password_output {
     }
     
     
-}
-impl GetRandomPasswordOutput {
-    /// Creates a new builder-style object to manufacture [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput).
-    pub fn builder() -> crate::output::get_random_password_output::Builder {
-        crate::output::get_random_password_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1850,6 +1867,13 @@ impl aws_http::request_id::RequestId for DescribeSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSecretOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
+    pub fn builder() -> crate::output::describe_secret_output::Builder {
+        crate::output::describe_secret_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
 pub mod describe_secret_output {
     
@@ -2141,12 +2165,6 @@ pub mod describe_secret_output {
     
     
 }
-impl DescribeSecretOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSecretOutput`](crate::output::DescribeSecretOutput).
-    pub fn builder() -> crate::output::describe_secret_output::Builder {
-        crate::output::describe_secret_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2182,6 +2200,13 @@ impl aws_http::request_id::RequestId for DeleteSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSecretOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
+    pub fn builder() -> crate::output::delete_secret_output::Builder {
+        crate::output::delete_secret_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
 pub mod delete_secret_output {
     
@@ -2247,12 +2272,6 @@ pub mod delete_secret_output {
     
     
 }
-impl DeleteSecretOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSecretOutput`](crate::output::DeleteSecretOutput).
-    pub fn builder() -> crate::output::delete_secret_output::Builder {
-        crate::output::delete_secret_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2281,6 +2300,13 @@ impl aws_http::request_id::RequestId for DeleteResourcePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
     
@@ -2334,12 +2360,6 @@ pub mod delete_resource_policy_output {
     
     
 }
-impl DeleteResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
-    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
-        crate::output::delete_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2392,6 +2412,13 @@ impl aws_http::request_id::RequestId for CreateSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSecretOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSecretOutput`](crate::output::CreateSecretOutput).
+    pub fn builder() -> crate::output::create_secret_output::Builder {
+        crate::output::create_secret_output::Builder::default()
+    }
+}
+
 /// See [`CreateSecretOutput`](crate::output::CreateSecretOutput).
 pub mod create_secret_output {
     
@@ -2485,12 +2512,6 @@ pub mod create_secret_output {
     
     
 }
-impl CreateSecretOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSecretOutput`](crate::output::CreateSecretOutput).
-    pub fn builder() -> crate::output::create_secret_output::Builder {
-        crate::output::create_secret_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2526,6 +2547,13 @@ impl aws_http::request_id::RequestId for CancelRotateSecretOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelRotateSecretOutput {
+    /// Creates a new builder-style object to manufacture [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
+    pub fn builder() -> crate::output::cancel_rotate_secret_output::Builder {
+        crate::output::cancel_rotate_secret_output::Builder::default()
+    }
+}
+
 /// See [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
 pub mod cancel_rotate_secret_output {
     
@@ -2590,11 +2618,5 @@ pub mod cancel_rotate_secret_output {
     }
     
     
-}
-impl CancelRotateSecretOutput {
-    /// Creates a new builder-style object to manufacture [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput).
-    pub fn builder() -> crate::output::cancel_rotate_secret_output::Builder {
-        crate::output::cancel_rotate_secret_output::Builder::default()
-    }
 }
 

@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.</p>
@@ -112,6 +113,13 @@ impl Change {
         self.change_name.as_deref()
     }
 }
+impl Change {
+    /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
+    pub fn builder() -> crate::model::change::Builder {
+        crate::model::change::Builder::default()
+    }
+}
+
 /// See [`Change`](crate::model::Change).
 pub mod change {
     
@@ -196,12 +204,6 @@ pub mod change {
     
     
 }
-impl Change {
-    /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
-    pub fn builder() -> crate::model::change::Builder {
-        crate::model::change::Builder::default()
-    }
-}
 
 /// <p>An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. </p>
 #[non_exhaustive]
@@ -224,6 +226,13 @@ impl Entity {
         self.identifier.as_deref()
     }
 }
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
+    }
+}
+
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
     
@@ -265,12 +274,6 @@ pub mod entity {
     }
     
     
-}
-impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
-    pub fn builder() -> crate::model::entity::Builder {
-        crate::model::entity::Builder::default()
-    }
 }
 
 /// <p>This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.</p>
@@ -322,6 +325,13 @@ impl EntitySummary {
         self.visibility.as_deref()
     }
 }
+impl EntitySummary {
+    /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary).
+    pub fn builder() -> crate::model::entity_summary::Builder {
+        crate::model::entity_summary::Builder::default()
+    }
+}
+
 /// See [`EntitySummary`](crate::model::EntitySummary).
 pub mod entity_summary {
     
@@ -412,12 +422,6 @@ pub mod entity_summary {
     
     
 }
-impl EntitySummary {
-    /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary).
-    pub fn builder() -> crate::model::entity_summary::Builder {
-        crate::model::entity_summary::Builder::default()
-    }
-}
 
 /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
 #[non_exhaustive]
@@ -442,6 +446,13 @@ impl Sort {
         self.sort_order.as_ref()
     }
 }
+impl Sort {
+    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
+    pub fn builder() -> crate::model::sort::Builder {
+        crate::model::sort::Builder::default()
+    }
+}
+
 /// See [`Sort`](crate::model::Sort).
 pub mod sort {
     
@@ -485,12 +496,6 @@ pub mod sort {
     }
     
     
-}
-impl Sort {
-    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
-    pub fn builder() -> crate::model::sort::Builder {
-        crate::model::sort::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
@@ -618,6 +623,13 @@ impl Filter {
         self.value_list.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -688,12 +700,6 @@ pub mod filter {
     
     
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.</p>
 #[non_exhaustive]
@@ -758,6 +764,13 @@ impl ChangeSetSummaryListItem {
         self.failure_code.as_ref()
     }
 }
+impl ChangeSetSummaryListItem {
+    /// Creates a new builder-style object to manufacture [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
+    pub fn builder() -> crate::model::change_set_summary_list_item::Builder {
+        crate::model::change_set_summary_list_item::Builder::default()
+    }
+}
+
 /// See [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
 pub mod change_set_summary_list_item {
     
@@ -877,12 +890,6 @@ pub mod change_set_summary_list_item {
     }
     
     
-}
-impl ChangeSetSummaryListItem {
-    /// Creates a new builder-style object to manufacture [`ChangeSetSummaryListItem`](crate::model::ChangeSetSummaryListItem).
-    pub fn builder() -> crate::model::change_set_summary_list_item::Builder {
-        crate::model::change_set_summary_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FailureCode`, it is important to ensure
@@ -1106,6 +1113,13 @@ impl ChangeSummary {
         self.change_name.as_deref()
     }
 }
+impl ChangeSummary {
+    /// Creates a new builder-style object to manufacture [`ChangeSummary`](crate::model::ChangeSummary).
+    pub fn builder() -> crate::model::change_summary::Builder {
+        crate::model::change_summary::Builder::default()
+    }
+}
+
 /// See [`ChangeSummary`](crate::model::ChangeSummary).
 pub mod change_summary {
     
@@ -1190,12 +1204,6 @@ pub mod change_summary {
     
     
 }
-impl ChangeSummary {
-    /// Creates a new builder-style object to manufacture [`ChangeSummary`](crate::model::ChangeSummary).
-    pub fn builder() -> crate::model::change_summary::Builder {
-        crate::model::change_summary::Builder::default()
-    }
-}
 
 /// <p>Details about the error.</p>
 #[non_exhaustive]
@@ -1218,6 +1226,13 @@ impl ErrorDetail {
         self.error_message.as_deref()
     }
 }
+impl ErrorDetail {
+    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
+    pub fn builder() -> crate::model::error_detail::Builder {
+        crate::model::error_detail::Builder::default()
+    }
+}
+
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
     
@@ -1259,11 +1274,5 @@ pub mod error_detail {
     }
     
     
-}
-impl ErrorDetail {
-    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
-    pub fn builder() -> crate::model::error_detail::Builder {
-        crate::model::error_detail::Builder::default()
-    }
 }
 

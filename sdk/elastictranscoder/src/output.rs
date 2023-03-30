@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdatePipelineStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePipelineStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
+    pub fn builder() -> crate::output::update_pipeline_status_output::Builder {
+        crate::output::update_pipeline_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
 pub mod update_pipeline_status_output {
     
@@ -61,12 +68,6 @@ pub mod update_pipeline_status_output {
     
     
 }
-impl UpdatePipelineStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
-    pub fn builder() -> crate::output::update_pipeline_status_output::Builder {
-        crate::output::update_pipeline_status_output::Builder::default()
-    }
-}
 
 /// <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
 #[non_exhaustive]
@@ -88,6 +89,13 @@ impl aws_http::request_id::RequestId for UpdatePipelineNotificationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePipelineNotificationsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
+    pub fn builder() -> crate::output::update_pipeline_notifications_output::Builder {
+        crate::output::update_pipeline_notifications_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
 pub mod update_pipeline_notifications_output {
     
@@ -129,12 +137,6 @@ pub mod update_pipeline_notifications_output {
     
     
 }
-impl UpdatePipelineNotificationsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
-    pub fn builder() -> crate::output::update_pipeline_notifications_output::Builder {
-        crate::output::update_pipeline_notifications_output::Builder::default()
-    }
-}
 
 /// <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
@@ -165,6 +167,13 @@ impl aws_http::request_id::RequestId for UpdatePipelineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
+    pub fn builder() -> crate::output::update_pipeline_output::Builder {
+        crate::output::update_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
 pub mod update_pipeline_output {
     
@@ -226,12 +235,6 @@ pub mod update_pipeline_output {
     
     
 }
-impl UpdatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
-    pub fn builder() -> crate::output::update_pipeline_output::Builder {
-        crate::output::update_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>The <code>TestRoleResponse</code> structure.</p>
 #[deprecated]
@@ -261,6 +264,13 @@ impl aws_http::request_id::RequestId for TestRoleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TestRoleOutput {
+    /// Creates a new builder-style object to manufacture [`TestRoleOutput`](crate::output::TestRoleOutput).
+    pub fn builder() -> crate::output::test_role_output::Builder {
+        crate::output::test_role_output::Builder::default()
+    }
+}
+
 /// See [`TestRoleOutput`](crate::output::TestRoleOutput).
 pub mod test_role_output {
     
@@ -320,12 +330,6 @@ pub mod test_role_output {
     
     
 }
-impl TestRoleOutput {
-    /// Creates a new builder-style object to manufacture [`TestRoleOutput`](crate::output::TestRoleOutput).
-    pub fn builder() -> crate::output::test_role_output::Builder {
-        crate::output::test_role_output::Builder::default()
-    }
-}
 
 /// <p>The <code>ReadPresetResponse</code> structure.</p>
 #[non_exhaustive]
@@ -347,6 +351,13 @@ impl aws_http::request_id::RequestId for ReadPresetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReadPresetOutput {
+    /// Creates a new builder-style object to manufacture [`ReadPresetOutput`](crate::output::ReadPresetOutput).
+    pub fn builder() -> crate::output::read_preset_output::Builder {
+        crate::output::read_preset_output::Builder::default()
+    }
+}
+
 /// See [`ReadPresetOutput`](crate::output::ReadPresetOutput).
 pub mod read_preset_output {
     
@@ -388,12 +399,6 @@ pub mod read_preset_output {
     
     
 }
-impl ReadPresetOutput {
-    /// Creates a new builder-style object to manufacture [`ReadPresetOutput`](crate::output::ReadPresetOutput).
-    pub fn builder() -> crate::output::read_preset_output::Builder {
-        crate::output::read_preset_output::Builder::default()
-    }
-}
 
 /// <p>The <code>ReadPipelineResponse</code> structure.</p>
 #[non_exhaustive]
@@ -424,6 +429,13 @@ impl aws_http::request_id::RequestId for ReadPipelineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReadPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
+    pub fn builder() -> crate::output::read_pipeline_output::Builder {
+        crate::output::read_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
 pub mod read_pipeline_output {
     
@@ -485,12 +497,6 @@ pub mod read_pipeline_output {
     
     
 }
-impl ReadPipelineOutput {
-    /// Creates a new builder-style object to manufacture [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
-    pub fn builder() -> crate::output::read_pipeline_output::Builder {
-        crate::output::read_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>The <code>ReadJobResponse</code> structure.</p>
 #[non_exhaustive]
@@ -512,6 +518,13 @@ impl aws_http::request_id::RequestId for ReadJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReadJobOutput {
+    /// Creates a new builder-style object to manufacture [`ReadJobOutput`](crate::output::ReadJobOutput).
+    pub fn builder() -> crate::output::read_job_output::Builder {
+        crate::output::read_job_output::Builder::default()
+    }
+}
+
 /// See [`ReadJobOutput`](crate::output::ReadJobOutput).
 pub mod read_job_output {
     
@@ -553,12 +566,6 @@ pub mod read_job_output {
     
     
 }
-impl ReadJobOutput {
-    /// Creates a new builder-style object to manufacture [`ReadJobOutput`](crate::output::ReadJobOutput).
-    pub fn builder() -> crate::output::read_job_output::Builder {
-        crate::output::read_job_output::Builder::default()
-    }
-}
 
 /// <p>The <code>ListPresetsResponse</code> structure.</p>
 #[non_exhaustive]
@@ -587,6 +594,13 @@ impl aws_http::request_id::RequestId for ListPresetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPresetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::output::ListPresetsOutput).
+    pub fn builder() -> crate::output::list_presets_output::Builder {
+        crate::output::list_presets_output::Builder::default()
+    }
+}
+
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput).
 pub mod list_presets_output {
     
@@ -646,12 +660,6 @@ pub mod list_presets_output {
     
     
 }
-impl ListPresetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::output::ListPresetsOutput).
-    pub fn builder() -> crate::output::list_presets_output::Builder {
-        crate::output::list_presets_output::Builder::default()
-    }
-}
 
 /// <p>A list of the pipelines associated with the current AWS account.</p>
 #[non_exhaustive]
@@ -680,6 +688,13 @@ impl aws_http::request_id::RequestId for ListPipelinesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
+    pub fn builder() -> crate::output::list_pipelines_output::Builder {
+        crate::output::list_pipelines_output::Builder::default()
+    }
+}
+
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
     
@@ -739,12 +754,6 @@ pub mod list_pipelines_output {
     
     
 }
-impl ListPipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
-    pub fn builder() -> crate::output::list_pipelines_output::Builder {
-        crate::output::list_pipelines_output::Builder::default()
-    }
-}
 
 /// <p> The <code>ListJobsByStatusResponse</code> structure. </p>
 #[non_exhaustive]
@@ -773,6 +782,13 @@ impl aws_http::request_id::RequestId for ListJobsByStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListJobsByStatusOutput {
+    /// Creates a new builder-style object to manufacture [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
+    pub fn builder() -> crate::output::list_jobs_by_status_output::Builder {
+        crate::output::list_jobs_by_status_output::Builder::default()
+    }
+}
+
 /// See [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
 pub mod list_jobs_by_status_output {
     
@@ -832,12 +848,6 @@ pub mod list_jobs_by_status_output {
     
     
 }
-impl ListJobsByStatusOutput {
-    /// Creates a new builder-style object to manufacture [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
-    pub fn builder() -> crate::output::list_jobs_by_status_output::Builder {
-        crate::output::list_jobs_by_status_output::Builder::default()
-    }
-}
 
 /// <p>The <code>ListJobsByPipelineResponse</code> structure.</p>
 #[non_exhaustive]
@@ -866,6 +876,13 @@ impl aws_http::request_id::RequestId for ListJobsByPipelineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListJobsByPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
+    pub fn builder() -> crate::output::list_jobs_by_pipeline_output::Builder {
+        crate::output::list_jobs_by_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
 pub mod list_jobs_by_pipeline_output {
     
@@ -925,12 +942,6 @@ pub mod list_jobs_by_pipeline_output {
     
     
 }
-impl ListJobsByPipelineOutput {
-    /// Creates a new builder-style object to manufacture [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
-    pub fn builder() -> crate::output::list_jobs_by_pipeline_output::Builder {
-        crate::output::list_jobs_by_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>The <code>DeletePresetResponse</code> structure.</p>
 #[non_exhaustive]
@@ -943,6 +954,13 @@ impl aws_http::request_id::RequestId for DeletePresetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePresetOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePresetOutput`](crate::output::DeletePresetOutput).
+    pub fn builder() -> crate::output::delete_preset_output::Builder {
+        crate::output::delete_preset_output::Builder::default()
+    }
+}
+
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput).
 pub mod delete_preset_output {
     
@@ -972,12 +990,6 @@ pub mod delete_preset_output {
     
     
 }
-impl DeletePresetOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePresetOutput`](crate::output::DeletePresetOutput).
-    pub fn builder() -> crate::output::delete_preset_output::Builder {
-        crate::output::delete_preset_output::Builder::default()
-    }
-}
 
 /// <p>The <code>DeletePipelineResponse</code> structure.</p>
 #[non_exhaustive]
@@ -990,6 +1002,13 @@ impl aws_http::request_id::RequestId for DeletePipelineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
+    pub fn builder() -> crate::output::delete_pipeline_output::Builder {
+        crate::output::delete_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
     
@@ -1019,12 +1038,6 @@ pub mod delete_pipeline_output {
     
     
 }
-impl DeletePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
-    pub fn builder() -> crate::output::delete_pipeline_output::Builder {
-        crate::output::delete_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>The <code>CreatePresetResponse</code> structure.</p>
 #[non_exhaustive]
@@ -1053,6 +1066,13 @@ impl aws_http::request_id::RequestId for CreatePresetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePresetOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePresetOutput`](crate::output::CreatePresetOutput).
+    pub fn builder() -> crate::output::create_preset_output::Builder {
+        crate::output::create_preset_output::Builder::default()
+    }
+}
+
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput).
 pub mod create_preset_output {
     
@@ -1106,12 +1126,6 @@ pub mod create_preset_output {
     
     
 }
-impl CreatePresetOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePresetOutput`](crate::output::CreatePresetOutput).
-    pub fn builder() -> crate::output::create_preset_output::Builder {
-        crate::output::create_preset_output::Builder::default()
-    }
-}
 
 /// <p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
@@ -1142,6 +1156,13 @@ impl aws_http::request_id::RequestId for CreatePipelineOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
+    pub fn builder() -> crate::output::create_pipeline_output::Builder {
+        crate::output::create_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
     
@@ -1203,12 +1224,6 @@ pub mod create_pipeline_output {
     
     
 }
-impl CreatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
-    pub fn builder() -> crate::output::create_pipeline_output::Builder {
-        crate::output::create_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>The CreateJobResponse structure.</p>
 #[non_exhaustive]
@@ -1230,6 +1245,13 @@ impl aws_http::request_id::RequestId for CreateJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
+    pub fn builder() -> crate::output::create_job_output::Builder {
+        crate::output::create_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
     
@@ -1271,12 +1293,6 @@ pub mod create_job_output {
     
     
 }
-impl CreateJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
-    pub fn builder() -> crate::output::create_job_output::Builder {
-        crate::output::create_job_output::Builder::default()
-    }
-}
 
 /// <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
 #[non_exhaustive]
@@ -1289,6 +1305,13 @@ impl aws_http::request_id::RequestId for CancelJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelJobOutput {
+    /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput).
+    pub fn builder() -> crate::output::cancel_job_output::Builder {
+        crate::output::cancel_job_output::Builder::default()
+    }
+}
+
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
     
@@ -1317,11 +1340,5 @@ pub mod cancel_job_output {
     }
     
     
-}
-impl CancelJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput).
-    pub fn builder() -> crate::output::cancel_job_output::Builder {
-        crate::output::cancel_job_output::Builder::default()
-    }
 }
 

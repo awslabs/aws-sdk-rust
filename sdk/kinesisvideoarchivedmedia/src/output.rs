@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListFragmentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFragmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
+    pub fn builder() -> crate::output::list_fragments_output::Builder {
+        crate::output::list_fragments_output::Builder::default()
+    }
+}
+
 /// See [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
 pub mod list_fragments_output {
     
@@ -85,12 +92,6 @@ pub mod list_fragments_output {
     
     
 }
-impl ListFragmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
-    pub fn builder() -> crate::output::list_fragments_output::Builder {
-        crate::output::list_fragments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -140,6 +141,13 @@ impl aws_http::request_id::RequestId for GetMediaForFragmentListOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMediaForFragmentListOutput {
+    /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
+    pub fn builder() -> crate::output::get_media_for_fragment_list_output::Builder {
+        crate::output::get_media_for_fragment_list_output::Builder::default()
+    }
+}
+
 /// See [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
 pub mod get_media_for_fragment_list_output {
     
@@ -216,12 +224,6 @@ pub mod get_media_for_fragment_list_output {
     
     
 }
-impl GetMediaForFragmentListOutput {
-    /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
-    pub fn builder() -> crate::output::get_media_for_fragment_list_output::Builder {
-        crate::output::get_media_for_fragment_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -250,6 +252,13 @@ impl aws_http::request_id::RequestId for GetImagesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetImagesOutput {
+    /// Creates a new builder-style object to manufacture [`GetImagesOutput`](crate::output::GetImagesOutput).
+    pub fn builder() -> crate::output::get_images_output::Builder {
+        crate::output::get_images_output::Builder::default()
+    }
+}
+
 /// See [`GetImagesOutput`](crate::output::GetImagesOutput).
 pub mod get_images_output {
     
@@ -309,12 +318,6 @@ pub mod get_images_output {
     
     
 }
-impl GetImagesOutput {
-    /// Creates a new builder-style object to manufacture [`GetImagesOutput`](crate::output::GetImagesOutput).
-    pub fn builder() -> crate::output::get_images_output::Builder {
-        crate::output::get_images_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -336,6 +339,13 @@ impl aws_http::request_id::RequestId for GetHlsStreamingSessionUrlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetHlsStreamingSessionUrlOutput {
+    /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
+    pub fn builder() -> crate::output::get_hls_streaming_session_url_output::Builder {
+        crate::output::get_hls_streaming_session_url_output::Builder::default()
+    }
+}
+
 /// See [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
 pub mod get_hls_streaming_session_url_output {
     
@@ -377,12 +387,6 @@ pub mod get_hls_streaming_session_url_output {
     
     
 }
-impl GetHlsStreamingSessionUrlOutput {
-    /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
-    pub fn builder() -> crate::output::get_hls_streaming_session_url_output::Builder {
-        crate::output::get_hls_streaming_session_url_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -404,6 +408,13 @@ impl aws_http::request_id::RequestId for GetDashStreamingSessionUrlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDashStreamingSessionUrlOutput {
+    /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
+    pub fn builder() -> crate::output::get_dash_streaming_session_url_output::Builder {
+        crate::output::get_dash_streaming_session_url_output::Builder::default()
+    }
+}
+
 /// See [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
 pub mod get_dash_streaming_session_url_output {
     
@@ -445,12 +456,6 @@ pub mod get_dash_streaming_session_url_output {
     
     
 }
-impl GetDashStreamingSessionUrlOutput {
-    /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
-    pub fn builder() -> crate::output::get_dash_streaming_session_url_output::Builder {
-        crate::output::get_dash_streaming_session_url_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -478,6 +483,13 @@ impl aws_http::request_id::RequestId for GetClipOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetClipOutput {
+    /// Creates a new builder-style object to manufacture [`GetClipOutput`](crate::output::GetClipOutput).
+    pub fn builder() -> crate::output::get_clip_output::Builder {
+        crate::output::get_clip_output::Builder::default()
+    }
+}
+
 /// See [`GetClipOutput`](crate::output::GetClipOutput).
 pub mod get_clip_output {
     
@@ -531,11 +543,5 @@ pub mod get_clip_output {
     }
     
     
-}
-impl GetClipOutput {
-    /// Creates a new builder-style object to manufacture [`GetClipOutput`](crate::output::GetClipOutput).
-    pub fn builder() -> crate::output::get_clip_output::Builder {
-        crate::output::get_clip_output::Builder::default()
-    }
 }
 

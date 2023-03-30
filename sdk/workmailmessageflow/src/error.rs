@@ -166,55 +166,6 @@ pub struct ResourceNotFoundException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
-        crate::error::resource_not_found_exception::Builder::default()
-    }
-}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-pub mod resource_not_found_exception {
-    
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-        pub fn build(self) -> crate::error::ResourceNotFoundException {
-            crate::error::ResourceNotFoundException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ResourceNotFoundException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -239,26 +190,17 @@ impl aws_http::request_id::RequestId for crate::error::ResourceNotFoundException
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The requested email could not be updated due to an error in the MIME content. Check the error message for more information about what caused the error.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageRejected  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl MessageRejected {
-    /// Creates a new builder-style object to manufacture [`MessageRejected`](crate::error::MessageRejected).
-    pub fn builder() -> crate::error::message_rejected::Builder {
-        crate::error::message_rejected::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
-/// See [`MessageRejected`](crate::error::MessageRejected).
-pub mod message_rejected {
+
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+pub mod resource_not_found_exception {
     
-    /// A builder for [`MessageRejected`](crate::error::MessageRejected).
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -276,19 +218,19 @@ pub mod message_rejected {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MessageRejected`](crate::error::MessageRejected).
-        pub fn build(self) -> crate::error::MessageRejected {
-            crate::error::MessageRejected {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -297,6 +239,16 @@ pub mod message_rejected {
     }
     
     
+}
+
+/// <p>The requested email could not be updated due to an error in the MIME content. Check the error message for more information about what caused the error.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MessageRejected  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MessageRejected {
     /// Returns the error message.
@@ -323,26 +275,17 @@ impl aws_http::request_id::RequestId for crate::error::MessageRejected {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MessageRejected {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The requested email is not eligible for update. This is usually the case for a redirected email.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageFrozen  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl MessageFrozen {
-    /// Creates a new builder-style object to manufacture [`MessageFrozen`](crate::error::MessageFrozen).
-    pub fn builder() -> crate::error::message_frozen::Builder {
-        crate::error::message_frozen::Builder::default()
+impl MessageRejected {
+    /// Creates a new builder-style object to manufacture [`MessageRejected`](crate::error::MessageRejected).
+    pub fn builder() -> crate::error::message_rejected::Builder {
+        crate::error::message_rejected::Builder::default()
     }
 }
-/// See [`MessageFrozen`](crate::error::MessageFrozen).
-pub mod message_frozen {
+
+/// See [`MessageRejected`](crate::error::MessageRejected).
+pub mod message_rejected {
     
-    /// A builder for [`MessageFrozen`](crate::error::MessageFrozen).
+    /// A builder for [`MessageRejected`](crate::error::MessageRejected).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -360,19 +303,19 @@ pub mod message_frozen {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MessageFrozen`](crate::error::MessageFrozen).
-        pub fn build(self) -> crate::error::MessageFrozen {
-            crate::error::MessageFrozen {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MessageRejected`](crate::error::MessageRejected).
+        pub fn build(self) -> crate::error::MessageRejected {
+            crate::error::MessageRejected {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -381,6 +324,16 @@ pub mod message_frozen {
     }
     
     
+}
+
+/// <p>The requested email is not eligible for update. This is usually the case for a redirected email.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MessageFrozen  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MessageFrozen {
     /// Returns the error message.
@@ -407,31 +360,17 @@ impl aws_http::request_id::RequestId for crate::error::MessageFrozen {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MessageFrozen {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>WorkMail could not access the updated email content. Possible reasons:</p> 
-/// <ul> 
-/// <li> <p>You made the request in a region other than your S3 bucket region.</p> </li> 
-/// <li> <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-owner-condition.html">S3 bucket owner</a> is not the same as the calling AWS account.</p> </li> 
-/// <li> <p>You have an incomplete or missing S3 bucket policy. For more information about policies, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda </a> in the <i>WorkMail Administrator Guide</i>.</p> </li> 
-/// </ul>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidContentLocation  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidContentLocation {
-    /// Creates a new builder-style object to manufacture [`InvalidContentLocation`](crate::error::InvalidContentLocation).
-    pub fn builder() -> crate::error::invalid_content_location::Builder {
-        crate::error::invalid_content_location::Builder::default()
+impl MessageFrozen {
+    /// Creates a new builder-style object to manufacture [`MessageFrozen`](crate::error::MessageFrozen).
+    pub fn builder() -> crate::error::message_frozen::Builder {
+        crate::error::message_frozen::Builder::default()
     }
 }
-/// See [`InvalidContentLocation`](crate::error::InvalidContentLocation).
-pub mod invalid_content_location {
+
+/// See [`MessageFrozen`](crate::error::MessageFrozen).
+pub mod message_frozen {
     
-    /// A builder for [`InvalidContentLocation`](crate::error::InvalidContentLocation).
+    /// A builder for [`MessageFrozen`](crate::error::MessageFrozen).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -449,19 +388,19 @@ pub mod invalid_content_location {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidContentLocation`](crate::error::InvalidContentLocation).
-        pub fn build(self) -> crate::error::InvalidContentLocation {
-            crate::error::InvalidContentLocation {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MessageFrozen`](crate::error::MessageFrozen).
+        pub fn build(self) -> crate::error::MessageFrozen {
+            crate::error::MessageFrozen {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -470,6 +409,21 @@ pub mod invalid_content_location {
     }
     
     
+}
+
+/// <p>WorkMail could not access the updated email content. Possible reasons:</p> 
+/// <ul> 
+/// <li> <p>You made the request in a region other than your S3 bucket region.</p> </li> 
+/// <li> <p>The <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-owner-condition.html">S3 bucket owner</a> is not the same as the calling AWS account.</p> </li> 
+/// <li> <p>You have an incomplete or missing S3 bucket policy. For more information about policies, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda </a> in the <i>WorkMail Administrator Guide</i>.</p> </li> 
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidContentLocation  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidContentLocation {
     /// Returns the error message.
@@ -495,6 +449,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidContentLocation {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidContentLocation {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidContentLocation {
+    /// Creates a new builder-style object to manufacture [`InvalidContentLocation`](crate::error::InvalidContentLocation).
+    pub fn builder() -> crate::error::invalid_content_location::Builder {
+        crate::error::invalid_content_location::Builder::default()
+    }
+}
+
+/// See [`InvalidContentLocation`](crate::error::InvalidContentLocation).
+pub mod invalid_content_location {
+    
+    /// A builder for [`InvalidContentLocation`](crate::error::InvalidContentLocation).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidContentLocation`](crate::error::InvalidContentLocation).
+        pub fn build(self) -> crate::error::InvalidContentLocation {
+            crate::error::InvalidContentLocation {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

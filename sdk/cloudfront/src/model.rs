@@ -60,6 +60,13 @@ impl StreamingDistribution {
         self.streaming_distribution_config.as_ref()
     }
 }
+impl StreamingDistribution {
+    /// Creates a new builder-style object to manufacture [`StreamingDistribution`](crate::model::StreamingDistribution).
+    pub fn builder() -> crate::model::streaming_distribution::Builder {
+        crate::model::streaming_distribution::Builder::default()
+    }
+}
+
 /// See [`StreamingDistribution`](crate::model::StreamingDistribution).
 pub mod streaming_distribution {
     
@@ -166,12 +173,6 @@ pub mod streaming_distribution {
     
     
 }
-impl StreamingDistribution {
-    /// Creates a new builder-style object to manufacture [`StreamingDistribution`](crate::model::StreamingDistribution).
-    pub fn builder() -> crate::model::streaming_distribution::Builder {
-        crate::model::streaming_distribution::Builder::default()
-    }
-}
 
 /// <p>The RTMP distribution's configuration information.</p>
 #[non_exhaustive]
@@ -240,6 +241,13 @@ impl StreamingDistributionConfig {
         self.enabled
     }
 }
+impl StreamingDistributionConfig {
+    /// Creates a new builder-style object to manufacture [`StreamingDistributionConfig`](crate::model::StreamingDistributionConfig).
+    pub fn builder() -> crate::model::streaming_distribution_config::Builder {
+        crate::model::streaming_distribution_config::Builder::default()
+    }
+}
+
 /// See [`StreamingDistributionConfig`](crate::model::StreamingDistributionConfig).
 pub mod streaming_distribution_config {
     
@@ -358,12 +366,6 @@ pub mod streaming_distribution_config {
     
     
 }
-impl StreamingDistributionConfig {
-    /// Creates a new builder-style object to manufacture [`StreamingDistributionConfig`](crate::model::StreamingDistributionConfig).
-    pub fn builder() -> crate::model::streaming_distribution_config::Builder {
-        crate::model::streaming_distribution_config::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PriceClass`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -480,6 +482,13 @@ impl TrustedSigners {
         self.items.as_deref()
     }
 }
+impl TrustedSigners {
+    /// Creates a new builder-style object to manufacture [`TrustedSigners`](crate::model::TrustedSigners).
+    pub fn builder() -> crate::model::trusted_signers::Builder {
+        crate::model::trusted_signers::Builder::default()
+    }
+}
+
 /// See [`TrustedSigners`](crate::model::TrustedSigners).
 pub mod trusted_signers {
     
@@ -540,12 +549,6 @@ pub mod trusted_signers {
     
     
 }
-impl TrustedSigners {
-    /// Creates a new builder-style object to manufacture [`TrustedSigners`](crate::model::TrustedSigners).
-    pub fn builder() -> crate::model::trusted_signers::Builder {
-        crate::model::trusted_signers::Builder::default()
-    }
-}
 
 /// <p>A complex type that controls whether access logs are written for this streaming distribution.</p>
 #[non_exhaustive]
@@ -575,6 +578,13 @@ impl StreamingLoggingConfig {
         self.prefix.as_deref()
     }
 }
+impl StreamingLoggingConfig {
+    /// Creates a new builder-style object to manufacture [`StreamingLoggingConfig`](crate::model::StreamingLoggingConfig).
+    pub fn builder() -> crate::model::streaming_logging_config::Builder {
+        crate::model::streaming_logging_config::Builder::default()
+    }
+}
+
 /// See [`StreamingLoggingConfig`](crate::model::StreamingLoggingConfig).
 pub mod streaming_logging_config {
     
@@ -629,12 +639,6 @@ pub mod streaming_logging_config {
     
     
 }
-impl StreamingLoggingConfig {
-    /// Creates a new builder-style object to manufacture [`StreamingLoggingConfig`](crate::model::StreamingLoggingConfig).
-    pub fn builder() -> crate::model::streaming_logging_config::Builder {
-        crate::model::streaming_logging_config::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.</p>
 #[non_exhaustive]
@@ -657,6 +661,13 @@ impl Aliases {
         self.items.as_deref()
     }
 }
+impl Aliases {
+    /// Creates a new builder-style object to manufacture [`Aliases`](crate::model::Aliases).
+    pub fn builder() -> crate::model::aliases::Builder {
+        crate::model::aliases::Builder::default()
+    }
+}
+
 /// See [`Aliases`](crate::model::Aliases).
 pub mod aliases {
     
@@ -705,12 +716,6 @@ pub mod aliases {
     
     
 }
-impl Aliases {
-    /// Creates a new builder-style object to manufacture [`Aliases`](crate::model::Aliases).
-    pub fn builder() -> crate::model::aliases::Builder {
-        crate::model::aliases::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.</p>
 #[non_exhaustive]
@@ -741,6 +746,13 @@ impl S3Origin {
         self.origin_access_identity.as_deref()
     }
 }
+impl S3Origin {
+    /// Creates a new builder-style object to manufacture [`S3Origin`](crate::model::S3Origin).
+    pub fn builder() -> crate::model::s3_origin::Builder {
+        crate::model::s3_origin::Builder::default()
+    }
+}
+
 /// See [`S3Origin`](crate::model::S3Origin).
 pub mod s3_origin {
     
@@ -791,12 +803,6 @@ pub mod s3_origin {
     
     
 }
-impl S3Origin {
-    /// Creates a new builder-style object to manufacture [`S3Origin`](crate::model::S3Origin).
-    pub fn builder() -> crate::model::s3_origin::Builder {
-        crate::model::s3_origin::Builder::default()
-    }
-}
 
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
@@ -826,6 +832,13 @@ impl ActiveTrustedSigners {
         self.items.as_deref()
     }
 }
+impl ActiveTrustedSigners {
+    /// Creates a new builder-style object to manufacture [`ActiveTrustedSigners`](crate::model::ActiveTrustedSigners).
+    pub fn builder() -> crate::model::active_trusted_signers::Builder {
+        crate::model::active_trusted_signers::Builder::default()
+    }
+}
+
 /// See [`ActiveTrustedSigners`](crate::model::ActiveTrustedSigners).
 pub mod active_trusted_signers {
     
@@ -886,12 +899,6 @@ pub mod active_trusted_signers {
     
     
 }
-impl ActiveTrustedSigners {
-    /// Creates a new builder-style object to manufacture [`ActiveTrustedSigners`](crate::model::ActiveTrustedSigners).
-    pub fn builder() -> crate::model::active_trusted_signers::Builder {
-        crate::model::active_trusted_signers::Builder::default()
-    }
-}
 
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
@@ -914,6 +921,13 @@ impl Signer {
         self.key_pair_ids.as_ref()
     }
 }
+impl Signer {
+    /// Creates a new builder-style object to manufacture [`Signer`](crate::model::Signer).
+    pub fn builder() -> crate::model::signer::Builder {
+        crate::model::signer::Builder::default()
+    }
+}
+
 /// See [`Signer`](crate::model::Signer).
 pub mod signer {
     
@@ -956,12 +970,6 @@ pub mod signer {
     
     
 }
-impl Signer {
-    /// Creates a new builder-style object to manufacture [`Signer`](crate::model::Signer).
-    pub fn builder() -> crate::model::signer::Builder {
-        crate::model::signer::Builder::default()
-    }
-}
 
 /// <p>A list of CloudFront key pair identifiers.</p>
 #[non_exhaustive]
@@ -984,6 +992,13 @@ impl KeyPairIds {
         self.items.as_deref()
     }
 }
+impl KeyPairIds {
+    /// Creates a new builder-style object to manufacture [`KeyPairIds`](crate::model::KeyPairIds).
+    pub fn builder() -> crate::model::key_pair_ids::Builder {
+        crate::model::key_pair_ids::Builder::default()
+    }
+}
+
 /// See [`KeyPairIds`](crate::model::KeyPairIds).
 pub mod key_pair_ids {
     
@@ -1032,12 +1047,6 @@ pub mod key_pair_ids {
     
     
 }
-impl KeyPairIds {
-    /// Creates a new builder-style object to manufacture [`KeyPairIds`](crate::model::KeyPairIds).
-    pub fn builder() -> crate::model::key_pair_ids::Builder {
-        crate::model::key_pair_ids::Builder::default()
-    }
-}
 
 /// <p>A response headers policy.</p> 
 /// <p>A response headers policy contains information about a set of HTTP response headers.</p> 
@@ -1070,6 +1079,13 @@ impl ResponseHeadersPolicy {
         self.response_headers_policy_config.as_ref()
     }
 }
+impl ResponseHeadersPolicy {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy).
+    pub fn builder() -> crate::model::response_headers_policy::Builder {
+        crate::model::response_headers_policy::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy).
 pub mod response_headers_policy {
     
@@ -1123,12 +1139,6 @@ pub mod response_headers_policy {
     }
     
     
-}
-impl ResponseHeadersPolicy {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicy`](crate::model::ResponseHeadersPolicy).
-    pub fn builder() -> crate::model::response_headers_policy::Builder {
-        crate::model::response_headers_policy::Builder::default()
-    }
 }
 
 /// <p>A response headers policy configuration.</p> 
@@ -1192,6 +1202,13 @@ impl ResponseHeadersPolicyConfig {
         self.remove_headers_config.as_ref()
     }
 }
+impl ResponseHeadersPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
+    pub fn builder() -> crate::model::response_headers_policy_config::Builder {
+        crate::model::response_headers_policy_config::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
 pub mod response_headers_policy_config {
     
@@ -1298,12 +1315,6 @@ pub mod response_headers_policy_config {
     
     
 }
-impl ResponseHeadersPolicyConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyConfig`](crate::model::ResponseHeadersPolicyConfig).
-    pub fn builder() -> crate::model::response_headers_policy_config::Builder {
-        crate::model::response_headers_policy_config::Builder::default()
-    }
-}
 
 /// <p>A list of HTTP header names that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 #[non_exhaustive]
@@ -1326,6 +1337,13 @@ impl ResponseHeadersPolicyRemoveHeadersConfig {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyRemoveHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::model::ResponseHeadersPolicyRemoveHeadersConfig).
+    pub fn builder() -> crate::model::response_headers_policy_remove_headers_config::Builder {
+        crate::model::response_headers_policy_remove_headers_config::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::model::ResponseHeadersPolicyRemoveHeadersConfig).
 pub mod response_headers_policy_remove_headers_config {
     
@@ -1374,12 +1392,6 @@ pub mod response_headers_policy_remove_headers_config {
     
     
 }
-impl ResponseHeadersPolicyRemoveHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyRemoveHeadersConfig`](crate::model::ResponseHeadersPolicyRemoveHeadersConfig).
-    pub fn builder() -> crate::model::response_headers_policy_remove_headers_config::Builder {
-        crate::model::response_headers_policy_remove_headers_config::Builder::default()
-    }
-}
 
 /// <p>The name of an HTTP header that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 #[non_exhaustive]
@@ -1395,6 +1407,13 @@ impl ResponseHeadersPolicyRemoveHeader {
         self.header.as_deref()
     }
 }
+impl ResponseHeadersPolicyRemoveHeader {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyRemoveHeader`](crate::model::ResponseHeadersPolicyRemoveHeader).
+    pub fn builder() -> crate::model::response_headers_policy_remove_header::Builder {
+        crate::model::response_headers_policy_remove_header::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyRemoveHeader`](crate::model::ResponseHeadersPolicyRemoveHeader).
 pub mod response_headers_policy_remove_header {
     
@@ -1425,12 +1444,6 @@ pub mod response_headers_policy_remove_header {
     
     
 }
-impl ResponseHeadersPolicyRemoveHeader {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyRemoveHeader`](crate::model::ResponseHeadersPolicyRemoveHeader).
-    pub fn builder() -> crate::model::response_headers_policy_remove_header::Builder {
-        crate::model::response_headers_policy_remove_header::Builder::default()
-    }
-}
 
 /// <p>A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that's associated with this response headers policy.</p>
 #[non_exhaustive]
@@ -1453,6 +1466,13 @@ impl ResponseHeadersPolicyCustomHeadersConfig {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyCustomHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig).
+    pub fn builder() -> crate::model::response_headers_policy_custom_headers_config::Builder {
+        crate::model::response_headers_policy_custom_headers_config::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig).
 pub mod response_headers_policy_custom_headers_config {
     
@@ -1501,12 +1521,6 @@ pub mod response_headers_policy_custom_headers_config {
     
     
 }
-impl ResponseHeadersPolicyCustomHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeadersConfig`](crate::model::ResponseHeadersPolicyCustomHeadersConfig).
-    pub fn builder() -> crate::model::response_headers_policy_custom_headers_config::Builder {
-        crate::model::response_headers_policy_custom_headers_config::Builder::default()
-    }
-}
 
 /// <p>An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for requests that match a cache behavior that's associated with this response headers policy.</p>
 #[non_exhaustive]
@@ -1536,6 +1550,13 @@ impl ResponseHeadersPolicyCustomHeader {
         self.r#override
     }
 }
+impl ResponseHeadersPolicyCustomHeader {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
+    pub fn builder() -> crate::model::response_headers_policy_custom_header::Builder {
+        crate::model::response_headers_policy_custom_header::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
 pub mod response_headers_policy_custom_header {
     
@@ -1590,12 +1611,6 @@ pub mod response_headers_policy_custom_header {
     
     
 }
-impl ResponseHeadersPolicyCustomHeader {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCustomHeader`](crate::model::ResponseHeadersPolicyCustomHeader).
-    pub fn builder() -> crate::model::response_headers_policy_custom_header::Builder {
-        crate::model::response_headers_policy_custom_header::Builder::default()
-    }
-}
 
 /// <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p> 
 /// <p>You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header">Server-Timing header</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -1619,6 +1634,13 @@ impl ResponseHeadersPolicyServerTimingHeadersConfig {
         self.sampling_rate
     }
 }
+impl ResponseHeadersPolicyServerTimingHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
+    pub fn builder() -> crate::model::response_headers_policy_server_timing_headers_config::Builder {
+        crate::model::response_headers_policy_server_timing_headers_config::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
 pub mod response_headers_policy_server_timing_headers_config {
     
@@ -1660,12 +1682,6 @@ pub mod response_headers_policy_server_timing_headers_config {
     }
     
     
-}
-impl ResponseHeadersPolicyServerTimingHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::model::ResponseHeadersPolicyServerTimingHeadersConfig).
-    pub fn builder() -> crate::model::response_headers_policy_server_timing_headers_config::Builder {
-        crate::model::response_headers_policy_server_timing_headers_config::Builder::default()
-    }
 }
 
 /// <p>A configuration for a set of security-related HTTP response headers. CloudFront adds these headers to HTTP responses that it sends for requests that match a cache behavior associated with this response headers policy.</p>
@@ -1729,6 +1745,13 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
         self.strict_transport_security.as_ref()
     }
 }
+impl ResponseHeadersPolicySecurityHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig).
+    pub fn builder() -> crate::model::response_headers_policy_security_headers_config::Builder {
+        crate::model::response_headers_policy_security_headers_config::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig).
 pub mod response_headers_policy_security_headers_config {
     
@@ -1831,12 +1854,6 @@ pub mod response_headers_policy_security_headers_config {
     
     
 }
-impl ResponseHeadersPolicySecurityHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicySecurityHeadersConfig`](crate::model::ResponseHeadersPolicySecurityHeadersConfig).
-    pub fn builder() -> crate::model::response_headers_policy_security_headers_config::Builder {
-        crate::model::response_headers_policy_security_headers_config::Builder::default()
-    }
-}
 
 /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header's value.</p> 
 /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
@@ -1874,6 +1891,13 @@ impl ResponseHeadersPolicyStrictTransportSecurity {
         self.access_control_max_age_sec
     }
 }
+impl ResponseHeadersPolicyStrictTransportSecurity {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity).
+    pub fn builder() -> crate::model::response_headers_policy_strict_transport_security::Builder {
+        crate::model::response_headers_policy_strict_transport_security::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity).
 pub mod response_headers_policy_strict_transport_security {
     
@@ -1940,12 +1964,6 @@ pub mod response_headers_policy_strict_transport_security {
     
     
 }
-impl ResponseHeadersPolicyStrictTransportSecurity {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyStrictTransportSecurity`](crate::model::ResponseHeadersPolicyStrictTransportSecurity).
-    pub fn builder() -> crate::model::response_headers_policy_strict_transport_security::Builder {
-        crate::model::response_headers_policy_strict_transport_security::Builder::default()
-    }
-}
 
 /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p> 
 /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
@@ -1962,6 +1980,13 @@ impl ResponseHeadersPolicyContentTypeOptions {
         self.r#override
     }
 }
+impl ResponseHeadersPolicyContentTypeOptions {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions).
+    pub fn builder() -> crate::model::response_headers_policy_content_type_options::Builder {
+        crate::model::response_headers_policy_content_type_options::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions).
 pub mod response_headers_policy_content_type_options {
     
@@ -1992,12 +2017,6 @@ pub mod response_headers_policy_content_type_options {
     
     
 }
-impl ResponseHeadersPolicyContentTypeOptions {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyContentTypeOptions`](crate::model::ResponseHeadersPolicyContentTypeOptions).
-    pub fn builder() -> crate::model::response_headers_policy_content_type_options::Builder {
-        crate::model::response_headers_policy_content_type_options::Builder::default()
-    }
-}
 
 /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p> 
 /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
@@ -2021,6 +2040,13 @@ impl ResponseHeadersPolicyContentSecurityPolicy {
         self.content_security_policy.as_deref()
     }
 }
+impl ResponseHeadersPolicyContentSecurityPolicy {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy).
+    pub fn builder() -> crate::model::response_headers_policy_content_security_policy::Builder {
+        crate::model::response_headers_policy_content_security_policy::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy).
 pub mod response_headers_policy_content_security_policy {
     
@@ -2062,12 +2088,6 @@ pub mod response_headers_policy_content_security_policy {
     }
     
     
-}
-impl ResponseHeadersPolicyContentSecurityPolicy {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyContentSecurityPolicy`](crate::model::ResponseHeadersPolicyContentSecurityPolicy).
-    pub fn builder() -> crate::model::response_headers_policy_content_security_policy::Builder {
-        crate::model::response_headers_policy_content_security_policy::Builder::default()
-    }
 }
 
 /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.</p> 
@@ -2114,6 +2134,13 @@ impl ResponseHeadersPolicyReferrerPolicy {
         self.referrer_policy.as_ref()
     }
 }
+impl ResponseHeadersPolicyReferrerPolicy {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy).
+    pub fn builder() -> crate::model::response_headers_policy_referrer_policy::Builder {
+        crate::model::response_headers_policy_referrer_policy::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy).
 pub mod response_headers_policy_referrer_policy {
     
@@ -2177,12 +2204,6 @@ pub mod response_headers_policy_referrer_policy {
     }
     
     
-}
-impl ResponseHeadersPolicyReferrerPolicy {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyReferrerPolicy`](crate::model::ResponseHeadersPolicyReferrerPolicy).
-    pub fn builder() -> crate::model::response_headers_policy_referrer_policy::Builder {
-        crate::model::response_headers_policy_referrer_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReferrerPolicyList`, it is important to ensure
@@ -2321,6 +2342,13 @@ impl ResponseHeadersPolicyFrameOptions {
         self.frame_option.as_ref()
     }
 }
+impl ResponseHeadersPolicyFrameOptions {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions).
+    pub fn builder() -> crate::model::response_headers_policy_frame_options::Builder {
+        crate::model::response_headers_policy_frame_options::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions).
 pub mod response_headers_policy_frame_options {
     
@@ -2364,12 +2392,6 @@ pub mod response_headers_policy_frame_options {
     }
     
     
-}
-impl ResponseHeadersPolicyFrameOptions {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyFrameOptions`](crate::model::ResponseHeadersPolicyFrameOptions).
-    pub fn builder() -> crate::model::response_headers_policy_frame_options::Builder {
-        crate::model::response_headers_policy_frame_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FrameOptionsList`, it is important to ensure
@@ -2498,6 +2520,13 @@ impl ResponseHeadersPolicyXssProtection {
         self.report_uri.as_deref()
     }
 }
+impl ResponseHeadersPolicyXssProtection {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection).
+    pub fn builder() -> crate::model::response_headers_policy_xss_protection::Builder {
+        crate::model::response_headers_policy_xss_protection::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection).
 pub mod response_headers_policy_xss_protection {
     
@@ -2572,12 +2601,6 @@ pub mod response_headers_policy_xss_protection {
     
     
 }
-impl ResponseHeadersPolicyXssProtection {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyXssProtection`](crate::model::ResponseHeadersPolicyXssProtection).
-    pub fn builder() -> crate::model::response_headers_policy_xss_protection::Builder {
-        crate::model::response_headers_policy_xss_protection::Builder::default()
-    }
-}
 
 /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS). CloudFront adds these headers to HTTP responses that it sends for CORS requests that match a cache behavior associated with this response headers policy.</p> 
 /// <p>For more information about CORS, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> in the MDN Web Docs.</p>
@@ -2648,6 +2671,13 @@ impl ResponseHeadersPolicyCorsConfig {
         self.origin_override
     }
 }
+impl ResponseHeadersPolicyCorsConfig {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig).
+    pub fn builder() -> crate::model::response_headers_policy_cors_config::Builder {
+        crate::model::response_headers_policy_cors_config::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig).
 pub mod response_headers_policy_cors_config {
     
@@ -2762,12 +2792,6 @@ pub mod response_headers_policy_cors_config {
     
     
 }
-impl ResponseHeadersPolicyCorsConfig {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyCorsConfig`](crate::model::ResponseHeadersPolicyCorsConfig).
-    pub fn builder() -> crate::model::response_headers_policy_cors_config::Builder {
-        crate::model::response_headers_policy_cors_config::Builder::default()
-    }
-}
 
 /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p> 
 /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
@@ -2791,6 +2815,13 @@ impl ResponseHeadersPolicyAccessControlExposeHeaders {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyAccessControlExposeHeaders {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders).
+    pub fn builder() -> crate::model::response_headers_policy_access_control_expose_headers::Builder {
+        crate::model::response_headers_policy_access_control_expose_headers::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders).
 pub mod response_headers_policy_access_control_expose_headers {
     
@@ -2839,12 +2870,6 @@ pub mod response_headers_policy_access_control_expose_headers {
     
     
 }
-impl ResponseHeadersPolicyAccessControlExposeHeaders {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlExposeHeaders`](crate::model::ResponseHeadersPolicyAccessControlExposeHeaders).
-    pub fn builder() -> crate::model::response_headers_policy_access_control_expose_headers::Builder {
-        crate::model::response_headers_policy_access_control_expose_headers::Builder::default()
-    }
-}
 
 /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p> 
 /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
@@ -2890,6 +2915,13 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyAccessControlAllowMethods {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods).
+    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_methods::Builder {
+        crate::model::response_headers_policy_access_control_allow_methods::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods).
 pub mod response_headers_policy_access_control_allow_methods {
     
@@ -2959,12 +2991,6 @@ pub mod response_headers_policy_access_control_allow_methods {
     }
     
     
-}
-impl ResponseHeadersPolicyAccessControlAllowMethods {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::model::ResponseHeadersPolicyAccessControlAllowMethods).
-    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_methods::Builder {
-        crate::model::response_headers_policy_access_control_allow_methods::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResponseHeadersPolicyAccessControlAllowMethodsValues`, it is important to ensure
@@ -3101,6 +3127,13 @@ impl ResponseHeadersPolicyAccessControlAllowHeaders {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyAccessControlAllowHeaders {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders).
+    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_headers::Builder {
+        crate::model::response_headers_policy_access_control_allow_headers::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders).
 pub mod response_headers_policy_access_control_allow_headers {
     
@@ -3149,12 +3182,6 @@ pub mod response_headers_policy_access_control_allow_headers {
     
     
 }
-impl ResponseHeadersPolicyAccessControlAllowHeaders {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::model::ResponseHeadersPolicyAccessControlAllowHeaders).
-    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_headers::Builder {
-        crate::model::response_headers_policy_access_control_allow_headers::Builder::default()
-    }
-}
 
 /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p> 
 /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
@@ -3178,6 +3205,13 @@ impl ResponseHeadersPolicyAccessControlAllowOrigins {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyAccessControlAllowOrigins {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins).
+    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_origins::Builder {
+        crate::model::response_headers_policy_access_control_allow_origins::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins).
 pub mod response_headers_policy_access_control_allow_origins {
     
@@ -3226,12 +3260,6 @@ pub mod response_headers_policy_access_control_allow_origins {
     
     
 }
-impl ResponseHeadersPolicyAccessControlAllowOrigins {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAccessControlAllowOrigins`](crate::model::ResponseHeadersPolicyAccessControlAllowOrigins).
-    pub fn builder() -> crate::model::response_headers_policy_access_control_allow_origins::Builder {
-        crate::model::response_headers_policy_access_control_allow_origins::Builder::default()
-    }
-}
 
 /// <p>A real-time log configuration.</p>
 #[non_exhaustive]
@@ -3277,6 +3305,13 @@ impl RealtimeLogConfig {
         self.fields.as_deref()
     }
 }
+impl RealtimeLogConfig {
+    /// Creates a new builder-style object to manufacture [`RealtimeLogConfig`](crate::model::RealtimeLogConfig).
+    pub fn builder() -> crate::model::realtime_log_config::Builder {
+        crate::model::realtime_log_config::Builder::default()
+    }
+}
+
 /// See [`RealtimeLogConfig`](crate::model::RealtimeLogConfig).
 pub mod realtime_log_config {
     
@@ -3369,12 +3404,6 @@ pub mod realtime_log_config {
     
     
 }
-impl RealtimeLogConfig {
-    /// Creates a new builder-style object to manufacture [`RealtimeLogConfig`](crate::model::RealtimeLogConfig).
-    pub fn builder() -> crate::model::realtime_log_config::Builder {
-        crate::model::realtime_log_config::Builder::default()
-    }
-}
 
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.</p>
 #[non_exhaustive]
@@ -3397,6 +3426,13 @@ impl EndPoint {
         self.kinesis_stream_config.as_ref()
     }
 }
+impl EndPoint {
+    /// Creates a new builder-style object to manufacture [`EndPoint`](crate::model::EndPoint).
+    pub fn builder() -> crate::model::end_point::Builder {
+        crate::model::end_point::Builder::default()
+    }
+}
+
 /// See [`EndPoint`](crate::model::EndPoint).
 pub mod end_point {
     
@@ -3439,12 +3475,6 @@ pub mod end_point {
     
     
 }
-impl EndPoint {
-    /// Creates a new builder-style object to manufacture [`EndPoint`](crate::model::EndPoint).
-    pub fn builder() -> crate::model::end_point::Builder {
-        crate::model::end_point::Builder::default()
-    }
-}
 
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
 #[non_exhaustive]
@@ -3469,6 +3499,13 @@ impl KinesisStreamConfig {
         self.stream_arn.as_deref()
     }
 }
+impl KinesisStreamConfig {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
+    pub fn builder() -> crate::model::kinesis_stream_config::Builder {
+        crate::model::kinesis_stream_config::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
 pub mod kinesis_stream_config {
     
@@ -3513,12 +3550,6 @@ pub mod kinesis_stream_config {
     
     
 }
-impl KinesisStreamConfig {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamConfig`](crate::model::KinesisStreamConfig).
-    pub fn builder() -> crate::model::kinesis_stream_config::Builder {
-        crate::model::kinesis_stream_config::Builder::default()
-    }
-}
 
 /// <p>A public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
@@ -3548,6 +3579,13 @@ impl PublicKey {
         self.public_key_config.as_ref()
     }
 }
+impl PublicKey {
+    /// Creates a new builder-style object to manufacture [`PublicKey`](crate::model::PublicKey).
+    pub fn builder() -> crate::model::public_key::Builder {
+        crate::model::public_key::Builder::default()
+    }
+}
+
 /// See [`PublicKey`](crate::model::PublicKey).
 pub mod public_key {
     
@@ -3602,12 +3640,6 @@ pub mod public_key {
     
     
 }
-impl PublicKey {
-    /// Creates a new builder-style object to manufacture [`PublicKey`](crate::model::PublicKey).
-    pub fn builder() -> crate::model::public_key::Builder {
-        crate::model::public_key::Builder::default()
-    }
-}
 
 /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
@@ -3644,6 +3676,13 @@ impl PublicKeyConfig {
         self.comment.as_deref()
     }
 }
+impl PublicKeyConfig {
+    /// Creates a new builder-style object to manufacture [`PublicKeyConfig`](crate::model::PublicKeyConfig).
+    pub fn builder() -> crate::model::public_key_config::Builder {
+        crate::model::public_key_config::Builder::default()
+    }
+}
+
 /// See [`PublicKeyConfig`](crate::model::PublicKeyConfig).
 pub mod public_key_config {
     
@@ -3710,12 +3749,6 @@ pub mod public_key_config {
     
     
 }
-impl PublicKeyConfig {
-    /// Creates a new builder-style object to manufacture [`PublicKeyConfig`](crate::model::PublicKeyConfig).
-    pub fn builder() -> crate::model::public_key_config::Builder {
-        crate::model::public_key_config::Builder::default()
-    }
-}
 
 /// <p>An origin request policy.</p> 
 /// <p>When it's attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p> 
@@ -3752,6 +3785,13 @@ impl OriginRequestPolicy {
         self.origin_request_policy_config.as_ref()
     }
 }
+impl OriginRequestPolicy {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicy`](crate::model::OriginRequestPolicy).
+    pub fn builder() -> crate::model::origin_request_policy::Builder {
+        crate::model::origin_request_policy::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicy`](crate::model::OriginRequestPolicy).
 pub mod origin_request_policy {
     
@@ -3806,12 +3846,6 @@ pub mod origin_request_policy {
     
     
 }
-impl OriginRequestPolicy {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicy`](crate::model::OriginRequestPolicy).
-    pub fn builder() -> crate::model::origin_request_policy::Builder {
-        crate::model::origin_request_policy::Builder::default()
-    }
-}
 
 /// <p>An origin request policy configuration.</p> 
 /// <p>This configuration determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p> 
@@ -3862,6 +3896,13 @@ impl OriginRequestPolicyConfig {
         self.query_strings_config.as_ref()
     }
 }
+impl OriginRequestPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyConfig`](crate::model::OriginRequestPolicyConfig).
+    pub fn builder() -> crate::model::origin_request_policy_config::Builder {
+        crate::model::origin_request_policy_config::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicyConfig`](crate::model::OriginRequestPolicyConfig).
 pub mod origin_request_policy_config {
     
@@ -3940,12 +3981,6 @@ pub mod origin_request_policy_config {
     
     
 }
-impl OriginRequestPolicyConfig {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyConfig`](crate::model::OriginRequestPolicyConfig).
-    pub fn builder() -> crate::model::origin_request_policy_config::Builder {
-        crate::model::origin_request_policy_config::Builder::default()
-    }
-}
 
 /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
@@ -3978,6 +4013,13 @@ impl OriginRequestPolicyQueryStringsConfig {
         self.query_strings.as_ref()
     }
 }
+impl OriginRequestPolicyQueryStringsConfig {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyQueryStringsConfig`](crate::model::OriginRequestPolicyQueryStringsConfig).
+    pub fn builder() -> crate::model::origin_request_policy_query_strings_config::Builder {
+        crate::model::origin_request_policy_query_strings_config::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicyQueryStringsConfig`](crate::model::OriginRequestPolicyQueryStringsConfig).
 pub mod origin_request_policy_query_strings_config {
     
@@ -4030,12 +4072,6 @@ pub mod origin_request_policy_query_strings_config {
     
     
 }
-impl OriginRequestPolicyQueryStringsConfig {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyQueryStringsConfig`](crate::model::OriginRequestPolicyQueryStringsConfig).
-    pub fn builder() -> crate::model::origin_request_policy_query_strings_config::Builder {
-        crate::model::origin_request_policy_query_strings_config::Builder::default()
-    }
-}
 
 /// <p>Contains a list of query string names.</p>
 #[non_exhaustive]
@@ -4058,6 +4094,13 @@ impl QueryStringNames {
         self.items.as_deref()
     }
 }
+impl QueryStringNames {
+    /// Creates a new builder-style object to manufacture [`QueryStringNames`](crate::model::QueryStringNames).
+    pub fn builder() -> crate::model::query_string_names::Builder {
+        crate::model::query_string_names::Builder::default()
+    }
+}
+
 /// See [`QueryStringNames`](crate::model::QueryStringNames).
 pub mod query_string_names {
     
@@ -4105,12 +4148,6 @@ pub mod query_string_names {
     }
     
     
-}
-impl QueryStringNames {
-    /// Creates a new builder-style object to manufacture [`QueryStringNames`](crate::model::QueryStringNames).
-    pub fn builder() -> crate::model::query_string_names::Builder {
-        crate::model::query_string_names::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OriginRequestPolicyQueryStringBehavior`, it is important to ensure
@@ -4231,6 +4268,13 @@ impl OriginRequestPolicyCookiesConfig {
         self.cookies.as_ref()
     }
 }
+impl OriginRequestPolicyCookiesConfig {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyCookiesConfig`](crate::model::OriginRequestPolicyCookiesConfig).
+    pub fn builder() -> crate::model::origin_request_policy_cookies_config::Builder {
+        crate::model::origin_request_policy_cookies_config::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicyCookiesConfig`](crate::model::OriginRequestPolicyCookiesConfig).
 pub mod origin_request_policy_cookies_config {
     
@@ -4283,12 +4327,6 @@ pub mod origin_request_policy_cookies_config {
     
     
 }
-impl OriginRequestPolicyCookiesConfig {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyCookiesConfig`](crate::model::OriginRequestPolicyCookiesConfig).
-    pub fn builder() -> crate::model::origin_request_policy_cookies_config::Builder {
-        crate::model::origin_request_policy_cookies_config::Builder::default()
-    }
-}
 
 /// <p>Contains a list of cookie names.</p>
 #[non_exhaustive]
@@ -4311,6 +4349,13 @@ impl CookieNames {
         self.items.as_deref()
     }
 }
+impl CookieNames {
+    /// Creates a new builder-style object to manufacture [`CookieNames`](crate::model::CookieNames).
+    pub fn builder() -> crate::model::cookie_names::Builder {
+        crate::model::cookie_names::Builder::default()
+    }
+}
+
 /// See [`CookieNames`](crate::model::CookieNames).
 pub mod cookie_names {
     
@@ -4358,12 +4403,6 @@ pub mod cookie_names {
     }
     
     
-}
-impl CookieNames {
-    /// Creates a new builder-style object to manufacture [`CookieNames`](crate::model::CookieNames).
-    pub fn builder() -> crate::model::cookie_names::Builder {
-        crate::model::cookie_names::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OriginRequestPolicyCookieBehavior`, it is important to ensure
@@ -4486,6 +4525,13 @@ impl OriginRequestPolicyHeadersConfig {
         self.headers.as_ref()
     }
 }
+impl OriginRequestPolicyHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyHeadersConfig`](crate::model::OriginRequestPolicyHeadersConfig).
+    pub fn builder() -> crate::model::origin_request_policy_headers_config::Builder {
+        crate::model::origin_request_policy_headers_config::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicyHeadersConfig`](crate::model::OriginRequestPolicyHeadersConfig).
 pub mod origin_request_policy_headers_config {
     
@@ -4540,12 +4586,6 @@ pub mod origin_request_policy_headers_config {
     
     
 }
-impl OriginRequestPolicyHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyHeadersConfig`](crate::model::OriginRequestPolicyHeadersConfig).
-    pub fn builder() -> crate::model::origin_request_policy_headers_config::Builder {
-        crate::model::origin_request_policy_headers_config::Builder::default()
-    }
-}
 
 /// <p>Contains a list of HTTP header names.</p>
 #[non_exhaustive]
@@ -4568,6 +4608,13 @@ impl Headers {
         self.items.as_deref()
     }
 }
+impl Headers {
+    /// Creates a new builder-style object to manufacture [`Headers`](crate::model::Headers).
+    pub fn builder() -> crate::model::headers::Builder {
+        crate::model::headers::Builder::default()
+    }
+}
+
 /// See [`Headers`](crate::model::Headers).
 pub mod headers {
     
@@ -4615,12 +4662,6 @@ pub mod headers {
     }
     
     
-}
-impl Headers {
-    /// Creates a new builder-style object to manufacture [`Headers`](crate::model::Headers).
-    pub fn builder() -> crate::model::headers::Builder {
-        crate::model::headers::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OriginRequestPolicyHeaderBehavior`, it is important to ensure
@@ -4736,6 +4777,13 @@ impl OriginAccessControl {
         self.origin_access_control_config.as_ref()
     }
 }
+impl OriginAccessControl {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControl`](crate::model::OriginAccessControl).
+    pub fn builder() -> crate::model::origin_access_control::Builder {
+        crate::model::origin_access_control::Builder::default()
+    }
+}
+
 /// See [`OriginAccessControl`](crate::model::OriginAccessControl).
 pub mod origin_access_control {
     
@@ -4777,12 +4825,6 @@ pub mod origin_access_control {
     }
     
     
-}
-impl OriginAccessControl {
-    /// Creates a new builder-style object to manufacture [`OriginAccessControl`](crate::model::OriginAccessControl).
-    pub fn builder() -> crate::model::origin_access_control::Builder {
-        crate::model::origin_access_control::Builder::default()
-    }
 }
 
 /// <p>A CloudFront origin access control configuration.</p>
@@ -4839,6 +4881,13 @@ impl OriginAccessControlConfig {
         self.origin_access_control_origin_type.as_ref()
     }
 }
+impl OriginAccessControlConfig {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
+    pub fn builder() -> crate::model::origin_access_control_config::Builder {
+        crate::model::origin_access_control_config::Builder::default()
+    }
+}
+
 /// See [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
 pub mod origin_access_control_config {
     
@@ -4928,12 +4977,6 @@ pub mod origin_access_control_config {
     }
     
     
-}
-impl OriginAccessControlConfig {
-    /// Creates a new builder-style object to manufacture [`OriginAccessControlConfig`](crate::model::OriginAccessControlConfig).
-    pub fn builder() -> crate::model::origin_access_control_config::Builder {
-        crate::model::origin_access_control_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OriginAccessControlOriginTypes`, it is important to ensure
@@ -5206,6 +5249,13 @@ impl KeyGroup {
         self.key_group_config.as_ref()
     }
 }
+impl KeyGroup {
+    /// Creates a new builder-style object to manufacture [`KeyGroup`](crate::model::KeyGroup).
+    pub fn builder() -> crate::model::key_group::Builder {
+        crate::model::key_group::Builder::default()
+    }
+}
+
 /// See [`KeyGroup`](crate::model::KeyGroup).
 pub mod key_group {
     
@@ -5260,12 +5310,6 @@ pub mod key_group {
     
     
 }
-impl KeyGroup {
-    /// Creates a new builder-style object to manufacture [`KeyGroup`](crate::model::KeyGroup).
-    pub fn builder() -> crate::model::key_group::Builder {
-        crate::model::key_group::Builder::default()
-    }
-}
 
 /// <p>A key group configuration.</p> 
 /// <p>A key group contains a list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>
@@ -5296,6 +5340,13 @@ impl KeyGroupConfig {
         self.comment.as_deref()
     }
 }
+impl KeyGroupConfig {
+    /// Creates a new builder-style object to manufacture [`KeyGroupConfig`](crate::model::KeyGroupConfig).
+    pub fn builder() -> crate::model::key_group_config::Builder {
+        crate::model::key_group_config::Builder::default()
+    }
+}
+
 /// See [`KeyGroupConfig`](crate::model::KeyGroupConfig).
 pub mod key_group_config {
     
@@ -5356,12 +5407,6 @@ pub mod key_group_config {
     
     
 }
-impl KeyGroupConfig {
-    /// Creates a new builder-style object to manufacture [`KeyGroupConfig`](crate::model::KeyGroupConfig).
-    pub fn builder() -> crate::model::key_group_config::Builder {
-        crate::model::key_group_config::Builder::default()
-    }
-}
 
 /// <p>Contains configuration information and metadata about a CloudFront function.</p>
 #[non_exhaustive]
@@ -5398,6 +5443,13 @@ impl FunctionSummary {
         self.function_metadata.as_ref()
     }
 }
+impl FunctionSummary {
+    /// Creates a new builder-style object to manufacture [`FunctionSummary`](crate::model::FunctionSummary).
+    pub fn builder() -> crate::model::function_summary::Builder {
+        crate::model::function_summary::Builder::default()
+    }
+}
+
 /// See [`FunctionSummary`](crate::model::FunctionSummary).
 pub mod function_summary {
     
@@ -5464,12 +5516,6 @@ pub mod function_summary {
     
     
 }
-impl FunctionSummary {
-    /// Creates a new builder-style object to manufacture [`FunctionSummary`](crate::model::FunctionSummary).
-    pub fn builder() -> crate::model::function_summary::Builder {
-        crate::model::function_summary::Builder::default()
-    }
-}
 
 /// <p>Contains metadata about a CloudFront function.</p>
 #[non_exhaustive]
@@ -5510,6 +5556,13 @@ impl FunctionMetadata {
         self.last_modified_time.as_ref()
     }
 }
+impl FunctionMetadata {
+    /// Creates a new builder-style object to manufacture [`FunctionMetadata`](crate::model::FunctionMetadata).
+    pub fn builder() -> crate::model::function_metadata::Builder {
+        crate::model::function_metadata::Builder::default()
+    }
+}
+
 /// See [`FunctionMetadata`](crate::model::FunctionMetadata).
 pub mod function_metadata {
     
@@ -5579,12 +5632,6 @@ pub mod function_metadata {
     }
     
     
-}
-impl FunctionMetadata {
-    /// Creates a new builder-style object to manufacture [`FunctionMetadata`](crate::model::FunctionMetadata).
-    pub fn builder() -> crate::model::function_metadata::Builder {
-        crate::model::function_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FunctionStage`, it is important to ensure
@@ -5690,6 +5737,13 @@ impl FunctionConfig {
         self.runtime.as_ref()
     }
 }
+impl FunctionConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionConfig`](crate::model::FunctionConfig).
+    pub fn builder() -> crate::model::function_config::Builder {
+        crate::model::function_config::Builder::default()
+    }
+}
+
 /// See [`FunctionConfig`](crate::model::FunctionConfig).
 pub mod function_config {
     
@@ -5731,12 +5785,6 @@ pub mod function_config {
     }
     
     
-}
-impl FunctionConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionConfig`](crate::model::FunctionConfig).
-    pub fn builder() -> crate::model::function_config::Builder {
-        crate::model::function_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FunctionRuntime`, it is important to ensure
@@ -5844,6 +5892,13 @@ impl FieldLevelEncryptionProfile {
         self.field_level_encryption_profile_config.as_ref()
     }
 }
+impl FieldLevelEncryptionProfile {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfile`](crate::model::FieldLevelEncryptionProfile).
+    pub fn builder() -> crate::model::field_level_encryption_profile::Builder {
+        crate::model::field_level_encryption_profile::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionProfile`](crate::model::FieldLevelEncryptionProfile).
 pub mod field_level_encryption_profile {
     
@@ -5898,12 +5953,6 @@ pub mod field_level_encryption_profile {
     
     
 }
-impl FieldLevelEncryptionProfile {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfile`](crate::model::FieldLevelEncryptionProfile).
-    pub fn builder() -> crate::model::field_level_encryption_profile::Builder {
-        crate::model::field_level_encryption_profile::Builder::default()
-    }
-}
 
 /// <p>A complex data type of profiles for the field-level encryption.</p>
 #[non_exhaustive]
@@ -5940,6 +5989,13 @@ impl FieldLevelEncryptionProfileConfig {
         self.encryption_entities.as_ref()
     }
 }
+impl FieldLevelEncryptionProfileConfig {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileConfig`](crate::model::FieldLevelEncryptionProfileConfig).
+    pub fn builder() -> crate::model::field_level_encryption_profile_config::Builder {
+        crate::model::field_level_encryption_profile_config::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionProfileConfig`](crate::model::FieldLevelEncryptionProfileConfig).
 pub mod field_level_encryption_profile_config {
     
@@ -6006,12 +6062,6 @@ pub mod field_level_encryption_profile_config {
     
     
 }
-impl FieldLevelEncryptionProfileConfig {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileConfig`](crate::model::FieldLevelEncryptionProfileConfig).
-    pub fn builder() -> crate::model::field_level_encryption_profile_config::Builder {
-        crate::model::field_level_encryption_profile_config::Builder::default()
-    }
-}
 
 /// <p>Complex data type for field-level encryption profiles that includes all of the encryption entities.</p>
 #[non_exhaustive]
@@ -6034,6 +6084,13 @@ impl EncryptionEntities {
         self.items.as_deref()
     }
 }
+impl EncryptionEntities {
+    /// Creates a new builder-style object to manufacture [`EncryptionEntities`](crate::model::EncryptionEntities).
+    pub fn builder() -> crate::model::encryption_entities::Builder {
+        crate::model::encryption_entities::Builder::default()
+    }
+}
+
 /// See [`EncryptionEntities`](crate::model::EncryptionEntities).
 pub mod encryption_entities {
     
@@ -6082,12 +6139,6 @@ pub mod encryption_entities {
     
     
 }
-impl EncryptionEntities {
-    /// Creates a new builder-style object to manufacture [`EncryptionEntities`](crate::model::EncryptionEntities).
-    pub fn builder() -> crate::model::encryption_entities::Builder {
-        crate::model::encryption_entities::Builder::default()
-    }
-}
 
 /// <p>Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.</p>
 #[non_exhaustive]
@@ -6117,6 +6168,13 @@ impl EncryptionEntity {
         self.field_patterns.as_ref()
     }
 }
+impl EncryptionEntity {
+    /// Creates a new builder-style object to manufacture [`EncryptionEntity`](crate::model::EncryptionEntity).
+    pub fn builder() -> crate::model::encryption_entity::Builder {
+        crate::model::encryption_entity::Builder::default()
+    }
+}
+
 /// See [`EncryptionEntity`](crate::model::EncryptionEntity).
 pub mod encryption_entity {
     
@@ -6171,12 +6229,6 @@ pub mod encryption_entity {
     
     
 }
-impl EncryptionEntity {
-    /// Creates a new builder-style object to manufacture [`EncryptionEntity`](crate::model::EncryptionEntity).
-    pub fn builder() -> crate::model::encryption_entity::Builder {
-        crate::model::encryption_entity::Builder::default()
-    }
-}
 
 /// <p>A complex data type that includes the field patterns to match for field-level encryption.</p>
 #[non_exhaustive]
@@ -6199,6 +6251,13 @@ impl FieldPatterns {
         self.items.as_deref()
     }
 }
+impl FieldPatterns {
+    /// Creates a new builder-style object to manufacture [`FieldPatterns`](crate::model::FieldPatterns).
+    pub fn builder() -> crate::model::field_patterns::Builder {
+        crate::model::field_patterns::Builder::default()
+    }
+}
+
 /// See [`FieldPatterns`](crate::model::FieldPatterns).
 pub mod field_patterns {
     
@@ -6247,12 +6306,6 @@ pub mod field_patterns {
     
     
 }
-impl FieldPatterns {
-    /// Creates a new builder-style object to manufacture [`FieldPatterns`](crate::model::FieldPatterns).
-    pub fn builder() -> crate::model::field_patterns::Builder {
-        crate::model::field_patterns::Builder::default()
-    }
-}
 
 /// <p>A complex data type that includes the profile configurations and other options specified for field-level encryption.</p>
 #[non_exhaustive]
@@ -6282,6 +6335,13 @@ impl FieldLevelEncryption {
         self.field_level_encryption_config.as_ref()
     }
 }
+impl FieldLevelEncryption {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryption`](crate::model::FieldLevelEncryption).
+    pub fn builder() -> crate::model::field_level_encryption::Builder {
+        crate::model::field_level_encryption::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryption`](crate::model::FieldLevelEncryption).
 pub mod field_level_encryption {
     
@@ -6336,12 +6396,6 @@ pub mod field_level_encryption {
     
     
 }
-impl FieldLevelEncryption {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryption`](crate::model::FieldLevelEncryption).
-    pub fn builder() -> crate::model::field_level_encryption::Builder {
-        crate::model::field_level_encryption::Builder::default()
-    }
-}
 
 /// <p>A complex data type that includes the profile configurations specified for field-level encryption.</p>
 #[non_exhaustive]
@@ -6378,6 +6432,13 @@ impl FieldLevelEncryptionConfig {
         self.content_type_profile_config.as_ref()
     }
 }
+impl FieldLevelEncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfig`](crate::model::FieldLevelEncryptionConfig).
+    pub fn builder() -> crate::model::field_level_encryption_config::Builder {
+        crate::model::field_level_encryption_config::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionConfig`](crate::model::FieldLevelEncryptionConfig).
 pub mod field_level_encryption_config {
     
@@ -6444,12 +6505,6 @@ pub mod field_level_encryption_config {
     
     
 }
-impl FieldLevelEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfig`](crate::model::FieldLevelEncryptionConfig).
-    pub fn builder() -> crate::model::field_level_encryption_config::Builder {
-        crate::model::field_level_encryption_config::Builder::default()
-    }
-}
 
 /// <p>The configuration for a field-level encryption content type-profile mapping.</p>
 #[non_exhaustive]
@@ -6472,6 +6527,13 @@ impl ContentTypeProfileConfig {
         self.content_type_profiles.as_ref()
     }
 }
+impl ContentTypeProfileConfig {
+    /// Creates a new builder-style object to manufacture [`ContentTypeProfileConfig`](crate::model::ContentTypeProfileConfig).
+    pub fn builder() -> crate::model::content_type_profile_config::Builder {
+        crate::model::content_type_profile_config::Builder::default()
+    }
+}
+
 /// See [`ContentTypeProfileConfig`](crate::model::ContentTypeProfileConfig).
 pub mod content_type_profile_config {
     
@@ -6514,12 +6576,6 @@ pub mod content_type_profile_config {
     
     
 }
-impl ContentTypeProfileConfig {
-    /// Creates a new builder-style object to manufacture [`ContentTypeProfileConfig`](crate::model::ContentTypeProfileConfig).
-    pub fn builder() -> crate::model::content_type_profile_config::Builder {
-        crate::model::content_type_profile_config::Builder::default()
-    }
-}
 
 /// <p>Field-level encryption content type-profile.</p>
 #[non_exhaustive]
@@ -6542,6 +6598,13 @@ impl ContentTypeProfiles {
         self.items.as_deref()
     }
 }
+impl ContentTypeProfiles {
+    /// Creates a new builder-style object to manufacture [`ContentTypeProfiles`](crate::model::ContentTypeProfiles).
+    pub fn builder() -> crate::model::content_type_profiles::Builder {
+        crate::model::content_type_profiles::Builder::default()
+    }
+}
+
 /// See [`ContentTypeProfiles`](crate::model::ContentTypeProfiles).
 pub mod content_type_profiles {
     
@@ -6590,12 +6653,6 @@ pub mod content_type_profiles {
     
     
 }
-impl ContentTypeProfiles {
-    /// Creates a new builder-style object to manufacture [`ContentTypeProfiles`](crate::model::ContentTypeProfiles).
-    pub fn builder() -> crate::model::content_type_profiles::Builder {
-        crate::model::content_type_profiles::Builder::default()
-    }
-}
 
 /// <p>A field-level encryption content type profile.</p>
 #[non_exhaustive]
@@ -6625,6 +6682,13 @@ impl ContentTypeProfile {
         self.content_type.as_deref()
     }
 }
+impl ContentTypeProfile {
+    /// Creates a new builder-style object to manufacture [`ContentTypeProfile`](crate::model::ContentTypeProfile).
+    pub fn builder() -> crate::model::content_type_profile::Builder {
+        crate::model::content_type_profile::Builder::default()
+    }
+}
+
 /// See [`ContentTypeProfile`](crate::model::ContentTypeProfile).
 pub mod content_type_profile {
     
@@ -6678,12 +6742,6 @@ pub mod content_type_profile {
     }
     
     
-}
-impl ContentTypeProfile {
-    /// Creates a new builder-style object to manufacture [`ContentTypeProfile`](crate::model::ContentTypeProfile).
-    pub fn builder() -> crate::model::content_type_profile::Builder {
-        crate::model::content_type_profile::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Format`, it is important to ensure
@@ -6784,6 +6842,13 @@ impl QueryArgProfileConfig {
         self.query_arg_profiles.as_ref()
     }
 }
+impl QueryArgProfileConfig {
+    /// Creates a new builder-style object to manufacture [`QueryArgProfileConfig`](crate::model::QueryArgProfileConfig).
+    pub fn builder() -> crate::model::query_arg_profile_config::Builder {
+        crate::model::query_arg_profile_config::Builder::default()
+    }
+}
+
 /// See [`QueryArgProfileConfig`](crate::model::QueryArgProfileConfig).
 pub mod query_arg_profile_config {
     
@@ -6826,12 +6891,6 @@ pub mod query_arg_profile_config {
     
     
 }
-impl QueryArgProfileConfig {
-    /// Creates a new builder-style object to manufacture [`QueryArgProfileConfig`](crate::model::QueryArgProfileConfig).
-    pub fn builder() -> crate::model::query_arg_profile_config::Builder {
-        crate::model::query_arg_profile_config::Builder::default()
-    }
-}
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
@@ -6854,6 +6913,13 @@ impl QueryArgProfiles {
         self.items.as_deref()
     }
 }
+impl QueryArgProfiles {
+    /// Creates a new builder-style object to manufacture [`QueryArgProfiles`](crate::model::QueryArgProfiles).
+    pub fn builder() -> crate::model::query_arg_profiles::Builder {
+        crate::model::query_arg_profiles::Builder::default()
+    }
+}
+
 /// See [`QueryArgProfiles`](crate::model::QueryArgProfiles).
 pub mod query_arg_profiles {
     
@@ -6902,12 +6968,6 @@ pub mod query_arg_profiles {
     
     
 }
-impl QueryArgProfiles {
-    /// Creates a new builder-style object to manufacture [`QueryArgProfiles`](crate::model::QueryArgProfiles).
-    pub fn builder() -> crate::model::query_arg_profiles::Builder {
-        crate::model::query_arg_profiles::Builder::default()
-    }
-}
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
@@ -6930,6 +6990,13 @@ impl QueryArgProfile {
         self.profile_id.as_deref()
     }
 }
+impl QueryArgProfile {
+    /// Creates a new builder-style object to manufacture [`QueryArgProfile`](crate::model::QueryArgProfile).
+    pub fn builder() -> crate::model::query_arg_profile::Builder {
+        crate::model::query_arg_profile::Builder::default()
+    }
+}
+
 /// See [`QueryArgProfile`](crate::model::QueryArgProfile).
 pub mod query_arg_profile {
     
@@ -6971,12 +7038,6 @@ pub mod query_arg_profile {
     }
     
     
-}
-impl QueryArgProfile {
-    /// Creates a new builder-style object to manufacture [`QueryArgProfile`](crate::model::QueryArgProfile).
-    pub fn builder() -> crate::model::query_arg_profile::Builder {
-        crate::model::query_arg_profile::Builder::default()
-    }
 }
 
 /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
@@ -7064,6 +7125,13 @@ impl Distribution {
         self.alias_icp_recordals.as_deref()
     }
 }
+impl Distribution {
+    /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution).
+    pub fn builder() -> crate::model::distribution::Builder {
+        crate::model::distribution::Builder::default()
+    }
+}
+
 /// See [`Distribution`](crate::model::Distribution).
 pub mod distribution {
     
@@ -7216,12 +7284,6 @@ pub mod distribution {
     
     
 }
-impl Distribution {
-    /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution).
-    pub fn builder() -> crate::model::distribution::Builder {
-        crate::model::distribution::Builder::default()
-    }
-}
 
 /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself.</p> 
 /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
@@ -7257,6 +7319,13 @@ impl AliasIcpRecordal {
         self.icp_recordal_status.as_ref()
     }
 }
+impl AliasIcpRecordal {
+    /// Creates a new builder-style object to manufacture [`AliasIcpRecordal`](crate::model::AliasIcpRecordal).
+    pub fn builder() -> crate::model::alias_icp_recordal::Builder {
+        crate::model::alias_icp_recordal::Builder::default()
+    }
+}
+
 /// See [`AliasIcpRecordal`](crate::model::AliasIcpRecordal).
 pub mod alias_icp_recordal {
     
@@ -7310,12 +7379,6 @@ pub mod alias_icp_recordal {
     }
     
     
-}
-impl AliasIcpRecordal {
-    /// Creates a new builder-style object to manufacture [`AliasIcpRecordal`](crate::model::AliasIcpRecordal).
-    pub fn builder() -> crate::model::alias_icp_recordal::Builder {
-        crate::model::alias_icp_recordal::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IcpRecordalStatus`, it is important to ensure
@@ -7622,6 +7685,13 @@ impl  std::fmt::Debug for DistributionConfig  {
         formatter.finish()
     }
 }
+impl DistributionConfig {
+    /// Creates a new builder-style object to manufacture [`DistributionConfig`](crate::model::DistributionConfig).
+    pub fn builder() -> crate::model::distribution_config::Builder {
+        crate::model::distribution_config::Builder::default()
+    }
+}
+
 /// See [`DistributionConfig`](crate::model::DistributionConfig).
 pub mod distribution_config {
     
@@ -7945,12 +8015,6 @@ pub mod distribution_config {
     
     
 }
-impl DistributionConfig {
-    /// Creates a new builder-style object to manufacture [`DistributionConfig`](crate::model::DistributionConfig).
-    pub fn builder() -> crate::model::distribution_config::Builder {
-        crate::model::distribution_config::Builder::default()
-    }
-}
 
 /// When writing a match expression against `HttpVersion`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8058,6 +8122,13 @@ impl Restrictions {
         self.geo_restriction.as_ref()
     }
 }
+impl Restrictions {
+    /// Creates a new builder-style object to manufacture [`Restrictions`](crate::model::Restrictions).
+    pub fn builder() -> crate::model::restrictions::Builder {
+        crate::model::restrictions::Builder::default()
+    }
+}
+
 /// See [`Restrictions`](crate::model::Restrictions).
 pub mod restrictions {
     
@@ -8087,12 +8158,6 @@ pub mod restrictions {
     }
     
     
-}
-impl Restrictions {
-    /// Creates a new builder-style object to manufacture [`Restrictions`](crate::model::Restrictions).
-    pub fn builder() -> crate::model::restrictions::Builder {
-        crate::model::restrictions::Builder::default()
-    }
 }
 
 /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases. </p>
@@ -8137,6 +8202,13 @@ impl GeoRestriction {
         self.items.as_deref()
     }
 }
+impl GeoRestriction {
+    /// Creates a new builder-style object to manufacture [`GeoRestriction`](crate::model::GeoRestriction).
+    pub fn builder() -> crate::model::geo_restriction::Builder {
+        crate::model::geo_restriction::Builder::default()
+    }
+}
+
 /// See [`GeoRestriction`](crate::model::GeoRestriction).
 pub mod geo_restriction {
     
@@ -8210,12 +8282,6 @@ pub mod geo_restriction {
     }
     
     
-}
-impl GeoRestriction {
-    /// Creates a new builder-style object to manufacture [`GeoRestriction`](crate::model::GeoRestriction).
-    pub fn builder() -> crate::model::geo_restriction::Builder {
-        crate::model::geo_restriction::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GeoRestrictionType`, it is important to ensure
@@ -8448,6 +8514,13 @@ impl ViewerCertificate {
         self.certificate_source.as_ref()
     }
 }
+impl ViewerCertificate {
+    /// Creates a new builder-style object to manufacture [`ViewerCertificate`](crate::model::ViewerCertificate).
+    pub fn builder() -> crate::model::viewer_certificate::Builder {
+        crate::model::viewer_certificate::Builder::default()
+    }
+}
+
 /// See [`ViewerCertificate`](crate::model::ViewerCertificate).
 pub mod viewer_certificate {
     
@@ -8619,12 +8692,6 @@ pub mod viewer_certificate {
     }
     
     
-}
-impl ViewerCertificate {
-    /// Creates a new builder-style object to manufacture [`ViewerCertificate`](crate::model::ViewerCertificate).
-    pub fn builder() -> crate::model::viewer_certificate::Builder {
-        crate::model::viewer_certificate::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CertificateSource`, it is important to ensure
@@ -8943,6 +9010,13 @@ impl LoggingConfig {
         self.prefix.as_deref()
     }
 }
+impl LoggingConfig {
+    /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
+    pub fn builder() -> crate::model::logging_config::Builder {
+        crate::model::logging_config::Builder::default()
+    }
+}
+
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
 pub mod logging_config {
     
@@ -9009,12 +9083,6 @@ pub mod logging_config {
     
     
 }
-impl LoggingConfig {
-    /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
-    pub fn builder() -> crate::model::logging_config::Builder {
-        crate::model::logging_config::Builder::default()
-    }
-}
 
 /// <p>A complex type that controls:</p> 
 /// <ul> 
@@ -9042,6 +9110,13 @@ impl CustomErrorResponses {
         self.items.as_deref()
     }
 }
+impl CustomErrorResponses {
+    /// Creates a new builder-style object to manufacture [`CustomErrorResponses`](crate::model::CustomErrorResponses).
+    pub fn builder() -> crate::model::custom_error_responses::Builder {
+        crate::model::custom_error_responses::Builder::default()
+    }
+}
+
 /// See [`CustomErrorResponses`](crate::model::CustomErrorResponses).
 pub mod custom_error_responses {
     
@@ -9089,12 +9164,6 @@ pub mod custom_error_responses {
     }
     
     
-}
-impl CustomErrorResponses {
-    /// Creates a new builder-style object to manufacture [`CustomErrorResponses`](crate::model::CustomErrorResponses).
-    pub fn builder() -> crate::model::custom_error_responses::Builder {
-        crate::model::custom_error_responses::Builder::default()
-    }
 }
 
 /// <p>A complex type that controls:</p> 
@@ -9163,6 +9232,13 @@ impl CustomErrorResponse {
         self.error_caching_min_ttl
     }
 }
+impl CustomErrorResponse {
+    /// Creates a new builder-style object to manufacture [`CustomErrorResponse`](crate::model::CustomErrorResponse).
+    pub fn builder() -> crate::model::custom_error_response::Builder {
+        crate::model::custom_error_response::Builder::default()
+    }
+}
+
 /// See [`CustomErrorResponse`](crate::model::CustomErrorResponse).
 pub mod custom_error_response {
     
@@ -9255,12 +9331,6 @@ pub mod custom_error_response {
     
     
 }
-impl CustomErrorResponse {
-    /// Creates a new builder-style object to manufacture [`CustomErrorResponse`](crate::model::CustomErrorResponse).
-    pub fn builder() -> crate::model::custom_error_response::Builder {
-        crate::model::custom_error_response::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.</p>
 #[non_exhaustive]
@@ -9283,6 +9353,13 @@ impl CacheBehaviors {
         self.items.as_deref()
     }
 }
+impl CacheBehaviors {
+    /// Creates a new builder-style object to manufacture [`CacheBehaviors`](crate::model::CacheBehaviors).
+    pub fn builder() -> crate::model::cache_behaviors::Builder {
+        crate::model::cache_behaviors::Builder::default()
+    }
+}
+
 /// See [`CacheBehaviors`](crate::model::CacheBehaviors).
 pub mod cache_behaviors {
     
@@ -9330,12 +9407,6 @@ pub mod cache_behaviors {
     }
     
     
-}
-impl CacheBehaviors {
-    /// Creates a new builder-style object to manufacture [`CacheBehaviors`](crate::model::CacheBehaviors).
-    pub fn builder() -> crate::model::cache_behaviors::Builder {
-        crate::model::cache_behaviors::Builder::default()
-    }
 }
 
 /// <p>A complex type that describes how CloudFront processes requests.</p> 
@@ -9556,6 +9627,13 @@ impl CacheBehavior {
         self.max_ttl
     }
 }
+impl CacheBehavior {
+    /// Creates a new builder-style object to manufacture [`CacheBehavior`](crate::model::CacheBehavior).
+    pub fn builder() -> crate::model::cache_behavior::Builder {
+        crate::model::cache_behavior::Builder::default()
+    }
+}
+
 /// See [`CacheBehavior`](crate::model::CacheBehavior).
 pub mod cache_behavior {
     
@@ -9874,12 +9952,6 @@ pub mod cache_behavior {
     
     
 }
-impl CacheBehavior {
-    /// Creates a new builder-style object to manufacture [`CacheBehavior`](crate::model::CacheBehavior).
-    pub fn builder() -> crate::model::cache_behavior::Builder {
-        crate::model::cache_behavior::Builder::default()
-    }
-}
 
 /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p> 
 /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
@@ -9953,6 +10025,13 @@ impl ForwardedValues {
         self.query_string_cache_keys.as_ref()
     }
 }
+impl ForwardedValues {
+    /// Creates a new builder-style object to manufacture [`ForwardedValues`](crate::model::ForwardedValues).
+    pub fn builder() -> crate::model::forwarded_values::Builder {
+        crate::model::forwarded_values::Builder::default()
+    }
+}
+
 /// See [`ForwardedValues`](crate::model::ForwardedValues).
 pub mod forwarded_values {
     
@@ -10053,12 +10132,6 @@ pub mod forwarded_values {
     
     
 }
-impl ForwardedValues {
-    /// Creates a new builder-style object to manufacture [`ForwardedValues`](crate::model::ForwardedValues).
-    pub fn builder() -> crate::model::forwarded_values::Builder {
-        crate::model::forwarded_values::Builder::default()
-    }
-}
 
 /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p> 
 /// <p>If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See <code>CachePolicy</code>.</p> 
@@ -10084,6 +10157,13 @@ impl QueryStringCacheKeys {
         self.items.as_deref()
     }
 }
+impl QueryStringCacheKeys {
+    /// Creates a new builder-style object to manufacture [`QueryStringCacheKeys`](crate::model::QueryStringCacheKeys).
+    pub fn builder() -> crate::model::query_string_cache_keys::Builder {
+        crate::model::query_string_cache_keys::Builder::default()
+    }
+}
+
 /// See [`QueryStringCacheKeys`](crate::model::QueryStringCacheKeys).
 pub mod query_string_cache_keys {
     
@@ -10132,12 +10212,6 @@ pub mod query_string_cache_keys {
     
     
 }
-impl QueryStringCacheKeys {
-    /// Creates a new builder-style object to manufacture [`QueryStringCacheKeys`](crate::model::QueryStringCacheKeys).
-    pub fn builder() -> crate::model::query_string_cache_keys::Builder {
-        crate::model::query_string_cache_keys::Builder::default()
-    }
-}
 
 /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p> 
 /// <p>If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See <code>CachePolicy</code>.</p> 
@@ -10181,6 +10255,13 @@ impl CookiePreference {
         self.whitelisted_names.as_ref()
     }
 }
+impl CookiePreference {
+    /// Creates a new builder-style object to manufacture [`CookiePreference`](crate::model::CookiePreference).
+    pub fn builder() -> crate::model::cookie_preference::Builder {
+        crate::model::cookie_preference::Builder::default()
+    }
+}
+
 /// See [`CookiePreference`](crate::model::CookiePreference).
 pub mod cookie_preference {
     
@@ -10240,12 +10321,6 @@ pub mod cookie_preference {
     }
     
     
-}
-impl CookiePreference {
-    /// Creates a new builder-style object to manufacture [`CookiePreference`](crate::model::CookiePreference).
-    pub fn builder() -> crate::model::cookie_preference::Builder {
-        crate::model::cookie_preference::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ItemSelection`, it is important to ensure
@@ -10356,6 +10431,13 @@ impl FunctionAssociations {
         self.items.as_deref()
     }
 }
+impl FunctionAssociations {
+    /// Creates a new builder-style object to manufacture [`FunctionAssociations`](crate::model::FunctionAssociations).
+    pub fn builder() -> crate::model::function_associations::Builder {
+        crate::model::function_associations::Builder::default()
+    }
+}
+
 /// See [`FunctionAssociations`](crate::model::FunctionAssociations).
 pub mod function_associations {
     
@@ -10404,12 +10486,6 @@ pub mod function_associations {
     
     
 }
-impl FunctionAssociations {
-    /// Creates a new builder-style object to manufacture [`FunctionAssociations`](crate::model::FunctionAssociations).
-    pub fn builder() -> crate::model::function_associations::Builder {
-        crate::model::function_associations::Builder::default()
-    }
-}
 
 /// <p>A CloudFront function that is associated with a cache behavior in a CloudFront distribution.</p>
 #[non_exhaustive]
@@ -10432,6 +10508,13 @@ impl FunctionAssociation {
         self.event_type.as_ref()
     }
 }
+impl FunctionAssociation {
+    /// Creates a new builder-style object to manufacture [`FunctionAssociation`](crate::model::FunctionAssociation).
+    pub fn builder() -> crate::model::function_association::Builder {
+        crate::model::function_association::Builder::default()
+    }
+}
+
 /// See [`FunctionAssociation`](crate::model::FunctionAssociation).
 pub mod function_association {
     
@@ -10473,12 +10556,6 @@ pub mod function_association {
     }
     
     
-}
-impl FunctionAssociation {
-    /// Creates a new builder-style object to manufacture [`FunctionAssociation`](crate::model::FunctionAssociation).
-    pub fn builder() -> crate::model::function_association::Builder {
-        crate::model::function_association::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventType`, it is important to ensure
@@ -10596,6 +10673,13 @@ impl LambdaFunctionAssociations {
         self.items.as_deref()
     }
 }
+impl LambdaFunctionAssociations {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionAssociations`](crate::model::LambdaFunctionAssociations).
+    pub fn builder() -> crate::model::lambda_function_associations::Builder {
+        crate::model::lambda_function_associations::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionAssociations`](crate::model::LambdaFunctionAssociations).
 pub mod lambda_function_associations {
     
@@ -10644,12 +10728,6 @@ pub mod lambda_function_associations {
     
     
 }
-impl LambdaFunctionAssociations {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionAssociations`](crate::model::LambdaFunctionAssociations).
-    pub fn builder() -> crate::model::lambda_function_associations::Builder {
-        crate::model::lambda_function_associations::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains a Lambda@Edge function association.</p>
 #[non_exhaustive]
@@ -10691,6 +10769,13 @@ impl LambdaFunctionAssociation {
         self.include_body
     }
 }
+impl LambdaFunctionAssociation {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionAssociation`](crate::model::LambdaFunctionAssociation).
+    pub fn builder() -> crate::model::lambda_function_association::Builder {
+        crate::model::lambda_function_association::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionAssociation`](crate::model::LambdaFunctionAssociation).
 pub mod lambda_function_association {
     
@@ -10757,12 +10842,6 @@ pub mod lambda_function_association {
     
     
 }
-impl LambdaFunctionAssociation {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionAssociation`](crate::model::LambdaFunctionAssociation).
-    pub fn builder() -> crate::model::lambda_function_association::Builder {
-        crate::model::lambda_function_association::Builder::default()
-    }
-}
 
 /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p> 
 /// <ul> 
@@ -10808,6 +10887,13 @@ impl AllowedMethods {
         self.cached_methods.as_ref()
     }
 }
+impl AllowedMethods {
+    /// Creates a new builder-style object to manufacture [`AllowedMethods`](crate::model::AllowedMethods).
+    pub fn builder() -> crate::model::allowed_methods::Builder {
+        crate::model::allowed_methods::Builder::default()
+    }
+}
+
 /// See [`AllowedMethods`](crate::model::AllowedMethods).
 pub mod allowed_methods {
     
@@ -10878,12 +10964,6 @@ pub mod allowed_methods {
     
     
 }
-impl AllowedMethods {
-    /// Creates a new builder-style object to manufacture [`AllowedMethods`](crate::model::AllowedMethods).
-    pub fn builder() -> crate::model::allowed_methods::Builder {
-        crate::model::allowed_methods::Builder::default()
-    }
-}
 
 /// <p>A complex type that controls whether CloudFront caches the response to requests using the specified HTTP methods. There are two choices:</p> 
 /// <ul> 
@@ -10911,6 +10991,13 @@ impl CachedMethods {
         self.items.as_deref()
     }
 }
+impl CachedMethods {
+    /// Creates a new builder-style object to manufacture [`CachedMethods`](crate::model::CachedMethods).
+    pub fn builder() -> crate::model::cached_methods::Builder {
+        crate::model::cached_methods::Builder::default()
+    }
+}
+
 /// See [`CachedMethods`](crate::model::CachedMethods).
 pub mod cached_methods {
     
@@ -10958,12 +11045,6 @@ pub mod cached_methods {
     }
     
     
-}
-impl CachedMethods {
-    /// Creates a new builder-style object to manufacture [`CachedMethods`](crate::model::CachedMethods).
-    pub fn builder() -> crate::model::cached_methods::Builder {
-        crate::model::cached_methods::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Method`, it is important to ensure
@@ -11188,6 +11269,13 @@ impl TrustedKeyGroups {
         self.items.as_deref()
     }
 }
+impl TrustedKeyGroups {
+    /// Creates a new builder-style object to manufacture [`TrustedKeyGroups`](crate::model::TrustedKeyGroups).
+    pub fn builder() -> crate::model::trusted_key_groups::Builder {
+        crate::model::trusted_key_groups::Builder::default()
+    }
+}
+
 /// See [`TrustedKeyGroups`](crate::model::TrustedKeyGroups).
 pub mod trusted_key_groups {
     
@@ -11247,12 +11335,6 @@ pub mod trusted_key_groups {
     }
     
     
-}
-impl TrustedKeyGroups {
-    /// Creates a new builder-style object to manufacture [`TrustedKeyGroups`](crate::model::TrustedKeyGroups).
-    pub fn builder() -> crate::model::trusted_key_groups::Builder {
-        crate::model::trusted_key_groups::Builder::default()
-    }
 }
 
 /// <p>A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or if request URLs don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.</p>
@@ -11452,6 +11534,13 @@ impl DefaultCacheBehavior {
         self.max_ttl
     }
 }
+impl DefaultCacheBehavior {
+    /// Creates a new builder-style object to manufacture [`DefaultCacheBehavior`](crate::model::DefaultCacheBehavior).
+    pub fn builder() -> crate::model::default_cache_behavior::Builder {
+        crate::model::default_cache_behavior::Builder::default()
+    }
+}
+
 /// See [`DefaultCacheBehavior`](crate::model::DefaultCacheBehavior).
 pub mod default_cache_behavior {
     
@@ -11750,12 +11839,6 @@ pub mod default_cache_behavior {
     
     
 }
-impl DefaultCacheBehavior {
-    /// Creates a new builder-style object to manufacture [`DefaultCacheBehavior`](crate::model::DefaultCacheBehavior).
-    pub fn builder() -> crate::model::default_cache_behavior::Builder {
-        crate::model::default_cache_behavior::Builder::default()
-    }
-}
 
 /// <p>A complex data type for the origin groups specified for a distribution.</p>
 #[non_exhaustive]
@@ -11778,6 +11861,13 @@ impl OriginGroups {
         self.items.as_deref()
     }
 }
+impl OriginGroups {
+    /// Creates a new builder-style object to manufacture [`OriginGroups`](crate::model::OriginGroups).
+    pub fn builder() -> crate::model::origin_groups::Builder {
+        crate::model::origin_groups::Builder::default()
+    }
+}
+
 /// See [`OriginGroups`](crate::model::OriginGroups).
 pub mod origin_groups {
     
@@ -11826,12 +11916,6 @@ pub mod origin_groups {
     
     
 }
-impl OriginGroups {
-    /// Creates a new builder-style object to manufacture [`OriginGroups`](crate::model::OriginGroups).
-    pub fn builder() -> crate::model::origin_groups::Builder {
-        crate::model::origin_groups::Builder::default()
-    }
-}
 
 /// <p>An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.</p>
 #[non_exhaustive]
@@ -11861,6 +11945,13 @@ impl OriginGroup {
         self.members.as_ref()
     }
 }
+impl OriginGroup {
+    /// Creates a new builder-style object to manufacture [`OriginGroup`](crate::model::OriginGroup).
+    pub fn builder() -> crate::model::origin_group::Builder {
+        crate::model::origin_group::Builder::default()
+    }
+}
+
 /// See [`OriginGroup`](crate::model::OriginGroup).
 pub mod origin_group {
     
@@ -11915,12 +12006,6 @@ pub mod origin_group {
     
     
 }
-impl OriginGroup {
-    /// Creates a new builder-style object to manufacture [`OriginGroup`](crate::model::OriginGroup).
-    pub fn builder() -> crate::model::origin_group::Builder {
-        crate::model::origin_group::Builder::default()
-    }
-}
 
 /// <p>A complex data type for the origins included in an origin group.</p>
 #[non_exhaustive]
@@ -11943,6 +12028,13 @@ impl OriginGroupMembers {
         self.items.as_deref()
     }
 }
+impl OriginGroupMembers {
+    /// Creates a new builder-style object to manufacture [`OriginGroupMembers`](crate::model::OriginGroupMembers).
+    pub fn builder() -> crate::model::origin_group_members::Builder {
+        crate::model::origin_group_members::Builder::default()
+    }
+}
+
 /// See [`OriginGroupMembers`](crate::model::OriginGroupMembers).
 pub mod origin_group_members {
     
@@ -11991,12 +12083,6 @@ pub mod origin_group_members {
     
     
 }
-impl OriginGroupMembers {
-    /// Creates a new builder-style object to manufacture [`OriginGroupMembers`](crate::model::OriginGroupMembers).
-    pub fn builder() -> crate::model::origin_group_members::Builder {
-        crate::model::origin_group_members::Builder::default()
-    }
-}
 
 /// <p>An origin in an origin group.</p>
 #[non_exhaustive]
@@ -12012,6 +12098,13 @@ impl OriginGroupMember {
         self.origin_id.as_deref()
     }
 }
+impl OriginGroupMember {
+    /// Creates a new builder-style object to manufacture [`OriginGroupMember`](crate::model::OriginGroupMember).
+    pub fn builder() -> crate::model::origin_group_member::Builder {
+        crate::model::origin_group_member::Builder::default()
+    }
+}
+
 /// See [`OriginGroupMember`](crate::model::OriginGroupMember).
 pub mod origin_group_member {
     
@@ -12042,12 +12135,6 @@ pub mod origin_group_member {
     
     
 }
-impl OriginGroupMember {
-    /// Creates a new builder-style object to manufacture [`OriginGroupMember`](crate::model::OriginGroupMember).
-    pub fn builder() -> crate::model::origin_group_member::Builder {
-        crate::model::origin_group_member::Builder::default()
-    }
-}
 
 /// <p>A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.</p>
 #[non_exhaustive]
@@ -12063,6 +12150,13 @@ impl OriginGroupFailoverCriteria {
         self.status_codes.as_ref()
     }
 }
+impl OriginGroupFailoverCriteria {
+    /// Creates a new builder-style object to manufacture [`OriginGroupFailoverCriteria`](crate::model::OriginGroupFailoverCriteria).
+    pub fn builder() -> crate::model::origin_group_failover_criteria::Builder {
+        crate::model::origin_group_failover_criteria::Builder::default()
+    }
+}
+
 /// See [`OriginGroupFailoverCriteria`](crate::model::OriginGroupFailoverCriteria).
 pub mod origin_group_failover_criteria {
     
@@ -12093,12 +12187,6 @@ pub mod origin_group_failover_criteria {
     
     
 }
-impl OriginGroupFailoverCriteria {
-    /// Creates a new builder-style object to manufacture [`OriginGroupFailoverCriteria`](crate::model::OriginGroupFailoverCriteria).
-    pub fn builder() -> crate::model::origin_group_failover_criteria::Builder {
-        crate::model::origin_group_failover_criteria::Builder::default()
-    }
-}
 
 /// <p>A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.</p>
 #[non_exhaustive]
@@ -12121,6 +12209,13 @@ impl StatusCodes {
         self.items.as_deref()
     }
 }
+impl StatusCodes {
+    /// Creates a new builder-style object to manufacture [`StatusCodes`](crate::model::StatusCodes).
+    pub fn builder() -> crate::model::status_codes::Builder {
+        crate::model::status_codes::Builder::default()
+    }
+}
+
 /// See [`StatusCodes`](crate::model::StatusCodes).
 pub mod status_codes {
     
@@ -12169,12 +12264,6 @@ pub mod status_codes {
     
     
 }
-impl StatusCodes {
-    /// Creates a new builder-style object to manufacture [`StatusCodes`](crate::model::StatusCodes).
-    pub fn builder() -> crate::model::status_codes::Builder {
-        crate::model::status_codes::Builder::default()
-    }
-}
 
 /// <p>Contains information about the origins for this distribution.</p>
 #[non_exhaustive]
@@ -12197,6 +12286,13 @@ impl Origins {
         self.items.as_deref()
     }
 }
+impl Origins {
+    /// Creates a new builder-style object to manufacture [`Origins`](crate::model::Origins).
+    pub fn builder() -> crate::model::origins::Builder {
+        crate::model::origins::Builder::default()
+    }
+}
+
 /// See [`Origins`](crate::model::Origins).
 pub mod origins {
     
@@ -12244,12 +12340,6 @@ pub mod origins {
     }
     
     
-}
-impl Origins {
-    /// Creates a new builder-style object to manufacture [`Origins`](crate::model::Origins).
-    pub fn builder() -> crate::model::origins::Builder {
-        crate::model::origins::Builder::default()
-    }
 }
 
 /// <p>An origin.</p> 
@@ -12360,6 +12450,13 @@ impl Origin {
         self.origin_access_control_id.as_deref()
     }
 }
+impl Origin {
+    /// Creates a new builder-style object to manufacture [`Origin`](crate::model::Origin).
+    pub fn builder() -> crate::model::origin::Builder {
+        crate::model::origin::Builder::default()
+    }
+}
+
 /// See [`Origin`](crate::model::Origin).
 pub mod origin {
     
@@ -12516,12 +12613,6 @@ pub mod origin {
     
     
 }
-impl Origin {
-    /// Creates a new builder-style object to manufacture [`Origin`](crate::model::Origin).
-    pub fn builder() -> crate::model::origin::Builder {
-        crate::model::origin::Builder::default()
-    }
-}
 
 /// <p>CloudFront Origin Shield.</p> 
 /// <p>Using Origin Shield can help reduce the load on your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -12551,6 +12642,13 @@ impl OriginShield {
         self.origin_shield_region.as_deref()
     }
 }
+impl OriginShield {
+    /// Creates a new builder-style object to manufacture [`OriginShield`](crate::model::OriginShield).
+    pub fn builder() -> crate::model::origin_shield::Builder {
+        crate::model::origin_shield::Builder::default()
+    }
+}
+
 /// See [`OriginShield`](crate::model::OriginShield).
 pub mod origin_shield {
     
@@ -12598,12 +12696,6 @@ pub mod origin_shield {
     }
     
     
-}
-impl OriginShield {
-    /// Creates a new builder-style object to manufacture [`OriginShield`](crate::model::OriginShield).
-    pub fn builder() -> crate::model::origin_shield::Builder {
-        crate::model::origin_shield::Builder::default()
-    }
 }
 
 /// <p>A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin.</p>
@@ -12671,6 +12763,13 @@ impl CustomOriginConfig {
         self.origin_keepalive_timeout
     }
 }
+impl CustomOriginConfig {
+    /// Creates a new builder-style object to manufacture [`CustomOriginConfig`](crate::model::CustomOriginConfig).
+    pub fn builder() -> crate::model::custom_origin_config::Builder {
+        crate::model::custom_origin_config::Builder::default()
+    }
+}
+
 /// See [`CustomOriginConfig`](crate::model::CustomOriginConfig).
 pub mod custom_origin_config {
     
@@ -12777,12 +12876,6 @@ pub mod custom_origin_config {
     
     
 }
-impl CustomOriginConfig {
-    /// Creates a new builder-style object to manufacture [`CustomOriginConfig`](crate::model::CustomOriginConfig).
-    pub fn builder() -> crate::model::custom_origin_config::Builder {
-        crate::model::custom_origin_config::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.</p>
 #[non_exhaustive]
@@ -12805,6 +12898,13 @@ impl OriginSslProtocols {
         self.items.as_deref()
     }
 }
+impl OriginSslProtocols {
+    /// Creates a new builder-style object to manufacture [`OriginSslProtocols`](crate::model::OriginSslProtocols).
+    pub fn builder() -> crate::model::origin_ssl_protocols::Builder {
+        crate::model::origin_ssl_protocols::Builder::default()
+    }
+}
+
 /// See [`OriginSslProtocols`](crate::model::OriginSslProtocols).
 pub mod origin_ssl_protocols {
     
@@ -12852,12 +12952,6 @@ pub mod origin_ssl_protocols {
     }
     
     
-}
-impl OriginSslProtocols {
-    /// Creates a new builder-style object to manufacture [`OriginSslProtocols`](crate::model::OriginSslProtocols).
-    pub fn builder() -> crate::model::origin_ssl_protocols::Builder {
-        crate::model::origin_ssl_protocols::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SslProtocol`, it is important to ensure
@@ -13065,6 +13159,13 @@ impl S3OriginConfig {
         self.origin_access_identity.as_deref()
     }
 }
+impl S3OriginConfig {
+    /// Creates a new builder-style object to manufacture [`S3OriginConfig`](crate::model::S3OriginConfig).
+    pub fn builder() -> crate::model::s3_origin_config::Builder {
+        crate::model::s3_origin_config::Builder::default()
+    }
+}
+
 /// See [`S3OriginConfig`](crate::model::S3OriginConfig).
 pub mod s3_origin_config {
     
@@ -13107,12 +13208,6 @@ pub mod s3_origin_config {
     
     
 }
-impl S3OriginConfig {
-    /// Creates a new builder-style object to manufacture [`S3OriginConfig`](crate::model::S3OriginConfig).
-    pub fn builder() -> crate::model::s3_origin_config::Builder {
-        crate::model::s3_origin_config::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the list of Custom Headers for each origin.</p>
 #[non_exhaustive]
@@ -13135,6 +13230,13 @@ impl CustomHeaders {
         self.items.as_deref()
     }
 }
+impl CustomHeaders {
+    /// Creates a new builder-style object to manufacture [`CustomHeaders`](crate::model::CustomHeaders).
+    pub fn builder() -> crate::model::custom_headers::Builder {
+        crate::model::custom_headers::Builder::default()
+    }
+}
+
 /// See [`CustomHeaders`](crate::model::CustomHeaders).
 pub mod custom_headers {
     
@@ -13183,12 +13285,6 @@ pub mod custom_headers {
     
     
 }
-impl CustomHeaders {
-    /// Creates a new builder-style object to manufacture [`CustomHeaders`](crate::model::CustomHeaders).
-    pub fn builder() -> crate::model::custom_headers::Builder {
-        crate::model::custom_headers::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.</p>
 #[non_exhaustive]
@@ -13219,6 +13315,13 @@ impl  std::fmt::Debug for OriginCustomHeader  {
         formatter.finish()
     }
 }
+impl OriginCustomHeader {
+    /// Creates a new builder-style object to manufacture [`OriginCustomHeader`](crate::model::OriginCustomHeader).
+    pub fn builder() -> crate::model::origin_custom_header::Builder {
+        crate::model::origin_custom_header::Builder::default()
+    }
+}
+
 /// See [`OriginCustomHeader`](crate::model::OriginCustomHeader).
 pub mod origin_custom_header {
     
@@ -13269,12 +13372,6 @@ pub mod origin_custom_header {
     
     
 }
-impl OriginCustomHeader {
-    /// Creates a new builder-style object to manufacture [`OriginCustomHeader`](crate::model::OriginCustomHeader).
-    pub fn builder() -> crate::model::origin_custom_header::Builder {
-        crate::model::origin_custom_header::Builder::default()
-    }
-}
 
 /// <p>A list of key groups, and the public keys in each key group, that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
@@ -13304,6 +13401,13 @@ impl ActiveTrustedKeyGroups {
         self.items.as_deref()
     }
 }
+impl ActiveTrustedKeyGroups {
+    /// Creates a new builder-style object to manufacture [`ActiveTrustedKeyGroups`](crate::model::ActiveTrustedKeyGroups).
+    pub fn builder() -> crate::model::active_trusted_key_groups::Builder {
+        crate::model::active_trusted_key_groups::Builder::default()
+    }
+}
+
 /// See [`ActiveTrustedKeyGroups`](crate::model::ActiveTrustedKeyGroups).
 pub mod active_trusted_key_groups {
     
@@ -13364,12 +13468,6 @@ pub mod active_trusted_key_groups {
     
     
 }
-impl ActiveTrustedKeyGroups {
-    /// Creates a new builder-style object to manufacture [`ActiveTrustedKeyGroups`](crate::model::ActiveTrustedKeyGroups).
-    pub fn builder() -> crate::model::active_trusted_key_groups::Builder {
-        crate::model::active_trusted_key_groups::Builder::default()
-    }
-}
 
 /// <p>A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
@@ -13392,6 +13490,13 @@ impl KgKeyPairIds {
         self.key_pair_ids.as_ref()
     }
 }
+impl KgKeyPairIds {
+    /// Creates a new builder-style object to manufacture [`KgKeyPairIds`](crate::model::KgKeyPairIds).
+    pub fn builder() -> crate::model::kg_key_pair_ids::Builder {
+        crate::model::kg_key_pair_ids::Builder::default()
+    }
+}
+
 /// See [`KgKeyPairIds`](crate::model::KgKeyPairIds).
 pub mod kg_key_pair_ids {
     
@@ -13434,12 +13539,6 @@ pub mod kg_key_pair_ids {
     
     
 }
-impl KgKeyPairIds {
-    /// Creates a new builder-style object to manufacture [`KgKeyPairIds`](crate::model::KgKeyPairIds).
-    pub fn builder() -> crate::model::kg_key_pair_ids::Builder {
-        crate::model::kg_key_pair_ids::Builder::default()
-    }
-}
 
 /// <p>A continuous deployment policy.</p>
 #[non_exhaustive]
@@ -13469,6 +13568,13 @@ impl ContinuousDeploymentPolicy {
         self.continuous_deployment_policy_config.as_ref()
     }
 }
+impl ContinuousDeploymentPolicy {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicy`](crate::model::ContinuousDeploymentPolicy).
+    pub fn builder() -> crate::model::continuous_deployment_policy::Builder {
+        crate::model::continuous_deployment_policy::Builder::default()
+    }
+}
+
 /// See [`ContinuousDeploymentPolicy`](crate::model::ContinuousDeploymentPolicy).
 pub mod continuous_deployment_policy {
     
@@ -13523,12 +13629,6 @@ pub mod continuous_deployment_policy {
     
     
 }
-impl ContinuousDeploymentPolicy {
-    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicy`](crate::model::ContinuousDeploymentPolicy).
-    pub fn builder() -> crate::model::continuous_deployment_policy::Builder {
-        crate::model::continuous_deployment_policy::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration for a continuous deployment policy.</p>
 #[non_exhaustive]
@@ -13558,6 +13658,13 @@ impl ContinuousDeploymentPolicyConfig {
         self.traffic_config.as_ref()
     }
 }
+impl ContinuousDeploymentPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyConfig`](crate::model::ContinuousDeploymentPolicyConfig).
+    pub fn builder() -> crate::model::continuous_deployment_policy_config::Builder {
+        crate::model::continuous_deployment_policy_config::Builder::default()
+    }
+}
+
 /// See [`ContinuousDeploymentPolicyConfig`](crate::model::ContinuousDeploymentPolicyConfig).
 pub mod continuous_deployment_policy_config {
     
@@ -13612,12 +13719,6 @@ pub mod continuous_deployment_policy_config {
     
     
 }
-impl ContinuousDeploymentPolicyConfig {
-    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyConfig`](crate::model::ContinuousDeploymentPolicyConfig).
-    pub fn builder() -> crate::model::continuous_deployment_policy_config::Builder {
-        crate::model::continuous_deployment_policy_config::Builder::default()
-    }
-}
 
 /// <p>The traffic configuration of your continuous deployment.</p>
 #[non_exhaustive]
@@ -13647,6 +13748,13 @@ impl TrafficConfig {
         self.r#type.as_ref()
     }
 }
+impl TrafficConfig {
+    /// Creates a new builder-style object to manufacture [`TrafficConfig`](crate::model::TrafficConfig).
+    pub fn builder() -> crate::model::traffic_config::Builder {
+        crate::model::traffic_config::Builder::default()
+    }
+}
+
 /// See [`TrafficConfig`](crate::model::TrafficConfig).
 pub mod traffic_config {
     
@@ -13700,12 +13808,6 @@ pub mod traffic_config {
     }
     
     
-}
-impl TrafficConfig {
-    /// Creates a new builder-style object to manufacture [`TrafficConfig`](crate::model::TrafficConfig).
-    pub fn builder() -> crate::model::traffic_config::Builder {
-        crate::model::traffic_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContinuousDeploymentPolicyType`, it is important to ensure
@@ -13811,6 +13913,13 @@ impl ContinuousDeploymentSingleHeaderConfig {
         self.value.as_deref()
     }
 }
+impl ContinuousDeploymentSingleHeaderConfig {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentSingleHeaderConfig`](crate::model::ContinuousDeploymentSingleHeaderConfig).
+    pub fn builder() -> crate::model::continuous_deployment_single_header_config::Builder {
+        crate::model::continuous_deployment_single_header_config::Builder::default()
+    }
+}
+
 /// See [`ContinuousDeploymentSingleHeaderConfig`](crate::model::ContinuousDeploymentSingleHeaderConfig).
 pub mod continuous_deployment_single_header_config {
     
@@ -13853,12 +13962,6 @@ pub mod continuous_deployment_single_header_config {
     
     
 }
-impl ContinuousDeploymentSingleHeaderConfig {
-    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentSingleHeaderConfig`](crate::model::ContinuousDeploymentSingleHeaderConfig).
-    pub fn builder() -> crate::model::continuous_deployment_single_header_config::Builder {
-        crate::model::continuous_deployment_single_header_config::Builder::default()
-    }
-}
 
 /// <p>Contains the percentage of traffic to send to a staging distribution.</p>
 #[non_exhaustive]
@@ -13881,6 +13984,13 @@ impl ContinuousDeploymentSingleWeightConfig {
         self.session_stickiness_config.as_ref()
     }
 }
+impl ContinuousDeploymentSingleWeightConfig {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentSingleWeightConfig`](crate::model::ContinuousDeploymentSingleWeightConfig).
+    pub fn builder() -> crate::model::continuous_deployment_single_weight_config::Builder {
+        crate::model::continuous_deployment_single_weight_config::Builder::default()
+    }
+}
+
 /// See [`ContinuousDeploymentSingleWeightConfig`](crate::model::ContinuousDeploymentSingleWeightConfig).
 pub mod continuous_deployment_single_weight_config {
     
@@ -13923,12 +14033,6 @@ pub mod continuous_deployment_single_weight_config {
     
     
 }
-impl ContinuousDeploymentSingleWeightConfig {
-    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentSingleWeightConfig`](crate::model::ContinuousDeploymentSingleWeightConfig).
-    pub fn builder() -> crate::model::continuous_deployment_single_weight_config::Builder {
-        crate::model::continuous_deployment_single_weight_config::Builder::default()
-    }
-}
 
 /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
 #[non_exhaustive]
@@ -13955,6 +14059,13 @@ impl SessionStickinessConfig {
         self.maximum_ttl
     }
 }
+impl SessionStickinessConfig {
+    /// Creates a new builder-style object to manufacture [`SessionStickinessConfig`](crate::model::SessionStickinessConfig).
+    pub fn builder() -> crate::model::session_stickiness_config::Builder {
+        crate::model::session_stickiness_config::Builder::default()
+    }
+}
+
 /// See [`SessionStickinessConfig`](crate::model::SessionStickinessConfig).
 pub mod session_stickiness_config {
     
@@ -14001,12 +14112,6 @@ pub mod session_stickiness_config {
     
     
 }
-impl SessionStickinessConfig {
-    /// Creates a new builder-style object to manufacture [`SessionStickinessConfig`](crate::model::SessionStickinessConfig).
-    pub fn builder() -> crate::model::session_stickiness_config::Builder {
-        crate::model::session_stickiness_config::Builder::default()
-    }
-}
 
 /// <p>The CloudFront domain name of the staging distribution.</p>
 #[non_exhaustive]
@@ -14029,6 +14134,13 @@ impl StagingDistributionDnsNames {
         self.items.as_deref()
     }
 }
+impl StagingDistributionDnsNames {
+    /// Creates a new builder-style object to manufacture [`StagingDistributionDnsNames`](crate::model::StagingDistributionDnsNames).
+    pub fn builder() -> crate::model::staging_distribution_dns_names::Builder {
+        crate::model::staging_distribution_dns_names::Builder::default()
+    }
+}
+
 /// See [`StagingDistributionDnsNames`](crate::model::StagingDistributionDnsNames).
 pub mod staging_distribution_dns_names {
     
@@ -14077,12 +14189,6 @@ pub mod staging_distribution_dns_names {
     
     
 }
-impl StagingDistributionDnsNames {
-    /// Creates a new builder-style object to manufacture [`StagingDistributionDnsNames`](crate::model::StagingDistributionDnsNames).
-    pub fn builder() -> crate::model::staging_distribution_dns_names::Builder {
-        crate::model::staging_distribution_dns_names::Builder::default()
-    }
-}
 
 /// <p>CloudFront origin access identity.</p>
 #[non_exhaustive]
@@ -14112,6 +14218,13 @@ impl CloudFrontOriginAccessIdentity {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
 }
+impl CloudFrontOriginAccessIdentity {
+    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentity`](crate::model::CloudFrontOriginAccessIdentity).
+    pub fn builder() -> crate::model::cloud_front_origin_access_identity::Builder {
+        crate::model::cloud_front_origin_access_identity::Builder::default()
+    }
+}
+
 /// See [`CloudFrontOriginAccessIdentity`](crate::model::CloudFrontOriginAccessIdentity).
 pub mod cloud_front_origin_access_identity {
     
@@ -14166,12 +14279,6 @@ pub mod cloud_front_origin_access_identity {
     
     
 }
-impl CloudFrontOriginAccessIdentity {
-    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentity`](crate::model::CloudFrontOriginAccessIdentity).
-    pub fn builder() -> crate::model::cloud_front_origin_access_identity::Builder {
-        crate::model::cloud_front_origin_access_identity::Builder::default()
-    }
-}
 
 /// <p>Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.</p>
 #[non_exhaustive]
@@ -14200,6 +14307,13 @@ impl CloudFrontOriginAccessIdentityConfig {
         self.comment.as_deref()
     }
 }
+impl CloudFrontOriginAccessIdentityConfig {
+    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityConfig`](crate::model::CloudFrontOriginAccessIdentityConfig).
+    pub fn builder() -> crate::model::cloud_front_origin_access_identity_config::Builder {
+        crate::model::cloud_front_origin_access_identity_config::Builder::default()
+    }
+}
+
 /// See [`CloudFrontOriginAccessIdentityConfig`](crate::model::CloudFrontOriginAccessIdentityConfig).
 pub mod cloud_front_origin_access_identity_config {
     
@@ -14248,12 +14362,6 @@ pub mod cloud_front_origin_access_identity_config {
     
     
 }
-impl CloudFrontOriginAccessIdentityConfig {
-    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityConfig`](crate::model::CloudFrontOriginAccessIdentityConfig).
-    pub fn builder() -> crate::model::cloud_front_origin_access_identity_config::Builder {
-        crate::model::cloud_front_origin_access_identity_config::Builder::default()
-    }
-}
 
 /// <p>A cache policy.</p> 
 /// <p>When it's attached to a cache behavior, the cache policy determines the following:</p> 
@@ -14289,6 +14397,13 @@ impl CachePolicy {
         self.cache_policy_config.as_ref()
     }
 }
+impl CachePolicy {
+    /// Creates a new builder-style object to manufacture [`CachePolicy`](crate::model::CachePolicy).
+    pub fn builder() -> crate::model::cache_policy::Builder {
+        crate::model::cache_policy::Builder::default()
+    }
+}
+
 /// See [`CachePolicy`](crate::model::CachePolicy).
 pub mod cache_policy {
     
@@ -14342,12 +14457,6 @@ pub mod cache_policy {
     }
     
     
-}
-impl CachePolicy {
-    /// Creates a new builder-style object to manufacture [`CachePolicy`](crate::model::CachePolicy).
-    pub fn builder() -> crate::model::cache_policy::Builder {
-        crate::model::cache_policy::Builder::default()
-    }
 }
 
 /// <p>A cache policy configuration.</p> 
@@ -14409,6 +14518,13 @@ impl CachePolicyConfig {
         self.parameters_in_cache_key_and_forwarded_to_origin.as_ref()
     }
 }
+impl CachePolicyConfig {
+    /// Creates a new builder-style object to manufacture [`CachePolicyConfig`](crate::model::CachePolicyConfig).
+    pub fn builder() -> crate::model::cache_policy_config::Builder {
+        crate::model::cache_policy_config::Builder::default()
+    }
+}
+
 /// See [`CachePolicyConfig`](crate::model::CachePolicyConfig).
 pub mod cache_policy_config {
     
@@ -14503,12 +14619,6 @@ pub mod cache_policy_config {
     
     
 }
-impl CachePolicyConfig {
-    /// Creates a new builder-style object to manufacture [`CachePolicyConfig`](crate::model::CachePolicyConfig).
-    pub fn builder() -> crate::model::cache_policy_config::Builder {
-        crate::model::cache_policy_config::Builder::default()
-    }
-}
 
 /// <p>This object determines the values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.</p> 
 /// <p>The headers, cookies, and query strings that are included in the cache key are automatically included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
@@ -14589,6 +14699,13 @@ impl ParametersInCacheKeyAndForwardedToOrigin {
         self.query_strings_config.as_ref()
     }
 }
+impl ParametersInCacheKeyAndForwardedToOrigin {
+    /// Creates a new builder-style object to manufacture [`ParametersInCacheKeyAndForwardedToOrigin`](crate::model::ParametersInCacheKeyAndForwardedToOrigin).
+    pub fn builder() -> crate::model::parameters_in_cache_key_and_forwarded_to_origin::Builder {
+        crate::model::parameters_in_cache_key_and_forwarded_to_origin::Builder::default()
+    }
+}
+
 /// See [`ParametersInCacheKeyAndForwardedToOrigin`](crate::model::ParametersInCacheKeyAndForwardedToOrigin).
 pub mod parameters_in_cache_key_and_forwarded_to_origin {
     
@@ -14703,12 +14820,6 @@ pub mod parameters_in_cache_key_and_forwarded_to_origin {
     
     
 }
-impl ParametersInCacheKeyAndForwardedToOrigin {
-    /// Creates a new builder-style object to manufacture [`ParametersInCacheKeyAndForwardedToOrigin`](crate::model::ParametersInCacheKeyAndForwardedToOrigin).
-    pub fn builder() -> crate::model::parameters_in_cache_key_and_forwarded_to_origin::Builder {
-        crate::model::parameters_in_cache_key_and_forwarded_to_origin::Builder::default()
-    }
-}
 
 /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are included in the cache key and automatically included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
@@ -14743,6 +14854,13 @@ impl CachePolicyQueryStringsConfig {
         self.query_strings.as_ref()
     }
 }
+impl CachePolicyQueryStringsConfig {
+    /// Creates a new builder-style object to manufacture [`CachePolicyQueryStringsConfig`](crate::model::CachePolicyQueryStringsConfig).
+    pub fn builder() -> crate::model::cache_policy_query_strings_config::Builder {
+        crate::model::cache_policy_query_strings_config::Builder::default()
+    }
+}
+
 /// See [`CachePolicyQueryStringsConfig`](crate::model::CachePolicyQueryStringsConfig).
 pub mod cache_policy_query_strings_config {
     
@@ -14796,12 +14914,6 @@ pub mod cache_policy_query_strings_config {
     }
     
     
-}
-impl CachePolicyQueryStringsConfig {
-    /// Creates a new builder-style object to manufacture [`CachePolicyQueryStringsConfig`](crate::model::CachePolicyQueryStringsConfig).
-    pub fn builder() -> crate::model::cache_policy_query_strings_config::Builder {
-        crate::model::cache_policy_query_strings_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CachePolicyQueryStringBehavior`, it is important to ensure
@@ -14929,6 +15041,13 @@ impl CachePolicyCookiesConfig {
         self.cookies.as_ref()
     }
 }
+impl CachePolicyCookiesConfig {
+    /// Creates a new builder-style object to manufacture [`CachePolicyCookiesConfig`](crate::model::CachePolicyCookiesConfig).
+    pub fn builder() -> crate::model::cache_policy_cookies_config::Builder {
+        crate::model::cache_policy_cookies_config::Builder::default()
+    }
+}
+
 /// See [`CachePolicyCookiesConfig`](crate::model::CachePolicyCookiesConfig).
 pub mod cache_policy_cookies_config {
     
@@ -14982,12 +15101,6 @@ pub mod cache_policy_cookies_config {
     }
     
     
-}
-impl CachePolicyCookiesConfig {
-    /// Creates a new builder-style object to manufacture [`CachePolicyCookiesConfig`](crate::model::CachePolicyCookiesConfig).
-    pub fn builder() -> crate::model::cache_policy_cookies_config::Builder {
-        crate::model::cache_policy_cookies_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CachePolicyCookieBehavior`, it is important to ensure
@@ -15111,6 +15224,13 @@ impl CachePolicyHeadersConfig {
         self.headers.as_ref()
     }
 }
+impl CachePolicyHeadersConfig {
+    /// Creates a new builder-style object to manufacture [`CachePolicyHeadersConfig`](crate::model::CachePolicyHeadersConfig).
+    pub fn builder() -> crate::model::cache_policy_headers_config::Builder {
+        crate::model::cache_policy_headers_config::Builder::default()
+    }
+}
+
 /// See [`CachePolicyHeadersConfig`](crate::model::CachePolicyHeadersConfig).
 pub mod cache_policy_headers_config {
     
@@ -15160,12 +15280,6 @@ pub mod cache_policy_headers_config {
     }
     
     
-}
-impl CachePolicyHeadersConfig {
-    /// Creates a new builder-style object to manufacture [`CachePolicyHeadersConfig`](crate::model::CachePolicyHeadersConfig).
-    pub fn builder() -> crate::model::cache_policy_headers_config::Builder {
-        crate::model::cache_policy_headers_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CachePolicyHeaderBehavior`, it is important to ensure
@@ -15264,6 +15378,13 @@ impl TagKeys {
         self.items.as_deref()
     }
 }
+impl TagKeys {
+    /// Creates a new builder-style object to manufacture [`TagKeys`](crate::model::TagKeys).
+    pub fn builder() -> crate::model::tag_keys::Builder {
+        crate::model::tag_keys::Builder::default()
+    }
+}
+
 /// See [`TagKeys`](crate::model::TagKeys).
 pub mod tag_keys {
     
@@ -15299,12 +15420,6 @@ pub mod tag_keys {
     }
     
     
-}
-impl TagKeys {
-    /// Creates a new builder-style object to manufacture [`TagKeys`](crate::model::TagKeys).
-    pub fn builder() -> crate::model::tag_keys::Builder {
-        crate::model::tag_keys::Builder::default()
-    }
 }
 
 /// <p>Contains the result of testing a CloudFront function with <code>TestFunction</code>.</p>
@@ -15360,6 +15475,13 @@ impl  std::fmt::Debug for TestResult  {
         formatter.finish()
     }
 }
+impl TestResult {
+    /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
+    pub fn builder() -> crate::model::test_result::Builder {
+        crate::model::test_result::Builder::default()
+    }
+}
+
 /// See [`TestResult`](crate::model::TestResult).
 pub mod test_result {
     
@@ -15455,12 +15577,6 @@ pub mod test_result {
     
     
 }
-impl TestResult {
-    /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
-    pub fn builder() -> crate::model::test_result::Builder {
-        crate::model::test_result::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
@@ -15476,6 +15592,13 @@ impl Tags {
         self.items.as_deref()
     }
 }
+impl Tags {
+    /// Creates a new builder-style object to manufacture [`Tags`](crate::model::Tags).
+    pub fn builder() -> crate::model::tags::Builder {
+        crate::model::tags::Builder::default()
+    }
+}
+
 /// See [`Tags`](crate::model::Tags).
 pub mod tags {
     
@@ -15512,12 +15635,6 @@ pub mod tags {
     
     
 }
-impl Tags {
-    /// Creates a new builder-style object to manufacture [`Tags`](crate::model::Tags).
-    pub fn builder() -> crate::model::tags::Builder {
-        crate::model::tags::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains <code>Tag</code> key and <code>Tag</code> value.</p>
 #[non_exhaustive]
@@ -15544,6 +15661,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -15589,12 +15713,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>A streaming distribution list.</p>
@@ -15646,6 +15764,13 @@ impl StreamingDistributionList {
         self.items.as_deref()
     }
 }
+impl StreamingDistributionList {
+    /// Creates a new builder-style object to manufacture [`StreamingDistributionList`](crate::model::StreamingDistributionList).
+    pub fn builder() -> crate::model::streaming_distribution_list::Builder {
+        crate::model::streaming_distribution_list::Builder::default()
+    }
+}
+
 /// See [`StreamingDistributionList`](crate::model::StreamingDistributionList).
 pub mod streaming_distribution_list {
     
@@ -15742,12 +15867,6 @@ pub mod streaming_distribution_list {
     
     
 }
-impl StreamingDistributionList {
-    /// Creates a new builder-style object to manufacture [`StreamingDistributionList`](crate::model::StreamingDistributionList).
-    pub fn builder() -> crate::model::streaming_distribution_list::Builder {
-        crate::model::streaming_distribution_list::Builder::default()
-    }
-}
 
 /// <p>A summary of the information for a CloudFront streaming distribution.</p>
 #[non_exhaustive]
@@ -15835,6 +15954,13 @@ impl StreamingDistributionSummary {
         self.enabled
     }
 }
+impl StreamingDistributionSummary {
+    /// Creates a new builder-style object to manufacture [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary).
+    pub fn builder() -> crate::model::streaming_distribution_summary::Builder {
+        crate::model::streaming_distribution_summary::Builder::default()
+    }
+}
+
 /// See [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary).
 pub mod streaming_distribution_summary {
     
@@ -15987,12 +16113,6 @@ pub mod streaming_distribution_summary {
     
     
 }
-impl StreamingDistributionSummary {
-    /// Creates a new builder-style object to manufacture [`StreamingDistributionSummary`](crate::model::StreamingDistributionSummary).
-    pub fn builder() -> crate::model::streaming_distribution_summary::Builder {
-        crate::model::streaming_distribution_summary::Builder::default()
-    }
-}
 
 /// <p>A list of response headers policies.</p>
 #[non_exhaustive]
@@ -16029,6 +16149,13 @@ impl ResponseHeadersPolicyList {
         self.items.as_deref()
     }
 }
+impl ResponseHeadersPolicyList {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList).
+    pub fn builder() -> crate::model::response_headers_policy_list::Builder {
+        crate::model::response_headers_policy_list::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList).
 pub mod response_headers_policy_list {
     
@@ -16101,12 +16228,6 @@ pub mod response_headers_policy_list {
     
     
 }
-impl ResponseHeadersPolicyList {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyList`](crate::model::ResponseHeadersPolicyList).
-    pub fn builder() -> crate::model::response_headers_policy_list::Builder {
-        crate::model::response_headers_policy_list::Builder::default()
-    }
-}
 
 /// <p>Contains a response headers policy.</p>
 #[non_exhaustive]
@@ -16129,6 +16250,13 @@ impl ResponseHeadersPolicySummary {
         self.response_headers_policy.as_ref()
     }
 }
+impl ResponseHeadersPolicySummary {
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary).
+    pub fn builder() -> crate::model::response_headers_policy_summary::Builder {
+        crate::model::response_headers_policy_summary::Builder::default()
+    }
+}
+
 /// See [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary).
 pub mod response_headers_policy_summary {
     
@@ -16170,12 +16298,6 @@ pub mod response_headers_policy_summary {
     }
     
     
-}
-impl ResponseHeadersPolicySummary {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicySummary`](crate::model::ResponseHeadersPolicySummary).
-    pub fn builder() -> crate::model::response_headers_policy_summary::Builder {
-        crate::model::response_headers_policy_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResponseHeadersPolicyType`, it is important to ensure
@@ -16302,6 +16424,13 @@ impl RealtimeLogConfigs {
         self.next_marker.as_deref()
     }
 }
+impl RealtimeLogConfigs {
+    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigs`](crate::model::RealtimeLogConfigs).
+    pub fn builder() -> crate::model::realtime_log_configs::Builder {
+        crate::model::realtime_log_configs::Builder::default()
+    }
+}
+
 /// See [`RealtimeLogConfigs`](crate::model::RealtimeLogConfigs).
 pub mod realtime_log_configs {
     
@@ -16386,12 +16515,6 @@ pub mod realtime_log_configs {
     
     
 }
-impl RealtimeLogConfigs {
-    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigs`](crate::model::RealtimeLogConfigs).
-    pub fn builder() -> crate::model::realtime_log_configs::Builder {
-        crate::model::realtime_log_configs::Builder::default()
-    }
-}
 
 /// <p>A list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
@@ -16428,6 +16551,13 @@ impl PublicKeyList {
         self.items.as_deref()
     }
 }
+impl PublicKeyList {
+    /// Creates a new builder-style object to manufacture [`PublicKeyList`](crate::model::PublicKeyList).
+    pub fn builder() -> crate::model::public_key_list::Builder {
+        crate::model::public_key_list::Builder::default()
+    }
+}
+
 /// See [`PublicKeyList`](crate::model::PublicKeyList).
 pub mod public_key_list {
     
@@ -16500,12 +16630,6 @@ pub mod public_key_list {
     
     
 }
-impl PublicKeyList {
-    /// Creates a new builder-style object to manufacture [`PublicKeyList`](crate::model::PublicKeyList).
-    pub fn builder() -> crate::model::public_key_list::Builder {
-        crate::model::public_key_list::Builder::default()
-    }
-}
 
 /// <p>Contains information about a public key.</p>
 #[non_exhaustive]
@@ -16549,6 +16673,13 @@ impl PublicKeySummary {
         self.comment.as_deref()
     }
 }
+impl PublicKeySummary {
+    /// Creates a new builder-style object to manufacture [`PublicKeySummary`](crate::model::PublicKeySummary).
+    pub fn builder() -> crate::model::public_key_summary::Builder {
+        crate::model::public_key_summary::Builder::default()
+    }
+}
+
 /// See [`PublicKeySummary`](crate::model::PublicKeySummary).
 pub mod public_key_summary {
     
@@ -16627,12 +16758,6 @@ pub mod public_key_summary {
     
     
 }
-impl PublicKeySummary {
-    /// Creates a new builder-style object to manufacture [`PublicKeySummary`](crate::model::PublicKeySummary).
-    pub fn builder() -> crate::model::public_key_summary::Builder {
-        crate::model::public_key_summary::Builder::default()
-    }
-}
 
 /// <p>A list of origin request policies.</p>
 #[non_exhaustive]
@@ -16669,6 +16794,13 @@ impl OriginRequestPolicyList {
         self.items.as_deref()
     }
 }
+impl OriginRequestPolicyList {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyList`](crate::model::OriginRequestPolicyList).
+    pub fn builder() -> crate::model::origin_request_policy_list::Builder {
+        crate::model::origin_request_policy_list::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicyList`](crate::model::OriginRequestPolicyList).
 pub mod origin_request_policy_list {
     
@@ -16741,12 +16873,6 @@ pub mod origin_request_policy_list {
     
     
 }
-impl OriginRequestPolicyList {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyList`](crate::model::OriginRequestPolicyList).
-    pub fn builder() -> crate::model::origin_request_policy_list::Builder {
-        crate::model::origin_request_policy_list::Builder::default()
-    }
-}
 
 /// <p>Contains an origin request policy.</p>
 #[non_exhaustive]
@@ -16769,6 +16895,13 @@ impl OriginRequestPolicySummary {
         self.origin_request_policy.as_ref()
     }
 }
+impl OriginRequestPolicySummary {
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicySummary`](crate::model::OriginRequestPolicySummary).
+    pub fn builder() -> crate::model::origin_request_policy_summary::Builder {
+        crate::model::origin_request_policy_summary::Builder::default()
+    }
+}
+
 /// See [`OriginRequestPolicySummary`](crate::model::OriginRequestPolicySummary).
 pub mod origin_request_policy_summary {
     
@@ -16810,12 +16943,6 @@ pub mod origin_request_policy_summary {
     }
     
     
-}
-impl OriginRequestPolicySummary {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicySummary`](crate::model::OriginRequestPolicySummary).
-    pub fn builder() -> crate::model::origin_request_policy_summary::Builder {
-        crate::model::origin_request_policy_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OriginRequestPolicyType`, it is important to ensure
@@ -16949,6 +17076,13 @@ impl OriginAccessControlList {
         self.items.as_deref()
     }
 }
+impl OriginAccessControlList {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControlList`](crate::model::OriginAccessControlList).
+    pub fn builder() -> crate::model::origin_access_control_list::Builder {
+        crate::model::origin_access_control_list::Builder::default()
+    }
+}
+
 /// See [`OriginAccessControlList`](crate::model::OriginAccessControlList).
 pub mod origin_access_control_list {
     
@@ -17045,12 +17179,6 @@ pub mod origin_access_control_list {
     
     
 }
-impl OriginAccessControlList {
-    /// Creates a new builder-style object to manufacture [`OriginAccessControlList`](crate::model::OriginAccessControlList).
-    pub fn builder() -> crate::model::origin_access_control_list::Builder {
-        crate::model::origin_access_control_list::Builder::default()
-    }
-}
 
 /// <p>A CloudFront origin access control.</p>
 #[non_exhaustive]
@@ -17111,6 +17239,13 @@ impl OriginAccessControlSummary {
         self.origin_access_control_origin_type.as_ref()
     }
 }
+impl OriginAccessControlSummary {
+    /// Creates a new builder-style object to manufacture [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
+    pub fn builder() -> crate::model::origin_access_control_summary::Builder {
+        crate::model::origin_access_control_summary::Builder::default()
+    }
+}
+
 /// See [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
 pub mod origin_access_control_summary {
     
@@ -17211,12 +17346,6 @@ pub mod origin_access_control_summary {
     
     
 }
-impl OriginAccessControlSummary {
-    /// Creates a new builder-style object to manufacture [`OriginAccessControlSummary`](crate::model::OriginAccessControlSummary).
-    pub fn builder() -> crate::model::origin_access_control_summary::Builder {
-        crate::model::origin_access_control_summary::Builder::default()
-    }
-}
 
 /// <p>A list of key groups.</p>
 #[non_exhaustive]
@@ -17253,6 +17382,13 @@ impl KeyGroupList {
         self.items.as_deref()
     }
 }
+impl KeyGroupList {
+    /// Creates a new builder-style object to manufacture [`KeyGroupList`](crate::model::KeyGroupList).
+    pub fn builder() -> crate::model::key_group_list::Builder {
+        crate::model::key_group_list::Builder::default()
+    }
+}
+
 /// See [`KeyGroupList`](crate::model::KeyGroupList).
 pub mod key_group_list {
     
@@ -17325,12 +17461,6 @@ pub mod key_group_list {
     
     
 }
-impl KeyGroupList {
-    /// Creates a new builder-style object to manufacture [`KeyGroupList`](crate::model::KeyGroupList).
-    pub fn builder() -> crate::model::key_group_list::Builder {
-        crate::model::key_group_list::Builder::default()
-    }
-}
 
 /// <p>Contains information about a key group.</p>
 #[non_exhaustive]
@@ -17346,6 +17476,13 @@ impl KeyGroupSummary {
         self.key_group.as_ref()
     }
 }
+impl KeyGroupSummary {
+    /// Creates a new builder-style object to manufacture [`KeyGroupSummary`](crate::model::KeyGroupSummary).
+    pub fn builder() -> crate::model::key_group_summary::Builder {
+        crate::model::key_group_summary::Builder::default()
+    }
+}
+
 /// See [`KeyGroupSummary`](crate::model::KeyGroupSummary).
 pub mod key_group_summary {
     
@@ -17375,12 +17512,6 @@ pub mod key_group_summary {
     }
     
     
-}
-impl KeyGroupSummary {
-    /// Creates a new builder-style object to manufacture [`KeyGroupSummary`](crate::model::KeyGroupSummary).
-    pub fn builder() -> crate::model::key_group_summary::Builder {
-        crate::model::key_group_summary::Builder::default()
-    }
 }
 
 /// <p>The <code>InvalidationList</code> complex type describes the list of invalidation objects. For more information about invalidation, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -17432,6 +17563,13 @@ impl InvalidationList {
         self.items.as_deref()
     }
 }
+impl InvalidationList {
+    /// Creates a new builder-style object to manufacture [`InvalidationList`](crate::model::InvalidationList).
+    pub fn builder() -> crate::model::invalidation_list::Builder {
+        crate::model::invalidation_list::Builder::default()
+    }
+}
+
 /// See [`InvalidationList`](crate::model::InvalidationList).
 pub mod invalidation_list {
     
@@ -17528,12 +17666,6 @@ pub mod invalidation_list {
     
     
 }
-impl InvalidationList {
-    /// Creates a new builder-style object to manufacture [`InvalidationList`](crate::model::InvalidationList).
-    pub fn builder() -> crate::model::invalidation_list::Builder {
-        crate::model::invalidation_list::Builder::default()
-    }
-}
 
 /// <p>A summary of an invalidation request.</p>
 #[non_exhaustive]
@@ -17563,6 +17695,13 @@ impl InvalidationSummary {
         self.status.as_deref()
     }
 }
+impl InvalidationSummary {
+    /// Creates a new builder-style object to manufacture [`InvalidationSummary`](crate::model::InvalidationSummary).
+    pub fn builder() -> crate::model::invalidation_summary::Builder {
+        crate::model::invalidation_summary::Builder::default()
+    }
+}
+
 /// See [`InvalidationSummary`](crate::model::InvalidationSummary).
 pub mod invalidation_summary {
     
@@ -17617,12 +17756,6 @@ pub mod invalidation_summary {
     
     
 }
-impl InvalidationSummary {
-    /// Creates a new builder-style object to manufacture [`InvalidationSummary`](crate::model::InvalidationSummary).
-    pub fn builder() -> crate::model::invalidation_summary::Builder {
-        crate::model::invalidation_summary::Builder::default()
-    }
-}
 
 /// <p>A list of CloudFront functions.</p>
 #[non_exhaustive]
@@ -17659,6 +17792,13 @@ impl FunctionList {
         self.items.as_deref()
     }
 }
+impl FunctionList {
+    /// Creates a new builder-style object to manufacture [`FunctionList`](crate::model::FunctionList).
+    pub fn builder() -> crate::model::function_list::Builder {
+        crate::model::function_list::Builder::default()
+    }
+}
+
 /// See [`FunctionList`](crate::model::FunctionList).
 pub mod function_list {
     
@@ -17731,12 +17871,6 @@ pub mod function_list {
     
     
 }
-impl FunctionList {
-    /// Creates a new builder-style object to manufacture [`FunctionList`](crate::model::FunctionList).
-    pub fn builder() -> crate::model::function_list::Builder {
-        crate::model::function_list::Builder::default()
-    }
-}
 
 /// <p>List of field-level encryption profiles.</p>
 #[non_exhaustive]
@@ -17773,6 +17907,13 @@ impl FieldLevelEncryptionProfileList {
         self.items.as_deref()
     }
 }
+impl FieldLevelEncryptionProfileList {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileList`](crate::model::FieldLevelEncryptionProfileList).
+    pub fn builder() -> crate::model::field_level_encryption_profile_list::Builder {
+        crate::model::field_level_encryption_profile_list::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionProfileList`](crate::model::FieldLevelEncryptionProfileList).
 pub mod field_level_encryption_profile_list {
     
@@ -17845,12 +17986,6 @@ pub mod field_level_encryption_profile_list {
     
     
 }
-impl FieldLevelEncryptionProfileList {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileList`](crate::model::FieldLevelEncryptionProfileList).
-    pub fn builder() -> crate::model::field_level_encryption_profile_list::Builder {
-        crate::model::field_level_encryption_profile_list::Builder::default()
-    }
-}
 
 /// <p>The field-level encryption profile summary.</p>
 #[non_exhaustive]
@@ -17894,6 +18029,13 @@ impl FieldLevelEncryptionProfileSummary {
         self.comment.as_deref()
     }
 }
+impl FieldLevelEncryptionProfileSummary {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileSummary`](crate::model::FieldLevelEncryptionProfileSummary).
+    pub fn builder() -> crate::model::field_level_encryption_profile_summary::Builder {
+        crate::model::field_level_encryption_profile_summary::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionProfileSummary`](crate::model::FieldLevelEncryptionProfileSummary).
 pub mod field_level_encryption_profile_summary {
     
@@ -17972,12 +18114,6 @@ pub mod field_level_encryption_profile_summary {
     
     
 }
-impl FieldLevelEncryptionProfileSummary {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileSummary`](crate::model::FieldLevelEncryptionProfileSummary).
-    pub fn builder() -> crate::model::field_level_encryption_profile_summary::Builder {
-        crate::model::field_level_encryption_profile_summary::Builder::default()
-    }
-}
 
 /// <p>List of field-level encrpytion configurations.</p>
 #[non_exhaustive]
@@ -18014,6 +18150,13 @@ impl FieldLevelEncryptionList {
         self.items.as_deref()
     }
 }
+impl FieldLevelEncryptionList {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionList`](crate::model::FieldLevelEncryptionList).
+    pub fn builder() -> crate::model::field_level_encryption_list::Builder {
+        crate::model::field_level_encryption_list::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionList`](crate::model::FieldLevelEncryptionList).
 pub mod field_level_encryption_list {
     
@@ -18086,12 +18229,6 @@ pub mod field_level_encryption_list {
     
     
 }
-impl FieldLevelEncryptionList {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionList`](crate::model::FieldLevelEncryptionList).
-    pub fn builder() -> crate::model::field_level_encryption_list::Builder {
-        crate::model::field_level_encryption_list::Builder::default()
-    }
-}
 
 /// <p>A summary of a field-level encryption item.</p>
 #[non_exhaustive]
@@ -18135,6 +18272,13 @@ impl FieldLevelEncryptionSummary {
         self.content_type_profile_config.as_ref()
     }
 }
+impl FieldLevelEncryptionSummary {
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionSummary`](crate::model::FieldLevelEncryptionSummary).
+    pub fn builder() -> crate::model::field_level_encryption_summary::Builder {
+        crate::model::field_level_encryption_summary::Builder::default()
+    }
+}
+
 /// See [`FieldLevelEncryptionSummary`](crate::model::FieldLevelEncryptionSummary).
 pub mod field_level_encryption_summary {
     
@@ -18213,12 +18357,6 @@ pub mod field_level_encryption_summary {
     
     
 }
-impl FieldLevelEncryptionSummary {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionSummary`](crate::model::FieldLevelEncryptionSummary).
-    pub fn builder() -> crate::model::field_level_encryption_summary::Builder {
-        crate::model::field_level_encryption_summary::Builder::default()
-    }
-}
 
 /// <p>A distribution list.</p>
 #[non_exhaustive]
@@ -18269,6 +18407,13 @@ impl DistributionList {
         self.items.as_deref()
     }
 }
+impl DistributionList {
+    /// Creates a new builder-style object to manufacture [`DistributionList`](crate::model::DistributionList).
+    pub fn builder() -> crate::model::distribution_list::Builder {
+        crate::model::distribution_list::Builder::default()
+    }
+}
+
 /// See [`DistributionList`](crate::model::DistributionList).
 pub mod distribution_list {
     
@@ -18364,12 +18509,6 @@ pub mod distribution_list {
     }
     
     
-}
-impl DistributionList {
-    /// Creates a new builder-style object to manufacture [`DistributionList`](crate::model::DistributionList).
-    pub fn builder() -> crate::model::distribution_list::Builder {
-        crate::model::distribution_list::Builder::default()
-    }
 }
 
 /// <p>A summary of the information about a CloudFront distribution.</p>
@@ -18528,6 +18667,13 @@ impl DistributionSummary {
         self.staging
     }
 }
+impl DistributionSummary {
+    /// Creates a new builder-style object to manufacture [`DistributionSummary`](crate::model::DistributionSummary).
+    pub fn builder() -> crate::model::distribution_summary::Builder {
+        crate::model::distribution_summary::Builder::default()
+    }
+}
+
 /// See [`DistributionSummary`](crate::model::DistributionSummary).
 pub mod distribution_summary {
     
@@ -18806,12 +18952,6 @@ pub mod distribution_summary {
     
     
 }
-impl DistributionSummary {
-    /// Creates a new builder-style object to manufacture [`DistributionSummary`](crate::model::DistributionSummary).
-    pub fn builder() -> crate::model::distribution_summary::Builder {
-        crate::model::distribution_summary::Builder::default()
-    }
-}
 
 /// <p>A list of distribution IDs.</p>
 #[non_exhaustive]
@@ -18862,6 +19002,13 @@ impl DistributionIdList {
         self.items.as_deref()
     }
 }
+impl DistributionIdList {
+    /// Creates a new builder-style object to manufacture [`DistributionIdList`](crate::model::DistributionIdList).
+    pub fn builder() -> crate::model::distribution_id_list::Builder {
+        crate::model::distribution_id_list::Builder::default()
+    }
+}
+
 /// See [`DistributionIdList`](crate::model::DistributionIdList).
 pub mod distribution_id_list {
     
@@ -18958,12 +19105,6 @@ pub mod distribution_id_list {
     
     
 }
-impl DistributionIdList {
-    /// Creates a new builder-style object to manufacture [`DistributionIdList`](crate::model::DistributionIdList).
-    pub fn builder() -> crate::model::distribution_id_list::Builder {
-        crate::model::distribution_id_list::Builder::default()
-    }
-}
 
 /// <p>Contains a list of continuous deployment policies.</p>
 #[non_exhaustive]
@@ -19000,6 +19141,13 @@ impl ContinuousDeploymentPolicyList {
         self.items.as_deref()
     }
 }
+impl ContinuousDeploymentPolicyList {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyList`](crate::model::ContinuousDeploymentPolicyList).
+    pub fn builder() -> crate::model::continuous_deployment_policy_list::Builder {
+        crate::model::continuous_deployment_policy_list::Builder::default()
+    }
+}
+
 /// See [`ContinuousDeploymentPolicyList`](crate::model::ContinuousDeploymentPolicyList).
 pub mod continuous_deployment_policy_list {
     
@@ -19072,12 +19220,6 @@ pub mod continuous_deployment_policy_list {
     
     
 }
-impl ContinuousDeploymentPolicyList {
-    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyList`](crate::model::ContinuousDeploymentPolicyList).
-    pub fn builder() -> crate::model::continuous_deployment_policy_list::Builder {
-        crate::model::continuous_deployment_policy_list::Builder::default()
-    }
-}
 
 /// <p>A summary of the information about your continuous deployment policies.</p>
 #[non_exhaustive]
@@ -19093,6 +19235,13 @@ impl ContinuousDeploymentPolicySummary {
         self.continuous_deployment_policy.as_ref()
     }
 }
+impl ContinuousDeploymentPolicySummary {
+    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicySummary`](crate::model::ContinuousDeploymentPolicySummary).
+    pub fn builder() -> crate::model::continuous_deployment_policy_summary::Builder {
+        crate::model::continuous_deployment_policy_summary::Builder::default()
+    }
+}
+
 /// See [`ContinuousDeploymentPolicySummary`](crate::model::ContinuousDeploymentPolicySummary).
 pub mod continuous_deployment_policy_summary {
     
@@ -19122,12 +19271,6 @@ pub mod continuous_deployment_policy_summary {
     }
     
     
-}
-impl ContinuousDeploymentPolicySummary {
-    /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicySummary`](crate::model::ContinuousDeploymentPolicySummary).
-    pub fn builder() -> crate::model::continuous_deployment_policy_summary::Builder {
-        crate::model::continuous_deployment_policy_summary::Builder::default()
-    }
 }
 
 /// <p>A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon Web Services accounts that they are associated with. In the list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don't own.</p>
@@ -19165,6 +19308,13 @@ impl ConflictingAliasesList {
         self.items.as_deref()
     }
 }
+impl ConflictingAliasesList {
+    /// Creates a new builder-style object to manufacture [`ConflictingAliasesList`](crate::model::ConflictingAliasesList).
+    pub fn builder() -> crate::model::conflicting_aliases_list::Builder {
+        crate::model::conflicting_aliases_list::Builder::default()
+    }
+}
+
 /// See [`ConflictingAliasesList`](crate::model::ConflictingAliasesList).
 pub mod conflicting_aliases_list {
     
@@ -19237,12 +19387,6 @@ pub mod conflicting_aliases_list {
     
     
 }
-impl ConflictingAliasesList {
-    /// Creates a new builder-style object to manufacture [`ConflictingAliasesList`](crate::model::ConflictingAliasesList).
-    pub fn builder() -> crate::model::conflicting_aliases_list::Builder {
-        crate::model::conflicting_aliases_list::Builder::default()
-    }
-}
 
 /// <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it's associated with. The distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don't own.</p>
 #[non_exhaustive]
@@ -19272,6 +19416,13 @@ impl ConflictingAlias {
         self.account_id.as_deref()
     }
 }
+impl ConflictingAlias {
+    /// Creates a new builder-style object to manufacture [`ConflictingAlias`](crate::model::ConflictingAlias).
+    pub fn builder() -> crate::model::conflicting_alias::Builder {
+        crate::model::conflicting_alias::Builder::default()
+    }
+}
+
 /// See [`ConflictingAlias`](crate::model::ConflictingAlias).
 pub mod conflicting_alias {
     
@@ -19326,12 +19477,6 @@ pub mod conflicting_alias {
     
     
 }
-impl ConflictingAlias {
-    /// Creates a new builder-style object to manufacture [`ConflictingAlias`](crate::model::ConflictingAlias).
-    pub fn builder() -> crate::model::conflicting_alias::Builder {
-        crate::model::conflicting_alias::Builder::default()
-    }
-}
 
 /// <p>Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code> resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child elements. By default, your entire list of origin access identities is returned in one single page. If the list is long, you can paginate it using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[non_exhaustive]
@@ -19382,6 +19527,13 @@ impl CloudFrontOriginAccessIdentityList {
         self.items.as_deref()
     }
 }
+impl CloudFrontOriginAccessIdentityList {
+    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityList`](crate::model::CloudFrontOriginAccessIdentityList).
+    pub fn builder() -> crate::model::cloud_front_origin_access_identity_list::Builder {
+        crate::model::cloud_front_origin_access_identity_list::Builder::default()
+    }
+}
+
 /// See [`CloudFrontOriginAccessIdentityList`](crate::model::CloudFrontOriginAccessIdentityList).
 pub mod cloud_front_origin_access_identity_list {
     
@@ -19478,12 +19630,6 @@ pub mod cloud_front_origin_access_identity_list {
     
     
 }
-impl CloudFrontOriginAccessIdentityList {
-    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityList`](crate::model::CloudFrontOriginAccessIdentityList).
-    pub fn builder() -> crate::model::cloud_front_origin_access_identity_list::Builder {
-        crate::model::cloud_front_origin_access_identity_list::Builder::default()
-    }
-}
 
 /// <p>Summary of the information about a CloudFront origin access identity.</p>
 #[non_exhaustive]
@@ -19513,6 +19659,13 @@ impl CloudFrontOriginAccessIdentitySummary {
         self.comment.as_deref()
     }
 }
+impl CloudFrontOriginAccessIdentitySummary {
+    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentitySummary`](crate::model::CloudFrontOriginAccessIdentitySummary).
+    pub fn builder() -> crate::model::cloud_front_origin_access_identity_summary::Builder {
+        crate::model::cloud_front_origin_access_identity_summary::Builder::default()
+    }
+}
+
 /// See [`CloudFrontOriginAccessIdentitySummary`](crate::model::CloudFrontOriginAccessIdentitySummary).
 pub mod cloud_front_origin_access_identity_summary {
     
@@ -19567,12 +19720,6 @@ pub mod cloud_front_origin_access_identity_summary {
     
     
 }
-impl CloudFrontOriginAccessIdentitySummary {
-    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentitySummary`](crate::model::CloudFrontOriginAccessIdentitySummary).
-    pub fn builder() -> crate::model::cloud_front_origin_access_identity_summary::Builder {
-        crate::model::cloud_front_origin_access_identity_summary::Builder::default()
-    }
-}
 
 /// <p>A list of cache policies.</p>
 #[non_exhaustive]
@@ -19609,6 +19756,13 @@ impl CachePolicyList {
         self.items.as_deref()
     }
 }
+impl CachePolicyList {
+    /// Creates a new builder-style object to manufacture [`CachePolicyList`](crate::model::CachePolicyList).
+    pub fn builder() -> crate::model::cache_policy_list::Builder {
+        crate::model::cache_policy_list::Builder::default()
+    }
+}
+
 /// See [`CachePolicyList`](crate::model::CachePolicyList).
 pub mod cache_policy_list {
     
@@ -19681,12 +19835,6 @@ pub mod cache_policy_list {
     
     
 }
-impl CachePolicyList {
-    /// Creates a new builder-style object to manufacture [`CachePolicyList`](crate::model::CachePolicyList).
-    pub fn builder() -> crate::model::cache_policy_list::Builder {
-        crate::model::cache_policy_list::Builder::default()
-    }
-}
 
 /// <p>Contains a cache policy.</p>
 #[non_exhaustive]
@@ -19709,6 +19857,13 @@ impl CachePolicySummary {
         self.cache_policy.as_ref()
     }
 }
+impl CachePolicySummary {
+    /// Creates a new builder-style object to manufacture [`CachePolicySummary`](crate::model::CachePolicySummary).
+    pub fn builder() -> crate::model::cache_policy_summary::Builder {
+        crate::model::cache_policy_summary::Builder::default()
+    }
+}
+
 /// See [`CachePolicySummary`](crate::model::CachePolicySummary).
 pub mod cache_policy_summary {
     
@@ -19750,12 +19905,6 @@ pub mod cache_policy_summary {
     }
     
     
-}
-impl CachePolicySummary {
-    /// Creates a new builder-style object to manufacture [`CachePolicySummary`](crate::model::CachePolicySummary).
-    pub fn builder() -> crate::model::cache_policy_summary::Builder {
-        crate::model::cache_policy_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CachePolicyType`, it is important to ensure
@@ -19854,6 +20003,13 @@ impl MonitoringSubscription {
         self.realtime_metrics_subscription_config.as_ref()
     }
 }
+impl MonitoringSubscription {
+    /// Creates a new builder-style object to manufacture [`MonitoringSubscription`](crate::model::MonitoringSubscription).
+    pub fn builder() -> crate::model::monitoring_subscription::Builder {
+        crate::model::monitoring_subscription::Builder::default()
+    }
+}
+
 /// See [`MonitoringSubscription`](crate::model::MonitoringSubscription).
 pub mod monitoring_subscription {
     
@@ -19884,12 +20040,6 @@ pub mod monitoring_subscription {
     
     
 }
-impl MonitoringSubscription {
-    /// Creates a new builder-style object to manufacture [`MonitoringSubscription`](crate::model::MonitoringSubscription).
-    pub fn builder() -> crate::model::monitoring_subscription::Builder {
-        crate::model::monitoring_subscription::Builder::default()
-    }
-}
 
 /// <p>A subscription configuration for additional CloudWatch metrics.</p>
 #[non_exhaustive]
@@ -19905,6 +20055,13 @@ impl RealtimeMetricsSubscriptionConfig {
         self.realtime_metrics_subscription_status.as_ref()
     }
 }
+impl RealtimeMetricsSubscriptionConfig {
+    /// Creates a new builder-style object to manufacture [`RealtimeMetricsSubscriptionConfig`](crate::model::RealtimeMetricsSubscriptionConfig).
+    pub fn builder() -> crate::model::realtime_metrics_subscription_config::Builder {
+        crate::model::realtime_metrics_subscription_config::Builder::default()
+    }
+}
+
 /// See [`RealtimeMetricsSubscriptionConfig`](crate::model::RealtimeMetricsSubscriptionConfig).
 pub mod realtime_metrics_subscription_config {
     
@@ -19934,12 +20091,6 @@ pub mod realtime_metrics_subscription_config {
     }
     
     
-}
-impl RealtimeMetricsSubscriptionConfig {
-    /// Creates a new builder-style object to manufacture [`RealtimeMetricsSubscriptionConfig`](crate::model::RealtimeMetricsSubscriptionConfig).
-    pub fn builder() -> crate::model::realtime_metrics_subscription_config::Builder {
-        crate::model::realtime_metrics_subscription_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RealtimeMetricsSubscriptionStatus`, it is important to ensure
@@ -20059,6 +20210,13 @@ impl Invalidation {
         self.invalidation_batch.as_ref()
     }
 }
+impl Invalidation {
+    /// Creates a new builder-style object to manufacture [`Invalidation`](crate::model::Invalidation).
+    pub fn builder() -> crate::model::invalidation::Builder {
+        crate::model::invalidation::Builder::default()
+    }
+}
+
 /// See [`Invalidation`](crate::model::Invalidation).
 pub mod invalidation {
     
@@ -20125,12 +20283,6 @@ pub mod invalidation {
     
     
 }
-impl Invalidation {
-    /// Creates a new builder-style object to manufacture [`Invalidation`](crate::model::Invalidation).
-    pub fn builder() -> crate::model::invalidation::Builder {
-        crate::model::invalidation::Builder::default()
-    }
-}
 
 /// <p>An invalidation batch.</p>
 #[non_exhaustive]
@@ -20157,6 +20309,13 @@ impl InvalidationBatch {
         self.caller_reference.as_deref()
     }
 }
+impl InvalidationBatch {
+    /// Creates a new builder-style object to manufacture [`InvalidationBatch`](crate::model::InvalidationBatch).
+    pub fn builder() -> crate::model::invalidation_batch::Builder {
+        crate::model::invalidation_batch::Builder::default()
+    }
+}
+
 /// See [`InvalidationBatch`](crate::model::InvalidationBatch).
 pub mod invalidation_batch {
     
@@ -20203,12 +20362,6 @@ pub mod invalidation_batch {
     
     
 }
-impl InvalidationBatch {
-    /// Creates a new builder-style object to manufacture [`InvalidationBatch`](crate::model::InvalidationBatch).
-    pub fn builder() -> crate::model::invalidation_batch::Builder {
-        crate::model::invalidation_batch::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -20231,6 +20384,13 @@ impl Paths {
         self.items.as_deref()
     }
 }
+impl Paths {
+    /// Creates a new builder-style object to manufacture [`Paths`](crate::model::Paths).
+    pub fn builder() -> crate::model::paths::Builder {
+        crate::model::paths::Builder::default()
+    }
+}
+
 /// See [`Paths`](crate::model::Paths).
 pub mod paths {
     
@@ -20279,12 +20439,6 @@ pub mod paths {
     
     
 }
-impl Paths {
-    /// Creates a new builder-style object to manufacture [`Paths`](crate::model::Paths).
-    pub fn builder() -> crate::model::paths::Builder {
-        crate::model::paths::Builder::default()
-    }
-}
 
 /// <p>A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.</p>
 #[non_exhaustive]
@@ -20307,6 +20461,13 @@ impl StreamingDistributionConfigWithTags {
         self.tags.as_ref()
     }
 }
+impl StreamingDistributionConfigWithTags {
+    /// Creates a new builder-style object to manufacture [`StreamingDistributionConfigWithTags`](crate::model::StreamingDistributionConfigWithTags).
+    pub fn builder() -> crate::model::streaming_distribution_config_with_tags::Builder {
+        crate::model::streaming_distribution_config_with_tags::Builder::default()
+    }
+}
+
 /// See [`StreamingDistributionConfigWithTags`](crate::model::StreamingDistributionConfigWithTags).
 pub mod streaming_distribution_config_with_tags {
     
@@ -20349,12 +20510,6 @@ pub mod streaming_distribution_config_with_tags {
     
     
 }
-impl StreamingDistributionConfigWithTags {
-    /// Creates a new builder-style object to manufacture [`StreamingDistributionConfigWithTags`](crate::model::StreamingDistributionConfigWithTags).
-    pub fn builder() -> crate::model::streaming_distribution_config_with_tags::Builder {
-        crate::model::streaming_distribution_config_with_tags::Builder::default()
-    }
-}
 
 /// <p>A distribution Configuration and a list of tags to be associated with the distribution.</p>
 #[non_exhaustive]
@@ -20377,6 +20532,13 @@ impl DistributionConfigWithTags {
         self.tags.as_ref()
     }
 }
+impl DistributionConfigWithTags {
+    /// Creates a new builder-style object to manufacture [`DistributionConfigWithTags`](crate::model::DistributionConfigWithTags).
+    pub fn builder() -> crate::model::distribution_config_with_tags::Builder {
+        crate::model::distribution_config_with_tags::Builder::default()
+    }
+}
+
 /// See [`DistributionConfigWithTags`](crate::model::DistributionConfigWithTags).
 pub mod distribution_config_with_tags {
     
@@ -20418,11 +20580,5 @@ pub mod distribution_config_with_tags {
     }
     
     
-}
-impl DistributionConfigWithTags {
-    /// Creates a new builder-style object to manufacture [`DistributionConfigWithTags`](crate::model::DistributionConfigWithTags).
-    pub fn builder() -> crate::model::distribution_config_with_tags::Builder {
-        crate::model::distribution_config_with_tags::Builder::default()
-    }
 }
 

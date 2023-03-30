@@ -208,6 +208,13 @@ impl Item {
         self.content_length
     }
 }
+impl Item {
+    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
+    pub fn builder() -> crate::model::item::Builder {
+        crate::model::item::Builder::default()
+    }
+}
+
 /// See [`Item`](crate::model::Item).
 pub mod item {
     
@@ -297,12 +304,6 @@ pub mod item {
     }
     
     
-}
-impl Item {
-    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
-    pub fn builder() -> crate::model::item::Builder {
-        crate::model::item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ItemType`, it is important to ensure

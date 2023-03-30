@@ -58,6 +58,13 @@ impl StartSelector {
         self.continuation_token.as_deref()
     }
 }
+impl StartSelector {
+    /// Creates a new builder-style object to manufacture [`StartSelector`](crate::model::StartSelector).
+    pub fn builder() -> crate::model::start_selector::Builder {
+        crate::model::start_selector::Builder::default()
+    }
+}
+
 /// See [`StartSelector`](crate::model::StartSelector).
 pub mod start_selector {
     
@@ -141,12 +148,6 @@ pub mod start_selector {
     }
     
     
-}
-impl StartSelector {
-    /// Creates a new builder-style object to manufacture [`StartSelector`](crate::model::StartSelector).
-    pub fn builder() -> crate::model::start_selector::Builder {
-        crate::model::start_selector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StartSelectorType`, it is important to ensure

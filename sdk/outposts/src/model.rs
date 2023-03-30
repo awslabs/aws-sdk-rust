@@ -166,6 +166,13 @@ impl Site {
         self.rack_physical_properties.as_ref()
     }
 }
+impl Site {
+    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
+    pub fn builder() -> crate::model::site::Builder {
+        crate::model::site::Builder::default()
+    }
+}
+
 /// See [`Site`](crate::model::Site).
 pub mod site {
     
@@ -322,12 +329,6 @@ pub mod site {
     
     
 }
-impl Site {
-    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
-    pub fn builder() -> crate::model::site::Builder {
-        crate::model::site::Builder::default()
-    }
-}
 
 /// <p> Information about the physical and logistical details for racks at sites. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
 #[non_exhaustive]
@@ -399,6 +400,13 @@ impl RackPhysicalProperties {
         self.maximum_supported_weight_lbs.as_ref()
     }
 }
+impl RackPhysicalProperties {
+    /// Creates a new builder-style object to manufacture [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
+    pub fn builder() -> crate::model::rack_physical_properties::Builder {
+        crate::model::rack_physical_properties::Builder::default()
+    }
+}
+
 /// See [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
 pub mod rack_physical_properties {
     
@@ -524,12 +532,6 @@ pub mod rack_physical_properties {
     }
     
     
-}
-impl RackPhysicalProperties {
-    /// Creates a new builder-style object to manufacture [`RackPhysicalProperties`](crate::model::RackPhysicalProperties).
-    pub fn builder() -> crate::model::rack_physical_properties::Builder {
-        crate::model::rack_physical_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MaximumSupportedWeightLbs`, it is important to ensure
@@ -1494,6 +1496,13 @@ impl Address {
         self.municipality.as_deref()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
     
@@ -1643,12 +1652,6 @@ pub mod address {
     }
     
     
-}
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AddressType`, it is important to ensure
@@ -1824,6 +1827,13 @@ impl Outpost {
         self.supported_hardware_type.as_ref()
     }
 }
+impl Outpost {
+    /// Creates a new builder-style object to manufacture [`Outpost`](crate::model::Outpost).
+    pub fn builder() -> crate::model::outpost::Builder {
+        crate::model::outpost::Builder::default()
+    }
+}
+
 /// See [`Outpost`](crate::model::Outpost).
 pub mod outpost {
     
@@ -1992,12 +2002,6 @@ pub mod outpost {
     
     
 }
-impl Outpost {
-    /// Creates a new builder-style object to manufacture [`Outpost`](crate::model::Outpost).
-    pub fn builder() -> crate::model::outpost::Builder {
-        crate::model::outpost::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SupportedHardwareType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2155,6 +2159,13 @@ impl OrderSummary {
         self.order_fulfilled_date.as_ref()
     }
 }
+impl OrderSummary {
+    /// Creates a new builder-style object to manufacture [`OrderSummary`](crate::model::OrderSummary).
+    pub fn builder() -> crate::model::order_summary::Builder {
+        crate::model::order_summary::Builder::default()
+    }
+}
+
 /// See [`OrderSummary`](crate::model::OrderSummary).
 pub mod order_summary {
     
@@ -2280,12 +2291,6 @@ pub mod order_summary {
     }
     
     
-}
-impl OrderSummary {
-    /// Creates a new builder-style object to manufacture [`OrderSummary`](crate::model::OrderSummary).
-    pub fn builder() -> crate::model::order_summary::Builder {
-        crate::model::order_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LineItemStatus`, it is important to ensure
@@ -2660,6 +2665,13 @@ impl CatalogItem {
         self.supported_storage.as_deref()
     }
 }
+impl CatalogItem {
+    /// Creates a new builder-style object to manufacture [`CatalogItem`](crate::model::CatalogItem).
+    pub fn builder() -> crate::model::catalog_item::Builder {
+        crate::model::catalog_item::Builder::default()
+    }
+}
+
 /// See [`CatalogItem`](crate::model::CatalogItem).
 pub mod catalog_item {
     
@@ -2780,12 +2792,6 @@ pub mod catalog_item {
     
     
 }
-impl CatalogItem {
-    /// Creates a new builder-style object to manufacture [`CatalogItem`](crate::model::CatalogItem).
-    pub fn builder() -> crate::model::catalog_item::Builder {
-        crate::model::catalog_item::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SupportedStorageEnum`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2897,6 +2903,13 @@ impl Ec2Capacity {
         self.quantity.as_deref()
     }
 }
+impl Ec2Capacity {
+    /// Creates a new builder-style object to manufacture [`Ec2Capacity`](crate::model::Ec2Capacity).
+    pub fn builder() -> crate::model::ec2_capacity::Builder {
+        crate::model::ec2_capacity::Builder::default()
+    }
+}
+
 /// See [`Ec2Capacity`](crate::model::Ec2Capacity).
 pub mod ec2_capacity {
     
@@ -2950,12 +2963,6 @@ pub mod ec2_capacity {
     }
     
     
-}
-impl Ec2Capacity {
-    /// Creates a new builder-style object to manufacture [`Ec2Capacity`](crate::model::Ec2Capacity).
-    pub fn builder() -> crate::model::ec2_capacity::Builder {
-        crate::model::ec2_capacity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CatalogItemStatus`, it is important to ensure
@@ -3164,6 +3171,13 @@ impl AssetInfo {
         self.asset_location.as_ref()
     }
 }
+impl AssetInfo {
+    /// Creates a new builder-style object to manufacture [`AssetInfo`](crate::model::AssetInfo).
+    pub fn builder() -> crate::model::asset_info::Builder {
+        crate::model::asset_info::Builder::default()
+    }
+}
+
 /// See [`AssetInfo`](crate::model::AssetInfo).
 pub mod asset_info {
     
@@ -3242,12 +3256,6 @@ pub mod asset_info {
     
     
 }
-impl AssetInfo {
-    /// Creates a new builder-style object to manufacture [`AssetInfo`](crate::model::AssetInfo).
-    pub fn builder() -> crate::model::asset_info::Builder {
-        crate::model::asset_info::Builder::default()
-    }
-}
 
 /// <p> Information about the position of the asset in a rack. </p>
 #[non_exhaustive]
@@ -3263,6 +3271,13 @@ impl AssetLocation {
         self.rack_elevation
     }
 }
+impl AssetLocation {
+    /// Creates a new builder-style object to manufacture [`AssetLocation`](crate::model::AssetLocation).
+    pub fn builder() -> crate::model::asset_location::Builder {
+        crate::model::asset_location::Builder::default()
+    }
+}
+
 /// See [`AssetLocation`](crate::model::AssetLocation).
 pub mod asset_location {
     
@@ -3292,12 +3307,6 @@ pub mod asset_location {
     }
     
     
-}
-impl AssetLocation {
-    /// Creates a new builder-style object to manufacture [`AssetLocation`](crate::model::AssetLocation).
-    pub fn builder() -> crate::model::asset_location::Builder {
-        crate::model::asset_location::Builder::default()
-    }
 }
 
 /// <p> Information about compute hardware assets. </p>
@@ -3331,6 +3340,13 @@ impl ComputeAttributes {
         self.state.as_ref()
     }
 }
+impl ComputeAttributes {
+    /// Creates a new builder-style object to manufacture [`ComputeAttributes`](crate::model::ComputeAttributes).
+    pub fn builder() -> crate::model::compute_attributes::Builder {
+        crate::model::compute_attributes::Builder::default()
+    }
+}
+
 /// See [`ComputeAttributes`](crate::model::ComputeAttributes).
 pub mod compute_attributes {
     
@@ -3382,12 +3398,6 @@ pub mod compute_attributes {
     }
     
     
-}
-impl ComputeAttributes {
-    /// Creates a new builder-style object to manufacture [`ComputeAttributes`](crate::model::ComputeAttributes).
-    pub fn builder() -> crate::model::compute_attributes::Builder {
-        crate::model::compute_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComputeAssetState`, it is important to ensure
@@ -3650,6 +3660,13 @@ impl InstanceTypeItem {
         self.instance_type.as_deref()
     }
 }
+impl InstanceTypeItem {
+    /// Creates a new builder-style object to manufacture [`InstanceTypeItem`](crate::model::InstanceTypeItem).
+    pub fn builder() -> crate::model::instance_type_item::Builder {
+        crate::model::instance_type_item::Builder::default()
+    }
+}
+
 /// See [`InstanceTypeItem`](crate::model::InstanceTypeItem).
 pub mod instance_type_item {
     
@@ -3679,12 +3696,6 @@ pub mod instance_type_item {
     }
     
     
-}
-impl InstanceTypeItem {
-    /// Creates a new builder-style object to manufacture [`InstanceTypeItem`](crate::model::InstanceTypeItem).
-    pub fn builder() -> crate::model::instance_type_item::Builder {
-        crate::model::instance_type_item::Builder::default()
-    }
 }
 
 /// <p>Information about an order.</p>
@@ -3761,6 +3772,13 @@ impl Order {
         self.order_fulfilled_date.as_ref()
     }
 }
+impl Order {
+    /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order).
+    pub fn builder() -> crate::model::order::Builder {
+        crate::model::order::Builder::default()
+    }
+}
+
 /// See [`Order`](crate::model::Order).
 pub mod order {
     
@@ -3886,12 +3904,6 @@ pub mod order {
     }
     
     
-}
-impl Order {
-    /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order).
-    pub fn builder() -> crate::model::order::Builder {
-        crate::model::order::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PaymentOption`, it is important to ensure
@@ -4030,6 +4042,13 @@ impl LineItem {
         self.asset_information_list.as_deref()
     }
 }
+impl LineItem {
+    /// Creates a new builder-style object to manufacture [`LineItem`](crate::model::LineItem).
+    pub fn builder() -> crate::model::line_item::Builder {
+        crate::model::line_item::Builder::default()
+    }
+}
+
 /// See [`LineItem`](crate::model::LineItem).
 pub mod line_item {
     
@@ -4127,12 +4146,6 @@ pub mod line_item {
     
     
 }
-impl LineItem {
-    /// Creates a new builder-style object to manufacture [`LineItem`](crate::model::LineItem).
-    pub fn builder() -> crate::model::line_item::Builder {
-        crate::model::line_item::Builder::default()
-    }
-}
 
 /// <p> Information about a line item asset. </p>
 #[non_exhaustive]
@@ -4155,6 +4168,13 @@ impl LineItemAssetInformation {
         self.mac_address_list.as_deref()
     }
 }
+impl LineItemAssetInformation {
+    /// Creates a new builder-style object to manufacture [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
+    pub fn builder() -> crate::model::line_item_asset_information::Builder {
+        crate::model::line_item_asset_information::Builder::default()
+    }
+}
+
 /// See [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
 pub mod line_item_asset_information {
     
@@ -4203,12 +4223,6 @@ pub mod line_item_asset_information {
     
     
 }
-impl LineItemAssetInformation {
-    /// Creates a new builder-style object to manufacture [`LineItemAssetInformation`](crate::model::LineItemAssetInformation).
-    pub fn builder() -> crate::model::line_item_asset_information::Builder {
-        crate::model::line_item_asset_information::Builder::default()
-    }
-}
 
 /// <p> Information about a line item shipment. </p>
 #[non_exhaustive]
@@ -4231,6 +4245,13 @@ impl ShipmentInformation {
         self.shipment_carrier.as_ref()
     }
 }
+impl ShipmentInformation {
+    /// Creates a new builder-style object to manufacture [`ShipmentInformation`](crate::model::ShipmentInformation).
+    pub fn builder() -> crate::model::shipment_information::Builder {
+        crate::model::shipment_information::Builder::default()
+    }
+}
+
 /// See [`ShipmentInformation`](crate::model::ShipmentInformation).
 pub mod shipment_information {
     
@@ -4272,12 +4293,6 @@ pub mod shipment_information {
     }
     
     
-}
-impl ShipmentInformation {
-    /// Creates a new builder-style object to manufacture [`ShipmentInformation`](crate::model::ShipmentInformation).
-    pub fn builder() -> crate::model::shipment_information::Builder {
-        crate::model::shipment_information::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ShipmentCarrier`, it is important to ensure
@@ -4421,6 +4436,13 @@ impl ConnectionDetails {
         self.allowed_ips.as_deref()
     }
 }
+impl ConnectionDetails {
+    /// Creates a new builder-style object to manufacture [`ConnectionDetails`](crate::model::ConnectionDetails).
+    pub fn builder() -> crate::model::connection_details::Builder {
+        crate::model::connection_details::Builder::default()
+    }
+}
+
 /// See [`ConnectionDetails`](crate::model::ConnectionDetails).
 pub mod connection_details {
     
@@ -4516,12 +4538,6 @@ pub mod connection_details {
     }
     
     
-}
-impl ConnectionDetails {
-    /// Creates a new builder-style object to manufacture [`ConnectionDetails`](crate::model::ConnectionDetails).
-    pub fn builder() -> crate::model::connection_details::Builder {
-        crate::model::connection_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PaymentTerm`, it is important to ensure
@@ -4627,6 +4643,13 @@ impl LineItemRequest {
         self.quantity
     }
 }
+impl LineItemRequest {
+    /// Creates a new builder-style object to manufacture [`LineItemRequest`](crate::model::LineItemRequest).
+    pub fn builder() -> crate::model::line_item_request::Builder {
+        crate::model::line_item_request::Builder::default()
+    }
+}
+
 /// See [`LineItemRequest`](crate::model::LineItemRequest).
 pub mod line_item_request {
     
@@ -4669,11 +4692,5 @@ pub mod line_item_request {
     }
     
     
-}
-impl LineItemRequest {
-    /// Creates a new builder-style object to manufacture [`LineItemRequest`](crate::model::LineItemRequest).
-    pub fn builder() -> crate::model::line_item_request::Builder {
-        crate::model::line_item_request::Builder::default()
-    }
 }
 

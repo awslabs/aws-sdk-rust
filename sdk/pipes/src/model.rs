@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PipeState`, it is important to ensure
@@ -356,6 +357,13 @@ impl Pipe {
         self.enrichment.as_deref()
     }
 }
+impl Pipe {
+    /// Creates a new builder-style object to manufacture [`Pipe`](crate::model::Pipe).
+    pub fn builder() -> crate::model::pipe::Builder {
+        crate::model::pipe::Builder::default()
+    }
+}
+
 /// See [`Pipe`](crate::model::Pipe).
 pub mod pipe {
     
@@ -494,12 +502,6 @@ pub mod pipe {
     
     
 }
-impl Pipe {
-    /// Creates a new builder-style object to manufacture [`Pipe`](crate::model::Pipe).
-    pub fn builder() -> crate::model::pipe::Builder {
-        crate::model::pipe::Builder::default()
-    }
-}
 
 /// <p>The parameters required to set up a target for your pipe.</p>
 #[non_exhaustive]
@@ -610,6 +612,13 @@ impl  std::fmt::Debug for PipeTargetParameters  {
         formatter.finish()
     }
 }
+impl PipeTargetParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetParameters`](crate::model::PipeTargetParameters).
+    pub fn builder() -> crate::model::pipe_target_parameters::Builder {
+        crate::model::pipe_target_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetParameters`](crate::model::PipeTargetParameters).
 pub mod pipe_target_parameters {
     
@@ -790,12 +799,6 @@ pub mod pipe_target_parameters {
     
     
 }
-impl PipeTargetParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetParameters`](crate::model::PipeTargetParameters).
-    pub fn builder() -> crate::model::pipe_target_parameters::Builder {
-        crate::model::pipe_target_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
 #[non_exhaustive]
@@ -818,6 +821,13 @@ impl PipeTargetCloudWatchLogsParameters {
         self.timestamp.as_deref()
     }
 }
+impl PipeTargetCloudWatchLogsParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
+    pub fn builder() -> crate::model::pipe_target_cloud_watch_logs_parameters::Builder {
+        crate::model::pipe_target_cloud_watch_logs_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
 pub mod pipe_target_cloud_watch_logs_parameters {
     
@@ -859,12 +869,6 @@ pub mod pipe_target_cloud_watch_logs_parameters {
     }
     
     
-}
-impl PipeTargetCloudWatchLogsParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
-    pub fn builder() -> crate::model::pipe_target_cloud_watch_logs_parameters::Builder {
-        crate::model::pipe_target_cloud_watch_logs_parameters::Builder::default()
-    }
 }
 
 /// <p>The parameters for using an EventBridge event bus as a target.</p>
@@ -924,6 +928,13 @@ impl  std::fmt::Debug for PipeTargetEventBridgeEventBusParameters  {
         formatter.finish()
     }
 }
+impl PipeTargetEventBridgeEventBusParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
+    pub fn builder() -> crate::model::pipe_target_event_bridge_event_bus_parameters::Builder {
+        crate::model::pipe_target_event_bridge_event_bus_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
 pub mod pipe_target_event_bridge_event_bus_parameters {
     
@@ -1023,12 +1034,6 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
     
     
 }
-impl PipeTargetEventBridgeEventBusParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
-    pub fn builder() -> crate::model::pipe_target_event_bridge_event_bus_parameters::Builder {
-        crate::model::pipe_target_event_bridge_event_bus_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a SageMaker pipeline as a target.</p>
 #[non_exhaustive]
@@ -1044,6 +1049,13 @@ impl PipeTargetSageMakerPipelineParameters {
         self.pipeline_parameter_list.as_deref()
     }
 }
+impl PipeTargetSageMakerPipelineParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
+    pub fn builder() -> crate::model::pipe_target_sage_maker_pipeline_parameters::Builder {
+        crate::model::pipe_target_sage_maker_pipeline_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
 pub mod pipe_target_sage_maker_pipeline_parameters {
     
@@ -1080,12 +1092,6 @@ pub mod pipe_target_sage_maker_pipeline_parameters {
     
     
 }
-impl PipeTargetSageMakerPipelineParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
-    pub fn builder() -> crate::model::pipe_target_sage_maker_pipeline_parameters::Builder {
-        crate::model::pipe_target_sage_maker_pipeline_parameters::Builder::default()
-    }
-}
 
 /// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
@@ -1116,6 +1122,13 @@ impl  std::fmt::Debug for SageMakerPipelineParameter  {
         formatter.finish()
     }
 }
+impl SageMakerPipelineParameter {
+    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
+    pub fn builder() -> crate::model::sage_maker_pipeline_parameter::Builder {
+        crate::model::sage_maker_pipeline_parameter::Builder::default()
+    }
+}
+
 /// See [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
 pub mod sage_maker_pipeline_parameter {
     
@@ -1165,12 +1178,6 @@ pub mod sage_maker_pipeline_parameter {
     }
     
     
-}
-impl SageMakerPipelineParameter {
-    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
-    pub fn builder() -> crate::model::sage_maker_pipeline_parameter::Builder {
-        crate::model::sage_maker_pipeline_parameter::Builder::default()
-    }
 }
 
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
@@ -1234,6 +1241,13 @@ impl  std::fmt::Debug for PipeTargetRedshiftDataParameters  {
         formatter.finish()
     }
 }
+impl PipeTargetRedshiftDataParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
+    pub fn builder() -> crate::model::pipe_target_redshift_data_parameters::Builder {
+        crate::model::pipe_target_redshift_data_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
 pub mod pipe_target_redshift_data_parameters {
     
@@ -1343,12 +1357,6 @@ pub mod pipe_target_redshift_data_parameters {
     
     
 }
-impl PipeTargetRedshiftDataParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
-    pub fn builder() -> crate::model::pipe_target_redshift_data_parameters::Builder {
-        crate::model::pipe_target_redshift_data_parameters::Builder::default()
-    }
-}
 
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
 #[non_exhaustive]
@@ -1378,6 +1386,13 @@ impl PipeTargetHttpParameters {
         self.query_string_parameters.as_ref()
     }
 }
+impl PipeTargetHttpParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
+    pub fn builder() -> crate::model::pipe_target_http_parameters::Builder {
+        crate::model::pipe_target_http_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
 pub mod pipe_target_http_parameters {
     
@@ -1450,12 +1465,6 @@ pub mod pipe_target_http_parameters {
     
     
 }
-impl PipeTargetHttpParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
-    pub fn builder() -> crate::model::pipe_target_http_parameters::Builder {
-        crate::model::pipe_target_http_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
@@ -1488,6 +1497,13 @@ impl  std::fmt::Debug for PipeTargetSqsQueueParameters  {
         formatter.finish()
     }
 }
+impl PipeTargetSqsQueueParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
+    pub fn builder() -> crate::model::pipe_target_sqs_queue_parameters::Builder {
+        crate::model::pipe_target_sqs_queue_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
 pub mod pipe_target_sqs_queue_parameters {
     
@@ -1539,12 +1555,6 @@ pub mod pipe_target_sqs_queue_parameters {
     }
     
     
-}
-impl PipeTargetSqsQueueParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
-    pub fn builder() -> crate::model::pipe_target_sqs_queue_parameters::Builder {
-        crate::model::pipe_target_sqs_queue_parameters::Builder::default()
-    }
 }
 
 /// <p>The parameters for using an Batch job as a target.</p>
@@ -1603,6 +1613,13 @@ impl PipeTargetBatchJobParameters {
         self.parameters.as_ref()
     }
 }
+impl PipeTargetBatchJobParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
+    pub fn builder() -> crate::model::pipe_target_batch_job_parameters::Builder {
+        crate::model::pipe_target_batch_job_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
 pub mod pipe_target_batch_job_parameters {
     
@@ -1717,12 +1734,6 @@ pub mod pipe_target_batch_job_parameters {
     
     
 }
-impl PipeTargetBatchJobParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
-    pub fn builder() -> crate::model::pipe_target_batch_job_parameters::Builder {
-        crate::model::pipe_target_batch_job_parameters::Builder::default()
-    }
-}
 
 /// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
@@ -1745,6 +1756,13 @@ impl BatchJobDependency {
         self.r#type.as_ref()
     }
 }
+impl BatchJobDependency {
+    /// Creates a new builder-style object to manufacture [`BatchJobDependency`](crate::model::BatchJobDependency).
+    pub fn builder() -> crate::model::batch_job_dependency::Builder {
+        crate::model::batch_job_dependency::Builder::default()
+    }
+}
+
 /// See [`BatchJobDependency`](crate::model::BatchJobDependency).
 pub mod batch_job_dependency {
     
@@ -1786,12 +1804,6 @@ pub mod batch_job_dependency {
     }
     
     
-}
-impl BatchJobDependency {
-    /// Creates a new builder-style object to manufacture [`BatchJobDependency`](crate::model::BatchJobDependency).
-    pub fn builder() -> crate::model::batch_job_dependency::Builder {
-        crate::model::batch_job_dependency::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BatchJobDependencyType`, it is important to ensure
@@ -1919,6 +1931,13 @@ impl BatchContainerOverrides {
         self.resource_requirements.as_deref()
     }
 }
+impl BatchContainerOverrides {
+    /// Creates a new builder-style object to manufacture [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
+    pub fn builder() -> crate::model::batch_container_overrides::Builder {
+        crate::model::batch_container_overrides::Builder::default()
+    }
+}
+
 /// See [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
 pub mod batch_container_overrides {
     
@@ -2010,12 +2029,6 @@ pub mod batch_container_overrides {
     }
     
     
-}
-impl BatchContainerOverrides {
-    /// Creates a new builder-style object to manufacture [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
-    pub fn builder() -> crate::model::batch_container_overrides::Builder {
-        crate::model::batch_container_overrides::Builder::default()
-    }
 }
 
 /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
@@ -2353,6 +2366,13 @@ impl BatchResourceRequirement {
         self.value.as_deref()
     }
 }
+impl BatchResourceRequirement {
+    /// Creates a new builder-style object to manufacture [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
+    pub fn builder() -> crate::model::batch_resource_requirement::Builder {
+        crate::model::batch_resource_requirement::Builder::default()
+    }
+}
+
 /// See [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
 pub mod batch_resource_requirement {
     
@@ -2709,12 +2729,6 @@ pub mod batch_resource_requirement {
     
     
 }
-impl BatchResourceRequirement {
-    /// Creates a new builder-style object to manufacture [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
-    pub fn builder() -> crate::model::batch_resource_requirement::Builder {
-        crate::model::batch_resource_requirement::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BatchResourceRequirementType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2826,6 +2840,13 @@ impl BatchEnvironmentVariable {
         self.value.as_deref()
     }
 }
+impl BatchEnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
+    pub fn builder() -> crate::model::batch_environment_variable::Builder {
+        crate::model::batch_environment_variable::Builder::default()
+    }
+}
+
 /// See [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
 pub mod batch_environment_variable {
     
@@ -2868,12 +2889,6 @@ pub mod batch_environment_variable {
     
     
 }
-impl BatchEnvironmentVariable {
-    /// Creates a new builder-style object to manufacture [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
-    pub fn builder() -> crate::model::batch_environment_variable::Builder {
-        crate::model::batch_environment_variable::Builder::default()
-    }
-}
 
 /// <p>The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html"> Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
@@ -2889,6 +2904,13 @@ impl BatchRetryStrategy {
         self.attempts
     }
 }
+impl BatchRetryStrategy {
+    /// Creates a new builder-style object to manufacture [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
+    pub fn builder() -> crate::model::batch_retry_strategy::Builder {
+        crate::model::batch_retry_strategy::Builder::default()
+    }
+}
+
 /// See [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
 pub mod batch_retry_strategy {
     
@@ -2920,12 +2942,6 @@ pub mod batch_retry_strategy {
     
     
 }
-impl BatchRetryStrategy {
-    /// Creates a new builder-style object to manufacture [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
-    pub fn builder() -> crate::model::batch_retry_strategy::Builder {
-        crate::model::batch_retry_strategy::Builder::default()
-    }
-}
 
 /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
@@ -2941,6 +2957,13 @@ impl BatchArrayProperties {
         self.size
     }
 }
+impl BatchArrayProperties {
+    /// Creates a new builder-style object to manufacture [`BatchArrayProperties`](crate::model::BatchArrayProperties).
+    pub fn builder() -> crate::model::batch_array_properties::Builder {
+        crate::model::batch_array_properties::Builder::default()
+    }
+}
+
 /// See [`BatchArrayProperties`](crate::model::BatchArrayProperties).
 pub mod batch_array_properties {
     
@@ -2971,12 +2994,6 @@ pub mod batch_array_properties {
     }
     
     
-}
-impl BatchArrayProperties {
-    /// Creates a new builder-style object to manufacture [`BatchArrayProperties`](crate::model::BatchArrayProperties).
-    pub fn builder() -> crate::model::batch_array_properties::Builder {
-        crate::model::batch_array_properties::Builder::default()
-    }
 }
 
 /// <p>The parameters for using an Amazon ECS task as a target.</p>
@@ -3118,6 +3135,13 @@ impl  std::fmt::Debug for PipeTargetEcsTaskParameters  {
         formatter.finish()
     }
 }
+impl PipeTargetEcsTaskParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
+    pub fn builder() -> crate::model::pipe_target_ecs_task_parameters::Builder {
+        crate::model::pipe_target_ecs_task_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
 pub mod pipe_target_ecs_task_parameters {
     
@@ -3369,12 +3393,6 @@ pub mod pipe_target_ecs_task_parameters {
     
     
 }
-impl PipeTargetEcsTaskParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
-    pub fn builder() -> crate::model::pipe_target_ecs_task_parameters::Builder {
-        crate::model::pipe_target_ecs_task_parameters::Builder::default()
-    }
-}
 
 /// <p>A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses support tagging.</p>
 #[non_exhaustive]
@@ -3405,6 +3423,13 @@ impl  std::fmt::Debug for Tag  {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -3454,12 +3479,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>The overrides that are associated with a task.</p>
@@ -3530,6 +3549,13 @@ impl EcsTaskOverride {
         self.task_role_arn.as_deref()
     }
 }
+impl EcsTaskOverride {
+    /// Creates a new builder-style object to manufacture [`EcsTaskOverride`](crate::model::EcsTaskOverride).
+    pub fn builder() -> crate::model::ecs_task_override::Builder {
+        crate::model::ecs_task_override::Builder::default()
+    }
+}
+
 /// See [`EcsTaskOverride`](crate::model::EcsTaskOverride).
 pub mod ecs_task_override {
     
@@ -3656,12 +3682,6 @@ pub mod ecs_task_override {
     
     
 }
-impl EcsTaskOverride {
-    /// Creates a new builder-style object to manufacture [`EcsTaskOverride`](crate::model::EcsTaskOverride).
-    pub fn builder() -> crate::model::ecs_task_override::Builder {
-        crate::model::ecs_task_override::Builder::default()
-    }
-}
 
 /// <p>Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -3684,6 +3704,13 @@ impl EcsInferenceAcceleratorOverride {
         self.device_type.as_deref()
     }
 }
+impl EcsInferenceAcceleratorOverride {
+    /// Creates a new builder-style object to manufacture [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
+    pub fn builder() -> crate::model::ecs_inference_accelerator_override::Builder {
+        crate::model::ecs_inference_accelerator_override::Builder::default()
+    }
+}
+
 /// See [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
 pub mod ecs_inference_accelerator_override {
     
@@ -3726,12 +3753,6 @@ pub mod ecs_inference_accelerator_override {
     
     
 }
-impl EcsInferenceAcceleratorOverride {
-    /// Creates a new builder-style object to manufacture [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
-    pub fn builder() -> crate::model::ecs_inference_accelerator_override::Builder {
-        crate::model::ecs_inference_accelerator_override::Builder::default()
-    }
-}
 
 /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note> 
 /// <p>This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.</p> 
@@ -3749,6 +3770,13 @@ impl EcsEphemeralStorage {
         self.size_in_gi_b
     }
 }
+impl EcsEphemeralStorage {
+    /// Creates a new builder-style object to manufacture [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
+    pub fn builder() -> crate::model::ecs_ephemeral_storage::Builder {
+        crate::model::ecs_ephemeral_storage::Builder::default()
+    }
+}
+
 /// See [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
 pub mod ecs_ephemeral_storage {
     
@@ -3779,12 +3807,6 @@ pub mod ecs_ephemeral_storage {
     }
     
     
-}
-impl EcsEphemeralStorage {
-    /// Creates a new builder-style object to manufacture [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
-    pub fn builder() -> crate::model::ecs_ephemeral_storage::Builder {
-        crate::model::ecs_ephemeral_storage::Builder::default()
-    }
 }
 
 /// <p>The overrides that are sent to a container. An empty container override can be passed in. An example of an empty container override is <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.</p>
@@ -3850,6 +3872,13 @@ impl EcsContainerOverride {
         self.resource_requirements.as_deref()
     }
 }
+impl EcsContainerOverride {
+    /// Creates a new builder-style object to manufacture [`EcsContainerOverride`](crate::model::EcsContainerOverride).
+    pub fn builder() -> crate::model::ecs_container_override::Builder {
+        crate::model::ecs_container_override::Builder::default()
+    }
+}
+
 /// See [`EcsContainerOverride`](crate::model::EcsContainerOverride).
 pub mod ecs_container_override {
     
@@ -3988,12 +4017,6 @@ pub mod ecs_container_override {
     
     
 }
-impl EcsContainerOverride {
-    /// Creates a new builder-style object to manufacture [`EcsContainerOverride`](crate::model::EcsContainerOverride).
-    pub fn builder() -> crate::model::ecs_container_override::Builder {
-        crate::model::ecs_container_override::Builder::default()
-    }
-}
 
 /// <p>The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
 #[non_exhaustive]
@@ -4020,6 +4043,13 @@ impl EcsResourceRequirement {
         self.value.as_deref()
     }
 }
+impl EcsResourceRequirement {
+    /// Creates a new builder-style object to manufacture [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
+    pub fn builder() -> crate::model::ecs_resource_requirement::Builder {
+        crate::model::ecs_resource_requirement::Builder::default()
+    }
+}
+
 /// See [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
 pub mod ecs_resource_requirement {
     
@@ -4065,12 +4095,6 @@ pub mod ecs_resource_requirement {
     }
     
     
-}
-impl EcsResourceRequirement {
-    /// Creates a new builder-style object to manufacture [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
-    pub fn builder() -> crate::model::ecs_resource_requirement::Builder {
-        crate::model::ecs_resource_requirement::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EcsResourceRequirementType`, it is important to ensure
@@ -4182,6 +4206,13 @@ impl EcsEnvironmentFile {
         self.value.as_deref()
     }
 }
+impl EcsEnvironmentFile {
+    /// Creates a new builder-style object to manufacture [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
+    pub fn builder() -> crate::model::ecs_environment_file::Builder {
+        crate::model::ecs_environment_file::Builder::default()
+    }
+}
+
 /// See [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
 pub mod ecs_environment_file {
     
@@ -4223,12 +4254,6 @@ pub mod ecs_environment_file {
     }
     
     
-}
-impl EcsEnvironmentFile {
-    /// Creates a new builder-style object to manufacture [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
-    pub fn builder() -> crate::model::ecs_environment_file::Builder {
-        crate::model::ecs_environment_file::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EcsEnvironmentFileType`, it is important to ensure
@@ -4329,6 +4354,13 @@ impl EcsEnvironmentVariable {
         self.value.as_deref()
     }
 }
+impl EcsEnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
+    pub fn builder() -> crate::model::ecs_environment_variable::Builder {
+        crate::model::ecs_environment_variable::Builder::default()
+    }
+}
+
 /// See [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
 pub mod ecs_environment_variable {
     
@@ -4370,12 +4402,6 @@ pub mod ecs_environment_variable {
     }
     
     
-}
-impl EcsEnvironmentVariable {
-    /// Creates a new builder-style object to manufacture [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
-    pub fn builder() -> crate::model::ecs_environment_variable::Builder {
-        crate::model::ecs_environment_variable::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PropagateTags`, it is important to ensure
@@ -4484,6 +4510,13 @@ impl  std::fmt::Debug for PlacementStrategy  {
         formatter.finish()
     }
 }
+impl PlacementStrategy {
+    /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
+    pub fn builder() -> crate::model::placement_strategy::Builder {
+        crate::model::placement_strategy::Builder::default()
+    }
+}
+
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
 pub mod placement_strategy {
     
@@ -4533,12 +4566,6 @@ pub mod placement_strategy {
     }
     
     
-}
-impl PlacementStrategy {
-    /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
-    pub fn builder() -> crate::model::placement_strategy::Builder {
-        crate::model::placement_strategy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlacementStrategyType`, it is important to ensure
@@ -4657,6 +4684,13 @@ impl  std::fmt::Debug for PlacementConstraint  {
         formatter.finish()
     }
 }
+impl PlacementConstraint {
+    /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
+    pub fn builder() -> crate::model::placement_constraint::Builder {
+        crate::model::placement_constraint::Builder::default()
+    }
+}
+
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
 pub mod placement_constraint {
     
@@ -4706,12 +4740,6 @@ pub mod placement_constraint {
     }
     
     
-}
-impl PlacementConstraint {
-    /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
-    pub fn builder() -> crate::model::placement_constraint::Builder {
-        crate::model::placement_constraint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlacementConstraintType`, it is important to ensure
@@ -4833,6 +4861,13 @@ impl  std::fmt::Debug for CapacityProviderStrategyItem  {
         formatter.finish()
     }
 }
+impl CapacityProviderStrategyItem {
+    /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
+    pub fn builder() -> crate::model::capacity_provider_strategy_item::Builder {
+        crate::model::capacity_provider_strategy_item::Builder::default()
+    }
+}
+
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
 pub mod capacity_provider_strategy_item {
     
@@ -4898,12 +4933,6 @@ pub mod capacity_provider_strategy_item {
     
     
 }
-impl CapacityProviderStrategyItem {
-    /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
-    pub fn builder() -> crate::model::capacity_provider_strategy_item::Builder {
-        crate::model::capacity_provider_strategy_item::Builder::default()
-    }
-}
 
 /// <p>This structure specifies the network configuration for an Amazon ECS task.</p>
 #[non_exhaustive]
@@ -4919,6 +4948,13 @@ impl NetworkConfiguration {
         self.awsvpc_configuration.as_ref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
     
@@ -4949,12 +4985,6 @@ pub mod network_configuration {
     
     
 }
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
-    }
-}
 
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
@@ -4984,6 +5014,13 @@ impl AwsVpcConfiguration {
         self.assign_public_ip.as_ref()
     }
 }
+impl AwsVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
+    pub fn builder() -> crate::model::aws_vpc_configuration::Builder {
+        crate::model::aws_vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
 pub mod aws_vpc_configuration {
     
@@ -5049,12 +5086,6 @@ pub mod aws_vpc_configuration {
     }
     
     
-}
-impl AwsVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
-    pub fn builder() -> crate::model::aws_vpc_configuration::Builder {
-        crate::model::aws_vpc_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssignPublicIp`, it is important to ensure
@@ -5247,6 +5278,13 @@ impl  std::fmt::Debug for PipeTargetKinesisStreamParameters  {
         formatter.finish()
     }
 }
+impl PipeTargetKinesisStreamParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
+    pub fn builder() -> crate::model::pipe_target_kinesis_stream_parameters::Builder {
+        crate::model::pipe_target_kinesis_stream_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
 pub mod pipe_target_kinesis_stream_parameters {
     
@@ -5284,12 +5322,6 @@ pub mod pipe_target_kinesis_stream_parameters {
     
     
 }
-impl PipeTargetKinesisStreamParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
-    pub fn builder() -> crate::model::pipe_target_kinesis_stream_parameters::Builder {
-        crate::model::pipe_target_kinesis_stream_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a Step Functions state machine as a target.</p>
 #[non_exhaustive]
@@ -5305,6 +5337,13 @@ impl PipeTargetStateMachineParameters {
         self.invocation_type.as_ref()
     }
 }
+impl PipeTargetStateMachineParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
+    pub fn builder() -> crate::model::pipe_target_state_machine_parameters::Builder {
+        crate::model::pipe_target_state_machine_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
 pub mod pipe_target_state_machine_parameters {
     
@@ -5334,12 +5373,6 @@ pub mod pipe_target_state_machine_parameters {
     }
     
     
-}
-impl PipeTargetStateMachineParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
-    pub fn builder() -> crate::model::pipe_target_state_machine_parameters::Builder {
-        crate::model::pipe_target_state_machine_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PipeTargetInvocationType`, it is important to ensure
@@ -5448,6 +5481,13 @@ impl PipeTargetLambdaFunctionParameters {
         self.invocation_type.as_ref()
     }
 }
+impl PipeTargetLambdaFunctionParameters {
+    /// Creates a new builder-style object to manufacture [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
+    pub fn builder() -> crate::model::pipe_target_lambda_function_parameters::Builder {
+        crate::model::pipe_target_lambda_function_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
 pub mod pipe_target_lambda_function_parameters {
     
@@ -5488,12 +5528,6 @@ pub mod pipe_target_lambda_function_parameters {
     
     
 }
-impl PipeTargetLambdaFunctionParameters {
-    /// Creates a new builder-style object to manufacture [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
-    pub fn builder() -> crate::model::pipe_target_lambda_function_parameters::Builder {
-        crate::model::pipe_target_lambda_function_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters required to set up enrichment on your pipe.</p>
 #[non_exhaustive]
@@ -5526,6 +5560,13 @@ impl  std::fmt::Debug for PipeEnrichmentParameters  {
         formatter.finish()
     }
 }
+impl PipeEnrichmentParameters {
+    /// Creates a new builder-style object to manufacture [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
+    pub fn builder() -> crate::model::pipe_enrichment_parameters::Builder {
+        crate::model::pipe_enrichment_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
 pub mod pipe_enrichment_parameters {
     
@@ -5578,12 +5619,6 @@ pub mod pipe_enrichment_parameters {
     
     
 }
-impl PipeEnrichmentParameters {
-    /// Creates a new builder-style object to manufacture [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
-    pub fn builder() -> crate::model::pipe_enrichment_parameters::Builder {
-        crate::model::pipe_enrichment_parameters::Builder::default()
-    }
-}
 
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.</p>
 #[non_exhaustive]
@@ -5613,6 +5648,13 @@ impl PipeEnrichmentHttpParameters {
         self.query_string_parameters.as_ref()
     }
 }
+impl PipeEnrichmentHttpParameters {
+    /// Creates a new builder-style object to manufacture [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
+    pub fn builder() -> crate::model::pipe_enrichment_http_parameters::Builder {
+        crate::model::pipe_enrichment_http_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
 pub mod pipe_enrichment_http_parameters {
     
@@ -5685,12 +5727,6 @@ pub mod pipe_enrichment_http_parameters {
     
     
 }
-impl PipeEnrichmentHttpParameters {
-    /// Creates a new builder-style object to manufacture [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
-    pub fn builder() -> crate::model::pipe_enrichment_http_parameters::Builder {
-        crate::model::pipe_enrichment_http_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters required to set up a source for your pipe.</p>
 #[non_exhaustive]
@@ -5755,6 +5791,13 @@ impl PipeSourceParameters {
         self.self_managed_kafka_parameters.as_ref()
     }
 }
+impl PipeSourceParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceParameters`](crate::model::PipeSourceParameters).
+    pub fn builder() -> crate::model::pipe_source_parameters::Builder {
+        crate::model::pipe_source_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceParameters`](crate::model::PipeSourceParameters).
 pub mod pipe_source_parameters {
     
@@ -5869,12 +5912,6 @@ pub mod pipe_source_parameters {
     
     
 }
-impl PipeSourceParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceParameters`](crate::model::PipeSourceParameters).
-    pub fn builder() -> crate::model::pipe_source_parameters::Builder {
-        crate::model::pipe_source_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
 #[non_exhaustive]
@@ -5961,6 +5998,13 @@ impl  std::fmt::Debug for PipeSourceSelfManagedKafkaParameters  {
         formatter.finish()
     }
 }
+impl PipeSourceSelfManagedKafkaParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
+    pub fn builder() -> crate::model::pipe_source_self_managed_kafka_parameters::Builder {
+        crate::model::pipe_source_self_managed_kafka_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
 pub mod pipe_source_self_managed_kafka_parameters {
     
@@ -6108,12 +6152,6 @@ pub mod pipe_source_self_managed_kafka_parameters {
     
     
 }
-impl PipeSourceSelfManagedKafkaParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
-    pub fn builder() -> crate::model::pipe_source_self_managed_kafka_parameters::Builder {
-        crate::model::pipe_source_self_managed_kafka_parameters::Builder::default()
-    }
-}
 
 /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
 #[non_exhaustive]
@@ -6136,6 +6174,13 @@ impl SelfManagedKafkaAccessConfigurationVpc {
         self.security_group.as_deref()
     }
 }
+impl SelfManagedKafkaAccessConfigurationVpc {
+    /// Creates a new builder-style object to manufacture [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
+    pub fn builder() -> crate::model::self_managed_kafka_access_configuration_vpc::Builder {
+        crate::model::self_managed_kafka_access_configuration_vpc::Builder::default()
+    }
+}
+
 /// See [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
 pub mod self_managed_kafka_access_configuration_vpc {
     
@@ -6189,12 +6234,6 @@ pub mod self_managed_kafka_access_configuration_vpc {
     }
     
     
-}
-impl SelfManagedKafkaAccessConfigurationVpc {
-    /// Creates a new builder-style object to manufacture [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
-    pub fn builder() -> crate::model::self_managed_kafka_access_configuration_vpc::Builder {
-        crate::model::self_managed_kafka_access_configuration_vpc::Builder::default()
-    }
 }
 
 /// <p>The Secrets Manager secret that stores your stream credentials.</p>
@@ -6405,6 +6444,13 @@ impl  std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters  {
         formatter.finish()
     }
 }
+impl PipeSourceManagedStreamingKafkaParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
+    pub fn builder() -> crate::model::pipe_source_managed_streaming_kafka_parameters::Builder {
+        crate::model::pipe_source_managed_streaming_kafka_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
 pub mod pipe_source_managed_streaming_kafka_parameters {
     
@@ -6506,12 +6552,6 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
     }
     
     
-}
-impl PipeSourceManagedStreamingKafkaParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
-    pub fn builder() -> crate::model::pipe_source_managed_streaming_kafka_parameters::Builder {
-        crate::model::pipe_source_managed_streaming_kafka_parameters::Builder::default()
-    }
 }
 
 /// <p>The Secrets Manager secret that stores your stream credentials.</p>
@@ -6692,6 +6732,13 @@ impl  std::fmt::Debug for PipeSourceRabbitMqBrokerParameters  {
         formatter.finish()
     }
 }
+impl PipeSourceRabbitMqBrokerParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
+    pub fn builder() -> crate::model::pipe_source_rabbit_mq_broker_parameters::Builder {
+        crate::model::pipe_source_rabbit_mq_broker_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
 pub mod pipe_source_rabbit_mq_broker_parameters {
     
@@ -6781,12 +6828,6 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
     
     
 }
-impl PipeSourceRabbitMqBrokerParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
-    pub fn builder() -> crate::model::pipe_source_rabbit_mq_broker_parameters::Builder {
-        crate::model::pipe_source_rabbit_mq_broker_parameters::Builder::default()
-    }
-}
 
 /// <p>The Secrets Manager secret that stores your broker credentials.</p>
 #[non_exhaustive]
@@ -6866,6 +6907,13 @@ impl  std::fmt::Debug for PipeSourceActiveMqBrokerParameters  {
         formatter.finish()
     }
 }
+impl PipeSourceActiveMqBrokerParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
+    pub fn builder() -> crate::model::pipe_source_active_mq_broker_parameters::Builder {
+        crate::model::pipe_source_active_mq_broker_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
 pub mod pipe_source_active_mq_broker_parameters {
     
@@ -6942,12 +6990,6 @@ pub mod pipe_source_active_mq_broker_parameters {
     
     
 }
-impl PipeSourceActiveMqBrokerParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
-    pub fn builder() -> crate::model::pipe_source_active_mq_broker_parameters::Builder {
-        crate::model::pipe_source_active_mq_broker_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
@@ -6970,6 +7012,13 @@ impl PipeSourceSqsQueueParameters {
         self.maximum_batching_window_in_seconds
     }
 }
+impl PipeSourceSqsQueueParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
+    pub fn builder() -> crate::model::pipe_source_sqs_queue_parameters::Builder {
+        crate::model::pipe_source_sqs_queue_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
 pub mod pipe_source_sqs_queue_parameters {
     
@@ -7011,12 +7060,6 @@ pub mod pipe_source_sqs_queue_parameters {
     }
     
     
-}
-impl PipeSourceSqsQueueParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
-    pub fn builder() -> crate::model::pipe_source_sqs_queue_parameters::Builder {
-        crate::model::pipe_source_sqs_queue_parameters::Builder::default()
-    }
 }
 
 /// <p>The parameters for using a DynamoDB stream as a source.</p>
@@ -7082,6 +7125,13 @@ impl PipeSourceDynamoDbStreamParameters {
         self.starting_position.as_ref()
     }
 }
+impl PipeSourceDynamoDbStreamParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
+    pub fn builder() -> crate::model::pipe_source_dynamo_db_stream_parameters::Builder {
+        crate::model::pipe_source_dynamo_db_stream_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
 pub mod pipe_source_dynamo_db_stream_parameters {
     
@@ -7195,12 +7245,6 @@ pub mod pipe_source_dynamo_db_stream_parameters {
     }
     
     
-}
-impl PipeSourceDynamoDbStreamParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
-    pub fn builder() -> crate::model::pipe_source_dynamo_db_stream_parameters::Builder {
-        crate::model::pipe_source_dynamo_db_stream_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DynamoDbStreamStartPosition`, it is important to ensure
@@ -7376,6 +7420,13 @@ impl DeadLetterConfig {
         self.arn.as_deref()
     }
 }
+impl DeadLetterConfig {
+    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
+    pub fn builder() -> crate::model::dead_letter_config::Builder {
+        crate::model::dead_letter_config::Builder::default()
+    }
+}
+
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
     
@@ -7405,12 +7456,6 @@ pub mod dead_letter_config {
     }
     
     
-}
-impl DeadLetterConfig {
-    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
-    pub fn builder() -> crate::model::dead_letter_config::Builder {
-        crate::model::dead_letter_config::Builder::default()
-    }
 }
 
 /// <p>The parameters for using a Kinesis stream as a source.</p>
@@ -7483,6 +7528,13 @@ impl PipeSourceKinesisStreamParameters {
         self.starting_position_timestamp.as_ref()
     }
 }
+impl PipeSourceKinesisStreamParameters {
+    /// Creates a new builder-style object to manufacture [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
+    pub fn builder() -> crate::model::pipe_source_kinesis_stream_parameters::Builder {
+        crate::model::pipe_source_kinesis_stream_parameters::Builder::default()
+    }
+}
+
 /// See [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
 pub mod pipe_source_kinesis_stream_parameters {
     
@@ -7609,12 +7661,6 @@ pub mod pipe_source_kinesis_stream_parameters {
     
     
 }
-impl PipeSourceKinesisStreamParameters {
-    /// Creates a new builder-style object to manufacture [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
-    pub fn builder() -> crate::model::pipe_source_kinesis_stream_parameters::Builder {
-        crate::model::pipe_source_kinesis_stream_parameters::Builder::default()
-    }
-}
 
 /// When writing a match expression against `KinesisStreamStartPosition`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7717,6 +7763,13 @@ impl FilterCriteria {
         self.filters.as_deref()
     }
 }
+impl FilterCriteria {
+    /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
+    pub fn builder() -> crate::model::filter_criteria::Builder {
+        crate::model::filter_criteria::Builder::default()
+    }
+}
+
 /// See [`FilterCriteria`](crate::model::FilterCriteria).
 pub mod filter_criteria {
     
@@ -7753,12 +7806,6 @@ pub mod filter_criteria {
     
     
 }
-impl FilterCriteria {
-    /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
-    pub fn builder() -> crate::model::filter_criteria::Builder {
-        crate::model::filter_criteria::Builder::default()
-    }
-}
 
 /// <p>Filter events using an event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
@@ -7781,6 +7828,13 @@ impl  std::fmt::Debug for Filter  {
         formatter.finish()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -7817,12 +7871,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequestedPipeStateDescribeResponse`, it is important to ensure
@@ -7975,6 +8023,13 @@ impl UpdatePipeSourceParameters {
         self.self_managed_kafka_parameters.as_ref()
     }
 }
+impl UpdatePipeSourceParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
+    pub fn builder() -> crate::model::update_pipe_source_parameters::Builder {
+        crate::model::update_pipe_source_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
 pub mod update_pipe_source_parameters {
     
@@ -8089,12 +8144,6 @@ pub mod update_pipe_source_parameters {
     
     
 }
-impl UpdatePipeSourceParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
-    pub fn builder() -> crate::model::update_pipe_source_parameters::Builder {
-        crate::model::update_pipe_source_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
 #[non_exhaustive]
@@ -8138,6 +8187,13 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
         self.vpc.as_ref()
     }
 }
+impl UpdatePipeSourceSelfManagedKafkaParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
+    pub fn builder() -> crate::model::update_pipe_source_self_managed_kafka_parameters::Builder {
+        crate::model::update_pipe_source_self_managed_kafka_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
 pub mod update_pipe_source_self_managed_kafka_parameters {
     
@@ -8216,12 +8272,6 @@ pub mod update_pipe_source_self_managed_kafka_parameters {
     
     
 }
-impl UpdatePipeSourceSelfManagedKafkaParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
-    pub fn builder() -> crate::model::update_pipe_source_self_managed_kafka_parameters::Builder {
-        crate::model::update_pipe_source_self_managed_kafka_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using an MSK stream as a source.</p>
 #[non_exhaustive]
@@ -8251,6 +8301,13 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
 }
+impl UpdatePipeSourceManagedStreamingKafkaParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
+    pub fn builder() -> crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder {
+        crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
 pub mod update_pipe_source_managed_streaming_kafka_parameters {
     
@@ -8305,12 +8362,6 @@ pub mod update_pipe_source_managed_streaming_kafka_parameters {
     
     
 }
-impl UpdatePipeSourceManagedStreamingKafkaParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
-    pub fn builder() -> crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder {
-        crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
 #[non_exhaustive]
@@ -8340,6 +8391,13 @@ impl UpdatePipeSourceRabbitMqBrokerParameters {
         self.maximum_batching_window_in_seconds
     }
 }
+impl UpdatePipeSourceRabbitMqBrokerParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
+    pub fn builder() -> crate::model::update_pipe_source_rabbit_mq_broker_parameters::Builder {
+        crate::model::update_pipe_source_rabbit_mq_broker_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
 pub mod update_pipe_source_rabbit_mq_broker_parameters {
     
@@ -8394,12 +8452,6 @@ pub mod update_pipe_source_rabbit_mq_broker_parameters {
     
     
 }
-impl UpdatePipeSourceRabbitMqBrokerParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
-    pub fn builder() -> crate::model::update_pipe_source_rabbit_mq_broker_parameters::Builder {
-        crate::model::update_pipe_source_rabbit_mq_broker_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using an Active MQ broker as a source.</p>
 #[non_exhaustive]
@@ -8429,6 +8481,13 @@ impl UpdatePipeSourceActiveMqBrokerParameters {
         self.maximum_batching_window_in_seconds
     }
 }
+impl UpdatePipeSourceActiveMqBrokerParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
+    pub fn builder() -> crate::model::update_pipe_source_active_mq_broker_parameters::Builder {
+        crate::model::update_pipe_source_active_mq_broker_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
 pub mod update_pipe_source_active_mq_broker_parameters {
     
@@ -8483,12 +8542,6 @@ pub mod update_pipe_source_active_mq_broker_parameters {
     
     
 }
-impl UpdatePipeSourceActiveMqBrokerParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
-    pub fn builder() -> crate::model::update_pipe_source_active_mq_broker_parameters::Builder {
-        crate::model::update_pipe_source_active_mq_broker_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
@@ -8511,6 +8564,13 @@ impl UpdatePipeSourceSqsQueueParameters {
         self.maximum_batching_window_in_seconds
     }
 }
+impl UpdatePipeSourceSqsQueueParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
+    pub fn builder() -> crate::model::update_pipe_source_sqs_queue_parameters::Builder {
+        crate::model::update_pipe_source_sqs_queue_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
 pub mod update_pipe_source_sqs_queue_parameters {
     
@@ -8552,12 +8612,6 @@ pub mod update_pipe_source_sqs_queue_parameters {
     }
     
     
-}
-impl UpdatePipeSourceSqsQueueParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
-    pub fn builder() -> crate::model::update_pipe_source_sqs_queue_parameters::Builder {
-        crate::model::update_pipe_source_sqs_queue_parameters::Builder::default()
-    }
 }
 
 /// <p>The parameters for using a DynamoDB stream as a source.</p>
@@ -8616,6 +8670,13 @@ impl UpdatePipeSourceDynamoDbStreamParameters {
         self.parallelization_factor
     }
 }
+impl UpdatePipeSourceDynamoDbStreamParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
+    pub fn builder() -> crate::model::update_pipe_source_dynamo_db_stream_parameters::Builder {
+        crate::model::update_pipe_source_dynamo_db_stream_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
 pub mod update_pipe_source_dynamo_db_stream_parameters {
     
@@ -8718,12 +8779,6 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
     
     
 }
-impl UpdatePipeSourceDynamoDbStreamParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
-    pub fn builder() -> crate::model::update_pipe_source_dynamo_db_stream_parameters::Builder {
-        crate::model::update_pipe_source_dynamo_db_stream_parameters::Builder::default()
-    }
-}
 
 /// <p>The parameters for using a Kinesis stream as a source.</p>
 #[non_exhaustive]
@@ -8781,6 +8836,13 @@ impl UpdatePipeSourceKinesisStreamParameters {
         self.parallelization_factor
     }
 }
+impl UpdatePipeSourceKinesisStreamParameters {
+    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
+    pub fn builder() -> crate::model::update_pipe_source_kinesis_stream_parameters::Builder {
+        crate::model::update_pipe_source_kinesis_stream_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
 pub mod update_pipe_source_kinesis_stream_parameters {
     
@@ -8882,11 +8944,5 @@ pub mod update_pipe_source_kinesis_stream_parameters {
     }
     
     
-}
-impl UpdatePipeSourceKinesisStreamParameters {
-    /// Creates a new builder-style object to manufacture [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
-    pub fn builder() -> crate::model::update_pipe_source_kinesis_stream_parameters::Builder {
-        crate::model::update_pipe_source_kinesis_stream_parameters::Builder::default()
-    }
 }
 

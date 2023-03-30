@@ -31,6 +31,13 @@ impl aws_http::request_id::RequestId for ListStreamsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListStreamsOutput {
+    /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::output::ListStreamsOutput).
+    pub fn builder() -> crate::output::list_streams_output::Builder {
+        crate::output::list_streams_output::Builder::default()
+    }
+}
+
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
     
@@ -94,12 +101,6 @@ pub mod list_streams_output {
     
     
 }
-impl ListStreamsOutput {
-    /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::output::ListStreamsOutput).
-    pub fn builder() -> crate::output::list_streams_output::Builder {
-        crate::output::list_streams_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
@@ -121,6 +122,13 @@ impl aws_http::request_id::RequestId for GetShardIteratorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetShardIteratorOutput {
+    /// Creates a new builder-style object to manufacture [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
+    pub fn builder() -> crate::output::get_shard_iterator_output::Builder {
+        crate::output::get_shard_iterator_output::Builder::default()
+    }
+}
+
 /// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
 pub mod get_shard_iterator_output {
     
@@ -162,12 +170,6 @@ pub mod get_shard_iterator_output {
     
     
 }
-impl GetShardIteratorOutput {
-    /// Creates a new builder-style object to manufacture [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
-    pub fn builder() -> crate::output::get_shard_iterator_output::Builder {
-        crate::output::get_shard_iterator_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetRecords</code> operation.</p>
 #[non_exhaustive]
@@ -196,6 +198,13 @@ impl aws_http::request_id::RequestId for GetRecordsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRecordsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRecordsOutput`](crate::output::GetRecordsOutput).
+    pub fn builder() -> crate::output::get_records_output::Builder {
+        crate::output::get_records_output::Builder::default()
+    }
+}
+
 /// See [`GetRecordsOutput`](crate::output::GetRecordsOutput).
 pub mod get_records_output {
     
@@ -255,12 +264,6 @@ pub mod get_records_output {
     
     
 }
-impl GetRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecordsOutput`](crate::output::GetRecordsOutput).
-    pub fn builder() -> crate::output::get_records_output::Builder {
-        crate::output::get_records_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
@@ -282,6 +285,13 @@ impl aws_http::request_id::RequestId for DescribeStreamOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeStreamOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
+    pub fn builder() -> crate::output::describe_stream_output::Builder {
+        crate::output::describe_stream_output::Builder::default()
+    }
+}
+
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
 pub mod describe_stream_output {
     
@@ -322,11 +332,5 @@ pub mod describe_stream_output {
     }
     
     
-}
-impl DescribeStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
-    pub fn builder() -> crate::output::describe_stream_output::Builder {
-        crate::output::describe_stream_output::Builder::default()
-    }
 }
 

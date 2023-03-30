@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`apply_archive_rule`](crate::client::Client::apply_archive_rule).
             ///
-            /// See [`crate::client::fluent_builders::ApplyArchiveRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ApplyArchiveRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ApplyArchiveRule {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplyArchiveRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`cancel_policy_generation`](crate::client::Client::cancel_policy_generation).
             ///
-            /// See [`crate::client::fluent_builders::CancelPolicyGeneration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CancelPolicyGeneration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelPolicyGeneration {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelPolicyGeneration {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_access_preview`](crate::client::Client::create_access_preview).
             ///
-            /// See [`crate::client::fluent_builders::CreateAccessPreview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAccessPreview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccessPreview {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPreview {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_analyzer`](crate::client::Client::create_analyzer).
             ///
-            /// See [`crate::client::fluent_builders::CreateAnalyzer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAnalyzer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAnalyzer {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnalyzer {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_archive_rule`](crate::client::Client::create_archive_rule).
             ///
-            /// See [`crate::client::fluent_builders::CreateArchiveRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateArchiveRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateArchiveRule {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateArchiveRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_analyzer`](crate::client::Client::delete_analyzer).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAnalyzer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAnalyzer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAnalyzer {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnalyzer {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_archive_rule`](crate::client::Client::delete_archive_rule).
             ///
-            /// See [`crate::client::fluent_builders::DeleteArchiveRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteArchiveRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteArchiveRule {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteArchiveRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_access_preview`](crate::client::Client::get_access_preview).
             ///
-            /// See [`crate::client::fluent_builders::GetAccessPreview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAccessPreview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccessPreview {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPreview {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_analyzed_resource`](crate::client::Client::get_analyzed_resource).
             ///
-            /// See [`crate::client::fluent_builders::GetAnalyzedResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAnalyzedResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAnalyzedResource {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnalyzedResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_analyzer`](crate::client::Client::get_analyzer).
             ///
-            /// See [`crate::client::fluent_builders::GetAnalyzer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAnalyzer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAnalyzer {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnalyzer {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_archive_rule`](crate::client::Client::get_archive_rule).
             ///
-            /// See [`crate::client::fluent_builders::GetArchiveRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetArchiveRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetArchiveRule {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetArchiveRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_finding`](crate::client::Client::get_finding).
             ///
-            /// See [`crate::client::fluent_builders::GetFinding`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetFinding`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFinding {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFinding {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_generated_policy`](crate::client::Client::get_generated_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetGeneratedPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGeneratedPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGeneratedPolicy {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeneratedPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_access_preview_findings`](crate::client::Client::list_access_preview_findings).
             ///
-            /// See [`crate::client::fluent_builders::ListAccessPreviewFindings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAccessPreviewFindings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccessPreviewFindings {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPreviewFinding
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_access_previews`](crate::client::Client::list_access_previews).
             ///
-            /// See [`crate::client::fluent_builders::ListAccessPreviews`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAccessPreviews`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccessPreviews {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPreviews {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_analyzed_resources`](crate::client::Client::list_analyzed_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListAnalyzedResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAnalyzedResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAnalyzedResources {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnalyzedResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_analyzers`](crate::client::Client::list_analyzers).
             ///
-            /// See [`crate::client::fluent_builders::ListAnalyzers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAnalyzers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAnalyzers {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnalyzers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_archive_rules`](crate::client::Client::list_archive_rules).
             ///
-            /// See [`crate::client::fluent_builders::ListArchiveRules`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListArchiveRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListArchiveRules {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListArchiveRules {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_findings`](crate::client::Client::list_findings).
             ///
-            /// See [`crate::client::fluent_builders::ListFindings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFindings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFindings {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFindings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_policy_generations`](crate::client::Client::list_policy_generations).
             ///
-            /// See [`crate::client::fluent_builders::ListPolicyGenerations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPolicyGenerations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPolicyGenerations {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPolicyGenerations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_policy_generation`](crate::client::Client::start_policy_generation).
             ///
-            /// See [`crate::client::fluent_builders::StartPolicyGeneration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartPolicyGeneration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartPolicyGeneration {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartPolicyGeneration {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_resource_scan`](crate::client::Client::start_resource_scan).
             ///
-            /// See [`crate::client::fluent_builders::StartResourceScan`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartResourceScan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartResourceScan {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartResourceScan {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_archive_rule`](crate::client::Client::update_archive_rule).
             ///
-            /// See [`crate::client::fluent_builders::UpdateArchiveRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateArchiveRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateArchiveRule {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateArchiveRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_findings`](crate::client::Client::update_findings).
             ///
-            /// See [`crate::client::fluent_builders::UpdateFindings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateFindings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFindings {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFindings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`validate_policy`](crate::client::Client::validate_policy).
             ///
-            /// See [`crate::client::fluent_builders::ValidatePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ValidatePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ValidatePolicy {
     _private: ()

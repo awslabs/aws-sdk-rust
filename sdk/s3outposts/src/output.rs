@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListSharedEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSharedEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
+    pub fn builder() -> crate::output::list_shared_endpoints_output::Builder {
+        crate::output::list_shared_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
 pub mod list_shared_endpoints_output {
     
@@ -85,12 +92,6 @@ pub mod list_shared_endpoints_output {
     
     
 }
-impl ListSharedEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
-    pub fn builder() -> crate::output::list_shared_endpoints_output::Builder {
-        crate::output::list_shared_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -119,6 +120,13 @@ impl aws_http::request_id::RequestId for ListEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
+    pub fn builder() -> crate::output::list_endpoints_output::Builder {
+        crate::output::list_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
 pub mod list_endpoints_output {
     
@@ -178,12 +186,6 @@ pub mod list_endpoints_output {
     
     
 }
-impl ListEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
-    pub fn builder() -> crate::output::list_endpoints_output::Builder {
-        crate::output::list_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -196,6 +198,13 @@ impl aws_http::request_id::RequestId for DeleteEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
+    pub fn builder() -> crate::output::delete_endpoint_output::Builder {
+        crate::output::delete_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
     
@@ -225,12 +234,6 @@ pub mod delete_endpoint_output {
     
     
 }
-impl DeleteEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
-    pub fn builder() -> crate::output::delete_endpoint_output::Builder {
-        crate::output::delete_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -252,6 +255,13 @@ impl aws_http::request_id::RequestId for CreateEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
+    pub fn builder() -> crate::output::create_endpoint_output::Builder {
+        crate::output::create_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
     
@@ -292,11 +302,5 @@ pub mod create_endpoint_output {
     }
     
     
-}
-impl CreateEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
-    pub fn builder() -> crate::output::create_endpoint_output::Builder {
-        crate::output::create_endpoint_output::Builder::default()
-    }
 }
 

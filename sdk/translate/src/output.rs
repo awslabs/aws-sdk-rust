@@ -40,6 +40,13 @@ impl aws_http::request_id::RequestId for UpdateParallelDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateParallelDataOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
+    pub fn builder() -> crate::output::update_parallel_data_output::Builder {
+        crate::output::update_parallel_data_output::Builder::default()
+    }
+}
+
 /// See [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
 pub mod update_parallel_data_output {
     
@@ -117,12 +124,6 @@ pub mod update_parallel_data_output {
     
     
 }
-impl UpdateParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
-    pub fn builder() -> crate::output::update_parallel_data_output::Builder {
-        crate::output::update_parallel_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -135,6 +136,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -163,12 +171,6 @@ pub mod untag_resource_output {
     }
     
     
-}
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -219,6 +221,13 @@ impl aws_http::request_id::RequestId for TranslateTextOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TranslateTextOutput {
+    /// Creates a new builder-style object to manufacture [`TranslateTextOutput`](crate::output::TranslateTextOutput).
+    pub fn builder() -> crate::output::translate_text_output::Builder {
+        crate::output::translate_text_output::Builder::default()
+    }
+}
+
 /// See [`TranslateTextOutput`](crate::output::TranslateTextOutput).
 pub mod translate_text_output {
     
@@ -314,12 +323,6 @@ pub mod translate_text_output {
     
     
 }
-impl TranslateTextOutput {
-    /// Creates a new builder-style object to manufacture [`TranslateTextOutput`](crate::output::TranslateTextOutput).
-    pub fn builder() -> crate::output::translate_text_output::Builder {
-        crate::output::translate_text_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -332,6 +335,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -361,12 +371,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -395,6 +399,13 @@ impl aws_http::request_id::RequestId for StopTextTranslationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopTextTranslationJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
+    pub fn builder() -> crate::output::stop_text_translation_job_output::Builder {
+        crate::output::stop_text_translation_job_output::Builder::default()
+    }
+}
+
 /// See [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
 pub mod stop_text_translation_job_output {
     
@@ -448,12 +459,6 @@ pub mod stop_text_translation_job_output {
     
     
 }
-impl StopTextTranslationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
-    pub fn builder() -> crate::output::stop_text_translation_job_output::Builder {
-        crate::output::stop_text_translation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -500,6 +505,13 @@ impl aws_http::request_id::RequestId for StartTextTranslationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartTextTranslationJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
+    pub fn builder() -> crate::output::start_text_translation_job_output::Builder {
+        crate::output::start_text_translation_job_output::Builder::default()
+    }
+}
+
 /// See [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
 pub mod start_text_translation_job_output {
     
@@ -571,12 +583,6 @@ pub mod start_text_translation_job_output {
     
     
 }
-impl StartTextTranslationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
-    pub fn builder() -> crate::output::start_text_translation_job_output::Builder {
-        crate::output::start_text_translation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -605,6 +611,13 @@ impl aws_http::request_id::RequestId for ListTextTranslationJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTextTranslationJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
+    pub fn builder() -> crate::output::list_text_translation_jobs_output::Builder {
+        crate::output::list_text_translation_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
 pub mod list_text_translation_jobs_output {
     
@@ -664,12 +677,6 @@ pub mod list_text_translation_jobs_output {
     
     
 }
-impl ListTextTranslationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
-    pub fn builder() -> crate::output::list_text_translation_jobs_output::Builder {
-        crate::output::list_text_translation_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -698,6 +705,13 @@ impl aws_http::request_id::RequestId for ListTerminologiesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTerminologiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
+    pub fn builder() -> crate::output::list_terminologies_output::Builder {
+        crate::output::list_terminologies_output::Builder::default()
+    }
+}
+
 /// See [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
 pub mod list_terminologies_output {
     
@@ -757,12 +771,6 @@ pub mod list_terminologies_output {
     
     
 }
-impl ListTerminologiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
-    pub fn builder() -> crate::output::list_terminologies_output::Builder {
-        crate::output::list_terminologies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -784,6 +792,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -831,12 +846,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -865,6 +874,13 @@ impl aws_http::request_id::RequestId for ListParallelDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListParallelDataOutput {
+    /// Creates a new builder-style object to manufacture [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
+    pub fn builder() -> crate::output::list_parallel_data_output::Builder {
+        crate::output::list_parallel_data_output::Builder::default()
+    }
+}
+
 /// See [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
 pub mod list_parallel_data_output {
     
@@ -924,12 +940,6 @@ pub mod list_parallel_data_output {
     
     
 }
-impl ListParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
-    pub fn builder() -> crate::output::list_parallel_data_output::Builder {
-        crate::output::list_parallel_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -965,6 +975,13 @@ impl aws_http::request_id::RequestId for ListLanguagesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListLanguagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
+    pub fn builder() -> crate::output::list_languages_output::Builder {
+        crate::output::list_languages_output::Builder::default()
+    }
+}
+
 /// See [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
 pub mod list_languages_output {
     
@@ -1036,12 +1053,6 @@ pub mod list_languages_output {
     
     
 }
-impl ListLanguagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
-    pub fn builder() -> crate::output::list_languages_output::Builder {
-        crate::output::list_languages_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1070,6 +1081,13 @@ impl aws_http::request_id::RequestId for ImportTerminologyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ImportTerminologyOutput {
+    /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
+    pub fn builder() -> crate::output::import_terminology_output::Builder {
+        crate::output::import_terminology_output::Builder::default()
+    }
+}
+
 /// See [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
 pub mod import_terminology_output {
     
@@ -1123,12 +1141,6 @@ pub mod import_terminology_output {
     
     
 }
-impl ImportTerminologyOutput {
-    /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
-    pub fn builder() -> crate::output::import_terminology_output::Builder {
-        crate::output::import_terminology_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1172,6 +1184,13 @@ impl aws_http::request_id::RequestId for GetTerminologyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetTerminologyOutput {
+    /// Creates a new builder-style object to manufacture [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
+    pub fn builder() -> crate::output::get_terminology_output::Builder {
+        crate::output::get_terminology_output::Builder::default()
+    }
+}
+
 /// See [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
 pub mod get_terminology_output {
     
@@ -1245,12 +1264,6 @@ pub mod get_terminology_output {
     
     
 }
-impl GetTerminologyOutput {
-    /// Creates a new builder-style object to manufacture [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
-    pub fn builder() -> crate::output::get_terminology_output::Builder {
-        crate::output::get_terminology_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1301,6 +1314,13 @@ impl aws_http::request_id::RequestId for GetParallelDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetParallelDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
+    pub fn builder() -> crate::output::get_parallel_data_output::Builder {
+        crate::output::get_parallel_data_output::Builder::default()
+    }
+}
+
 /// See [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
 pub mod get_parallel_data_output {
     
@@ -1386,12 +1406,6 @@ pub mod get_parallel_data_output {
     
     
 }
-impl GetParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
-    pub fn builder() -> crate::output::get_parallel_data_output::Builder {
-        crate::output::get_parallel_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1413,6 +1427,13 @@ impl aws_http::request_id::RequestId for DescribeTextTranslationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTextTranslationJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
+    pub fn builder() -> crate::output::describe_text_translation_job_output::Builder {
+        crate::output::describe_text_translation_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
 pub mod describe_text_translation_job_output {
     
@@ -1454,12 +1475,6 @@ pub mod describe_text_translation_job_output {
     
     
 }
-impl DescribeTextTranslationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
-    pub fn builder() -> crate::output::describe_text_translation_job_output::Builder {
-        crate::output::describe_text_translation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1472,6 +1487,13 @@ impl aws_http::request_id::RequestId for DeleteTerminologyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteTerminologyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
+    pub fn builder() -> crate::output::delete_terminology_output::Builder {
+        crate::output::delete_terminology_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
 pub mod delete_terminology_output {
     
@@ -1501,12 +1523,6 @@ pub mod delete_terminology_output {
     
     
 }
-impl DeleteTerminologyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
-    pub fn builder() -> crate::output::delete_terminology_output::Builder {
-        crate::output::delete_terminology_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1535,6 +1551,13 @@ impl aws_http::request_id::RequestId for DeleteParallelDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteParallelDataOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
+    pub fn builder() -> crate::output::delete_parallel_data_output::Builder {
+        crate::output::delete_parallel_data_output::Builder::default()
+    }
+}
+
 /// See [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
 pub mod delete_parallel_data_output {
     
@@ -1588,12 +1611,6 @@ pub mod delete_parallel_data_output {
     
     
 }
-impl DeleteParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
-    pub fn builder() -> crate::output::delete_parallel_data_output::Builder {
-        crate::output::delete_parallel_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1622,6 +1639,13 @@ impl aws_http::request_id::RequestId for CreateParallelDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateParallelDataOutput {
+    /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
+    pub fn builder() -> crate::output::create_parallel_data_output::Builder {
+        crate::output::create_parallel_data_output::Builder::default()
+    }
+}
+
 /// See [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
 pub mod create_parallel_data_output {
     
@@ -1674,11 +1698,5 @@ pub mod create_parallel_data_output {
     }
     
     
-}
-impl CreateParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
-    pub fn builder() -> crate::output::create_parallel_data_output::Builder {
-        crate::output::create_parallel_data_output::Builder::default()
-    }
 }
 

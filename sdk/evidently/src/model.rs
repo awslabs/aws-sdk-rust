@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -218,6 +219,13 @@ impl RefResource {
         self.last_updated_on.as_deref()
     }
 }
+impl RefResource {
+    /// Creates a new builder-style object to manufacture [`RefResource`](crate::model::RefResource).
+    pub fn builder() -> crate::model::ref_resource::Builder {
+        crate::model::ref_resource::Builder::default()
+    }
+}
+
 /// See [`RefResource`](crate::model::RefResource).
 pub mod ref_resource {
     
@@ -319,12 +327,6 @@ pub mod ref_resource {
     }
     
     
-}
-impl RefResource {
-    /// Creates a new builder-style object to manufacture [`RefResource`](crate::model::RefResource).
-    pub fn builder() -> crate::model::ref_resource::Builder {
-        crate::model::ref_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SegmentReferenceResourceType`, it is important to ensure
@@ -479,6 +481,13 @@ impl Segment {
         self.tags.as_ref()
     }
 }
+impl Segment {
+    /// Creates a new builder-style object to manufacture [`Segment`](crate::model::Segment).
+    pub fn builder() -> crate::model::segment::Builder {
+        crate::model::segment::Builder::default()
+    }
+}
+
 /// See [`Segment`](crate::model::Segment).
 pub mod segment {
     
@@ -611,12 +620,6 @@ pub mod segment {
     
     
 }
-impl Segment {
-    /// Creates a new builder-style object to manufacture [`Segment`](crate::model::Segment).
-    pub fn builder() -> crate::model::segment::Builder {
-        crate::model::segment::Builder::default()
-    }
-}
 
 /// <p>This structure defines a project, which is the logical object in Evidently that can contain features, launches, and experiments. Use projects to group similar features together.</p>
 #[non_exhaustive]
@@ -723,6 +726,13 @@ impl Project {
         self.tags.as_ref()
     }
 }
+impl Project {
+    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
+    pub fn builder() -> crate::model::project::Builder {
+        crate::model::project::Builder::default()
+    }
+}
+
 /// See [`Project`](crate::model::Project).
 pub mod project {
     
@@ -915,12 +925,6 @@ pub mod project {
     
     
 }
-impl Project {
-    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
-    pub fn builder() -> crate::model::project::Builder {
-        crate::model::project::Builder::default()
-    }
-}
 
 /// <p>This is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
 #[non_exhaustive]
@@ -950,6 +954,13 @@ impl ProjectAppConfigResource {
         self.configuration_profile_id.as_deref()
     }
 }
+impl ProjectAppConfigResource {
+    /// Creates a new builder-style object to manufacture [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
+    pub fn builder() -> crate::model::project_app_config_resource::Builder {
+        crate::model::project_app_config_resource::Builder::default()
+    }
+}
+
 /// See [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
 pub mod project_app_config_resource {
     
@@ -1004,12 +1015,6 @@ pub mod project_app_config_resource {
     
     
 }
-impl ProjectAppConfigResource {
-    /// Creates a new builder-style object to manufacture [`ProjectAppConfigResource`](crate::model::ProjectAppConfigResource).
-    pub fn builder() -> crate::model::project_app_config_resource::Builder {
-        crate::model::project_app_config_resource::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
@@ -1032,6 +1037,13 @@ impl ProjectDataDelivery {
         self.cloud_watch_logs.as_ref()
     }
 }
+impl ProjectDataDelivery {
+    /// Creates a new builder-style object to manufacture [`ProjectDataDelivery`](crate::model::ProjectDataDelivery).
+    pub fn builder() -> crate::model::project_data_delivery::Builder {
+        crate::model::project_data_delivery::Builder::default()
+    }
+}
+
 /// See [`ProjectDataDelivery`](crate::model::ProjectDataDelivery).
 pub mod project_data_delivery {
     
@@ -1074,12 +1086,6 @@ pub mod project_data_delivery {
     
     
 }
-impl ProjectDataDelivery {
-    /// Creates a new builder-style object to manufacture [`ProjectDataDelivery`](crate::model::ProjectDataDelivery).
-    pub fn builder() -> crate::model::project_data_delivery::Builder {
-        crate::model::project_data_delivery::Builder::default()
-    }
-}
 
 /// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation events.</p>
 #[non_exhaustive]
@@ -1095,6 +1101,13 @@ impl CloudWatchLogsDestination {
         self.log_group.as_deref()
     }
 }
+impl CloudWatchLogsDestination {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
+        crate::model::cloud_watch_logs_destination::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
     
@@ -1125,12 +1138,6 @@ pub mod cloud_watch_logs_destination {
     
     
 }
-impl CloudWatchLogsDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
-    pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
-        crate::model::cloud_watch_logs_destination::Builder::default()
-    }
-}
 
 /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
@@ -1153,6 +1160,13 @@ impl S3Destination {
         self.prefix.as_deref()
     }
 }
+impl S3Destination {
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
+    pub fn builder() -> crate::model::s3_destination::Builder {
+        crate::model::s3_destination::Builder::default()
+    }
+}
+
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
     
@@ -1194,12 +1208,6 @@ pub mod s3_destination {
     }
     
     
-}
-impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
-    pub fn builder() -> crate::model::s3_destination::Builder {
-        crate::model::s3_destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProjectStatus`, it is important to ensure
@@ -1298,6 +1306,13 @@ impl CloudWatchLogsDestinationConfig {
         self.log_group.as_deref()
     }
 }
+impl CloudWatchLogsDestinationConfig {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationConfig`](crate::model::CloudWatchLogsDestinationConfig).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination_config::Builder {
+        crate::model::cloud_watch_logs_destination_config::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsDestinationConfig`](crate::model::CloudWatchLogsDestinationConfig).
 pub mod cloud_watch_logs_destination_config {
     
@@ -1328,12 +1343,6 @@ pub mod cloud_watch_logs_destination_config {
     
     
 }
-impl CloudWatchLogsDestinationConfig {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationConfig`](crate::model::CloudWatchLogsDestinationConfig).
-    pub fn builder() -> crate::model::cloud_watch_logs_destination_config::Builder {
-        crate::model::cloud_watch_logs_destination_config::Builder::default()
-    }
-}
 
 /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
@@ -1356,6 +1365,13 @@ impl S3DestinationConfig {
         self.prefix.as_deref()
     }
 }
+impl S3DestinationConfig {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfig`](crate::model::S3DestinationConfig).
+    pub fn builder() -> crate::model::s3_destination_config::Builder {
+        crate::model::s3_destination_config::Builder::default()
+    }
+}
+
 /// See [`S3DestinationConfig`](crate::model::S3DestinationConfig).
 pub mod s3_destination_config {
     
@@ -1398,12 +1414,6 @@ pub mod s3_destination_config {
     
     
 }
-impl S3DestinationConfig {
-    /// Creates a new builder-style object to manufacture [`S3DestinationConfig`](crate::model::S3DestinationConfig).
-    pub fn builder() -> crate::model::s3_destination_config::Builder {
-        crate::model::s3_destination_config::Builder::default()
-    }
-}
 
 /// <p>Use this parameter to configure client-side evaluation for your project. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation to assign the variations. This mitigates the latency and availability risks that come with an API call.</p> 
 /// <p> <code>ProjectAppConfigResource</code> is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
@@ -1427,6 +1437,13 @@ impl ProjectAppConfigResourceConfig {
         self.environment_id.as_deref()
     }
 }
+impl ProjectAppConfigResourceConfig {
+    /// Creates a new builder-style object to manufacture [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
+    pub fn builder() -> crate::model::project_app_config_resource_config::Builder {
+        crate::model::project_app_config_resource_config::Builder::default()
+    }
+}
+
 /// See [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
 pub mod project_app_config_resource_config {
     
@@ -1469,12 +1486,6 @@ pub mod project_app_config_resource_config {
     
     
 }
-impl ProjectAppConfigResourceConfig {
-    /// Creates a new builder-style object to manufacture [`ProjectAppConfigResourceConfig`](crate::model::ProjectAppConfigResourceConfig).
-    pub fn builder() -> crate::model::project_app_config_resource_config::Builder {
-        crate::model::project_app_config_resource_config::Builder::default()
-    }
-}
 
 /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any. </p>
 #[non_exhaustive]
@@ -1504,6 +1515,13 @@ impl PutProjectEventsResultEntry {
         self.error_message.as_deref()
     }
 }
+impl PutProjectEventsResultEntry {
+    /// Creates a new builder-style object to manufacture [`PutProjectEventsResultEntry`](crate::model::PutProjectEventsResultEntry).
+    pub fn builder() -> crate::model::put_project_events_result_entry::Builder {
+        crate::model::put_project_events_result_entry::Builder::default()
+    }
+}
+
 /// See [`PutProjectEventsResultEntry`](crate::model::PutProjectEventsResultEntry).
 pub mod put_project_events_result_entry {
     
@@ -1558,12 +1576,6 @@ pub mod put_project_events_result_entry {
     
     
 }
-impl PutProjectEventsResultEntry {
-    /// Creates a new builder-style object to manufacture [`PutProjectEventsResultEntry`](crate::model::PutProjectEventsResultEntry).
-    pub fn builder() -> crate::model::put_project_events_result_entry::Builder {
-        crate::model::put_project_events_result_entry::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the information about one evaluation event or custom event sent to Evidently. This is a JSON payload. If this event specifies a pre-defined event type, the payload must follow the defined event schema.</p>
 #[non_exhaustive]
@@ -1593,6 +1605,13 @@ impl Event {
         self.data.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -1646,12 +1665,6 @@ pub mod event {
     }
     
     
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventType`, it is important to ensure
@@ -1857,6 +1870,13 @@ impl EvaluationResult {
         self.details.as_deref()
     }
 }
+impl EvaluationResult {
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
+    pub fn builder() -> crate::model::evaluation_result::Builder {
+        crate::model::evaluation_result::Builder::default()
+    }
+}
+
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
     
@@ -1959,12 +1979,6 @@ pub mod evaluation_result {
     
     
 }
-impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
-    pub fn builder() -> crate::model::evaluation_result::Builder {
-        crate::model::evaluation_result::Builder::default()
-    }
-}
 
 /// <p>This structure assigns a feature variation to one user session.</p>
 #[non_exhaustive]
@@ -1994,6 +2008,13 @@ impl EvaluationRequest {
         self.evaluation_context.as_deref()
     }
 }
+impl EvaluationRequest {
+    /// Creates a new builder-style object to manufacture [`EvaluationRequest`](crate::model::EvaluationRequest).
+    pub fn builder() -> crate::model::evaluation_request::Builder {
+        crate::model::evaluation_request::Builder::default()
+    }
+}
+
 /// See [`EvaluationRequest`](crate::model::EvaluationRequest).
 pub mod evaluation_request {
     
@@ -2047,12 +2068,6 @@ pub mod evaluation_request {
     }
     
     
-}
-impl EvaluationRequest {
-    /// Creates a new builder-style object to manufacture [`EvaluationRequest`](crate::model::EvaluationRequest).
-    pub fn builder() -> crate::model::evaluation_request::Builder {
-        crate::model::evaluation_request::Builder::default()
-    }
 }
 
 /// <p>A structure that contains configuration information about an Evidently project.</p>
@@ -2146,6 +2161,13 @@ impl ProjectSummary {
         self.tags.as_ref()
     }
 }
+impl ProjectSummary {
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
+    pub fn builder() -> crate::model::project_summary::Builder {
+        crate::model::project_summary::Builder::default()
+    }
+}
+
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
     
@@ -2314,12 +2336,6 @@ pub mod project_summary {
     
     
 }
-impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
-    pub fn builder() -> crate::model::project_summary::Builder {
-        crate::model::project_summary::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
@@ -2342,6 +2358,13 @@ impl ProjectDataDeliveryConfig {
         self.cloud_watch_logs.as_ref()
     }
 }
+impl ProjectDataDeliveryConfig {
+    /// Creates a new builder-style object to manufacture [`ProjectDataDeliveryConfig`](crate::model::ProjectDataDeliveryConfig).
+    pub fn builder() -> crate::model::project_data_delivery_config::Builder {
+        crate::model::project_data_delivery_config::Builder::default()
+    }
+}
+
 /// See [`ProjectDataDeliveryConfig`](crate::model::ProjectDataDeliveryConfig).
 pub mod project_data_delivery_config {
     
@@ -2383,12 +2406,6 @@ pub mod project_data_delivery_config {
     }
     
     
-}
-impl ProjectDataDeliveryConfig {
-    /// Creates a new builder-style object to manufacture [`ProjectDataDeliveryConfig`](crate::model::ProjectDataDeliveryConfig).
-    pub fn builder() -> crate::model::project_data_delivery_config::Builder {
-        crate::model::project_data_delivery_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LaunchStopDesiredState`, it is important to ensure
@@ -2585,6 +2602,13 @@ impl Launch {
         self.tags.as_ref()
     }
 }
+impl Launch {
+    /// Creates a new builder-style object to manufacture [`Launch`](crate::model::Launch).
+    pub fn builder() -> crate::model::launch::Builder {
+        crate::model::launch::Builder::default()
+    }
+}
+
 /// See [`Launch`](crate::model::Launch).
 pub mod launch {
     
@@ -2801,12 +2825,6 @@ pub mod launch {
     
     
 }
-impl Launch {
-    /// Creates a new builder-style object to manufacture [`Launch`](crate::model::Launch).
-    pub fn builder() -> crate::model::launch::Builder {
-        crate::model::launch::Builder::default()
-    }
-}
 
 /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
@@ -2822,6 +2840,13 @@ impl ScheduledSplitsLaunchDefinition {
         self.steps.as_deref()
     }
 }
+impl ScheduledSplitsLaunchDefinition {
+    /// Creates a new builder-style object to manufacture [`ScheduledSplitsLaunchDefinition`](crate::model::ScheduledSplitsLaunchDefinition).
+    pub fn builder() -> crate::model::scheduled_splits_launch_definition::Builder {
+        crate::model::scheduled_splits_launch_definition::Builder::default()
+    }
+}
+
 /// See [`ScheduledSplitsLaunchDefinition`](crate::model::ScheduledSplitsLaunchDefinition).
 pub mod scheduled_splits_launch_definition {
     
@@ -2858,12 +2883,6 @@ pub mod scheduled_splits_launch_definition {
     
     
 }
-impl ScheduledSplitsLaunchDefinition {
-    /// Creates a new builder-style object to manufacture [`ScheduledSplitsLaunchDefinition`](crate::model::ScheduledSplitsLaunchDefinition).
-    pub fn builder() -> crate::model::scheduled_splits_launch_definition::Builder {
-        crate::model::scheduled_splits_launch_definition::Builder::default()
-    }
-}
 
 /// <p>This structure defines the traffic allocation percentages among the feature variations during one step of a launch, and the start time of that step.</p>
 #[non_exhaustive]
@@ -2899,6 +2918,13 @@ impl ScheduledSplit {
         self.segment_overrides.as_deref()
     }
 }
+impl ScheduledSplit {
+    /// Creates a new builder-style object to manufacture [`ScheduledSplit`](crate::model::ScheduledSplit).
+    pub fn builder() -> crate::model::scheduled_split::Builder {
+        crate::model::scheduled_split::Builder::default()
+    }
+}
+
 /// See [`ScheduledSplit`](crate::model::ScheduledSplit).
 pub mod scheduled_split {
     
@@ -2971,12 +2997,6 @@ pub mod scheduled_split {
     
     
 }
-impl ScheduledSplit {
-    /// Creates a new builder-style object to manufacture [`ScheduledSplit`](crate::model::ScheduledSplit).
-    pub fn builder() -> crate::model::scheduled_split::Builder {
-        crate::model::scheduled_split::Builder::default()
-    }
-}
 
 /// <p>This structure specifies a segment that you have already created, and defines the traffic split for that segment to be used in a launch.</p>
 #[non_exhaustive]
@@ -3006,6 +3026,13 @@ impl SegmentOverride {
         self.weights.as_ref()
     }
 }
+impl SegmentOverride {
+    /// Creates a new builder-style object to manufacture [`SegmentOverride`](crate::model::SegmentOverride).
+    pub fn builder() -> crate::model::segment_override::Builder {
+        crate::model::segment_override::Builder::default()
+    }
+}
+
 /// See [`SegmentOverride`](crate::model::SegmentOverride).
 pub mod segment_override {
     
@@ -3065,12 +3092,6 @@ pub mod segment_override {
     }
     
     
-}
-impl SegmentOverride {
-    /// Creates a new builder-style object to manufacture [`SegmentOverride`](crate::model::SegmentOverride).
-    pub fn builder() -> crate::model::segment_override::Builder {
-        crate::model::segment_override::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LaunchType`, it is important to ensure
@@ -3164,6 +3185,13 @@ impl MetricMonitor {
         self.metric_definition.as_ref()
     }
 }
+impl MetricMonitor {
+    /// Creates a new builder-style object to manufacture [`MetricMonitor`](crate::model::MetricMonitor).
+    pub fn builder() -> crate::model::metric_monitor::Builder {
+        crate::model::metric_monitor::Builder::default()
+    }
+}
+
 /// See [`MetricMonitor`](crate::model::MetricMonitor).
 pub mod metric_monitor {
     
@@ -3193,12 +3221,6 @@ pub mod metric_monitor {
     }
     
     
-}
-impl MetricMonitor {
-    /// Creates a new builder-style object to manufacture [`MetricMonitor`](crate::model::MetricMonitor).
-    pub fn builder() -> crate::model::metric_monitor::Builder {
-        crate::model::metric_monitor::Builder::default()
-    }
 }
 
 /// <p>This structure defines a metric that is being used to evaluate the variations during a launch or experiment.</p>
@@ -3245,6 +3267,13 @@ impl MetricDefinition {
         self.unit_label.as_deref()
     }
 }
+impl MetricDefinition {
+    /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::model::MetricDefinition).
+    pub fn builder() -> crate::model::metric_definition::Builder {
+        crate::model::metric_definition::Builder::default()
+    }
+}
+
 /// See [`MetricDefinition`](crate::model::MetricDefinition).
 pub mod metric_definition {
     
@@ -3325,12 +3354,6 @@ pub mod metric_definition {
     
     
 }
-impl MetricDefinition {
-    /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::model::MetricDefinition).
-    pub fn builder() -> crate::model::metric_definition::Builder {
-        crate::model::metric_definition::Builder::default()
-    }
-}
 
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
@@ -3360,6 +3383,13 @@ impl LaunchGroup {
         self.feature_variations.as_ref()
     }
 }
+impl LaunchGroup {
+    /// Creates a new builder-style object to manufacture [`LaunchGroup`](crate::model::LaunchGroup).
+    pub fn builder() -> crate::model::launch_group::Builder {
+        crate::model::launch_group::Builder::default()
+    }
+}
+
 /// See [`LaunchGroup`](crate::model::LaunchGroup).
 pub mod launch_group {
     
@@ -3420,12 +3450,6 @@ pub mod launch_group {
     
     
 }
-impl LaunchGroup {
-    /// Creates a new builder-style object to manufacture [`LaunchGroup`](crate::model::LaunchGroup).
-    pub fn builder() -> crate::model::launch_group::Builder {
-        crate::model::launch_group::Builder::default()
-    }
-}
 
 /// <p>This structure contains information about the start and end times of the launch.</p>
 #[non_exhaustive]
@@ -3448,6 +3472,13 @@ impl LaunchExecution {
         self.ended_time.as_ref()
     }
 }
+impl LaunchExecution {
+    /// Creates a new builder-style object to manufacture [`LaunchExecution`](crate::model::LaunchExecution).
+    pub fn builder() -> crate::model::launch_execution::Builder {
+        crate::model::launch_execution::Builder::default()
+    }
+}
+
 /// See [`LaunchExecution`](crate::model::LaunchExecution).
 pub mod launch_execution {
     
@@ -3489,12 +3520,6 @@ pub mod launch_execution {
     }
     
     
-}
-impl LaunchExecution {
-    /// Creates a new builder-style object to manufacture [`LaunchExecution`](crate::model::LaunchExecution).
-    pub fn builder() -> crate::model::launch_execution::Builder {
-        crate::model::launch_execution::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LaunchStatus`, it is important to ensure
@@ -3629,6 +3654,13 @@ impl LaunchGroupConfig {
         self.variation.as_deref()
     }
 }
+impl LaunchGroupConfig {
+    /// Creates a new builder-style object to manufacture [`LaunchGroupConfig`](crate::model::LaunchGroupConfig).
+    pub fn builder() -> crate::model::launch_group_config::Builder {
+        crate::model::launch_group_config::Builder::default()
+    }
+}
+
 /// See [`LaunchGroupConfig`](crate::model::LaunchGroupConfig).
 pub mod launch_group_config {
     
@@ -3695,12 +3727,6 @@ pub mod launch_group_config {
     
     
 }
-impl LaunchGroupConfig {
-    /// Creates a new builder-style object to manufacture [`LaunchGroupConfig`](crate::model::LaunchGroupConfig).
-    pub fn builder() -> crate::model::launch_group_config::Builder {
-        crate::model::launch_group_config::Builder::default()
-    }
-}
 
 /// <p>A structure that defines a metric to be used to monitor performance of the variations during a launch.</p>
 #[non_exhaustive]
@@ -3716,6 +3742,13 @@ impl MetricMonitorConfig {
         self.metric_definition.as_ref()
     }
 }
+impl MetricMonitorConfig {
+    /// Creates a new builder-style object to manufacture [`MetricMonitorConfig`](crate::model::MetricMonitorConfig).
+    pub fn builder() -> crate::model::metric_monitor_config::Builder {
+        crate::model::metric_monitor_config::Builder::default()
+    }
+}
+
 /// See [`MetricMonitorConfig`](crate::model::MetricMonitorConfig).
 pub mod metric_monitor_config {
     
@@ -3745,12 +3778,6 @@ pub mod metric_monitor_config {
     }
     
     
-}
-impl MetricMonitorConfig {
-    /// Creates a new builder-style object to manufacture [`MetricMonitorConfig`](crate::model::MetricMonitorConfig).
-    pub fn builder() -> crate::model::metric_monitor_config::Builder {
-        crate::model::metric_monitor_config::Builder::default()
-    }
 }
 
 /// <p>This structure defines a metric that you want to use to evaluate the variations during a launch or experiment.</p>
@@ -3797,6 +3824,13 @@ impl MetricDefinitionConfig {
         self.unit_label.as_deref()
     }
 }
+impl MetricDefinitionConfig {
+    /// Creates a new builder-style object to manufacture [`MetricDefinitionConfig`](crate::model::MetricDefinitionConfig).
+    pub fn builder() -> crate::model::metric_definition_config::Builder {
+        crate::model::metric_definition_config::Builder::default()
+    }
+}
+
 /// See [`MetricDefinitionConfig`](crate::model::MetricDefinitionConfig).
 pub mod metric_definition_config {
     
@@ -3877,12 +3911,6 @@ pub mod metric_definition_config {
     
     
 }
-impl MetricDefinitionConfig {
-    /// Creates a new builder-style object to manufacture [`MetricDefinitionConfig`](crate::model::MetricDefinitionConfig).
-    pub fn builder() -> crate::model::metric_definition_config::Builder {
-        crate::model::metric_definition_config::Builder::default()
-    }
-}
 
 /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
@@ -3898,6 +3926,13 @@ impl ScheduledSplitsLaunchConfig {
         self.steps.as_deref()
     }
 }
+impl ScheduledSplitsLaunchConfig {
+    /// Creates a new builder-style object to manufacture [`ScheduledSplitsLaunchConfig`](crate::model::ScheduledSplitsLaunchConfig).
+    pub fn builder() -> crate::model::scheduled_splits_launch_config::Builder {
+        crate::model::scheduled_splits_launch_config::Builder::default()
+    }
+}
+
 /// See [`ScheduledSplitsLaunchConfig`](crate::model::ScheduledSplitsLaunchConfig).
 pub mod scheduled_splits_launch_config {
     
@@ -3934,12 +3969,6 @@ pub mod scheduled_splits_launch_config {
     
     
 }
-impl ScheduledSplitsLaunchConfig {
-    /// Creates a new builder-style object to manufacture [`ScheduledSplitsLaunchConfig`](crate::model::ScheduledSplitsLaunchConfig).
-    pub fn builder() -> crate::model::scheduled_splits_launch_config::Builder {
-        crate::model::scheduled_splits_launch_config::Builder::default()
-    }
-}
 
 /// <p>This structure defines the traffic allocation percentages among the feature variations during one step of a launch, and the start time of that step.</p>
 #[non_exhaustive]
@@ -3975,6 +4004,13 @@ impl ScheduledSplitConfig {
         self.segment_overrides.as_deref()
     }
 }
+impl ScheduledSplitConfig {
+    /// Creates a new builder-style object to manufacture [`ScheduledSplitConfig`](crate::model::ScheduledSplitConfig).
+    pub fn builder() -> crate::model::scheduled_split_config::Builder {
+        crate::model::scheduled_split_config::Builder::default()
+    }
+}
+
 /// See [`ScheduledSplitConfig`](crate::model::ScheduledSplitConfig).
 pub mod scheduled_split_config {
     
@@ -4046,12 +4082,6 @@ pub mod scheduled_split_config {
     }
     
     
-}
-impl ScheduledSplitConfig {
-    /// Creates a new builder-style object to manufacture [`ScheduledSplitConfig`](crate::model::ScheduledSplitConfig).
-    pub fn builder() -> crate::model::scheduled_split_config::Builder {
-        crate::model::scheduled_split_config::Builder::default()
-    }
 }
 
 /// <p>This structure contains information about one Evidently feature in your account.</p>
@@ -4131,6 +4161,13 @@ impl FeatureSummary {
         self.tags.as_ref()
     }
 }
+impl FeatureSummary {
+    /// Creates a new builder-style object to manufacture [`FeatureSummary`](crate::model::FeatureSummary).
+    pub fn builder() -> crate::model::feature_summary::Builder {
+        crate::model::feature_summary::Builder::default()
+    }
+}
+
 /// See [`FeatureSummary`](crate::model::FeatureSummary).
 pub mod feature_summary {
     
@@ -4281,12 +4318,6 @@ pub mod feature_summary {
     
     
 }
-impl FeatureSummary {
-    /// Creates a new builder-style object to manufacture [`FeatureSummary`](crate::model::FeatureSummary).
-    pub fn builder() -> crate::model::feature_summary::Builder {
-        crate::model::feature_summary::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the information about an evaluation rule for this feature, if it is used in a launch or experiment.</p>
 #[non_exhaustive]
@@ -4309,6 +4340,13 @@ impl EvaluationRule {
         self.r#type.as_deref()
     }
 }
+impl EvaluationRule {
+    /// Creates a new builder-style object to manufacture [`EvaluationRule`](crate::model::EvaluationRule).
+    pub fn builder() -> crate::model::evaluation_rule::Builder {
+        crate::model::evaluation_rule::Builder::default()
+    }
+}
+
 /// See [`EvaluationRule`](crate::model::EvaluationRule).
 pub mod evaluation_rule {
     
@@ -4350,12 +4388,6 @@ pub mod evaluation_rule {
     }
     
     
-}
-impl EvaluationRule {
-    /// Creates a new builder-style object to manufacture [`EvaluationRule`](crate::model::EvaluationRule).
-    pub fn builder() -> crate::model::evaluation_rule::Builder {
-        crate::model::evaluation_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FeatureEvaluationStrategy`, it is important to ensure
@@ -4633,6 +4665,13 @@ impl Feature {
         self.entity_overrides.as_ref()
     }
 }
+impl Feature {
+    /// Creates a new builder-style object to manufacture [`Feature`](crate::model::Feature).
+    pub fn builder() -> crate::model::feature::Builder {
+        crate::model::feature::Builder::default()
+    }
+}
+
 /// See [`Feature`](crate::model::Feature).
 pub mod feature {
     
@@ -4849,12 +4888,6 @@ pub mod feature {
     
     
 }
-impl Feature {
-    /// Creates a new builder-style object to manufacture [`Feature`](crate::model::Feature).
-    pub fn builder() -> crate::model::feature::Builder {
-        crate::model::feature::Builder::default()
-    }
-}
 
 /// <p>This structure contains the name and variation value of one variation of a feature.</p>
 #[non_exhaustive]
@@ -4877,6 +4910,13 @@ impl Variation {
         self.value.as_ref()
     }
 }
+impl Variation {
+    /// Creates a new builder-style object to manufacture [`Variation`](crate::model::Variation).
+    pub fn builder() -> crate::model::variation::Builder {
+        crate::model::variation::Builder::default()
+    }
+}
+
 /// See [`Variation`](crate::model::Variation).
 pub mod variation {
     
@@ -4918,12 +4958,6 @@ pub mod variation {
     }
     
     
-}
-impl Variation {
-    /// Creates a new builder-style object to manufacture [`Variation`](crate::model::Variation).
-    pub fn builder() -> crate::model::variation::Builder {
-        crate::model::variation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VariationValueType`, it is important to ensure
@@ -5039,6 +5073,13 @@ impl VariationConfig {
         self.value.as_ref()
     }
 }
+impl VariationConfig {
+    /// Creates a new builder-style object to manufacture [`VariationConfig`](crate::model::VariationConfig).
+    pub fn builder() -> crate::model::variation_config::Builder {
+        crate::model::variation_config::Builder::default()
+    }
+}
+
 /// See [`VariationConfig`](crate::model::VariationConfig).
 pub mod variation_config {
     
@@ -5080,12 +5121,6 @@ pub mod variation_config {
     }
     
     
-}
-impl VariationConfig {
-    /// Creates a new builder-style object to manufacture [`VariationConfig`](crate::model::VariationConfig).
-    pub fn builder() -> crate::model::variation_config::Builder {
-        crate::model::variation_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentStopDesiredState`, it is important to ensure
@@ -5205,6 +5240,13 @@ impl ExperimentReport {
         self.content.as_deref()
     }
 }
+impl ExperimentReport {
+    /// Creates a new builder-style object to manufacture [`ExperimentReport`](crate::model::ExperimentReport).
+    pub fn builder() -> crate::model::experiment_report::Builder {
+        crate::model::experiment_report::Builder::default()
+    }
+}
+
 /// See [`ExperimentReport`](crate::model::ExperimentReport).
 pub mod experiment_report {
     
@@ -5270,12 +5312,6 @@ pub mod experiment_report {
     }
     
     
-}
-impl ExperimentReport {
-    /// Creates a new builder-style object to manufacture [`ExperimentReport`](crate::model::ExperimentReport).
-    pub fn builder() -> crate::model::experiment_report::Builder {
-        crate::model::experiment_report::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentReportName`, it is important to ensure
@@ -5390,6 +5426,13 @@ impl ExperimentResultsData {
         self.values.as_deref()
     }
 }
+impl ExperimentResultsData {
+    /// Creates a new builder-style object to manufacture [`ExperimentResultsData`](crate::model::ExperimentResultsData).
+    pub fn builder() -> crate::model::experiment_results_data::Builder {
+        crate::model::experiment_results_data::Builder::default()
+    }
+}
+
 /// See [`ExperimentResultsData`](crate::model::ExperimentResultsData).
 pub mod experiment_results_data {
     
@@ -5461,12 +5504,6 @@ pub mod experiment_results_data {
     }
     
     
-}
-impl ExperimentResultsData {
-    /// Creates a new builder-style object to manufacture [`ExperimentResultsData`](crate::model::ExperimentResultsData).
-    pub fn builder() -> crate::model::experiment_results_data::Builder {
-        crate::model::experiment_results_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentResultResponseType`, it is important to ensure
@@ -5870,6 +5907,13 @@ impl Experiment {
         self.tags.as_ref()
     }
 }
+impl Experiment {
+    /// Creates a new builder-style object to manufacture [`Experiment`](crate::model::Experiment).
+    pub fn builder() -> crate::model::experiment::Builder {
+        crate::model::experiment::Builder::default()
+    }
+}
+
 /// See [`Experiment`](crate::model::Experiment).
 pub mod experiment {
     
@@ -6125,12 +6169,6 @@ pub mod experiment {
     
     
 }
-impl Experiment {
-    /// Creates a new builder-style object to manufacture [`Experiment`](crate::model::Experiment).
-    pub fn builder() -> crate::model::experiment::Builder {
-        crate::model::experiment::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
 #[non_exhaustive]
@@ -6153,6 +6191,13 @@ impl OnlineAbDefinition {
         self.treatment_weights.as_ref()
     }
 }
+impl OnlineAbDefinition {
+    /// Creates a new builder-style object to manufacture [`OnlineAbDefinition`](crate::model::OnlineAbDefinition).
+    pub fn builder() -> crate::model::online_ab_definition::Builder {
+        crate::model::online_ab_definition::Builder::default()
+    }
+}
+
 /// See [`OnlineAbDefinition`](crate::model::OnlineAbDefinition).
 pub mod online_ab_definition {
     
@@ -6200,12 +6245,6 @@ pub mod online_ab_definition {
     }
     
     
-}
-impl OnlineAbDefinition {
-    /// Creates a new builder-style object to manufacture [`OnlineAbDefinition`](crate::model::OnlineAbDefinition).
-    pub fn builder() -> crate::model::online_ab_definition::Builder {
-        crate::model::online_ab_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentType`, it is important to ensure
@@ -6308,6 +6347,13 @@ impl MetricGoal {
         self.desired_change.as_ref()
     }
 }
+impl MetricGoal {
+    /// Creates a new builder-style object to manufacture [`MetricGoal`](crate::model::MetricGoal).
+    pub fn builder() -> crate::model::metric_goal::Builder {
+        crate::model::metric_goal::Builder::default()
+    }
+}
+
 /// See [`MetricGoal`](crate::model::MetricGoal).
 pub mod metric_goal {
     
@@ -6351,12 +6397,6 @@ pub mod metric_goal {
     }
     
     
-}
-impl MetricGoal {
-    /// Creates a new builder-style object to manufacture [`MetricGoal`](crate::model::MetricGoal).
-    pub fn builder() -> crate::model::metric_goal::Builder {
-        crate::model::metric_goal::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeDirectionEnum`, it is important to ensure
@@ -6469,6 +6509,13 @@ impl Treatment {
         self.feature_variations.as_ref()
     }
 }
+impl Treatment {
+    /// Creates a new builder-style object to manufacture [`Treatment`](crate::model::Treatment).
+    pub fn builder() -> crate::model::treatment::Builder {
+        crate::model::treatment::Builder::default()
+    }
+}
+
 /// See [`Treatment`](crate::model::Treatment).
 pub mod treatment {
     
@@ -6529,12 +6576,6 @@ pub mod treatment {
     
     
 }
-impl Treatment {
-    /// Creates a new builder-style object to manufacture [`Treatment`](crate::model::Treatment).
-    pub fn builder() -> crate::model::treatment::Builder {
-        crate::model::treatment::Builder::default()
-    }
-}
 
 /// <p>This structure contains the date and time that the experiment started and ended.</p>
 #[non_exhaustive]
@@ -6557,6 +6598,13 @@ impl ExperimentExecution {
         self.ended_time.as_ref()
     }
 }
+impl ExperimentExecution {
+    /// Creates a new builder-style object to manufacture [`ExperimentExecution`](crate::model::ExperimentExecution).
+    pub fn builder() -> crate::model::experiment_execution::Builder {
+        crate::model::experiment_execution::Builder::default()
+    }
+}
+
 /// See [`ExperimentExecution`](crate::model::ExperimentExecution).
 pub mod experiment_execution {
     
@@ -6599,12 +6647,6 @@ pub mod experiment_execution {
     
     
 }
-impl ExperimentExecution {
-    /// Creates a new builder-style object to manufacture [`ExperimentExecution`](crate::model::ExperimentExecution).
-    pub fn builder() -> crate::model::experiment_execution::Builder {
-        crate::model::experiment_execution::Builder::default()
-    }
-}
 
 /// <p>This structure contains the time and date that Evidently completed the analysis of the experiment.</p>
 #[non_exhaustive]
@@ -6620,6 +6662,13 @@ impl ExperimentSchedule {
         self.analysis_complete_time.as_ref()
     }
 }
+impl ExperimentSchedule {
+    /// Creates a new builder-style object to manufacture [`ExperimentSchedule`](crate::model::ExperimentSchedule).
+    pub fn builder() -> crate::model::experiment_schedule::Builder {
+        crate::model::experiment_schedule::Builder::default()
+    }
+}
+
 /// See [`ExperimentSchedule`](crate::model::ExperimentSchedule).
 pub mod experiment_schedule {
     
@@ -6649,12 +6698,6 @@ pub mod experiment_schedule {
     }
     
     
-}
-impl ExperimentSchedule {
-    /// Creates a new builder-style object to manufacture [`ExperimentSchedule`](crate::model::ExperimentSchedule).
-    pub fn builder() -> crate::model::experiment_schedule::Builder {
-        crate::model::experiment_schedule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExperimentStatus`, it is important to ensure
@@ -6775,6 +6818,13 @@ impl OnlineAbConfig {
         self.treatment_weights.as_ref()
     }
 }
+impl OnlineAbConfig {
+    /// Creates a new builder-style object to manufacture [`OnlineAbConfig`](crate::model::OnlineAbConfig).
+    pub fn builder() -> crate::model::online_ab_config::Builder {
+        crate::model::online_ab_config::Builder::default()
+    }
+}
+
 /// See [`OnlineAbConfig`](crate::model::OnlineAbConfig).
 pub mod online_ab_config {
     
@@ -6823,12 +6873,6 @@ pub mod online_ab_config {
     
     
 }
-impl OnlineAbConfig {
-    /// Creates a new builder-style object to manufacture [`OnlineAbConfig`](crate::model::OnlineAbConfig).
-    pub fn builder() -> crate::model::online_ab_config::Builder {
-        crate::model::online_ab_config::Builder::default()
-    }
-}
 
 /// <p>Use this structure to tell Evidently whether higher or lower values are desired for a metric that is used in an experiment.</p>
 #[non_exhaustive]
@@ -6853,6 +6897,13 @@ impl MetricGoalConfig {
         self.desired_change.as_ref()
     }
 }
+impl MetricGoalConfig {
+    /// Creates a new builder-style object to manufacture [`MetricGoalConfig`](crate::model::MetricGoalConfig).
+    pub fn builder() -> crate::model::metric_goal_config::Builder {
+        crate::model::metric_goal_config::Builder::default()
+    }
+}
+
 /// See [`MetricGoalConfig`](crate::model::MetricGoalConfig).
 pub mod metric_goal_config {
     
@@ -6897,12 +6948,6 @@ pub mod metric_goal_config {
     
     
 }
-impl MetricGoalConfig {
-    /// Creates a new builder-style object to manufacture [`MetricGoalConfig`](crate::model::MetricGoalConfig).
-    pub fn builder() -> crate::model::metric_goal_config::Builder {
-        crate::model::metric_goal_config::Builder::default()
-    }
-}
 
 /// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
@@ -6939,6 +6984,13 @@ impl TreatmentConfig {
         self.variation.as_deref()
     }
 }
+impl TreatmentConfig {
+    /// Creates a new builder-style object to manufacture [`TreatmentConfig`](crate::model::TreatmentConfig).
+    pub fn builder() -> crate::model::treatment_config::Builder {
+        crate::model::treatment_config::Builder::default()
+    }
+}
+
 /// See [`TreatmentConfig`](crate::model::TreatmentConfig).
 pub mod treatment_config {
     
@@ -7004,11 +7056,5 @@ pub mod treatment_config {
     }
     
     
-}
-impl TreatmentConfig {
-    /// Creates a new builder-style object to manufacture [`TreatmentConfig`](crate::model::TreatmentConfig).
-    pub fn builder() -> crate::model::treatment_config::Builder {
-        crate::model::treatment_config::Builder::default()
-    }
 }
 

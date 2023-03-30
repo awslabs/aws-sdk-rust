@@ -145,55 +145,6 @@ pub struct UnauthorizedPartnerIntegrationFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnauthorizedPartnerIntegrationFault {
-    /// Creates a new builder-style object to manufacture [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
-    pub fn builder() -> crate::error::unauthorized_partner_integration_fault::Builder {
-        crate::error::unauthorized_partner_integration_fault::Builder::default()
-    }
-}
-/// See [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
-pub mod unauthorized_partner_integration_fault {
-    
-    /// A builder for [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
-        pub fn build(self) -> crate::error::UnauthorizedPartnerIntegrationFault {
-            crate::error::UnauthorizedPartnerIntegrationFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnauthorizedPartnerIntegrationFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -218,26 +169,17 @@ impl aws_http::request_id::RequestId for crate::error::UnauthorizedPartnerIntegr
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnauthorizedPartnerIntegrationFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The name of the partner was not found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartnerNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl PartnerNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
-    pub fn builder() -> crate::error::partner_not_found_fault::Builder {
-        crate::error::partner_not_found_fault::Builder::default()
+impl UnauthorizedPartnerIntegrationFault {
+    /// Creates a new builder-style object to manufacture [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
+    pub fn builder() -> crate::error::unauthorized_partner_integration_fault::Builder {
+        crate::error::unauthorized_partner_integration_fault::Builder::default()
     }
 }
-/// See [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
-pub mod partner_not_found_fault {
+
+/// See [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
+pub mod unauthorized_partner_integration_fault {
     
-    /// A builder for [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
+    /// A builder for [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -255,19 +197,19 @@ pub mod partner_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
-        pub fn build(self) -> crate::error::PartnerNotFoundFault {
-            crate::error::PartnerNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnauthorizedPartnerIntegrationFault`](crate::error::UnauthorizedPartnerIntegrationFault).
+        pub fn build(self) -> crate::error::UnauthorizedPartnerIntegrationFault {
+            crate::error::UnauthorizedPartnerIntegrationFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -276,6 +218,16 @@ pub mod partner_not_found_fault {
     }
     
     
+}
+
+/// <p>The name of the partner was not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct PartnerNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PartnerNotFoundFault {
     /// Returns the error message.
@@ -302,26 +254,17 @@ impl aws_http::request_id::RequestId for crate::error::PartnerNotFoundFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PartnerNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
-    pub fn builder() -> crate::error::cluster_not_found_fault::Builder {
-        crate::error::cluster_not_found_fault::Builder::default()
+impl PartnerNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
+    pub fn builder() -> crate::error::partner_not_found_fault::Builder {
+        crate::error::partner_not_found_fault::Builder::default()
     }
 }
-/// See [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
-pub mod cluster_not_found_fault {
+
+/// See [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
+pub mod partner_not_found_fault {
     
-    /// A builder for [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
+    /// A builder for [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -339,19 +282,19 @@ pub mod cluster_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
-        pub fn build(self) -> crate::error::ClusterNotFoundFault {
-            crate::error::ClusterNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`PartnerNotFoundFault`](crate::error::PartnerNotFoundFault).
+        pub fn build(self) -> crate::error::PartnerNotFoundFault {
+            crate::error::PartnerNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -360,6 +303,16 @@ pub mod cluster_not_found_fault {
     }
     
     
+}
+
+/// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterNotFoundFault {
     /// Returns the error message.
@@ -385,6 +338,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterNotFoundFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
+    pub fn builder() -> crate::error::cluster_not_found_fault::Builder {
+        crate::error::cluster_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
+pub mod cluster_not_found_fault {
+    
+    /// A builder for [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterNotFoundFault`](crate::error::ClusterNotFoundFault).
+        pub fn build(self) -> crate::error::ClusterNotFoundFault {
+            crate::error::ClusterNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -533,55 +536,6 @@ pub struct InvalidClusterStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_state_fault::Builder {
-        crate::error::invalid_cluster_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
-pub mod invalid_cluster_state_fault {
-    
-    /// A builder for [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterStateFault {
-            crate::error::InvalidClusterStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidClusterStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -606,26 +560,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterStateFault 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DependentServiceRequestThrottlingFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl DependentServiceRequestThrottlingFault {
-    /// Creates a new builder-style object to manufacture [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
-    pub fn builder() -> crate::error::dependent_service_request_throttling_fault::Builder {
-        crate::error::dependent_service_request_throttling_fault::Builder::default()
+impl InvalidClusterStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_state_fault::Builder {
+        crate::error::invalid_cluster_state_fault::Builder::default()
     }
 }
-/// See [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
-pub mod dependent_service_request_throttling_fault {
+
+/// See [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
+pub mod invalid_cluster_state_fault {
     
-    /// A builder for [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
+    /// A builder for [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -643,19 +588,19 @@ pub mod dependent_service_request_throttling_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
-        pub fn build(self) -> crate::error::DependentServiceRequestThrottlingFault {
-            crate::error::DependentServiceRequestThrottlingFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterStateFault`](crate::error::InvalidClusterStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterStateFault {
+            crate::error::InvalidClusterStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -664,6 +609,16 @@ pub mod dependent_service_request_throttling_fault {
     }
     
     
+}
+
+/// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DependentServiceRequestThrottlingFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DependentServiceRequestThrottlingFault {
     /// Returns the error message.
@@ -689,6 +644,56 @@ impl aws_http::request_id::RequestId for crate::error::DependentServiceRequestTh
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DependentServiceRequestThrottlingFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DependentServiceRequestThrottlingFault {
+    /// Creates a new builder-style object to manufacture [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
+    pub fn builder() -> crate::error::dependent_service_request_throttling_fault::Builder {
+        crate::error::dependent_service_request_throttling_fault::Builder::default()
+    }
+}
+
+/// See [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
+pub mod dependent_service_request_throttling_fault {
+    
+    /// A builder for [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DependentServiceRequestThrottlingFault`](crate::error::DependentServiceRequestThrottlingFault).
+        pub fn build(self) -> crate::error::DependentServiceRequestThrottlingFault {
+            crate::error::DependentServiceRequestThrottlingFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -853,55 +858,6 @@ pub struct UnsupportedOperationFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedOperationFault {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-    pub fn builder() -> crate::error::unsupported_operation_fault::Builder {
-        crate::error::unsupported_operation_fault::Builder::default()
-    }
-}
-/// See [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-pub mod unsupported_operation_fault {
-    
-    /// A builder for [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
-        pub fn build(self) -> crate::error::UnsupportedOperationFault {
-            crate::error::UnsupportedOperationFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnsupportedOperationFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -926,26 +882,17 @@ impl aws_http::request_id::RequestId for crate::error::UnsupportedOperationFault
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedOperationFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSnapshotNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterSnapshotNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
-    pub fn builder() -> crate::error::cluster_snapshot_not_found_fault::Builder {
-        crate::error::cluster_snapshot_not_found_fault::Builder::default()
+impl UnsupportedOperationFault {
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+    pub fn builder() -> crate::error::unsupported_operation_fault::Builder {
+        crate::error::unsupported_operation_fault::Builder::default()
     }
 }
-/// See [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
-pub mod cluster_snapshot_not_found_fault {
+
+/// See [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+pub mod unsupported_operation_fault {
     
-    /// A builder for [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
+    /// A builder for [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -963,19 +910,19 @@ pub mod cluster_snapshot_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
-        pub fn build(self) -> crate::error::ClusterSnapshotNotFoundFault {
-            crate::error::ClusterSnapshotNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnsupportedOperationFault`](crate::error::UnsupportedOperationFault).
+        pub fn build(self) -> crate::error::UnsupportedOperationFault {
+            crate::error::UnsupportedOperationFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -984,6 +931,16 @@ pub mod cluster_snapshot_not_found_fault {
     }
     
     
+}
+
+/// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterSnapshotNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSnapshotNotFoundFault {
     /// Returns the error message.
@@ -1010,26 +967,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSnapshotNotFoundFa
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSnapshotNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizationNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AuthorizationNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
-    pub fn builder() -> crate::error::authorization_not_found_fault::Builder {
-        crate::error::authorization_not_found_fault::Builder::default()
+impl ClusterSnapshotNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
+    pub fn builder() -> crate::error::cluster_snapshot_not_found_fault::Builder {
+        crate::error::cluster_snapshot_not_found_fault::Builder::default()
     }
 }
-/// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
-pub mod authorization_not_found_fault {
+
+/// See [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
+pub mod cluster_snapshot_not_found_fault {
     
-    /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
+    /// A builder for [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1047,19 +995,19 @@ pub mod authorization_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
-        pub fn build(self) -> crate::error::AuthorizationNotFoundFault {
-            crate::error::AuthorizationNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSnapshotNotFoundFault`](crate::error::ClusterSnapshotNotFoundFault).
+        pub fn build(self) -> crate::error::ClusterSnapshotNotFoundFault {
+            crate::error::ClusterSnapshotNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1068,6 +1016,16 @@ pub mod authorization_not_found_fault {
     }
     
     
+}
+
+/// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthorizationNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthorizationNotFoundFault {
     /// Returns the error message.
@@ -1094,26 +1052,17 @@ impl aws_http::request_id::RequestId for crate::error::AuthorizationNotFoundFaul
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthorizationNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessToSnapshotDeniedFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AccessToSnapshotDeniedFault {
-    /// Creates a new builder-style object to manufacture [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
-    pub fn builder() -> crate::error::access_to_snapshot_denied_fault::Builder {
-        crate::error::access_to_snapshot_denied_fault::Builder::default()
+impl AuthorizationNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
+    pub fn builder() -> crate::error::authorization_not_found_fault::Builder {
+        crate::error::authorization_not_found_fault::Builder::default()
     }
 }
-/// See [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
-pub mod access_to_snapshot_denied_fault {
+
+/// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
+pub mod authorization_not_found_fault {
     
-    /// A builder for [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
+    /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1131,19 +1080,19 @@ pub mod access_to_snapshot_denied_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
-        pub fn build(self) -> crate::error::AccessToSnapshotDeniedFault {
-            crate::error::AccessToSnapshotDeniedFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
+        pub fn build(self) -> crate::error::AuthorizationNotFoundFault {
+            crate::error::AuthorizationNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1152,6 +1101,16 @@ pub mod access_to_snapshot_denied_fault {
     }
     
     
+}
+
+/// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessToSnapshotDeniedFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessToSnapshotDeniedFault {
     /// Returns the error message.
@@ -1177,6 +1136,56 @@ impl aws_http::request_id::RequestId for crate::error::AccessToSnapshotDeniedFau
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessToSnapshotDeniedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AccessToSnapshotDeniedFault {
+    /// Creates a new builder-style object to manufacture [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
+    pub fn builder() -> crate::error::access_to_snapshot_denied_fault::Builder {
+        crate::error::access_to_snapshot_denied_fault::Builder::default()
+    }
+}
+
+/// See [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
+pub mod access_to_snapshot_denied_fault {
+    
+    /// A builder for [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AccessToSnapshotDeniedFault`](crate::error::AccessToSnapshotDeniedFault).
+        pub fn build(self) -> crate::error::AccessToSnapshotDeniedFault {
+            crate::error::AccessToSnapshotDeniedFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1389,55 +1398,6 @@ pub struct InvalidEndpointStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidEndpointStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
-    pub fn builder() -> crate::error::invalid_endpoint_state_fault::Builder {
-        crate::error::invalid_endpoint_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
-pub mod invalid_endpoint_state_fault {
-    
-    /// A builder for [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
-        pub fn build(self) -> crate::error::InvalidEndpointStateFault {
-            crate::error::InvalidEndpointStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidEndpointStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1462,26 +1422,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidEndpointStateFault
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidEndpointStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The state of the cluster security group is not <code>available</code>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidClusterSecurityGroupStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidClusterSecurityGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_security_group_state_fault::Builder {
-        crate::error::invalid_cluster_security_group_state_fault::Builder::default()
+impl InvalidEndpointStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
+    pub fn builder() -> crate::error::invalid_endpoint_state_fault::Builder {
+        crate::error::invalid_endpoint_state_fault::Builder::default()
     }
 }
-/// See [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
-pub mod invalid_cluster_security_group_state_fault {
+
+/// See [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
+pub mod invalid_endpoint_state_fault {
     
-    /// A builder for [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
+    /// A builder for [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1499,19 +1450,19 @@ pub mod invalid_cluster_security_group_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterSecurityGroupStateFault {
-            crate::error::InvalidClusterSecurityGroupStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidEndpointStateFault`](crate::error::InvalidEndpointStateFault).
+        pub fn build(self) -> crate::error::InvalidEndpointStateFault {
+            crate::error::InvalidEndpointStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1520,6 +1471,16 @@ pub mod invalid_cluster_security_group_state_fault {
     }
     
     
+}
+
+/// <p>The state of the cluster security group is not <code>available</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidClusterSecurityGroupStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterSecurityGroupStateFault {
     /// Returns the error message.
@@ -1546,26 +1507,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterSecurityGro
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterSecurityGroupStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The status of the authorization is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidAuthorizationStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidAuthorizationStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
-    pub fn builder() -> crate::error::invalid_authorization_state_fault::Builder {
-        crate::error::invalid_authorization_state_fault::Builder::default()
+impl InvalidClusterSecurityGroupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_security_group_state_fault::Builder {
+        crate::error::invalid_cluster_security_group_state_fault::Builder::default()
     }
 }
-/// See [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
-pub mod invalid_authorization_state_fault {
+
+/// See [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
+pub mod invalid_cluster_security_group_state_fault {
     
-    /// A builder for [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
+    /// A builder for [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1583,19 +1535,19 @@ pub mod invalid_authorization_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
-        pub fn build(self) -> crate::error::InvalidAuthorizationStateFault {
-            crate::error::InvalidAuthorizationStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterSecurityGroupStateFault`](crate::error::InvalidClusterSecurityGroupStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterSecurityGroupStateFault {
+            crate::error::InvalidClusterSecurityGroupStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1604,6 +1556,16 @@ pub mod invalid_authorization_state_fault {
     }
     
     
+}
+
+/// <p>The status of the authorization is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidAuthorizationStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidAuthorizationStateFault {
     /// Returns the error message.
@@ -1630,26 +1592,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidAuthorizationState
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidAuthorizationStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The endpoint name doesn't refer to an existing endpoint.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EndpointNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
-    pub fn builder() -> crate::error::endpoint_not_found_fault::Builder {
-        crate::error::endpoint_not_found_fault::Builder::default()
+impl InvalidAuthorizationStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
+    pub fn builder() -> crate::error::invalid_authorization_state_fault::Builder {
+        crate::error::invalid_authorization_state_fault::Builder::default()
     }
 }
-/// See [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
-pub mod endpoint_not_found_fault {
+
+/// See [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
+pub mod invalid_authorization_state_fault {
     
-    /// A builder for [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
+    /// A builder for [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1667,19 +1620,19 @@ pub mod endpoint_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
-        pub fn build(self) -> crate::error::EndpointNotFoundFault {
-            crate::error::EndpointNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidAuthorizationStateFault`](crate::error::InvalidAuthorizationStateFault).
+        pub fn build(self) -> crate::error::InvalidAuthorizationStateFault {
+            crate::error::InvalidAuthorizationStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1688,6 +1641,16 @@ pub mod endpoint_not_found_fault {
     }
     
     
+}
+
+/// <p>The endpoint name doesn't refer to an existing endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EndpointNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointNotFoundFault {
     /// Returns the error message.
@@ -1714,26 +1677,17 @@ impl aws_http::request_id::RequestId for crate::error::EndpointNotFoundFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The authorization for this endpoint can't be found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAuthorizationNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EndpointAuthorizationNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
-    pub fn builder() -> crate::error::endpoint_authorization_not_found_fault::Builder {
-        crate::error::endpoint_authorization_not_found_fault::Builder::default()
+impl EndpointNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
+    pub fn builder() -> crate::error::endpoint_not_found_fault::Builder {
+        crate::error::endpoint_not_found_fault::Builder::default()
     }
 }
-/// See [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
-pub mod endpoint_authorization_not_found_fault {
+
+/// See [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
+pub mod endpoint_not_found_fault {
     
-    /// A builder for [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
+    /// A builder for [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1751,19 +1705,19 @@ pub mod endpoint_authorization_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
-        pub fn build(self) -> crate::error::EndpointAuthorizationNotFoundFault {
-            crate::error::EndpointAuthorizationNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointNotFoundFault`](crate::error::EndpointNotFoundFault).
+        pub fn build(self) -> crate::error::EndpointNotFoundFault {
+            crate::error::EndpointNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1772,6 +1726,16 @@ pub mod endpoint_authorization_not_found_fault {
     }
     
     
+}
+
+/// <p>The authorization for this endpoint can't be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EndpointAuthorizationNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointAuthorizationNotFoundFault {
     /// Returns the error message.
@@ -1797,6 +1761,56 @@ impl aws_http::request_id::RequestId for crate::error::EndpointAuthorizationNotF
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointAuthorizationNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl EndpointAuthorizationNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
+    pub fn builder() -> crate::error::endpoint_authorization_not_found_fault::Builder {
+        crate::error::endpoint_authorization_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
+pub mod endpoint_authorization_not_found_fault {
+    
+    /// A builder for [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointAuthorizationNotFoundFault`](crate::error::EndpointAuthorizationNotFoundFault).
+        pub fn build(self) -> crate::error::EndpointAuthorizationNotFoundFault {
+            crate::error::EndpointAuthorizationNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1945,55 +1959,6 @@ pub struct ClusterSecurityGroupNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSecurityGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
-    pub fn builder() -> crate::error::cluster_security_group_not_found_fault::Builder {
-        crate::error::cluster_security_group_not_found_fault::Builder::default()
-    }
-}
-/// See [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
-pub mod cluster_security_group_not_found_fault {
-    
-    /// A builder for [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
-        pub fn build(self) -> crate::error::ClusterSecurityGroupNotFoundFault {
-            crate::error::ClusterSecurityGroupNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ClusterSecurityGroupNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2017,6 +1982,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSecurityGroupNotFo
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSecurityGroupNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterSecurityGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
+    pub fn builder() -> crate::error::cluster_security_group_not_found_fault::Builder {
+        crate::error::cluster_security_group_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
+pub mod cluster_security_group_not_found_fault {
+    
+    /// A builder for [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSecurityGroupNotFoundFault`](crate::error::ClusterSecurityGroupNotFoundFault).
+        pub fn build(self) -> crate::error::ClusterSecurityGroupNotFoundFault {
+            crate::error::ClusterSecurityGroupNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2165,55 +2180,6 @@ pub struct InsufficientClusterCapacityFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InsufficientClusterCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
-    pub fn builder() -> crate::error::insufficient_cluster_capacity_fault::Builder {
-        crate::error::insufficient_cluster_capacity_fault::Builder::default()
-    }
-}
-/// See [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
-pub mod insufficient_cluster_capacity_fault {
-    
-    /// A builder for [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
-        pub fn build(self) -> crate::error::InsufficientClusterCapacityFault {
-            crate::error::InsufficientClusterCapacityFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InsufficientClusterCapacityFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2237,6 +2203,56 @@ impl aws_http::request_id::RequestId for crate::error::InsufficientClusterCapaci
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InsufficientClusterCapacityFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InsufficientClusterCapacityFault {
+    /// Creates a new builder-style object to manufacture [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
+    pub fn builder() -> crate::error::insufficient_cluster_capacity_fault::Builder {
+        crate::error::insufficient_cluster_capacity_fault::Builder::default()
+    }
+}
+
+/// See [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
+pub mod insufficient_cluster_capacity_fault {
+    
+    /// A builder for [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InsufficientClusterCapacityFault`](crate::error::InsufficientClusterCapacityFault).
+        pub fn build(self) -> crate::error::InsufficientClusterCapacityFault {
+            crate::error::InsufficientClusterCapacityFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2449,55 +2465,6 @@ pub struct InvalidTableRestoreArgumentFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidTableRestoreArgumentFault {
-    /// Creates a new builder-style object to manufacture [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
-    pub fn builder() -> crate::error::invalid_table_restore_argument_fault::Builder {
-        crate::error::invalid_table_restore_argument_fault::Builder::default()
-    }
-}
-/// See [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
-pub mod invalid_table_restore_argument_fault {
-    
-    /// A builder for [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
-        pub fn build(self) -> crate::error::InvalidTableRestoreArgumentFault {
-            crate::error::InvalidTableRestoreArgumentFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidTableRestoreArgumentFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2522,26 +2489,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidTableRestoreArgume
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTableRestoreArgumentFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidClusterSnapshotStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidClusterSnapshotStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_snapshot_state_fault::Builder {
-        crate::error::invalid_cluster_snapshot_state_fault::Builder::default()
+impl InvalidTableRestoreArgumentFault {
+    /// Creates a new builder-style object to manufacture [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
+    pub fn builder() -> crate::error::invalid_table_restore_argument_fault::Builder {
+        crate::error::invalid_table_restore_argument_fault::Builder::default()
     }
 }
-/// See [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
-pub mod invalid_cluster_snapshot_state_fault {
+
+/// See [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
+pub mod invalid_table_restore_argument_fault {
     
-    /// A builder for [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
+    /// A builder for [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2559,19 +2517,19 @@ pub mod invalid_cluster_snapshot_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterSnapshotStateFault {
-            crate::error::InvalidClusterSnapshotStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidTableRestoreArgumentFault`](crate::error::InvalidTableRestoreArgumentFault).
+        pub fn build(self) -> crate::error::InvalidTableRestoreArgumentFault {
+            crate::error::InvalidTableRestoreArgumentFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2580,6 +2538,16 @@ pub mod invalid_cluster_snapshot_state_fault {
     }
     
     
+}
+
+/// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidClusterSnapshotStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterSnapshotStateFault {
     /// Returns the error message.
@@ -2606,26 +2574,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterSnapshotSta
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterSnapshotStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InProgressTableRestoreQuotaExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InProgressTableRestoreQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
-    pub fn builder() -> crate::error::in_progress_table_restore_quota_exceeded_fault::Builder {
-        crate::error::in_progress_table_restore_quota_exceeded_fault::Builder::default()
+impl InvalidClusterSnapshotStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_snapshot_state_fault::Builder {
+        crate::error::invalid_cluster_snapshot_state_fault::Builder::default()
     }
 }
-/// See [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
-pub mod in_progress_table_restore_quota_exceeded_fault {
+
+/// See [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
+pub mod invalid_cluster_snapshot_state_fault {
     
-    /// A builder for [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
+    /// A builder for [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2643,19 +2602,19 @@ pub mod in_progress_table_restore_quota_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
-        pub fn build(self) -> crate::error::InProgressTableRestoreQuotaExceededFault {
-            crate::error::InProgressTableRestoreQuotaExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterSnapshotStateFault`](crate::error::InvalidClusterSnapshotStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterSnapshotStateFault {
+            crate::error::InvalidClusterSnapshotStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -2664,6 +2623,16 @@ pub mod in_progress_table_restore_quota_exceeded_fault {
     }
     
     
+}
+
+/// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InProgressTableRestoreQuotaExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InProgressTableRestoreQuotaExceededFault {
     /// Returns the error message.
@@ -2689,6 +2658,56 @@ impl aws_http::request_id::RequestId for crate::error::InProgressTableRestoreQuo
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InProgressTableRestoreQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InProgressTableRestoreQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
+    pub fn builder() -> crate::error::in_progress_table_restore_quota_exceeded_fault::Builder {
+        crate::error::in_progress_table_restore_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
+pub mod in_progress_table_restore_quota_exceeded_fault {
+    
+    /// A builder for [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InProgressTableRestoreQuotaExceededFault`](crate::error::InProgressTableRestoreQuotaExceededFault).
+        pub fn build(self) -> crate::error::InProgressTableRestoreQuotaExceededFault {
+            crate::error::InProgressTableRestoreQuotaExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -3301,55 +3320,6 @@ pub struct UnauthorizedOperation  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnauthorizedOperation {
-    /// Creates a new builder-style object to manufacture [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
-    pub fn builder() -> crate::error::unauthorized_operation::Builder {
-        crate::error::unauthorized_operation::Builder::default()
-    }
-}
-/// See [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
-pub mod unauthorized_operation {
-    
-    /// A builder for [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
-        pub fn build(self) -> crate::error::UnauthorizedOperation {
-            crate::error::UnauthorizedOperation {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnauthorizedOperation {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -3374,26 +3344,17 @@ impl aws_http::request_id::RequestId for crate::error::UnauthorizedOperation {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnauthorizedOperation {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>You have exceeded the number of tags allowed.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagLimitExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl TagLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
-    pub fn builder() -> crate::error::tag_limit_exceeded_fault::Builder {
-        crate::error::tag_limit_exceeded_fault::Builder::default()
+impl UnauthorizedOperation {
+    /// Creates a new builder-style object to manufacture [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
+    pub fn builder() -> crate::error::unauthorized_operation::Builder {
+        crate::error::unauthorized_operation::Builder::default()
     }
 }
-/// See [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
-pub mod tag_limit_exceeded_fault {
+
+/// See [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
+pub mod unauthorized_operation {
     
-    /// A builder for [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
+    /// A builder for [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3411,19 +3372,19 @@ pub mod tag_limit_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
-        pub fn build(self) -> crate::error::TagLimitExceededFault {
-            crate::error::TagLimitExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnauthorizedOperation`](crate::error::UnauthorizedOperation).
+        pub fn build(self) -> crate::error::UnauthorizedOperation {
+            crate::error::UnauthorizedOperation {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3432,6 +3393,16 @@ pub mod tag_limit_exceeded_fault {
     }
     
     
+}
+
+/// <p>You have exceeded the number of tags allowed.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TagLimitExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TagLimitExceededFault {
     /// Returns the error message.
@@ -3458,26 +3429,17 @@ impl aws_http::request_id::RequestId for crate::error::TagLimitExceededFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TagLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>We could not find the specified snapshot schedule. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotScheduleNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnapshotScheduleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
-    pub fn builder() -> crate::error::snapshot_schedule_not_found_fault::Builder {
-        crate::error::snapshot_schedule_not_found_fault::Builder::default()
+impl TagLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
+    pub fn builder() -> crate::error::tag_limit_exceeded_fault::Builder {
+        crate::error::tag_limit_exceeded_fault::Builder::default()
     }
 }
-/// See [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
-pub mod snapshot_schedule_not_found_fault {
+
+/// See [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
+pub mod tag_limit_exceeded_fault {
     
-    /// A builder for [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
+    /// A builder for [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3495,19 +3457,19 @@ pub mod snapshot_schedule_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
-        pub fn build(self) -> crate::error::SnapshotScheduleNotFoundFault {
-            crate::error::SnapshotScheduleNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TagLimitExceededFault`](crate::error::TagLimitExceededFault).
+        pub fn build(self) -> crate::error::TagLimitExceededFault {
+            crate::error::TagLimitExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3516,6 +3478,16 @@ pub mod snapshot_schedule_not_found_fault {
     }
     
     
+}
+
+/// <p>We could not find the specified snapshot schedule. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapshotScheduleNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotScheduleNotFoundFault {
     /// Returns the error message.
@@ -3542,26 +3514,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotScheduleNotFoundF
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotScheduleNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Specified offering does not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeOfferingNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ReservedNodeOfferingNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
-    pub fn builder() -> crate::error::reserved_node_offering_not_found_fault::Builder {
-        crate::error::reserved_node_offering_not_found_fault::Builder::default()
+impl SnapshotScheduleNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
+    pub fn builder() -> crate::error::snapshot_schedule_not_found_fault::Builder {
+        crate::error::snapshot_schedule_not_found_fault::Builder::default()
     }
 }
-/// See [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
-pub mod reserved_node_offering_not_found_fault {
+
+/// See [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
+pub mod snapshot_schedule_not_found_fault {
     
-    /// A builder for [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
+    /// A builder for [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3579,19 +3542,19 @@ pub mod reserved_node_offering_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
-        pub fn build(self) -> crate::error::ReservedNodeOfferingNotFoundFault {
-            crate::error::ReservedNodeOfferingNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotScheduleNotFoundFault`](crate::error::SnapshotScheduleNotFoundFault).
+        pub fn build(self) -> crate::error::SnapshotScheduleNotFoundFault {
+            crate::error::SnapshotScheduleNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3600,6 +3563,16 @@ pub mod reserved_node_offering_not_found_fault {
     }
     
     
+}
+
+/// <p>Specified offering does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeOfferingNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReservedNodeOfferingNotFoundFault {
     /// Returns the error message.
@@ -3626,26 +3599,17 @@ impl aws_http::request_id::RequestId for crate::error::ReservedNodeOfferingNotFo
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedNodeOfferingNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified reserved compute node not found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ReservedNodeNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
-    pub fn builder() -> crate::error::reserved_node_not_found_fault::Builder {
-        crate::error::reserved_node_not_found_fault::Builder::default()
+impl ReservedNodeOfferingNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
+    pub fn builder() -> crate::error::reserved_node_offering_not_found_fault::Builder {
+        crate::error::reserved_node_offering_not_found_fault::Builder::default()
     }
 }
-/// See [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
-pub mod reserved_node_not_found_fault {
+
+/// See [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
+pub mod reserved_node_offering_not_found_fault {
     
-    /// A builder for [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+    /// A builder for [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3663,19 +3627,19 @@ pub mod reserved_node_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
-        pub fn build(self) -> crate::error::ReservedNodeNotFoundFault {
-            crate::error::ReservedNodeNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReservedNodeOfferingNotFoundFault`](crate::error::ReservedNodeOfferingNotFoundFault).
+        pub fn build(self) -> crate::error::ReservedNodeOfferingNotFoundFault {
+            crate::error::ReservedNodeOfferingNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3684,6 +3648,16 @@ pub mod reserved_node_not_found_fault {
     }
     
     
+}
+
+/// <p>The specified reserved compute node not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReservedNodeNotFoundFault {
     /// Returns the error message.
@@ -3710,26 +3684,17 @@ impl aws_http::request_id::RequestId for crate::error::ReservedNodeNotFoundFault
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedNodeNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Indicates that the reserved node has already been exchanged.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeAlreadyMigratedFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ReservedNodeAlreadyMigratedFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
-    pub fn builder() -> crate::error::reserved_node_already_migrated_fault::Builder {
-        crate::error::reserved_node_already_migrated_fault::Builder::default()
+impl ReservedNodeNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+    pub fn builder() -> crate::error::reserved_node_not_found_fault::Builder {
+        crate::error::reserved_node_not_found_fault::Builder::default()
     }
 }
-/// See [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
-pub mod reserved_node_already_migrated_fault {
+
+/// See [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+pub mod reserved_node_not_found_fault {
     
-    /// A builder for [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
+    /// A builder for [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3747,19 +3712,19 @@ pub mod reserved_node_already_migrated_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
-        pub fn build(self) -> crate::error::ReservedNodeAlreadyMigratedFault {
-            crate::error::ReservedNodeAlreadyMigratedFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReservedNodeNotFoundFault`](crate::error::ReservedNodeNotFoundFault).
+        pub fn build(self) -> crate::error::ReservedNodeNotFoundFault {
+            crate::error::ReservedNodeNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3768,6 +3733,16 @@ pub mod reserved_node_already_migrated_fault {
     }
     
     
+}
+
+/// <p>Indicates that the reserved node has already been exchanged.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeAlreadyMigratedFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReservedNodeAlreadyMigratedFault {
     /// Returns the error message.
@@ -3794,26 +3769,17 @@ impl aws_http::request_id::RequestId for crate::error::ReservedNodeAlreadyMigrat
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedNodeAlreadyMigratedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>User already has a reservation with the given identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodeAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ReservedNodeAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
-    pub fn builder() -> crate::error::reserved_node_already_exists_fault::Builder {
-        crate::error::reserved_node_already_exists_fault::Builder::default()
+impl ReservedNodeAlreadyMigratedFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
+    pub fn builder() -> crate::error::reserved_node_already_migrated_fault::Builder {
+        crate::error::reserved_node_already_migrated_fault::Builder::default()
     }
 }
-/// See [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
-pub mod reserved_node_already_exists_fault {
+
+/// See [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
+pub mod reserved_node_already_migrated_fault {
     
-    /// A builder for [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+    /// A builder for [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3831,19 +3797,19 @@ pub mod reserved_node_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ReservedNodeAlreadyExistsFault {
-            crate::error::ReservedNodeAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReservedNodeAlreadyMigratedFault`](crate::error::ReservedNodeAlreadyMigratedFault).
+        pub fn build(self) -> crate::error::ReservedNodeAlreadyMigratedFault {
+            crate::error::ReservedNodeAlreadyMigratedFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3852,6 +3818,16 @@ pub mod reserved_node_already_exists_fault {
     }
     
     
+}
+
+/// <p>User already has a reservation with the given identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReservedNodeAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReservedNodeAlreadyExistsFault {
     /// Returns the error message.
@@ -3878,26 +3854,17 @@ impl aws_http::request_id::RequestId for crate::error::ReservedNodeAlreadyExists
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedNodeAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumberOfNodesQuotaExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl NumberOfNodesQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
-    pub fn builder() -> crate::error::number_of_nodes_quota_exceeded_fault::Builder {
-        crate::error::number_of_nodes_quota_exceeded_fault::Builder::default()
+impl ReservedNodeAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+    pub fn builder() -> crate::error::reserved_node_already_exists_fault::Builder {
+        crate::error::reserved_node_already_exists_fault::Builder::default()
     }
 }
-/// See [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
-pub mod number_of_nodes_quota_exceeded_fault {
+
+/// See [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+pub mod reserved_node_already_exists_fault {
     
-    /// A builder for [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
+    /// A builder for [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3915,19 +3882,19 @@ pub mod number_of_nodes_quota_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
-        pub fn build(self) -> crate::error::NumberOfNodesQuotaExceededFault {
-            crate::error::NumberOfNodesQuotaExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReservedNodeAlreadyExistsFault`](crate::error::ReservedNodeAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ReservedNodeAlreadyExistsFault {
+            crate::error::ReservedNodeAlreadyExistsFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -3936,6 +3903,16 @@ pub mod number_of_nodes_quota_exceeded_fault {
     }
     
     
+}
+
+/// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NumberOfNodesQuotaExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NumberOfNodesQuotaExceededFault {
     /// Returns the error message.
@@ -3962,26 +3939,17 @@ impl aws_http::request_id::RequestId for crate::error::NumberOfNodesQuotaExceede
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NumberOfNodesQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumberOfNodesPerClusterLimitExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl NumberOfNodesPerClusterLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
-    pub fn builder() -> crate::error::number_of_nodes_per_cluster_limit_exceeded_fault::Builder {
-        crate::error::number_of_nodes_per_cluster_limit_exceeded_fault::Builder::default()
+impl NumberOfNodesQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
+    pub fn builder() -> crate::error::number_of_nodes_quota_exceeded_fault::Builder {
+        crate::error::number_of_nodes_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
-pub mod number_of_nodes_per_cluster_limit_exceeded_fault {
+
+/// See [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
+pub mod number_of_nodes_quota_exceeded_fault {
     
-    /// A builder for [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
+    /// A builder for [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3999,19 +3967,19 @@ pub mod number_of_nodes_per_cluster_limit_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
-        pub fn build(self) -> crate::error::NumberOfNodesPerClusterLimitExceededFault {
-            crate::error::NumberOfNodesPerClusterLimitExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NumberOfNodesQuotaExceededFault`](crate::error::NumberOfNodesQuotaExceededFault).
+        pub fn build(self) -> crate::error::NumberOfNodesQuotaExceededFault {
+            crate::error::NumberOfNodesQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4020,6 +3988,16 @@ pub mod number_of_nodes_per_cluster_limit_exceeded_fault {
     }
     
     
+}
+
+/// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NumberOfNodesPerClusterLimitExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NumberOfNodesPerClusterLimitExceededFault {
     /// Returns the error message.
@@ -4046,26 +4024,17 @@ impl aws_http::request_id::RequestId for crate::error::NumberOfNodesPerClusterLi
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NumberOfNodesPerClusterLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl LimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault).
-    pub fn builder() -> crate::error::limit_exceeded_fault::Builder {
-        crate::error::limit_exceeded_fault::Builder::default()
+impl NumberOfNodesPerClusterLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
+    pub fn builder() -> crate::error::number_of_nodes_per_cluster_limit_exceeded_fault::Builder {
+        crate::error::number_of_nodes_per_cluster_limit_exceeded_fault::Builder::default()
     }
 }
-/// See [`LimitExceededFault`](crate::error::LimitExceededFault).
-pub mod limit_exceeded_fault {
+
+/// See [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
+pub mod number_of_nodes_per_cluster_limit_exceeded_fault {
     
-    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
+    /// A builder for [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4083,19 +4052,19 @@ pub mod limit_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault).
-        pub fn build(self) -> crate::error::LimitExceededFault {
-            crate::error::LimitExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NumberOfNodesPerClusterLimitExceededFault`](crate::error::NumberOfNodesPerClusterLimitExceededFault).
+        pub fn build(self) -> crate::error::NumberOfNodesPerClusterLimitExceededFault {
+            crate::error::NumberOfNodesPerClusterLimitExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4104,6 +4073,16 @@ pub mod limit_exceeded_fault {
     }
     
     
+}
+
+/// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LimitExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl LimitExceededFault {
     /// Returns the error message.
@@ -4130,26 +4109,17 @@ impl aws_http::request_id::RequestId for crate::error::LimitExceededFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The cluster subnet group does not cover all Availability Zones.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidVpcNetworkStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidVpcNetworkStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
-    pub fn builder() -> crate::error::invalid_vpc_network_state_fault::Builder {
-        crate::error::invalid_vpc_network_state_fault::Builder::default()
+impl LimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault).
+    pub fn builder() -> crate::error::limit_exceeded_fault::Builder {
+        crate::error::limit_exceeded_fault::Builder::default()
     }
 }
-/// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
-pub mod invalid_vpc_network_state_fault {
+
+/// See [`LimitExceededFault`](crate::error::LimitExceededFault).
+pub mod limit_exceeded_fault {
     
-    /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
+    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4167,19 +4137,19 @@ pub mod invalid_vpc_network_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
-        pub fn build(self) -> crate::error::InvalidVpcNetworkStateFault {
-            crate::error::InvalidVpcNetworkStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault).
+        pub fn build(self) -> crate::error::LimitExceededFault {
+            crate::error::LimitExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4188,6 +4158,16 @@ pub mod invalid_vpc_network_state_fault {
     }
     
     
+}
+
+/// <p>The cluster subnet group does not cover all Availability Zones.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidVpcNetworkStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidVpcNetworkStateFault {
     /// Returns the error message.
@@ -4214,26 +4194,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidVpcNetworkStateFau
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidVpcNetworkStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The tag is invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTagFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidTagFault {
-    /// Creates a new builder-style object to manufacture [`InvalidTagFault`](crate::error::InvalidTagFault).
-    pub fn builder() -> crate::error::invalid_tag_fault::Builder {
-        crate::error::invalid_tag_fault::Builder::default()
+impl InvalidVpcNetworkStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
+    pub fn builder() -> crate::error::invalid_vpc_network_state_fault::Builder {
+        crate::error::invalid_vpc_network_state_fault::Builder::default()
     }
 }
-/// See [`InvalidTagFault`](crate::error::InvalidTagFault).
-pub mod invalid_tag_fault {
+
+/// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
+pub mod invalid_vpc_network_state_fault {
     
-    /// A builder for [`InvalidTagFault`](crate::error::InvalidTagFault).
+    /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4251,19 +4222,19 @@ pub mod invalid_tag_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidTagFault`](crate::error::InvalidTagFault).
-        pub fn build(self) -> crate::error::InvalidTagFault {
-            crate::error::InvalidTagFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
+        pub fn build(self) -> crate::error::InvalidVpcNetworkStateFault {
+            crate::error::InvalidVpcNetworkStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4272,6 +4243,16 @@ pub mod invalid_tag_fault {
     }
     
     
+}
+
+/// <p>The tag is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidTagFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidTagFault {
     /// Returns the error message.
@@ -4298,26 +4279,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidTagFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTagFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSubnet  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidSubnet {
-    /// Creates a new builder-style object to manufacture [`InvalidSubnet`](crate::error::InvalidSubnet).
-    pub fn builder() -> crate::error::invalid_subnet::Builder {
-        crate::error::invalid_subnet::Builder::default()
+impl InvalidTagFault {
+    /// Creates a new builder-style object to manufacture [`InvalidTagFault`](crate::error::InvalidTagFault).
+    pub fn builder() -> crate::error::invalid_tag_fault::Builder {
+        crate::error::invalid_tag_fault::Builder::default()
     }
 }
-/// See [`InvalidSubnet`](crate::error::InvalidSubnet).
-pub mod invalid_subnet {
+
+/// See [`InvalidTagFault`](crate::error::InvalidTagFault).
+pub mod invalid_tag_fault {
     
-    /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
+    /// A builder for [`InvalidTagFault`](crate::error::InvalidTagFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4335,19 +4307,19 @@ pub mod invalid_subnet {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidSubnet`](crate::error::InvalidSubnet).
-        pub fn build(self) -> crate::error::InvalidSubnet {
-            crate::error::InvalidSubnet {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidTagFault`](crate::error::InvalidTagFault).
+        pub fn build(self) -> crate::error::InvalidTagFault {
+            crate::error::InvalidTagFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4356,6 +4328,16 @@ pub mod invalid_subnet {
     }
     
     
+}
+
+/// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidSubnet  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSubnet {
     /// Returns the error message.
@@ -4382,26 +4364,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidSubnet {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSubnet {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The restore is invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRestoreFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidRestoreFault {
-    /// Creates a new builder-style object to manufacture [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
-    pub fn builder() -> crate::error::invalid_restore_fault::Builder {
-        crate::error::invalid_restore_fault::Builder::default()
+impl InvalidSubnet {
+    /// Creates a new builder-style object to manufacture [`InvalidSubnet`](crate::error::InvalidSubnet).
+    pub fn builder() -> crate::error::invalid_subnet::Builder {
+        crate::error::invalid_subnet::Builder::default()
     }
 }
-/// See [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
-pub mod invalid_restore_fault {
+
+/// See [`InvalidSubnet`](crate::error::InvalidSubnet).
+pub mod invalid_subnet {
     
-    /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
+    /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4419,19 +4392,19 @@ pub mod invalid_restore_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
-        pub fn build(self) -> crate::error::InvalidRestoreFault {
-            crate::error::InvalidRestoreFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidSubnet`](crate::error::InvalidSubnet).
+        pub fn build(self) -> crate::error::InvalidSubnet {
+            crate::error::InvalidSubnet {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4440,6 +4413,16 @@ pub mod invalid_restore_fault {
     }
     
     
+}
+
+/// <p>The restore is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidRestoreFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRestoreFault {
     /// Returns the error message.
@@ -4466,26 +4449,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidRestoreFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRestoreFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidReservedNodeStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidReservedNodeStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
-    pub fn builder() -> crate::error::invalid_reserved_node_state_fault::Builder {
-        crate::error::invalid_reserved_node_state_fault::Builder::default()
+impl InvalidRestoreFault {
+    /// Creates a new builder-style object to manufacture [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
+    pub fn builder() -> crate::error::invalid_restore_fault::Builder {
+        crate::error::invalid_restore_fault::Builder::default()
     }
 }
-/// See [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
-pub mod invalid_reserved_node_state_fault {
+
+/// See [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
+pub mod invalid_restore_fault {
     
-    /// A builder for [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
+    /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4503,19 +4477,19 @@ pub mod invalid_reserved_node_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
-        pub fn build(self) -> crate::error::InvalidReservedNodeStateFault {
-            crate::error::InvalidReservedNodeStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
+        pub fn build(self) -> crate::error::InvalidRestoreFault {
+            crate::error::InvalidRestoreFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4524,6 +4498,16 @@ pub mod invalid_reserved_node_state_fault {
     }
     
     
+}
+
+/// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidReservedNodeStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidReservedNodeStateFault {
     /// Returns the error message.
@@ -4550,26 +4534,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidReservedNodeStateF
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidReservedNodeStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidElasticIpFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidElasticIpFault {
-    /// Creates a new builder-style object to manufacture [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
-    pub fn builder() -> crate::error::invalid_elastic_ip_fault::Builder {
-        crate::error::invalid_elastic_ip_fault::Builder::default()
+impl InvalidReservedNodeStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
+    pub fn builder() -> crate::error::invalid_reserved_node_state_fault::Builder {
+        crate::error::invalid_reserved_node_state_fault::Builder::default()
     }
 }
-/// See [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
-pub mod invalid_elastic_ip_fault {
+
+/// See [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
+pub mod invalid_reserved_node_state_fault {
     
-    /// A builder for [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
+    /// A builder for [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4587,19 +4562,19 @@ pub mod invalid_elastic_ip_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
-        pub fn build(self) -> crate::error::InvalidElasticIpFault {
-            crate::error::InvalidElasticIpFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidReservedNodeStateFault`](crate::error::InvalidReservedNodeStateFault).
+        pub fn build(self) -> crate::error::InvalidReservedNodeStateFault {
+            crate::error::InvalidReservedNodeStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4608,6 +4583,16 @@ pub mod invalid_elastic_ip_fault {
     }
     
     
+}
+
+/// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidElasticIpFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidElasticIpFault {
     /// Returns the error message.
@@ -4634,26 +4619,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidElasticIpFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidElasticIpFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The provided cluster track name is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidClusterTrackFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidClusterTrackFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
-    pub fn builder() -> crate::error::invalid_cluster_track_fault::Builder {
-        crate::error::invalid_cluster_track_fault::Builder::default()
+impl InvalidElasticIpFault {
+    /// Creates a new builder-style object to manufacture [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
+    pub fn builder() -> crate::error::invalid_elastic_ip_fault::Builder {
+        crate::error::invalid_elastic_ip_fault::Builder::default()
     }
 }
-/// See [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
-pub mod invalid_cluster_track_fault {
+
+/// See [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
+pub mod invalid_elastic_ip_fault {
     
-    /// A builder for [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
+    /// A builder for [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4671,19 +4647,19 @@ pub mod invalid_cluster_track_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
-        pub fn build(self) -> crate::error::InvalidClusterTrackFault {
-            crate::error::InvalidClusterTrackFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidElasticIpFault`](crate::error::InvalidElasticIpFault).
+        pub fn build(self) -> crate::error::InvalidElasticIpFault {
+            crate::error::InvalidElasticIpFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4692,6 +4668,16 @@ pub mod invalid_cluster_track_fault {
     }
     
     
+}
+
+/// <p>The provided cluster track name is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidClusterTrackFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterTrackFault {
     /// Returns the error message.
@@ -4718,26 +4704,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterTrackFault 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterTrackFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The cluster subnet group cannot be deleted because it is in use.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidClusterSubnetGroupStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidClusterSubnetGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_subnet_group_state_fault::Builder {
-        crate::error::invalid_cluster_subnet_group_state_fault::Builder::default()
+impl InvalidClusterTrackFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
+    pub fn builder() -> crate::error::invalid_cluster_track_fault::Builder {
+        crate::error::invalid_cluster_track_fault::Builder::default()
     }
 }
-/// See [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
-pub mod invalid_cluster_subnet_group_state_fault {
+
+/// See [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
+pub mod invalid_cluster_track_fault {
     
-    /// A builder for [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
+    /// A builder for [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4755,19 +4732,19 @@ pub mod invalid_cluster_subnet_group_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterSubnetGroupStateFault {
-            crate::error::InvalidClusterSubnetGroupStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterTrackFault`](crate::error::InvalidClusterTrackFault).
+        pub fn build(self) -> crate::error::InvalidClusterTrackFault {
+            crate::error::InvalidClusterTrackFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4776,6 +4753,16 @@ pub mod invalid_cluster_subnet_group_state_fault {
     }
     
     
+}
+
+/// <p>The cluster subnet group cannot be deleted because it is in use.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidClusterSubnetGroupStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterSubnetGroupStateFault {
     /// Returns the error message.
@@ -4802,26 +4789,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterSubnetGroup
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterSubnetGroupStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmConfigurationNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl HsmConfigurationNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
-    pub fn builder() -> crate::error::hsm_configuration_not_found_fault::Builder {
-        crate::error::hsm_configuration_not_found_fault::Builder::default()
+impl InvalidClusterSubnetGroupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_subnet_group_state_fault::Builder {
+        crate::error::invalid_cluster_subnet_group_state_fault::Builder::default()
     }
 }
-/// See [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
-pub mod hsm_configuration_not_found_fault {
+
+/// See [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
+pub mod invalid_cluster_subnet_group_state_fault {
     
-    /// A builder for [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
+    /// A builder for [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4839,19 +4817,19 @@ pub mod hsm_configuration_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
-        pub fn build(self) -> crate::error::HsmConfigurationNotFoundFault {
-            crate::error::HsmConfigurationNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterSubnetGroupStateFault`](crate::error::InvalidClusterSubnetGroupStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterSubnetGroupStateFault {
+            crate::error::InvalidClusterSubnetGroupStateFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4860,6 +4838,16 @@ pub mod hsm_configuration_not_found_fault {
     }
     
     
+}
+
+/// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct HsmConfigurationNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl HsmConfigurationNotFoundFault {
     /// Returns the error message.
@@ -4886,26 +4874,17 @@ impl aws_http::request_id::RequestId for crate::error::HsmConfigurationNotFoundF
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for HsmConfigurationNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmClientCertificateNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl HsmClientCertificateNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
-    pub fn builder() -> crate::error::hsm_client_certificate_not_found_fault::Builder {
-        crate::error::hsm_client_certificate_not_found_fault::Builder::default()
+impl HsmConfigurationNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
+    pub fn builder() -> crate::error::hsm_configuration_not_found_fault::Builder {
+        crate::error::hsm_configuration_not_found_fault::Builder::default()
     }
 }
-/// See [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
-pub mod hsm_client_certificate_not_found_fault {
+
+/// See [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
+pub mod hsm_configuration_not_found_fault {
     
-    /// A builder for [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
+    /// A builder for [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4923,19 +4902,19 @@ pub mod hsm_client_certificate_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
-        pub fn build(self) -> crate::error::HsmClientCertificateNotFoundFault {
-            crate::error::HsmClientCertificateNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`HsmConfigurationNotFoundFault`](crate::error::HsmConfigurationNotFoundFault).
+        pub fn build(self) -> crate::error::HsmConfigurationNotFoundFault {
+            crate::error::HsmConfigurationNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -4944,6 +4923,16 @@ pub mod hsm_client_certificate_not_found_fault {
     }
     
     
+}
+
+/// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct HsmClientCertificateNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl HsmClientCertificateNotFoundFault {
     /// Returns the error message.
@@ -4970,26 +4959,17 @@ impl aws_http::request_id::RequestId for crate::error::HsmClientCertificateNotFo
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for HsmClientCertificateNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DependentServiceUnavailableFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl DependentServiceUnavailableFault {
-    /// Creates a new builder-style object to manufacture [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
-    pub fn builder() -> crate::error::dependent_service_unavailable_fault::Builder {
-        crate::error::dependent_service_unavailable_fault::Builder::default()
+impl HsmClientCertificateNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
+    pub fn builder() -> crate::error::hsm_client_certificate_not_found_fault::Builder {
+        crate::error::hsm_client_certificate_not_found_fault::Builder::default()
     }
 }
-/// See [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
-pub mod dependent_service_unavailable_fault {
+
+/// See [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
+pub mod hsm_client_certificate_not_found_fault {
     
-    /// A builder for [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
+    /// A builder for [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5007,19 +4987,19 @@ pub mod dependent_service_unavailable_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
-        pub fn build(self) -> crate::error::DependentServiceUnavailableFault {
-            crate::error::DependentServiceUnavailableFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`HsmClientCertificateNotFoundFault`](crate::error::HsmClientCertificateNotFoundFault).
+        pub fn build(self) -> crate::error::HsmClientCertificateNotFoundFault {
+            crate::error::HsmClientCertificateNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -5028,6 +5008,16 @@ pub mod dependent_service_unavailable_fault {
     }
     
     
+}
+
+/// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DependentServiceUnavailableFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DependentServiceUnavailableFault {
     /// Returns the error message.
@@ -5054,26 +5044,17 @@ impl aws_http::request_id::RequestId for crate::error::DependentServiceUnavailab
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DependentServiceUnavailableFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSubnetGroupNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterSubnetGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
-    pub fn builder() -> crate::error::cluster_subnet_group_not_found_fault::Builder {
-        crate::error::cluster_subnet_group_not_found_fault::Builder::default()
+impl DependentServiceUnavailableFault {
+    /// Creates a new builder-style object to manufacture [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
+    pub fn builder() -> crate::error::dependent_service_unavailable_fault::Builder {
+        crate::error::dependent_service_unavailable_fault::Builder::default()
     }
 }
-/// See [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
-pub mod cluster_subnet_group_not_found_fault {
+
+/// See [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
+pub mod dependent_service_unavailable_fault {
     
-    /// A builder for [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
+    /// A builder for [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5091,19 +5072,19 @@ pub mod cluster_subnet_group_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
-        pub fn build(self) -> crate::error::ClusterSubnetGroupNotFoundFault {
-            crate::error::ClusterSubnetGroupNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DependentServiceUnavailableFault`](crate::error::DependentServiceUnavailableFault).
+        pub fn build(self) -> crate::error::DependentServiceUnavailableFault {
+            crate::error::DependentServiceUnavailableFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -5112,6 +5093,16 @@ pub mod cluster_subnet_group_not_found_fault {
     }
     
     
+}
+
+/// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterSubnetGroupNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSubnetGroupNotFoundFault {
     /// Returns the error message.
@@ -5138,26 +5129,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSubnetGroupNotFoun
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSubnetGroupNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterQuotaExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
-    pub fn builder() -> crate::error::cluster_quota_exceeded_fault::Builder {
-        crate::error::cluster_quota_exceeded_fault::Builder::default()
+impl ClusterSubnetGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
+    pub fn builder() -> crate::error::cluster_subnet_group_not_found_fault::Builder {
+        crate::error::cluster_subnet_group_not_found_fault::Builder::default()
     }
 }
-/// See [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
-pub mod cluster_quota_exceeded_fault {
+
+/// See [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
+pub mod cluster_subnet_group_not_found_fault {
     
-    /// A builder for [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
+    /// A builder for [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5175,19 +5157,19 @@ pub mod cluster_quota_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
-        pub fn build(self) -> crate::error::ClusterQuotaExceededFault {
-            crate::error::ClusterQuotaExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSubnetGroupNotFoundFault`](crate::error::ClusterSubnetGroupNotFoundFault).
+        pub fn build(self) -> crate::error::ClusterSubnetGroupNotFoundFault {
+            crate::error::ClusterSubnetGroupNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -5196,6 +5178,16 @@ pub mod cluster_quota_exceeded_fault {
     }
     
     
+}
+
+/// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterQuotaExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterQuotaExceededFault {
     /// Returns the error message.
@@ -5222,26 +5214,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterQuotaExceededFault
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The parameter group name does not refer to an existing parameter group.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterParameterGroupNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterParameterGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
-    pub fn builder() -> crate::error::cluster_parameter_group_not_found_fault::Builder {
-        crate::error::cluster_parameter_group_not_found_fault::Builder::default()
+impl ClusterQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
+    pub fn builder() -> crate::error::cluster_quota_exceeded_fault::Builder {
+        crate::error::cluster_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
-pub mod cluster_parameter_group_not_found_fault {
+
+/// See [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
+pub mod cluster_quota_exceeded_fault {
     
-    /// A builder for [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
+    /// A builder for [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5259,19 +5242,19 @@ pub mod cluster_parameter_group_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
-        pub fn build(self) -> crate::error::ClusterParameterGroupNotFoundFault {
-            crate::error::ClusterParameterGroupNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterQuotaExceededFault`](crate::error::ClusterQuotaExceededFault).
+        pub fn build(self) -> crate::error::ClusterQuotaExceededFault {
+            crate::error::ClusterQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -5280,6 +5263,16 @@ pub mod cluster_parameter_group_not_found_fault {
     }
     
     
+}
+
+/// <p>The parameter group name does not refer to an existing parameter group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterParameterGroupNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterParameterGroupNotFoundFault {
     /// Returns the error message.
@@ -5306,26 +5299,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterParameterGroupNotF
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterParameterGroupNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The account already has a cluster with the given identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
-    pub fn builder() -> crate::error::cluster_already_exists_fault::Builder {
-        crate::error::cluster_already_exists_fault::Builder::default()
+impl ClusterParameterGroupNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
+    pub fn builder() -> crate::error::cluster_parameter_group_not_found_fault::Builder {
+        crate::error::cluster_parameter_group_not_found_fault::Builder::default()
     }
 }
-/// See [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
-pub mod cluster_already_exists_fault {
+
+/// See [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
+pub mod cluster_parameter_group_not_found_fault {
     
-    /// A builder for [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
+    /// A builder for [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5343,19 +5327,19 @@ pub mod cluster_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ClusterAlreadyExistsFault {
-            crate::error::ClusterAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterParameterGroupNotFoundFault`](crate::error::ClusterParameterGroupNotFoundFault).
+        pub fn build(self) -> crate::error::ClusterParameterGroupNotFoundFault {
+            crate::error::ClusterParameterGroupNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -5364,6 +5348,16 @@ pub mod cluster_already_exists_fault {
     }
     
     
+}
+
+/// <p>The account already has a cluster with the given identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterAlreadyExistsFault {
     /// Returns the error message.
@@ -5389,6 +5383,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterAlreadyExistsFault
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
+    pub fn builder() -> crate::error::cluster_already_exists_fault::Builder {
+        crate::error::cluster_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
+pub mod cluster_already_exists_fault {
+    
+    /// A builder for [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterAlreadyExistsFault`](crate::error::ClusterAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ClusterAlreadyExistsFault {
+            crate::error::ClusterAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -5729,55 +5773,6 @@ pub struct UnsupportedOptionFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedOptionFault {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
-    pub fn builder() -> crate::error::unsupported_option_fault::Builder {
-        crate::error::unsupported_option_fault::Builder::default()
-    }
-}
-/// See [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
-pub mod unsupported_option_fault {
-    
-    /// A builder for [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
-        pub fn build(self) -> crate::error::UnsupportedOptionFault {
-            crate::error::UnsupportedOptionFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnsupportedOptionFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -5801,6 +5796,56 @@ impl aws_http::request_id::RequestId for crate::error::UnsupportedOptionFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedOptionFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl UnsupportedOptionFault {
+    /// Creates a new builder-style object to manufacture [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
+    pub fn builder() -> crate::error::unsupported_option_fault::Builder {
+        crate::error::unsupported_option_fault::Builder::default()
+    }
+}
+
+/// See [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
+pub mod unsupported_option_fault {
+    
+    /// A builder for [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnsupportedOptionFault`](crate::error::UnsupportedOptionFault).
+        pub fn build(self) -> crate::error::UnsupportedOptionFault {
+            crate::error::UnsupportedOptionFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -5933,55 +5978,6 @@ pub struct InvalidClusterParameterGroupStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterParameterGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_parameter_group_state_fault::Builder {
-        crate::error::invalid_cluster_parameter_group_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
-pub mod invalid_cluster_parameter_group_state_fault {
-    
-    /// A builder for [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterParameterGroupStateFault {
-            crate::error::InvalidClusterParameterGroupStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidClusterParameterGroupStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -6005,6 +6001,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterParameterGr
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterParameterGroupStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidClusterParameterGroupStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_parameter_group_state_fault::Builder {
+        crate::error::invalid_cluster_parameter_group_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
+pub mod invalid_cluster_parameter_group_state_fault {
+    
+    /// A builder for [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterParameterGroupStateFault`](crate::error::InvalidClusterParameterGroupStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterParameterGroupStateFault {
+            crate::error::InvalidClusterParameterGroupStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -6121,55 +6167,6 @@ pub struct InvalidDataShareFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidDataShareFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
-    pub fn builder() -> crate::error::invalid_data_share_fault::Builder {
-        crate::error::invalid_data_share_fault::Builder::default()
-    }
-}
-/// See [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
-pub mod invalid_data_share_fault {
-    
-    /// A builder for [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
-        pub fn build(self) -> crate::error::InvalidDataShareFault {
-            crate::error::InvalidDataShareFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidDataShareFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -6193,6 +6190,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidDataShareFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDataShareFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidDataShareFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
+    pub fn builder() -> crate::error::invalid_data_share_fault::Builder {
+        crate::error::invalid_data_share_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
+pub mod invalid_data_share_fault {
+    
+    /// A builder for [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidDataShareFault`](crate::error::InvalidDataShareFault).
+        pub fn build(self) -> crate::error::InvalidDataShareFault {
+            crate::error::InvalidDataShareFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -6477,55 +6524,6 @@ pub struct ReservedNodeQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReservedNodeQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
-    pub fn builder() -> crate::error::reserved_node_quota_exceeded_fault::Builder {
-        crate::error::reserved_node_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
-pub mod reserved_node_quota_exceeded_fault {
-    
-    /// A builder for [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
-        pub fn build(self) -> crate::error::ReservedNodeQuotaExceededFault {
-            crate::error::ReservedNodeQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ReservedNodeQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -6549,6 +6547,56 @@ impl aws_http::request_id::RequestId for crate::error::ReservedNodeQuotaExceeded
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedNodeQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ReservedNodeQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+    pub fn builder() -> crate::error::reserved_node_quota_exceeded_fault::Builder {
+        crate::error::reserved_node_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+pub mod reserved_node_quota_exceeded_fault {
+    
+    /// A builder for [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReservedNodeQuotaExceededFault`](crate::error::ReservedNodeQuotaExceededFault).
+        pub fn build(self) -> crate::error::ReservedNodeQuotaExceededFault {
+            crate::error::ReservedNodeQuotaExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -6817,55 +6865,6 @@ pub struct UsageLimitNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UsageLimitNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
-    pub fn builder() -> crate::error::usage_limit_not_found_fault::Builder {
-        crate::error::usage_limit_not_found_fault::Builder::default()
-    }
-}
-/// See [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
-pub mod usage_limit_not_found_fault {
-    
-    /// A builder for [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
-        pub fn build(self) -> crate::error::UsageLimitNotFoundFault {
-            crate::error::UsageLimitNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UsageLimitNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -6890,26 +6889,17 @@ impl aws_http::request_id::RequestId for crate::error::UsageLimitNotFoundFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UsageLimitNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The usage limit is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidUsageLimitFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidUsageLimitFault {
-    /// Creates a new builder-style object to manufacture [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
-    pub fn builder() -> crate::error::invalid_usage_limit_fault::Builder {
-        crate::error::invalid_usage_limit_fault::Builder::default()
+impl UsageLimitNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
+    pub fn builder() -> crate::error::usage_limit_not_found_fault::Builder {
+        crate::error::usage_limit_not_found_fault::Builder::default()
     }
 }
-/// See [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
-pub mod invalid_usage_limit_fault {
+
+/// See [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
+pub mod usage_limit_not_found_fault {
     
-    /// A builder for [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
+    /// A builder for [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6927,19 +6917,19 @@ pub mod invalid_usage_limit_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
-        pub fn build(self) -> crate::error::InvalidUsageLimitFault {
-            crate::error::InvalidUsageLimitFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UsageLimitNotFoundFault`](crate::error::UsageLimitNotFoundFault).
+        pub fn build(self) -> crate::error::UsageLimitNotFoundFault {
+            crate::error::UsageLimitNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -6948,6 +6938,16 @@ pub mod invalid_usage_limit_fault {
     }
     
     
+}
+
+/// <p>The usage limit is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidUsageLimitFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidUsageLimitFault {
     /// Returns the error message.
@@ -6973,6 +6973,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidUsageLimitFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidUsageLimitFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidUsageLimitFault {
+    /// Creates a new builder-style object to manufacture [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
+    pub fn builder() -> crate::error::invalid_usage_limit_fault::Builder {
+        crate::error::invalid_usage_limit_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
+pub mod invalid_usage_limit_fault {
+    
+    /// A builder for [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidUsageLimitFault`](crate::error::InvalidUsageLimitFault).
+        pub fn build(self) -> crate::error::InvalidUsageLimitFault {
+            crate::error::InvalidUsageLimitFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -7121,55 +7171,6 @@ pub struct SnapshotScheduleUpdateInProgressFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotScheduleUpdateInProgressFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
-    pub fn builder() -> crate::error::snapshot_schedule_update_in_progress_fault::Builder {
-        crate::error::snapshot_schedule_update_in_progress_fault::Builder::default()
-    }
-}
-/// See [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
-pub mod snapshot_schedule_update_in_progress_fault {
-    
-    /// A builder for [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
-        pub fn build(self) -> crate::error::SnapshotScheduleUpdateInProgressFault {
-            crate::error::SnapshotScheduleUpdateInProgressFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SnapshotScheduleUpdateInProgressFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -7194,26 +7195,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotScheduleUpdateInP
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotScheduleUpdateInProgressFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The schedule you submitted isn't valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidScheduleFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidScheduleFault {
-    /// Creates a new builder-style object to manufacture [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
-    pub fn builder() -> crate::error::invalid_schedule_fault::Builder {
-        crate::error::invalid_schedule_fault::Builder::default()
+impl SnapshotScheduleUpdateInProgressFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
+    pub fn builder() -> crate::error::snapshot_schedule_update_in_progress_fault::Builder {
+        crate::error::snapshot_schedule_update_in_progress_fault::Builder::default()
     }
 }
-/// See [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
-pub mod invalid_schedule_fault {
+
+/// See [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
+pub mod snapshot_schedule_update_in_progress_fault {
     
-    /// A builder for [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
+    /// A builder for [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7231,19 +7223,19 @@ pub mod invalid_schedule_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
-        pub fn build(self) -> crate::error::InvalidScheduleFault {
-            crate::error::InvalidScheduleFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotScheduleUpdateInProgressFault`](crate::error::SnapshotScheduleUpdateInProgressFault).
+        pub fn build(self) -> crate::error::SnapshotScheduleUpdateInProgressFault {
+            crate::error::SnapshotScheduleUpdateInProgressFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -7252,6 +7244,16 @@ pub mod invalid_schedule_fault {
     }
     
     
+}
+
+/// <p>The schedule you submitted isn't valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidScheduleFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidScheduleFault {
     /// Returns the error message.
@@ -7277,6 +7279,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidScheduleFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidScheduleFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidScheduleFault {
+    /// Creates a new builder-style object to manufacture [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
+    pub fn builder() -> crate::error::invalid_schedule_fault::Builder {
+        crate::error::invalid_schedule_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
+pub mod invalid_schedule_fault {
+    
+    /// A builder for [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidScheduleFault`](crate::error::InvalidScheduleFault).
+        pub fn build(self) -> crate::error::InvalidScheduleFault {
+            crate::error::InvalidScheduleFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -7458,55 +7510,6 @@ pub struct SnapshotCopyDisabledFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotCopyDisabledFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
-    pub fn builder() -> crate::error::snapshot_copy_disabled_fault::Builder {
-        crate::error::snapshot_copy_disabled_fault::Builder::default()
-    }
-}
-/// See [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
-pub mod snapshot_copy_disabled_fault {
-    
-    /// A builder for [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
-        pub fn build(self) -> crate::error::SnapshotCopyDisabledFault {
-            crate::error::SnapshotCopyDisabledFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SnapshotCopyDisabledFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -7531,27 +7534,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotCopyDisabledFault
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotCopyDisabledFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The retention period specified is either in the past or is not a valid value.</p> 
-/// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRetentionPeriodFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidRetentionPeriodFault {
-    /// Creates a new builder-style object to manufacture [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
-    pub fn builder() -> crate::error::invalid_retention_period_fault::Builder {
-        crate::error::invalid_retention_period_fault::Builder::default()
+impl SnapshotCopyDisabledFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
+    pub fn builder() -> crate::error::snapshot_copy_disabled_fault::Builder {
+        crate::error::snapshot_copy_disabled_fault::Builder::default()
     }
 }
-/// See [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
-pub mod invalid_retention_period_fault {
+
+/// See [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
+pub mod snapshot_copy_disabled_fault {
     
-    /// A builder for [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
+    /// A builder for [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7569,19 +7562,19 @@ pub mod invalid_retention_period_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
-        pub fn build(self) -> crate::error::InvalidRetentionPeriodFault {
-            crate::error::InvalidRetentionPeriodFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotCopyDisabledFault`](crate::error::SnapshotCopyDisabledFault).
+        pub fn build(self) -> crate::error::SnapshotCopyDisabledFault {
+            crate::error::SnapshotCopyDisabledFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -7590,6 +7583,17 @@ pub mod invalid_retention_period_fault {
     }
     
     
+}
+
+/// <p>The retention period specified is either in the past or is not a valid value.</p> 
+/// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidRetentionPeriodFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRetentionPeriodFault {
     /// Returns the error message.
@@ -7615,6 +7619,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidRetentionPeriodFau
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRetentionPeriodFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidRetentionPeriodFault {
+    /// Creates a new builder-style object to manufacture [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
+    pub fn builder() -> crate::error::invalid_retention_period_fault::Builder {
+        crate::error::invalid_retention_period_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
+pub mod invalid_retention_period_fault {
+    
+    /// A builder for [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidRetentionPeriodFault`](crate::error::InvalidRetentionPeriodFault).
+        pub fn build(self) -> crate::error::InvalidRetentionPeriodFault {
+            crate::error::InvalidRetentionPeriodFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -7795,55 +7849,6 @@ pub struct ScheduledActionTypeUnsupportedFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ScheduledActionTypeUnsupportedFault {
-    /// Creates a new builder-style object to manufacture [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
-    pub fn builder() -> crate::error::scheduled_action_type_unsupported_fault::Builder {
-        crate::error::scheduled_action_type_unsupported_fault::Builder::default()
-    }
-}
-/// See [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
-pub mod scheduled_action_type_unsupported_fault {
-    
-    /// A builder for [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
-        pub fn build(self) -> crate::error::ScheduledActionTypeUnsupportedFault {
-            crate::error::ScheduledActionTypeUnsupportedFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ScheduledActionTypeUnsupportedFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -7868,26 +7873,17 @@ impl aws_http::request_id::RequestId for crate::error::ScheduledActionTypeUnsupp
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScheduledActionTypeUnsupportedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The scheduled action cannot be found. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledActionNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ScheduledActionNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
-    pub fn builder() -> crate::error::scheduled_action_not_found_fault::Builder {
-        crate::error::scheduled_action_not_found_fault::Builder::default()
+impl ScheduledActionTypeUnsupportedFault {
+    /// Creates a new builder-style object to manufacture [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
+    pub fn builder() -> crate::error::scheduled_action_type_unsupported_fault::Builder {
+        crate::error::scheduled_action_type_unsupported_fault::Builder::default()
     }
 }
-/// See [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
-pub mod scheduled_action_not_found_fault {
+
+/// See [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
+pub mod scheduled_action_type_unsupported_fault {
     
-    /// A builder for [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
+    /// A builder for [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7905,19 +7901,19 @@ pub mod scheduled_action_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
-        pub fn build(self) -> crate::error::ScheduledActionNotFoundFault {
-            crate::error::ScheduledActionNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ScheduledActionTypeUnsupportedFault`](crate::error::ScheduledActionTypeUnsupportedFault).
+        pub fn build(self) -> crate::error::ScheduledActionTypeUnsupportedFault {
+            crate::error::ScheduledActionTypeUnsupportedFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -7926,6 +7922,16 @@ pub mod scheduled_action_not_found_fault {
     }
     
     
+}
+
+/// <p>The scheduled action cannot be found. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ScheduledActionNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ScheduledActionNotFoundFault {
     /// Returns the error message.
@@ -7952,26 +7958,17 @@ impl aws_http::request_id::RequestId for crate::error::ScheduledActionNotFoundFa
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScheduledActionNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The scheduled action is not valid. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidScheduledActionFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidScheduledActionFault {
-    /// Creates a new builder-style object to manufacture [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
-    pub fn builder() -> crate::error::invalid_scheduled_action_fault::Builder {
-        crate::error::invalid_scheduled_action_fault::Builder::default()
+impl ScheduledActionNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
+    pub fn builder() -> crate::error::scheduled_action_not_found_fault::Builder {
+        crate::error::scheduled_action_not_found_fault::Builder::default()
     }
 }
-/// See [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
-pub mod invalid_scheduled_action_fault {
+
+/// See [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
+pub mod scheduled_action_not_found_fault {
     
-    /// A builder for [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
+    /// A builder for [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7989,19 +7986,19 @@ pub mod invalid_scheduled_action_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
-        pub fn build(self) -> crate::error::InvalidScheduledActionFault {
-            crate::error::InvalidScheduledActionFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ScheduledActionNotFoundFault`](crate::error::ScheduledActionNotFoundFault).
+        pub fn build(self) -> crate::error::ScheduledActionNotFoundFault {
+            crate::error::ScheduledActionNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8010,6 +8007,16 @@ pub mod invalid_scheduled_action_fault {
     }
     
     
+}
+
+/// <p>The scheduled action is not valid. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidScheduledActionFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidScheduledActionFault {
     /// Returns the error message.
@@ -8035,6 +8042,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidScheduledActionFau
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidScheduledActionFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidScheduledActionFault {
+    /// Creates a new builder-style object to manufacture [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
+    pub fn builder() -> crate::error::invalid_scheduled_action_fault::Builder {
+        crate::error::invalid_scheduled_action_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
+pub mod invalid_scheduled_action_fault {
+    
+    /// A builder for [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidScheduledActionFault`](crate::error::InvalidScheduledActionFault).
+        pub fn build(self) -> crate::error::InvalidScheduledActionFault {
+            crate::error::InvalidScheduledActionFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -8279,55 +8336,6 @@ pub struct SubscriptionSeverityNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SubscriptionSeverityNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
-    pub fn builder() -> crate::error::subscription_severity_not_found_fault::Builder {
-        crate::error::subscription_severity_not_found_fault::Builder::default()
-    }
-}
-/// See [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
-pub mod subscription_severity_not_found_fault {
-    
-    /// A builder for [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
-        pub fn build(self) -> crate::error::SubscriptionSeverityNotFoundFault {
-            crate::error::SubscriptionSeverityNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SubscriptionSeverityNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -8352,26 +8360,17 @@ impl aws_http::request_id::RequestId for crate::error::SubscriptionSeverityNotFo
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SubscriptionSeverityNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SubscriptionNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
-    pub fn builder() -> crate::error::subscription_not_found_fault::Builder {
-        crate::error::subscription_not_found_fault::Builder::default()
+impl SubscriptionSeverityNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
+    pub fn builder() -> crate::error::subscription_severity_not_found_fault::Builder {
+        crate::error::subscription_severity_not_found_fault::Builder::default()
     }
 }
-/// See [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
-pub mod subscription_not_found_fault {
+
+/// See [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
+pub mod subscription_severity_not_found_fault {
     
-    /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
+    /// A builder for [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8389,19 +8388,19 @@ pub mod subscription_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
-        pub fn build(self) -> crate::error::SubscriptionNotFoundFault {
-            crate::error::SubscriptionNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SubscriptionSeverityNotFoundFault`](crate::error::SubscriptionSeverityNotFoundFault).
+        pub fn build(self) -> crate::error::SubscriptionSeverityNotFoundFault {
+            crate::error::SubscriptionSeverityNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8410,6 +8409,16 @@ pub mod subscription_not_found_fault {
     }
     
     
+}
+
+/// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SubscriptionNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SubscriptionNotFoundFault {
     /// Returns the error message.
@@ -8436,26 +8445,17 @@ impl aws_http::request_id::RequestId for crate::error::SubscriptionNotFoundFault
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SubscriptionNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An Amazon Redshift event with the specified event ID does not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionEventIdNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SubscriptionEventIdNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
-    pub fn builder() -> crate::error::subscription_event_id_not_found_fault::Builder {
-        crate::error::subscription_event_id_not_found_fault::Builder::default()
+impl SubscriptionNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
+    pub fn builder() -> crate::error::subscription_not_found_fault::Builder {
+        crate::error::subscription_not_found_fault::Builder::default()
     }
 }
-/// See [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
-pub mod subscription_event_id_not_found_fault {
+
+/// See [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
+pub mod subscription_not_found_fault {
     
-    /// A builder for [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
+    /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8473,19 +8473,19 @@ pub mod subscription_event_id_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
-        pub fn build(self) -> crate::error::SubscriptionEventIdNotFoundFault {
-            crate::error::SubscriptionEventIdNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
+        pub fn build(self) -> crate::error::SubscriptionNotFoundFault {
+            crate::error::SubscriptionNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8494,6 +8494,16 @@ pub mod subscription_event_id_not_found_fault {
     }
     
     
+}
+
+/// <p>An Amazon Redshift event with the specified event ID does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SubscriptionEventIdNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SubscriptionEventIdNotFoundFault {
     /// Returns the error message.
@@ -8520,26 +8530,17 @@ impl aws_http::request_id::RequestId for crate::error::SubscriptionEventIdNotFou
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SubscriptionEventIdNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionCategoryNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SubscriptionCategoryNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
-    pub fn builder() -> crate::error::subscription_category_not_found_fault::Builder {
-        crate::error::subscription_category_not_found_fault::Builder::default()
+impl SubscriptionEventIdNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
+    pub fn builder() -> crate::error::subscription_event_id_not_found_fault::Builder {
+        crate::error::subscription_event_id_not_found_fault::Builder::default()
     }
 }
-/// See [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
-pub mod subscription_category_not_found_fault {
+
+/// See [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
+pub mod subscription_event_id_not_found_fault {
     
-    /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
+    /// A builder for [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8557,19 +8558,19 @@ pub mod subscription_category_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
-        pub fn build(self) -> crate::error::SubscriptionCategoryNotFoundFault {
-            crate::error::SubscriptionCategoryNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SubscriptionEventIdNotFoundFault`](crate::error::SubscriptionEventIdNotFoundFault).
+        pub fn build(self) -> crate::error::SubscriptionEventIdNotFoundFault {
+            crate::error::SubscriptionEventIdNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8578,6 +8579,16 @@ pub mod subscription_category_not_found_fault {
     }
     
     
+}
+
+/// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SubscriptionCategoryNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SubscriptionCategoryNotFoundFault {
     /// Returns the error message.
@@ -8604,26 +8615,17 @@ impl aws_http::request_id::RequestId for crate::error::SubscriptionCategoryNotFo
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SubscriptionCategoryNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified Amazon Redshift event source could not be found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SourceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
-    pub fn builder() -> crate::error::source_not_found_fault::Builder {
-        crate::error::source_not_found_fault::Builder::default()
+impl SubscriptionCategoryNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
+    pub fn builder() -> crate::error::subscription_category_not_found_fault::Builder {
+        crate::error::subscription_category_not_found_fault::Builder::default()
     }
 }
-/// See [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
-pub mod source_not_found_fault {
+
+/// See [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
+pub mod subscription_category_not_found_fault {
     
-    /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
+    /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8641,19 +8643,19 @@ pub mod source_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
-        pub fn build(self) -> crate::error::SourceNotFoundFault {
-            crate::error::SourceNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
+        pub fn build(self) -> crate::error::SubscriptionCategoryNotFoundFault {
+            crate::error::SubscriptionCategoryNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8662,6 +8664,16 @@ pub mod source_not_found_fault {
     }
     
     
+}
+
+/// <p>The specified Amazon Redshift event source could not be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SourceNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SourceNotFoundFault {
     /// Returns the error message.
@@ -8688,26 +8700,17 @@ impl aws_http::request_id::RequestId for crate::error::SourceNotFoundFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SourceNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsTopicArnNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnsTopicArnNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
-    pub fn builder() -> crate::error::sns_topic_arn_not_found_fault::Builder {
-        crate::error::sns_topic_arn_not_found_fault::Builder::default()
+impl SourceNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
+    pub fn builder() -> crate::error::source_not_found_fault::Builder {
+        crate::error::source_not_found_fault::Builder::default()
     }
 }
-/// See [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
-pub mod sns_topic_arn_not_found_fault {
+
+/// See [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
+pub mod source_not_found_fault {
     
-    /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
+    /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8725,19 +8728,19 @@ pub mod sns_topic_arn_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
-        pub fn build(self) -> crate::error::SnsTopicArnNotFoundFault {
-            crate::error::SnsTopicArnNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
+        pub fn build(self) -> crate::error::SourceNotFoundFault {
+            crate::error::SourceNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8746,6 +8749,16 @@ pub mod sns_topic_arn_not_found_fault {
     }
     
     
+}
+
+/// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnsTopicArnNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnsTopicArnNotFoundFault {
     /// Returns the error message.
@@ -8772,26 +8785,17 @@ impl aws_http::request_id::RequestId for crate::error::SnsTopicArnNotFoundFault 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnsTopicArnNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>You do not have permission to publish to the specified Amazon SNS topic.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsNoAuthorizationFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnsNoAuthorizationFault {
-    /// Creates a new builder-style object to manufacture [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
-    pub fn builder() -> crate::error::sns_no_authorization_fault::Builder {
-        crate::error::sns_no_authorization_fault::Builder::default()
+impl SnsTopicArnNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
+    pub fn builder() -> crate::error::sns_topic_arn_not_found_fault::Builder {
+        crate::error::sns_topic_arn_not_found_fault::Builder::default()
     }
 }
-/// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
-pub mod sns_no_authorization_fault {
+
+/// See [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
+pub mod sns_topic_arn_not_found_fault {
     
-    /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
+    /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8809,19 +8813,19 @@ pub mod sns_no_authorization_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
-        pub fn build(self) -> crate::error::SnsNoAuthorizationFault {
-            crate::error::SnsNoAuthorizationFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
+        pub fn build(self) -> crate::error::SnsTopicArnNotFoundFault {
+            crate::error::SnsTopicArnNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8830,6 +8834,16 @@ pub mod sns_no_authorization_fault {
     }
     
     
+}
+
+/// <p>You do not have permission to publish to the specified Amazon SNS topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnsNoAuthorizationFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnsNoAuthorizationFault {
     /// Returns the error message.
@@ -8856,26 +8870,17 @@ impl aws_http::request_id::RequestId for crate::error::SnsNoAuthorizationFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnsNoAuthorizationFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsInvalidTopicFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnsInvalidTopicFault {
-    /// Creates a new builder-style object to manufacture [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
-    pub fn builder() -> crate::error::sns_invalid_topic_fault::Builder {
-        crate::error::sns_invalid_topic_fault::Builder::default()
+impl SnsNoAuthorizationFault {
+    /// Creates a new builder-style object to manufacture [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
+    pub fn builder() -> crate::error::sns_no_authorization_fault::Builder {
+        crate::error::sns_no_authorization_fault::Builder::default()
     }
 }
-/// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
-pub mod sns_invalid_topic_fault {
+
+/// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
+pub mod sns_no_authorization_fault {
     
-    /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
+    /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8893,19 +8898,19 @@ pub mod sns_invalid_topic_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
-        pub fn build(self) -> crate::error::SnsInvalidTopicFault {
-            crate::error::SnsInvalidTopicFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
+        pub fn build(self) -> crate::error::SnsNoAuthorizationFault {
+            crate::error::SnsNoAuthorizationFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8914,6 +8919,16 @@ pub mod sns_invalid_topic_fault {
     }
     
     
+}
+
+/// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnsInvalidTopicFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnsInvalidTopicFault {
     /// Returns the error message.
@@ -8940,26 +8955,17 @@ impl aws_http::request_id::RequestId for crate::error::SnsInvalidTopicFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnsInvalidTopicFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSubscriptionStateFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidSubscriptionStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
-    pub fn builder() -> crate::error::invalid_subscription_state_fault::Builder {
-        crate::error::invalid_subscription_state_fault::Builder::default()
+impl SnsInvalidTopicFault {
+    /// Creates a new builder-style object to manufacture [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
+    pub fn builder() -> crate::error::sns_invalid_topic_fault::Builder {
+        crate::error::sns_invalid_topic_fault::Builder::default()
     }
 }
-/// See [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
-pub mod invalid_subscription_state_fault {
+
+/// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
+pub mod sns_invalid_topic_fault {
     
-    /// A builder for [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
+    /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8977,19 +8983,19 @@ pub mod invalid_subscription_state_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
-        pub fn build(self) -> crate::error::InvalidSubscriptionStateFault {
-            crate::error::InvalidSubscriptionStateFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
+        pub fn build(self) -> crate::error::SnsInvalidTopicFault {
+            crate::error::SnsInvalidTopicFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -8998,6 +9004,16 @@ pub mod invalid_subscription_state_fault {
     }
     
     
+}
+
+/// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidSubscriptionStateFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSubscriptionStateFault {
     /// Returns the error message.
@@ -9023,6 +9039,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidSubscriptionStateF
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSubscriptionStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidSubscriptionStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
+    pub fn builder() -> crate::error::invalid_subscription_state_fault::Builder {
+        crate::error::invalid_subscription_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
+pub mod invalid_subscription_state_fault {
+    
+    /// A builder for [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidSubscriptionStateFault`](crate::error::InvalidSubscriptionStateFault).
+        pub fn build(self) -> crate::error::InvalidSubscriptionStateFault {
+            crate::error::InvalidSubscriptionStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -9403,55 +9469,6 @@ pub struct SubnetAlreadyInUse  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SubnetAlreadyInUse {
-    /// Creates a new builder-style object to manufacture [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
-    pub fn builder() -> crate::error::subnet_already_in_use::Builder {
-        crate::error::subnet_already_in_use::Builder::default()
-    }
-}
-/// See [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
-pub mod subnet_already_in_use {
-    
-    /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
-        pub fn build(self) -> crate::error::SubnetAlreadyInUse {
-            crate::error::SubnetAlreadyInUse {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SubnetAlreadyInUse {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -9476,26 +9493,17 @@ impl aws_http::request_id::RequestId for crate::error::SubnetAlreadyInUse {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SubnetAlreadyInUse {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSubnetQuotaExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterSubnetQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
-    pub fn builder() -> crate::error::cluster_subnet_quota_exceeded_fault::Builder {
-        crate::error::cluster_subnet_quota_exceeded_fault::Builder::default()
+impl SubnetAlreadyInUse {
+    /// Creates a new builder-style object to manufacture [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
+    pub fn builder() -> crate::error::subnet_already_in_use::Builder {
+        crate::error::subnet_already_in_use::Builder::default()
     }
 }
-/// See [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
-pub mod cluster_subnet_quota_exceeded_fault {
+
+/// See [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
+pub mod subnet_already_in_use {
     
-    /// A builder for [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
+    /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9513,19 +9521,19 @@ pub mod cluster_subnet_quota_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
-        pub fn build(self) -> crate::error::ClusterSubnetQuotaExceededFault {
-            crate::error::ClusterSubnetQuotaExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
+        pub fn build(self) -> crate::error::SubnetAlreadyInUse {
+            crate::error::SubnetAlreadyInUse {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -9534,6 +9542,16 @@ pub mod cluster_subnet_quota_exceeded_fault {
     }
     
     
+}
+
+/// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterSubnetQuotaExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSubnetQuotaExceededFault {
     /// Returns the error message.
@@ -9559,6 +9577,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSubnetQuotaExceede
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSubnetQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterSubnetQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
+    pub fn builder() -> crate::error::cluster_subnet_quota_exceeded_fault::Builder {
+        crate::error::cluster_subnet_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
+pub mod cluster_subnet_quota_exceeded_fault {
+    
+    /// A builder for [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSubnetQuotaExceededFault`](crate::error::ClusterSubnetQuotaExceededFault).
+        pub fn build(self) -> crate::error::ClusterSubnetQuotaExceededFault {
+            crate::error::ClusterSubnetQuotaExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -9707,55 +9775,6 @@ pub struct InvalidClusterSnapshotScheduleStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterSnapshotScheduleStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_snapshot_schedule_state_fault::Builder {
-        crate::error::invalid_cluster_snapshot_schedule_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
-pub mod invalid_cluster_snapshot_schedule_state_fault {
-    
-    /// A builder for [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterSnapshotScheduleStateFault {
-            crate::error::InvalidClusterSnapshotScheduleStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidClusterSnapshotScheduleStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -9779,6 +9798,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterSnapshotSch
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterSnapshotScheduleStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidClusterSnapshotScheduleStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_snapshot_schedule_state_fault::Builder {
+        crate::error::invalid_cluster_snapshot_schedule_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
+pub mod invalid_cluster_snapshot_schedule_state_fault {
+    
+    /// A builder for [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterSnapshotScheduleStateFault`](crate::error::InvalidClusterSnapshotScheduleStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterSnapshotScheduleStateFault {
+            crate::error::InvalidClusterSnapshotScheduleStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -10424,55 +10493,6 @@ pub struct ClusterOnLatestRevisionFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterOnLatestRevisionFault {
-    /// Creates a new builder-style object to manufacture [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
-    pub fn builder() -> crate::error::cluster_on_latest_revision_fault::Builder {
-        crate::error::cluster_on_latest_revision_fault::Builder::default()
-    }
-}
-/// See [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
-pub mod cluster_on_latest_revision_fault {
-    
-    /// A builder for [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
-        pub fn build(self) -> crate::error::ClusterOnLatestRevisionFault {
-            crate::error::ClusterOnLatestRevisionFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ClusterOnLatestRevisionFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -10496,6 +10516,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterOnLatestRevisionFa
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterOnLatestRevisionFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterOnLatestRevisionFault {
+    /// Creates a new builder-style object to manufacture [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
+    pub fn builder() -> crate::error::cluster_on_latest_revision_fault::Builder {
+        crate::error::cluster_on_latest_revision_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
+pub mod cluster_on_latest_revision_fault {
+    
+    /// A builder for [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterOnLatestRevisionFault`](crate::error::ClusterOnLatestRevisionFault).
+        pub fn build(self) -> crate::error::ClusterOnLatestRevisionFault {
+            crate::error::ClusterOnLatestRevisionFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -10901,55 +10971,6 @@ pub struct TableLimitExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TableLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
-    pub fn builder() -> crate::error::table_limit_exceeded_fault::Builder {
-        crate::error::table_limit_exceeded_fault::Builder::default()
-    }
-}
-/// See [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
-pub mod table_limit_exceeded_fault {
-    
-    /// A builder for [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
-        pub fn build(self) -> crate::error::TableLimitExceededFault {
-            crate::error::TableLimitExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TableLimitExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -10973,6 +10994,56 @@ impl aws_http::request_id::RequestId for crate::error::TableLimitExceededFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TableLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl TableLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
+    pub fn builder() -> crate::error::table_limit_exceeded_fault::Builder {
+        crate::error::table_limit_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
+pub mod table_limit_exceeded_fault {
+    
+    /// A builder for [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TableLimitExceededFault`](crate::error::TableLimitExceededFault).
+        pub fn build(self) -> crate::error::TableLimitExceededFault {
+            crate::error::TableLimitExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -11121,55 +11192,6 @@ pub struct InvalidAuthenticationProfileRequestFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidAuthenticationProfileRequestFault {
-    /// Creates a new builder-style object to manufacture [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
-    pub fn builder() -> crate::error::invalid_authentication_profile_request_fault::Builder {
-        crate::error::invalid_authentication_profile_request_fault::Builder::default()
-    }
-}
-/// See [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
-pub mod invalid_authentication_profile_request_fault {
-    
-    /// A builder for [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
-        pub fn build(self) -> crate::error::InvalidAuthenticationProfileRequestFault {
-            crate::error::InvalidAuthenticationProfileRequestFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidAuthenticationProfileRequestFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -11194,26 +11216,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidAuthenticationProf
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidAuthenticationProfileRequestFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationProfileQuotaExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AuthenticationProfileQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
-    pub fn builder() -> crate::error::authentication_profile_quota_exceeded_fault::Builder {
-        crate::error::authentication_profile_quota_exceeded_fault::Builder::default()
+impl InvalidAuthenticationProfileRequestFault {
+    /// Creates a new builder-style object to manufacture [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
+    pub fn builder() -> crate::error::invalid_authentication_profile_request_fault::Builder {
+        crate::error::invalid_authentication_profile_request_fault::Builder::default()
     }
 }
-/// See [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
-pub mod authentication_profile_quota_exceeded_fault {
+
+/// See [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
+pub mod invalid_authentication_profile_request_fault {
     
-    /// A builder for [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
+    /// A builder for [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11231,19 +11244,19 @@ pub mod authentication_profile_quota_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
-        pub fn build(self) -> crate::error::AuthenticationProfileQuotaExceededFault {
-            crate::error::AuthenticationProfileQuotaExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault).
+        pub fn build(self) -> crate::error::InvalidAuthenticationProfileRequestFault {
+            crate::error::InvalidAuthenticationProfileRequestFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -11252,6 +11265,16 @@ pub mod authentication_profile_quota_exceeded_fault {
     }
     
     
+}
+
+/// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthenticationProfileQuotaExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthenticationProfileQuotaExceededFault {
     /// Returns the error message.
@@ -11278,26 +11301,17 @@ impl aws_http::request_id::RequestId for crate::error::AuthenticationProfileQuot
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthenticationProfileQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The authentication profile can't be found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationProfileNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AuthenticationProfileNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
-    pub fn builder() -> crate::error::authentication_profile_not_found_fault::Builder {
-        crate::error::authentication_profile_not_found_fault::Builder::default()
+impl AuthenticationProfileQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
+    pub fn builder() -> crate::error::authentication_profile_quota_exceeded_fault::Builder {
+        crate::error::authentication_profile_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
-pub mod authentication_profile_not_found_fault {
+
+/// See [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
+pub mod authentication_profile_quota_exceeded_fault {
     
-    /// A builder for [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
+    /// A builder for [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11315,19 +11329,19 @@ pub mod authentication_profile_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
-        pub fn build(self) -> crate::error::AuthenticationProfileNotFoundFault {
-            crate::error::AuthenticationProfileNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault).
+        pub fn build(self) -> crate::error::AuthenticationProfileQuotaExceededFault {
+            crate::error::AuthenticationProfileQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -11336,6 +11350,16 @@ pub mod authentication_profile_not_found_fault {
     }
     
     
+}
+
+/// <p>The authentication profile can't be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthenticationProfileNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthenticationProfileNotFoundFault {
     /// Returns the error message.
@@ -11361,6 +11385,56 @@ impl aws_http::request_id::RequestId for crate::error::AuthenticationProfileNotF
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthenticationProfileNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AuthenticationProfileNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
+    pub fn builder() -> crate::error::authentication_profile_not_found_fault::Builder {
+        crate::error::authentication_profile_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
+pub mod authentication_profile_not_found_fault {
+    
+    /// A builder for [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault).
+        pub fn build(self) -> crate::error::AuthenticationProfileNotFoundFault {
+            crate::error::AuthenticationProfileNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -12414,55 +12488,6 @@ pub struct UnknownSnapshotCopyRegionFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnknownSnapshotCopyRegionFault {
-    /// Creates a new builder-style object to manufacture [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
-    pub fn builder() -> crate::error::unknown_snapshot_copy_region_fault::Builder {
-        crate::error::unknown_snapshot_copy_region_fault::Builder::default()
-    }
-}
-/// See [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
-pub mod unknown_snapshot_copy_region_fault {
-    
-    /// A builder for [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
-        pub fn build(self) -> crate::error::UnknownSnapshotCopyRegionFault {
-            crate::error::UnknownSnapshotCopyRegionFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnknownSnapshotCopyRegionFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -12487,26 +12512,17 @@ impl aws_http::request_id::RequestId for crate::error::UnknownSnapshotCopyRegion
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnknownSnapshotCopyRegionFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotCopyGrantNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnapshotCopyGrantNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
-    pub fn builder() -> crate::error::snapshot_copy_grant_not_found_fault::Builder {
-        crate::error::snapshot_copy_grant_not_found_fault::Builder::default()
+impl UnknownSnapshotCopyRegionFault {
+    /// Creates a new builder-style object to manufacture [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
+    pub fn builder() -> crate::error::unknown_snapshot_copy_region_fault::Builder {
+        crate::error::unknown_snapshot_copy_region_fault::Builder::default()
     }
 }
-/// See [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
-pub mod snapshot_copy_grant_not_found_fault {
+
+/// See [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
+pub mod unknown_snapshot_copy_region_fault {
     
-    /// A builder for [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
+    /// A builder for [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12524,19 +12540,19 @@ pub mod snapshot_copy_grant_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
-        pub fn build(self) -> crate::error::SnapshotCopyGrantNotFoundFault {
-            crate::error::SnapshotCopyGrantNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnknownSnapshotCopyRegionFault`](crate::error::UnknownSnapshotCopyRegionFault).
+        pub fn build(self) -> crate::error::UnknownSnapshotCopyRegionFault {
+            crate::error::UnknownSnapshotCopyRegionFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -12545,6 +12561,16 @@ pub mod snapshot_copy_grant_not_found_fault {
     }
     
     
+}
+
+/// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapshotCopyGrantNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotCopyGrantNotFoundFault {
     /// Returns the error message.
@@ -12571,26 +12597,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotCopyGrantNotFound
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotCopyGrantNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The cluster already has cross-region snapshot copy enabled.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotCopyAlreadyEnabledFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnapshotCopyAlreadyEnabledFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
-    pub fn builder() -> crate::error::snapshot_copy_already_enabled_fault::Builder {
-        crate::error::snapshot_copy_already_enabled_fault::Builder::default()
+impl SnapshotCopyGrantNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
+    pub fn builder() -> crate::error::snapshot_copy_grant_not_found_fault::Builder {
+        crate::error::snapshot_copy_grant_not_found_fault::Builder::default()
     }
 }
-/// See [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
-pub mod snapshot_copy_already_enabled_fault {
+
+/// See [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
+pub mod snapshot_copy_grant_not_found_fault {
     
-    /// A builder for [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
+    /// A builder for [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12608,19 +12625,19 @@ pub mod snapshot_copy_already_enabled_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
-        pub fn build(self) -> crate::error::SnapshotCopyAlreadyEnabledFault {
-            crate::error::SnapshotCopyAlreadyEnabledFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotCopyGrantNotFoundFault`](crate::error::SnapshotCopyGrantNotFoundFault).
+        pub fn build(self) -> crate::error::SnapshotCopyGrantNotFoundFault {
+            crate::error::SnapshotCopyGrantNotFoundFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -12629,6 +12646,16 @@ pub mod snapshot_copy_already_enabled_fault {
     }
     
     
+}
+
+/// <p>The cluster already has cross-region snapshot copy enabled.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapshotCopyAlreadyEnabledFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotCopyAlreadyEnabledFault {
     /// Returns the error message.
@@ -12655,26 +12682,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotCopyAlreadyEnable
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotCopyAlreadyEnabledFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified options are incompatible.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncompatibleOrderableOptions  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl IncompatibleOrderableOptions {
-    /// Creates a new builder-style object to manufacture [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
-    pub fn builder() -> crate::error::incompatible_orderable_options::Builder {
-        crate::error::incompatible_orderable_options::Builder::default()
+impl SnapshotCopyAlreadyEnabledFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
+    pub fn builder() -> crate::error::snapshot_copy_already_enabled_fault::Builder {
+        crate::error::snapshot_copy_already_enabled_fault::Builder::default()
     }
 }
-/// See [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
-pub mod incompatible_orderable_options {
+
+/// See [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
+pub mod snapshot_copy_already_enabled_fault {
     
-    /// A builder for [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
+    /// A builder for [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12692,19 +12710,19 @@ pub mod incompatible_orderable_options {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
-        pub fn build(self) -> crate::error::IncompatibleOrderableOptions {
-            crate::error::IncompatibleOrderableOptions {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotCopyAlreadyEnabledFault`](crate::error::SnapshotCopyAlreadyEnabledFault).
+        pub fn build(self) -> crate::error::SnapshotCopyAlreadyEnabledFault {
+            crate::error::SnapshotCopyAlreadyEnabledFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -12713,6 +12731,16 @@ pub mod incompatible_orderable_options {
     }
     
     
+}
+
+/// <p>The specified options are incompatible.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct IncompatibleOrderableOptions  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl IncompatibleOrderableOptions {
     /// Returns the error message.
@@ -12739,26 +12767,17 @@ impl aws_http::request_id::RequestId for crate::error::IncompatibleOrderableOpti
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IncompatibleOrderableOptions {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyToRegionDisabledFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl CopyToRegionDisabledFault {
-    /// Creates a new builder-style object to manufacture [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
-    pub fn builder() -> crate::error::copy_to_region_disabled_fault::Builder {
-        crate::error::copy_to_region_disabled_fault::Builder::default()
+impl IncompatibleOrderableOptions {
+    /// Creates a new builder-style object to manufacture [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
+    pub fn builder() -> crate::error::incompatible_orderable_options::Builder {
+        crate::error::incompatible_orderable_options::Builder::default()
     }
 }
-/// See [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
-pub mod copy_to_region_disabled_fault {
+
+/// See [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
+pub mod incompatible_orderable_options {
     
-    /// A builder for [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
+    /// A builder for [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12776,19 +12795,19 @@ pub mod copy_to_region_disabled_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
-        pub fn build(self) -> crate::error::CopyToRegionDisabledFault {
-            crate::error::CopyToRegionDisabledFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`IncompatibleOrderableOptions`](crate::error::IncompatibleOrderableOptions).
+        pub fn build(self) -> crate::error::IncompatibleOrderableOptions {
+            crate::error::IncompatibleOrderableOptions {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -12797,6 +12816,16 @@ pub mod copy_to_region_disabled_fault {
     }
     
     
+}
+
+/// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct CopyToRegionDisabledFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CopyToRegionDisabledFault {
     /// Returns the error message.
@@ -12822,6 +12851,56 @@ impl aws_http::request_id::RequestId for crate::error::CopyToRegionDisabledFault
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CopyToRegionDisabledFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl CopyToRegionDisabledFault {
+    /// Creates a new builder-style object to manufacture [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
+    pub fn builder() -> crate::error::copy_to_region_disabled_fault::Builder {
+        crate::error::copy_to_region_disabled_fault::Builder::default()
+    }
+}
+
+/// See [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
+pub mod copy_to_region_disabled_fault {
+    
+    /// A builder for [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`CopyToRegionDisabledFault`](crate::error::CopyToRegionDisabledFault).
+        pub fn build(self) -> crate::error::CopyToRegionDisabledFault {
+            crate::error::CopyToRegionDisabledFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -13018,55 +13097,6 @@ pub struct InvalidS3KeyPrefixFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidS3KeyPrefixFault {
-    /// Creates a new builder-style object to manufacture [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
-    pub fn builder() -> crate::error::invalid_s3_key_prefix_fault::Builder {
-        crate::error::invalid_s3_key_prefix_fault::Builder::default()
-    }
-}
-/// See [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
-pub mod invalid_s3_key_prefix_fault {
-    
-    /// A builder for [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
-        pub fn build(self) -> crate::error::InvalidS3KeyPrefixFault {
-            crate::error::InvalidS3KeyPrefixFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidS3KeyPrefixFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -13091,26 +13121,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidS3KeyPrefixFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidS3KeyPrefixFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidS3BucketNameFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidS3BucketNameFault {
-    /// Creates a new builder-style object to manufacture [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
-    pub fn builder() -> crate::error::invalid_s3_bucket_name_fault::Builder {
-        crate::error::invalid_s3_bucket_name_fault::Builder::default()
+impl InvalidS3KeyPrefixFault {
+    /// Creates a new builder-style object to manufacture [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
+    pub fn builder() -> crate::error::invalid_s3_key_prefix_fault::Builder {
+        crate::error::invalid_s3_key_prefix_fault::Builder::default()
     }
 }
-/// See [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
-pub mod invalid_s3_bucket_name_fault {
+
+/// See [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
+pub mod invalid_s3_key_prefix_fault {
     
-    /// A builder for [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
+    /// A builder for [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13128,19 +13149,19 @@ pub mod invalid_s3_bucket_name_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
-        pub fn build(self) -> crate::error::InvalidS3BucketNameFault {
-            crate::error::InvalidS3BucketNameFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidS3KeyPrefixFault`](crate::error::InvalidS3KeyPrefixFault).
+        pub fn build(self) -> crate::error::InvalidS3KeyPrefixFault {
+            crate::error::InvalidS3KeyPrefixFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -13149,6 +13170,16 @@ pub mod invalid_s3_bucket_name_fault {
     }
     
     
+}
+
+/// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidS3BucketNameFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidS3BucketNameFault {
     /// Returns the error message.
@@ -13175,26 +13206,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidS3BucketNameFault 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidS3BucketNameFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsufficientS3BucketPolicyFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InsufficientS3BucketPolicyFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
-    pub fn builder() -> crate::error::insufficient_s3_bucket_policy_fault::Builder {
-        crate::error::insufficient_s3_bucket_policy_fault::Builder::default()
+impl InvalidS3BucketNameFault {
+    /// Creates a new builder-style object to manufacture [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
+    pub fn builder() -> crate::error::invalid_s3_bucket_name_fault::Builder {
+        crate::error::invalid_s3_bucket_name_fault::Builder::default()
     }
 }
-/// See [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
-pub mod insufficient_s3_bucket_policy_fault {
+
+/// See [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
+pub mod invalid_s3_bucket_name_fault {
     
-    /// A builder for [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
+    /// A builder for [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13212,19 +13234,19 @@ pub mod insufficient_s3_bucket_policy_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
-        pub fn build(self) -> crate::error::InsufficientS3BucketPolicyFault {
-            crate::error::InsufficientS3BucketPolicyFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidS3BucketNameFault`](crate::error::InvalidS3BucketNameFault).
+        pub fn build(self) -> crate::error::InvalidS3BucketNameFault {
+            crate::error::InvalidS3BucketNameFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -13233,6 +13255,16 @@ pub mod insufficient_s3_bucket_policy_fault {
     }
     
     
+}
+
+/// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InsufficientS3BucketPolicyFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InsufficientS3BucketPolicyFault {
     /// Returns the error message.
@@ -13259,26 +13291,17 @@ impl aws_http::request_id::RequestId for crate::error::InsufficientS3BucketPolic
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InsufficientS3BucketPolicyFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Could not find the specified S3 bucket.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketNotFoundFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl BucketNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
-    pub fn builder() -> crate::error::bucket_not_found_fault::Builder {
-        crate::error::bucket_not_found_fault::Builder::default()
+impl InsufficientS3BucketPolicyFault {
+    /// Creates a new builder-style object to manufacture [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
+    pub fn builder() -> crate::error::insufficient_s3_bucket_policy_fault::Builder {
+        crate::error::insufficient_s3_bucket_policy_fault::Builder::default()
     }
 }
-/// See [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
-pub mod bucket_not_found_fault {
+
+/// See [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
+pub mod insufficient_s3_bucket_policy_fault {
     
-    /// A builder for [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
+    /// A builder for [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13296,19 +13319,19 @@ pub mod bucket_not_found_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
-        pub fn build(self) -> crate::error::BucketNotFoundFault {
-            crate::error::BucketNotFoundFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InsufficientS3BucketPolicyFault`](crate::error::InsufficientS3BucketPolicyFault).
+        pub fn build(self) -> crate::error::InsufficientS3BucketPolicyFault {
+            crate::error::InsufficientS3BucketPolicyFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -13317,6 +13340,16 @@ pub mod bucket_not_found_fault {
     }
     
     
+}
+
+/// <p>Could not find the specified S3 bucket.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct BucketNotFoundFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BucketNotFoundFault {
     /// Returns the error message.
@@ -13342,6 +13375,56 @@ impl aws_http::request_id::RequestId for crate::error::BucketNotFoundFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BucketNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl BucketNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
+    pub fn builder() -> crate::error::bucket_not_found_fault::Builder {
+        crate::error::bucket_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
+pub mod bucket_not_found_fault {
+    
+    /// A builder for [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`BucketNotFoundFault`](crate::error::BucketNotFoundFault).
+        pub fn build(self) -> crate::error::BucketNotFoundFault {
+            crate::error::BucketNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -13474,55 +13557,6 @@ pub struct InvalidNamespaceFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidNamespaceFault {
-    /// Creates a new builder-style object to manufacture [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
-    pub fn builder() -> crate::error::invalid_namespace_fault::Builder {
-        crate::error::invalid_namespace_fault::Builder::default()
-    }
-}
-/// See [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
-pub mod invalid_namespace_fault {
-    
-    /// A builder for [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
-        pub fn build(self) -> crate::error::InvalidNamespaceFault {
-            crate::error::InvalidNamespaceFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidNamespaceFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -13546,6 +13580,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidNamespaceFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidNamespaceFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidNamespaceFault {
+    /// Creates a new builder-style object to manufacture [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
+    pub fn builder() -> crate::error::invalid_namespace_fault::Builder {
+        crate::error::invalid_namespace_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
+pub mod invalid_namespace_fault {
+    
+    /// A builder for [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault).
+        pub fn build(self) -> crate::error::InvalidNamespaceFault {
+            crate::error::InvalidNamespaceFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -13710,55 +13794,6 @@ pub struct SnapshotCopyAlreadyDisabledFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotCopyAlreadyDisabledFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
-    pub fn builder() -> crate::error::snapshot_copy_already_disabled_fault::Builder {
-        crate::error::snapshot_copy_already_disabled_fault::Builder::default()
-    }
-}
-/// See [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
-pub mod snapshot_copy_already_disabled_fault {
-    
-    /// A builder for [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
-        pub fn build(self) -> crate::error::SnapshotCopyAlreadyDisabledFault {
-            crate::error::SnapshotCopyAlreadyDisabledFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SnapshotCopyAlreadyDisabledFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -13782,6 +13817,56 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotCopyAlreadyDisabl
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotCopyAlreadyDisabledFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl SnapshotCopyAlreadyDisabledFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
+    pub fn builder() -> crate::error::snapshot_copy_already_disabled_fault::Builder {
+        crate::error::snapshot_copy_already_disabled_fault::Builder::default()
+    }
+}
+
+/// See [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
+pub mod snapshot_copy_already_disabled_fault {
+    
+    /// A builder for [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotCopyAlreadyDisabledFault`](crate::error::SnapshotCopyAlreadyDisabledFault).
+        pub fn build(self) -> crate::error::SnapshotCopyAlreadyDisabledFault {
+            crate::error::SnapshotCopyAlreadyDisabledFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -14154,55 +14239,6 @@ pub struct ResourceNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-    pub fn builder() -> crate::error::resource_not_found_fault::Builder {
-        crate::error::resource_not_found_fault::Builder::default()
-    }
-}
-/// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-pub mod resource_not_found_fault {
-    
-    /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
-        pub fn build(self) -> crate::error::ResourceNotFoundFault {
-            crate::error::ResourceNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ResourceNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -14226,6 +14262,56 @@ impl aws_http::request_id::RequestId for crate::error::ResourceNotFoundFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ResourceNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+    pub fn builder() -> crate::error::resource_not_found_fault::Builder {
+        crate::error::resource_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+pub mod resource_not_found_fault {
+    
+    /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
+        pub fn build(self) -> crate::error::ResourceNotFoundFault {
+            crate::error::ResourceNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -14358,55 +14444,6 @@ pub struct TableRestoreNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TableRestoreNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
-    pub fn builder() -> crate::error::table_restore_not_found_fault::Builder {
-        crate::error::table_restore_not_found_fault::Builder::default()
-    }
-}
-/// See [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
-pub mod table_restore_not_found_fault {
-    
-    /// A builder for [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
-        pub fn build(self) -> crate::error::TableRestoreNotFoundFault {
-            crate::error::TableRestoreNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TableRestoreNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -14430,6 +14467,56 @@ impl aws_http::request_id::RequestId for crate::error::TableRestoreNotFoundFault
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TableRestoreNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl TableRestoreNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
+    pub fn builder() -> crate::error::table_restore_not_found_fault::Builder {
+        crate::error::table_restore_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
+pub mod table_restore_not_found_fault {
+    
+    /// A builder for [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TableRestoreNotFoundFault`](crate::error::TableRestoreNotFoundFault).
+        pub fn build(self) -> crate::error::TableRestoreNotFoundFault {
+            crate::error::TableRestoreNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -14978,55 +15065,6 @@ pub struct ResizeNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResizeNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
-    pub fn builder() -> crate::error::resize_not_found_fault::Builder {
-        crate::error::resize_not_found_fault::Builder::default()
-    }
-}
-/// See [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
-pub mod resize_not_found_fault {
-    
-    /// A builder for [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
-        pub fn build(self) -> crate::error::ResizeNotFoundFault {
-            crate::error::ResizeNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ResizeNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -15050,6 +15088,56 @@ impl aws_http::request_id::RequestId for crate::error::ResizeNotFoundFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResizeNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ResizeNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
+    pub fn builder() -> crate::error::resize_not_found_fault::Builder {
+        crate::error::resize_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
+pub mod resize_not_found_fault {
+    
+    /// A builder for [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResizeNotFoundFault`](crate::error::ResizeNotFoundFault).
+        pub fn build(self) -> crate::error::ResizeNotFoundFault {
+            crate::error::ResizeNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -15454,55 +15542,6 @@ pub struct ReservedNodeExchangeNotFoundFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReservedNodeExchangeNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
-    pub fn builder() -> crate::error::reserved_node_exchange_not_found_fault::Builder {
-        crate::error::reserved_node_exchange_not_found_fault::Builder::default()
-    }
-}
-/// See [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
-pub mod reserved_node_exchange_not_found_fault {
-    
-    /// A builder for [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
-        pub fn build(self) -> crate::error::ReservedNodeExchangeNotFoundFault {
-            crate::error::ReservedNodeExchangeNotFoundFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ReservedNodeExchangeNotFoundFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -15526,6 +15565,56 @@ impl aws_http::request_id::RequestId for crate::error::ReservedNodeExchangeNotFo
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReservedNodeExchangeNotFoundFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ReservedNodeExchangeNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
+    pub fn builder() -> crate::error::reserved_node_exchange_not_found_fault::Builder {
+        crate::error::reserved_node_exchange_not_found_fault::Builder::default()
+    }
+}
+
+/// See [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
+pub mod reserved_node_exchange_not_found_fault {
+    
+    /// A builder for [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReservedNodeExchangeNotFoundFault`](crate::error::ReservedNodeExchangeNotFoundFault).
+        pub fn build(self) -> crate::error::ReservedNodeExchangeNotFoundFault {
+            crate::error::ReservedNodeExchangeNotFoundFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -18962,55 +19051,6 @@ pub struct InvalidSnapshotCopyGrantStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSnapshotCopyGrantStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
-    pub fn builder() -> crate::error::invalid_snapshot_copy_grant_state_fault::Builder {
-        crate::error::invalid_snapshot_copy_grant_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
-pub mod invalid_snapshot_copy_grant_state_fault {
-    
-    /// A builder for [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
-        pub fn build(self) -> crate::error::InvalidSnapshotCopyGrantStateFault {
-            crate::error::InvalidSnapshotCopyGrantStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidSnapshotCopyGrantStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -19034,6 +19074,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidSnapshotCopyGrantS
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidSnapshotCopyGrantStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidSnapshotCopyGrantStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
+    pub fn builder() -> crate::error::invalid_snapshot_copy_grant_state_fault::Builder {
+        crate::error::invalid_snapshot_copy_grant_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
+pub mod invalid_snapshot_copy_grant_state_fault {
+    
+    /// A builder for [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidSnapshotCopyGrantStateFault`](crate::error::InvalidSnapshotCopyGrantStateFault).
+        pub fn build(self) -> crate::error::InvalidSnapshotCopyGrantStateFault {
+            crate::error::InvalidSnapshotCopyGrantStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -19422,55 +19512,6 @@ pub struct InvalidHsmConfigurationStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidHsmConfigurationStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
-    pub fn builder() -> crate::error::invalid_hsm_configuration_state_fault::Builder {
-        crate::error::invalid_hsm_configuration_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
-pub mod invalid_hsm_configuration_state_fault {
-    
-    /// A builder for [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
-        pub fn build(self) -> crate::error::InvalidHsmConfigurationStateFault {
-            crate::error::InvalidHsmConfigurationStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidHsmConfigurationStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -19494,6 +19535,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidHsmConfigurationSt
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidHsmConfigurationStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidHsmConfigurationStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
+    pub fn builder() -> crate::error::invalid_hsm_configuration_state_fault::Builder {
+        crate::error::invalid_hsm_configuration_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
+pub mod invalid_hsm_configuration_state_fault {
+    
+    /// A builder for [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidHsmConfigurationStateFault`](crate::error::InvalidHsmConfigurationStateFault).
+        pub fn build(self) -> crate::error::InvalidHsmConfigurationStateFault {
+            crate::error::InvalidHsmConfigurationStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -19626,55 +19717,6 @@ pub struct InvalidHsmClientCertificateStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidHsmClientCertificateStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
-    pub fn builder() -> crate::error::invalid_hsm_client_certificate_state_fault::Builder {
-        crate::error::invalid_hsm_client_certificate_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
-pub mod invalid_hsm_client_certificate_state_fault {
-    
-    /// A builder for [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
-        pub fn build(self) -> crate::error::InvalidHsmClientCertificateStateFault {
-            crate::error::InvalidHsmClientCertificateStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidHsmClientCertificateStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -19698,6 +19740,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidHsmClientCertifica
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidHsmClientCertificateStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidHsmClientCertificateStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
+    pub fn builder() -> crate::error::invalid_hsm_client_certificate_state_fault::Builder {
+        crate::error::invalid_hsm_client_certificate_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
+pub mod invalid_hsm_client_certificate_state_fault {
+    
+    /// A builder for [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidHsmClientCertificateStateFault`](crate::error::InvalidHsmClientCertificateStateFault).
+        pub fn build(self) -> crate::error::InvalidHsmClientCertificateStateFault {
+            crate::error::InvalidHsmClientCertificateStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -20134,55 +20226,6 @@ pub struct InvalidClusterSubnetStateFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidClusterSubnetStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
-    pub fn builder() -> crate::error::invalid_cluster_subnet_state_fault::Builder {
-        crate::error::invalid_cluster_subnet_state_fault::Builder::default()
-    }
-}
-/// See [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
-pub mod invalid_cluster_subnet_state_fault {
-    
-    /// A builder for [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
-        pub fn build(self) -> crate::error::InvalidClusterSubnetStateFault {
-            crate::error::InvalidClusterSubnetStateFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidClusterSubnetStateFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -20206,6 +20249,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidClusterSubnetState
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidClusterSubnetStateFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidClusterSubnetStateFault {
+    /// Creates a new builder-style object to manufacture [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
+    pub fn builder() -> crate::error::invalid_cluster_subnet_state_fault::Builder {
+        crate::error::invalid_cluster_subnet_state_fault::Builder::default()
+    }
+}
+
+/// See [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
+pub mod invalid_cluster_subnet_state_fault {
+    
+    /// A builder for [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidClusterSubnetStateFault`](crate::error::InvalidClusterSubnetStateFault).
+        pub fn build(self) -> crate::error::InvalidClusterSubnetStateFault {
+            crate::error::InvalidClusterSubnetStateFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -20747,55 +20840,6 @@ pub struct ClusterSnapshotQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSnapshotQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
-    pub fn builder() -> crate::error::cluster_snapshot_quota_exceeded_fault::Builder {
-        crate::error::cluster_snapshot_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
-pub mod cluster_snapshot_quota_exceeded_fault {
-    
-    /// A builder for [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
-        pub fn build(self) -> crate::error::ClusterSnapshotQuotaExceededFault {
-            crate::error::ClusterSnapshotQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ClusterSnapshotQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -20820,26 +20864,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSnapshotQuotaExcee
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSnapshotQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSnapshotAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterSnapshotAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
-    pub fn builder() -> crate::error::cluster_snapshot_already_exists_fault::Builder {
-        crate::error::cluster_snapshot_already_exists_fault::Builder::default()
+impl ClusterSnapshotQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
+    pub fn builder() -> crate::error::cluster_snapshot_quota_exceeded_fault::Builder {
+        crate::error::cluster_snapshot_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
-pub mod cluster_snapshot_already_exists_fault {
+
+/// See [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
+pub mod cluster_snapshot_quota_exceeded_fault {
     
-    /// A builder for [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
+    /// A builder for [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -20857,19 +20892,19 @@ pub mod cluster_snapshot_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ClusterSnapshotAlreadyExistsFault {
-            crate::error::ClusterSnapshotAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSnapshotQuotaExceededFault`](crate::error::ClusterSnapshotQuotaExceededFault).
+        pub fn build(self) -> crate::error::ClusterSnapshotQuotaExceededFault {
+            crate::error::ClusterSnapshotQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -20878,6 +20913,16 @@ pub mod cluster_snapshot_already_exists_fault {
     }
     
     
+}
+
+/// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterSnapshotAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSnapshotAlreadyExistsFault {
     /// Returns the error message.
@@ -20903,6 +20948,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSnapshotAlreadyExi
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSnapshotAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterSnapshotAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
+    pub fn builder() -> crate::error::cluster_snapshot_already_exists_fault::Builder {
+        crate::error::cluster_snapshot_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
+pub mod cluster_snapshot_already_exists_fault {
+    
+    /// A builder for [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSnapshotAlreadyExistsFault`](crate::error::ClusterSnapshotAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ClusterSnapshotAlreadyExistsFault {
+            crate::error::ClusterSnapshotAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -21339,55 +21434,6 @@ pub struct UsageLimitAlreadyExistsFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UsageLimitAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
-    pub fn builder() -> crate::error::usage_limit_already_exists_fault::Builder {
-        crate::error::usage_limit_already_exists_fault::Builder::default()
-    }
-}
-/// See [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
-pub mod usage_limit_already_exists_fault {
-    
-    /// A builder for [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
-        pub fn build(self) -> crate::error::UsageLimitAlreadyExistsFault {
-            crate::error::UsageLimitAlreadyExistsFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UsageLimitAlreadyExistsFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -21411,6 +21457,56 @@ impl aws_http::request_id::RequestId for crate::error::UsageLimitAlreadyExistsFa
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UsageLimitAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl UsageLimitAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
+    pub fn builder() -> crate::error::usage_limit_already_exists_fault::Builder {
+        crate::error::usage_limit_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
+pub mod usage_limit_already_exists_fault {
+    
+    /// A builder for [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UsageLimitAlreadyExistsFault`](crate::error::UsageLimitAlreadyExistsFault).
+        pub fn build(self) -> crate::error::UsageLimitAlreadyExistsFault {
+            crate::error::UsageLimitAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -21759,55 +21855,6 @@ pub struct SnapshotScheduleQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotScheduleQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
-    pub fn builder() -> crate::error::snapshot_schedule_quota_exceeded_fault::Builder {
-        crate::error::snapshot_schedule_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
-pub mod snapshot_schedule_quota_exceeded_fault {
-    
-    /// A builder for [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
-        pub fn build(self) -> crate::error::SnapshotScheduleQuotaExceededFault {
-            crate::error::SnapshotScheduleQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SnapshotScheduleQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -21832,26 +21879,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotScheduleQuotaExce
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotScheduleQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified snapshot schedule already exists. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotScheduleAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnapshotScheduleAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
-    pub fn builder() -> crate::error::snapshot_schedule_already_exists_fault::Builder {
-        crate::error::snapshot_schedule_already_exists_fault::Builder::default()
+impl SnapshotScheduleQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
+    pub fn builder() -> crate::error::snapshot_schedule_quota_exceeded_fault::Builder {
+        crate::error::snapshot_schedule_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
-pub mod snapshot_schedule_already_exists_fault {
+
+/// See [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
+pub mod snapshot_schedule_quota_exceeded_fault {
     
-    /// A builder for [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
+    /// A builder for [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -21869,19 +21907,19 @@ pub mod snapshot_schedule_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
-        pub fn build(self) -> crate::error::SnapshotScheduleAlreadyExistsFault {
-            crate::error::SnapshotScheduleAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotScheduleQuotaExceededFault`](crate::error::SnapshotScheduleQuotaExceededFault).
+        pub fn build(self) -> crate::error::SnapshotScheduleQuotaExceededFault {
+            crate::error::SnapshotScheduleQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -21890,6 +21928,16 @@ pub mod snapshot_schedule_already_exists_fault {
     }
     
     
+}
+
+/// <p>The specified snapshot schedule already exists. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapshotScheduleAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotScheduleAlreadyExistsFault {
     /// Returns the error message.
@@ -21916,26 +21964,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotScheduleAlreadyEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotScheduleAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The definition you submitted is not supported.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleDefinitionTypeUnsupportedFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ScheduleDefinitionTypeUnsupportedFault {
-    /// Creates a new builder-style object to manufacture [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
-    pub fn builder() -> crate::error::schedule_definition_type_unsupported_fault::Builder {
-        crate::error::schedule_definition_type_unsupported_fault::Builder::default()
+impl SnapshotScheduleAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
+    pub fn builder() -> crate::error::snapshot_schedule_already_exists_fault::Builder {
+        crate::error::snapshot_schedule_already_exists_fault::Builder::default()
     }
 }
-/// See [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
-pub mod schedule_definition_type_unsupported_fault {
+
+/// See [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
+pub mod snapshot_schedule_already_exists_fault {
     
-    /// A builder for [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
+    /// A builder for [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -21953,19 +21992,19 @@ pub mod schedule_definition_type_unsupported_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
-        pub fn build(self) -> crate::error::ScheduleDefinitionTypeUnsupportedFault {
-            crate::error::ScheduleDefinitionTypeUnsupportedFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotScheduleAlreadyExistsFault`](crate::error::SnapshotScheduleAlreadyExistsFault).
+        pub fn build(self) -> crate::error::SnapshotScheduleAlreadyExistsFault {
+            crate::error::SnapshotScheduleAlreadyExistsFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -21974,6 +22013,16 @@ pub mod schedule_definition_type_unsupported_fault {
     }
     
     
+}
+
+/// <p>The definition you submitted is not supported.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ScheduleDefinitionTypeUnsupportedFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ScheduleDefinitionTypeUnsupportedFault {
     /// Returns the error message.
@@ -21999,6 +22048,56 @@ impl aws_http::request_id::RequestId for crate::error::ScheduleDefinitionTypeUns
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScheduleDefinitionTypeUnsupportedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ScheduleDefinitionTypeUnsupportedFault {
+    /// Creates a new builder-style object to manufacture [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
+    pub fn builder() -> crate::error::schedule_definition_type_unsupported_fault::Builder {
+        crate::error::schedule_definition_type_unsupported_fault::Builder::default()
+    }
+}
+
+/// See [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
+pub mod schedule_definition_type_unsupported_fault {
+    
+    /// A builder for [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ScheduleDefinitionTypeUnsupportedFault`](crate::error::ScheduleDefinitionTypeUnsupportedFault).
+        pub fn build(self) -> crate::error::ScheduleDefinitionTypeUnsupportedFault {
+            crate::error::ScheduleDefinitionTypeUnsupportedFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -22195,55 +22294,6 @@ pub struct SnapshotCopyGrantQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotCopyGrantQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
-    pub fn builder() -> crate::error::snapshot_copy_grant_quota_exceeded_fault::Builder {
-        crate::error::snapshot_copy_grant_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
-pub mod snapshot_copy_grant_quota_exceeded_fault {
-    
-    /// A builder for [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
-        pub fn build(self) -> crate::error::SnapshotCopyGrantQuotaExceededFault {
-            crate::error::SnapshotCopyGrantQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SnapshotCopyGrantQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -22268,26 +22318,17 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotCopyGrantQuotaExc
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotCopyGrantQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotCopyGrantAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SnapshotCopyGrantAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
-    pub fn builder() -> crate::error::snapshot_copy_grant_already_exists_fault::Builder {
-        crate::error::snapshot_copy_grant_already_exists_fault::Builder::default()
+impl SnapshotCopyGrantQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
+    pub fn builder() -> crate::error::snapshot_copy_grant_quota_exceeded_fault::Builder {
+        crate::error::snapshot_copy_grant_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
-pub mod snapshot_copy_grant_already_exists_fault {
+
+/// See [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
+pub mod snapshot_copy_grant_quota_exceeded_fault {
     
-    /// A builder for [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
+    /// A builder for [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -22305,19 +22346,19 @@ pub mod snapshot_copy_grant_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
-        pub fn build(self) -> crate::error::SnapshotCopyGrantAlreadyExistsFault {
-            crate::error::SnapshotCopyGrantAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotCopyGrantQuotaExceededFault`](crate::error::SnapshotCopyGrantQuotaExceededFault).
+        pub fn build(self) -> crate::error::SnapshotCopyGrantQuotaExceededFault {
+            crate::error::SnapshotCopyGrantQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -22326,6 +22367,16 @@ pub mod snapshot_copy_grant_already_exists_fault {
     }
     
     
+}
+
+/// <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SnapshotCopyGrantAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SnapshotCopyGrantAlreadyExistsFault {
     /// Returns the error message.
@@ -22351,6 +22402,56 @@ impl aws_http::request_id::RequestId for crate::error::SnapshotCopyGrantAlreadyE
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotCopyGrantAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl SnapshotCopyGrantAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
+    pub fn builder() -> crate::error::snapshot_copy_grant_already_exists_fault::Builder {
+        crate::error::snapshot_copy_grant_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
+pub mod snapshot_copy_grant_already_exists_fault {
+    
+    /// A builder for [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SnapshotCopyGrantAlreadyExistsFault`](crate::error::SnapshotCopyGrantAlreadyExistsFault).
+        pub fn build(self) -> crate::error::SnapshotCopyGrantAlreadyExistsFault {
+            crate::error::SnapshotCopyGrantAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -22547,55 +22648,6 @@ pub struct ScheduledActionQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ScheduledActionQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
-    pub fn builder() -> crate::error::scheduled_action_quota_exceeded_fault::Builder {
-        crate::error::scheduled_action_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
-pub mod scheduled_action_quota_exceeded_fault {
-    
-    /// A builder for [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
-        pub fn build(self) -> crate::error::ScheduledActionQuotaExceededFault {
-            crate::error::ScheduledActionQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ScheduledActionQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -22620,26 +22672,17 @@ impl aws_http::request_id::RequestId for crate::error::ScheduledActionQuotaExcee
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScheduledActionQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The scheduled action already exists. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledActionAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ScheduledActionAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
-    pub fn builder() -> crate::error::scheduled_action_already_exists_fault::Builder {
-        crate::error::scheduled_action_already_exists_fault::Builder::default()
+impl ScheduledActionQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
+    pub fn builder() -> crate::error::scheduled_action_quota_exceeded_fault::Builder {
+        crate::error::scheduled_action_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
-pub mod scheduled_action_already_exists_fault {
+
+/// See [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
+pub mod scheduled_action_quota_exceeded_fault {
     
-    /// A builder for [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
+    /// A builder for [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -22657,19 +22700,19 @@ pub mod scheduled_action_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ScheduledActionAlreadyExistsFault {
-            crate::error::ScheduledActionAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ScheduledActionQuotaExceededFault`](crate::error::ScheduledActionQuotaExceededFault).
+        pub fn build(self) -> crate::error::ScheduledActionQuotaExceededFault {
+            crate::error::ScheduledActionQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -22678,6 +22721,16 @@ pub mod scheduled_action_already_exists_fault {
     }
     
     
+}
+
+/// <p>The scheduled action already exists. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ScheduledActionAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ScheduledActionAlreadyExistsFault {
     /// Returns the error message.
@@ -22703,6 +22756,56 @@ impl aws_http::request_id::RequestId for crate::error::ScheduledActionAlreadyExi
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScheduledActionAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ScheduledActionAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
+    pub fn builder() -> crate::error::scheduled_action_already_exists_fault::Builder {
+        crate::error::scheduled_action_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
+pub mod scheduled_action_already_exists_fault {
+    
+    /// A builder for [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ScheduledActionAlreadyExistsFault`](crate::error::ScheduledActionAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ScheduledActionAlreadyExistsFault {
+            crate::error::ScheduledActionAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -22867,55 +22970,6 @@ pub struct HsmConfigurationQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl HsmConfigurationQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
-    pub fn builder() -> crate::error::hsm_configuration_quota_exceeded_fault::Builder {
-        crate::error::hsm_configuration_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
-pub mod hsm_configuration_quota_exceeded_fault {
-    
-    /// A builder for [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
-        pub fn build(self) -> crate::error::HsmConfigurationQuotaExceededFault {
-            crate::error::HsmConfigurationQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl HsmConfigurationQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -22940,26 +22994,17 @@ impl aws_http::request_id::RequestId for crate::error::HsmConfigurationQuotaExce
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for HsmConfigurationQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmConfigurationAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl HsmConfigurationAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
-    pub fn builder() -> crate::error::hsm_configuration_already_exists_fault::Builder {
-        crate::error::hsm_configuration_already_exists_fault::Builder::default()
+impl HsmConfigurationQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
+    pub fn builder() -> crate::error::hsm_configuration_quota_exceeded_fault::Builder {
+        crate::error::hsm_configuration_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
-pub mod hsm_configuration_already_exists_fault {
+
+/// See [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
+pub mod hsm_configuration_quota_exceeded_fault {
     
-    /// A builder for [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
+    /// A builder for [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -22977,19 +23022,19 @@ pub mod hsm_configuration_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
-        pub fn build(self) -> crate::error::HsmConfigurationAlreadyExistsFault {
-            crate::error::HsmConfigurationAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`HsmConfigurationQuotaExceededFault`](crate::error::HsmConfigurationQuotaExceededFault).
+        pub fn build(self) -> crate::error::HsmConfigurationQuotaExceededFault {
+            crate::error::HsmConfigurationQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -22998,6 +23043,16 @@ pub mod hsm_configuration_already_exists_fault {
     }
     
     
+}
+
+/// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct HsmConfigurationAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl HsmConfigurationAlreadyExistsFault {
     /// Returns the error message.
@@ -23023,6 +23078,56 @@ impl aws_http::request_id::RequestId for crate::error::HsmConfigurationAlreadyEx
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for HsmConfigurationAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl HsmConfigurationAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
+    pub fn builder() -> crate::error::hsm_configuration_already_exists_fault::Builder {
+        crate::error::hsm_configuration_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
+pub mod hsm_configuration_already_exists_fault {
+    
+    /// A builder for [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`HsmConfigurationAlreadyExistsFault`](crate::error::HsmConfigurationAlreadyExistsFault).
+        pub fn build(self) -> crate::error::HsmConfigurationAlreadyExistsFault {
+            crate::error::HsmConfigurationAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -23187,55 +23292,6 @@ pub struct HsmClientCertificateQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl HsmClientCertificateQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
-    pub fn builder() -> crate::error::hsm_client_certificate_quota_exceeded_fault::Builder {
-        crate::error::hsm_client_certificate_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
-pub mod hsm_client_certificate_quota_exceeded_fault {
-    
-    /// A builder for [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
-        pub fn build(self) -> crate::error::HsmClientCertificateQuotaExceededFault {
-            crate::error::HsmClientCertificateQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl HsmClientCertificateQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -23260,26 +23316,17 @@ impl aws_http::request_id::RequestId for crate::error::HsmClientCertificateQuota
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for HsmClientCertificateQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HsmClientCertificateAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl HsmClientCertificateAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
-    pub fn builder() -> crate::error::hsm_client_certificate_already_exists_fault::Builder {
-        crate::error::hsm_client_certificate_already_exists_fault::Builder::default()
+impl HsmClientCertificateQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
+    pub fn builder() -> crate::error::hsm_client_certificate_quota_exceeded_fault::Builder {
+        crate::error::hsm_client_certificate_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
-pub mod hsm_client_certificate_already_exists_fault {
+
+/// See [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
+pub mod hsm_client_certificate_quota_exceeded_fault {
     
-    /// A builder for [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
+    /// A builder for [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -23297,19 +23344,19 @@ pub mod hsm_client_certificate_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
-        pub fn build(self) -> crate::error::HsmClientCertificateAlreadyExistsFault {
-            crate::error::HsmClientCertificateAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`HsmClientCertificateQuotaExceededFault`](crate::error::HsmClientCertificateQuotaExceededFault).
+        pub fn build(self) -> crate::error::HsmClientCertificateQuotaExceededFault {
+            crate::error::HsmClientCertificateQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -23318,6 +23365,16 @@ pub mod hsm_client_certificate_already_exists_fault {
     }
     
     
+}
+
+/// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct HsmClientCertificateAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl HsmClientCertificateAlreadyExistsFault {
     /// Returns the error message.
@@ -23343,6 +23400,56 @@ impl aws_http::request_id::RequestId for crate::error::HsmClientCertificateAlrea
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for HsmClientCertificateAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl HsmClientCertificateAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
+    pub fn builder() -> crate::error::hsm_client_certificate_already_exists_fault::Builder {
+        crate::error::hsm_client_certificate_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
+pub mod hsm_client_certificate_already_exists_fault {
+    
+    /// A builder for [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`HsmClientCertificateAlreadyExistsFault`](crate::error::HsmClientCertificateAlreadyExistsFault).
+        pub fn build(self) -> crate::error::HsmClientCertificateAlreadyExistsFault {
+            crate::error::HsmClientCertificateAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -23619,55 +23726,6 @@ pub struct SubscriptionAlreadyExistFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SubscriptionAlreadyExistFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
-    pub fn builder() -> crate::error::subscription_already_exist_fault::Builder {
-        crate::error::subscription_already_exist_fault::Builder::default()
-    }
-}
-/// See [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
-pub mod subscription_already_exist_fault {
-    
-    /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
-        pub fn build(self) -> crate::error::SubscriptionAlreadyExistFault {
-            crate::error::SubscriptionAlreadyExistFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SubscriptionAlreadyExistFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -23692,26 +23750,17 @@ impl aws_http::request_id::RequestId for crate::error::SubscriptionAlreadyExistF
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SubscriptionAlreadyExistFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSubscriptionQuotaExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EventSubscriptionQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
-    pub fn builder() -> crate::error::event_subscription_quota_exceeded_fault::Builder {
-        crate::error::event_subscription_quota_exceeded_fault::Builder::default()
+impl SubscriptionAlreadyExistFault {
+    /// Creates a new builder-style object to manufacture [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
+    pub fn builder() -> crate::error::subscription_already_exist_fault::Builder {
+        crate::error::subscription_already_exist_fault::Builder::default()
     }
 }
-/// See [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
-pub mod event_subscription_quota_exceeded_fault {
+
+/// See [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
+pub mod subscription_already_exist_fault {
     
-    /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
+    /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -23729,19 +23778,19 @@ pub mod event_subscription_quota_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
-        pub fn build(self) -> crate::error::EventSubscriptionQuotaExceededFault {
-            crate::error::EventSubscriptionQuotaExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
+        pub fn build(self) -> crate::error::SubscriptionAlreadyExistFault {
+            crate::error::SubscriptionAlreadyExistFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -23750,6 +23799,16 @@ pub mod event_subscription_quota_exceeded_fault {
     }
     
     
+}
+
+/// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EventSubscriptionQuotaExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EventSubscriptionQuotaExceededFault {
     /// Returns the error message.
@@ -23775,6 +23834,56 @@ impl aws_http::request_id::RequestId for crate::error::EventSubscriptionQuotaExc
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EventSubscriptionQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl EventSubscriptionQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
+    pub fn builder() -> crate::error::event_subscription_quota_exceeded_fault::Builder {
+        crate::error::event_subscription_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
+pub mod event_subscription_quota_exceeded_fault {
+    
+    /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
+        pub fn build(self) -> crate::error::EventSubscriptionQuotaExceededFault {
+            crate::error::EventSubscriptionQuotaExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -24035,55 +24144,6 @@ pub struct EndpointsPerClusterLimitExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointsPerClusterLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
-    pub fn builder() -> crate::error::endpoints_per_cluster_limit_exceeded_fault::Builder {
-        crate::error::endpoints_per_cluster_limit_exceeded_fault::Builder::default()
-    }
-}
-/// See [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
-pub mod endpoints_per_cluster_limit_exceeded_fault {
-    
-    /// A builder for [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
-        pub fn build(self) -> crate::error::EndpointsPerClusterLimitExceededFault {
-            crate::error::EndpointsPerClusterLimitExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl EndpointsPerClusterLimitExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -24108,26 +24168,17 @@ impl aws_http::request_id::RequestId for crate::error::EndpointsPerClusterLimitE
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointsPerClusterLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointsPerAuthorizationLimitExceededFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EndpointsPerAuthorizationLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
-    pub fn builder() -> crate::error::endpoints_per_authorization_limit_exceeded_fault::Builder {
-        crate::error::endpoints_per_authorization_limit_exceeded_fault::Builder::default()
+impl EndpointsPerClusterLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
+    pub fn builder() -> crate::error::endpoints_per_cluster_limit_exceeded_fault::Builder {
+        crate::error::endpoints_per_cluster_limit_exceeded_fault::Builder::default()
     }
 }
-/// See [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
-pub mod endpoints_per_authorization_limit_exceeded_fault {
+
+/// See [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
+pub mod endpoints_per_cluster_limit_exceeded_fault {
     
-    /// A builder for [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
+    /// A builder for [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -24145,19 +24196,19 @@ pub mod endpoints_per_authorization_limit_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
-        pub fn build(self) -> crate::error::EndpointsPerAuthorizationLimitExceededFault {
-            crate::error::EndpointsPerAuthorizationLimitExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointsPerClusterLimitExceededFault`](crate::error::EndpointsPerClusterLimitExceededFault).
+        pub fn build(self) -> crate::error::EndpointsPerClusterLimitExceededFault {
+            crate::error::EndpointsPerClusterLimitExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -24166,6 +24217,16 @@ pub mod endpoints_per_authorization_limit_exceeded_fault {
     }
     
     
+}
+
+/// <p>The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EndpointsPerAuthorizationLimitExceededFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointsPerAuthorizationLimitExceededFault {
     /// Returns the error message.
@@ -24192,26 +24253,17 @@ impl aws_http::request_id::RequestId for crate::error::EndpointsPerAuthorization
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointsPerAuthorizationLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EndpointAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
-    pub fn builder() -> crate::error::endpoint_already_exists_fault::Builder {
-        crate::error::endpoint_already_exists_fault::Builder::default()
+impl EndpointsPerAuthorizationLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
+    pub fn builder() -> crate::error::endpoints_per_authorization_limit_exceeded_fault::Builder {
+        crate::error::endpoints_per_authorization_limit_exceeded_fault::Builder::default()
     }
 }
-/// See [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
-pub mod endpoint_already_exists_fault {
+
+/// See [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
+pub mod endpoints_per_authorization_limit_exceeded_fault {
     
-    /// A builder for [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
+    /// A builder for [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -24229,19 +24281,19 @@ pub mod endpoint_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
-        pub fn build(self) -> crate::error::EndpointAlreadyExistsFault {
-            crate::error::EndpointAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointsPerAuthorizationLimitExceededFault`](crate::error::EndpointsPerAuthorizationLimitExceededFault).
+        pub fn build(self) -> crate::error::EndpointsPerAuthorizationLimitExceededFault {
+            crate::error::EndpointsPerAuthorizationLimitExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -24250,6 +24302,16 @@ pub mod endpoint_already_exists_fault {
     }
     
     
+}
+
+/// <p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EndpointAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointAlreadyExistsFault {
     /// Returns the error message.
@@ -24276,26 +24338,17 @@ impl aws_http::request_id::RequestId for crate::error::EndpointAlreadyExistsFaul
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>You are not authorized to access the cluster.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessToClusterDeniedFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AccessToClusterDeniedFault {
-    /// Creates a new builder-style object to manufacture [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
-    pub fn builder() -> crate::error::access_to_cluster_denied_fault::Builder {
-        crate::error::access_to_cluster_denied_fault::Builder::default()
+impl EndpointAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
+    pub fn builder() -> crate::error::endpoint_already_exists_fault::Builder {
+        crate::error::endpoint_already_exists_fault::Builder::default()
     }
 }
-/// See [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
-pub mod access_to_cluster_denied_fault {
+
+/// See [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
+pub mod endpoint_already_exists_fault {
     
-    /// A builder for [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
+    /// A builder for [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -24313,19 +24366,19 @@ pub mod access_to_cluster_denied_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
-        pub fn build(self) -> crate::error::AccessToClusterDeniedFault {
-            crate::error::AccessToClusterDeniedFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointAlreadyExistsFault`](crate::error::EndpointAlreadyExistsFault).
+        pub fn build(self) -> crate::error::EndpointAlreadyExistsFault {
+            crate::error::EndpointAlreadyExistsFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -24334,6 +24387,16 @@ pub mod access_to_cluster_denied_fault {
     }
     
     
+}
+
+/// <p>You are not authorized to access the cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AccessToClusterDeniedFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessToClusterDeniedFault {
     /// Returns the error message.
@@ -24359,6 +24422,56 @@ impl aws_http::request_id::RequestId for crate::error::AccessToClusterDeniedFaul
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessToClusterDeniedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AccessToClusterDeniedFault {
+    /// Creates a new builder-style object to manufacture [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
+    pub fn builder() -> crate::error::access_to_cluster_denied_fault::Builder {
+        crate::error::access_to_cluster_denied_fault::Builder::default()
+    }
+}
+
+/// See [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
+pub mod access_to_cluster_denied_fault {
+    
+    /// A builder for [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AccessToClusterDeniedFault`](crate::error::AccessToClusterDeniedFault).
+        pub fn build(self) -> crate::error::AccessToClusterDeniedFault {
+            crate::error::AccessToClusterDeniedFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -24587,55 +24700,6 @@ pub struct ClusterSubnetGroupQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSubnetGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
-    pub fn builder() -> crate::error::cluster_subnet_group_quota_exceeded_fault::Builder {
-        crate::error::cluster_subnet_group_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
-pub mod cluster_subnet_group_quota_exceeded_fault {
-    
-    /// A builder for [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
-        pub fn build(self) -> crate::error::ClusterSubnetGroupQuotaExceededFault {
-            crate::error::ClusterSubnetGroupQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ClusterSubnetGroupQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -24660,26 +24724,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSubnetGroupQuotaEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSubnetGroupQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSubnetGroupAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterSubnetGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
-    pub fn builder() -> crate::error::cluster_subnet_group_already_exists_fault::Builder {
-        crate::error::cluster_subnet_group_already_exists_fault::Builder::default()
+impl ClusterSubnetGroupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
+    pub fn builder() -> crate::error::cluster_subnet_group_quota_exceeded_fault::Builder {
+        crate::error::cluster_subnet_group_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
-pub mod cluster_subnet_group_already_exists_fault {
+
+/// See [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
+pub mod cluster_subnet_group_quota_exceeded_fault {
     
-    /// A builder for [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
+    /// A builder for [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -24697,19 +24752,19 @@ pub mod cluster_subnet_group_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ClusterSubnetGroupAlreadyExistsFault {
-            crate::error::ClusterSubnetGroupAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSubnetGroupQuotaExceededFault`](crate::error::ClusterSubnetGroupQuotaExceededFault).
+        pub fn build(self) -> crate::error::ClusterSubnetGroupQuotaExceededFault {
+            crate::error::ClusterSubnetGroupQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -24718,6 +24773,16 @@ pub mod cluster_subnet_group_already_exists_fault {
     }
     
     
+}
+
+/// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterSubnetGroupAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSubnetGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -24743,6 +24808,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSubnetGroupAlready
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSubnetGroupAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterSubnetGroupAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
+    pub fn builder() -> crate::error::cluster_subnet_group_already_exists_fault::Builder {
+        crate::error::cluster_subnet_group_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
+pub mod cluster_subnet_group_already_exists_fault {
+    
+    /// A builder for [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSubnetGroupAlreadyExistsFault`](crate::error::ClusterSubnetGroupAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ClusterSubnetGroupAlreadyExistsFault {
+            crate::error::ClusterSubnetGroupAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -25108,55 +25223,6 @@ pub struct ClusterSecurityGroupQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSecurityGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
-    pub fn builder() -> crate::error::cluster_security_group_quota_exceeded_fault::Builder {
-        crate::error::cluster_security_group_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
-pub mod cluster_security_group_quota_exceeded_fault {
-    
-    /// A builder for [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
-        pub fn build(self) -> crate::error::ClusterSecurityGroupQuotaExceededFault {
-            crate::error::ClusterSecurityGroupQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ClusterSecurityGroupQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -25181,26 +25247,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSecurityGroupQuota
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSecurityGroupQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>A cluster security group with the same name already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSecurityGroupAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterSecurityGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
-    pub fn builder() -> crate::error::cluster_security_group_already_exists_fault::Builder {
-        crate::error::cluster_security_group_already_exists_fault::Builder::default()
+impl ClusterSecurityGroupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
+    pub fn builder() -> crate::error::cluster_security_group_quota_exceeded_fault::Builder {
+        crate::error::cluster_security_group_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
-pub mod cluster_security_group_already_exists_fault {
+
+/// See [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
+pub mod cluster_security_group_quota_exceeded_fault {
     
-    /// A builder for [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
+    /// A builder for [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -25218,19 +25275,19 @@ pub mod cluster_security_group_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ClusterSecurityGroupAlreadyExistsFault {
-            crate::error::ClusterSecurityGroupAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSecurityGroupQuotaExceededFault`](crate::error::ClusterSecurityGroupQuotaExceededFault).
+        pub fn build(self) -> crate::error::ClusterSecurityGroupQuotaExceededFault {
+            crate::error::ClusterSecurityGroupQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -25239,6 +25296,16 @@ pub mod cluster_security_group_already_exists_fault {
     }
     
     
+}
+
+/// <p>A cluster security group with the same name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterSecurityGroupAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterSecurityGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -25264,6 +25331,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterSecurityGroupAlrea
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterSecurityGroupAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterSecurityGroupAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
+    pub fn builder() -> crate::error::cluster_security_group_already_exists_fault::Builder {
+        crate::error::cluster_security_group_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
+pub mod cluster_security_group_already_exists_fault {
+    
+    /// A builder for [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterSecurityGroupAlreadyExistsFault`](crate::error::ClusterSecurityGroupAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ClusterSecurityGroupAlreadyExistsFault {
+            crate::error::ClusterSecurityGroupAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -25428,55 +25545,6 @@ pub struct ClusterParameterGroupQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterParameterGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
-    pub fn builder() -> crate::error::cluster_parameter_group_quota_exceeded_fault::Builder {
-        crate::error::cluster_parameter_group_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
-pub mod cluster_parameter_group_quota_exceeded_fault {
-    
-    /// A builder for [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
-        pub fn build(self) -> crate::error::ClusterParameterGroupQuotaExceededFault {
-            crate::error::ClusterParameterGroupQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ClusterParameterGroupQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -25501,26 +25569,17 @@ impl aws_http::request_id::RequestId for crate::error::ClusterParameterGroupQuot
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterParameterGroupQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>A cluster parameter group with the same name already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterParameterGroupAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClusterParameterGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
-    pub fn builder() -> crate::error::cluster_parameter_group_already_exists_fault::Builder {
-        crate::error::cluster_parameter_group_already_exists_fault::Builder::default()
+impl ClusterParameterGroupQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
+    pub fn builder() -> crate::error::cluster_parameter_group_quota_exceeded_fault::Builder {
+        crate::error::cluster_parameter_group_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
-pub mod cluster_parameter_group_already_exists_fault {
+
+/// See [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
+pub mod cluster_parameter_group_quota_exceeded_fault {
     
-    /// A builder for [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
+    /// A builder for [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -25538,19 +25597,19 @@ pub mod cluster_parameter_group_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
-        pub fn build(self) -> crate::error::ClusterParameterGroupAlreadyExistsFault {
-            crate::error::ClusterParameterGroupAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterParameterGroupQuotaExceededFault`](crate::error::ClusterParameterGroupQuotaExceededFault).
+        pub fn build(self) -> crate::error::ClusterParameterGroupQuotaExceededFault {
+            crate::error::ClusterParameterGroupQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -25559,6 +25618,16 @@ pub mod cluster_parameter_group_already_exists_fault {
     }
     
     
+}
+
+/// <p>A cluster parameter group with the same name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClusterParameterGroupAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClusterParameterGroupAlreadyExistsFault {
     /// Returns the error message.
@@ -25584,6 +25653,56 @@ impl aws_http::request_id::RequestId for crate::error::ClusterParameterGroupAlre
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClusterParameterGroupAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClusterParameterGroupAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
+    pub fn builder() -> crate::error::cluster_parameter_group_already_exists_fault::Builder {
+        crate::error::cluster_parameter_group_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
+pub mod cluster_parameter_group_already_exists_fault {
+    
+    /// A builder for [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClusterParameterGroupAlreadyExistsFault`](crate::error::ClusterParameterGroupAlreadyExistsFault).
+        pub fn build(self) -> crate::error::ClusterParameterGroupAlreadyExistsFault {
+            crate::error::ClusterParameterGroupAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -26173,55 +26292,6 @@ pub struct AuthenticationProfileAlreadyExistsFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthenticationProfileAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
-    pub fn builder() -> crate::error::authentication_profile_already_exists_fault::Builder {
-        crate::error::authentication_profile_already_exists_fault::Builder::default()
-    }
-}
-/// See [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
-pub mod authentication_profile_already_exists_fault {
-    
-    /// A builder for [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
-        pub fn build(self) -> crate::error::AuthenticationProfileAlreadyExistsFault {
-            crate::error::AuthenticationProfileAlreadyExistsFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl AuthenticationProfileAlreadyExistsFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -26245,6 +26315,56 @@ impl aws_http::request_id::RequestId for crate::error::AuthenticationProfileAlre
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthenticationProfileAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AuthenticationProfileAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
+    pub fn builder() -> crate::error::authentication_profile_already_exists_fault::Builder {
+        crate::error::authentication_profile_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
+pub mod authentication_profile_already_exists_fault {
+    
+    /// A builder for [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault).
+        pub fn build(self) -> crate::error::AuthenticationProfileAlreadyExistsFault {
+            crate::error::AuthenticationProfileAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -26699,55 +26819,6 @@ pub struct BatchModifyClusterSnapshotsLimitExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BatchModifyClusterSnapshotsLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
-    pub fn builder() -> crate::error::batch_modify_cluster_snapshots_limit_exceeded_fault::Builder {
-        crate::error::batch_modify_cluster_snapshots_limit_exceeded_fault::Builder::default()
-    }
-}
-/// See [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
-pub mod batch_modify_cluster_snapshots_limit_exceeded_fault {
-    
-    /// A builder for [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
-        pub fn build(self) -> crate::error::BatchModifyClusterSnapshotsLimitExceededFault {
-            crate::error::BatchModifyClusterSnapshotsLimitExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl BatchModifyClusterSnapshotsLimitExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -26771,6 +26842,56 @@ impl aws_http::request_id::RequestId for crate::error::BatchModifyClusterSnapsho
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchModifyClusterSnapshotsLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl BatchModifyClusterSnapshotsLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
+    pub fn builder() -> crate::error::batch_modify_cluster_snapshots_limit_exceeded_fault::Builder {
+        crate::error::batch_modify_cluster_snapshots_limit_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
+pub mod batch_modify_cluster_snapshots_limit_exceeded_fault {
+    
+    /// A builder for [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`BatchModifyClusterSnapshotsLimitExceededFault`](crate::error::BatchModifyClusterSnapshotsLimitExceededFault).
+        pub fn build(self) -> crate::error::BatchModifyClusterSnapshotsLimitExceededFault {
+            crate::error::BatchModifyClusterSnapshotsLimitExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -26887,55 +27008,6 @@ pub struct BatchDeleteRequestSizeExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BatchDeleteRequestSizeExceededFault {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
-    pub fn builder() -> crate::error::batch_delete_request_size_exceeded_fault::Builder {
-        crate::error::batch_delete_request_size_exceeded_fault::Builder::default()
-    }
-}
-/// See [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
-pub mod batch_delete_request_size_exceeded_fault {
-    
-    /// A builder for [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
-        pub fn build(self) -> crate::error::BatchDeleteRequestSizeExceededFault {
-            crate::error::BatchDeleteRequestSizeExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl BatchDeleteRequestSizeExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -26959,6 +27031,56 @@ impl aws_http::request_id::RequestId for crate::error::BatchDeleteRequestSizeExc
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchDeleteRequestSizeExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl BatchDeleteRequestSizeExceededFault {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
+    pub fn builder() -> crate::error::batch_delete_request_size_exceeded_fault::Builder {
+        crate::error::batch_delete_request_size_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
+pub mod batch_delete_request_size_exceeded_fault {
+    
+    /// A builder for [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`BatchDeleteRequestSizeExceededFault`](crate::error::BatchDeleteRequestSizeExceededFault).
+        pub fn build(self) -> crate::error::BatchDeleteRequestSizeExceededFault {
+            crate::error::BatchDeleteRequestSizeExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -27171,55 +27293,6 @@ pub struct AuthorizationQuotaExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthorizationQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
-    pub fn builder() -> crate::error::authorization_quota_exceeded_fault::Builder {
-        crate::error::authorization_quota_exceeded_fault::Builder::default()
-    }
-}
-/// See [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
-pub mod authorization_quota_exceeded_fault {
-    
-    /// A builder for [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
-        pub fn build(self) -> crate::error::AuthorizationQuotaExceededFault {
-            crate::error::AuthorizationQuotaExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl AuthorizationQuotaExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -27244,26 +27317,17 @@ impl aws_http::request_id::RequestId for crate::error::AuthorizationQuotaExceede
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthorizationQuotaExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizationAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AuthorizationAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
-    pub fn builder() -> crate::error::authorization_already_exists_fault::Builder {
-        crate::error::authorization_already_exists_fault::Builder::default()
+impl AuthorizationQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
+    pub fn builder() -> crate::error::authorization_quota_exceeded_fault::Builder {
+        crate::error::authorization_quota_exceeded_fault::Builder::default()
     }
 }
-/// See [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
-pub mod authorization_already_exists_fault {
+
+/// See [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
+pub mod authorization_quota_exceeded_fault {
     
-    /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
+    /// A builder for [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -27281,19 +27345,19 @@ pub mod authorization_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
-        pub fn build(self) -> crate::error::AuthorizationAlreadyExistsFault {
-            crate::error::AuthorizationAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
+        pub fn build(self) -> crate::error::AuthorizationQuotaExceededFault {
+            crate::error::AuthorizationQuotaExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -27302,6 +27366,16 @@ pub mod authorization_already_exists_fault {
     }
     
     
+}
+
+/// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthorizationAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthorizationAlreadyExistsFault {
     /// Returns the error message.
@@ -27327,6 +27401,56 @@ impl aws_http::request_id::RequestId for crate::error::AuthorizationAlreadyExist
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthorizationAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AuthorizationAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
+    pub fn builder() -> crate::error::authorization_already_exists_fault::Builder {
+        crate::error::authorization_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
+pub mod authorization_already_exists_fault {
+    
+    /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
+        pub fn build(self) -> crate::error::AuthorizationAlreadyExistsFault {
+            crate::error::AuthorizationAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -27523,55 +27647,6 @@ pub struct EndpointAuthorizationsPerClusterLimitExceededFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointAuthorizationsPerClusterLimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
-    pub fn builder() -> crate::error::endpoint_authorizations_per_cluster_limit_exceeded_fault::Builder {
-        crate::error::endpoint_authorizations_per_cluster_limit_exceeded_fault::Builder::default()
-    }
-}
-/// See [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
-pub mod endpoint_authorizations_per_cluster_limit_exceeded_fault {
-    
-    /// A builder for [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
-        pub fn build(self) -> crate::error::EndpointAuthorizationsPerClusterLimitExceededFault {
-            crate::error::EndpointAuthorizationsPerClusterLimitExceededFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl EndpointAuthorizationsPerClusterLimitExceededFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -27596,26 +27671,17 @@ impl aws_http::request_id::RequestId for crate::error::EndpointAuthorizationsPer
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointAuthorizationsPerClusterLimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The authorization already exists for this endpoint.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAuthorizationAlreadyExistsFault  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl EndpointAuthorizationAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
-    pub fn builder() -> crate::error::endpoint_authorization_already_exists_fault::Builder {
-        crate::error::endpoint_authorization_already_exists_fault::Builder::default()
+impl EndpointAuthorizationsPerClusterLimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
+    pub fn builder() -> crate::error::endpoint_authorizations_per_cluster_limit_exceeded_fault::Builder {
+        crate::error::endpoint_authorizations_per_cluster_limit_exceeded_fault::Builder::default()
     }
 }
-/// See [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
-pub mod endpoint_authorization_already_exists_fault {
+
+/// See [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
+pub mod endpoint_authorizations_per_cluster_limit_exceeded_fault {
     
-    /// A builder for [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
+    /// A builder for [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -27633,19 +27699,19 @@ pub mod endpoint_authorization_already_exists_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
-        pub fn build(self) -> crate::error::EndpointAuthorizationAlreadyExistsFault {
-            crate::error::EndpointAuthorizationAlreadyExistsFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointAuthorizationsPerClusterLimitExceededFault`](crate::error::EndpointAuthorizationsPerClusterLimitExceededFault).
+        pub fn build(self) -> crate::error::EndpointAuthorizationsPerClusterLimitExceededFault {
+            crate::error::EndpointAuthorizationsPerClusterLimitExceededFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -27654,6 +27720,16 @@ pub mod endpoint_authorization_already_exists_fault {
     }
     
     
+}
+
+/// <p>The authorization already exists for this endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct EndpointAuthorizationAlreadyExistsFault  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EndpointAuthorizationAlreadyExistsFault {
     /// Returns the error message.
@@ -27679,6 +27755,56 @@ impl aws_http::request_id::RequestId for crate::error::EndpointAuthorizationAlre
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EndpointAuthorizationAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl EndpointAuthorizationAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
+    pub fn builder() -> crate::error::endpoint_authorization_already_exists_fault::Builder {
+        crate::error::endpoint_authorization_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
+pub mod endpoint_authorization_already_exists_fault {
+    
+    /// A builder for [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`EndpointAuthorizationAlreadyExistsFault`](crate::error::EndpointAuthorizationAlreadyExistsFault).
+        pub fn build(self) -> crate::error::EndpointAuthorizationAlreadyExistsFault {
+            crate::error::EndpointAuthorizationAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

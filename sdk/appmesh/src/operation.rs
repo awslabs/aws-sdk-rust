@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_gateway_route`](crate::client::Client::create_gateway_route).
             ///
-            /// See [`crate::client::fluent_builders::CreateGatewayRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGatewayRoute {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGatewayRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_mesh`](crate::client::Client::create_mesh).
             ///
-            /// See [`crate::client::fluent_builders::CreateMesh`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateMesh`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMesh {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMesh {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_route`](crate::client::Client::create_route).
             ///
-            /// See [`crate::client::fluent_builders::CreateRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRoute {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_virtual_gateway`](crate::client::Client::create_virtual_gateway).
             ///
-            /// See [`crate::client::fluent_builders::CreateVirtualGateway`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateVirtualGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualGateway {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualGateway {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_virtual_node`](crate::client::Client::create_virtual_node).
             ///
-            /// See [`crate::client::fluent_builders::CreateVirtualNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateVirtualNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualNode {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_virtual_router`](crate::client::Client::create_virtual_router).
             ///
-            /// See [`crate::client::fluent_builders::CreateVirtualRouter`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateVirtualRouter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualRouter {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualRouter {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_virtual_service`](crate::client::Client::create_virtual_service).
             ///
-            /// See [`crate::client::fluent_builders::CreateVirtualService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateVirtualService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVirtualService {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_gateway_route`](crate::client::Client::delete_gateway_route).
             ///
-            /// See [`crate::client::fluent_builders::DeleteGatewayRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGatewayRoute {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGatewayRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_mesh`](crate::client::Client::delete_mesh).
             ///
-            /// See [`crate::client::fluent_builders::DeleteMesh`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteMesh`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMesh {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMesh {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_route`](crate::client::Client::delete_route).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRoute {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_virtual_gateway`](crate::client::Client::delete_virtual_gateway).
             ///
-            /// See [`crate::client::fluent_builders::DeleteVirtualGateway`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteVirtualGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualGateway {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualGateway {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_virtual_node`](crate::client::Client::delete_virtual_node).
             ///
-            /// See [`crate::client::fluent_builders::DeleteVirtualNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteVirtualNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualNode {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_virtual_router`](crate::client::Client::delete_virtual_router).
             ///
-            /// See [`crate::client::fluent_builders::DeleteVirtualRouter`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteVirtualRouter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualRouter {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualRouter {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_virtual_service`](crate::client::Client::delete_virtual_service).
             ///
-            /// See [`crate::client::fluent_builders::DeleteVirtualService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteVirtualService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVirtualService {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_gateway_route`](crate::client::Client::describe_gateway_route).
             ///
-            /// See [`crate::client::fluent_builders::DescribeGatewayRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeGatewayRoute {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGatewayRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_mesh`](crate::client::Client::describe_mesh).
             ///
-            /// See [`crate::client::fluent_builders::DescribeMesh`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeMesh`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMesh {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMesh {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_route`](crate::client::Client::describe_route).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRoute {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_virtual_gateway`](crate::client::Client::describe_virtual_gateway).
             ///
-            /// See [`crate::client::fluent_builders::DescribeVirtualGateway`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeVirtualGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualGateway {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualGateway {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_virtual_node`](crate::client::Client::describe_virtual_node).
             ///
-            /// See [`crate::client::fluent_builders::DescribeVirtualNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeVirtualNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualNode {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_virtual_router`](crate::client::Client::describe_virtual_router).
             ///
-            /// See [`crate::client::fluent_builders::DescribeVirtualRouter`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeVirtualRouter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualRouter {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualRouter {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_virtual_service`](crate::client::Client::describe_virtual_service).
             ///
-            /// See [`crate::client::fluent_builders::DescribeVirtualService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeVirtualService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVirtualService {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_gateway_routes`](crate::client::Client::list_gateway_routes).
             ///
-            /// See [`crate::client::fluent_builders::ListGatewayRoutes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGatewayRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGatewayRoutes {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGatewayRoutes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_meshes`](crate::client::Client::list_meshes).
             ///
-            /// See [`crate::client::fluent_builders::ListMeshes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMeshes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMeshes {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMeshes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_routes`](crate::client::Client::list_routes).
             ///
-            /// See [`crate::client::fluent_builders::ListRoutes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRoutes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRoutes {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_virtual_gateways`](crate::client::Client::list_virtual_gateways).
             ///
-            /// See [`crate::client::fluent_builders::ListVirtualGateways`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListVirtualGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualGateways {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualGateways {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_virtual_nodes`](crate::client::Client::list_virtual_nodes).
             ///
-            /// See [`crate::client::fluent_builders::ListVirtualNodes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListVirtualNodes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualNodes {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualNodes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_virtual_routers`](crate::client::Client::list_virtual_routers).
             ///
-            /// See [`crate::client::fluent_builders::ListVirtualRouters`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListVirtualRouters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualRouters {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualRouters {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_virtual_services`](crate::client::Client::list_virtual_services).
             ///
-            /// See [`crate::client::fluent_builders::ListVirtualServices`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListVirtualServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualServices {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualServices {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_gateway_route`](crate::client::Client::update_gateway_route).
             ///
-            /// See [`crate::client::fluent_builders::UpdateGatewayRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateGatewayRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGatewayRoute {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_mesh`](crate::client::Client::update_mesh).
             ///
-            /// See [`crate::client::fluent_builders::UpdateMesh`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateMesh`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMesh {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMesh {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_route`](crate::client::Client::update_route).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoute {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_virtual_gateway`](crate::client::Client::update_virtual_gateway).
             ///
-            /// See [`crate::client::fluent_builders::UpdateVirtualGateway`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateVirtualGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualGateway {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualGateway {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_virtual_node`](crate::client::Client::update_virtual_node).
             ///
-            /// See [`crate::client::fluent_builders::UpdateVirtualNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateVirtualNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualNode {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_virtual_router`](crate::client::Client::update_virtual_router).
             ///
-            /// See [`crate::client::fluent_builders::UpdateVirtualRouter`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateVirtualRouter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualRouter {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualRouter {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_virtual_service`](crate::client::Client::update_virtual_service).
             ///
-            /// See [`crate::client::fluent_builders::UpdateVirtualService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateVirtualService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVirtualService {
     _private: ()

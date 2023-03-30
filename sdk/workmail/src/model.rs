@@ -28,6 +28,13 @@ impl BookingOptions {
         self.auto_decline_conflicting_requests
     }
 }
+impl BookingOptions {
+    /// Creates a new builder-style object to manufacture [`BookingOptions`](crate::model::BookingOptions).
+    pub fn builder() -> crate::model::booking_options::Builder {
+        crate::model::booking_options::Builder::default()
+    }
+}
+
 /// See [`BookingOptions`](crate::model::BookingOptions).
 pub mod booking_options {
     
@@ -84,12 +91,6 @@ pub mod booking_options {
     }
     
     
-}
-impl BookingOptions {
-    /// Creates a new builder-style object to manufacture [`BookingOptions`](crate::model::BookingOptions).
-    pub fn builder() -> crate::model::booking_options::Builder {
-        crate::model::booking_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MobileDeviceAccessRuleEffect`, it is important to ensure
@@ -223,6 +224,13 @@ impl ImpersonationRule {
         self.not_target_users.as_deref()
     }
 }
+impl ImpersonationRule {
+    /// Creates a new builder-style object to manufacture [`ImpersonationRule`](crate::model::ImpersonationRule).
+    pub fn builder() -> crate::model::impersonation_rule::Builder {
+        crate::model::impersonation_rule::Builder::default()
+    }
+}
+
 /// See [`ImpersonationRule`](crate::model::ImpersonationRule).
 pub mod impersonation_rule {
     
@@ -324,12 +332,6 @@ pub mod impersonation_rule {
     }
     
     
-}
-impl ImpersonationRule {
-    /// Creates a new builder-style object to manufacture [`ImpersonationRule`](crate::model::ImpersonationRule).
-    pub fn builder() -> crate::model::impersonation_rule::Builder {
-        crate::model::impersonation_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessEffect`, it is important to ensure
@@ -510,6 +512,13 @@ impl LambdaAvailabilityProvider {
         self.lambda_arn.as_deref()
     }
 }
+impl LambdaAvailabilityProvider {
+    /// Creates a new builder-style object to manufacture [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
+    pub fn builder() -> crate::model::lambda_availability_provider::Builder {
+        crate::model::lambda_availability_provider::Builder::default()
+    }
+}
+
 /// See [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
 pub mod lambda_availability_provider {
     
@@ -539,12 +548,6 @@ pub mod lambda_availability_provider {
     }
     
     
-}
-impl LambdaAvailabilityProvider {
-    /// Creates a new builder-style object to manufacture [`LambdaAvailabilityProvider`](crate::model::LambdaAvailabilityProvider).
-    pub fn builder() -> crate::model::lambda_availability_provider::Builder {
-        crate::model::lambda_availability_provider::Builder::default()
-    }
 }
 
 /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
@@ -584,6 +587,13 @@ impl  std::fmt::Debug for EwsAvailabilityProvider  {
         formatter.finish()
     }
 }
+impl EwsAvailabilityProvider {
+    /// Creates a new builder-style object to manufacture [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
+    pub fn builder() -> crate::model::ews_availability_provider::Builder {
+        crate::model::ews_availability_provider::Builder::default()
+    }
+}
+
 /// See [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
 pub mod ews_availability_provider {
     
@@ -647,12 +657,6 @@ pub mod ews_availability_provider {
     
     
 }
-impl EwsAvailabilityProvider {
-    /// Creates a new builder-style object to manufacture [`EwsAvailabilityProvider`](crate::model::EwsAvailabilityProvider).
-    pub fn builder() -> crate::model::ews_availability_provider::Builder {
-        crate::model::ews_availability_provider::Builder::default()
-    }
-}
 
 /// <p>Describes a tag applied to a resource.</p>
 #[non_exhaustive]
@@ -675,6 +679,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -717,12 +728,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The configuration applied to an organization's folders by its retention policy.</p>
 #[non_exhaustive]
@@ -752,6 +757,13 @@ impl FolderConfiguration {
         self.period
     }
 }
+impl FolderConfiguration {
+    /// Creates a new builder-style object to manufacture [`FolderConfiguration`](crate::model::FolderConfiguration).
+    pub fn builder() -> crate::model::folder_configuration::Builder {
+        crate::model::folder_configuration::Builder::default()
+    }
+}
+
 /// See [`FolderConfiguration`](crate::model::FolderConfiguration).
 pub mod folder_configuration {
     
@@ -805,12 +817,6 @@ pub mod folder_configuration {
     }
     
     
-}
-impl FolderConfiguration {
-    /// Creates a new builder-style object to manufacture [`FolderConfiguration`](crate::model::FolderConfiguration).
-    pub fn builder() -> crate::model::folder_configuration::Builder {
-        crate::model::folder_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RetentionAction`, it is important to ensure
@@ -1229,6 +1235,13 @@ impl User {
         self.disabled_date.as_ref()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
     
@@ -1342,12 +1355,6 @@ pub mod user {
     }
     
     
-}
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UserRole`, it is important to ensure
@@ -1580,6 +1587,13 @@ impl Resource {
         self.disabled_date.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -1681,12 +1695,6 @@ pub mod resource {
     }
     
     
-}
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
@@ -1792,6 +1800,13 @@ impl Delegate {
         self.r#type.as_ref()
     }
 }
+impl Delegate {
+    /// Creates a new builder-style object to manufacture [`Delegate`](crate::model::Delegate).
+    pub fn builder() -> crate::model::delegate::Builder {
+        crate::model::delegate::Builder::default()
+    }
+}
+
 /// See [`Delegate`](crate::model::Delegate).
 pub mod delegate {
     
@@ -1833,12 +1848,6 @@ pub mod delegate {
     }
     
     
-}
-impl Delegate {
-    /// Creates a new builder-style object to manufacture [`Delegate`](crate::model::Delegate).
-    pub fn builder() -> crate::model::delegate::Builder {
-        crate::model::delegate::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MemberType`, it is important to ensure
@@ -1965,6 +1974,13 @@ impl OrganizationSummary {
         self.state.as_deref()
     }
 }
+impl OrganizationSummary {
+    /// Creates a new builder-style object to manufacture [`OrganizationSummary`](crate::model::OrganizationSummary).
+    pub fn builder() -> crate::model::organization_summary::Builder {
+        crate::model::organization_summary::Builder::default()
+    }
+}
+
 /// See [`OrganizationSummary`](crate::model::OrganizationSummary).
 pub mod organization_summary {
     
@@ -2042,12 +2058,6 @@ pub mod organization_summary {
     }
     
     
-}
-impl OrganizationSummary {
-    /// Creates a new builder-style object to manufacture [`OrganizationSummary`](crate::model::OrganizationSummary).
-    pub fn builder() -> crate::model::organization_summary::Builder {
-        crate::model::organization_summary::Builder::default()
-    }
 }
 
 /// <p>A rule that controls access to mobile devices for an WorkMail group.</p>
@@ -2155,6 +2165,13 @@ impl MobileDeviceAccessRule {
         self.date_modified.as_ref()
     }
 }
+impl MobileDeviceAccessRule {
+    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
+    pub fn builder() -> crate::model::mobile_device_access_rule::Builder {
+        crate::model::mobile_device_access_rule::Builder::default()
+    }
+}
+
 /// See [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
 pub mod mobile_device_access_rule {
     
@@ -2389,12 +2406,6 @@ pub mod mobile_device_access_rule {
     
     
 }
-impl MobileDeviceAccessRule {
-    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessRule`](crate::model::MobileDeviceAccessRule).
-    pub fn builder() -> crate::model::mobile_device_access_rule::Builder {
-        crate::model::mobile_device_access_rule::Builder::default()
-    }
-}
 
 /// <p>The override object.</p>
 #[non_exhaustive]
@@ -2445,6 +2456,13 @@ impl MobileDeviceAccessOverride {
         self.date_modified.as_ref()
     }
 }
+impl MobileDeviceAccessOverride {
+    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
+    pub fn builder() -> crate::model::mobile_device_access_override::Builder {
+        crate::model::mobile_device_access_override::Builder::default()
+    }
+}
+
 /// See [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
 pub mod mobile_device_access_override {
     
@@ -2535,12 +2553,6 @@ pub mod mobile_device_access_override {
     
     
 }
-impl MobileDeviceAccessOverride {
-    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessOverride`](crate::model::MobileDeviceAccessOverride).
-    pub fn builder() -> crate::model::mobile_device_access_override::Builder {
-        crate::model::mobile_device_access_override::Builder::default()
-    }
-}
 
 /// <p>The data for a given domain.</p>
 #[non_exhaustive]
@@ -2563,6 +2575,13 @@ impl MailDomainSummary {
         self.default_domain
     }
 }
+impl MailDomainSummary {
+    /// Creates a new builder-style object to manufacture [`MailDomainSummary`](crate::model::MailDomainSummary).
+    pub fn builder() -> crate::model::mail_domain_summary::Builder {
+        crate::model::mail_domain_summary::Builder::default()
+    }
+}
+
 /// See [`MailDomainSummary`](crate::model::MailDomainSummary).
 pub mod mail_domain_summary {
     
@@ -2606,12 +2625,6 @@ pub mod mail_domain_summary {
     
     
 }
-impl MailDomainSummary {
-    /// Creates a new builder-style object to manufacture [`MailDomainSummary`](crate::model::MailDomainSummary).
-    pub fn builder() -> crate::model::mail_domain_summary::Builder {
-        crate::model::mail_domain_summary::Builder::default()
-    }
-}
 
 /// <p>Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource mailbox.</p>
 #[non_exhaustive]
@@ -2641,6 +2654,13 @@ impl Permission {
         self.permission_values.as_deref()
     }
 }
+impl Permission {
+    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
+    pub fn builder() -> crate::model::permission::Builder {
+        crate::model::permission::Builder::default()
+    }
+}
+
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
     
@@ -2700,12 +2720,6 @@ pub mod permission {
     }
     
     
-}
-impl Permission {
-    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
-    pub fn builder() -> crate::model::permission::Builder {
-        crate::model::permission::Builder::default()
-    }
 }
 
 /// <p>The details of a mailbox export job, including the user or resource ID associated with the mailbox and the S3 bucket that the mailbox contents are exported to.</p>
@@ -2778,6 +2792,13 @@ impl MailboxExportJob {
         self.end_time.as_ref()
     }
 }
+impl MailboxExportJob {
+    /// Creates a new builder-style object to manufacture [`MailboxExportJob`](crate::model::MailboxExportJob).
+    pub fn builder() -> crate::model::mailbox_export_job::Builder {
+        crate::model::mailbox_export_job::Builder::default()
+    }
+}
+
 /// See [`MailboxExportJob`](crate::model::MailboxExportJob).
 pub mod mailbox_export_job {
     
@@ -2904,12 +2925,6 @@ pub mod mailbox_export_job {
     }
     
     
-}
-impl MailboxExportJob {
-    /// Creates a new builder-style object to manufacture [`MailboxExportJob`](crate::model::MailboxExportJob).
-    pub fn builder() -> crate::model::mailbox_export_job::Builder {
-        crate::model::mailbox_export_job::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MailboxExportJobState`, it is important to ensure
@@ -3046,6 +3061,13 @@ impl ImpersonationRole {
         self.date_modified.as_ref()
     }
 }
+impl ImpersonationRole {
+    /// Creates a new builder-style object to manufacture [`ImpersonationRole`](crate::model::ImpersonationRole).
+    pub fn builder() -> crate::model::impersonation_role::Builder {
+        crate::model::impersonation_role::Builder::default()
+    }
+}
+
 /// See [`ImpersonationRole`](crate::model::ImpersonationRole).
 pub mod impersonation_role {
     
@@ -3124,12 +3146,6 @@ pub mod impersonation_role {
     
     
 }
-impl ImpersonationRole {
-    /// Creates a new builder-style object to manufacture [`ImpersonationRole`](crate::model::ImpersonationRole).
-    pub fn builder() -> crate::model::impersonation_role::Builder {
-        crate::model::impersonation_role::Builder::default()
-    }
-}
 
 /// <p>The representation of an WorkMail group.</p>
 #[non_exhaustive]
@@ -3180,6 +3196,13 @@ impl Group {
         self.disabled_date.as_ref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
     
@@ -3270,12 +3293,6 @@ pub mod group {
     
     
 }
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
-}
 
 /// <p>The representation of a user or group.</p>
 #[non_exhaustive]
@@ -3326,6 +3343,13 @@ impl Member {
         self.disabled_date.as_ref()
     }
 }
+impl Member {
+    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
+    pub fn builder() -> crate::model::member::Builder {
+        crate::model::member::Builder::default()
+    }
+}
+
 /// See [`Member`](crate::model::Member).
 pub mod member {
     
@@ -3416,12 +3440,6 @@ pub mod member {
     
     
 }
-impl Member {
-    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
-    pub fn builder() -> crate::model::member::Builder {
-        crate::model::member::Builder::default()
-    }
-}
 
 /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
 #[non_exhaustive]
@@ -3472,6 +3490,13 @@ impl AvailabilityConfiguration {
         self.date_modified.as_ref()
     }
 }
+impl AvailabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
+    pub fn builder() -> crate::model::availability_configuration::Builder {
+        crate::model::availability_configuration::Builder::default()
+    }
+}
+
 /// See [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
 pub mod availability_configuration {
     
@@ -3562,12 +3587,6 @@ pub mod availability_configuration {
     
     
 }
-impl AvailabilityConfiguration {
-    /// Creates a new builder-style object to manufacture [`AvailabilityConfiguration`](crate::model::AvailabilityConfiguration).
-    pub fn builder() -> crate::model::availability_configuration::Builder {
-        crate::model::availability_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.</p>
 #[non_exhaustive]
@@ -3590,6 +3609,13 @@ impl RedactedEwsAvailabilityProvider {
         self.ews_username.as_deref()
     }
 }
+impl RedactedEwsAvailabilityProvider {
+    /// Creates a new builder-style object to manufacture [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
+    pub fn builder() -> crate::model::redacted_ews_availability_provider::Builder {
+        crate::model::redacted_ews_availability_provider::Builder::default()
+    }
+}
+
 /// See [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
 pub mod redacted_ews_availability_provider {
     
@@ -3631,12 +3657,6 @@ pub mod redacted_ews_availability_provider {
     }
     
     
-}
-impl RedactedEwsAvailabilityProvider {
-    /// Creates a new builder-style object to manufacture [`RedactedEwsAvailabilityProvider`](crate::model::RedactedEwsAvailabilityProvider).
-    pub fn builder() -> crate::model::redacted_ews_availability_provider::Builder {
-        crate::model::redacted_ews_availability_provider::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AvailabilityProviderType`, it is important to ensure
@@ -3819,6 +3839,13 @@ impl AccessControlRule {
         self.not_impersonation_role_ids.as_deref()
     }
 }
+impl AccessControlRule {
+    /// Creates a new builder-style object to manufacture [`AccessControlRule`](crate::model::AccessControlRule).
+    pub fn builder() -> crate::model::access_control_rule::Builder {
+        crate::model::access_control_rule::Builder::default()
+    }
+}
+
 /// See [`AccessControlRule`](crate::model::AccessControlRule).
 pub mod access_control_rule {
     
@@ -4041,12 +4068,6 @@ pub mod access_control_rule {
     
     
 }
-impl AccessControlRule {
-    /// Creates a new builder-style object to manufacture [`AccessControlRule`](crate::model::AccessControlRule).
-    pub fn builder() -> crate::model::access_control_rule::Builder {
-        crate::model::access_control_rule::Builder::default()
-    }
-}
 
 /// <p>The rule that a simulated user matches.</p>
 #[non_exhaustive]
@@ -4069,6 +4090,13 @@ impl MobileDeviceAccessMatchedRule {
         self.name.as_deref()
     }
 }
+impl MobileDeviceAccessMatchedRule {
+    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
+    pub fn builder() -> crate::model::mobile_device_access_matched_rule::Builder {
+        crate::model::mobile_device_access_matched_rule::Builder::default()
+    }
+}
+
 /// See [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
 pub mod mobile_device_access_matched_rule {
     
@@ -4110,12 +4138,6 @@ pub mod mobile_device_access_matched_rule {
     }
     
     
-}
-impl MobileDeviceAccessMatchedRule {
-    /// Creates a new builder-style object to manufacture [`MobileDeviceAccessMatchedRule`](crate::model::MobileDeviceAccessMatchedRule).
-    pub fn builder() -> crate::model::mobile_device_access_matched_rule::Builder {
-        crate::model::mobile_device_access_matched_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DnsRecordVerificationStatus`, it is important to ensure
@@ -4233,6 +4255,13 @@ impl DnsRecord {
         self.value.as_deref()
     }
 }
+impl DnsRecord {
+    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord).
+    pub fn builder() -> crate::model::dns_record::Builder {
+        crate::model::dns_record::Builder::default()
+    }
+}
+
 /// See [`DnsRecord`](crate::model::DnsRecord).
 pub mod dns_record {
     
@@ -4287,12 +4316,6 @@ pub mod dns_record {
     
     
 }
-impl DnsRecord {
-    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord).
-    pub fn builder() -> crate::model::dns_record::Builder {
-        crate::model::dns_record::Builder::default()
-    }
-}
 
 /// <p>The impersonation rule that matched the input.</p>
 #[non_exhaustive]
@@ -4315,6 +4338,13 @@ impl ImpersonationMatchedRule {
         self.name.as_deref()
     }
 }
+impl ImpersonationMatchedRule {
+    /// Creates a new builder-style object to manufacture [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
+    pub fn builder() -> crate::model::impersonation_matched_rule::Builder {
+        crate::model::impersonation_matched_rule::Builder::default()
+    }
+}
+
 /// See [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
 pub mod impersonation_matched_rule {
     
@@ -4357,12 +4387,6 @@ pub mod impersonation_matched_rule {
     
     
 }
-impl ImpersonationMatchedRule {
-    /// Creates a new builder-style object to manufacture [`ImpersonationMatchedRule`](crate::model::ImpersonationMatchedRule).
-    pub fn builder() -> crate::model::impersonation_matched_rule::Builder {
-        crate::model::impersonation_matched_rule::Builder::default()
-    }
-}
 
 /// <p>The domain to associate with an WorkMail organization.</p> 
 /// <p>When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> in the <i>WorkMail Administrator Guide</i>.</p>
@@ -4386,6 +4410,13 @@ impl Domain {
         self.hosted_zone_id.as_deref()
     }
 }
+impl Domain {
+    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
+    pub fn builder() -> crate::model::domain::Builder {
+        crate::model::domain::Builder::default()
+    }
+}
+
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
     
@@ -4427,11 +4458,5 @@ pub mod domain {
     }
     
     
-}
-impl Domain {
-    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
-    pub fn builder() -> crate::model::domain::Builder {
-        crate::model::domain::Builder::default()
-    }
 }
 

@@ -161,55 +161,6 @@ pub struct ValidationException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
-    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
-    pub fn builder() -> crate::error::validation_exception::Builder {
-        crate::error::validation_exception::Builder::default()
-    }
-}
-/// See [`ValidationException`](crate::error::ValidationException).
-pub mod validation_exception {
-    
-    /// A builder for [`ValidationException`](crate::error::ValidationException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A message to show the detail of the exception.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A message to show the detail of the exception.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
-        pub fn build(self) -> crate::error::ValidationException {
-            crate::error::ValidationException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ValidationException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -234,26 +185,17 @@ impl aws_http::request_id::RequestId for crate::error::ValidationException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportLimitReachedException  {
-    /// <p>A message to show the detail of the exception.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ReportLimitReachedException {
-    /// Creates a new builder-style object to manufacture [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
-    pub fn builder() -> crate::error::report_limit_reached_exception::Builder {
-        crate::error::report_limit_reached_exception::Builder::default()
+impl ValidationException {
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
+    pub fn builder() -> crate::error::validation_exception::Builder {
+        crate::error::validation_exception::Builder::default()
     }
 }
-/// See [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
-pub mod report_limit_reached_exception {
+
+/// See [`ValidationException`](crate::error::ValidationException).
+pub mod validation_exception {
     
-    /// A builder for [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
+    /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -271,19 +213,19 @@ pub mod report_limit_reached_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
-        pub fn build(self) -> crate::error::ReportLimitReachedException {
-            crate::error::ReportLimitReachedException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
+        pub fn build(self) -> crate::error::ValidationException {
+            crate::error::ValidationException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -292,6 +234,16 @@ pub mod report_limit_reached_exception {
     }
     
     
+}
+
+/// <p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ReportLimitReachedException  {
+    /// <p>A message to show the detail of the exception.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReportLimitReachedException {
     /// Returns the error message.
@@ -318,26 +270,17 @@ impl aws_http::request_id::RequestId for crate::error::ReportLimitReachedExcepti
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReportLimitReachedException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>An error on the server occurred during the processing of your request. Try again later.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalErrorException  {
-    /// <p>A message to show the detail of the exception.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InternalErrorException {
-    /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
-    pub fn builder() -> crate::error::internal_error_exception::Builder {
-        crate::error::internal_error_exception::Builder::default()
+impl ReportLimitReachedException {
+    /// Creates a new builder-style object to manufacture [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
+    pub fn builder() -> crate::error::report_limit_reached_exception::Builder {
+        crate::error::report_limit_reached_exception::Builder::default()
     }
 }
-/// See [`InternalErrorException`](crate::error::InternalErrorException).
-pub mod internal_error_exception {
+
+/// See [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
+pub mod report_limit_reached_exception {
     
-    /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
+    /// A builder for [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -355,19 +298,19 @@ pub mod internal_error_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InternalErrorException`](crate::error::InternalErrorException).
-        pub fn build(self) -> crate::error::InternalErrorException {
-            crate::error::InternalErrorException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
+        pub fn build(self) -> crate::error::ReportLimitReachedException {
+            crate::error::ReportLimitReachedException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -376,6 +319,16 @@ pub mod internal_error_exception {
     }
     
     
+}
+
+/// <p>An error on the server occurred during the processing of your request. Try again later.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InternalErrorException  {
+    /// <p>A message to show the detail of the exception.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalErrorException {
     /// Returns the error message.
@@ -402,26 +355,17 @@ impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>A report with the specified name already exists in the account. Specify a different report name.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateReportNameException  {
-    /// <p>A message to show the detail of the exception.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl DuplicateReportNameException {
-    /// Creates a new builder-style object to manufacture [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
-    pub fn builder() -> crate::error::duplicate_report_name_exception::Builder {
-        crate::error::duplicate_report_name_exception::Builder::default()
+impl InternalErrorException {
+    /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
+    pub fn builder() -> crate::error::internal_error_exception::Builder {
+        crate::error::internal_error_exception::Builder::default()
     }
 }
-/// See [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
-pub mod duplicate_report_name_exception {
+
+/// See [`InternalErrorException`](crate::error::InternalErrorException).
+pub mod internal_error_exception {
     
-    /// A builder for [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
+    /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -439,19 +383,19 @@ pub mod duplicate_report_name_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
-        pub fn build(self) -> crate::error::DuplicateReportNameException {
-            crate::error::DuplicateReportNameException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InternalErrorException`](crate::error::InternalErrorException).
+        pub fn build(self) -> crate::error::InternalErrorException {
+            crate::error::InternalErrorException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -460,6 +404,16 @@ pub mod duplicate_report_name_exception {
     }
     
     
+}
+
+/// <p>A report with the specified name already exists in the account. Specify a different report name.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct DuplicateReportNameException  {
+    /// <p>A message to show the detail of the exception.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DuplicateReportNameException {
     /// Returns the error message.
@@ -485,6 +439,56 @@ impl aws_http::request_id::RequestId for crate::error::DuplicateReportNameExcept
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateReportNameException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DuplicateReportNameException {
+    /// Creates a new builder-style object to manufacture [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
+    pub fn builder() -> crate::error::duplicate_report_name_exception::Builder {
+        crate::error::duplicate_report_name_exception::Builder::default()
+    }
+}
+
+/// See [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
+pub mod duplicate_report_name_exception {
+    
+    /// A builder for [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A message to show the detail of the exception.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message to show the detail of the exception.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
+        pub fn build(self) -> crate::error::DuplicateReportNameException {
+            crate::error::DuplicateReportNameException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

@@ -14,6 +14,13 @@ impl ExportVectorEnrichmentJobOutputConfig {
         self.s3_data.as_ref()
     }
 }
+impl ExportVectorEnrichmentJobOutputConfig {
+    /// Creates a new builder-style object to manufacture [`ExportVectorEnrichmentJobOutputConfig`](crate::model::ExportVectorEnrichmentJobOutputConfig).
+    pub fn builder() -> crate::model::export_vector_enrichment_job_output_config::Builder {
+        crate::model::export_vector_enrichment_job_output_config::Builder::default()
+    }
+}
+
 /// See [`ExportVectorEnrichmentJobOutputConfig`](crate::model::ExportVectorEnrichmentJobOutputConfig).
 pub mod export_vector_enrichment_job_output_config {
     
@@ -44,12 +51,6 @@ pub mod export_vector_enrichment_job_output_config {
     
     
 }
-impl ExportVectorEnrichmentJobOutputConfig {
-    /// Creates a new builder-style object to manufacture [`ExportVectorEnrichmentJobOutputConfig`](crate::model::ExportVectorEnrichmentJobOutputConfig).
-    pub fn builder() -> crate::model::export_vector_enrichment_job_output_config::Builder {
-        crate::model::export_vector_enrichment_job_output_config::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 data for the Vector Enrichment job.</p>
 #[non_exhaustive]
@@ -72,6 +73,13 @@ impl VectorEnrichmentJobS3Data {
         self.kms_key_id.as_deref()
     }
 }
+impl VectorEnrichmentJobS3Data {
+    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobS3Data`](crate::model::VectorEnrichmentJobS3Data).
+    pub fn builder() -> crate::model::vector_enrichment_job_s3_data::Builder {
+        crate::model::vector_enrichment_job_s3_data::Builder::default()
+    }
+}
+
 /// See [`VectorEnrichmentJobS3Data`](crate::model::VectorEnrichmentJobS3Data).
 pub mod vector_enrichment_job_s3_data {
     
@@ -113,12 +121,6 @@ pub mod vector_enrichment_job_s3_data {
     }
     
     
-}
-impl VectorEnrichmentJobS3Data {
-    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobS3Data`](crate::model::VectorEnrichmentJobS3Data).
-    pub fn builder() -> crate::model::vector_enrichment_job_s3_data::Builder {
-        crate::model::vector_enrichment_job_s3_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VectorEnrichmentJobExportStatus`, it is important to ensure
@@ -264,6 +266,13 @@ impl ListVectorEnrichmentJobOutputConfig {
         self.tags.as_ref()
     }
 }
+impl ListVectorEnrichmentJobOutputConfig {
+    /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobOutputConfig`](crate::model::ListVectorEnrichmentJobOutputConfig).
+    pub fn builder() -> crate::model::list_vector_enrichment_job_output_config::Builder {
+        crate::model::list_vector_enrichment_job_output_config::Builder::default()
+    }
+}
+
 /// See [`ListVectorEnrichmentJobOutputConfig`](crate::model::ListVectorEnrichmentJobOutputConfig).
 pub mod list_vector_enrichment_job_output_config {
     
@@ -371,12 +380,6 @@ pub mod list_vector_enrichment_job_output_config {
     }
     
     
-}
-impl ListVectorEnrichmentJobOutputConfig {
-    /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobOutputConfig`](crate::model::ListVectorEnrichmentJobOutputConfig).
-    pub fn builder() -> crate::model::list_vector_enrichment_job_output_config::Builder {
-        crate::model::list_vector_enrichment_job_output_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VectorEnrichmentJobStatus`, it is important to ensure
@@ -733,6 +736,13 @@ impl MapMatchingConfig {
         self.timestamp_attribute_name.as_deref()
     }
 }
+impl MapMatchingConfig {
+    /// Creates a new builder-style object to manufacture [`MapMatchingConfig`](crate::model::MapMatchingConfig).
+    pub fn builder() -> crate::model::map_matching_config::Builder {
+        crate::model::map_matching_config::Builder::default()
+    }
+}
+
 /// See [`MapMatchingConfig`](crate::model::MapMatchingConfig).
 pub mod map_matching_config {
     
@@ -799,12 +809,6 @@ pub mod map_matching_config {
     
     
 }
-impl MapMatchingConfig {
-    /// Creates a new builder-style object to manufacture [`MapMatchingConfig`](crate::model::MapMatchingConfig).
-    pub fn builder() -> crate::model::map_matching_config::Builder {
-        crate::model::map_matching_config::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -827,6 +831,13 @@ impl ReverseGeocodingConfig {
         self.x_attribute_name.as_deref()
     }
 }
+impl ReverseGeocodingConfig {
+    /// Creates a new builder-style object to manufacture [`ReverseGeocodingConfig`](crate::model::ReverseGeocodingConfig).
+    pub fn builder() -> crate::model::reverse_geocoding_config::Builder {
+        crate::model::reverse_geocoding_config::Builder::default()
+    }
+}
+
 /// See [`ReverseGeocodingConfig`](crate::model::ReverseGeocodingConfig).
 pub mod reverse_geocoding_config {
     
@@ -869,12 +880,6 @@ pub mod reverse_geocoding_config {
     
     
 }
-impl ReverseGeocodingConfig {
-    /// Creates a new builder-style object to manufacture [`ReverseGeocodingConfig`](crate::model::ReverseGeocodingConfig).
-    pub fn builder() -> crate::model::reverse_geocoding_config::Builder {
-        crate::model::reverse_geocoding_config::Builder::default()
-    }
-}
 
 /// <p>The input structure for the InputConfig in a VectorEnrichmentJob.</p>
 #[non_exhaustive]
@@ -897,6 +902,13 @@ impl VectorEnrichmentJobInputConfig {
         self.data_source_config.as_ref()
     }
 }
+impl VectorEnrichmentJobInputConfig {
+    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobInputConfig`](crate::model::VectorEnrichmentJobInputConfig).
+    pub fn builder() -> crate::model::vector_enrichment_job_input_config::Builder {
+        crate::model::vector_enrichment_job_input_config::Builder::default()
+    }
+}
+
 /// See [`VectorEnrichmentJobInputConfig`](crate::model::VectorEnrichmentJobInputConfig).
 pub mod vector_enrichment_job_input_config {
     
@@ -938,12 +950,6 @@ pub mod vector_enrichment_job_input_config {
     }
     
     
-}
-impl VectorEnrichmentJobInputConfig {
-    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobInputConfig`](crate::model::VectorEnrichmentJobInputConfig).
-    pub fn builder() -> crate::model::vector_enrichment_job_input_config::Builder {
-        crate::model::vector_enrichment_job_input_config::Builder::default()
-    }
 }
 
 /// <p></p>
@@ -1077,6 +1083,13 @@ impl VectorEnrichmentJobExportErrorDetails {
         self.message.as_deref()
     }
 }
+impl VectorEnrichmentJobExportErrorDetails {
+    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobExportErrorDetails`](crate::model::VectorEnrichmentJobExportErrorDetails).
+    pub fn builder() -> crate::model::vector_enrichment_job_export_error_details::Builder {
+        crate::model::vector_enrichment_job_export_error_details::Builder::default()
+    }
+}
+
 /// See [`VectorEnrichmentJobExportErrorDetails`](crate::model::VectorEnrichmentJobExportErrorDetails).
 pub mod vector_enrichment_job_export_error_details {
     
@@ -1118,12 +1131,6 @@ pub mod vector_enrichment_job_export_error_details {
     }
     
     
-}
-impl VectorEnrichmentJobExportErrorDetails {
-    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobExportErrorDetails`](crate::model::VectorEnrichmentJobExportErrorDetails).
-    pub fn builder() -> crate::model::vector_enrichment_job_export_error_details::Builder {
-        crate::model::vector_enrichment_job_export_error_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VectorEnrichmentJobExportErrorType`, it is important to ensure
@@ -1229,6 +1236,13 @@ impl VectorEnrichmentJobErrorDetails {
         self.error_message.as_deref()
     }
 }
+impl VectorEnrichmentJobErrorDetails {
+    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobErrorDetails`](crate::model::VectorEnrichmentJobErrorDetails).
+    pub fn builder() -> crate::model::vector_enrichment_job_error_details::Builder {
+        crate::model::vector_enrichment_job_error_details::Builder::default()
+    }
+}
+
 /// See [`VectorEnrichmentJobErrorDetails`](crate::model::VectorEnrichmentJobErrorDetails).
 pub mod vector_enrichment_job_error_details {
     
@@ -1270,12 +1284,6 @@ pub mod vector_enrichment_job_error_details {
     }
     
     
-}
-impl VectorEnrichmentJobErrorDetails {
-    /// Creates a new builder-style object to manufacture [`VectorEnrichmentJobErrorDetails`](crate::model::VectorEnrichmentJobErrorDetails).
-    pub fn builder() -> crate::model::vector_enrichment_job_error_details::Builder {
-        crate::model::vector_enrichment_job_error_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VectorEnrichmentJobErrorType`, it is important to ensure
@@ -1402,6 +1410,13 @@ impl ItemSource {
         self.properties.as_ref()
     }
 }
+impl ItemSource {
+    /// Creates a new builder-style object to manufacture [`ItemSource`](crate::model::ItemSource).
+    pub fn builder() -> crate::model::item_source::Builder {
+        crate::model::item_source::Builder::default()
+    }
+}
+
 /// See [`ItemSource`](crate::model::ItemSource).
 pub mod item_source {
     
@@ -1486,12 +1501,6 @@ pub mod item_source {
     
     
 }
-impl ItemSource {
-    /// Creates a new builder-style object to manufacture [`ItemSource`](crate::model::ItemSource).
-    pub fn builder() -> crate::model::item_source::Builder {
-        crate::model::item_source::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1542,6 +1551,13 @@ impl Properties {
         self.landsat_cloud_cover_land
     }
 }
+impl Properties {
+    /// Creates a new builder-style object to manufacture [`Properties`](crate::model::Properties).
+    pub fn builder() -> crate::model::properties::Builder {
+        crate::model::properties::Builder::default()
+    }
+}
+
 /// See [`Properties`](crate::model::Properties).
 pub mod properties {
     
@@ -1632,12 +1648,6 @@ pub mod properties {
     
     
 }
-impl Properties {
-    /// Creates a new builder-style object to manufacture [`Properties`](crate::model::Properties).
-    pub fn builder() -> crate::model::properties::Builder {
-        crate::model::properties::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1653,6 +1663,13 @@ impl AssetValue {
         self.href.as_deref()
     }
 }
+impl AssetValue {
+    /// Creates a new builder-style object to manufacture [`AssetValue`](crate::model::AssetValue).
+    pub fn builder() -> crate::model::asset_value::Builder {
+        crate::model::asset_value::Builder::default()
+    }
+}
+
 /// See [`AssetValue`](crate::model::AssetValue).
 pub mod asset_value {
     
@@ -1683,12 +1700,6 @@ pub mod asset_value {
     
     
 }
-impl AssetValue {
-    /// Creates a new builder-style object to manufacture [`AssetValue`](crate::model::AssetValue).
-    pub fn builder() -> crate::model::asset_value::Builder {
-        crate::model::asset_value::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1711,6 +1722,13 @@ impl Geometry {
         self.coordinates.as_deref()
     }
 }
+impl Geometry {
+    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
+    pub fn builder() -> crate::model::geometry::Builder {
+        crate::model::geometry::Builder::default()
+    }
+}
+
 /// See [`Geometry`](crate::model::Geometry).
 pub mod geometry {
     
@@ -1759,12 +1777,6 @@ pub mod geometry {
     
     
 }
-impl Geometry {
-    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
-    pub fn builder() -> crate::model::geometry::Builder {
-        crate::model::geometry::Builder::default()
-    }
-}
 
 /// <p>This is a RasterDataCollectionQueryInput containing AreaOfInterest, Time Range filter and Property filters.</p>
 #[non_exhaustive]
@@ -1811,6 +1823,13 @@ impl  std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInput  {
         formatter.finish()
     }
 }
+impl RasterDataCollectionQueryWithBandFilterInput {
+    /// Creates a new builder-style object to manufacture [`RasterDataCollectionQueryWithBandFilterInput`](crate::model::RasterDataCollectionQueryWithBandFilterInput).
+    pub fn builder() -> crate::model::raster_data_collection_query_with_band_filter_input::Builder {
+        crate::model::raster_data_collection_query_with_band_filter_input::Builder::default()
+    }
+}
+
 /// See [`RasterDataCollectionQueryWithBandFilterInput`](crate::model::RasterDataCollectionQueryWithBandFilterInput).
 pub mod raster_data_collection_query_with_band_filter_input {
     
@@ -1893,12 +1912,6 @@ pub mod raster_data_collection_query_with_band_filter_input {
     
     
 }
-impl RasterDataCollectionQueryWithBandFilterInput {
-    /// Creates a new builder-style object to manufacture [`RasterDataCollectionQueryWithBandFilterInput`](crate::model::RasterDataCollectionQueryWithBandFilterInput).
-    pub fn builder() -> crate::model::raster_data_collection_query_with_band_filter_input::Builder {
-        crate::model::raster_data_collection_query_with_band_filter_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1921,6 +1934,13 @@ impl PropertyFilters {
         self.logical_operator.as_ref()
     }
 }
+impl PropertyFilters {
+    /// Creates a new builder-style object to manufacture [`PropertyFilters`](crate::model::PropertyFilters).
+    pub fn builder() -> crate::model::property_filters::Builder {
+        crate::model::property_filters::Builder::default()
+    }
+}
+
 /// See [`PropertyFilters`](crate::model::PropertyFilters).
 pub mod property_filters {
     
@@ -1968,12 +1988,6 @@ pub mod property_filters {
     }
     
     
-}
-impl PropertyFilters {
-    /// Creates a new builder-style object to manufacture [`PropertyFilters`](crate::model::PropertyFilters).
-    pub fn builder() -> crate::model::property_filters::Builder {
-        crate::model::property_filters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LogicalOperator`, it is important to ensure
@@ -2067,6 +2081,13 @@ impl PropertyFilter {
         self.property.as_ref()
     }
 }
+impl PropertyFilter {
+    /// Creates a new builder-style object to manufacture [`PropertyFilter`](crate::model::PropertyFilter).
+    pub fn builder() -> crate::model::property_filter::Builder {
+        crate::model::property_filter::Builder::default()
+    }
+}
+
 /// See [`PropertyFilter`](crate::model::PropertyFilter).
 pub mod property_filter {
     
@@ -2096,12 +2117,6 @@ pub mod property_filter {
     }
     
     
-}
-impl PropertyFilter {
-    /// Creates a new builder-style object to manufacture [`PropertyFilter`](crate::model::PropertyFilter).
-    pub fn builder() -> crate::model::property_filter::Builder {
-        crate::model::property_filter::Builder::default()
-    }
 }
 
 /// <p></p>
@@ -2212,6 +2227,13 @@ impl LandsatCloudCoverLandInput {
         self.upper_bound
     }
 }
+impl LandsatCloudCoverLandInput {
+    /// Creates a new builder-style object to manufacture [`LandsatCloudCoverLandInput`](crate::model::LandsatCloudCoverLandInput).
+    pub fn builder() -> crate::model::landsat_cloud_cover_land_input::Builder {
+        crate::model::landsat_cloud_cover_land_input::Builder::default()
+    }
+}
+
 /// See [`LandsatCloudCoverLandInput`](crate::model::LandsatCloudCoverLandInput).
 pub mod landsat_cloud_cover_land_input {
     
@@ -2254,12 +2276,6 @@ pub mod landsat_cloud_cover_land_input {
     
     
 }
-impl LandsatCloudCoverLandInput {
-    /// Creates a new builder-style object to manufacture [`LandsatCloudCoverLandInput`](crate::model::LandsatCloudCoverLandInput).
-    pub fn builder() -> crate::model::landsat_cloud_cover_land_input::Builder {
-        crate::model::landsat_cloud_cover_land_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -2282,6 +2298,13 @@ impl PlatformInput {
         self.comparison_operator.as_ref()
     }
 }
+impl PlatformInput {
+    /// Creates a new builder-style object to manufacture [`PlatformInput`](crate::model::PlatformInput).
+    pub fn builder() -> crate::model::platform_input::Builder {
+        crate::model::platform_input::Builder::default()
+    }
+}
+
 /// See [`PlatformInput`](crate::model::PlatformInput).
 pub mod platform_input {
     
@@ -2323,12 +2346,6 @@ pub mod platform_input {
     }
     
     
-}
-impl PlatformInput {
-    /// Creates a new builder-style object to manufacture [`PlatformInput`](crate::model::PlatformInput).
-    pub fn builder() -> crate::model::platform_input::Builder {
-        crate::model::platform_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
@@ -2439,6 +2456,13 @@ impl ViewSunElevationInput {
         self.upper_bound
     }
 }
+impl ViewSunElevationInput {
+    /// Creates a new builder-style object to manufacture [`ViewSunElevationInput`](crate::model::ViewSunElevationInput).
+    pub fn builder() -> crate::model::view_sun_elevation_input::Builder {
+        crate::model::view_sun_elevation_input::Builder::default()
+    }
+}
+
 /// See [`ViewSunElevationInput`](crate::model::ViewSunElevationInput).
 pub mod view_sun_elevation_input {
     
@@ -2481,12 +2505,6 @@ pub mod view_sun_elevation_input {
     
     
 }
-impl ViewSunElevationInput {
-    /// Creates a new builder-style object to manufacture [`ViewSunElevationInput`](crate::model::ViewSunElevationInput).
-    pub fn builder() -> crate::model::view_sun_elevation_input::Builder {
-        crate::model::view_sun_elevation_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -2509,6 +2527,13 @@ impl ViewSunAzimuthInput {
         self.upper_bound
     }
 }
+impl ViewSunAzimuthInput {
+    /// Creates a new builder-style object to manufacture [`ViewSunAzimuthInput`](crate::model::ViewSunAzimuthInput).
+    pub fn builder() -> crate::model::view_sun_azimuth_input::Builder {
+        crate::model::view_sun_azimuth_input::Builder::default()
+    }
+}
+
 /// See [`ViewSunAzimuthInput`](crate::model::ViewSunAzimuthInput).
 pub mod view_sun_azimuth_input {
     
@@ -2551,12 +2576,6 @@ pub mod view_sun_azimuth_input {
     
     
 }
-impl ViewSunAzimuthInput {
-    /// Creates a new builder-style object to manufacture [`ViewSunAzimuthInput`](crate::model::ViewSunAzimuthInput).
-    pub fn builder() -> crate::model::view_sun_azimuth_input::Builder {
-        crate::model::view_sun_azimuth_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -2579,6 +2598,13 @@ impl ViewOffNadirInput {
         self.upper_bound
     }
 }
+impl ViewOffNadirInput {
+    /// Creates a new builder-style object to manufacture [`ViewOffNadirInput`](crate::model::ViewOffNadirInput).
+    pub fn builder() -> crate::model::view_off_nadir_input::Builder {
+        crate::model::view_off_nadir_input::Builder::default()
+    }
+}
+
 /// See [`ViewOffNadirInput`](crate::model::ViewOffNadirInput).
 pub mod view_off_nadir_input {
     
@@ -2621,12 +2647,6 @@ pub mod view_off_nadir_input {
     
     
 }
-impl ViewOffNadirInput {
-    /// Creates a new builder-style object to manufacture [`ViewOffNadirInput`](crate::model::ViewOffNadirInput).
-    pub fn builder() -> crate::model::view_off_nadir_input::Builder {
-        crate::model::view_off_nadir_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -2649,6 +2669,13 @@ impl EoCloudCoverInput {
         self.upper_bound
     }
 }
+impl EoCloudCoverInput {
+    /// Creates a new builder-style object to manufacture [`EoCloudCoverInput`](crate::model::EoCloudCoverInput).
+    pub fn builder() -> crate::model::eo_cloud_cover_input::Builder {
+        crate::model::eo_cloud_cover_input::Builder::default()
+    }
+}
+
 /// See [`EoCloudCoverInput`](crate::model::EoCloudCoverInput).
 pub mod eo_cloud_cover_input {
     
@@ -2690,12 +2717,6 @@ pub mod eo_cloud_cover_input {
     }
     
     
-}
-impl EoCloudCoverInput {
-    /// Creates a new builder-style object to manufacture [`EoCloudCoverInput`](crate::model::EoCloudCoverInput).
-    pub fn builder() -> crate::model::eo_cloud_cover_input::Builder {
-        crate::model::eo_cloud_cover_input::Builder::default()
-    }
 }
 
 /// <p></p>
@@ -2788,6 +2809,13 @@ impl MultiPolygonGeometryInput {
         self.coordinates.as_deref()
     }
 }
+impl MultiPolygonGeometryInput {
+    /// Creates a new builder-style object to manufacture [`MultiPolygonGeometryInput`](crate::model::MultiPolygonGeometryInput).
+    pub fn builder() -> crate::model::multi_polygon_geometry_input::Builder {
+        crate::model::multi_polygon_geometry_input::Builder::default()
+    }
+}
+
 /// See [`MultiPolygonGeometryInput`](crate::model::MultiPolygonGeometryInput).
 pub mod multi_polygon_geometry_input {
     
@@ -2824,12 +2852,6 @@ pub mod multi_polygon_geometry_input {
     
     
 }
-impl MultiPolygonGeometryInput {
-    /// Creates a new builder-style object to manufacture [`MultiPolygonGeometryInput`](crate::model::MultiPolygonGeometryInput).
-    pub fn builder() -> crate::model::multi_polygon_geometry_input::Builder {
-        crate::model::multi_polygon_geometry_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -2845,6 +2867,13 @@ impl PolygonGeometryInput {
         self.coordinates.as_deref()
     }
 }
+impl PolygonGeometryInput {
+    /// Creates a new builder-style object to manufacture [`PolygonGeometryInput`](crate::model::PolygonGeometryInput).
+    pub fn builder() -> crate::model::polygon_geometry_input::Builder {
+        crate::model::polygon_geometry_input::Builder::default()
+    }
+}
+
 /// See [`PolygonGeometryInput`](crate::model::PolygonGeometryInput).
 pub mod polygon_geometry_input {
     
@@ -2881,12 +2910,6 @@ pub mod polygon_geometry_input {
     
     
 }
-impl PolygonGeometryInput {
-    /// Creates a new builder-style object to manufacture [`PolygonGeometryInput`](crate::model::PolygonGeometryInput).
-    pub fn builder() -> crate::model::polygon_geometry_input::Builder {
-        crate::model::polygon_geometry_input::Builder::default()
-    }
-}
 
 /// <p>The input for the time-range filter.</p>
 #[non_exhaustive]
@@ -2917,6 +2940,13 @@ impl  std::fmt::Debug for TimeRangeFilterInput  {
         formatter.finish()
     }
 }
+impl TimeRangeFilterInput {
+    /// Creates a new builder-style object to manufacture [`TimeRangeFilterInput`](crate::model::TimeRangeFilterInput).
+    pub fn builder() -> crate::model::time_range_filter_input::Builder {
+        crate::model::time_range_filter_input::Builder::default()
+    }
+}
+
 /// See [`TimeRangeFilterInput`](crate::model::TimeRangeFilterInput).
 pub mod time_range_filter_input {
     
@@ -2966,12 +2996,6 @@ pub mod time_range_filter_input {
     }
     
     
-}
-impl TimeRangeFilterInput {
-    /// Creates a new builder-style object to manufacture [`TimeRangeFilterInput`](crate::model::TimeRangeFilterInput).
-    pub fn builder() -> crate::model::time_range_filter_input::Builder {
-        crate::model::time_range_filter_input::Builder::default()
-    }
 }
 
 /// <p>Response object containing details for a specific RasterDataCollection.</p>
@@ -3030,6 +3054,13 @@ impl RasterDataCollectionMetadata {
         self.tags.as_ref()
     }
 }
+impl RasterDataCollectionMetadata {
+    /// Creates a new builder-style object to manufacture [`RasterDataCollectionMetadata`](crate::model::RasterDataCollectionMetadata).
+    pub fn builder() -> crate::model::raster_data_collection_metadata::Builder {
+        crate::model::raster_data_collection_metadata::Builder::default()
+    }
+}
+
 /// See [`RasterDataCollectionMetadata`](crate::model::RasterDataCollectionMetadata).
 pub mod raster_data_collection_metadata {
     
@@ -3144,12 +3175,6 @@ pub mod raster_data_collection_metadata {
     
     
 }
-impl RasterDataCollectionMetadata {
-    /// Creates a new builder-style object to manufacture [`RasterDataCollectionMetadata`](crate::model::RasterDataCollectionMetadata).
-    pub fn builder() -> crate::model::raster_data_collection_metadata::Builder {
-        crate::model::raster_data_collection_metadata::Builder::default()
-    }
-}
 
 /// <p>The structure representing the filters supported by a RasterDataCollection.</p>
 #[non_exhaustive]
@@ -3186,6 +3211,13 @@ impl Filter {
         self.maximum
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -3251,12 +3283,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataCollectionType`, it is important to ensure
@@ -3539,6 +3565,13 @@ impl OutputConfigInput {
         self.s3_data.as_ref()
     }
 }
+impl OutputConfigInput {
+    /// Creates a new builder-style object to manufacture [`OutputConfigInput`](crate::model::OutputConfigInput).
+    pub fn builder() -> crate::model::output_config_input::Builder {
+        crate::model::output_config_input::Builder::default()
+    }
+}
+
 /// See [`OutputConfigInput`](crate::model::OutputConfigInput).
 pub mod output_config_input {
     
@@ -3569,12 +3602,6 @@ pub mod output_config_input {
     
     
 }
-impl OutputConfigInput {
-    /// Creates a new builder-style object to manufacture [`OutputConfigInput`](crate::model::OutputConfigInput).
-    pub fn builder() -> crate::model::output_config_input::Builder {
-        crate::model::output_config_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -3597,6 +3624,13 @@ impl ExportS3DataInput {
         self.kms_key_id.as_deref()
     }
 }
+impl ExportS3DataInput {
+    /// Creates a new builder-style object to manufacture [`ExportS3DataInput`](crate::model::ExportS3DataInput).
+    pub fn builder() -> crate::model::export_s3_data_input::Builder {
+        crate::model::export_s3_data_input::Builder::default()
+    }
+}
+
 /// See [`ExportS3DataInput`](crate::model::ExportS3DataInput).
 pub mod export_s3_data_input {
     
@@ -3638,12 +3672,6 @@ pub mod export_s3_data_input {
     }
     
     
-}
-impl ExportS3DataInput {
-    /// Creates a new builder-style object to manufacture [`ExportS3DataInput`](crate::model::ExportS3DataInput).
-    pub fn builder() -> crate::model::export_s3_data_input::Builder {
-        crate::model::export_s3_data_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EarthObservationJobExportStatus`, it is important to ensure
@@ -3789,6 +3817,13 @@ impl ListEarthObservationJobOutputConfig {
         self.tags.as_ref()
     }
 }
+impl ListEarthObservationJobOutputConfig {
+    /// Creates a new builder-style object to manufacture [`ListEarthObservationJobOutputConfig`](crate::model::ListEarthObservationJobOutputConfig).
+    pub fn builder() -> crate::model::list_earth_observation_job_output_config::Builder {
+        crate::model::list_earth_observation_job_output_config::Builder::default()
+    }
+}
+
 /// See [`ListEarthObservationJobOutputConfig`](crate::model::ListEarthObservationJobOutputConfig).
 pub mod list_earth_observation_job_output_config {
     
@@ -3896,12 +3931,6 @@ pub mod list_earth_observation_job_output_config {
     }
     
     
-}
-impl ListEarthObservationJobOutputConfig {
-    /// Creates a new builder-style object to manufacture [`ListEarthObservationJobOutputConfig`](crate::model::ListEarthObservationJobOutputConfig).
-    pub fn builder() -> crate::model::list_earth_observation_job_output_config::Builder {
-        crate::model::list_earth_observation_job_output_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EarthObservationJobStatus`, it is important to ensure
@@ -4141,6 +4170,13 @@ impl JobConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LandCoverSegmentationConfigInput  {
 }
+impl LandCoverSegmentationConfigInput {
+    /// Creates a new builder-style object to manufacture [`LandCoverSegmentationConfigInput`](crate::model::LandCoverSegmentationConfigInput).
+    pub fn builder() -> crate::model::land_cover_segmentation_config_input::Builder {
+        crate::model::land_cover_segmentation_config_input::Builder::default()
+    }
+}
+
 /// See [`LandCoverSegmentationConfigInput`](crate::model::LandCoverSegmentationConfigInput).
 pub mod land_cover_segmentation_config_input {
     
@@ -4159,18 +4195,19 @@ pub mod land_cover_segmentation_config_input {
     
     
 }
-impl LandCoverSegmentationConfigInput {
-    /// Creates a new builder-style object to manufacture [`LandCoverSegmentationConfigInput`](crate::model::LandCoverSegmentationConfigInput).
-    pub fn builder() -> crate::model::land_cover_segmentation_config_input::Builder {
-        crate::model::land_cover_segmentation_config_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudMaskingConfigInput  {
 }
+impl CloudMaskingConfigInput {
+    /// Creates a new builder-style object to manufacture [`CloudMaskingConfigInput`](crate::model::CloudMaskingConfigInput).
+    pub fn builder() -> crate::model::cloud_masking_config_input::Builder {
+        crate::model::cloud_masking_config_input::Builder::default()
+    }
+}
+
 /// See [`CloudMaskingConfigInput`](crate::model::CloudMaskingConfigInput).
 pub mod cloud_masking_config_input {
     
@@ -4188,12 +4225,6 @@ pub mod cloud_masking_config_input {
     }
     
     
-}
-impl CloudMaskingConfigInput {
-    /// Creates a new builder-style object to manufacture [`CloudMaskingConfigInput`](crate::model::CloudMaskingConfigInput).
-    pub fn builder() -> crate::model::cloud_masking_config_input::Builder {
-        crate::model::cloud_masking_config_input::Builder::default()
-    }
 }
 
 /// <p></p>
@@ -4217,6 +4248,13 @@ impl StackConfigInput {
         self.target_bands.as_deref()
     }
 }
+impl StackConfigInput {
+    /// Creates a new builder-style object to manufacture [`StackConfigInput`](crate::model::StackConfigInput).
+    pub fn builder() -> crate::model::stack_config_input::Builder {
+        crate::model::stack_config_input::Builder::default()
+    }
+}
+
 /// See [`StackConfigInput`](crate::model::StackConfigInput).
 pub mod stack_config_input {
     
@@ -4265,12 +4303,6 @@ pub mod stack_config_input {
     
     
 }
-impl StackConfigInput {
-    /// Creates a new builder-style object to manufacture [`StackConfigInput`](crate::model::StackConfigInput).
-    pub fn builder() -> crate::model::stack_config_input::Builder {
-        crate::model::stack_config_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -4293,6 +4325,13 @@ impl OutputResolutionStackInput {
         self.user_defined.as_ref()
     }
 }
+impl OutputResolutionStackInput {
+    /// Creates a new builder-style object to manufacture [`OutputResolutionStackInput`](crate::model::OutputResolutionStackInput).
+    pub fn builder() -> crate::model::output_resolution_stack_input::Builder {
+        crate::model::output_resolution_stack_input::Builder::default()
+    }
+}
+
 /// See [`OutputResolutionStackInput`](crate::model::OutputResolutionStackInput).
 pub mod output_resolution_stack_input {
     
@@ -4335,12 +4374,6 @@ pub mod output_resolution_stack_input {
     
     
 }
-impl OutputResolutionStackInput {
-    /// Creates a new builder-style object to manufacture [`OutputResolutionStackInput`](crate::model::OutputResolutionStackInput).
-    pub fn builder() -> crate::model::output_resolution_stack_input::Builder {
-        crate::model::output_resolution_stack_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -4363,6 +4396,13 @@ impl UserDefined {
         self.unit.as_ref()
     }
 }
+impl UserDefined {
+    /// Creates a new builder-style object to manufacture [`UserDefined`](crate::model::UserDefined).
+    pub fn builder() -> crate::model::user_defined::Builder {
+        crate::model::user_defined::Builder::default()
+    }
+}
+
 /// See [`UserDefined`](crate::model::UserDefined).
 pub mod user_defined {
     
@@ -4404,12 +4444,6 @@ pub mod user_defined {
     }
     
     
-}
-impl UserDefined {
-    /// Creates a new builder-style object to manufacture [`UserDefined`](crate::model::UserDefined).
-    pub fn builder() -> crate::model::user_defined::Builder {
-        crate::model::user_defined::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Unit`, it is important to ensure
@@ -4597,6 +4631,13 @@ impl GeoMosaicConfigInput {
         self.target_bands.as_deref()
     }
 }
+impl GeoMosaicConfigInput {
+    /// Creates a new builder-style object to manufacture [`GeoMosaicConfigInput`](crate::model::GeoMosaicConfigInput).
+    pub fn builder() -> crate::model::geo_mosaic_config_input::Builder {
+        crate::model::geo_mosaic_config_input::Builder::default()
+    }
+}
+
 /// See [`GeoMosaicConfigInput`](crate::model::GeoMosaicConfigInput).
 pub mod geo_mosaic_config_input {
     
@@ -4644,12 +4685,6 @@ pub mod geo_mosaic_config_input {
     }
     
     
-}
-impl GeoMosaicConfigInput {
-    /// Creates a new builder-style object to manufacture [`GeoMosaicConfigInput`](crate::model::GeoMosaicConfigInput).
-    pub fn builder() -> crate::model::geo_mosaic_config_input::Builder {
-        crate::model::geo_mosaic_config_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlgorithmNameGeoMosaic`, it is important to ensure
@@ -4822,6 +4857,13 @@ impl ZonalStatisticsConfigInput {
         self.target_bands.as_deref()
     }
 }
+impl ZonalStatisticsConfigInput {
+    /// Creates a new builder-style object to manufacture [`ZonalStatisticsConfigInput`](crate::model::ZonalStatisticsConfigInput).
+    pub fn builder() -> crate::model::zonal_statistics_config_input::Builder {
+        crate::model::zonal_statistics_config_input::Builder::default()
+    }
+}
+
 /// See [`ZonalStatisticsConfigInput`](crate::model::ZonalStatisticsConfigInput).
 pub mod zonal_statistics_config_input {
     
@@ -4887,12 +4929,6 @@ pub mod zonal_statistics_config_input {
     }
     
     
-}
-impl ZonalStatisticsConfigInput {
-    /// Creates a new builder-style object to manufacture [`ZonalStatisticsConfigInput`](crate::model::ZonalStatisticsConfigInput).
-    pub fn builder() -> crate::model::zonal_statistics_config_input::Builder {
-        crate::model::zonal_statistics_config_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ZonalStatistics`, it is important to ensure
@@ -5025,6 +5061,13 @@ impl CloudRemovalConfigInput {
         self.target_bands.as_deref()
     }
 }
+impl CloudRemovalConfigInput {
+    /// Creates a new builder-style object to manufacture [`CloudRemovalConfigInput`](crate::model::CloudRemovalConfigInput).
+    pub fn builder() -> crate::model::cloud_removal_config_input::Builder {
+        crate::model::cloud_removal_config_input::Builder::default()
+    }
+}
+
 /// See [`CloudRemovalConfigInput`](crate::model::CloudRemovalConfigInput).
 pub mod cloud_removal_config_input {
     
@@ -5084,12 +5127,6 @@ pub mod cloud_removal_config_input {
     }
     
     
-}
-impl CloudRemovalConfigInput {
-    /// Creates a new builder-style object to manufacture [`CloudRemovalConfigInput`](crate::model::CloudRemovalConfigInput).
-    pub fn builder() -> crate::model::cloud_removal_config_input::Builder {
-        crate::model::cloud_removal_config_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlgorithmNameCloudRemoval`, it is important to ensure
@@ -5197,6 +5234,13 @@ impl TemporalStatisticsConfigInput {
         self.target_bands.as_deref()
     }
 }
+impl TemporalStatisticsConfigInput {
+    /// Creates a new builder-style object to manufacture [`TemporalStatisticsConfigInput`](crate::model::TemporalStatisticsConfigInput).
+    pub fn builder() -> crate::model::temporal_statistics_config_input::Builder {
+        crate::model::temporal_statistics_config_input::Builder::default()
+    }
+}
+
 /// See [`TemporalStatisticsConfigInput`](crate::model::TemporalStatisticsConfigInput).
 pub mod temporal_statistics_config_input {
     
@@ -5262,12 +5306,6 @@ pub mod temporal_statistics_config_input {
     }
     
     
-}
-impl TemporalStatisticsConfigInput {
-    /// Creates a new builder-style object to manufacture [`TemporalStatisticsConfigInput`](crate::model::TemporalStatisticsConfigInput).
-    pub fn builder() -> crate::model::temporal_statistics_config_input::Builder {
-        crate::model::temporal_statistics_config_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TemporalStatistics`, it is important to ensure
@@ -5467,6 +5505,13 @@ impl ResamplingConfigInput {
         self.target_bands.as_deref()
     }
 }
+impl ResamplingConfigInput {
+    /// Creates a new builder-style object to manufacture [`ResamplingConfigInput`](crate::model::ResamplingConfigInput).
+    pub fn builder() -> crate::model::resampling_config_input::Builder {
+        crate::model::resampling_config_input::Builder::default()
+    }
+}
+
 /// See [`ResamplingConfigInput`](crate::model::ResamplingConfigInput).
 pub mod resampling_config_input {
     
@@ -5526,12 +5571,6 @@ pub mod resampling_config_input {
     }
     
     
-}
-impl ResamplingConfigInput {
-    /// Creates a new builder-style object to manufacture [`ResamplingConfigInput`](crate::model::ResamplingConfigInput).
-    pub fn builder() -> crate::model::resampling_config_input::Builder {
-        crate::model::resampling_config_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlgorithmNameResampling`, it is important to ensure
@@ -5690,6 +5729,13 @@ impl OutputResolutionResamplingInput {
         self.user_defined.as_ref()
     }
 }
+impl OutputResolutionResamplingInput {
+    /// Creates a new builder-style object to manufacture [`OutputResolutionResamplingInput`](crate::model::OutputResolutionResamplingInput).
+    pub fn builder() -> crate::model::output_resolution_resampling_input::Builder {
+        crate::model::output_resolution_resampling_input::Builder::default()
+    }
+}
+
 /// See [`OutputResolutionResamplingInput`](crate::model::OutputResolutionResamplingInput).
 pub mod output_resolution_resampling_input {
     
@@ -5720,12 +5766,6 @@ pub mod output_resolution_resampling_input {
     
     
 }
-impl OutputResolutionResamplingInput {
-    /// Creates a new builder-style object to manufacture [`OutputResolutionResamplingInput`](crate::model::OutputResolutionResamplingInput).
-    pub fn builder() -> crate::model::output_resolution_resampling_input::Builder {
-        crate::model::output_resolution_resampling_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -5748,6 +5788,13 @@ impl BandMathConfigInput {
         self.custom_indices.as_ref()
     }
 }
+impl BandMathConfigInput {
+    /// Creates a new builder-style object to manufacture [`BandMathConfigInput`](crate::model::BandMathConfigInput).
+    pub fn builder() -> crate::model::band_math_config_input::Builder {
+        crate::model::band_math_config_input::Builder::default()
+    }
+}
+
 /// See [`BandMathConfigInput`](crate::model::BandMathConfigInput).
 pub mod band_math_config_input {
     
@@ -5796,12 +5843,6 @@ pub mod band_math_config_input {
     
     
 }
-impl BandMathConfigInput {
-    /// Creates a new builder-style object to manufacture [`BandMathConfigInput`](crate::model::BandMathConfigInput).
-    pub fn builder() -> crate::model::band_math_config_input::Builder {
-        crate::model::band_math_config_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -5817,6 +5858,13 @@ impl CustomIndicesInput {
         self.operations.as_deref()
     }
 }
+impl CustomIndicesInput {
+    /// Creates a new builder-style object to manufacture [`CustomIndicesInput`](crate::model::CustomIndicesInput).
+    pub fn builder() -> crate::model::custom_indices_input::Builder {
+        crate::model::custom_indices_input::Builder::default()
+    }
+}
+
 /// See [`CustomIndicesInput`](crate::model::CustomIndicesInput).
 pub mod custom_indices_input {
     
@@ -5853,12 +5901,6 @@ pub mod custom_indices_input {
     
     
 }
-impl CustomIndicesInput {
-    /// Creates a new builder-style object to manufacture [`CustomIndicesInput`](crate::model::CustomIndicesInput).
-    pub fn builder() -> crate::model::custom_indices_input::Builder {
-        crate::model::custom_indices_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -5888,6 +5930,13 @@ impl Operation {
         self.output_type.as_ref()
     }
 }
+impl Operation {
+    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
+    pub fn builder() -> crate::model::operation::Builder {
+        crate::model::operation::Builder::default()
+    }
+}
+
 /// See [`Operation`](crate::model::Operation).
 pub mod operation {
     
@@ -5942,12 +5991,6 @@ pub mod operation {
     
     
 }
-impl Operation {
-    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
-    pub fn builder() -> crate::model::operation::Builder {
-        crate::model::operation::Builder::default()
-    }
-}
 
 /// <p>The InputConfig for an EarthObservationJob response.</p>
 #[non_exhaustive]
@@ -5977,6 +6020,13 @@ impl InputConfigOutput {
         self.raster_data_collection_query.as_ref()
     }
 }
+impl InputConfigOutput {
+    /// Creates a new builder-style object to manufacture [`InputConfigOutput`](crate::model::InputConfigOutput).
+    pub fn builder() -> crate::model::input_config_output::Builder {
+        crate::model::input_config_output::Builder::default()
+    }
+}
+
 /// See [`InputConfigOutput`](crate::model::InputConfigOutput).
 pub mod input_config_output {
     
@@ -6030,12 +6080,6 @@ pub mod input_config_output {
     }
     
     
-}
-impl InputConfigOutput {
-    /// Creates a new builder-style object to manufacture [`InputConfigOutput`](crate::model::InputConfigOutput).
-    pub fn builder() -> crate::model::input_config_output::Builder {
-        crate::model::input_config_output::Builder::default()
-    }
 }
 
 /// <p></p>
@@ -6091,6 +6135,13 @@ impl  std::fmt::Debug for RasterDataCollectionQueryOutput  {
         formatter.finish()
     }
 }
+impl RasterDataCollectionQueryOutput {
+    /// Creates a new builder-style object to manufacture [`RasterDataCollectionQueryOutput`](crate::model::RasterDataCollectionQueryOutput).
+    pub fn builder() -> crate::model::raster_data_collection_query_output::Builder {
+        crate::model::raster_data_collection_query_output::Builder::default()
+    }
+}
+
 /// See [`RasterDataCollectionQueryOutput`](crate::model::RasterDataCollectionQueryOutput).
 pub mod raster_data_collection_query_output {
     
@@ -6180,12 +6231,6 @@ pub mod raster_data_collection_query_output {
     
     
 }
-impl RasterDataCollectionQueryOutput {
-    /// Creates a new builder-style object to manufacture [`RasterDataCollectionQueryOutput`](crate::model::RasterDataCollectionQueryOutput).
-    pub fn builder() -> crate::model::raster_data_collection_query_output::Builder {
-        crate::model::raster_data_collection_query_output::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -6248,6 +6293,13 @@ impl S3DataInput {
         self.kms_key_id.as_deref()
     }
 }
+impl S3DataInput {
+    /// Creates a new builder-style object to manufacture [`S3DataInput`](crate::model::S3DataInput).
+    pub fn builder() -> crate::model::s3_data_input::Builder {
+        crate::model::s3_data_input::Builder::default()
+    }
+}
+
 /// See [`S3DataInput`](crate::model::S3DataInput).
 pub mod s3_data_input {
     
@@ -6301,12 +6353,6 @@ pub mod s3_data_input {
     }
     
     
-}
-impl S3DataInput {
-    /// Creates a new builder-style object to manufacture [`S3DataInput`](crate::model::S3DataInput).
-    pub fn builder() -> crate::model::s3_data_input::Builder {
-        crate::model::s3_data_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetadataProvider`, it is important to ensure
@@ -6414,6 +6460,13 @@ impl InputConfigInput {
         self.raster_data_collection_query.as_ref()
     }
 }
+impl InputConfigInput {
+    /// Creates a new builder-style object to manufacture [`InputConfigInput`](crate::model::InputConfigInput).
+    pub fn builder() -> crate::model::input_config_input::Builder {
+        crate::model::input_config_input::Builder::default()
+    }
+}
+
 /// See [`InputConfigInput`](crate::model::InputConfigInput).
 pub mod input_config_input {
     
@@ -6468,12 +6521,6 @@ pub mod input_config_input {
     
     
 }
-impl InputConfigInput {
-    /// Creates a new builder-style object to manufacture [`InputConfigInput`](crate::model::InputConfigInput).
-    pub fn builder() -> crate::model::input_config_input::Builder {
-        crate::model::input_config_input::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -6520,6 +6567,13 @@ impl  std::fmt::Debug for RasterDataCollectionQueryInput  {
         formatter.finish()
     }
 }
+impl RasterDataCollectionQueryInput {
+    /// Creates a new builder-style object to manufacture [`RasterDataCollectionQueryInput`](crate::model::RasterDataCollectionQueryInput).
+    pub fn builder() -> crate::model::raster_data_collection_query_input::Builder {
+        crate::model::raster_data_collection_query_input::Builder::default()
+    }
+}
+
 /// See [`RasterDataCollectionQueryInput`](crate::model::RasterDataCollectionQueryInput).
 pub mod raster_data_collection_query_input {
     
@@ -6596,12 +6650,6 @@ pub mod raster_data_collection_query_input {
     
     
 }
-impl RasterDataCollectionQueryInput {
-    /// Creates a new builder-style object to manufacture [`RasterDataCollectionQueryInput`](crate::model::RasterDataCollectionQueryInput).
-    pub fn builder() -> crate::model::raster_data_collection_query_input::Builder {
-        crate::model::raster_data_collection_query_input::Builder::default()
-    }
-}
 
 /// <p>The structure for returning the export error details in a GetEarthObservationJob.</p>
 #[non_exhaustive]
@@ -6624,6 +6672,13 @@ impl ExportErrorDetails {
         self.export_source_images.as_ref()
     }
 }
+impl ExportErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ExportErrorDetails`](crate::model::ExportErrorDetails).
+    pub fn builder() -> crate::model::export_error_details::Builder {
+        crate::model::export_error_details::Builder::default()
+    }
+}
+
 /// See [`ExportErrorDetails`](crate::model::ExportErrorDetails).
 pub mod export_error_details {
     
@@ -6666,12 +6721,6 @@ pub mod export_error_details {
     
     
 }
-impl ExportErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ExportErrorDetails`](crate::model::ExportErrorDetails).
-    pub fn builder() -> crate::model::export_error_details::Builder {
-        crate::model::export_error_details::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -6694,6 +6743,13 @@ impl ExportErrorDetailsOutput {
         self.message.as_deref()
     }
 }
+impl ExportErrorDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportErrorDetailsOutput`](crate::model::ExportErrorDetailsOutput).
+    pub fn builder() -> crate::model::export_error_details_output::Builder {
+        crate::model::export_error_details_output::Builder::default()
+    }
+}
+
 /// See [`ExportErrorDetailsOutput`](crate::model::ExportErrorDetailsOutput).
 pub mod export_error_details_output {
     
@@ -6735,12 +6791,6 @@ pub mod export_error_details_output {
     }
     
     
-}
-impl ExportErrorDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportErrorDetailsOutput`](crate::model::ExportErrorDetailsOutput).
-    pub fn builder() -> crate::model::export_error_details_output::Builder {
-        crate::model::export_error_details_output::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExportErrorType`, it is important to ensure
@@ -6846,6 +6896,13 @@ impl EarthObservationJobErrorDetails {
         self.message.as_deref()
     }
 }
+impl EarthObservationJobErrorDetails {
+    /// Creates a new builder-style object to manufacture [`EarthObservationJobErrorDetails`](crate::model::EarthObservationJobErrorDetails).
+    pub fn builder() -> crate::model::earth_observation_job_error_details::Builder {
+        crate::model::earth_observation_job_error_details::Builder::default()
+    }
+}
+
 /// See [`EarthObservationJobErrorDetails`](crate::model::EarthObservationJobErrorDetails).
 pub mod earth_observation_job_error_details {
     
@@ -6887,12 +6944,6 @@ pub mod earth_observation_job_error_details {
     }
     
     
-}
-impl EarthObservationJobErrorDetails {
-    /// Creates a new builder-style object to manufacture [`EarthObservationJobErrorDetails`](crate::model::EarthObservationJobErrorDetails).
-    pub fn builder() -> crate::model::earth_observation_job_error_details::Builder {
-        crate::model::earth_observation_job_error_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EarthObservationJobErrorType`, it is important to ensure
@@ -6998,6 +7049,13 @@ impl OutputBand {
         self.output_data_type.as_ref()
     }
 }
+impl OutputBand {
+    /// Creates a new builder-style object to manufacture [`OutputBand`](crate::model::OutputBand).
+    pub fn builder() -> crate::model::output_band::Builder {
+        crate::model::output_band::Builder::default()
+    }
+}
+
 /// See [`OutputBand`](crate::model::OutputBand).
 pub mod output_band {
     
@@ -7039,11 +7097,5 @@ pub mod output_band {
     }
     
     
-}
-impl OutputBand {
-    /// Creates a new builder-style object to manufacture [`OutputBand`](crate::model::OutputBand).
-    pub fn builder() -> crate::model::output_band::Builder {
-        crate::model::output_band::Builder::default()
-    }
 }
 

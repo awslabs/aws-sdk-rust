@@ -21,6 +21,13 @@ impl UpdateBackendStorageResourceConfig {
         self.service_name.as_ref()
     }
 }
+impl UpdateBackendStorageResourceConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
+    pub fn builder() -> crate::model::update_backend_storage_resource_config::Builder {
+        crate::model::update_backend_storage_resource_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
 pub mod update_backend_storage_resource_config {
     
@@ -62,12 +69,6 @@ pub mod update_backend_storage_resource_config {
     }
     
     
-}
-impl UpdateBackendStorageResourceConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageResourceConfig`](crate::model::UpdateBackendStorageResourceConfig).
-    pub fn builder() -> crate::model::update_backend_storage_resource_config::Builder {
-        crate::model::update_backend_storage_resource_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceName`, it is important to ensure
@@ -168,6 +169,13 @@ impl BackendStoragePermissions {
         self.un_authenticated.as_deref()
     }
 }
+impl BackendStoragePermissions {
+    /// Creates a new builder-style object to manufacture [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
+    pub fn builder() -> crate::model::backend_storage_permissions::Builder {
+        crate::model::backend_storage_permissions::Builder::default()
+    }
+}
+
 /// See [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
 pub mod backend_storage_permissions {
     
@@ -221,12 +229,6 @@ pub mod backend_storage_permissions {
     }
     
     
-}
-impl BackendStoragePermissions {
-    /// Creates a new builder-style object to manufacture [`BackendStoragePermissions`](crate::model::BackendStoragePermissions).
-    pub fn builder() -> crate::model::backend_storage_permissions::Builder {
-        crate::model::backend_storage_permissions::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UnAuthenticatedElement`, it is important to ensure
@@ -438,6 +440,13 @@ impl LoginAuthConfigReqObj {
         self.aws_user_pools_web_client_id.as_deref()
     }
 }
+impl LoginAuthConfigReqObj {
+    /// Creates a new builder-style object to manufacture [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
+    pub fn builder() -> crate::model::login_auth_config_req_obj::Builder {
+        crate::model::login_auth_config_req_obj::Builder::default()
+    }
+}
+
 /// See [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
 pub mod login_auth_config_req_obj {
     
@@ -504,12 +513,6 @@ pub mod login_auth_config_req_obj {
     
     
 }
-impl LoginAuthConfigReqObj {
-    /// Creates a new builder-style object to manufacture [`LoginAuthConfigReqObj`](crate::model::LoginAuthConfigReqObj).
-    pub fn builder() -> crate::model::login_auth_config_req_obj::Builder {
-        crate::model::login_auth_config_req_obj::Builder::default()
-    }
-}
 
 /// <p>Defines the resource configuration when updating an authentication resource in your Amplify project.</p>
 #[non_exhaustive]
@@ -546,6 +549,13 @@ impl UpdateBackendAuthResourceConfig {
         self.user_pool_configs.as_ref()
     }
 }
+impl UpdateBackendAuthResourceConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
+    pub fn builder() -> crate::model::update_backend_auth_resource_config::Builder {
+        crate::model::update_backend_auth_resource_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
 pub mod update_backend_auth_resource_config {
     
@@ -612,12 +622,6 @@ pub mod update_backend_auth_resource_config {
     
     
 }
-impl UpdateBackendAuthResourceConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthResourceConfig`](crate::model::UpdateBackendAuthResourceConfig).
-    pub fn builder() -> crate::model::update_backend_auth_resource_config::Builder {
-        crate::model::update_backend_auth_resource_config::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.</p>
 #[non_exhaustive]
@@ -661,6 +665,13 @@ impl UpdateBackendAuthUserPoolConfig {
         self.verification_message.as_ref()
     }
 }
+impl UpdateBackendAuthUserPoolConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
+    pub fn builder() -> crate::model::update_backend_auth_user_pool_config::Builder {
+        crate::model::update_backend_auth_user_pool_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
 pub mod update_backend_auth_user_pool_config {
     
@@ -739,12 +750,6 @@ pub mod update_backend_auth_user_pool_config {
     
     
 }
-impl UpdateBackendAuthUserPoolConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthUserPoolConfig`](crate::model::UpdateBackendAuthUserPoolConfig).
-    pub fn builder() -> crate::model::update_backend_auth_user_pool_config::Builder {
-        crate::model::update_backend_auth_user_pool_config::Builder::default()
-    }
-}
 
 /// <p>Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
@@ -774,6 +779,13 @@ impl UpdateBackendAuthVerificationMessageConfig {
         self.sms_settings.as_ref()
     }
 }
+impl UpdateBackendAuthVerificationMessageConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
+    pub fn builder() -> crate::model::update_backend_auth_verification_message_config::Builder {
+        crate::model::update_backend_auth_verification_message_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
 pub mod update_backend_auth_verification_message_config {
     
@@ -828,12 +840,6 @@ pub mod update_backend_auth_verification_message_config {
     
     
 }
-impl UpdateBackendAuthVerificationMessageConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthVerificationMessageConfig`](crate::model::UpdateBackendAuthVerificationMessageConfig).
-    pub fn builder() -> crate::model::update_backend_auth_verification_message_config::Builder {
-        crate::model::update_backend_auth_verification_message_config::Builder::default()
-    }
-}
 
 /// <p>SMS settings for authentication.</p>
 #[non_exhaustive]
@@ -849,6 +855,13 @@ impl SmsSettings {
         self.sms_message.as_deref()
     }
 }
+impl SmsSettings {
+    /// Creates a new builder-style object to manufacture [`SmsSettings`](crate::model::SmsSettings).
+    pub fn builder() -> crate::model::sms_settings::Builder {
+        crate::model::sms_settings::Builder::default()
+    }
+}
+
 /// See [`SmsSettings`](crate::model::SmsSettings).
 pub mod sms_settings {
     
@@ -879,12 +892,6 @@ pub mod sms_settings {
     
     
 }
-impl SmsSettings {
-    /// Creates a new builder-style object to manufacture [`SmsSettings`](crate::model::SmsSettings).
-    pub fn builder() -> crate::model::sms_settings::Builder {
-        crate::model::sms_settings::Builder::default()
-    }
-}
 
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
@@ -907,6 +914,13 @@ impl EmailSettings {
         self.email_subject.as_deref()
     }
 }
+impl EmailSettings {
+    /// Creates a new builder-style object to manufacture [`EmailSettings`](crate::model::EmailSettings).
+    pub fn builder() -> crate::model::email_settings::Builder {
+        crate::model::email_settings::Builder::default()
+    }
+}
+
 /// See [`EmailSettings`](crate::model::EmailSettings).
 pub mod email_settings {
     
@@ -948,12 +962,6 @@ pub mod email_settings {
     }
     
     
-}
-impl EmailSettings {
-    /// Creates a new builder-style object to manufacture [`EmailSettings`](crate::model::EmailSettings).
-    pub fn builder() -> crate::model::email_settings::Builder {
-        crate::model::email_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeliveryMethod`, it is important to ensure
@@ -1059,6 +1067,13 @@ impl UpdateBackendAuthPasswordPolicyConfig {
         self.minimum_length
     }
 }
+impl UpdateBackendAuthPasswordPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
+    pub fn builder() -> crate::model::update_backend_auth_password_policy_config::Builder {
+        crate::model::update_backend_auth_password_policy_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
 pub mod update_backend_auth_password_policy_config {
     
@@ -1107,12 +1122,6 @@ pub mod update_backend_auth_password_policy_config {
     }
     
     
-}
-impl UpdateBackendAuthPasswordPolicyConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthPasswordPolicyConfig`](crate::model::UpdateBackendAuthPasswordPolicyConfig).
-    pub fn builder() -> crate::model::update_backend_auth_password_policy_config::Builder {
-        crate::model::update_backend_auth_password_policy_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AdditionalConstraintsElement`, it is important to ensure
@@ -1256,6 +1265,13 @@ impl UpdateBackendAuthOAuthConfig {
         self.social_provider_settings.as_ref()
     }
 }
+impl UpdateBackendAuthOAuthConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
+    pub fn builder() -> crate::model::update_backend_auth_o_auth_config::Builder {
+        crate::model::update_backend_auth_o_auth_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
 pub mod update_backend_auth_o_auth_config {
     
@@ -1364,12 +1380,6 @@ pub mod update_backend_auth_o_auth_config {
     
     
 }
-impl UpdateBackendAuthOAuthConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthOAuthConfig`](crate::model::UpdateBackendAuthOAuthConfig).
-    pub fn builder() -> crate::model::update_backend_auth_o_auth_config::Builder {
-        crate::model::update_backend_auth_o_auth_config::Builder::default()
-    }
-}
 
 /// <p>The settings for using the social identity providers for access to your Amplify app.</p>
 #[non_exhaustive]
@@ -1406,6 +1416,13 @@ impl SocialProviderSettings {
         self.sign_in_with_apple.as_ref()
     }
 }
+impl SocialProviderSettings {
+    /// Creates a new builder-style object to manufacture [`SocialProviderSettings`](crate::model::SocialProviderSettings).
+    pub fn builder() -> crate::model::social_provider_settings::Builder {
+        crate::model::social_provider_settings::Builder::default()
+    }
+}
+
 /// See [`SocialProviderSettings`](crate::model::SocialProviderSettings).
 pub mod social_provider_settings {
     
@@ -1472,12 +1489,6 @@ pub mod social_provider_settings {
     
     
 }
-impl SocialProviderSettings {
-    /// Creates a new builder-style object to manufacture [`SocialProviderSettings`](crate::model::SocialProviderSettings).
-    pub fn builder() -> crate::model::social_provider_settings::Builder {
-        crate::model::social_provider_settings::Builder::default()
-    }
-}
 
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
@@ -1514,6 +1525,13 @@ impl BackendAuthAppleProviderConfig {
         self.team_id.as_deref()
     }
 }
+impl BackendAuthAppleProviderConfig {
+    /// Creates a new builder-style object to manufacture [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
+    pub fn builder() -> crate::model::backend_auth_apple_provider_config::Builder {
+        crate::model::backend_auth_apple_provider_config::Builder::default()
+    }
+}
+
 /// See [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
 pub mod backend_auth_apple_provider_config {
     
@@ -1580,12 +1598,6 @@ pub mod backend_auth_apple_provider_config {
     
     
 }
-impl BackendAuthAppleProviderConfig {
-    /// Creates a new builder-style object to manufacture [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig).
-    pub fn builder() -> crate::model::backend_auth_apple_provider_config::Builder {
-        crate::model::backend_auth_apple_provider_config::Builder::default()
-    }
-}
 
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
@@ -1608,6 +1620,13 @@ impl BackendAuthSocialProviderConfig {
         self.client_secret.as_deref()
     }
 }
+impl BackendAuthSocialProviderConfig {
+    /// Creates a new builder-style object to manufacture [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
+    pub fn builder() -> crate::model::backend_auth_social_provider_config::Builder {
+        crate::model::backend_auth_social_provider_config::Builder::default()
+    }
+}
+
 /// See [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
 pub mod backend_auth_social_provider_config {
     
@@ -1649,12 +1668,6 @@ pub mod backend_auth_social_provider_config {
     }
     
     
-}
-impl BackendAuthSocialProviderConfig {
-    /// Creates a new builder-style object to manufacture [`BackendAuthSocialProviderConfig`](crate::model::BackendAuthSocialProviderConfig).
-    pub fn builder() -> crate::model::backend_auth_social_provider_config::Builder {
-        crate::model::backend_auth_social_provider_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OAuthScopesElement`, it is important to ensure
@@ -1857,6 +1870,13 @@ impl UpdateBackendAuthMfaConfig {
         self.settings.as_ref()
     }
 }
+impl UpdateBackendAuthMfaConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
+    pub fn builder() -> crate::model::update_backend_auth_mfa_config::Builder {
+        crate::model::update_backend_auth_mfa_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
 pub mod update_backend_auth_mfa_config {
     
@@ -1899,12 +1919,6 @@ pub mod update_backend_auth_mfa_config {
     
     
 }
-impl UpdateBackendAuthMfaConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthMfaConfig`](crate::model::UpdateBackendAuthMfaConfig).
-    pub fn builder() -> crate::model::update_backend_auth_mfa_config::Builder {
-        crate::model::update_backend_auth_mfa_config::Builder::default()
-    }
-}
 
 /// <p>The settings of your MFA configuration for the backend of your Amplify project.</p>
 #[non_exhaustive]
@@ -1927,6 +1941,13 @@ impl Settings {
         self.sms_message.as_deref()
     }
 }
+impl Settings {
+    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
+    pub fn builder() -> crate::model::settings::Builder {
+        crate::model::settings::Builder::default()
+    }
+}
+
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
     
@@ -1974,12 +1995,6 @@ pub mod settings {
     }
     
     
-}
-impl Settings {
-    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
-    pub fn builder() -> crate::model::settings::Builder {
-        crate::model::settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MfaTypesElement`, it is important to ensure
@@ -2179,6 +2194,13 @@ impl UpdateBackendAuthForgotPasswordConfig {
         self.sms_settings.as_ref()
     }
 }
+impl UpdateBackendAuthForgotPasswordConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
+    pub fn builder() -> crate::model::update_backend_auth_forgot_password_config::Builder {
+        crate::model::update_backend_auth_forgot_password_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
 pub mod update_backend_auth_forgot_password_config {
     
@@ -2232,12 +2254,6 @@ pub mod update_backend_auth_forgot_password_config {
     }
     
     
-}
-impl UpdateBackendAuthForgotPasswordConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthForgotPasswordConfig`](crate::model::UpdateBackendAuthForgotPasswordConfig).
-    pub fn builder() -> crate::model::update_backend_auth_forgot_password_config::Builder {
-        crate::model::update_backend_auth_forgot_password_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Service`, it is important to ensure
@@ -2331,6 +2347,13 @@ impl UpdateBackendAuthIdentityPoolConfig {
         self.unauthenticated_login
     }
 }
+impl UpdateBackendAuthIdentityPoolConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
+    pub fn builder() -> crate::model::update_backend_auth_identity_pool_config::Builder {
+        crate::model::update_backend_auth_identity_pool_config::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
 pub mod update_backend_auth_identity_pool_config {
     
@@ -2361,12 +2384,6 @@ pub mod update_backend_auth_identity_pool_config {
     }
     
     
-}
-impl UpdateBackendAuthIdentityPoolConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthIdentityPoolConfig`](crate::model::UpdateBackendAuthIdentityPoolConfig).
-    pub fn builder() -> crate::model::update_backend_auth_identity_pool_config::Builder {
-        crate::model::update_backend_auth_identity_pool_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthResources`, it is important to ensure
@@ -2500,6 +2517,13 @@ impl BackendApiResourceConfig {
         self.transform_schema.as_deref()
     }
 }
+impl BackendApiResourceConfig {
+    /// Creates a new builder-style object to manufacture [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
+    pub fn builder() -> crate::model::backend_api_resource_config::Builder {
+        crate::model::backend_api_resource_config::Builder::default()
+    }
+}
+
 /// See [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
 pub mod backend_api_resource_config {
     
@@ -2596,12 +2620,6 @@ pub mod backend_api_resource_config {
     
     
 }
-impl BackendApiResourceConfig {
-    /// Creates a new builder-style object to manufacture [`BackendApiResourceConfig`](crate::model::BackendApiResourceConfig).
-    pub fn builder() -> crate::model::backend_api_resource_config::Builder {
-        crate::model::backend_api_resource_config::Builder::default()
-    }
-}
 
 /// <p>Describes the auth types for your configured data models.</p>
 #[non_exhaustive]
@@ -2624,6 +2642,13 @@ impl BackendApiAuthType {
         self.settings.as_ref()
     }
 }
+impl BackendApiAuthType {
+    /// Creates a new builder-style object to manufacture [`BackendApiAuthType`](crate::model::BackendApiAuthType).
+    pub fn builder() -> crate::model::backend_api_auth_type::Builder {
+        crate::model::backend_api_auth_type::Builder::default()
+    }
+}
+
 /// See [`BackendApiAuthType`](crate::model::BackendApiAuthType).
 pub mod backend_api_auth_type {
     
@@ -2665,12 +2690,6 @@ pub mod backend_api_auth_type {
     }
     
     
-}
-impl BackendApiAuthType {
-    /// Creates a new builder-style object to manufacture [`BackendApiAuthType`](crate::model::BackendApiAuthType).
-    pub fn builder() -> crate::model::backend_api_auth_type::Builder {
-        crate::model::backend_api_auth_type::Builder::default()
-    }
 }
 
 /// <p>The authentication settings for accessing provisioned data models in your Amplify project.</p>
@@ -2736,6 +2755,13 @@ impl BackendApiAppSyncAuthSettings {
         self.open_id_provider_name.as_deref()
     }
 }
+impl BackendApiAppSyncAuthSettings {
+    /// Creates a new builder-style object to manufacture [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
+    pub fn builder() -> crate::model::backend_api_app_sync_auth_settings::Builder {
+        crate::model::backend_api_app_sync_auth_settings::Builder::default()
+    }
+}
+
 /// See [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
 pub mod backend_api_app_sync_auth_settings {
     
@@ -2851,12 +2877,6 @@ pub mod backend_api_app_sync_auth_settings {
     
     
 }
-impl BackendApiAppSyncAuthSettings {
-    /// Creates a new builder-style object to manufacture [`BackendApiAppSyncAuthSettings`](crate::model::BackendApiAppSyncAuthSettings).
-    pub fn builder() -> crate::model::backend_api_app_sync_auth_settings::Builder {
-        crate::model::backend_api_app_sync_auth_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Mode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2964,6 +2984,13 @@ impl BackendApiConflictResolution {
         self.resolution_strategy.as_ref()
     }
 }
+impl BackendApiConflictResolution {
+    /// Creates a new builder-style object to manufacture [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
+    pub fn builder() -> crate::model::backend_api_conflict_resolution::Builder {
+        crate::model::backend_api_conflict_resolution::Builder::default()
+    }
+}
+
 /// See [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
 pub mod backend_api_conflict_resolution {
     
@@ -2993,12 +3020,6 @@ pub mod backend_api_conflict_resolution {
     }
     
     
-}
-impl BackendApiConflictResolution {
-    /// Creates a new builder-style object to manufacture [`BackendApiConflictResolution`](crate::model::BackendApiConflictResolution).
-    pub fn builder() -> crate::model::backend_api_conflict_resolution::Builder {
-        crate::model::backend_api_conflict_resolution::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResolutionStrategy`, it is important to ensure
@@ -3114,6 +3135,13 @@ impl S3BucketInfo {
         self.name.as_deref()
     }
 }
+impl S3BucketInfo {
+    /// Creates a new builder-style object to manufacture [`S3BucketInfo`](crate::model::S3BucketInfo).
+    pub fn builder() -> crate::model::s3_bucket_info::Builder {
+        crate::model::s3_bucket_info::Builder::default()
+    }
+}
+
 /// See [`S3BucketInfo`](crate::model::S3BucketInfo).
 pub mod s3_bucket_info {
     
@@ -3155,12 +3183,6 @@ pub mod s3_bucket_info {
     }
     
     
-}
-impl S3BucketInfo {
-    /// Creates a new builder-style object to manufacture [`S3BucketInfo`](crate::model::S3BucketInfo).
-    pub fn builder() -> crate::model::s3_bucket_info::Builder {
-        crate::model::s3_bucket_info::Builder::default()
-    }
 }
 
 /// <p>The response object for this operation.</p>
@@ -3226,6 +3248,13 @@ impl BackendJobRespObj {
         self.update_time.as_deref()
     }
 }
+impl BackendJobRespObj {
+    /// Creates a new builder-style object to manufacture [`BackendJobRespObj`](crate::model::BackendJobRespObj).
+    pub fn builder() -> crate::model::backend_job_resp_obj::Builder {
+        crate::model::backend_job_resp_obj::Builder::default()
+    }
+}
+
 /// See [`BackendJobRespObj`](crate::model::BackendJobRespObj).
 pub mod backend_job_resp_obj {
     
@@ -3340,12 +3369,6 @@ pub mod backend_job_resp_obj {
     
     
 }
-impl BackendJobRespObj {
-    /// Creates a new builder-style object to manufacture [`BackendJobRespObj`](crate::model::BackendJobRespObj).
-    pub fn builder() -> crate::model::backend_job_resp_obj::Builder {
-        crate::model::backend_job_resp_obj::Builder::default()
-    }
-}
 
 /// <p>The details for a backend storage resource.</p>
 #[non_exhaustive]
@@ -3382,6 +3405,13 @@ impl GetBackendStorageResourceConfig {
         self.service_name.as_ref()
     }
 }
+impl GetBackendStorageResourceConfig {
+    /// Creates a new builder-style object to manufacture [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
+    pub fn builder() -> crate::model::get_backend_storage_resource_config::Builder {
+        crate::model::get_backend_storage_resource_config::Builder::default()
+    }
+}
+
 /// See [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
 pub mod get_backend_storage_resource_config {
     
@@ -3449,12 +3479,6 @@ pub mod get_backend_storage_resource_config {
     
     
 }
-impl GetBackendStorageResourceConfig {
-    /// Creates a new builder-style object to manufacture [`GetBackendStorageResourceConfig`](crate::model::GetBackendStorageResourceConfig).
-    pub fn builder() -> crate::model::get_backend_storage_resource_config::Builder {
-        crate::model::get_backend_storage_resource_config::Builder::default()
-    }
-}
 
 /// <p>Defines the resource configuration when creating an auth resource in your Amplify project.</p>
 #[non_exhaustive]
@@ -3491,6 +3515,13 @@ impl CreateBackendAuthResourceConfig {
         self.user_pool_configs.as_ref()
     }
 }
+impl CreateBackendAuthResourceConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
+    pub fn builder() -> crate::model::create_backend_auth_resource_config::Builder {
+        crate::model::create_backend_auth_resource_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
 pub mod create_backend_auth_resource_config {
     
@@ -3557,12 +3588,6 @@ pub mod create_backend_auth_resource_config {
     
     
 }
-impl CreateBackendAuthResourceConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthResourceConfig`](crate::model::CreateBackendAuthResourceConfig).
-    pub fn builder() -> crate::model::create_backend_auth_resource_config::Builder {
-        crate::model::create_backend_auth_resource_config::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project.</p>
 #[non_exhaustive]
@@ -3627,6 +3652,13 @@ impl CreateBackendAuthUserPoolConfig {
         self.verification_message.as_ref()
     }
 }
+impl CreateBackendAuthUserPoolConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
+    pub fn builder() -> crate::model::create_backend_auth_user_pool_config::Builder {
+        crate::model::create_backend_auth_user_pool_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
 pub mod create_backend_auth_user_pool_config {
     
@@ -3747,12 +3779,6 @@ pub mod create_backend_auth_user_pool_config {
     
     
 }
-impl CreateBackendAuthUserPoolConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthUserPoolConfig`](crate::model::CreateBackendAuthUserPoolConfig).
-    pub fn builder() -> crate::model::create_backend_auth_user_pool_config::Builder {
-        crate::model::create_backend_auth_user_pool_config::Builder::default()
-    }
-}
 
 /// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
@@ -3782,6 +3808,13 @@ impl CreateBackendAuthVerificationMessageConfig {
         self.sms_settings.as_ref()
     }
 }
+impl CreateBackendAuthVerificationMessageConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
+    pub fn builder() -> crate::model::create_backend_auth_verification_message_config::Builder {
+        crate::model::create_backend_auth_verification_message_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
 pub mod create_backend_auth_verification_message_config {
     
@@ -3835,12 +3868,6 @@ pub mod create_backend_auth_verification_message_config {
     }
     
     
-}
-impl CreateBackendAuthVerificationMessageConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthVerificationMessageConfig`](crate::model::CreateBackendAuthVerificationMessageConfig).
-    pub fn builder() -> crate::model::create_backend_auth_verification_message_config::Builder {
-        crate::model::create_backend_auth_verification_message_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SignInMethod`, it is important to ensure
@@ -4113,6 +4140,13 @@ impl CreateBackendAuthPasswordPolicyConfig {
         self.minimum_length
     }
 }
+impl CreateBackendAuthPasswordPolicyConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
+    pub fn builder() -> crate::model::create_backend_auth_password_policy_config::Builder {
+        crate::model::create_backend_auth_password_policy_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
 pub mod create_backend_auth_password_policy_config {
     
@@ -4161,12 +4195,6 @@ pub mod create_backend_auth_password_policy_config {
     }
     
     
-}
-impl CreateBackendAuthPasswordPolicyConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthPasswordPolicyConfig`](crate::model::CreateBackendAuthPasswordPolicyConfig).
-    pub fn builder() -> crate::model::create_backend_auth_password_policy_config::Builder {
-        crate::model::create_backend_auth_password_policy_config::Builder::default()
-    }
 }
 
 /// <p>Creates the OAuth configuration for your Amplify project.</p>
@@ -4218,6 +4246,13 @@ impl CreateBackendAuthOAuthConfig {
         self.social_provider_settings.as_ref()
     }
 }
+impl CreateBackendAuthOAuthConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
+    pub fn builder() -> crate::model::create_backend_auth_o_auth_config::Builder {
+        crate::model::create_backend_auth_o_auth_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
 pub mod create_backend_auth_o_auth_config {
     
@@ -4326,12 +4361,6 @@ pub mod create_backend_auth_o_auth_config {
     
     
 }
-impl CreateBackendAuthOAuthConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthOAuthConfig`](crate::model::CreateBackendAuthOAuthConfig).
-    pub fn builder() -> crate::model::create_backend_auth_o_auth_config::Builder {
-        crate::model::create_backend_auth_o_auth_config::Builder::default()
-    }
-}
 
 /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
@@ -4354,6 +4383,13 @@ impl CreateBackendAuthMfaConfig {
         self.settings.as_ref()
     }
 }
+impl CreateBackendAuthMfaConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
+    pub fn builder() -> crate::model::create_backend_auth_mfa_config::Builder {
+        crate::model::create_backend_auth_mfa_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
 pub mod create_backend_auth_mfa_config {
     
@@ -4396,12 +4432,6 @@ pub mod create_backend_auth_mfa_config {
     
     
 }
-impl CreateBackendAuthMfaConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthMfaConfig`](crate::model::CreateBackendAuthMfaConfig).
-    pub fn builder() -> crate::model::create_backend_auth_mfa_config::Builder {
-        crate::model::create_backend_auth_mfa_config::Builder::default()
-    }
-}
 
 /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for authenticating into the Amplify app.</p>
 #[non_exhaustive]
@@ -4431,6 +4461,13 @@ impl CreateBackendAuthForgotPasswordConfig {
         self.sms_settings.as_ref()
     }
 }
+impl CreateBackendAuthForgotPasswordConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
+    pub fn builder() -> crate::model::create_backend_auth_forgot_password_config::Builder {
+        crate::model::create_backend_auth_forgot_password_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
 pub mod create_backend_auth_forgot_password_config {
     
@@ -4485,12 +4522,6 @@ pub mod create_backend_auth_forgot_password_config {
     
     
 }
-impl CreateBackendAuthForgotPasswordConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthForgotPasswordConfig`](crate::model::CreateBackendAuthForgotPasswordConfig).
-    pub fn builder() -> crate::model::create_backend_auth_forgot_password_config::Builder {
-        crate::model::create_backend_auth_forgot_password_config::Builder::default()
-    }
-}
 
 /// <p>Describes authorization configurations for the auth resources, configured as a part of your Amplify project.</p>
 #[non_exhaustive]
@@ -4513,6 +4544,13 @@ impl CreateBackendAuthIdentityPoolConfig {
         self.unauthenticated_login
     }
 }
+impl CreateBackendAuthIdentityPoolConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
+    pub fn builder() -> crate::model::create_backend_auth_identity_pool_config::Builder {
+        crate::model::create_backend_auth_identity_pool_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
 pub mod create_backend_auth_identity_pool_config {
     
@@ -4555,12 +4593,6 @@ pub mod create_backend_auth_identity_pool_config {
     }
     
     
-}
-impl CreateBackendAuthIdentityPoolConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthIdentityPoolConfig`](crate::model::CreateBackendAuthIdentityPoolConfig).
-    pub fn builder() -> crate::model::create_backend_auth_identity_pool_config::Builder {
-        crate::model::create_backend_auth_identity_pool_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Status`, it is important to ensure
@@ -4673,6 +4705,13 @@ impl CreateBackendStorageResourceConfig {
         self.service_name.as_ref()
     }
 }
+impl CreateBackendStorageResourceConfig {
+    /// Creates a new builder-style object to manufacture [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
+    pub fn builder() -> crate::model::create_backend_storage_resource_config::Builder {
+        crate::model::create_backend_storage_resource_config::Builder::default()
+    }
+}
+
 /// See [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
 pub mod create_backend_storage_resource_config {
     
@@ -4727,18 +4766,19 @@ pub mod create_backend_storage_resource_config {
     
     
 }
-impl CreateBackendStorageResourceConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendStorageResourceConfig`](crate::model::CreateBackendStorageResourceConfig).
-    pub fn builder() -> crate::model::create_backend_storage_resource_config::Builder {
-        crate::model::create_backend_storage_resource_config::Builder::default()
-    }
-}
 
 /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConfig  {
 }
+impl ResourceConfig {
+    /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::model::ResourceConfig).
+    pub fn builder() -> crate::model::resource_config::Builder {
+        crate::model::resource_config::Builder::default()
+    }
+}
+
 /// See [`ResourceConfig`](crate::model::ResourceConfig).
 pub mod resource_config {
     
@@ -4756,11 +4796,5 @@ pub mod resource_config {
     }
     
     
-}
-impl ResourceConfig {
-    /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::model::ResourceConfig).
-    pub fn builder() -> crate::model::resource_config::Builder {
-        crate::model::resource_config::Builder::default()
-    }
 }
 

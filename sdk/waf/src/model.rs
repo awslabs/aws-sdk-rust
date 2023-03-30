@@ -279,6 +279,13 @@ impl XssMatchSetUpdate {
         self.xss_match_tuple.as_ref()
     }
 }
+impl XssMatchSetUpdate {
+    /// Creates a new builder-style object to manufacture [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
+    pub fn builder() -> crate::model::xss_match_set_update::Builder {
+        crate::model::xss_match_set_update::Builder::default()
+    }
+}
+
 /// See [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
 pub mod xss_match_set_update {
     
@@ -320,12 +327,6 @@ pub mod xss_match_set_update {
     }
     
     
-}
-impl XssMatchSetUpdate {
-    /// Creates a new builder-style object to manufacture [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
-    pub fn builder() -> crate::model::xss_match_set_update::Builder {
-        crate::model::xss_match_set_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -427,6 +428,13 @@ impl XssMatchTuple {
         self.text_transformation.as_ref()
     }
 }
+impl XssMatchTuple {
+    /// Creates a new builder-style object to manufacture [`XssMatchTuple`](crate::model::XssMatchTuple).
+    pub fn builder() -> crate::model::xss_match_tuple::Builder {
+        crate::model::xss_match_tuple::Builder::default()
+    }
+}
+
 /// See [`XssMatchTuple`](crate::model::XssMatchTuple).
 pub mod xss_match_tuple {
     
@@ -542,12 +550,6 @@ pub mod xss_match_tuple {
     }
     
     
-}
-impl XssMatchTuple {
-    /// Creates a new builder-style object to manufacture [`XssMatchTuple`](crate::model::XssMatchTuple).
-    pub fn builder() -> crate::model::xss_match_tuple::Builder {
-        crate::model::xss_match_tuple::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TextTransformation`, it is important to ensure
@@ -699,6 +701,13 @@ impl FieldToMatch {
         self.data.as_deref()
     }
 }
+impl FieldToMatch {
+    /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::model::FieldToMatch).
+    pub fn builder() -> crate::model::field_to_match::Builder {
+        crate::model::field_to_match::Builder::default()
+    }
+}
+
 /// See [`FieldToMatch`](crate::model::FieldToMatch).
 pub mod field_to_match {
     
@@ -762,12 +771,6 @@ pub mod field_to_match {
     }
     
     
-}
-impl FieldToMatch {
-    /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::model::FieldToMatch).
-    pub fn builder() -> crate::model::field_to_match::Builder {
-        crate::model::field_to_match::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MatchFieldType`, it is important to ensure
@@ -987,6 +990,13 @@ impl WafAction {
         self.r#type.as_ref()
     }
 }
+impl WafAction {
+    /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction).
+    pub fn builder() -> crate::model::waf_action::Builder {
+        crate::model::waf_action::Builder::default()
+    }
+}
+
 /// See [`WafAction`](crate::model::WafAction).
 pub mod waf_action {
     
@@ -1026,12 +1036,6 @@ pub mod waf_action {
     }
     
     
-}
-impl WafAction {
-    /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction).
-    pub fn builder() -> crate::model::waf_action::Builder {
-        crate::model::waf_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WafActionType`, it is important to ensure
@@ -1146,6 +1150,13 @@ impl WebAclUpdate {
         self.activated_rule.as_ref()
     }
 }
+impl WebAclUpdate {
+    /// Creates a new builder-style object to manufacture [`WebAclUpdate`](crate::model::WebAclUpdate).
+    pub fn builder() -> crate::model::web_acl_update::Builder {
+        crate::model::web_acl_update::Builder::default()
+    }
+}
+
 /// See [`WebAclUpdate`](crate::model::WebAclUpdate).
 pub mod web_acl_update {
     
@@ -1187,12 +1198,6 @@ pub mod web_acl_update {
     }
     
     
-}
-impl WebAclUpdate {
-    /// Creates a new builder-style object to manufacture [`WebAclUpdate`](crate::model::WebAclUpdate).
-    pub fn builder() -> crate::model::web_acl_update::Builder {
-        crate::model::web_acl_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -1289,6 +1294,13 @@ impl ActivatedRule {
         self.excluded_rules.as_deref()
     }
 }
+impl ActivatedRule {
+    /// Creates a new builder-style object to manufacture [`ActivatedRule`](crate::model::ActivatedRule).
+    pub fn builder() -> crate::model::activated_rule::Builder {
+        crate::model::activated_rule::Builder::default()
+    }
+}
+
 /// See [`ActivatedRule`](crate::model::ActivatedRule).
 pub mod activated_rule {
     
@@ -1425,12 +1437,6 @@ pub mod activated_rule {
     
     
 }
-impl ActivatedRule {
-    /// Creates a new builder-style object to manufacture [`ActivatedRule`](crate::model::ActivatedRule).
-    pub fn builder() -> crate::model::activated_rule::Builder {
-        crate::model::activated_rule::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -1450,6 +1456,13 @@ impl ExcludedRule {
         self.rule_id.as_deref()
     }
 }
+impl ExcludedRule {
+    /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule).
+    pub fn builder() -> crate::model::excluded_rule::Builder {
+        crate::model::excluded_rule::Builder::default()
+    }
+}
+
 /// See [`ExcludedRule`](crate::model::ExcludedRule).
 pub mod excluded_rule {
     
@@ -1479,12 +1492,6 @@ pub mod excluded_rule {
     }
     
     
-}
-impl ExcludedRule {
-    /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule).
-    pub fn builder() -> crate::model::excluded_rule::Builder {
-        crate::model::excluded_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WafRuleType`, it is important to ensure
@@ -1592,6 +1599,13 @@ impl WafOverrideAction {
         self.r#type.as_ref()
     }
 }
+impl WafOverrideAction {
+    /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction).
+    pub fn builder() -> crate::model::waf_override_action::Builder {
+        crate::model::waf_override_action::Builder::default()
+    }
+}
+
 /// See [`WafOverrideAction`](crate::model::WafOverrideAction).
 pub mod waf_override_action {
     
@@ -1621,12 +1635,6 @@ pub mod waf_override_action {
     }
     
     
-}
-impl WafOverrideAction {
-    /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction).
-    pub fn builder() -> crate::model::waf_override_action::Builder {
-        crate::model::waf_override_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WafOverrideActionType`, it is important to ensure
@@ -1736,6 +1744,13 @@ impl SqlInjectionMatchSetUpdate {
         self.sql_injection_match_tuple.as_ref()
     }
 }
+impl SqlInjectionMatchSetUpdate {
+    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
+    pub fn builder() -> crate::model::sql_injection_match_set_update::Builder {
+        crate::model::sql_injection_match_set_update::Builder::default()
+    }
+}
+
 /// See [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
 pub mod sql_injection_match_set_update {
     
@@ -1777,12 +1792,6 @@ pub mod sql_injection_match_set_update {
     }
     
     
-}
-impl SqlInjectionMatchSetUpdate {
-    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
-    pub fn builder() -> crate::model::sql_injection_match_set_update::Builder {
-        crate::model::sql_injection_match_set_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -1884,6 +1893,13 @@ impl SqlInjectionMatchTuple {
         self.text_transformation.as_ref()
     }
 }
+impl SqlInjectionMatchTuple {
+    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
+    pub fn builder() -> crate::model::sql_injection_match_tuple::Builder {
+        crate::model::sql_injection_match_tuple::Builder::default()
+    }
+}
+
 /// See [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
 pub mod sql_injection_match_tuple {
     
@@ -2000,12 +2016,6 @@ pub mod sql_injection_match_tuple {
     
     
 }
-impl SqlInjectionMatchTuple {
-    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
-    pub fn builder() -> crate::model::sql_injection_match_tuple::Builder {
-        crate::model::sql_injection_match_tuple::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -2032,6 +2042,13 @@ impl SizeConstraintSetUpdate {
         self.size_constraint.as_ref()
     }
 }
+impl SizeConstraintSetUpdate {
+    /// Creates a new builder-style object to manufacture [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
+    pub fn builder() -> crate::model::size_constraint_set_update::Builder {
+        crate::model::size_constraint_set_update::Builder::default()
+    }
+}
+
 /// See [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
 pub mod size_constraint_set_update {
     
@@ -2073,12 +2090,6 @@ pub mod size_constraint_set_update {
     }
     
     
-}
-impl SizeConstraintSetUpdate {
-    /// Creates a new builder-style object to manufacture [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
-    pub fn builder() -> crate::model::size_constraint_set_update::Builder {
-        crate::model::size_constraint_set_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -2212,6 +2223,13 @@ impl SizeConstraint {
         self.size
     }
 }
+impl SizeConstraint {
+    /// Creates a new builder-style object to manufacture [`SizeConstraint`](crate::model::SizeConstraint).
+    pub fn builder() -> crate::model::size_constraint::Builder {
+        crate::model::size_constraint::Builder::default()
+    }
+}
+
 /// See [`SizeConstraint`](crate::model::SizeConstraint).
 pub mod size_constraint {
     
@@ -2371,12 +2389,6 @@ pub mod size_constraint {
     
     
 }
-impl SizeConstraint {
-    /// Creates a new builder-style object to manufacture [`SizeConstraint`](crate::model::SizeConstraint).
-    pub fn builder() -> crate::model::size_constraint::Builder {
-        crate::model::size_constraint::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2505,6 +2517,13 @@ impl RuleGroupUpdate {
         self.activated_rule.as_ref()
     }
 }
+impl RuleGroupUpdate {
+    /// Creates a new builder-style object to manufacture [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
+    pub fn builder() -> crate::model::rule_group_update::Builder {
+        crate::model::rule_group_update::Builder::default()
+    }
+}
+
 /// See [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
 pub mod rule_group_update {
     
@@ -2547,12 +2566,6 @@ pub mod rule_group_update {
     
     
 }
-impl RuleGroupUpdate {
-    /// Creates a new builder-style object to manufacture [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
-    pub fn builder() -> crate::model::rule_group_update::Builder {
-        crate::model::rule_group_update::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -2579,6 +2592,13 @@ impl RuleUpdate {
         self.predicate.as_ref()
     }
 }
+impl RuleUpdate {
+    /// Creates a new builder-style object to manufacture [`RuleUpdate`](crate::model::RuleUpdate).
+    pub fn builder() -> crate::model::rule_update::Builder {
+        crate::model::rule_update::Builder::default()
+    }
+}
+
 /// See [`RuleUpdate`](crate::model::RuleUpdate).
 pub mod rule_update {
     
@@ -2621,12 +2641,6 @@ pub mod rule_update {
     
     
 }
-impl RuleUpdate {
-    /// Creates a new builder-style object to manufacture [`RuleUpdate`](crate::model::RuleUpdate).
-    pub fn builder() -> crate::model::rule_update::Builder {
-        crate::model::rule_update::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -2662,6 +2676,13 @@ impl Predicate {
         self.data_id.as_deref()
     }
 }
+impl Predicate {
+    /// Creates a new builder-style object to manufacture [`Predicate`](crate::model::Predicate).
+    pub fn builder() -> crate::model::predicate::Builder {
+        crate::model::predicate::Builder::default()
+    }
+}
+
 /// See [`Predicate`](crate::model::Predicate).
 pub mod predicate {
     
@@ -2717,12 +2738,6 @@ pub mod predicate {
     }
     
     
-}
-impl Predicate {
-    /// Creates a new builder-style object to manufacture [`Predicate`](crate::model::Predicate).
-    pub fn builder() -> crate::model::predicate::Builder {
-        crate::model::predicate::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PredicateType`, it is important to ensure
@@ -2857,6 +2872,13 @@ impl RegexPatternSetUpdate {
         self.regex_pattern_string.as_deref()
     }
 }
+impl RegexPatternSetUpdate {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
+    pub fn builder() -> crate::model::regex_pattern_set_update::Builder {
+        crate::model::regex_pattern_set_update::Builder::default()
+    }
+}
+
 /// See [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
 pub mod regex_pattern_set_update {
     
@@ -2899,12 +2921,6 @@ pub mod regex_pattern_set_update {
     
     
 }
-impl RegexPatternSetUpdate {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
-    pub fn builder() -> crate::model::regex_pattern_set_update::Builder {
-        crate::model::regex_pattern_set_update::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -2931,6 +2947,13 @@ impl RegexMatchSetUpdate {
         self.regex_match_tuple.as_ref()
     }
 }
+impl RegexMatchSetUpdate {
+    /// Creates a new builder-style object to manufacture [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
+    pub fn builder() -> crate::model::regex_match_set_update::Builder {
+        crate::model::regex_match_set_update::Builder::default()
+    }
+}
+
 /// See [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
 pub mod regex_match_set_update {
     
@@ -2972,12 +2995,6 @@ pub mod regex_match_set_update {
     }
     
     
-}
-impl RegexMatchSetUpdate {
-    /// Creates a new builder-style object to manufacture [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
-    pub fn builder() -> crate::model::regex_match_set_update::Builder {
-        crate::model::regex_match_set_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -3093,6 +3110,13 @@ impl RegexMatchTuple {
         self.regex_pattern_set_id.as_deref()
     }
 }
+impl RegexMatchTuple {
+    /// Creates a new builder-style object to manufacture [`RegexMatchTuple`](crate::model::RegexMatchTuple).
+    pub fn builder() -> crate::model::regex_match_tuple::Builder {
+        crate::model::regex_match_tuple::Builder::default()
+    }
+}
+
 /// See [`RegexMatchTuple`](crate::model::RegexMatchTuple).
 pub mod regex_match_tuple {
     
@@ -3223,12 +3247,6 @@ pub mod regex_match_tuple {
     
     
 }
-impl RegexMatchTuple {
-    /// Creates a new builder-style object to manufacture [`RegexMatchTuple`](crate::model::RegexMatchTuple).
-    pub fn builder() -> crate::model::regex_match_tuple::Builder {
-        crate::model::regex_match_tuple::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -3255,6 +3273,13 @@ impl IpSetUpdate {
         self.ip_set_descriptor.as_ref()
     }
 }
+impl IpSetUpdate {
+    /// Creates a new builder-style object to manufacture [`IpSetUpdate`](crate::model::IpSetUpdate).
+    pub fn builder() -> crate::model::ip_set_update::Builder {
+        crate::model::ip_set_update::Builder::default()
+    }
+}
+
 /// See [`IpSetUpdate`](crate::model::IpSetUpdate).
 pub mod ip_set_update {
     
@@ -3296,12 +3321,6 @@ pub mod ip_set_update {
     }
     
     
-}
-impl IpSetUpdate {
-    /// Creates a new builder-style object to manufacture [`IpSetUpdate`](crate::model::IpSetUpdate).
-    pub fn builder() -> crate::model::ip_set_update::Builder {
-        crate::model::ip_set_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -3349,6 +3368,13 @@ impl IpSetDescriptor {
         self.value.as_deref()
     }
 }
+impl IpSetDescriptor {
+    /// Creates a new builder-style object to manufacture [`IpSetDescriptor`](crate::model::IpSetDescriptor).
+    pub fn builder() -> crate::model::ip_set_descriptor::Builder {
+        crate::model::ip_set_descriptor::Builder::default()
+    }
+}
+
 /// See [`IpSetDescriptor`](crate::model::IpSetDescriptor).
 pub mod ip_set_descriptor {
     
@@ -3410,12 +3436,6 @@ pub mod ip_set_descriptor {
     }
     
     
-}
-impl IpSetDescriptor {
-    /// Creates a new builder-style object to manufacture [`IpSetDescriptor`](crate::model::IpSetDescriptor).
-    pub fn builder() -> crate::model::ip_set_descriptor::Builder {
-        crate::model::ip_set_descriptor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IpSetDescriptorType`, it is important to ensure
@@ -3525,6 +3545,13 @@ impl GeoMatchSetUpdate {
         self.geo_match_constraint.as_ref()
     }
 }
+impl GeoMatchSetUpdate {
+    /// Creates a new builder-style object to manufacture [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
+    pub fn builder() -> crate::model::geo_match_set_update::Builder {
+        crate::model::geo_match_set_update::Builder::default()
+    }
+}
+
 /// See [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
 pub mod geo_match_set_update {
     
@@ -3567,12 +3594,6 @@ pub mod geo_match_set_update {
     
     
 }
-impl GeoMatchSetUpdate {
-    /// Creates a new builder-style object to manufacture [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
-    pub fn builder() -> crate::model::geo_match_set_update::Builder {
-        crate::model::geo_match_set_update::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -3599,6 +3620,13 @@ impl GeoMatchConstraint {
         self.value.as_ref()
     }
 }
+impl GeoMatchConstraint {
+    /// Creates a new builder-style object to manufacture [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
+    pub fn builder() -> crate::model::geo_match_constraint::Builder {
+        crate::model::geo_match_constraint::Builder::default()
+    }
+}
+
 /// See [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
 pub mod geo_match_constraint {
     
@@ -3640,12 +3668,6 @@ pub mod geo_match_constraint {
     }
     
     
-}
-impl GeoMatchConstraint {
-    /// Creates a new builder-style object to manufacture [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
-    pub fn builder() -> crate::model::geo_match_constraint::Builder {
-        crate::model::geo_match_constraint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GeoMatchConstraintValue`, it is important to ensure
@@ -5067,6 +5089,13 @@ impl ByteMatchSetUpdate {
         self.byte_match_tuple.as_ref()
     }
 }
+impl ByteMatchSetUpdate {
+    /// Creates a new builder-style object to manufacture [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
+    pub fn builder() -> crate::model::byte_match_set_update::Builder {
+        crate::model::byte_match_set_update::Builder::default()
+    }
+}
+
 /// See [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
 pub mod byte_match_set_update {
     
@@ -5108,12 +5137,6 @@ pub mod byte_match_set_update {
     }
     
     
-}
-impl ByteMatchSetUpdate {
-    /// Creates a new builder-style object to manufacture [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
-    pub fn builder() -> crate::model::byte_match_set_update::Builder {
-        crate::model::byte_match_set_update::Builder::default()
-    }
 }
 
 /// <note> 
@@ -5293,6 +5316,13 @@ impl ByteMatchTuple {
         self.positional_constraint.as_ref()
     }
 }
+impl ByteMatchTuple {
+    /// Creates a new builder-style object to manufacture [`ByteMatchTuple`](crate::model::ByteMatchTuple).
+    pub fn builder() -> crate::model::byte_match_tuple::Builder {
+        crate::model::byte_match_tuple::Builder::default()
+    }
+}
+
 /// See [`ByteMatchTuple`](crate::model::ByteMatchTuple).
 pub mod byte_match_tuple {
     
@@ -5497,12 +5527,6 @@ pub mod byte_match_tuple {
     
     
 }
-impl ByteMatchTuple {
-    /// Creates a new builder-style object to manufacture [`ByteMatchTuple`](crate::model::ByteMatchTuple).
-    pub fn builder() -> crate::model::byte_match_tuple::Builder {
-        crate::model::byte_match_tuple::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PositionalConstraint`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5627,6 +5651,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -5669,12 +5700,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -5708,6 +5733,13 @@ impl LoggingConfiguration {
         self.redacted_fields.as_deref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
     
@@ -5774,12 +5806,6 @@ pub mod logging_configuration {
     
     
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -5808,6 +5834,13 @@ impl XssMatchSetSummary {
         self.name.as_deref()
     }
 }
+impl XssMatchSetSummary {
+    /// Creates a new builder-style object to manufacture [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
+    pub fn builder() -> crate::model::xss_match_set_summary::Builder {
+        crate::model::xss_match_set_summary::Builder::default()
+    }
+}
+
 /// See [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
 pub mod xss_match_set_summary {
     
@@ -5852,12 +5885,6 @@ pub mod xss_match_set_summary {
     
     
 }
-impl XssMatchSetSummary {
-    /// Creates a new builder-style object to manufacture [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
-    pub fn builder() -> crate::model::xss_match_set_summary::Builder {
-        crate::model::xss_match_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -5886,6 +5913,13 @@ impl WebAclSummary {
         self.name.as_deref()
     }
 }
+impl WebAclSummary {
+    /// Creates a new builder-style object to manufacture [`WebAclSummary`](crate::model::WebAclSummary).
+    pub fn builder() -> crate::model::web_acl_summary::Builder {
+        crate::model::web_acl_summary::Builder::default()
+    }
+}
+
 /// See [`WebAclSummary`](crate::model::WebAclSummary).
 pub mod web_acl_summary {
     
@@ -5930,12 +5964,6 @@ pub mod web_acl_summary {
     
     
 }
-impl WebAclSummary {
-    /// Creates a new builder-style object to manufacture [`WebAclSummary`](crate::model::WebAclSummary).
-    pub fn builder() -> crate::model::web_acl_summary::Builder {
-        crate::model::web_acl_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -5963,6 +5991,13 @@ impl TagInfoForResource {
         self.tag_list.as_deref()
     }
 }
+impl TagInfoForResource {
+    /// Creates a new builder-style object to manufacture [`TagInfoForResource`](crate::model::TagInfoForResource).
+    pub fn builder() -> crate::model::tag_info_for_resource::Builder {
+        crate::model::tag_info_for_resource::Builder::default()
+    }
+}
+
 /// See [`TagInfoForResource`](crate::model::TagInfoForResource).
 pub mod tag_info_for_resource {
     
@@ -6011,12 +6046,6 @@ pub mod tag_info_for_resource {
     
     
 }
-impl TagInfoForResource {
-    /// Creates a new builder-style object to manufacture [`TagInfoForResource`](crate::model::TagInfoForResource).
-    pub fn builder() -> crate::model::tag_info_for_resource::Builder {
-        crate::model::tag_info_for_resource::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6050,6 +6079,13 @@ impl SubscribedRuleGroupSummary {
         self.metric_name.as_deref()
     }
 }
+impl SubscribedRuleGroupSummary {
+    /// Creates a new builder-style object to manufacture [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
+    pub fn builder() -> crate::model::subscribed_rule_group_summary::Builder {
+        crate::model::subscribed_rule_group_summary::Builder::default()
+    }
+}
+
 /// See [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
 pub mod subscribed_rule_group_summary {
     
@@ -6104,12 +6140,6 @@ pub mod subscribed_rule_group_summary {
     
     
 }
-impl SubscribedRuleGroupSummary {
-    /// Creates a new builder-style object to manufacture [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
-    pub fn builder() -> crate::model::subscribed_rule_group_summary::Builder {
-        crate::model::subscribed_rule_group_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6138,6 +6168,13 @@ impl SqlInjectionMatchSetSummary {
         self.name.as_deref()
     }
 }
+impl SqlInjectionMatchSetSummary {
+    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
+    pub fn builder() -> crate::model::sql_injection_match_set_summary::Builder {
+        crate::model::sql_injection_match_set_summary::Builder::default()
+    }
+}
+
 /// See [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
 pub mod sql_injection_match_set_summary {
     
@@ -6182,12 +6219,6 @@ pub mod sql_injection_match_set_summary {
     
     
 }
-impl SqlInjectionMatchSetSummary {
-    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
-    pub fn builder() -> crate::model::sql_injection_match_set_summary::Builder {
-        crate::model::sql_injection_match_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6216,6 +6247,13 @@ impl SizeConstraintSetSummary {
         self.name.as_deref()
     }
 }
+impl SizeConstraintSetSummary {
+    /// Creates a new builder-style object to manufacture [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
+    pub fn builder() -> crate::model::size_constraint_set_summary::Builder {
+        crate::model::size_constraint_set_summary::Builder::default()
+    }
+}
+
 /// See [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
 pub mod size_constraint_set_summary {
     
@@ -6260,12 +6298,6 @@ pub mod size_constraint_set_summary {
     
     
 }
-impl SizeConstraintSetSummary {
-    /// Creates a new builder-style object to manufacture [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
-    pub fn builder() -> crate::model::size_constraint_set_summary::Builder {
-        crate::model::size_constraint_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6294,6 +6326,13 @@ impl RuleSummary {
         self.name.as_deref()
     }
 }
+impl RuleSummary {
+    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
+    pub fn builder() -> crate::model::rule_summary::Builder {
+        crate::model::rule_summary::Builder::default()
+    }
+}
+
 /// See [`RuleSummary`](crate::model::RuleSummary).
 pub mod rule_summary {
     
@@ -6338,12 +6377,6 @@ pub mod rule_summary {
     
     
 }
-impl RuleSummary {
-    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
-    pub fn builder() -> crate::model::rule_summary::Builder {
-        crate::model::rule_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6372,6 +6405,13 @@ impl RuleGroupSummary {
         self.name.as_deref()
     }
 }
+impl RuleGroupSummary {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSummary`](crate::model::RuleGroupSummary).
+    pub fn builder() -> crate::model::rule_group_summary::Builder {
+        crate::model::rule_group_summary::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSummary`](crate::model::RuleGroupSummary).
 pub mod rule_group_summary {
     
@@ -6416,12 +6456,6 @@ pub mod rule_group_summary {
     
     
 }
-impl RuleGroupSummary {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSummary`](crate::model::RuleGroupSummary).
-    pub fn builder() -> crate::model::rule_group_summary::Builder {
-        crate::model::rule_group_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6450,6 +6484,13 @@ impl RegexPatternSetSummary {
         self.name.as_deref()
     }
 }
+impl RegexPatternSetSummary {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
+    pub fn builder() -> crate::model::regex_pattern_set_summary::Builder {
+        crate::model::regex_pattern_set_summary::Builder::default()
+    }
+}
+
 /// See [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
 pub mod regex_pattern_set_summary {
     
@@ -6494,12 +6535,6 @@ pub mod regex_pattern_set_summary {
     
     
 }
-impl RegexPatternSetSummary {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
-    pub fn builder() -> crate::model::regex_pattern_set_summary::Builder {
-        crate::model::regex_pattern_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6528,6 +6563,13 @@ impl RegexMatchSetSummary {
         self.name.as_deref()
     }
 }
+impl RegexMatchSetSummary {
+    /// Creates a new builder-style object to manufacture [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
+    pub fn builder() -> crate::model::regex_match_set_summary::Builder {
+        crate::model::regex_match_set_summary::Builder::default()
+    }
+}
+
 /// See [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
 pub mod regex_match_set_summary {
     
@@ -6572,12 +6614,6 @@ pub mod regex_match_set_summary {
     
     
 }
-impl RegexMatchSetSummary {
-    /// Creates a new builder-style object to manufacture [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
-    pub fn builder() -> crate::model::regex_match_set_summary::Builder {
-        crate::model::regex_match_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6604,6 +6640,13 @@ impl IpSetSummary {
         self.name.as_deref()
     }
 }
+impl IpSetSummary {
+    /// Creates a new builder-style object to manufacture [`IpSetSummary`](crate::model::IpSetSummary).
+    pub fn builder() -> crate::model::ip_set_summary::Builder {
+        crate::model::ip_set_summary::Builder::default()
+    }
+}
+
 /// See [`IpSetSummary`](crate::model::IpSetSummary).
 pub mod ip_set_summary {
     
@@ -6646,12 +6689,6 @@ pub mod ip_set_summary {
     
     
 }
-impl IpSetSummary {
-    /// Creates a new builder-style object to manufacture [`IpSetSummary`](crate::model::IpSetSummary).
-    pub fn builder() -> crate::model::ip_set_summary::Builder {
-        crate::model::ip_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6678,6 +6715,13 @@ impl GeoMatchSetSummary {
         self.name.as_deref()
     }
 }
+impl GeoMatchSetSummary {
+    /// Creates a new builder-style object to manufacture [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
+    pub fn builder() -> crate::model::geo_match_set_summary::Builder {
+        crate::model::geo_match_set_summary::Builder::default()
+    }
+}
+
 /// See [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
 pub mod geo_match_set_summary {
     
@@ -6720,12 +6764,6 @@ pub mod geo_match_set_summary {
     
     
 }
-impl GeoMatchSetSummary {
-    /// Creates a new builder-style object to manufacture [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
-    pub fn builder() -> crate::model::geo_match_set_summary::Builder {
-        crate::model::geo_match_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6754,6 +6792,13 @@ impl ByteMatchSetSummary {
         self.name.as_deref()
     }
 }
+impl ByteMatchSetSummary {
+    /// Creates a new builder-style object to manufacture [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
+    pub fn builder() -> crate::model::byte_match_set_summary::Builder {
+        crate::model::byte_match_set_summary::Builder::default()
+    }
+}
+
 /// See [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
 pub mod byte_match_set_summary {
     
@@ -6798,12 +6843,6 @@ pub mod byte_match_set_summary {
     
     
 }
-impl ByteMatchSetSummary {
-    /// Creates a new builder-style object to manufacture [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
-    pub fn builder() -> crate::model::byte_match_set_summary::Builder {
-        crate::model::byte_match_set_summary::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6839,6 +6878,13 @@ impl XssMatchSet {
         self.xss_match_tuples.as_deref()
     }
 }
+impl XssMatchSet {
+    /// Creates a new builder-style object to manufacture [`XssMatchSet`](crate::model::XssMatchSet).
+    pub fn builder() -> crate::model::xss_match_set::Builder {
+        crate::model::xss_match_set::Builder::default()
+    }
+}
+
 /// See [`XssMatchSet`](crate::model::XssMatchSet).
 pub mod xss_match_set {
     
@@ -6901,12 +6947,6 @@ pub mod xss_match_set {
     
     
 }
-impl XssMatchSet {
-    /// Creates a new builder-style object to manufacture [`XssMatchSet`](crate::model::XssMatchSet).
-    pub fn builder() -> crate::model::xss_match_set::Builder {
-        crate::model::xss_match_set::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -6963,6 +7003,13 @@ impl WebAcl {
         self.web_acl_arn.as_deref()
     }
 }
+impl WebAcl {
+    /// Creates a new builder-style object to manufacture [`WebAcl`](crate::model::WebAcl).
+    pub fn builder() -> crate::model::web_acl::Builder {
+        crate::model::web_acl::Builder::default()
+    }
+}
+
 /// See [`WebAcl`](crate::model::WebAcl).
 pub mod web_acl {
     
@@ -7061,12 +7108,6 @@ pub mod web_acl {
     
     
 }
-impl WebAcl {
-    /// Creates a new builder-style object to manufacture [`WebAcl`](crate::model::WebAcl).
-    pub fn builder() -> crate::model::web_acl::Builder {
-        crate::model::web_acl::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7102,6 +7143,13 @@ impl SqlInjectionMatchSet {
         self.sql_injection_match_tuples.as_deref()
     }
 }
+impl SqlInjectionMatchSet {
+    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
+    pub fn builder() -> crate::model::sql_injection_match_set::Builder {
+        crate::model::sql_injection_match_set::Builder::default()
+    }
+}
+
 /// See [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
 pub mod sql_injection_match_set {
     
@@ -7164,12 +7212,6 @@ pub mod sql_injection_match_set {
     
     
 }
-impl SqlInjectionMatchSet {
-    /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
-    pub fn builder() -> crate::model::sql_injection_match_set::Builder {
-        crate::model::sql_injection_match_set::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7205,6 +7247,13 @@ impl SizeConstraintSet {
         self.size_constraints.as_deref()
     }
 }
+impl SizeConstraintSet {
+    /// Creates a new builder-style object to manufacture [`SizeConstraintSet`](crate::model::SizeConstraintSet).
+    pub fn builder() -> crate::model::size_constraint_set::Builder {
+        crate::model::size_constraint_set::Builder::default()
+    }
+}
+
 /// See [`SizeConstraintSet`](crate::model::SizeConstraintSet).
 pub mod size_constraint_set {
     
@@ -7267,12 +7316,6 @@ pub mod size_constraint_set {
     
     
 }
-impl SizeConstraintSet {
-    /// Creates a new builder-style object to manufacture [`SizeConstraintSet`](crate::model::SizeConstraintSet).
-    pub fn builder() -> crate::model::size_constraint_set::Builder {
-        crate::model::size_constraint_set::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7301,6 +7344,13 @@ impl TimeWindow {
         self.end_time.as_ref()
     }
 }
+impl TimeWindow {
+    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
+    pub fn builder() -> crate::model::time_window::Builder {
+        crate::model::time_window::Builder::default()
+    }
+}
+
 /// See [`TimeWindow`](crate::model::TimeWindow).
 pub mod time_window {
     
@@ -7342,12 +7392,6 @@ pub mod time_window {
     }
     
     
-}
-impl TimeWindow {
-    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
-    pub fn builder() -> crate::model::time_window::Builder {
-        crate::model::time_window::Builder::default()
-    }
 }
 
 /// <note> 
@@ -7396,6 +7440,13 @@ impl SampledHttpRequest {
         self.rule_within_rule_group.as_deref()
     }
 }
+impl SampledHttpRequest {
+    /// Creates a new builder-style object to manufacture [`SampledHttpRequest`](crate::model::SampledHttpRequest).
+    pub fn builder() -> crate::model::sampled_http_request::Builder {
+        crate::model::sampled_http_request::Builder::default()
+    }
+}
+
 /// See [`SampledHttpRequest`](crate::model::SampledHttpRequest).
 pub mod sampled_http_request {
     
@@ -7475,12 +7526,6 @@ pub mod sampled_http_request {
     
     
 }
-impl SampledHttpRequest {
-    /// Creates a new builder-style object to manufacture [`SampledHttpRequest`](crate::model::SampledHttpRequest).
-    pub fn builder() -> crate::model::sampled_http_request::Builder {
-        crate::model::sampled_http_request::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7543,6 +7588,13 @@ impl HttpRequest {
         self.headers.as_deref()
     }
 }
+impl HttpRequest {
+    /// Creates a new builder-style object to manufacture [`HttpRequest`](crate::model::HttpRequest).
+    pub fn builder() -> crate::model::http_request::Builder {
+        crate::model::http_request::Builder::default()
+    }
+}
+
 /// See [`HttpRequest`](crate::model::HttpRequest).
 pub mod http_request {
     
@@ -7647,12 +7699,6 @@ pub mod http_request {
     
     
 }
-impl HttpRequest {
-    /// Creates a new builder-style object to manufacture [`HttpRequest`](crate::model::HttpRequest).
-    pub fn builder() -> crate::model::http_request::Builder {
-        crate::model::http_request::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7679,6 +7725,13 @@ impl HttpHeader {
         self.value.as_deref()
     }
 }
+impl HttpHeader {
+    /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
+    pub fn builder() -> crate::model::http_header::Builder {
+        crate::model::http_header::Builder::default()
+    }
+}
+
 /// See [`HttpHeader`](crate::model::HttpHeader).
 pub mod http_header {
     
@@ -7721,12 +7774,6 @@ pub mod http_header {
     
     
 }
-impl HttpHeader {
-    /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
-    pub fn builder() -> crate::model::http_header::Builder {
-        crate::model::http_header::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7768,6 +7815,13 @@ impl RuleGroup {
         self.metric_name.as_deref()
     }
 }
+impl RuleGroup {
+    /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
+    pub fn builder() -> crate::model::rule_group::Builder {
+        crate::model::rule_group::Builder::default()
+    }
+}
+
 /// See [`RuleGroup`](crate::model::RuleGroup).
 pub mod rule_group {
     
@@ -7824,12 +7878,6 @@ pub mod rule_group {
     
     
 }
-impl RuleGroup {
-    /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
-    pub fn builder() -> crate::model::rule_group::Builder {
-        crate::model::rule_group::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7877,6 +7925,13 @@ impl Rule {
         self.predicates.as_deref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
     
@@ -7951,12 +8006,6 @@ pub mod rule {
     
     
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -7992,6 +8041,13 @@ impl RegexPatternSet {
         self.regex_pattern_strings.as_deref()
     }
 }
+impl RegexPatternSet {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSet`](crate::model::RegexPatternSet).
+    pub fn builder() -> crate::model::regex_pattern_set::Builder {
+        crate::model::regex_pattern_set::Builder::default()
+    }
+}
+
 /// See [`RegexPatternSet`](crate::model::RegexPatternSet).
 pub mod regex_pattern_set {
     
@@ -8054,12 +8110,6 @@ pub mod regex_pattern_set {
     
     
 }
-impl RegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSet`](crate::model::RegexPatternSet).
-    pub fn builder() -> crate::model::regex_pattern_set::Builder {
-        crate::model::regex_pattern_set::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -8106,6 +8156,13 @@ impl RegexMatchSet {
         self.regex_match_tuples.as_deref()
     }
 }
+impl RegexMatchSet {
+    /// Creates a new builder-style object to manufacture [`RegexMatchSet`](crate::model::RegexMatchSet).
+    pub fn builder() -> crate::model::regex_match_set::Builder {
+        crate::model::regex_match_set::Builder::default()
+    }
+}
+
 /// See [`RegexMatchSet`](crate::model::RegexMatchSet).
 pub mod regex_match_set {
     
@@ -8178,12 +8235,6 @@ pub mod regex_match_set {
     
     
 }
-impl RegexMatchSet {
-    /// Creates a new builder-style object to manufacture [`RegexMatchSet`](crate::model::RegexMatchSet).
-    pub fn builder() -> crate::model::regex_match_set::Builder {
-        crate::model::regex_match_set::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -8244,6 +8295,13 @@ impl RateBasedRule {
         self.rate_limit
     }
 }
+impl RateBasedRule {
+    /// Creates a new builder-style object to manufacture [`RateBasedRule`](crate::model::RateBasedRule).
+    pub fn builder() -> crate::model::rate_based_rule::Builder {
+        crate::model::rate_based_rule::Builder::default()
+    }
+}
+
 /// See [`RateBasedRule`](crate::model::RateBasedRule).
 pub mod rate_based_rule {
     
@@ -8340,12 +8398,6 @@ pub mod rate_based_rule {
     }
     
     
-}
-impl RateBasedRule {
-    /// Creates a new builder-style object to manufacture [`RateBasedRule`](crate::model::RateBasedRule).
-    pub fn builder() -> crate::model::rate_based_rule::Builder {
-        crate::model::rate_based_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RateKey`, it is important to ensure
@@ -8460,6 +8512,13 @@ impl IpSet {
         self.ip_set_descriptors.as_deref()
     }
 }
+impl IpSet {
+    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
+    pub fn builder() -> crate::model::ip_set::Builder {
+        crate::model::ip_set::Builder::default()
+    }
+}
+
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
     
@@ -8522,12 +8581,6 @@ pub mod ip_set {
     
     
 }
-impl IpSet {
-    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
-    pub fn builder() -> crate::model::ip_set::Builder {
-        crate::model::ip_set::Builder::default()
-    }
-}
 
 /// <note> 
 /// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
@@ -8563,6 +8616,13 @@ impl GeoMatchSet {
         self.geo_match_constraints.as_deref()
     }
 }
+impl GeoMatchSet {
+    /// Creates a new builder-style object to manufacture [`GeoMatchSet`](crate::model::GeoMatchSet).
+    pub fn builder() -> crate::model::geo_match_set::Builder {
+        crate::model::geo_match_set::Builder::default()
+    }
+}
+
 /// See [`GeoMatchSet`](crate::model::GeoMatchSet).
 pub mod geo_match_set {
     
@@ -8624,12 +8684,6 @@ pub mod geo_match_set {
     }
     
     
-}
-impl GeoMatchSet {
-    /// Creates a new builder-style object to manufacture [`GeoMatchSet`](crate::model::GeoMatchSet).
-    pub fn builder() -> crate::model::geo_match_set::Builder {
-        crate::model::geo_match_set::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeTokenStatus`, it is important to ensure
@@ -8754,6 +8808,13 @@ impl ByteMatchSet {
         self.byte_match_tuples.as_deref()
     }
 }
+impl ByteMatchSet {
+    /// Creates a new builder-style object to manufacture [`ByteMatchSet`](crate::model::ByteMatchSet).
+    pub fn builder() -> crate::model::byte_match_set::Builder {
+        crate::model::byte_match_set::Builder::default()
+    }
+}
+
 /// See [`ByteMatchSet`](crate::model::ByteMatchSet).
 pub mod byte_match_set {
     
@@ -8815,12 +8876,6 @@ pub mod byte_match_set {
     }
     
     
-}
-impl ByteMatchSet {
-    /// Creates a new builder-style object to manufacture [`ByteMatchSet`](crate::model::ByteMatchSet).
-    pub fn builder() -> crate::model::byte_match_set::Builder {
-        crate::model::byte_match_set::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MigrationErrorType`, it is important to ensure

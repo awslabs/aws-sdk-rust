@@ -109,6 +109,13 @@ impl Volume {
         self.open_zfs_configuration.as_ref()
     }
 }
+impl Volume {
+    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
+    pub fn builder() -> crate::model::volume::Builder {
+        crate::model::volume::Builder::default()
+    }
+}
+
 /// See [`Volume`](crate::model::Volume).
 pub mod volume {
     
@@ -301,12 +308,6 @@ pub mod volume {
     
     
 }
-impl Volume {
-    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
-    pub fn builder() -> crate::model::volume::Builder {
-        crate::model::volume::Builder::default()
-    }
-}
 
 /// <p>The configuration of an Amazon FSx for OpenZFS volume.</p>
 #[non_exhaustive]
@@ -423,6 +424,13 @@ impl OpenZfsVolumeConfiguration {
         self.delete_cloned_volumes
     }
 }
+impl OpenZfsVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
+    pub fn builder() -> crate::model::open_zfs_volume_configuration::Builder {
+        crate::model::open_zfs_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
 pub mod open_zfs_volume_configuration {
     
@@ -631,12 +639,6 @@ pub mod open_zfs_volume_configuration {
     
     
 }
-impl OpenZfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
-    pub fn builder() -> crate::model::open_zfs_volume_configuration::Builder {
-        crate::model::open_zfs_volume_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for how much storage a user or group can use on the volume. </p>
 #[non_exhaustive]
@@ -666,6 +668,13 @@ impl OpenZfsUserOrGroupQuota {
         self.storage_capacity_quota_gi_b
     }
 }
+impl OpenZfsUserOrGroupQuota {
+    /// Creates a new builder-style object to manufacture [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
+    pub fn builder() -> crate::model::open_zfs_user_or_group_quota::Builder {
+        crate::model::open_zfs_user_or_group_quota::Builder::default()
+    }
+}
+
 /// See [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
 pub mod open_zfs_user_or_group_quota {
     
@@ -719,12 +728,6 @@ pub mod open_zfs_user_or_group_quota {
     }
     
     
-}
-impl OpenZfsUserOrGroupQuota {
-    /// Creates a new builder-style object to manufacture [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
-    pub fn builder() -> crate::model::open_zfs_user_or_group_quota::Builder {
-        crate::model::open_zfs_user_or_group_quota::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OpenZfsQuotaType`, it is important to ensure
@@ -823,6 +826,13 @@ impl OpenZfsNfsExport {
         self.client_configurations.as_deref()
     }
 }
+impl OpenZfsNfsExport {
+    /// Creates a new builder-style object to manufacture [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
+    pub fn builder() -> crate::model::open_zfs_nfs_export::Builder {
+        crate::model::open_zfs_nfs_export::Builder::default()
+    }
+}
+
 /// See [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
 pub mod open_zfs_nfs_export {
     
@@ -859,12 +869,6 @@ pub mod open_zfs_nfs_export {
     
     
 }
-impl OpenZfsNfsExport {
-    /// Creates a new builder-style object to manufacture [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
-    pub fn builder() -> crate::model::open_zfs_nfs_export::Builder {
-        crate::model::open_zfs_nfs_export::Builder::default()
-    }
-}
 
 /// <p>Specifies who can mount an OpenZFS file system and the options available while mounting the file system.</p>
 #[non_exhaustive]
@@ -895,6 +899,13 @@ impl OpenZfsClientConfiguration {
         self.options.as_deref()
     }
 }
+impl OpenZfsClientConfiguration {
+    /// Creates a new builder-style object to manufacture [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
+    pub fn builder() -> crate::model::open_zfs_client_configuration::Builder {
+        crate::model::open_zfs_client_configuration::Builder::default()
+    }
+}
+
 /// See [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
 pub mod open_zfs_client_configuration {
     
@@ -951,12 +962,6 @@ pub mod open_zfs_client_configuration {
     
     
 }
-impl OpenZfsClientConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
-    pub fn builder() -> crate::model::open_zfs_client_configuration::Builder {
-        crate::model::open_zfs_client_configuration::Builder::default()
-    }
-}
 
 /// <p>The snapshot configuration to use when creating an OpenZFS volume from a snapshot.</p>
 #[non_exhaustive]
@@ -987,6 +992,13 @@ impl OpenZfsOriginSnapshotConfiguration {
         self.copy_strategy.as_ref()
     }
 }
+impl OpenZfsOriginSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
+    pub fn builder() -> crate::model::open_zfs_origin_snapshot_configuration::Builder {
+        crate::model::open_zfs_origin_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
 pub mod open_zfs_origin_snapshot_configuration {
     
@@ -1036,12 +1048,6 @@ pub mod open_zfs_origin_snapshot_configuration {
     }
     
     
-}
-impl OpenZfsOriginSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
-    pub fn builder() -> crate::model::open_zfs_origin_snapshot_configuration::Builder {
-        crate::model::open_zfs_origin_snapshot_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OpenZfsCopyStrategy`, it is important to ensure
@@ -1318,6 +1324,13 @@ impl AdministrativeAction {
         self.target_snapshot_values.as_ref()
     }
 }
+impl AdministrativeAction {
+    /// Creates a new builder-style object to manufacture [`AdministrativeAction`](crate::model::AdministrativeAction).
+    pub fn builder() -> crate::model::administrative_action::Builder {
+        crate::model::administrative_action::Builder::default()
+    }
+}
+
 /// See [`AdministrativeAction`](crate::model::AdministrativeAction).
 pub mod administrative_action {
     
@@ -1474,12 +1487,6 @@ pub mod administrative_action {
     
     
 }
-impl AdministrativeAction {
-    /// Creates a new builder-style object to manufacture [`AdministrativeAction`](crate::model::AdministrativeAction).
-    pub fn builder() -> crate::model::administrative_action::Builder {
-        crate::model::administrative_action::Builder::default()
-    }
-}
 
 /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
 #[non_exhaustive]
@@ -1563,6 +1570,13 @@ impl Snapshot {
         self.administrative_actions.as_deref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
     
@@ -1713,12 +1727,6 @@ pub mod snapshot {
     
     
 }
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
-    }
-}
 
 /// <p>Specifies a key-value pair for a resource tag.</p>
 #[non_exhaustive]
@@ -1741,6 +1749,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1783,12 +1798,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Describes why a resource lifecycle state changed.</p>
 #[non_exhaustive]
@@ -1804,6 +1813,13 @@ impl LifecycleTransitionReason {
         self.message.as_deref()
     }
 }
+impl LifecycleTransitionReason {
+    /// Creates a new builder-style object to manufacture [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
+    pub fn builder() -> crate::model::lifecycle_transition_reason::Builder {
+        crate::model::lifecycle_transition_reason::Builder::default()
+    }
+}
+
 /// See [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
 pub mod lifecycle_transition_reason {
     
@@ -1833,12 +1849,6 @@ pub mod lifecycle_transition_reason {
     }
     
     
-}
-impl LifecycleTransitionReason {
-    /// Creates a new builder-style object to manufacture [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
-    pub fn builder() -> crate::model::lifecycle_transition_reason::Builder {
-        crate::model::lifecycle_transition_reason::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnapshotLifecycle`, it is important to ensure
@@ -1947,6 +1957,13 @@ impl AdministrativeActionFailureDetails {
         self.message.as_deref()
     }
 }
+impl AdministrativeActionFailureDetails {
+    /// Creates a new builder-style object to manufacture [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
+    pub fn builder() -> crate::model::administrative_action_failure_details::Builder {
+        crate::model::administrative_action_failure_details::Builder::default()
+    }
+}
+
 /// See [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
 pub mod administrative_action_failure_details {
     
@@ -1976,12 +1993,6 @@ pub mod administrative_action_failure_details {
     }
     
     
-}
-impl AdministrativeActionFailureDetails {
-    /// Creates a new builder-style object to manufacture [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
-    pub fn builder() -> crate::model::administrative_action_failure_details::Builder {
-        crate::model::administrative_action_failure_details::Builder::default()
-    }
 }
 
 /// <p>A description of a specific Amazon FSx file system.</p>
@@ -2172,6 +2183,13 @@ impl FileSystem {
         self.open_zfs_configuration.as_ref()
     }
 }
+impl FileSystem {
+    /// Creates a new builder-style object to manufacture [`FileSystem`](crate::model::FileSystem).
+    pub fn builder() -> crate::model::file_system::Builder {
+        crate::model::file_system::Builder::default()
+    }
+}
+
 /// See [`FileSystem`](crate::model::FileSystem).
 pub mod file_system {
     
@@ -2500,12 +2518,6 @@ pub mod file_system {
     
     
 }
-impl FileSystem {
-    /// Creates a new builder-style object to manufacture [`FileSystem`](crate::model::FileSystem).
-    pub fn builder() -> crate::model::file_system::Builder {
-        crate::model::file_system::Builder::default()
-    }
-}
 
 /// <p>The configuration for the Amazon FSx for OpenZFS file system. </p>
 #[non_exhaustive]
@@ -2583,6 +2595,13 @@ impl OpenZfsFileSystemConfiguration {
         self.root_volume_id.as_deref()
     }
 }
+impl OpenZfsFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
+    pub fn builder() -> crate::model::open_zfs_file_system_configuration::Builder {
+        crate::model::open_zfs_file_system_configuration::Builder::default()
+    }
+}
+
 /// See [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
 pub mod open_zfs_file_system_configuration {
     
@@ -2715,12 +2734,6 @@ pub mod open_zfs_file_system_configuration {
     
     
 }
-impl OpenZfsFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
-    pub fn builder() -> crate::model::open_zfs_file_system_configuration::Builder {
-        crate::model::open_zfs_file_system_configuration::Builder::default()
-    }
-}
 
 /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how the amount was provisioned (by the customer or by the system).</p>
 #[non_exhaustive]
@@ -2743,6 +2756,13 @@ impl DiskIopsConfiguration {
         self.iops
     }
 }
+impl DiskIopsConfiguration {
+    /// Creates a new builder-style object to manufacture [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
+    pub fn builder() -> crate::model::disk_iops_configuration::Builder {
+        crate::model::disk_iops_configuration::Builder::default()
+    }
+}
+
 /// See [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
 pub mod disk_iops_configuration {
     
@@ -2784,12 +2804,6 @@ pub mod disk_iops_configuration {
     }
     
     
-}
-impl DiskIopsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
-    pub fn builder() -> crate::model::disk_iops_configuration::Builder {
-        crate::model::disk_iops_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DiskIopsConfigurationMode`, it is important to ensure
@@ -3053,6 +3067,13 @@ impl OntapFileSystemConfiguration {
         self.weekly_maintenance_start_time.as_deref()
     }
 }
+impl OntapFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
+    pub fn builder() -> crate::model::ontap_file_system_configuration::Builder {
+        crate::model::ontap_file_system_configuration::Builder::default()
+    }
+}
+
 /// See [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
 pub mod ontap_file_system_configuration {
     
@@ -3217,12 +3238,6 @@ pub mod ontap_file_system_configuration {
     
     
 }
-impl OntapFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
-    pub fn builder() -> crate::model::ontap_file_system_configuration::Builder {
-        crate::model::ontap_file_system_configuration::Builder::default()
-    }
-}
 
 /// <p>An Amazon FSx for NetApp ONTAP file system has the following endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
 #[non_exhaustive]
@@ -3245,6 +3260,13 @@ impl FileSystemEndpoints {
         self.management.as_ref()
     }
 }
+impl FileSystemEndpoints {
+    /// Creates a new builder-style object to manufacture [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
+    pub fn builder() -> crate::model::file_system_endpoints::Builder {
+        crate::model::file_system_endpoints::Builder::default()
+    }
+}
+
 /// See [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
 pub mod file_system_endpoints {
     
@@ -3287,12 +3309,6 @@ pub mod file_system_endpoints {
     
     
 }
-impl FileSystemEndpoints {
-    /// Creates a new builder-style object to manufacture [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
-    pub fn builder() -> crate::model::file_system_endpoints::Builder {
-        crate::model::file_system_endpoints::Builder::default()
-    }
-}
 
 /// <p>An Amazon FSx for NetApp ONTAP file system has two endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. They are the <code>Management</code> and <code>Intercluster</code> endpoints.</p>
 #[non_exhaustive]
@@ -3315,6 +3331,13 @@ impl FileSystemEndpoint {
         self.ip_addresses.as_deref()
     }
 }
+impl FileSystemEndpoint {
+    /// Creates a new builder-style object to manufacture [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
+    pub fn builder() -> crate::model::file_system_endpoint::Builder {
+        crate::model::file_system_endpoint::Builder::default()
+    }
+}
+
 /// See [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
 pub mod file_system_endpoint {
     
@@ -3362,12 +3385,6 @@ pub mod file_system_endpoint {
     }
     
     
-}
-impl FileSystemEndpoint {
-    /// Creates a new builder-style object to manufacture [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
-    pub fn builder() -> crate::model::file_system_endpoint::Builder {
-        crate::model::file_system_endpoint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OntapDeploymentType`, it is important to ensure
@@ -3577,6 +3594,13 @@ impl LustreFileSystemConfiguration {
         self.root_squash_configuration.as_ref()
     }
 }
+impl LustreFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
+    pub fn builder() -> crate::model::lustre_file_system_configuration::Builder {
+        crate::model::lustre_file_system_configuration::Builder::default()
+    }
+}
+
 /// See [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
 pub mod lustre_file_system_configuration {
     
@@ -3773,12 +3797,6 @@ pub mod lustre_file_system_configuration {
     
     
 }
-impl LustreFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
-    pub fn builder() -> crate::model::lustre_file_system_configuration::Builder {
-        crate::model::lustre_file_system_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for Lustre root squash used to restrict root-level access from clients that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code> parameter to enable root squash. To learn more about Lustre root squash, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html">Lustre root squash</a>.</p> 
 /// <p>You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.</p>
@@ -3820,6 +3838,13 @@ impl LustreRootSquashConfiguration {
         self.no_squash_nids.as_deref()
     }
 }
+impl LustreRootSquashConfiguration {
+    /// Creates a new builder-style object to manufacture [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
+    pub fn builder() -> crate::model::lustre_root_squash_configuration::Builder {
+        crate::model::lustre_root_squash_configuration::Builder::default()
+    }
+}
+
 /// See [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
 pub mod lustre_root_squash_configuration {
     
@@ -3886,12 +3911,6 @@ pub mod lustre_root_squash_configuration {
     
     
 }
-impl LustreRootSquashConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
-    pub fn builder() -> crate::model::lustre_root_squash_configuration::Builder {
-        crate::model::lustre_root_squash_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -3928,6 +3947,13 @@ impl LustreLogConfiguration {
         self.destination.as_deref()
     }
 }
+impl LustreLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
+    pub fn builder() -> crate::model::lustre_log_configuration::Builder {
+        crate::model::lustre_log_configuration::Builder::default()
+    }
+}
+
 /// See [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
 pub mod lustre_log_configuration {
     
@@ -3983,12 +4009,6 @@ pub mod lustre_log_configuration {
     }
     
     
-}
-impl LustreLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
-    pub fn builder() -> crate::model::lustre_log_configuration::Builder {
-        crate::model::lustre_log_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LustreAccessAuditLogLevel`, it is important to ensure
@@ -4417,6 +4437,13 @@ impl DataRepositoryConfiguration {
         self.failure_details.as_ref()
     }
 }
+impl DataRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
+    pub fn builder() -> crate::model::data_repository_configuration::Builder {
+        crate::model::data_repository_configuration::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
 pub mod data_repository_configuration {
     
@@ -4535,12 +4562,6 @@ pub mod data_repository_configuration {
     
     
 }
-impl DataRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
-    pub fn builder() -> crate::model::data_repository_configuration::Builder {
-        crate::model::data_repository_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
 #[non_exhaustive]
@@ -4556,6 +4577,13 @@ impl DataRepositoryFailureDetails {
         self.message.as_deref()
     }
 }
+impl DataRepositoryFailureDetails {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
+    pub fn builder() -> crate::model::data_repository_failure_details::Builder {
+        crate::model::data_repository_failure_details::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
 pub mod data_repository_failure_details {
     
@@ -4585,12 +4613,6 @@ pub mod data_repository_failure_details {
     }
     
     
-}
-impl DataRepositoryFailureDetails {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
-    pub fn builder() -> crate::model::data_repository_failure_details::Builder {
-        crate::model::data_repository_failure_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AutoImportPolicyType`, it is important to ensure
@@ -4912,6 +4934,13 @@ impl WindowsFileSystemConfiguration {
         self.audit_log_configuration.as_ref()
     }
 }
+impl WindowsFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
+    pub fn builder() -> crate::model::windows_file_system_configuration::Builder {
+        crate::model::windows_file_system_configuration::Builder::default()
+    }
+}
+
 /// See [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
 pub mod windows_file_system_configuration {
     
@@ -5130,12 +5159,6 @@ pub mod windows_file_system_configuration {
     
     
 }
-impl WindowsFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
-    pub fn builder() -> crate::model::windows_file_system_configuration::Builder {
-        crate::model::windows_file_system_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/file-access-auditing.html"> File access auditing</a>.</p>
 #[non_exhaustive]
@@ -5193,6 +5216,13 @@ impl WindowsAuditLogConfiguration {
         self.audit_log_destination.as_deref()
     }
 }
+impl WindowsAuditLogConfiguration {
+    /// Creates a new builder-style object to manufacture [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
+    pub fn builder() -> crate::model::windows_audit_log_configuration::Builder {
+        crate::model::windows_audit_log_configuration::Builder::default()
+    }
+}
+
 /// See [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
 pub mod windows_audit_log_configuration {
     
@@ -5274,12 +5304,6 @@ pub mod windows_audit_log_configuration {
     }
     
     
-}
-impl WindowsAuditLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
-    pub fn builder() -> crate::model::windows_audit_log_configuration::Builder {
-        crate::model::windows_audit_log_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WindowsAccessAuditLogLevel`, it is important to ensure
@@ -5423,6 +5447,13 @@ impl Alias {
         self.lifecycle.as_ref()
     }
 }
+impl Alias {
+    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
+    pub fn builder() -> crate::model::alias::Builder {
+        crate::model::alias::Builder::default()
+    }
+}
+
 /// See [`Alias`](crate::model::Alias).
 pub mod alias {
     
@@ -5492,12 +5523,6 @@ pub mod alias {
     }
     
     
-}
-impl Alias {
-    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
-    pub fn builder() -> crate::model::alias::Builder {
-        crate::model::alias::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AliasLifecycle`, it is important to ensure
@@ -5808,6 +5833,13 @@ impl SelfManagedActiveDirectoryAttributes {
         self.dns_ips.as_deref()
     }
 }
+impl SelfManagedActiveDirectoryAttributes {
+    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
+    pub fn builder() -> crate::model::self_managed_active_directory_attributes::Builder {
+        crate::model::self_managed_active_directory_attributes::Builder::default()
+    }
+}
+
 /// See [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
 pub mod self_managed_active_directory_attributes {
     
@@ -5891,12 +5923,6 @@ pub mod self_managed_active_directory_attributes {
     }
     
     
-}
-impl SelfManagedActiveDirectoryAttributes {
-    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
-    pub fn builder() -> crate::model::self_managed_active_directory_attributes::Builder {
-        crate::model::self_managed_active_directory_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StorageType`, it is important to ensure
@@ -5995,6 +6021,13 @@ impl FileSystemFailureDetails {
         self.message.as_deref()
     }
 }
+impl FileSystemFailureDetails {
+    /// Creates a new builder-style object to manufacture [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
+    pub fn builder() -> crate::model::file_system_failure_details::Builder {
+        crate::model::file_system_failure_details::Builder::default()
+    }
+}
+
 /// See [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
 pub mod file_system_failure_details {
     
@@ -6024,12 +6057,6 @@ pub mod file_system_failure_details {
     }
     
     
-}
-impl FileSystemFailureDetails {
-    /// Creates a new builder-style object to manufacture [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
-    pub fn builder() -> crate::model::file_system_failure_details::Builder {
-        crate::model::file_system_failure_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FileSystemLifecycle`, it is important to ensure
@@ -6721,6 +6748,13 @@ impl OntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
 }
+impl OntapVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
+    pub fn builder() -> crate::model::ontap_volume_configuration::Builder {
+        crate::model::ontap_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
 pub mod ontap_volume_configuration {
     
@@ -6919,12 +6953,6 @@ pub mod ontap_volume_configuration {
     
     
 }
-impl OntapVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
-    pub fn builder() -> crate::model::ontap_volume_configuration::Builder {
-        crate::model::ontap_volume_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OntapVolumeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7059,6 +7087,13 @@ impl TieringPolicy {
         self.name.as_ref()
     }
 }
+impl TieringPolicy {
+    /// Creates a new builder-style object to manufacture [`TieringPolicy`](crate::model::TieringPolicy).
+    pub fn builder() -> crate::model::tiering_policy::Builder {
+        crate::model::tiering_policy::Builder::default()
+    }
+}
+
 /// See [`TieringPolicy`](crate::model::TieringPolicy).
 pub mod tiering_policy {
     
@@ -7112,12 +7147,6 @@ pub mod tiering_policy {
     }
     
     
-}
-impl TieringPolicy {
-    /// Creates a new builder-style object to manufacture [`TieringPolicy`](crate::model::TieringPolicy).
-    pub fn builder() -> crate::model::tiering_policy::Builder {
-        crate::model::tiering_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TieringPolicyName`, it is important to ensure
@@ -7559,6 +7588,13 @@ impl UpdateOpenZfsVolumeConfiguration {
         self.read_only
     }
 }
+impl UpdateOpenZfsVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
+    pub fn builder() -> crate::model::update_open_zfs_volume_configuration::Builder {
+        crate::model::update_open_zfs_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
 pub mod update_open_zfs_volume_configuration {
     
@@ -7683,12 +7719,6 @@ pub mod update_open_zfs_volume_configuration {
     
     
 }
-impl UpdateOpenZfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
-    pub fn builder() -> crate::model::update_open_zfs_volume_configuration::Builder {
-        crate::model::update_open_zfs_volume_configuration::Builder::default()
-    }
-}
 
 /// <p>Used to specify changes to the ONTAP configuration for the volume you are updating.</p>
 #[non_exhaustive]
@@ -7760,6 +7790,13 @@ impl UpdateOntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
 }
+impl UpdateOntapVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
+    pub fn builder() -> crate::model::update_ontap_volume_configuration::Builder {
+        crate::model::update_ontap_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
 pub mod update_ontap_volume_configuration {
     
@@ -7876,12 +7913,6 @@ pub mod update_ontap_volume_configuration {
     
     
 }
-impl UpdateOntapVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
-    pub fn builder() -> crate::model::update_ontap_volume_configuration::Builder {
-        crate::model::update_ontap_volume_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
 #[non_exhaustive]
@@ -7997,6 +8028,13 @@ impl StorageVirtualMachine {
         self.root_volume_security_style.as_ref()
     }
 }
+impl StorageVirtualMachine {
+    /// Creates a new builder-style object to manufacture [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
+    pub fn builder() -> crate::model::storage_virtual_machine::Builder {
+        crate::model::storage_virtual_machine::Builder::default()
+    }
+}
+
 /// See [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
 pub mod storage_virtual_machine {
     
@@ -8192,12 +8230,6 @@ pub mod storage_virtual_machine {
     }
     
     
-}
-impl StorageVirtualMachine {
-    /// Creates a new builder-style object to manufacture [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
-    pub fn builder() -> crate::model::storage_virtual_machine::Builder {
-        crate::model::storage_virtual_machine::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StorageVirtualMachineRootVolumeSecurityStyle`, it is important to ensure
@@ -8516,6 +8548,13 @@ impl SvmEndpoints {
         self.smb.as_ref()
     }
 }
+impl SvmEndpoints {
+    /// Creates a new builder-style object to manufacture [`SvmEndpoints`](crate::model::SvmEndpoints).
+    pub fn builder() -> crate::model::svm_endpoints::Builder {
+        crate::model::svm_endpoints::Builder::default()
+    }
+}
+
 /// See [`SvmEndpoints`](crate::model::SvmEndpoints).
 pub mod svm_endpoints {
     
@@ -8582,12 +8621,6 @@ pub mod svm_endpoints {
     
     
 }
-impl SvmEndpoints {
-    /// Creates a new builder-style object to manufacture [`SvmEndpoints`](crate::model::SvmEndpoints).
-    pub fn builder() -> crate::model::svm_endpoints::Builder {
-        crate::model::svm_endpoints::Builder::default()
-    }
-}
 
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has four endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
 #[non_exhaustive]
@@ -8610,6 +8643,13 @@ impl SvmEndpoint {
         self.ip_addresses.as_deref()
     }
 }
+impl SvmEndpoint {
+    /// Creates a new builder-style object to manufacture [`SvmEndpoint`](crate::model::SvmEndpoint).
+    pub fn builder() -> crate::model::svm_endpoint::Builder {
+        crate::model::svm_endpoint::Builder::default()
+    }
+}
+
 /// See [`SvmEndpoint`](crate::model::SvmEndpoint).
 pub mod svm_endpoint {
     
@@ -8658,12 +8698,6 @@ pub mod svm_endpoint {
     
     
 }
-impl SvmEndpoint {
-    /// Creates a new builder-style object to manufacture [`SvmEndpoint`](crate::model::SvmEndpoint).
-    pub fn builder() -> crate::model::svm_endpoint::Builder {
-        crate::model::svm_endpoint::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of the Microsoft Active Directory (AD) directory to which the Amazon FSx for ONTAP storage virtual machine (SVM) is joined. Pleae note, account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
@@ -8686,6 +8720,13 @@ impl SvmActiveDirectoryConfiguration {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
+impl SvmActiveDirectoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
+    pub fn builder() -> crate::model::svm_active_directory_configuration::Builder {
+        crate::model::svm_active_directory_configuration::Builder::default()
+    }
+}
+
 /// See [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
 pub mod svm_active_directory_configuration {
     
@@ -8728,12 +8769,6 @@ pub mod svm_active_directory_configuration {
     
     
 }
-impl SvmActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
-    pub fn builder() -> crate::model::svm_active_directory_configuration::Builder {
-        crate::model::svm_active_directory_configuration::Builder::default()
-    }
-}
 
 /// <p>Updates the Microsoft Active Directory (AD) configuration of an SVM joined to an AD. Please note, account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
@@ -8749,6 +8784,13 @@ impl UpdateSvmActiveDirectoryConfiguration {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
+impl UpdateSvmActiveDirectoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
+    pub fn builder() -> crate::model::update_svm_active_directory_configuration::Builder {
+        crate::model::update_svm_active_directory_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
 pub mod update_svm_active_directory_configuration {
     
@@ -8778,12 +8820,6 @@ pub mod update_svm_active_directory_configuration {
     }
     
     
-}
-impl UpdateSvmActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
-    pub fn builder() -> crate::model::update_svm_active_directory_configuration::Builder {
-        crate::model::update_svm_active_directory_configuration::Builder::default()
-    }
 }
 
 /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
@@ -8823,6 +8859,13 @@ impl  std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates  {
         formatter.finish()
     }
 }
+impl SelfManagedActiveDirectoryConfigurationUpdates {
+    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
+    pub fn builder() -> crate::model::self_managed_active_directory_configuration_updates::Builder {
+        crate::model::self_managed_active_directory_configuration_updates::Builder::default()
+    }
+}
+
 /// See [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
 pub mod self_managed_active_directory_configuration_updates {
     
@@ -8891,12 +8934,6 @@ pub mod self_managed_active_directory_configuration_updates {
     }
     
     
-}
-impl SelfManagedActiveDirectoryConfigurationUpdates {
-    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
-    pub fn builder() -> crate::model::self_managed_active_directory_configuration_updates::Builder {
-        crate::model::self_managed_active_directory_configuration_updates::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceLimit`, it is important to ensure
@@ -9094,6 +9131,13 @@ impl UpdateFileSystemOpenZfsConfiguration {
         self.disk_iops_configuration.as_ref()
     }
 }
+impl UpdateFileSystemOpenZfsConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
+    pub fn builder() -> crate::model::update_file_system_open_zfs_configuration::Builder {
+        crate::model::update_file_system_open_zfs_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
 pub mod update_file_system_open_zfs_configuration {
     
@@ -9210,12 +9254,6 @@ pub mod update_file_system_open_zfs_configuration {
     
     
 }
-impl UpdateFileSystemOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
-    pub fn builder() -> crate::model::update_file_system_open_zfs_configuration::Builder {
-        crate::model::update_file_system_open_zfs_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
@@ -9300,6 +9338,13 @@ impl  std::fmt::Debug for UpdateFileSystemOntapConfiguration  {
         formatter.finish()
     }
 }
+impl UpdateFileSystemOntapConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
+    pub fn builder() -> crate::model::update_file_system_ontap_configuration::Builder {
+        crate::model::update_file_system_ontap_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
 pub mod update_file_system_ontap_configuration {
     
@@ -9446,12 +9491,6 @@ pub mod update_file_system_ontap_configuration {
     
     
 }
-impl UpdateFileSystemOntapConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
-    pub fn builder() -> crate::model::update_file_system_ontap_configuration::Builder {
-        crate::model::update_file_system_ontap_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -9535,6 +9574,13 @@ impl UpdateFileSystemLustreConfiguration {
         self.root_squash_configuration.as_ref()
     }
 }
+impl UpdateFileSystemLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
+    pub fn builder() -> crate::model::update_file_system_lustre_configuration::Builder {
+        crate::model::update_file_system_lustre_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
 pub mod update_file_system_lustre_configuration {
     
@@ -9663,12 +9709,6 @@ pub mod update_file_system_lustre_configuration {
     
     
 }
-impl UpdateFileSystemLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
-    pub fn builder() -> crate::model::update_file_system_lustre_configuration::Builder {
-        crate::model::update_file_system_lustre_configuration::Builder::default()
-    }
-}
 
 /// <p>The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. An Amazon File Cache is created with Lustre logging enabled by default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't be changed.</p> 
 /// <p>Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.</p>
@@ -9720,6 +9760,13 @@ impl LustreLogCreateConfiguration {
         self.destination.as_deref()
     }
 }
+impl LustreLogCreateConfiguration {
+    /// Creates a new builder-style object to manufacture [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
+    pub fn builder() -> crate::model::lustre_log_create_configuration::Builder {
+        crate::model::lustre_log_create_configuration::Builder::default()
+    }
+}
+
 /// See [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
 pub mod lustre_log_create_configuration {
     
@@ -9790,12 +9837,6 @@ pub mod lustre_log_create_configuration {
     
     
 }
-impl LustreLogCreateConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
-    pub fn builder() -> crate::model::lustre_log_create_configuration::Builder {
-        crate::model::lustre_log_create_configuration::Builder::default()
-    }
-}
 
 /// <p>Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites existing properties with non-null values provided in the request.</p>
 #[non_exhaustive]
@@ -9846,6 +9887,13 @@ impl UpdateFileSystemWindowsConfiguration {
         self.audit_log_configuration.as_ref()
     }
 }
+impl UpdateFileSystemWindowsConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
+    pub fn builder() -> crate::model::update_file_system_windows_configuration::Builder {
+        crate::model::update_file_system_windows_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
 pub mod update_file_system_windows_configuration {
     
@@ -9936,12 +9984,6 @@ pub mod update_file_system_windows_configuration {
     
     
 }
-impl UpdateFileSystemWindowsConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
-    pub fn builder() -> crate::model::update_file_system_windows_configuration::Builder {
-        crate::model::update_file_system_windows_configuration::Builder::default()
-    }
-}
 
 /// <p>The Windows file access auditing configuration used when creating or updating an Amazon FSx for Windows File Server file system.</p>
 #[non_exhaustive]
@@ -10011,6 +10053,13 @@ impl WindowsAuditLogCreateConfiguration {
         self.audit_log_destination.as_deref()
     }
 }
+impl WindowsAuditLogCreateConfiguration {
+    /// Creates a new builder-style object to manufacture [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
+    pub fn builder() -> crate::model::windows_audit_log_create_configuration::Builder {
+        crate::model::windows_audit_log_create_configuration::Builder::default()
+    }
+}
+
 /// See [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
 pub mod windows_audit_log_create_configuration {
     
@@ -10104,12 +10153,6 @@ pub mod windows_audit_log_create_configuration {
     }
     
     
-}
-impl WindowsAuditLogCreateConfiguration {
-    /// Creates a new builder-style object to manufacture [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
-    pub fn builder() -> crate::model::windows_audit_log_create_configuration::Builder {
-        crate::model::windows_audit_log_create_configuration::Builder::default()
-    }
 }
 
 /// <p>A description of a specific Amazon File Cache resource, which is a response object from the <code>DescribeFileCaches</code> operation.</p>
@@ -10245,6 +10288,13 @@ impl FileCache {
         self.data_repository_association_ids.as_deref()
     }
 }
+impl FileCache {
+    /// Creates a new builder-style object to manufacture [`FileCache`](crate::model::FileCache).
+    pub fn builder() -> crate::model::file_cache::Builder {
+        crate::model::file_cache::Builder::default()
+    }
+}
+
 /// See [`FileCache`](crate::model::FileCache).
 pub mod file_cache {
     
@@ -10487,12 +10537,6 @@ pub mod file_cache {
     
     
 }
-impl FileCache {
-    /// Creates a new builder-style object to manufacture [`FileCache`](crate::model::FileCache).
-    pub fn builder() -> crate::model::file_cache::Builder {
-        crate::model::file_cache::Builder::default()
-    }
-}
 
 /// <p>The configuration for the Amazon File Cache resource.</p>
 #[non_exhaustive]
@@ -10549,6 +10593,13 @@ impl FileCacheLustreConfiguration {
         self.log_configuration.as_ref()
     }
 }
+impl FileCacheLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
+    pub fn builder() -> crate::model::file_cache_lustre_configuration::Builder {
+        crate::model::file_cache_lustre_configuration::Builder::default()
+    }
+}
+
 /// See [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
 pub mod file_cache_lustre_configuration {
     
@@ -10645,12 +10696,6 @@ pub mod file_cache_lustre_configuration {
     
     
 }
-impl FileCacheLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`FileCacheLustreConfiguration`](crate::model::FileCacheLustreConfiguration).
-    pub fn builder() -> crate::model::file_cache_lustre_configuration::Builder {
-        crate::model::file_cache_lustre_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT.</p>
 #[non_exhaustive]
@@ -10666,6 +10711,13 @@ impl FileCacheLustreMetadataConfiguration {
         self.storage_capacity
     }
 }
+impl FileCacheLustreMetadataConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
+    pub fn builder() -> crate::model::file_cache_lustre_metadata_configuration::Builder {
+        crate::model::file_cache_lustre_metadata_configuration::Builder::default()
+    }
+}
+
 /// See [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
 pub mod file_cache_lustre_metadata_configuration {
     
@@ -10695,12 +10747,6 @@ pub mod file_cache_lustre_metadata_configuration {
     }
     
     
-}
-impl FileCacheLustreMetadataConfiguration {
-    /// Creates a new builder-style object to manufacture [`FileCacheLustreMetadataConfiguration`](crate::model::FileCacheLustreMetadataConfiguration).
-    pub fn builder() -> crate::model::file_cache_lustre_metadata_configuration::Builder {
-        crate::model::file_cache_lustre_metadata_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FileCacheLustreDeploymentType`, it is important to ensure
@@ -10794,6 +10840,13 @@ impl FileCacheFailureDetails {
         self.message.as_deref()
     }
 }
+impl FileCacheFailureDetails {
+    /// Creates a new builder-style object to manufacture [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
+    pub fn builder() -> crate::model::file_cache_failure_details::Builder {
+        crate::model::file_cache_failure_details::Builder::default()
+    }
+}
+
 /// See [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
 pub mod file_cache_failure_details {
     
@@ -10823,12 +10876,6 @@ pub mod file_cache_failure_details {
     }
     
     
-}
-impl FileCacheFailureDetails {
-    /// Creates a new builder-style object to manufacture [`FileCacheFailureDetails`](crate::model::FileCacheFailureDetails).
-    pub fn builder() -> crate::model::file_cache_failure_details::Builder {
-        crate::model::file_cache_failure_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FileCacheLifecycle`, it is important to ensure
@@ -11025,6 +11072,13 @@ impl UpdateFileCacheLustreConfiguration {
         self.weekly_maintenance_start_time.as_deref()
     }
 }
+impl UpdateFileCacheLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
+    pub fn builder() -> crate::model::update_file_cache_lustre_configuration::Builder {
+        crate::model::update_file_cache_lustre_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
 pub mod update_file_cache_lustre_configuration {
     
@@ -11060,12 +11114,6 @@ pub mod update_file_cache_lustre_configuration {
     }
     
     
-}
-impl UpdateFileCacheLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileCacheLustreConfiguration`](crate::model::UpdateFileCacheLustreConfiguration).
-    pub fn builder() -> crate::model::update_file_cache_lustre_configuration::Builder {
-        crate::model::update_file_cache_lustre_configuration::Builder::default()
-    }
 }
 
 /// <p>The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket or an Amazon File Cache resource to an Amazon S3 bucket or an NFS file system. The data repository association configuration object is returned in the response of the following operations:</p> 
@@ -11247,6 +11295,13 @@ impl DataRepositoryAssociation {
         self.nfs.as_ref()
     }
 }
+impl DataRepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
+    pub fn builder() -> crate::model::data_repository_association::Builder {
+        crate::model::data_repository_association::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
 pub mod data_repository_association {
     
@@ -11523,12 +11578,6 @@ pub mod data_repository_association {
     
     
 }
-impl DataRepositoryAssociation {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
-    pub fn builder() -> crate::model::data_repository_association::Builder {
-        crate::model::data_repository_association::Builder::default()
-    }
-}
 
 /// <p>The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.</p>
 #[non_exhaustive]
@@ -11558,6 +11607,13 @@ impl NfsDataRepositoryConfiguration {
         self.auto_export_policy.as_ref()
     }
 }
+impl NfsDataRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
+    pub fn builder() -> crate::model::nfs_data_repository_configuration::Builder {
+        crate::model::nfs_data_repository_configuration::Builder::default()
+    }
+}
+
 /// See [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
 pub mod nfs_data_repository_configuration {
     
@@ -11618,12 +11674,6 @@ pub mod nfs_data_repository_configuration {
     
     
 }
-impl NfsDataRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`NfsDataRepositoryConfiguration`](crate::model::NfsDataRepositoryConfiguration).
-    pub fn builder() -> crate::model::nfs_data_repository_configuration::Builder {
-        crate::model::nfs_data_repository_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file.</p> 
 /// <p>This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.</p>
@@ -11652,6 +11702,13 @@ impl AutoExportPolicy {
         self.events.as_deref()
     }
 }
+impl AutoExportPolicy {
+    /// Creates a new builder-style object to manufacture [`AutoExportPolicy`](crate::model::AutoExportPolicy).
+    pub fn builder() -> crate::model::auto_export_policy::Builder {
+        crate::model::auto_export_policy::Builder::default()
+    }
+}
+
 /// See [`AutoExportPolicy`](crate::model::AutoExportPolicy).
 pub mod auto_export_policy {
     
@@ -11699,12 +11756,6 @@ pub mod auto_export_policy {
     }
     
     
-}
-impl AutoExportPolicy {
-    /// Creates a new builder-style object to manufacture [`AutoExportPolicy`](crate::model::AutoExportPolicy).
-    pub fn builder() -> crate::model::auto_export_policy::Builder {
-        crate::model::auto_export_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventType`, it is important to ensure
@@ -11894,6 +11945,13 @@ impl S3DataRepositoryConfiguration {
         self.auto_export_policy.as_ref()
     }
 }
+impl S3DataRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
+    pub fn builder() -> crate::model::s3_data_repository_configuration::Builder {
+        crate::model::s3_data_repository_configuration::Builder::default()
+    }
+}
+
 /// See [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
 pub mod s3_data_repository_configuration {
     
@@ -11936,12 +11994,6 @@ pub mod s3_data_repository_configuration {
     
     
 }
-impl S3DataRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
-    pub fn builder() -> crate::model::s3_data_repository_configuration::Builder {
-        crate::model::s3_data_repository_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your Amazon FSx for Lustre file system as you modify objects in a linked S3 bucket.</p> 
 /// <p>The <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.</p>
@@ -11970,6 +12022,13 @@ impl AutoImportPolicy {
         self.events.as_deref()
     }
 }
+impl AutoImportPolicy {
+    /// Creates a new builder-style object to manufacture [`AutoImportPolicy`](crate::model::AutoImportPolicy).
+    pub fn builder() -> crate::model::auto_import_policy::Builder {
+        crate::model::auto_import_policy::Builder::default()
+    }
+}
+
 /// See [`AutoImportPolicy`](crate::model::AutoImportPolicy).
 pub mod auto_import_policy {
     
@@ -12017,12 +12076,6 @@ pub mod auto_import_policy {
     }
     
     
-}
-impl AutoImportPolicy {
-    /// Creates a new builder-style object to manufacture [`AutoImportPolicy`](crate::model::AutoImportPolicy).
-    pub fn builder() -> crate::model::auto_import_policy::Builder {
-        crate::model::auto_import_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RestoreOpenZfsVolumeOption`, it is important to ensure
@@ -12128,6 +12181,13 @@ impl VolumeFilter {
         self.values.as_deref()
     }
 }
+impl VolumeFilter {
+    /// Creates a new builder-style object to manufacture [`VolumeFilter`](crate::model::VolumeFilter).
+    pub fn builder() -> crate::model::volume_filter::Builder {
+        crate::model::volume_filter::Builder::default()
+    }
+}
+
 /// See [`VolumeFilter`](crate::model::VolumeFilter).
 pub mod volume_filter {
     
@@ -12175,12 +12235,6 @@ pub mod volume_filter {
     }
     
     
-}
-impl VolumeFilter {
-    /// Creates a new builder-style object to manufacture [`VolumeFilter`](crate::model::VolumeFilter).
-    pub fn builder() -> crate::model::volume_filter::Builder {
-        crate::model::volume_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VolumeFilterName`, it is important to ensure
@@ -12286,6 +12340,13 @@ impl StorageVirtualMachineFilter {
         self.values.as_deref()
     }
 }
+impl StorageVirtualMachineFilter {
+    /// Creates a new builder-style object to manufacture [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
+    pub fn builder() -> crate::model::storage_virtual_machine_filter::Builder {
+        crate::model::storage_virtual_machine_filter::Builder::default()
+    }
+}
+
 /// See [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
 pub mod storage_virtual_machine_filter {
     
@@ -12333,12 +12394,6 @@ pub mod storage_virtual_machine_filter {
     }
     
     
-}
-impl StorageVirtualMachineFilter {
-    /// Creates a new builder-style object to manufacture [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
-    pub fn builder() -> crate::model::storage_virtual_machine_filter::Builder {
-        crate::model::storage_virtual_machine_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StorageVirtualMachineFilterName`, it is important to ensure
@@ -12439,6 +12494,13 @@ impl SnapshotFilter {
         self.values.as_deref()
     }
 }
+impl SnapshotFilter {
+    /// Creates a new builder-style object to manufacture [`SnapshotFilter`](crate::model::SnapshotFilter).
+    pub fn builder() -> crate::model::snapshot_filter::Builder {
+        crate::model::snapshot_filter::Builder::default()
+    }
+}
+
 /// See [`SnapshotFilter`](crate::model::SnapshotFilter).
 pub mod snapshot_filter {
     
@@ -12486,12 +12548,6 @@ pub mod snapshot_filter {
     }
     
     
-}
-impl SnapshotFilter {
-    /// Creates a new builder-style object to manufacture [`SnapshotFilter`](crate::model::SnapshotFilter).
-    pub fn builder() -> crate::model::snapshot_filter::Builder {
-        crate::model::snapshot_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnapshotFilterName`, it is important to ensure
@@ -12720,6 +12776,13 @@ impl DataRepositoryTask {
         self.file_cache_id.as_deref()
     }
 }
+impl DataRepositoryTask {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTask`](crate::model::DataRepositoryTask).
+    pub fn builder() -> crate::model::data_repository_task::Builder {
+        crate::model::data_repository_task::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryTask`](crate::model::DataRepositoryTask).
 pub mod data_repository_task {
     
@@ -12962,12 +13025,6 @@ pub mod data_repository_task {
     
     
 }
-impl DataRepositoryTask {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTask`](crate::model::DataRepositoryTask).
-    pub fn builder() -> crate::model::data_repository_task::Builder {
-        crate::model::data_repository_task::Builder::default()
-    }
-}
 
 /// <p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>
 #[non_exhaustive]
@@ -13004,6 +13061,13 @@ impl CompletionReport {
         self.scope.as_ref()
     }
 }
+impl CompletionReport {
+    /// Creates a new builder-style object to manufacture [`CompletionReport`](crate::model::CompletionReport).
+    pub fn builder() -> crate::model::completion_report::Builder {
+        crate::model::completion_report::Builder::default()
+    }
+}
+
 /// See [`CompletionReport`](crate::model::CompletionReport).
 pub mod completion_report {
     
@@ -13069,12 +13133,6 @@ pub mod completion_report {
     }
     
     
-}
-impl CompletionReport {
-    /// Creates a new builder-style object to manufacture [`CompletionReport`](crate::model::CompletionReport).
-    pub fn builder() -> crate::model::completion_report::Builder {
-        crate::model::completion_report::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReportScope`, it is important to ensure
@@ -13273,6 +13331,13 @@ impl DataRepositoryTaskStatus {
         self.released_capacity
     }
 }
+impl DataRepositoryTaskStatus {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
+    pub fn builder() -> crate::model::data_repository_task_status::Builder {
+        crate::model::data_repository_task_status::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
 pub mod data_repository_task_status {
     
@@ -13351,12 +13416,6 @@ pub mod data_repository_task_status {
     
     
 }
-impl DataRepositoryTaskStatus {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
-    pub fn builder() -> crate::model::data_repository_task_status::Builder {
-        crate::model::data_repository_task_status::Builder::default()
-    }
-}
 
 /// <p>Provides information about why a data repository task failed. Only populated when the task <code>Lifecycle</code> is set to <code>FAILED</code>.</p>
 #[non_exhaustive]
@@ -13372,6 +13431,13 @@ impl DataRepositoryTaskFailureDetails {
         self.message.as_deref()
     }
 }
+impl DataRepositoryTaskFailureDetails {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
+    pub fn builder() -> crate::model::data_repository_task_failure_details::Builder {
+        crate::model::data_repository_task_failure_details::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
 pub mod data_repository_task_failure_details {
     
@@ -13401,12 +13467,6 @@ pub mod data_repository_task_failure_details {
     }
     
     
-}
-impl DataRepositoryTaskFailureDetails {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
-    pub fn builder() -> crate::model::data_repository_task_failure_details::Builder {
-        crate::model::data_repository_task_failure_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataRepositoryTaskType`, it is important to ensure
@@ -13632,6 +13692,13 @@ impl DataRepositoryTaskFilter {
         self.values.as_deref()
     }
 }
+impl DataRepositoryTaskFilter {
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
+    pub fn builder() -> crate::model::data_repository_task_filter::Builder {
+        crate::model::data_repository_task_filter::Builder::default()
+    }
+}
+
 /// See [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
 pub mod data_repository_task_filter {
     
@@ -13687,12 +13754,6 @@ pub mod data_repository_task_filter {
     }
     
     
-}
-impl DataRepositoryTaskFilter {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
-    pub fn builder() -> crate::model::data_repository_task_filter::Builder {
-        crate::model::data_repository_task_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataRepositoryTaskFilterName`, it is important to ensure
@@ -13808,6 +13869,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -13855,12 +13923,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FilterName`, it is important to ensure
@@ -14107,6 +14169,13 @@ impl Backup {
         self.volume.as_ref()
     }
 }
+impl Backup {
+    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
+    pub fn builder() -> crate::model::backup::Builder {
+        crate::model::backup::Builder::default()
+    }
+}
+
 /// See [`Backup`](crate::model::Backup).
 pub mod backup {
     
@@ -14341,12 +14410,6 @@ pub mod backup {
     
     
 }
-impl Backup {
-    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
-    pub fn builder() -> crate::model::backup::Builder {
-        crate::model::backup::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -14458,6 +14521,13 @@ impl ActiveDirectoryBackupAttributes {
         self.resource_arn.as_deref()
     }
 }
+impl ActiveDirectoryBackupAttributes {
+    /// Creates a new builder-style object to manufacture [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
+    pub fn builder() -> crate::model::active_directory_backup_attributes::Builder {
+        crate::model::active_directory_backup_attributes::Builder::default()
+    }
+}
+
 /// See [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
 pub mod active_directory_backup_attributes {
     
@@ -14511,12 +14581,6 @@ pub mod active_directory_backup_attributes {
     }
     
     
-}
-impl ActiveDirectoryBackupAttributes {
-    /// Creates a new builder-style object to manufacture [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
-    pub fn builder() -> crate::model::active_directory_backup_attributes::Builder {
-        crate::model::active_directory_backup_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BackupType`, it is important to ensure
@@ -14620,6 +14684,13 @@ impl BackupFailureDetails {
         self.message.as_deref()
     }
 }
+impl BackupFailureDetails {
+    /// Creates a new builder-style object to manufacture [`BackupFailureDetails`](crate::model::BackupFailureDetails).
+    pub fn builder() -> crate::model::backup_failure_details::Builder {
+        crate::model::backup_failure_details::Builder::default()
+    }
+}
+
 /// See [`BackupFailureDetails`](crate::model::BackupFailureDetails).
 pub mod backup_failure_details {
     
@@ -14649,12 +14720,6 @@ pub mod backup_failure_details {
     }
     
     
-}
-impl BackupFailureDetails {
-    /// Creates a new builder-style object to manufacture [`BackupFailureDetails`](crate::model::BackupFailureDetails).
-    pub fn builder() -> crate::model::backup_failure_details::Builder {
-        crate::model::backup_failure_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BackupLifecycle`, it is important to ensure
@@ -14817,6 +14882,13 @@ impl DeleteVolumeOntapResponse {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteVolumeOntapResponse {
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
+    pub fn builder() -> crate::model::delete_volume_ontap_response::Builder {
+        crate::model::delete_volume_ontap_response::Builder::default()
+    }
+}
+
 /// See [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
 pub mod delete_volume_ontap_response {
     
@@ -14865,12 +14937,6 @@ pub mod delete_volume_ontap_response {
     
     
 }
-impl DeleteVolumeOntapResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
-    pub fn builder() -> crate::model::delete_volume_ontap_response::Builder {
-        crate::model::delete_volume_ontap_response::Builder::default()
-    }
-}
 
 /// <p>A value that specifies whether to delete all child volumes and snapshots. </p>
 #[non_exhaustive]
@@ -14886,6 +14952,13 @@ impl DeleteVolumeOpenZfsConfiguration {
         self.options.as_deref()
     }
 }
+impl DeleteVolumeOpenZfsConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
+    pub fn builder() -> crate::model::delete_volume_open_zfs_configuration::Builder {
+        crate::model::delete_volume_open_zfs_configuration::Builder::default()
+    }
+}
+
 /// See [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
 pub mod delete_volume_open_zfs_configuration {
     
@@ -14921,12 +14994,6 @@ pub mod delete_volume_open_zfs_configuration {
     }
     
     
-}
-impl DeleteVolumeOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
-    pub fn builder() -> crate::model::delete_volume_open_zfs_configuration::Builder {
-        crate::model::delete_volume_open_zfs_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeleteOpenZfsVolumeOption`, it is important to ensure
@@ -15027,6 +15094,13 @@ impl DeleteVolumeOntapConfiguration {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteVolumeOntapConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
+    pub fn builder() -> crate::model::delete_volume_ontap_configuration::Builder {
+        crate::model::delete_volume_ontap_configuration::Builder::default()
+    }
+}
+
 /// See [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
 pub mod delete_volume_ontap_configuration {
     
@@ -15075,12 +15149,6 @@ pub mod delete_volume_ontap_configuration {
     
     
 }
-impl DeleteVolumeOntapConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
-    pub fn builder() -> crate::model::delete_volume_ontap_configuration::Builder {
-        crate::model::delete_volume_ontap_configuration::Builder::default()
-    }
-}
 
 /// <p>The response object for the Amazon FSx for OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -15103,6 +15171,13 @@ impl DeleteFileSystemOpenZfsResponse {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteFileSystemOpenZfsResponse {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
+    pub fn builder() -> crate::model::delete_file_system_open_zfs_response::Builder {
+        crate::model::delete_file_system_open_zfs_response::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
 pub mod delete_file_system_open_zfs_response {
     
@@ -15151,12 +15226,6 @@ pub mod delete_file_system_open_zfs_response {
     
     
 }
-impl DeleteFileSystemOpenZfsResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
-    pub fn builder() -> crate::model::delete_file_system_open_zfs_response::Builder {
-        crate::model::delete_file_system_open_zfs_response::Builder::default()
-    }
-}
 
 /// <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -15179,6 +15248,13 @@ impl DeleteFileSystemLustreResponse {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteFileSystemLustreResponse {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
+    pub fn builder() -> crate::model::delete_file_system_lustre_response::Builder {
+        crate::model::delete_file_system_lustre_response::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
 pub mod delete_file_system_lustre_response {
     
@@ -15227,12 +15303,6 @@ pub mod delete_file_system_lustre_response {
     
     
 }
-impl DeleteFileSystemLustreResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
-    pub fn builder() -> crate::model::delete_file_system_lustre_response::Builder {
-        crate::model::delete_file_system_lustre_response::Builder::default()
-    }
-}
 
 /// <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -15255,6 +15325,13 @@ impl DeleteFileSystemWindowsResponse {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteFileSystemWindowsResponse {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
+    pub fn builder() -> crate::model::delete_file_system_windows_response::Builder {
+        crate::model::delete_file_system_windows_response::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
 pub mod delete_file_system_windows_response {
     
@@ -15303,12 +15380,6 @@ pub mod delete_file_system_windows_response {
     
     
 }
-impl DeleteFileSystemWindowsResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
-    pub fn builder() -> crate::model::delete_file_system_windows_response::Builder {
-        crate::model::delete_file_system_windows_response::Builder::default()
-    }
-}
 
 /// <p>The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -15338,6 +15409,13 @@ impl DeleteFileSystemOpenZfsConfiguration {
         self.options.as_deref()
     }
 }
+impl DeleteFileSystemOpenZfsConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
+    pub fn builder() -> crate::model::delete_file_system_open_zfs_configuration::Builder {
+        crate::model::delete_file_system_open_zfs_configuration::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
 pub mod delete_file_system_open_zfs_configuration {
     
@@ -15403,12 +15481,6 @@ pub mod delete_file_system_open_zfs_configuration {
     }
     
     
-}
-impl DeleteFileSystemOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
-    pub fn builder() -> crate::model::delete_file_system_open_zfs_configuration::Builder {
-        crate::model::delete_file_system_open_zfs_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeleteFileSystemOpenZfsOption`, it is important to ensure
@@ -15513,6 +15585,13 @@ impl DeleteFileSystemLustreConfiguration {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteFileSystemLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
+    pub fn builder() -> crate::model::delete_file_system_lustre_configuration::Builder {
+        crate::model::delete_file_system_lustre_configuration::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
 pub mod delete_file_system_lustre_configuration {
     
@@ -15565,12 +15644,6 @@ pub mod delete_file_system_lustre_configuration {
     
     
 }
-impl DeleteFileSystemLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
-    pub fn builder() -> crate::model::delete_file_system_lustre_configuration::Builder {
-        crate::model::delete_file_system_lustre_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
@@ -15593,6 +15666,13 @@ impl DeleteFileSystemWindowsConfiguration {
         self.final_backup_tags.as_deref()
     }
 }
+impl DeleteFileSystemWindowsConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
+    pub fn builder() -> crate::model::delete_file_system_windows_configuration::Builder {
+        crate::model::delete_file_system_windows_configuration::Builder::default()
+    }
+}
+
 /// See [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
 pub mod delete_file_system_windows_configuration {
     
@@ -15640,12 +15720,6 @@ pub mod delete_file_system_windows_configuration {
     }
     
     
-}
-impl DeleteFileSystemWindowsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
-    pub fn builder() -> crate::model::delete_file_system_windows_configuration::Builder {
-        crate::model::delete_file_system_windows_configuration::Builder::default()
-    }
 }
 
 /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
@@ -15778,6 +15852,13 @@ impl CreateOntapVolumeConfiguration {
         self.copy_tags_to_backups
     }
 }
+impl CreateOntapVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
+    pub fn builder() -> crate::model::create_ontap_volume_configuration::Builder {
+        crate::model::create_ontap_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
 pub mod create_ontap_volume_configuration {
     
@@ -15964,12 +16045,6 @@ pub mod create_ontap_volume_configuration {
     
     
 }
-impl CreateOntapVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
-    pub fn builder() -> crate::model::create_ontap_volume_configuration::Builder {
-        crate::model::create_ontap_volume_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InputOntapVolumeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -16144,6 +16219,13 @@ impl CreateOpenZfsVolumeConfiguration {
         self.user_and_group_quotas.as_deref()
     }
 }
+impl CreateOpenZfsVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
+    pub fn builder() -> crate::model::create_open_zfs_volume_configuration::Builder {
+        crate::model::create_open_zfs_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
 pub mod create_open_zfs_volume_configuration {
     
@@ -16308,12 +16390,6 @@ pub mod create_open_zfs_volume_configuration {
     
     
 }
-impl CreateOpenZfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
-    pub fn builder() -> crate::model::create_open_zfs_volume_configuration::Builder {
-        crate::model::create_open_zfs_volume_configuration::Builder::default()
-    }
-}
 
 /// <p>The snapshot configuration to use when creating an OpenZFS volume from a snapshot. </p>
 #[non_exhaustive]
@@ -16344,6 +16420,13 @@ impl CreateOpenZfsOriginSnapshotConfiguration {
         self.copy_strategy.as_ref()
     }
 }
+impl CreateOpenZfsOriginSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
+    pub fn builder() -> crate::model::create_open_zfs_origin_snapshot_configuration::Builder {
+        crate::model::create_open_zfs_origin_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
 pub mod create_open_zfs_origin_snapshot_configuration {
     
@@ -16393,12 +16476,6 @@ pub mod create_open_zfs_origin_snapshot_configuration {
     }
     
     
-}
-impl CreateOpenZfsOriginSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
-    pub fn builder() -> crate::model::create_open_zfs_origin_snapshot_configuration::Builder {
-        crate::model::create_open_zfs_origin_snapshot_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActiveDirectoryErrorType`, it is important to ensure
@@ -16518,6 +16595,13 @@ impl CreateSvmActiveDirectoryConfiguration {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
+impl CreateSvmActiveDirectoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
+    pub fn builder() -> crate::model::create_svm_active_directory_configuration::Builder {
+        crate::model::create_svm_active_directory_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
 pub mod create_svm_active_directory_configuration {
     
@@ -16559,12 +16643,6 @@ pub mod create_svm_active_directory_configuration {
     }
     
     
-}
-impl CreateSvmActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
-    pub fn builder() -> crate::model::create_svm_active_directory_configuration::Builder {
-        crate::model::create_svm_active_directory_configuration::Builder::default()
-    }
 }
 
 /// <p>The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx with your self-managed Microsoft Active Directory</a> or <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.</p>
@@ -16632,6 +16710,13 @@ impl  std::fmt::Debug for SelfManagedActiveDirectoryConfiguration  {
         formatter.finish()
     }
 }
+impl SelfManagedActiveDirectoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
+    pub fn builder() -> crate::model::self_managed_active_directory_configuration::Builder {
+        crate::model::self_managed_active_directory_configuration::Builder::default()
+    }
+}
+
 /// See [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
 pub mod self_managed_active_directory_configuration {
     
@@ -16744,12 +16829,6 @@ pub mod self_managed_active_directory_configuration {
     
     
 }
-impl SelfManagedActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
-    pub fn builder() -> crate::model::self_managed_active_directory_configuration::Builder {
-        crate::model::self_managed_active_directory_configuration::Builder::default()
-    }
-}
 
 /// <p>The Amazon FSx for OpenZFS configuration properties for the file system that you are creating.</p>
 #[non_exhaustive]
@@ -16847,6 +16926,13 @@ impl CreateFileSystemOpenZfsConfiguration {
         self.root_volume_configuration.as_ref()
     }
 }
+impl CreateFileSystemOpenZfsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
+    pub fn builder() -> crate::model::create_file_system_open_zfs_configuration::Builder {
+        crate::model::create_file_system_open_zfs_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
 pub mod create_file_system_open_zfs_configuration {
     
@@ -16999,12 +17085,6 @@ pub mod create_file_system_open_zfs_configuration {
     
     
 }
-impl CreateFileSystemOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
-    pub fn builder() -> crate::model::create_file_system_open_zfs_configuration::Builder {
-        crate::model::create_file_system_open_zfs_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration of an Amazon FSx for OpenZFS root volume.</p>
 #[non_exhaustive]
@@ -17065,6 +17145,13 @@ impl OpenZfsCreateRootVolumeConfiguration {
         self.read_only
     }
 }
+impl OpenZfsCreateRootVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
+    pub fn builder() -> crate::model::open_zfs_create_root_volume_configuration::Builder {
+        crate::model::open_zfs_create_root_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
 pub mod open_zfs_create_root_volume_configuration {
     
@@ -17176,12 +17263,6 @@ pub mod open_zfs_create_root_volume_configuration {
     }
     
     
-}
-impl OpenZfsCreateRootVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
-    pub fn builder() -> crate::model::open_zfs_create_root_volume_configuration::Builder {
-        crate::model::open_zfs_create_root_volume_configuration::Builder::default()
-    }
 }
 
 /// <p>The Lustre configuration for the file system being created.</p> <note> 
@@ -17369,6 +17450,13 @@ impl CreateFileSystemLustreConfiguration {
         self.root_squash_configuration.as_ref()
     }
 }
+impl CreateFileSystemLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
+    pub fn builder() -> crate::model::create_file_system_lustre_configuration::Builder {
+        crate::model::create_file_system_lustre_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
 pub mod create_file_system_lustre_configuration {
     
@@ -17627,12 +17715,6 @@ pub mod create_file_system_lustre_configuration {
     
     
 }
-impl CreateFileSystemLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
-    pub fn builder() -> crate::model::create_file_system_lustre_configuration::Builder {
-        crate::model::create_file_system_lustre_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.</p>
 #[non_exhaustive]
@@ -17748,6 +17830,13 @@ impl CreateFileSystemWindowsConfiguration {
         self.audit_log_configuration.as_ref()
     }
 }
+impl CreateFileSystemWindowsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
+    pub fn builder() -> crate::model::create_file_system_windows_configuration::Builder {
+        crate::model::create_file_system_windows_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
 pub mod create_file_system_windows_configuration {
     
@@ -17934,12 +18023,6 @@ pub mod create_file_system_windows_configuration {
     
     
 }
-impl CreateFileSystemWindowsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
-    pub fn builder() -> crate::model::create_file_system_windows_configuration::Builder {
-        crate::model::create_file_system_windows_configuration::Builder::default()
-    }
-}
 
 /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
 #[non_exhaustive]
@@ -18050,6 +18133,13 @@ impl  std::fmt::Debug for CreateFileSystemOntapConfiguration  {
         formatter.finish()
     }
 }
+impl CreateFileSystemOntapConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
+    pub fn builder() -> crate::model::create_file_system_ontap_configuration::Builder {
+        crate::model::create_file_system_ontap_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
 pub mod create_file_system_ontap_configuration {
     
@@ -18226,12 +18316,6 @@ pub mod create_file_system_ontap_configuration {
     
     
 }
-impl CreateFileSystemOntapConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
-    pub fn builder() -> crate::model::create_file_system_ontap_configuration::Builder {
-        crate::model::create_file_system_ontap_configuration::Builder::default()
-    }
-}
 
 /// <p>The response object for the Amazon File Cache resource being created in the <code>CreateFileCache</code> operation.</p>
 #[non_exhaustive]
@@ -18380,6 +18464,13 @@ impl FileCacheCreating {
         self.data_repository_association_ids.as_deref()
     }
 }
+impl FileCacheCreating {
+    /// Creates a new builder-style object to manufacture [`FileCacheCreating`](crate::model::FileCacheCreating).
+    pub fn builder() -> crate::model::file_cache_creating::Builder {
+        crate::model::file_cache_creating::Builder::default()
+    }
+}
+
 /// See [`FileCacheCreating`](crate::model::FileCacheCreating).
 pub mod file_cache_creating {
     
@@ -18652,12 +18743,6 @@ pub mod file_cache_creating {
     
     
 }
-impl FileCacheCreating {
-    /// Creates a new builder-style object to manufacture [`FileCacheCreating`](crate::model::FileCacheCreating).
-    pub fn builder() -> crate::model::file_cache_creating::Builder {
-        crate::model::file_cache_creating::Builder::default()
-    }
-}
 
 /// <p>The configuration for a data repository association (DRA) to be created during the Amazon File Cache resource creation. The DRA links the cache to either an Amazon S3 bucket or prefix, or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p> 
 /// <p>The DRA does not support automatic import or automatic export.</p>
@@ -18719,6 +18804,13 @@ impl FileCacheDataRepositoryAssociation {
         self.nfs.as_ref()
     }
 }
+impl FileCacheDataRepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
+    pub fn builder() -> crate::model::file_cache_data_repository_association::Builder {
+        crate::model::file_cache_data_repository_association::Builder::default()
+    }
+}
+
 /// See [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
 pub mod file_cache_data_repository_association {
     
@@ -18815,12 +18907,6 @@ pub mod file_cache_data_repository_association {
     
     
 }
-impl FileCacheDataRepositoryAssociation {
-    /// Creates a new builder-style object to manufacture [`FileCacheDataRepositoryAssociation`](crate::model::FileCacheDataRepositoryAssociation).
-    pub fn builder() -> crate::model::file_cache_data_repository_association::Builder {
-        crate::model::file_cache_data_repository_association::Builder::default()
-    }
-}
 
 /// <p>The configuration for an NFS data repository association (DRA) created during the creation of the Amazon File Cache resource.</p>
 #[non_exhaustive]
@@ -18843,6 +18929,13 @@ impl FileCacheNfsConfiguration {
         self.dns_ips.as_deref()
     }
 }
+impl FileCacheNfsConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
+    pub fn builder() -> crate::model::file_cache_nfs_configuration::Builder {
+        crate::model::file_cache_nfs_configuration::Builder::default()
+    }
+}
+
 /// See [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
 pub mod file_cache_nfs_configuration {
     
@@ -18891,12 +18984,6 @@ pub mod file_cache_nfs_configuration {
     
     
 }
-impl FileCacheNfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`FileCacheNfsConfiguration`](crate::model::FileCacheNfsConfiguration).
-    pub fn builder() -> crate::model::file_cache_nfs_configuration::Builder {
-        crate::model::file_cache_nfs_configuration::Builder::default()
-    }
-}
 
 /// <p>The Amazon File Cache configuration for the cache that you are creating.</p>
 #[non_exhaustive]
@@ -18939,6 +19026,13 @@ impl CreateFileCacheLustreConfiguration {
         self.metadata_configuration.as_ref()
     }
 }
+impl CreateFileCacheLustreConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
+    pub fn builder() -> crate::model::create_file_cache_lustre_configuration::Builder {
+        crate::model::create_file_cache_lustre_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
 pub mod create_file_cache_lustre_configuration {
     
@@ -19010,11 +19104,5 @@ pub mod create_file_cache_lustre_configuration {
     }
     
     
-}
-impl CreateFileCacheLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileCacheLustreConfiguration`](crate::model::CreateFileCacheLustreConfiguration).
-    pub fn builder() -> crate::model::create_file_cache_lustre_configuration::Builder {
-        crate::model::create_file_cache_lustre_configuration::Builder::default()
-    }
 }
 

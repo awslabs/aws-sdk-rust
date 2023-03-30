@@ -21,6 +21,13 @@ impl TypedLinkFacetAttributeUpdate {
         self.action.as_ref()
     }
 }
+impl TypedLinkFacetAttributeUpdate {
+    /// Creates a new builder-style object to manufacture [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
+    pub fn builder() -> crate::model::typed_link_facet_attribute_update::Builder {
+        crate::model::typed_link_facet_attribute_update::Builder::default()
+    }
+}
+
 /// See [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
 pub mod typed_link_facet_attribute_update {
     
@@ -62,12 +69,6 @@ pub mod typed_link_facet_attribute_update {
     }
     
     
-}
-impl TypedLinkFacetAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
-    pub fn builder() -> crate::model::typed_link_facet_attribute_update::Builder {
-        crate::model::typed_link_facet_attribute_update::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UpdateActionType`, it is important to ensure
@@ -201,6 +202,13 @@ impl TypedLinkAttributeDefinition {
         self.required_behavior.as_ref()
     }
 }
+impl TypedLinkAttributeDefinition {
+    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
+    pub fn builder() -> crate::model::typed_link_attribute_definition::Builder {
+        crate::model::typed_link_attribute_definition::Builder::default()
+    }
+}
+
 /// See [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
 pub mod typed_link_attribute_definition {
     
@@ -297,12 +305,6 @@ pub mod typed_link_attribute_definition {
     }
     
     
-}
-impl TypedLinkAttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
-    pub fn builder() -> crate::model::typed_link_attribute_definition::Builder {
-        crate::model::typed_link_attribute_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequiredAttributeBehavior`, it is important to ensure
@@ -408,6 +410,13 @@ impl Rule {
         self.parameters.as_ref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
     
@@ -455,12 +464,6 @@ pub mod rule {
     }
     
     
-}
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RuleType`, it is important to ensure
@@ -754,6 +757,13 @@ impl ObjectAttributeUpdate {
         self.object_attribute_action.as_ref()
     }
 }
+impl ObjectAttributeUpdate {
+    /// Creates a new builder-style object to manufacture [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
+    pub fn builder() -> crate::model::object_attribute_update::Builder {
+        crate::model::object_attribute_update::Builder::default()
+    }
+}
+
 /// See [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
 pub mod object_attribute_update {
     
@@ -796,12 +806,6 @@ pub mod object_attribute_update {
     
     
 }
-impl ObjectAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
-    pub fn builder() -> crate::model::object_attribute_update::Builder {
-        crate::model::object_attribute_update::Builder::default()
-    }
-}
 
 /// <p>The action to take on the object attribute.</p>
 #[non_exhaustive]
@@ -824,6 +828,13 @@ impl ObjectAttributeAction {
         self.object_attribute_update_value.as_ref()
     }
 }
+impl ObjectAttributeAction {
+    /// Creates a new builder-style object to manufacture [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
+    pub fn builder() -> crate::model::object_attribute_action::Builder {
+        crate::model::object_attribute_action::Builder::default()
+    }
+}
+
 /// See [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
 pub mod object_attribute_action {
     
@@ -866,12 +877,6 @@ pub mod object_attribute_action {
     
     
 }
-impl ObjectAttributeAction {
-    /// Creates a new builder-style object to manufacture [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
-    pub fn builder() -> crate::model::object_attribute_action::Builder {
-        crate::model::object_attribute_action::Builder::default()
-    }
-}
 
 /// <p>A unique identifier for an attribute.</p>
 #[non_exhaustive]
@@ -901,6 +906,13 @@ impl AttributeKey {
         self.name.as_deref()
     }
 }
+impl AttributeKey {
+    /// Creates a new builder-style object to manufacture [`AttributeKey`](crate::model::AttributeKey).
+    pub fn builder() -> crate::model::attribute_key::Builder {
+        crate::model::attribute_key::Builder::default()
+    }
+}
+
 /// See [`AttributeKey`](crate::model::AttributeKey).
 pub mod attribute_key {
     
@@ -955,12 +967,6 @@ pub mod attribute_key {
     
     
 }
-impl AttributeKey {
-    /// Creates a new builder-style object to manufacture [`AttributeKey`](crate::model::AttributeKey).
-    pub fn builder() -> crate::model::attribute_key::Builder {
-        crate::model::attribute_key::Builder::default()
-    }
-}
 
 /// <p>The reference that identifies an object.</p>
 #[non_exhaustive]
@@ -986,6 +992,13 @@ impl ObjectReference {
         self.selector.as_deref()
     }
 }
+impl ObjectReference {
+    /// Creates a new builder-style object to manufacture [`ObjectReference`](crate::model::ObjectReference).
+    pub fn builder() -> crate::model::object_reference::Builder {
+        crate::model::object_reference::Builder::default()
+    }
+}
+
 /// See [`ObjectReference`](crate::model::ObjectReference).
 pub mod object_reference {
     
@@ -1026,12 +1039,6 @@ pub mod object_reference {
     
     
 }
-impl ObjectReference {
-    /// Creates a new builder-style object to manufacture [`ObjectReference`](crate::model::ObjectReference).
-    pub fn builder() -> crate::model::object_reference::Builder {
-        crate::model::object_reference::Builder::default()
-    }
-}
 
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
@@ -1054,6 +1061,13 @@ impl LinkAttributeUpdate {
         self.attribute_action.as_ref()
     }
 }
+impl LinkAttributeUpdate {
+    /// Creates a new builder-style object to manufacture [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
+    pub fn builder() -> crate::model::link_attribute_update::Builder {
+        crate::model::link_attribute_update::Builder::default()
+    }
+}
+
 /// See [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
 pub mod link_attribute_update {
     
@@ -1096,12 +1110,6 @@ pub mod link_attribute_update {
     
     
 }
-impl LinkAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
-    pub fn builder() -> crate::model::link_attribute_update::Builder {
-        crate::model::link_attribute_update::Builder::default()
-    }
-}
 
 /// <p>The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.</p>
 #[non_exhaustive]
@@ -1124,6 +1132,13 @@ impl LinkAttributeAction {
         self.attribute_update_value.as_ref()
     }
 }
+impl LinkAttributeAction {
+    /// Creates a new builder-style object to manufacture [`LinkAttributeAction`](crate::model::LinkAttributeAction).
+    pub fn builder() -> crate::model::link_attribute_action::Builder {
+        crate::model::link_attribute_action::Builder::default()
+    }
+}
+
 /// See [`LinkAttributeAction`](crate::model::LinkAttributeAction).
 pub mod link_attribute_action {
     
@@ -1166,12 +1181,6 @@ pub mod link_attribute_action {
     
     
 }
-impl LinkAttributeAction {
-    /// Creates a new builder-style object to manufacture [`LinkAttributeAction`](crate::model::LinkAttributeAction).
-    pub fn builder() -> crate::model::link_attribute_action::Builder {
-        crate::model::link_attribute_action::Builder::default()
-    }
-}
 
 /// <p>Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <code>AttachTypedLink</code> API returns a typed link specifier while the <code>DetachTypedLink</code> API accepts one as input. Similarly, the <code>ListIncomingTypedLinks</code> and <code>ListOutgoingTypedLinks</code> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.</p>
 #[non_exhaustive]
@@ -1208,6 +1217,13 @@ impl TypedLinkSpecifier {
         self.identity_attribute_values.as_deref()
     }
 }
+impl TypedLinkSpecifier {
+    /// Creates a new builder-style object to manufacture [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
+    pub fn builder() -> crate::model::typed_link_specifier::Builder {
+        crate::model::typed_link_specifier::Builder::default()
+    }
+}
+
 /// See [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
 pub mod typed_link_specifier {
     
@@ -1280,12 +1296,6 @@ pub mod typed_link_specifier {
     
     
 }
-impl TypedLinkSpecifier {
-    /// Creates a new builder-style object to manufacture [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
-    pub fn builder() -> crate::model::typed_link_specifier::Builder {
-        crate::model::typed_link_specifier::Builder::default()
-    }
-}
 
 /// <p>Identifies the attribute name and value for a typed link.</p>
 #[non_exhaustive]
@@ -1308,6 +1318,13 @@ impl AttributeNameAndValue {
         self.value.as_ref()
     }
 }
+impl AttributeNameAndValue {
+    /// Creates a new builder-style object to manufacture [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
+    pub fn builder() -> crate::model::attribute_name_and_value::Builder {
+        crate::model::attribute_name_and_value::Builder::default()
+    }
+}
+
 /// See [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
 pub mod attribute_name_and_value {
     
@@ -1350,12 +1367,6 @@ pub mod attribute_name_and_value {
     
     
 }
-impl AttributeNameAndValue {
-    /// Creates a new builder-style object to manufacture [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
-    pub fn builder() -> crate::model::attribute_name_and_value::Builder {
-        crate::model::attribute_name_and_value::Builder::default()
-    }
-}
 
 /// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 #[non_exhaustive]
@@ -1378,6 +1389,13 @@ impl TypedLinkSchemaAndFacetName {
         self.typed_link_name.as_deref()
     }
 }
+impl TypedLinkSchemaAndFacetName {
+    /// Creates a new builder-style object to manufacture [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
+    pub fn builder() -> crate::model::typed_link_schema_and_facet_name::Builder {
+        crate::model::typed_link_schema_and_facet_name::Builder::default()
+    }
+}
+
 /// See [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
 pub mod typed_link_schema_and_facet_name {
     
@@ -1419,12 +1437,6 @@ pub mod typed_link_schema_and_facet_name {
     }
     
     
-}
-impl TypedLinkSchemaAndFacetName {
-    /// Creates a new builder-style object to manufacture [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
-    pub fn builder() -> crate::model::typed_link_schema_and_facet_name::Builder {
-        crate::model::typed_link_schema_and_facet_name::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ObjectType`, it is important to ensure
@@ -1540,6 +1552,13 @@ impl FacetAttributeUpdate {
         self.action.as_ref()
     }
 }
+impl FacetAttributeUpdate {
+    /// Creates a new builder-style object to manufacture [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
+    pub fn builder() -> crate::model::facet_attribute_update::Builder {
+        crate::model::facet_attribute_update::Builder::default()
+    }
+}
+
 /// See [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
 pub mod facet_attribute_update {
     
@@ -1582,12 +1601,6 @@ pub mod facet_attribute_update {
     
     
 }
-impl FacetAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
-    pub fn builder() -> crate::model::facet_attribute_update::Builder {
-        crate::model::facet_attribute_update::Builder::default()
-    }
-}
 
 /// <p>An attribute that is associated with the <code>Facet</code>.</p>
 #[non_exhaustive]
@@ -1624,6 +1637,13 @@ impl FacetAttribute {
         self.required_behavior.as_ref()
     }
 }
+impl FacetAttribute {
+    /// Creates a new builder-style object to manufacture [`FacetAttribute`](crate::model::FacetAttribute).
+    pub fn builder() -> crate::model::facet_attribute::Builder {
+        crate::model::facet_attribute::Builder::default()
+    }
+}
+
 /// See [`FacetAttribute`](crate::model::FacetAttribute).
 pub mod facet_attribute {
     
@@ -1690,12 +1710,6 @@ pub mod facet_attribute {
     
     
 }
-impl FacetAttribute {
-    /// Creates a new builder-style object to manufacture [`FacetAttribute`](crate::model::FacetAttribute).
-    pub fn builder() -> crate::model::facet_attribute::Builder {
-        crate::model::facet_attribute::Builder::default()
-    }
-}
 
 /// <p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>
 #[non_exhaustive]
@@ -1718,6 +1732,13 @@ impl FacetAttributeReference {
         self.target_attribute_name.as_deref()
     }
 }
+impl FacetAttributeReference {
+    /// Creates a new builder-style object to manufacture [`FacetAttributeReference`](crate::model::FacetAttributeReference).
+    pub fn builder() -> crate::model::facet_attribute_reference::Builder {
+        crate::model::facet_attribute_reference::Builder::default()
+    }
+}
+
 /// See [`FacetAttributeReference`](crate::model::FacetAttributeReference).
 pub mod facet_attribute_reference {
     
@@ -1760,12 +1781,6 @@ pub mod facet_attribute_reference {
     
     
 }
-impl FacetAttributeReference {
-    /// Creates a new builder-style object to manufacture [`FacetAttributeReference`](crate::model::FacetAttributeReference).
-    pub fn builder() -> crate::model::facet_attribute_reference::Builder {
-        crate::model::facet_attribute_reference::Builder::default()
-    }
-}
 
 /// <p>A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
 #[non_exhaustive]
@@ -1802,6 +1817,13 @@ impl FacetAttributeDefinition {
         self.rules.as_ref()
     }
 }
+impl FacetAttributeDefinition {
+    /// Creates a new builder-style object to manufacture [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
+    pub fn builder() -> crate::model::facet_attribute_definition::Builder {
+        crate::model::facet_attribute_definition::Builder::default()
+    }
+}
+
 /// See [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
 pub mod facet_attribute_definition {
     
@@ -1875,12 +1897,6 @@ pub mod facet_attribute_definition {
     
     
 }
-impl FacetAttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
-    pub fn builder() -> crate::model::facet_attribute_definition::Builder {
-        crate::model::facet_attribute_definition::Builder::default()
-    }
-}
 
 /// <p>The tag structure that contains a tag key and value.</p>
 #[non_exhaustive]
@@ -1903,6 +1919,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1945,12 +1968,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A facet.</p>
 #[non_exhaustive]
@@ -1973,6 +1990,13 @@ impl SchemaFacet {
         self.facet_name.as_deref()
     }
 }
+impl SchemaFacet {
+    /// Creates a new builder-style object to manufacture [`SchemaFacet`](crate::model::SchemaFacet).
+    pub fn builder() -> crate::model::schema_facet::Builder {
+        crate::model::schema_facet::Builder::default()
+    }
+}
+
 /// See [`SchemaFacet`](crate::model::SchemaFacet).
 pub mod schema_facet {
     
@@ -2015,12 +2039,6 @@ pub mod schema_facet {
     
     
 }
-impl SchemaFacet {
-    /// Creates a new builder-style object to manufacture [`SchemaFacet`](crate::model::SchemaFacet).
-    pub fn builder() -> crate::model::schema_facet::Builder {
-        crate::model::schema_facet::Builder::default()
-    }
-}
 
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
@@ -2043,6 +2061,13 @@ impl PolicyToPath {
         self.policies.as_deref()
     }
 }
+impl PolicyToPath {
+    /// Creates a new builder-style object to manufacture [`PolicyToPath`](crate::model::PolicyToPath).
+    pub fn builder() -> crate::model::policy_to_path::Builder {
+        crate::model::policy_to_path::Builder::default()
+    }
+}
+
 /// See [`PolicyToPath`](crate::model::PolicyToPath).
 pub mod policy_to_path {
     
@@ -2091,12 +2116,6 @@ pub mod policy_to_path {
     
     
 }
-impl PolicyToPath {
-    /// Creates a new builder-style object to manufacture [`PolicyToPath`](crate::model::PolicyToPath).
-    pub fn builder() -> crate::model::policy_to_path::Builder {
-        crate::model::policy_to_path::Builder::default()
-    }
-}
 
 /// <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
 #[non_exhaustive]
@@ -2126,6 +2145,13 @@ impl PolicyAttachment {
         self.policy_type.as_deref()
     }
 }
+impl PolicyAttachment {
+    /// Creates a new builder-style object to manufacture [`PolicyAttachment`](crate::model::PolicyAttachment).
+    pub fn builder() -> crate::model::policy_attachment::Builder {
+        crate::model::policy_attachment::Builder::default()
+    }
+}
+
 /// See [`PolicyAttachment`](crate::model::PolicyAttachment).
 pub mod policy_attachment {
     
@@ -2179,12 +2205,6 @@ pub mod policy_attachment {
     }
     
     
-}
-impl PolicyAttachment {
-    /// Creates a new builder-style object to manufacture [`PolicyAttachment`](crate::model::PolicyAttachment).
-    pub fn builder() -> crate::model::policy_attachment::Builder {
-        crate::model::policy_attachment::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConsistencyLevel`, it is important to ensure
@@ -2290,6 +2310,13 @@ impl TypedLinkAttributeRange {
         self.range.as_ref()
     }
 }
+impl TypedLinkAttributeRange {
+    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
+    pub fn builder() -> crate::model::typed_link_attribute_range::Builder {
+        crate::model::typed_link_attribute_range::Builder::default()
+    }
+}
+
 /// See [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
 pub mod typed_link_attribute_range {
     
@@ -2332,12 +2359,6 @@ pub mod typed_link_attribute_range {
     
     
 }
-impl TypedLinkAttributeRange {
-    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
-    pub fn builder() -> crate::model::typed_link_attribute_range::Builder {
-        crate::model::typed_link_attribute_range::Builder::default()
-    }
-}
 
 /// <p>A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.</p>
 #[non_exhaustive]
@@ -2374,6 +2395,13 @@ impl TypedAttributeValueRange {
         self.end_value.as_ref()
     }
 }
+impl TypedAttributeValueRange {
+    /// Creates a new builder-style object to manufacture [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
+    pub fn builder() -> crate::model::typed_attribute_value_range::Builder {
+        crate::model::typed_attribute_value_range::Builder::default()
+    }
+}
+
 /// See [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
 pub mod typed_attribute_value_range {
     
@@ -2439,12 +2467,6 @@ pub mod typed_attribute_value_range {
     }
     
     
-}
-impl TypedAttributeValueRange {
-    /// Creates a new builder-style object to manufacture [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
-    pub fn builder() -> crate::model::typed_attribute_value_range::Builder {
-        crate::model::typed_attribute_value_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RangeMode`, it is important to ensure
@@ -2565,6 +2587,13 @@ impl ObjectIdentifierAndLinkNameTuple {
         self.link_name.as_deref()
     }
 }
+impl ObjectIdentifierAndLinkNameTuple {
+    /// Creates a new builder-style object to manufacture [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
+    pub fn builder() -> crate::model::object_identifier_and_link_name_tuple::Builder {
+        crate::model::object_identifier_and_link_name_tuple::Builder::default()
+    }
+}
+
 /// See [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
 pub mod object_identifier_and_link_name_tuple {
     
@@ -2607,12 +2636,6 @@ pub mod object_identifier_and_link_name_tuple {
     
     
 }
-impl ObjectIdentifierAndLinkNameTuple {
-    /// Creates a new builder-style object to manufacture [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
-    pub fn builder() -> crate::model::object_identifier_and_link_name_tuple::Builder {
-        crate::model::object_identifier_and_link_name_tuple::Builder::default()
-    }
-}
 
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
@@ -2635,6 +2658,13 @@ impl PathToObjectIdentifiers {
         self.object_identifiers.as_deref()
     }
 }
+impl PathToObjectIdentifiers {
+    /// Creates a new builder-style object to manufacture [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
+    pub fn builder() -> crate::model::path_to_object_identifiers::Builder {
+        crate::model::path_to_object_identifiers::Builder::default()
+    }
+}
+
 /// See [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
 pub mod path_to_object_identifiers {
     
@@ -2683,12 +2713,6 @@ pub mod path_to_object_identifiers {
     
     
 }
-impl PathToObjectIdentifiers {
-    /// Creates a new builder-style object to manufacture [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
-    pub fn builder() -> crate::model::path_to_object_identifiers::Builder {
-        crate::model::path_to_object_identifiers::Builder::default()
-    }
-}
 
 /// <p>The combination of an attribute key and an attribute value.</p>
 #[non_exhaustive]
@@ -2711,6 +2735,13 @@ impl AttributeKeyAndValue {
         self.value.as_ref()
     }
 }
+impl AttributeKeyAndValue {
+    /// Creates a new builder-style object to manufacture [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
+    pub fn builder() -> crate::model::attribute_key_and_value::Builder {
+        crate::model::attribute_key_and_value::Builder::default()
+    }
+}
+
 /// See [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
 pub mod attribute_key_and_value {
     
@@ -2753,12 +2784,6 @@ pub mod attribute_key_and_value {
     
     
 }
-impl AttributeKeyAndValue {
-    /// Creates a new builder-style object to manufacture [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
-    pub fn builder() -> crate::model::attribute_key_and_value::Builder {
-        crate::model::attribute_key_and_value::Builder::default()
-    }
-}
 
 /// <p>Represents an index and an attached object.</p>
 #[non_exhaustive]
@@ -2781,6 +2806,13 @@ impl IndexAttachment {
         self.object_identifier.as_deref()
     }
 }
+impl IndexAttachment {
+    /// Creates a new builder-style object to manufacture [`IndexAttachment`](crate::model::IndexAttachment).
+    pub fn builder() -> crate::model::index_attachment::Builder {
+        crate::model::index_attachment::Builder::default()
+    }
+}
+
 /// See [`IndexAttachment`](crate::model::IndexAttachment).
 pub mod index_attachment {
     
@@ -2829,12 +2861,6 @@ pub mod index_attachment {
     
     
 }
-impl IndexAttachment {
-    /// Creates a new builder-style object to manufacture [`IndexAttachment`](crate::model::IndexAttachment).
-    pub fn builder() -> crate::model::index_attachment::Builder {
-        crate::model::index_attachment::Builder::default()
-    }
-}
 
 /// <p>A range of attributes.</p>
 #[non_exhaustive]
@@ -2857,6 +2883,13 @@ impl ObjectAttributeRange {
         self.range.as_ref()
     }
 }
+impl ObjectAttributeRange {
+    /// Creates a new builder-style object to manufacture [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
+    pub fn builder() -> crate::model::object_attribute_range::Builder {
+        crate::model::object_attribute_range::Builder::default()
+    }
+}
+
 /// See [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
 pub mod object_attribute_range {
     
@@ -2899,12 +2932,6 @@ pub mod object_attribute_range {
     
     
 }
-impl ObjectAttributeRange {
-    /// Creates a new builder-style object to manufacture [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
-    pub fn builder() -> crate::model::object_attribute_range::Builder {
-        crate::model::object_attribute_range::Builder::default()
-    }
-}
 
 /// <p>Directory structure that includes the directory name and directory ARN.</p>
 #[non_exhaustive]
@@ -2941,6 +2968,13 @@ impl Directory {
         self.creation_date_time.as_ref()
     }
 }
+impl Directory {
+    /// Creates a new builder-style object to manufacture [`Directory`](crate::model::Directory).
+    pub fn builder() -> crate::model::directory::Builder {
+        crate::model::directory::Builder::default()
+    }
+}
+
 /// See [`Directory`](crate::model::Directory).
 pub mod directory {
     
@@ -3006,12 +3040,6 @@ pub mod directory {
     }
     
     
-}
-impl Directory {
-    /// Creates a new builder-style object to manufacture [`Directory`](crate::model::Directory).
-    pub fn builder() -> crate::model::directory::Builder {
-        crate::model::directory::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DirectoryState`, it is important to ensure
@@ -3129,6 +3157,13 @@ impl Facet {
         self.facet_style.as_ref()
     }
 }
+impl Facet {
+    /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet).
+    pub fn builder() -> crate::model::facet::Builder {
+        crate::model::facet::Builder::default()
+    }
+}
+
 /// See [`Facet`](crate::model::Facet).
 pub mod facet {
     
@@ -3182,12 +3217,6 @@ pub mod facet {
     }
     
     
-}
-impl Facet {
-    /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet).
-    pub fn builder() -> crate::model::facet::Builder {
-        crate::model::facet::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FacetStyle`, it is important to ensure
@@ -3300,6 +3329,13 @@ impl TypedLinkFacet {
         self.identity_attribute_order.as_deref()
     }
 }
+impl TypedLinkFacet {
+    /// Creates a new builder-style object to manufacture [`TypedLinkFacet`](crate::model::TypedLinkFacet).
+    pub fn builder() -> crate::model::typed_link_facet::Builder {
+        crate::model::typed_link_facet::Builder::default()
+    }
+}
+
 /// See [`TypedLinkFacet`](crate::model::TypedLinkFacet).
 pub mod typed_link_facet {
     
@@ -3365,12 +3401,6 @@ pub mod typed_link_facet {
     }
     
     
-}
-impl TypedLinkFacet {
-    /// Creates a new builder-style object to manufacture [`TypedLinkFacet`](crate::model::TypedLinkFacet).
-    pub fn builder() -> crate::model::typed_link_facet::Builder {
-        crate::model::typed_link_facet::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BatchWriteExceptionType`, it is important to ensure
@@ -3647,6 +3677,13 @@ impl BatchWriteOperationResponse {
         self.update_link_attributes.as_ref()
     }
 }
+impl BatchWriteOperationResponse {
+    /// Creates a new builder-style object to manufacture [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
+    pub fn builder() -> crate::model::batch_write_operation_response::Builder {
+        crate::model::batch_write_operation_response::Builder::default()
+    }
+}
+
 /// See [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
 pub mod batch_write_operation_response {
     
@@ -3845,18 +3882,19 @@ pub mod batch_write_operation_response {
     
     
 }
-impl BatchWriteOperationResponse {
-    /// Creates a new builder-style object to manufacture [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
-    pub fn builder() -> crate::model::batch_write_operation_response::Builder {
-        crate::model::batch_write_operation_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>UpdateLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateLinkAttributesResponse  {
 }
+impl BatchUpdateLinkAttributesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
+    pub fn builder() -> crate::model::batch_update_link_attributes_response::Builder {
+        crate::model::batch_update_link_attributes_response::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
 pub mod batch_update_link_attributes_response {
     
@@ -3875,18 +3913,19 @@ pub mod batch_update_link_attributes_response {
     
     
 }
-impl BatchUpdateLinkAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
-    pub fn builder() -> crate::model::batch_update_link_attributes_response::Builder {
-        crate::model::batch_update_link_attributes_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DetachTypedLink</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachTypedLinkResponse  {
 }
+impl BatchDetachTypedLinkResponse {
+    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
+    pub fn builder() -> crate::model::batch_detach_typed_link_response::Builder {
+        crate::model::batch_detach_typed_link_response::Builder::default()
+    }
+}
+
 /// See [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
 pub mod batch_detach_typed_link_response {
     
@@ -3905,12 +3944,6 @@ pub mod batch_detach_typed_link_response {
     
     
 }
-impl BatchDetachTypedLinkResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
-    pub fn builder() -> crate::model::batch_detach_typed_link_response::Builder {
-        crate::model::batch_detach_typed_link_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>AttachTypedLink</code> response operation.</p>
 #[non_exhaustive]
@@ -3926,6 +3959,13 @@ impl BatchAttachTypedLinkResponse {
         self.typed_link_specifier.as_ref()
     }
 }
+impl BatchAttachTypedLinkResponse {
+    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
+    pub fn builder() -> crate::model::batch_attach_typed_link_response::Builder {
+        crate::model::batch_attach_typed_link_response::Builder::default()
+    }
+}
+
 /// See [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
 pub mod batch_attach_typed_link_response {
     
@@ -3956,12 +3996,6 @@ pub mod batch_attach_typed_link_response {
     
     
 }
-impl BatchAttachTypedLinkResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
-    pub fn builder() -> crate::model::batch_attach_typed_link_response::Builder {
-        crate::model::batch_attach_typed_link_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DetachFromIndex</code> response operation.</p>
 #[non_exhaustive]
@@ -3977,6 +4011,13 @@ impl BatchDetachFromIndexResponse {
         self.detached_object_identifier.as_deref()
     }
 }
+impl BatchDetachFromIndexResponse {
+    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
+    pub fn builder() -> crate::model::batch_detach_from_index_response::Builder {
+        crate::model::batch_detach_from_index_response::Builder::default()
+    }
+}
+
 /// See [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
 pub mod batch_detach_from_index_response {
     
@@ -4007,12 +4048,6 @@ pub mod batch_detach_from_index_response {
     
     
 }
-impl BatchDetachFromIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
-    pub fn builder() -> crate::model::batch_detach_from_index_response::Builder {
-        crate::model::batch_detach_from_index_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>AttachToIndex</code> response operation.</p>
 #[non_exhaustive]
@@ -4028,6 +4063,13 @@ impl BatchAttachToIndexResponse {
         self.attached_object_identifier.as_deref()
     }
 }
+impl BatchAttachToIndexResponse {
+    /// Creates a new builder-style object to manufacture [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
+    pub fn builder() -> crate::model::batch_attach_to_index_response::Builder {
+        crate::model::batch_attach_to_index_response::Builder::default()
+    }
+}
+
 /// See [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
 pub mod batch_attach_to_index_response {
     
@@ -4058,12 +4100,6 @@ pub mod batch_attach_to_index_response {
     
     
 }
-impl BatchAttachToIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
-    pub fn builder() -> crate::model::batch_attach_to_index_response::Builder {
-        crate::model::batch_attach_to_index_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>CreateIndex</code> response operation.</p>
 #[non_exhaustive]
@@ -4079,6 +4115,13 @@ impl BatchCreateIndexResponse {
         self.object_identifier.as_deref()
     }
 }
+impl BatchCreateIndexResponse {
+    /// Creates a new builder-style object to manufacture [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
+    pub fn builder() -> crate::model::batch_create_index_response::Builder {
+        crate::model::batch_create_index_response::Builder::default()
+    }
+}
+
 /// See [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
 pub mod batch_create_index_response {
     
@@ -4109,18 +4152,19 @@ pub mod batch_create_index_response {
     
     
 }
-impl BatchCreateIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
-    pub fn builder() -> crate::model::batch_create_index_response::Builder {
-        crate::model::batch_create_index_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DetachPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDetachPolicyResponse  {
 }
+impl BatchDetachPolicyResponse {
+    /// Creates a new builder-style object to manufacture [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
+    pub fn builder() -> crate::model::batch_detach_policy_response::Builder {
+        crate::model::batch_detach_policy_response::Builder::default()
+    }
+}
+
 /// See [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
 pub mod batch_detach_policy_response {
     
@@ -4139,18 +4183,19 @@ pub mod batch_detach_policy_response {
     
     
 }
-impl BatchDetachPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
-    pub fn builder() -> crate::model::batch_detach_policy_response::Builder {
-        crate::model::batch_detach_policy_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>AttachPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAttachPolicyResponse  {
 }
+impl BatchAttachPolicyResponse {
+    /// Creates a new builder-style object to manufacture [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
+    pub fn builder() -> crate::model::batch_attach_policy_response::Builder {
+        crate::model::batch_attach_policy_response::Builder::default()
+    }
+}
+
 /// See [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
 pub mod batch_attach_policy_response {
     
@@ -4169,18 +4214,19 @@ pub mod batch_attach_policy_response {
     
     
 }
-impl BatchAttachPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
-    pub fn builder() -> crate::model::batch_attach_policy_response::Builder {
-        crate::model::batch_attach_policy_response::Builder::default()
-    }
-}
 
 /// <p>An empty result that represents success.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchRemoveFacetFromObjectResponse  {
 }
+impl BatchRemoveFacetFromObjectResponse {
+    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
+    pub fn builder() -> crate::model::batch_remove_facet_from_object_response::Builder {
+        crate::model::batch_remove_facet_from_object_response::Builder::default()
+    }
+}
+
 /// See [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
 pub mod batch_remove_facet_from_object_response {
     
@@ -4199,18 +4245,19 @@ pub mod batch_remove_facet_from_object_response {
     
     
 }
-impl BatchRemoveFacetFromObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
-    pub fn builder() -> crate::model::batch_remove_facet_from_object_response::Builder {
-        crate::model::batch_remove_facet_from_object_response::Builder::default()
-    }
-}
 
 /// <p>The result of a batch add facet to object operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAddFacetToObjectResponse  {
 }
+impl BatchAddFacetToObjectResponse {
+    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
+    pub fn builder() -> crate::model::batch_add_facet_to_object_response::Builder {
+        crate::model::batch_add_facet_to_object_response::Builder::default()
+    }
+}
+
 /// See [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
 pub mod batch_add_facet_to_object_response {
     
@@ -4229,18 +4276,19 @@ pub mod batch_add_facet_to_object_response {
     
     
 }
-impl BatchAddFacetToObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
-    pub fn builder() -> crate::model::batch_add_facet_to_object_response::Builder {
-        crate::model::batch_add_facet_to_object_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DeleteObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteObjectResponse  {
 }
+impl BatchDeleteObjectResponse {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
+    pub fn builder() -> crate::model::batch_delete_object_response::Builder {
+        crate::model::batch_delete_object_response::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
 pub mod batch_delete_object_response {
     
@@ -4259,12 +4307,6 @@ pub mod batch_delete_object_response {
     
     
 }
-impl BatchDeleteObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
-    pub fn builder() -> crate::model::batch_delete_object_response::Builder {
-        crate::model::batch_delete_object_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
 #[non_exhaustive]
@@ -4280,6 +4322,13 @@ impl BatchUpdateObjectAttributesResponse {
         self.object_identifier.as_deref()
     }
 }
+impl BatchUpdateObjectAttributesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
+    pub fn builder() -> crate::model::batch_update_object_attributes_response::Builder {
+        crate::model::batch_update_object_attributes_response::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
 pub mod batch_update_object_attributes_response {
     
@@ -4310,12 +4359,6 @@ pub mod batch_update_object_attributes_response {
     
     
 }
-impl BatchUpdateObjectAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
-    pub fn builder() -> crate::model::batch_update_object_attributes_response::Builder {
-        crate::model::batch_update_object_attributes_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DetachObject</code> response operation.</p>
 #[non_exhaustive]
@@ -4331,6 +4374,13 @@ impl BatchDetachObjectResponse {
         self.detached_object_identifier.as_deref()
     }
 }
+impl BatchDetachObjectResponse {
+    /// Creates a new builder-style object to manufacture [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
+    pub fn builder() -> crate::model::batch_detach_object_response::Builder {
+        crate::model::batch_detach_object_response::Builder::default()
+    }
+}
+
 /// See [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
 pub mod batch_detach_object_response {
     
@@ -4361,12 +4411,6 @@ pub mod batch_detach_object_response {
     
     
 }
-impl BatchDetachObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
-    pub fn builder() -> crate::model::batch_detach_object_response::Builder {
-        crate::model::batch_detach_object_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output batch <code>AttachObject</code> response operation.</p>
 #[non_exhaustive]
@@ -4382,6 +4426,13 @@ impl BatchAttachObjectResponse {
         self.attached_object_identifier.as_deref()
     }
 }
+impl BatchAttachObjectResponse {
+    /// Creates a new builder-style object to manufacture [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
+    pub fn builder() -> crate::model::batch_attach_object_response::Builder {
+        crate::model::batch_attach_object_response::Builder::default()
+    }
+}
+
 /// See [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
 pub mod batch_attach_object_response {
     
@@ -4412,12 +4463,6 @@ pub mod batch_attach_object_response {
     
     
 }
-impl BatchAttachObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
-    pub fn builder() -> crate::model::batch_attach_object_response::Builder {
-        crate::model::batch_attach_object_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>CreateObject</code> response operation.</p>
 #[non_exhaustive]
@@ -4433,6 +4478,13 @@ impl BatchCreateObjectResponse {
         self.object_identifier.as_deref()
     }
 }
+impl BatchCreateObjectResponse {
+    /// Creates a new builder-style object to manufacture [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
+    pub fn builder() -> crate::model::batch_create_object_response::Builder {
+        crate::model::batch_create_object_response::Builder::default()
+    }
+}
+
 /// See [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
 pub mod batch_create_object_response {
     
@@ -4462,12 +4514,6 @@ pub mod batch_create_object_response {
     }
     
     
-}
-impl BatchCreateObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
-    pub fn builder() -> crate::model::batch_create_object_response::Builder {
-        crate::model::batch_create_object_response::Builder::default()
-    }
 }
 
 /// <p>Represents the output of a <code>BatchWrite</code> operation. </p>
@@ -4582,6 +4628,13 @@ impl BatchWriteOperation {
         self.update_link_attributes.as_ref()
     }
 }
+impl BatchWriteOperation {
+    /// Creates a new builder-style object to manufacture [`BatchWriteOperation`](crate::model::BatchWriteOperation).
+    pub fn builder() -> crate::model::batch_write_operation::Builder {
+        crate::model::batch_write_operation::Builder::default()
+    }
+}
+
 /// See [`BatchWriteOperation`](crate::model::BatchWriteOperation).
 pub mod batch_write_operation {
     
@@ -4780,12 +4833,6 @@ pub mod batch_write_operation {
     
     
 }
-impl BatchWriteOperation {
-    /// Creates a new builder-style object to manufacture [`BatchWriteOperation`](crate::model::BatchWriteOperation).
-    pub fn builder() -> crate::model::batch_write_operation::Builder {
-        crate::model::batch_write_operation::Builder::default()
-    }
-}
 
 /// <p>Updates a given typed link’s attributes inside a <code>BatchRead</code> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <code>UpdateLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -4808,6 +4855,13 @@ impl BatchUpdateLinkAttributes {
         self.attribute_updates.as_deref()
     }
 }
+impl BatchUpdateLinkAttributes {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
+    pub fn builder() -> crate::model::batch_update_link_attributes::Builder {
+        crate::model::batch_update_link_attributes::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
 pub mod batch_update_link_attributes {
     
@@ -4856,12 +4910,6 @@ pub mod batch_update_link_attributes {
     
     
 }
-impl BatchUpdateLinkAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
-    pub fn builder() -> crate::model::batch_update_link_attributes::Builder {
-        crate::model::batch_update_link_attributes::Builder::default()
-    }
-}
 
 /// <p>Detaches a typed link from a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>DetachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -4877,6 +4925,13 @@ impl BatchDetachTypedLink {
         self.typed_link_specifier.as_ref()
     }
 }
+impl BatchDetachTypedLink {
+    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
+    pub fn builder() -> crate::model::batch_detach_typed_link::Builder {
+        crate::model::batch_detach_typed_link::Builder::default()
+    }
+}
+
 /// See [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
 pub mod batch_detach_typed_link {
     
@@ -4906,12 +4961,6 @@ pub mod batch_detach_typed_link {
     }
     
     
-}
-impl BatchDetachTypedLink {
-    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
-    pub fn builder() -> crate::model::batch_detach_typed_link::Builder {
-        crate::model::batch_detach_typed_link::Builder::default()
-    }
 }
 
 /// <p>Attaches a typed link to a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>AttachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
@@ -4949,6 +4998,13 @@ impl BatchAttachTypedLink {
         self.attributes.as_deref()
     }
 }
+impl BatchAttachTypedLink {
+    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
+    pub fn builder() -> crate::model::batch_attach_typed_link::Builder {
+        crate::model::batch_attach_typed_link::Builder::default()
+    }
+}
+
 /// See [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
 pub mod batch_attach_typed_link {
     
@@ -5021,12 +5077,6 @@ pub mod batch_attach_typed_link {
     
     
 }
-impl BatchAttachTypedLink {
-    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
-    pub fn builder() -> crate::model::batch_attach_typed_link::Builder {
-        crate::model::batch_attach_typed_link::Builder::default()
-    }
-}
 
 /// <p>Detaches the specified object from the specified index inside a <code>BatchRead</code> operation. For more information, see <code>DetachFromIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -5049,6 +5099,13 @@ impl BatchDetachFromIndex {
         self.target_reference.as_ref()
     }
 }
+impl BatchDetachFromIndex {
+    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
+    pub fn builder() -> crate::model::batch_detach_from_index::Builder {
+        crate::model::batch_detach_from_index::Builder::default()
+    }
+}
+
 /// See [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
 pub mod batch_detach_from_index {
     
@@ -5091,12 +5148,6 @@ pub mod batch_detach_from_index {
     
     
 }
-impl BatchDetachFromIndex {
-    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
-    pub fn builder() -> crate::model::batch_detach_from_index::Builder {
-        crate::model::batch_detach_from_index::Builder::default()
-    }
-}
 
 /// <p>Attaches the specified object to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>AttachToIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -5119,6 +5170,13 @@ impl BatchAttachToIndex {
         self.target_reference.as_ref()
     }
 }
+impl BatchAttachToIndex {
+    /// Creates a new builder-style object to manufacture [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
+    pub fn builder() -> crate::model::batch_attach_to_index::Builder {
+        crate::model::batch_attach_to_index::Builder::default()
+    }
+}
+
 /// See [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
 pub mod batch_attach_to_index {
     
@@ -5160,12 +5218,6 @@ pub mod batch_attach_to_index {
     }
     
     
-}
-impl BatchAttachToIndex {
-    /// Creates a new builder-style object to manufacture [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
-    pub fn builder() -> crate::model::batch_attach_to_index::Builder {
-        crate::model::batch_attach_to_index::Builder::default()
-    }
 }
 
 /// <p>Creates an index object inside of a <code>BatchRead</code> operation. For more information, see <code>CreateIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
@@ -5210,6 +5262,13 @@ impl BatchCreateIndex {
         self.batch_reference_name.as_deref()
     }
 }
+impl BatchCreateIndex {
+    /// Creates a new builder-style object to manufacture [`BatchCreateIndex`](crate::model::BatchCreateIndex).
+    pub fn builder() -> crate::model::batch_create_index::Builder {
+        crate::model::batch_create_index::Builder::default()
+    }
+}
+
 /// See [`BatchCreateIndex`](crate::model::BatchCreateIndex).
 pub mod batch_create_index {
     
@@ -5295,12 +5354,6 @@ pub mod batch_create_index {
     
     
 }
-impl BatchCreateIndex {
-    /// Creates a new builder-style object to manufacture [`BatchCreateIndex`](crate::model::BatchCreateIndex).
-    pub fn builder() -> crate::model::batch_create_index::Builder {
-        crate::model::batch_create_index::Builder::default()
-    }
-}
 
 /// <p>Detaches the specified policy from the specified directory inside a <code>BatchWrite</code> operation. For more information, see <code>DetachPolicy</code> and <code>BatchWriteRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -5323,6 +5376,13 @@ impl BatchDetachPolicy {
         self.object_reference.as_ref()
     }
 }
+impl BatchDetachPolicy {
+    /// Creates a new builder-style object to manufacture [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
+    pub fn builder() -> crate::model::batch_detach_policy::Builder {
+        crate::model::batch_detach_policy::Builder::default()
+    }
+}
+
 /// See [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
 pub mod batch_detach_policy {
     
@@ -5365,12 +5425,6 @@ pub mod batch_detach_policy {
     
     
 }
-impl BatchDetachPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
-    pub fn builder() -> crate::model::batch_detach_policy::Builder {
-        crate::model::batch_detach_policy::Builder::default()
-    }
-}
 
 /// <p>Attaches a policy object to a regular object inside a <code>BatchRead</code> operation.&nbsp;For more information, see <code>AttachPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -5393,6 +5447,13 @@ impl BatchAttachPolicy {
         self.object_reference.as_ref()
     }
 }
+impl BatchAttachPolicy {
+    /// Creates a new builder-style object to manufacture [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
+    pub fn builder() -> crate::model::batch_attach_policy::Builder {
+        crate::model::batch_attach_policy::Builder::default()
+    }
+}
+
 /// See [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
 pub mod batch_attach_policy {
     
@@ -5435,12 +5496,6 @@ pub mod batch_attach_policy {
     
     
 }
-impl BatchAttachPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
-    pub fn builder() -> crate::model::batch_attach_policy::Builder {
-        crate::model::batch_attach_policy::Builder::default()
-    }
-}
 
 /// <p>A batch operation to remove a facet from an object.</p>
 #[non_exhaustive]
@@ -5463,6 +5518,13 @@ impl BatchRemoveFacetFromObject {
         self.object_reference.as_ref()
     }
 }
+impl BatchRemoveFacetFromObject {
+    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
+    pub fn builder() -> crate::model::batch_remove_facet_from_object::Builder {
+        crate::model::batch_remove_facet_from_object::Builder::default()
+    }
+}
+
 /// See [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
 pub mod batch_remove_facet_from_object {
     
@@ -5505,12 +5567,6 @@ pub mod batch_remove_facet_from_object {
     
     
 }
-impl BatchRemoveFacetFromObject {
-    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
-    pub fn builder() -> crate::model::batch_remove_facet_from_object::Builder {
-        crate::model::batch_remove_facet_from_object::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a batch add facet to object operation.</p>
 #[non_exhaustive]
@@ -5540,6 +5596,13 @@ impl BatchAddFacetToObject {
         self.object_reference.as_ref()
     }
 }
+impl BatchAddFacetToObject {
+    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
+    pub fn builder() -> crate::model::batch_add_facet_to_object::Builder {
+        crate::model::batch_add_facet_to_object::Builder::default()
+    }
+}
+
 /// See [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
 pub mod batch_add_facet_to_object {
     
@@ -5600,12 +5663,6 @@ pub mod batch_add_facet_to_object {
     
     
 }
-impl BatchAddFacetToObject {
-    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
-    pub fn builder() -> crate::model::batch_add_facet_to_object::Builder {
-        crate::model::batch_add_facet_to_object::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DeleteObject</code> operation.</p>
 #[non_exhaustive]
@@ -5621,6 +5678,13 @@ impl BatchDeleteObject {
         self.object_reference.as_ref()
     }
 }
+impl BatchDeleteObject {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteObject`](crate::model::BatchDeleteObject).
+    pub fn builder() -> crate::model::batch_delete_object::Builder {
+        crate::model::batch_delete_object::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteObject`](crate::model::BatchDeleteObject).
 pub mod batch_delete_object {
     
@@ -5651,12 +5715,6 @@ pub mod batch_delete_object {
     
     
 }
-impl BatchDeleteObject {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteObject`](crate::model::BatchDeleteObject).
-    pub fn builder() -> crate::model::batch_delete_object::Builder {
-        crate::model::batch_delete_object::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>BatchUpdate</code> operation. </p>
 #[non_exhaustive]
@@ -5679,6 +5737,13 @@ impl BatchUpdateObjectAttributes {
         self.attribute_updates.as_deref()
     }
 }
+impl BatchUpdateObjectAttributes {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
+    pub fn builder() -> crate::model::batch_update_object_attributes::Builder {
+        crate::model::batch_update_object_attributes::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
 pub mod batch_update_object_attributes {
     
@@ -5727,12 +5792,6 @@ pub mod batch_update_object_attributes {
     
     
 }
-impl BatchUpdateObjectAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
-    pub fn builder() -> crate::model::batch_update_object_attributes::Builder {
-        crate::model::batch_update_object_attributes::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DetachObject</code> operation.</p>
 #[non_exhaustive]
@@ -5762,6 +5821,13 @@ impl BatchDetachObject {
         self.batch_reference_name.as_deref()
     }
 }
+impl BatchDetachObject {
+    /// Creates a new builder-style object to manufacture [`BatchDetachObject`](crate::model::BatchDetachObject).
+    pub fn builder() -> crate::model::batch_detach_object::Builder {
+        crate::model::batch_detach_object::Builder::default()
+    }
+}
+
 /// See [`BatchDetachObject`](crate::model::BatchDetachObject).
 pub mod batch_detach_object {
     
@@ -5816,12 +5882,6 @@ pub mod batch_detach_object {
     
     
 }
-impl BatchDetachObject {
-    /// Creates a new builder-style object to manufacture [`BatchDetachObject`](crate::model::BatchDetachObject).
-    pub fn builder() -> crate::model::batch_detach_object::Builder {
-        crate::model::batch_detach_object::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>AttachObject</code> operation.</p>
 #[non_exhaustive]
@@ -5851,6 +5911,13 @@ impl BatchAttachObject {
         self.link_name.as_deref()
     }
 }
+impl BatchAttachObject {
+    /// Creates a new builder-style object to manufacture [`BatchAttachObject`](crate::model::BatchAttachObject).
+    pub fn builder() -> crate::model::batch_attach_object::Builder {
+        crate::model::batch_attach_object::Builder::default()
+    }
+}
+
 /// See [`BatchAttachObject`](crate::model::BatchAttachObject).
 pub mod batch_attach_object {
     
@@ -5905,12 +5972,6 @@ pub mod batch_attach_object {
     
     
 }
-impl BatchAttachObject {
-    /// Creates a new builder-style object to manufacture [`BatchAttachObject`](crate::model::BatchAttachObject).
-    pub fn builder() -> crate::model::batch_attach_object::Builder {
-        crate::model::batch_attach_object::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>CreateObject</code> operation.</p>
 #[non_exhaustive]
@@ -5954,6 +6015,13 @@ impl BatchCreateObject {
         self.batch_reference_name.as_deref()
     }
 }
+impl BatchCreateObject {
+    /// Creates a new builder-style object to manufacture [`BatchCreateObject`](crate::model::BatchCreateObject).
+    pub fn builder() -> crate::model::batch_create_object::Builder {
+        crate::model::batch_create_object::Builder::default()
+    }
+}
+
 /// See [`BatchCreateObject`](crate::model::BatchCreateObject).
 pub mod batch_create_object {
     
@@ -6044,12 +6112,6 @@ pub mod batch_create_object {
     
     
 }
-impl BatchCreateObject {
-    /// Creates a new builder-style object to manufacture [`BatchCreateObject`](crate::model::BatchCreateObject).
-    pub fn builder() -> crate::model::batch_create_object::Builder {
-        crate::model::batch_create_object::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>BatchRead</code> response operation.</p>
 #[non_exhaustive]
@@ -6072,6 +6134,13 @@ impl BatchReadOperationResponse {
         self.exception_response.as_ref()
     }
 }
+impl BatchReadOperationResponse {
+    /// Creates a new builder-style object to manufacture [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
+    pub fn builder() -> crate::model::batch_read_operation_response::Builder {
+        crate::model::batch_read_operation_response::Builder::default()
+    }
+}
+
 /// See [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
 pub mod batch_read_operation_response {
     
@@ -6114,12 +6183,6 @@ pub mod batch_read_operation_response {
     
     
 }
-impl BatchReadOperationResponse {
-    /// Creates a new builder-style object to manufacture [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
-    pub fn builder() -> crate::model::batch_read_operation_response::Builder {
-        crate::model::batch_read_operation_response::Builder::default()
-    }
-}
 
 /// <p>The batch read exception structure, which contains the exception type and message.</p>
 #[non_exhaustive]
@@ -6142,6 +6205,13 @@ impl BatchReadException {
         self.message.as_deref()
     }
 }
+impl BatchReadException {
+    /// Creates a new builder-style object to manufacture [`BatchReadException`](crate::model::BatchReadException).
+    pub fn builder() -> crate::model::batch_read_exception::Builder {
+        crate::model::batch_read_exception::Builder::default()
+    }
+}
+
 /// See [`BatchReadException`](crate::model::BatchReadException).
 pub mod batch_read_exception {
     
@@ -6183,12 +6253,6 @@ pub mod batch_read_exception {
     }
     
     
-}
-impl BatchReadException {
-    /// Creates a new builder-style object to manufacture [`BatchReadException`](crate::model::BatchReadException).
-    pub fn builder() -> crate::model::batch_read_exception::Builder {
-        crate::model::batch_read_exception::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BatchReadExceptionType`, it is important to ensure
@@ -6433,6 +6497,13 @@ impl BatchReadSuccessfulResponse {
         self.list_object_parents.as_ref()
     }
 }
+impl BatchReadSuccessfulResponse {
+    /// Creates a new builder-style object to manufacture [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
+    pub fn builder() -> crate::model::batch_read_successful_response::Builder {
+        crate::model::batch_read_successful_response::Builder::default()
+    }
+}
+
 /// See [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
 pub mod batch_read_successful_response {
     
@@ -6619,12 +6690,6 @@ pub mod batch_read_successful_response {
     
     
 }
-impl BatchReadSuccessfulResponse {
-    /// Creates a new builder-style object to manufacture [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
-    pub fn builder() -> crate::model::batch_read_successful_response::Builder {
-        crate::model::batch_read_successful_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectParents</code> response operation.</p>
 #[non_exhaustive]
@@ -6647,6 +6712,13 @@ impl BatchListObjectParentsResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListObjectParentsResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
+    pub fn builder() -> crate::model::batch_list_object_parents_response::Builder {
+        crate::model::batch_list_object_parents_response::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
 pub mod batch_list_object_parents_response {
     
@@ -6695,12 +6767,6 @@ pub mod batch_list_object_parents_response {
     
     
 }
-impl BatchListObjectParentsResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
-    pub fn builder() -> crate::model::batch_list_object_parents_response::Builder {
-        crate::model::batch_list_object_parents_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
@@ -6716,6 +6782,13 @@ impl BatchGetLinkAttributesResponse {
         self.attributes.as_deref()
     }
 }
+impl BatchGetLinkAttributesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
+    pub fn builder() -> crate::model::batch_get_link_attributes_response::Builder {
+        crate::model::batch_get_link_attributes_response::Builder::default()
+    }
+}
+
 /// See [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
 pub mod batch_get_link_attributes_response {
     
@@ -6752,12 +6825,6 @@ pub mod batch_get_link_attributes_response {
     
     
 }
-impl BatchGetLinkAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
-    pub fn builder() -> crate::model::batch_get_link_attributes_response::Builder {
-        crate::model::batch_get_link_attributes_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListIncomingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
@@ -6780,6 +6847,13 @@ impl BatchListIncomingTypedLinksResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListIncomingTypedLinksResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
+    pub fn builder() -> crate::model::batch_list_incoming_typed_links_response::Builder {
+        crate::model::batch_list_incoming_typed_links_response::Builder::default()
+    }
+}
+
 /// See [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
 pub mod batch_list_incoming_typed_links_response {
     
@@ -6828,12 +6902,6 @@ pub mod batch_list_incoming_typed_links_response {
     
     
 }
-impl BatchListIncomingTypedLinksResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
-    pub fn builder() -> crate::model::batch_list_incoming_typed_links_response::Builder {
-        crate::model::batch_list_incoming_typed_links_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListOutgoingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
@@ -6856,6 +6924,13 @@ impl BatchListOutgoingTypedLinksResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListOutgoingTypedLinksResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
+    pub fn builder() -> crate::model::batch_list_outgoing_typed_links_response::Builder {
+        crate::model::batch_list_outgoing_typed_links_response::Builder::default()
+    }
+}
+
 /// See [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
 pub mod batch_list_outgoing_typed_links_response {
     
@@ -6904,12 +6979,6 @@ pub mod batch_list_outgoing_typed_links_response {
     
     
 }
-impl BatchListOutgoingTypedLinksResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
-    pub fn builder() -> crate::model::batch_list_outgoing_typed_links_response::Builder {
-        crate::model::batch_list_outgoing_typed_links_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListIndex</code> response operation.</p>
 #[non_exhaustive]
@@ -6932,6 +7001,13 @@ impl BatchListIndexResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListIndexResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
+    pub fn builder() -> crate::model::batch_list_index_response::Builder {
+        crate::model::batch_list_index_response::Builder::default()
+    }
+}
+
 /// See [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
 pub mod batch_list_index_response {
     
@@ -6980,12 +7056,6 @@ pub mod batch_list_index_response {
     
     
 }
-impl BatchListIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
-    pub fn builder() -> crate::model::batch_list_index_response::Builder {
-        crate::model::batch_list_index_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>LookupPolicy</code> response operation.</p>
 #[non_exhaustive]
@@ -7008,6 +7078,13 @@ impl BatchLookupPolicyResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchLookupPolicyResponse {
+    /// Creates a new builder-style object to manufacture [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
+    pub fn builder() -> crate::model::batch_lookup_policy_response::Builder {
+        crate::model::batch_lookup_policy_response::Builder::default()
+    }
+}
+
 /// See [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
 pub mod batch_lookup_policy_response {
     
@@ -7056,12 +7133,6 @@ pub mod batch_lookup_policy_response {
     
     
 }
-impl BatchLookupPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
-    pub fn builder() -> crate::model::batch_lookup_policy_response::Builder {
-        crate::model::batch_lookup_policy_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListPolicyAttachments</code> response operation.</p>
 #[non_exhaustive]
@@ -7084,6 +7155,13 @@ impl BatchListPolicyAttachmentsResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListPolicyAttachmentsResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
+    pub fn builder() -> crate::model::batch_list_policy_attachments_response::Builder {
+        crate::model::batch_list_policy_attachments_response::Builder::default()
+    }
+}
+
 /// See [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
 pub mod batch_list_policy_attachments_response {
     
@@ -7132,12 +7210,6 @@ pub mod batch_list_policy_attachments_response {
     
     
 }
-impl BatchListPolicyAttachmentsResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
-    pub fn builder() -> crate::model::batch_list_policy_attachments_response::Builder {
-        crate::model::batch_list_policy_attachments_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectPolicies</code> response operation.</p>
 #[non_exhaustive]
@@ -7160,6 +7232,13 @@ impl BatchListObjectPoliciesResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListObjectPoliciesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
+    pub fn builder() -> crate::model::batch_list_object_policies_response::Builder {
+        crate::model::batch_list_object_policies_response::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
 pub mod batch_list_object_policies_response {
     
@@ -7208,12 +7287,6 @@ pub mod batch_list_object_policies_response {
     
     
 }
-impl BatchListObjectPoliciesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
-    pub fn builder() -> crate::model::batch_list_object_policies_response::Builder {
-        crate::model::batch_list_object_policies_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectParentPaths</code> response operation.</p>
 #[non_exhaustive]
@@ -7236,6 +7309,13 @@ impl BatchListObjectParentPathsResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListObjectParentPathsResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
+    pub fn builder() -> crate::model::batch_list_object_parent_paths_response::Builder {
+        crate::model::batch_list_object_parent_paths_response::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
 pub mod batch_list_object_parent_paths_response {
     
@@ -7284,12 +7364,6 @@ pub mod batch_list_object_parent_paths_response {
     
     
 }
-impl BatchListObjectParentPathsResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
-    pub fn builder() -> crate::model::batch_list_object_parent_paths_response::Builder {
-        crate::model::batch_list_object_parent_paths_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListAttachedIndices</code> response operation.</p>
 #[non_exhaustive]
@@ -7312,6 +7386,13 @@ impl BatchListAttachedIndicesResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListAttachedIndicesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
+    pub fn builder() -> crate::model::batch_list_attached_indices_response::Builder {
+        crate::model::batch_list_attached_indices_response::Builder::default()
+    }
+}
+
 /// See [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
 pub mod batch_list_attached_indices_response {
     
@@ -7360,12 +7441,6 @@ pub mod batch_list_attached_indices_response {
     
     
 }
-impl BatchListAttachedIndicesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
-    pub fn builder() -> crate::model::batch_list_attached_indices_response::Builder {
-        crate::model::batch_list_attached_indices_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
@@ -7381,6 +7456,13 @@ impl BatchGetObjectAttributesResponse {
         self.attributes.as_deref()
     }
 }
+impl BatchGetObjectAttributesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
+    pub fn builder() -> crate::model::batch_get_object_attributes_response::Builder {
+        crate::model::batch_get_object_attributes_response::Builder::default()
+    }
+}
+
 /// See [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
 pub mod batch_get_object_attributes_response {
     
@@ -7417,12 +7499,6 @@ pub mod batch_get_object_attributes_response {
     
     
 }
-impl BatchGetObjectAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
-    pub fn builder() -> crate::model::batch_get_object_attributes_response::Builder {
-        crate::model::batch_get_object_attributes_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetObjectInformation</code> response operation.</p>
 #[non_exhaustive]
@@ -7445,6 +7521,13 @@ impl BatchGetObjectInformationResponse {
         self.object_identifier.as_deref()
     }
 }
+impl BatchGetObjectInformationResponse {
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
+    pub fn builder() -> crate::model::batch_get_object_information_response::Builder {
+        crate::model::batch_get_object_information_response::Builder::default()
+    }
+}
+
 /// See [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
 pub mod batch_get_object_information_response {
     
@@ -7493,12 +7576,6 @@ pub mod batch_get_object_information_response {
     
     
 }
-impl BatchGetObjectInformationResponse {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
-    pub fn builder() -> crate::model::batch_get_object_information_response::Builder {
-        crate::model::batch_get_object_information_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectChildren</code> response operation.</p>
 #[non_exhaustive]
@@ -7521,6 +7598,13 @@ impl BatchListObjectChildrenResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListObjectChildrenResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
+    pub fn builder() -> crate::model::batch_list_object_children_response::Builder {
+        crate::model::batch_list_object_children_response::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
 pub mod batch_list_object_children_response {
     
@@ -7569,12 +7653,6 @@ pub mod batch_list_object_children_response {
     
     
 }
-impl BatchListObjectChildrenResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
-    pub fn builder() -> crate::model::batch_list_object_children_response::Builder {
-        crate::model::batch_list_object_children_response::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
@@ -7597,6 +7675,13 @@ impl BatchListObjectAttributesResponse {
         self.next_token.as_deref()
     }
 }
+impl BatchListObjectAttributesResponse {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
+    pub fn builder() -> crate::model::batch_list_object_attributes_response::Builder {
+        crate::model::batch_list_object_attributes_response::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
 pub mod batch_list_object_attributes_response {
     
@@ -7644,12 +7729,6 @@ pub mod batch_list_object_attributes_response {
     }
     
     
-}
-impl BatchListObjectAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
-    pub fn builder() -> crate::model::batch_list_object_attributes_response::Builder {
-        crate::model::batch_list_object_attributes_response::Builder::default()
-    }
 }
 
 /// <p>Represents the output of a <code>BatchRead</code> operation.</p>
@@ -7757,6 +7836,13 @@ impl BatchReadOperation {
         self.get_link_attributes.as_ref()
     }
 }
+impl BatchReadOperation {
+    /// Creates a new builder-style object to manufacture [`BatchReadOperation`](crate::model::BatchReadOperation).
+    pub fn builder() -> crate::model::batch_read_operation::Builder {
+        crate::model::batch_read_operation::Builder::default()
+    }
+}
+
 /// See [`BatchReadOperation`](crate::model::BatchReadOperation).
 pub mod batch_read_operation {
     
@@ -7943,12 +8029,6 @@ pub mod batch_read_operation {
     
     
 }
-impl BatchReadOperation {
-    /// Creates a new builder-style object to manufacture [`BatchReadOperation`](crate::model::BatchReadOperation).
-    pub fn builder() -> crate::model::batch_read_operation::Builder {
-        crate::model::batch_read_operation::Builder::default()
-    }
-}
 
 /// <p>Retrieves attributes that are associated with a typed link inside a <code>BatchRead</code> operation. For more information, see <code>GetLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -7971,6 +8051,13 @@ impl BatchGetLinkAttributes {
         self.attribute_names.as_deref()
     }
 }
+impl BatchGetLinkAttributes {
+    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
+    pub fn builder() -> crate::model::batch_get_link_attributes::Builder {
+        crate::model::batch_get_link_attributes::Builder::default()
+    }
+}
+
 /// See [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
 pub mod batch_get_link_attributes {
     
@@ -8019,12 +8106,6 @@ pub mod batch_get_link_attributes {
     
     
 }
-impl BatchGetLinkAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
-    pub fn builder() -> crate::model::batch_get_link_attributes::Builder {
-        crate::model::batch_get_link_attributes::Builder::default()
-    }
-}
 
 /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListIncomingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8068,6 +8149,13 @@ impl BatchListIncomingTypedLinks {
         self.max_results
     }
 }
+impl BatchListIncomingTypedLinks {
+    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
+    pub fn builder() -> crate::model::batch_list_incoming_typed_links::Builder {
+        crate::model::batch_list_incoming_typed_links::Builder::default()
+    }
+}
+
 /// See [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
 pub mod batch_list_incoming_typed_links {
     
@@ -8152,12 +8240,6 @@ pub mod batch_list_incoming_typed_links {
     
     
 }
-impl BatchListIncomingTypedLinks {
-    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
-    pub fn builder() -> crate::model::batch_list_incoming_typed_links::Builder {
-        crate::model::batch_list_incoming_typed_links::Builder::default()
-    }
-}
 
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListOutgoingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8201,6 +8283,13 @@ impl BatchListOutgoingTypedLinks {
         self.max_results
     }
 }
+impl BatchListOutgoingTypedLinks {
+    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
+    pub fn builder() -> crate::model::batch_list_outgoing_typed_links::Builder {
+        crate::model::batch_list_outgoing_typed_links::Builder::default()
+    }
+}
+
 /// See [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
 pub mod batch_list_outgoing_typed_links {
     
@@ -8285,12 +8374,6 @@ pub mod batch_list_outgoing_typed_links {
     
     
 }
-impl BatchListOutgoingTypedLinks {
-    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
-    pub fn builder() -> crate::model::batch_list_outgoing_typed_links::Builder {
-        crate::model::batch_list_outgoing_typed_links::Builder::default()
-    }
-}
 
 /// <p>Lists objects attached to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>ListIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8327,6 +8410,13 @@ impl BatchListIndex {
         self.next_token.as_deref()
     }
 }
+impl BatchListIndex {
+    /// Creates a new builder-style object to manufacture [`BatchListIndex`](crate::model::BatchListIndex).
+    pub fn builder() -> crate::model::batch_list_index::Builder {
+        crate::model::batch_list_index::Builder::default()
+    }
+}
+
 /// See [`BatchListIndex`](crate::model::BatchListIndex).
 pub mod batch_list_index {
     
@@ -8399,12 +8489,6 @@ pub mod batch_list_index {
     
     
 }
-impl BatchListIndex {
-    /// Creates a new builder-style object to manufacture [`BatchListIndex`](crate::model::BatchListIndex).
-    pub fn builder() -> crate::model::batch_list_index::Builder {
-        crate::model::batch_list_index::Builder::default()
-    }
-}
 
 /// <p>Lists all policies from the root of the Directory to the object specified inside a <code>BatchRead</code> operation. For more information, see <code>LookupPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8434,6 +8518,13 @@ impl BatchLookupPolicy {
         self.max_results
     }
 }
+impl BatchLookupPolicy {
+    /// Creates a new builder-style object to manufacture [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
+    pub fn builder() -> crate::model::batch_lookup_policy::Builder {
+        crate::model::batch_lookup_policy::Builder::default()
+    }
+}
+
 /// See [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
 pub mod batch_lookup_policy {
     
@@ -8488,12 +8579,6 @@ pub mod batch_lookup_policy {
     
     
 }
-impl BatchLookupPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
-    pub fn builder() -> crate::model::batch_lookup_policy::Builder {
-        crate::model::batch_lookup_policy::Builder::default()
-    }
-}
 
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <code>BatchRead</code> operation. For more information, see <code>ListPolicyAttachments</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8523,6 +8608,13 @@ impl BatchListPolicyAttachments {
         self.max_results
     }
 }
+impl BatchListPolicyAttachments {
+    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
+    pub fn builder() -> crate::model::batch_list_policy_attachments::Builder {
+        crate::model::batch_list_policy_attachments::Builder::default()
+    }
+}
+
 /// See [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
 pub mod batch_list_policy_attachments {
     
@@ -8577,12 +8669,6 @@ pub mod batch_list_policy_attachments {
     
     
 }
-impl BatchListPolicyAttachments {
-    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
-    pub fn builder() -> crate::model::batch_list_policy_attachments::Builder {
-        crate::model::batch_list_policy_attachments::Builder::default()
-    }
-}
 
 /// <p>Returns policies attached to an object in pagination fashion inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectPolicies</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8612,6 +8698,13 @@ impl BatchListObjectPolicies {
         self.max_results
     }
 }
+impl BatchListObjectPolicies {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
+    pub fn builder() -> crate::model::batch_list_object_policies::Builder {
+        crate::model::batch_list_object_policies::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
 pub mod batch_list_object_policies {
     
@@ -8666,12 +8759,6 @@ pub mod batch_list_object_policies {
     
     
 }
-impl BatchListObjectPolicies {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
-    pub fn builder() -> crate::model::batch_list_object_policies::Builder {
-        crate::model::batch_list_object_policies::Builder::default()
-    }
-}
 
 /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 #[non_exhaustive]
@@ -8701,6 +8788,13 @@ impl BatchListObjectParents {
         self.max_results
     }
 }
+impl BatchListObjectParents {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParents`](crate::model::BatchListObjectParents).
+    pub fn builder() -> crate::model::batch_list_object_parents::Builder {
+        crate::model::batch_list_object_parents::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectParents`](crate::model::BatchListObjectParents).
 pub mod batch_list_object_parents {
     
@@ -8755,12 +8849,6 @@ pub mod batch_list_object_parents {
     
     
 }
-impl BatchListObjectParents {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParents`](crate::model::BatchListObjectParents).
-    pub fn builder() -> crate::model::batch_list_object_parents::Builder {
-        crate::model::batch_list_object_parents::Builder::default()
-    }
-}
 
 /// <p>Retrieves attributes within a facet that are associated with an object inside an <code>BatchRead</code> operation. For more information, see <code>GetObjectAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8790,6 +8878,13 @@ impl BatchGetObjectAttributes {
         self.attribute_names.as_deref()
     }
 }
+impl BatchGetObjectAttributes {
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
+    pub fn builder() -> crate::model::batch_get_object_attributes::Builder {
+        crate::model::batch_get_object_attributes::Builder::default()
+    }
+}
+
 /// See [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
 pub mod batch_get_object_attributes {
     
@@ -8850,12 +8945,6 @@ pub mod batch_get_object_attributes {
     
     
 }
-impl BatchGetObjectAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
-    pub fn builder() -> crate::model::batch_get_object_attributes::Builder {
-        crate::model::batch_get_object_attributes::Builder::default()
-    }
-}
 
 /// <p>Retrieves metadata about an object inside a <code>BatchRead</code> operation. For more information, see <code>GetObjectInformation</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8871,6 +8960,13 @@ impl BatchGetObjectInformation {
         self.object_reference.as_ref()
     }
 }
+impl BatchGetObjectInformation {
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
+    pub fn builder() -> crate::model::batch_get_object_information::Builder {
+        crate::model::batch_get_object_information::Builder::default()
+    }
+}
+
 /// See [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
 pub mod batch_get_object_information {
     
@@ -8901,12 +8997,6 @@ pub mod batch_get_object_information {
     
     
 }
-impl BatchGetObjectInformation {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
-    pub fn builder() -> crate::model::batch_get_object_information::Builder {
-        crate::model::batch_get_object_information::Builder::default()
-    }
-}
 
 /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectParentPaths</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -8936,6 +9026,13 @@ impl BatchListObjectParentPaths {
         self.max_results
     }
 }
+impl BatchListObjectParentPaths {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
+    pub fn builder() -> crate::model::batch_list_object_parent_paths::Builder {
+        crate::model::batch_list_object_parent_paths::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
 pub mod batch_list_object_parent_paths {
     
@@ -8990,12 +9087,6 @@ pub mod batch_list_object_parent_paths {
     
     
 }
-impl BatchListObjectParentPaths {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
-    pub fn builder() -> crate::model::batch_list_object_parent_paths::Builder {
-        crate::model::batch_list_object_parent_paths::Builder::default()
-    }
-}
 
 /// <p>Lists indices attached to an object inside a <code>BatchRead</code> operation. For more information, see <code>ListAttachedIndices</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
@@ -9025,6 +9116,13 @@ impl BatchListAttachedIndices {
         self.max_results
     }
 }
+impl BatchListAttachedIndices {
+    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
+    pub fn builder() -> crate::model::batch_list_attached_indices::Builder {
+        crate::model::batch_list_attached_indices::Builder::default()
+    }
+}
+
 /// See [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
 pub mod batch_list_attached_indices {
     
@@ -9079,12 +9177,6 @@ pub mod batch_list_attached_indices {
     
     
 }
-impl BatchListAttachedIndices {
-    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
-    pub fn builder() -> crate::model::batch_list_attached_indices::Builder {
-        crate::model::batch_list_attached_indices::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectChildren</code> operation.</p>
 #[non_exhaustive]
@@ -9114,6 +9206,13 @@ impl BatchListObjectChildren {
         self.max_results
     }
 }
+impl BatchListObjectChildren {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
+    pub fn builder() -> crate::model::batch_list_object_children::Builder {
+        crate::model::batch_list_object_children::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
 pub mod batch_list_object_children {
     
@@ -9168,12 +9267,6 @@ pub mod batch_list_object_children {
     
     
 }
-impl BatchListObjectChildren {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
-    pub fn builder() -> crate::model::batch_list_object_children::Builder {
-        crate::model::batch_list_object_children::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> operation.</p>
 #[non_exhaustive]
@@ -9210,6 +9303,13 @@ impl BatchListObjectAttributes {
         self.facet_filter.as_ref()
     }
 }
+impl BatchListObjectAttributes {
+    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
+    pub fn builder() -> crate::model::batch_list_object_attributes::Builder {
+        crate::model::batch_list_object_attributes::Builder::default()
+    }
+}
+
 /// See [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
 pub mod batch_list_object_attributes {
     
@@ -9275,11 +9375,5 @@ pub mod batch_list_object_attributes {
     }
     
     
-}
-impl BatchListObjectAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
-    pub fn builder() -> crate::model::batch_list_object_attributes::Builder {
-        crate::model::batch_list_object_attributes::Builder::default()
-    }
 }
 

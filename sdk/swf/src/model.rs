@@ -29,6 +29,13 @@ impl WorkflowType {
         self.version.as_deref()
     }
 }
+impl WorkflowType {
+    /// Creates a new builder-style object to manufacture [`WorkflowType`](crate::model::WorkflowType).
+    pub fn builder() -> crate::model::workflow_type::Builder {
+        crate::model::workflow_type::Builder::default()
+    }
+}
+
 /// See [`WorkflowType`](crate::model::WorkflowType).
 pub mod workflow_type {
     
@@ -79,12 +86,6 @@ pub mod workflow_type {
     
     
 }
-impl WorkflowType {
-    /// Creates a new builder-style object to manufacture [`WorkflowType`](crate::model::WorkflowType).
-    pub fn builder() -> crate::model::workflow_type::Builder {
-        crate::model::workflow_type::Builder::default()
-    }
-}
 
 /// <p>Represents an activity type.</p>
 #[non_exhaustive]
@@ -115,6 +116,13 @@ impl ActivityType {
         self.version.as_deref()
     }
 }
+impl ActivityType {
+    /// Creates a new builder-style object to manufacture [`ActivityType`](crate::model::ActivityType).
+    pub fn builder() -> crate::model::activity_type::Builder {
+        crate::model::activity_type::Builder::default()
+    }
+}
+
 /// See [`ActivityType`](crate::model::ActivityType).
 pub mod activity_type {
     
@@ -164,12 +172,6 @@ pub mod activity_type {
     }
     
     
-}
-impl ActivityType {
-    /// Creates a new builder-style object to manufacture [`ActivityType`](crate::model::ActivityType).
-    pub fn builder() -> crate::model::activity_type::Builder {
-        crate::model::activity_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChildPolicy`, it is important to ensure
@@ -281,6 +283,13 @@ impl ResourceTag {
         self.value.as_deref()
     }
 }
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
     
@@ -323,12 +332,6 @@ pub mod resource_tag {
     
     
 }
-impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
-    pub fn builder() -> crate::model::resource_tag::Builder {
-        crate::model::resource_tag::Builder::default()
-    }
-}
 
 /// <p>Represents a task list.</p>
 #[non_exhaustive]
@@ -344,6 +347,13 @@ impl TaskList {
         self.name.as_deref()
     }
 }
+impl TaskList {
+    /// Creates a new builder-style object to manufacture [`TaskList`](crate::model::TaskList).
+    pub fn builder() -> crate::model::task_list::Builder {
+        crate::model::task_list::Builder::default()
+    }
+}
+
 /// See [`TaskList`](crate::model::TaskList).
 pub mod task_list {
     
@@ -373,12 +383,6 @@ pub mod task_list {
     }
     
     
-}
-impl TaskList {
-    /// Creates a new builder-style object to manufacture [`TaskList`](crate::model::TaskList).
-    pub fn builder() -> crate::model::task_list::Builder {
-        crate::model::task_list::Builder::default()
-    }
 }
 
 /// <p>Specifies a decision made by the decider. A decision can be one of these types:</p> 
@@ -542,6 +546,13 @@ impl Decision {
         self.schedule_lambda_function_decision_attributes.as_ref()
     }
 }
+impl Decision {
+    /// Creates a new builder-style object to manufacture [`Decision`](crate::model::Decision).
+    pub fn builder() -> crate::model::decision::Builder {
+        crate::model::decision::Builder::default()
+    }
+}
+
 /// See [`Decision`](crate::model::Decision).
 pub mod decision {
     
@@ -728,12 +739,6 @@ pub mod decision {
     
     
 }
-impl Decision {
-    /// Creates a new builder-style object to manufacture [`Decision`](crate::model::Decision).
-    pub fn builder() -> crate::model::decision::Builder {
-        crate::model::decision::Builder::default()
-    }
-}
 
 /// <p>Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions <code>decisions</code> passed to <code>RespondDecisionTaskCompleted</code>.</p>
 #[non_exhaustive]
@@ -777,6 +782,13 @@ impl ScheduleLambdaFunctionDecisionAttributes {
         self.start_to_close_timeout.as_deref()
     }
 }
+impl ScheduleLambdaFunctionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
+    pub fn builder() -> crate::model::schedule_lambda_function_decision_attributes::Builder {
+        crate::model::schedule_lambda_function_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
 pub mod schedule_lambda_function_decision_attributes {
     
@@ -854,12 +866,6 @@ pub mod schedule_lambda_function_decision_attributes {
     }
     
     
-}
-impl ScheduleLambdaFunctionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
-    pub fn builder() -> crate::model::schedule_lambda_function_decision_attributes::Builder {
-        crate::model::schedule_lambda_function_decision_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision.</p> 
@@ -998,6 +1004,13 @@ impl StartChildWorkflowExecutionDecisionAttributes {
         self.lambda_role.as_deref()
     }
 }
+impl StartChildWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::start_child_workflow_execution_decision_attributes::Builder {
+        crate::model::start_child_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
 pub mod start_child_workflow_execution_decision_attributes {
     
@@ -1192,12 +1205,6 @@ pub mod start_child_workflow_execution_decision_attributes {
     
     
 }
-impl StartChildWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::start_child_workflow_execution_decision_attributes::Builder {
-        crate::model::start_child_workflow_execution_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -1235,6 +1242,13 @@ impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
         self.control.as_deref()
     }
 }
+impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::request_cancel_external_workflow_execution_decision_attributes::Builder {
+        crate::model::request_cancel_external_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
 pub mod request_cancel_external_workflow_execution_decision_attributes {
     
@@ -1289,12 +1303,6 @@ pub mod request_cancel_external_workflow_execution_decision_attributes {
     
     
 }
-impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::request_cancel_external_workflow_execution_decision_attributes::Builder {
-        crate::model::request_cancel_external_workflow_execution_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -1346,6 +1354,13 @@ impl SignalExternalWorkflowExecutionDecisionAttributes {
         self.control.as_deref()
     }
 }
+impl SignalExternalWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::signal_external_workflow_execution_decision_attributes::Builder {
+        crate::model::signal_external_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
 pub mod signal_external_workflow_execution_decision_attributes {
     
@@ -1424,12 +1439,6 @@ pub mod signal_external_workflow_execution_decision_attributes {
     
     
 }
-impl SignalExternalWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::signal_external_workflow_execution_decision_attributes::Builder {
-        crate::model::signal_external_workflow_execution_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>CancelTimer</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -1453,6 +1462,13 @@ impl CancelTimerDecisionAttributes {
         self.timer_id.as_deref()
     }
 }
+impl CancelTimerDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
+    pub fn builder() -> crate::model::cancel_timer_decision_attributes::Builder {
+        crate::model::cancel_timer_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
 pub mod cancel_timer_decision_attributes {
     
@@ -1482,12 +1498,6 @@ pub mod cancel_timer_decision_attributes {
     }
     
     
-}
-impl CancelTimerDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
-    pub fn builder() -> crate::model::cancel_timer_decision_attributes::Builder {
-        crate::model::cancel_timer_decision_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>StartTimer</code> decision.</p> 
@@ -1530,6 +1540,13 @@ impl StartTimerDecisionAttributes {
         self.start_to_fire_timeout.as_deref()
     }
 }
+impl StartTimerDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
+    pub fn builder() -> crate::model::start_timer_decision_attributes::Builder {
+        crate::model::start_timer_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
 pub mod start_timer_decision_attributes {
     
@@ -1588,12 +1605,6 @@ pub mod start_timer_decision_attributes {
     
     
 }
-impl StartTimerDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
-    pub fn builder() -> crate::model::start_timer_decision_attributes::Builder {
-        crate::model::start_timer_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>RecordMarker</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -1624,6 +1635,13 @@ impl RecordMarkerDecisionAttributes {
         self.details.as_deref()
     }
 }
+impl RecordMarkerDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
+    pub fn builder() -> crate::model::record_marker_decision_attributes::Builder {
+        crate::model::record_marker_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
 pub mod record_marker_decision_attributes {
     
@@ -1665,12 +1683,6 @@ pub mod record_marker_decision_attributes {
     }
     
     
-}
-impl RecordMarkerDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
-    pub fn builder() -> crate::model::record_marker_decision_attributes::Builder {
-        crate::model::record_marker_decision_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.</p> 
@@ -1786,6 +1798,13 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributes {
         self.lambda_role.as_deref()
     }
 }
+impl ContinueAsNewWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::continue_as_new_workflow_execution_decision_attributes::Builder {
+        crate::model::continue_as_new_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
 pub mod continue_as_new_workflow_execution_decision_attributes {
     
@@ -1948,12 +1967,6 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
     
     
 }
-impl ContinueAsNewWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::continue_as_new_workflow_execution_decision_attributes::Builder {
-        crate::model::continue_as_new_workflow_execution_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -1977,6 +1990,13 @@ impl CancelWorkflowExecutionDecisionAttributes {
         self.details.as_deref()
     }
 }
+impl CancelWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::cancel_workflow_execution_decision_attributes::Builder {
+        crate::model::cancel_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
 pub mod cancel_workflow_execution_decision_attributes {
     
@@ -2006,12 +2026,6 @@ pub mod cancel_workflow_execution_decision_attributes {
     }
     
     
-}
-impl CancelWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::cancel_workflow_execution_decision_attributes::Builder {
-        crate::model::cancel_workflow_execution_decision_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision.</p> 
@@ -2043,6 +2057,13 @@ impl FailWorkflowExecutionDecisionAttributes {
         self.details.as_deref()
     }
 }
+impl FailWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::fail_workflow_execution_decision_attributes::Builder {
+        crate::model::fail_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
 pub mod fail_workflow_execution_decision_attributes {
     
@@ -2085,12 +2106,6 @@ pub mod fail_workflow_execution_decision_attributes {
     
     
 }
-impl FailWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::fail_workflow_execution_decision_attributes::Builder {
-        crate::model::fail_workflow_execution_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -2114,6 +2129,13 @@ impl CompleteWorkflowExecutionDecisionAttributes {
         self.result.as_deref()
     }
 }
+impl CompleteWorkflowExecutionDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
+    pub fn builder() -> crate::model::complete_workflow_execution_decision_attributes::Builder {
+        crate::model::complete_workflow_execution_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
 pub mod complete_workflow_execution_decision_attributes {
     
@@ -2144,12 +2166,6 @@ pub mod complete_workflow_execution_decision_attributes {
     
     
 }
-impl CompleteWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
-    pub fn builder() -> crate::model::complete_workflow_execution_decision_attributes::Builder {
-        crate::model::complete_workflow_execution_decision_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision.</p> 
 /// <p> <b>Access Control</b> </p> 
@@ -2173,6 +2189,13 @@ impl RequestCancelActivityTaskDecisionAttributes {
         self.activity_id.as_deref()
     }
 }
+impl RequestCancelActivityTaskDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
+    pub fn builder() -> crate::model::request_cancel_activity_task_decision_attributes::Builder {
+        crate::model::request_cancel_activity_task_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
 pub mod request_cancel_activity_task_decision_attributes {
     
@@ -2202,12 +2225,6 @@ pub mod request_cancel_activity_task_decision_attributes {
     }
     
     
-}
-impl RequestCancelActivityTaskDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
-    pub fn builder() -> crate::model::request_cancel_activity_task_decision_attributes::Builder {
-        crate::model::request_cancel_activity_task_decision_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision.</p> 
@@ -2330,6 +2347,13 @@ impl ScheduleActivityTaskDecisionAttributes {
         self.heartbeat_timeout.as_deref()
     }
 }
+impl ScheduleActivityTaskDecisionAttributes {
+    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
+    pub fn builder() -> crate::model::schedule_activity_task_decision_attributes::Builder {
+        crate::model::schedule_activity_task_decision_attributes::Builder::default()
+    }
+}
+
 /// See [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
 pub mod schedule_activity_task_decision_attributes {
     
@@ -2497,12 +2521,6 @@ pub mod schedule_activity_task_decision_attributes {
     }
     
     
-}
-impl ScheduleActivityTaskDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
-    pub fn builder() -> crate::model::schedule_activity_task_decision_attributes::Builder {
-        crate::model::schedule_activity_task_decision_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DecisionType`, it is important to ensure
@@ -3098,6 +3116,13 @@ impl HistoryEvent {
         self.start_lambda_function_failed_event_attributes.as_ref()
     }
 }
+impl HistoryEvent {
+    /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::model::HistoryEvent).
+    pub fn builder() -> crate::model::history_event::Builder {
+        crate::model::history_event::Builder::default()
+    }
+}
+
 /// See [`HistoryEvent`](crate::model::HistoryEvent).
 pub mod history_event {
     
@@ -3801,12 +3826,6 @@ pub mod history_event {
     
     
 }
-impl HistoryEvent {
-    /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::model::HistoryEvent).
-    pub fn builder() -> crate::model::history_event::Builder {
-        crate::model::history_event::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
@@ -3840,6 +3859,13 @@ impl StartLambdaFunctionFailedEventAttributes {
         self.message.as_deref()
     }
 }
+impl StartLambdaFunctionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
+    pub fn builder() -> crate::model::start_lambda_function_failed_event_attributes::Builder {
+        crate::model::start_lambda_function_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
 pub mod start_lambda_function_failed_event_attributes {
     
@@ -3898,12 +3924,6 @@ pub mod start_lambda_function_failed_event_attributes {
     }
     
     
-}
-impl StartLambdaFunctionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
-    pub fn builder() -> crate::model::start_lambda_function_failed_event_attributes::Builder {
-        crate::model::start_lambda_function_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StartLambdaFunctionFailedCause`, it is important to ensure
@@ -4022,6 +4042,13 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl ScheduleLambdaFunctionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
+    pub fn builder() -> crate::model::schedule_lambda_function_failed_event_attributes::Builder {
+        crate::model::schedule_lambda_function_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
 pub mod schedule_lambda_function_failed_event_attributes {
     
@@ -4092,12 +4119,6 @@ pub mod schedule_lambda_function_failed_event_attributes {
     }
     
     
-}
-impl ScheduleLambdaFunctionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
-    pub fn builder() -> crate::model::schedule_lambda_function_failed_event_attributes::Builder {
-        crate::model::schedule_lambda_function_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduleLambdaFunctionFailedCause`, it is important to ensure
@@ -4220,6 +4241,13 @@ impl LambdaFunctionTimedOutEventAttributes {
         self.timeout_type.as_ref()
     }
 }
+impl LambdaFunctionTimedOutEventAttributes {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
+    pub fn builder() -> crate::model::lambda_function_timed_out_event_attributes::Builder {
+        crate::model::lambda_function_timed_out_event_attributes::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
 pub mod lambda_function_timed_out_event_attributes {
     
@@ -4275,12 +4303,6 @@ pub mod lambda_function_timed_out_event_attributes {
     }
     
     
-}
-impl LambdaFunctionTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
-    pub fn builder() -> crate::model::lambda_function_timed_out_event_attributes::Builder {
-        crate::model::lambda_function_timed_out_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LambdaFunctionTimeoutType`, it is important to ensure
@@ -4395,6 +4417,13 @@ impl LambdaFunctionFailedEventAttributes {
         self.details.as_deref()
     }
 }
+impl LambdaFunctionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
+    pub fn builder() -> crate::model::lambda_function_failed_event_attributes::Builder {
+        crate::model::lambda_function_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
 pub mod lambda_function_failed_event_attributes {
     
@@ -4463,12 +4492,6 @@ pub mod lambda_function_failed_event_attributes {
     
     
 }
-impl LambdaFunctionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
-    pub fn builder() -> crate::model::lambda_function_failed_event_attributes::Builder {
-        crate::model::lambda_function_failed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
@@ -4498,6 +4521,13 @@ impl LambdaFunctionCompletedEventAttributes {
         self.result.as_deref()
     }
 }
+impl LambdaFunctionCompletedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
+    pub fn builder() -> crate::model::lambda_function_completed_event_attributes::Builder {
+        crate::model::lambda_function_completed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
 pub mod lambda_function_completed_event_attributes {
     
@@ -4554,12 +4584,6 @@ pub mod lambda_function_completed_event_attributes {
     
     
 }
-impl LambdaFunctionCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
-    pub fn builder() -> crate::model::lambda_function_completed_event_attributes::Builder {
-        crate::model::lambda_function_completed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
@@ -4575,6 +4599,13 @@ impl LambdaFunctionStartedEventAttributes {
         self.scheduled_event_id
     }
 }
+impl LambdaFunctionStartedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
+    pub fn builder() -> crate::model::lambda_function_started_event_attributes::Builder {
+        crate::model::lambda_function_started_event_attributes::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
 pub mod lambda_function_started_event_attributes {
     
@@ -4605,12 +4636,6 @@ pub mod lambda_function_started_event_attributes {
     }
     
     
-}
-impl LambdaFunctionStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
-    pub fn builder() -> crate::model::lambda_function_started_event_attributes::Builder {
-        crate::model::lambda_function_started_event_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
@@ -4662,6 +4687,13 @@ impl LambdaFunctionScheduledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl LambdaFunctionScheduledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
+    pub fn builder() -> crate::model::lambda_function_scheduled_event_attributes::Builder {
+        crate::model::lambda_function_scheduled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
 pub mod lambda_function_scheduled_event_attributes {
     
@@ -4753,12 +4785,6 @@ pub mod lambda_function_scheduled_event_attributes {
     
     
 }
-impl LambdaFunctionScheduledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
-    pub fn builder() -> crate::model::lambda_function_scheduled_event_attributes::Builder {
-        crate::model::lambda_function_scheduled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
@@ -4815,6 +4841,13 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
         self.control.as_deref()
     }
 }
+impl StartChildWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::start_child_workflow_execution_failed_event_attributes::Builder {
+        crate::model::start_child_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
 pub mod start_child_workflow_execution_failed_event_attributes {
     
@@ -4912,12 +4945,6 @@ pub mod start_child_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl StartChildWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::start_child_workflow_execution_failed_event_attributes::Builder {
-        crate::model::start_child_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StartChildWorkflowExecutionFailedCause`, it is important to ensure
@@ -5079,6 +5106,13 @@ impl CancelTimerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl CancelTimerFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
+    pub fn builder() -> crate::model::cancel_timer_failed_event_attributes::Builder {
+        crate::model::cancel_timer_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
 pub mod cancel_timer_failed_event_attributes {
     
@@ -5137,12 +5171,6 @@ pub mod cancel_timer_failed_event_attributes {
     }
     
     
-}
-impl CancelTimerFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
-    pub fn builder() -> crate::model::cancel_timer_failed_event_attributes::Builder {
-        crate::model::cancel_timer_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CancelTimerFailedCause`, it is important to ensure
@@ -5259,6 +5287,13 @@ impl StartTimerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl StartTimerFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
+    pub fn builder() -> crate::model::start_timer_failed_event_attributes::Builder {
+        crate::model::start_timer_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
 pub mod start_timer_failed_event_attributes {
     
@@ -5317,12 +5352,6 @@ pub mod start_timer_failed_event_attributes {
     }
     
     
-}
-impl StartTimerFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
-    pub fn builder() -> crate::model::start_timer_failed_event_attributes::Builder {
-        crate::model::start_timer_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StartTimerFailedCause`, it is important to ensure
@@ -5449,6 +5478,13 @@ impl RequestCancelActivityTaskFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl RequestCancelActivityTaskFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
+    pub fn builder() -> crate::model::request_cancel_activity_task_failed_event_attributes::Builder {
+        crate::model::request_cancel_activity_task_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
 pub mod request_cancel_activity_task_failed_event_attributes {
     
@@ -5507,12 +5543,6 @@ pub mod request_cancel_activity_task_failed_event_attributes {
     }
     
     
-}
-impl RequestCancelActivityTaskFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
-    pub fn builder() -> crate::model::request_cancel_activity_task_failed_event_attributes::Builder {
-        crate::model::request_cancel_activity_task_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequestCancelActivityTaskFailedCause`, it is important to ensure
@@ -5636,6 +5666,13 @@ impl ScheduleActivityTaskFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl ScheduleActivityTaskFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
+    pub fn builder() -> crate::model::schedule_activity_task_failed_event_attributes::Builder {
+        crate::model::schedule_activity_task_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
 pub mod schedule_activity_task_failed_event_attributes {
     
@@ -5706,12 +5743,6 @@ pub mod schedule_activity_task_failed_event_attributes {
     }
     
     
-}
-impl ScheduleActivityTaskFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
-    pub fn builder() -> crate::model::schedule_activity_task_failed_event_attributes::Builder {
-        crate::model::schedule_activity_task_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduleActivityTaskFailedCause`, it is important to ensure
@@ -5894,6 +5925,13 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
         self.control.as_deref()
     }
 }
+impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder {
+        crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
 pub mod request_cancel_external_workflow_execution_failed_event_attributes {
     
@@ -5989,12 +6027,6 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder {
-        crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequestCancelExternalWorkflowExecutionFailedCause`, it is important to ensure
@@ -6119,6 +6151,13 @@ impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
         self.control.as_deref()
     }
 }
+impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
+    pub fn builder() -> crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder {
+        crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder::default()
+    }
+}
+
 /// See [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
 pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
     
@@ -6186,12 +6225,6 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
     
     
 }
-impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn builder() -> crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder {
-        crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
@@ -6214,6 +6247,13 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
         self.initiated_event_id
     }
 }
+impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
+    pub fn builder() -> crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder {
+        crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
 pub mod external_workflow_execution_cancel_requested_event_attributes {
     
@@ -6257,12 +6297,6 @@ pub mod external_workflow_execution_cancel_requested_event_attributes {
     
     
 }
-impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
-    pub fn builder() -> crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder {
-        crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Represents a workflow execution.</p>
 #[non_exhaustive]
@@ -6285,6 +6319,13 @@ impl WorkflowExecution {
         self.run_id.as_deref()
     }
 }
+impl WorkflowExecution {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecution`](crate::model::WorkflowExecution).
+    pub fn builder() -> crate::model::workflow_execution::Builder {
+        crate::model::workflow_execution::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecution`](crate::model::WorkflowExecution).
 pub mod workflow_execution {
     
@@ -6326,12 +6367,6 @@ pub mod workflow_execution {
     }
     
     
-}
-impl WorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecution`](crate::model::WorkflowExecution).
-    pub fn builder() -> crate::model::workflow_execution::Builder {
-        crate::model::workflow_execution::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionFailed</code> event.</p>
@@ -6387,6 +6422,13 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
         self.control.as_deref()
     }
 }
+impl SignalExternalWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::signal_external_workflow_execution_failed_event_attributes::Builder {
+        crate::model::signal_external_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
 pub mod signal_external_workflow_execution_failed_event_attributes {
     
@@ -6482,12 +6524,6 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl SignalExternalWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::signal_external_workflow_execution_failed_event_attributes::Builder {
-        crate::model::signal_external_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SignalExternalWorkflowExecutionFailedCause`, it is important to ensure
@@ -6598,6 +6634,13 @@ impl ExternalWorkflowExecutionSignaledEventAttributes {
         self.initiated_event_id
     }
 }
+impl ExternalWorkflowExecutionSignaledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
+    pub fn builder() -> crate::model::external_workflow_execution_signaled_event_attributes::Builder {
+        crate::model::external_workflow_execution_signaled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
 pub mod external_workflow_execution_signaled_event_attributes {
     
@@ -6640,12 +6683,6 @@ pub mod external_workflow_execution_signaled_event_attributes {
     }
     
     
-}
-impl ExternalWorkflowExecutionSignaledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
-    pub fn builder() -> crate::model::external_workflow_execution_signaled_event_attributes::Builder {
-        crate::model::external_workflow_execution_signaled_event_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.</p>
@@ -6697,6 +6734,13 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
         self.control.as_deref()
     }
 }
+impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
+    pub fn builder() -> crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder {
+        crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder::default()
+    }
+}
+
 /// See [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
 pub mod signal_external_workflow_execution_initiated_event_attributes {
     
@@ -6788,12 +6832,6 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
     
     
 }
-impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
-    pub fn builder() -> crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder {
-        crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionTerminated</code> event.</p>
 #[non_exhaustive]
@@ -6830,6 +6868,13 @@ impl ChildWorkflowExecutionTerminatedEventAttributes {
         self.started_event_id
     }
 }
+impl ChildWorkflowExecutionTerminatedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
+    pub fn builder() -> crate::model::child_workflow_execution_terminated_event_attributes::Builder {
+        crate::model::child_workflow_execution_terminated_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
 pub mod child_workflow_execution_terminated_event_attributes {
     
@@ -6898,12 +6943,6 @@ pub mod child_workflow_execution_terminated_event_attributes {
     
     
 }
-impl ChildWorkflowExecutionTerminatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
-    pub fn builder() -> crate::model::child_workflow_execution_terminated_event_attributes::Builder {
-        crate::model::child_workflow_execution_terminated_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.</p>
 #[non_exhaustive]
@@ -6947,6 +6986,13 @@ impl ChildWorkflowExecutionCanceledEventAttributes {
         self.started_event_id
     }
 }
+impl ChildWorkflowExecutionCanceledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
+    pub fn builder() -> crate::model::child_workflow_execution_canceled_event_attributes::Builder {
+        crate::model::child_workflow_execution_canceled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
 pub mod child_workflow_execution_canceled_event_attributes {
     
@@ -7027,12 +7073,6 @@ pub mod child_workflow_execution_canceled_event_attributes {
     
     
 }
-impl ChildWorkflowExecutionCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
-    pub fn builder() -> crate::model::child_workflow_execution_canceled_event_attributes::Builder {
-        crate::model::child_workflow_execution_canceled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
@@ -7076,6 +7116,13 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
         self.started_event_id
     }
 }
+impl ChildWorkflowExecutionTimedOutEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
+    pub fn builder() -> crate::model::child_workflow_execution_timed_out_event_attributes::Builder {
+        crate::model::child_workflow_execution_timed_out_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
 pub mod child_workflow_execution_timed_out_event_attributes {
     
@@ -7155,12 +7202,6 @@ pub mod child_workflow_execution_timed_out_event_attributes {
     }
     
     
-}
-impl ChildWorkflowExecutionTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
-    pub fn builder() -> crate::model::child_workflow_execution_timed_out_event_attributes::Builder {
-        crate::model::child_workflow_execution_timed_out_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkflowExecutionTimeoutType`, it is important to ensure
@@ -7289,6 +7330,13 @@ impl ChildWorkflowExecutionFailedEventAttributes {
         self.started_event_id
     }
 }
+impl ChildWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::child_workflow_execution_failed_event_attributes::Builder {
+        crate::model::child_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
 pub mod child_workflow_execution_failed_event_attributes {
     
@@ -7381,12 +7429,6 @@ pub mod child_workflow_execution_failed_event_attributes {
     
     
 }
-impl ChildWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::child_workflow_execution_failed_event_attributes::Builder {
-        crate::model::child_workflow_execution_failed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionCompleted</code> event.</p>
 #[non_exhaustive]
@@ -7430,6 +7472,13 @@ impl ChildWorkflowExecutionCompletedEventAttributes {
         self.started_event_id
     }
 }
+impl ChildWorkflowExecutionCompletedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
+    pub fn builder() -> crate::model::child_workflow_execution_completed_event_attributes::Builder {
+        crate::model::child_workflow_execution_completed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
 pub mod child_workflow_execution_completed_event_attributes {
     
@@ -7510,12 +7559,6 @@ pub mod child_workflow_execution_completed_event_attributes {
     
     
 }
-impl ChildWorkflowExecutionCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
-    pub fn builder() -> crate::model::child_workflow_execution_completed_event_attributes::Builder {
-        crate::model::child_workflow_execution_completed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.</p>
 #[non_exhaustive]
@@ -7545,6 +7588,13 @@ impl ChildWorkflowExecutionStartedEventAttributes {
         self.initiated_event_id
     }
 }
+impl ChildWorkflowExecutionStartedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
+    pub fn builder() -> crate::model::child_workflow_execution_started_event_attributes::Builder {
+        crate::model::child_workflow_execution_started_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
 pub mod child_workflow_execution_started_event_attributes {
     
@@ -7599,12 +7649,6 @@ pub mod child_workflow_execution_started_event_attributes {
     }
     
     
-}
-impl ChildWorkflowExecutionStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
-    pub fn builder() -> crate::model::child_workflow_execution_started_event_attributes::Builder {
-        crate::model::child_workflow_execution_started_event_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.</p>
@@ -7716,6 +7760,13 @@ impl StartChildWorkflowExecutionInitiatedEventAttributes {
         self.lambda_role.as_deref()
     }
 }
+impl StartChildWorkflowExecutionInitiatedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
+    pub fn builder() -> crate::model::start_child_workflow_execution_initiated_event_attributes::Builder {
+        crate::model::start_child_workflow_execution_initiated_event_attributes::Builder::default()
+    }
+}
+
 /// See [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
 pub mod start_child_workflow_execution_initiated_event_attributes {
     
@@ -7903,12 +7954,6 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
     
     
 }
-impl StartChildWorkflowExecutionInitiatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
-    pub fn builder() -> crate::model::start_child_workflow_execution_initiated_event_attributes::Builder {
-        crate::model::start_child_workflow_execution_initiated_event_attributes::Builder::default()
-    }
-}
 
 /// <p> Provides the details of the <code>TimerCanceled</code> event. </p>
 #[non_exhaustive]
@@ -7938,6 +7983,13 @@ impl TimerCanceledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl TimerCanceledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
+    pub fn builder() -> crate::model::timer_canceled_event_attributes::Builder {
+        crate::model::timer_canceled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
 pub mod timer_canceled_event_attributes {
     
@@ -7994,12 +8046,6 @@ pub mod timer_canceled_event_attributes {
     
     
 }
-impl TimerCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
-    pub fn builder() -> crate::model::timer_canceled_event_attributes::Builder {
-        crate::model::timer_canceled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>TimerFired</code> event.</p>
 #[non_exhaustive]
@@ -8022,6 +8068,13 @@ impl TimerFiredEventAttributes {
         self.started_event_id
     }
 }
+impl TimerFiredEventAttributes {
+    /// Creates a new builder-style object to manufacture [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
+    pub fn builder() -> crate::model::timer_fired_event_attributes::Builder {
+        crate::model::timer_fired_event_attributes::Builder::default()
+    }
+}
+
 /// See [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
 pub mod timer_fired_event_attributes {
     
@@ -8065,12 +8118,6 @@ pub mod timer_fired_event_attributes {
     
     
 }
-impl TimerFiredEventAttributes {
-    /// Creates a new builder-style object to manufacture [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
-    pub fn builder() -> crate::model::timer_fired_event_attributes::Builder {
-        crate::model::timer_fired_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>TimerStarted</code> event.</p>
 #[non_exhaustive]
@@ -8109,6 +8156,13 @@ impl TimerStartedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl TimerStartedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
+    pub fn builder() -> crate::model::timer_started_event_attributes::Builder {
+        crate::model::timer_started_event_attributes::Builder::default()
+    }
+}
+
 /// See [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
 pub mod timer_started_event_attributes {
     
@@ -8178,12 +8232,6 @@ pub mod timer_started_event_attributes {
     
     
 }
-impl TimerStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
-    pub fn builder() -> crate::model::timer_started_event_attributes::Builder {
-        crate::model::timer_started_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>RecordMarkerFailed</code> event.</p>
 #[non_exhaustive]
@@ -8217,6 +8265,13 @@ impl RecordMarkerFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl RecordMarkerFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
+    pub fn builder() -> crate::model::record_marker_failed_event_attributes::Builder {
+        crate::model::record_marker_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
 pub mod record_marker_failed_event_attributes {
     
@@ -8275,12 +8330,6 @@ pub mod record_marker_failed_event_attributes {
     }
     
     
-}
-impl RecordMarkerFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
-    pub fn builder() -> crate::model::record_marker_failed_event_attributes::Builder {
-        crate::model::record_marker_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecordMarkerFailedCause`, it is important to ensure
@@ -8388,6 +8437,13 @@ impl MarkerRecordedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl MarkerRecordedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
+    pub fn builder() -> crate::model::marker_recorded_event_attributes::Builder {
+        crate::model::marker_recorded_event_attributes::Builder::default()
+    }
+}
+
 /// See [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
 pub mod marker_recorded_event_attributes {
     
@@ -8443,12 +8499,6 @@ pub mod marker_recorded_event_attributes {
     
     
 }
-impl MarkerRecordedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
-    pub fn builder() -> crate::model::marker_recorded_event_attributes::Builder {
-        crate::model::marker_recorded_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>WorkflowExecutionSignaled</code> event.</p>
 #[non_exhaustive]
@@ -8485,6 +8535,13 @@ impl WorkflowExecutionSignaledEventAttributes {
         self.external_initiated_event_id
     }
 }
+impl WorkflowExecutionSignaledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_signaled_event_attributes::Builder {
+        crate::model::workflow_execution_signaled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
 pub mod workflow_execution_signaled_event_attributes {
     
@@ -8552,12 +8609,6 @@ pub mod workflow_execution_signaled_event_attributes {
     
     
 }
-impl WorkflowExecutionSignaledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_signaled_event_attributes::Builder {
-        crate::model::workflow_execution_signaled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ActivityTaskCancelRequested</code> event.</p>
 #[non_exhaustive]
@@ -8580,6 +8631,13 @@ impl ActivityTaskCancelRequestedEventAttributes {
         self.activity_id.as_deref()
     }
 }
+impl ActivityTaskCancelRequestedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
+    pub fn builder() -> crate::model::activity_task_cancel_requested_event_attributes::Builder {
+        crate::model::activity_task_cancel_requested_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
 pub mod activity_task_cancel_requested_event_attributes {
     
@@ -8623,12 +8681,6 @@ pub mod activity_task_cancel_requested_event_attributes {
     
     
 }
-impl ActivityTaskCancelRequestedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
-    pub fn builder() -> crate::model::activity_task_cancel_requested_event_attributes::Builder {
-        crate::model::activity_task_cancel_requested_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ActivityTaskCanceled</code> event.</p>
 #[non_exhaustive]
@@ -8665,6 +8717,13 @@ impl ActivityTaskCanceledEventAttributes {
         self.latest_cancel_requested_event_id
     }
 }
+impl ActivityTaskCanceledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
+    pub fn builder() -> crate::model::activity_task_canceled_event_attributes::Builder {
+        crate::model::activity_task_canceled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
 pub mod activity_task_canceled_event_attributes {
     
@@ -8734,12 +8793,6 @@ pub mod activity_task_canceled_event_attributes {
     
     
 }
-impl ActivityTaskCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
-    pub fn builder() -> crate::model::activity_task_canceled_event_attributes::Builder {
-        crate::model::activity_task_canceled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ActivityTaskTimedOut</code> event.</p>
 #[non_exhaustive]
@@ -8776,6 +8829,13 @@ impl ActivityTaskTimedOutEventAttributes {
         self.details.as_deref()
     }
 }
+impl ActivityTaskTimedOutEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
+    pub fn builder() -> crate::model::activity_task_timed_out_event_attributes::Builder {
+        crate::model::activity_task_timed_out_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
 pub mod activity_task_timed_out_event_attributes {
     
@@ -8843,12 +8903,6 @@ pub mod activity_task_timed_out_event_attributes {
     }
     
     
-}
-impl ActivityTaskTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
-    pub fn builder() -> crate::model::activity_task_timed_out_event_attributes::Builder {
-        crate::model::activity_task_timed_out_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActivityTaskTimeoutType`, it is important to ensure
@@ -8978,6 +9032,13 @@ impl ActivityTaskFailedEventAttributes {
         self.started_event_id
     }
 }
+impl ActivityTaskFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
+    pub fn builder() -> crate::model::activity_task_failed_event_attributes::Builder {
+        crate::model::activity_task_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
 pub mod activity_task_failed_event_attributes {
     
@@ -9046,12 +9107,6 @@ pub mod activity_task_failed_event_attributes {
     
     
 }
-impl ActivityTaskFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
-    pub fn builder() -> crate::model::activity_task_failed_event_attributes::Builder {
-        crate::model::activity_task_failed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ActivityTaskCompleted</code> event.</p>
 #[non_exhaustive]
@@ -9081,6 +9136,13 @@ impl ActivityTaskCompletedEventAttributes {
         self.started_event_id
     }
 }
+impl ActivityTaskCompletedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
+    pub fn builder() -> crate::model::activity_task_completed_event_attributes::Builder {
+        crate::model::activity_task_completed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
 pub mod activity_task_completed_event_attributes {
     
@@ -9137,12 +9199,6 @@ pub mod activity_task_completed_event_attributes {
     
     
 }
-impl ActivityTaskCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
-    pub fn builder() -> crate::model::activity_task_completed_event_attributes::Builder {
-        crate::model::activity_task_completed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>ActivityTaskStarted</code> event.</p>
 #[non_exhaustive]
@@ -9165,6 +9221,13 @@ impl ActivityTaskStartedEventAttributes {
         self.scheduled_event_id
     }
 }
+impl ActivityTaskStartedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
+    pub fn builder() -> crate::model::activity_task_started_event_attributes::Builder {
+        crate::model::activity_task_started_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
 pub mod activity_task_started_event_attributes {
     
@@ -9207,12 +9270,6 @@ pub mod activity_task_started_event_attributes {
     }
     
     
-}
-impl ActivityTaskStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
-    pub fn builder() -> crate::model::activity_task_started_event_attributes::Builder {
-        crate::model::activity_task_started_event_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides the details of the <code>ActivityTaskScheduled</code> event.</p>
@@ -9303,6 +9360,13 @@ impl ActivityTaskScheduledEventAttributes {
         self.heartbeat_timeout.as_deref()
     }
 }
+impl ActivityTaskScheduledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
+    pub fn builder() -> crate::model::activity_task_scheduled_event_attributes::Builder {
+        crate::model::activity_task_scheduled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
 pub mod activity_task_scheduled_event_attributes {
     
@@ -9458,12 +9522,6 @@ pub mod activity_task_scheduled_event_attributes {
     
     
 }
-impl ActivityTaskScheduledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
-    pub fn builder() -> crate::model::activity_task_scheduled_event_attributes::Builder {
-        crate::model::activity_task_scheduled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>DecisionTaskTimedOut</code> event.</p>
 #[non_exhaustive]
@@ -9493,6 +9551,13 @@ impl DecisionTaskTimedOutEventAttributes {
         self.started_event_id
     }
 }
+impl DecisionTaskTimedOutEventAttributes {
+    /// Creates a new builder-style object to manufacture [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
+    pub fn builder() -> crate::model::decision_task_timed_out_event_attributes::Builder {
+        crate::model::decision_task_timed_out_event_attributes::Builder::default()
+    }
+}
+
 /// See [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
 pub mod decision_task_timed_out_event_attributes {
     
@@ -9548,12 +9613,6 @@ pub mod decision_task_timed_out_event_attributes {
     }
     
     
-}
-impl DecisionTaskTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
-    pub fn builder() -> crate::model::decision_task_timed_out_event_attributes::Builder {
-        crate::model::decision_task_timed_out_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DecisionTaskTimeoutType`, it is important to ensure
@@ -9661,6 +9720,13 @@ impl DecisionTaskCompletedEventAttributes {
         self.started_event_id
     }
 }
+impl DecisionTaskCompletedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
+    pub fn builder() -> crate::model::decision_task_completed_event_attributes::Builder {
+        crate::model::decision_task_completed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
 pub mod decision_task_completed_event_attributes {
     
@@ -9717,12 +9783,6 @@ pub mod decision_task_completed_event_attributes {
     
     
 }
-impl DecisionTaskCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
-    pub fn builder() -> crate::model::decision_task_completed_event_attributes::Builder {
-        crate::model::decision_task_completed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>DecisionTaskStarted</code> event.</p>
 #[non_exhaustive]
@@ -9745,6 +9805,13 @@ impl DecisionTaskStartedEventAttributes {
         self.scheduled_event_id
     }
 }
+impl DecisionTaskStartedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
+    pub fn builder() -> crate::model::decision_task_started_event_attributes::Builder {
+        crate::model::decision_task_started_event_attributes::Builder::default()
+    }
+}
+
 /// See [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
 pub mod decision_task_started_event_attributes {
     
@@ -9788,12 +9855,6 @@ pub mod decision_task_started_event_attributes {
     
     
 }
-impl DecisionTaskStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
-    pub fn builder() -> crate::model::decision_task_started_event_attributes::Builder {
-        crate::model::decision_task_started_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides details about the <code>DecisionTaskScheduled</code> event.</p>
 #[non_exhaustive]
@@ -9827,6 +9888,13 @@ impl DecisionTaskScheduledEventAttributes {
         self.start_to_close_timeout.as_deref()
     }
 }
+impl DecisionTaskScheduledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
+    pub fn builder() -> crate::model::decision_task_scheduled_event_attributes::Builder {
+        crate::model::decision_task_scheduled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
 pub mod decision_task_scheduled_event_attributes {
     
@@ -9885,12 +9953,6 @@ pub mod decision_task_scheduled_event_attributes {
     
     
 }
-impl DecisionTaskScheduledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
-    pub fn builder() -> crate::model::decision_task_scheduled_event_attributes::Builder {
-        crate::model::decision_task_scheduled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
@@ -9920,6 +9982,13 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
         self.cause.as_ref()
     }
 }
+impl WorkflowExecutionCancelRequestedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_cancel_requested_event_attributes::Builder {
+        crate::model::workflow_execution_cancel_requested_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
 pub mod workflow_execution_cancel_requested_event_attributes {
     
@@ -9974,12 +10043,6 @@ pub mod workflow_execution_cancel_requested_event_attributes {
     }
     
     
-}
-impl WorkflowExecutionCancelRequestedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_cancel_requested_event_attributes::Builder {
-        crate::model::workflow_execution_cancel_requested_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkflowExecutionCancelRequestedCause`, it is important to ensure
@@ -10106,6 +10169,13 @@ impl WorkflowExecutionTerminatedEventAttributes {
         self.cause.as_ref()
     }
 }
+impl WorkflowExecutionTerminatedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_terminated_event_attributes::Builder {
+        crate::model::workflow_execution_terminated_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
 pub mod workflow_execution_terminated_event_attributes {
     
@@ -10183,12 +10253,6 @@ pub mod workflow_execution_terminated_event_attributes {
     }
     
     
-}
-impl WorkflowExecutionTerminatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_terminated_event_attributes::Builder {
-        crate::model::workflow_execution_terminated_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkflowExecutionTerminatedCause`, it is important to ensure
@@ -10303,6 +10367,13 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder {
+        crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
 pub mod continue_as_new_workflow_execution_failed_event_attributes {
     
@@ -10349,12 +10420,6 @@ pub mod continue_as_new_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder {
-        crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContinueAsNewWorkflowExecutionFailedCause`, it is important to ensure
@@ -10574,6 +10639,13 @@ impl WorkflowExecutionContinuedAsNewEventAttributes {
         self.lambda_role.as_deref()
     }
 }
+impl WorkflowExecutionContinuedAsNewEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_continued_as_new_event_attributes::Builder {
+        crate::model::workflow_execution_continued_as_new_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
 pub mod workflow_execution_continued_as_new_event_attributes {
     
@@ -10747,12 +10819,6 @@ pub mod workflow_execution_continued_as_new_event_attributes {
     
     
 }
-impl WorkflowExecutionContinuedAsNewEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_continued_as_new_event_attributes::Builder {
-        crate::model::workflow_execution_continued_as_new_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>CancelWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
@@ -10779,6 +10845,13 @@ impl CancelWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl CancelWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::cancel_workflow_execution_failed_event_attributes::Builder {
+        crate::model::cancel_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
 pub mod cancel_workflow_execution_failed_event_attributes {
     
@@ -10825,12 +10898,6 @@ pub mod cancel_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl CancelWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::cancel_workflow_execution_failed_event_attributes::Builder {
-        crate::model::cancel_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CancelWorkflowExecutionFailedCause`, it is important to ensure
@@ -10936,6 +11003,13 @@ impl WorkflowExecutionCanceledEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl WorkflowExecutionCanceledEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_canceled_event_attributes::Builder {
+        crate::model::workflow_execution_canceled_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
 pub mod workflow_execution_canceled_event_attributes {
     
@@ -10979,12 +11053,6 @@ pub mod workflow_execution_canceled_event_attributes {
     
     
 }
-impl WorkflowExecutionCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_canceled_event_attributes::Builder {
-        crate::model::workflow_execution_canceled_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>WorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
@@ -11019,6 +11087,13 @@ impl WorkflowExecutionTimedOutEventAttributes {
         self.child_policy.as_ref()
     }
 }
+impl WorkflowExecutionTimedOutEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_timed_out_event_attributes::Builder {
+        crate::model::workflow_execution_timed_out_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
 pub mod workflow_execution_timed_out_event_attributes {
     
@@ -11073,12 +11148,6 @@ pub mod workflow_execution_timed_out_event_attributes {
     
     
 }
-impl WorkflowExecutionTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_timed_out_event_attributes::Builder {
-        crate::model::workflow_execution_timed_out_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>FailWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
@@ -11105,6 +11174,13 @@ impl FailWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl FailWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::fail_workflow_execution_failed_event_attributes::Builder {
+        crate::model::fail_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
 pub mod fail_workflow_execution_failed_event_attributes {
     
@@ -11151,12 +11227,6 @@ pub mod fail_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl FailWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::fail_workflow_execution_failed_event_attributes::Builder {
-        crate::model::fail_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FailWorkflowExecutionFailedCause`, it is important to ensure
@@ -11269,6 +11339,13 @@ impl WorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl WorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_failed_event_attributes::Builder {
+        crate::model::workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
 pub mod workflow_execution_failed_event_attributes {
     
@@ -11324,12 +11401,6 @@ pub mod workflow_execution_failed_event_attributes {
     
     
 }
-impl WorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_failed_event_attributes::Builder {
-        crate::model::workflow_execution_failed_event_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides the details of the <code>CompleteWorkflowExecutionFailed</code> event.</p>
 #[non_exhaustive]
@@ -11356,6 +11427,13 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl CompleteWorkflowExecutionFailedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
+    pub fn builder() -> crate::model::complete_workflow_execution_failed_event_attributes::Builder {
+        crate::model::complete_workflow_execution_failed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
 pub mod complete_workflow_execution_failed_event_attributes {
     
@@ -11402,12 +11480,6 @@ pub mod complete_workflow_execution_failed_event_attributes {
     }
     
     
-}
-impl CompleteWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
-    pub fn builder() -> crate::model::complete_workflow_execution_failed_event_attributes::Builder {
-        crate::model::complete_workflow_execution_failed_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CompleteWorkflowExecutionFailedCause`, it is important to ensure
@@ -11513,6 +11585,13 @@ impl WorkflowExecutionCompletedEventAttributes {
         self.decision_task_completed_event_id
     }
 }
+impl WorkflowExecutionCompletedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_completed_event_attributes::Builder {
+        crate::model::workflow_execution_completed_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
 pub mod workflow_execution_completed_event_attributes {
     
@@ -11555,12 +11634,6 @@ pub mod workflow_execution_completed_event_attributes {
     }
     
     
-}
-impl WorkflowExecutionCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_completed_event_attributes::Builder {
-        crate::model::workflow_execution_completed_event_attributes::Builder::default()
-    }
 }
 
 /// <p>Provides details of <code>WorkflowExecutionStarted</code> event.</p>
@@ -11670,6 +11743,13 @@ impl WorkflowExecutionStartedEventAttributes {
         self.lambda_role.as_deref()
     }
 }
+impl WorkflowExecutionStartedEventAttributes {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
+    pub fn builder() -> crate::model::workflow_execution_started_event_attributes::Builder {
+        crate::model::workflow_execution_started_event_attributes::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
 pub mod workflow_execution_started_event_attributes {
     
@@ -11854,12 +11934,6 @@ pub mod workflow_execution_started_event_attributes {
     }
     
     
-}
-impl WorkflowExecutionStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
-    pub fn builder() -> crate::model::workflow_execution_started_event_attributes::Builder {
-        crate::model::workflow_execution_started_event_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventType`, it is important to ensure
@@ -12246,6 +12320,13 @@ impl WorkflowTypeInfo {
         self.deprecation_date.as_ref()
     }
 }
+impl WorkflowTypeInfo {
+    /// Creates a new builder-style object to manufacture [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
+    pub fn builder() -> crate::model::workflow_type_info::Builder {
+        crate::model::workflow_type_info::Builder::default()
+    }
+}
+
 /// See [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
 pub mod workflow_type_info {
     
@@ -12323,12 +12404,6 @@ pub mod workflow_type_info {
     }
     
     
-}
-impl WorkflowTypeInfo {
-    /// Creates a new builder-style object to manufacture [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
-    pub fn builder() -> crate::model::workflow_type_info::Builder {
-        crate::model::workflow_type_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RegistrationStatus`, it is important to ensure
@@ -12499,6 +12574,13 @@ impl WorkflowExecutionInfo {
         self.cancel_requested
     }
 }
+impl WorkflowExecutionInfo {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
+    pub fn builder() -> crate::model::workflow_execution_info::Builder {
+        crate::model::workflow_execution_info::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
 pub mod workflow_execution_info {
     
@@ -12647,12 +12729,6 @@ pub mod workflow_execution_info {
     }
     
     
-}
-impl WorkflowExecutionInfo {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
-    pub fn builder() -> crate::model::workflow_execution_info::Builder {
-        crate::model::workflow_execution_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloseStatus`, it is important to ensure
@@ -12853,6 +12929,13 @@ impl WorkflowExecutionFilter {
         self.workflow_id.as_deref()
     }
 }
+impl WorkflowExecutionFilter {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
+    pub fn builder() -> crate::model::workflow_execution_filter::Builder {
+        crate::model::workflow_execution_filter::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
 pub mod workflow_execution_filter {
     
@@ -12883,12 +12966,6 @@ pub mod workflow_execution_filter {
     
     
 }
-impl WorkflowExecutionFilter {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
-    pub fn builder() -> crate::model::workflow_execution_filter::Builder {
-        crate::model::workflow_execution_filter::Builder::default()
-    }
-}
 
 /// <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
 #[non_exhaustive]
@@ -12906,6 +12983,13 @@ impl TagFilter {
         self.tag.as_deref()
     }
 }
+impl TagFilter {
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
+    pub fn builder() -> crate::model::tag_filter::Builder {
+        crate::model::tag_filter::Builder::default()
+    }
+}
+
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
     
@@ -12938,12 +13022,6 @@ pub mod tag_filter {
     
     
 }
-impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
-    pub fn builder() -> crate::model::tag_filter::Builder {
-        crate::model::tag_filter::Builder::default()
-    }
-}
 
 /// <p>Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be satisfied by each returned result.</p>
 #[non_exhaustive]
@@ -12966,6 +13044,13 @@ impl WorkflowTypeFilter {
         self.version.as_deref()
     }
 }
+impl WorkflowTypeFilter {
+    /// Creates a new builder-style object to manufacture [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
+    pub fn builder() -> crate::model::workflow_type_filter::Builder {
+        crate::model::workflow_type_filter::Builder::default()
+    }
+}
+
 /// See [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
 pub mod workflow_type_filter {
     
@@ -13008,12 +13093,6 @@ pub mod workflow_type_filter {
     
     
 }
-impl WorkflowTypeFilter {
-    /// Creates a new builder-style object to manufacture [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
-    pub fn builder() -> crate::model::workflow_type_filter::Builder {
-        crate::model::workflow_type_filter::Builder::default()
-    }
-}
 
 /// <p>Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> </p>
 #[non_exhaustive]
@@ -13036,6 +13115,13 @@ impl ExecutionTimeFilter {
         self.latest_date.as_ref()
     }
 }
+impl ExecutionTimeFilter {
+    /// Creates a new builder-style object to manufacture [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
+    pub fn builder() -> crate::model::execution_time_filter::Builder {
+        crate::model::execution_time_filter::Builder::default()
+    }
+}
+
 /// See [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
 pub mod execution_time_filter {
     
@@ -13077,12 +13163,6 @@ pub mod execution_time_filter {
     }
     
     
-}
-impl ExecutionTimeFilter {
-    /// Creates a new builder-style object to manufacture [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
-    pub fn builder() -> crate::model::execution_time_filter::Builder {
-        crate::model::execution_time_filter::Builder::default()
-    }
 }
 
 /// <p>Contains general information about a domain.</p>
@@ -13128,6 +13208,13 @@ impl DomainInfo {
         self.arn.as_deref()
     }
 }
+impl DomainInfo {
+    /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo).
+    pub fn builder() -> crate::model::domain_info::Builder {
+        crate::model::domain_info::Builder::default()
+    }
+}
+
 /// See [`DomainInfo`](crate::model::DomainInfo).
 pub mod domain_info {
     
@@ -13202,12 +13289,6 @@ pub mod domain_info {
     
     
 }
-impl DomainInfo {
-    /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo).
-    pub fn builder() -> crate::model::domain_info::Builder {
-        crate::model::domain_info::Builder::default()
-    }
-}
 
 /// <p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>
 #[non_exhaustive]
@@ -13223,6 +13304,13 @@ impl CloseStatusFilter {
         self.status.as_ref()
     }
 }
+impl CloseStatusFilter {
+    /// Creates a new builder-style object to manufacture [`CloseStatusFilter`](crate::model::CloseStatusFilter).
+    pub fn builder() -> crate::model::close_status_filter::Builder {
+        crate::model::close_status_filter::Builder::default()
+    }
+}
+
 /// See [`CloseStatusFilter`](crate::model::CloseStatusFilter).
 pub mod close_status_filter {
     
@@ -13252,12 +13340,6 @@ pub mod close_status_filter {
     }
     
     
-}
-impl CloseStatusFilter {
-    /// Creates a new builder-style object to manufacture [`CloseStatusFilter`](crate::model::CloseStatusFilter).
-    pub fn builder() -> crate::model::close_status_filter::Builder {
-        crate::model::close_status_filter::Builder::default()
-    }
 }
 
 /// <p>Detailed information about an activity type.</p>
@@ -13302,6 +13384,13 @@ impl ActivityTypeInfo {
         self.deprecation_date.as_ref()
     }
 }
+impl ActivityTypeInfo {
+    /// Creates a new builder-style object to manufacture [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
+    pub fn builder() -> crate::model::activity_type_info::Builder {
+        crate::model::activity_type_info::Builder::default()
+    }
+}
+
 /// See [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
 pub mod activity_type_info {
     
@@ -13380,12 +13469,6 @@ pub mod activity_type_info {
     
     
 }
-impl ActivityTypeInfo {
-    /// Creates a new builder-style object to manufacture [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
-    pub fn builder() -> crate::model::activity_type_info::Builder {
-        crate::model::activity_type_info::Builder::default()
-    }
-}
 
 /// <p>The configuration settings of a workflow type.</p>
 #[non_exhaustive]
@@ -13460,6 +13543,13 @@ impl WorkflowTypeConfiguration {
         self.default_lambda_role.as_deref()
     }
 }
+impl WorkflowTypeConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
+    pub fn builder() -> crate::model::workflow_type_configuration::Builder {
+        crate::model::workflow_type_configuration::Builder::default()
+    }
+}
+
 /// See [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
 pub mod workflow_type_configuration {
     
@@ -13574,12 +13664,6 @@ pub mod workflow_type_configuration {
     
     
 }
-impl WorkflowTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
-    pub fn builder() -> crate::model::workflow_type_configuration::Builder {
-        crate::model::workflow_type_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the counts of open tasks, child workflow executions and timers for a workflow execution.</p>
 #[non_exhaustive]
@@ -13623,6 +13707,13 @@ impl WorkflowExecutionOpenCounts {
         self.open_lambda_functions
     }
 }
+impl WorkflowExecutionOpenCounts {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
+    pub fn builder() -> crate::model::workflow_execution_open_counts::Builder {
+        crate::model::workflow_execution_open_counts::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
 pub mod workflow_execution_open_counts {
     
@@ -13706,12 +13797,6 @@ pub mod workflow_execution_open_counts {
     
     
 }
-impl WorkflowExecutionOpenCounts {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
-    pub fn builder() -> crate::model::workflow_execution_open_counts::Builder {
-        crate::model::workflow_execution_open_counts::Builder::default()
-    }
-}
 
 /// <p>The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.</p>
 #[non_exhaustive]
@@ -13780,6 +13865,13 @@ impl WorkflowExecutionConfiguration {
         self.lambda_role.as_deref()
     }
 }
+impl WorkflowExecutionConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
+    pub fn builder() -> crate::model::workflow_execution_configuration::Builder {
+        crate::model::workflow_execution_configuration::Builder::default()
+    }
+}
+
 /// See [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
 pub mod workflow_execution_configuration {
     
@@ -13888,12 +13980,6 @@ pub mod workflow_execution_configuration {
     
     
 }
-impl WorkflowExecutionConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
-    pub fn builder() -> crate::model::workflow_execution_configuration::Builder {
-        crate::model::workflow_execution_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration settings of a domain.</p>
 #[non_exhaustive]
@@ -13909,6 +13995,13 @@ impl DomainConfiguration {
         self.workflow_execution_retention_period_in_days.as_deref()
     }
 }
+impl DomainConfiguration {
+    /// Creates a new builder-style object to manufacture [`DomainConfiguration`](crate::model::DomainConfiguration).
+    pub fn builder() -> crate::model::domain_configuration::Builder {
+        crate::model::domain_configuration::Builder::default()
+    }
+}
+
 /// See [`DomainConfiguration`](crate::model::DomainConfiguration).
 pub mod domain_configuration {
     
@@ -13938,12 +14031,6 @@ pub mod domain_configuration {
     }
     
     
-}
-impl DomainConfiguration {
-    /// Creates a new builder-style object to manufacture [`DomainConfiguration`](crate::model::DomainConfiguration).
-    pub fn builder() -> crate::model::domain_configuration::Builder {
-        crate::model::domain_configuration::Builder::default()
-    }
 }
 
 /// <p>Configuration settings registered with the activity type.</p>
@@ -14009,6 +14096,13 @@ impl ActivityTypeConfiguration {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
+impl ActivityTypeConfiguration {
+    /// Creates a new builder-style object to manufacture [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
+    pub fn builder() -> crate::model::activity_type_configuration::Builder {
+        crate::model::activity_type_configuration::Builder::default()
+    }
+}
+
 /// See [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
 pub mod activity_type_configuration {
     
@@ -14112,11 +14206,5 @@ pub mod activity_type_configuration {
     }
     
     
-}
-impl ActivityTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
-    pub fn builder() -> crate::model::activity_type_configuration::Builder {
-        crate::model::activity_type_configuration::Builder::default()
-    }
 }
 

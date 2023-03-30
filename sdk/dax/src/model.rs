@@ -39,6 +39,13 @@ impl SubnetGroup {
         self.subnets.as_deref()
     }
 }
+impl SubnetGroup {
+    /// Creates a new builder-style object to manufacture [`SubnetGroup`](crate::model::SubnetGroup).
+    pub fn builder() -> crate::model::subnet_group::Builder {
+        crate::model::subnet_group::Builder::default()
+    }
+}
+
 /// See [`SubnetGroup`](crate::model::SubnetGroup).
 pub mod subnet_group {
     
@@ -111,12 +118,6 @@ pub mod subnet_group {
     
     
 }
-impl SubnetGroup {
-    /// Creates a new builder-style object to manufacture [`SubnetGroup`](crate::model::SubnetGroup).
-    pub fn builder() -> crate::model::subnet_group::Builder {
-        crate::model::subnet_group::Builder::default()
-    }
-}
 
 /// <p>Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX.</p>
 #[non_exhaustive]
@@ -139,6 +140,13 @@ impl Subnet {
         self.subnet_availability_zone.as_deref()
     }
 }
+impl Subnet {
+    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
+    pub fn builder() -> crate::model::subnet::Builder {
+        crate::model::subnet::Builder::default()
+    }
+}
+
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
     
@@ -181,12 +189,6 @@ pub mod subnet {
     
     
 }
-impl Subnet {
-    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
-    pub fn builder() -> crate::model::subnet::Builder {
-        crate::model::subnet::Builder::default()
-    }
-}
 
 /// <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
 #[non_exhaustive]
@@ -209,6 +211,13 @@ impl ParameterGroup {
         self.description.as_deref()
     }
 }
+impl ParameterGroup {
+    /// Creates a new builder-style object to manufacture [`ParameterGroup`](crate::model::ParameterGroup).
+    pub fn builder() -> crate::model::parameter_group::Builder {
+        crate::model::parameter_group::Builder::default()
+    }
+}
+
 /// See [`ParameterGroup`](crate::model::ParameterGroup).
 pub mod parameter_group {
     
@@ -251,12 +260,6 @@ pub mod parameter_group {
     
     
 }
-impl ParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ParameterGroup`](crate::model::ParameterGroup).
-    pub fn builder() -> crate::model::parameter_group::Builder {
-        crate::model::parameter_group::Builder::default()
-    }
-}
 
 /// <p>An individual DAX parameter.</p>
 #[non_exhaustive]
@@ -279,6 +282,13 @@ impl ParameterNameValue {
         self.parameter_value.as_deref()
     }
 }
+impl ParameterNameValue {
+    /// Creates a new builder-style object to manufacture [`ParameterNameValue`](crate::model::ParameterNameValue).
+    pub fn builder() -> crate::model::parameter_name_value::Builder {
+        crate::model::parameter_name_value::Builder::default()
+    }
+}
+
 /// See [`ParameterNameValue`](crate::model::ParameterNameValue).
 pub mod parameter_name_value {
     
@@ -320,12 +330,6 @@ pub mod parameter_name_value {
     }
     
     
-}
-impl ParameterNameValue {
-    /// Creates a new builder-style object to manufacture [`ParameterNameValue`](crate::model::ParameterNameValue).
-    pub fn builder() -> crate::model::parameter_name_value::Builder {
-        crate::model::parameter_name_value::Builder::default()
-    }
 }
 
 /// <p>Contains all of the attributes of a specific DAX cluster.</p>
@@ -467,6 +471,13 @@ impl Cluster {
         self.cluster_endpoint_encryption_type.as_ref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
     
@@ -725,12 +736,6 @@ pub mod cluster {
     
     
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ClusterEndpointEncryptionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -840,6 +845,13 @@ impl SseDescription {
         self.status.as_ref()
     }
 }
+impl SseDescription {
+    /// Creates a new builder-style object to manufacture [`SseDescription`](crate::model::SseDescription).
+    pub fn builder() -> crate::model::sse_description::Builder {
+        crate::model::sse_description::Builder::default()
+    }
+}
+
 /// See [`SseDescription`](crate::model::SseDescription).
 pub mod sse_description {
     
@@ -881,12 +893,6 @@ pub mod sse_description {
     }
     
     
-}
-impl SseDescription {
-    /// Creates a new builder-style object to manufacture [`SseDescription`](crate::model::SseDescription).
-    pub fn builder() -> crate::model::sse_description::Builder {
-        crate::model::sse_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SseStatus`, it is important to ensure
@@ -1009,6 +1015,13 @@ impl ParameterGroupStatus {
         self.node_ids_to_reboot.as_deref()
     }
 }
+impl ParameterGroupStatus {
+    /// Creates a new builder-style object to manufacture [`ParameterGroupStatus`](crate::model::ParameterGroupStatus).
+    pub fn builder() -> crate::model::parameter_group_status::Builder {
+        crate::model::parameter_group_status::Builder::default()
+    }
+}
+
 /// See [`ParameterGroupStatus`](crate::model::ParameterGroupStatus).
 pub mod parameter_group_status {
     
@@ -1069,12 +1082,6 @@ pub mod parameter_group_status {
     
     
 }
-impl ParameterGroupStatus {
-    /// Creates a new builder-style object to manufacture [`ParameterGroupStatus`](crate::model::ParameterGroupStatus).
-    pub fn builder() -> crate::model::parameter_group_status::Builder {
-        crate::model::parameter_group_status::Builder::default()
-    }
-}
 
 /// <p>An individual VPC security group and its status.</p>
 #[non_exhaustive]
@@ -1097,6 +1104,13 @@ impl SecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl SecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
+    pub fn builder() -> crate::model::security_group_membership::Builder {
+        crate::model::security_group_membership::Builder::default()
+    }
+}
+
 /// See [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
 pub mod security_group_membership {
     
@@ -1139,12 +1153,6 @@ pub mod security_group_membership {
     
     
 }
-impl SecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
-    pub fn builder() -> crate::model::security_group_membership::Builder {
-        crate::model::security_group_membership::Builder::default()
-    }
-}
 
 /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
 #[non_exhaustive]
@@ -1167,6 +1175,13 @@ impl NotificationConfiguration {
         self.topic_status.as_deref()
     }
 }
+impl NotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    pub fn builder() -> crate::model::notification_configuration::Builder {
+        crate::model::notification_configuration::Builder::default()
+    }
+}
+
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
     
@@ -1208,12 +1223,6 @@ pub mod notification_configuration {
     }
     
     
-}
-impl NotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    pub fn builder() -> crate::model::notification_configuration::Builder {
-        crate::model::notification_configuration::Builder::default()
-    }
 }
 
 /// <p>Represents an individual node within a DAX cluster.</p>
@@ -1265,6 +1274,13 @@ impl Node {
         self.parameter_group_status.as_deref()
     }
 }
+impl Node {
+    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
+    pub fn builder() -> crate::model::node::Builder {
+        crate::model::node::Builder::default()
+    }
+}
+
 /// See [`Node`](crate::model::Node).
 pub mod node {
     
@@ -1355,12 +1371,6 @@ pub mod node {
     
     
 }
-impl Node {
-    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
-    pub fn builder() -> crate::model::node::Builder {
-        crate::model::node::Builder::default()
-    }
-}
 
 /// <p>Represents the information required for client programs to connect to the endpoint for a DAX cluster.</p>
 #[non_exhaustive]
@@ -1390,6 +1400,13 @@ impl Endpoint {
         self.url.as_deref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
     
@@ -1445,12 +1462,6 @@ pub mod endpoint {
     
     
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.</p> 
 /// <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p> 
@@ -1475,6 +1486,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1516,12 +1534,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Describes an individual setting that controls some aspect of DAX behavior.</p>
@@ -1601,6 +1613,13 @@ impl Parameter {
         self.change_type.as_ref()
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
     
@@ -1744,12 +1763,6 @@ pub mod parameter {
     }
     
     
-}
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeType`, it is important to ensure
@@ -1942,6 +1955,13 @@ impl NodeTypeSpecificValue {
         self.value.as_deref()
     }
 }
+impl NodeTypeSpecificValue {
+    /// Creates a new builder-style object to manufacture [`NodeTypeSpecificValue`](crate::model::NodeTypeSpecificValue).
+    pub fn builder() -> crate::model::node_type_specific_value::Builder {
+        crate::model::node_type_specific_value::Builder::default()
+    }
+}
+
 /// See [`NodeTypeSpecificValue`](crate::model::NodeTypeSpecificValue).
 pub mod node_type_specific_value {
     
@@ -1983,12 +2003,6 @@ pub mod node_type_specific_value {
     }
     
     
-}
-impl NodeTypeSpecificValue {
-    /// Creates a new builder-style object to manufacture [`NodeTypeSpecificValue`](crate::model::NodeTypeSpecificValue).
-    pub fn builder() -> crate::model::node_type_specific_value::Builder {
-        crate::model::node_type_specific_value::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ParameterType`, it is important to ensure
@@ -2108,6 +2122,13 @@ impl Event {
         self.date.as_ref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -2173,12 +2194,6 @@ pub mod event {
     }
     
     
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceType`, it is important to ensure
@@ -2282,6 +2297,13 @@ impl SseSpecification {
         self.enabled
     }
 }
+impl SseSpecification {
+    /// Creates a new builder-style object to manufacture [`SseSpecification`](crate::model::SseSpecification).
+    pub fn builder() -> crate::model::sse_specification::Builder {
+        crate::model::sse_specification::Builder::default()
+    }
+}
+
 /// See [`SseSpecification`](crate::model::SseSpecification).
 pub mod sse_specification {
     
@@ -2311,11 +2333,5 @@ pub mod sse_specification {
     }
     
     
-}
-impl SseSpecification {
-    /// Creates a new builder-style object to manufacture [`SseSpecification`](crate::model::SseSpecification).
-    pub fn builder() -> crate::model::sse_specification::Builder {
-        crate::model::sse_specification::Builder::default()
-    }
 }
 

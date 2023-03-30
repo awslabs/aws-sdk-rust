@@ -129,55 +129,6 @@ pub struct InternalServerError  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerError {
-    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
-    pub fn builder() -> crate::error::internal_server_error::Builder {
-        crate::error::internal_server_error::Builder::default()
-    }
-}
-/// See [`InternalServerError`](crate::error::InternalServerError).
-pub mod internal_server_error {
-    
-    /// A builder for [`InternalServerError`](crate::error::InternalServerError).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>An internal server error occurred.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>An internal server error occurred.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
-        pub fn build(self) -> crate::error::InternalServerError {
-            crate::error::InternalServerError {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InternalServerError {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -202,6 +153,56 @@ impl aws_http::request_id::RequestId for crate::error::InternalServerError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl InternalServerError {
+    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
+    pub fn builder() -> crate::error::internal_server_error::Builder {
+        crate::error::internal_server_error::Builder::default()
+    }
+}
+
+/// See [`InternalServerError`](crate::error::InternalServerError).
+pub mod internal_server_error {
+    
+    /// A builder for [`InternalServerError`](crate::error::InternalServerError).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>An internal server error occurred.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>An internal server error occurred.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
+        pub fn build(self) -> crate::error::InternalServerError {
+            crate::error::InternalServerError {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>The requested <code>caseId</code> couldn't be located.</p>
 #[non_exhaustive]
@@ -211,55 +212,6 @@ pub struct CaseIdNotFound  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl CaseIdNotFound {
-    /// Creates a new builder-style object to manufacture [`CaseIdNotFound`](crate::error::CaseIdNotFound).
-    pub fn builder() -> crate::error::case_id_not_found::Builder {
-        crate::error::case_id_not_found::Builder::default()
-    }
-}
-/// See [`CaseIdNotFound`](crate::error::CaseIdNotFound).
-pub mod case_id_not_found {
-    
-    /// A builder for [`CaseIdNotFound`](crate::error::CaseIdNotFound).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The requested <code>CaseId</code> could not be located.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The requested <code>CaseId</code> could not be located.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`CaseIdNotFound`](crate::error::CaseIdNotFound).
-        pub fn build(self) -> crate::error::CaseIdNotFound {
-            crate::error::CaseIdNotFound {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl CaseIdNotFound {
     /// Returns the error message.
@@ -285,6 +237,56 @@ impl aws_http::request_id::RequestId for crate::error::CaseIdNotFound {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CaseIdNotFound {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl CaseIdNotFound {
+    /// Creates a new builder-style object to manufacture [`CaseIdNotFound`](crate::error::CaseIdNotFound).
+    pub fn builder() -> crate::error::case_id_not_found::Builder {
+        crate::error::case_id_not_found::Builder::default()
+    }
+}
+
+/// See [`CaseIdNotFound`](crate::error::CaseIdNotFound).
+pub mod case_id_not_found {
+    
+    /// A builder for [`CaseIdNotFound`](crate::error::CaseIdNotFound).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The requested <code>CaseId</code> could not be located.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The requested <code>CaseId</code> could not be located.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`CaseIdNotFound`](crate::error::CaseIdNotFound).
+        pub fn build(self) -> crate::error::CaseIdNotFound {
+            crate::error::CaseIdNotFound {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1401,55 +1403,6 @@ pub struct DescribeAttachmentLimitExceeded  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DescribeAttachmentLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
-    pub fn builder() -> crate::error::describe_attachment_limit_exceeded::Builder {
-        crate::error::describe_attachment_limit_exceeded::Builder::default()
-    }
-}
-/// See [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
-pub mod describe_attachment_limit_exceeded {
-    
-    /// A builder for [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
-        pub fn build(self) -> crate::error::DescribeAttachmentLimitExceeded {
-            crate::error::DescribeAttachmentLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl DescribeAttachmentLimitExceeded {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1474,6 +1427,56 @@ impl aws_http::request_id::RequestId for crate::error::DescribeAttachmentLimitEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeAttachmentLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl DescribeAttachmentLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
+    pub fn builder() -> crate::error::describe_attachment_limit_exceeded::Builder {
+        crate::error::describe_attachment_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
+pub mod describe_attachment_limit_exceeded {
+    
+    /// A builder for [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
+        pub fn build(self) -> crate::error::DescribeAttachmentLimitExceeded {
+            crate::error::DescribeAttachmentLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>An attachment with the specified ID could not be found.</p>
 #[non_exhaustive]
@@ -1483,55 +1486,6 @@ pub struct AttachmentIdNotFound  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AttachmentIdNotFound {
-    /// Creates a new builder-style object to manufacture [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
-    pub fn builder() -> crate::error::attachment_id_not_found::Builder {
-        crate::error::attachment_id_not_found::Builder::default()
-    }
-}
-/// See [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
-pub mod attachment_id_not_found {
-    
-    /// A builder for [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>An attachment with the specified ID could not be found.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>An attachment with the specified ID could not be found.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
-        pub fn build(self) -> crate::error::AttachmentIdNotFound {
-            crate::error::AttachmentIdNotFound {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl AttachmentIdNotFound {
     /// Returns the error message.
@@ -1557,6 +1511,56 @@ impl aws_http::request_id::RequestId for crate::error::AttachmentIdNotFound {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentIdNotFound {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AttachmentIdNotFound {
+    /// Creates a new builder-style object to manufacture [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
+    pub fn builder() -> crate::error::attachment_id_not_found::Builder {
+        crate::error::attachment_id_not_found::Builder::default()
+    }
+}
+
+/// See [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
+pub mod attachment_id_not_found {
+    
+    /// A builder for [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>An attachment with the specified ID could not be found.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>An attachment with the specified ID could not be found.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
+        pub fn build(self) -> crate::error::AttachmentIdNotFound {
+            crate::error::AttachmentIdNotFound {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1721,55 +1725,6 @@ pub struct CaseCreationLimitExceeded  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CaseCreationLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
-    pub fn builder() -> crate::error::case_creation_limit_exceeded::Builder {
-        crate::error::case_creation_limit_exceeded::Builder::default()
-    }
-}
-/// See [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
-pub mod case_creation_limit_exceeded {
-    
-    /// A builder for [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
-        pub fn build(self) -> crate::error::CaseCreationLimitExceeded {
-            crate::error::CaseCreationLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl CaseCreationLimitExceeded {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1794,6 +1749,56 @@ impl aws_http::request_id::RequestId for crate::error::CaseCreationLimitExceeded
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CaseCreationLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl CaseCreationLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
+    pub fn builder() -> crate::error::case_creation_limit_exceeded::Builder {
+        crate::error::case_creation_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
+pub mod case_creation_limit_exceeded {
+    
+    /// A builder for [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
+        pub fn build(self) -> crate::error::CaseCreationLimitExceeded {
+            crate::error::CaseCreationLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>An attachment set with the specified ID could not be found.</p>
 #[non_exhaustive]
@@ -1803,55 +1808,6 @@ pub struct AttachmentSetIdNotFound  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AttachmentSetIdNotFound {
-    /// Creates a new builder-style object to manufacture [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
-    pub fn builder() -> crate::error::attachment_set_id_not_found::Builder {
-        crate::error::attachment_set_id_not_found::Builder::default()
-    }
-}
-/// See [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
-pub mod attachment_set_id_not_found {
-    
-    /// A builder for [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>An attachment set with the specified ID could not be found.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>An attachment set with the specified ID could not be found.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
-        pub fn build(self) -> crate::error::AttachmentSetIdNotFound {
-            crate::error::AttachmentSetIdNotFound {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl AttachmentSetIdNotFound {
     /// Returns the error message.
@@ -1878,6 +1834,56 @@ impl aws_http::request_id::RequestId for crate::error::AttachmentSetIdNotFound {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetIdNotFound {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl AttachmentSetIdNotFound {
+    /// Creates a new builder-style object to manufacture [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
+    pub fn builder() -> crate::error::attachment_set_id_not_found::Builder {
+        crate::error::attachment_set_id_not_found::Builder::default()
+    }
+}
+
+/// See [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
+pub mod attachment_set_id_not_found {
+    
+    /// A builder for [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>An attachment set with the specified ID could not be found.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>An attachment set with the specified ID could not be found.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
+        pub fn build(self) -> crate::error::AttachmentSetIdNotFound {
+            crate::error::AttachmentSetIdNotFound {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
 #[non_exhaustive]
@@ -1887,55 +1893,6 @@ pub struct AttachmentSetExpired  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AttachmentSetExpired {
-    /// Creates a new builder-style object to manufacture [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
-    pub fn builder() -> crate::error::attachment_set_expired::Builder {
-        crate::error::attachment_set_expired::Builder::default()
-    }
-}
-/// See [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
-pub mod attachment_set_expired {
-    
-    /// A builder for [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
-        pub fn build(self) -> crate::error::AttachmentSetExpired {
-            crate::error::AttachmentSetExpired {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl AttachmentSetExpired {
     /// Returns the error message.
@@ -1961,6 +1918,56 @@ impl aws_http::request_id::RequestId for crate::error::AttachmentSetExpired {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetExpired {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AttachmentSetExpired {
+    /// Creates a new builder-style object to manufacture [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
+    pub fn builder() -> crate::error::attachment_set_expired::Builder {
+        crate::error::attachment_set_expired::Builder::default()
+    }
+}
+
+/// See [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
+pub mod attachment_set_expired {
+    
+    /// A builder for [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
+        pub fn build(self) -> crate::error::AttachmentSetExpired {
+            crate::error::AttachmentSetExpired {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -2293,55 +2300,6 @@ pub struct AttachmentSetSizeLimitExceeded  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AttachmentSetSizeLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
-    pub fn builder() -> crate::error::attachment_set_size_limit_exceeded::Builder {
-        crate::error::attachment_set_size_limit_exceeded::Builder::default()
-    }
-}
-/// See [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
-pub mod attachment_set_size_limit_exceeded {
-    
-    /// A builder for [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
-        pub fn build(self) -> crate::error::AttachmentSetSizeLimitExceeded {
-            crate::error::AttachmentSetSizeLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl AttachmentSetSizeLimitExceeded {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -2366,6 +2324,56 @@ impl aws_http::request_id::RequestId for crate::error::AttachmentSetSizeLimitExc
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetSizeLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl AttachmentSetSizeLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
+    pub fn builder() -> crate::error::attachment_set_size_limit_exceeded::Builder {
+        crate::error::attachment_set_size_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
+pub mod attachment_set_size_limit_exceeded {
+    
+    /// A builder for [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
+        pub fn build(self) -> crate::error::AttachmentSetSizeLimitExceeded {
+            crate::error::AttachmentSetSizeLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
 #[non_exhaustive]
@@ -2375,55 +2383,6 @@ pub struct AttachmentLimitExceeded  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AttachmentLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
-    pub fn builder() -> crate::error::attachment_limit_exceeded::Builder {
-        crate::error::attachment_limit_exceeded::Builder::default()
-    }
-}
-/// See [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
-pub mod attachment_limit_exceeded {
-    
-    /// A builder for [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
-        pub fn build(self) -> crate::error::AttachmentLimitExceeded {
-            crate::error::AttachmentLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl AttachmentLimitExceeded {
     /// Returns the error message.
@@ -2449,5 +2408,55 @@ impl aws_http::request_id::RequestId for crate::error::AttachmentLimitExceeded {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AttachmentLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
+    pub fn builder() -> crate::error::attachment_limit_exceeded::Builder {
+        crate::error::attachment_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
+pub mod attachment_limit_exceeded {
+    
+    /// A builder for [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
+        pub fn build(self) -> crate::error::AttachmentLimitExceeded {
+            crate::error::AttachmentLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 

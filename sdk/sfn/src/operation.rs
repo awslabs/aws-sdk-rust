@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_activity`](crate::client::Client::create_activity).
             ///
-            /// See [`crate::client::fluent_builders::CreateActivity`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateActivity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateActivity {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateActivity {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_state_machine`](crate::client::Client::create_state_machine).
             ///
-            /// See [`crate::client::fluent_builders::CreateStateMachine`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateStateMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStateMachine {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStateMachine {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_activity`](crate::client::Client::delete_activity).
             ///
-            /// See [`crate::client::fluent_builders::DeleteActivity`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteActivity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteActivity {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteActivity {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_state_machine`](crate::client::Client::delete_state_machine).
             ///
-            /// See [`crate::client::fluent_builders::DeleteStateMachine`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteStateMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStateMachine {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStateMachine {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_activity`](crate::client::Client::describe_activity).
             ///
-            /// See [`crate::client::fluent_builders::DescribeActivity`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeActivity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeActivity {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActivity {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_execution`](crate::client::Client::describe_execution).
             ///
-            /// See [`crate::client::fluent_builders::DescribeExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeExecution {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExecution {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_map_run`](crate::client::Client::describe_map_run).
             ///
-            /// See [`crate::client::fluent_builders::DescribeMapRun`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeMapRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMapRun {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMapRun {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_state_machine`](crate::client::Client::describe_state_machine).
             ///
-            /// See [`crate::client::fluent_builders::DescribeStateMachine`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeStateMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStateMachine {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStateMachine {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_state_machine_for_execution`](crate::client::Client::describe_state_machine_for_execution).
             ///
-            /// See [`crate::client::fluent_builders::DescribeStateMachineForExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeStateMachineForExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStateMachineForExecution {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStateMachineForE
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_activity_task`](crate::client::Client::get_activity_task).
             ///
-            /// See [`crate::client::fluent_builders::GetActivityTask`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetActivityTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetActivityTask {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetActivityTask {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_execution_history`](crate::client::Client::get_execution_history).
             ///
-            /// See [`crate::client::fluent_builders::GetExecutionHistory`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetExecutionHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExecutionHistory {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExecutionHistory {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_activities`](crate::client::Client::list_activities).
             ///
-            /// See [`crate::client::fluent_builders::ListActivities`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListActivities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActivities {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActivities {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_executions`](crate::client::Client::list_executions).
             ///
-            /// See [`crate::client::fluent_builders::ListExecutions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExecutions {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExecutions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_map_runs`](crate::client::Client::list_map_runs).
             ///
-            /// See [`crate::client::fluent_builders::ListMapRuns`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMapRuns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMapRuns {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMapRuns {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_state_machines`](crate::client::Client::list_state_machines).
             ///
-            /// See [`crate::client::fluent_builders::ListStateMachines`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListStateMachines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStateMachines {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStateMachines {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`send_task_failure`](crate::client::Client::send_task_failure).
             ///
-            /// See [`crate::client::fluent_builders::SendTaskFailure`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SendTaskFailure`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendTaskFailure {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTaskFailure {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`send_task_heartbeat`](crate::client::Client::send_task_heartbeat).
             ///
-            /// See [`crate::client::fluent_builders::SendTaskHeartbeat`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SendTaskHeartbeat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendTaskHeartbeat {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTaskHeartbeat {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`send_task_success`](crate::client::Client::send_task_success).
             ///
-            /// See [`crate::client::fluent_builders::SendTaskSuccess`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SendTaskSuccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendTaskSuccess {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTaskSuccess {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_execution`](crate::client::Client::start_execution).
             ///
-            /// See [`crate::client::fluent_builders::StartExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartExecution {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExecution {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_sync_execution`](crate::client::Client::start_sync_execution).
             ///
-            /// See [`crate::client::fluent_builders::StartSyncExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartSyncExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSyncExecution {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSyncExecution {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`stop_execution`](crate::client::Client::stop_execution).
             ///
-            /// See [`crate::client::fluent_builders::StopExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StopExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopExecution {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopExecution {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_map_run`](crate::client::Client::update_map_run).
             ///
-            /// See [`crate::client::fluent_builders::UpdateMapRun`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateMapRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMapRun {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMapRun {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_state_machine`](crate::client::Client::update_state_machine).
             ///
-            /// See [`crate::client::fluent_builders::UpdateStateMachine`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateStateMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStateMachine {
     _private: ()

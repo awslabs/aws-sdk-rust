@@ -35,6 +35,13 @@ impl Template {
         self.html_part.as_deref()
     }
 }
+impl Template {
+    /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
+    pub fn builder() -> crate::model::template::Builder {
+        crate::model::template::Builder::default()
+    }
+}
+
 /// See [`Template`](crate::model::Template).
 pub mod template {
     
@@ -101,12 +108,6 @@ pub mod template {
     
     
 }
-impl Template {
-    /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
-    pub fn builder() -> crate::model::template::Builder {
-        crate::model::template::Builder::default()
-    }
-}
 
 /// <p>Receipt rules enable you to specify which actions Amazon SES should take when it receives mail on behalf of one or more email addresses or domains that you own.</p> 
 /// <p>Each receipt rule defines a set of email addresses or domains that it applies to. If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.</p> 
@@ -169,6 +170,13 @@ impl ReceiptRule {
         self.scan_enabled
     }
 }
+impl ReceiptRule {
+    /// Creates a new builder-style object to manufacture [`ReceiptRule`](crate::model::ReceiptRule).
+    pub fn builder() -> crate::model::receipt_rule::Builder {
+        crate::model::receipt_rule::Builder::default()
+    }
+}
+
 /// See [`ReceiptRule`](crate::model::ReceiptRule).
 pub mod receipt_rule {
     
@@ -283,12 +291,6 @@ pub mod receipt_rule {
     
     
 }
-impl ReceiptRule {
-    /// Creates a new builder-style object to manufacture [`ReceiptRule`](crate::model::ReceiptRule).
-    pub fn builder() -> crate::model::receipt_rule::Builder {
-        crate::model::receipt_rule::Builder::default()
-    }
-}
 
 /// <p>An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.</p> 
 /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
@@ -347,6 +349,13 @@ impl ReceiptAction {
         self.sns_action.as_ref()
     }
 }
+impl ReceiptAction {
+    /// Creates a new builder-style object to manufacture [`ReceiptAction`](crate::model::ReceiptAction).
+    pub fn builder() -> crate::model::receipt_action::Builder {
+        crate::model::receipt_action::Builder::default()
+    }
+}
+
 /// See [`ReceiptAction`](crate::model::ReceiptAction).
 pub mod receipt_action {
     
@@ -449,12 +458,6 @@ pub mod receipt_action {
     
     
 }
-impl ReceiptAction {
-    /// Creates a new builder-style object to manufacture [`ReceiptAction`](crate::model::ReceiptAction).
-    pub fn builder() -> crate::model::receipt_action::Builder {
-        crate::model::receipt_action::Builder::default()
-    }
-}
 
 /// <p>When included in a receipt rule, this action publishes a notification to Amazon Simple Notification Service (Amazon SNS). This action includes a complete copy of the email content in the Amazon SNS notifications. Amazon SNS notifications for all other actions simply provide information about the email. They do not include the email content itself.</p> 
 /// <p>If you own the Amazon SNS topic, you don't need to do anything to give Amazon SES permission to publish emails to it. However, if you don't own the Amazon SNS topic, you need to attach a policy to the topic to give Amazon SES permissions to access it. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <important> 
@@ -481,6 +484,13 @@ impl SnsAction {
         self.encoding.as_ref()
     }
 }
+impl SnsAction {
+    /// Creates a new builder-style object to manufacture [`SnsAction`](crate::model::SnsAction).
+    pub fn builder() -> crate::model::sns_action::Builder {
+        crate::model::sns_action::Builder::default()
+    }
+}
+
 /// See [`SnsAction`](crate::model::SnsAction).
 pub mod sns_action {
     
@@ -522,12 +532,6 @@ pub mod sns_action {
     }
     
     
-}
-impl SnsAction {
-    /// Creates a new builder-style object to manufacture [`SnsAction`](crate::model::SnsAction).
-    pub fn builder() -> crate::model::sns_action::Builder {
-        crate::model::sns_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnsActionEncoding`, it is important to ensure
@@ -634,6 +638,13 @@ impl AddHeaderAction {
         self.header_value.as_deref()
     }
 }
+impl AddHeaderAction {
+    /// Creates a new builder-style object to manufacture [`AddHeaderAction`](crate::model::AddHeaderAction).
+    pub fn builder() -> crate::model::add_header_action::Builder {
+        crate::model::add_header_action::Builder::default()
+    }
+}
+
 /// See [`AddHeaderAction`](crate::model::AddHeaderAction).
 pub mod add_header_action {
     
@@ -676,12 +687,6 @@ pub mod add_header_action {
     
     
 }
-impl AddHeaderAction {
-    /// Creates a new builder-style object to manufacture [`AddHeaderAction`](crate::model::AddHeaderAction).
-    pub fn builder() -> crate::model::add_header_action::Builder {
-        crate::model::add_header_action::Builder::default()
-    }
-}
 
 /// <p>When included in a receipt rule, this action terminates the evaluation of the receipt rule set and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> 
 /// <p>For information about setting a stop action in a receipt rule, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer Guide</a>.</p>
@@ -705,6 +710,13 @@ impl StopAction {
         self.topic_arn.as_deref()
     }
 }
+impl StopAction {
+    /// Creates a new builder-style object to manufacture [`StopAction`](crate::model::StopAction).
+    pub fn builder() -> crate::model::stop_action::Builder {
+        crate::model::stop_action::Builder::default()
+    }
+}
+
 /// See [`StopAction`](crate::model::StopAction).
 pub mod stop_action {
     
@@ -746,12 +758,6 @@ pub mod stop_action {
     }
     
     
-}
-impl StopAction {
-    /// Creates a new builder-style object to manufacture [`StopAction`](crate::model::StopAction).
-    pub fn builder() -> crate::model::stop_action::Builder {
-        crate::model::stop_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StopScope`, it is important to ensure
@@ -865,6 +871,13 @@ impl LambdaAction {
         self.invocation_type.as_ref()
     }
 }
+impl LambdaAction {
+    /// Creates a new builder-style object to manufacture [`LambdaAction`](crate::model::LambdaAction).
+    pub fn builder() -> crate::model::lambda_action::Builder {
+        crate::model::lambda_action::Builder::default()
+    }
+}
+
 /// See [`LambdaAction`](crate::model::LambdaAction).
 pub mod lambda_action {
     
@@ -922,12 +935,6 @@ pub mod lambda_action {
     }
     
     
-}
-impl LambdaAction {
-    /// Creates a new builder-style object to manufacture [`LambdaAction`](crate::model::LambdaAction).
-    pub fn builder() -> crate::model::lambda_action::Builder {
-        crate::model::lambda_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InvocationType`, it is important to ensure
@@ -1034,6 +1041,13 @@ impl WorkmailAction {
         self.organization_arn.as_deref()
     }
 }
+impl WorkmailAction {
+    /// Creates a new builder-style object to manufacture [`WorkmailAction`](crate::model::WorkmailAction).
+    pub fn builder() -> crate::model::workmail_action::Builder {
+        crate::model::workmail_action::Builder::default()
+    }
+}
+
 /// See [`WorkmailAction`](crate::model::WorkmailAction).
 pub mod workmail_action {
     
@@ -1075,12 +1089,6 @@ pub mod workmail_action {
     }
     
     
-}
-impl WorkmailAction {
-    /// Creates a new builder-style object to manufacture [`WorkmailAction`](crate::model::WorkmailAction).
-    pub fn builder() -> crate::model::workmail_action::Builder {
-        crate::model::workmail_action::Builder::default()
-    }
 }
 
 /// <p>When included in a receipt rule, this action rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> 
@@ -1126,6 +1134,13 @@ impl BounceAction {
         self.sender.as_deref()
     }
 }
+impl BounceAction {
+    /// Creates a new builder-style object to manufacture [`BounceAction`](crate::model::BounceAction).
+    pub fn builder() -> crate::model::bounce_action::Builder {
+        crate::model::bounce_action::Builder::default()
+    }
+}
+
 /// See [`BounceAction`](crate::model::BounceAction).
 pub mod bounce_action {
     
@@ -1204,12 +1219,6 @@ pub mod bounce_action {
     
     
 }
-impl BounceAction {
-    /// Creates a new builder-style object to manufacture [`BounceAction`](crate::model::BounceAction).
-    pub fn builder() -> crate::model::bounce_action::Builder {
-        crate::model::bounce_action::Builder::default()
-    }
-}
 
 /// <p>When included in a receipt rule, this action saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p> 
 /// <p>To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS key to encrypt your emails, or publish to an Amazon SNS topic of another account, Amazon SES must have permission to access those resources. For information about giving permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer Guide</a>.</p> <note> 
@@ -1264,6 +1273,13 @@ impl S3Action {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3Action {
+    /// Creates a new builder-style object to manufacture [`S3Action`](crate::model::S3Action).
+    pub fn builder() -> crate::model::s3_action::Builder {
+        crate::model::s3_action::Builder::default()
+    }
+}
+
 /// See [`S3Action`](crate::model::S3Action).
 pub mod s3_action {
     
@@ -1343,12 +1359,6 @@ pub mod s3_action {
     }
     
     
-}
-impl S3Action {
-    /// Creates a new builder-style object to manufacture [`S3Action`](crate::model::S3Action).
-    pub fn builder() -> crate::model::s3_action::Builder {
-        crate::model::s3_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TlsPolicy`, it is important to ensure
@@ -1448,6 +1458,13 @@ impl TrackingOptions {
         self.custom_redirect_domain.as_deref()
     }
 }
+impl TrackingOptions {
+    /// Creates a new builder-style object to manufacture [`TrackingOptions`](crate::model::TrackingOptions).
+    pub fn builder() -> crate::model::tracking_options::Builder {
+        crate::model::tracking_options::Builder::default()
+    }
+}
+
 /// See [`TrackingOptions`](crate::model::TrackingOptions).
 pub mod tracking_options {
     
@@ -1477,12 +1494,6 @@ pub mod tracking_options {
     }
     
     
-}
-impl TrackingOptions {
-    /// Creates a new builder-style object to manufacture [`TrackingOptions`](crate::model::TrackingOptions).
-    pub fn builder() -> crate::model::tracking_options::Builder {
-        crate::model::tracking_options::Builder::default()
-    }
 }
 
 /// <p>Contains information about the event destination that the specified email sending events will be published to.</p> <note> 
@@ -1545,6 +1556,13 @@ impl EventDestination {
         self.sns_destination.as_ref()
     }
 }
+impl EventDestination {
+    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
+    pub fn builder() -> crate::model::event_destination::Builder {
+        crate::model::event_destination::Builder::default()
+    }
+}
+
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
     
@@ -1650,12 +1668,6 @@ pub mod event_destination {
     
     
 }
-impl EventDestination {
-    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
-    pub fn builder() -> crate::model::event_destination::Builder {
-        crate::model::event_destination::Builder::default()
-    }
-}
 
 /// <p>Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination.</p> 
 /// <p>Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
@@ -1672,6 +1684,13 @@ impl SnsDestination {
         self.topic_arn.as_deref()
     }
 }
+impl SnsDestination {
+    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
+    pub fn builder() -> crate::model::sns_destination::Builder {
+        crate::model::sns_destination::Builder::default()
+    }
+}
+
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
     
@@ -1702,12 +1721,6 @@ pub mod sns_destination {
     
     
 }
-impl SnsDestination {
-    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
-    pub fn builder() -> crate::model::sns_destination::Builder {
-        crate::model::sns_destination::Builder::default()
-    }
-}
 
 /// <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p> 
 /// <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
@@ -1724,6 +1737,13 @@ impl CloudWatchDestination {
         self.dimension_configurations.as_deref()
     }
 }
+impl CloudWatchDestination {
+    /// Creates a new builder-style object to manufacture [`CloudWatchDestination`](crate::model::CloudWatchDestination).
+    pub fn builder() -> crate::model::cloud_watch_destination::Builder {
+        crate::model::cloud_watch_destination::Builder::default()
+    }
+}
+
 /// See [`CloudWatchDestination`](crate::model::CloudWatchDestination).
 pub mod cloud_watch_destination {
     
@@ -1759,12 +1779,6 @@ pub mod cloud_watch_destination {
     }
     
     
-}
-impl CloudWatchDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchDestination`](crate::model::CloudWatchDestination).
-    pub fn builder() -> crate::model::cloud_watch_destination::Builder {
-        crate::model::cloud_watch_destination::Builder::default()
-    }
 }
 
 /// <p>Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.</p> 
@@ -1812,6 +1826,13 @@ impl CloudWatchDimensionConfiguration {
         self.default_dimension_value.as_deref()
     }
 }
+impl CloudWatchDimensionConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_dimension_configuration::Builder {
+        crate::model::cloud_watch_dimension_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
 pub mod cloud_watch_dimension_configuration {
     
@@ -1881,12 +1902,6 @@ pub mod cloud_watch_dimension_configuration {
     }
     
     
-}
-impl CloudWatchDimensionConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
-    pub fn builder() -> crate::model::cloud_watch_dimension_configuration::Builder {
-        crate::model::cloud_watch_dimension_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DimensionValueSource`, it is important to ensure
@@ -1998,6 +2013,13 @@ impl KinesisFirehoseDestination {
         self.delivery_stream_arn.as_deref()
     }
 }
+impl KinesisFirehoseDestination {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
+    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
+        crate::model::kinesis_firehose_destination::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
     
@@ -2039,12 +2061,6 @@ pub mod kinesis_firehose_destination {
     }
     
     
-}
-impl KinesisFirehoseDestination {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
-    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
-        crate::model::kinesis_firehose_destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventType`, it is important to ensure
@@ -2366,6 +2382,13 @@ impl MessageTag {
         self.value.as_deref()
     }
 }
+impl MessageTag {
+    /// Creates a new builder-style object to manufacture [`MessageTag`](crate::model::MessageTag).
+    pub fn builder() -> crate::model::message_tag::Builder {
+        crate::model::message_tag::Builder::default()
+    }
+}
+
 /// See [`MessageTag`](crate::model::MessageTag).
 pub mod message_tag {
     
@@ -2424,12 +2447,6 @@ pub mod message_tag {
     
     
 }
-impl MessageTag {
-    /// Creates a new builder-style object to manufacture [`MessageTag`](crate::model::MessageTag).
-    pub fn builder() -> crate::model::message_tag::Builder {
-        crate::model::message_tag::Builder::default()
-    }
-}
 
 /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note> 
 /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p> 
@@ -2461,6 +2478,13 @@ impl Destination {
         self.bcc_addresses.as_deref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
     
@@ -2533,12 +2557,6 @@ pub mod destination {
     
     
 }
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
-}
 
 /// <p>Represents the raw data of the message.</p>
 #[non_exhaustive]
@@ -2564,6 +2582,13 @@ impl RawMessage {
         self.data.as_ref()
     }
 }
+impl RawMessage {
+    /// Creates a new builder-style object to manufacture [`RawMessage`](crate::model::RawMessage).
+    pub fn builder() -> crate::model::raw_message::Builder {
+        crate::model::raw_message::Builder::default()
+    }
+}
+
 /// See [`RawMessage`](crate::model::RawMessage).
 pub mod raw_message {
     
@@ -2604,12 +2629,6 @@ pub mod raw_message {
     
     
 }
-impl RawMessage {
-    /// Creates a new builder-style object to manufacture [`RawMessage`](crate::model::RawMessage).
-    pub fn builder() -> crate::model::raw_message::Builder {
-        crate::model::raw_message::Builder::default()
-    }
-}
 
 /// <p>Represents the message to be sent, composed of a subject and a body.</p>
 #[non_exhaustive]
@@ -2632,6 +2651,13 @@ impl Message {
         self.body.as_ref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
     
@@ -2674,12 +2700,6 @@ pub mod message {
     
     
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// <p>Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest variety of email clients.</p>
 #[non_exhaustive]
@@ -2702,6 +2722,13 @@ impl Body {
         self.html.as_ref()
     }
 }
+impl Body {
+    /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
+    pub fn builder() -> crate::model::body::Builder {
+        crate::model::body::Builder::default()
+    }
+}
+
 /// See [`Body`](crate::model::Body).
 pub mod body {
     
@@ -2744,12 +2771,6 @@ pub mod body {
     
     
 }
-impl Body {
-    /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
-    pub fn builder() -> crate::model::body::Builder {
-        crate::model::body::Builder::default()
-    }
-}
 
 /// <p>Represents textual data, plus an optional character set specification.</p> 
 /// <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p>
@@ -2773,6 +2794,13 @@ impl Content {
         self.charset.as_deref()
     }
 }
+impl Content {
+    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
+    pub fn builder() -> crate::model::content::Builder {
+        crate::model::content::Builder::default()
+    }
+}
+
 /// See [`Content`](crate::model::Content).
 pub mod content {
     
@@ -2814,12 +2842,6 @@ pub mod content {
     }
     
     
-}
-impl Content {
-    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
-    pub fn builder() -> crate::model::content::Builder {
-        crate::model::content::Builder::default()
-    }
 }
 
 /// <p>An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation.</p>
@@ -2884,6 +2906,13 @@ impl BulkEmailDestinationStatus {
         self.message_id.as_deref()
     }
 }
+impl BulkEmailDestinationStatus {
+    /// Creates a new builder-style object to manufacture [`BulkEmailDestinationStatus`](crate::model::BulkEmailDestinationStatus).
+    pub fn builder() -> crate::model::bulk_email_destination_status::Builder {
+        crate::model::bulk_email_destination_status::Builder::default()
+    }
+}
+
 /// See [`BulkEmailDestinationStatus`](crate::model::BulkEmailDestinationStatus).
 pub mod bulk_email_destination_status {
     
@@ -2971,12 +3000,6 @@ pub mod bulk_email_destination_status {
     }
     
     
-}
-impl BulkEmailDestinationStatus {
-    /// Creates a new builder-style object to manufacture [`BulkEmailDestinationStatus`](crate::model::BulkEmailDestinationStatus).
-    pub fn builder() -> crate::model::bulk_email_destination_status::Builder {
-        crate::model::bulk_email_destination_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BulkEmailStatus`, it is important to ensure
@@ -3153,6 +3176,13 @@ impl BulkEmailDestination {
         self.replacement_template_data.as_deref()
     }
 }
+impl BulkEmailDestination {
+    /// Creates a new builder-style object to manufacture [`BulkEmailDestination`](crate::model::BulkEmailDestination).
+    pub fn builder() -> crate::model::bulk_email_destination::Builder {
+        crate::model::bulk_email_destination::Builder::default()
+    }
+}
+
 /// See [`BulkEmailDestination`](crate::model::BulkEmailDestination).
 pub mod bulk_email_destination {
     
@@ -3217,12 +3247,6 @@ pub mod bulk_email_destination {
     
     
 }
-impl BulkEmailDestination {
-    /// Creates a new builder-style object to manufacture [`BulkEmailDestination`](crate::model::BulkEmailDestination).
-    pub fn builder() -> crate::model::bulk_email_destination::Builder {
-        crate::model::bulk_email_destination::Builder::default()
-    }
-}
 
 /// <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> 
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
@@ -3260,6 +3284,13 @@ impl BouncedRecipientInfo {
         self.recipient_dsn_fields.as_ref()
     }
 }
+impl BouncedRecipientInfo {
+    /// Creates a new builder-style object to manufacture [`BouncedRecipientInfo`](crate::model::BouncedRecipientInfo).
+    pub fn builder() -> crate::model::bounced_recipient_info::Builder {
+        crate::model::bounced_recipient_info::Builder::default()
+    }
+}
+
 /// See [`BouncedRecipientInfo`](crate::model::BouncedRecipientInfo).
 pub mod bounced_recipient_info {
     
@@ -3326,12 +3357,6 @@ pub mod bounced_recipient_info {
     
     
 }
-impl BouncedRecipientInfo {
-    /// Creates a new builder-style object to manufacture [`BouncedRecipientInfo`](crate::model::BouncedRecipientInfo).
-    pub fn builder() -> crate::model::bounced_recipient_info::Builder {
-        crate::model::bounced_recipient_info::Builder::default()
-    }
-}
 
 /// <p>Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> 
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
@@ -3394,6 +3419,13 @@ impl RecipientDsnFields {
         self.extension_fields.as_deref()
     }
 }
+impl RecipientDsnFields {
+    /// Creates a new builder-style object to manufacture [`RecipientDsnFields`](crate::model::RecipientDsnFields).
+    pub fn builder() -> crate::model::recipient_dsn_fields::Builder {
+        crate::model::recipient_dsn_fields::Builder::default()
+    }
+}
+
 /// See [`RecipientDsnFields`](crate::model::RecipientDsnFields).
 pub mod recipient_dsn_fields {
     
@@ -3506,12 +3538,6 @@ pub mod recipient_dsn_fields {
     
     
 }
-impl RecipientDsnFields {
-    /// Creates a new builder-style object to manufacture [`RecipientDsnFields`](crate::model::RecipientDsnFields).
-    pub fn builder() -> crate::model::recipient_dsn_fields::Builder {
-        crate::model::recipient_dsn_fields::Builder::default()
-    }
-}
 
 /// <p>Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces.</p> 
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
@@ -3535,6 +3561,13 @@ impl ExtensionField {
         self.value.as_deref()
     }
 }
+impl ExtensionField {
+    /// Creates a new builder-style object to manufacture [`ExtensionField`](crate::model::ExtensionField).
+    pub fn builder() -> crate::model::extension_field::Builder {
+        crate::model::extension_field::Builder::default()
+    }
+}
+
 /// See [`ExtensionField`](crate::model::ExtensionField).
 pub mod extension_field {
     
@@ -3576,12 +3609,6 @@ pub mod extension_field {
     }
     
     
-}
-impl ExtensionField {
-    /// Creates a new builder-style object to manufacture [`ExtensionField`](crate::model::ExtensionField).
-    pub fn builder() -> crate::model::extension_field::Builder {
-        crate::model::extension_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DsnAction`, it is important to ensure
@@ -3812,6 +3839,13 @@ impl MessageDsn {
         self.extension_fields.as_deref()
     }
 }
+impl MessageDsn {
+    /// Creates a new builder-style object to manufacture [`MessageDsn`](crate::model::MessageDsn).
+    pub fn builder() -> crate::model::message_dsn::Builder {
+        crate::model::message_dsn::Builder::default()
+    }
+}
+
 /// See [`MessageDsn`](crate::model::MessageDsn).
 pub mod message_dsn {
     
@@ -3872,12 +3906,6 @@ pub mod message_dsn {
     
     
 }
-impl MessageDsn {
-    /// Creates a new builder-style object to manufacture [`MessageDsn`](crate::model::MessageDsn).
-    pub fn builder() -> crate::model::message_dsn::Builder {
-        crate::model::message_dsn::Builder::default()
-    }
-}
 
 /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
 #[non_exhaustive]
@@ -3893,6 +3921,13 @@ impl DeliveryOptions {
         self.tls_policy.as_ref()
     }
 }
+impl DeliveryOptions {
+    /// Creates a new builder-style object to manufacture [`DeliveryOptions`](crate::model::DeliveryOptions).
+    pub fn builder() -> crate::model::delivery_options::Builder {
+        crate::model::delivery_options::Builder::default()
+    }
+}
+
 /// See [`DeliveryOptions`](crate::model::DeliveryOptions).
 pub mod delivery_options {
     
@@ -3923,12 +3958,6 @@ pub mod delivery_options {
     
     
 }
-impl DeliveryOptions {
-    /// Creates a new builder-style object to manufacture [`DeliveryOptions`](crate::model::DeliveryOptions).
-    pub fn builder() -> crate::model::delivery_options::Builder {
-        crate::model::delivery_options::Builder::default()
-    }
-}
 
 /// <p>Contains information about an email template.</p>
 #[non_exhaustive]
@@ -3951,6 +3980,13 @@ impl TemplateMetadata {
         self.created_timestamp.as_ref()
     }
 }
+impl TemplateMetadata {
+    /// Creates a new builder-style object to manufacture [`TemplateMetadata`](crate::model::TemplateMetadata).
+    pub fn builder() -> crate::model::template_metadata::Builder {
+        crate::model::template_metadata::Builder::default()
+    }
+}
+
 /// See [`TemplateMetadata`](crate::model::TemplateMetadata).
 pub mod template_metadata {
     
@@ -3993,12 +4029,6 @@ pub mod template_metadata {
     
     
 }
-impl TemplateMetadata {
-    /// Creates a new builder-style object to manufacture [`TemplateMetadata`](crate::model::TemplateMetadata).
-    pub fn builder() -> crate::model::template_metadata::Builder {
-        crate::model::template_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about a receipt rule set.</p> 
 /// <p>A receipt rule set is a collection of rules that specify what Amazon SES should do with mail it receives on behalf of your account's verified domains.</p> 
@@ -4033,6 +4063,13 @@ impl ReceiptRuleSetMetadata {
         self.created_timestamp.as_ref()
     }
 }
+impl ReceiptRuleSetMetadata {
+    /// Creates a new builder-style object to manufacture [`ReceiptRuleSetMetadata`](crate::model::ReceiptRuleSetMetadata).
+    pub fn builder() -> crate::model::receipt_rule_set_metadata::Builder {
+        crate::model::receipt_rule_set_metadata::Builder::default()
+    }
+}
+
 /// See [`ReceiptRuleSetMetadata`](crate::model::ReceiptRuleSetMetadata).
 pub mod receipt_rule_set_metadata {
     
@@ -4085,12 +4122,6 @@ pub mod receipt_rule_set_metadata {
     
     
 }
-impl ReceiptRuleSetMetadata {
-    /// Creates a new builder-style object to manufacture [`ReceiptRuleSetMetadata`](crate::model::ReceiptRuleSetMetadata).
-    pub fn builder() -> crate::model::receipt_rule_set_metadata::Builder {
-        crate::model::receipt_rule_set_metadata::Builder::default()
-    }
-}
 
 /// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> 
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
@@ -4124,6 +4155,13 @@ impl ReceiptFilter {
         self.ip_filter.as_ref()
     }
 }
+impl ReceiptFilter {
+    /// Creates a new builder-style object to manufacture [`ReceiptFilter`](crate::model::ReceiptFilter).
+    pub fn builder() -> crate::model::receipt_filter::Builder {
+        crate::model::receipt_filter::Builder::default()
+    }
+}
+
 /// See [`ReceiptFilter`](crate::model::ReceiptFilter).
 pub mod receipt_filter {
     
@@ -4176,12 +4214,6 @@ pub mod receipt_filter {
     
     
 }
-impl ReceiptFilter {
-    /// Creates a new builder-style object to manufacture [`ReceiptFilter`](crate::model::ReceiptFilter).
-    pub fn builder() -> crate::model::receipt_filter::Builder {
-        crate::model::receipt_filter::Builder::default()
-    }
-}
 
 /// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p> 
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
@@ -4205,6 +4237,13 @@ impl ReceiptIpFilter {
         self.cidr.as_deref()
     }
 }
+impl ReceiptIpFilter {
+    /// Creates a new builder-style object to manufacture [`ReceiptIpFilter`](crate::model::ReceiptIpFilter).
+    pub fn builder() -> crate::model::receipt_ip_filter::Builder {
+        crate::model::receipt_ip_filter::Builder::default()
+    }
+}
+
 /// See [`ReceiptIpFilter`](crate::model::ReceiptIpFilter).
 pub mod receipt_ip_filter {
     
@@ -4246,12 +4285,6 @@ pub mod receipt_ip_filter {
     }
     
     
-}
-impl ReceiptIpFilter {
-    /// Creates a new builder-style object to manufacture [`ReceiptIpFilter`](crate::model::ReceiptIpFilter).
-    pub fn builder() -> crate::model::receipt_ip_filter::Builder {
-        crate::model::receipt_ip_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReceiptFilterPolicy`, it is important to ensure
@@ -4460,6 +4493,13 @@ impl CustomVerificationEmailTemplate {
         self.failure_redirection_url.as_deref()
     }
 }
+impl CustomVerificationEmailTemplate {
+    /// Creates a new builder-style object to manufacture [`CustomVerificationEmailTemplate`](crate::model::CustomVerificationEmailTemplate).
+    pub fn builder() -> crate::model::custom_verification_email_template::Builder {
+        crate::model::custom_verification_email_template::Builder::default()
+    }
+}
+
 /// See [`CustomVerificationEmailTemplate`](crate::model::CustomVerificationEmailTemplate).
 pub mod custom_verification_email_template {
     
@@ -4538,12 +4578,6 @@ pub mod custom_verification_email_template {
     
     
 }
-impl CustomVerificationEmailTemplate {
-    /// Creates a new builder-style object to manufacture [`CustomVerificationEmailTemplate`](crate::model::CustomVerificationEmailTemplate).
-    pub fn builder() -> crate::model::custom_verification_email_template::Builder {
-        crate::model::custom_verification_email_template::Builder::default()
-    }
-}
 
 /// <p>The name of the configuration set.</p> 
 /// <p>Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer Guide</a>.</p>
@@ -4568,6 +4602,13 @@ impl ConfigurationSet {
         self.name.as_deref()
     }
 }
+impl ConfigurationSet {
+    /// Creates a new builder-style object to manufacture [`ConfigurationSet`](crate::model::ConfigurationSet).
+    pub fn builder() -> crate::model::configuration_set::Builder {
+        crate::model::configuration_set::Builder::default()
+    }
+}
+
 /// See [`ConfigurationSet`](crate::model::ConfigurationSet).
 pub mod configuration_set {
     
@@ -4605,12 +4646,6 @@ pub mod configuration_set {
     }
     
     
-}
-impl ConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`ConfigurationSet`](crate::model::ConfigurationSet).
-    pub fn builder() -> crate::model::configuration_set::Builder {
-        crate::model::configuration_set::Builder::default()
-    }
 }
 
 /// <p>Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity. </p>
@@ -4655,6 +4690,13 @@ impl SendDataPoint {
         self.rejects
     }
 }
+impl SendDataPoint {
+    /// Creates a new builder-style object to manufacture [`SendDataPoint`](crate::model::SendDataPoint).
+    pub fn builder() -> crate::model::send_data_point::Builder {
+        crate::model::send_data_point::Builder::default()
+    }
+}
+
 /// See [`SendDataPoint`](crate::model::SendDataPoint).
 pub mod send_data_point {
     
@@ -4737,12 +4779,6 @@ pub mod send_data_point {
     
     
 }
-impl SendDataPoint {
-    /// Creates a new builder-style object to manufacture [`SendDataPoint`](crate::model::SendDataPoint).
-    pub fn builder() -> crate::model::send_data_point::Builder {
-        crate::model::send_data_point::Builder::default()
-    }
-}
 
 /// <p>Represents the verification attributes of a single identity.</p>
 #[non_exhaustive]
@@ -4765,6 +4801,13 @@ impl IdentityVerificationAttributes {
         self.verification_token.as_deref()
     }
 }
+impl IdentityVerificationAttributes {
+    /// Creates a new builder-style object to manufacture [`IdentityVerificationAttributes`](crate::model::IdentityVerificationAttributes).
+    pub fn builder() -> crate::model::identity_verification_attributes::Builder {
+        crate::model::identity_verification_attributes::Builder::default()
+    }
+}
+
 /// See [`IdentityVerificationAttributes`](crate::model::IdentityVerificationAttributes).
 pub mod identity_verification_attributes {
     
@@ -4806,12 +4849,6 @@ pub mod identity_verification_attributes {
     }
     
     
-}
-impl IdentityVerificationAttributes {
-    /// Creates a new builder-style object to manufacture [`IdentityVerificationAttributes`](crate::model::IdentityVerificationAttributes).
-    pub fn builder() -> crate::model::identity_verification_attributes::Builder {
-        crate::model::identity_verification_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VerificationStatus`, it is important to ensure
@@ -4967,6 +5004,13 @@ impl IdentityNotificationAttributes {
         self.headers_in_delivery_notifications_enabled
     }
 }
+impl IdentityNotificationAttributes {
+    /// Creates a new builder-style object to manufacture [`IdentityNotificationAttributes`](crate::model::IdentityNotificationAttributes).
+    pub fn builder() -> crate::model::identity_notification_attributes::Builder {
+        crate::model::identity_notification_attributes::Builder::default()
+    }
+}
+
 /// See [`IdentityNotificationAttributes`](crate::model::IdentityNotificationAttributes).
 pub mod identity_notification_attributes {
     
@@ -5073,12 +5117,6 @@ pub mod identity_notification_attributes {
     
     
 }
-impl IdentityNotificationAttributes {
-    /// Creates a new builder-style object to manufacture [`IdentityNotificationAttributes`](crate::model::IdentityNotificationAttributes).
-    pub fn builder() -> crate::model::identity_notification_attributes::Builder {
-        crate::model::identity_notification_attributes::Builder::default()
-    }
-}
 
 /// <p>Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain).</p>
 #[non_exhaustive]
@@ -5110,6 +5148,13 @@ impl IdentityMailFromDomainAttributes {
         self.behavior_on_mx_failure.as_ref()
     }
 }
+impl IdentityMailFromDomainAttributes {
+    /// Creates a new builder-style object to manufacture [`IdentityMailFromDomainAttributes`](crate::model::IdentityMailFromDomainAttributes).
+    pub fn builder() -> crate::model::identity_mail_from_domain_attributes::Builder {
+        crate::model::identity_mail_from_domain_attributes::Builder::default()
+    }
+}
+
 /// See [`IdentityMailFromDomainAttributes`](crate::model::IdentityMailFromDomainAttributes).
 pub mod identity_mail_from_domain_attributes {
     
@@ -5165,12 +5210,6 @@ pub mod identity_mail_from_domain_attributes {
     }
     
     
-}
-impl IdentityMailFromDomainAttributes {
-    /// Creates a new builder-style object to manufacture [`IdentityMailFromDomainAttributes`](crate::model::IdentityMailFromDomainAttributes).
-    pub fn builder() -> crate::model::identity_mail_from_domain_attributes::Builder {
-        crate::model::identity_mail_from_domain_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomMailFromStatus`, it is important to ensure
@@ -5295,6 +5334,13 @@ impl IdentityDkimAttributes {
         self.dkim_tokens.as_deref()
     }
 }
+impl IdentityDkimAttributes {
+    /// Creates a new builder-style object to manufacture [`IdentityDkimAttributes`](crate::model::IdentityDkimAttributes).
+    pub fn builder() -> crate::model::identity_dkim_attributes::Builder {
+        crate::model::identity_dkim_attributes::Builder::default()
+    }
+}
+
 /// See [`IdentityDkimAttributes`](crate::model::IdentityDkimAttributes).
 pub mod identity_dkim_attributes {
     
@@ -5358,12 +5404,6 @@ pub mod identity_dkim_attributes {
     
     
 }
-impl IdentityDkimAttributes {
-    /// Creates a new builder-style object to manufacture [`IdentityDkimAttributes`](crate::model::IdentityDkimAttributes).
-    pub fn builder() -> crate::model::identity_dkim_attributes::Builder {
-        crate::model::identity_dkim_attributes::Builder::default()
-    }
-}
 
 /// <p>Contains information about the reputation settings for a configuration set.</p>
 #[non_exhaustive]
@@ -5399,6 +5439,13 @@ impl ReputationOptions {
         self.last_fresh_start.as_ref()
     }
 }
+impl ReputationOptions {
+    /// Creates a new builder-style object to manufacture [`ReputationOptions`](crate::model::ReputationOptions).
+    pub fn builder() -> crate::model::reputation_options::Builder {
+        crate::model::reputation_options::Builder::default()
+    }
+}
+
 /// See [`ReputationOptions`](crate::model::ReputationOptions).
 pub mod reputation_options {
     
@@ -5460,12 +5507,6 @@ pub mod reputation_options {
     }
     
     
-}
-impl ReputationOptions {
-    /// Creates a new builder-style object to manufacture [`ReputationOptions`](crate::model::ReputationOptions).
-    pub fn builder() -> crate::model::reputation_options::Builder {
-        crate::model::reputation_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigurationSetAttribute`, it is important to ensure

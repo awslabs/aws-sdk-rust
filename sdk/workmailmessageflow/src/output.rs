@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for PutRawMessageContentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutRawMessageContentOutput {
+    /// Creates a new builder-style object to manufacture [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
+    pub fn builder() -> crate::output::put_raw_message_content_output::Builder {
+        crate::output::put_raw_message_content_output::Builder::default()
+    }
+}
+
 /// See [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
 pub mod put_raw_message_content_output {
     
@@ -39,12 +46,6 @@ pub mod put_raw_message_content_output {
     
     
 }
-impl PutRawMessageContentOutput {
-    /// Creates a new builder-style object to manufacture [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
-    pub fn builder() -> crate::output::put_raw_message_content_output::Builder {
-        crate::output::put_raw_message_content_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -65,6 +66,13 @@ impl aws_http::request_id::RequestId for GetRawMessageContentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRawMessageContentOutput {
+    /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
+    pub fn builder() -> crate::output::get_raw_message_content_output::Builder {
+        crate::output::get_raw_message_content_output::Builder::default()
+    }
+}
+
 /// See [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
 pub mod get_raw_message_content_output {
     
@@ -106,11 +114,5 @@ pub mod get_raw_message_content_output {
     }
     
     
-}
-impl GetRawMessageContentOutput {
-    /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
-    pub fn builder() -> crate::output::get_raw_message_content_output::Builder {
-        crate::output::get_raw_message_content_output::Builder::default()
-    }
 }
 

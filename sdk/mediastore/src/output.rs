@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for StopAccessLoggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopAccessLoggingOutput {
+    /// Creates a new builder-style object to manufacture [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
+    pub fn builder() -> crate::output::stop_access_logging_output::Builder {
+        crate::output::stop_access_logging_output::Builder::default()
+    }
+}
+
 /// See [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
 pub mod stop_access_logging_output {
     
@@ -133,12 +142,6 @@ pub mod stop_access_logging_output {
     
     
 }
-impl StopAccessLoggingOutput {
-    /// Creates a new builder-style object to manufacture [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput).
-    pub fn builder() -> crate::output::stop_access_logging_output::Builder {
-        crate::output::stop_access_logging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -151,6 +154,13 @@ impl aws_http::request_id::RequestId for StartAccessLoggingOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartAccessLoggingOutput {
+    /// Creates a new builder-style object to manufacture [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
+    pub fn builder() -> crate::output::start_access_logging_output::Builder {
+        crate::output::start_access_logging_output::Builder::default()
+    }
+}
+
 /// See [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
 pub mod start_access_logging_output {
     
@@ -180,12 +190,6 @@ pub mod start_access_logging_output {
     
     
 }
-impl StartAccessLoggingOutput {
-    /// Creates a new builder-style object to manufacture [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput).
-    pub fn builder() -> crate::output::start_access_logging_output::Builder {
-        crate::output::start_access_logging_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -198,6 +202,13 @@ impl aws_http::request_id::RequestId for PutMetricPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutMetricPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
+    pub fn builder() -> crate::output::put_metric_policy_output::Builder {
+        crate::output::put_metric_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
 pub mod put_metric_policy_output {
     
@@ -227,12 +238,6 @@ pub mod put_metric_policy_output {
     
     
 }
-impl PutMetricPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput).
-    pub fn builder() -> crate::output::put_metric_policy_output::Builder {
-        crate::output::put_metric_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -245,6 +250,13 @@ impl aws_http::request_id::RequestId for PutLifecyclePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutLifecyclePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
+    pub fn builder() -> crate::output::put_lifecycle_policy_output::Builder {
+        crate::output::put_lifecycle_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
 pub mod put_lifecycle_policy_output {
     
@@ -274,12 +286,6 @@ pub mod put_lifecycle_policy_output {
     
     
 }
-impl PutLifecyclePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
-    pub fn builder() -> crate::output::put_lifecycle_policy_output::Builder {
-        crate::output::put_lifecycle_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -292,6 +298,13 @@ impl aws_http::request_id::RequestId for PutCorsPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutCorsPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
+    pub fn builder() -> crate::output::put_cors_policy_output::Builder {
+        crate::output::put_cors_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
 pub mod put_cors_policy_output {
     
@@ -321,12 +334,6 @@ pub mod put_cors_policy_output {
     
     
 }
-impl PutCorsPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput).
-    pub fn builder() -> crate::output::put_cors_policy_output::Builder {
-        crate::output::put_cors_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -339,6 +346,13 @@ impl aws_http::request_id::RequestId for PutContainerPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutContainerPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
+    pub fn builder() -> crate::output::put_container_policy_output::Builder {
+        crate::output::put_container_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
 pub mod put_container_policy_output {
     
@@ -368,12 +382,6 @@ pub mod put_container_policy_output {
     
     
 }
-impl PutContainerPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput).
-    pub fn builder() -> crate::output::put_container_policy_output::Builder {
-        crate::output::put_container_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -395,6 +403,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -442,12 +457,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -476,6 +485,13 @@ impl aws_http::request_id::RequestId for ListContainersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListContainersOutput {
+    /// Creates a new builder-style object to manufacture [`ListContainersOutput`](crate::output::ListContainersOutput).
+    pub fn builder() -> crate::output::list_containers_output::Builder {
+        crate::output::list_containers_output::Builder::default()
+    }
+}
+
 /// See [`ListContainersOutput`](crate::output::ListContainersOutput).
 pub mod list_containers_output {
     
@@ -535,12 +551,6 @@ pub mod list_containers_output {
     
     
 }
-impl ListContainersOutput {
-    /// Creates a new builder-style object to manufacture [`ListContainersOutput`](crate::output::ListContainersOutput).
-    pub fn builder() -> crate::output::list_containers_output::Builder {
-        crate::output::list_containers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -562,6 +572,13 @@ impl aws_http::request_id::RequestId for GetMetricPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMetricPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
+    pub fn builder() -> crate::output::get_metric_policy_output::Builder {
+        crate::output::get_metric_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
 pub mod get_metric_policy_output {
     
@@ -603,12 +620,6 @@ pub mod get_metric_policy_output {
     
     
 }
-impl GetMetricPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput).
-    pub fn builder() -> crate::output::get_metric_policy_output::Builder {
-        crate::output::get_metric_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -630,6 +641,13 @@ impl aws_http::request_id::RequestId for GetLifecyclePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLifecyclePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
+    pub fn builder() -> crate::output::get_lifecycle_policy_output::Builder {
+        crate::output::get_lifecycle_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
 pub mod get_lifecycle_policy_output {
     
@@ -671,12 +689,6 @@ pub mod get_lifecycle_policy_output {
     
     
 }
-impl GetLifecyclePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
-    pub fn builder() -> crate::output::get_lifecycle_policy_output::Builder {
-        crate::output::get_lifecycle_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -698,6 +710,13 @@ impl aws_http::request_id::RequestId for GetCorsPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCorsPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
+    pub fn builder() -> crate::output::get_cors_policy_output::Builder {
+        crate::output::get_cors_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
 pub mod get_cors_policy_output {
     
@@ -745,12 +764,6 @@ pub mod get_cors_policy_output {
     
     
 }
-impl GetCorsPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput).
-    pub fn builder() -> crate::output::get_cors_policy_output::Builder {
-        crate::output::get_cors_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -772,6 +785,13 @@ impl aws_http::request_id::RequestId for GetContainerPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
+    pub fn builder() -> crate::output::get_container_policy_output::Builder {
+        crate::output::get_container_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
 pub mod get_container_policy_output {
     
@@ -813,12 +833,6 @@ pub mod get_container_policy_output {
     
     
 }
-impl GetContainerPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput).
-    pub fn builder() -> crate::output::get_container_policy_output::Builder {
-        crate::output::get_container_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -840,6 +854,13 @@ impl aws_http::request_id::RequestId for DescribeContainerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeContainerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
+    pub fn builder() -> crate::output::describe_container_output::Builder {
+        crate::output::describe_container_output::Builder::default()
+    }
+}
+
 /// See [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
 pub mod describe_container_output {
     
@@ -881,12 +902,6 @@ pub mod describe_container_output {
     
     
 }
-impl DescribeContainerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeContainerOutput`](crate::output::DescribeContainerOutput).
-    pub fn builder() -> crate::output::describe_container_output::Builder {
-        crate::output::describe_container_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -899,6 +914,13 @@ impl aws_http::request_id::RequestId for DeleteMetricPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMetricPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
+    pub fn builder() -> crate::output::delete_metric_policy_output::Builder {
+        crate::output::delete_metric_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
 pub mod delete_metric_policy_output {
     
@@ -928,12 +950,6 @@ pub mod delete_metric_policy_output {
     
     
 }
-impl DeleteMetricPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput).
-    pub fn builder() -> crate::output::delete_metric_policy_output::Builder {
-        crate::output::delete_metric_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -946,6 +962,13 @@ impl aws_http::request_id::RequestId for DeleteLifecyclePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLifecyclePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
+    pub fn builder() -> crate::output::delete_lifecycle_policy_output::Builder {
+        crate::output::delete_lifecycle_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
 pub mod delete_lifecycle_policy_output {
     
@@ -975,12 +998,6 @@ pub mod delete_lifecycle_policy_output {
     
     
 }
-impl DeleteLifecyclePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
-    pub fn builder() -> crate::output::delete_lifecycle_policy_output::Builder {
-        crate::output::delete_lifecycle_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -993,6 +1010,13 @@ impl aws_http::request_id::RequestId for DeleteCorsPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCorsPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
+    pub fn builder() -> crate::output::delete_cors_policy_output::Builder {
+        crate::output::delete_cors_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
 pub mod delete_cors_policy_output {
     
@@ -1022,12 +1046,6 @@ pub mod delete_cors_policy_output {
     
     
 }
-impl DeleteCorsPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput).
-    pub fn builder() -> crate::output::delete_cors_policy_output::Builder {
-        crate::output::delete_cors_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1040,6 +1058,13 @@ impl aws_http::request_id::RequestId for DeleteContainerPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteContainerPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
+    pub fn builder() -> crate::output::delete_container_policy_output::Builder {
+        crate::output::delete_container_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
 pub mod delete_container_policy_output {
     
@@ -1069,12 +1094,6 @@ pub mod delete_container_policy_output {
     
     
 }
-impl DeleteContainerPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput).
-    pub fn builder() -> crate::output::delete_container_policy_output::Builder {
-        crate::output::delete_container_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1087,6 +1106,13 @@ impl aws_http::request_id::RequestId for DeleteContainerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteContainerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
+    pub fn builder() -> crate::output::delete_container_output::Builder {
+        crate::output::delete_container_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
 pub mod delete_container_output {
     
@@ -1115,12 +1141,6 @@ pub mod delete_container_output {
     }
     
     
-}
-impl DeleteContainerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContainerOutput`](crate::output::DeleteContainerOutput).
-    pub fn builder() -> crate::output::delete_container_output::Builder {
-        crate::output::delete_container_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1167,6 +1187,13 @@ impl aws_http::request_id::RequestId for CreateContainerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateContainerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContainerOutput`](crate::output::CreateContainerOutput).
+    pub fn builder() -> crate::output::create_container_output::Builder {
+        crate::output::create_container_output::Builder::default()
+    }
+}
+
 /// See [`CreateContainerOutput`](crate::output::CreateContainerOutput).
 pub mod create_container_output {
     
@@ -1231,11 +1258,5 @@ pub mod create_container_output {
     }
     
     
-}
-impl CreateContainerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContainerOutput`](crate::output::CreateContainerOutput).
-    pub fn builder() -> crate::output::create_container_output::Builder {
-        crate::output::create_container_output::Builder::default()
-    }
 }
 

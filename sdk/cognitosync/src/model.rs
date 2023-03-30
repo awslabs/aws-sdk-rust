@@ -49,6 +49,13 @@ impl Record {
         self.device_last_modified_date.as_ref()
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
     
@@ -139,12 +146,6 @@ pub mod record {
     
     
 }
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
-    }
-}
 
 /// An update operation for a record.
 #[non_exhaustive]
@@ -188,6 +189,13 @@ impl RecordPatch {
         self.device_last_modified_date.as_ref()
     }
 }
+impl RecordPatch {
+    /// Creates a new builder-style object to manufacture [`RecordPatch`](crate::model::RecordPatch).
+    pub fn builder() -> crate::model::record_patch::Builder {
+        crate::model::record_patch::Builder::default()
+    }
+}
+
 /// See [`RecordPatch`](crate::model::RecordPatch).
 pub mod record_patch {
     
@@ -265,12 +273,6 @@ pub mod record_patch {
     }
     
     
-}
-impl RecordPatch {
-    /// Creates a new builder-style object to manufacture [`RecordPatch`](crate::model::RecordPatch).
-    pub fn builder() -> crate::model::record_patch::Builder {
-        crate::model::record_patch::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Operation`, it is important to ensure
@@ -387,6 +389,13 @@ impl CognitoStreams {
         self.streaming_status.as_ref()
     }
 }
+impl CognitoStreams {
+    /// Creates a new builder-style object to manufacture [`CognitoStreams`](crate::model::CognitoStreams).
+    pub fn builder() -> crate::model::cognito_streams::Builder {
+        crate::model::cognito_streams::Builder::default()
+    }
+}
+
 /// See [`CognitoStreams`](crate::model::CognitoStreams).
 pub mod cognito_streams {
     
@@ -444,12 +453,6 @@ pub mod cognito_streams {
     }
     
     
-}
-impl CognitoStreams {
-    /// Creates a new builder-style object to manufacture [`CognitoStreams`](crate::model::CognitoStreams).
-    pub fn builder() -> crate::model::cognito_streams::Builder {
-        crate::model::cognito_streams::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StreamingStatus`, it is important to ensure
@@ -555,6 +558,13 @@ impl PushSync {
         self.role_arn.as_deref()
     }
 }
+impl PushSync {
+    /// Creates a new builder-style object to manufacture [`PushSync`](crate::model::PushSync).
+    pub fn builder() -> crate::model::push_sync::Builder {
+        crate::model::push_sync::Builder::default()
+    }
+}
+
 /// See [`PushSync`](crate::model::PushSync).
 pub mod push_sync {
     
@@ -602,12 +612,6 @@ pub mod push_sync {
     }
     
     
-}
-impl PushSync {
-    /// Creates a new builder-style object to manufacture [`PushSync`](crate::model::PushSync).
-    pub fn builder() -> crate::model::push_sync::Builder {
-        crate::model::push_sync::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Platform`, it is important to ensure
@@ -737,6 +741,13 @@ impl IdentityPoolUsage {
         self.last_modified_date.as_ref()
     }
 }
+impl IdentityPoolUsage {
+    /// Creates a new builder-style object to manufacture [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
+    pub fn builder() -> crate::model::identity_pool_usage::Builder {
+        crate::model::identity_pool_usage::Builder::default()
+    }
+}
+
 /// See [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
 pub mod identity_pool_usage {
     
@@ -803,12 +814,6 @@ pub mod identity_pool_usage {
     
     
 }
-impl IdentityPoolUsage {
-    /// Creates a new builder-style object to manufacture [`IdentityPoolUsage`](crate::model::IdentityPoolUsage).
-    pub fn builder() -> crate::model::identity_pool_usage::Builder {
-        crate::model::identity_pool_usage::Builder::default()
-    }
-}
 
 /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
 #[non_exhaustive]
@@ -866,6 +871,13 @@ impl Dataset {
         self.num_records
     }
 }
+impl Dataset {
+    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
+    pub fn builder() -> crate::model::dataset::Builder {
+        crate::model::dataset::Builder::default()
+    }
+}
+
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
     
@@ -967,12 +979,6 @@ pub mod dataset {
     }
     
     
-}
-impl Dataset {
-    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
-    pub fn builder() -> crate::model::dataset::Builder {
-        crate::model::dataset::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BulkPublishStatus`, it is important to ensure
@@ -1109,6 +1115,13 @@ impl IdentityUsage {
         self.data_storage
     }
 }
+impl IdentityUsage {
+    /// Creates a new builder-style object to manufacture [`IdentityUsage`](crate::model::IdentityUsage).
+    pub fn builder() -> crate::model::identity_usage::Builder {
+        crate::model::identity_usage::Builder::default()
+    }
+}
+
 /// See [`IdentityUsage`](crate::model::IdentityUsage).
 pub mod identity_usage {
     
@@ -1187,11 +1200,5 @@ pub mod identity_usage {
     }
     
     
-}
-impl IdentityUsage {
-    /// Creates a new builder-style object to manufacture [`IdentityUsage`](crate::model::IdentityUsage).
-    pub fn builder() -> crate::model::identity_usage::Builder {
-        crate::model::identity_usage::Builder::default()
-    }
 }
 

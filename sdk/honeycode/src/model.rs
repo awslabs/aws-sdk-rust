@@ -113,6 +113,13 @@ impl ImportOptions {
         self.delimited_text_options.as_ref()
     }
 }
+impl ImportOptions {
+    /// Creates a new builder-style object to manufacture [`ImportOptions`](crate::model::ImportOptions).
+    pub fn builder() -> crate::model::import_options::Builder {
+        crate::model::import_options::Builder::default()
+    }
+}
+
 /// See [`ImportOptions`](crate::model::ImportOptions).
 pub mod import_options {
     
@@ -155,12 +162,6 @@ pub mod import_options {
     
     
 }
-impl ImportOptions {
-    /// Creates a new builder-style object to manufacture [`ImportOptions`](crate::model::ImportOptions).
-    pub fn builder() -> crate::model::import_options::Builder {
-        crate::model::import_options::Builder::default()
-    }
-}
 
 /// <p> An object that contains the options relating to parsing delimited text as part of an import request. </p>
 #[non_exhaustive]
@@ -197,6 +198,13 @@ impl DelimitedTextImportOptions {
         self.data_character_encoding.as_ref()
     }
 }
+impl DelimitedTextImportOptions {
+    /// Creates a new builder-style object to manufacture [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
+    pub fn builder() -> crate::model::delimited_text_import_options::Builder {
+        crate::model::delimited_text_import_options::Builder::default()
+    }
+}
+
 /// See [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
 pub mod delimited_text_import_options {
     
@@ -264,12 +272,6 @@ pub mod delimited_text_import_options {
     }
     
     
-}
-impl DelimitedTextImportOptions {
-    /// Creates a new builder-style object to manufacture [`DelimitedTextImportOptions`](crate::model::DelimitedTextImportOptions).
-    pub fn builder() -> crate::model::delimited_text_import_options::Builder {
-        crate::model::delimited_text_import_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportDataCharacterEncoding`, it is important to ensure
@@ -388,6 +390,13 @@ impl DestinationOptions {
         self.column_map.as_ref()
     }
 }
+impl DestinationOptions {
+    /// Creates a new builder-style object to manufacture [`DestinationOptions`](crate::model::DestinationOptions).
+    pub fn builder() -> crate::model::destination_options::Builder {
+        crate::model::destination_options::Builder::default()
+    }
+}
+
 /// See [`DestinationOptions`](crate::model::DestinationOptions).
 pub mod destination_options {
     
@@ -424,12 +433,6 @@ pub mod destination_options {
     
     
 }
-impl DestinationOptions {
-    /// Creates a new builder-style object to manufacture [`DestinationOptions`](crate::model::DestinationOptions).
-    pub fn builder() -> crate::model::destination_options::Builder {
-        crate::model::destination_options::Builder::default()
-    }
-}
 
 /// <p>An object that contains the properties for importing data to a specific column in a table.</p>
 #[non_exhaustive]
@@ -445,6 +448,13 @@ impl SourceDataColumnProperties {
         self.column_index
     }
 }
+impl SourceDataColumnProperties {
+    /// Creates a new builder-style object to manufacture [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
+    pub fn builder() -> crate::model::source_data_column_properties::Builder {
+        crate::model::source_data_column_properties::Builder::default()
+    }
+}
+
 /// See [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
 pub mod source_data_column_properties {
     
@@ -475,12 +485,6 @@ pub mod source_data_column_properties {
     }
     
     
-}
-impl SourceDataColumnProperties {
-    /// Creates a new builder-style object to manufacture [`SourceDataColumnProperties`](crate::model::SourceDataColumnProperties).
-    pub fn builder() -> crate::model::source_data_column_properties::Builder {
-        crate::model::source_data_column_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportSourceDataFormat`, it is important to ensure
@@ -574,6 +578,13 @@ impl ImportDataSource {
         self.data_source_config.as_ref()
     }
 }
+impl ImportDataSource {
+    /// Creates a new builder-style object to manufacture [`ImportDataSource`](crate::model::ImportDataSource).
+    pub fn builder() -> crate::model::import_data_source::Builder {
+        crate::model::import_data_source::Builder::default()
+    }
+}
+
 /// See [`ImportDataSource`](crate::model::ImportDataSource).
 pub mod import_data_source {
     
@@ -604,12 +615,6 @@ pub mod import_data_source {
     
     
 }
-impl ImportDataSource {
-    /// Creates a new builder-style object to manufacture [`ImportDataSource`](crate::model::ImportDataSource).
-    pub fn builder() -> crate::model::import_data_source::Builder {
-        crate::model::import_data_source::Builder::default()
-    }
-}
 
 /// <p> An object that contains the configuration parameters for the data source of an import request. </p>
 #[non_exhaustive]
@@ -632,6 +637,13 @@ impl  std::fmt::Debug for ImportDataSourceConfig  {
         formatter.finish()
     }
 }
+impl ImportDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
+    pub fn builder() -> crate::model::import_data_source_config::Builder {
+        crate::model::import_data_source_config::Builder::default()
+    }
+}
+
 /// See [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
 pub mod import_data_source_config {
     
@@ -669,12 +681,6 @@ pub mod import_data_source_config {
     
     
 }
-impl ImportDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`ImportDataSourceConfig`](crate::model::ImportDataSourceConfig).
-    pub fn builder() -> crate::model::import_data_source_config::Builder {
-        crate::model::import_data_source_config::Builder::default()
-    }
-}
 
 /// <p>An object that contains attributes about a single row in a table</p>
 #[non_exhaustive]
@@ -697,6 +703,13 @@ impl TableRow {
         self.cells.as_deref()
     }
 }
+impl TableRow {
+    /// Creates a new builder-style object to manufacture [`TableRow`](crate::model::TableRow).
+    pub fn builder() -> crate::model::table_row::Builder {
+        crate::model::table_row::Builder::default()
+    }
+}
+
 /// See [`TableRow`](crate::model::TableRow).
 pub mod table_row {
     
@@ -744,12 +757,6 @@ pub mod table_row {
     }
     
     
-}
-impl TableRow {
-    /// Creates a new builder-style object to manufacture [`TableRow`](crate::model::TableRow).
-    pub fn builder() -> crate::model::table_row::Builder {
-        crate::model::table_row::Builder::default()
-    }
 }
 
 /// <p>An object that represents a single cell in a table.</p>
@@ -823,6 +830,13 @@ impl  std::fmt::Debug for Cell  {
         formatter.finish()
     }
 }
+impl Cell {
+    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
+    pub fn builder() -> crate::model::cell::Builder {
+        crate::model::cell::Builder::default()
+    }
+}
+
 /// See [`Cell`](crate::model::Cell).
 pub mod cell {
     
@@ -935,12 +949,6 @@ pub mod cell {
     }
     
     
-}
-impl Cell {
-    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
-    pub fn builder() -> crate::model::cell::Builder {
-        crate::model::cell::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Format`, it is important to ensure
@@ -1104,6 +1112,13 @@ impl  std::fmt::Debug for Filter  {
         formatter.finish()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -1154,12 +1169,6 @@ pub mod filter {
     
     
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>An object representing the properties of a table in a workbook.</p>
 #[non_exhaustive]
@@ -1182,6 +1191,13 @@ impl Table {
         self.table_name.as_deref()
     }
 }
+impl Table {
+    /// Creates a new builder-style object to manufacture [`Table`](crate::model::Table).
+    pub fn builder() -> crate::model::table::Builder {
+        crate::model::table::Builder::default()
+    }
+}
+
 /// See [`Table`](crate::model::Table).
 pub mod table {
     
@@ -1224,12 +1240,6 @@ pub mod table {
     
     
 }
-impl Table {
-    /// Creates a new builder-style object to manufacture [`Table`](crate::model::Table).
-    pub fn builder() -> crate::model::table::Builder {
-        crate::model::table::Builder::default()
-    }
-}
 
 /// <p>An object that contains attributes about a single column in a table</p>
 #[non_exhaustive]
@@ -1259,6 +1269,13 @@ impl TableColumn {
         self.format.as_ref()
     }
 }
+impl TableColumn {
+    /// Creates a new builder-style object to manufacture [`TableColumn`](crate::model::TableColumn).
+    pub fn builder() -> crate::model::table_column::Builder {
+        crate::model::table_column::Builder::default()
+    }
+}
+
 /// See [`TableColumn`](crate::model::TableColumn).
 pub mod table_column {
     
@@ -1313,12 +1330,6 @@ pub mod table_column {
     
     
 }
-impl TableColumn {
-    /// Creates a new builder-style object to manufacture [`TableColumn`](crate::model::TableColumn).
-    pub fn builder() -> crate::model::table_column::Builder {
-        crate::model::table_column::Builder::default()
-    }
-}
 
 /// <p>The input variables to the app to be used by the InvokeScreenAutomation action request.</p>
 #[non_exhaustive]
@@ -1341,6 +1352,13 @@ impl  std::fmt::Debug for VariableValue  {
         formatter.finish()
     }
 }
+impl VariableValue {
+    /// Creates a new builder-style object to manufacture [`VariableValue`](crate::model::VariableValue).
+    pub fn builder() -> crate::model::variable_value::Builder {
+        crate::model::variable_value::Builder::default()
+    }
+}
+
 /// See [`VariableValue`](crate::model::VariableValue).
 pub mod variable_value {
     
@@ -1378,12 +1396,6 @@ pub mod variable_value {
     
     
 }
-impl VariableValue {
-    /// Creates a new builder-style object to manufacture [`VariableValue`](crate::model::VariableValue).
-    pub fn builder() -> crate::model::variable_value::Builder {
-        crate::model::variable_value::Builder::default()
-    }
-}
 
 /// <p> ResultSet contains the results of the request for a single block or list defined on the screen. </p>
 #[non_exhaustive]
@@ -1408,6 +1420,13 @@ impl ResultSet {
         self.rows.as_deref()
     }
 }
+impl ResultSet {
+    /// Creates a new builder-style object to manufacture [`ResultSet`](crate::model::ResultSet).
+    pub fn builder() -> crate::model::result_set::Builder {
+        crate::model::result_set::Builder::default()
+    }
+}
+
 /// See [`ResultSet`](crate::model::ResultSet).
 pub mod result_set {
     
@@ -1464,12 +1483,6 @@ pub mod result_set {
     
     
 }
-impl ResultSet {
-    /// Creates a new builder-style object to manufacture [`ResultSet`](crate::model::ResultSet).
-    pub fn builder() -> crate::model::result_set::Builder {
-        crate::model::result_set::Builder::default()
-    }
-}
 
 /// <p>A single row in the ResultSet.</p>
 #[non_exhaustive]
@@ -1492,6 +1505,13 @@ impl ResultRow {
         self.data_items.as_deref()
     }
 }
+impl ResultRow {
+    /// Creates a new builder-style object to manufacture [`ResultRow`](crate::model::ResultRow).
+    pub fn builder() -> crate::model::result_row::Builder {
+        crate::model::result_row::Builder::default()
+    }
+}
+
 /// See [`ResultRow`](crate::model::ResultRow).
 pub mod result_row {
     
@@ -1540,12 +1560,6 @@ pub mod result_row {
     
     
 }
-impl ResultRow {
-    /// Creates a new builder-style object to manufacture [`ResultRow`](crate::model::ResultRow).
-    pub fn builder() -> crate::model::result_row::Builder {
-        crate::model::result_row::Builder::default()
-    }
-}
 
 /// <p>The data in a particular data cell defined on the screen.</p>
 #[non_exhaustive]
@@ -1584,6 +1598,13 @@ impl  std::fmt::Debug for DataItem  {
         formatter.finish()
     }
 }
+impl DataItem {
+    /// Creates a new builder-style object to manufacture [`DataItem`](crate::model::DataItem).
+    pub fn builder() -> crate::model::data_item::Builder {
+        crate::model::data_item::Builder::default()
+    }
+}
+
 /// See [`DataItem`](crate::model::DataItem).
 pub mod data_item {
     
@@ -1647,12 +1668,6 @@ pub mod data_item {
     
     
 }
-impl DataItem {
-    /// Creates a new builder-style object to manufacture [`DataItem`](crate::model::DataItem).
-    pub fn builder() -> crate::model::data_item::Builder {
-        crate::model::data_item::Builder::default()
-    }
-}
 
 /// <p>Metadata for column in the table.</p>
 #[non_exhaustive]
@@ -1683,6 +1698,13 @@ impl  std::fmt::Debug for ColumnMetadata  {
         formatter.finish()
     }
 }
+impl ColumnMetadata {
+    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
+    pub fn builder() -> crate::model::column_metadata::Builder {
+        crate::model::column_metadata::Builder::default()
+    }
+}
+
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
     
@@ -1732,12 +1754,6 @@ pub mod column_metadata {
     }
     
     
-}
-impl ColumnMetadata {
-    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
-    pub fn builder() -> crate::model::column_metadata::Builder {
-        crate::model::column_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorCode`, it is important to ensure
@@ -1917,6 +1933,13 @@ impl TableDataImportJobMetadata {
         self.data_source.as_ref()
     }
 }
+impl TableDataImportJobMetadata {
+    /// Creates a new builder-style object to manufacture [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
+    pub fn builder() -> crate::model::table_data_import_job_metadata::Builder {
+        crate::model::table_data_import_job_metadata::Builder::default()
+    }
+}
+
 /// See [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
 pub mod table_data_import_job_metadata {
     
@@ -1983,12 +2006,6 @@ pub mod table_data_import_job_metadata {
     
     
 }
-impl TableDataImportJobMetadata {
-    /// Creates a new builder-style object to manufacture [`TableDataImportJobMetadata`](crate::model::TableDataImportJobMetadata).
-    pub fn builder() -> crate::model::table_data_import_job_metadata::Builder {
-        crate::model::table_data_import_job_metadata::Builder::default()
-    }
-}
 
 /// <p>An object that contains the attributes of the submitter of the import job.</p>
 #[non_exhaustive]
@@ -2019,6 +2036,13 @@ impl  std::fmt::Debug for ImportJobSubmitter  {
         formatter.finish()
     }
 }
+impl ImportJobSubmitter {
+    /// Creates a new builder-style object to manufacture [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
+    pub fn builder() -> crate::model::import_job_submitter::Builder {
+        crate::model::import_job_submitter::Builder::default()
+    }
+}
+
 /// See [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
 pub mod import_job_submitter {
     
@@ -2069,12 +2093,6 @@ pub mod import_job_submitter {
     
     
 }
-impl ImportJobSubmitter {
-    /// Creates a new builder-style object to manufacture [`ImportJobSubmitter`](crate::model::ImportJobSubmitter).
-    pub fn builder() -> crate::model::import_job_submitter::Builder {
-        crate::model::import_job_submitter::Builder::default()
-    }
-}
 
 /// <p> A single item in a batch that failed to perform the intended action because of an error preventing it from succeeding. </p>
 #[non_exhaustive]
@@ -2097,6 +2115,13 @@ impl FailedBatchItem {
         self.error_message.as_deref()
     }
 }
+impl FailedBatchItem {
+    /// Creates a new builder-style object to manufacture [`FailedBatchItem`](crate::model::FailedBatchItem).
+    pub fn builder() -> crate::model::failed_batch_item::Builder {
+        crate::model::failed_batch_item::Builder::default()
+    }
+}
+
 /// See [`FailedBatchItem`](crate::model::FailedBatchItem).
 pub mod failed_batch_item {
     
@@ -2139,12 +2164,6 @@ pub mod failed_batch_item {
     
     
 }
-impl FailedBatchItem {
-    /// Creates a new builder-style object to manufacture [`FailedBatchItem`](crate::model::FailedBatchItem).
-    pub fn builder() -> crate::model::failed_batch_item::Builder {
-        crate::model::failed_batch_item::Builder::default()
-    }
-}
 
 /// <p> An object that represents the result of a single upsert row request. </p>
 #[non_exhaustive]
@@ -2167,6 +2186,13 @@ impl UpsertRowsResult {
         self.upsert_action.as_ref()
     }
 }
+impl UpsertRowsResult {
+    /// Creates a new builder-style object to manufacture [`UpsertRowsResult`](crate::model::UpsertRowsResult).
+    pub fn builder() -> crate::model::upsert_rows_result::Builder {
+        crate::model::upsert_rows_result::Builder::default()
+    }
+}
+
 /// See [`UpsertRowsResult`](crate::model::UpsertRowsResult).
 pub mod upsert_rows_result {
     
@@ -2214,12 +2240,6 @@ pub mod upsert_rows_result {
     }
     
     
-}
-impl UpsertRowsResult {
-    /// Creates a new builder-style object to manufacture [`UpsertRowsResult`](crate::model::UpsertRowsResult).
-    pub fn builder() -> crate::model::upsert_rows_result::Builder {
-        crate::model::upsert_rows_result::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UpsertAction`, it is important to ensure
@@ -2334,6 +2354,13 @@ impl UpsertRowData {
         self.cells_to_update.as_ref()
     }
 }
+impl UpsertRowData {
+    /// Creates a new builder-style object to manufacture [`UpsertRowData`](crate::model::UpsertRowData).
+    pub fn builder() -> crate::model::upsert_row_data::Builder {
+        crate::model::upsert_row_data::Builder::default()
+    }
+}
+
 /// See [`UpsertRowData`](crate::model::UpsertRowData).
 pub mod upsert_row_data {
     
@@ -2396,12 +2423,6 @@ pub mod upsert_row_data {
     
     
 }
-impl UpsertRowData {
-    /// Creates a new builder-style object to manufacture [`UpsertRowData`](crate::model::UpsertRowData).
-    pub fn builder() -> crate::model::upsert_row_data::Builder {
-        crate::model::upsert_row_data::Builder::default()
-    }
-}
 
 /// <p> CellInput object contains the data needed to create or update cells in a table. </p> <note> 
 /// <p> CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present. </p> 
@@ -2434,6 +2455,13 @@ impl  std::fmt::Debug for CellInput  {
         formatter.finish()
     }
 }
+impl CellInput {
+    /// Creates a new builder-style object to manufacture [`CellInput`](crate::model::CellInput).
+    pub fn builder() -> crate::model::cell_input::Builder {
+        crate::model::cell_input::Builder::default()
+    }
+}
+
 /// See [`CellInput`](crate::model::CellInput).
 pub mod cell_input {
     
@@ -2490,12 +2518,6 @@ pub mod cell_input {
     
     
 }
-impl CellInput {
-    /// Creates a new builder-style object to manufacture [`CellInput`](crate::model::CellInput).
-    pub fn builder() -> crate::model::cell_input::Builder {
-        crate::model::cell_input::Builder::default()
-    }
-}
 
 /// <p> Data needed to create a single row in a table as part of the BatchCreateTableRows request. </p>
 #[non_exhaustive]
@@ -2518,6 +2540,13 @@ impl UpdateRowData {
         self.cells_to_update.as_ref()
     }
 }
+impl UpdateRowData {
+    /// Creates a new builder-style object to manufacture [`UpdateRowData`](crate::model::UpdateRowData).
+    pub fn builder() -> crate::model::update_row_data::Builder {
+        crate::model::update_row_data::Builder::default()
+    }
+}
+
 /// See [`UpdateRowData`](crate::model::UpdateRowData).
 pub mod update_row_data {
     
@@ -2566,12 +2595,6 @@ pub mod update_row_data {
     
     
 }
-impl UpdateRowData {
-    /// Creates a new builder-style object to manufacture [`UpdateRowData`](crate::model::UpdateRowData).
-    pub fn builder() -> crate::model::update_row_data::Builder {
-        crate::model::update_row_data::Builder::default()
-    }
-}
 
 /// <p> Data needed to create a single row in a table as part of the BatchCreateTableRows request. </p>
 #[non_exhaustive]
@@ -2594,6 +2617,13 @@ impl CreateRowData {
         self.cells_to_create.as_ref()
     }
 }
+impl CreateRowData {
+    /// Creates a new builder-style object to manufacture [`CreateRowData`](crate::model::CreateRowData).
+    pub fn builder() -> crate::model::create_row_data::Builder {
+        crate::model::create_row_data::Builder::default()
+    }
+}
+
 /// See [`CreateRowData`](crate::model::CreateRowData).
 pub mod create_row_data {
     
@@ -2641,11 +2671,5 @@ pub mod create_row_data {
     }
     
     
-}
-impl CreateRowData {
-    /// Creates a new builder-style object to manufacture [`CreateRowData`](crate::model::CreateRowData).
-    pub fn builder() -> crate::model::create_row_data::Builder {
-        crate::model::create_row_data::Builder::default()
-    }
 }
 

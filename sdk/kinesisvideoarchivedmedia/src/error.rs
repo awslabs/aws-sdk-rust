@@ -163,55 +163,6 @@ pub struct ResourceNotFoundException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
-        crate::error::resource_not_found_exception::Builder::default()
-    }
-}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-pub mod resource_not_found_exception {
-    
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
-        pub fn build(self) -> crate::error::ResourceNotFoundException {
-            crate::error::ResourceNotFoundException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ResourceNotFoundException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -236,26 +187,17 @@ impl aws_http::request_id::RequestId for crate::error::ResourceNotFoundException
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotAuthorizedException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl NotAuthorizedException {
-    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-    pub fn builder() -> crate::error::not_authorized_exception::Builder {
-        crate::error::not_authorized_exception::Builder::default()
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
     }
 }
-/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-pub mod not_authorized_exception {
+
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+pub mod resource_not_found_exception {
     
-    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -273,19 +215,19 @@ pub mod not_authorized_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException).
-        pub fn build(self) -> crate::error::NotAuthorizedException {
-            crate::error::NotAuthorizedException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -294,6 +236,16 @@ pub mod not_authorized_exception {
     }
     
     
+}
+
+/// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NotAuthorizedException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotAuthorizedException {
     /// Returns the error message.
@@ -320,26 +272,17 @@ impl aws_http::request_id::RequestId for crate::error::NotAuthorizedException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotAuthorizedException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgumentException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidArgumentException {
-    /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-    pub fn builder() -> crate::error::invalid_argument_exception::Builder {
-        crate::error::invalid_argument_exception::Builder::default()
+impl NotAuthorizedException {
+    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+    pub fn builder() -> crate::error::not_authorized_exception::Builder {
+        crate::error::not_authorized_exception::Builder::default()
     }
 }
-/// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-pub mod invalid_argument_exception {
+
+/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+pub mod not_authorized_exception {
     
-    /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -357,19 +300,19 @@ pub mod invalid_argument_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
-        pub fn build(self) -> crate::error::InvalidArgumentException {
-            crate::error::InvalidArgumentException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException).
+        pub fn build(self) -> crate::error::NotAuthorizedException {
+            crate::error::NotAuthorizedException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -378,6 +321,16 @@ pub mod invalid_argument_exception {
     }
     
     
+}
+
+/// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidArgumentException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidArgumentException {
     /// Returns the error message.
@@ -404,26 +357,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidArgumentException 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgumentException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientLimitExceededException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClientLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
-    pub fn builder() -> crate::error::client_limit_exceeded_exception::Builder {
-        crate::error::client_limit_exceeded_exception::Builder::default()
+impl InvalidArgumentException {
+    /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+    pub fn builder() -> crate::error::invalid_argument_exception::Builder {
+        crate::error::invalid_argument_exception::Builder::default()
     }
 }
-/// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
-pub mod client_limit_exceeded_exception {
+
+/// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+pub mod invalid_argument_exception {
     
-    /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+    /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,19 +385,19 @@ pub mod client_limit_exceeded_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
-        pub fn build(self) -> crate::error::ClientLimitExceededException {
-            crate::error::ClientLimitExceededException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
+        pub fn build(self) -> crate::error::InvalidArgumentException {
+            crate::error::InvalidArgumentException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -462,6 +406,16 @@ pub mod client_limit_exceeded_exception {
     }
     
     
+}
+
+/// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClientLimitExceededException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClientLimitExceededException {
     /// Returns the error message.
@@ -487,6 +441,56 @@ impl aws_http::request_id::RequestId for crate::error::ClientLimitExceededExcept
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClientLimitExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClientLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+    pub fn builder() -> crate::error::client_limit_exceeded_exception::Builder {
+        crate::error::client_limit_exceeded_exception::Builder::default()
+    }
+}
+
+/// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+pub mod client_limit_exceeded_exception {
+    
+    /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
+        pub fn build(self) -> crate::error::ClientLimitExceededException {
+            crate::error::ClientLimitExceededException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1022,55 +1026,6 @@ pub struct UnsupportedStreamMediaTypeException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedStreamMediaTypeException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
-    pub fn builder() -> crate::error::unsupported_stream_media_type_exception::Builder {
-        crate::error::unsupported_stream_media_type_exception::Builder::default()
-    }
-}
-/// See [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
-pub mod unsupported_stream_media_type_exception {
-    
-    /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
-        pub fn build(self) -> crate::error::UnsupportedStreamMediaTypeException {
-            crate::error::UnsupportedStreamMediaTypeException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnsupportedStreamMediaTypeException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1095,26 +1050,17 @@ impl aws_http::request_id::RequestId for crate::error::UnsupportedStreamMediaTyp
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedStreamMediaTypeException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoDataRetentionException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl NoDataRetentionException {
-    /// Creates a new builder-style object to manufacture [`NoDataRetentionException`](crate::error::NoDataRetentionException).
-    pub fn builder() -> crate::error::no_data_retention_exception::Builder {
-        crate::error::no_data_retention_exception::Builder::default()
+impl UnsupportedStreamMediaTypeException {
+    /// Creates a new builder-style object to manufacture [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
+    pub fn builder() -> crate::error::unsupported_stream_media_type_exception::Builder {
+        crate::error::unsupported_stream_media_type_exception::Builder::default()
     }
 }
-/// See [`NoDataRetentionException`](crate::error::NoDataRetentionException).
-pub mod no_data_retention_exception {
+
+/// See [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
+pub mod unsupported_stream_media_type_exception {
     
-    /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException).
+    /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1132,19 +1078,19 @@ pub mod no_data_retention_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`NoDataRetentionException`](crate::error::NoDataRetentionException).
-        pub fn build(self) -> crate::error::NoDataRetentionException {
-            crate::error::NoDataRetentionException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
+        pub fn build(self) -> crate::error::UnsupportedStreamMediaTypeException {
+            crate::error::UnsupportedStreamMediaTypeException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1153,6 +1099,16 @@ pub mod no_data_retention_exception {
     }
     
     
+}
+
+/// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct NoDataRetentionException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoDataRetentionException {
     /// Returns the error message.
@@ -1179,26 +1135,17 @@ impl aws_http::request_id::RequestId for crate::error::NoDataRetentionException 
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoDataRetentionException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>No codec private data was found in at least one of tracks of the video stream.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MissingCodecPrivateDataException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl MissingCodecPrivateDataException {
-    /// Creates a new builder-style object to manufacture [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
-    pub fn builder() -> crate::error::missing_codec_private_data_exception::Builder {
-        crate::error::missing_codec_private_data_exception::Builder::default()
+impl NoDataRetentionException {
+    /// Creates a new builder-style object to manufacture [`NoDataRetentionException`](crate::error::NoDataRetentionException).
+    pub fn builder() -> crate::error::no_data_retention_exception::Builder {
+        crate::error::no_data_retention_exception::Builder::default()
     }
 }
-/// See [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
-pub mod missing_codec_private_data_exception {
+
+/// See [`NoDataRetentionException`](crate::error::NoDataRetentionException).
+pub mod no_data_retention_exception {
     
-    /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
+    /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1216,19 +1163,19 @@ pub mod missing_codec_private_data_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
-        pub fn build(self) -> crate::error::MissingCodecPrivateDataException {
-            crate::error::MissingCodecPrivateDataException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`NoDataRetentionException`](crate::error::NoDataRetentionException).
+        pub fn build(self) -> crate::error::NoDataRetentionException {
+            crate::error::NoDataRetentionException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1237,6 +1184,16 @@ pub mod missing_codec_private_data_exception {
     }
     
     
+}
+
+/// <p>No codec private data was found in at least one of tracks of the video stream.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct MissingCodecPrivateDataException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MissingCodecPrivateDataException {
     /// Returns the error message.
@@ -1263,26 +1220,17 @@ impl aws_http::request_id::RequestId for crate::error::MissingCodecPrivateDataEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MissingCodecPrivateDataException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCodecPrivateDataException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidCodecPrivateDataException {
-    /// Creates a new builder-style object to manufacture [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
-    pub fn builder() -> crate::error::invalid_codec_private_data_exception::Builder {
-        crate::error::invalid_codec_private_data_exception::Builder::default()
+impl MissingCodecPrivateDataException {
+    /// Creates a new builder-style object to manufacture [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
+    pub fn builder() -> crate::error::missing_codec_private_data_exception::Builder {
+        crate::error::missing_codec_private_data_exception::Builder::default()
     }
 }
-/// See [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
-pub mod invalid_codec_private_data_exception {
+
+/// See [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
+pub mod missing_codec_private_data_exception {
     
-    /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
+    /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1300,19 +1248,19 @@ pub mod invalid_codec_private_data_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
-        pub fn build(self) -> crate::error::InvalidCodecPrivateDataException {
-            crate::error::InvalidCodecPrivateDataException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
+        pub fn build(self) -> crate::error::MissingCodecPrivateDataException {
+            crate::error::MissingCodecPrivateDataException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1321,6 +1269,16 @@ pub mod invalid_codec_private_data_exception {
     }
     
     
+}
+
+/// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidCodecPrivateDataException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidCodecPrivateDataException {
     /// Returns the error message.
@@ -1346,6 +1304,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidCodecPrivateDataEx
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidCodecPrivateDataException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidCodecPrivateDataException {
+    /// Creates a new builder-style object to manufacture [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
+    pub fn builder() -> crate::error::invalid_codec_private_data_exception::Builder {
+        crate::error::invalid_codec_private_data_exception::Builder::default()
+    }
+}
+
+/// See [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
+pub mod invalid_codec_private_data_exception {
+    
+    /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
+        pub fn build(self) -> crate::error::InvalidCodecPrivateDataException {
+            crate::error::InvalidCodecPrivateDataException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1808,55 +1816,6 @@ pub struct InvalidMediaFrameException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidMediaFrameException {
-    /// Creates a new builder-style object to manufacture [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
-    pub fn builder() -> crate::error::invalid_media_frame_exception::Builder {
-        crate::error::invalid_media_frame_exception::Builder::default()
-    }
-}
-/// See [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
-pub mod invalid_media_frame_exception {
-    
-    /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
-        pub fn build(self) -> crate::error::InvalidMediaFrameException {
-            crate::error::InvalidMediaFrameException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidMediaFrameException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1880,5 +1839,55 @@ impl aws_http::request_id::RequestId for crate::error::InvalidMediaFrameExceptio
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidMediaFrameException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidMediaFrameException {
+    /// Creates a new builder-style object to manufacture [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
+    pub fn builder() -> crate::error::invalid_media_frame_exception::Builder {
+        crate::error::invalid_media_frame_exception::Builder::default()
+    }
+}
+
+/// See [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
+pub mod invalid_media_frame_exception {
+    
+    /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
+        pub fn build(self) -> crate::error::InvalidMediaFrameException {
+            crate::error::InvalidMediaFrameException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 

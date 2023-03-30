@@ -91,6 +91,13 @@ impl ReportDefinition {
         self.billing_view_arn.as_deref()
     }
 }
+impl ReportDefinition {
+    /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition).
+    pub fn builder() -> crate::model::report_definition::Builder {
+        crate::model::report_definition::Builder::default()
+    }
+}
+
 /// See [`ReportDefinition`](crate::model::ReportDefinition).
 pub mod report_definition {
     
@@ -264,12 +271,6 @@ pub mod report_definition {
     }
     
     
-}
-impl ReportDefinition {
-    /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition).
-    pub fn builder() -> crate::model::report_definition::Builder {
-        crate::model::report_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReportVersioning`, it is important to ensure

@@ -28,6 +28,13 @@ impl AcceleratorType {
         self.throughput_info.as_deref()
     }
 }
+impl AcceleratorType {
+    /// Creates a new builder-style object to manufacture [`AcceleratorType`](crate::model::AcceleratorType).
+    pub fn builder() -> crate::model::accelerator_type::Builder {
+        crate::model::accelerator_type::Builder::default()
+    }
+}
+
 /// See [`AcceleratorType`](crate::model::AcceleratorType).
 pub mod accelerator_type {
     
@@ -88,12 +95,6 @@ pub mod accelerator_type {
     
     
 }
-impl AcceleratorType {
-    /// Creates a new builder-style object to manufacture [`AcceleratorType`](crate::model::AcceleratorType).
-    pub fn builder() -> crate::model::accelerator_type::Builder {
-        crate::model::accelerator_type::Builder::default()
-    }
-}
 
 /// <p> A throughput entry for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
@@ -116,6 +117,13 @@ impl KeyValuePair {
         self.value
     }
 }
+impl KeyValuePair {
+    /// Creates a new builder-style object to manufacture [`KeyValuePair`](crate::model::KeyValuePair).
+    pub fn builder() -> crate::model::key_value_pair::Builder {
+        crate::model::key_value_pair::Builder::default()
+    }
+}
+
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
 pub mod key_value_pair {
     
@@ -159,12 +167,6 @@ pub mod key_value_pair {
     
     
 }
-impl KeyValuePair {
-    /// Creates a new builder-style object to manufacture [`KeyValuePair`](crate::model::KeyValuePair).
-    pub fn builder() -> crate::model::key_value_pair::Builder {
-        crate::model::key_value_pair::Builder::default()
-    }
-}
 
 /// <p> The memory information of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
@@ -180,6 +182,13 @@ impl MemoryInfo {
         self.size_in_mi_b
     }
 }
+impl MemoryInfo {
+    /// Creates a new builder-style object to manufacture [`MemoryInfo`](crate::model::MemoryInfo).
+    pub fn builder() -> crate::model::memory_info::Builder {
+        crate::model::memory_info::Builder::default()
+    }
+}
+
 /// See [`MemoryInfo`](crate::model::MemoryInfo).
 pub mod memory_info {
     
@@ -210,12 +219,6 @@ pub mod memory_info {
     }
     
     
-}
-impl MemoryInfo {
-    /// Creates a new builder-style object to manufacture [`MemoryInfo`](crate::model::MemoryInfo).
-    pub fn builder() -> crate::model::memory_info::Builder {
-        crate::model::memory_info::Builder::default()
-    }
 }
 
 /// <p> The details of an Elastic Inference Accelerator. </p>
@@ -260,6 +263,13 @@ impl ElasticInferenceAccelerator {
         self.attached_resource.as_deref()
     }
 }
+impl ElasticInferenceAccelerator {
+    /// Creates a new builder-style object to manufacture [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
+    pub fn builder() -> crate::model::elastic_inference_accelerator::Builder {
+        crate::model::elastic_inference_accelerator::Builder::default()
+    }
+}
+
 /// See [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
 pub mod elastic_inference_accelerator {
     
@@ -338,12 +348,6 @@ pub mod elastic_inference_accelerator {
     
     
 }
-impl ElasticInferenceAccelerator {
-    /// Creates a new builder-style object to manufacture [`ElasticInferenceAccelerator`](crate::model::ElasticInferenceAccelerator).
-    pub fn builder() -> crate::model::elastic_inference_accelerator::Builder {
-        crate::model::elastic_inference_accelerator::Builder::default()
-    }
-}
 
 /// <p> The health details of an Elastic Inference Accelerator. </p>
 #[non_exhaustive]
@@ -359,6 +363,13 @@ impl ElasticInferenceAcceleratorHealth {
         self.status.as_deref()
     }
 }
+impl ElasticInferenceAcceleratorHealth {
+    /// Creates a new builder-style object to manufacture [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
+    pub fn builder() -> crate::model::elastic_inference_accelerator_health::Builder {
+        crate::model::elastic_inference_accelerator_health::Builder::default()
+    }
+}
+
 /// See [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
 pub mod elastic_inference_accelerator_health {
     
@@ -389,12 +400,6 @@ pub mod elastic_inference_accelerator_health {
     
     
 }
-impl ElasticInferenceAcceleratorHealth {
-    /// Creates a new builder-style object to manufacture [`ElasticInferenceAcceleratorHealth`](crate::model::ElasticInferenceAcceleratorHealth).
-    pub fn builder() -> crate::model::elastic_inference_accelerator_health::Builder {
-        crate::model::elastic_inference_accelerator_health::Builder::default()
-    }
-}
 
 /// <p> A filter expression for the Elastic Inference Accelerator list. </p>
 #[non_exhaustive]
@@ -417,6 +422,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -465,12 +477,6 @@ pub mod filter {
     
     
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p> The offering for an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
@@ -500,6 +506,13 @@ impl AcceleratorTypeOffering {
         self.location.as_deref()
     }
 }
+impl AcceleratorTypeOffering {
+    /// Creates a new builder-style object to manufacture [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).
+    pub fn builder() -> crate::model::accelerator_type_offering::Builder {
+        crate::model::accelerator_type_offering::Builder::default()
+    }
+}
+
 /// See [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).
 pub mod accelerator_type_offering {
     
@@ -553,12 +566,6 @@ pub mod accelerator_type_offering {
     }
     
     
-}
-impl AcceleratorTypeOffering {
-    /// Creates a new builder-style object to manufacture [`AcceleratorTypeOffering`](crate::model::AcceleratorTypeOffering).
-    pub fn builder() -> crate::model::accelerator_type_offering::Builder {
-        crate::model::accelerator_type_offering::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LocationType`, it is important to ensure

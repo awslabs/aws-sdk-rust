@@ -144,6 +144,13 @@ impl InvalidParameterDetail {
         self.problem.as_ref()
     }
 }
+impl InvalidParameterDetail {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
+    pub fn builder() -> crate::model::invalid_parameter_detail::Builder {
+        crate::model::invalid_parameter_detail::Builder::default()
+    }
+}
+
 /// See [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
 pub mod invalid_parameter_detail {
     
@@ -173,12 +180,6 @@ pub mod invalid_parameter_detail {
     }
     
     
-}
-impl InvalidParameterDetail {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
-    pub fn builder() -> crate::model::invalid_parameter_detail::Builder {
-        crate::model::invalid_parameter_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InvalidParameterProblem`, it is important to ensure

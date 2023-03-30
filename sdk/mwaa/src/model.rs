@@ -124,6 +124,13 @@ impl LoggingConfigurationInput {
         self.task_logs.as_ref()
     }
 }
+impl LoggingConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationInput`](crate::model::LoggingConfigurationInput).
+    pub fn builder() -> crate::model::logging_configuration_input::Builder {
+        crate::model::logging_configuration_input::Builder::default()
+    }
+}
+
 /// See [`LoggingConfigurationInput`](crate::model::LoggingConfigurationInput).
 pub mod logging_configuration_input {
     
@@ -202,12 +209,6 @@ pub mod logging_configuration_input {
     
     
 }
-impl LoggingConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`LoggingConfigurationInput`](crate::model::LoggingConfigurationInput).
-    pub fn builder() -> crate::model::logging_configuration_input::Builder {
-        crate::model::logging_configuration_input::Builder::default()
-    }
-}
 
 /// <p>Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and defines the log level to send to CloudWatch Logs (e.g. <code>INFO</code>).</p>
 #[non_exhaustive]
@@ -230,6 +231,13 @@ impl ModuleLoggingConfigurationInput {
         self.log_level.as_ref()
     }
 }
+impl ModuleLoggingConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ModuleLoggingConfigurationInput`](crate::model::ModuleLoggingConfigurationInput).
+    pub fn builder() -> crate::model::module_logging_configuration_input::Builder {
+        crate::model::module_logging_configuration_input::Builder::default()
+    }
+}
+
 /// See [`ModuleLoggingConfigurationInput`](crate::model::ModuleLoggingConfigurationInput).
 pub mod module_logging_configuration_input {
     
@@ -271,12 +279,6 @@ pub mod module_logging_configuration_input {
     }
     
     
-}
-impl ModuleLoggingConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`ModuleLoggingConfigurationInput`](crate::model::ModuleLoggingConfigurationInput).
-    pub fn builder() -> crate::model::module_logging_configuration_input::Builder {
-        crate::model::module_logging_configuration_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoggingLevel`, it is important to ensure
@@ -390,6 +392,13 @@ impl UpdateNetworkConfigurationInput {
         self.security_group_ids.as_deref()
     }
 }
+impl UpdateNetworkConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkConfigurationInput`](crate::model::UpdateNetworkConfigurationInput).
+    pub fn builder() -> crate::model::update_network_configuration_input::Builder {
+        crate::model::update_network_configuration_input::Builder::default()
+    }
+}
+
 /// See [`UpdateNetworkConfigurationInput`](crate::model::UpdateNetworkConfigurationInput).
 pub mod update_network_configuration_input {
     
@@ -425,12 +434,6 @@ pub mod update_network_configuration_input {
     }
     
     
-}
-impl UpdateNetworkConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkConfigurationInput`](crate::model::UpdateNetworkConfigurationInput).
-    pub fn builder() -> crate::model::update_network_configuration_input::Builder {
-        crate::model::update_network_configuration_input::Builder::default()
-    }
 }
 
 /// <p> <b>Internal only</b>. Collects Apache Airflow metrics. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
@@ -482,6 +485,13 @@ impl MetricDatum {
         self.statistic_values.as_ref()
     }
 }
+impl MetricDatum {
+    /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum).
+    pub fn builder() -> crate::model::metric_datum::Builder {
+        crate::model::metric_datum::Builder::default()
+    }
+}
+
 /// See [`MetricDatum`](crate::model::MetricDatum).
 pub mod metric_datum {
     
@@ -578,12 +588,6 @@ pub mod metric_datum {
     
     
 }
-impl MetricDatum {
-    /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum).
-    pub fn builder() -> crate::model::metric_datum::Builder {
-        crate::model::metric_datum::Builder::default()
-    }
-}
 
 /// <p> <b>Internal only</b>. Represents a set of statistics that describe a specific metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
@@ -620,6 +624,13 @@ impl StatisticSet {
         self.maximum
     }
 }
+impl StatisticSet {
+    /// Creates a new builder-style object to manufacture [`StatisticSet`](crate::model::StatisticSet).
+    pub fn builder() -> crate::model::statistic_set::Builder {
+        crate::model::statistic_set::Builder::default()
+    }
+}
+
 /// See [`StatisticSet`](crate::model::StatisticSet).
 pub mod statistic_set {
     
@@ -685,12 +696,6 @@ pub mod statistic_set {
     }
     
     
-}
-impl StatisticSet {
-    /// Creates a new builder-style object to manufacture [`StatisticSet`](crate::model::StatisticSet).
-    pub fn builder() -> crate::model::statistic_set::Builder {
-        crate::model::statistic_set::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Unit`, it is important to ensure
@@ -921,6 +926,13 @@ impl Dimension {
         self.value.as_deref()
     }
 }
+impl Dimension {
+    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
+    pub fn builder() -> crate::model::dimension::Builder {
+        crate::model::dimension::Builder::default()
+    }
+}
+
 /// See [`Dimension`](crate::model::Dimension).
 pub mod dimension {
     
@@ -962,12 +974,6 @@ pub mod dimension {
     }
     
     
-}
-impl Dimension {
-    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
-    pub fn builder() -> crate::model::dimension::Builder {
-        crate::model::dimension::Builder::default()
-    }
 }
 
 /// <p>Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.</p>
@@ -1213,6 +1219,13 @@ impl  std::fmt::Debug for Environment  {
         formatter.finish()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
     
@@ -1609,12 +1622,6 @@ pub mod environment {
     
     
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 /// <p>Describes the status of the last update on the environment, and any errors that were encountered.</p>
 #[non_exhaustive]
@@ -1651,6 +1658,13 @@ impl LastUpdate {
         self.source.as_deref()
     }
 }
+impl LastUpdate {
+    /// Creates a new builder-style object to manufacture [`LastUpdate`](crate::model::LastUpdate).
+    pub fn builder() -> crate::model::last_update::Builder {
+        crate::model::last_update::Builder::default()
+    }
+}
+
 /// See [`LastUpdate`](crate::model::LastUpdate).
 pub mod last_update {
     
@@ -1717,12 +1731,6 @@ pub mod last_update {
     
     
 }
-impl LastUpdate {
-    /// Creates a new builder-style object to manufacture [`LastUpdate`](crate::model::LastUpdate).
-    pub fn builder() -> crate::model::last_update::Builder {
-        crate::model::last_update::Builder::default()
-    }
-}
 
 /// <p>Describes the error(s) encountered with the last update of the environment.</p>
 #[non_exhaustive]
@@ -1745,6 +1753,13 @@ impl UpdateError {
         self.error_message.as_deref()
     }
 }
+impl UpdateError {
+    /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError).
+    pub fn builder() -> crate::model::update_error::Builder {
+        crate::model::update_error::Builder::default()
+    }
+}
+
 /// See [`UpdateError`](crate::model::UpdateError).
 pub mod update_error {
     
@@ -1786,12 +1801,6 @@ pub mod update_error {
     }
     
     
-}
-impl UpdateError {
-    /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError).
-    pub fn builder() -> crate::model::update_error::Builder {
-        crate::model::update_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UpdateStatus`, it is important to ensure
@@ -1923,6 +1932,13 @@ impl LoggingConfiguration {
         self.task_logs.as_ref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
     
@@ -2001,12 +2017,6 @@ pub mod logging_configuration {
     
     
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the Apache Airflow log details for the log type (e.g. <code>DagProcessingLogs</code>).</p>
 #[non_exhaustive]
@@ -2036,6 +2046,13 @@ impl ModuleLoggingConfiguration {
         self.cloud_watch_log_group_arn.as_deref()
     }
 }
+impl ModuleLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ModuleLoggingConfiguration`](crate::model::ModuleLoggingConfiguration).
+    pub fn builder() -> crate::model::module_logging_configuration::Builder {
+        crate::model::module_logging_configuration::Builder::default()
+    }
+}
+
 /// See [`ModuleLoggingConfiguration`](crate::model::ModuleLoggingConfiguration).
 pub mod module_logging_configuration {
     
@@ -2090,12 +2107,6 @@ pub mod module_logging_configuration {
     
     
 }
-impl ModuleLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ModuleLoggingConfiguration`](crate::model::ModuleLoggingConfiguration).
-    pub fn builder() -> crate::model::module_logging_configuration::Builder {
-        crate::model::module_logging_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
 #[non_exhaustive]
@@ -2118,6 +2129,13 @@ impl NetworkConfiguration {
         self.security_group_ids.as_deref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
     
@@ -2171,12 +2189,6 @@ pub mod network_configuration {
     }
     
     
-}
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentStatus`, it is important to ensure

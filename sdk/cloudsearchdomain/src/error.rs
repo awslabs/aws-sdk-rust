@@ -122,11 +122,37 @@ impl DocumentServiceException {
     }
 }
 impl DocumentServiceException {
+    /// Returns the error message.
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+}
+impl std::fmt::Display for DocumentServiceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DocumentServiceException")?;
+        if let Some(inner_1) = &self.message {
+             {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DocumentServiceException {}
+impl aws_http::request_id::RequestId for crate::error::DocumentServiceException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DocumentServiceException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DocumentServiceException {
     /// Creates a new builder-style object to manufacture [`DocumentServiceException`](crate::error::DocumentServiceException).
     pub fn builder() -> crate::error::document_service_exception::Builder {
         crate::error::document_service_exception::Builder::default()
     }
 }
+
 /// See [`DocumentServiceException`](crate::error::DocumentServiceException).
 pub mod document_service_exception {
     
@@ -158,16 +184,16 @@ pub mod document_service_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
         /// Consumes the builder and constructs a [`DocumentServiceException`](crate::error::DocumentServiceException).
         pub fn build(self) -> crate::error::DocumentServiceException {
             crate::error::DocumentServiceException {
@@ -181,31 +207,6 @@ pub mod document_service_exception {
     }
     
     
-}
-impl DocumentServiceException {
-    /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
-}
-impl std::fmt::Display for DocumentServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DocumentServiceException")?;
-        if let Some(inner_1) = &self.message {
-             {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DocumentServiceException {}
-impl aws_http::request_id::RequestId for crate::error::DocumentServiceException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DocumentServiceException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 
 /// Do not use this.
@@ -322,55 +323,6 @@ pub struct SearchException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SearchException {
-    /// Creates a new builder-style object to manufacture [`SearchException`](crate::error::SearchException).
-    pub fn builder() -> crate::error::search_exception::Builder {
-        crate::error::search_exception::Builder::default()
-    }
-}
-/// See [`SearchException`](crate::error::SearchException).
-pub mod search_exception {
-    
-    /// A builder for [`SearchException`](crate::error::SearchException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A description of the error returned by the search service.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description of the error returned by the search service.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SearchException`](crate::error::SearchException).
-        pub fn build(self) -> crate::error::SearchException {
-            crate::error::SearchException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SearchException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -394,6 +346,56 @@ impl aws_http::request_id::RequestId for crate::error::SearchException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SearchException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl SearchException {
+    /// Creates a new builder-style object to manufacture [`SearchException`](crate::error::SearchException).
+    pub fn builder() -> crate::error::search_exception::Builder {
+        crate::error::search_exception::Builder::default()
+    }
+}
+
+/// See [`SearchException`](crate::error::SearchException).
+pub mod search_exception {
+    
+    /// A builder for [`SearchException`](crate::error::SearchException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A description of the error returned by the search service.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description of the error returned by the search service.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SearchException`](crate::error::SearchException).
+        pub fn build(self) -> crate::error::SearchException {
+            crate::error::SearchException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

@@ -21,6 +21,13 @@ impl PlacementTemplate {
         self.device_templates.as_ref()
     }
 }
+impl PlacementTemplate {
+    /// Creates a new builder-style object to manufacture [`PlacementTemplate`](crate::model::PlacementTemplate).
+    pub fn builder() -> crate::model::placement_template::Builder {
+        crate::model::placement_template::Builder::default()
+    }
+}
+
 /// See [`PlacementTemplate`](crate::model::PlacementTemplate).
 pub mod placement_template {
     
@@ -75,12 +82,6 @@ pub mod placement_template {
     
     
 }
-impl PlacementTemplate {
-    /// Creates a new builder-style object to manufacture [`PlacementTemplate`](crate::model::PlacementTemplate).
-    pub fn builder() -> crate::model::placement_template::Builder {
-        crate::model::placement_template::Builder::default()
-    }
-}
 
 /// <p>An object representing a device for a placement template (see <code>PlacementTemplate</code>).</p>
 #[non_exhaustive]
@@ -103,6 +104,13 @@ impl DeviceTemplate {
         self.callback_overrides.as_ref()
     }
 }
+impl DeviceTemplate {
+    /// Creates a new builder-style object to manufacture [`DeviceTemplate`](crate::model::DeviceTemplate).
+    pub fn builder() -> crate::model::device_template::Builder {
+        crate::model::device_template::Builder::default()
+    }
+}
+
 /// See [`DeviceTemplate`](crate::model::DeviceTemplate).
 pub mod device_template {
     
@@ -151,12 +159,6 @@ pub mod device_template {
     
     
 }
-impl DeviceTemplate {
-    /// Creates a new builder-style object to manufacture [`DeviceTemplate`](crate::model::DeviceTemplate).
-    pub fn builder() -> crate::model::device_template::Builder {
-        crate::model::device_template::Builder::default()
-    }
-}
 
 /// <p>An object providing summary information for a particular project for an associated AWS account and region.</p>
 #[non_exhaustive]
@@ -200,6 +202,13 @@ impl ProjectSummary {
         self.tags.as_ref()
     }
 }
+impl ProjectSummary {
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
+    pub fn builder() -> crate::model::project_summary::Builder {
+        crate::model::project_summary::Builder::default()
+    }
+}
+
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
     
@@ -284,12 +293,6 @@ pub mod project_summary {
     
     
 }
-impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
-    pub fn builder() -> crate::model::project_summary::Builder {
-        crate::model::project_summary::Builder::default()
-    }
-}
 
 /// <p>An object providing summary information for a particular placement.</p>
 #[non_exhaustive]
@@ -326,6 +329,13 @@ impl PlacementSummary {
         self.updated_date.as_ref()
     }
 }
+impl PlacementSummary {
+    /// Creates a new builder-style object to manufacture [`PlacementSummary`](crate::model::PlacementSummary).
+    pub fn builder() -> crate::model::placement_summary::Builder {
+        crate::model::placement_summary::Builder::default()
+    }
+}
+
 /// See [`PlacementSummary`](crate::model::PlacementSummary).
 pub mod placement_summary {
     
@@ -392,12 +402,6 @@ pub mod placement_summary {
     
     
 }
-impl PlacementSummary {
-    /// Creates a new builder-style object to manufacture [`PlacementSummary`](crate::model::PlacementSummary).
-    pub fn builder() -> crate::model::placement_summary::Builder {
-        crate::model::placement_summary::Builder::default()
-    }
-}
 
 /// <p>An object providing detailed information for a particular project associated with an AWS account and region.</p>
 #[non_exhaustive]
@@ -455,6 +459,13 @@ impl ProjectDescription {
         self.tags.as_ref()
     }
 }
+impl ProjectDescription {
+    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
+    pub fn builder() -> crate::model::project_description::Builder {
+        crate::model::project_description::Builder::default()
+    }
+}
+
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
 pub mod project_description {
     
@@ -563,12 +574,6 @@ pub mod project_description {
     
     
 }
-impl ProjectDescription {
-    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
-    pub fn builder() -> crate::model::project_description::Builder {
-        crate::model::project_description::Builder::default()
-    }
-}
 
 /// <p>An object describing a project's placement.</p>
 #[non_exhaustive]
@@ -612,6 +617,13 @@ impl PlacementDescription {
         self.updated_date.as_ref()
     }
 }
+impl PlacementDescription {
+    /// Creates a new builder-style object to manufacture [`PlacementDescription`](crate::model::PlacementDescription).
+    pub fn builder() -> crate::model::placement_description::Builder {
+        crate::model::placement_description::Builder::default()
+    }
+}
+
 /// See [`PlacementDescription`](crate::model::PlacementDescription).
 pub mod placement_description {
     
@@ -695,11 +707,5 @@ pub mod placement_description {
     }
     
     
-}
-impl PlacementDescription {
-    /// Creates a new builder-style object to manufacture [`PlacementDescription`](crate::model::PlacementDescription).
-    pub fn builder() -> crate::model::placement_description::Builder {
-        crate::model::placement_description::Builder::default()
-    }
 }
 

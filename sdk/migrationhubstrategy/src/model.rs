@@ -35,6 +35,13 @@ impl StrategyOption {
         self.is_preferred
     }
 }
+impl StrategyOption {
+    /// Creates a new builder-style object to manufacture [`StrategyOption`](crate::model::StrategyOption).
+    pub fn builder() -> crate::model::strategy_option::Builder {
+        crate::model::strategy_option::Builder::default()
+    }
+}
+
 /// See [`StrategyOption`](crate::model::StrategyOption).
 pub mod strategy_option {
     
@@ -100,12 +107,6 @@ pub mod strategy_option {
     }
     
     
-}
-impl StrategyOption {
-    /// Creates a new builder-style object to manufacture [`StrategyOption`](crate::model::StrategyOption).
-    pub fn builder() -> crate::model::strategy_option::Builder {
-        crate::model::strategy_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetDestination`, it is important to ensure
@@ -696,6 +697,13 @@ impl SourceCode {
         self.project_name.as_deref()
     }
 }
+impl SourceCode {
+    /// Creates a new builder-style object to manufacture [`SourceCode`](crate::model::SourceCode).
+    pub fn builder() -> crate::model::source_code::Builder {
+        crate::model::source_code::Builder::default()
+    }
+}
+
 /// See [`SourceCode`](crate::model::SourceCode).
 pub mod source_code {
     
@@ -761,12 +769,6 @@ pub mod source_code {
     }
     
     
-}
-impl SourceCode {
-    /// Creates a new builder-style object to manufacture [`SourceCode`](crate::model::SourceCode).
-    pub fn builder() -> crate::model::source_code::Builder {
-        crate::model::source_code::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VersionControl`, it is important to ensure
@@ -959,6 +961,13 @@ impl Group {
         self.value.as_deref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
     
@@ -1000,12 +1009,6 @@ pub mod group {
     }
     
     
-}
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GroupName`, it is important to ensure
@@ -1277,6 +1280,13 @@ impl AssessmentTarget {
         self.values.as_deref()
     }
 }
+impl AssessmentTarget {
+    /// Creates a new builder-style object to manufacture [`AssessmentTarget`](crate::model::AssessmentTarget).
+    pub fn builder() -> crate::model::assessment_target::Builder {
+        crate::model::assessment_target::Builder::default()
+    }
+}
+
 /// See [`AssessmentTarget`](crate::model::AssessmentTarget).
 pub mod assessment_target {
     
@@ -1336,12 +1346,6 @@ pub mod assessment_target {
     }
     
     
-}
-impl AssessmentTarget {
-    /// Creates a new builder-style object to manufacture [`AssessmentTarget`](crate::model::AssessmentTarget).
-    pub fn builder() -> crate::model::assessment_target::Builder {
-        crate::model::assessment_target::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Condition`, it is important to ensure
@@ -1544,6 +1548,13 @@ impl DatabasePreferences {
         self.database_migration_preference.as_ref()
     }
 }
+impl DatabasePreferences {
+    /// Creates a new builder-style object to manufacture [`DatabasePreferences`](crate::model::DatabasePreferences).
+    pub fn builder() -> crate::model::database_preferences::Builder {
+        crate::model::database_preferences::Builder::default()
+    }
+}
+
 /// See [`DatabasePreferences`](crate::model::DatabasePreferences).
 pub mod database_preferences {
     
@@ -1585,12 +1596,6 @@ pub mod database_preferences {
     }
     
     
-}
-impl DatabasePreferences {
-    /// Creates a new builder-style object to manufacture [`DatabasePreferences`](crate::model::DatabasePreferences).
-    pub fn builder() -> crate::model::database_preferences::Builder {
-        crate::model::database_preferences::Builder::default()
-    }
 }
 
 /// <p> Preferences for migrating a database to AWS. </p>
@@ -1661,6 +1666,13 @@ impl NoDatabaseMigrationPreference {
         self.target_database_engine.as_deref()
     }
 }
+impl NoDatabaseMigrationPreference {
+    /// Creates a new builder-style object to manufacture [`NoDatabaseMigrationPreference`](crate::model::NoDatabaseMigrationPreference).
+    pub fn builder() -> crate::model::no_database_migration_preference::Builder {
+        crate::model::no_database_migration_preference::Builder::default()
+    }
+}
+
 /// See [`NoDatabaseMigrationPreference`](crate::model::NoDatabaseMigrationPreference).
 pub mod no_database_migration_preference {
     
@@ -1696,12 +1708,6 @@ pub mod no_database_migration_preference {
     }
     
     
-}
-impl NoDatabaseMigrationPreference {
-    /// Creates a new builder-style object to manufacture [`NoDatabaseMigrationPreference`](crate::model::NoDatabaseMigrationPreference).
-    pub fn builder() -> crate::model::no_database_migration_preference::Builder {
-        crate::model::no_database_migration_preference::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetDatabaseEngine`, it is important to ensure
@@ -1840,6 +1846,13 @@ impl Homogeneous {
         self.target_database_engine.as_deref()
     }
 }
+impl Homogeneous {
+    /// Creates a new builder-style object to manufacture [`Homogeneous`](crate::model::Homogeneous).
+    pub fn builder() -> crate::model::homogeneous::Builder {
+        crate::model::homogeneous::Builder::default()
+    }
+}
+
 /// See [`Homogeneous`](crate::model::Homogeneous).
 pub mod homogeneous {
     
@@ -1875,12 +1888,6 @@ pub mod homogeneous {
     }
     
     
-}
-impl Homogeneous {
-    /// Creates a new builder-style object to manufacture [`Homogeneous`](crate::model::Homogeneous).
-    pub fn builder() -> crate::model::homogeneous::Builder {
-        crate::model::homogeneous::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HomogeneousTargetDatabaseEngine`, it is important to ensure
@@ -1974,6 +1981,13 @@ impl Heterogeneous {
         self.target_database_engine.as_deref()
     }
 }
+impl Heterogeneous {
+    /// Creates a new builder-style object to manufacture [`Heterogeneous`](crate::model::Heterogeneous).
+    pub fn builder() -> crate::model::heterogeneous::Builder {
+        crate::model::heterogeneous::Builder::default()
+    }
+}
+
 /// See [`Heterogeneous`](crate::model::Heterogeneous).
 pub mod heterogeneous {
     
@@ -2009,12 +2023,6 @@ pub mod heterogeneous {
     }
     
     
-}
-impl Heterogeneous {
-    /// Creates a new builder-style object to manufacture [`Heterogeneous`](crate::model::Heterogeneous).
-    pub fn builder() -> crate::model::heterogeneous::Builder {
-        crate::model::heterogeneous::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HeterogeneousTargetDatabaseEngine`, it is important to ensure
@@ -2240,6 +2248,13 @@ impl ApplicationPreferences {
         self.management_preference.as_ref()
     }
 }
+impl ApplicationPreferences {
+    /// Creates a new builder-style object to manufacture [`ApplicationPreferences`](crate::model::ApplicationPreferences).
+    pub fn builder() -> crate::model::application_preferences::Builder {
+        crate::model::application_preferences::Builder::default()
+    }
+}
+
 /// See [`ApplicationPreferences`](crate::model::ApplicationPreferences).
 pub mod application_preferences {
     
@@ -2269,12 +2284,6 @@ pub mod application_preferences {
     }
     
     
-}
-impl ApplicationPreferences {
-    /// Creates a new builder-style object to manufacture [`ApplicationPreferences`](crate::model::ApplicationPreferences).
-    pub fn builder() -> crate::model::application_preferences::Builder {
-        crate::model::application_preferences::Builder::default()
-    }
 }
 
 /// <p> Preferences for migrating an application to AWS. </p>
@@ -2345,6 +2354,13 @@ impl NoManagementPreference {
         self.target_destination.as_deref()
     }
 }
+impl NoManagementPreference {
+    /// Creates a new builder-style object to manufacture [`NoManagementPreference`](crate::model::NoManagementPreference).
+    pub fn builder() -> crate::model::no_management_preference::Builder {
+        crate::model::no_management_preference::Builder::default()
+    }
+}
+
 /// See [`NoManagementPreference`](crate::model::NoManagementPreference).
 pub mod no_management_preference {
     
@@ -2380,12 +2396,6 @@ pub mod no_management_preference {
     }
     
     
-}
-impl NoManagementPreference {
-    /// Creates a new builder-style object to manufacture [`NoManagementPreference`](crate::model::NoManagementPreference).
-    pub fn builder() -> crate::model::no_management_preference::Builder {
-        crate::model::no_management_preference::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NoPreferenceTargetDestination`, it is important to ensure
@@ -2504,6 +2514,13 @@ impl SelfManageResources {
         self.target_destination.as_deref()
     }
 }
+impl SelfManageResources {
+    /// Creates a new builder-style object to manufacture [`SelfManageResources`](crate::model::SelfManageResources).
+    pub fn builder() -> crate::model::self_manage_resources::Builder {
+        crate::model::self_manage_resources::Builder::default()
+    }
+}
+
 /// See [`SelfManageResources`](crate::model::SelfManageResources).
 pub mod self_manage_resources {
     
@@ -2539,12 +2556,6 @@ pub mod self_manage_resources {
     }
     
     
-}
-impl SelfManageResources {
-    /// Creates a new builder-style object to manufacture [`SelfManageResources`](crate::model::SelfManageResources).
-    pub fn builder() -> crate::model::self_manage_resources::Builder {
-        crate::model::self_manage_resources::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SelfManageTargetDestination`, it is important to ensure
@@ -2653,6 +2664,13 @@ impl AwsManagedResources {
         self.target_destination.as_deref()
     }
 }
+impl AwsManagedResources {
+    /// Creates a new builder-style object to manufacture [`AwsManagedResources`](crate::model::AwsManagedResources).
+    pub fn builder() -> crate::model::aws_managed_resources::Builder {
+        crate::model::aws_managed_resources::Builder::default()
+    }
+}
+
 /// See [`AwsManagedResources`](crate::model::AwsManagedResources).
 pub mod aws_managed_resources {
     
@@ -2688,12 +2706,6 @@ pub mod aws_managed_resources {
     }
     
     
-}
-impl AwsManagedResources {
-    /// Creates a new builder-style object to manufacture [`AwsManagedResources`](crate::model::AwsManagedResources).
-    pub fn builder() -> crate::model::aws_managed_resources::Builder {
-        crate::model::aws_managed_resources::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AwsManagedTargetDestination`, it is important to ensure
@@ -2797,6 +2809,13 @@ impl PrioritizeBusinessGoals {
         self.business_goals.as_ref()
     }
 }
+impl PrioritizeBusinessGoals {
+    /// Creates a new builder-style object to manufacture [`PrioritizeBusinessGoals`](crate::model::PrioritizeBusinessGoals).
+    pub fn builder() -> crate::model::prioritize_business_goals::Builder {
+        crate::model::prioritize_business_goals::Builder::default()
+    }
+}
+
 /// See [`PrioritizeBusinessGoals`](crate::model::PrioritizeBusinessGoals).
 pub mod prioritize_business_goals {
     
@@ -2826,12 +2845,6 @@ pub mod prioritize_business_goals {
     }
     
     
-}
-impl PrioritizeBusinessGoals {
-    /// Creates a new builder-style object to manufacture [`PrioritizeBusinessGoals`](crate::model::PrioritizeBusinessGoals).
-    pub fn builder() -> crate::model::prioritize_business_goals::Builder {
-        crate::model::prioritize_business_goals::Builder::default()
-    }
 }
 
 /// <p> Business goals that you specify. </p>
@@ -2869,6 +2882,13 @@ impl BusinessGoals {
         self.license_cost_reduction
     }
 }
+impl BusinessGoals {
+    /// Creates a new builder-style object to manufacture [`BusinessGoals`](crate::model::BusinessGoals).
+    pub fn builder() -> crate::model::business_goals::Builder {
+        crate::model::business_goals::Builder::default()
+    }
+}
+
 /// See [`BusinessGoals`](crate::model::BusinessGoals).
 pub mod business_goals {
     
@@ -2934,12 +2954,6 @@ pub mod business_goals {
     }
     
     
-}
-impl BusinessGoals {
-    /// Creates a new builder-style object to manufacture [`BusinessGoals`](crate::model::BusinessGoals).
-    pub fn builder() -> crate::model::business_goals::Builder {
-        crate::model::business_goals::Builder::default()
-    }
 }
 
 /// <p> Detailed information about a server. </p>
@@ -3047,6 +3061,13 @@ impl ServerDetail {
         self.server_error.as_ref()
     }
 }
+impl ServerDetail {
+    /// Creates a new builder-style object to manufacture [`ServerDetail`](crate::model::ServerDetail).
+    pub fn builder() -> crate::model::server_detail::Builder {
+        crate::model::server_detail::Builder::default()
+    }
+}
+
 /// See [`ServerDetail`](crate::model::ServerDetail).
 pub mod server_detail {
     
@@ -3245,12 +3266,6 @@ pub mod server_detail {
     
     
 }
-impl ServerDetail {
-    /// Creates a new builder-style object to manufacture [`ServerDetail`](crate::model::ServerDetail).
-    pub fn builder() -> crate::model::server_detail::Builder {
-        crate::model::server_detail::Builder::default()
-    }
-}
 
 /// <p>The error in server analysis.</p>
 #[non_exhaustive]
@@ -3266,6 +3281,13 @@ impl ServerError {
         self.server_error_category.as_ref()
     }
 }
+impl ServerError {
+    /// Creates a new builder-style object to manufacture [`ServerError`](crate::model::ServerError).
+    pub fn builder() -> crate::model::server_error::Builder {
+        crate::model::server_error::Builder::default()
+    }
+}
+
 /// See [`ServerError`](crate::model::ServerError).
 pub mod server_error {
     
@@ -3295,12 +3317,6 @@ pub mod server_error {
     }
     
     
-}
-impl ServerError {
-    /// Creates a new builder-style object to manufacture [`ServerError`](crate::model::ServerError).
-    pub fn builder() -> crate::model::server_error::Builder {
-        crate::model::server_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServerErrorCategory`, it is important to ensure
@@ -3508,6 +3524,13 @@ impl S3Object {
         self.s3key.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
     
@@ -3550,12 +3573,6 @@ pub mod s3_object {
     
     
 }
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
-    }
-}
 
 /// <p> Object containing the summary of the strategy recommendations. </p>
 #[non_exhaustive]
@@ -3578,6 +3595,13 @@ impl StrategySummary {
         self.count
     }
 }
+impl StrategySummary {
+    /// Creates a new builder-style object to manufacture [`StrategySummary`](crate::model::StrategySummary).
+    pub fn builder() -> crate::model::strategy_summary::Builder {
+        crate::model::strategy_summary::Builder::default()
+    }
+}
+
 /// See [`StrategySummary`](crate::model::StrategySummary).
 pub mod strategy_summary {
     
@@ -3620,12 +3644,6 @@ pub mod strategy_summary {
     
     
 }
-impl StrategySummary {
-    /// Creates a new builder-style object to manufacture [`StrategySummary`](crate::model::StrategySummary).
-    pub fn builder() -> crate::model::strategy_summary::Builder {
-        crate::model::strategy_summary::Builder::default()
-    }
-}
 
 /// <p> Information about the server that hosts application components. </p>
 #[non_exhaustive]
@@ -3662,6 +3680,13 @@ impl SystemInfo {
         self.cpu_architecture.as_deref()
     }
 }
+impl SystemInfo {
+    /// Creates a new builder-style object to manufacture [`SystemInfo`](crate::model::SystemInfo).
+    pub fn builder() -> crate::model::system_info::Builder {
+        crate::model::system_info::Builder::default()
+    }
+}
+
 /// See [`SystemInfo`](crate::model::SystemInfo).
 pub mod system_info {
     
@@ -3734,12 +3759,6 @@ pub mod system_info {
     
     
 }
-impl SystemInfo {
-    /// Creates a new builder-style object to manufacture [`SystemInfo`](crate::model::SystemInfo).
-    pub fn builder() -> crate::model::system_info::Builder {
-        crate::model::system_info::Builder::default()
-    }
-}
 
 /// <p> Information about the server's network for which the assessment was run. </p>
 #[non_exhaustive]
@@ -3776,6 +3795,13 @@ impl NetworkInfo {
         self.net_mask.as_deref()
     }
 }
+impl NetworkInfo {
+    /// Creates a new builder-style object to manufacture [`NetworkInfo`](crate::model::NetworkInfo).
+    pub fn builder() -> crate::model::network_info::Builder {
+        crate::model::network_info::Builder::default()
+    }
+}
+
 /// See [`NetworkInfo`](crate::model::NetworkInfo).
 pub mod network_info {
     
@@ -3842,12 +3868,6 @@ pub mod network_info {
     
     
 }
-impl NetworkInfo {
-    /// Creates a new builder-style object to manufacture [`NetworkInfo`](crate::model::NetworkInfo).
-    pub fn builder() -> crate::model::network_info::Builder {
-        crate::model::network_info::Builder::default()
-    }
-}
 
 /// <p> Information about the operating system. </p>
 #[non_exhaustive]
@@ -3870,6 +3890,13 @@ impl OsInfo {
         self.version.as_deref()
     }
 }
+impl OsInfo {
+    /// Creates a new builder-style object to manufacture [`OsInfo`](crate::model::OsInfo).
+    pub fn builder() -> crate::model::os_info::Builder {
+        crate::model::os_info::Builder::default()
+    }
+}
+
 /// See [`OsInfo`](crate::model::OsInfo).
 pub mod os_info {
     
@@ -3911,12 +3938,6 @@ pub mod os_info {
     }
     
     
-}
-impl OsInfo {
-    /// Creates a new builder-style object to manufacture [`OsInfo`](crate::model::OsInfo).
-    pub fn builder() -> crate::model::os_info::Builder {
-        crate::model::os_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OsType`, it is important to ensure
@@ -4022,6 +4043,13 @@ impl AntipatternSeveritySummary {
         self.count
     }
 }
+impl AntipatternSeveritySummary {
+    /// Creates a new builder-style object to manufacture [`AntipatternSeveritySummary`](crate::model::AntipatternSeveritySummary).
+    pub fn builder() -> crate::model::antipattern_severity_summary::Builder {
+        crate::model::antipattern_severity_summary::Builder::default()
+    }
+}
+
 /// See [`AntipatternSeveritySummary`](crate::model::AntipatternSeveritySummary).
 pub mod antipattern_severity_summary {
     
@@ -4063,12 +4091,6 @@ pub mod antipattern_severity_summary {
     }
     
     
-}
-impl AntipatternSeveritySummary {
-    /// Creates a new builder-style object to manufacture [`AntipatternSeveritySummary`](crate::model::AntipatternSeveritySummary).
-    pub fn builder() -> crate::model::antipattern_severity_summary::Builder {
-        crate::model::antipattern_severity_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Severity`, it is important to ensure
@@ -4293,6 +4315,13 @@ impl RecommendationSet {
         self.strategy.as_ref()
     }
 }
+impl RecommendationSet {
+    /// Creates a new builder-style object to manufacture [`RecommendationSet`](crate::model::RecommendationSet).
+    pub fn builder() -> crate::model::recommendation_set::Builder {
+        crate::model::recommendation_set::Builder::default()
+    }
+}
+
 /// See [`RecommendationSet`](crate::model::RecommendationSet).
 pub mod recommendation_set {
     
@@ -4347,12 +4376,6 @@ pub mod recommendation_set {
     
     
 }
-impl RecommendationSet {
-    /// Creates a new builder-style object to manufacture [`RecommendationSet`](crate::model::RecommendationSet).
-    pub fn builder() -> crate::model::recommendation_set::Builder {
-        crate::model::recommendation_set::Builder::default()
-    }
-}
 
 /// <p> Information of the transformation tool that can be used to migrate and modernize the application. </p>
 #[non_exhaustive]
@@ -4382,6 +4405,13 @@ impl TransformationTool {
         self.tranformation_tool_installation_link.as_deref()
     }
 }
+impl TransformationTool {
+    /// Creates a new builder-style object to manufacture [`TransformationTool`](crate::model::TransformationTool).
+    pub fn builder() -> crate::model::transformation_tool::Builder {
+        crate::model::transformation_tool::Builder::default()
+    }
+}
+
 /// See [`TransformationTool`](crate::model::TransformationTool).
 pub mod transformation_tool {
     
@@ -4435,12 +4465,6 @@ pub mod transformation_tool {
     }
     
     
-}
-impl TransformationTool {
-    /// Creates a new builder-style object to manufacture [`TransformationTool`](crate::model::TransformationTool).
-    pub fn builder() -> crate::model::transformation_tool::Builder {
-        crate::model::transformation_tool::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
@@ -4716,6 +4740,13 @@ impl ImportFileTaskInformation {
         self.import_name.as_deref()
     }
 }
+impl ImportFileTaskInformation {
+    /// Creates a new builder-style object to manufacture [`ImportFileTaskInformation`](crate::model::ImportFileTaskInformation).
+    pub fn builder() -> crate::model::import_file_task_information::Builder {
+        crate::model::import_file_task_information::Builder::default()
+    }
+}
+
 /// See [`ImportFileTaskInformation`](crate::model::ImportFileTaskInformation).
 pub mod import_file_task_information {
     
@@ -4865,12 +4896,6 @@ pub mod import_file_task_information {
     }
     
     
-}
-impl ImportFileTaskInformation {
-    /// Creates a new builder-style object to manufacture [`ImportFileTaskInformation`](crate::model::ImportFileTaskInformation).
-    pub fn builder() -> crate::model::import_file_task_information::Builder {
-        crate::model::import_file_task_information::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportFileTaskStatus`, it is important to ensure
@@ -5048,6 +5073,13 @@ impl Collector {
         self.configuration_summary.as_ref()
     }
 }
+impl Collector {
+    /// Creates a new builder-style object to manufacture [`Collector`](crate::model::Collector).
+    pub fn builder() -> crate::model::collector::Builder {
+        crate::model::collector::Builder::default()
+    }
+}
+
 /// See [`Collector`](crate::model::Collector).
 pub mod collector {
     
@@ -5162,12 +5194,6 @@ pub mod collector {
     
     
 }
-impl Collector {
-    /// Creates a new builder-style object to manufacture [`Collector`](crate::model::Collector).
-    pub fn builder() -> crate::model::collector::Builder {
-        crate::model::collector::Builder::default()
-    }
-}
 
 /// <p>Summary of the collector configuration.</p>
 #[non_exhaustive]
@@ -5211,6 +5237,13 @@ impl ConfigurationSummary {
         self.remote_source_code_analysis_server_info.as_ref()
     }
 }
+impl ConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`ConfigurationSummary`](crate::model::ConfigurationSummary).
+    pub fn builder() -> crate::model::configuration_summary::Builder {
+        crate::model::configuration_summary::Builder::default()
+    }
+}
+
 /// See [`ConfigurationSummary`](crate::model::ConfigurationSummary).
 pub mod configuration_summary {
     
@@ -5313,12 +5346,6 @@ pub mod configuration_summary {
     
     
 }
-impl ConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`ConfigurationSummary`](crate::model::ConfigurationSummary).
-    pub fn builder() -> crate::model::configuration_summary::Builder {
-        crate::model::configuration_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the server configured for source code analysis.</p>
 #[non_exhaustive]
@@ -5334,6 +5361,13 @@ impl RemoteSourceCodeAnalysisServerInfo {
         self.remote_source_code_analysis_server_configuration_timestamp.as_deref()
     }
 }
+impl RemoteSourceCodeAnalysisServerInfo {
+    /// Creates a new builder-style object to manufacture [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
+    pub fn builder() -> crate::model::remote_source_code_analysis_server_info::Builder {
+        crate::model::remote_source_code_analysis_server_info::Builder::default()
+    }
+}
+
 /// See [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
 pub mod remote_source_code_analysis_server_info {
     
@@ -5364,12 +5398,6 @@ pub mod remote_source_code_analysis_server_info {
     
     
 }
-impl RemoteSourceCodeAnalysisServerInfo {
-    /// Creates a new builder-style object to manufacture [`RemoteSourceCodeAnalysisServerInfo`](crate::model::RemoteSourceCodeAnalysisServerInfo).
-    pub fn builder() -> crate::model::remote_source_code_analysis_server_info::Builder {
-        crate::model::remote_source_code_analysis_server_info::Builder::default()
-    }
-}
 
 /// <p>Detailed information of the pipeline.</p>
 #[non_exhaustive]
@@ -5392,6 +5420,13 @@ impl PipelineInfo {
         self.pipeline_configuration_time_stamp.as_deref()
     }
 }
+impl PipelineInfo {
+    /// Creates a new builder-style object to manufacture [`PipelineInfo`](crate::model::PipelineInfo).
+    pub fn builder() -> crate::model::pipeline_info::Builder {
+        crate::model::pipeline_info::Builder::default()
+    }
+}
+
 /// See [`PipelineInfo`](crate::model::PipelineInfo).
 pub mod pipeline_info {
     
@@ -5433,12 +5468,6 @@ pub mod pipeline_info {
     }
     
     
-}
-impl PipelineInfo {
-    /// Creates a new builder-style object to manufacture [`PipelineInfo`](crate::model::PipelineInfo).
-    pub fn builder() -> crate::model::pipeline_info::Builder {
-        crate::model::pipeline_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PipelineType`, it is important to ensure
@@ -5539,6 +5568,13 @@ impl VersionControlInfo {
         self.version_control_configuration_time_stamp.as_deref()
     }
 }
+impl VersionControlInfo {
+    /// Creates a new builder-style object to manufacture [`VersionControlInfo`](crate::model::VersionControlInfo).
+    pub fn builder() -> crate::model::version_control_info::Builder {
+        crate::model::version_control_info::Builder::default()
+    }
+}
+
 /// See [`VersionControlInfo`](crate::model::VersionControlInfo).
 pub mod version_control_info {
     
@@ -5580,12 +5616,6 @@ pub mod version_control_info {
     }
     
     
-}
-impl VersionControlInfo {
-    /// Creates a new builder-style object to manufacture [`VersionControlInfo`](crate::model::VersionControlInfo).
-    pub fn builder() -> crate::model::version_control_info::Builder {
-        crate::model::version_control_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VersionControlType`, it is important to ensure
@@ -5703,6 +5733,13 @@ impl IpAddressBasedRemoteInfo {
         self.os_type.as_ref()
     }
 }
+impl IpAddressBasedRemoteInfo {
+    /// Creates a new builder-style object to manufacture [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
+    pub fn builder() -> crate::model::ip_address_based_remote_info::Builder {
+        crate::model::ip_address_based_remote_info::Builder::default()
+    }
+}
+
 /// See [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
 pub mod ip_address_based_remote_info {
     
@@ -5756,12 +5793,6 @@ pub mod ip_address_based_remote_info {
     }
     
     
-}
-impl IpAddressBasedRemoteInfo {
-    /// Creates a new builder-style object to manufacture [`IpAddressBasedRemoteInfo`](crate::model::IpAddressBasedRemoteInfo).
-    pub fn builder() -> crate::model::ip_address_based_remote_info::Builder {
-        crate::model::ip_address_based_remote_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthType`, it is important to ensure
@@ -5872,6 +5903,13 @@ impl VcenterBasedRemoteInfo {
         self.os_type.as_ref()
     }
 }
+impl VcenterBasedRemoteInfo {
+    /// Creates a new builder-style object to manufacture [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
+    pub fn builder() -> crate::model::vcenter_based_remote_info::Builder {
+        crate::model::vcenter_based_remote_info::Builder::default()
+    }
+}
+
 /// See [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
 pub mod vcenter_based_remote_info {
     
@@ -5913,12 +5951,6 @@ pub mod vcenter_based_remote_info {
     }
     
     
-}
-impl VcenterBasedRemoteInfo {
-    /// Creates a new builder-style object to manufacture [`VcenterBasedRemoteInfo`](crate::model::VcenterBasedRemoteInfo).
-    pub fn builder() -> crate::model::vcenter_based_remote_info::Builder {
-        crate::model::vcenter_based_remote_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CollectorHealth`, it is important to ensure
@@ -6164,6 +6196,13 @@ impl ApplicationComponentDetail {
         self.app_unit_error.as_ref()
     }
 }
+impl ApplicationComponentDetail {
+    /// Creates a new builder-style object to manufacture [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
+    pub fn builder() -> crate::model::application_component_detail::Builder {
+        crate::model::application_component_detail::Builder::default()
+    }
+}
+
 /// See [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
 pub mod application_component_detail {
     
@@ -6458,12 +6497,6 @@ pub mod application_component_detail {
     
     
 }
-impl ApplicationComponentDetail {
-    /// Creates a new builder-style object to manufacture [`ApplicationComponentDetail`](crate::model::ApplicationComponentDetail).
-    pub fn builder() -> crate::model::application_component_detail::Builder {
-        crate::model::application_component_detail::Builder::default()
-    }
-}
 
 /// <p>Error in the analysis of the application unit.</p>
 #[non_exhaustive]
@@ -6479,6 +6512,13 @@ impl AppUnitError {
         self.app_unit_error_category.as_ref()
     }
 }
+impl AppUnitError {
+    /// Creates a new builder-style object to manufacture [`AppUnitError`](crate::model::AppUnitError).
+    pub fn builder() -> crate::model::app_unit_error::Builder {
+        crate::model::app_unit_error::Builder::default()
+    }
+}
+
 /// See [`AppUnitError`](crate::model::AppUnitError).
 pub mod app_unit_error {
     
@@ -6508,12 +6548,6 @@ pub mod app_unit_error {
     }
     
     
-}
-impl AppUnitError {
-    /// Creates a new builder-style object to manufacture [`AppUnitError`](crate::model::AppUnitError).
-    pub fn builder() -> crate::model::app_unit_error::Builder {
-        crate::model::app_unit_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AppUnitErrorCategory`, it is important to ensure
@@ -6827,6 +6861,13 @@ impl SourceCodeRepository {
         self.project_name.as_deref()
     }
 }
+impl SourceCodeRepository {
+    /// Creates a new builder-style object to manufacture [`SourceCodeRepository`](crate::model::SourceCodeRepository).
+    pub fn builder() -> crate::model::source_code_repository::Builder {
+        crate::model::source_code_repository::Builder::default()
+    }
+}
+
 /// See [`SourceCodeRepository`](crate::model::SourceCodeRepository).
 pub mod source_code_repository {
     
@@ -6893,12 +6934,6 @@ pub mod source_code_repository {
     
     
 }
-impl SourceCodeRepository {
-    /// Creates a new builder-style object to manufacture [`SourceCodeRepository`](crate::model::SourceCodeRepository).
-    pub fn builder() -> crate::model::source_code_repository::Builder {
-        crate::model::source_code_repository::Builder::default()
-    }
-}
 
 /// <p> Configuration information used for assessing databases. </p>
 #[non_exhaustive]
@@ -6914,6 +6949,13 @@ impl DatabaseConfigDetail {
         self.secret_name.as_deref()
     }
 }
+impl DatabaseConfigDetail {
+    /// Creates a new builder-style object to manufacture [`DatabaseConfigDetail`](crate::model::DatabaseConfigDetail).
+    pub fn builder() -> crate::model::database_config_detail::Builder {
+        crate::model::database_config_detail::Builder::default()
+    }
+}
+
 /// See [`DatabaseConfigDetail`](crate::model::DatabaseConfigDetail).
 pub mod database_config_detail {
     
@@ -6943,12 +6985,6 @@ pub mod database_config_detail {
     }
     
     
-}
-impl DatabaseConfigDetail {
-    /// Creates a new builder-style object to manufacture [`DatabaseConfigDetail`](crate::model::DatabaseConfigDetail).
-    pub fn builder() -> crate::model::database_config_detail::Builder {
-        crate::model::database_config_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SrcCodeOrDbAnalysisStatus`, it is important to ensure
@@ -7205,6 +7241,13 @@ impl ServerStrategy {
         self.is_preferred
     }
 }
+impl ServerStrategy {
+    /// Creates a new builder-style object to manufacture [`ServerStrategy`](crate::model::ServerStrategy).
+    pub fn builder() -> crate::model::server_strategy::Builder {
+        crate::model::server_strategy::Builder::default()
+    }
+}
+
 /// See [`ServerStrategy`](crate::model::ServerStrategy).
 pub mod server_strategy {
     
@@ -7270,12 +7313,6 @@ pub mod server_strategy {
     }
     
     
-}
-impl ServerStrategy {
-    /// Creates a new builder-style object to manufacture [`ServerStrategy`](crate::model::ServerStrategy).
-    pub fn builder() -> crate::model::server_strategy::Builder {
-        crate::model::server_strategy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StrategyRecommendation`, it is important to ensure
@@ -7391,6 +7428,13 @@ impl AssociatedApplication {
         self.id.as_deref()
     }
 }
+impl AssociatedApplication {
+    /// Creates a new builder-style object to manufacture [`AssociatedApplication`](crate::model::AssociatedApplication).
+    pub fn builder() -> crate::model::associated_application::Builder {
+        crate::model::associated_application::Builder::default()
+    }
+}
+
 /// See [`AssociatedApplication`](crate::model::AssociatedApplication).
 pub mod associated_application {
     
@@ -7432,12 +7476,6 @@ pub mod associated_application {
     }
     
     
-}
-impl AssociatedApplication {
-    /// Creates a new builder-style object to manufacture [`AssociatedApplication`](crate::model::AssociatedApplication).
-    pub fn builder() -> crate::model::associated_application::Builder {
-        crate::model::associated_application::Builder::default()
-    }
 }
 
 /// <p> Contains detailed information about a recommendation report. </p>
@@ -7489,6 +7527,13 @@ impl RecommendationReportDetails {
         self.s3_keys.as_deref()
     }
 }
+impl RecommendationReportDetails {
+    /// Creates a new builder-style object to manufacture [`RecommendationReportDetails`](crate::model::RecommendationReportDetails).
+    pub fn builder() -> crate::model::recommendation_report_details::Builder {
+        crate::model::recommendation_report_details::Builder::default()
+    }
+}
+
 /// See [`RecommendationReportDetails`](crate::model::RecommendationReportDetails).
 pub mod recommendation_report_details {
     
@@ -7584,12 +7629,6 @@ pub mod recommendation_report_details {
     }
     
     
-}
-impl RecommendationReportDetails {
-    /// Creates a new builder-style object to manufacture [`RecommendationReportDetails`](crate::model::RecommendationReportDetails).
-    pub fn builder() -> crate::model::recommendation_report_details::Builder {
-        crate::model::recommendation_report_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecommendationReportStatus`, it is important to ensure
@@ -7763,6 +7802,13 @@ impl AssessmentSummary {
         self.list_server_status_summary.as_deref()
     }
 }
+impl AssessmentSummary {
+    /// Creates a new builder-style object to manufacture [`AssessmentSummary`](crate::model::AssessmentSummary).
+    pub fn builder() -> crate::model::assessment_summary::Builder {
+        crate::model::assessment_summary::Builder::default()
+    }
+}
+
 /// See [`AssessmentSummary`](crate::model::AssessmentSummary).
 pub mod assessment_summary {
     
@@ -7955,12 +8001,6 @@ pub mod assessment_summary {
     
     
 }
-impl AssessmentSummary {
-    /// Creates a new builder-style object to manufacture [`AssessmentSummary`](crate::model::AssessmentSummary).
-    pub fn builder() -> crate::model::assessment_summary::Builder {
-        crate::model::assessment_summary::Builder::default()
-    }
-}
 
 /// <p>The status summary of the server analysis.</p>
 #[non_exhaustive]
@@ -7983,6 +8023,13 @@ impl ServerStatusSummary {
         self.count
     }
 }
+impl ServerStatusSummary {
+    /// Creates a new builder-style object to manufacture [`ServerStatusSummary`](crate::model::ServerStatusSummary).
+    pub fn builder() -> crate::model::server_status_summary::Builder {
+        crate::model::server_status_summary::Builder::default()
+    }
+}
+
 /// See [`ServerStatusSummary`](crate::model::ServerStatusSummary).
 pub mod server_status_summary {
     
@@ -8025,12 +8072,6 @@ pub mod server_status_summary {
     
     
 }
-impl ServerStatusSummary {
-    /// Creates a new builder-style object to manufacture [`ServerStatusSummary`](crate::model::ServerStatusSummary).
-    pub fn builder() -> crate::model::server_status_summary::Builder {
-        crate::model::server_status_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the analysis status of the application component.</p>
 #[non_exhaustive]
@@ -8053,6 +8094,13 @@ impl ApplicationComponentStatusSummary {
         self.count
     }
 }
+impl ApplicationComponentStatusSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
+    pub fn builder() -> crate::model::application_component_status_summary::Builder {
+        crate::model::application_component_status_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
 pub mod application_component_status_summary {
     
@@ -8095,12 +8143,6 @@ pub mod application_component_status_summary {
     
     
 }
-impl ApplicationComponentStatusSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationComponentStatusSummary`](crate::model::ApplicationComponentStatusSummary).
-    pub fn builder() -> crate::model::application_component_status_summary::Builder {
-        crate::model::application_component_status_summary::Builder::default()
-    }
-}
 
 /// <p> Object containing details about the servers imported by Application Discovery Service </p>
 #[non_exhaustive]
@@ -8123,6 +8165,13 @@ impl ServerSummary {
         self.count
     }
 }
+impl ServerSummary {
+    /// Creates a new builder-style object to manufacture [`ServerSummary`](crate::model::ServerSummary).
+    pub fn builder() -> crate::model::server_summary::Builder {
+        crate::model::server_summary::Builder::default()
+    }
+}
+
 /// See [`ServerSummary`](crate::model::ServerSummary).
 pub mod server_summary {
     
@@ -8164,12 +8213,6 @@ pub mod server_summary {
     }
     
     
-}
-impl ServerSummary {
-    /// Creates a new builder-style object to manufacture [`ServerSummary`](crate::model::ServerSummary).
-    pub fn builder() -> crate::model::server_summary::Builder {
-        crate::model::server_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServerOsType`, it is important to ensure
@@ -8290,6 +8333,13 @@ impl ApplicationComponentSummary {
         self.count
     }
 }
+impl ApplicationComponentSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationComponentSummary`](crate::model::ApplicationComponentSummary).
+    pub fn builder() -> crate::model::application_component_summary::Builder {
+        crate::model::application_component_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationComponentSummary`](crate::model::ApplicationComponentSummary).
 pub mod application_component_summary {
     
@@ -8331,12 +8381,6 @@ pub mod application_component_summary {
     }
     
     
-}
-impl ApplicationComponentSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationComponentSummary`](crate::model::ApplicationComponentSummary).
-    pub fn builder() -> crate::model::application_component_summary::Builder {
-        crate::model::application_component_summary::Builder::default()
-    }
 }
 
 /// <p> Detailed information about an assessment. </p>
@@ -8402,6 +8446,13 @@ impl DataCollectionDetails {
         self.status_message.as_deref()
     }
 }
+impl DataCollectionDetails {
+    /// Creates a new builder-style object to manufacture [`DataCollectionDetails`](crate::model::DataCollectionDetails).
+    pub fn builder() -> crate::model::data_collection_details::Builder {
+        crate::model::data_collection_details::Builder::default()
+    }
+}
+
 /// See [`DataCollectionDetails`](crate::model::DataCollectionDetails).
 pub mod data_collection_details {
     
@@ -8515,12 +8566,6 @@ pub mod data_collection_details {
     }
     
     
-}
-impl DataCollectionDetails {
-    /// Creates a new builder-style object to manufacture [`DataCollectionDetails`](crate::model::DataCollectionDetails).
-    pub fn builder() -> crate::model::data_collection_details::Builder {
-        crate::model::data_collection_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssessmentStatus`, it is important to ensure
@@ -8643,6 +8688,13 @@ impl ApplicationComponentStrategy {
         self.is_preferred
     }
 }
+impl ApplicationComponentStrategy {
+    /// Creates a new builder-style object to manufacture [`ApplicationComponentStrategy`](crate::model::ApplicationComponentStrategy).
+    pub fn builder() -> crate::model::application_component_strategy::Builder {
+        crate::model::application_component_strategy::Builder::default()
+    }
+}
+
 /// See [`ApplicationComponentStrategy`](crate::model::ApplicationComponentStrategy).
 pub mod application_component_strategy {
     
@@ -8696,11 +8748,5 @@ pub mod application_component_strategy {
     }
     
     
-}
-impl ApplicationComponentStrategy {
-    /// Creates a new builder-style object to manufacture [`ApplicationComponentStrategy`](crate::model::ApplicationComponentStrategy).
-    pub fn builder() -> crate::model::application_component_strategy::Builder {
-        crate::model::application_component_strategy::Builder::default()
-    }
 }
 

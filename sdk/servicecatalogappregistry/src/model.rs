@@ -56,6 +56,13 @@ impl AttributeGroup {
         self.tags.as_ref()
     }
 }
+impl AttributeGroup {
+    /// Creates a new builder-style object to manufacture [`AttributeGroup`](crate::model::AttributeGroup).
+    pub fn builder() -> crate::model::attribute_group::Builder {
+        crate::model::attribute_group::Builder::default()
+    }
+}
+
 /// See [`AttributeGroup`](crate::model::AttributeGroup).
 pub mod attribute_group {
     
@@ -164,12 +171,6 @@ pub mod attribute_group {
     
     
 }
-impl AttributeGroup {
-    /// Creates a new builder-style object to manufacture [`AttributeGroup`](crate::model::AttributeGroup).
-    pub fn builder() -> crate::model::attribute_group::Builder {
-        crate::model::attribute_group::Builder::default()
-    }
-}
 
 /// <p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>
 #[non_exhaustive]
@@ -227,6 +228,13 @@ impl Application {
         self.tags.as_ref()
     }
 }
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
 /// See [`Application`](crate::model::Application).
 pub mod application {
     
@@ -334,12 +342,6 @@ pub mod application {
     }
     
     
-}
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SyncAction`, it is important to ensure
@@ -520,6 +522,13 @@ impl AppRegistryConfiguration {
         self.tag_query_configuration.as_ref()
     }
 }
+impl AppRegistryConfiguration {
+    /// Creates a new builder-style object to manufacture [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
+    pub fn builder() -> crate::model::app_registry_configuration::Builder {
+        crate::model::app_registry_configuration::Builder::default()
+    }
+}
+
 /// See [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
 pub mod app_registry_configuration {
     
@@ -550,12 +559,6 @@ pub mod app_registry_configuration {
     
     
 }
-impl AppRegistryConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppRegistryConfiguration`](crate::model::AppRegistryConfiguration).
-    pub fn builder() -> crate::model::app_registry_configuration::Builder {
-        crate::model::app_registry_configuration::Builder::default()
-    }
-}
 
 /// <p> The definition of <code>tagQuery</code>. Specifies which resources are associated with an application. </p>
 #[non_exhaustive]
@@ -571,6 +574,13 @@ impl TagQueryConfiguration {
         self.tag_key.as_deref()
     }
 }
+impl TagQueryConfiguration {
+    /// Creates a new builder-style object to manufacture [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
+    pub fn builder() -> crate::model::tag_query_configuration::Builder {
+        crate::model::tag_query_configuration::Builder::default()
+    }
+}
+
 /// See [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
 pub mod tag_query_configuration {
     
@@ -600,12 +610,6 @@ pub mod tag_query_configuration {
     }
     
     
-}
-impl TagQueryConfiguration {
-    /// Creates a new builder-style object to manufacture [`TagQueryConfiguration`](crate::model::TagQueryConfiguration).
-    pub fn builder() -> crate::model::tag_query_configuration::Builder {
-        crate::model::tag_query_configuration::Builder::default()
-    }
 }
 
 /// <p> The details related to a specific AttributeGroup. </p>
@@ -644,6 +648,13 @@ impl AttributeGroupDetails {
         self.name.as_deref()
     }
 }
+impl AttributeGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
+    pub fn builder() -> crate::model::attribute_group_details::Builder {
+        crate::model::attribute_group_details::Builder::default()
+    }
+}
+
 /// See [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
 pub mod attribute_group_details {
     
@@ -706,12 +717,6 @@ pub mod attribute_group_details {
     
     
 }
-impl AttributeGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AttributeGroupDetails`](crate::model::AttributeGroupDetails).
-    pub fn builder() -> crate::model::attribute_group_details::Builder {
-        crate::model::attribute_group_details::Builder::default()
-    }
-}
 
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.</p>
 #[non_exhaustive]
@@ -762,6 +767,13 @@ impl AttributeGroupSummary {
         self.last_update_time.as_ref()
     }
 }
+impl AttributeGroupSummary {
+    /// Creates a new builder-style object to manufacture [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
+    pub fn builder() -> crate::model::attribute_group_summary::Builder {
+        crate::model::attribute_group_summary::Builder::default()
+    }
+}
+
 /// See [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
 pub mod attribute_group_summary {
     
@@ -852,12 +864,6 @@ pub mod attribute_group_summary {
     
     
 }
-impl AttributeGroupSummary {
-    /// Creates a new builder-style object to manufacture [`AttributeGroupSummary`](crate::model::AttributeGroupSummary).
-    pub fn builder() -> crate::model::attribute_group_summary::Builder {
-        crate::model::attribute_group_summary::Builder::default()
-    }
-}
 
 /// <p>The information about the resource.</p>
 #[non_exhaustive]
@@ -894,6 +900,13 @@ impl ResourceInfo {
         self.resource_details.as_ref()
     }
 }
+impl ResourceInfo {
+    /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
+    pub fn builder() -> crate::model::resource_info::Builder {
+        crate::model::resource_info::Builder::default()
+    }
+}
+
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
 pub mod resource_info {
     
@@ -960,12 +973,6 @@ pub mod resource_info {
     
     
 }
-impl ResourceInfo {
-    /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
-    pub fn builder() -> crate::model::resource_info::Builder {
-        crate::model::resource_info::Builder::default()
-    }
-}
 
 /// <p> The details related to the resource. </p>
 #[non_exhaustive]
@@ -981,6 +988,13 @@ impl ResourceDetails {
         self.tag_value.as_deref()
     }
 }
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
     
@@ -1010,12 +1024,6 @@ pub mod resource_details {
     }
     
     
-}
-impl ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
-    pub fn builder() -> crate::model::resource_details::Builder {
-        crate::model::resource_details::Builder::default()
-    }
 }
 
 /// <p>Summary of a Amazon Web Services Service Catalog AppRegistry application.</p>
@@ -1067,6 +1075,13 @@ impl ApplicationSummary {
         self.last_update_time.as_ref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
     
@@ -1157,12 +1172,6 @@ pub mod application_summary {
     
     
 }
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
-    }
-}
 
 /// <p> The information about the resource.</p>
 #[non_exhaustive]
@@ -1199,6 +1208,13 @@ impl Resource {
         self.integrations.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -1265,12 +1281,6 @@ pub mod resource {
     
     
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>The service integration information about the resource.</p>
 #[non_exhaustive]
@@ -1286,6 +1296,13 @@ impl ResourceIntegrations {
         self.resource_group.as_ref()
     }
 }
+impl ResourceIntegrations {
+    /// Creates a new builder-style object to manufacture [`ResourceIntegrations`](crate::model::ResourceIntegrations).
+    pub fn builder() -> crate::model::resource_integrations::Builder {
+        crate::model::resource_integrations::Builder::default()
+    }
+}
+
 /// See [`ResourceIntegrations`](crate::model::ResourceIntegrations).
 pub mod resource_integrations {
     
@@ -1315,12 +1332,6 @@ pub mod resource_integrations {
     }
     
     
-}
-impl ResourceIntegrations {
-    /// Creates a new builder-style object to manufacture [`ResourceIntegrations`](crate::model::ResourceIntegrations).
-    pub fn builder() -> crate::model::resource_integrations::Builder {
-        crate::model::resource_integrations::Builder::default()
-    }
 }
 
 /// <p>The information about the resource group integration.</p>
@@ -1363,6 +1374,13 @@ impl ResourceGroup {
         self.error_message.as_deref()
     }
 }
+impl ResourceGroup {
+    /// Creates a new builder-style object to manufacture [`ResourceGroup`](crate::model::ResourceGroup).
+    pub fn builder() -> crate::model::resource_group::Builder {
+        crate::model::resource_group::Builder::default()
+    }
+}
+
 /// See [`ResourceGroup`](crate::model::ResourceGroup).
 pub mod resource_group {
     
@@ -1428,12 +1446,6 @@ pub mod resource_group {
     }
     
     
-}
-impl ResourceGroup {
-    /// Creates a new builder-style object to manufacture [`ResourceGroup`](crate::model::ResourceGroup).
-    pub fn builder() -> crate::model::resource_group::Builder {
-        crate::model::resource_group::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceGroupState`, it is important to ensure
@@ -1552,6 +1564,13 @@ impl Integrations {
         self.resource_group.as_ref()
     }
 }
+impl Integrations {
+    /// Creates a new builder-style object to manufacture [`Integrations`](crate::model::Integrations).
+    pub fn builder() -> crate::model::integrations::Builder {
+        crate::model::integrations::Builder::default()
+    }
+}
+
 /// See [`Integrations`](crate::model::Integrations).
 pub mod integrations {
     
@@ -1581,11 +1600,5 @@ pub mod integrations {
     }
     
     
-}
-impl Integrations {
-    /// Creates a new builder-style object to manufacture [`Integrations`](crate::model::Integrations).
-    pub fn builder() -> crate::model::integrations::Builder {
-        crate::model::integrations::Builder::default()
-    }
 }
 

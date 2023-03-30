@@ -168,6 +168,13 @@ impl ChannelMessageStatusStructure {
         self.detail.as_deref()
     }
 }
+impl ChannelMessageStatusStructure {
+    /// Creates a new builder-style object to manufacture [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
+    pub fn builder() -> crate::model::channel_message_status_structure::Builder {
+        crate::model::channel_message_status_structure::Builder::default()
+    }
+}
+
 /// See [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
 pub mod channel_message_status_structure {
     
@@ -209,12 +216,6 @@ pub mod channel_message_status_structure {
     }
     
     
-}
-impl ChannelMessageStatusStructure {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
-    pub fn builder() -> crate::model::channel_message_status_structure::Builder {
-        crate::model::channel_message_status_structure::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChannelMessageStatus`, it is important to ensure
@@ -354,6 +355,13 @@ impl  std::fmt::Debug for Processor  {
         formatter.finish()
     }
 }
+impl Processor {
+    /// Creates a new builder-style object to manufacture [`Processor`](crate::model::Processor).
+    pub fn builder() -> crate::model::processor::Builder {
+        crate::model::processor::Builder::default()
+    }
+}
+
 /// See [`Processor`](crate::model::Processor).
 pub mod processor {
     
@@ -429,12 +437,6 @@ pub mod processor {
     }
     
     
-}
-impl Processor {
-    /// Creates a new builder-style object to manufacture [`Processor`](crate::model::Processor).
-    pub fn builder() -> crate::model::processor::Builder {
-        crate::model::processor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FallbackAction`, it is important to ensure
@@ -533,6 +535,13 @@ impl ProcessorConfiguration {
         self.lambda.as_ref()
     }
 }
+impl ProcessorConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
+    pub fn builder() -> crate::model::processor_configuration::Builder {
+        crate::model::processor_configuration::Builder::default()
+    }
+}
+
 /// See [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
 pub mod processor_configuration {
     
@@ -563,12 +572,6 @@ pub mod processor_configuration {
     
     
 }
-impl ProcessorConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
-    pub fn builder() -> crate::model::processor_configuration::Builder {
-        crate::model::processor_configuration::Builder::default()
-    }
-}
 
 /// <p>Stores metadata about a Lambda processor.</p>
 #[non_exhaustive]
@@ -591,6 +594,13 @@ impl LambdaConfiguration {
         self.invocation_type.as_ref()
     }
 }
+impl LambdaConfiguration {
+    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration).
+    pub fn builder() -> crate::model::lambda_configuration::Builder {
+        crate::model::lambda_configuration::Builder::default()
+    }
+}
+
 /// See [`LambdaConfiguration`](crate::model::LambdaConfiguration).
 pub mod lambda_configuration {
     
@@ -632,12 +642,6 @@ pub mod lambda_configuration {
     }
     
     
-}
-impl LambdaConfiguration {
-    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration).
-    pub fn builder() -> crate::model::lambda_configuration::Builder {
-        crate::model::lambda_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InvocationType`, it is important to ensure
@@ -828,6 +832,13 @@ impl  std::fmt::Debug for Tag  {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -878,12 +889,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A list of message attribute values.</p>
 #[non_exhaustive]
@@ -899,6 +904,13 @@ impl MessageAttributeValue {
         self.string_values.as_deref()
     }
 }
+impl MessageAttributeValue {
+    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
+    pub fn builder() -> crate::model::message_attribute_value::Builder {
+        crate::model::message_attribute_value::Builder::default()
+    }
+}
+
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
 pub mod message_attribute_value {
     
@@ -934,12 +946,6 @@ pub mod message_attribute_value {
     }
     
     
-}
-impl MessageAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
-    pub fn builder() -> crate::model::message_attribute_value::Builder {
-        crate::model::message_attribute_value::Builder::default()
-    }
 }
 
 /// <p>The push notification configuration of the message.</p>
@@ -979,6 +985,13 @@ impl  std::fmt::Debug for PushNotificationConfiguration  {
         formatter.finish()
     }
 }
+impl PushNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
+    pub fn builder() -> crate::model::push_notification_configuration::Builder {
+        crate::model::push_notification_configuration::Builder::default()
+    }
+}
+
 /// See [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
 pub mod push_notification_configuration {
     
@@ -1041,12 +1054,6 @@ pub mod push_notification_configuration {
     }
     
     
-}
-impl PushNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
-    pub fn builder() -> crate::model::push_notification_configuration::Builder {
-        crate::model::push_notification_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PushNotificationType`, it is important to ensure
@@ -1356,6 +1363,13 @@ impl  std::fmt::Debug for ChannelSummary  {
         formatter.finish()
     }
 }
+impl ChannelSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
+    pub fn builder() -> crate::model::channel_summary::Builder {
+        crate::model::channel_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
     
@@ -1457,12 +1471,6 @@ pub mod channel_summary {
     }
     
     
-}
-impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
-    pub fn builder() -> crate::model::channel_summary::Builder {
-        crate::model::channel_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChannelPrivacy`, it is important to ensure
@@ -1579,6 +1587,13 @@ impl SearchField {
         self.operator.as_ref()
     }
 }
+impl SearchField {
+    /// Creates a new builder-style object to manufacture [`SearchField`](crate::model::SearchField).
+    pub fn builder() -> crate::model::search_field::Builder {
+        crate::model::search_field::Builder::default()
+    }
+}
+
 /// See [`SearchField`](crate::model::SearchField).
 pub mod search_field {
     
@@ -1642,12 +1657,6 @@ pub mod search_field {
     }
     
     
-}
-impl SearchField {
-    /// Creates a new builder-style object to manufacture [`SearchField`](crate::model::SearchField).
-    pub fn builder() -> crate::model::search_field::Builder {
-        crate::model::search_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SearchFieldOperator`, it is important to ensure
@@ -1823,6 +1832,13 @@ impl ChannelMembershipPreferences {
         self.push_notifications.as_ref()
     }
 }
+impl ChannelMembershipPreferences {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
+    pub fn builder() -> crate::model::channel_membership_preferences::Builder {
+        crate::model::channel_membership_preferences::Builder::default()
+    }
+}
+
 /// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
 pub mod channel_membership_preferences {
     
@@ -1852,12 +1868,6 @@ pub mod channel_membership_preferences {
     }
     
     
-}
-impl ChannelMembershipPreferences {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
-    pub fn builder() -> crate::model::channel_membership_preferences::Builder {
-        crate::model::channel_membership_preferences::Builder::default()
-    }
 }
 
 /// <p>The channel membership preferences for push notification.</p>
@@ -1889,6 +1899,13 @@ impl  std::fmt::Debug for PushNotificationPreferences  {
         formatter.finish()
     }
 }
+impl PushNotificationPreferences {
+    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
+    pub fn builder() -> crate::model::push_notification_preferences::Builder {
+        crate::model::push_notification_preferences::Builder::default()
+    }
+}
+
 /// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
 pub mod push_notification_preferences {
     
@@ -1938,12 +1955,6 @@ pub mod push_notification_preferences {
     }
     
     
-}
-impl PushNotificationPreferences {
-    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
-    pub fn builder() -> crate::model::push_notification_preferences::Builder {
-        crate::model::push_notification_preferences::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AllowNotifications`, it is important to ensure
@@ -2062,6 +2073,13 @@ impl  std::fmt::Debug for Identity  {
         formatter.finish()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
     
@@ -2112,12 +2130,6 @@ pub mod identity {
     
     
 }
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
-}
 
 /// <p>Summary of the sub-channels associated with the elastic channel.</p>
 #[non_exhaustive]
@@ -2140,6 +2152,13 @@ impl SubChannelSummary {
         self.membership_count
     }
 }
+impl SubChannelSummary {
+    /// Creates a new builder-style object to manufacture [`SubChannelSummary`](crate::model::SubChannelSummary).
+    pub fn builder() -> crate::model::sub_channel_summary::Builder {
+        crate::model::sub_channel_summary::Builder::default()
+    }
+}
+
 /// See [`SubChannelSummary`](crate::model::SubChannelSummary).
 pub mod sub_channel_summary {
     
@@ -2182,12 +2201,6 @@ pub mod sub_channel_summary {
     
     
 }
-impl SubChannelSummary {
-    /// Creates a new builder-style object to manufacture [`SubChannelSummary`](crate::model::SubChannelSummary).
-    pub fn builder() -> crate::model::sub_channel_summary::Builder {
-        crate::model::sub_channel_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of a moderated channel.</p>
 #[non_exhaustive]
@@ -2203,6 +2216,13 @@ impl ChannelModeratedByAppInstanceUserSummary {
         self.channel_summary.as_ref()
     }
 }
+impl ChannelModeratedByAppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
+    pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
+        crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
 pub mod channel_moderated_by_app_instance_user_summary {
     
@@ -2232,12 +2252,6 @@ pub mod channel_moderated_by_app_instance_user_summary {
     }
     
     
-}
-impl ChannelModeratedByAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
-    pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
-        crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
-    }
 }
 
 /// <p>Summary of details of a channel associated with channel flow.</p>
@@ -2293,6 +2307,13 @@ impl  std::fmt::Debug for ChannelAssociatedWithFlowSummary  {
         formatter.finish()
     }
 }
+impl ChannelAssociatedWithFlowSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
+    pub fn builder() -> crate::model::channel_associated_with_flow_summary::Builder {
+        crate::model::channel_associated_with_flow_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
 pub mod channel_associated_with_flow_summary {
     
@@ -2382,12 +2403,6 @@ pub mod channel_associated_with_flow_summary {
     
     
 }
-impl ChannelAssociatedWithFlowSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
-    pub fn builder() -> crate::model::channel_associated_with_flow_summary::Builder {
-        crate::model::channel_associated_with_flow_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of a <code>ChannelModerator</code>.</p>
 #[non_exhaustive]
@@ -2403,6 +2418,13 @@ impl ChannelModeratorSummary {
         self.moderator.as_ref()
     }
 }
+impl ChannelModeratorSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
+    pub fn builder() -> crate::model::channel_moderator_summary::Builder {
+        crate::model::channel_moderator_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
 pub mod channel_moderator_summary {
     
@@ -2432,12 +2454,6 @@ pub mod channel_moderator_summary {
     }
     
     
-}
-impl ChannelModeratorSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
-    pub fn builder() -> crate::model::channel_moderator_summary::Builder {
-        crate::model::channel_moderator_summary::Builder::default()
-    }
 }
 
 /// <p>Summary of the messages in a <code>Channel</code>.</p>
@@ -2541,6 +2557,13 @@ impl  std::fmt::Debug for ChannelMessageSummary  {
         formatter.finish()
     }
 }
+impl ChannelMessageSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
+    pub fn builder() -> crate::model::channel_message_summary::Builder {
+        crate::model::channel_message_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
 pub mod channel_message_summary {
     
@@ -2715,12 +2738,6 @@ pub mod channel_message_summary {
     
     
 }
-impl ChannelMessageSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
-    pub fn builder() -> crate::model::channel_message_summary::Builder {
-        crate::model::channel_message_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2825,6 +2842,13 @@ impl ChannelMembershipForAppInstanceUserSummary {
         self.app_instance_user_membership_summary.as_ref()
     }
 }
+impl ChannelMembershipForAppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
+    pub fn builder() -> crate::model::channel_membership_for_app_instance_user_summary::Builder {
+        crate::model::channel_membership_for_app_instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
 pub mod channel_membership_for_app_instance_user_summary {
     
@@ -2867,12 +2891,6 @@ pub mod channel_membership_for_app_instance_user_summary {
     
     
 }
-impl ChannelMembershipForAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
-    pub fn builder() -> crate::model::channel_membership_for_app_instance_user_summary::Builder {
-        crate::model::channel_membership_for_app_instance_user_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
@@ -2902,6 +2920,13 @@ impl AppInstanceUserMembershipSummary {
         self.sub_channel_id.as_deref()
     }
 }
+impl AppInstanceUserMembershipSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
+    pub fn builder() -> crate::model::app_instance_user_membership_summary::Builder {
+        crate::model::app_instance_user_membership_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
 pub mod app_instance_user_membership_summary {
     
@@ -2955,12 +2980,6 @@ pub mod app_instance_user_membership_summary {
     }
     
     
-}
-impl AppInstanceUserMembershipSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
-    pub fn builder() -> crate::model::app_instance_user_membership_summary::Builder {
-        crate::model::app_instance_user_membership_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChannelMembershipType`, it is important to ensure
@@ -3059,6 +3078,13 @@ impl ChannelMembershipSummary {
         self.member.as_ref()
     }
 }
+impl ChannelMembershipSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
+    pub fn builder() -> crate::model::channel_membership_summary::Builder {
+        crate::model::channel_membership_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
 pub mod channel_membership_summary {
     
@@ -3088,12 +3114,6 @@ pub mod channel_membership_summary {
     }
     
     
-}
-impl ChannelMembershipSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
-    pub fn builder() -> crate::model::channel_membership_summary::Builder {
-        crate::model::channel_membership_summary::Builder::default()
-    }
 }
 
 /// <p>Summary of details of a channel flow.</p>
@@ -3133,6 +3153,13 @@ impl  std::fmt::Debug for ChannelFlowSummary  {
         formatter.finish()
     }
 }
+impl ChannelFlowSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
+    pub fn builder() -> crate::model::channel_flow_summary::Builder {
+        crate::model::channel_flow_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
 pub mod channel_flow_summary {
     
@@ -3202,12 +3229,6 @@ pub mod channel_flow_summary {
     
     
 }
-impl ChannelFlowSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
-    pub fn builder() -> crate::model::channel_flow_summary::Builder {
-        crate::model::channel_flow_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of a <code>ChannelBan</code>.</p>
 #[non_exhaustive]
@@ -3223,6 +3244,13 @@ impl ChannelBanSummary {
         self.member.as_ref()
     }
 }
+impl ChannelBanSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelBanSummary`](crate::model::ChannelBanSummary).
+    pub fn builder() -> crate::model::channel_ban_summary::Builder {
+        crate::model::channel_ban_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelBanSummary`](crate::model::ChannelBanSummary).
 pub mod channel_ban_summary {
     
@@ -3253,12 +3281,6 @@ pub mod channel_ban_summary {
     
     
 }
-impl ChannelBanSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelBanSummary`](crate::model::ChannelBanSummary).
-    pub fn builder() -> crate::model::channel_ban_summary::Builder {
-        crate::model::channel_ban_summary::Builder::default()
-    }
-}
 
 /// <p>The websocket endpoint used to connect to Amazon Chime SDK messaging.</p>
 #[non_exhaustive]
@@ -3274,6 +3296,13 @@ impl MessagingSessionEndpoint {
         self.url.as_deref()
     }
 }
+impl MessagingSessionEndpoint {
+    /// Creates a new builder-style object to manufacture [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
+    pub fn builder() -> crate::model::messaging_session_endpoint::Builder {
+        crate::model::messaging_session_endpoint::Builder::default()
+    }
+}
+
 /// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
 pub mod messaging_session_endpoint {
     
@@ -3303,12 +3332,6 @@ pub mod messaging_session_endpoint {
     }
     
     
-}
-impl MessagingSessionEndpoint {
-    /// Creates a new builder-style object to manufacture [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
-    pub fn builder() -> crate::model::messaging_session_endpoint::Builder {
-        crate::model::messaging_session_endpoint::Builder::default()
-    }
 }
 
 /// <p>The details of a message in a channel.</p>
@@ -3436,6 +3459,13 @@ impl  std::fmt::Debug for ChannelMessage  {
         formatter.finish()
     }
 }
+impl ChannelMessage {
+    /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage).
+    pub fn builder() -> crate::model::channel_message::Builder {
+        crate::model::channel_message::Builder::default()
+    }
+}
+
 /// See [`ChannelMessage`](crate::model::ChannelMessage).
 pub mod channel_message {
     
@@ -3649,12 +3679,6 @@ pub mod channel_message {
     
     
 }
-impl ChannelMessage {
-    /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage).
-    pub fn builder() -> crate::model::channel_message::Builder {
-        crate::model::channel_message::Builder::default()
-    }
-}
 
 /// <p>The details of a channel moderator.</p>
 #[non_exhaustive]
@@ -3691,6 +3715,13 @@ impl ChannelModerator {
         self.created_by.as_ref()
     }
 }
+impl ChannelModerator {
+    /// Creates a new builder-style object to manufacture [`ChannelModerator`](crate::model::ChannelModerator).
+    pub fn builder() -> crate::model::channel_moderator::Builder {
+        crate::model::channel_moderator::Builder::default()
+    }
+}
+
 /// See [`ChannelModerator`](crate::model::ChannelModerator).
 pub mod channel_moderator {
     
@@ -3757,12 +3788,6 @@ pub mod channel_moderator {
     
     
 }
-impl ChannelModerator {
-    /// Creates a new builder-style object to manufacture [`ChannelModerator`](crate::model::ChannelModerator).
-    pub fn builder() -> crate::model::channel_moderator::Builder {
-        crate::model::channel_moderator::Builder::default()
-    }
-}
 
 /// <p>The details of a channel member.</p>
 #[non_exhaustive]
@@ -3820,6 +3845,13 @@ impl ChannelMembership {
         self.sub_channel_id.as_deref()
     }
 }
+impl ChannelMembership {
+    /// Creates a new builder-style object to manufacture [`ChannelMembership`](crate::model::ChannelMembership).
+    pub fn builder() -> crate::model::channel_membership::Builder {
+        crate::model::channel_membership::Builder::default()
+    }
+}
+
 /// See [`ChannelMembership`](crate::model::ChannelMembership).
 pub mod channel_membership {
     
@@ -3922,12 +3954,6 @@ pub mod channel_membership {
     
     
 }
-impl ChannelMembership {
-    /// Creates a new builder-style object to manufacture [`ChannelMembership`](crate::model::ChannelMembership).
-    pub fn builder() -> crate::model::channel_membership::Builder {
-        crate::model::channel_membership::Builder::default()
-    }
-}
 
 /// <p>The details of a channel flow.</p>
 #[non_exhaustive]
@@ -3982,6 +4008,13 @@ impl  std::fmt::Debug for ChannelFlow  {
         formatter.finish()
     }
 }
+impl ChannelFlow {
+    /// Creates a new builder-style object to manufacture [`ChannelFlow`](crate::model::ChannelFlow).
+    pub fn builder() -> crate::model::channel_flow::Builder {
+        crate::model::channel_flow::Builder::default()
+    }
+}
+
 /// See [`ChannelFlow`](crate::model::ChannelFlow).
 pub mod channel_flow {
     
@@ -4077,12 +4110,6 @@ pub mod channel_flow {
     
     
 }
-impl ChannelFlow {
-    /// Creates a new builder-style object to manufacture [`ChannelFlow`](crate::model::ChannelFlow).
-    pub fn builder() -> crate::model::channel_flow::Builder {
-        crate::model::channel_flow::Builder::default()
-    }
-}
 
 /// <p>The details of a channel ban.</p>
 #[non_exhaustive]
@@ -4119,6 +4146,13 @@ impl ChannelBan {
         self.created_by.as_ref()
     }
 }
+impl ChannelBan {
+    /// Creates a new builder-style object to manufacture [`ChannelBan`](crate::model::ChannelBan).
+    pub fn builder() -> crate::model::channel_ban::Builder {
+        crate::model::channel_ban::Builder::default()
+    }
+}
+
 /// See [`ChannelBan`](crate::model::ChannelBan).
 pub mod channel_ban {
     
@@ -4184,12 +4218,6 @@ pub mod channel_ban {
     }
     
     
-}
-impl ChannelBan {
-    /// Creates a new builder-style object to manufacture [`ChannelBan`](crate::model::ChannelBan).
-    pub fn builder() -> crate::model::channel_ban::Builder {
-        crate::model::channel_ban::Builder::default()
-    }
 }
 
 /// <p>The details of a channel.</p>
@@ -4293,6 +4321,13 @@ impl  std::fmt::Debug for Channel  {
         formatter.finish()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
     
@@ -4460,12 +4495,6 @@ pub mod channel {
     
     
 }
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
-}
 
 /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
 #[non_exhaustive]
@@ -4495,6 +4524,13 @@ impl ElasticChannelConfiguration {
         self.minimum_membership_percentage
     }
 }
+impl ElasticChannelConfiguration {
+    /// Creates a new builder-style object to manufacture [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
+    pub fn builder() -> crate::model::elastic_channel_configuration::Builder {
+        crate::model::elastic_channel_configuration::Builder::default()
+    }
+}
+
 /// See [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
 pub mod elastic_channel_configuration {
     
@@ -4548,12 +4584,6 @@ pub mod elastic_channel_configuration {
     }
     
     
-}
-impl ElasticChannelConfiguration {
-    /// Creates a new builder-style object to manufacture [`ElasticChannelConfiguration`](crate::model::ElasticChannelConfiguration).
-    pub fn builder() -> crate::model::elastic_channel_configuration::Builder {
-        crate::model::elastic_channel_configuration::Builder::default()
-    }
 }
 
 /// <p>Stores information about a callback.</p>
@@ -4617,6 +4647,13 @@ impl  std::fmt::Debug for ChannelMessageCallback  {
         formatter.finish()
     }
 }
+impl ChannelMessageCallback {
+    /// Creates a new builder-style object to manufacture [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
+    pub fn builder() -> crate::model::channel_message_callback::Builder {
+        crate::model::channel_message_callback::Builder::default()
+    }
+}
+
 /// See [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
 pub mod channel_message_callback {
     
@@ -4725,12 +4762,6 @@ pub mod channel_message_callback {
     
     
 }
-impl ChannelMessageCallback {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
-    pub fn builder() -> crate::model::channel_message_callback::Builder {
-        crate::model::channel_message_callback::Builder::default()
-    }
-}
 
 /// <p>A list of failed member ARNs, error codes, and error messages.</p>
 #[non_exhaustive]
@@ -4760,6 +4791,13 @@ impl BatchCreateChannelMembershipError {
         self.error_message.as_deref()
     }
 }
+impl BatchCreateChannelMembershipError {
+    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
+    pub fn builder() -> crate::model::batch_create_channel_membership_error::Builder {
+        crate::model::batch_create_channel_membership_error::Builder::default()
+    }
+}
+
 /// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
 pub mod batch_create_channel_membership_error {
     
@@ -4814,12 +4852,6 @@ pub mod batch_create_channel_membership_error {
     
     
 }
-impl BatchCreateChannelMembershipError {
-    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
-    pub fn builder() -> crate::model::batch_create_channel_membership_error::Builder {
-        crate::model::batch_create_channel_membership_error::Builder::default()
-    }
-}
 
 /// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
@@ -4863,6 +4895,13 @@ impl BatchChannelMemberships {
         self.sub_channel_id.as_deref()
     }
 }
+impl BatchChannelMemberships {
+    /// Creates a new builder-style object to manufacture [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
+    pub fn builder() -> crate::model::batch_channel_memberships::Builder {
+        crate::model::batch_channel_memberships::Builder::default()
+    }
+}
+
 /// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
 pub mod batch_channel_memberships {
     
@@ -4946,11 +4985,5 @@ pub mod batch_channel_memberships {
     }
     
     
-}
-impl BatchChannelMemberships {
-    /// Creates a new builder-style object to manufacture [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
-    pub fn builder() -> crate::model::batch_channel_memberships::Builder {
-        crate::model::batch_channel_memberships::Builder::default()
-    }
 }
 

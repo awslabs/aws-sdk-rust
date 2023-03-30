@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -63,12 +70,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The destination configuration.</p>
 #[non_exhaustive]
@@ -91,6 +92,13 @@ impl DestinationConfig {
         self.services.as_deref()
     }
 }
+impl DestinationConfig {
+    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
+    pub fn builder() -> crate::model::destination_config::Builder {
+        crate::model::destination_config::Builder::default()
+    }
+}
+
 /// See [`DestinationConfig`](crate::model::DestinationConfig).
 pub mod destination_config {
     
@@ -138,12 +146,6 @@ pub mod destination_config {
     }
     
     
-}
-impl DestinationConfig {
-    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
-    pub fn builder() -> crate::model::destination_config::Builder {
-        crate::model::destination_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClientMode`, it is important to ensure
@@ -247,6 +249,13 @@ impl TimeoutConfig {
         self.max_lifetime_timeout_minutes
     }
 }
+impl TimeoutConfig {
+    /// Creates a new builder-style object to manufacture [`TimeoutConfig`](crate::model::TimeoutConfig).
+    pub fn builder() -> crate::model::timeout_config::Builder {
+        crate::model::timeout_config::Builder::default()
+    }
+}
+
 /// See [`TimeoutConfig`](crate::model::TimeoutConfig).
 pub mod timeout_config {
     
@@ -276,12 +285,6 @@ pub mod timeout_config {
     }
     
     
-}
-impl TimeoutConfig {
-    /// Creates a new builder-style object to manufacture [`TimeoutConfig`](crate::model::TimeoutConfig).
-    pub fn builder() -> crate::model::timeout_config::Builder {
-        crate::model::timeout_config::Builder::default()
-    }
 }
 
 /// <p>Information about the tunnel.</p>
@@ -333,6 +336,13 @@ impl TunnelSummary {
         self.last_updated_at.as_ref()
     }
 }
+impl TunnelSummary {
+    /// Creates a new builder-style object to manufacture [`TunnelSummary`](crate::model::TunnelSummary).
+    pub fn builder() -> crate::model::tunnel_summary::Builder {
+        crate::model::tunnel_summary::Builder::default()
+    }
+}
+
 /// See [`TunnelSummary`](crate::model::TunnelSummary).
 pub mod tunnel_summary {
     
@@ -422,12 +432,6 @@ pub mod tunnel_summary {
     }
     
     
-}
-impl TunnelSummary {
-    /// Creates a new builder-style object to manufacture [`TunnelSummary`](crate::model::TunnelSummary).
-    pub fn builder() -> crate::model::tunnel_summary::Builder {
-        crate::model::tunnel_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TunnelStatus`, it is important to ensure
@@ -596,6 +600,13 @@ impl Tunnel {
         self.last_updated_at.as_ref()
     }
 }
+impl Tunnel {
+    /// Creates a new builder-style object to manufacture [`Tunnel`](crate::model::Tunnel).
+    pub fn builder() -> crate::model::tunnel::Builder {
+        crate::model::tunnel::Builder::default()
+    }
+}
+
 /// See [`Tunnel`](crate::model::Tunnel).
 pub mod tunnel {
     
@@ -752,12 +763,6 @@ pub mod tunnel {
     
     
 }
-impl Tunnel {
-    /// Creates a new builder-style object to manufacture [`Tunnel`](crate::model::Tunnel).
-    pub fn builder() -> crate::model::tunnel::Builder {
-        crate::model::tunnel::Builder::default()
-    }
-}
 
 /// <p>The state of a connection.</p>
 #[non_exhaustive]
@@ -780,6 +785,13 @@ impl ConnectionState {
         self.last_updated_at.as_ref()
     }
 }
+impl ConnectionState {
+    /// Creates a new builder-style object to manufacture [`ConnectionState`](crate::model::ConnectionState).
+    pub fn builder() -> crate::model::connection_state::Builder {
+        crate::model::connection_state::Builder::default()
+    }
+}
+
 /// See [`ConnectionState`](crate::model::ConnectionState).
 pub mod connection_state {
     
@@ -821,12 +833,6 @@ pub mod connection_state {
     }
     
     
-}
-impl ConnectionState {
-    /// Creates a new builder-style object to manufacture [`ConnectionState`](crate::model::ConnectionState).
-    pub fn builder() -> crate::model::connection_state::Builder {
-        crate::model::connection_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionStatus`, it is important to ensure

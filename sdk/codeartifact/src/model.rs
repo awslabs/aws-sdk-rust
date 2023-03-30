@@ -257,6 +257,13 @@ impl RepositoryDescription {
         self.external_connections.as_deref()
     }
 }
+impl RepositoryDescription {
+    /// Creates a new builder-style object to manufacture [`RepositoryDescription`](crate::model::RepositoryDescription).
+    pub fn builder() -> crate::model::repository_description::Builder {
+        crate::model::repository_description::Builder::default()
+    }
+}
+
 /// See [`RepositoryDescription`](crate::model::RepositoryDescription).
 pub mod repository_description {
     
@@ -383,12 +390,6 @@ pub mod repository_description {
     
     
 }
-impl RepositoryDescription {
-    /// Creates a new builder-style object to manufacture [`RepositoryDescription`](crate::model::RepositoryDescription).
-    pub fn builder() -> crate::model::repository_description::Builder {
-        crate::model::repository_description::Builder::default()
-    }
-}
 
 /// <p> Contains information about the external connection of a repository. </p>
 #[non_exhaustive]
@@ -430,6 +431,13 @@ impl RepositoryExternalConnectionInfo {
         self.status.as_ref()
     }
 }
+impl RepositoryExternalConnectionInfo {
+    /// Creates a new builder-style object to manufacture [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
+    pub fn builder() -> crate::model::repository_external_connection_info::Builder {
+        crate::model::repository_external_connection_info::Builder::default()
+    }
+}
+
 /// See [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
 pub mod repository_external_connection_info {
     
@@ -495,12 +503,6 @@ pub mod repository_external_connection_info {
     }
     
     
-}
-impl RepositoryExternalConnectionInfo {
-    /// Creates a new builder-style object to manufacture [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
-    pub fn builder() -> crate::model::repository_external_connection_info::Builder {
-        crate::model::repository_external_connection_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExternalConnectionStatus`, it is important to ensure
@@ -686,6 +688,13 @@ impl UpstreamRepositoryInfo {
         self.repository_name.as_deref()
     }
 }
+impl UpstreamRepositoryInfo {
+    /// Creates a new builder-style object to manufacture [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
+    pub fn builder() -> crate::model::upstream_repository_info::Builder {
+        crate::model::upstream_repository_info::Builder::default()
+    }
+}
+
 /// See [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
 pub mod upstream_repository_info {
     
@@ -716,12 +725,6 @@ pub mod upstream_repository_info {
     
     
 }
-impl UpstreamRepositoryInfo {
-    /// Creates a new builder-style object to manufacture [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
-    pub fn builder() -> crate::model::upstream_repository_info::Builder {
-        crate::model::upstream_repository_info::Builder::default()
-    }
-}
 
 /// <p> Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">CreateRepository</a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">UpdateRepository</a>. </p>
 #[non_exhaustive]
@@ -737,6 +740,13 @@ impl UpstreamRepository {
         self.repository_name.as_deref()
     }
 }
+impl UpstreamRepository {
+    /// Creates a new builder-style object to manufacture [`UpstreamRepository`](crate::model::UpstreamRepository).
+    pub fn builder() -> crate::model::upstream_repository::Builder {
+        crate::model::upstream_repository::Builder::default()
+    }
+}
+
 /// See [`UpstreamRepository`](crate::model::UpstreamRepository).
 pub mod upstream_repository {
     
@@ -766,12 +776,6 @@ pub mod upstream_repository {
     }
     
     
-}
-impl UpstreamRepository {
-    /// Creates a new builder-style object to manufacture [`UpstreamRepository`](crate::model::UpstreamRepository).
-    pub fn builder() -> crate::model::upstream_repository::Builder {
-        crate::model::upstream_repository::Builder::default()
-    }
 }
 
 /// <p>l An error associated with package. </p>
@@ -811,6 +815,13 @@ impl PackageVersionError {
         self.error_message.as_deref()
     }
 }
+impl PackageVersionError {
+    /// Creates a new builder-style object to manufacture [`PackageVersionError`](crate::model::PackageVersionError).
+    pub fn builder() -> crate::model::package_version_error::Builder {
+        crate::model::package_version_error::Builder::default()
+    }
+}
+
 /// See [`PackageVersionError`](crate::model::PackageVersionError).
 pub mod package_version_error {
     
@@ -868,12 +879,6 @@ pub mod package_version_error {
     }
     
     
-}
-impl PackageVersionError {
-    /// Creates a new builder-style object to manufacture [`PackageVersionError`](crate::model::PackageVersionError).
-    pub fn builder() -> crate::model::package_version_error::Builder {
-        crate::model::package_version_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PackageVersionErrorCode`, it is important to ensure
@@ -999,6 +1004,13 @@ impl SuccessfulPackageVersionInfo {
         self.status.as_ref()
     }
 }
+impl SuccessfulPackageVersionInfo {
+    /// Creates a new builder-style object to manufacture [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
+    pub fn builder() -> crate::model::successful_package_version_info::Builder {
+        crate::model::successful_package_version_info::Builder::default()
+    }
+}
+
 /// See [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
 pub mod successful_package_version_info {
     
@@ -1040,12 +1052,6 @@ pub mod successful_package_version_info {
     }
     
     
-}
-impl SuccessfulPackageVersionInfo {
-    /// Creates a new builder-style object to manufacture [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
-    pub fn builder() -> crate::model::successful_package_version_info::Builder {
-        crate::model::successful_package_version_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PackageVersionStatus`, it is important to ensure
@@ -1171,6 +1177,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1213,12 +1226,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p> An CodeArtifact resource policy that contains a resource ARN, document details, and a revision. </p>
 #[non_exhaustive]
@@ -1248,6 +1255,13 @@ impl ResourcePolicy {
         self.document.as_deref()
     }
 }
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
     
@@ -1302,12 +1316,6 @@ pub mod resource_policy {
     
     
 }
-impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
-    pub fn builder() -> crate::model::resource_policy::Builder {
-        crate::model::resource_policy::Builder::default()
-    }
-}
 
 /// <p>Details about the package origin configuration of a package.</p>
 #[non_exhaustive]
@@ -1323,6 +1331,13 @@ impl PackageOriginConfiguration {
         self.restrictions.as_ref()
     }
 }
+impl PackageOriginConfiguration {
+    /// Creates a new builder-style object to manufacture [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
+    pub fn builder() -> crate::model::package_origin_configuration::Builder {
+        crate::model::package_origin_configuration::Builder::default()
+    }
+}
+
 /// See [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
 pub mod package_origin_configuration {
     
@@ -1353,12 +1368,6 @@ pub mod package_origin_configuration {
     
     
 }
-impl PackageOriginConfiguration {
-    /// Creates a new builder-style object to manufacture [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
-    pub fn builder() -> crate::model::package_origin_configuration::Builder {
-        crate::model::package_origin_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
 #[non_exhaustive]
@@ -1381,6 +1390,13 @@ impl PackageOriginRestrictions {
         self.upstream.as_ref()
     }
 }
+impl PackageOriginRestrictions {
+    /// Creates a new builder-style object to manufacture [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
+    pub fn builder() -> crate::model::package_origin_restrictions::Builder {
+        crate::model::package_origin_restrictions::Builder::default()
+    }
+}
+
 /// See [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
 pub mod package_origin_restrictions {
     
@@ -1422,12 +1438,6 @@ pub mod package_origin_restrictions {
     }
     
     
-}
-impl PackageOriginRestrictions {
-    /// Creates a new builder-style object to manufacture [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
-    pub fn builder() -> crate::model::package_origin_restrictions::Builder {
-        crate::model::package_origin_restrictions::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AllowUpstream`, it is important to ensure
@@ -1643,6 +1653,13 @@ impl RepositorySummary {
         self.description.as_deref()
     }
 }
+impl RepositorySummary {
+    /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::model::RepositorySummary).
+    pub fn builder() -> crate::model::repository_summary::Builder {
+        crate::model::repository_summary::Builder::default()
+    }
+}
+
 /// See [`RepositorySummary`](crate::model::RepositorySummary).
 pub mod repository_summary {
     
@@ -1733,12 +1750,6 @@ pub mod repository_summary {
     
     
 }
-impl RepositorySummary {
-    /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::model::RepositorySummary).
-    pub fn builder() -> crate::model::repository_summary::Builder {
-        crate::model::repository_summary::Builder::default()
-    }
-}
 
 /// <p> Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> operation returns a list of <code>PackageVersionSummary</code> objects. </p>
 #[non_exhaustive]
@@ -1775,6 +1786,13 @@ impl PackageVersionSummary {
         self.origin.as_ref()
     }
 }
+impl PackageVersionSummary {
+    /// Creates a new builder-style object to manufacture [`PackageVersionSummary`](crate::model::PackageVersionSummary).
+    pub fn builder() -> crate::model::package_version_summary::Builder {
+        crate::model::package_version_summary::Builder::default()
+    }
+}
+
 /// See [`PackageVersionSummary`](crate::model::PackageVersionSummary).
 pub mod package_version_summary {
     
@@ -1841,12 +1859,6 @@ pub mod package_version_summary {
     
     
 }
-impl PackageVersionSummary {
-    /// Creates a new builder-style object to manufacture [`PackageVersionSummary`](crate::model::PackageVersionSummary).
-    pub fn builder() -> crate::model::package_version_summary::Builder {
-        crate::model::package_version_summary::Builder::default()
-    }
-}
 
 /// <p>Information about how a package version was added to a repository.</p>
 #[non_exhaustive]
@@ -1869,6 +1881,13 @@ impl PackageVersionOrigin {
         self.origin_type.as_ref()
     }
 }
+impl PackageVersionOrigin {
+    /// Creates a new builder-style object to manufacture [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
+    pub fn builder() -> crate::model::package_version_origin::Builder {
+        crate::model::package_version_origin::Builder::default()
+    }
+}
+
 /// See [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
 pub mod package_version_origin {
     
@@ -1910,12 +1929,6 @@ pub mod package_version_origin {
     }
     
     
-}
-impl PackageVersionOrigin {
-    /// Creates a new builder-style object to manufacture [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
-    pub fn builder() -> crate::model::package_version_origin::Builder {
-        crate::model::package_version_origin::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PackageVersionOriginType`, it is important to ensure
@@ -2026,6 +2039,13 @@ impl DomainEntryPoint {
         self.external_connection_name.as_deref()
     }
 }
+impl DomainEntryPoint {
+    /// Creates a new builder-style object to manufacture [`DomainEntryPoint`](crate::model::DomainEntryPoint).
+    pub fn builder() -> crate::model::domain_entry_point::Builder {
+        crate::model::domain_entry_point::Builder::default()
+    }
+}
+
 /// See [`DomainEntryPoint`](crate::model::DomainEntryPoint).
 pub mod domain_entry_point {
     
@@ -2067,12 +2087,6 @@ pub mod domain_entry_point {
     }
     
     
-}
-impl DomainEntryPoint {
-    /// Creates a new builder-style object to manufacture [`DomainEntryPoint`](crate::model::DomainEntryPoint).
-    pub fn builder() -> crate::model::domain_entry_point::Builder {
-        crate::model::domain_entry_point::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PackageVersionSortType`, it is important to ensure
@@ -2215,6 +2229,13 @@ impl PackageDependency {
         self.version_requirement.as_deref()
     }
 }
+impl PackageDependency {
+    /// Creates a new builder-style object to manufacture [`PackageDependency`](crate::model::PackageDependency).
+    pub fn builder() -> crate::model::package_dependency::Builder {
+        crate::model::package_dependency::Builder::default()
+    }
+}
+
 /// See [`PackageDependency`](crate::model::PackageDependency).
 pub mod package_dependency {
     
@@ -2309,12 +2330,6 @@ pub mod package_dependency {
     
     
 }
-impl PackageDependency {
-    /// Creates a new builder-style object to manufacture [`PackageDependency`](crate::model::PackageDependency).
-    pub fn builder() -> crate::model::package_dependency::Builder {
-        crate::model::package_dependency::Builder::default()
-    }
-}
 
 /// <p> Contains details about a package version asset. </p>
 #[non_exhaustive]
@@ -2344,6 +2359,13 @@ impl AssetSummary {
         self.hashes.as_ref()
     }
 }
+impl AssetSummary {
+    /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::model::AssetSummary).
+    pub fn builder() -> crate::model::asset_summary::Builder {
+        crate::model::asset_summary::Builder::default()
+    }
+}
+
 /// See [`AssetSummary`](crate::model::AssetSummary).
 pub mod asset_summary {
     
@@ -2403,12 +2425,6 @@ pub mod asset_summary {
     }
     
     
-}
-impl AssetSummary {
-    /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::model::AssetSummary).
-    pub fn builder() -> crate::model::asset_summary::Builder {
-        crate::model::asset_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HashAlgorithm`, it is important to ensure
@@ -2548,6 +2564,13 @@ impl PackageSummary {
         self.origin_configuration.as_ref()
     }
 }
+impl PackageSummary {
+    /// Creates a new builder-style object to manufacture [`PackageSummary`](crate::model::PackageSummary).
+    pub fn builder() -> crate::model::package_summary::Builder {
+        crate::model::package_summary::Builder::default()
+    }
+}
+
 /// See [`PackageSummary`](crate::model::PackageSummary).
 pub mod package_summary {
     
@@ -2624,12 +2647,6 @@ pub mod package_summary {
     
     
 }
-impl PackageSummary {
-    /// Creates a new builder-style object to manufacture [`PackageSummary`](crate::model::PackageSummary).
-    pub fn builder() -> crate::model::package_summary::Builder {
-        crate::model::package_summary::Builder::default()
-    }
-}
 
 /// <p> Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">ListDomains</a> operation returns a list of <code>DomainSummary</code> objects. </p>
 #[non_exhaustive]
@@ -2680,6 +2697,13 @@ impl DomainSummary {
         self.encryption_key.as_deref()
     }
 }
+impl DomainSummary {
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
+    pub fn builder() -> crate::model::domain_summary::Builder {
+        crate::model::domain_summary::Builder::default()
+    }
+}
+
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
     
@@ -2769,12 +2793,6 @@ pub mod domain_summary {
     }
     
     
-}
-impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
-    pub fn builder() -> crate::model::domain_summary::Builder {
-        crate::model::domain_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DomainStatus`, it is important to ensure
@@ -2967,6 +2985,13 @@ impl PackageVersionDescription {
         self.origin.as_ref()
     }
 }
+impl PackageVersionDescription {
+    /// Creates a new builder-style object to manufacture [`PackageVersionDescription`](crate::model::PackageVersionDescription).
+    pub fn builder() -> crate::model::package_version_description::Builder {
+        crate::model::package_version_description::Builder::default()
+    }
+}
+
 /// See [`PackageVersionDescription`](crate::model::PackageVersionDescription).
 pub mod package_version_description {
     
@@ -3157,12 +3182,6 @@ pub mod package_version_description {
     
     
 }
-impl PackageVersionDescription {
-    /// Creates a new builder-style object to manufacture [`PackageVersionDescription`](crate::model::PackageVersionDescription).
-    pub fn builder() -> crate::model::package_version_description::Builder {
-        crate::model::package_version_description::Builder::default()
-    }
-}
 
 /// <p> Details of the license data. </p>
 #[non_exhaustive]
@@ -3185,6 +3204,13 @@ impl LicenseInfo {
         self.url.as_deref()
     }
 }
+impl LicenseInfo {
+    /// Creates a new builder-style object to manufacture [`LicenseInfo`](crate::model::LicenseInfo).
+    pub fn builder() -> crate::model::license_info::Builder {
+        crate::model::license_info::Builder::default()
+    }
+}
+
 /// See [`LicenseInfo`](crate::model::LicenseInfo).
 pub mod license_info {
     
@@ -3226,12 +3252,6 @@ pub mod license_info {
     }
     
     
-}
-impl LicenseInfo {
-    /// Creates a new builder-style object to manufacture [`LicenseInfo`](crate::model::LicenseInfo).
-    pub fn builder() -> crate::model::license_info::Builder {
-        crate::model::license_info::Builder::default()
-    }
 }
 
 /// <p>Details about a package.</p>
@@ -3279,6 +3299,13 @@ impl PackageDescription {
         self.origin_configuration.as_ref()
     }
 }
+impl PackageDescription {
+    /// Creates a new builder-style object to manufacture [`PackageDescription`](crate::model::PackageDescription).
+    pub fn builder() -> crate::model::package_description::Builder {
+        crate::model::package_description::Builder::default()
+    }
+}
+
 /// See [`PackageDescription`](crate::model::PackageDescription).
 pub mod package_description {
     
@@ -3355,12 +3382,6 @@ pub mod package_description {
     
     
 }
-impl PackageDescription {
-    /// Creates a new builder-style object to manufacture [`PackageDescription`](crate::model::PackageDescription).
-    pub fn builder() -> crate::model::package_description::Builder {
-        crate::model::package_description::Builder::default()
-    }
-}
 
 /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
 #[non_exhaustive]
@@ -3432,6 +3453,13 @@ impl DomainDescription {
         self.s3_bucket_arn.as_deref()
     }
 }
+impl DomainDescription {
+    /// Creates a new builder-style object to manufacture [`DomainDescription`](crate::model::DomainDescription).
+    pub fn builder() -> crate::model::domain_description::Builder {
+        crate::model::domain_description::Builder::default()
+    }
+}
+
 /// See [`DomainDescription`](crate::model::DomainDescription).
 pub mod domain_description {
     
@@ -3559,11 +3587,5 @@ pub mod domain_description {
     }
     
     
-}
-impl DomainDescription {
-    /// Creates a new builder-style object to manufacture [`DomainDescription`](crate::model::DomainDescription).
-    pub fn builder() -> crate::model::domain_description::Builder {
-        crate::model::domain_description::Builder::default()
-    }
 }
 

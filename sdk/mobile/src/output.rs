@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateProjectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateProjectOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
+    pub fn builder() -> crate::output::update_project_output::Builder {
+        crate::output::update_project_output::Builder::default()
+    }
+}
+
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
     
@@ -61,12 +68,6 @@ pub mod update_project_output {
     
     
 }
-impl UpdateProjectOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
-    pub fn builder() -> crate::output::update_project_output::Builder {
-        crate::output::update_project_output::Builder::default()
-    }
-}
 
 /// <p> Result structure used for requests to list projects in AWS Mobile Hub. </p>
 #[non_exhaustive]
@@ -95,6 +96,13 @@ impl aws_http::request_id::RequestId for ListProjectsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListProjectsOutput {
+    /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput).
+    pub fn builder() -> crate::output::list_projects_output::Builder {
+        crate::output::list_projects_output::Builder::default()
+    }
+}
+
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
     
@@ -154,12 +162,6 @@ pub mod list_projects_output {
     
     
 }
-impl ListProjectsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput).
-    pub fn builder() -> crate::output::list_projects_output::Builder {
-        crate::output::list_projects_output::Builder::default()
-    }
-}
 
 /// <p> Result structure contains a list of all available bundles with details. </p>
 #[non_exhaustive]
@@ -188,6 +190,13 @@ impl aws_http::request_id::RequestId for ListBundlesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`ListBundlesOutput`](crate::output::ListBundlesOutput).
+    pub fn builder() -> crate::output::list_bundles_output::Builder {
+        crate::output::list_bundles_output::Builder::default()
+    }
+}
+
 /// See [`ListBundlesOutput`](crate::output::ListBundlesOutput).
 pub mod list_bundles_output {
     
@@ -247,12 +256,6 @@ pub mod list_bundles_output {
     
     
 }
-impl ListBundlesOutput {
-    /// Creates a new builder-style object to manufacture [`ListBundlesOutput`](crate::output::ListBundlesOutput).
-    pub fn builder() -> crate::output::list_bundles_output::Builder {
-        crate::output::list_bundles_output::Builder::default()
-    }
-}
 
 /// <p> Result structure used for requests to export project configuration details. </p>
 #[non_exhaustive]
@@ -288,6 +291,13 @@ impl aws_http::request_id::RequestId for ExportProjectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ExportProjectOutput {
+    /// Creates a new builder-style object to manufacture [`ExportProjectOutput`](crate::output::ExportProjectOutput).
+    pub fn builder() -> crate::output::export_project_output::Builder {
+        crate::output::export_project_output::Builder::default()
+    }
+}
+
 /// See [`ExportProjectOutput`](crate::output::ExportProjectOutput).
 pub mod export_project_output {
     
@@ -353,12 +363,6 @@ pub mod export_project_output {
     
     
 }
-impl ExportProjectOutput {
-    /// Creates a new builder-style object to manufacture [`ExportProjectOutput`](crate::output::ExportProjectOutput).
-    pub fn builder() -> crate::output::export_project_output::Builder {
-        crate::output::export_project_output::Builder::default()
-    }
-}
 
 /// <p> Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources. </p>
 #[non_exhaustive]
@@ -380,6 +384,13 @@ impl aws_http::request_id::RequestId for ExportBundleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ExportBundleOutput {
+    /// Creates a new builder-style object to manufacture [`ExportBundleOutput`](crate::output::ExportBundleOutput).
+    pub fn builder() -> crate::output::export_bundle_output::Builder {
+        crate::output::export_bundle_output::Builder::default()
+    }
+}
+
 /// See [`ExportBundleOutput`](crate::output::ExportBundleOutput).
 pub mod export_bundle_output {
     
@@ -421,12 +432,6 @@ pub mod export_bundle_output {
     
     
 }
-impl ExportBundleOutput {
-    /// Creates a new builder-style object to manufacture [`ExportBundleOutput`](crate::output::ExportBundleOutput).
-    pub fn builder() -> crate::output::export_bundle_output::Builder {
-        crate::output::export_bundle_output::Builder::default()
-    }
-}
 
 /// <p> Result structure used for requests of project details. </p>
 #[non_exhaustive]
@@ -448,6 +453,13 @@ impl aws_http::request_id::RequestId for DescribeProjectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeProjectOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
+    pub fn builder() -> crate::output::describe_project_output::Builder {
+        crate::output::describe_project_output::Builder::default()
+    }
+}
+
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
 pub mod describe_project_output {
     
@@ -489,12 +501,6 @@ pub mod describe_project_output {
     
     
 }
-impl DescribeProjectOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
-    pub fn builder() -> crate::output::describe_project_output::Builder {
-        crate::output::describe_project_output::Builder::default()
-    }
-}
 
 /// <p> Result structure contains the details of the bundle. </p>
 #[non_exhaustive]
@@ -516,6 +522,13 @@ impl aws_http::request_id::RequestId for DescribeBundleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeBundleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
+    pub fn builder() -> crate::output::describe_bundle_output::Builder {
+        crate::output::describe_bundle_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
 pub mod describe_bundle_output {
     
@@ -557,12 +570,6 @@ pub mod describe_bundle_output {
     
     
 }
-impl DescribeBundleOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
-    pub fn builder() -> crate::output::describe_bundle_output::Builder {
-        crate::output::describe_bundle_output::Builder::default()
-    }
-}
 
 /// <p> Result structure used in response to request to delete a project. </p>
 #[non_exhaustive]
@@ -591,6 +598,13 @@ impl aws_http::request_id::RequestId for DeleteProjectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteProjectOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
+    pub fn builder() -> crate::output::delete_project_output::Builder {
+        crate::output::delete_project_output::Builder::default()
+    }
+}
+
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
     
@@ -656,12 +670,6 @@ pub mod delete_project_output {
     
     
 }
-impl DeleteProjectOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
-    pub fn builder() -> crate::output::delete_project_output::Builder {
-        crate::output::delete_project_output::Builder::default()
-    }
-}
 
 /// <p> Result structure used in response to a request to create a project. </p>
 #[non_exhaustive]
@@ -683,6 +691,13 @@ impl aws_http::request_id::RequestId for CreateProjectOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateProjectOutput {
+    /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput).
+    pub fn builder() -> crate::output::create_project_output::Builder {
+        crate::output::create_project_output::Builder::default()
+    }
+}
+
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
     
@@ -723,11 +738,5 @@ pub mod create_project_output {
     }
     
     
-}
-impl CreateProjectOutput {
-    /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput).
-    pub fn builder() -> crate::output::create_project_output::Builder {
-        crate::output::create_project_output::Builder::default()
-    }
 }
 

@@ -91,6 +91,13 @@ impl Operation {
         self.error_details.as_deref()
     }
 }
+impl Operation {
+    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
+    pub fn builder() -> crate::model::operation::Builder {
+        crate::model::operation::Builder::default()
+    }
+}
+
 /// See [`Operation`](crate::model::Operation).
 pub mod operation {
     
@@ -252,12 +259,6 @@ pub mod operation {
     }
     
     
-}
-impl Operation {
-    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
-    pub fn builder() -> crate::model::operation::Builder {
-        crate::model::operation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperationStatus`, it is important to ensure
@@ -850,6 +851,13 @@ impl ResourceLocation {
         self.region_name.as_ref()
     }
 }
+impl ResourceLocation {
+    /// Creates a new builder-style object to manufacture [`ResourceLocation`](crate::model::ResourceLocation).
+    pub fn builder() -> crate::model::resource_location::Builder {
+        crate::model::resource_location::Builder::default()
+    }
+}
+
 /// See [`ResourceLocation`](crate::model::ResourceLocation).
 pub mod resource_location {
     
@@ -891,12 +899,6 @@ pub mod resource_location {
     }
     
     
-}
-impl ResourceLocation {
-    /// Creates a new builder-style object to manufacture [`ResourceLocation`](crate::model::ResourceLocation).
-    pub fn builder() -> crate::model::resource_location::Builder {
-        crate::model::resource_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RegionName`, it is important to ensure
@@ -1283,6 +1285,13 @@ impl RelationalDatabaseParameter {
         self.parameter_value.as_deref()
     }
 }
+impl RelationalDatabaseParameter {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseParameter`](crate::model::RelationalDatabaseParameter).
+    pub fn builder() -> crate::model::relational_database_parameter::Builder {
+        crate::model::relational_database_parameter::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseParameter`](crate::model::RelationalDatabaseParameter).
 pub mod relational_database_parameter {
     
@@ -1398,12 +1407,6 @@ pub mod relational_database_parameter {
     }
     
     
-}
-impl RelationalDatabaseParameter {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseParameter`](crate::model::RelationalDatabaseParameter).
-    pub fn builder() -> crate::model::relational_database_parameter::Builder {
-        crate::model::relational_database_parameter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoadBalancerAttributeName`, it is important to ensure
@@ -1828,6 +1831,13 @@ impl DomainEntry {
         self.options.as_ref()
     }
 }
+impl DomainEntry {
+    /// Creates a new builder-style object to manufacture [`DomainEntry`](crate::model::DomainEntry).
+    pub fn builder() -> crate::model::domain_entry::Builder {
+        crate::model::domain_entry::Builder::default()
+    }
+}
+
 /// See [`DomainEntry`](crate::model::DomainEntry).
 pub mod domain_entry {
     
@@ -1954,12 +1964,6 @@ pub mod domain_entry {
     
     
 }
-impl DomainEntry {
-    /// Creates a new builder-style object to manufacture [`DomainEntry`](crate::model::DomainEntry).
-    pub fn builder() -> crate::model::domain_entry::Builder {
-        crate::model::domain_entry::Builder::default()
-    }
-}
 
 /// <p>Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.</p> 
 /// <p>A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.</p>
@@ -2007,6 +2011,13 @@ impl CacheBehaviorPerPath {
         self.behavior.as_ref()
     }
 }
+impl CacheBehaviorPerPath {
+    /// Creates a new builder-style object to manufacture [`CacheBehaviorPerPath`](crate::model::CacheBehaviorPerPath).
+    pub fn builder() -> crate::model::cache_behavior_per_path::Builder {
+        crate::model::cache_behavior_per_path::Builder::default()
+    }
+}
+
 /// See [`CacheBehaviorPerPath`](crate::model::CacheBehaviorPerPath).
 pub mod cache_behavior_per_path {
     
@@ -2072,12 +2083,6 @@ pub mod cache_behavior_per_path {
     }
     
     
-}
-impl CacheBehaviorPerPath {
-    /// Creates a new builder-style object to manufacture [`CacheBehaviorPerPath`](crate::model::CacheBehaviorPerPath).
-    pub fn builder() -> crate::model::cache_behavior_per_path::Builder {
-        crate::model::cache_behavior_per_path::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BehaviorEnum`, it is important to ensure
@@ -2258,6 +2263,13 @@ impl CacheSettings {
         self.forwarded_query_strings.as_ref()
     }
 }
+impl CacheSettings {
+    /// Creates a new builder-style object to manufacture [`CacheSettings`](crate::model::CacheSettings).
+    pub fn builder() -> crate::model::cache_settings::Builder {
+        crate::model::cache_settings::Builder::default()
+    }
+}
+
 /// See [`CacheSettings`](crate::model::CacheSettings).
 pub mod cache_settings {
     
@@ -2404,12 +2416,6 @@ pub mod cache_settings {
     
     
 }
-impl CacheSettings {
-    /// Creates a new builder-style object to manufacture [`CacheSettings`](crate::model::CacheSettings).
-    pub fn builder() -> crate::model::cache_settings::Builder {
-        crate::model::cache_settings::Builder::default()
-    }
-}
 
 /// <p>Describes the query string parameters that an Amazon Lightsail content delivery network (CDN) distribution to bases caching on.</p> 
 /// <p>For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.</p>
@@ -2437,6 +2443,13 @@ impl QueryStringObject {
         self.query_strings_allow_list.as_deref()
     }
 }
+impl QueryStringObject {
+    /// Creates a new builder-style object to manufacture [`QueryStringObject`](crate::model::QueryStringObject).
+    pub fn builder() -> crate::model::query_string_object::Builder {
+        crate::model::query_string_object::Builder::default()
+    }
+}
+
 /// See [`QueryStringObject`](crate::model::QueryStringObject).
 pub mod query_string_object {
     
@@ -2489,12 +2502,6 @@ pub mod query_string_object {
     
     
 }
-impl QueryStringObject {
-    /// Creates a new builder-style object to manufacture [`QueryStringObject`](crate::model::QueryStringObject).
-    pub fn builder() -> crate::model::query_string_object::Builder {
-        crate::model::query_string_object::Builder::default()
-    }
-}
 
 /// <p>Describes the request headers that a Lightsail distribution bases caching on.</p> 
 /// <p>For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. </p>
@@ -2530,6 +2537,13 @@ impl HeaderObject {
         self.headers_allow_list.as_deref()
     }
 }
+impl HeaderObject {
+    /// Creates a new builder-style object to manufacture [`HeaderObject`](crate::model::HeaderObject).
+    pub fn builder() -> crate::model::header_object::Builder {
+        crate::model::header_object::Builder::default()
+    }
+}
+
 /// See [`HeaderObject`](crate::model::HeaderObject).
 pub mod header_object {
     
@@ -2589,12 +2603,6 @@ pub mod header_object {
     }
     
     
-}
-impl HeaderObject {
-    /// Creates a new builder-style object to manufacture [`HeaderObject`](crate::model::HeaderObject).
-    pub fn builder() -> crate::model::header_object::Builder {
-        crate::model::header_object::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HeaderEnum`, it is important to ensure
@@ -2853,6 +2861,13 @@ impl CookieObject {
         self.cookies_allow_list.as_deref()
     }
 }
+impl CookieObject {
+    /// Creates a new builder-style object to manufacture [`CookieObject`](crate::model::CookieObject).
+    pub fn builder() -> crate::model::cookie_object::Builder {
+        crate::model::cookie_object::Builder::default()
+    }
+}
+
 /// See [`CookieObject`](crate::model::CookieObject).
 pub mod cookie_object {
     
@@ -2901,12 +2916,6 @@ pub mod cookie_object {
     
     
 }
-impl CookieObject {
-    /// Creates a new builder-style object to manufacture [`CookieObject`](crate::model::CookieObject).
-    pub fn builder() -> crate::model::cookie_object::Builder {
-        crate::model::cookie_object::Builder::default()
-    }
-}
 
 /// <p>Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.</p>
 #[non_exhaustive]
@@ -2932,6 +2941,13 @@ impl CacheBehavior {
         self.behavior.as_ref()
     }
 }
+impl CacheBehavior {
+    /// Creates a new builder-style object to manufacture [`CacheBehavior`](crate::model::CacheBehavior).
+    pub fn builder() -> crate::model::cache_behavior::Builder {
+        crate::model::cache_behavior::Builder::default()
+    }
+}
+
 /// See [`CacheBehavior`](crate::model::CacheBehavior).
 pub mod cache_behavior {
     
@@ -2972,12 +2988,6 @@ pub mod cache_behavior {
     
     
 }
-impl CacheBehavior {
-    /// Creates a new builder-style object to manufacture [`CacheBehavior`](crate::model::CacheBehavior).
-    pub fn builder() -> crate::model::cache_behavior::Builder {
-        crate::model::cache_behavior::Builder::default()
-    }
-}
 
 /// <p>Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.</p> 
 /// <p>An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
@@ -3008,6 +3018,13 @@ impl InputOrigin {
         self.protocol_policy.as_ref()
     }
 }
+impl InputOrigin {
+    /// Creates a new builder-style object to manufacture [`InputOrigin`](crate::model::InputOrigin).
+    pub fn builder() -> crate::model::input_origin::Builder {
+        crate::model::input_origin::Builder::default()
+    }
+}
+
 /// See [`InputOrigin`](crate::model::InputOrigin).
 pub mod input_origin {
     
@@ -3061,12 +3078,6 @@ pub mod input_origin {
     }
     
     
-}
-impl InputOrigin {
-    /// Creates a new builder-style object to manufacture [`InputOrigin`](crate::model::InputOrigin).
-    pub fn builder() -> crate::model::input_origin::Builder {
-        crate::model::input_origin::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OriginProtocolPolicyEnum`, it is important to ensure
@@ -3339,6 +3350,13 @@ impl ContainerService {
         self.private_registry_access.as_ref()
     }
 }
+impl ContainerService {
+    /// Creates a new builder-style object to manufacture [`ContainerService`](crate::model::ContainerService).
+    pub fn builder() -> crate::model::container_service::Builder {
+        crate::model::container_service::Builder::default()
+    }
+}
+
 /// See [`ContainerService`](crate::model::ContainerService).
 pub mod container_service {
     
@@ -3645,12 +3663,6 @@ pub mod container_service {
     
     
 }
-impl ContainerService {
-    /// Creates a new builder-style object to manufacture [`ContainerService`](crate::model::ContainerService).
-    pub fn builder() -> crate::model::container_service::Builder {
-        crate::model::container_service::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p> 
 /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -3667,6 +3679,13 @@ impl PrivateRegistryAccess {
         self.ecr_image_puller_role.as_ref()
     }
 }
+impl PrivateRegistryAccess {
+    /// Creates a new builder-style object to manufacture [`PrivateRegistryAccess`](crate::model::PrivateRegistryAccess).
+    pub fn builder() -> crate::model::private_registry_access::Builder {
+        crate::model::private_registry_access::Builder::default()
+    }
+}
+
 /// See [`PrivateRegistryAccess`](crate::model::PrivateRegistryAccess).
 pub mod private_registry_access {
     
@@ -3697,12 +3716,6 @@ pub mod private_registry_access {
     
     
 }
-impl PrivateRegistryAccess {
-    /// Creates a new builder-style object to manufacture [`PrivateRegistryAccess`](crate::model::PrivateRegistryAccess).
-    pub fn builder() -> crate::model::private_registry_access::Builder {
-        crate::model::private_registry_access::Builder::default()
-    }
-}
 
 /// <p>Describes the activation status of the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p> 
 /// <p>When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -3726,6 +3739,13 @@ impl ContainerServiceEcrImagePullerRole {
         self.principal_arn.as_deref()
     }
 }
+impl ContainerServiceEcrImagePullerRole {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceEcrImagePullerRole`](crate::model::ContainerServiceEcrImagePullerRole).
+    pub fn builder() -> crate::model::container_service_ecr_image_puller_role::Builder {
+        crate::model::container_service_ecr_image_puller_role::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceEcrImagePullerRole`](crate::model::ContainerServiceEcrImagePullerRole).
 pub mod container_service_ecr_image_puller_role {
     
@@ -3767,12 +3787,6 @@ pub mod container_service_ecr_image_puller_role {
     }
     
     
-}
-impl ContainerServiceEcrImagePullerRole {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceEcrImagePullerRole`](crate::model::ContainerServiceEcrImagePullerRole).
-    pub fn builder() -> crate::model::container_service_ecr_image_puller_role::Builder {
-        crate::model::container_service_ecr_image_puller_role::Builder::default()
-    }
 }
 
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p> 
@@ -3832,6 +3846,13 @@ impl ContainerServiceDeployment {
         self.created_at.as_ref()
     }
 }
+impl ContainerServiceDeployment {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceDeployment`](crate::model::ContainerServiceDeployment).
+    pub fn builder() -> crate::model::container_service_deployment::Builder {
+        crate::model::container_service_deployment::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceDeployment`](crate::model::ContainerServiceDeployment).
 pub mod container_service_deployment {
     
@@ -3930,12 +3951,6 @@ pub mod container_service_deployment {
     
     
 }
-impl ContainerServiceDeployment {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceDeployment`](crate::model::ContainerServiceDeployment).
-    pub fn builder() -> crate::model::container_service_deployment::Builder {
-        crate::model::container_service_deployment::Builder::default()
-    }
-}
 
 /// <p>Describes the public endpoint configuration of a deployment of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
@@ -3965,6 +3980,13 @@ impl ContainerServiceEndpoint {
         self.health_check.as_ref()
     }
 }
+impl ContainerServiceEndpoint {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceEndpoint`](crate::model::ContainerServiceEndpoint).
+    pub fn builder() -> crate::model::container_service_endpoint::Builder {
+        crate::model::container_service_endpoint::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceEndpoint`](crate::model::ContainerServiceEndpoint).
 pub mod container_service_endpoint {
     
@@ -4019,12 +4041,6 @@ pub mod container_service_endpoint {
     
     
 }
-impl ContainerServiceEndpoint {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceEndpoint`](crate::model::ContainerServiceEndpoint).
-    pub fn builder() -> crate::model::container_service_endpoint::Builder {
-        crate::model::container_service_endpoint::Builder::default()
-    }
-}
 
 /// <p>Describes the health check configuration of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
@@ -4075,6 +4091,13 @@ impl ContainerServiceHealthCheckConfig {
         self.success_codes.as_deref()
     }
 }
+impl ContainerServiceHealthCheckConfig {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceHealthCheckConfig`](crate::model::ContainerServiceHealthCheckConfig).
+    pub fn builder() -> crate::model::container_service_health_check_config::Builder {
+        crate::model::container_service_health_check_config::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceHealthCheckConfig`](crate::model::ContainerServiceHealthCheckConfig).
 pub mod container_service_health_check_config {
     
@@ -4165,12 +4188,6 @@ pub mod container_service_health_check_config {
     
     
 }
-impl ContainerServiceHealthCheckConfig {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceHealthCheckConfig`](crate::model::ContainerServiceHealthCheckConfig).
-    pub fn builder() -> crate::model::container_service_health_check_config::Builder {
-        crate::model::container_service_health_check_config::Builder::default()
-    }
-}
 
 /// <p>Describes the settings of a container that will be launched, or that is launched, to an Amazon Lightsail container service.</p>
 #[non_exhaustive]
@@ -4211,6 +4228,13 @@ impl Container {
         self.ports.as_ref()
     }
 }
+impl Container {
+    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
+    pub fn builder() -> crate::model::container::Builder {
+        crate::model::container::Builder::default()
+    }
+}
+
 /// See [`Container`](crate::model::Container).
 pub mod container {
     
@@ -4298,12 +4322,6 @@ pub mod container {
     }
     
     
-}
-impl Container {
-    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
-    pub fn builder() -> crate::model::container::Builder {
-        crate::model::container::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContainerServiceProtocol`, it is important to ensure
@@ -4551,6 +4569,13 @@ impl ContainerServiceStateDetail {
         self.message.as_deref()
     }
 }
+impl ContainerServiceStateDetail {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceStateDetail`](crate::model::ContainerServiceStateDetail).
+    pub fn builder() -> crate::model::container_service_state_detail::Builder {
+        crate::model::container_service_state_detail::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceStateDetail`](crate::model::ContainerServiceStateDetail).
 pub mod container_service_state_detail {
     
@@ -4632,12 +4657,6 @@ pub mod container_service_state_detail {
     }
     
     
-}
-impl ContainerServiceStateDetail {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceStateDetail`](crate::model::ContainerServiceStateDetail).
-    pub fn builder() -> crate::model::container_service_state_detail::Builder {
-        crate::model::container_service_state_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContainerServiceStateDetailCode`, it is important to ensure
@@ -4992,6 +5011,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -5038,12 +5064,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Describes a request to configure an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories.</p> 
 /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -5060,6 +5080,13 @@ impl PrivateRegistryAccessRequest {
         self.ecr_image_puller_role.as_ref()
     }
 }
+impl PrivateRegistryAccessRequest {
+    /// Creates a new builder-style object to manufacture [`PrivateRegistryAccessRequest`](crate::model::PrivateRegistryAccessRequest).
+    pub fn builder() -> crate::model::private_registry_access_request::Builder {
+        crate::model::private_registry_access_request::Builder::default()
+    }
+}
+
 /// See [`PrivateRegistryAccessRequest`](crate::model::PrivateRegistryAccessRequest).
 pub mod private_registry_access_request {
     
@@ -5090,12 +5117,6 @@ pub mod private_registry_access_request {
     
     
 }
-impl PrivateRegistryAccessRequest {
-    /// Creates a new builder-style object to manufacture [`PrivateRegistryAccessRequest`](crate::model::PrivateRegistryAccessRequest).
-    pub fn builder() -> crate::model::private_registry_access_request::Builder {
-        crate::model::private_registry_access_request::Builder::default()
-    }
-}
 
 /// <p>Describes a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories.</p> 
 /// <p>When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -5112,6 +5133,13 @@ impl ContainerServiceEcrImagePullerRoleRequest {
         self.is_active
     }
 }
+impl ContainerServiceEcrImagePullerRoleRequest {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceEcrImagePullerRoleRequest`](crate::model::ContainerServiceEcrImagePullerRoleRequest).
+    pub fn builder() -> crate::model::container_service_ecr_image_puller_role_request::Builder {
+        crate::model::container_service_ecr_image_puller_role_request::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceEcrImagePullerRoleRequest`](crate::model::ContainerServiceEcrImagePullerRoleRequest).
 pub mod container_service_ecr_image_puller_role_request {
     
@@ -5141,12 +5169,6 @@ pub mod container_service_ecr_image_puller_role_request {
     }
     
     
-}
-impl ContainerServiceEcrImagePullerRoleRequest {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceEcrImagePullerRoleRequest`](crate::model::ContainerServiceEcrImagePullerRoleRequest).
-    pub fn builder() -> crate::model::container_service_ecr_image_puller_role_request::Builder {
-        crate::model::container_service_ecr_image_puller_role_request::Builder::default()
-    }
 }
 
 /// <p>Describes an Amazon Lightsail bucket.</p>
@@ -5290,6 +5312,13 @@ impl Bucket {
         self.access_log_config.as_ref()
     }
 }
+impl Bucket {
+    /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket).
+    pub fn builder() -> crate::model::bucket::Builder {
+        crate::model::bucket::Builder::default()
+    }
+}
+
 /// See [`Bucket`](crate::model::Bucket).
 pub mod bucket {
     
@@ -5540,12 +5569,6 @@ pub mod bucket {
     
     
 }
-impl Bucket {
-    /// Creates a new builder-style object to manufacture [`Bucket`](crate::model::Bucket).
-    pub fn builder() -> crate::model::bucket::Builder {
-        crate::model::bucket::Builder::default()
-    }
-}
 
 /// <p>Describes the access log configuration for a bucket in the Amazon Lightsail object storage service.</p> 
 /// <p>For more information about bucket access logs, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs">Logging bucket requests using access logging in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
@@ -5586,6 +5609,13 @@ impl BucketAccessLogConfig {
         self.prefix.as_deref()
     }
 }
+impl BucketAccessLogConfig {
+    /// Creates a new builder-style object to manufacture [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig).
+    pub fn builder() -> crate::model::bucket_access_log_config::Builder {
+        crate::model::bucket_access_log_config::Builder::default()
+    }
+}
+
 /// See [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig).
 pub mod bucket_access_log_config {
     
@@ -5650,12 +5680,6 @@ pub mod bucket_access_log_config {
     
     
 }
-impl BucketAccessLogConfig {
-    /// Creates a new builder-style object to manufacture [`BucketAccessLogConfig`](crate::model::BucketAccessLogConfig).
-    pub fn builder() -> crate::model::bucket_access_log_config::Builder {
-        crate::model::bucket_access_log_config::Builder::default()
-    }
-}
 
 /// <p>Describes the state of an Amazon Lightsail bucket.</p>
 #[non_exhaustive]
@@ -5688,6 +5712,13 @@ impl BucketState {
         self.message.as_deref()
     }
 }
+impl BucketState {
+    /// Creates a new builder-style object to manufacture [`BucketState`](crate::model::BucketState).
+    pub fn builder() -> crate::model::bucket_state::Builder {
+        crate::model::bucket_state::Builder::default()
+    }
+}
+
 /// See [`BucketState`](crate::model::BucketState).
 pub mod bucket_state {
     
@@ -5740,12 +5771,6 @@ pub mod bucket_state {
     
     
 }
-impl BucketState {
-    /// Creates a new builder-style object to manufacture [`BucketState`](crate::model::BucketState).
-    pub fn builder() -> crate::model::bucket_state::Builder {
-        crate::model::bucket_state::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon Lightsail instance that has access to a Lightsail bucket.</p>
 #[non_exhaustive]
@@ -5768,6 +5793,13 @@ impl ResourceReceivingAccess {
         self.resource_type.as_deref()
     }
 }
+impl ResourceReceivingAccess {
+    /// Creates a new builder-style object to manufacture [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess).
+    pub fn builder() -> crate::model::resource_receiving_access::Builder {
+        crate::model::resource_receiving_access::Builder::default()
+    }
+}
+
 /// See [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess).
 pub mod resource_receiving_access {
     
@@ -5810,12 +5842,6 @@ pub mod resource_receiving_access {
     
     
 }
-impl ResourceReceivingAccess {
-    /// Creates a new builder-style object to manufacture [`ResourceReceivingAccess`](crate::model::ResourceReceivingAccess).
-    pub fn builder() -> crate::model::resource_receiving_access::Builder {
-        crate::model::resource_receiving_access::Builder::default()
-    }
-}
 
 /// <p>Describes the anonymous access permissions for an Amazon Lightsail bucket and its objects.</p> 
 /// <p>For more information about bucket access permissions, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-understanding-bucket-permissions">Understanding bucket permissions in Amazon Lightsail</a> in the </p> 
@@ -5852,6 +5878,13 @@ impl AccessRules {
         self.allow_public_overrides
     }
 }
+impl AccessRules {
+    /// Creates a new builder-style object to manufacture [`AccessRules`](crate::model::AccessRules).
+    pub fn builder() -> crate::model::access_rules::Builder {
+        crate::model::access_rules::Builder::default()
+    }
+}
+
 /// See [`AccessRules`](crate::model::AccessRules).
 pub mod access_rules {
     
@@ -5905,12 +5938,6 @@ pub mod access_rules {
     }
     
     
-}
-impl AccessRules {
-    /// Creates a new builder-style object to manufacture [`AccessRules`](crate::model::AccessRules).
-    pub fn builder() -> crate::model::access_rules::Builder {
-        crate::model::access_rules::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessType`, it is important to ensure
@@ -6351,6 +6378,13 @@ impl ContainerImage {
         self.created_at.as_ref()
     }
 }
+impl ContainerImage {
+    /// Creates a new builder-style object to manufacture [`ContainerImage`](crate::model::ContainerImage).
+    pub fn builder() -> crate::model::container_image::Builder {
+        crate::model::container_image::Builder::default()
+    }
+}
+
 /// See [`ContainerImage`](crate::model::ContainerImage).
 pub mod container_image {
     
@@ -6404,12 +6438,6 @@ pub mod container_image {
     }
     
     
-}
-impl ContainerImage {
-    /// Creates a new builder-style object to manufacture [`ContainerImage`](crate::model::ContainerImage).
-    pub fn builder() -> crate::model::container_image::Builder {
-        crate::model::container_image::Builder::default()
-    }
 }
 
 /// <p>Describes ports to open on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
@@ -6523,6 +6551,13 @@ impl PortInfo {
         self.cidr_list_aliases.as_deref()
     }
 }
+impl PortInfo {
+    /// Creates a new builder-style object to manufacture [`PortInfo`](crate::model::PortInfo).
+    pub fn builder() -> crate::model::port_info::Builder {
+        crate::model::port_info::Builder::default()
+    }
+}
+
 /// See [`PortInfo`](crate::model::PortInfo).
 pub mod port_info {
     
@@ -6694,12 +6729,6 @@ pub mod port_info {
     }
     
     
-}
-impl PortInfo {
-    /// Creates a new builder-style object to manufacture [`PortInfo`](crate::model::PortInfo).
-    pub fn builder() -> crate::model::port_info::Builder {
-        crate::model::port_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NetworkProtocol`, it is important to ensure
@@ -7327,6 +7356,13 @@ impl StaticIp {
         self.is_attached
     }
 }
+impl StaticIp {
+    /// Creates a new builder-style object to manufacture [`StaticIp`](crate::model::StaticIp).
+    pub fn builder() -> crate::model::static_ip::Builder {
+        crate::model::static_ip::Builder::default()
+    }
+}
+
 /// See [`StaticIp`](crate::model::StaticIp).
 pub mod static_ip {
     
@@ -7453,12 +7489,6 @@ pub mod static_ip {
     
     
 }
-impl StaticIp {
-    /// Creates a new builder-style object to manufacture [`StaticIp`](crate::model::StaticIp).
-    pub fn builder() -> crate::model::static_ip::Builder {
-        crate::model::static_ip::Builder::default()
-    }
-}
 
 /// <p>Describes a database snapshot.</p>
 #[non_exhaustive]
@@ -7572,6 +7602,13 @@ impl RelationalDatabaseSnapshot {
         self.from_relational_database_blueprint_id.as_deref()
     }
 }
+impl RelationalDatabaseSnapshot {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseSnapshot`](crate::model::RelationalDatabaseSnapshot).
+    pub fn builder() -> crate::model::relational_database_snapshot::Builder {
+        crate::model::relational_database_snapshot::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseSnapshot`](crate::model::RelationalDatabaseSnapshot).
 pub mod relational_database_snapshot {
     
@@ -7776,12 +7813,6 @@ pub mod relational_database_snapshot {
     
     
 }
-impl RelationalDatabaseSnapshot {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseSnapshot`](crate::model::RelationalDatabaseSnapshot).
-    pub fn builder() -> crate::model::relational_database_snapshot::Builder {
-        crate::model::relational_database_snapshot::Builder::default()
-    }
-}
 
 /// <p>Describes a database.</p>
 #[non_exhaustive]
@@ -7976,6 +8007,13 @@ impl RelationalDatabase {
         self.ca_certificate_identifier.as_deref()
     }
 }
+impl RelationalDatabase {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabase`](crate::model::RelationalDatabase).
+    pub fn builder() -> crate::model::relational_database::Builder {
+        crate::model::relational_database::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabase`](crate::model::RelationalDatabase).
 pub mod relational_database {
     
@@ -8322,12 +8360,6 @@ pub mod relational_database {
     
     
 }
-impl RelationalDatabase {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabase`](crate::model::RelationalDatabase).
-    pub fn builder() -> crate::model::relational_database::Builder {
-        crate::model::relational_database::Builder::default()
-    }
-}
 
 /// <p>Describes a pending database maintenance action.</p>
 #[non_exhaustive]
@@ -8357,6 +8389,13 @@ impl PendingMaintenanceAction {
         self.current_apply_date.as_ref()
     }
 }
+impl PendingMaintenanceAction {
+    /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
+    pub fn builder() -> crate::model::pending_maintenance_action::Builder {
+        crate::model::pending_maintenance_action::Builder::default()
+    }
+}
+
 /// See [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
 pub mod pending_maintenance_action {
     
@@ -8411,12 +8450,6 @@ pub mod pending_maintenance_action {
     
     
 }
-impl PendingMaintenanceAction {
-    /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
-    pub fn builder() -> crate::model::pending_maintenance_action::Builder {
-        crate::model::pending_maintenance_action::Builder::default()
-    }
-}
 
 /// <p>Describes an endpoint for a database.</p>
 #[non_exhaustive]
@@ -8439,6 +8472,13 @@ impl RelationalDatabaseEndpoint {
         self.address.as_deref()
     }
 }
+impl RelationalDatabaseEndpoint {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseEndpoint`](crate::model::RelationalDatabaseEndpoint).
+    pub fn builder() -> crate::model::relational_database_endpoint::Builder {
+        crate::model::relational_database_endpoint::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseEndpoint`](crate::model::RelationalDatabaseEndpoint).
 pub mod relational_database_endpoint {
     
@@ -8481,12 +8521,6 @@ pub mod relational_database_endpoint {
     
     
 }
-impl RelationalDatabaseEndpoint {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseEndpoint`](crate::model::RelationalDatabaseEndpoint).
-    pub fn builder() -> crate::model::relational_database_endpoint::Builder {
-        crate::model::relational_database_endpoint::Builder::default()
-    }
-}
 
 /// <p>Describes a pending database value modification.</p>
 #[non_exhaustive]
@@ -8516,6 +8550,13 @@ impl PendingModifiedRelationalDatabaseValues {
         self.backup_retention_enabled
     }
 }
+impl PendingModifiedRelationalDatabaseValues {
+    /// Creates a new builder-style object to manufacture [`PendingModifiedRelationalDatabaseValues`](crate::model::PendingModifiedRelationalDatabaseValues).
+    pub fn builder() -> crate::model::pending_modified_relational_database_values::Builder {
+        crate::model::pending_modified_relational_database_values::Builder::default()
+    }
+}
+
 /// See [`PendingModifiedRelationalDatabaseValues`](crate::model::PendingModifiedRelationalDatabaseValues).
 pub mod pending_modified_relational_database_values {
     
@@ -8570,12 +8611,6 @@ pub mod pending_modified_relational_database_values {
     
     
 }
-impl PendingModifiedRelationalDatabaseValues {
-    /// Creates a new builder-style object to manufacture [`PendingModifiedRelationalDatabaseValues`](crate::model::PendingModifiedRelationalDatabaseValues).
-    pub fn builder() -> crate::model::pending_modified_relational_database_values::Builder {
-        crate::model::pending_modified_relational_database_values::Builder::default()
-    }
-}
 
 /// <p>Describes the hardware of a database.</p>
 #[non_exhaustive]
@@ -8605,6 +8640,13 @@ impl RelationalDatabaseHardware {
         self.ram_size_in_gb
     }
 }
+impl RelationalDatabaseHardware {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseHardware`](crate::model::RelationalDatabaseHardware).
+    pub fn builder() -> crate::model::relational_database_hardware::Builder {
+        crate::model::relational_database_hardware::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseHardware`](crate::model::RelationalDatabaseHardware).
 pub mod relational_database_hardware {
     
@@ -8658,12 +8700,6 @@ pub mod relational_database_hardware {
     }
     
     
-}
-impl RelationalDatabaseHardware {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseHardware`](crate::model::RelationalDatabaseHardware).
-    pub fn builder() -> crate::model::relational_database_hardware::Builder {
-        crate::model::relational_database_hardware::Builder::default()
-    }
 }
 
 /// <p>Describes the metric data point.</p>
@@ -8722,6 +8758,13 @@ impl MetricDatapoint {
         self.unit.as_ref()
     }
 }
+impl MetricDatapoint {
+    /// Creates a new builder-style object to manufacture [`MetricDatapoint`](crate::model::MetricDatapoint).
+    pub fn builder() -> crate::model::metric_datapoint::Builder {
+        crate::model::metric_datapoint::Builder::default()
+    }
+}
+
 /// See [`MetricDatapoint`](crate::model::MetricDatapoint).
 pub mod metric_datapoint {
     
@@ -8823,12 +8866,6 @@ pub mod metric_datapoint {
     }
     
     
-}
-impl MetricDatapoint {
-    /// Creates a new builder-style object to manufacture [`MetricDatapoint`](crate::model::MetricDatapoint).
-    pub fn builder() -> crate::model::metric_datapoint::Builder {
-        crate::model::metric_datapoint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetricUnit`, it is important to ensure
@@ -9345,6 +9382,13 @@ impl LogEvent {
         self.message.as_deref()
     }
 }
+impl LogEvent {
+    /// Creates a new builder-style object to manufacture [`LogEvent`](crate::model::LogEvent).
+    pub fn builder() -> crate::model::log_event::Builder {
+        crate::model::log_event::Builder::default()
+    }
+}
+
 /// See [`LogEvent`](crate::model::LogEvent).
 pub mod log_event {
     
@@ -9387,12 +9431,6 @@ pub mod log_event {
     
     
 }
-impl LogEvent {
-    /// Creates a new builder-style object to manufacture [`LogEvent`](crate::model::LogEvent).
-    pub fn builder() -> crate::model::log_event::Builder {
-        crate::model::log_event::Builder::default()
-    }
-}
 
 /// <p>Describes an event for a database.</p>
 #[non_exhaustive]
@@ -9429,6 +9467,13 @@ impl RelationalDatabaseEvent {
         self.event_categories.as_deref()
     }
 }
+impl RelationalDatabaseEvent {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseEvent`](crate::model::RelationalDatabaseEvent).
+    pub fn builder() -> crate::model::relational_database_event::Builder {
+        crate::model::relational_database_event::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseEvent`](crate::model::RelationalDatabaseEvent).
 pub mod relational_database_event {
     
@@ -9501,12 +9546,6 @@ pub mod relational_database_event {
     
     
 }
-impl RelationalDatabaseEvent {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseEvent`](crate::model::RelationalDatabaseEvent).
-    pub fn builder() -> crate::model::relational_database_event::Builder {
-        crate::model::relational_database_event::Builder::default()
-    }
-}
 
 /// <p>Describes a database bundle. A bundle describes the performance specifications of the database.</p>
 #[non_exhaustive]
@@ -9578,6 +9617,13 @@ impl RelationalDatabaseBundle {
         self.is_active
     }
 }
+impl RelationalDatabaseBundle {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseBundle`](crate::model::RelationalDatabaseBundle).
+    pub fn builder() -> crate::model::relational_database_bundle::Builder {
+        crate::model::relational_database_bundle::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseBundle`](crate::model::RelationalDatabaseBundle).
 pub mod relational_database_bundle {
     
@@ -9704,12 +9750,6 @@ pub mod relational_database_bundle {
     
     
 }
-impl RelationalDatabaseBundle {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseBundle`](crate::model::RelationalDatabaseBundle).
-    pub fn builder() -> crate::model::relational_database_bundle::Builder {
-        crate::model::relational_database_bundle::Builder::default()
-    }
-}
 
 /// <p>Describes a database image, or blueprint. A blueprint describes the major engine version of a database.</p>
 #[non_exhaustive]
@@ -9760,6 +9800,13 @@ impl RelationalDatabaseBlueprint {
         self.is_engine_default
     }
 }
+impl RelationalDatabaseBlueprint {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseBlueprint`](crate::model::RelationalDatabaseBlueprint).
+    pub fn builder() -> crate::model::relational_database_blueprint::Builder {
+        crate::model::relational_database_blueprint::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseBlueprint`](crate::model::RelationalDatabaseBlueprint).
 pub mod relational_database_blueprint {
     
@@ -9849,12 +9896,6 @@ pub mod relational_database_blueprint {
     }
     
     
-}
-impl RelationalDatabaseBlueprint {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseBlueprint`](crate::model::RelationalDatabaseBlueprint).
-    pub fn builder() -> crate::model::relational_database_blueprint::Builder {
-        crate::model::relational_database_blueprint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RelationalDatabaseEngine`, it is important to ensure
@@ -9983,6 +10024,13 @@ impl Region {
         self.relational_database_availability_zones.as_deref()
     }
 }
+impl Region {
+    /// Creates a new builder-style object to manufacture [`Region`](crate::model::Region).
+    pub fn builder() -> crate::model::region::Builder {
+        crate::model::region::Builder::default()
+    }
+}
+
 /// See [`Region`](crate::model::Region).
 pub mod region {
     
@@ -10085,12 +10133,6 @@ pub mod region {
     
     
 }
-impl Region {
-    /// Creates a new builder-style object to manufacture [`Region`](crate::model::Region).
-    pub fn builder() -> crate::model::region::Builder {
-        crate::model::region::Builder::default()
-    }
-}
 
 /// <p>Describes an Availability Zone.</p>
 #[non_exhaustive]
@@ -10113,6 +10155,13 @@ impl AvailabilityZone {
         self.state.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
     
@@ -10154,12 +10203,6 @@ pub mod availability_zone {
     }
     
     
-}
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
-    }
 }
 
 /// <p>Describes the TLS security policies that are available for Lightsail load balancers.</p> 
@@ -10207,6 +10250,13 @@ impl LoadBalancerTlsPolicy {
         self.ciphers.as_deref()
     }
 }
+impl LoadBalancerTlsPolicy {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy).
+    pub fn builder() -> crate::model::load_balancer_tls_policy::Builder {
+        crate::model::load_balancer_tls_policy::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy).
 pub mod load_balancer_tls_policy {
     
@@ -10298,12 +10348,6 @@ pub mod load_balancer_tls_policy {
     }
     
     
-}
-impl LoadBalancerTlsPolicy {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsPolicy`](crate::model::LoadBalancerTlsPolicy).
-    pub fn builder() -> crate::model::load_balancer_tls_policy::Builder {
-        crate::model::load_balancer_tls_policy::Builder::default()
-    }
 }
 
 /// <p>Describes a load balancer SSL/TLS certificate.</p> 
@@ -10533,6 +10577,13 @@ impl LoadBalancerTlsCertificate {
         self.subject_alternative_names.as_deref()
     }
 }
+impl LoadBalancerTlsCertificate {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificate`](crate::model::LoadBalancerTlsCertificate).
+    pub fn builder() -> crate::model::load_balancer_tls_certificate::Builder {
+        crate::model::load_balancer_tls_certificate::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsCertificate`](crate::model::LoadBalancerTlsCertificate).
 pub mod load_balancer_tls_certificate {
     
@@ -10913,12 +10964,6 @@ pub mod load_balancer_tls_certificate {
     
     
 }
-impl LoadBalancerTlsCertificate {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificate`](crate::model::LoadBalancerTlsCertificate).
-    pub fn builder() -> crate::model::load_balancer_tls_certificate::Builder {
-        crate::model::load_balancer_tls_certificate::Builder::default()
-    }
-}
 
 /// When writing a match expression against `LoadBalancerTlsCertificateRevocationReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11085,6 +11130,13 @@ impl LoadBalancerTlsCertificateRenewalSummary {
         self.domain_validation_options.as_deref()
     }
 }
+impl LoadBalancerTlsCertificateRenewalSummary {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateRenewalSummary`](crate::model::LoadBalancerTlsCertificateRenewalSummary).
+    pub fn builder() -> crate::model::load_balancer_tls_certificate_renewal_summary::Builder {
+        crate::model::load_balancer_tls_certificate_renewal_summary::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsCertificateRenewalSummary`](crate::model::LoadBalancerTlsCertificateRenewalSummary).
 pub mod load_balancer_tls_certificate_renewal_summary {
     
@@ -11147,12 +11199,6 @@ pub mod load_balancer_tls_certificate_renewal_summary {
     
     
 }
-impl LoadBalancerTlsCertificateRenewalSummary {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateRenewalSummary`](crate::model::LoadBalancerTlsCertificateRenewalSummary).
-    pub fn builder() -> crate::model::load_balancer_tls_certificate_renewal_summary::Builder {
-        crate::model::load_balancer_tls_certificate_renewal_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.</p>
 #[non_exhaustive]
@@ -11175,6 +11221,13 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
         self.validation_status.as_ref()
     }
 }
+impl LoadBalancerTlsCertificateDomainValidationOption {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDomainValidationOption`](crate::model::LoadBalancerTlsCertificateDomainValidationOption).
+    pub fn builder() -> crate::model::load_balancer_tls_certificate_domain_validation_option::Builder {
+        crate::model::load_balancer_tls_certificate_domain_validation_option::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsCertificateDomainValidationOption`](crate::model::LoadBalancerTlsCertificateDomainValidationOption).
 pub mod load_balancer_tls_certificate_domain_validation_option {
     
@@ -11216,12 +11269,6 @@ pub mod load_balancer_tls_certificate_domain_validation_option {
     }
     
     
-}
-impl LoadBalancerTlsCertificateDomainValidationOption {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDomainValidationOption`](crate::model::LoadBalancerTlsCertificateDomainValidationOption).
-    pub fn builder() -> crate::model::load_balancer_tls_certificate_domain_validation_option::Builder {
-        crate::model::load_balancer_tls_certificate_domain_validation_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoadBalancerTlsCertificateDomainStatus`, it is important to ensure
@@ -11549,6 +11596,13 @@ impl LoadBalancerTlsCertificateDomainValidationRecord {
         self.dns_record_creation_state.as_ref()
     }
 }
+impl LoadBalancerTlsCertificateDomainValidationRecord {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::model::LoadBalancerTlsCertificateDomainValidationRecord).
+    pub fn builder() -> crate::model::load_balancer_tls_certificate_domain_validation_record::Builder {
+        crate::model::load_balancer_tls_certificate_domain_validation_record::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::model::LoadBalancerTlsCertificateDomainValidationRecord).
 pub mod load_balancer_tls_certificate_domain_validation_record {
     
@@ -11639,12 +11693,6 @@ pub mod load_balancer_tls_certificate_domain_validation_record {
     
     
 }
-impl LoadBalancerTlsCertificateDomainValidationRecord {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::model::LoadBalancerTlsCertificateDomainValidationRecord).
-    pub fn builder() -> crate::model::load_balancer_tls_certificate_domain_validation_record::Builder {
-        crate::model::load_balancer_tls_certificate_domain_validation_record::Builder::default()
-    }
-}
 
 /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
 #[non_exhaustive]
@@ -11679,6 +11727,13 @@ impl LoadBalancerTlsCertificateDnsRecordCreationState {
         self.message.as_deref()
     }
 }
+impl LoadBalancerTlsCertificateDnsRecordCreationState {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
+    pub fn builder() -> crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder {
+        crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
 pub mod load_balancer_tls_certificate_dns_record_creation_state {
     
@@ -11732,12 +11787,6 @@ pub mod load_balancer_tls_certificate_dns_record_creation_state {
     }
     
     
-}
-impl LoadBalancerTlsCertificateDnsRecordCreationState {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDnsRecordCreationState`](crate::model::LoadBalancerTlsCertificateDnsRecordCreationState).
-    pub fn builder() -> crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder {
-        crate::model::load_balancer_tls_certificate_dns_record_creation_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoadBalancerTlsCertificateDnsRecordCreationStateCode`, it is important to ensure
@@ -12083,6 +12132,13 @@ impl LoadBalancer {
         self.tls_policy_name.as_deref()
     }
 }
+impl LoadBalancer {
+    /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
+    pub fn builder() -> crate::model::load_balancer::Builder {
+        crate::model::load_balancer::Builder::default()
+    }
+}
+
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
 pub mod load_balancer {
     
@@ -12363,12 +12419,6 @@ pub mod load_balancer {
     
     
 }
-impl LoadBalancer {
-    /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
-    pub fn builder() -> crate::model::load_balancer::Builder {
-        crate::model::load_balancer::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of SSL/TLS certificate metadata.</p>
 #[non_exhaustive]
@@ -12391,6 +12441,13 @@ impl LoadBalancerTlsCertificateSummary {
         self.is_attached
     }
 }
+impl LoadBalancerTlsCertificateSummary {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateSummary`](crate::model::LoadBalancerTlsCertificateSummary).
+    pub fn builder() -> crate::model::load_balancer_tls_certificate_summary::Builder {
+        crate::model::load_balancer_tls_certificate_summary::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTlsCertificateSummary`](crate::model::LoadBalancerTlsCertificateSummary).
 pub mod load_balancer_tls_certificate_summary {
     
@@ -12432,12 +12489,6 @@ pub mod load_balancer_tls_certificate_summary {
     }
     
     
-}
-impl LoadBalancerTlsCertificateSummary {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateSummary`](crate::model::LoadBalancerTlsCertificateSummary).
-    pub fn builder() -> crate::model::load_balancer_tls_certificate_summary::Builder {
-        crate::model::load_balancer_tls_certificate_summary::Builder::default()
-    }
 }
 
 /// <p>Describes information about the health of the instance.</p>
@@ -12514,6 +12565,13 @@ impl InstanceHealthSummary {
         self.instance_health_reason.as_ref()
     }
 }
+impl InstanceHealthSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
+    pub fn builder() -> crate::model::instance_health_summary::Builder {
+        crate::model::instance_health_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
 pub mod instance_health_summary {
     
@@ -12613,12 +12671,6 @@ pub mod instance_health_summary {
     }
     
     
-}
-impl InstanceHealthSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
-    pub fn builder() -> crate::model::instance_health_summary::Builder {
-        crate::model::instance_health_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceHealthReason`, it is important to ensure
@@ -13224,6 +13276,13 @@ impl KeyPair {
         self.fingerprint.as_deref()
     }
 }
+impl KeyPair {
+    /// Creates a new builder-style object to manufacture [`KeyPair`](crate::model::KeyPair).
+    pub fn builder() -> crate::model::key_pair::Builder {
+        crate::model::key_pair::Builder::default()
+    }
+}
+
 /// See [`KeyPair`](crate::model::KeyPair).
 pub mod key_pair {
     
@@ -13344,12 +13403,6 @@ pub mod key_pair {
     
     
 }
-impl KeyPair {
-    /// Creates a new builder-style object to manufacture [`KeyPair`](crate::model::KeyPair).
-    pub fn builder() -> crate::model::key_pair::Builder {
-        crate::model::key_pair::Builder::default()
-    }
-}
 
 /// <p>Describes the virtual private server (or <i>instance</i>) status.</p>
 #[non_exhaustive]
@@ -13372,6 +13425,13 @@ impl InstanceState {
         self.name.as_deref()
     }
 }
+impl InstanceState {
+    /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
+    pub fn builder() -> crate::model::instance_state::Builder {
+        crate::model::instance_state::Builder::default()
+    }
+}
+
 /// See [`InstanceState`](crate::model::InstanceState).
 pub mod instance_state {
     
@@ -13413,12 +13473,6 @@ pub mod instance_state {
     }
     
     
-}
-impl InstanceState {
-    /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
-    pub fn builder() -> crate::model::instance_state::Builder {
-        crate::model::instance_state::Builder::default()
-    }
 }
 
 /// <p>Describes an instance snapshot.</p>
@@ -13544,6 +13598,13 @@ impl InstanceSnapshot {
         self.size_in_gb
     }
 }
+impl InstanceSnapshot {
+    /// Creates a new builder-style object to manufacture [`InstanceSnapshot`](crate::model::InstanceSnapshot).
+    pub fn builder() -> crate::model::instance_snapshot::Builder {
+        crate::model::instance_snapshot::Builder::default()
+    }
+}
+
 /// See [`InstanceSnapshot`](crate::model::InstanceSnapshot).
 pub mod instance_snapshot {
     
@@ -13770,12 +13831,6 @@ pub mod instance_snapshot {
     
     
 }
-impl InstanceSnapshot {
-    /// Creates a new builder-style object to manufacture [`InstanceSnapshot`](crate::model::InstanceSnapshot).
-    pub fn builder() -> crate::model::instance_snapshot::Builder {
-        crate::model::instance_snapshot::Builder::default()
-    }
-}
 
 /// <p>Describes a block storage disk.</p>
 #[non_exhaustive]
@@ -13915,6 +13970,13 @@ impl Disk {
         self.gb_in_use
     }
 }
+impl Disk {
+    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
+    pub fn builder() -> crate::model::disk::Builder {
+        crate::model::disk::Builder::default()
+    }
+}
+
 /// See [`Disk`](crate::model::Disk).
 pub mod disk {
     
@@ -14161,12 +14223,6 @@ pub mod disk {
     
     
 }
-impl Disk {
-    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
-    pub fn builder() -> crate::model::disk::Builder {
-        crate::model::disk::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DiskState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -14308,6 +14364,13 @@ impl AddOn {
         self.next_snapshot_time_of_day.as_deref()
     }
 }
+impl AddOn {
+    /// Creates a new builder-style object to manufacture [`AddOn`](crate::model::AddOn).
+    pub fn builder() -> crate::model::add_on::Builder {
+        crate::model::add_on::Builder::default()
+    }
+}
+
 /// See [`AddOn`](crate::model::AddOn).
 pub mod add_on {
     
@@ -14381,12 +14444,6 @@ pub mod add_on {
     }
     
     
-}
-impl AddOn {
-    /// Creates a new builder-style object to manufacture [`AddOn`](crate::model::AddOn).
-    pub fn builder() -> crate::model::add_on::Builder {
-        crate::model::add_on::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceSnapshotState`, it is important to ensure
@@ -14639,6 +14696,13 @@ impl Instance {
         self.metadata_options.as_ref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -14941,12 +15005,6 @@ pub mod instance {
     
     
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// <p>The metadata options for the instance.</p>
 #[non_exhaustive]
@@ -15010,6 +15068,13 @@ impl InstanceMetadataOptions {
         self.http_protocol_ipv6.as_ref()
     }
 }
+impl InstanceMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+    pub fn builder() -> crate::model::instance_metadata_options::Builder {
+        crate::model::instance_metadata_options::Builder::default()
+    }
+}
+
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
 pub mod instance_metadata_options {
     
@@ -15107,12 +15172,6 @@ pub mod instance_metadata_options {
     }
     
     
-}
-impl InstanceMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
-    pub fn builder() -> crate::model::instance_metadata_options::Builder {
-        crate::model::instance_metadata_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceMetadataState`, it is important to ensure
@@ -15218,6 +15277,13 @@ impl InstanceNetworking {
         self.ports.as_deref()
     }
 }
+impl InstanceNetworking {
+    /// Creates a new builder-style object to manufacture [`InstanceNetworking`](crate::model::InstanceNetworking).
+    pub fn builder() -> crate::model::instance_networking::Builder {
+        crate::model::instance_networking::Builder::default()
+    }
+}
+
 /// See [`InstanceNetworking`](crate::model::InstanceNetworking).
 pub mod instance_networking {
     
@@ -15265,12 +15331,6 @@ pub mod instance_networking {
     }
     
     
-}
-impl InstanceNetworking {
-    /// Creates a new builder-style object to manufacture [`InstanceNetworking`](crate::model::InstanceNetworking).
-    pub fn builder() -> crate::model::instance_networking::Builder {
-        crate::model::instance_networking::Builder::default()
-    }
 }
 
 /// <p>Describes information about ports for an Amazon Lightsail instance.</p>
@@ -15406,6 +15466,13 @@ impl InstancePortInfo {
         self.cidr_list_aliases.as_deref()
     }
 }
+impl InstancePortInfo {
+    /// Creates a new builder-style object to manufacture [`InstancePortInfo`](crate::model::InstancePortInfo).
+    pub fn builder() -> crate::model::instance_port_info::Builder {
+        crate::model::instance_port_info::Builder::default()
+    }
+}
+
 /// See [`InstancePortInfo`](crate::model::InstancePortInfo).
 pub mod instance_port_info {
     
@@ -15620,12 +15687,6 @@ pub mod instance_port_info {
     
     
 }
-impl InstancePortInfo {
-    /// Creates a new builder-style object to manufacture [`InstancePortInfo`](crate::model::InstancePortInfo).
-    pub fn builder() -> crate::model::instance_port_info::Builder {
-        crate::model::instance_port_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AccessDirection`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -15805,6 +15866,13 @@ impl MonthlyTransfer {
         self.gb_per_month_allocated
     }
 }
+impl MonthlyTransfer {
+    /// Creates a new builder-style object to manufacture [`MonthlyTransfer`](crate::model::MonthlyTransfer).
+    pub fn builder() -> crate::model::monthly_transfer::Builder {
+        crate::model::monthly_transfer::Builder::default()
+    }
+}
+
 /// See [`MonthlyTransfer`](crate::model::MonthlyTransfer).
 pub mod monthly_transfer {
     
@@ -15835,12 +15903,6 @@ pub mod monthly_transfer {
     
     
 }
-impl MonthlyTransfer {
-    /// Creates a new builder-style object to manufacture [`MonthlyTransfer`](crate::model::MonthlyTransfer).
-    pub fn builder() -> crate::model::monthly_transfer::Builder {
-        crate::model::monthly_transfer::Builder::default()
-    }
-}
 
 /// <p>Describes the hardware for the instance.</p>
 #[non_exhaustive]
@@ -15870,6 +15932,13 @@ impl InstanceHardware {
         self.ram_size_in_gb
     }
 }
+impl InstanceHardware {
+    /// Creates a new builder-style object to manufacture [`InstanceHardware`](crate::model::InstanceHardware).
+    pub fn builder() -> crate::model::instance_hardware::Builder {
+        crate::model::instance_hardware::Builder::default()
+    }
+}
+
 /// See [`InstanceHardware`](crate::model::InstanceHardware).
 pub mod instance_hardware {
     
@@ -15929,12 +15998,6 @@ pub mod instance_hardware {
     }
     
     
-}
-impl InstanceHardware {
-    /// Creates a new builder-style object to manufacture [`InstanceHardware`](crate::model::InstanceHardware).
-    pub fn builder() -> crate::model::instance_hardware::Builder {
-        crate::model::instance_hardware::Builder::default()
-    }
 }
 
 /// <p>Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
@@ -16049,6 +16112,13 @@ impl InstancePortState {
         self.cidr_list_aliases.as_deref()
     }
 }
+impl InstancePortState {
+    /// Creates a new builder-style object to manufacture [`InstancePortState`](crate::model::InstancePortState).
+    pub fn builder() -> crate::model::instance_port_state::Builder {
+        crate::model::instance_port_state::Builder::default()
+    }
+}
+
 /// See [`InstancePortState`](crate::model::InstancePortState).
 pub mod instance_port_state {
     
@@ -16226,12 +16296,6 @@ pub mod instance_port_state {
     }
     
     
-}
-impl InstancePortState {
-    /// Creates a new builder-style object to manufacture [`InstancePortState`](crate::model::InstancePortState).
-    pub fn builder() -> crate::model::instance_port_state::Builder {
-        crate::model::instance_port_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PortState`, it is important to ensure
@@ -16516,6 +16580,13 @@ impl InstanceAccessDetails {
         self.host_keys.as_deref()
     }
 }
+impl InstanceAccessDetails {
+    /// Creates a new builder-style object to manufacture [`InstanceAccessDetails`](crate::model::InstanceAccessDetails).
+    pub fn builder() -> crate::model::instance_access_details::Builder {
+        crate::model::instance_access_details::Builder::default()
+    }
+}
+
 /// See [`InstanceAccessDetails`](crate::model::InstanceAccessDetails).
 pub mod instance_access_details {
     
@@ -16666,12 +16737,6 @@ pub mod instance_access_details {
     
     
 }
-impl InstanceAccessDetails {
-    /// Creates a new builder-style object to manufacture [`InstanceAccessDetails`](crate::model::InstanceAccessDetails).
-    pub fn builder() -> crate::model::instance_access_details::Builder {
-        crate::model::instance_access_details::Builder::default()
-    }
-}
 
 /// <p>Describes the public SSH host keys or the RDP certificate.</p>
 #[non_exhaustive]
@@ -16751,6 +16816,13 @@ impl HostKeyAttributes {
         self.not_valid_after.as_ref()
     }
 }
+impl HostKeyAttributes {
+    /// Creates a new builder-style object to manufacture [`HostKeyAttributes`](crate::model::HostKeyAttributes).
+    pub fn builder() -> crate::model::host_key_attributes::Builder {
+        crate::model::host_key_attributes::Builder::default()
+    }
+}
+
 /// See [`HostKeyAttributes`](crate::model::HostKeyAttributes).
 pub mod host_key_attributes {
     
@@ -16875,12 +16947,6 @@ pub mod host_key_attributes {
     
     
 }
-impl HostKeyAttributes {
-    /// Creates a new builder-style object to manufacture [`HostKeyAttributes`](crate::model::HostKeyAttributes).
-    pub fn builder() -> crate::model::host_key_attributes::Builder {
-        crate::model::host_key_attributes::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InstanceAccessProtocol`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -16995,6 +17061,13 @@ impl PasswordData {
         self.key_pair_name.as_deref()
     }
 }
+impl PasswordData {
+    /// Creates a new builder-style object to manufacture [`PasswordData`](crate::model::PasswordData).
+    pub fn builder() -> crate::model::password_data::Builder {
+        crate::model::password_data::Builder::default()
+    }
+}
+
 /// See [`PasswordData`](crate::model::PasswordData).
 pub mod password_data {
     
@@ -17046,12 +17119,6 @@ pub mod password_data {
     }
     
     
-}
-impl PasswordData {
-    /// Creates a new builder-style object to manufacture [`PasswordData`](crate::model::PasswordData).
-    pub fn builder() -> crate::model::password_data::Builder {
-        crate::model::password_data::Builder::default()
-    }
 }
 
 /// <p>Describes an export snapshot record.</p>
@@ -17117,6 +17184,13 @@ impl ExportSnapshotRecord {
         self.destination_info.as_ref()
     }
 }
+impl ExportSnapshotRecord {
+    /// Creates a new builder-style object to manufacture [`ExportSnapshotRecord`](crate::model::ExportSnapshotRecord).
+    pub fn builder() -> crate::model::export_snapshot_record::Builder {
+        crate::model::export_snapshot_record::Builder::default()
+    }
+}
+
 /// See [`ExportSnapshotRecord`](crate::model::ExportSnapshotRecord).
 pub mod export_snapshot_record {
     
@@ -17231,12 +17305,6 @@ pub mod export_snapshot_record {
     
     
 }
-impl ExportSnapshotRecord {
-    /// Creates a new builder-style object to manufacture [`ExportSnapshotRecord`](crate::model::ExportSnapshotRecord).
-    pub fn builder() -> crate::model::export_snapshot_record::Builder {
-        crate::model::export_snapshot_record::Builder::default()
-    }
-}
 
 /// <p>Describes the destination of a record.</p>
 #[non_exhaustive]
@@ -17259,6 +17327,13 @@ impl DestinationInfo {
         self.service.as_deref()
     }
 }
+impl DestinationInfo {
+    /// Creates a new builder-style object to manufacture [`DestinationInfo`](crate::model::DestinationInfo).
+    pub fn builder() -> crate::model::destination_info::Builder {
+        crate::model::destination_info::Builder::default()
+    }
+}
+
 /// See [`DestinationInfo`](crate::model::DestinationInfo).
 pub mod destination_info {
     
@@ -17300,12 +17375,6 @@ pub mod destination_info {
     }
     
     
-}
-impl DestinationInfo {
-    /// Creates a new builder-style object to manufacture [`DestinationInfo`](crate::model::DestinationInfo).
-    pub fn builder() -> crate::model::destination_info::Builder {
-        crate::model::destination_info::Builder::default()
-    }
 }
 
 /// <p>Describes the source of an export snapshot record.</p>
@@ -17371,6 +17440,13 @@ impl ExportSnapshotRecordSourceInfo {
         self.disk_snapshot_info.as_ref()
     }
 }
+impl ExportSnapshotRecordSourceInfo {
+    /// Creates a new builder-style object to manufacture [`ExportSnapshotRecordSourceInfo`](crate::model::ExportSnapshotRecordSourceInfo).
+    pub fn builder() -> crate::model::export_snapshot_record_source_info::Builder {
+        crate::model::export_snapshot_record_source_info::Builder::default()
+    }
+}
+
 /// See [`ExportSnapshotRecordSourceInfo`](crate::model::ExportSnapshotRecordSourceInfo).
 pub mod export_snapshot_record_source_info {
     
@@ -17485,12 +17561,6 @@ pub mod export_snapshot_record_source_info {
     
     
 }
-impl ExportSnapshotRecordSourceInfo {
-    /// Creates a new builder-style object to manufacture [`ExportSnapshotRecordSourceInfo`](crate::model::ExportSnapshotRecordSourceInfo).
-    pub fn builder() -> crate::model::export_snapshot_record_source_info::Builder {
-        crate::model::export_snapshot_record_source_info::Builder::default()
-    }
-}
 
 /// <p>Describes a disk snapshot.</p>
 #[non_exhaustive]
@@ -17506,6 +17576,13 @@ impl DiskSnapshotInfo {
         self.size_in_gb
     }
 }
+impl DiskSnapshotInfo {
+    /// Creates a new builder-style object to manufacture [`DiskSnapshotInfo`](crate::model::DiskSnapshotInfo).
+    pub fn builder() -> crate::model::disk_snapshot_info::Builder {
+        crate::model::disk_snapshot_info::Builder::default()
+    }
+}
+
 /// See [`DiskSnapshotInfo`](crate::model::DiskSnapshotInfo).
 pub mod disk_snapshot_info {
     
@@ -17536,12 +17613,6 @@ pub mod disk_snapshot_info {
     
     
 }
-impl DiskSnapshotInfo {
-    /// Creates a new builder-style object to manufacture [`DiskSnapshotInfo`](crate::model::DiskSnapshotInfo).
-    pub fn builder() -> crate::model::disk_snapshot_info::Builder {
-        crate::model::disk_snapshot_info::Builder::default()
-    }
-}
 
 /// <p>Describes an instance snapshot.</p>
 #[non_exhaustive]
@@ -17571,6 +17642,13 @@ impl InstanceSnapshotInfo {
         self.from_disk_info.as_deref()
     }
 }
+impl InstanceSnapshotInfo {
+    /// Creates a new builder-style object to manufacture [`InstanceSnapshotInfo`](crate::model::InstanceSnapshotInfo).
+    pub fn builder() -> crate::model::instance_snapshot_info::Builder {
+        crate::model::instance_snapshot_info::Builder::default()
+    }
+}
+
 /// See [`InstanceSnapshotInfo`](crate::model::InstanceSnapshotInfo).
 pub mod instance_snapshot_info {
     
@@ -17631,12 +17709,6 @@ pub mod instance_snapshot_info {
     
     
 }
-impl InstanceSnapshotInfo {
-    /// Creates a new builder-style object to manufacture [`InstanceSnapshotInfo`](crate::model::InstanceSnapshotInfo).
-    pub fn builder() -> crate::model::instance_snapshot_info::Builder {
-        crate::model::instance_snapshot_info::Builder::default()
-    }
-}
 
 /// <p>Describes a disk.</p>
 #[non_exhaustive]
@@ -17673,6 +17745,13 @@ impl DiskInfo {
         self.is_system_disk
     }
 }
+impl DiskInfo {
+    /// Creates a new builder-style object to manufacture [`DiskInfo`](crate::model::DiskInfo).
+    pub fn builder() -> crate::model::disk_info::Builder {
+        crate::model::disk_info::Builder::default()
+    }
+}
+
 /// See [`DiskInfo`](crate::model::DiskInfo).
 pub mod disk_info {
     
@@ -17738,12 +17817,6 @@ pub mod disk_info {
     }
     
     
-}
-impl DiskInfo {
-    /// Creates a new builder-style object to manufacture [`DiskInfo`](crate::model::DiskInfo).
-    pub fn builder() -> crate::model::disk_info::Builder {
-        crate::model::disk_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExportSnapshotRecordSourceType`, it is important to ensure
@@ -17985,6 +18058,13 @@ impl Domain {
         self.registered_domain_delegation_info.as_ref()
     }
 }
+impl Domain {
+    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
+    pub fn builder() -> crate::model::domain::Builder {
+        crate::model::domain::Builder::default()
+    }
+}
+
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
     
@@ -18123,12 +18203,6 @@ pub mod domain {
     
     
 }
-impl Domain {
-    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
-    pub fn builder() -> crate::model::domain::Builder {
-        crate::model::domain::Builder::default()
-    }
-}
 
 /// <p>Describes the delegation state of an Amazon Route&nbsp;53 registered domain to Amazon Lightsail.</p> 
 /// <p>When you delegate an Amazon Route&nbsp;53 registered domain to Lightsail, you can manage the DNS of the domain using a Lightsail DNS zone. You no longer use the Route&nbsp;53 hosted zone to manage the DNS of the domain. To delegate the domain, Lightsail automatically updates the domain's name servers in Route&nbsp;53 to the name servers of the Lightsail DNS zone. Then, Lightsail automatically deletes the Route&nbsp;53 hosted zone for the domain.</p> 
@@ -18159,6 +18233,13 @@ impl RegisteredDomainDelegationInfo {
         self.r53_hosted_zone_deletion_state.as_ref()
     }
 }
+impl RegisteredDomainDelegationInfo {
+    /// Creates a new builder-style object to manufacture [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
+    pub fn builder() -> crate::model::registered_domain_delegation_info::Builder {
+        crate::model::registered_domain_delegation_info::Builder::default()
+    }
+}
+
 /// See [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
 pub mod registered_domain_delegation_info {
     
@@ -18201,12 +18282,6 @@ pub mod registered_domain_delegation_info {
     
     
 }
-impl RegisteredDomainDelegationInfo {
-    /// Creates a new builder-style object to manufacture [`RegisteredDomainDelegationInfo`](crate::model::RegisteredDomainDelegationInfo).
-    pub fn builder() -> crate::model::registered_domain_delegation_info::Builder {
-        crate::model::registered_domain_delegation_info::Builder::default()
-    }
-}
 
 /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
 #[non_exhaustive]
@@ -18243,6 +18318,13 @@ impl R53HostedZoneDeletionState {
         self.message.as_deref()
     }
 }
+impl R53HostedZoneDeletionState {
+    /// Creates a new builder-style object to manufacture [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
+    pub fn builder() -> crate::model::r53_hosted_zone_deletion_state::Builder {
+        crate::model::r53_hosted_zone_deletion_state::Builder::default()
+    }
+}
+
 /// See [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
 pub mod r53_hosted_zone_deletion_state {
     
@@ -18298,12 +18380,6 @@ pub mod r53_hosted_zone_deletion_state {
     }
     
     
-}
-impl R53HostedZoneDeletionState {
-    /// Creates a new builder-style object to manufacture [`R53HostedZoneDeletionState`](crate::model::R53HostedZoneDeletionState).
-    pub fn builder() -> crate::model::r53_hosted_zone_deletion_state::Builder {
-        crate::model::r53_hosted_zone_deletion_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `R53HostedZoneDeletionStateCode`, it is important to ensure
@@ -18434,6 +18510,13 @@ impl NameServersUpdateState {
         self.message.as_deref()
     }
 }
+impl NameServersUpdateState {
+    /// Creates a new builder-style object to manufacture [`NameServersUpdateState`](crate::model::NameServersUpdateState).
+    pub fn builder() -> crate::model::name_servers_update_state::Builder {
+        crate::model::name_servers_update_state::Builder::default()
+    }
+}
+
 /// See [`NameServersUpdateState`](crate::model::NameServersUpdateState).
 pub mod name_servers_update_state {
     
@@ -18489,12 +18572,6 @@ pub mod name_servers_update_state {
     }
     
     
-}
-impl NameServersUpdateState {
-    /// Creates a new builder-style object to manufacture [`NameServersUpdateState`](crate::model::NameServersUpdateState).
-    pub fn builder() -> crate::model::name_servers_update_state::Builder {
-        crate::model::name_servers_update_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NameServersUpdateStateCode`, it is important to ensure
@@ -18746,6 +18823,13 @@ impl LightsailDistribution {
         self.tags.as_deref()
     }
 }
+impl LightsailDistribution {
+    /// Creates a new builder-style object to manufacture [`LightsailDistribution`](crate::model::LightsailDistribution).
+    pub fn builder() -> crate::model::lightsail_distribution::Builder {
+        crate::model::lightsail_distribution::Builder::default()
+    }
+}
+
 /// See [`LightsailDistribution`](crate::model::LightsailDistribution).
 pub mod lightsail_distribution {
     
@@ -19032,12 +19116,6 @@ pub mod lightsail_distribution {
     
     
 }
-impl LightsailDistribution {
-    /// Creates a new builder-style object to manufacture [`LightsailDistribution`](crate::model::LightsailDistribution).
-    pub fn builder() -> crate::model::lightsail_distribution::Builder {
-        crate::model::lightsail_distribution::Builder::default()
-    }
-}
 
 /// <p>Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.</p> 
 /// <p>An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.</p>
@@ -19075,6 +19153,13 @@ impl Origin {
         self.protocol_policy.as_ref()
     }
 }
+impl Origin {
+    /// Creates a new builder-style object to manufacture [`Origin`](crate::model::Origin).
+    pub fn builder() -> crate::model::origin::Builder {
+        crate::model::origin::Builder::default()
+    }
+}
+
 /// See [`Origin`](crate::model::Origin).
 pub mod origin {
     
@@ -19140,12 +19225,6 @@ pub mod origin {
     }
     
     
-}
-impl Origin {
-    /// Creates a new builder-style object to manufacture [`Origin`](crate::model::Origin).
-    pub fn builder() -> crate::model::origin::Builder {
-        crate::model::origin::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DistributionMetricName`, it is important to ensure
@@ -19292,6 +19371,13 @@ impl DistributionBundle {
         self.is_active
     }
 }
+impl DistributionBundle {
+    /// Creates a new builder-style object to manufacture [`DistributionBundle`](crate::model::DistributionBundle).
+    pub fn builder() -> crate::model::distribution_bundle::Builder {
+        crate::model::distribution_bundle::Builder::default()
+    }
+}
+
 /// See [`DistributionBundle`](crate::model::DistributionBundle).
 pub mod distribution_bundle {
     
@@ -19369,12 +19455,6 @@ pub mod distribution_bundle {
     }
     
     
-}
-impl DistributionBundle {
-    /// Creates a new builder-style object to manufacture [`DistributionBundle`](crate::model::DistributionBundle).
-    pub fn builder() -> crate::model::distribution_bundle::Builder {
-        crate::model::distribution_bundle::Builder::default()
-    }
 }
 
 /// <p>Describes a block storage disk snapshot.</p>
@@ -19489,6 +19569,13 @@ impl DiskSnapshot {
         self.is_from_auto_snapshot
     }
 }
+impl DiskSnapshot {
+    /// Creates a new builder-style object to manufacture [`DiskSnapshot`](crate::model::DiskSnapshot).
+    pub fn builder() -> crate::model::disk_snapshot::Builder {
+        crate::model::disk_snapshot::Builder::default()
+    }
+}
+
 /// See [`DiskSnapshot`](crate::model::DiskSnapshot).
 pub mod disk_snapshot {
     
@@ -19693,12 +19780,6 @@ pub mod disk_snapshot {
     
     
 }
-impl DiskSnapshot {
-    /// Creates a new builder-style object to manufacture [`DiskSnapshot`](crate::model::DiskSnapshot).
-    pub fn builder() -> crate::model::disk_snapshot::Builder {
-        crate::model::disk_snapshot::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DiskSnapshotState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -19842,6 +19923,13 @@ impl ContainerServicePower {
         self.is_active
     }
 }
+impl ContainerServicePower {
+    /// Creates a new builder-style object to manufacture [`ContainerServicePower`](crate::model::ContainerServicePower).
+    pub fn builder() -> crate::model::container_service_power::Builder {
+        crate::model::container_service_power::Builder::default()
+    }
+}
+
 /// See [`ContainerServicePower`](crate::model::ContainerServicePower).
 pub mod container_service_power {
     
@@ -19931,12 +20019,6 @@ pub mod container_service_power {
     }
     
     
-}
-impl ContainerServicePower {
-    /// Creates a new builder-style object to manufacture [`ContainerServicePower`](crate::model::ContainerServicePower).
-    pub fn builder() -> crate::model::container_service_power::Builder {
-        crate::model::container_service_power::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContainerServiceMetricName`, it is important to ensure
@@ -20042,6 +20124,13 @@ impl ContainerServiceLogEvent {
         self.message.as_deref()
     }
 }
+impl ContainerServiceLogEvent {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceLogEvent`](crate::model::ContainerServiceLogEvent).
+    pub fn builder() -> crate::model::container_service_log_event::Builder {
+        crate::model::container_service_log_event::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceLogEvent`](crate::model::ContainerServiceLogEvent).
 pub mod container_service_log_event {
     
@@ -20083,12 +20172,6 @@ pub mod container_service_log_event {
     }
     
     
-}
-impl ContainerServiceLogEvent {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceLogEvent`](crate::model::ContainerServiceLogEvent).
-    pub fn builder() -> crate::model::container_service_log_event::Builder {
-        crate::model::container_service_log_event::Builder::default()
-    }
 }
 
 /// <p>Describes a contact method.</p> 
@@ -20174,6 +20257,13 @@ impl ContactMethod {
         self.support_code.as_deref()
     }
 }
+impl ContactMethod {
+    /// Creates a new builder-style object to manufacture [`ContactMethod`](crate::model::ContactMethod).
+    pub fn builder() -> crate::model::contact_method::Builder {
+        crate::model::contact_method::Builder::default()
+    }
+}
+
 /// See [`ContactMethod`](crate::model::ContactMethod).
 pub mod contact_method {
     
@@ -20311,12 +20401,6 @@ pub mod contact_method {
     }
     
     
-}
-impl ContactMethod {
-    /// Creates a new builder-style object to manufacture [`ContactMethod`](crate::model::ContactMethod).
-    pub fn builder() -> crate::model::contact_method::Builder {
-        crate::model::contact_method::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContactMethodStatus`, it is important to ensure
@@ -20470,6 +20554,13 @@ impl CloudFormationStackRecord {
         self.destination_info.as_ref()
     }
 }
+impl CloudFormationStackRecord {
+    /// Creates a new builder-style object to manufacture [`CloudFormationStackRecord`](crate::model::CloudFormationStackRecord).
+    pub fn builder() -> crate::model::cloud_formation_stack_record::Builder {
+        crate::model::cloud_formation_stack_record::Builder::default()
+    }
+}
+
 /// See [`CloudFormationStackRecord`](crate::model::CloudFormationStackRecord).
 pub mod cloud_formation_stack_record {
     
@@ -20590,12 +20681,6 @@ pub mod cloud_formation_stack_record {
     
     
 }
-impl CloudFormationStackRecord {
-    /// Creates a new builder-style object to manufacture [`CloudFormationStackRecord`](crate::model::CloudFormationStackRecord).
-    pub fn builder() -> crate::model::cloud_formation_stack_record::Builder {
-        crate::model::cloud_formation_stack_record::Builder::default()
-    }
-}
 
 /// <p>Describes the source of a CloudFormation stack record (i.e., the export snapshot record).</p>
 #[non_exhaustive]
@@ -20625,6 +20710,13 @@ impl CloudFormationStackRecordSourceInfo {
         self.arn.as_deref()
     }
 }
+impl CloudFormationStackRecordSourceInfo {
+    /// Creates a new builder-style object to manufacture [`CloudFormationStackRecordSourceInfo`](crate::model::CloudFormationStackRecordSourceInfo).
+    pub fn builder() -> crate::model::cloud_formation_stack_record_source_info::Builder {
+        crate::model::cloud_formation_stack_record_source_info::Builder::default()
+    }
+}
+
 /// See [`CloudFormationStackRecordSourceInfo`](crate::model::CloudFormationStackRecordSourceInfo).
 pub mod cloud_formation_stack_record_source_info {
     
@@ -20678,12 +20770,6 @@ pub mod cloud_formation_stack_record_source_info {
     }
     
     
-}
-impl CloudFormationStackRecordSourceInfo {
-    /// Creates a new builder-style object to manufacture [`CloudFormationStackRecordSourceInfo`](crate::model::CloudFormationStackRecordSourceInfo).
-    pub fn builder() -> crate::model::cloud_formation_stack_record_source_info::Builder {
-        crate::model::cloud_formation_stack_record_source_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloudFormationStackRecordSourceType`, it is important to ensure
@@ -20805,6 +20891,13 @@ impl CertificateSummary {
         self.tags.as_deref()
     }
 }
+impl CertificateSummary {
+    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
+    pub fn builder() -> crate::model::certificate_summary::Builder {
+        crate::model::certificate_summary::Builder::default()
+    }
+}
+
 /// See [`CertificateSummary`](crate::model::CertificateSummary).
 pub mod certificate_summary {
     
@@ -20888,12 +20981,6 @@ pub mod certificate_summary {
     }
     
     
-}
-impl CertificateSummary {
-    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
-    pub fn builder() -> crate::model::certificate_summary::Builder {
-        crate::model::certificate_summary::Builder::default()
-    }
 }
 
 /// <p>Describes the full details of an Amazon Lightsail SSL/TLS certificate.</p> <note> 
@@ -21072,6 +21159,13 @@ impl Certificate {
         self.support_code.as_deref()
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
     
@@ -21381,12 +21475,6 @@ pub mod certificate {
     
     
 }
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.</p>
 #[non_exhaustive]
@@ -21437,6 +21525,13 @@ impl RenewalSummary {
         self.updated_at.as_ref()
     }
 }
+impl RenewalSummary {
+    /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::model::RenewalSummary).
+    pub fn builder() -> crate::model::renewal_summary::Builder {
+        crate::model::renewal_summary::Builder::default()
+    }
+}
+
 /// See [`RenewalSummary`](crate::model::RenewalSummary).
 pub mod renewal_summary {
     
@@ -21522,12 +21617,6 @@ pub mod renewal_summary {
     }
     
     
-}
-impl RenewalSummary {
-    /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::model::RenewalSummary).
-    pub fn builder() -> crate::model::renewal_summary::Builder {
-        crate::model::renewal_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RenewalStatus`, it is important to ensure
@@ -21657,6 +21746,13 @@ impl DomainValidationRecord {
         self.validation_status.as_ref()
     }
 }
+impl DomainValidationRecord {
+    /// Creates a new builder-style object to manufacture [`DomainValidationRecord`](crate::model::DomainValidationRecord).
+    pub fn builder() -> crate::model::domain_validation_record::Builder {
+        crate::model::domain_validation_record::Builder::default()
+    }
+}
+
 /// See [`DomainValidationRecord`](crate::model::DomainValidationRecord).
 pub mod domain_validation_record {
     
@@ -21722,12 +21818,6 @@ pub mod domain_validation_record {
     }
     
     
-}
-impl DomainValidationRecord {
-    /// Creates a new builder-style object to manufacture [`DomainValidationRecord`](crate::model::DomainValidationRecord).
-    pub fn builder() -> crate::model::domain_validation_record::Builder {
-        crate::model::domain_validation_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CertificateDomainValidationStatus`, it is important to ensure
@@ -21851,6 +21941,13 @@ impl DnsRecordCreationState {
         self.message.as_deref()
     }
 }
+impl DnsRecordCreationState {
+    /// Creates a new builder-style object to manufacture [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
+    pub fn builder() -> crate::model::dns_record_creation_state::Builder {
+        crate::model::dns_record_creation_state::Builder::default()
+    }
+}
+
 /// See [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
 pub mod dns_record_creation_state {
     
@@ -21904,12 +22001,6 @@ pub mod dns_record_creation_state {
     }
     
     
-}
-impl DnsRecordCreationState {
-    /// Creates a new builder-style object to manufacture [`DnsRecordCreationState`](crate::model::DnsRecordCreationState).
-    pub fn builder() -> crate::model::dns_record_creation_state::Builder {
-        crate::model::dns_record_creation_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DnsRecordCreationStateCode`, it is important to ensure
@@ -22027,6 +22118,13 @@ impl ResourceRecord {
         self.value.as_deref()
     }
 }
+impl ResourceRecord {
+    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
+    pub fn builder() -> crate::model::resource_record::Builder {
+        crate::model::resource_record::Builder::default()
+    }
+}
+
 /// See [`ResourceRecord`](crate::model::ResourceRecord).
 pub mod resource_record {
     
@@ -22080,12 +22178,6 @@ pub mod resource_record {
     }
     
     
-}
-impl ResourceRecord {
-    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
-    pub fn builder() -> crate::model::resource_record::Builder {
-        crate::model::resource_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CertificateStatus`, it is important to ensure
@@ -22279,6 +22371,13 @@ impl Bundle {
         self.supported_platforms.as_deref()
     }
 }
+impl Bundle {
+    /// Creates a new builder-style object to manufacture [`Bundle`](crate::model::Bundle).
+    pub fn builder() -> crate::model::bundle::Builder {
+        crate::model::bundle::Builder::default()
+    }
+}
+
 /// See [`Bundle`](crate::model::Bundle).
 pub mod bundle {
     
@@ -22435,12 +22534,6 @@ pub mod bundle {
     
     
 }
-impl Bundle {
-    /// Creates a new builder-style object to manufacture [`Bundle`](crate::model::Bundle).
-    pub fn builder() -> crate::model::bundle::Builder {
-        crate::model::bundle::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InstancePlatform`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -22592,6 +22685,13 @@ impl AccountLevelBpaSync {
         self.bpa_impacts_lightsail
     }
 }
+impl AccountLevelBpaSync {
+    /// Creates a new builder-style object to manufacture [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync).
+    pub fn builder() -> crate::model::account_level_bpa_sync::Builder {
+        crate::model::account_level_bpa_sync::Builder::default()
+    }
+}
+
 /// See [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync).
 pub mod account_level_bpa_sync {
     
@@ -22689,12 +22789,6 @@ pub mod account_level_bpa_sync {
     }
     
     
-}
-impl AccountLevelBpaSync {
-    /// Creates a new builder-style object to manufacture [`AccountLevelBpaSync`](crate::model::AccountLevelBpaSync).
-    pub fn builder() -> crate::model::account_level_bpa_sync::Builder {
-        crate::model::account_level_bpa_sync::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BpaStatusMessage`, it is important to ensure
@@ -23013,6 +23107,13 @@ impl BucketBundle {
         self.is_active
     }
 }
+impl BucketBundle {
+    /// Creates a new builder-style object to manufacture [`BucketBundle`](crate::model::BucketBundle).
+    pub fn builder() -> crate::model::bucket_bundle::Builder {
+        crate::model::bucket_bundle::Builder::default()
+    }
+}
+
 /// See [`BucketBundle`](crate::model::BucketBundle).
 pub mod bucket_bundle {
     
@@ -23103,12 +23204,6 @@ pub mod bucket_bundle {
     
     
 }
-impl BucketBundle {
-    /// Creates a new builder-style object to manufacture [`BucketBundle`](crate::model::BucketBundle).
-    pub fn builder() -> crate::model::bucket_bundle::Builder {
-        crate::model::bucket_bundle::Builder::default()
-    }
-}
 
 /// <p>Describes an access key for an Amazon Lightsail bucket.</p> 
 /// <p>Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action to create an access key for a specific bucket. For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p> <important> 
@@ -23174,6 +23269,13 @@ impl  std::fmt::Debug for AccessKey  {
         formatter.finish()
     }
 }
+impl AccessKey {
+    /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey).
+    pub fn builder() -> crate::model::access_key::Builder {
+        crate::model::access_key::Builder::default()
+    }
+}
+
 /// See [`AccessKey`](crate::model::AccessKey).
 pub mod access_key {
     
@@ -23271,12 +23373,6 @@ pub mod access_key {
     
     
 }
-impl AccessKey {
-    /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey).
-    pub fn builder() -> crate::model::access_key::Builder {
-        crate::model::access_key::Builder::default()
-    }
-}
 
 /// <p>Describes the last time an access key was used.</p> <note> 
 /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action.</p> 
@@ -23314,6 +23410,13 @@ impl AccessKeyLastUsed {
         self.service_name.as_deref()
     }
 }
+impl AccessKeyLastUsed {
+    /// Creates a new builder-style object to manufacture [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
+    pub fn builder() -> crate::model::access_key_last_used::Builder {
+        crate::model::access_key_last_used::Builder::default()
+    }
+}
+
 /// See [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
 pub mod access_key_last_used {
     
@@ -23373,12 +23476,6 @@ pub mod access_key_last_used {
     }
     
     
-}
-impl AccessKeyLastUsed {
-    /// Creates a new builder-style object to manufacture [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
-    pub fn builder() -> crate::model::access_key_last_used::Builder {
-        crate::model::access_key_last_used::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StatusType`, it is important to ensure
@@ -23554,6 +23651,13 @@ impl Blueprint {
         self.platform.as_ref()
     }
 }
+impl Blueprint {
+    /// Creates a new builder-style object to manufacture [`Blueprint`](crate::model::Blueprint).
+    pub fn builder() -> crate::model::blueprint::Builder {
+        crate::model::blueprint::Builder::default()
+    }
+}
+
 /// See [`Blueprint`](crate::model::Blueprint).
 pub mod blueprint {
     
@@ -23716,12 +23820,6 @@ pub mod blueprint {
     
     
 }
-impl Blueprint {
-    /// Creates a new builder-style object to manufacture [`Blueprint`](crate::model::Blueprint).
-    pub fn builder() -> crate::model::blueprint::Builder {
-        crate::model::blueprint::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BlueprintType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -23840,6 +23938,13 @@ impl AutoSnapshotDetails {
         self.from_attached_disks.as_deref()
     }
 }
+impl AutoSnapshotDetails {
+    /// Creates a new builder-style object to manufacture [`AutoSnapshotDetails`](crate::model::AutoSnapshotDetails).
+    pub fn builder() -> crate::model::auto_snapshot_details::Builder {
+        crate::model::auto_snapshot_details::Builder::default()
+    }
+}
+
 /// See [`AutoSnapshotDetails`](crate::model::AutoSnapshotDetails).
 pub mod auto_snapshot_details {
     
@@ -23912,12 +24017,6 @@ pub mod auto_snapshot_details {
     
     
 }
-impl AutoSnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`AutoSnapshotDetails`](crate::model::AutoSnapshotDetails).
-    pub fn builder() -> crate::model::auto_snapshot_details::Builder {
-        crate::model::auto_snapshot_details::Builder::default()
-    }
-}
 
 /// <p>Describes a block storage disk that is attached to an instance, and is included in an automatic snapshot.</p>
 #[non_exhaustive]
@@ -23940,6 +24039,13 @@ impl AttachedDisk {
         self.size_in_gb
     }
 }
+impl AttachedDisk {
+    /// Creates a new builder-style object to manufacture [`AttachedDisk`](crate::model::AttachedDisk).
+    pub fn builder() -> crate::model::attached_disk::Builder {
+        crate::model::attached_disk::Builder::default()
+    }
+}
+
 /// See [`AttachedDisk`](crate::model::AttachedDisk).
 pub mod attached_disk {
     
@@ -23981,12 +24087,6 @@ pub mod attached_disk {
     }
     
     
-}
-impl AttachedDisk {
-    /// Creates a new builder-style object to manufacture [`AttachedDisk`](crate::model::AttachedDisk).
-    pub fn builder() -> crate::model::attached_disk::Builder {
-        crate::model::attached_disk::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AutoSnapshotStatus`, it is important to ensure
@@ -24271,6 +24371,13 @@ impl Alarm {
         self.notification_enabled
     }
 }
+impl Alarm {
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
+    pub fn builder() -> crate::model::alarm::Builder {
+        crate::model::alarm::Builder::default()
+    }
+}
+
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
     
@@ -24584,12 +24691,6 @@ pub mod alarm {
     
     
 }
-impl Alarm {
-    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
-    pub fn builder() -> crate::model::alarm::Builder {
-        crate::model::alarm::Builder::default()
-    }
-}
 
 /// <p>Describes resource being monitored by an alarm.</p> 
 /// <p>An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
@@ -24622,6 +24723,13 @@ impl MonitoredResourceInfo {
         self.resource_type.as_ref()
     }
 }
+impl MonitoredResourceInfo {
+    /// Creates a new builder-style object to manufacture [`MonitoredResourceInfo`](crate::model::MonitoredResourceInfo).
+    pub fn builder() -> crate::model::monitored_resource_info::Builder {
+        crate::model::monitored_resource_info::Builder::default()
+    }
+}
+
 /// See [`MonitoredResourceInfo`](crate::model::MonitoredResourceInfo).
 pub mod monitored_resource_info {
     
@@ -24678,12 +24786,6 @@ pub mod monitored_resource_info {
     
     
 }
-impl MonitoredResourceInfo {
-    /// Creates a new builder-style object to manufacture [`MonitoredResourceInfo`](crate::model::MonitoredResourceInfo).
-    pub fn builder() -> crate::model::monitored_resource_info::Builder {
-        crate::model::monitored_resource_info::Builder::default()
-    }
-}
 
 /// <p>Describes a request to enable, modify, or disable an add-on for an Amazon Lightsail resource.</p> <note> 
 /// <p>An additional cost may be associated with enabling add-ons. For more information, see the <a href="https://aws.amazon.com/lightsail/pricing/">Lightsail pricing page</a>.</p> 
@@ -24708,6 +24810,13 @@ impl AddOnRequest {
         self.auto_snapshot_add_on_request.as_ref()
     }
 }
+impl AddOnRequest {
+    /// Creates a new builder-style object to manufacture [`AddOnRequest`](crate::model::AddOnRequest).
+    pub fn builder() -> crate::model::add_on_request::Builder {
+        crate::model::add_on_request::Builder::default()
+    }
+}
+
 /// See [`AddOnRequest`](crate::model::AddOnRequest).
 pub mod add_on_request {
     
@@ -24750,12 +24859,6 @@ pub mod add_on_request {
     
     
 }
-impl AddOnRequest {
-    /// Creates a new builder-style object to manufacture [`AddOnRequest`](crate::model::AddOnRequest).
-    pub fn builder() -> crate::model::add_on_request::Builder {
-        crate::model::add_on_request::Builder::default()
-    }
-}
 
 /// <p>Describes a request to enable or modify the automatic snapshot add-on for an Amazon Lightsail instance or disk.</p> 
 /// <p>When you modify the automatic snapshot time for a resource, it is typically effective immediately except under the following conditions:</p> 
@@ -24790,6 +24893,13 @@ impl AutoSnapshotAddOnRequest {
         self.snapshot_time_of_day.as_deref()
     }
 }
+impl AutoSnapshotAddOnRequest {
+    /// Creates a new builder-style object to manufacture [`AutoSnapshotAddOnRequest`](crate::model::AutoSnapshotAddOnRequest).
+    pub fn builder() -> crate::model::auto_snapshot_add_on_request::Builder {
+        crate::model::auto_snapshot_add_on_request::Builder::default()
+    }
+}
+
 /// See [`AutoSnapshotAddOnRequest`](crate::model::AutoSnapshotAddOnRequest).
 pub mod auto_snapshot_add_on_request {
     
@@ -24831,12 +24941,6 @@ pub mod auto_snapshot_add_on_request {
     }
     
     
-}
-impl AutoSnapshotAddOnRequest {
-    /// Creates a new builder-style object to manufacture [`AutoSnapshotAddOnRequest`](crate::model::AutoSnapshotAddOnRequest).
-    pub fn builder() -> crate::model::auto_snapshot_add_on_request::Builder {
-        crate::model::auto_snapshot_add_on_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AddOnType`, it is important to ensure
@@ -24937,6 +25041,13 @@ impl DiskMap {
         self.new_disk_name.as_deref()
     }
 }
+impl DiskMap {
+    /// Creates a new builder-style object to manufacture [`DiskMap`](crate::model::DiskMap).
+    pub fn builder() -> crate::model::disk_map::Builder {
+        crate::model::disk_map::Builder::default()
+    }
+}
+
 /// See [`DiskMap`](crate::model::DiskMap).
 pub mod disk_map {
     
@@ -24979,12 +25090,6 @@ pub mod disk_map {
     
     
 }
-impl DiskMap {
-    /// Creates a new builder-style object to manufacture [`DiskMap`](crate::model::DiskMap).
-    pub fn builder() -> crate::model::disk_map::Builder {
-        crate::model::disk_map::Builder::default()
-    }
-}
 
 /// <p>Describes the login information for the container image registry of an Amazon Lightsail account.</p>
 #[non_exhaustive]
@@ -25023,6 +25128,13 @@ impl ContainerServiceRegistryLogin {
         self.registry.as_deref()
     }
 }
+impl ContainerServiceRegistryLogin {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceRegistryLogin`](crate::model::ContainerServiceRegistryLogin).
+    pub fn builder() -> crate::model::container_service_registry_login::Builder {
+        crate::model::container_service_registry_login::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceRegistryLogin`](crate::model::ContainerServiceRegistryLogin).
 pub mod container_service_registry_login {
     
@@ -25091,12 +25203,6 @@ pub mod container_service_registry_login {
     
     
 }
-impl ContainerServiceRegistryLogin {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceRegistryLogin`](crate::model::ContainerServiceRegistryLogin).
-    pub fn builder() -> crate::model::container_service_registry_login::Builder {
-        crate::model::container_service_registry_login::Builder::default()
-    }
-}
 
 /// <p>Describes the settings of a public endpoint for an Amazon Lightsail container service.</p>
 #[non_exhaustive]
@@ -25126,6 +25232,13 @@ impl EndpointRequest {
         self.health_check.as_ref()
     }
 }
+impl EndpointRequest {
+    /// Creates a new builder-style object to manufacture [`EndpointRequest`](crate::model::EndpointRequest).
+    pub fn builder() -> crate::model::endpoint_request::Builder {
+        crate::model::endpoint_request::Builder::default()
+    }
+}
+
 /// See [`EndpointRequest`](crate::model::EndpointRequest).
 pub mod endpoint_request {
     
@@ -25180,12 +25293,6 @@ pub mod endpoint_request {
     
     
 }
-impl EndpointRequest {
-    /// Creates a new builder-style object to manufacture [`EndpointRequest`](crate::model::EndpointRequest).
-    pub fn builder() -> crate::model::endpoint_request::Builder {
-        crate::model::endpoint_request::Builder::default()
-    }
-}
 
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p> 
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
@@ -25209,6 +25316,13 @@ impl ContainerServiceDeploymentRequest {
         self.public_endpoint.as_ref()
     }
 }
+impl ContainerServiceDeploymentRequest {
+    /// Creates a new builder-style object to manufacture [`ContainerServiceDeploymentRequest`](crate::model::ContainerServiceDeploymentRequest).
+    pub fn builder() -> crate::model::container_service_deployment_request::Builder {
+        crate::model::container_service_deployment_request::Builder::default()
+    }
+}
+
 /// See [`ContainerServiceDeploymentRequest`](crate::model::ContainerServiceDeploymentRequest).
 pub mod container_service_deployment_request {
     
@@ -25256,12 +25370,6 @@ pub mod container_service_deployment_request {
     }
     
     
-}
-impl ContainerServiceDeploymentRequest {
-    /// Creates a new builder-style object to manufacture [`ContainerServiceDeploymentRequest`](crate::model::ContainerServiceDeploymentRequest).
-    pub fn builder() -> crate::model::container_service_deployment_request::Builder {
-        crate::model::container_service_deployment_request::Builder::default()
-    }
 }
 
 /// <p>Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.</p>
@@ -25330,6 +25438,13 @@ impl InstanceEntry {
         self.availability_zone.as_deref()
     }
 }
+impl InstanceEntry {
+    /// Creates a new builder-style object to manufacture [`InstanceEntry`](crate::model::InstanceEntry).
+    pub fn builder() -> crate::model::instance_entry::Builder {
+        crate::model::instance_entry::Builder::default()
+    }
+}
+
 /// See [`InstanceEntry`](crate::model::InstanceEntry).
 pub mod instance_entry {
     
@@ -25431,12 +25546,6 @@ pub mod instance_entry {
     }
     
     
-}
-impl InstanceEntry {
-    /// Creates a new builder-style object to manufacture [`InstanceEntry`](crate::model::InstanceEntry).
-    pub fn builder() -> crate::model::instance_entry::Builder {
-        crate::model::instance_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PortInfoSourceType`, it is important to ensure

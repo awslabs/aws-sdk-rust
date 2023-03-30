@@ -35,6 +35,13 @@ impl ErrorDetails {
         self.resource_type.as_deref()
     }
 }
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
     
@@ -101,12 +108,6 @@ pub mod error_details {
     
     
 }
-impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
-    pub fn builder() -> crate::model::error_details::Builder {
-        crate::model::error_details::Builder::default()
-    }
-}
 
 /// <p>Wave aggregated status.</p>
 #[non_exhaustive]
@@ -150,6 +151,13 @@ impl WaveAggregatedStatus {
         self.total_applications
     }
 }
+impl WaveAggregatedStatus {
+    /// Creates a new builder-style object to manufacture [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
+    pub fn builder() -> crate::model::wave_aggregated_status::Builder {
+        crate::model::wave_aggregated_status::Builder::default()
+    }
+}
+
 /// See [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
 pub mod wave_aggregated_status {
     
@@ -228,12 +236,6 @@ pub mod wave_aggregated_status {
     }
     
     
-}
-impl WaveAggregatedStatus {
-    /// Creates a new builder-style object to manufacture [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
-    pub fn builder() -> crate::model::wave_aggregated_status::Builder {
-        crate::model::wave_aggregated_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WaveProgressStatus`, it is important to ensure
@@ -495,6 +497,13 @@ impl  std::fmt::Debug for Wave  {
         formatter.finish()
     }
 }
+impl Wave {
+    /// Creates a new builder-style object to manufacture [`Wave`](crate::model::Wave).
+    pub fn builder() -> crate::model::wave::Builder {
+        crate::model::wave::Builder::default()
+    }
+}
+
 /// See [`Wave`](crate::model::Wave).
 pub mod wave {
     
@@ -642,12 +651,6 @@ pub mod wave {
     
     
 }
-impl Wave {
-    /// Creates a new builder-style object to manufacture [`Wave`](crate::model::Wave).
-    pub fn builder() -> crate::model::wave::Builder {
-        crate::model::wave::Builder::default()
-    }
-}
 
 /// <p>Waves list filters.</p>
 #[non_exhaustive]
@@ -670,6 +673,13 @@ impl ListWavesRequestFilters {
         self.is_archived
     }
 }
+impl ListWavesRequestFilters {
+    /// Creates a new builder-style object to manufacture [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
+    pub fn builder() -> crate::model::list_waves_request_filters::Builder {
+        crate::model::list_waves_request_filters::Builder::default()
+    }
+}
+
 /// See [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
 pub mod list_waves_request_filters {
     
@@ -718,12 +728,6 @@ pub mod list_waves_request_filters {
     
     
 }
-impl ListWavesRequestFilters {
-    /// Creates a new builder-style object to manufacture [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
-    pub fn builder() -> crate::model::list_waves_request_filters::Builder {
-        crate::model::list_waves_request_filters::Builder::default()
-    }
-}
 
 /// <p>Validate exception field.</p>
 #[non_exhaustive]
@@ -746,6 +750,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -787,12 +798,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -964,6 +969,13 @@ impl  std::fmt::Debug for VcenterClient  {
         formatter.finish()
     }
 }
+impl VcenterClient {
+    /// Creates a new builder-style object to manufacture [`VcenterClient`](crate::model::VcenterClient).
+    pub fn builder() -> crate::model::vcenter_client::Builder {
+        crate::model::vcenter_client::Builder::default()
+    }
+}
+
 /// See [`VcenterClient`](crate::model::VcenterClient).
 pub mod vcenter_client {
     
@@ -1103,12 +1115,6 @@ pub mod vcenter_client {
     }
     
     
-}
-impl VcenterClient {
-    /// Creates a new builder-style object to manufacture [`VcenterClient`](crate::model::VcenterClient).
-    pub fn builder() -> crate::model::vcenter_client::Builder {
-        crate::model::vcenter_client::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationType`, it is important to ensure
@@ -1256,6 +1262,13 @@ impl SourceProperties {
         self.os.as_ref()
     }
 }
+impl SourceProperties {
+    /// Creates a new builder-style object to manufacture [`SourceProperties`](crate::model::SourceProperties).
+    pub fn builder() -> crate::model::source_properties::Builder {
+        crate::model::source_properties::Builder::default()
+    }
+}
+
 /// See [`SourceProperties`](crate::model::SourceProperties).
 pub mod source_properties {
     
@@ -1389,12 +1402,6 @@ pub mod source_properties {
     
     
 }
-impl SourceProperties {
-    /// Creates a new builder-style object to manufacture [`SourceProperties`](crate::model::SourceProperties).
-    pub fn builder() -> crate::model::source_properties::Builder {
-        crate::model::source_properties::Builder::default()
-    }
-}
 
 /// <p>Operating System.</p>
 #[non_exhaustive]
@@ -1410,6 +1417,13 @@ impl Os {
         self.full_string.as_deref()
     }
 }
+impl Os {
+    /// Creates a new builder-style object to manufacture [`Os`](crate::model::Os).
+    pub fn builder() -> crate::model::os::Builder {
+        crate::model::os::Builder::default()
+    }
+}
+
 /// See [`Os`](crate::model::Os).
 pub mod os {
     
@@ -1440,12 +1454,6 @@ pub mod os {
     
     
 }
-impl Os {
-    /// Creates a new builder-style object to manufacture [`Os`](crate::model::Os).
-    pub fn builder() -> crate::model::os::Builder {
-        crate::model::os::Builder::default()
-    }
-}
 
 /// <p>Source server CPU information.</p>
 #[non_exhaustive]
@@ -1468,6 +1476,13 @@ impl Cpu {
         self.model_name.as_deref()
     }
 }
+impl Cpu {
+    /// Creates a new builder-style object to manufacture [`Cpu`](crate::model::Cpu).
+    pub fn builder() -> crate::model::cpu::Builder {
+        crate::model::cpu::Builder::default()
+    }
+}
+
 /// See [`Cpu`](crate::model::Cpu).
 pub mod cpu {
     
@@ -1511,12 +1526,6 @@ pub mod cpu {
     
     
 }
-impl Cpu {
-    /// Creates a new builder-style object to manufacture [`Cpu`](crate::model::Cpu).
-    pub fn builder() -> crate::model::cpu::Builder {
-        crate::model::cpu::Builder::default()
-    }
-}
 
 /// <p>The disk identifier.</p>
 #[non_exhaustive]
@@ -1539,6 +1548,13 @@ impl Disk {
         self.bytes
     }
 }
+impl Disk {
+    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
+    pub fn builder() -> crate::model::disk::Builder {
+        crate::model::disk::Builder::default()
+    }
+}
+
 /// See [`Disk`](crate::model::Disk).
 pub mod disk {
     
@@ -1582,12 +1598,6 @@ pub mod disk {
     
     
 }
-impl Disk {
-    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
-    pub fn builder() -> crate::model::disk::Builder {
-        crate::model::disk::Builder::default()
-    }
-}
 
 /// <p>Network interface.</p>
 #[non_exhaustive]
@@ -1617,6 +1627,13 @@ impl NetworkInterface {
         self.is_primary
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
     
@@ -1677,12 +1694,6 @@ pub mod network_interface {
     
     
 }
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
-}
 
 /// <p>Identification hints.</p>
 #[non_exhaustive]
@@ -1726,6 +1737,13 @@ impl IdentificationHints {
         self.vm_path.as_deref()
     }
 }
+impl IdentificationHints {
+    /// Creates a new builder-style object to manufacture [`IdentificationHints`](crate::model::IdentificationHints).
+    pub fn builder() -> crate::model::identification_hints::Builder {
+        crate::model::identification_hints::Builder::default()
+    }
+}
+
 /// See [`IdentificationHints`](crate::model::IdentificationHints).
 pub mod identification_hints {
     
@@ -1804,12 +1822,6 @@ pub mod identification_hints {
     
     
 }
-impl IdentificationHints {
-    /// Creates a new builder-style object to manufacture [`IdentificationHints`](crate::model::IdentificationHints).
-    pub fn builder() -> crate::model::identification_hints::Builder {
-        crate::model::identification_hints::Builder::default()
-    }
-}
 
 /// <p>Lifecycle.</p>
 #[non_exhaustive]
@@ -1867,6 +1879,13 @@ impl LifeCycle {
         self.state.as_ref()
     }
 }
+impl LifeCycle {
+    /// Creates a new builder-style object to manufacture [`LifeCycle`](crate::model::LifeCycle).
+    pub fn builder() -> crate::model::life_cycle::Builder {
+        crate::model::life_cycle::Builder::default()
+    }
+}
+
 /// See [`LifeCycle`](crate::model::LifeCycle).
 pub mod life_cycle {
     
@@ -1968,12 +1987,6 @@ pub mod life_cycle {
     }
     
     
-}
-impl LifeCycle {
-    /// Creates a new builder-style object to manufacture [`LifeCycle`](crate::model::LifeCycle).
-    pub fn builder() -> crate::model::life_cycle::Builder {
-        crate::model::life_cycle::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LifeCycleState`, it is important to ensure
@@ -2121,6 +2134,13 @@ impl LifeCycleLastCutover {
         self.finalized.as_ref()
     }
 }
+impl LifeCycleLastCutover {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
+    pub fn builder() -> crate::model::life_cycle_last_cutover::Builder {
+        crate::model::life_cycle_last_cutover::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
 pub mod life_cycle_last_cutover {
     
@@ -2175,12 +2195,6 @@ pub mod life_cycle_last_cutover {
     
     
 }
-impl LifeCycleLastCutover {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
-    pub fn builder() -> crate::model::life_cycle_last_cutover::Builder {
-        crate::model::life_cycle_last_cutover::Builder::default()
-    }
-}
 
 /// <p>Lifecycle Cutover finalized</p>
 #[non_exhaustive]
@@ -2196,6 +2210,13 @@ impl LifeCycleLastCutoverFinalized {
         self.api_call_date_time.as_deref()
     }
 }
+impl LifeCycleLastCutoverFinalized {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
+    pub fn builder() -> crate::model::life_cycle_last_cutover_finalized::Builder {
+        crate::model::life_cycle_last_cutover_finalized::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
 pub mod life_cycle_last_cutover_finalized {
     
@@ -2226,12 +2247,6 @@ pub mod life_cycle_last_cutover_finalized {
     
     
 }
-impl LifeCycleLastCutoverFinalized {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
-    pub fn builder() -> crate::model::life_cycle_last_cutover_finalized::Builder {
-        crate::model::life_cycle_last_cutover_finalized::Builder::default()
-    }
-}
 
 /// <p>Lifecycle last Cutover reverted.</p>
 #[non_exhaustive]
@@ -2247,6 +2262,13 @@ impl LifeCycleLastCutoverReverted {
         self.api_call_date_time.as_deref()
     }
 }
+impl LifeCycleLastCutoverReverted {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
+    pub fn builder() -> crate::model::life_cycle_last_cutover_reverted::Builder {
+        crate::model::life_cycle_last_cutover_reverted::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
 pub mod life_cycle_last_cutover_reverted {
     
@@ -2277,12 +2299,6 @@ pub mod life_cycle_last_cutover_reverted {
     
     
 }
-impl LifeCycleLastCutoverReverted {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
-    pub fn builder() -> crate::model::life_cycle_last_cutover_reverted::Builder {
-        crate::model::life_cycle_last_cutover_reverted::Builder::default()
-    }
-}
 
 /// <p>Lifecycle last Cutover initiated.</p>
 #[non_exhaustive]
@@ -2305,6 +2321,13 @@ impl LifeCycleLastCutoverInitiated {
         self.job_id.as_deref()
     }
 }
+impl LifeCycleLastCutoverInitiated {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
+    pub fn builder() -> crate::model::life_cycle_last_cutover_initiated::Builder {
+        crate::model::life_cycle_last_cutover_initiated::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
 pub mod life_cycle_last_cutover_initiated {
     
@@ -2347,12 +2370,6 @@ pub mod life_cycle_last_cutover_initiated {
     
     
 }
-impl LifeCycleLastCutoverInitiated {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
-    pub fn builder() -> crate::model::life_cycle_last_cutover_initiated::Builder {
-        crate::model::life_cycle_last_cutover_initiated::Builder::default()
-    }
-}
 
 /// <p>Lifecycle last Test.</p>
 #[non_exhaustive]
@@ -2382,6 +2399,13 @@ impl LifeCycleLastTest {
         self.finalized.as_ref()
     }
 }
+impl LifeCycleLastTest {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
+    pub fn builder() -> crate::model::life_cycle_last_test::Builder {
+        crate::model::life_cycle_last_test::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
 pub mod life_cycle_last_test {
     
@@ -2436,12 +2460,6 @@ pub mod life_cycle_last_test {
     
     
 }
-impl LifeCycleLastTest {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
-    pub fn builder() -> crate::model::life_cycle_last_test::Builder {
-        crate::model::life_cycle_last_test::Builder::default()
-    }
-}
 
 /// <p>Lifecycle last Test finalized.</p>
 #[non_exhaustive]
@@ -2457,6 +2475,13 @@ impl LifeCycleLastTestFinalized {
         self.api_call_date_time.as_deref()
     }
 }
+impl LifeCycleLastTestFinalized {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
+    pub fn builder() -> crate::model::life_cycle_last_test_finalized::Builder {
+        crate::model::life_cycle_last_test_finalized::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
 pub mod life_cycle_last_test_finalized {
     
@@ -2487,12 +2512,6 @@ pub mod life_cycle_last_test_finalized {
     
     
 }
-impl LifeCycleLastTestFinalized {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
-    pub fn builder() -> crate::model::life_cycle_last_test_finalized::Builder {
-        crate::model::life_cycle_last_test_finalized::Builder::default()
-    }
-}
 
 /// <p>Lifecycle last Test reverted.</p>
 #[non_exhaustive]
@@ -2508,6 +2527,13 @@ impl LifeCycleLastTestReverted {
         self.api_call_date_time.as_deref()
     }
 }
+impl LifeCycleLastTestReverted {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
+    pub fn builder() -> crate::model::life_cycle_last_test_reverted::Builder {
+        crate::model::life_cycle_last_test_reverted::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
 pub mod life_cycle_last_test_reverted {
     
@@ -2538,12 +2564,6 @@ pub mod life_cycle_last_test_reverted {
     
     
 }
-impl LifeCycleLastTestReverted {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
-    pub fn builder() -> crate::model::life_cycle_last_test_reverted::Builder {
-        crate::model::life_cycle_last_test_reverted::Builder::default()
-    }
-}
 
 /// <p>Lifecycle last Test initiated.</p>
 #[non_exhaustive]
@@ -2566,6 +2586,13 @@ impl LifeCycleLastTestInitiated {
         self.job_id.as_deref()
     }
 }
+impl LifeCycleLastTestInitiated {
+    /// Creates a new builder-style object to manufacture [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
+    pub fn builder() -> crate::model::life_cycle_last_test_initiated::Builder {
+        crate::model::life_cycle_last_test_initiated::Builder::default()
+    }
+}
+
 /// See [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
 pub mod life_cycle_last_test_initiated {
     
@@ -2607,12 +2634,6 @@ pub mod life_cycle_last_test_initiated {
     }
     
     
-}
-impl LifeCycleLastTestInitiated {
-    /// Creates a new builder-style object to manufacture [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
-    pub fn builder() -> crate::model::life_cycle_last_test_initiated::Builder {
-        crate::model::life_cycle_last_test_initiated::Builder::default()
-    }
 }
 
 /// <p>Request data replication info.</p>
@@ -2671,6 +2692,13 @@ impl DataReplicationInfo {
         self.last_snapshot_date_time.as_deref()
     }
 }
+impl DataReplicationInfo {
+    /// Creates a new builder-style object to manufacture [`DataReplicationInfo`](crate::model::DataReplicationInfo).
+    pub fn builder() -> crate::model::data_replication_info::Builder {
+        crate::model::data_replication_info::Builder::default()
+    }
+}
+
 /// See [`DataReplicationInfo`](crate::model::DataReplicationInfo).
 pub mod data_replication_info {
     
@@ -2779,12 +2807,6 @@ pub mod data_replication_info {
     
     
 }
-impl DataReplicationInfo {
-    /// Creates a new builder-style object to manufacture [`DataReplicationInfo`](crate::model::DataReplicationInfo).
-    pub fn builder() -> crate::model::data_replication_info::Builder {
-        crate::model::data_replication_info::Builder::default()
-    }
-}
 
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
@@ -2807,6 +2829,13 @@ impl DataReplicationError {
         self.raw_error.as_deref()
     }
 }
+impl DataReplicationError {
+    /// Creates a new builder-style object to manufacture [`DataReplicationError`](crate::model::DataReplicationError).
+    pub fn builder() -> crate::model::data_replication_error::Builder {
+        crate::model::data_replication_error::Builder::default()
+    }
+}
+
 /// See [`DataReplicationError`](crate::model::DataReplicationError).
 pub mod data_replication_error {
     
@@ -2848,12 +2877,6 @@ pub mod data_replication_error {
     }
     
     
-}
-impl DataReplicationError {
-    /// Creates a new builder-style object to manufacture [`DataReplicationError`](crate::model::DataReplicationError).
-    pub fn builder() -> crate::model::data_replication_error::Builder {
-        crate::model::data_replication_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataReplicationErrorString`, it is important to ensure
@@ -3036,6 +3059,13 @@ impl DataReplicationInitiation {
         self.steps.as_deref()
     }
 }
+impl DataReplicationInitiation {
+    /// Creates a new builder-style object to manufacture [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
+    pub fn builder() -> crate::model::data_replication_initiation::Builder {
+        crate::model::data_replication_initiation::Builder::default()
+    }
+}
+
 /// See [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
 pub mod data_replication_initiation {
     
@@ -3096,12 +3126,6 @@ pub mod data_replication_initiation {
     
     
 }
-impl DataReplicationInitiation {
-    /// Creates a new builder-style object to manufacture [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
-    pub fn builder() -> crate::model::data_replication_initiation::Builder {
-        crate::model::data_replication_initiation::Builder::default()
-    }
-}
 
 /// <p>Data replication initiation step.</p>
 #[non_exhaustive]
@@ -3124,6 +3148,13 @@ impl DataReplicationInitiationStep {
         self.status.as_ref()
     }
 }
+impl DataReplicationInitiationStep {
+    /// Creates a new builder-style object to manufacture [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
+    pub fn builder() -> crate::model::data_replication_initiation_step::Builder {
+        crate::model::data_replication_initiation_step::Builder::default()
+    }
+}
+
 /// See [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
 pub mod data_replication_initiation_step {
     
@@ -3165,12 +3196,6 @@ pub mod data_replication_initiation_step {
     }
     
     
-}
-impl DataReplicationInitiationStep {
-    /// Creates a new builder-style object to manufacture [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
-    pub fn builder() -> crate::model::data_replication_initiation_step::Builder {
-        crate::model::data_replication_initiation_step::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataReplicationInitiationStepStatus`, it is important to ensure
@@ -3571,6 +3596,13 @@ impl DataReplicationInfoReplicatedDisk {
         self.backlogged_storage_bytes
     }
 }
+impl DataReplicationInfoReplicatedDisk {
+    /// Creates a new builder-style object to manufacture [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
+    pub fn builder() -> crate::model::data_replication_info_replicated_disk::Builder {
+        crate::model::data_replication_info_replicated_disk::Builder::default()
+    }
+}
+
 /// See [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
 pub mod data_replication_info_replicated_disk {
     
@@ -3653,12 +3685,6 @@ pub mod data_replication_info_replicated_disk {
     
     
 }
-impl DataReplicationInfoReplicatedDisk {
-    /// Creates a new builder-style object to manufacture [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
-    pub fn builder() -> crate::model::data_replication_info_replicated_disk::Builder {
-        crate::model::data_replication_info_replicated_disk::Builder::default()
-    }
-}
 
 /// <p>Launched instance.</p>
 #[non_exhaustive]
@@ -3688,6 +3714,13 @@ impl LaunchedInstance {
         self.first_boot.as_ref()
     }
 }
+impl LaunchedInstance {
+    /// Creates a new builder-style object to manufacture [`LaunchedInstance`](crate::model::LaunchedInstance).
+    pub fn builder() -> crate::model::launched_instance::Builder {
+        crate::model::launched_instance::Builder::default()
+    }
+}
+
 /// See [`LaunchedInstance`](crate::model::LaunchedInstance).
 pub mod launched_instance {
     
@@ -3741,12 +3774,6 @@ pub mod launched_instance {
     }
     
     
-}
-impl LaunchedInstance {
-    /// Creates a new builder-style object to manufacture [`LaunchedInstance`](crate::model::LaunchedInstance).
-    pub fn builder() -> crate::model::launched_instance::Builder {
-        crate::model::launched_instance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FirstBoot`, it is important to ensure
@@ -4047,6 +4074,13 @@ impl ReplicationConfigurationReplicatedDisk {
         self.throughput
     }
 }
+impl ReplicationConfigurationReplicatedDisk {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
+    pub fn builder() -> crate::model::replication_configuration_replicated_disk::Builder {
+        crate::model::replication_configuration_replicated_disk::Builder::default()
+    }
+}
+
 /// See [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
 pub mod replication_configuration_replicated_disk {
     
@@ -4126,12 +4160,6 @@ pub mod replication_configuration_replicated_disk {
     }
     
     
-}
-impl ReplicationConfigurationReplicatedDisk {
-    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
-    pub fn builder() -> crate::model::replication_configuration_replicated_disk::Builder {
-        crate::model::replication_configuration_replicated_disk::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationConfigurationReplicatedDiskStagingDiskType`, it is important to ensure
@@ -4375,6 +4403,13 @@ impl PostLaunchActions {
         self.ssm_documents.as_deref()
     }
 }
+impl PostLaunchActions {
+    /// Creates a new builder-style object to manufacture [`PostLaunchActions`](crate::model::PostLaunchActions).
+    pub fn builder() -> crate::model::post_launch_actions::Builder {
+        crate::model::post_launch_actions::Builder::default()
+    }
+}
+
 /// See [`PostLaunchActions`](crate::model::PostLaunchActions).
 pub mod post_launch_actions {
     
@@ -4459,12 +4494,6 @@ pub mod post_launch_actions {
     
     
 }
-impl PostLaunchActions {
-    /// Creates a new builder-style object to manufacture [`PostLaunchActions`](crate::model::PostLaunchActions).
-    pub fn builder() -> crate::model::post_launch_actions::Builder {
-        crate::model::post_launch_actions::Builder::default()
-    }
-}
 
 /// <p>AWS Systems Manager Document.</p>
 #[non_exhaustive]
@@ -4508,6 +4537,13 @@ impl SsmDocument {
         self.parameters.as_ref()
     }
 }
+impl SsmDocument {
+    /// Creates a new builder-style object to manufacture [`SsmDocument`](crate::model::SsmDocument).
+    pub fn builder() -> crate::model::ssm_document::Builder {
+        crate::model::ssm_document::Builder::default()
+    }
+}
+
 /// See [`SsmDocument`](crate::model::SsmDocument).
 pub mod ssm_document {
     
@@ -4593,12 +4629,6 @@ pub mod ssm_document {
     
     
 }
-impl SsmDocument {
-    /// Creates a new builder-style object to manufacture [`SsmDocument`](crate::model::SsmDocument).
-    pub fn builder() -> crate::model::ssm_document::Builder {
-        crate::model::ssm_document::Builder::default()
-    }
-}
 
 /// <p>AWS Systems Manager Parameter Store parameter.</p>
 #[non_exhaustive]
@@ -4621,6 +4651,13 @@ impl SsmParameterStoreParameter {
         self.parameter_name.as_deref()
     }
 }
+impl SsmParameterStoreParameter {
+    /// Creates a new builder-style object to manufacture [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
+    pub fn builder() -> crate::model::ssm_parameter_store_parameter::Builder {
+        crate::model::ssm_parameter_store_parameter::Builder::default()
+    }
+}
+
 /// See [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
 pub mod ssm_parameter_store_parameter {
     
@@ -4662,12 +4699,6 @@ pub mod ssm_parameter_store_parameter {
     }
     
     
-}
-impl SsmParameterStoreParameter {
-    /// Creates a new builder-style object to manufacture [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
-    pub fn builder() -> crate::model::ssm_parameter_store_parameter::Builder {
-        crate::model::ssm_parameter_store_parameter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SsmParameterStoreParameterType`, it is important to ensure
@@ -4930,6 +4961,13 @@ impl Licensing {
         self.os_byol
     }
 }
+impl Licensing {
+    /// Creates a new builder-style object to manufacture [`Licensing`](crate::model::Licensing).
+    pub fn builder() -> crate::model::licensing::Builder {
+        crate::model::licensing::Builder::default()
+    }
+}
+
 /// See [`Licensing`](crate::model::Licensing).
 pub mod licensing {
     
@@ -4959,12 +4997,6 @@ pub mod licensing {
     }
     
     
-}
-impl Licensing {
-    /// Creates a new builder-style object to manufacture [`Licensing`](crate::model::Licensing).
-    pub fn builder() -> crate::model::licensing::Builder {
-        crate::model::licensing::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetInstanceTypeRightSizingMethod`, it is important to ensure
@@ -5201,6 +5233,13 @@ impl SourceServerActionDocument {
         self.parameters.as_ref()
     }
 }
+impl SourceServerActionDocument {
+    /// Creates a new builder-style object to manufacture [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
+    pub fn builder() -> crate::model::source_server_action_document::Builder {
+        crate::model::source_server_action_document::Builder::default()
+    }
+}
+
 /// See [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
 pub mod source_server_action_document {
     
@@ -5335,12 +5374,6 @@ pub mod source_server_action_document {
     
     
 }
-impl SourceServerActionDocument {
-    /// Creates a new builder-style object to manufacture [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
-    pub fn builder() -> crate::model::source_server_action_document::Builder {
-        crate::model::source_server_action_document::Builder::default()
-    }
-}
 
 /// <p>Source server post migration custom action filters.</p>
 #[non_exhaustive]
@@ -5356,6 +5389,13 @@ impl SourceServerActionsRequestFilters {
         self.action_i_ds.as_deref()
     }
 }
+impl SourceServerActionsRequestFilters {
+    /// Creates a new builder-style object to manufacture [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
+    pub fn builder() -> crate::model::source_server_actions_request_filters::Builder {
+        crate::model::source_server_actions_request_filters::Builder::default()
+    }
+}
+
 /// See [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
 pub mod source_server_actions_request_filters {
     
@@ -5392,12 +5432,6 @@ pub mod source_server_actions_request_filters {
     
     
 }
-impl SourceServerActionsRequestFilters {
-    /// Creates a new builder-style object to manufacture [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
-    pub fn builder() -> crate::model::source_server_actions_request_filters::Builder {
-        crate::model::source_server_actions_request_filters::Builder::default()
-    }
-}
 
 /// <p>The request to change the source server migration lifecycle state.</p>
 #[non_exhaustive]
@@ -5413,6 +5447,13 @@ impl ChangeServerLifeCycleStateSourceServerLifecycle {
         self.state.as_ref()
     }
 }
+impl ChangeServerLifeCycleStateSourceServerLifecycle {
+    /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
+    pub fn builder() -> crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder {
+        crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder::default()
+    }
+}
+
 /// See [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
 pub mod change_server_life_cycle_state_source_server_lifecycle {
     
@@ -5442,12 +5483,6 @@ pub mod change_server_life_cycle_state_source_server_lifecycle {
     }
     
     
-}
-impl ChangeServerLifeCycleStateSourceServerLifecycle {
-    /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
-    pub fn builder() -> crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder {
-        crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChangeServerLifeCycleStateSourceServerLifecycleState`, it is important to ensure
@@ -5622,6 +5657,13 @@ impl  std::fmt::Debug for Job  {
         formatter.finish()
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
     
@@ -5775,12 +5817,6 @@ pub mod job {
     
     
 }
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
-    }
-}
 
 /// <p>Server participating in Job.</p>
 #[non_exhaustive]
@@ -5817,6 +5853,13 @@ impl ParticipatingServer {
         self.post_launch_actions_status.as_ref()
     }
 }
+impl ParticipatingServer {
+    /// Creates a new builder-style object to manufacture [`ParticipatingServer`](crate::model::ParticipatingServer).
+    pub fn builder() -> crate::model::participating_server::Builder {
+        crate::model::participating_server::Builder::default()
+    }
+}
+
 /// See [`ParticipatingServer`](crate::model::ParticipatingServer).
 pub mod participating_server {
     
@@ -5883,12 +5926,6 @@ pub mod participating_server {
     
     
 }
-impl ParticipatingServer {
-    /// Creates a new builder-style object to manufacture [`ParticipatingServer`](crate::model::ParticipatingServer).
-    pub fn builder() -> crate::model::participating_server::Builder {
-        crate::model::participating_server::Builder::default()
-    }
-}
 
 /// <p>Status of the Post Launch Actions running on the Test or Cutover instance.</p>
 #[non_exhaustive]
@@ -5911,6 +5948,13 @@ impl PostLaunchActionsStatus {
         self.post_launch_actions_launch_status_list.as_deref()
     }
 }
+impl PostLaunchActionsStatus {
+    /// Creates a new builder-style object to manufacture [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
+    pub fn builder() -> crate::model::post_launch_actions_status::Builder {
+        crate::model::post_launch_actions_status::Builder::default()
+    }
+}
+
 /// See [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
 pub mod post_launch_actions_status {
     
@@ -5959,12 +6003,6 @@ pub mod post_launch_actions_status {
     
     
 }
-impl PostLaunchActionsStatus {
-    /// Creates a new builder-style object to manufacture [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
-    pub fn builder() -> crate::model::post_launch_actions_status::Builder {
-        crate::model::post_launch_actions_status::Builder::default()
-    }
-}
 
 /// <p>Launch Status of the Job Post Launch Actions.</p>
 #[non_exhaustive]
@@ -6008,6 +6046,13 @@ impl JobPostLaunchActionsLaunchStatus {
         self.failure_reason.as_deref()
     }
 }
+impl JobPostLaunchActionsLaunchStatus {
+    /// Creates a new builder-style object to manufacture [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
+    pub fn builder() -> crate::model::job_post_launch_actions_launch_status::Builder {
+        crate::model::job_post_launch_actions_launch_status::Builder::default()
+    }
+}
+
 /// See [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
 pub mod job_post_launch_actions_launch_status {
     
@@ -6085,12 +6130,6 @@ pub mod job_post_launch_actions_launch_status {
     }
     
     
-}
-impl JobPostLaunchActionsLaunchStatus {
-    /// Creates a new builder-style object to manufacture [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
-    pub fn builder() -> crate::model::job_post_launch_actions_launch_status::Builder {
-        crate::model::job_post_launch_actions_launch_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PostLaunchActionExecutionStatus`, it is important to ensure
@@ -6721,6 +6760,13 @@ impl  std::fmt::Debug for SourceServer  {
         formatter.finish()
     }
 }
+impl SourceServer {
+    /// Creates a new builder-style object to manufacture [`SourceServer`](crate::model::SourceServer).
+    pub fn builder() -> crate::model::source_server::Builder {
+        crate::model::source_server::Builder::default()
+    }
+}
+
 /// See [`SourceServer`](crate::model::SourceServer).
 pub mod source_server {
     
@@ -6894,12 +6940,6 @@ pub mod source_server {
     
     
 }
-impl SourceServer {
-    /// Creates a new builder-style object to manufacture [`SourceServer`](crate::model::SourceServer).
-    pub fn builder() -> crate::model::source_server::Builder {
-        crate::model::source_server::Builder::default()
-    }
-}
 
 /// <p>Request to filter Source Servers list.</p>
 #[non_exhaustive]
@@ -6943,6 +6983,13 @@ impl DescribeSourceServersRequestFilters {
         self.application_i_ds.as_deref()
     }
 }
+impl DescribeSourceServersRequestFilters {
+    /// Creates a new builder-style object to manufacture [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
+    pub fn builder() -> crate::model::describe_source_servers_request_filters::Builder {
+        crate::model::describe_source_servers_request_filters::Builder::default()
+    }
+}
+
 /// See [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
 pub mod describe_source_servers_request_filters {
     
@@ -7044,12 +7091,6 @@ pub mod describe_source_servers_request_filters {
     }
     
     
-}
-impl DescribeSourceServersRequestFilters {
-    /// Creates a new builder-style object to manufacture [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
-    pub fn builder() -> crate::model::describe_source_servers_request_filters::Builder {
-        crate::model::describe_source_servers_request_filters::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -7185,6 +7226,13 @@ impl  std::fmt::Debug for ReplicationConfigurationTemplate  {
         formatter.finish()
     }
 }
+impl ReplicationConfigurationTemplate {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
+    pub fn builder() -> crate::model::replication_configuration_template::Builder {
+        crate::model::replication_configuration_template::Builder::default()
+    }
+}
+
 /// See [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
 pub mod replication_configuration_template {
     
@@ -7423,12 +7471,6 @@ pub mod replication_configuration_template {
     
     
 }
-impl ReplicationConfigurationTemplate {
-    /// Creates a new builder-style object to manufacture [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
-    pub fn builder() -> crate::model::replication_configuration_template::Builder {
-        crate::model::replication_configuration_template::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7507,6 +7549,13 @@ impl TemplateActionDocument {
         self.operating_system.as_deref()
     }
 }
+impl TemplateActionDocument {
+    /// Creates a new builder-style object to manufacture [`TemplateActionDocument`](crate::model::TemplateActionDocument).
+    pub fn builder() -> crate::model::template_action_document::Builder {
+        crate::model::template_action_document::Builder::default()
+    }
+}
+
 /// See [`TemplateActionDocument`](crate::model::TemplateActionDocument).
 pub mod template_action_document {
     
@@ -7653,12 +7702,6 @@ pub mod template_action_document {
     
     
 }
-impl TemplateActionDocument {
-    /// Creates a new builder-style object to manufacture [`TemplateActionDocument`](crate::model::TemplateActionDocument).
-    pub fn builder() -> crate::model::template_action_document::Builder {
-        crate::model::template_action_document::Builder::default()
-    }
-}
 
 /// <p>Template post migration custom action filters.</p>
 #[non_exhaustive]
@@ -7674,6 +7717,13 @@ impl TemplateActionsRequestFilters {
         self.action_i_ds.as_deref()
     }
 }
+impl TemplateActionsRequestFilters {
+    /// Creates a new builder-style object to manufacture [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
+    pub fn builder() -> crate::model::template_actions_request_filters::Builder {
+        crate::model::template_actions_request_filters::Builder::default()
+    }
+}
+
 /// See [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
 pub mod template_actions_request_filters {
     
@@ -7709,12 +7759,6 @@ pub mod template_actions_request_filters {
     }
     
     
-}
-impl TemplateActionsRequestFilters {
-    /// Creates a new builder-style object to manufacture [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
-    pub fn builder() -> crate::model::template_actions_request_filters::Builder {
-        crate::model::template_actions_request_filters::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -7866,6 +7910,13 @@ impl  std::fmt::Debug for LaunchConfigurationTemplate  {
         formatter.finish()
     }
 }
+impl LaunchConfigurationTemplate {
+    /// Creates a new builder-style object to manufacture [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
+    pub fn builder() -> crate::model::launch_configuration_template::Builder {
+        crate::model::launch_configuration_template::Builder::default()
+    }
+}
+
 /// See [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
 pub mod launch_configuration_template {
     
@@ -8118,12 +8169,6 @@ pub mod launch_configuration_template {
     
     
 }
-impl LaunchConfigurationTemplate {
-    /// Creates a new builder-style object to manufacture [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
-    pub fn builder() -> crate::model::launch_configuration_template::Builder {
-        crate::model::launch_configuration_template::Builder::default()
-    }
-}
 
 /// <p>Launch template disk configuration.</p>
 #[non_exhaustive]
@@ -8153,6 +8198,13 @@ impl LaunchTemplateDiskConf {
         self.throughput
     }
 }
+impl LaunchTemplateDiskConf {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
+    pub fn builder() -> crate::model::launch_template_disk_conf::Builder {
+        crate::model::launch_template_disk_conf::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
 pub mod launch_template_disk_conf {
     
@@ -8208,12 +8260,6 @@ pub mod launch_template_disk_conf {
     }
     
     
-}
-impl LaunchTemplateDiskConf {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
-    pub fn builder() -> crate::model::launch_template_disk_conf::Builder {
-        crate::model::launch_template_disk_conf::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VolumeType`, it is important to ensure
@@ -8351,6 +8397,13 @@ impl JobLog {
         self.event_data.as_ref()
     }
 }
+impl JobLog {
+    /// Creates a new builder-style object to manufacture [`JobLog`](crate::model::JobLog).
+    pub fn builder() -> crate::model::job_log::Builder {
+        crate::model::job_log::Builder::default()
+    }
+}
+
 /// See [`JobLog`](crate::model::JobLog).
 pub mod job_log {
     
@@ -8405,12 +8458,6 @@ pub mod job_log {
     
     
 }
-impl JobLog {
-    /// Creates a new builder-style object to manufacture [`JobLog`](crate::model::JobLog).
-    pub fn builder() -> crate::model::job_log::Builder {
-        crate::model::job_log::Builder::default()
-    }
-}
 
 /// <p>Job log data</p>
 #[non_exhaustive]
@@ -8447,6 +8494,13 @@ impl JobLogEventData {
         self.raw_error.as_deref()
     }
 }
+impl JobLogEventData {
+    /// Creates a new builder-style object to manufacture [`JobLogEventData`](crate::model::JobLogEventData).
+    pub fn builder() -> crate::model::job_log_event_data::Builder {
+        crate::model::job_log_event_data::Builder::default()
+    }
+}
+
 /// See [`JobLogEventData`](crate::model::JobLogEventData).
 pub mod job_log_event_data {
     
@@ -8512,12 +8566,6 @@ pub mod job_log_event_data {
     }
     
     
-}
-impl JobLogEventData {
-    /// Creates a new builder-style object to manufacture [`JobLogEventData`](crate::model::JobLogEventData).
-    pub fn builder() -> crate::model::job_log_event_data::Builder {
-        crate::model::job_log_event_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobLogEvent`, it is important to ensure
@@ -8700,6 +8748,13 @@ impl DescribeJobsRequestFilters {
         self.to_date.as_deref()
     }
 }
+impl DescribeJobsRequestFilters {
+    /// Creates a new builder-style object to manufacture [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
+    pub fn builder() -> crate::model::describe_jobs_request_filters::Builder {
+        crate::model::describe_jobs_request_filters::Builder::default()
+    }
+}
+
 /// See [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
 pub mod describe_jobs_request_filters {
     
@@ -8760,12 +8815,6 @@ pub mod describe_jobs_request_filters {
     
     
 }
-impl DescribeJobsRequestFilters {
-    /// Creates a new builder-style object to manufacture [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
-    pub fn builder() -> crate::model::describe_jobs_request_filters::Builder {
-        crate::model::describe_jobs_request_filters::Builder::default()
-    }
-}
 
 /// <p>Application aggregated status.</p>
 #[non_exhaustive]
@@ -8802,6 +8851,13 @@ impl ApplicationAggregatedStatus {
         self.total_source_servers
     }
 }
+impl ApplicationAggregatedStatus {
+    /// Creates a new builder-style object to manufacture [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
+    pub fn builder() -> crate::model::application_aggregated_status::Builder {
+        crate::model::application_aggregated_status::Builder::default()
+    }
+}
+
 /// See [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
 pub mod application_aggregated_status {
     
@@ -8868,12 +8924,6 @@ pub mod application_aggregated_status {
     }
     
     
-}
-impl ApplicationAggregatedStatus {
-    /// Creates a new builder-style object to manufacture [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
-    pub fn builder() -> crate::model::application_aggregated_status::Builder {
-        crate::model::application_aggregated_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ApplicationProgressStatus`, it is important to ensure
@@ -9143,6 +9193,13 @@ impl  std::fmt::Debug for Application  {
         formatter.finish()
     }
 }
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
 /// See [`Application`](crate::model::Application).
 pub mod application {
     
@@ -9303,12 +9360,6 @@ pub mod application {
     
     
 }
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
-    }
-}
 
 /// <p>Applications list filters.</p>
 #[non_exhaustive]
@@ -9338,6 +9389,13 @@ impl ListApplicationsRequestFilters {
         self.wave_i_ds.as_deref()
     }
 }
+impl ListApplicationsRequestFilters {
+    /// Creates a new builder-style object to manufacture [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
+    pub fn builder() -> crate::model::list_applications_request_filters::Builder {
+        crate::model::list_applications_request_filters::Builder::default()
+    }
+}
+
 /// See [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
 pub mod list_applications_request_filters {
     
@@ -9403,11 +9461,5 @@ pub mod list_applications_request_filters {
     }
     
     
-}
-impl ListApplicationsRequestFilters {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
-    pub fn builder() -> crate::model::list_applications_request_filters::Builder {
-        crate::model::list_applications_request_filters::Builder::default()
-    }
 }
 

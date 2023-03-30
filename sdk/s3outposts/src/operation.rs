@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_endpoint`](crate::client::Client::create_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::CreateEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEndpoint {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_endpoint`](crate::client::Client::delete_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::DeleteEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEndpoint {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_endpoints`](crate::client::Client::list_endpoints).
             ///
-            /// See [`crate::client::fluent_builders::ListEndpoints`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEndpoints {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_shared_endpoints`](crate::client::Client::list_shared_endpoints).
             ///
-            /// See [`crate::client::fluent_builders::ListSharedEndpoints`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSharedEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSharedEndpoints {
     _private: ()

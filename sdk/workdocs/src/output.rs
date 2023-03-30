@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateUserOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
+    pub fn builder() -> crate::output::update_user_output::Builder {
+        crate::output::update_user_output::Builder::default()
+    }
+}
+
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
     
@@ -60,12 +67,6 @@ pub mod update_user_output {
     
     
 }
-impl UpdateUserOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
-    pub fn builder() -> crate::output::update_user_output::Builder {
-        crate::output::update_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -78,6 +79,13 @@ impl aws_http::request_id::RequestId for UpdateFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFolderOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
+    pub fn builder() -> crate::output::update_folder_output::Builder {
+        crate::output::update_folder_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
 pub mod update_folder_output {
     
@@ -107,12 +115,6 @@ pub mod update_folder_output {
     
     
 }
-impl UpdateFolderOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFolderOutput`](crate::output::UpdateFolderOutput).
-    pub fn builder() -> crate::output::update_folder_output::Builder {
-        crate::output::update_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -125,6 +127,13 @@ impl aws_http::request_id::RequestId for UpdateDocumentVersionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDocumentVersionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
+    pub fn builder() -> crate::output::update_document_version_output::Builder {
+        crate::output::update_document_version_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
 pub mod update_document_version_output {
     
@@ -154,12 +163,6 @@ pub mod update_document_version_output {
     
     
 }
-impl UpdateDocumentVersionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDocumentVersionOutput`](crate::output::UpdateDocumentVersionOutput).
-    pub fn builder() -> crate::output::update_document_version_output::Builder {
-        crate::output::update_document_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -172,6 +175,13 @@ impl aws_http::request_id::RequestId for UpdateDocumentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDocumentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
+    pub fn builder() -> crate::output::update_document_output::Builder {
+        crate::output::update_document_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
 pub mod update_document_output {
     
@@ -201,12 +211,6 @@ pub mod update_document_output {
     
     
 }
-impl UpdateDocumentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput).
-    pub fn builder() -> crate::output::update_document_output::Builder {
-        crate::output::update_document_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -219,6 +223,13 @@ impl aws_http::request_id::RequestId for RestoreDocumentVersionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestoreDocumentVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
+    pub fn builder() -> crate::output::restore_document_versions_output::Builder {
+        crate::output::restore_document_versions_output::Builder::default()
+    }
+}
+
 /// See [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
 pub mod restore_document_versions_output {
     
@@ -248,12 +259,6 @@ pub mod restore_document_versions_output {
     
     
 }
-impl RestoreDocumentVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreDocumentVersionsOutput`](crate::output::RestoreDocumentVersionsOutput).
-    pub fn builder() -> crate::output::restore_document_versions_output::Builder {
-        crate::output::restore_document_versions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -266,6 +271,13 @@ impl aws_http::request_id::RequestId for RemoveResourcePermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveResourcePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
+    pub fn builder() -> crate::output::remove_resource_permission_output::Builder {
+        crate::output::remove_resource_permission_output::Builder::default()
+    }
+}
+
 /// See [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
 pub mod remove_resource_permission_output {
     
@@ -295,12 +307,6 @@ pub mod remove_resource_permission_output {
     
     
 }
-impl RemoveResourcePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveResourcePermissionOutput`](crate::output::RemoveResourcePermissionOutput).
-    pub fn builder() -> crate::output::remove_resource_permission_output::Builder {
-        crate::output::remove_resource_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -313,6 +319,13 @@ impl aws_http::request_id::RequestId for RemoveAllResourcePermissionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveAllResourcePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
+    pub fn builder() -> crate::output::remove_all_resource_permissions_output::Builder {
+        crate::output::remove_all_resource_permissions_output::Builder::default()
+    }
+}
+
 /// See [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
 pub mod remove_all_resource_permissions_output {
     
@@ -342,12 +355,6 @@ pub mod remove_all_resource_permissions_output {
     
     
 }
-impl RemoveAllResourcePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveAllResourcePermissionsOutput`](crate::output::RemoveAllResourcePermissionsOutput).
-    pub fn builder() -> crate::output::remove_all_resource_permissions_output::Builder {
-        crate::output::remove_all_resource_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -376,6 +383,13 @@ impl aws_http::request_id::RequestId for InitiateDocumentVersionUploadOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl InitiateDocumentVersionUploadOutput {
+    /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
+    pub fn builder() -> crate::output::initiate_document_version_upload_output::Builder {
+        crate::output::initiate_document_version_upload_output::Builder::default()
+    }
+}
+
 /// See [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
 pub mod initiate_document_version_upload_output {
     
@@ -429,12 +443,6 @@ pub mod initiate_document_version_upload_output {
     
     
 }
-impl InitiateDocumentVersionUploadOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateDocumentVersionUploadOutput`](crate::output::InitiateDocumentVersionUploadOutput).
-    pub fn builder() -> crate::output::initiate_document_version_upload_output::Builder {
-        crate::output::initiate_document_version_upload_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -470,6 +478,13 @@ impl aws_http::request_id::RequestId for GetResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::output::GetResourcesOutput).
+    pub fn builder() -> crate::output::get_resources_output::Builder {
+        crate::output::get_resources_output::Builder::default()
+    }
+}
+
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput).
 pub mod get_resources_output {
     
@@ -547,12 +562,6 @@ pub mod get_resources_output {
     
     
 }
-impl GetResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::output::GetResourcesOutput).
-    pub fn builder() -> crate::output::get_resources_output::Builder {
-        crate::output::get_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -574,6 +583,13 @@ impl aws_http::request_id::RequestId for GetFolderPathOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFolderPathOutput {
+    /// Creates a new builder-style object to manufacture [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
+    pub fn builder() -> crate::output::get_folder_path_output::Builder {
+        crate::output::get_folder_path_output::Builder::default()
+    }
+}
+
 /// See [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
 pub mod get_folder_path_output {
     
@@ -615,12 +631,6 @@ pub mod get_folder_path_output {
     
     
 }
-impl GetFolderPathOutput {
-    /// Creates a new builder-style object to manufacture [`GetFolderPathOutput`](crate::output::GetFolderPathOutput).
-    pub fn builder() -> crate::output::get_folder_path_output::Builder {
-        crate::output::get_folder_path_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -649,6 +659,13 @@ impl aws_http::request_id::RequestId for GetFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFolderOutput {
+    /// Creates a new builder-style object to manufacture [`GetFolderOutput`](crate::output::GetFolderOutput).
+    pub fn builder() -> crate::output::get_folder_output::Builder {
+        crate::output::get_folder_output::Builder::default()
+    }
+}
+
 /// See [`GetFolderOutput`](crate::output::GetFolderOutput).
 pub mod get_folder_output {
     
@@ -708,12 +725,6 @@ pub mod get_folder_output {
     
     
 }
-impl GetFolderOutput {
-    /// Creates a new builder-style object to manufacture [`GetFolderOutput`](crate::output::GetFolderOutput).
-    pub fn builder() -> crate::output::get_folder_output::Builder {
-        crate::output::get_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -742,6 +753,13 @@ impl aws_http::request_id::RequestId for GetDocumentVersionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDocumentVersionOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
+    pub fn builder() -> crate::output::get_document_version_output::Builder {
+        crate::output::get_document_version_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
 pub mod get_document_version_output {
     
@@ -801,12 +819,6 @@ pub mod get_document_version_output {
     
     
 }
-impl GetDocumentVersionOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentVersionOutput`](crate::output::GetDocumentVersionOutput).
-    pub fn builder() -> crate::output::get_document_version_output::Builder {
-        crate::output::get_document_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -828,6 +840,13 @@ impl aws_http::request_id::RequestId for GetDocumentPathOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDocumentPathOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
+    pub fn builder() -> crate::output::get_document_path_output::Builder {
+        crate::output::get_document_path_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
 pub mod get_document_path_output {
     
@@ -869,12 +888,6 @@ pub mod get_document_path_output {
     
     
 }
-impl GetDocumentPathOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentPathOutput`](crate::output::GetDocumentPathOutput).
-    pub fn builder() -> crate::output::get_document_path_output::Builder {
-        crate::output::get_document_path_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -903,6 +916,13 @@ impl aws_http::request_id::RequestId for GetDocumentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDocumentOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentOutput`](crate::output::GetDocumentOutput).
+    pub fn builder() -> crate::output::get_document_output::Builder {
+        crate::output::get_document_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentOutput`](crate::output::GetDocumentOutput).
 pub mod get_document_output {
     
@@ -962,12 +982,6 @@ pub mod get_document_output {
     
     
 }
-impl GetDocumentOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentOutput`](crate::output::GetDocumentOutput).
-    pub fn builder() -> crate::output::get_document_output::Builder {
-        crate::output::get_document_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -989,6 +1003,13 @@ impl aws_http::request_id::RequestId for GetCurrentUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCurrentUserOutput {
+    /// Creates a new builder-style object to manufacture [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
+    pub fn builder() -> crate::output::get_current_user_output::Builder {
+        crate::output::get_current_user_output::Builder::default()
+    }
+}
+
 /// See [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
 pub mod get_current_user_output {
     
@@ -1030,12 +1051,6 @@ pub mod get_current_user_output {
     
     
 }
-impl GetCurrentUserOutput {
-    /// Creates a new builder-style object to manufacture [`GetCurrentUserOutput`](crate::output::GetCurrentUserOutput).
-    pub fn builder() -> crate::output::get_current_user_output::Builder {
-        crate::output::get_current_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1073,6 +1088,13 @@ impl aws_http::request_id::RequestId for DescribeUsersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeUsersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
+    pub fn builder() -> crate::output::describe_users_output::Builder {
+        crate::output::describe_users_output::Builder::default()
+    }
+}
+
 /// See [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
 pub mod describe_users_output {
     
@@ -1146,12 +1168,6 @@ pub mod describe_users_output {
     
     
 }
-impl DescribeUsersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
-    pub fn builder() -> crate::output::describe_users_output::Builder {
-        crate::output::describe_users_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1180,6 +1196,13 @@ impl aws_http::request_id::RequestId for DescribeRootFoldersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRootFoldersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
+    pub fn builder() -> crate::output::describe_root_folders_output::Builder {
+        crate::output::describe_root_folders_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
 pub mod describe_root_folders_output {
     
@@ -1239,12 +1262,6 @@ pub mod describe_root_folders_output {
     
     
 }
-impl DescribeRootFoldersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRootFoldersOutput`](crate::output::DescribeRootFoldersOutput).
-    pub fn builder() -> crate::output::describe_root_folders_output::Builder {
-        crate::output::describe_root_folders_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1273,6 +1290,13 @@ impl aws_http::request_id::RequestId for DescribeResourcePermissionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeResourcePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
+    pub fn builder() -> crate::output::describe_resource_permissions_output::Builder {
+        crate::output::describe_resource_permissions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
 pub mod describe_resource_permissions_output {
     
@@ -1332,12 +1356,6 @@ pub mod describe_resource_permissions_output {
     
     
 }
-impl DescribeResourcePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsOutput`](crate::output::DescribeResourcePermissionsOutput).
-    pub fn builder() -> crate::output::describe_resource_permissions_output::Builder {
-        crate::output::describe_resource_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1366,6 +1384,13 @@ impl aws_http::request_id::RequestId for DescribeNotificationSubscriptionsOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeNotificationSubscriptionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
+    pub fn builder() -> crate::output::describe_notification_subscriptions_output::Builder {
+        crate::output::describe_notification_subscriptions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
 pub mod describe_notification_subscriptions_output {
     
@@ -1425,12 +1450,6 @@ pub mod describe_notification_subscriptions_output {
     
     
 }
-impl DescribeNotificationSubscriptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationSubscriptionsOutput`](crate::output::DescribeNotificationSubscriptionsOutput).
-    pub fn builder() -> crate::output::describe_notification_subscriptions_output::Builder {
-        crate::output::describe_notification_subscriptions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1459,6 +1478,13 @@ impl aws_http::request_id::RequestId for DescribeGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
+    pub fn builder() -> crate::output::describe_groups_output::Builder {
+        crate::output::describe_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
 pub mod describe_groups_output {
     
@@ -1518,12 +1544,6 @@ pub mod describe_groups_output {
     
     
 }
-impl DescribeGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGroupsOutput`](crate::output::DescribeGroupsOutput).
-    pub fn builder() -> crate::output::describe_groups_output::Builder {
-        crate::output::describe_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1559,6 +1579,13 @@ impl aws_http::request_id::RequestId for DescribeFolderContentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFolderContentsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
+    pub fn builder() -> crate::output::describe_folder_contents_output::Builder {
+        crate::output::describe_folder_contents_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
 pub mod describe_folder_contents_output {
     
@@ -1636,12 +1663,6 @@ pub mod describe_folder_contents_output {
     
     
 }
-impl DescribeFolderContentsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput).
-    pub fn builder() -> crate::output::describe_folder_contents_output::Builder {
-        crate::output::describe_folder_contents_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1670,6 +1691,13 @@ impl aws_http::request_id::RequestId for DescribeDocumentVersionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDocumentVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
+    pub fn builder() -> crate::output::describe_document_versions_output::Builder {
+        crate::output::describe_document_versions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
 pub mod describe_document_versions_output {
     
@@ -1729,12 +1757,6 @@ pub mod describe_document_versions_output {
     
     
 }
-impl DescribeDocumentVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDocumentVersionsOutput`](crate::output::DescribeDocumentVersionsOutput).
-    pub fn builder() -> crate::output::describe_document_versions_output::Builder {
-        crate::output::describe_document_versions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1763,6 +1785,13 @@ impl aws_http::request_id::RequestId for DescribeCommentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCommentsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
+    pub fn builder() -> crate::output::describe_comments_output::Builder {
+        crate::output::describe_comments_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
 pub mod describe_comments_output {
     
@@ -1822,12 +1851,6 @@ pub mod describe_comments_output {
     
     
 }
-impl DescribeCommentsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCommentsOutput`](crate::output::DescribeCommentsOutput).
-    pub fn builder() -> crate::output::describe_comments_output::Builder {
-        crate::output::describe_comments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1856,6 +1879,13 @@ impl aws_http::request_id::RequestId for DescribeActivitiesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeActivitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
+    pub fn builder() -> crate::output::describe_activities_output::Builder {
+        crate::output::describe_activities_output::Builder::default()
+    }
+}
+
 /// See [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
 pub mod describe_activities_output {
     
@@ -1915,12 +1945,6 @@ pub mod describe_activities_output {
     
     
 }
-impl DescribeActivitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeActivitiesOutput`](crate::output::DescribeActivitiesOutput).
-    pub fn builder() -> crate::output::describe_activities_output::Builder {
-        crate::output::describe_activities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1933,6 +1957,13 @@ impl aws_http::request_id::RequestId for DeleteUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteUserOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    pub fn builder() -> crate::output::delete_user_output::Builder {
+        crate::output::delete_user_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
     
@@ -1962,12 +1993,6 @@ pub mod delete_user_output {
     
     
 }
-impl DeleteUserOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    pub fn builder() -> crate::output::delete_user_output::Builder {
-        crate::output::delete_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1980,6 +2005,13 @@ impl aws_http::request_id::RequestId for DeleteNotificationSubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteNotificationSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
+    pub fn builder() -> crate::output::delete_notification_subscription_output::Builder {
+        crate::output::delete_notification_subscription_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
 pub mod delete_notification_subscription_output {
     
@@ -2009,12 +2041,6 @@ pub mod delete_notification_subscription_output {
     
     
 }
-impl DeleteNotificationSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNotificationSubscriptionOutput`](crate::output::DeleteNotificationSubscriptionOutput).
-    pub fn builder() -> crate::output::delete_notification_subscription_output::Builder {
-        crate::output::delete_notification_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2027,6 +2053,13 @@ impl aws_http::request_id::RequestId for DeleteLabelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLabelsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
+    pub fn builder() -> crate::output::delete_labels_output::Builder {
+        crate::output::delete_labels_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
 pub mod delete_labels_output {
     
@@ -2056,12 +2089,6 @@ pub mod delete_labels_output {
     
     
 }
-impl DeleteLabelsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLabelsOutput`](crate::output::DeleteLabelsOutput).
-    pub fn builder() -> crate::output::delete_labels_output::Builder {
-        crate::output::delete_labels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2074,6 +2101,13 @@ impl aws_http::request_id::RequestId for DeleteFolderContentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFolderContentsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
+    pub fn builder() -> crate::output::delete_folder_contents_output::Builder {
+        crate::output::delete_folder_contents_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
 pub mod delete_folder_contents_output {
     
@@ -2103,12 +2137,6 @@ pub mod delete_folder_contents_output {
     
     
 }
-impl DeleteFolderContentsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFolderContentsOutput`](crate::output::DeleteFolderContentsOutput).
-    pub fn builder() -> crate::output::delete_folder_contents_output::Builder {
-        crate::output::delete_folder_contents_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2121,6 +2149,13 @@ impl aws_http::request_id::RequestId for DeleteFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFolderOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
+    pub fn builder() -> crate::output::delete_folder_output::Builder {
+        crate::output::delete_folder_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
 pub mod delete_folder_output {
     
@@ -2150,12 +2185,6 @@ pub mod delete_folder_output {
     
     
 }
-impl DeleteFolderOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFolderOutput`](crate::output::DeleteFolderOutput).
-    pub fn builder() -> crate::output::delete_folder_output::Builder {
-        crate::output::delete_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2168,6 +2197,13 @@ impl aws_http::request_id::RequestId for DeleteDocumentVersionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDocumentVersionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
+    pub fn builder() -> crate::output::delete_document_version_output::Builder {
+        crate::output::delete_document_version_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
 pub mod delete_document_version_output {
     
@@ -2197,12 +2233,6 @@ pub mod delete_document_version_output {
     
     
 }
-impl DeleteDocumentVersionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionOutput`](crate::output::DeleteDocumentVersionOutput).
-    pub fn builder() -> crate::output::delete_document_version_output::Builder {
-        crate::output::delete_document_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2215,6 +2245,13 @@ impl aws_http::request_id::RequestId for DeleteDocumentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDocumentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
+    pub fn builder() -> crate::output::delete_document_output::Builder {
+        crate::output::delete_document_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
 pub mod delete_document_output {
     
@@ -2244,12 +2281,6 @@ pub mod delete_document_output {
     
     
 }
-impl DeleteDocumentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput).
-    pub fn builder() -> crate::output::delete_document_output::Builder {
-        crate::output::delete_document_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2262,6 +2293,13 @@ impl aws_http::request_id::RequestId for DeleteCustomMetadataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCustomMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
+    pub fn builder() -> crate::output::delete_custom_metadata_output::Builder {
+        crate::output::delete_custom_metadata_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
 pub mod delete_custom_metadata_output {
     
@@ -2291,12 +2329,6 @@ pub mod delete_custom_metadata_output {
     
     
 }
-impl DeleteCustomMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomMetadataOutput`](crate::output::DeleteCustomMetadataOutput).
-    pub fn builder() -> crate::output::delete_custom_metadata_output::Builder {
-        crate::output::delete_custom_metadata_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2309,6 +2341,13 @@ impl aws_http::request_id::RequestId for DeleteCommentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCommentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
+    pub fn builder() -> crate::output::delete_comment_output::Builder {
+        crate::output::delete_comment_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
 pub mod delete_comment_output {
     
@@ -2338,12 +2377,6 @@ pub mod delete_comment_output {
     
     
 }
-impl DeleteCommentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCommentOutput`](crate::output::DeleteCommentOutput).
-    pub fn builder() -> crate::output::delete_comment_output::Builder {
-        crate::output::delete_comment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2356,6 +2389,13 @@ impl aws_http::request_id::RequestId for DeactivateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeactivateUserOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
+    pub fn builder() -> crate::output::deactivate_user_output::Builder {
+        crate::output::deactivate_user_output::Builder::default()
+    }
+}
+
 /// See [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
 pub mod deactivate_user_output {
     
@@ -2385,12 +2425,6 @@ pub mod deactivate_user_output {
     
     
 }
-impl DeactivateUserOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateUserOutput`](crate::output::DeactivateUserOutput).
-    pub fn builder() -> crate::output::deactivate_user_output::Builder {
-        crate::output::deactivate_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2412,6 +2446,13 @@ impl aws_http::request_id::RequestId for CreateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateUserOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
+    pub fn builder() -> crate::output::create_user_output::Builder {
+        crate::output::create_user_output::Builder::default()
+    }
+}
+
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
     
@@ -2453,12 +2494,6 @@ pub mod create_user_output {
     
     
 }
-impl CreateUserOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
-    pub fn builder() -> crate::output::create_user_output::Builder {
-        crate::output::create_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2480,6 +2515,13 @@ impl aws_http::request_id::RequestId for CreateNotificationSubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateNotificationSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
+    pub fn builder() -> crate::output::create_notification_subscription_output::Builder {
+        crate::output::create_notification_subscription_output::Builder::default()
+    }
+}
+
 /// See [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
 pub mod create_notification_subscription_output {
     
@@ -2521,12 +2563,6 @@ pub mod create_notification_subscription_output {
     
     
 }
-impl CreateNotificationSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNotificationSubscriptionOutput`](crate::output::CreateNotificationSubscriptionOutput).
-    pub fn builder() -> crate::output::create_notification_subscription_output::Builder {
-        crate::output::create_notification_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2539,6 +2575,13 @@ impl aws_http::request_id::RequestId for CreateLabelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLabelsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
+    pub fn builder() -> crate::output::create_labels_output::Builder {
+        crate::output::create_labels_output::Builder::default()
+    }
+}
+
 /// See [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
 pub mod create_labels_output {
     
@@ -2568,12 +2611,6 @@ pub mod create_labels_output {
     
     
 }
-impl CreateLabelsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLabelsOutput`](crate::output::CreateLabelsOutput).
-    pub fn builder() -> crate::output::create_labels_output::Builder {
-        crate::output::create_labels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2595,6 +2632,13 @@ impl aws_http::request_id::RequestId for CreateFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFolderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFolderOutput`](crate::output::CreateFolderOutput).
+    pub fn builder() -> crate::output::create_folder_output::Builder {
+        crate::output::create_folder_output::Builder::default()
+    }
+}
+
 /// See [`CreateFolderOutput`](crate::output::CreateFolderOutput).
 pub mod create_folder_output {
     
@@ -2636,12 +2680,6 @@ pub mod create_folder_output {
     
     
 }
-impl CreateFolderOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFolderOutput`](crate::output::CreateFolderOutput).
-    pub fn builder() -> crate::output::create_folder_output::Builder {
-        crate::output::create_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2654,6 +2692,13 @@ impl aws_http::request_id::RequestId for CreateCustomMetadataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCustomMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
+    pub fn builder() -> crate::output::create_custom_metadata_output::Builder {
+        crate::output::create_custom_metadata_output::Builder::default()
+    }
+}
+
 /// See [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
 pub mod create_custom_metadata_output {
     
@@ -2683,12 +2728,6 @@ pub mod create_custom_metadata_output {
     
     
 }
-impl CreateCustomMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomMetadataOutput`](crate::output::CreateCustomMetadataOutput).
-    pub fn builder() -> crate::output::create_custom_metadata_output::Builder {
-        crate::output::create_custom_metadata_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2710,6 +2749,13 @@ impl aws_http::request_id::RequestId for CreateCommentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCommentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCommentOutput`](crate::output::CreateCommentOutput).
+    pub fn builder() -> crate::output::create_comment_output::Builder {
+        crate::output::create_comment_output::Builder::default()
+    }
+}
+
 /// See [`CreateCommentOutput`](crate::output::CreateCommentOutput).
 pub mod create_comment_output {
     
@@ -2751,12 +2797,6 @@ pub mod create_comment_output {
     
     
 }
-impl CreateCommentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCommentOutput`](crate::output::CreateCommentOutput).
-    pub fn builder() -> crate::output::create_comment_output::Builder {
-        crate::output::create_comment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2778,6 +2818,13 @@ impl aws_http::request_id::RequestId for AddResourcePermissionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddResourcePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
+    pub fn builder() -> crate::output::add_resource_permissions_output::Builder {
+        crate::output::add_resource_permissions_output::Builder::default()
+    }
+}
+
 /// See [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
 pub mod add_resource_permissions_output {
     
@@ -2825,12 +2872,6 @@ pub mod add_resource_permissions_output {
     
     
 }
-impl AddResourcePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`AddResourcePermissionsOutput`](crate::output::AddResourcePermissionsOutput).
-    pub fn builder() -> crate::output::add_resource_permissions_output::Builder {
-        crate::output::add_resource_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2852,6 +2893,13 @@ impl aws_http::request_id::RequestId for ActivateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ActivateUserOutput {
+    /// Creates a new builder-style object to manufacture [`ActivateUserOutput`](crate::output::ActivateUserOutput).
+    pub fn builder() -> crate::output::activate_user_output::Builder {
+        crate::output::activate_user_output::Builder::default()
+    }
+}
+
 /// See [`ActivateUserOutput`](crate::output::ActivateUserOutput).
 pub mod activate_user_output {
     
@@ -2893,12 +2941,6 @@ pub mod activate_user_output {
     
     
 }
-impl ActivateUserOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateUserOutput`](crate::output::ActivateUserOutput).
-    pub fn builder() -> crate::output::activate_user_output::Builder {
-        crate::output::activate_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2911,6 +2953,13 @@ impl aws_http::request_id::RequestId for AbortDocumentVersionUploadOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AbortDocumentVersionUploadOutput {
+    /// Creates a new builder-style object to manufacture [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
+    pub fn builder() -> crate::output::abort_document_version_upload_output::Builder {
+        crate::output::abort_document_version_upload_output::Builder::default()
+    }
+}
+
 /// See [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
 pub mod abort_document_version_upload_output {
     
@@ -2939,11 +2988,5 @@ pub mod abort_document_version_upload_output {
     }
     
     
-}
-impl AbortDocumentVersionUploadOutput {
-    /// Creates a new builder-style object to manufacture [`AbortDocumentVersionUploadOutput`](crate::output::AbortDocumentVersionUploadOutput).
-    pub fn builder() -> crate::output::abort_document_version_upload_output::Builder {
-        crate::output::abort_document_version_upload_output::Builder::default()
-    }
 }
 

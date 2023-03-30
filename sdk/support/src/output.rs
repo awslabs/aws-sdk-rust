@@ -27,6 +27,13 @@ impl aws_http::request_id::RequestId for ResolveCaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResolveCaseOutput {
+    /// Creates a new builder-style object to manufacture [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
+    pub fn builder() -> crate::output::resolve_case_output::Builder {
+        crate::output::resolve_case_output::Builder::default()
+    }
+}
+
 /// See [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
 pub mod resolve_case_output {
     
@@ -80,12 +87,6 @@ pub mod resolve_case_output {
     
     
 }
-impl ResolveCaseOutput {
-    /// Creates a new builder-style object to manufacture [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
-    pub fn builder() -> crate::output::resolve_case_output::Builder {
-        crate::output::resolve_case_output::Builder::default()
-    }
-}
 
 /// <p>The current refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
@@ -107,6 +108,13 @@ impl aws_http::request_id::RequestId for RefreshTrustedAdvisorCheckOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RefreshTrustedAdvisorCheckOutput {
+    /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
+    pub fn builder() -> crate::output::refresh_trusted_advisor_check_output::Builder {
+        crate::output::refresh_trusted_advisor_check_output::Builder::default()
+    }
+}
+
 /// See [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
 pub mod refresh_trusted_advisor_check_output {
     
@@ -148,12 +156,6 @@ pub mod refresh_trusted_advisor_check_output {
     
     
 }
-impl RefreshTrustedAdvisorCheckOutput {
-    /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
-    pub fn builder() -> crate::output::refresh_trusted_advisor_check_output::Builder {
-        crate::output::refresh_trusted_advisor_check_output::Builder::default()
-    }
-}
 
 /// <p>The summaries of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckSummaries</code> operation.</p>
 #[non_exhaustive]
@@ -175,6 +177,13 @@ impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckSummariesOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTrustedAdvisorCheckSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
+    pub fn builder() -> crate::output::describe_trusted_advisor_check_summaries_output::Builder {
+        crate::output::describe_trusted_advisor_check_summaries_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
 pub mod describe_trusted_advisor_check_summaries_output {
     
@@ -222,12 +231,6 @@ pub mod describe_trusted_advisor_check_summaries_output {
     
     
 }
-impl DescribeTrustedAdvisorCheckSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
-    pub fn builder() -> crate::output::describe_trusted_advisor_check_summaries_output::Builder {
-        crate::output::describe_trusted_advisor_check_summaries_output::Builder::default()
-    }
-}
 
 /// <p>Information about the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorChecks</code> operation.</p>
 #[non_exhaustive]
@@ -249,6 +252,13 @@ impl aws_http::request_id::RequestId for DescribeTrustedAdvisorChecksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTrustedAdvisorChecksOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
+    pub fn builder() -> crate::output::describe_trusted_advisor_checks_output::Builder {
+        crate::output::describe_trusted_advisor_checks_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
 pub mod describe_trusted_advisor_checks_output {
     
@@ -296,12 +306,6 @@ pub mod describe_trusted_advisor_checks_output {
     
     
 }
-impl DescribeTrustedAdvisorChecksOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
-    pub fn builder() -> crate::output::describe_trusted_advisor_checks_output::Builder {
-        crate::output::describe_trusted_advisor_checks_output::Builder::default()
-    }
-}
 
 /// <p>The result of the Trusted Advisor check returned by the <code>DescribeTrustedAdvisorCheckResult</code> operation.</p>
 #[non_exhaustive]
@@ -323,6 +327,13 @@ impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckResultOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTrustedAdvisorCheckResultOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
+    pub fn builder() -> crate::output::describe_trusted_advisor_check_result_output::Builder {
+        crate::output::describe_trusted_advisor_check_result_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
 pub mod describe_trusted_advisor_check_result_output {
     
@@ -364,12 +375,6 @@ pub mod describe_trusted_advisor_check_result_output {
     
     
 }
-impl DescribeTrustedAdvisorCheckResultOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
-    pub fn builder() -> crate::output::describe_trusted_advisor_check_result_output::Builder {
-        crate::output::describe_trusted_advisor_check_result_output::Builder::default()
-    }
-}
 
 /// <p>The statuses of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation.</p>
 #[non_exhaustive]
@@ -391,6 +396,13 @@ impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
+    pub fn builder() -> crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder {
+        crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
 pub mod describe_trusted_advisor_check_refresh_statuses_output {
     
@@ -438,12 +450,6 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
     
     
 }
-impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
-    pub fn builder() -> crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder {
-        crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder::default()
-    }
-}
 
 /// <p>The list of severity levels returned by the <code>DescribeSeverityLevels</code> operation.</p>
 #[non_exhaustive]
@@ -465,6 +471,13 @@ impl aws_http::request_id::RequestId for DescribeSeverityLevelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSeverityLevelsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
+    pub fn builder() -> crate::output::describe_severity_levels_output::Builder {
+        crate::output::describe_severity_levels_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
 pub mod describe_severity_levels_output {
     
@@ -512,12 +525,6 @@ pub mod describe_severity_levels_output {
     
     
 }
-impl DescribeSeverityLevelsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
-    pub fn builder() -> crate::output::describe_severity_levels_output::Builder {
-        crate::output::describe_severity_levels_output::Builder::default()
-    }
-}
 
 /// <p>The list of Amazon Web Services services returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
@@ -539,6 +546,13 @@ impl aws_http::request_id::RequestId for DescribeServicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeServicesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
+    pub fn builder() -> crate::output::describe_services_output::Builder {
+        crate::output::describe_services_output::Builder::default()
+    }
+}
+
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
     
@@ -586,12 +600,6 @@ pub mod describe_services_output {
     
     
 }
-impl DescribeServicesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
-    pub fn builder() -> crate::output::describe_services_output::Builder {
-        crate::output::describe_services_output::Builder::default()
-    }
-}
 
 /// <p>The communications returned by the <code>DescribeCommunications</code> operation.</p>
 #[non_exhaustive]
@@ -620,6 +628,13 @@ impl aws_http::request_id::RequestId for DescribeCommunicationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCommunicationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
+    pub fn builder() -> crate::output::describe_communications_output::Builder {
+        crate::output::describe_communications_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
 pub mod describe_communications_output {
     
@@ -679,12 +694,6 @@ pub mod describe_communications_output {
     
     
 }
-impl DescribeCommunicationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
-    pub fn builder() -> crate::output::describe_communications_output::Builder {
-        crate::output::describe_communications_output::Builder::default()
-    }
-}
 
 /// <p>Returns an array of <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
 #[non_exhaustive]
@@ -713,6 +722,13 @@ impl aws_http::request_id::RequestId for DescribeCasesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCasesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
+    pub fn builder() -> crate::output::describe_cases_output::Builder {
+        crate::output::describe_cases_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
 pub mod describe_cases_output {
     
@@ -772,12 +788,6 @@ pub mod describe_cases_output {
     
     
 }
-impl DescribeCasesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
-    pub fn builder() -> crate::output::describe_cases_output::Builder {
-        crate::output::describe_cases_output::Builder::default()
-    }
-}
 
 /// <p>The content and file name of the attachment returned by the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
@@ -801,6 +811,13 @@ impl aws_http::request_id::RequestId for DescribeAttachmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
+    pub fn builder() -> crate::output::describe_attachment_output::Builder {
+        crate::output::describe_attachment_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
 pub mod describe_attachment_output {
     
@@ -844,12 +861,6 @@ pub mod describe_attachment_output {
     
     
 }
-impl DescribeAttachmentOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
-    pub fn builder() -> crate::output::describe_attachment_output::Builder {
-        crate::output::describe_attachment_output::Builder::default()
-    }
-}
 
 /// <p>The support case ID returned by a successful completion of the <code>CreateCase</code> operation.</p>
 #[non_exhaustive]
@@ -871,6 +882,13 @@ impl aws_http::request_id::RequestId for CreateCaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCaseOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCaseOutput`](crate::output::CreateCaseOutput).
+    pub fn builder() -> crate::output::create_case_output::Builder {
+        crate::output::create_case_output::Builder::default()
+    }
+}
+
 /// See [`CreateCaseOutput`](crate::output::CreateCaseOutput).
 pub mod create_case_output {
     
@@ -912,12 +930,6 @@ pub mod create_case_output {
     
     
 }
-impl CreateCaseOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCaseOutput`](crate::output::CreateCaseOutput).
-    pub fn builder() -> crate::output::create_case_output::Builder {
-        crate::output::create_case_output::Builder::default()
-    }
-}
 
 /// <p>The result of the <code>AddCommunicationToCase</code> operation.</p>
 #[non_exhaustive]
@@ -939,6 +951,13 @@ impl aws_http::request_id::RequestId for AddCommunicationToCaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddCommunicationToCaseOutput {
+    /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
+    pub fn builder() -> crate::output::add_communication_to_case_output::Builder {
+        crate::output::add_communication_to_case_output::Builder::default()
+    }
+}
+
 /// See [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
 pub mod add_communication_to_case_output {
     
@@ -981,12 +1000,6 @@ pub mod add_communication_to_case_output {
     
     
 }
-impl AddCommunicationToCaseOutput {
-    /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
-    pub fn builder() -> crate::output::add_communication_to_case_output::Builder {
-        crate::output::add_communication_to_case_output::Builder::default()
-    }
-}
 
 /// <p>The ID and expiry time of the attachment set returned by the <code>AddAttachmentsToSet</code> operation.</p>
 #[non_exhaustive]
@@ -1015,6 +1028,13 @@ impl aws_http::request_id::RequestId for AddAttachmentsToSetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddAttachmentsToSetOutput {
+    /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
+    pub fn builder() -> crate::output::add_attachments_to_set_output::Builder {
+        crate::output::add_attachments_to_set_output::Builder::default()
+    }
+}
+
 /// See [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
 pub mod add_attachments_to_set_output {
     
@@ -1067,11 +1087,5 @@ pub mod add_attachments_to_set_output {
     }
     
     
-}
-impl AddAttachmentsToSetOutput {
-    /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
-    pub fn builder() -> crate::output::add_attachments_to_set_output::Builder {
-        crate::output::add_attachments_to_set_output::Builder::default()
-    }
 }
 

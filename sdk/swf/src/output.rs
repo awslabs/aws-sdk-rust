@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for UndeprecateWorkflowTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UndeprecateWorkflowTypeOutput {
+    /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
+    pub fn builder() -> crate::output::undeprecate_workflow_type_output::Builder {
+        crate::output::undeprecate_workflow_type_output::Builder::default()
+    }
+}
+
 /// See [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
 pub mod undeprecate_workflow_type_output {
     
@@ -86,12 +94,6 @@ pub mod undeprecate_workflow_type_output {
     
     
 }
-impl UndeprecateWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
-    pub fn builder() -> crate::output::undeprecate_workflow_type_output::Builder {
-        crate::output::undeprecate_workflow_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for UndeprecateDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UndeprecateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
+    pub fn builder() -> crate::output::undeprecate_domain_output::Builder {
+        crate::output::undeprecate_domain_output::Builder::default()
+    }
+}
+
 /// See [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
 pub mod undeprecate_domain_output {
     
@@ -133,12 +142,6 @@ pub mod undeprecate_domain_output {
     
     
 }
-impl UndeprecateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
-    pub fn builder() -> crate::output::undeprecate_domain_output::Builder {
-        crate::output::undeprecate_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -151,6 +154,13 @@ impl aws_http::request_id::RequestId for UndeprecateActivityTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UndeprecateActivityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
+    pub fn builder() -> crate::output::undeprecate_activity_type_output::Builder {
+        crate::output::undeprecate_activity_type_output::Builder::default()
+    }
+}
+
 /// See [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
 pub mod undeprecate_activity_type_output {
     
@@ -180,12 +190,6 @@ pub mod undeprecate_activity_type_output {
     
     
 }
-impl UndeprecateActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
-    pub fn builder() -> crate::output::undeprecate_activity_type_output::Builder {
-        crate::output::undeprecate_activity_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -198,6 +202,13 @@ impl aws_http::request_id::RequestId for TerminateWorkflowExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TerminateWorkflowExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
+    pub fn builder() -> crate::output::terminate_workflow_execution_output::Builder {
+        crate::output::terminate_workflow_execution_output::Builder::default()
+    }
+}
+
 /// See [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
 pub mod terminate_workflow_execution_output {
     
@@ -227,12 +238,6 @@ pub mod terminate_workflow_execution_output {
     
     
 }
-impl TerminateWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
-    pub fn builder() -> crate::output::terminate_workflow_execution_output::Builder {
-        crate::output::terminate_workflow_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -245,6 +250,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -274,12 +286,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 /// <p>Specifies the <code>runId</code> of a workflow execution.</p>
 #[non_exhaustive]
@@ -301,6 +307,13 @@ impl aws_http::request_id::RequestId for StartWorkflowExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartWorkflowExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
+    pub fn builder() -> crate::output::start_workflow_execution_output::Builder {
+        crate::output::start_workflow_execution_output::Builder::default()
+    }
+}
+
 /// See [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
 pub mod start_workflow_execution_output {
     
@@ -342,12 +355,6 @@ pub mod start_workflow_execution_output {
     
     
 }
-impl StartWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
-    pub fn builder() -> crate::output::start_workflow_execution_output::Builder {
-        crate::output::start_workflow_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -360,6 +367,13 @@ impl aws_http::request_id::RequestId for SignalWorkflowExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SignalWorkflowExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
+    pub fn builder() -> crate::output::signal_workflow_execution_output::Builder {
+        crate::output::signal_workflow_execution_output::Builder::default()
+    }
+}
+
 /// See [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
 pub mod signal_workflow_execution_output {
     
@@ -389,12 +403,6 @@ pub mod signal_workflow_execution_output {
     
     
 }
-impl SignalWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
-    pub fn builder() -> crate::output::signal_workflow_execution_output::Builder {
-        crate::output::signal_workflow_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -407,6 +415,13 @@ impl aws_http::request_id::RequestId for RespondDecisionTaskCompletedOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RespondDecisionTaskCompletedOutput {
+    /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
+    pub fn builder() -> crate::output::respond_decision_task_completed_output::Builder {
+        crate::output::respond_decision_task_completed_output::Builder::default()
+    }
+}
+
 /// See [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
 pub mod respond_decision_task_completed_output {
     
@@ -436,12 +451,6 @@ pub mod respond_decision_task_completed_output {
     
     
 }
-impl RespondDecisionTaskCompletedOutput {
-    /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
-    pub fn builder() -> crate::output::respond_decision_task_completed_output::Builder {
-        crate::output::respond_decision_task_completed_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -454,6 +463,13 @@ impl aws_http::request_id::RequestId for RespondActivityTaskFailedOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RespondActivityTaskFailedOutput {
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
+    pub fn builder() -> crate::output::respond_activity_task_failed_output::Builder {
+        crate::output::respond_activity_task_failed_output::Builder::default()
+    }
+}
+
 /// See [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
 pub mod respond_activity_task_failed_output {
     
@@ -483,12 +499,6 @@ pub mod respond_activity_task_failed_output {
     
     
 }
-impl RespondActivityTaskFailedOutput {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
-    pub fn builder() -> crate::output::respond_activity_task_failed_output::Builder {
-        crate::output::respond_activity_task_failed_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -501,6 +511,13 @@ impl aws_http::request_id::RequestId for RespondActivityTaskCompletedOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RespondActivityTaskCompletedOutput {
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
+    pub fn builder() -> crate::output::respond_activity_task_completed_output::Builder {
+        crate::output::respond_activity_task_completed_output::Builder::default()
+    }
+}
+
 /// See [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
 pub mod respond_activity_task_completed_output {
     
@@ -530,12 +547,6 @@ pub mod respond_activity_task_completed_output {
     
     
 }
-impl RespondActivityTaskCompletedOutput {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
-    pub fn builder() -> crate::output::respond_activity_task_completed_output::Builder {
-        crate::output::respond_activity_task_completed_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -548,6 +559,13 @@ impl aws_http::request_id::RequestId for RespondActivityTaskCanceledOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RespondActivityTaskCanceledOutput {
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
+    pub fn builder() -> crate::output::respond_activity_task_canceled_output::Builder {
+        crate::output::respond_activity_task_canceled_output::Builder::default()
+    }
+}
+
 /// See [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
 pub mod respond_activity_task_canceled_output {
     
@@ -577,12 +595,6 @@ pub mod respond_activity_task_canceled_output {
     
     
 }
-impl RespondActivityTaskCanceledOutput {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
-    pub fn builder() -> crate::output::respond_activity_task_canceled_output::Builder {
-        crate::output::respond_activity_task_canceled_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -595,6 +607,13 @@ impl aws_http::request_id::RequestId for RequestCancelWorkflowExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RequestCancelWorkflowExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
+    pub fn builder() -> crate::output::request_cancel_workflow_execution_output::Builder {
+        crate::output::request_cancel_workflow_execution_output::Builder::default()
+    }
+}
+
 /// See [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
 pub mod request_cancel_workflow_execution_output {
     
@@ -624,12 +643,6 @@ pub mod request_cancel_workflow_execution_output {
     
     
 }
-impl RequestCancelWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
-    pub fn builder() -> crate::output::request_cancel_workflow_execution_output::Builder {
-        crate::output::request_cancel_workflow_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -642,6 +655,13 @@ impl aws_http::request_id::RequestId for RegisterWorkflowTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterWorkflowTypeOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
+    pub fn builder() -> crate::output::register_workflow_type_output::Builder {
+        crate::output::register_workflow_type_output::Builder::default()
+    }
+}
+
 /// See [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
 pub mod register_workflow_type_output {
     
@@ -671,12 +691,6 @@ pub mod register_workflow_type_output {
     
     
 }
-impl RegisterWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
-    pub fn builder() -> crate::output::register_workflow_type_output::Builder {
-        crate::output::register_workflow_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -689,6 +703,13 @@ impl aws_http::request_id::RequestId for RegisterDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterDomainOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
+    pub fn builder() -> crate::output::register_domain_output::Builder {
+        crate::output::register_domain_output::Builder::default()
+    }
+}
+
 /// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
 pub mod register_domain_output {
     
@@ -718,12 +739,6 @@ pub mod register_domain_output {
     
     
 }
-impl RegisterDomainOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
-    pub fn builder() -> crate::output::register_domain_output::Builder {
-        crate::output::register_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -736,6 +751,13 @@ impl aws_http::request_id::RequestId for RegisterActivityTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterActivityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
+    pub fn builder() -> crate::output::register_activity_type_output::Builder {
+        crate::output::register_activity_type_output::Builder::default()
+    }
+}
+
 /// See [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
 pub mod register_activity_type_output {
     
@@ -765,12 +787,6 @@ pub mod register_activity_type_output {
     
     
 }
-impl RegisterActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
-    pub fn builder() -> crate::output::register_activity_type_output::Builder {
-        crate::output::register_activity_type_output::Builder::default()
-    }
-}
 
 /// <p>Status information about an activity task.</p>
 #[non_exhaustive]
@@ -792,6 +808,13 @@ impl aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RecordActivityTaskHeartbeatOutput {
+    /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
+    pub fn builder() -> crate::output::record_activity_task_heartbeat_output::Builder {
+        crate::output::record_activity_task_heartbeat_output::Builder::default()
+    }
+}
+
 /// See [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
 pub mod record_activity_task_heartbeat_output {
     
@@ -833,12 +856,6 @@ pub mod record_activity_task_heartbeat_output {
     }
     
     
-}
-impl RecordActivityTaskHeartbeatOutput {
-    /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
-    pub fn builder() -> crate::output::record_activity_task_heartbeat_output::Builder {
-        crate::output::record_activity_task_heartbeat_output::Builder::default()
-    }
 }
 
 /// <p>A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.</p>
@@ -905,6 +922,13 @@ impl aws_http::request_id::RequestId for PollForDecisionTaskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PollForDecisionTaskOutput {
+    /// Creates a new builder-style object to manufacture [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
+    pub fn builder() -> crate::output::poll_for_decision_task_output::Builder {
+        crate::output::poll_for_decision_task_output::Builder::default()
+    }
+}
+
 /// See [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
 pub mod poll_for_decision_task_output {
     
@@ -1028,12 +1052,6 @@ pub mod poll_for_decision_task_output {
     
     
 }
-impl PollForDecisionTaskOutput {
-    /// Creates a new builder-style object to manufacture [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
-    pub fn builder() -> crate::output::poll_for_decision_task_output::Builder {
-        crate::output::poll_for_decision_task_output::Builder::default()
-    }
-}
 
 /// <p>Unit of work sent to an activity worker.</p>
 #[non_exhaustive]
@@ -1090,6 +1108,13 @@ impl aws_http::request_id::RequestId for PollForActivityTaskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PollForActivityTaskOutput {
+    /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
+    pub fn builder() -> crate::output::poll_for_activity_task_output::Builder {
+        crate::output::poll_for_activity_task_output::Builder::default()
+    }
+}
+
 /// See [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
 pub mod poll_for_activity_task_output {
     
@@ -1192,12 +1217,6 @@ pub mod poll_for_activity_task_output {
     
     
 }
-impl PollForActivityTaskOutput {
-    /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
-    pub fn builder() -> crate::output::poll_for_activity_task_output::Builder {
-        crate::output::poll_for_activity_task_output::Builder::default()
-    }
-}
 
 /// <p>Contains a paginated list of information structures about workflow types.</p>
 #[non_exhaustive]
@@ -1228,6 +1247,13 @@ impl aws_http::request_id::RequestId for ListWorkflowTypesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorkflowTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
+    pub fn builder() -> crate::output::list_workflow_types_output::Builder {
+        crate::output::list_workflow_types_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
 pub mod list_workflow_types_output {
     
@@ -1289,12 +1315,6 @@ pub mod list_workflow_types_output {
     
     
 }
-impl ListWorkflowTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
-    pub fn builder() -> crate::output::list_workflow_types_output::Builder {
-        crate::output::list_workflow_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1316,6 +1336,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1363,12 +1390,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>Contains a paginated list of information about workflow executions.</p>
 #[non_exhaustive]
@@ -1399,6 +1420,13 @@ impl aws_http::request_id::RequestId for ListOpenWorkflowExecutionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListOpenWorkflowExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
+    pub fn builder() -> crate::output::list_open_workflow_executions_output::Builder {
+        crate::output::list_open_workflow_executions_output::Builder::default()
+    }
+}
+
 /// See [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
 pub mod list_open_workflow_executions_output {
     
@@ -1460,12 +1488,6 @@ pub mod list_open_workflow_executions_output {
     
     
 }
-impl ListOpenWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
-    pub fn builder() -> crate::output::list_open_workflow_executions_output::Builder {
-        crate::output::list_open_workflow_executions_output::Builder::default()
-    }
-}
 
 /// <p>Contains a paginated collection of DomainInfo structures.</p>
 #[non_exhaustive]
@@ -1496,6 +1518,13 @@ impl aws_http::request_id::RequestId for ListDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    pub fn builder() -> crate::output::list_domains_output::Builder {
+        crate::output::list_domains_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
     
@@ -1557,12 +1586,6 @@ pub mod list_domains_output {
     
     
 }
-impl ListDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    pub fn builder() -> crate::output::list_domains_output::Builder {
-        crate::output::list_domains_output::Builder::default()
-    }
-}
 
 /// <p>Contains a paginated list of information about workflow executions.</p>
 #[non_exhaustive]
@@ -1593,6 +1616,13 @@ impl aws_http::request_id::RequestId for ListClosedWorkflowExecutionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListClosedWorkflowExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
+    pub fn builder() -> crate::output::list_closed_workflow_executions_output::Builder {
+        crate::output::list_closed_workflow_executions_output::Builder::default()
+    }
+}
+
 /// See [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
 pub mod list_closed_workflow_executions_output {
     
@@ -1654,12 +1684,6 @@ pub mod list_closed_workflow_executions_output {
     
     
 }
-impl ListClosedWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
-    pub fn builder() -> crate::output::list_closed_workflow_executions_output::Builder {
-        crate::output::list_closed_workflow_executions_output::Builder::default()
-    }
-}
 
 /// <p>Contains a paginated list of activity type information structures.</p>
 #[non_exhaustive]
@@ -1690,6 +1714,13 @@ impl aws_http::request_id::RequestId for ListActivityTypesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListActivityTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
+    pub fn builder() -> crate::output::list_activity_types_output::Builder {
+        crate::output::list_activity_types_output::Builder::default()
+    }
+}
+
 /// See [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
 pub mod list_activity_types_output {
     
@@ -1751,12 +1782,6 @@ pub mod list_activity_types_output {
     
     
 }
-impl ListActivityTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
-    pub fn builder() -> crate::output::list_activity_types_output::Builder {
-        crate::output::list_activity_types_output::Builder::default()
-    }
-}
 
 /// <p>Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.</p>
 #[non_exhaustive]
@@ -1787,6 +1812,13 @@ impl aws_http::request_id::RequestId for GetWorkflowExecutionHistoryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetWorkflowExecutionHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
+    pub fn builder() -> crate::output::get_workflow_execution_history_output::Builder {
+        crate::output::get_workflow_execution_history_output::Builder::default()
+    }
+}
+
 /// See [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
 pub mod get_workflow_execution_history_output {
     
@@ -1848,12 +1880,6 @@ pub mod get_workflow_execution_history_output {
     
     
 }
-impl GetWorkflowExecutionHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
-    pub fn builder() -> crate::output::get_workflow_execution_history_output::Builder {
-        crate::output::get_workflow_execution_history_output::Builder::default()
-    }
-}
 
 /// <p>Contains details about a workflow type.</p>
 #[non_exhaustive]
@@ -1892,6 +1918,13 @@ impl aws_http::request_id::RequestId for DescribeWorkflowTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorkflowTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
+    pub fn builder() -> crate::output::describe_workflow_type_output::Builder {
+        crate::output::describe_workflow_type_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
 pub mod describe_workflow_type_output {
     
@@ -1955,12 +1988,6 @@ pub mod describe_workflow_type_output {
     
     
 }
-impl DescribeWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
-    pub fn builder() -> crate::output::describe_workflow_type_output::Builder {
-        crate::output::describe_workflow_type_output::Builder::default()
-    }
-}
 
 /// <p>Contains details about a workflow execution.</p>
 #[non_exhaustive]
@@ -2010,6 +2037,13 @@ impl aws_http::request_id::RequestId for DescribeWorkflowExecutionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorkflowExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
+    pub fn builder() -> crate::output::describe_workflow_execution_output::Builder {
+        crate::output::describe_workflow_execution_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
 pub mod describe_workflow_execution_output {
     
@@ -2099,12 +2133,6 @@ pub mod describe_workflow_execution_output {
     
     
 }
-impl DescribeWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
-    pub fn builder() -> crate::output::describe_workflow_execution_output::Builder {
-        crate::output::describe_workflow_execution_output::Builder::default()
-    }
-}
 
 /// <p>Contains details of a domain.</p>
 #[non_exhaustive]
@@ -2133,6 +2161,13 @@ impl aws_http::request_id::RequestId for DescribeDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    pub fn builder() -> crate::output::describe_domain_output::Builder {
+        crate::output::describe_domain_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
     
@@ -2186,12 +2221,6 @@ pub mod describe_domain_output {
     
     
 }
-impl DescribeDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-    pub fn builder() -> crate::output::describe_domain_output::Builder {
-        crate::output::describe_domain_output::Builder::default()
-    }
-}
 
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
@@ -2230,6 +2259,13 @@ impl aws_http::request_id::RequestId for DescribeActivityTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeActivityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
+    pub fn builder() -> crate::output::describe_activity_type_output::Builder {
+        crate::output::describe_activity_type_output::Builder::default()
+    }
+}
+
 /// See [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
 pub mod describe_activity_type_output {
     
@@ -2293,12 +2329,6 @@ pub mod describe_activity_type_output {
     
     
 }
-impl DescribeActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
-    pub fn builder() -> crate::output::describe_activity_type_output::Builder {
-        crate::output::describe_activity_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2311,6 +2341,13 @@ impl aws_http::request_id::RequestId for DeprecateWorkflowTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeprecateWorkflowTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
+    pub fn builder() -> crate::output::deprecate_workflow_type_output::Builder {
+        crate::output::deprecate_workflow_type_output::Builder::default()
+    }
+}
+
 /// See [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
 pub mod deprecate_workflow_type_output {
     
@@ -2340,12 +2377,6 @@ pub mod deprecate_workflow_type_output {
     
     
 }
-impl DeprecateWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
-    pub fn builder() -> crate::output::deprecate_workflow_type_output::Builder {
-        crate::output::deprecate_workflow_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2358,6 +2389,13 @@ impl aws_http::request_id::RequestId for DeprecateDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeprecateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
+    pub fn builder() -> crate::output::deprecate_domain_output::Builder {
+        crate::output::deprecate_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
 pub mod deprecate_domain_output {
     
@@ -2387,12 +2425,6 @@ pub mod deprecate_domain_output {
     
     
 }
-impl DeprecateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
-    pub fn builder() -> crate::output::deprecate_domain_output::Builder {
-        crate::output::deprecate_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2405,6 +2437,13 @@ impl aws_http::request_id::RequestId for DeprecateActivityTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeprecateActivityTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
+    pub fn builder() -> crate::output::deprecate_activity_type_output::Builder {
+        crate::output::deprecate_activity_type_output::Builder::default()
+    }
+}
+
 /// See [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
 pub mod deprecate_activity_type_output {
     
@@ -2434,12 +2473,6 @@ pub mod deprecate_activity_type_output {
     
     
 }
-impl DeprecateActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
-    pub fn builder() -> crate::output::deprecate_activity_type_output::Builder {
-        crate::output::deprecate_activity_type_output::Builder::default()
-    }
-}
 
 /// <p>Contains the count of tasks in a task list.</p>
 #[non_exhaustive]
@@ -2468,6 +2501,13 @@ impl aws_http::request_id::RequestId for CountPendingDecisionTasksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CountPendingDecisionTasksOutput {
+    /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
+    pub fn builder() -> crate::output::count_pending_decision_tasks_output::Builder {
+        crate::output::count_pending_decision_tasks_output::Builder::default()
+    }
+}
+
 /// See [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
 pub mod count_pending_decision_tasks_output {
     
@@ -2523,12 +2563,6 @@ pub mod count_pending_decision_tasks_output {
     
     
 }
-impl CountPendingDecisionTasksOutput {
-    /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
-    pub fn builder() -> crate::output::count_pending_decision_tasks_output::Builder {
-        crate::output::count_pending_decision_tasks_output::Builder::default()
-    }
-}
 
 /// <p>Contains the count of tasks in a task list.</p>
 #[non_exhaustive]
@@ -2557,6 +2591,13 @@ impl aws_http::request_id::RequestId for CountPendingActivityTasksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CountPendingActivityTasksOutput {
+    /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
+    pub fn builder() -> crate::output::count_pending_activity_tasks_output::Builder {
+        crate::output::count_pending_activity_tasks_output::Builder::default()
+    }
+}
+
 /// See [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
 pub mod count_pending_activity_tasks_output {
     
@@ -2612,12 +2653,6 @@ pub mod count_pending_activity_tasks_output {
     
     
 }
-impl CountPendingActivityTasksOutput {
-    /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
-    pub fn builder() -> crate::output::count_pending_activity_tasks_output::Builder {
-        crate::output::count_pending_activity_tasks_output::Builder::default()
-    }
-}
 
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code> </p>
 #[non_exhaustive]
@@ -2646,6 +2681,13 @@ impl aws_http::request_id::RequestId for CountOpenWorkflowExecutionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CountOpenWorkflowExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
+    pub fn builder() -> crate::output::count_open_workflow_executions_output::Builder {
+        crate::output::count_open_workflow_executions_output::Builder::default()
+    }
+}
+
 /// See [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
 pub mod count_open_workflow_executions_output {
     
@@ -2701,12 +2743,6 @@ pub mod count_open_workflow_executions_output {
     
     
 }
-impl CountOpenWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
-    pub fn builder() -> crate::output::count_open_workflow_executions_output::Builder {
-        crate::output::count_open_workflow_executions_output::Builder::default()
-    }
-}
 
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code> </p>
 #[non_exhaustive]
@@ -2735,6 +2771,13 @@ impl aws_http::request_id::RequestId for CountClosedWorkflowExecutionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CountClosedWorkflowExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
+    pub fn builder() -> crate::output::count_closed_workflow_executions_output::Builder {
+        crate::output::count_closed_workflow_executions_output::Builder::default()
+    }
+}
+
 /// See [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
 pub mod count_closed_workflow_executions_output {
     
@@ -2789,11 +2832,5 @@ pub mod count_closed_workflow_executions_output {
     }
     
     
-}
-impl CountClosedWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
-    pub fn builder() -> crate::output::count_closed_workflow_executions_output::Builder {
-        crate::output::count_closed_workflow_executions_output::Builder::default()
-    }
 }
 

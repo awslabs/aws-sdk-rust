@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_token`](crate::client::Client::create_token).
             ///
-            /// See [`crate::client::fluent_builders::CreateToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateToken {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`register_client`](crate::client::Client::register_client).
             ///
-            /// See [`crate::client::fluent_builders::RegisterClient`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RegisterClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterClient {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterClient {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_device_authorization`](crate::client::Client::start_device_authorization).
             ///
-            /// See [`crate::client::fluent_builders::StartDeviceAuthorization`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartDeviceAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDeviceAuthorization {
     _private: ()

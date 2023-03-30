@@ -44,6 +44,13 @@ impl BillingRecord {
         self.price
     }
 }
+impl BillingRecord {
+    /// Creates a new builder-style object to manufacture [`BillingRecord`](crate::model::BillingRecord).
+    pub fn builder() -> crate::model::billing_record::Builder {
+        crate::model::billing_record::Builder::default()
+    }
+}
+
 /// See [`BillingRecord`](crate::model::BillingRecord).
 pub mod billing_record {
     
@@ -124,12 +131,6 @@ pub mod billing_record {
     }
     
     
-}
-impl BillingRecord {
-    /// Creates a new builder-style object to manufacture [`BillingRecord`](crate::model::BillingRecord).
-    pub fn builder() -> crate::model::billing_record::Builder {
-        crate::model::billing_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperationType`, it is important to ensure
@@ -323,6 +324,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -373,12 +381,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Name server includes the following elements.</p>
 #[non_exhaustive]
@@ -405,6 +407,13 @@ impl Nameserver {
         self.glue_ips.as_deref()
     }
 }
+impl Nameserver {
+    /// Creates a new builder-style object to manufacture [`Nameserver`](crate::model::Nameserver).
+    pub fn builder() -> crate::model::nameserver::Builder {
+        crate::model::nameserver::Builder::default()
+    }
+}
+
 /// See [`Nameserver`](crate::model::Nameserver).
 pub mod nameserver {
     
@@ -457,12 +466,6 @@ pub mod nameserver {
     
     
 }
-impl Nameserver {
-    /// Creates a new builder-style object to manufacture [`Nameserver`](crate::model::Nameserver).
-    pub fn builder() -> crate::model::nameserver::Builder {
-        crate::model::nameserver::Builder::default()
-    }
-}
 
 /// <p> Customer's consent for the owner change request. </p>
 #[non_exhaustive]
@@ -485,6 +488,13 @@ impl Consent {
         self.currency.as_deref()
     }
 }
+impl Consent {
+    /// Creates a new builder-style object to manufacture [`Consent`](crate::model::Consent).
+    pub fn builder() -> crate::model::consent::Builder {
+        crate::model::consent::Builder::default()
+    }
+}
+
 /// See [`Consent`](crate::model::Consent).
 pub mod consent {
     
@@ -527,12 +537,6 @@ pub mod consent {
     }
     
     
-}
-impl Consent {
-    /// Creates a new builder-style object to manufacture [`Consent`](crate::model::Consent).
-    pub fn builder() -> crate::model::consent::Builder {
-        crate::model::consent::Builder::default()
-    }
 }
 
 /// <p>ContactDetail includes the following elements.</p>
@@ -674,6 +678,13 @@ impl  std::fmt::Debug for ContactDetail  {
         formatter.finish()
     }
 }
+impl ContactDetail {
+    /// Creates a new builder-style object to manufacture [`ContactDetail`](crate::model::ContactDetail).
+    pub fn builder() -> crate::model::contact_detail::Builder {
+        crate::model::contact_detail::Builder::default()
+    }
+}
+
 /// See [`ContactDetail`](crate::model::ContactDetail).
 pub mod contact_detail {
     
@@ -899,12 +910,6 @@ pub mod contact_detail {
     }
     
     
-}
-impl ContactDetail {
-    /// Creates a new builder-style object to manufacture [`ContactDetail`](crate::model::ContactDetail).
-    pub fn builder() -> crate::model::contact_detail::Builder {
-        crate::model::contact_detail::Builder::default()
-    }
 }
 
 /// <p>ExtraParam includes the following elements.</p>
@@ -1476,6 +1481,13 @@ impl  std::fmt::Debug for ExtraParam  {
         formatter.finish()
     }
 }
+impl ExtraParam {
+    /// Creates a new builder-style object to manufacture [`ExtraParam`](crate::model::ExtraParam).
+    pub fn builder() -> crate::model::extra_param::Builder {
+        crate::model::extra_param::Builder::default()
+    }
+}
+
 /// See [`ExtraParam`](crate::model::ExtraParam).
 pub mod extra_param {
     
@@ -2065,12 +2077,6 @@ pub mod extra_param {
     }
     
     
-}
-impl ExtraParam {
-    /// Creates a new builder-style object to manufacture [`ExtraParam`](crate::model::ExtraParam).
-    pub fn builder() -> crate::model::extra_param::Builder {
-        crate::model::extra_param::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExtraParamName`, it is important to ensure
@@ -3773,6 +3779,13 @@ impl DomainPrice {
         self.restoration_price.as_ref()
     }
 }
+impl DomainPrice {
+    /// Creates a new builder-style object to manufacture [`DomainPrice`](crate::model::DomainPrice).
+    pub fn builder() -> crate::model::domain_price::Builder {
+        crate::model::domain_price::Builder::default()
+    }
+}
+
 /// See [`DomainPrice`](crate::model::DomainPrice).
 pub mod domain_price {
     
@@ -3863,12 +3876,6 @@ pub mod domain_price {
     
     
 }
-impl DomainPrice {
-    /// Creates a new builder-style object to manufacture [`DomainPrice`](crate::model::DomainPrice).
-    pub fn builder() -> crate::model::domain_price::Builder {
-        crate::model::domain_price::Builder::default()
-    }
-}
 
 /// <p>Currency-specific price information.</p>
 #[non_exhaustive]
@@ -3891,6 +3898,13 @@ impl PriceWithCurrency {
         self.currency.as_deref()
     }
 }
+impl PriceWithCurrency {
+    /// Creates a new builder-style object to manufacture [`PriceWithCurrency`](crate::model::PriceWithCurrency).
+    pub fn builder() -> crate::model::price_with_currency::Builder {
+        crate::model::price_with_currency::Builder::default()
+    }
+}
+
 /// See [`PriceWithCurrency`](crate::model::PriceWithCurrency).
 pub mod price_with_currency {
     
@@ -3933,12 +3947,6 @@ pub mod price_with_currency {
     }
     
     
-}
-impl PriceWithCurrency {
-    /// Creates a new builder-style object to manufacture [`PriceWithCurrency`](crate::model::PriceWithCurrency).
-    pub fn builder() -> crate::model::price_with_currency::Builder {
-        crate::model::price_with_currency::Builder::default()
-    }
 }
 
 /// <p>OperationSummary includes the following elements.</p>
@@ -4020,6 +4028,13 @@ impl OperationSummary {
         self.last_updated_date.as_ref()
     }
 }
+impl OperationSummary {
+    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
+    pub fn builder() -> crate::model::operation_summary::Builder {
+        crate::model::operation_summary::Builder::default()
+    }
+}
+
 /// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
     
@@ -4149,12 +4164,6 @@ pub mod operation_summary {
     }
     
     
-}
-impl OperationSummary {
-    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
-    pub fn builder() -> crate::model::operation_summary::Builder {
-        crate::model::operation_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StatusFlag`, it is important to ensure
@@ -4545,6 +4554,13 @@ impl DomainSummary {
         self.expiry.as_ref()
     }
 }
+impl DomainSummary {
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
+    pub fn builder() -> crate::model::domain_summary::Builder {
+        crate::model::domain_summary::Builder::default()
+    }
+}
+
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
     
@@ -4611,12 +4627,6 @@ pub mod domain_summary {
     
     
 }
-impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
-    pub fn builder() -> crate::model::domain_summary::Builder {
-        crate::model::domain_summary::Builder::default()
-    }
-}
 
 /// <p>Information for sorting a list of domains.</p>
 #[non_exhaustive]
@@ -4639,6 +4649,13 @@ impl SortCondition {
         self.sort_order.as_ref()
     }
 }
+impl SortCondition {
+    /// Creates a new builder-style object to manufacture [`SortCondition`](crate::model::SortCondition).
+    pub fn builder() -> crate::model::sort_condition::Builder {
+        crate::model::sort_condition::Builder::default()
+    }
+}
+
 /// See [`SortCondition`](crate::model::SortCondition).
 pub mod sort_condition {
     
@@ -4680,12 +4697,6 @@ pub mod sort_condition {
     }
     
     
-}
-impl SortCondition {
-    /// Creates a new builder-style object to manufacture [`SortCondition`](crate::model::SortCondition).
-    pub fn builder() -> crate::model::sort_condition::Builder {
-        crate::model::sort_condition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ListDomainsAttributeName`, it is important to ensure
@@ -4808,6 +4819,13 @@ impl FilterCondition {
         self.values.as_deref()
     }
 }
+impl FilterCondition {
+    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
+    pub fn builder() -> crate::model::filter_condition::Builder {
+        crate::model::filter_condition::Builder::default()
+    }
+}
+
 /// See [`FilterCondition`](crate::model::FilterCondition).
 pub mod filter_condition {
     
@@ -4877,12 +4895,6 @@ pub mod filter_condition {
     }
     
     
-}
-impl FilterCondition {
-    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
-    pub fn builder() -> crate::model::filter_condition::Builder {
-        crate::model::filter_condition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Operator`, it is important to ensure
@@ -5111,6 +5123,13 @@ impl DomainSuggestion {
         self.availability.as_deref()
     }
 }
+impl DomainSuggestion {
+    /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::model::DomainSuggestion).
+    pub fn builder() -> crate::model::domain_suggestion::Builder {
+        crate::model::domain_suggestion::Builder::default()
+    }
+}
+
 /// See [`DomainSuggestion`](crate::model::DomainSuggestion).
 pub mod domain_suggestion {
     
@@ -5271,12 +5290,6 @@ pub mod domain_suggestion {
     
     
 }
-impl DomainSuggestion {
-    /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::model::DomainSuggestion).
-    pub fn builder() -> crate::model::domain_suggestion::Builder {
-        crate::model::domain_suggestion::Builder::default()
-    }
-}
 
 /// <p>Information about the DNSSEC key.</p> 
 /// <p>You get this from your DNS provider and then give it to Route&nbsp;53 (by using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>) to pass it to the registry to establish the chain of trust.</p>
@@ -5345,6 +5358,13 @@ impl DnssecKey {
         self.id.as_deref()
     }
 }
+impl DnssecKey {
+    /// Creates a new builder-style object to manufacture [`DnssecKey`](crate::model::DnssecKey).
+    pub fn builder() -> crate::model::dnssec_key::Builder {
+        crate::model::dnssec_key::Builder::default()
+    }
+}
+
 /// See [`DnssecKey`](crate::model::DnssecKey).
 pub mod dnssec_key {
     
@@ -5456,12 +5476,6 @@ pub mod dnssec_key {
     }
     
     
-}
-impl DnssecKey {
-    /// Creates a new builder-style object to manufacture [`DnssecKey`](crate::model::DnssecKey).
-    pub fn builder() -> crate::model::dnssec_key::Builder {
-        crate::model::dnssec_key::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReachabilityStatus`, it is important to ensure
@@ -5647,6 +5661,13 @@ impl DomainTransferability {
         self.transferable.as_ref()
     }
 }
+impl DomainTransferability {
+    /// Creates a new builder-style object to manufacture [`DomainTransferability`](crate::model::DomainTransferability).
+    pub fn builder() -> crate::model::domain_transferability::Builder {
+        crate::model::domain_transferability::Builder::default()
+    }
+}
+
 /// See [`DomainTransferability`](crate::model::DomainTransferability).
 pub mod domain_transferability {
     
@@ -5758,12 +5779,6 @@ pub mod domain_transferability {
     }
     
     
-}
-impl DomainTransferability {
-    /// Creates a new builder-style object to manufacture [`DomainTransferability`](crate::model::DomainTransferability).
-    pub fn builder() -> crate::model::domain_transferability::Builder {
-        crate::model::domain_transferability::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Transferable`, it is important to ensure
@@ -6041,6 +6056,13 @@ impl DnssecSigningAttributes {
         self.public_key.as_deref()
     }
 }
+impl DnssecSigningAttributes {
+    /// Creates a new builder-style object to manufacture [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
+    pub fn builder() -> crate::model::dnssec_signing_attributes::Builder {
+        crate::model::dnssec_signing_attributes::Builder::default()
+    }
+}
+
 /// See [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
 pub mod dnssec_signing_attributes {
     
@@ -6096,11 +6118,5 @@ pub mod dnssec_signing_attributes {
     }
     
     
-}
-impl DnssecSigningAttributes {
-    /// Creates a new builder-style object to manufacture [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
-    pub fn builder() -> crate::model::dnssec_signing_attributes::Builder {
-        crate::model::dnssec_signing_attributes::Builder::default()
-    }
 }
 

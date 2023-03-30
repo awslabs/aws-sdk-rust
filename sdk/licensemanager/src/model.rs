@@ -14,6 +14,13 @@ impl OrganizationConfiguration {
         self.enable_integration
     }
 }
+impl OrganizationConfiguration {
+    /// Creates a new builder-style object to manufacture [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
+    pub fn builder() -> crate::model::organization_configuration::Builder {
+        crate::model::organization_configuration::Builder::default()
+    }
+}
+
 /// See [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
 pub mod organization_configuration {
     
@@ -45,12 +52,6 @@ pub mod organization_configuration {
     
     
 }
-impl OrganizationConfiguration {
-    /// Creates a new builder-style object to manufacture [`OrganizationConfiguration`](crate::model::OrganizationConfiguration).
-    pub fn builder() -> crate::model::organization_configuration::Builder {
-        crate::model::organization_configuration::Builder::default()
-    }
-}
 
 /// <p>Details for associating a license configuration with a resource.</p>
 #[non_exhaustive]
@@ -73,6 +74,13 @@ impl LicenseSpecification {
         self.ami_association_scope.as_deref()
     }
 }
+impl LicenseSpecification {
+    /// Creates a new builder-style object to manufacture [`LicenseSpecification`](crate::model::LicenseSpecification).
+    pub fn builder() -> crate::model::license_specification::Builder {
+        crate::model::license_specification::Builder::default()
+    }
+}
+
 /// See [`LicenseSpecification`](crate::model::LicenseSpecification).
 pub mod license_specification {
     
@@ -115,12 +123,6 @@ pub mod license_specification {
     
     
 }
-impl LicenseSpecification {
-    /// Creates a new builder-style object to manufacture [`LicenseSpecification`](crate::model::LicenseSpecification).
-    pub fn builder() -> crate::model::license_specification::Builder {
-        crate::model::license_specification::Builder::default()
-    }
-}
 
 /// <p>Details about how frequently reports are generated.</p>
 #[non_exhaustive]
@@ -143,6 +145,13 @@ impl ReportFrequency {
         self.period.as_ref()
     }
 }
+impl ReportFrequency {
+    /// Creates a new builder-style object to manufacture [`ReportFrequency`](crate::model::ReportFrequency).
+    pub fn builder() -> crate::model::report_frequency::Builder {
+        crate::model::report_frequency::Builder::default()
+    }
+}
+
 /// See [`ReportFrequency`](crate::model::ReportFrequency).
 pub mod report_frequency {
     
@@ -184,12 +193,6 @@ pub mod report_frequency {
     }
     
     
-}
-impl ReportFrequency {
-    /// Creates a new builder-style object to manufacture [`ReportFrequency`](crate::model::ReportFrequency).
-    pub fn builder() -> crate::model::report_frequency::Builder {
-        crate::model::report_frequency::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReportFrequencyType`, it is important to ensure
@@ -293,6 +296,13 @@ impl ReportContext {
         self.license_configuration_arns.as_deref()
     }
 }
+impl ReportContext {
+    /// Creates a new builder-style object to manufacture [`ReportContext`](crate::model::ReportContext).
+    pub fn builder() -> crate::model::report_context::Builder {
+        crate::model::report_context::Builder::default()
+    }
+}
+
 /// See [`ReportContext`](crate::model::ReportContext).
 pub mod report_context {
     
@@ -328,12 +338,6 @@ pub mod report_context {
     }
     
     
-}
-impl ReportContext {
-    /// Creates a new builder-style object to manufacture [`ReportContext`](crate::model::ReportContext).
-    pub fn builder() -> crate::model::report_context::Builder {
-        crate::model::report_context::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReportType`, it is important to ensure
@@ -473,6 +477,13 @@ impl ProductInformation {
         self.product_information_filter_list.as_deref()
     }
 }
+impl ProductInformation {
+    /// Creates a new builder-style object to manufacture [`ProductInformation`](crate::model::ProductInformation).
+    pub fn builder() -> crate::model::product_information::Builder {
+        crate::model::product_information::Builder::default()
+    }
+}
+
 /// See [`ProductInformation`](crate::model::ProductInformation).
 pub mod product_information {
     
@@ -555,12 +566,6 @@ pub mod product_information {
     
     
 }
-impl ProductInformation {
-    /// Creates a new builder-style object to manufacture [`ProductInformation`](crate::model::ProductInformation).
-    pub fn builder() -> crate::model::product_information::Builder {
-        crate::model::product_information::Builder::default()
-    }
-}
 
 /// <p>Describes product information filters.</p>
 #[non_exhaustive]
@@ -590,6 +595,13 @@ impl ProductInformationFilter {
         self.product_information_filter_comparator.as_deref()
     }
 }
+impl ProductInformationFilter {
+    /// Creates a new builder-style object to manufacture [`ProductInformationFilter`](crate::model::ProductInformationFilter).
+    pub fn builder() -> crate::model::product_information_filter::Builder {
+        crate::model::product_information_filter::Builder::default()
+    }
+}
+
 /// See [`ProductInformationFilter`](crate::model::ProductInformationFilter).
 pub mod product_information_filter {
     
@@ -649,12 +661,6 @@ pub mod product_information_filter {
     }
     
     
-}
-impl ProductInformationFilter {
-    /// Creates a new builder-style object to manufacture [`ProductInformationFilter`](crate::model::ProductInformationFilter).
-    pub fn builder() -> crate::model::product_information_filter::Builder {
-        crate::model::product_information_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LicenseConfigurationStatus`, it is important to ensure
@@ -760,6 +766,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -801,12 +814,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GrantStatus`, it is important to ensure
@@ -975,6 +982,13 @@ impl LicenseConfigurationUsage {
         self.consumed_licenses
     }
 }
+impl LicenseConfigurationUsage {
+    /// Creates a new builder-style object to manufacture [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
+    pub fn builder() -> crate::model::license_configuration_usage::Builder {
+        crate::model::license_configuration_usage::Builder::default()
+    }
+}
+
 /// See [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
 pub mod license_configuration_usage {
     
@@ -1064,12 +1078,6 @@ pub mod license_configuration_usage {
     }
     
     
-}
-impl LicenseConfigurationUsage {
-    /// Creates a new builder-style object to manufacture [`LicenseConfigurationUsage`](crate::model::LicenseConfigurationUsage).
-    pub fn builder() -> crate::model::license_configuration_usage::Builder {
-        crate::model::license_configuration_usage::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
@@ -1190,6 +1198,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -1237,12 +1252,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// <p>Describes a token.</p>
@@ -1301,6 +1310,13 @@ impl TokenData {
         self.status.as_deref()
     }
 }
+impl TokenData {
+    /// Creates a new builder-style object to manufacture [`TokenData`](crate::model::TokenData).
+    pub fn builder() -> crate::model::token_data::Builder {
+        crate::model::token_data::Builder::default()
+    }
+}
+
 /// See [`TokenData`](crate::model::TokenData).
 pub mod token_data {
     
@@ -1415,12 +1431,6 @@ pub mod token_data {
     
     
 }
-impl TokenData {
-    /// Creates a new builder-style object to manufacture [`TokenData`](crate::model::TokenData).
-    pub fn builder() -> crate::model::token_data::Builder {
-        crate::model::token_data::Builder::default()
-    }
-}
 
 /// <p>Details about a resource.</p>
 #[non_exhaustive]
@@ -1471,6 +1481,13 @@ impl ResourceInventory {
         self.resource_owning_account_id.as_deref()
     }
 }
+impl ResourceInventory {
+    /// Creates a new builder-style object to manufacture [`ResourceInventory`](crate::model::ResourceInventory).
+    pub fn builder() -> crate::model::resource_inventory::Builder {
+        crate::model::resource_inventory::Builder::default()
+    }
+}
+
 /// See [`ResourceInventory`](crate::model::ResourceInventory).
 pub mod resource_inventory {
     
@@ -1561,12 +1578,6 @@ pub mod resource_inventory {
     
     
 }
-impl ResourceInventory {
-    /// Creates a new builder-style object to manufacture [`ResourceInventory`](crate::model::ResourceInventory).
-    pub fn builder() -> crate::model::resource_inventory::Builder {
-        crate::model::resource_inventory::Builder::default()
-    }
-}
 
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
@@ -1596,6 +1607,13 @@ impl InventoryFilter {
         self.value.as_deref()
     }
 }
+impl InventoryFilter {
+    /// Creates a new builder-style object to manufacture [`InventoryFilter`](crate::model::InventoryFilter).
+    pub fn builder() -> crate::model::inventory_filter::Builder {
+        crate::model::inventory_filter::Builder::default()
+    }
+}
+
 /// See [`InventoryFilter`](crate::model::InventoryFilter).
 pub mod inventory_filter {
     
@@ -1649,12 +1667,6 @@ pub mod inventory_filter {
     }
     
     
-}
-impl InventoryFilter {
-    /// Creates a new builder-style object to manufacture [`InventoryFilter`](crate::model::InventoryFilter).
-    pub fn builder() -> crate::model::inventory_filter::Builder {
-        crate::model::inventory_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InventoryFilterCondition`, it is important to ensure
@@ -1861,6 +1873,13 @@ impl GrantedLicense {
         self.received_metadata.as_ref()
     }
 }
+impl GrantedLicense {
+    /// Creates a new builder-style object to manufacture [`GrantedLicense`](crate::model::GrantedLicense).
+    pub fn builder() -> crate::model::granted_license::Builder {
+        crate::model::granted_license::Builder::default()
+    }
+}
+
 /// See [`GrantedLicense`](crate::model::GrantedLicense).
 pub mod granted_license {
     
@@ -2071,12 +2090,6 @@ pub mod granted_license {
     
     
 }
-impl GrantedLicense {
-    /// Creates a new builder-style object to manufacture [`GrantedLicense`](crate::model::GrantedLicense).
-    pub fn builder() -> crate::model::granted_license::Builder {
-        crate::model::granted_license::Builder::default()
-    }
-}
 
 /// <p>Metadata associated with received licenses and grants.</p>
 #[non_exhaustive]
@@ -2106,6 +2119,13 @@ impl ReceivedMetadata {
         self.allowed_operations.as_deref()
     }
 }
+impl ReceivedMetadata {
+    /// Creates a new builder-style object to manufacture [`ReceivedMetadata`](crate::model::ReceivedMetadata).
+    pub fn builder() -> crate::model::received_metadata::Builder {
+        crate::model::received_metadata::Builder::default()
+    }
+}
+
 /// See [`ReceivedMetadata`](crate::model::ReceivedMetadata).
 pub mod received_metadata {
     
@@ -2165,12 +2185,6 @@ pub mod received_metadata {
     }
     
     
-}
-impl ReceivedMetadata {
-    /// Creates a new builder-style object to manufacture [`ReceivedMetadata`](crate::model::ReceivedMetadata).
-    pub fn builder() -> crate::model::received_metadata::Builder {
-        crate::model::received_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AllowedOperation`, it is important to ensure
@@ -2413,6 +2427,13 @@ impl Metadata {
         self.value.as_deref()
     }
 }
+impl Metadata {
+    /// Creates a new builder-style object to manufacture [`Metadata`](crate::model::Metadata).
+    pub fn builder() -> crate::model::metadata::Builder {
+        crate::model::metadata::Builder::default()
+    }
+}
+
 /// See [`Metadata`](crate::model::Metadata).
 pub mod metadata {
     
@@ -2455,12 +2476,6 @@ pub mod metadata {
     
     
 }
-impl Metadata {
-    /// Creates a new builder-style object to manufacture [`Metadata`](crate::model::Metadata).
-    pub fn builder() -> crate::model::metadata::Builder {
-        crate::model::metadata::Builder::default()
-    }
-}
 
 /// <p>Details about a consumption configuration.</p>
 #[non_exhaustive]
@@ -2490,6 +2505,13 @@ impl ConsumptionConfiguration {
         self.borrow_configuration.as_ref()
     }
 }
+impl ConsumptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
+    pub fn builder() -> crate::model::consumption_configuration::Builder {
+        crate::model::consumption_configuration::Builder::default()
+    }
+}
+
 /// See [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
 pub mod consumption_configuration {
     
@@ -2544,12 +2566,6 @@ pub mod consumption_configuration {
     
     
 }
-impl ConsumptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConsumptionConfiguration`](crate::model::ConsumptionConfiguration).
-    pub fn builder() -> crate::model::consumption_configuration::Builder {
-        crate::model::consumption_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about a borrow configuration.</p>
 #[non_exhaustive]
@@ -2572,6 +2588,13 @@ impl BorrowConfiguration {
         self.max_time_to_live_in_minutes
     }
 }
+impl BorrowConfiguration {
+    /// Creates a new builder-style object to manufacture [`BorrowConfiguration`](crate::model::BorrowConfiguration).
+    pub fn builder() -> crate::model::borrow_configuration::Builder {
+        crate::model::borrow_configuration::Builder::default()
+    }
+}
+
 /// See [`BorrowConfiguration`](crate::model::BorrowConfiguration).
 pub mod borrow_configuration {
     
@@ -2614,12 +2637,6 @@ pub mod borrow_configuration {
     
     
 }
-impl BorrowConfiguration {
-    /// Creates a new builder-style object to manufacture [`BorrowConfiguration`](crate::model::BorrowConfiguration).
-    pub fn builder() -> crate::model::borrow_configuration::Builder {
-        crate::model::borrow_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about a provisional configuration.</p>
 #[non_exhaustive]
@@ -2635,6 +2652,13 @@ impl ProvisionalConfiguration {
         self.max_time_to_live_in_minutes
     }
 }
+impl ProvisionalConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
+    pub fn builder() -> crate::model::provisional_configuration::Builder {
+        crate::model::provisional_configuration::Builder::default()
+    }
+}
+
 /// See [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
 pub mod provisional_configuration {
     
@@ -2664,12 +2688,6 @@ pub mod provisional_configuration {
     }
     
     
-}
-impl ProvisionalConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProvisionalConfiguration`](crate::model::ProvisionalConfiguration).
-    pub fn builder() -> crate::model::provisional_configuration::Builder {
-        crate::model::provisional_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RenewType`, it is important to ensure
@@ -2808,6 +2826,13 @@ impl Entitlement {
         self.allow_check_in
     }
 }
+impl Entitlement {
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
+    pub fn builder() -> crate::model::entitlement::Builder {
+        crate::model::entitlement::Builder::default()
+    }
+}
+
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
     
@@ -2897,12 +2922,6 @@ pub mod entitlement {
     }
     
     
-}
-impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
-    pub fn builder() -> crate::model::entitlement::Builder {
-        crate::model::entitlement::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntitlementUnit`, it is important to ensure
@@ -3133,6 +3152,13 @@ impl DatetimeRange {
         self.end.as_deref()
     }
 }
+impl DatetimeRange {
+    /// Creates a new builder-style object to manufacture [`DatetimeRange`](crate::model::DatetimeRange).
+    pub fn builder() -> crate::model::datetime_range::Builder {
+        crate::model::datetime_range::Builder::default()
+    }
+}
+
 /// See [`DatetimeRange`](crate::model::DatetimeRange).
 pub mod datetime_range {
     
@@ -3174,12 +3200,6 @@ pub mod datetime_range {
     }
     
     
-}
-impl DatetimeRange {
-    /// Creates a new builder-style object to manufacture [`DatetimeRange`](crate::model::DatetimeRange).
-    pub fn builder() -> crate::model::datetime_range::Builder {
-        crate::model::datetime_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LicenseStatus`, it is important to ensure
@@ -3317,6 +3337,13 @@ impl IssuerDetails {
         self.key_fingerprint.as_deref()
     }
 }
+impl IssuerDetails {
+    /// Creates a new builder-style object to manufacture [`IssuerDetails`](crate::model::IssuerDetails).
+    pub fn builder() -> crate::model::issuer_details::Builder {
+        crate::model::issuer_details::Builder::default()
+    }
+}
+
 /// See [`IssuerDetails`](crate::model::IssuerDetails).
 pub mod issuer_details {
     
@@ -3370,12 +3397,6 @@ pub mod issuer_details {
     }
     
     
-}
-impl IssuerDetails {
-    /// Creates a new builder-style object to manufacture [`IssuerDetails`](crate::model::IssuerDetails).
-    pub fn builder() -> crate::model::issuer_details::Builder {
-        crate::model::issuer_details::Builder::default()
-    }
 }
 
 /// <p>Describes a grant.</p>
@@ -3455,6 +3476,13 @@ impl Grant {
         self.granted_operations.as_deref()
     }
 }
+impl Grant {
+    /// Creates a new builder-style object to manufacture [`Grant`](crate::model::Grant).
+    pub fn builder() -> crate::model::grant::Builder {
+        crate::model::grant::Builder::default()
+    }
+}
+
 /// See [`Grant`](crate::model::Grant).
 pub mod grant {
     
@@ -3599,12 +3627,6 @@ pub mod grant {
     
     
 }
-impl Grant {
-    /// Creates a new builder-style object to manufacture [`Grant`](crate::model::Grant).
-    pub fn builder() -> crate::model::grant::Builder {
-        crate::model::grant::Builder::default()
-    }
-}
 
 /// <p>Software license that is managed in License Manager.</p>
 #[non_exhaustive]
@@ -3711,6 +3733,13 @@ impl License {
         self.version.as_deref()
     }
 }
+impl License {
+    /// Creates a new builder-style object to manufacture [`License`](crate::model::License).
+    pub fn builder() -> crate::model::license::Builder {
+        crate::model::license::Builder::default()
+    }
+}
+
 /// See [`License`](crate::model::License).
 pub mod license {
     
@@ -3909,12 +3938,6 @@ pub mod license {
     
     
 }
-impl License {
-    /// Creates a new builder-style object to manufacture [`License`](crate::model::License).
-    pub fn builder() -> crate::model::license::Builder {
-        crate::model::license::Builder::default()
-    }
-}
 
 /// <p>Describe the details of a report generator.</p>
 #[non_exhaustive]
@@ -4014,6 +4037,13 @@ impl ReportGenerator {
         self.tags.as_deref()
     }
 }
+impl ReportGenerator {
+    /// Creates a new builder-style object to manufacture [`ReportGenerator`](crate::model::ReportGenerator).
+    pub fn builder() -> crate::model::report_generator::Builder {
+        crate::model::report_generator::Builder::default()
+    }
+}
+
 /// See [`ReportGenerator`](crate::model::ReportGenerator).
 pub mod report_generator {
     
@@ -4200,12 +4230,6 @@ pub mod report_generator {
     
     
 }
-impl ReportGenerator {
-    /// Creates a new builder-style object to manufacture [`ReportGenerator`](crate::model::ReportGenerator).
-    pub fn builder() -> crate::model::report_generator::Builder {
-        crate::model::report_generator::Builder::default()
-    }
-}
 
 /// <p>Details of the S3 bucket that report generator reports are published to.</p>
 #[non_exhaustive]
@@ -4228,6 +4252,13 @@ impl S3Location {
         self.key_prefix.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -4269,12 +4300,6 @@ pub mod s3_location {
     }
     
     
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
 }
 
 /// <p>Information about a license type conversion task.</p>
@@ -4347,6 +4372,13 @@ impl LicenseConversionTask {
         self.end_time.as_ref()
     }
 }
+impl LicenseConversionTask {
+    /// Creates a new builder-style object to manufacture [`LicenseConversionTask`](crate::model::LicenseConversionTask).
+    pub fn builder() -> crate::model::license_conversion_task::Builder {
+        crate::model::license_conversion_task::Builder::default()
+    }
+}
+
 /// See [`LicenseConversionTask`](crate::model::LicenseConversionTask).
 pub mod license_conversion_task {
     
@@ -4473,12 +4505,6 @@ pub mod license_conversion_task {
     
     
 }
-impl LicenseConversionTask {
-    /// Creates a new builder-style object to manufacture [`LicenseConversionTask`](crate::model::LicenseConversionTask).
-    pub fn builder() -> crate::model::license_conversion_task::Builder {
-        crate::model::license_conversion_task::Builder::default()
-    }
-}
 
 /// When writing a match expression against `LicenseConversionTaskStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4581,6 +4607,13 @@ impl LicenseConversionContext {
         self.usage_operation.as_deref()
     }
 }
+impl LicenseConversionContext {
+    /// Creates a new builder-style object to manufacture [`LicenseConversionContext`](crate::model::LicenseConversionContext).
+    pub fn builder() -> crate::model::license_conversion_context::Builder {
+        crate::model::license_conversion_context::Builder::default()
+    }
+}
+
 /// See [`LicenseConversionContext`](crate::model::LicenseConversionContext).
 pub mod license_conversion_context {
     
@@ -4610,12 +4643,6 @@ pub mod license_conversion_context {
     }
     
     
-}
-impl LicenseConversionContext {
-    /// Creates a new builder-style object to manufacture [`LicenseConversionContext`](crate::model::LicenseConversionContext).
-    pub fn builder() -> crate::model::license_conversion_context::Builder {
-        crate::model::license_conversion_context::Builder::default()
-    }
 }
 
 /// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a VM must be associated with a host), and the number of licenses purchased and used.</p>
@@ -4737,6 +4764,13 @@ impl LicenseConfiguration {
         self.automated_discovery_information.as_ref()
     }
 }
+impl LicenseConfiguration {
+    /// Creates a new builder-style object to manufacture [`LicenseConfiguration`](crate::model::LicenseConfiguration).
+    pub fn builder() -> crate::model::license_configuration::Builder {
+        crate::model::license_configuration::Builder::default()
+    }
+}
+
 /// See [`LicenseConfiguration`](crate::model::LicenseConfiguration).
 pub mod license_configuration {
     
@@ -4971,12 +5005,6 @@ pub mod license_configuration {
     
     
 }
-impl LicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`LicenseConfiguration`](crate::model::LicenseConfiguration).
-    pub fn builder() -> crate::model::license_configuration::Builder {
-        crate::model::license_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes automated discovery.</p>
 #[non_exhaustive]
@@ -4992,6 +5020,13 @@ impl AutomatedDiscoveryInformation {
         self.last_run_time.as_ref()
     }
 }
+impl AutomatedDiscoveryInformation {
+    /// Creates a new builder-style object to manufacture [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
+    pub fn builder() -> crate::model::automated_discovery_information::Builder {
+        crate::model::automated_discovery_information::Builder::default()
+    }
+}
+
 /// See [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
 pub mod automated_discovery_information {
     
@@ -5022,12 +5057,6 @@ pub mod automated_discovery_information {
     
     
 }
-impl AutomatedDiscoveryInformation {
-    /// Creates a new builder-style object to manufacture [`AutomatedDiscoveryInformation`](crate::model::AutomatedDiscoveryInformation).
-    pub fn builder() -> crate::model::automated_discovery_information::Builder {
-        crate::model::automated_discovery_information::Builder::default()
-    }
-}
 
 /// <p>Summary information about a managed resource.</p>
 #[non_exhaustive]
@@ -5050,6 +5079,13 @@ impl ManagedResourceSummary {
         self.association_count
     }
 }
+impl ManagedResourceSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
+    pub fn builder() -> crate::model::managed_resource_summary::Builder {
+        crate::model::managed_resource_summary::Builder::default()
+    }
+}
+
 /// See [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
 pub mod managed_resource_summary {
     
@@ -5092,12 +5128,6 @@ pub mod managed_resource_summary {
     
     
 }
-impl ManagedResourceSummary {
-    /// Creates a new builder-style object to manufacture [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
-    pub fn builder() -> crate::model::managed_resource_summary::Builder {
-        crate::model::managed_resource_summary::Builder::default()
-    }
-}
 
 /// <p>Details about license consumption.</p>
 #[non_exhaustive]
@@ -5120,6 +5150,13 @@ impl ConsumedLicenseSummary {
         self.consumed_licenses
     }
 }
+impl ConsumedLicenseSummary {
+    /// Creates a new builder-style object to manufacture [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
+    pub fn builder() -> crate::model::consumed_license_summary::Builder {
+        crate::model::consumed_license_summary::Builder::default()
+    }
+}
+
 /// See [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
 pub mod consumed_license_summary {
     
@@ -5161,12 +5198,6 @@ pub mod consumed_license_summary {
     }
     
     
-}
-impl ConsumedLicenseSummary {
-    /// Creates a new builder-style object to manufacture [`ConsumedLicenseSummary`](crate::model::ConsumedLicenseSummary).
-    pub fn builder() -> crate::model::consumed_license_summary::Builder {
-        crate::model::consumed_license_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LicenseCountingType`, it is important to ensure
@@ -5324,6 +5355,13 @@ impl LicenseOperationFailure {
         self.metadata_list.as_deref()
     }
 }
+impl LicenseOperationFailure {
+    /// Creates a new builder-style object to manufacture [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
+    pub fn builder() -> crate::model::license_operation_failure::Builder {
+        crate::model::license_operation_failure::Builder::default()
+    }
+}
+
 /// See [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
 pub mod license_operation_failure {
     
@@ -5444,12 +5482,6 @@ pub mod license_operation_failure {
     
     
 }
-impl LicenseOperationFailure {
-    /// Creates a new builder-style object to manufacture [`LicenseOperationFailure`](crate::model::LicenseOperationFailure).
-    pub fn builder() -> crate::model::license_operation_failure::Builder {
-        crate::model::license_operation_failure::Builder::default()
-    }
-}
 
 /// <p>Describes an association with a license configuration.</p>
 #[non_exhaustive]
@@ -5493,6 +5525,13 @@ impl LicenseConfigurationAssociation {
         self.ami_association_scope.as_deref()
     }
 }
+impl LicenseConfigurationAssociation {
+    /// Creates a new builder-style object to manufacture [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
+    pub fn builder() -> crate::model::license_configuration_association::Builder {
+        crate::model::license_configuration_association::Builder::default()
+    }
+}
+
 /// See [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
 pub mod license_configuration_association {
     
@@ -5571,12 +5610,6 @@ pub mod license_configuration_association {
     
     
 }
-impl LicenseConfigurationAssociation {
-    /// Creates a new builder-style object to manufacture [`LicenseConfigurationAssociation`](crate::model::LicenseConfigurationAssociation).
-    pub fn builder() -> crate::model::license_configuration_association::Builder {
-        crate::model::license_configuration_association::Builder::default()
-    }
-}
 
 /// <p>Describes the entitlement usage associated with a license.</p>
 #[non_exhaustive]
@@ -5592,6 +5625,13 @@ impl LicenseUsage {
         self.entitlement_usages.as_deref()
     }
 }
+impl LicenseUsage {
+    /// Creates a new builder-style object to manufacture [`LicenseUsage`](crate::model::LicenseUsage).
+    pub fn builder() -> crate::model::license_usage::Builder {
+        crate::model::license_usage::Builder::default()
+    }
+}
+
 /// See [`LicenseUsage`](crate::model::LicenseUsage).
 pub mod license_usage {
     
@@ -5627,12 +5667,6 @@ pub mod license_usage {
     }
     
     
-}
-impl LicenseUsage {
-    /// Creates a new builder-style object to manufacture [`LicenseUsage`](crate::model::LicenseUsage).
-    pub fn builder() -> crate::model::license_usage::Builder {
-        crate::model::license_usage::Builder::default()
-    }
 }
 
 /// <p>Usage associated with an entitlement resource.</p>
@@ -5670,6 +5704,13 @@ impl EntitlementUsage {
         self.unit.as_ref()
     }
 }
+impl EntitlementUsage {
+    /// Creates a new builder-style object to manufacture [`EntitlementUsage`](crate::model::EntitlementUsage).
+    pub fn builder() -> crate::model::entitlement_usage::Builder {
+        crate::model::entitlement_usage::Builder::default()
+    }
+}
+
 /// See [`EntitlementUsage`](crate::model::EntitlementUsage).
 pub mod entitlement_usage {
     
@@ -5735,12 +5776,6 @@ pub mod entitlement_usage {
     }
     
     
-}
-impl EntitlementUsage {
-    /// Creates a new builder-style object to manufacture [`EntitlementUsage`](crate::model::EntitlementUsage).
-    pub fn builder() -> crate::model::entitlement_usage::Builder {
-        crate::model::entitlement_usage::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntitlementDataUnit`, it is important to ensure
@@ -6130,6 +6165,13 @@ impl Issuer {
         self.sign_key.as_deref()
     }
 }
+impl Issuer {
+    /// Creates a new builder-style object to manufacture [`Issuer`](crate::model::Issuer).
+    pub fn builder() -> crate::model::issuer::Builder {
+        crate::model::issuer::Builder::default()
+    }
+}
+
 /// See [`Issuer`](crate::model::Issuer).
 pub mod issuer {
     
@@ -6172,12 +6214,6 @@ pub mod issuer {
     
     
 }
-impl Issuer {
-    /// Creates a new builder-style object to manufacture [`Issuer`](crate::model::Issuer).
-    pub fn builder() -> crate::model::issuer::Builder {
-        crate::model::issuer::Builder::default()
-    }
-}
 
 /// <p>Data associated with an entitlement resource.</p>
 #[non_exhaustive]
@@ -6207,6 +6243,13 @@ impl EntitlementData {
         self.unit.as_ref()
     }
 }
+impl EntitlementData {
+    /// Creates a new builder-style object to manufacture [`EntitlementData`](crate::model::EntitlementData).
+    pub fn builder() -> crate::model::entitlement_data::Builder {
+        crate::model::entitlement_data::Builder::default()
+    }
+}
+
 /// See [`EntitlementData`](crate::model::EntitlementData).
 pub mod entitlement_data {
     
@@ -6260,12 +6303,6 @@ pub mod entitlement_data {
     }
     
     
-}
-impl EntitlementData {
-    /// Creates a new builder-style object to manufacture [`EntitlementData`](crate::model::EntitlementData).
-    pub fn builder() -> crate::model::entitlement_data::Builder {
-        crate::model::entitlement_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CheckoutType`, it is important to ensure

@@ -56,6 +56,13 @@ impl Webhook {
         self.update_time.as_ref()
     }
 }
+impl Webhook {
+    /// Creates a new builder-style object to manufacture [`Webhook`](crate::model::Webhook).
+    pub fn builder() -> crate::model::webhook::Builder {
+        crate::model::webhook::Builder::default()
+    }
+}
+
 /// See [`Webhook`](crate::model::Webhook).
 pub mod webhook {
     
@@ -158,12 +165,6 @@ pub mod webhook {
     
     
 }
-impl Webhook {
-    /// Creates a new builder-style object to manufacture [`Webhook`](crate::model::Webhook).
-    pub fn builder() -> crate::model::webhook::Builder {
-        crate::model::webhook::Builder::default()
-    }
-}
 
 /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
 #[non_exhaustive]
@@ -235,6 +236,13 @@ impl DomainAssociation {
         self.sub_domains.as_deref()
     }
 }
+impl DomainAssociation {
+    /// Creates a new builder-style object to manufacture [`DomainAssociation`](crate::model::DomainAssociation).
+    pub fn builder() -> crate::model::domain_association::Builder {
+        crate::model::domain_association::Builder::default()
+    }
+}
+
 /// See [`DomainAssociation`](crate::model::DomainAssociation).
 pub mod domain_association {
     
@@ -373,12 +381,6 @@ pub mod domain_association {
     
     
 }
-impl DomainAssociation {
-    /// Creates a new builder-style object to manufacture [`DomainAssociation`](crate::model::DomainAssociation).
-    pub fn builder() -> crate::model::domain_association::Builder {
-        crate::model::domain_association::Builder::default()
-    }
-}
 
 /// <p> The subdomain for the domain association. </p>
 #[non_exhaustive]
@@ -408,6 +410,13 @@ impl SubDomain {
         self.dns_record.as_deref()
     }
 }
+impl SubDomain {
+    /// Creates a new builder-style object to manufacture [`SubDomain`](crate::model::SubDomain).
+    pub fn builder() -> crate::model::sub_domain::Builder {
+        crate::model::sub_domain::Builder::default()
+    }
+}
+
 /// See [`SubDomain`](crate::model::SubDomain).
 pub mod sub_domain {
     
@@ -462,12 +471,6 @@ pub mod sub_domain {
     
     
 }
-impl SubDomain {
-    /// Creates a new builder-style object to manufacture [`SubDomain`](crate::model::SubDomain).
-    pub fn builder() -> crate::model::sub_domain::Builder {
-        crate::model::sub_domain::Builder::default()
-    }
-}
 
 /// <p> Describes the settings for the subdomain. </p>
 #[non_exhaustive]
@@ -490,6 +493,13 @@ impl SubDomainSetting {
         self.branch_name.as_deref()
     }
 }
+impl SubDomainSetting {
+    /// Creates a new builder-style object to manufacture [`SubDomainSetting`](crate::model::SubDomainSetting).
+    pub fn builder() -> crate::model::sub_domain_setting::Builder {
+        crate::model::sub_domain_setting::Builder::default()
+    }
+}
+
 /// See [`SubDomainSetting`](crate::model::SubDomainSetting).
 pub mod sub_domain_setting {
     
@@ -531,12 +541,6 @@ pub mod sub_domain_setting {
     }
     
     
-}
-impl SubDomainSetting {
-    /// Creates a new builder-style object to manufacture [`SubDomainSetting`](crate::model::SubDomainSetting).
-    pub fn builder() -> crate::model::sub_domain_setting::Builder {
-        crate::model::sub_domain_setting::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DomainStatus`, it is important to ensure
@@ -882,6 +886,13 @@ impl  std::fmt::Debug for Branch  {
         formatter.finish()
     }
 }
+impl Branch {
+    /// Creates a new builder-style object to manufacture [`Branch`](crate::model::Branch).
+    pub fn builder() -> crate::model::branch::Builder {
+        crate::model::branch::Builder::default()
+    }
+}
+
 /// See [`Branch`](crate::model::Branch).
 pub mod branch {
     
@@ -1283,12 +1294,6 @@ pub mod branch {
     
     
 }
-impl Branch {
-    /// Creates a new builder-style object to manufacture [`Branch`](crate::model::Branch).
-    pub fn builder() -> crate::model::branch::Builder {
-        crate::model::branch::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Stage`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1598,6 +1603,13 @@ impl  std::fmt::Debug for App  {
         formatter.finish()
     }
 }
+impl App {
+    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
+    pub fn builder() -> crate::model::app::Builder {
+        crate::model::app::Builder::default()
+    }
+}
+
 /// See [`App`](crate::model::App).
 pub mod app {
     
@@ -1964,12 +1976,6 @@ pub mod app {
     
     
 }
-impl App {
-    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
-    pub fn builder() -> crate::model::app::Builder {
-        crate::model::app::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RepositoryCloneMethod`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2153,6 +2159,13 @@ impl  std::fmt::Debug for AutoBranchCreationConfig  {
         formatter.finish()
     }
 }
+impl AutoBranchCreationConfig {
+    /// Creates a new builder-style object to manufacture [`AutoBranchCreationConfig`](crate::model::AutoBranchCreationConfig).
+    pub fn builder() -> crate::model::auto_branch_creation_config::Builder {
+        crate::model::auto_branch_creation_config::Builder::default()
+    }
+}
+
 /// See [`AutoBranchCreationConfig`](crate::model::AutoBranchCreationConfig).
 pub mod auto_branch_creation_config {
     
@@ -2315,12 +2328,6 @@ pub mod auto_branch_creation_config {
     
     
 }
-impl AutoBranchCreationConfig {
-    /// Creates a new builder-style object to manufacture [`AutoBranchCreationConfig`](crate::model::AutoBranchCreationConfig).
-    pub fn builder() -> crate::model::auto_branch_creation_config::Builder {
-        crate::model::auto_branch_creation_config::Builder::default()
-    }
-}
 
 /// <p> Describes the information about a production branch for an Amplify app. </p>
 #[non_exhaustive]
@@ -2357,6 +2364,13 @@ impl ProductionBranch {
         self.branch_name.as_deref()
     }
 }
+impl ProductionBranch {
+    /// Creates a new builder-style object to manufacture [`ProductionBranch`](crate::model::ProductionBranch).
+    pub fn builder() -> crate::model::production_branch::Builder {
+        crate::model::production_branch::Builder::default()
+    }
+}
+
 /// See [`ProductionBranch`](crate::model::ProductionBranch).
 pub mod production_branch {
     
@@ -2422,12 +2436,6 @@ pub mod production_branch {
     }
     
     
-}
-impl ProductionBranch {
-    /// Creates a new builder-style object to manufacture [`ProductionBranch`](crate::model::ProductionBranch).
-    pub fn builder() -> crate::model::production_branch::Builder {
-        crate::model::production_branch::Builder::default()
-    }
 }
 
 /// <p> Describes a custom rewrite or redirect rule. </p>
@@ -2529,6 +2537,13 @@ impl CustomRule {
         self.condition.as_deref()
     }
 }
+impl CustomRule {
+    /// Creates a new builder-style object to manufacture [`CustomRule`](crate::model::CustomRule).
+    pub fn builder() -> crate::model::custom_rule::Builder {
+        crate::model::custom_rule::Builder::default()
+    }
+}
+
 /// See [`CustomRule`](crate::model::CustomRule).
 pub mod custom_rule {
     
@@ -2658,12 +2673,6 @@ pub mod custom_rule {
     }
     
     
-}
-impl CustomRule {
-    /// Creates a new builder-style object to manufacture [`CustomRule`](crate::model::CustomRule).
-    pub fn builder() -> crate::model::custom_rule::Builder {
-        crate::model::custom_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Platform`, it is important to ensure
@@ -2823,6 +2832,13 @@ impl JobSummary {
         self.job_type.as_ref()
     }
 }
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
 /// See [`JobSummary`](crate::model::JobSummary).
 pub mod job_summary {
     
@@ -2948,12 +2964,6 @@ pub mod job_summary {
     }
     
     
-}
-impl JobSummary {
-    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
-    pub fn builder() -> crate::model::job_summary::Builder {
-        crate::model::job_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobType`, it is important to ensure
@@ -3204,6 +3214,13 @@ impl BackendEnvironment {
         self.update_time.as_ref()
     }
 }
+impl BackendEnvironment {
+    /// Creates a new builder-style object to manufacture [`BackendEnvironment`](crate::model::BackendEnvironment).
+    pub fn builder() -> crate::model::backend_environment::Builder {
+        crate::model::backend_environment::Builder::default()
+    }
+}
+
 /// See [`BackendEnvironment`](crate::model::BackendEnvironment).
 pub mod backend_environment {
     
@@ -3294,12 +3311,6 @@ pub mod backend_environment {
     
     
 }
-impl BackendEnvironment {
-    /// Creates a new builder-style object to manufacture [`BackendEnvironment`](crate::model::BackendEnvironment).
-    pub fn builder() -> crate::model::backend_environment::Builder {
-        crate::model::backend_environment::Builder::default()
-    }
-}
 
 /// <p> Describes an artifact. </p>
 #[non_exhaustive]
@@ -3322,6 +3333,13 @@ impl Artifact {
         self.artifact_id.as_deref()
     }
 }
+impl Artifact {
+    /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
+    pub fn builder() -> crate::model::artifact::Builder {
+        crate::model::artifact::Builder::default()
+    }
+}
+
 /// See [`Artifact`](crate::model::Artifact).
 pub mod artifact {
     
@@ -3364,12 +3382,6 @@ pub mod artifact {
     
     
 }
-impl Artifact {
-    /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
-    pub fn builder() -> crate::model::artifact::Builder {
-        crate::model::artifact::Builder::default()
-    }
-}
 
 /// <p> Describes an execution job for an Amplify app. </p>
 #[non_exhaustive]
@@ -3392,6 +3404,13 @@ impl Job {
         self.steps.as_deref()
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
     
@@ -3439,12 +3458,6 @@ pub mod job {
     }
     
     
-}
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
-    }
 }
 
 /// <p> Describes an execution step, for an execution job, for an Amplify app. </p>
@@ -3531,6 +3544,13 @@ impl Step {
         self.context.as_deref()
     }
 }
+impl Step {
+    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
+    pub fn builder() -> crate::model::step::Builder {
+        crate::model::step::Builder::default()
+    }
+}
+
 /// See [`Step`](crate::model::Step).
 pub mod step {
     
@@ -3686,11 +3706,5 @@ pub mod step {
     }
     
     
-}
-impl Step {
-    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
-    pub fn builder() -> crate::model::step::Builder {
-        crate::model::step::Builder::default()
-    }
 }
 

@@ -25,6 +25,13 @@ impl RawMessageContent {
         self.s3_reference.as_ref()
     }
 }
+impl RawMessageContent {
+    /// Creates a new builder-style object to manufacture [`RawMessageContent`](crate::model::RawMessageContent).
+    pub fn builder() -> crate::model::raw_message_content::Builder {
+        crate::model::raw_message_content::Builder::default()
+    }
+}
+
 /// See [`RawMessageContent`](crate::model::RawMessageContent).
 pub mod raw_message_content {
     
@@ -54,12 +61,6 @@ pub mod raw_message_content {
     }
     
     
-}
-impl RawMessageContent {
-    /// Creates a new builder-style object to manufacture [`RawMessageContent`](crate::model::RawMessageContent).
-    pub fn builder() -> crate::model::raw_message_content::Builder {
-        crate::model::raw_message_content::Builder::default()
-    }
 }
 
 /// <p>Amazon S3 object representing the updated message content, in MIME format.</p> <note> 
@@ -92,6 +93,13 @@ impl S3Reference {
         self.object_version.as_deref()
     }
 }
+impl S3Reference {
+    /// Creates a new builder-style object to manufacture [`S3Reference`](crate::model::S3Reference).
+    pub fn builder() -> crate::model::s3_reference::Builder {
+        crate::model::s3_reference::Builder::default()
+    }
+}
+
 /// See [`S3Reference`](crate::model::S3Reference).
 pub mod s3_reference {
     
@@ -145,11 +153,5 @@ pub mod s3_reference {
     }
     
     
-}
-impl S3Reference {
-    /// Creates a new builder-style object to manufacture [`S3Reference`](crate::model::S3Reference).
-    pub fn builder() -> crate::model::s3_reference::Builder {
-        crate::model::s3_reference::Builder::default()
-    }
 }
 

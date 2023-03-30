@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -85,12 +93,6 @@ pub mod tag_resource_output {
     }
     
     
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -137,6 +139,13 @@ impl aws_http::request_id::RequestId for RotateTunnelAccessTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RotateTunnelAccessTokenOutput {
+    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
+    pub fn builder() -> crate::output::rotate_tunnel_access_token_output::Builder {
+        crate::output::rotate_tunnel_access_token_output::Builder::default()
+    }
+}
+
 /// See [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
 pub mod rotate_tunnel_access_token_output {
     
@@ -212,12 +221,6 @@ pub mod rotate_tunnel_access_token_output {
     
     
 }
-impl RotateTunnelAccessTokenOutput {
-    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
-    pub fn builder() -> crate::output::rotate_tunnel_access_token_output::Builder {
-        crate::output::rotate_tunnel_access_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -271,6 +274,13 @@ impl aws_http::request_id::RequestId for OpenTunnelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl OpenTunnelOutput {
+    /// Creates a new builder-style object to manufacture [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
+    pub fn builder() -> crate::output::open_tunnel_output::Builder {
+        crate::output::open_tunnel_output::Builder::default()
+    }
+}
+
 /// See [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
 pub mod open_tunnel_output {
     
@@ -359,12 +369,6 @@ pub mod open_tunnel_output {
     
     
 }
-impl OpenTunnelOutput {
-    /// Creates a new builder-style object to manufacture [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
-    pub fn builder() -> crate::output::open_tunnel_output::Builder {
-        crate::output::open_tunnel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -393,6 +397,13 @@ impl aws_http::request_id::RequestId for ListTunnelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTunnelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
+    pub fn builder() -> crate::output::list_tunnels_output::Builder {
+        crate::output::list_tunnels_output::Builder::default()
+    }
+}
+
 /// See [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
 pub mod list_tunnels_output {
     
@@ -452,12 +463,6 @@ pub mod list_tunnels_output {
     
     
 }
-impl ListTunnelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
-    pub fn builder() -> crate::output::list_tunnels_output::Builder {
-        crate::output::list_tunnels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -479,6 +484,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -526,12 +538,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -553,6 +559,13 @@ impl aws_http::request_id::RequestId for DescribeTunnelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTunnelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
+    pub fn builder() -> crate::output::describe_tunnel_output::Builder {
+        crate::output::describe_tunnel_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
 pub mod describe_tunnel_output {
     
@@ -594,12 +607,6 @@ pub mod describe_tunnel_output {
     
     
 }
-impl DescribeTunnelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
-    pub fn builder() -> crate::output::describe_tunnel_output::Builder {
-        crate::output::describe_tunnel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -612,6 +619,13 @@ impl aws_http::request_id::RequestId for CloseTunnelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CloseTunnelOutput {
+    /// Creates a new builder-style object to manufacture [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
+    pub fn builder() -> crate::output::close_tunnel_output::Builder {
+        crate::output::close_tunnel_output::Builder::default()
+    }
+}
+
 /// See [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
 pub mod close_tunnel_output {
     
@@ -640,11 +654,5 @@ pub mod close_tunnel_output {
     }
     
     
-}
-impl CloseTunnelOutput {
-    /// Creates a new builder-style object to manufacture [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
-    pub fn builder() -> crate::output::close_tunnel_output::Builder {
-        crate::output::close_tunnel_output::Builder::default()
-    }
 }
 

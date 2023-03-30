@@ -28,6 +28,13 @@ impl ResponseResourceMetric {
         self.unit.as_deref()
     }
 }
+impl ResponseResourceMetric {
+    /// Creates a new builder-style object to manufacture [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
+    pub fn builder() -> crate::model::response_resource_metric::Builder {
+        crate::model::response_resource_metric::Builder::default()
+    }
+}
+
 /// See [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
 pub mod response_resource_metric {
     
@@ -81,12 +88,6 @@ pub mod response_resource_metric {
     }
     
     
-}
-impl ResponseResourceMetric {
-    /// Creates a new builder-style object to manufacture [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
-    pub fn builder() -> crate::model::response_resource_metric::Builder {
-        crate::model::response_resource_metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceType`, it is important to ensure
@@ -192,6 +193,13 @@ impl MetricDimensionGroups {
         self.groups.as_deref()
     }
 }
+impl MetricDimensionGroups {
+    /// Creates a new builder-style object to manufacture [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
+    pub fn builder() -> crate::model::metric_dimension_groups::Builder {
+        crate::model::metric_dimension_groups::Builder::default()
+    }
+}
+
 /// See [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
 pub mod metric_dimension_groups {
     
@@ -240,12 +248,6 @@ pub mod metric_dimension_groups {
     
     
 }
-impl MetricDimensionGroups {
-    /// Creates a new builder-style object to manufacture [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
-    pub fn builder() -> crate::model::metric_dimension_groups::Builder {
-        crate::model::metric_dimension_groups::Builder::default()
-    }
-}
 
 /// <p>Information about dimensions within a dimension group.</p>
 #[non_exhaustive]
@@ -268,6 +270,13 @@ impl DimensionGroupDetail {
         self.dimensions.as_deref()
     }
 }
+impl DimensionGroupDetail {
+    /// Creates a new builder-style object to manufacture [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
+    pub fn builder() -> crate::model::dimension_group_detail::Builder {
+        crate::model::dimension_group_detail::Builder::default()
+    }
+}
+
 /// See [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
 pub mod dimension_group_detail {
     
@@ -316,12 +325,6 @@ pub mod dimension_group_detail {
     
     
 }
-impl DimensionGroupDetail {
-    /// Creates a new builder-style object to manufacture [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
-    pub fn builder() -> crate::model::dimension_group_detail::Builder {
-        crate::model::dimension_group_detail::Builder::default()
-    }
-}
 
 /// <p>The information about a dimension.</p>
 #[non_exhaustive]
@@ -337,6 +340,13 @@ impl DimensionDetail {
         self.identifier.as_deref()
     }
 }
+impl DimensionDetail {
+    /// Creates a new builder-style object to manufacture [`DimensionDetail`](crate::model::DimensionDetail).
+    pub fn builder() -> crate::model::dimension_detail::Builder {
+        crate::model::dimension_detail::Builder::default()
+    }
+}
+
 /// See [`DimensionDetail`](crate::model::DimensionDetail).
 pub mod dimension_detail {
     
@@ -367,12 +377,6 @@ pub mod dimension_detail {
     
     
 }
-impl DimensionDetail {
-    /// Creates a new builder-style object to manufacture [`DimensionDetail`](crate::model::DimensionDetail).
-    pub fn builder() -> crate::model::dimension_detail::Builder {
-        crate::model::dimension_detail::Builder::default()
-    }
-}
 
 /// <p>A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.</p>
 #[non_exhaustive]
@@ -395,6 +399,13 @@ impl MetricKeyDataPoints {
         self.data_points.as_deref()
     }
 }
+impl MetricKeyDataPoints {
+    /// Creates a new builder-style object to manufacture [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
+    pub fn builder() -> crate::model::metric_key_data_points::Builder {
+        crate::model::metric_key_data_points::Builder::default()
+    }
+}
+
 /// See [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
 pub mod metric_key_data_points {
     
@@ -443,12 +454,6 @@ pub mod metric_key_data_points {
     
     
 }
-impl MetricKeyDataPoints {
-    /// Creates a new builder-style object to manufacture [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
-    pub fn builder() -> crate::model::metric_key_data_points::Builder {
-        crate::model::metric_key_data_points::Builder::default()
-    }
-}
 
 /// <p>A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.</p>
 #[non_exhaustive]
@@ -471,6 +476,13 @@ impl DataPoint {
         self.value
     }
 }
+impl DataPoint {
+    /// Creates a new builder-style object to manufacture [`DataPoint`](crate::model::DataPoint).
+    pub fn builder() -> crate::model::data_point::Builder {
+        crate::model::data_point::Builder::default()
+    }
+}
+
 /// See [`DataPoint`](crate::model::DataPoint).
 pub mod data_point {
     
@@ -513,12 +525,6 @@ pub mod data_point {
     
     
 }
-impl DataPoint {
-    /// Creates a new builder-style object to manufacture [`DataPoint`](crate::model::DataPoint).
-    pub fn builder() -> crate::model::data_point::Builder {
-        crate::model::data_point::Builder::default()
-    }
-}
 
 /// <p>An object describing a Performance Insights metric and one or more dimensions for that metric.</p>
 #[non_exhaustive]
@@ -555,6 +561,13 @@ impl ResponseResourceMetricKey {
         self.dimensions.as_ref()
     }
 }
+impl ResponseResourceMetricKey {
+    /// Creates a new builder-style object to manufacture [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
+    pub fn builder() -> crate::model::response_resource_metric_key::Builder {
+        crate::model::response_resource_metric_key::Builder::default()
+    }
+}
+
 /// See [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
 pub mod response_resource_metric_key {
     
@@ -617,12 +630,6 @@ pub mod response_resource_metric_key {
     
     
 }
-impl ResponseResourceMetricKey {
-    /// Creates a new builder-style object to manufacture [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
-    pub fn builder() -> crate::model::response_resource_metric_key::Builder {
-        crate::model::response_resource_metric_key::Builder::default()
-    }
-}
 
 /// <p>A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all data points for the specified metric. Optionally, you can request that the data points be aggregated by dimension group (<code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).</p>
 #[non_exhaustive]
@@ -674,6 +681,13 @@ impl MetricQuery {
         self.filter.as_ref()
     }
 }
+impl MetricQuery {
+    /// Creates a new builder-style object to manufacture [`MetricQuery`](crate::model::MetricQuery).
+    pub fn builder() -> crate::model::metric_query::Builder {
+        crate::model::metric_query::Builder::default()
+    }
+}
+
 /// See [`MetricQuery`](crate::model::MetricQuery).
 pub mod metric_query {
     
@@ -755,12 +769,6 @@ pub mod metric_query {
     }
     
     
-}
-impl MetricQuery {
-    /// Creates a new builder-style object to manufacture [`MetricQuery`](crate::model::MetricQuery).
-    pub fn builder() -> crate::model::metric_query::Builder {
-        crate::model::metric_query::Builder::default()
-    }
 }
 
 /// <p>A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions:</p> 
@@ -935,6 +943,13 @@ impl DimensionGroup {
         self.limit
     }
 }
+impl DimensionGroup {
+    /// Creates a new builder-style object to manufacture [`DimensionGroup`](crate::model::DimensionGroup).
+    pub fn builder() -> crate::model::dimension_group::Builder {
+        crate::model::dimension_group::Builder::default()
+    }
+}
+
 /// See [`DimensionGroup`](crate::model::DimensionGroup).
 pub mod dimension_group {
     
@@ -1131,12 +1146,6 @@ pub mod dimension_group {
     
     
 }
-impl DimensionGroup {
-    /// Creates a new builder-style object to manufacture [`DimensionGroup`](crate::model::DimensionGroup).
-    pub fn builder() -> crate::model::dimension_group::Builder {
-        crate::model::dimension_group::Builder::default()
-    }
-}
 
 /// <p>The metadata for a feature. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
 #[non_exhaustive]
@@ -1168,6 +1177,13 @@ impl FeatureMetadata {
         self.status.as_ref()
     }
 }
+impl FeatureMetadata {
+    /// Creates a new builder-style object to manufacture [`FeatureMetadata`](crate::model::FeatureMetadata).
+    pub fn builder() -> crate::model::feature_metadata::Builder {
+        crate::model::feature_metadata::Builder::default()
+    }
+}
+
 /// See [`FeatureMetadata`](crate::model::FeatureMetadata).
 pub mod feature_metadata {
     
@@ -1213,12 +1229,6 @@ pub mod feature_metadata {
     }
     
     
-}
-impl FeatureMetadata {
-    /// Creates a new builder-style object to manufacture [`FeatureMetadata`](crate::model::FeatureMetadata).
-    pub fn builder() -> crate::model::feature_metadata::Builder {
-        crate::model::feature_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FeatureStatus`, it is important to ensure
@@ -1377,6 +1387,13 @@ impl DimensionKeyDetail {
         self.status.as_ref()
     }
 }
+impl DimensionKeyDetail {
+    /// Creates a new builder-style object to manufacture [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
+    pub fn builder() -> crate::model::dimension_key_detail::Builder {
+        crate::model::dimension_key_detail::Builder::default()
+    }
+}
+
 /// See [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
 pub mod dimension_key_detail {
     
@@ -1456,12 +1473,6 @@ pub mod dimension_key_detail {
     }
     
     
-}
-impl DimensionKeyDetail {
-    /// Creates a new builder-style object to manufacture [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
-    pub fn builder() -> crate::model::dimension_key_detail::Builder {
-        crate::model::dimension_key_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DetailStatus`, it is important to ensure
@@ -1586,6 +1597,13 @@ impl DimensionKeyDescription {
         self.partitions.as_deref()
     }
 }
+impl DimensionKeyDescription {
+    /// Creates a new builder-style object to manufacture [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
+    pub fn builder() -> crate::model::dimension_key_description::Builder {
+        crate::model::dimension_key_description::Builder::default()
+    }
+}
+
 /// See [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
 pub mod dimension_key_description {
     
@@ -1670,12 +1688,6 @@ pub mod dimension_key_description {
     
     
 }
-impl DimensionKeyDescription {
-    /// Creates a new builder-style object to manufacture [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
-    pub fn builder() -> crate::model::dimension_key_description::Builder {
-        crate::model::dimension_key_description::Builder::default()
-    }
-}
 
 /// <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension. </p>
 #[non_exhaustive]
@@ -1691,6 +1703,13 @@ impl ResponsePartitionKey {
         self.dimensions.as_ref()
     }
 }
+impl ResponsePartitionKey {
+    /// Creates a new builder-style object to manufacture [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).
+    pub fn builder() -> crate::model::response_partition_key::Builder {
+        crate::model::response_partition_key::Builder::default()
+    }
+}
+
 /// See [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).
 pub mod response_partition_key {
     
@@ -1726,11 +1745,5 @@ pub mod response_partition_key {
     }
     
     
-}
-impl ResponsePartitionKey {
-    /// Creates a new builder-style object to manufacture [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).
-    pub fn builder() -> crate::model::response_partition_key::Builder {
-        crate::model::response_partition_key::Builder::default()
-    }
 }
 

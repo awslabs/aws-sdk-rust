@@ -21,6 +21,13 @@ impl ChangeProgressDetails {
         self.message.as_deref()
     }
 }
+impl ChangeProgressDetails {
+    /// Creates a new builder-style object to manufacture [`ChangeProgressDetails`](crate::model::ChangeProgressDetails).
+    pub fn builder() -> crate::model::change_progress_details::Builder {
+        crate::model::change_progress_details::Builder::default()
+    }
+}
+
 /// See [`ChangeProgressDetails`](crate::model::ChangeProgressDetails).
 pub mod change_progress_details {
     
@@ -62,12 +69,6 @@ pub mod change_progress_details {
     }
     
     
-}
-impl ChangeProgressDetails {
-    /// Creates a new builder-style object to manufacture [`ChangeProgressDetails`](crate::model::ChangeProgressDetails).
-    pub fn builder() -> crate::model::change_progress_details::Builder {
-        crate::model::change_progress_details::Builder::default()
-    }
 }
 
 /// <p>The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.</p>
@@ -119,6 +120,13 @@ impl VpcEndpoint {
         self.endpoint.as_deref()
     }
 }
+impl VpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
+    pub fn builder() -> crate::model::vpc_endpoint::Builder {
+        crate::model::vpc_endpoint::Builder::default()
+    }
+}
+
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
 pub mod vpc_endpoint {
     
@@ -208,12 +216,6 @@ pub mod vpc_endpoint {
     }
     
     
-}
-impl VpcEndpoint {
-    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
-    pub fn builder() -> crate::model::vpc_endpoint::Builder {
-        crate::model::vpc_endpoint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VpcEndpointStatus`, it is important to ensure
@@ -358,6 +360,13 @@ impl VpcDerivedInfo {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcDerivedInfo {
+    /// Creates a new builder-style object to manufacture [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
+    pub fn builder() -> crate::model::vpc_derived_info::Builder {
+        crate::model::vpc_derived_info::Builder::default()
+    }
+}
+
 /// See [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
 pub mod vpc_derived_info {
     
@@ -442,12 +451,6 @@ pub mod vpc_derived_info {
     
     
 }
-impl VpcDerivedInfo {
-    /// Creates a new builder-style object to manufacture [`VpcDerivedInfo`](crate::model::VpcDerivedInfo).
-    pub fn builder() -> crate::model::vpc_derived_info::Builder {
-        crate::model::vpc_derived_info::Builder::default()
-    }
-}
 
 /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
 #[non_exhaustive]
@@ -470,6 +473,13 @@ impl VpcOptions {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcOptions {
+    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
+    pub fn builder() -> crate::model::vpc_options::Builder {
+        crate::model::vpc_options::Builder::default()
+    }
+}
+
 /// See [`VpcOptions`](crate::model::VpcOptions).
 pub mod vpc_options {
     
@@ -523,12 +533,6 @@ pub mod vpc_options {
     }
     
     
-}
-impl VpcOptions {
-    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
-    pub fn builder() -> crate::model::vpc_options::Builder {
-        crate::model::vpc_options::Builder::default()
-    }
 }
 
 /// <p>Basic information about a package.</p>
@@ -601,6 +605,13 @@ impl PackageDetails {
         self.error_details.as_ref()
     }
 }
+impl PackageDetails {
+    /// Creates a new builder-style object to manufacture [`PackageDetails`](crate::model::PackageDetails).
+    pub fn builder() -> crate::model::package_details::Builder {
+        crate::model::package_details::Builder::default()
+    }
+}
+
 /// See [`PackageDetails`](crate::model::PackageDetails).
 pub mod package_details {
     
@@ -727,12 +738,6 @@ pub mod package_details {
     
     
 }
-impl PackageDetails {
-    /// Creates a new builder-style object to manufacture [`PackageDetails`](crate::model::PackageDetails).
-    pub fn builder() -> crate::model::package_details::Builder {
-        crate::model::package_details::Builder::default()
-    }
-}
 
 /// <p>Additional information if the package is in an error state. Null otherwise.</p>
 #[non_exhaustive]
@@ -755,6 +760,13 @@ impl ErrorDetails {
         self.error_message.as_deref()
     }
 }
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
     
@@ -796,12 +808,6 @@ pub mod error_details {
     }
     
     
-}
-impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
-    pub fn builder() -> crate::model::error_details::Builder {
-        crate::model::error_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PackageStatus`, it is important to ensure
@@ -1014,6 +1020,13 @@ impl PackageSource {
         self.s3_key.as_deref()
     }
 }
+impl PackageSource {
+    /// Creates a new builder-style object to manufacture [`PackageSource`](crate::model::PackageSource).
+    pub fn builder() -> crate::model::package_source::Builder {
+        crate::model::package_source::Builder::default()
+    }
+}
+
 /// See [`PackageSource`](crate::model::PackageSource).
 pub mod package_source {
     
@@ -1055,12 +1068,6 @@ pub mod package_source {
     }
     
     
-}
-impl PackageSource {
-    /// Creates a new builder-style object to manufacture [`PackageSource`](crate::model::PackageSource).
-    pub fn builder() -> crate::model::package_source::Builder {
-        crate::model::package_source::Builder::default()
-    }
 }
 
 /// <p>Information about the progress of a pre-upgrade dry run analysis.</p>
@@ -1105,6 +1112,13 @@ impl DryRunProgressStatus {
         self.validation_failures.as_deref()
     }
 }
+impl DryRunProgressStatus {
+    /// Creates a new builder-style object to manufacture [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
+    pub fn builder() -> crate::model::dry_run_progress_status::Builder {
+        crate::model::dry_run_progress_status::Builder::default()
+    }
+}
+
 /// See [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
 pub mod dry_run_progress_status {
     
@@ -1189,12 +1203,6 @@ pub mod dry_run_progress_status {
     
     
 }
-impl DryRunProgressStatus {
-    /// Creates a new builder-style object to manufacture [`DryRunProgressStatus`](crate::model::DryRunProgressStatus).
-    pub fn builder() -> crate::model::dry_run_progress_status::Builder {
-        crate::model::dry_run_progress_status::Builder::default()
-    }
-}
 
 /// <p>A validation failure that occurred as the result of a pre-update validation check (verbose dry run) on a domain.</p>
 #[non_exhaustive]
@@ -1217,6 +1225,13 @@ impl ValidationFailure {
         self.message.as_deref()
     }
 }
+impl ValidationFailure {
+    /// Creates a new builder-style object to manufacture [`ValidationFailure`](crate::model::ValidationFailure).
+    pub fn builder() -> crate::model::validation_failure::Builder {
+        crate::model::validation_failure::Builder::default()
+    }
+}
+
 /// See [`ValidationFailure`](crate::model::ValidationFailure).
 pub mod validation_failure {
     
@@ -1259,12 +1274,6 @@ pub mod validation_failure {
     
     
 }
-impl ValidationFailure {
-    /// Creates a new builder-style object to manufacture [`ValidationFailure`](crate::model::ValidationFailure).
-    pub fn builder() -> crate::model::validation_failure::Builder {
-        crate::model::validation_failure::Builder::default()
-    }
-}
 
 /// <p>Results of a dry run performed in an update domain request.</p>
 #[non_exhaustive]
@@ -1299,6 +1308,13 @@ impl DryRunResults {
         self.message.as_deref()
     }
 }
+impl DryRunResults {
+    /// Creates a new builder-style object to manufacture [`DryRunResults`](crate::model::DryRunResults).
+    pub fn builder() -> crate::model::dry_run_results::Builder {
+        crate::model::dry_run_results::Builder::default()
+    }
+}
+
 /// See [`DryRunResults`](crate::model::DryRunResults).
 pub mod dry_run_results {
     
@@ -1352,12 +1368,6 @@ pub mod dry_run_results {
     }
     
     
-}
-impl DryRunResults {
-    /// Creates a new builder-style object to manufacture [`DryRunResults`](crate::model::DryRunResults).
-    pub fn builder() -> crate::model::dry_run_results::Builder {
-        crate::model::dry_run_results::Builder::default()
-    }
 }
 
 /// <p>Container for the configuration of an OpenSearch Service domain.</p>
@@ -1472,6 +1482,13 @@ impl DomainConfig {
         self.change_progress_details.as_ref()
     }
 }
+impl DomainConfig {
+    /// Creates a new builder-style object to manufacture [`DomainConfig`](crate::model::DomainConfig).
+    pub fn builder() -> crate::model::domain_config::Builder {
+        crate::model::domain_config::Builder::default()
+    }
+}
+
 /// See [`DomainConfig`](crate::model::DomainConfig).
 pub mod domain_config {
     
@@ -1670,12 +1687,6 @@ pub mod domain_config {
     
     
 }
-impl DomainConfig {
-    /// Creates a new builder-style object to manufacture [`DomainConfig`](crate::model::DomainConfig).
-    pub fn builder() -> crate::model::domain_config::Builder {
-        crate::model::domain_config::Builder::default()
-    }
-}
 
 /// <p>The Auto-Tune status for the domain.</p>
 #[non_exhaustive]
@@ -1698,6 +1709,13 @@ impl AutoTuneOptionsStatus {
         self.status.as_ref()
     }
 }
+impl AutoTuneOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`AutoTuneOptionsStatus`](crate::model::AutoTuneOptionsStatus).
+    pub fn builder() -> crate::model::auto_tune_options_status::Builder {
+        crate::model::auto_tune_options_status::Builder::default()
+    }
+}
+
 /// See [`AutoTuneOptionsStatus`](crate::model::AutoTuneOptionsStatus).
 pub mod auto_tune_options_status {
     
@@ -1739,12 +1757,6 @@ pub mod auto_tune_options_status {
     }
     
     
-}
-impl AutoTuneOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`AutoTuneOptionsStatus`](crate::model::AutoTuneOptionsStatus).
-    pub fn builder() -> crate::model::auto_tune_options_status::Builder {
-        crate::model::auto_tune_options_status::Builder::default()
-    }
 }
 
 /// <p>The current status of Auto-Tune for the domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
@@ -1796,6 +1808,13 @@ impl AutoTuneStatus {
         self.pending_deletion
     }
 }
+impl AutoTuneStatus {
+    /// Creates a new builder-style object to manufacture [`AutoTuneStatus`](crate::model::AutoTuneStatus).
+    pub fn builder() -> crate::model::auto_tune_status::Builder {
+        crate::model::auto_tune_status::Builder::default()
+    }
+}
+
 /// See [`AutoTuneStatus`](crate::model::AutoTuneStatus).
 pub mod auto_tune_status {
     
@@ -1886,12 +1905,6 @@ pub mod auto_tune_status {
     }
     
     
-}
-impl AutoTuneStatus {
-    /// Creates a new builder-style object to manufacture [`AutoTuneStatus`](crate::model::AutoTuneStatus).
-    pub fn builder() -> crate::model::auto_tune_status::Builder {
-        crate::model::auto_tune_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AutoTuneState`, it is important to ensure
@@ -2040,6 +2053,13 @@ impl AutoTuneOptions {
         self.maintenance_schedules.as_deref()
     }
 }
+impl AutoTuneOptions {
+    /// Creates a new builder-style object to manufacture [`AutoTuneOptions`](crate::model::AutoTuneOptions).
+    pub fn builder() -> crate::model::auto_tune_options::Builder {
+        crate::model::auto_tune_options::Builder::default()
+    }
+}
+
 /// See [`AutoTuneOptions`](crate::model::AutoTuneOptions).
 pub mod auto_tune_options {
     
@@ -2100,12 +2120,6 @@ pub mod auto_tune_options {
     
     
 }
-impl AutoTuneOptions {
-    /// Creates a new builder-style object to manufacture [`AutoTuneOptions`](crate::model::AutoTuneOptions).
-    pub fn builder() -> crate::model::auto_tune_options::Builder {
-        crate::model::auto_tune_options::Builder::default()
-    }
-}
 
 /// <p>The Auto-Tune maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
@@ -2135,6 +2149,13 @@ impl AutoTuneMaintenanceSchedule {
         self.cron_expression_for_recurrence.as_deref()
     }
 }
+impl AutoTuneMaintenanceSchedule {
+    /// Creates a new builder-style object to manufacture [`AutoTuneMaintenanceSchedule`](crate::model::AutoTuneMaintenanceSchedule).
+    pub fn builder() -> crate::model::auto_tune_maintenance_schedule::Builder {
+        crate::model::auto_tune_maintenance_schedule::Builder::default()
+    }
+}
+
 /// See [`AutoTuneMaintenanceSchedule`](crate::model::AutoTuneMaintenanceSchedule).
 pub mod auto_tune_maintenance_schedule {
     
@@ -2189,12 +2210,6 @@ pub mod auto_tune_maintenance_schedule {
     
     
 }
-impl AutoTuneMaintenanceSchedule {
-    /// Creates a new builder-style object to manufacture [`AutoTuneMaintenanceSchedule`](crate::model::AutoTuneMaintenanceSchedule).
-    pub fn builder() -> crate::model::auto_tune_maintenance_schedule::Builder {
-        crate::model::auto_tune_maintenance_schedule::Builder::default()
-    }
-}
 
 /// <p>The duration of a maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
@@ -2217,6 +2232,13 @@ impl Duration {
         self.unit.as_ref()
     }
 }
+impl Duration {
+    /// Creates a new builder-style object to manufacture [`Duration`](crate::model::Duration).
+    pub fn builder() -> crate::model::duration::Builder {
+        crate::model::duration::Builder::default()
+    }
+}
+
 /// See [`Duration`](crate::model::Duration).
 pub mod duration {
     
@@ -2259,12 +2281,6 @@ pub mod duration {
     }
     
     
-}
-impl Duration {
-    /// Creates a new builder-style object to manufacture [`Duration`](crate::model::Duration).
-    pub fn builder() -> crate::model::duration::Builder {
-        crate::model::duration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TimeUnit`, it is important to ensure
@@ -2529,6 +2545,13 @@ impl AdvancedSecurityOptionsStatus {
         self.status.as_ref()
     }
 }
+impl AdvancedSecurityOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`AdvancedSecurityOptionsStatus`](crate::model::AdvancedSecurityOptionsStatus).
+    pub fn builder() -> crate::model::advanced_security_options_status::Builder {
+        crate::model::advanced_security_options_status::Builder::default()
+    }
+}
+
 /// See [`AdvancedSecurityOptionsStatus`](crate::model::AdvancedSecurityOptionsStatus).
 pub mod advanced_security_options_status {
     
@@ -2570,12 +2593,6 @@ pub mod advanced_security_options_status {
     }
     
     
-}
-impl AdvancedSecurityOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`AdvancedSecurityOptionsStatus`](crate::model::AdvancedSecurityOptionsStatus).
-    pub fn builder() -> crate::model::advanced_security_options_status::Builder {
-        crate::model::advanced_security_options_status::Builder::default()
-    }
 }
 
 /// <p>Provides the current status of an entity.</p>
@@ -2620,6 +2637,13 @@ impl OptionStatus {
         self.pending_deletion
     }
 }
+impl OptionStatus {
+    /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus).
+    pub fn builder() -> crate::model::option_status::Builder {
+        crate::model::option_status::Builder::default()
+    }
+}
+
 /// See [`OptionStatus`](crate::model::OptionStatus).
 pub mod option_status {
     
@@ -2698,12 +2722,6 @@ pub mod option_status {
     }
     
     
-}
-impl OptionStatus {
-    /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus).
-    pub fn builder() -> crate::model::option_status::Builder {
-        crate::model::option_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OptionState`, it is important to ensure
@@ -2847,6 +2865,13 @@ impl AdvancedSecurityOptions {
         self.anonymous_auth_enabled
     }
 }
+impl AdvancedSecurityOptions {
+    /// Creates a new builder-style object to manufacture [`AdvancedSecurityOptions`](crate::model::AdvancedSecurityOptions).
+    pub fn builder() -> crate::model::advanced_security_options::Builder {
+        crate::model::advanced_security_options::Builder::default()
+    }
+}
+
 /// See [`AdvancedSecurityOptions`](crate::model::AdvancedSecurityOptions).
 pub mod advanced_security_options {
     
@@ -2925,12 +2950,6 @@ pub mod advanced_security_options {
     
     
 }
-impl AdvancedSecurityOptions {
-    /// Creates a new builder-style object to manufacture [`AdvancedSecurityOptions`](crate::model::AdvancedSecurityOptions).
-    pub fn builder() -> crate::model::advanced_security_options::Builder {
-        crate::model::advanced_security_options::Builder::default()
-    }
-}
 
 /// <p>Describes the SAML application configured for the domain.</p>
 #[non_exhaustive]
@@ -2974,6 +2993,13 @@ impl SamlOptionsOutput {
         self.session_timeout_minutes
     }
 }
+impl SamlOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`SamlOptionsOutput`](crate::model::SamlOptionsOutput).
+    pub fn builder() -> crate::model::saml_options_output::Builder {
+        crate::model::saml_options_output::Builder::default()
+    }
+}
+
 /// See [`SamlOptionsOutput`](crate::model::SamlOptionsOutput).
 pub mod saml_options_output {
     
@@ -3052,12 +3078,6 @@ pub mod saml_options_output {
     
     
 }
-impl SamlOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`SamlOptionsOutput`](crate::model::SamlOptionsOutput).
-    pub fn builder() -> crate::model::saml_options_output::Builder {
-        crate::model::saml_options_output::Builder::default()
-    }
-}
 
 /// <p>The SAML identity povider information.</p>
 #[non_exhaustive]
@@ -3080,6 +3100,13 @@ impl SamlIdp {
         self.entity_id.as_deref()
     }
 }
+impl SamlIdp {
+    /// Creates a new builder-style object to manufacture [`SamlIdp`](crate::model::SamlIdp).
+    pub fn builder() -> crate::model::saml_idp::Builder {
+        crate::model::saml_idp::Builder::default()
+    }
+}
+
 /// See [`SamlIdp`](crate::model::SamlIdp).
 pub mod saml_idp {
     
@@ -3122,12 +3149,6 @@ pub mod saml_idp {
     
     
 }
-impl SamlIdp {
-    /// Creates a new builder-style object to manufacture [`SamlIdp`](crate::model::SamlIdp).
-    pub fn builder() -> crate::model::saml_idp::Builder {
-        crate::model::saml_idp::Builder::default()
-    }
-}
 
 /// <p>The configured endpoint options for a domain and their current status.</p>
 #[non_exhaustive]
@@ -3150,6 +3171,13 @@ impl DomainEndpointOptionsStatus {
         self.status.as_ref()
     }
 }
+impl DomainEndpointOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
+    pub fn builder() -> crate::model::domain_endpoint_options_status::Builder {
+        crate::model::domain_endpoint_options_status::Builder::default()
+    }
+}
+
 /// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
 pub mod domain_endpoint_options_status {
     
@@ -3191,12 +3219,6 @@ pub mod domain_endpoint_options_status {
     }
     
     
-}
-impl DomainEndpointOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
-    pub fn builder() -> crate::model::domain_endpoint_options_status::Builder {
-        crate::model::domain_endpoint_options_status::Builder::default()
-    }
 }
 
 /// <p>Options to configure a custom endpoint for an OpenSearch Service domain.</p>
@@ -3251,6 +3273,13 @@ impl DomainEndpointOptions {
         self.custom_endpoint_certificate_arn.as_deref()
     }
 }
+impl DomainEndpointOptions {
+    /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
+    pub fn builder() -> crate::model::domain_endpoint_options::Builder {
+        crate::model::domain_endpoint_options::Builder::default()
+    }
+}
+
 /// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
 pub mod domain_endpoint_options {
     
@@ -3338,12 +3367,6 @@ pub mod domain_endpoint_options {
     }
     
     
-}
-impl DomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
-    pub fn builder() -> crate::model::domain_endpoint_options::Builder {
-        crate::model::domain_endpoint_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TlsSecurityPolicy`, it is important to ensure
@@ -3449,6 +3472,13 @@ impl LogPublishingOptionsStatus {
         self.status.as_ref()
     }
 }
+impl LogPublishingOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`LogPublishingOptionsStatus`](crate::model::LogPublishingOptionsStatus).
+    pub fn builder() -> crate::model::log_publishing_options_status::Builder {
+        crate::model::log_publishing_options_status::Builder::default()
+    }
+}
+
 /// See [`LogPublishingOptionsStatus`](crate::model::LogPublishingOptionsStatus).
 pub mod log_publishing_options_status {
     
@@ -3497,12 +3527,6 @@ pub mod log_publishing_options_status {
     
     
 }
-impl LogPublishingOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`LogPublishingOptionsStatus`](crate::model::LogPublishingOptionsStatus).
-    pub fn builder() -> crate::model::log_publishing_options_status::Builder {
-        crate::model::log_publishing_options_status::Builder::default()
-    }
-}
 
 /// <p>Specifies whether the Amazon OpenSearch Service domain publishes the OpenSearch application and slow logs to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html">Monitoring OpenSearch logs with Amazon CloudWatch Logs</a>.</p> <note> 
 /// <p>After you enable log publishing, you still have to enable the collection of slow logs using the OpenSearch REST API.</p> 
@@ -3527,6 +3551,13 @@ impl LogPublishingOption {
         self.enabled
     }
 }
+impl LogPublishingOption {
+    /// Creates a new builder-style object to manufacture [`LogPublishingOption`](crate::model::LogPublishingOption).
+    pub fn builder() -> crate::model::log_publishing_option::Builder {
+        crate::model::log_publishing_option::Builder::default()
+    }
+}
+
 /// See [`LogPublishingOption`](crate::model::LogPublishingOption).
 pub mod log_publishing_option {
     
@@ -3568,12 +3599,6 @@ pub mod log_publishing_option {
     }
     
     
-}
-impl LogPublishingOption {
-    /// Creates a new builder-style object to manufacture [`LogPublishingOption`](crate::model::LogPublishingOption).
-    pub fn builder() -> crate::model::log_publishing_option::Builder {
-        crate::model::log_publishing_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LogType`, it is important to ensure
@@ -3719,6 +3744,13 @@ impl AdvancedOptionsStatus {
         self.status.as_ref()
     }
 }
+impl AdvancedOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`AdvancedOptionsStatus`](crate::model::AdvancedOptionsStatus).
+    pub fn builder() -> crate::model::advanced_options_status::Builder {
+        crate::model::advanced_options_status::Builder::default()
+    }
+}
+
 /// See [`AdvancedOptionsStatus`](crate::model::AdvancedOptionsStatus).
 pub mod advanced_options_status {
     
@@ -3767,12 +3799,6 @@ pub mod advanced_options_status {
     
     
 }
-impl AdvancedOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`AdvancedOptionsStatus`](crate::model::AdvancedOptionsStatus).
-    pub fn builder() -> crate::model::advanced_options_status::Builder {
-        crate::model::advanced_options_status::Builder::default()
-    }
-}
 
 /// <p>Status of the node-to-node encryption options for the specified domain.</p>
 #[non_exhaustive]
@@ -3795,6 +3821,13 @@ impl NodeToNodeEncryptionOptionsStatus {
         self.status.as_ref()
     }
 }
+impl NodeToNodeEncryptionOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`NodeToNodeEncryptionOptionsStatus`](crate::model::NodeToNodeEncryptionOptionsStatus).
+    pub fn builder() -> crate::model::node_to_node_encryption_options_status::Builder {
+        crate::model::node_to_node_encryption_options_status::Builder::default()
+    }
+}
+
 /// See [`NodeToNodeEncryptionOptionsStatus`](crate::model::NodeToNodeEncryptionOptionsStatus).
 pub mod node_to_node_encryption_options_status {
     
@@ -3837,12 +3870,6 @@ pub mod node_to_node_encryption_options_status {
     
     
 }
-impl NodeToNodeEncryptionOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`NodeToNodeEncryptionOptionsStatus`](crate::model::NodeToNodeEncryptionOptionsStatus).
-    pub fn builder() -> crate::model::node_to_node_encryption_options_status::Builder {
-        crate::model::node_to_node_encryption_options_status::Builder::default()
-    }
-}
 
 /// <p>Enables or disables node-to-node encryption. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ntn.html">Node-to-node encryption for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
@@ -3858,6 +3885,13 @@ impl NodeToNodeEncryptionOptions {
         self.enabled
     }
 }
+impl NodeToNodeEncryptionOptions {
+    /// Creates a new builder-style object to manufacture [`NodeToNodeEncryptionOptions`](crate::model::NodeToNodeEncryptionOptions).
+    pub fn builder() -> crate::model::node_to_node_encryption_options::Builder {
+        crate::model::node_to_node_encryption_options::Builder::default()
+    }
+}
+
 /// See [`NodeToNodeEncryptionOptions`](crate::model::NodeToNodeEncryptionOptions).
 pub mod node_to_node_encryption_options {
     
@@ -3888,12 +3922,6 @@ pub mod node_to_node_encryption_options {
     
     
 }
-impl NodeToNodeEncryptionOptions {
-    /// Creates a new builder-style object to manufacture [`NodeToNodeEncryptionOptions`](crate::model::NodeToNodeEncryptionOptions).
-    pub fn builder() -> crate::model::node_to_node_encryption_options::Builder {
-        crate::model::node_to_node_encryption_options::Builder::default()
-    }
-}
 
 /// <p>Status of the encryption at rest options for the specified OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -3916,6 +3944,13 @@ impl EncryptionAtRestOptionsStatus {
         self.status.as_ref()
     }
 }
+impl EncryptionAtRestOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`EncryptionAtRestOptionsStatus`](crate::model::EncryptionAtRestOptionsStatus).
+    pub fn builder() -> crate::model::encryption_at_rest_options_status::Builder {
+        crate::model::encryption_at_rest_options_status::Builder::default()
+    }
+}
+
 /// See [`EncryptionAtRestOptionsStatus`](crate::model::EncryptionAtRestOptionsStatus).
 pub mod encryption_at_rest_options_status {
     
@@ -3958,12 +3993,6 @@ pub mod encryption_at_rest_options_status {
     
     
 }
-impl EncryptionAtRestOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`EncryptionAtRestOptionsStatus`](crate::model::EncryptionAtRestOptionsStatus).
-    pub fn builder() -> crate::model::encryption_at_rest_options_status::Builder {
-        crate::model::encryption_at_rest_options_status::Builder::default()
-    }
-}
 
 /// <p>Specifies whether the domain should encrypt data at rest, and if so, the Key Management Service (KMS) key to use. Can be used only to create a new domain, not update an existing one.</p>
 #[non_exhaustive]
@@ -3986,6 +4015,13 @@ impl EncryptionAtRestOptions {
         self.kms_key_id.as_deref()
     }
 }
+impl EncryptionAtRestOptions {
+    /// Creates a new builder-style object to manufacture [`EncryptionAtRestOptions`](crate::model::EncryptionAtRestOptions).
+    pub fn builder() -> crate::model::encryption_at_rest_options::Builder {
+        crate::model::encryption_at_rest_options::Builder::default()
+    }
+}
+
 /// See [`EncryptionAtRestOptions`](crate::model::EncryptionAtRestOptions).
 pub mod encryption_at_rest_options {
     
@@ -4028,12 +4064,6 @@ pub mod encryption_at_rest_options {
     
     
 }
-impl EncryptionAtRestOptions {
-    /// Creates a new builder-style object to manufacture [`EncryptionAtRestOptions`](crate::model::EncryptionAtRestOptions).
-    pub fn builder() -> crate::model::encryption_at_rest_options::Builder {
-        crate::model::encryption_at_rest_options::Builder::default()
-    }
-}
 
 /// <p>The status of the Cognito options for the specified domain.</p>
 #[non_exhaustive]
@@ -4056,6 +4086,13 @@ impl CognitoOptionsStatus {
         self.status.as_ref()
     }
 }
+impl CognitoOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`CognitoOptionsStatus`](crate::model::CognitoOptionsStatus).
+    pub fn builder() -> crate::model::cognito_options_status::Builder {
+        crate::model::cognito_options_status::Builder::default()
+    }
+}
+
 /// See [`CognitoOptionsStatus`](crate::model::CognitoOptionsStatus).
 pub mod cognito_options_status {
     
@@ -4098,12 +4135,6 @@ pub mod cognito_options_status {
     
     
 }
-impl CognitoOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`CognitoOptionsStatus`](crate::model::CognitoOptionsStatus).
-    pub fn builder() -> crate::model::cognito_options_status::Builder {
-        crate::model::cognito_options_status::Builder::default()
-    }
-}
 
 /// <p>Container for the parameters required to enable Cognito authentication for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
 #[non_exhaustive]
@@ -4140,6 +4171,13 @@ impl CognitoOptions {
         self.role_arn.as_deref()
     }
 }
+impl CognitoOptions {
+    /// Creates a new builder-style object to manufacture [`CognitoOptions`](crate::model::CognitoOptions).
+    pub fn builder() -> crate::model::cognito_options::Builder {
+        crate::model::cognito_options::Builder::default()
+    }
+}
+
 /// See [`CognitoOptions`](crate::model::CognitoOptions).
 pub mod cognito_options {
     
@@ -4206,12 +4244,6 @@ pub mod cognito_options {
     
     
 }
-impl CognitoOptions {
-    /// Creates a new builder-style object to manufacture [`CognitoOptions`](crate::model::CognitoOptions).
-    pub fn builder() -> crate::model::cognito_options::Builder {
-        crate::model::cognito_options::Builder::default()
-    }
-}
 
 /// <p>Status of the VPC options for a specified domain.</p>
 #[non_exhaustive]
@@ -4234,6 +4266,13 @@ impl VpcDerivedInfoStatus {
         self.status.as_ref()
     }
 }
+impl VpcDerivedInfoStatus {
+    /// Creates a new builder-style object to manufacture [`VpcDerivedInfoStatus`](crate::model::VpcDerivedInfoStatus).
+    pub fn builder() -> crate::model::vpc_derived_info_status::Builder {
+        crate::model::vpc_derived_info_status::Builder::default()
+    }
+}
+
 /// See [`VpcDerivedInfoStatus`](crate::model::VpcDerivedInfoStatus).
 pub mod vpc_derived_info_status {
     
@@ -4276,12 +4315,6 @@ pub mod vpc_derived_info_status {
     
     
 }
-impl VpcDerivedInfoStatus {
-    /// Creates a new builder-style object to manufacture [`VpcDerivedInfoStatus`](crate::model::VpcDerivedInfoStatus).
-    pub fn builder() -> crate::model::vpc_derived_info_status::Builder {
-        crate::model::vpc_derived_info_status::Builder::default()
-    }
-}
 
 /// <p>Container for information about a daily automated snapshot for an OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -4304,6 +4337,13 @@ impl SnapshotOptionsStatus {
         self.status.as_ref()
     }
 }
+impl SnapshotOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`SnapshotOptionsStatus`](crate::model::SnapshotOptionsStatus).
+    pub fn builder() -> crate::model::snapshot_options_status::Builder {
+        crate::model::snapshot_options_status::Builder::default()
+    }
+}
+
 /// See [`SnapshotOptionsStatus`](crate::model::SnapshotOptionsStatus).
 pub mod snapshot_options_status {
     
@@ -4346,12 +4386,6 @@ pub mod snapshot_options_status {
     
     
 }
-impl SnapshotOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`SnapshotOptionsStatus`](crate::model::SnapshotOptionsStatus).
-    pub fn builder() -> crate::model::snapshot_options_status::Builder {
-        crate::model::snapshot_options_status::Builder::default()
-    }
-}
 
 /// <p>The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.</p>
 #[non_exhaustive]
@@ -4367,6 +4401,13 @@ impl SnapshotOptions {
         self.automated_snapshot_start_hour
     }
 }
+impl SnapshotOptions {
+    /// Creates a new builder-style object to manufacture [`SnapshotOptions`](crate::model::SnapshotOptions).
+    pub fn builder() -> crate::model::snapshot_options::Builder {
+        crate::model::snapshot_options::Builder::default()
+    }
+}
+
 /// See [`SnapshotOptions`](crate::model::SnapshotOptions).
 pub mod snapshot_options {
     
@@ -4397,12 +4438,6 @@ pub mod snapshot_options {
     
     
 }
-impl SnapshotOptions {
-    /// Creates a new builder-style object to manufacture [`SnapshotOptions`](crate::model::SnapshotOptions).
-    pub fn builder() -> crate::model::snapshot_options::Builder {
-        crate::model::snapshot_options::Builder::default()
-    }
-}
 
 /// <p>The configured access rules for the domain's search endpoint, and the current status of those rules.</p>
 #[non_exhaustive]
@@ -4425,6 +4460,13 @@ impl AccessPoliciesStatus {
         self.status.as_ref()
     }
 }
+impl AccessPoliciesStatus {
+    /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
+    pub fn builder() -> crate::model::access_policies_status::Builder {
+        crate::model::access_policies_status::Builder::default()
+    }
+}
+
 /// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
 pub mod access_policies_status {
     
@@ -4467,12 +4509,6 @@ pub mod access_policies_status {
     
     
 }
-impl AccessPoliciesStatus {
-    /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
-    pub fn builder() -> crate::model::access_policies_status::Builder {
-        crate::model::access_policies_status::Builder::default()
-    }
-}
 
 /// <p>The status of the EBS options for the specified OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -4495,6 +4531,13 @@ impl EbsOptionsStatus {
         self.status.as_ref()
     }
 }
+impl EbsOptionsStatus {
+    /// Creates a new builder-style object to manufacture [`EbsOptionsStatus`](crate::model::EbsOptionsStatus).
+    pub fn builder() -> crate::model::ebs_options_status::Builder {
+        crate::model::ebs_options_status::Builder::default()
+    }
+}
+
 /// See [`EbsOptionsStatus`](crate::model::EbsOptionsStatus).
 pub mod ebs_options_status {
     
@@ -4536,12 +4579,6 @@ pub mod ebs_options_status {
     }
     
     
-}
-impl EbsOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`EbsOptionsStatus`](crate::model::EbsOptionsStatus).
-    pub fn builder() -> crate::model::ebs_options_status::Builder {
-        crate::model::ebs_options_status::Builder::default()
-    }
 }
 
 /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
@@ -4586,6 +4623,13 @@ impl EbsOptions {
         self.throughput
     }
 }
+impl EbsOptions {
+    /// Creates a new builder-style object to manufacture [`EbsOptions`](crate::model::EbsOptions).
+    pub fn builder() -> crate::model::ebs_options::Builder {
+        crate::model::ebs_options::Builder::default()
+    }
+}
+
 /// See [`EbsOptions`](crate::model::EbsOptions).
 pub mod ebs_options {
     
@@ -4663,12 +4707,6 @@ pub mod ebs_options {
     }
     
     
-}
-impl EbsOptions {
-    /// Creates a new builder-style object to manufacture [`EbsOptions`](crate::model::EbsOptions).
-    pub fn builder() -> crate::model::ebs_options::Builder {
-        crate::model::ebs_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VolumeType`, it is important to ensure
@@ -4784,6 +4822,13 @@ impl ClusterConfigStatus {
         self.status.as_ref()
     }
 }
+impl ClusterConfigStatus {
+    /// Creates a new builder-style object to manufacture [`ClusterConfigStatus`](crate::model::ClusterConfigStatus).
+    pub fn builder() -> crate::model::cluster_config_status::Builder {
+        crate::model::cluster_config_status::Builder::default()
+    }
+}
+
 /// See [`ClusterConfigStatus`](crate::model::ClusterConfigStatus).
 pub mod cluster_config_status {
     
@@ -4825,12 +4870,6 @@ pub mod cluster_config_status {
     }
     
     
-}
-impl ClusterConfigStatus {
-    /// Creates a new builder-style object to manufacture [`ClusterConfigStatus`](crate::model::ClusterConfigStatus).
-    pub fn builder() -> crate::model::cluster_config_status::Builder {
-        crate::model::cluster_config_status::Builder::default()
-    }
 }
 
 /// <p>Container for the cluster configuration of an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
@@ -4917,6 +4956,13 @@ impl ClusterConfig {
         self.cold_storage_options.as_ref()
     }
 }
+impl ClusterConfig {
+    /// Creates a new builder-style object to manufacture [`ClusterConfig`](crate::model::ClusterConfig).
+    pub fn builder() -> crate::model::cluster_config::Builder {
+        crate::model::cluster_config::Builder::default()
+    }
+}
+
 /// See [`ClusterConfig`](crate::model::ClusterConfig).
 pub mod cluster_config {
     
@@ -5067,12 +5113,6 @@ pub mod cluster_config {
     
     
 }
-impl ClusterConfig {
-    /// Creates a new builder-style object to manufacture [`ClusterConfig`](crate::model::ClusterConfig).
-    pub fn builder() -> crate::model::cluster_config::Builder {
-        crate::model::cluster_config::Builder::default()
-    }
-}
 
 /// <p>Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold storage for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
@@ -5088,6 +5128,13 @@ impl ColdStorageOptions {
         self.enabled
     }
 }
+impl ColdStorageOptions {
+    /// Creates a new builder-style object to manufacture [`ColdStorageOptions`](crate::model::ColdStorageOptions).
+    pub fn builder() -> crate::model::cold_storage_options::Builder {
+        crate::model::cold_storage_options::Builder::default()
+    }
+}
+
 /// See [`ColdStorageOptions`](crate::model::ColdStorageOptions).
 pub mod cold_storage_options {
     
@@ -5117,12 +5164,6 @@ pub mod cold_storage_options {
     }
     
     
-}
-impl ColdStorageOptions {
-    /// Creates a new builder-style object to manufacture [`ColdStorageOptions`](crate::model::ColdStorageOptions).
-    pub fn builder() -> crate::model::cold_storage_options::Builder {
-        crate::model::cold_storage_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OpenSearchWarmPartitionInstanceType`, it is important to ensure
@@ -5773,6 +5814,13 @@ impl ZoneAwarenessConfig {
         self.availability_zone_count
     }
 }
+impl ZoneAwarenessConfig {
+    /// Creates a new builder-style object to manufacture [`ZoneAwarenessConfig`](crate::model::ZoneAwarenessConfig).
+    pub fn builder() -> crate::model::zone_awareness_config::Builder {
+        crate::model::zone_awareness_config::Builder::default()
+    }
+}
+
 /// See [`ZoneAwarenessConfig`](crate::model::ZoneAwarenessConfig).
 pub mod zone_awareness_config {
     
@@ -5803,12 +5851,6 @@ pub mod zone_awareness_config {
     
     
 }
-impl ZoneAwarenessConfig {
-    /// Creates a new builder-style object to manufacture [`ZoneAwarenessConfig`](crate::model::ZoneAwarenessConfig).
-    pub fn builder() -> crate::model::zone_awareness_config::Builder {
-        crate::model::zone_awareness_config::Builder::default()
-    }
-}
 
 /// <p>The status of the the OpenSearch or Elasticsearch version options for the specified Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -5831,6 +5873,13 @@ impl VersionStatus {
         self.status.as_ref()
     }
 }
+impl VersionStatus {
+    /// Creates a new builder-style object to manufacture [`VersionStatus`](crate::model::VersionStatus).
+    pub fn builder() -> crate::model::version_status::Builder {
+        crate::model::version_status::Builder::default()
+    }
+}
+
 /// See [`VersionStatus`](crate::model::VersionStatus).
 pub mod version_status {
     
@@ -5872,12 +5921,6 @@ pub mod version_status {
     }
     
     
-}
-impl VersionStatus {
-    /// Creates a new builder-style object to manufacture [`VersionStatus`](crate::model::VersionStatus).
-    pub fn builder() -> crate::model::version_status::Builder {
-        crate::model::version_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DryRunMode`, it is important to ensure
@@ -6004,6 +6047,13 @@ impl AdvancedSecurityOptionsInput {
         self.anonymous_auth_enabled
     }
 }
+impl AdvancedSecurityOptionsInput {
+    /// Creates a new builder-style object to manufacture [`AdvancedSecurityOptionsInput`](crate::model::AdvancedSecurityOptionsInput).
+    pub fn builder() -> crate::model::advanced_security_options_input::Builder {
+        crate::model::advanced_security_options_input::Builder::default()
+    }
+}
+
 /// See [`AdvancedSecurityOptionsInput`](crate::model::AdvancedSecurityOptionsInput).
 pub mod advanced_security_options_input {
     
@@ -6082,12 +6132,6 @@ pub mod advanced_security_options_input {
     
     
 }
-impl AdvancedSecurityOptionsInput {
-    /// Creates a new builder-style object to manufacture [`AdvancedSecurityOptionsInput`](crate::model::AdvancedSecurityOptionsInput).
-    pub fn builder() -> crate::model::advanced_security_options_input::Builder {
-        crate::model::advanced_security_options_input::Builder::default()
-    }
-}
 
 /// <p>The SAML authentication configuration for an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -6158,6 +6202,13 @@ impl  std::fmt::Debug for SamlOptionsInput  {
         formatter.finish()
     }
 }
+impl SamlOptionsInput {
+    /// Creates a new builder-style object to manufacture [`SamlOptionsInput`](crate::model::SamlOptionsInput).
+    pub fn builder() -> crate::model::saml_options_input::Builder {
+        crate::model::saml_options_input::Builder::default()
+    }
+}
+
 /// See [`SamlOptionsInput`](crate::model::SamlOptionsInput).
 pub mod saml_options_input {
     
@@ -6273,12 +6324,6 @@ pub mod saml_options_input {
     
     
 }
-impl SamlOptionsInput {
-    /// Creates a new builder-style object to manufacture [`SamlOptionsInput`](crate::model::SamlOptionsInput).
-    pub fn builder() -> crate::model::saml_options_input::Builder {
-        crate::model::saml_options_input::Builder::default()
-    }
-}
 
 /// <p>Credentials for the master user for a domain.</p>
 #[non_exhaustive]
@@ -6317,6 +6362,13 @@ impl  std::fmt::Debug for MasterUserOptions  {
         formatter.finish()
     }
 }
+impl MasterUserOptions {
+    /// Creates a new builder-style object to manufacture [`MasterUserOptions`](crate::model::MasterUserOptions).
+    pub fn builder() -> crate::model::master_user_options::Builder {
+        crate::model::master_user_options::Builder::default()
+    }
+}
+
 /// See [`MasterUserOptions`](crate::model::MasterUserOptions).
 pub mod master_user_options {
     
@@ -6379,12 +6431,6 @@ pub mod master_user_options {
     }
     
     
-}
-impl MasterUserOptions {
-    /// Creates a new builder-style object to manufacture [`MasterUserOptions`](crate::model::MasterUserOptions).
-    pub fn builder() -> crate::model::master_user_options::Builder {
-        crate::model::master_user_options::Builder::default()
-    }
 }
 
 /// <p>The current status of the service software for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service software updates in Amazon OpenSearch Service</a>.</p>
@@ -6450,6 +6496,13 @@ impl ServiceSoftwareOptions {
         self.optional_deployment
     }
 }
+impl ServiceSoftwareOptions {
+    /// Creates a new builder-style object to manufacture [`ServiceSoftwareOptions`](crate::model::ServiceSoftwareOptions).
+    pub fn builder() -> crate::model::service_software_options::Builder {
+        crate::model::service_software_options::Builder::default()
+    }
+}
+
 /// See [`ServiceSoftwareOptions`](crate::model::ServiceSoftwareOptions).
 pub mod service_software_options {
     
@@ -6563,12 +6616,6 @@ pub mod service_software_options {
     }
     
     
-}
-impl ServiceSoftwareOptions {
-    /// Creates a new builder-style object to manufacture [`ServiceSoftwareOptions`](crate::model::ServiceSoftwareOptions).
-    pub fn builder() -> crate::model::service_software_options::Builder {
-        crate::model::service_software_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentStatus`, it is important to ensure
@@ -6703,6 +6750,13 @@ impl InboundConnection {
         self.connection_status.as_ref()
     }
 }
+impl InboundConnection {
+    /// Creates a new builder-style object to manufacture [`InboundConnection`](crate::model::InboundConnection).
+    pub fn builder() -> crate::model::inbound_connection::Builder {
+        crate::model::inbound_connection::Builder::default()
+    }
+}
+
 /// See [`InboundConnection`](crate::model::InboundConnection).
 pub mod inbound_connection {
     
@@ -6769,12 +6823,6 @@ pub mod inbound_connection {
     
     
 }
-impl InboundConnection {
-    /// Creates a new builder-style object to manufacture [`InboundConnection`](crate::model::InboundConnection).
-    pub fn builder() -> crate::model::inbound_connection::Builder {
-        crate::model::inbound_connection::Builder::default()
-    }
-}
 
 /// <p>The status of an inbound cross-cluster connection for OpenSearch Service.</p>
 #[non_exhaustive]
@@ -6817,6 +6865,13 @@ impl InboundConnectionStatus {
         self.message.as_deref()
     }
 }
+impl InboundConnectionStatus {
+    /// Creates a new builder-style object to manufacture [`InboundConnectionStatus`](crate::model::InboundConnectionStatus).
+    pub fn builder() -> crate::model::inbound_connection_status::Builder {
+        crate::model::inbound_connection_status::Builder::default()
+    }
+}
+
 /// See [`InboundConnectionStatus`](crate::model::InboundConnectionStatus).
 pub mod inbound_connection_status {
     
@@ -6878,12 +6933,6 @@ pub mod inbound_connection_status {
     }
     
     
-}
-impl InboundConnectionStatus {
-    /// Creates a new builder-style object to manufacture [`InboundConnectionStatus`](crate::model::InboundConnectionStatus).
-    pub fn builder() -> crate::model::inbound_connection_status::Builder {
-        crate::model::inbound_connection_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InboundConnectionStatusCode`, it is important to ensure
@@ -7012,6 +7061,13 @@ impl DomainInformationContainer {
         self.aws_domain_information.as_ref()
     }
 }
+impl DomainInformationContainer {
+    /// Creates a new builder-style object to manufacture [`DomainInformationContainer`](crate::model::DomainInformationContainer).
+    pub fn builder() -> crate::model::domain_information_container::Builder {
+        crate::model::domain_information_container::Builder::default()
+    }
+}
+
 /// See [`DomainInformationContainer`](crate::model::DomainInformationContainer).
 pub mod domain_information_container {
     
@@ -7042,12 +7098,6 @@ pub mod domain_information_container {
     
     
 }
-impl DomainInformationContainer {
-    /// Creates a new builder-style object to manufacture [`DomainInformationContainer`](crate::model::DomainInformationContainer).
-    pub fn builder() -> crate::model::domain_information_container::Builder {
-        crate::model::domain_information_container::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -7077,6 +7127,13 @@ impl AwsDomainInformation {
         self.region.as_deref()
     }
 }
+impl AwsDomainInformation {
+    /// Creates a new builder-style object to manufacture [`AwsDomainInformation`](crate::model::AwsDomainInformation).
+    pub fn builder() -> crate::model::aws_domain_information::Builder {
+        crate::model::aws_domain_information::Builder::default()
+    }
+}
+
 /// See [`AwsDomainInformation`](crate::model::AwsDomainInformation).
 pub mod aws_domain_information {
     
@@ -7131,12 +7188,6 @@ pub mod aws_domain_information {
     
     
 }
-impl AwsDomainInformation {
-    /// Creates a new builder-style object to manufacture [`AwsDomainInformation`](crate::model::AwsDomainInformation).
-    pub fn builder() -> crate::model::aws_domain_information::Builder {
-        crate::model::aws_domain_information::Builder::default()
-    }
-}
 
 /// <p>Summary information for an Amazon OpenSearch Service-managed VPC endpoint.</p>
 #[non_exhaustive]
@@ -7173,6 +7224,13 @@ impl VpcEndpointSummary {
         self.status.as_ref()
     }
 }
+impl VpcEndpointSummary {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+    pub fn builder() -> crate::model::vpc_endpoint_summary::Builder {
+        crate::model::vpc_endpoint_summary::Builder::default()
+    }
+}
+
 /// See [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
 pub mod vpc_endpoint_summary {
     
@@ -7239,12 +7297,6 @@ pub mod vpc_endpoint_summary {
     
     
 }
-impl VpcEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
-    pub fn builder() -> crate::model::vpc_endpoint_summary::Builder {
-        crate::model::vpc_endpoint_summary::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon Web Services account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
 #[non_exhaustive]
@@ -7267,6 +7319,13 @@ impl AuthorizedPrincipal {
         self.principal.as_deref()
     }
 }
+impl AuthorizedPrincipal {
+    /// Creates a new builder-style object to manufacture [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
+    pub fn builder() -> crate::model::authorized_principal::Builder {
+        crate::model::authorized_principal::Builder::default()
+    }
+}
+
 /// See [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
 pub mod authorized_principal {
     
@@ -7308,12 +7367,6 @@ pub mod authorized_principal {
     }
     
     
-}
-impl AuthorizedPrincipal {
-    /// Creates a new builder-style object to manufacture [`AuthorizedPrincipal`](crate::model::AuthorizedPrincipal).
-    pub fn builder() -> crate::model::authorized_principal::Builder {
-        crate::model::authorized_principal::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PrincipalType`, it is important to ensure
@@ -7419,6 +7472,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -7460,12 +7520,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Information about a package that is associated with a domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
@@ -7538,6 +7592,13 @@ impl DomainPackageDetails {
         self.error_details.as_ref()
     }
 }
+impl DomainPackageDetails {
+    /// Creates a new builder-style object to manufacture [`DomainPackageDetails`](crate::model::DomainPackageDetails).
+    pub fn builder() -> crate::model::domain_package_details::Builder {
+        crate::model::domain_package_details::Builder::default()
+    }
+}
+
 /// See [`DomainPackageDetails`](crate::model::DomainPackageDetails).
 pub mod domain_package_details {
     
@@ -7663,12 +7724,6 @@ pub mod domain_package_details {
     }
     
     
-}
-impl DomainPackageDetails {
-    /// Creates a new builder-style object to manufacture [`DomainPackageDetails`](crate::model::DomainPackageDetails).
-    pub fn builder() -> crate::model::domain_package_details::Builder {
-        crate::model::domain_package_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DomainPackageStatus`, it is important to ensure
@@ -7824,6 +7879,13 @@ impl InstanceTypeDetails {
         self.instance_role.as_deref()
     }
 }
+impl InstanceTypeDetails {
+    /// Creates a new builder-style object to manufacture [`InstanceTypeDetails`](crate::model::InstanceTypeDetails).
+    pub fn builder() -> crate::model::instance_type_details::Builder {
+        crate::model::instance_type_details::Builder::default()
+    }
+}
+
 /// See [`InstanceTypeDetails`](crate::model::InstanceTypeDetails).
 pub mod instance_type_details {
     
@@ -7932,12 +7994,6 @@ pub mod instance_type_details {
     
     
 }
-impl InstanceTypeDetails {
-    /// Creates a new builder-style object to manufacture [`InstanceTypeDetails`](crate::model::InstanceTypeDetails).
-    pub fn builder() -> crate::model::instance_type_details::Builder {
-        crate::model::instance_type_details::Builder::default()
-    }
-}
 
 /// <p>Information about an OpenSearch Service domain.</p>
 #[non_exhaustive]
@@ -7960,6 +8016,13 @@ impl DomainInfo {
         self.engine_type.as_ref()
     }
 }
+impl DomainInfo {
+    /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo).
+    pub fn builder() -> crate::model::domain_info::Builder {
+        crate::model::domain_info::Builder::default()
+    }
+}
+
 /// See [`DomainInfo`](crate::model::DomainInfo).
 pub mod domain_info {
     
@@ -8001,12 +8064,6 @@ pub mod domain_info {
     }
     
     
-}
-impl DomainInfo {
-    /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo).
-    pub fn builder() -> crate::model::domain_info::Builder {
-        crate::model::domain_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EngineType`, it is important to ensure
@@ -8317,6 +8374,13 @@ impl UpgradeHistory {
         self.steps_list.as_deref()
     }
 }
+impl UpgradeHistory {
+    /// Creates a new builder-style object to manufacture [`UpgradeHistory`](crate::model::UpgradeHistory).
+    pub fn builder() -> crate::model::upgrade_history::Builder {
+        crate::model::upgrade_history::Builder::default()
+    }
+}
+
 /// See [`UpgradeHistory`](crate::model::UpgradeHistory).
 pub mod upgrade_history {
     
@@ -8401,12 +8465,6 @@ pub mod upgrade_history {
     
     
 }
-impl UpgradeHistory {
-    /// Creates a new builder-style object to manufacture [`UpgradeHistory`](crate::model::UpgradeHistory).
-    pub fn builder() -> crate::model::upgrade_history::Builder {
-        crate::model::upgrade_history::Builder::default()
-    }
-}
 
 /// <p>Represents a single step of an upgrade or upgrade eligibility check workflow.</p>
 #[non_exhaustive]
@@ -8465,6 +8523,13 @@ impl UpgradeStepItem {
         self.progress_percent
     }
 }
+impl UpgradeStepItem {
+    /// Creates a new builder-style object to manufacture [`UpgradeStepItem`](crate::model::UpgradeStepItem).
+    pub fn builder() -> crate::model::upgrade_step_item::Builder {
+        crate::model::upgrade_step_item::Builder::default()
+    }
+}
+
 /// See [`UpgradeStepItem`](crate::model::UpgradeStepItem).
 pub mod upgrade_step_item {
     
@@ -8559,12 +8624,6 @@ pub mod upgrade_step_item {
     
     
 }
-impl UpgradeStepItem {
-    /// Creates a new builder-style object to manufacture [`UpgradeStepItem`](crate::model::UpgradeStepItem).
-    pub fn builder() -> crate::model::upgrade_step_item::Builder {
-        crate::model::upgrade_step_item::Builder::default()
-    }
-}
 
 /// <p>Details about a package version.</p>
 #[non_exhaustive]
@@ -8594,6 +8653,13 @@ impl PackageVersionHistory {
         self.created_at.as_ref()
     }
 }
+impl PackageVersionHistory {
+    /// Creates a new builder-style object to manufacture [`PackageVersionHistory`](crate::model::PackageVersionHistory).
+    pub fn builder() -> crate::model::package_version_history::Builder {
+        crate::model::package_version_history::Builder::default()
+    }
+}
+
 /// See [`PackageVersionHistory`](crate::model::PackageVersionHistory).
 pub mod package_version_history {
     
@@ -8648,12 +8714,6 @@ pub mod package_version_history {
     
     
 }
-impl PackageVersionHistory {
-    /// Creates a new builder-style object to manufacture [`PackageVersionHistory`](crate::model::PackageVersionHistory).
-    pub fn builder() -> crate::model::package_version_history::Builder {
-        crate::model::package_version_history::Builder::default()
-    }
-}
 
 /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
 #[non_exhaustive]
@@ -8676,6 +8736,13 @@ impl CompatibleVersionsMap {
         self.target_versions.as_deref()
     }
 }
+impl CompatibleVersionsMap {
+    /// Creates a new builder-style object to manufacture [`CompatibleVersionsMap`](crate::model::CompatibleVersionsMap).
+    pub fn builder() -> crate::model::compatible_versions_map::Builder {
+        crate::model::compatible_versions_map::Builder::default()
+    }
+}
+
 /// See [`CompatibleVersionsMap`](crate::model::CompatibleVersionsMap).
 pub mod compatible_versions_map {
     
@@ -8724,12 +8791,6 @@ pub mod compatible_versions_map {
     
     
 }
-impl CompatibleVersionsMap {
-    /// Creates a new builder-style object to manufacture [`CompatibleVersionsMap`](crate::model::CompatibleVersionsMap).
-    pub fn builder() -> crate::model::compatible_versions_map::Builder {
-        crate::model::compatible_versions_map::Builder::default()
-    }
-}
 
 /// <p>Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.</p>
 #[non_exhaustive]
@@ -8759,6 +8820,13 @@ impl VpcEndpointError {
         self.error_message.as_deref()
     }
 }
+impl VpcEndpointError {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointError`](crate::model::VpcEndpointError).
+    pub fn builder() -> crate::model::vpc_endpoint_error::Builder {
+        crate::model::vpc_endpoint_error::Builder::default()
+    }
+}
+
 /// See [`VpcEndpointError`](crate::model::VpcEndpointError).
 pub mod vpc_endpoint_error {
     
@@ -8812,12 +8880,6 @@ pub mod vpc_endpoint_error {
     }
     
     
-}
-impl VpcEndpointError {
-    /// Creates a new builder-style object to manufacture [`VpcEndpointError`](crate::model::VpcEndpointError).
-    pub fn builder() -> crate::model::vpc_endpoint_error::Builder {
-        crate::model::vpc_endpoint_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VpcEndpointErrorCode`, it is important to ensure
@@ -9007,6 +9069,13 @@ impl ReservedInstance {
         self.recurring_charges.as_deref()
     }
 }
+impl ReservedInstance {
+    /// Creates a new builder-style object to manufacture [`ReservedInstance`](crate::model::ReservedInstance).
+    pub fn builder() -> crate::model::reserved_instance::Builder {
+        crate::model::reserved_instance::Builder::default()
+    }
+}
+
 /// See [`ReservedInstance`](crate::model::ReservedInstance).
 pub mod reserved_instance {
     
@@ -9201,12 +9270,6 @@ pub mod reserved_instance {
     
     
 }
-impl ReservedInstance {
-    /// Creates a new builder-style object to manufacture [`ReservedInstance`](crate::model::ReservedInstance).
-    pub fn builder() -> crate::model::reserved_instance::Builder {
-        crate::model::reserved_instance::Builder::default()
-    }
-}
 
 /// <p>Contains the specific price and frequency of a recurring charges for an OpenSearch Reserved Instance, or for a Reserved Instance offering.</p>
 #[non_exhaustive]
@@ -9229,6 +9292,13 @@ impl RecurringCharge {
         self.recurring_charge_frequency.as_deref()
     }
 }
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
     
@@ -9270,12 +9340,6 @@ pub mod recurring_charge {
     }
     
     
-}
-impl RecurringCharge {
-    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
-    pub fn builder() -> crate::model::recurring_charge::Builder {
-        crate::model::recurring_charge::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReservedInstancePaymentOption`, it is important to ensure
@@ -9428,6 +9492,13 @@ impl ReservedInstanceOffering {
         self.recurring_charges.as_deref()
     }
 }
+impl ReservedInstanceOffering {
+    /// Creates a new builder-style object to manufacture [`ReservedInstanceOffering`](crate::model::ReservedInstanceOffering).
+    pub fn builder() -> crate::model::reserved_instance_offering::Builder {
+        crate::model::reserved_instance_offering::Builder::default()
+    }
+}
+
 /// See [`ReservedInstanceOffering`](crate::model::ReservedInstanceOffering).
 pub mod reserved_instance_offering {
     
@@ -9549,12 +9620,6 @@ pub mod reserved_instance_offering {
     
     
 }
-impl ReservedInstanceOffering {
-    /// Creates a new builder-style object to manufacture [`ReservedInstanceOffering`](crate::model::ReservedInstanceOffering).
-    pub fn builder() -> crate::model::reserved_instance_offering::Builder {
-        crate::model::reserved_instance_offering::Builder::default()
-    }
-}
 
 /// <p>A filter to apply to the <code>DescribePackage</code> response.</p>
 #[non_exhaustive]
@@ -9577,6 +9642,13 @@ impl DescribePackagesFilter {
         self.value.as_deref()
     }
 }
+impl DescribePackagesFilter {
+    /// Creates a new builder-style object to manufacture [`DescribePackagesFilter`](crate::model::DescribePackagesFilter).
+    pub fn builder() -> crate::model::describe_packages_filter::Builder {
+        crate::model::describe_packages_filter::Builder::default()
+    }
+}
+
 /// See [`DescribePackagesFilter`](crate::model::DescribePackagesFilter).
 pub mod describe_packages_filter {
     
@@ -9624,12 +9696,6 @@ pub mod describe_packages_filter {
     }
     
     
-}
-impl DescribePackagesFilter {
-    /// Creates a new builder-style object to manufacture [`DescribePackagesFilter`](crate::model::DescribePackagesFilter).
-    pub fn builder() -> crate::model::describe_packages_filter::Builder {
-        crate::model::describe_packages_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DescribePackagesFilterName`, it is important to ensure
@@ -9761,6 +9827,13 @@ impl OutboundConnection {
         self.connection_status.as_ref()
     }
 }
+impl OutboundConnection {
+    /// Creates a new builder-style object to manufacture [`OutboundConnection`](crate::model::OutboundConnection).
+    pub fn builder() -> crate::model::outbound_connection::Builder {
+        crate::model::outbound_connection::Builder::default()
+    }
+}
+
 /// See [`OutboundConnection`](crate::model::OutboundConnection).
 pub mod outbound_connection {
     
@@ -9839,12 +9912,6 @@ pub mod outbound_connection {
     
     
 }
-impl OutboundConnection {
-    /// Creates a new builder-style object to manufacture [`OutboundConnection`](crate::model::OutboundConnection).
-    pub fn builder() -> crate::model::outbound_connection::Builder {
-        crate::model::outbound_connection::Builder::default()
-    }
-}
 
 /// <p>The status of an outbound cross-cluster connection.</p>
 #[non_exhaustive]
@@ -9891,6 +9958,13 @@ impl OutboundConnectionStatus {
         self.message.as_deref()
     }
 }
+impl OutboundConnectionStatus {
+    /// Creates a new builder-style object to manufacture [`OutboundConnectionStatus`](crate::model::OutboundConnectionStatus).
+    pub fn builder() -> crate::model::outbound_connection_status::Builder {
+        crate::model::outbound_connection_status::Builder::default()
+    }
+}
+
 /// See [`OutboundConnectionStatus`](crate::model::OutboundConnectionStatus).
 pub mod outbound_connection_status {
     
@@ -9956,12 +10030,6 @@ pub mod outbound_connection_status {
     }
     
     
-}
-impl OutboundConnectionStatus {
-    /// Creates a new builder-style object to manufacture [`OutboundConnectionStatus`](crate::model::OutboundConnectionStatus).
-    pub fn builder() -> crate::model::outbound_connection_status::Builder {
-        crate::model::outbound_connection_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OutboundConnectionStatusCode`, it is important to ensure
@@ -10107,6 +10175,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -10155,12 +10230,6 @@ pub mod filter {
     
     
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>Limits for a given instance type and for each of its roles.</p>
 #[non_exhaustive]
@@ -10190,6 +10259,13 @@ impl Limits {
         self.additional_limits.as_deref()
     }
 }
+impl Limits {
+    /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits).
+    pub fn builder() -> crate::model::limits::Builder {
+        crate::model::limits::Builder::default()
+    }
+}
+
 /// See [`Limits`](crate::model::Limits).
 pub mod limits {
     
@@ -10256,12 +10332,6 @@ pub mod limits {
     
     
 }
-impl Limits {
-    /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits).
-    pub fn builder() -> crate::model::limits::Builder {
-        crate::model::limits::Builder::default()
-    }
-}
 
 /// <p> List of limits that are specific to a given instance type.</p>
 #[non_exhaustive]
@@ -10290,6 +10360,13 @@ impl AdditionalLimit {
         self.limit_values.as_deref()
     }
 }
+impl AdditionalLimit {
+    /// Creates a new builder-style object to manufacture [`AdditionalLimit`](crate::model::AdditionalLimit).
+    pub fn builder() -> crate::model::additional_limit::Builder {
+        crate::model::additional_limit::Builder::default()
+    }
+}
+
 /// See [`AdditionalLimit`](crate::model::AdditionalLimit).
 pub mod additional_limit {
     
@@ -10344,12 +10421,6 @@ pub mod additional_limit {
     
     
 }
-impl AdditionalLimit {
-    /// Creates a new builder-style object to manufacture [`AdditionalLimit`](crate::model::AdditionalLimit).
-    pub fn builder() -> crate::model::additional_limit::Builder {
-        crate::model::additional_limit::Builder::default()
-    }
-}
 
 /// <p>Instance-related attributes that are available for a given instance type.</p>
 #[non_exhaustive]
@@ -10365,6 +10436,13 @@ impl InstanceLimits {
         self.instance_count_limits.as_ref()
     }
 }
+impl InstanceLimits {
+    /// Creates a new builder-style object to manufacture [`InstanceLimits`](crate::model::InstanceLimits).
+    pub fn builder() -> crate::model::instance_limits::Builder {
+        crate::model::instance_limits::Builder::default()
+    }
+}
+
 /// See [`InstanceLimits`](crate::model::InstanceLimits).
 pub mod instance_limits {
     
@@ -10395,12 +10473,6 @@ pub mod instance_limits {
     
     
 }
-impl InstanceLimits {
-    /// Creates a new builder-style object to manufacture [`InstanceLimits`](crate::model::InstanceLimits).
-    pub fn builder() -> crate::model::instance_limits::Builder {
-        crate::model::instance_limits::Builder::default()
-    }
-}
 
 /// <p>Limits on the number of instances that can be created in OpenSearch Service for a given instance type.</p>
 #[non_exhaustive]
@@ -10423,6 +10495,13 @@ impl InstanceCountLimits {
         self.maximum_instance_count
     }
 }
+impl InstanceCountLimits {
+    /// Creates a new builder-style object to manufacture [`InstanceCountLimits`](crate::model::InstanceCountLimits).
+    pub fn builder() -> crate::model::instance_count_limits::Builder {
+        crate::model::instance_count_limits::Builder::default()
+    }
+}
+
 /// See [`InstanceCountLimits`](crate::model::InstanceCountLimits).
 pub mod instance_count_limits {
     
@@ -10467,12 +10546,6 @@ pub mod instance_count_limits {
     
     
 }
-impl InstanceCountLimits {
-    /// Creates a new builder-style object to manufacture [`InstanceCountLimits`](crate::model::InstanceCountLimits).
-    pub fn builder() -> crate::model::instance_count_limits::Builder {
-        crate::model::instance_count_limits::Builder::default()
-    }
-}
 
 /// <p>A list of storage types for an Amazon OpenSearch Service domain that are available for a given intance type.</p>
 #[non_exhaustive]
@@ -10502,6 +10575,13 @@ impl StorageType {
         self.storage_type_limits.as_deref()
     }
 }
+impl StorageType {
+    /// Creates a new builder-style object to manufacture [`StorageType`](crate::model::StorageType).
+    pub fn builder() -> crate::model::storage_type::Builder {
+        crate::model::storage_type::Builder::default()
+    }
+}
+
 /// See [`StorageType`](crate::model::StorageType).
 pub mod storage_type {
     
@@ -10562,12 +10642,6 @@ pub mod storage_type {
     
     
 }
-impl StorageType {
-    /// Creates a new builder-style object to manufacture [`StorageType`](crate::model::StorageType).
-    pub fn builder() -> crate::model::storage_type::Builder {
-        crate::model::storage_type::Builder::default()
-    }
-}
 
 /// <p>Limits that are applicable for the given Amazon OpenSearch Service storage type.</p>
 #[non_exhaustive]
@@ -10606,6 +10680,13 @@ impl StorageTypeLimit {
         self.limit_values.as_deref()
     }
 }
+impl StorageTypeLimit {
+    /// Creates a new builder-style object to manufacture [`StorageTypeLimit`](crate::model::StorageTypeLimit).
+    pub fn builder() -> crate::model::storage_type_limit::Builder {
+        crate::model::storage_type_limit::Builder::default()
+    }
+}
+
 /// See [`StorageTypeLimit`](crate::model::StorageTypeLimit).
 pub mod storage_type_limit {
     
@@ -10669,12 +10750,6 @@ pub mod storage_type_limit {
     }
     
     
-}
-impl StorageTypeLimit {
-    /// Creates a new builder-style object to manufacture [`StorageTypeLimit`](crate::model::StorageTypeLimit).
-    pub fn builder() -> crate::model::storage_type_limit::Builder {
-        crate::model::storage_type_limit::Builder::default()
-    }
 }
 
 /// <p>The current status of an OpenSearch Service domain.</p>
@@ -10859,6 +10934,13 @@ impl DomainStatus {
         self.change_progress_details.as_ref()
     }
 }
+impl DomainStatus {
+    /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus).
+    pub fn builder() -> crate::model::domain_status::Builder {
+        crate::model::domain_status::Builder::default()
+    }
+}
+
 /// See [`DomainStatus`](crate::model::DomainStatus).
 pub mod domain_status {
     
@@ -11195,12 +11277,6 @@ pub mod domain_status {
     
     
 }
-impl DomainStatus {
-    /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus).
-    pub fn builder() -> crate::model::domain_status::Builder {
-        crate::model::domain_status::Builder::default()
-    }
-}
 
 /// <p>The Auto-Tune settings for a domain, displayed when enabling or disabling Auto-Tune.</p>
 #[non_exhaustive]
@@ -11223,6 +11299,13 @@ impl AutoTuneOptionsOutput {
         self.error_message.as_deref()
     }
 }
+impl AutoTuneOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`AutoTuneOptionsOutput`](crate::model::AutoTuneOptionsOutput).
+    pub fn builder() -> crate::model::auto_tune_options_output::Builder {
+        crate::model::auto_tune_options_output::Builder::default()
+    }
+}
+
 /// See [`AutoTuneOptionsOutput`](crate::model::AutoTuneOptionsOutput).
 pub mod auto_tune_options_output {
     
@@ -11264,12 +11347,6 @@ pub mod auto_tune_options_output {
     }
     
     
-}
-impl AutoTuneOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`AutoTuneOptionsOutput`](crate::model::AutoTuneOptionsOutput).
-    pub fn builder() -> crate::model::auto_tune_options_output::Builder {
-        crate::model::auto_tune_options_output::Builder::default()
-    }
 }
 
 /// <p>The progress details of a specific domain configuration change.</p>
@@ -11328,6 +11405,13 @@ impl ChangeProgressStatusDetails {
         self.change_progress_stages.as_deref()
     }
 }
+impl ChangeProgressStatusDetails {
+    /// Creates a new builder-style object to manufacture [`ChangeProgressStatusDetails`](crate::model::ChangeProgressStatusDetails).
+    pub fn builder() -> crate::model::change_progress_status_details::Builder {
+        crate::model::change_progress_status_details::Builder::default()
+    }
+}
+
 /// See [`ChangeProgressStatusDetails`](crate::model::ChangeProgressStatusDetails).
 pub mod change_progress_status_details {
     
@@ -11449,12 +11533,6 @@ pub mod change_progress_status_details {
     
     
 }
-impl ChangeProgressStatusDetails {
-    /// Creates a new builder-style object to manufacture [`ChangeProgressStatusDetails`](crate::model::ChangeProgressStatusDetails).
-    pub fn builder() -> crate::model::change_progress_status_details::Builder {
-        crate::model::change_progress_status_details::Builder::default()
-    }
-}
 
 /// <p>Progress details for each stage of a domain update.</p>
 #[non_exhaustive]
@@ -11491,6 +11569,13 @@ impl ChangeProgressStage {
         self.last_updated.as_ref()
     }
 }
+impl ChangeProgressStage {
+    /// Creates a new builder-style object to manufacture [`ChangeProgressStage`](crate::model::ChangeProgressStage).
+    pub fn builder() -> crate::model::change_progress_stage::Builder {
+        crate::model::change_progress_stage::Builder::default()
+    }
+}
+
 /// See [`ChangeProgressStage`](crate::model::ChangeProgressStage).
 pub mod change_progress_stage {
     
@@ -11556,12 +11641,6 @@ pub mod change_progress_stage {
     }
     
     
-}
-impl ChangeProgressStage {
-    /// Creates a new builder-style object to manufacture [`ChangeProgressStage`](crate::model::ChangeProgressStage).
-    pub fn builder() -> crate::model::change_progress_stage::Builder {
-        crate::model::change_progress_stage::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OverallChangeStatus`, it is important to ensure
@@ -11677,6 +11756,13 @@ impl AutoTune {
         self.auto_tune_details.as_ref()
     }
 }
+impl AutoTune {
+    /// Creates a new builder-style object to manufacture [`AutoTune`](crate::model::AutoTune).
+    pub fn builder() -> crate::model::auto_tune::Builder {
+        crate::model::auto_tune::Builder::default()
+    }
+}
+
 /// See [`AutoTune`](crate::model::AutoTune).
 pub mod auto_tune {
     
@@ -11719,12 +11805,6 @@ pub mod auto_tune {
     
     
 }
-impl AutoTune {
-    /// Creates a new builder-style object to manufacture [`AutoTune`](crate::model::AutoTune).
-    pub fn builder() -> crate::model::auto_tune::Builder {
-        crate::model::auto_tune::Builder::default()
-    }
-}
 
 /// <p>Specifies details about a scheduled Auto-Tune action. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
@@ -11740,6 +11820,13 @@ impl AutoTuneDetails {
         self.scheduled_auto_tune_details.as_ref()
     }
 }
+impl AutoTuneDetails {
+    /// Creates a new builder-style object to manufacture [`AutoTuneDetails`](crate::model::AutoTuneDetails).
+    pub fn builder() -> crate::model::auto_tune_details::Builder {
+        crate::model::auto_tune_details::Builder::default()
+    }
+}
+
 /// See [`AutoTuneDetails`](crate::model::AutoTuneDetails).
 pub mod auto_tune_details {
     
@@ -11769,12 +11856,6 @@ pub mod auto_tune_details {
     }
     
     
-}
-impl AutoTuneDetails {
-    /// Creates a new builder-style object to manufacture [`AutoTuneDetails`](crate::model::AutoTuneDetails).
-    pub fn builder() -> crate::model::auto_tune_details::Builder {
-        crate::model::auto_tune_details::Builder::default()
-    }
 }
 
 /// <p>Specifies details about a scheduled Auto-Tune action. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
@@ -11812,6 +11893,13 @@ impl ScheduledAutoTuneDetails {
         self.severity.as_ref()
     }
 }
+impl ScheduledAutoTuneDetails {
+    /// Creates a new builder-style object to manufacture [`ScheduledAutoTuneDetails`](crate::model::ScheduledAutoTuneDetails).
+    pub fn builder() -> crate::model::scheduled_auto_tune_details::Builder {
+        crate::model::scheduled_auto_tune_details::Builder::default()
+    }
+}
+
 /// See [`ScheduledAutoTuneDetails`](crate::model::ScheduledAutoTuneDetails).
 pub mod scheduled_auto_tune_details {
     
@@ -11877,12 +11965,6 @@ pub mod scheduled_auto_tune_details {
     }
     
     
-}
-impl ScheduledAutoTuneDetails {
-    /// Creates a new builder-style object to manufacture [`ScheduledAutoTuneDetails`](crate::model::ScheduledAutoTuneDetails).
-    pub fn builder() -> crate::model::scheduled_auto_tune_details::Builder {
-        crate::model::scheduled_auto_tune_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduledAutoTuneSeverityType`, it is important to ensure
@@ -12152,6 +12234,13 @@ impl AutoTuneOptionsInput {
         self.maintenance_schedules.as_deref()
     }
 }
+impl AutoTuneOptionsInput {
+    /// Creates a new builder-style object to manufacture [`AutoTuneOptionsInput`](crate::model::AutoTuneOptionsInput).
+    pub fn builder() -> crate::model::auto_tune_options_input::Builder {
+        crate::model::auto_tune_options_input::Builder::default()
+    }
+}
+
 /// See [`AutoTuneOptionsInput`](crate::model::AutoTuneOptionsInput).
 pub mod auto_tune_options_input {
     
@@ -12199,11 +12288,5 @@ pub mod auto_tune_options_input {
     }
     
     
-}
-impl AutoTuneOptionsInput {
-    /// Creates a new builder-style object to manufacture [`AutoTuneOptionsInput`](crate::model::AutoTuneOptionsInput).
-    pub fn builder() -> crate::model::auto_tune_options_input::Builder {
-        crate::model::auto_tune_options_input::Builder::default()
-    }
 }
 

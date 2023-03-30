@@ -28,6 +28,13 @@ impl AgentConfigurationStatus {
         self.description.as_deref()
     }
 }
+impl AgentConfigurationStatus {
+    /// Creates a new builder-style object to manufacture [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
+    pub fn builder() -> crate::model::agent_configuration_status::Builder {
+        crate::model::agent_configuration_status::Builder::default()
+    }
+}
+
 /// See [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
 pub mod agent_configuration_status {
     
@@ -82,12 +89,6 @@ pub mod agent_configuration_status {
     }
     
     
-}
-impl AgentConfigurationStatus {
-    /// Creates a new builder-style object to manufacture [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
-    pub fn builder() -> crate::model::agent_configuration_status::Builder {
-        crate::model::agent_configuration_status::Builder::default()
-    }
 }
 
 /// <p>An array of information related to the import task request that includes status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
@@ -192,6 +193,13 @@ impl ImportTask {
         self.errors_and_failed_entries_zip.as_deref()
     }
 }
+impl ImportTask {
+    /// Creates a new builder-style object to manufacture [`ImportTask`](crate::model::ImportTask).
+    pub fn builder() -> crate::model::import_task::Builder {
+        crate::model::import_task::Builder::default()
+    }
+}
+
 /// See [`ImportTask`](crate::model::ImportTask).
 pub mod import_task {
     
@@ -374,12 +382,6 @@ pub mod import_task {
     
     
 }
-impl ImportTask {
-    /// Creates a new builder-style object to manufacture [`ImportTask`](crate::model::ImportTask).
-    pub fn builder() -> crate::model::import_task::Builder {
-        crate::model::import_task::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ImportStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -536,6 +538,13 @@ impl ExportFilter {
         self.condition.as_deref()
     }
 }
+impl ExportFilter {
+    /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter).
+    pub fn builder() -> crate::model::export_filter::Builder {
+        crate::model::export_filter::Builder::default()
+    }
+}
+
 /// See [`ExportFilter`](crate::model::ExportFilter).
 pub mod export_filter {
     
@@ -595,12 +604,6 @@ pub mod export_filter {
     }
     
     
-}
-impl ExportFilter {
-    /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter).
-    pub fn builder() -> crate::model::export_filter::Builder {
-        crate::model::export_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExportDataFormat`, it is important to ensure
@@ -804,6 +807,13 @@ impl NeighborConnectionDetail {
         self.connections_count
     }
 }
+impl NeighborConnectionDetail {
+    /// Creates a new builder-style object to manufacture [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
+    pub fn builder() -> crate::model::neighbor_connection_detail::Builder {
+        crate::model::neighbor_connection_detail::Builder::default()
+    }
+}
+
 /// See [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
 pub mod neighbor_connection_detail {
     
@@ -883,12 +893,6 @@ pub mod neighbor_connection_detail {
     
     
 }
-impl NeighborConnectionDetail {
-    /// Creates a new builder-style object to manufacture [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
-    pub fn builder() -> crate::model::neighbor_connection_detail::Builder {
-        crate::model::neighbor_connection_detail::Builder::default()
-    }
-}
 
 /// <p>A field and direction for ordered output.</p>
 #[non_exhaustive]
@@ -911,6 +915,13 @@ impl OrderByElement {
         self.sort_order.as_ref()
     }
 }
+impl OrderByElement {
+    /// Creates a new builder-style object to manufacture [`OrderByElement`](crate::model::OrderByElement).
+    pub fn builder() -> crate::model::order_by_element::Builder {
+        crate::model::order_by_element::Builder::default()
+    }
+}
+
 /// See [`OrderByElement`](crate::model::OrderByElement).
 pub mod order_by_element {
     
@@ -952,12 +963,6 @@ pub mod order_by_element {
     }
     
     
-}
-impl OrderByElement {
-    /// Creates a new builder-style object to manufacture [`OrderByElement`](crate::model::OrderByElement).
-    pub fn builder() -> crate::model::order_by_element::Builder {
-        crate::model::order_by_element::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OrderString`, it is important to ensure
@@ -1071,6 +1076,13 @@ impl Filter {
         self.condition.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -1130,12 +1142,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigurationItemType`, it is important to ensure
@@ -1286,6 +1292,13 @@ impl CustomerAgentlessCollectorInfo {
         self.unknown_agentless_collectors
     }
 }
+impl CustomerAgentlessCollectorInfo {
+    /// Creates a new builder-style object to manufacture [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
+    pub fn builder() -> crate::model::customer_agentless_collector_info::Builder {
+        crate::model::customer_agentless_collector_info::Builder::default()
+    }
+}
+
 /// See [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
 pub mod customer_agentless_collector_info {
     
@@ -1395,12 +1408,6 @@ pub mod customer_agentless_collector_info {
     
     
 }
-impl CustomerAgentlessCollectorInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerAgentlessCollectorInfo`](crate::model::CustomerAgentlessCollectorInfo).
-    pub fn builder() -> crate::model::customer_agentless_collector_info::Builder {
-        crate::model::customer_agentless_collector_info::Builder::default()
-    }
-}
 
 /// <p> The inventory data for installed Migration Evaluator collectors. </p>
 #[non_exhaustive]
@@ -1458,6 +1465,13 @@ impl CustomerMeCollectorInfo {
         self.unknown_me_collectors
     }
 }
+impl CustomerMeCollectorInfo {
+    /// Creates a new builder-style object to manufacture [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
+    pub fn builder() -> crate::model::customer_me_collector_info::Builder {
+        crate::model::customer_me_collector_info::Builder::default()
+    }
+}
+
 /// See [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
 pub mod customer_me_collector_info {
     
@@ -1567,12 +1581,6 @@ pub mod customer_me_collector_info {
     
     
 }
-impl CustomerMeCollectorInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
-    pub fn builder() -> crate::model::customer_me_collector_info::Builder {
-        crate::model::customer_me_collector_info::Builder::default()
-    }
-}
 
 /// <p>Inventory data for installed discovery connectors.</p>
 #[non_exhaustive]
@@ -1630,6 +1638,13 @@ impl CustomerConnectorInfo {
         self.unknown_connectors
     }
 }
+impl CustomerConnectorInfo {
+    /// Creates a new builder-style object to manufacture [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
+    pub fn builder() -> crate::model::customer_connector_info::Builder {
+        crate::model::customer_connector_info::Builder::default()
+    }
+}
+
 /// See [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
 pub mod customer_connector_info {
     
@@ -1739,12 +1754,6 @@ pub mod customer_connector_info {
     
     
 }
-impl CustomerConnectorInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
-    pub fn builder() -> crate::model::customer_connector_info::Builder {
-        crate::model::customer_connector_info::Builder::default()
-    }
-}
 
 /// <p>Inventory data for installed discovery agents.</p>
 #[non_exhaustive]
@@ -1802,6 +1811,13 @@ impl CustomerAgentInfo {
         self.unknown_agents
     }
 }
+impl CustomerAgentInfo {
+    /// Creates a new builder-style object to manufacture [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
+    pub fn builder() -> crate::model::customer_agent_info::Builder {
+        crate::model::customer_agent_info::Builder::default()
+    }
+}
+
 /// See [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
 pub mod customer_agent_info {
     
@@ -1911,12 +1927,6 @@ pub mod customer_agent_info {
     
     
 }
-impl CustomerAgentInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
-    pub fn builder() -> crate::model::customer_agent_info::Builder {
-        crate::model::customer_agent_info::Builder::default()
-    }
-}
 
 /// <p>Tags for a configuration item. Tags are metadata that help you categorize IT assets.</p>
 #[non_exhaustive]
@@ -1960,6 +1970,13 @@ impl ConfigurationTag {
         self.time_of_creation.as_ref()
     }
 }
+impl ConfigurationTag {
+    /// Creates a new builder-style object to manufacture [`ConfigurationTag`](crate::model::ConfigurationTag).
+    pub fn builder() -> crate::model::configuration_tag::Builder {
+        crate::model::configuration_tag::Builder::default()
+    }
+}
+
 /// See [`ConfigurationTag`](crate::model::ConfigurationTag).
 pub mod configuration_tag {
     
@@ -2038,12 +2055,6 @@ pub mod configuration_tag {
     
     
 }
-impl ConfigurationTag {
-    /// Creates a new builder-style object to manufacture [`ConfigurationTag`](crate::model::ConfigurationTag).
-    pub fn builder() -> crate::model::configuration_tag::Builder {
-        crate::model::configuration_tag::Builder::default()
-    }
-}
 
 /// <p>The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.</p>
 #[non_exhaustive]
@@ -2066,6 +2077,13 @@ impl TagFilter {
         self.values.as_deref()
     }
 }
+impl TagFilter {
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
+    pub fn builder() -> crate::model::tag_filter::Builder {
+        crate::model::tag_filter::Builder::default()
+    }
+}
+
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
     
@@ -2114,12 +2132,6 @@ pub mod tag_filter {
     
     
 }
-impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
-    pub fn builder() -> crate::model::tag_filter::Builder {
-        crate::model::tag_filter::Builder::default()
-    }
-}
 
 /// <p>A name-values pair of elements you can use to filter the results when querying your import tasks. Currently, wildcards are not supported for filters.</p> <note> 
 /// <p>When filtering by import status, all other filter values are ignored.</p> 
@@ -2144,6 +2156,13 @@ impl ImportTaskFilter {
         self.values.as_deref()
     }
 }
+impl ImportTaskFilter {
+    /// Creates a new builder-style object to manufacture [`ImportTaskFilter`](crate::model::ImportTaskFilter).
+    pub fn builder() -> crate::model::import_task_filter::Builder {
+        crate::model::import_task_filter::Builder::default()
+    }
+}
+
 /// See [`ImportTaskFilter`](crate::model::ImportTaskFilter).
 pub mod import_task_filter {
     
@@ -2191,12 +2210,6 @@ pub mod import_task_filter {
     }
     
     
-}
-impl ImportTaskFilter {
-    /// Creates a new builder-style object to manufacture [`ImportTaskFilter`](crate::model::ImportTaskFilter).
-    pub fn builder() -> crate::model::import_task_filter::Builder {
-        crate::model::import_task_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportTaskFilterName`, it is important to ensure
@@ -2349,6 +2362,13 @@ impl ExportInfo {
         self.requested_end_time.as_ref()
     }
 }
+impl ExportInfo {
+    /// Creates a new builder-style object to manufacture [`ExportInfo`](crate::model::ExportInfo).
+    pub fn builder() -> crate::model::export_info::Builder {
+        crate::model::export_info::Builder::default()
+    }
+}
+
 /// See [`ExportInfo`](crate::model::ExportInfo).
 pub mod export_info {
     
@@ -2463,12 +2483,6 @@ pub mod export_info {
     }
     
     
-}
-impl ExportInfo {
-    /// Creates a new builder-style object to manufacture [`ExportInfo`](crate::model::ExportInfo).
-    pub fn builder() -> crate::model::export_info::Builder {
-        crate::model::export_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExportStatus`, it is important to ensure
@@ -2681,6 +2695,13 @@ impl ContinuousExportDescription {
         self.schema_storage_config.as_ref()
     }
 }
+impl ContinuousExportDescription {
+    /// Creates a new builder-style object to manufacture [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
+    pub fn builder() -> crate::model::continuous_export_description::Builder {
+        crate::model::continuous_export_description::Builder::default()
+    }
+}
+
 /// See [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
 pub mod continuous_export_description {
     
@@ -2860,12 +2881,6 @@ pub mod continuous_export_description {
     }
     
     
-}
-impl ContinuousExportDescription {
-    /// Creates a new builder-style object to manufacture [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
-    pub fn builder() -> crate::model::continuous_export_description::Builder {
-        crate::model::continuous_export_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContinuousExportStatus`, it is important to ensure
@@ -3052,6 +3067,13 @@ impl AgentInfo {
         self.registered_time.as_deref()
     }
 }
+impl AgentInfo {
+    /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::model::AgentInfo).
+    pub fn builder() -> crate::model::agent_info::Builder {
+        crate::model::agent_info::Builder::default()
+    }
+}
+
 /// See [`AgentInfo`](crate::model::AgentInfo).
 pub mod agent_info {
     
@@ -3196,12 +3218,6 @@ pub mod agent_info {
     
     
 }
-impl AgentInfo {
-    /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::model::AgentInfo).
-    pub fn builder() -> crate::model::agent_info::Builder {
-        crate::model::agent_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AgentStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3326,6 +3342,13 @@ impl AgentNetworkInfo {
         self.mac_address.as_deref()
     }
 }
+impl AgentNetworkInfo {
+    /// Creates a new builder-style object to manufacture [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
+    pub fn builder() -> crate::model::agent_network_info::Builder {
+        crate::model::agent_network_info::Builder::default()
+    }
+}
+
 /// See [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
 pub mod agent_network_info {
     
@@ -3368,12 +3391,6 @@ pub mod agent_network_info {
     
     
 }
-impl AgentNetworkInfo {
-    /// Creates a new builder-style object to manufacture [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
-    pub fn builder() -> crate::model::agent_network_info::Builder {
-        crate::model::agent_network_info::Builder::default()
-    }
-}
 
 /// <p>Metadata that help you categorize IT assets.</p> <important> 
 /// <p>Do not store sensitive information (like personal data) in tags.</p> 
@@ -3398,6 +3415,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -3440,12 +3464,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Error messages returned for each import task that you deleted as a response for this command.</p>
 #[non_exhaustive]
@@ -3475,6 +3493,13 @@ impl BatchDeleteImportDataError {
         self.error_description.as_deref()
     }
 }
+impl BatchDeleteImportDataError {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
+    pub fn builder() -> crate::model::batch_delete_import_data_error::Builder {
+        crate::model::batch_delete_import_data_error::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
 pub mod batch_delete_import_data_error {
     
@@ -3528,12 +3553,6 @@ pub mod batch_delete_import_data_error {
     }
     
     
-}
-impl BatchDeleteImportDataError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
-    pub fn builder() -> crate::model::batch_delete_import_data_error::Builder {
-        crate::model::batch_delete_import_data_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BatchDeleteImportDataErrorCode`, it is important to ensure

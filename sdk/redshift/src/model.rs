@@ -547,6 +547,13 @@ impl Cluster {
         self.reserved_node_exchange_status.as_ref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
     
@@ -1328,12 +1335,6 @@ pub mod cluster {
     
     
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// <p>Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.</p>
 #[non_exhaustive]
@@ -1405,6 +1406,13 @@ impl ReservedNodeExchangeStatus {
         self.target_reserved_node_count
     }
 }
+impl ReservedNodeExchangeStatus {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
+    pub fn builder() -> crate::model::reserved_node_exchange_status::Builder {
+        crate::model::reserved_node_exchange_status::Builder::default()
+    }
+}
+
 /// See [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
 pub mod reserved_node_exchange_status {
     
@@ -1533,12 +1541,6 @@ pub mod reserved_node_exchange_status {
     
     
 }
-impl ReservedNodeExchangeStatus {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeExchangeStatus`](crate::model::ReservedNodeExchangeStatus).
-    pub fn builder() -> crate::model::reserved_node_exchange_status::Builder {
-        crate::model::reserved_node_exchange_status::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReservedNodeExchangeStatusType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1663,6 +1665,13 @@ impl AquaConfiguration {
         self.aqua_configuration_status.as_ref()
     }
 }
+impl AquaConfiguration {
+    /// Creates a new builder-style object to manufacture [`AquaConfiguration`](crate::model::AquaConfiguration).
+    pub fn builder() -> crate::model::aqua_configuration::Builder {
+        crate::model::aqua_configuration::Builder::default()
+    }
+}
+
 /// See [`AquaConfiguration`](crate::model::AquaConfiguration).
 pub mod aqua_configuration {
     
@@ -1704,12 +1713,6 @@ pub mod aqua_configuration {
     }
     
     
-}
-impl AquaConfiguration {
-    /// Creates a new builder-style object to manufacture [`AquaConfiguration`](crate::model::AquaConfiguration).
-    pub fn builder() -> crate::model::aqua_configuration::Builder {
-        crate::model::aqua_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AquaConfigurationStatus`, it is important to ensure
@@ -1907,6 +1910,13 @@ impl ResizeInfo {
         self.allow_cancel_resize
     }
 }
+impl ResizeInfo {
+    /// Creates a new builder-style object to manufacture [`ResizeInfo`](crate::model::ResizeInfo).
+    pub fn builder() -> crate::model::resize_info::Builder {
+        crate::model::resize_info::Builder::default()
+    }
+}
+
 /// See [`ResizeInfo`](crate::model::ResizeInfo).
 pub mod resize_info {
     
@@ -1949,12 +1959,6 @@ pub mod resize_info {
     }
     
     
-}
-impl ResizeInfo {
-    /// Creates a new builder-style object to manufacture [`ResizeInfo`](crate::model::ResizeInfo).
-    pub fn builder() -> crate::model::resize_info::Builder {
-        crate::model::resize_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduleState`, it is important to ensure
@@ -2072,6 +2076,13 @@ impl DeferredMaintenanceWindow {
         self.defer_maintenance_end_time.as_ref()
     }
 }
+impl DeferredMaintenanceWindow {
+    /// Creates a new builder-style object to manufacture [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
+    pub fn builder() -> crate::model::deferred_maintenance_window::Builder {
+        crate::model::deferred_maintenance_window::Builder::default()
+    }
+}
+
 /// See [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
 pub mod deferred_maintenance_window {
     
@@ -2126,12 +2137,6 @@ pub mod deferred_maintenance_window {
     
     
 }
-impl DeferredMaintenanceWindow {
-    /// Creates a new builder-style object to manufacture [`DeferredMaintenanceWindow`](crate::model::DeferredMaintenanceWindow).
-    pub fn builder() -> crate::model::deferred_maintenance_window::Builder {
-        crate::model::deferred_maintenance_window::Builder::default()
-    }
-}
 
 /// <p>An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.</p>
 #[non_exhaustive]
@@ -2166,6 +2171,13 @@ impl ClusterIamRole {
         self.apply_status.as_deref()
     }
 }
+impl ClusterIamRole {
+    /// Creates a new builder-style object to manufacture [`ClusterIamRole`](crate::model::ClusterIamRole).
+    pub fn builder() -> crate::model::cluster_iam_role::Builder {
+        crate::model::cluster_iam_role::Builder::default()
+    }
+}
+
 /// See [`ClusterIamRole`](crate::model::ClusterIamRole).
 pub mod cluster_iam_role {
     
@@ -2220,12 +2232,6 @@ pub mod cluster_iam_role {
     
     
 }
-impl ClusterIamRole {
-    /// Creates a new builder-style object to manufacture [`ClusterIamRole`](crate::model::ClusterIamRole).
-    pub fn builder() -> crate::model::cluster_iam_role::Builder {
-        crate::model::cluster_iam_role::Builder::default()
-    }
-}
 
 /// <p>A tag consisting of a name/value pair for a resource.</p>
 #[non_exhaustive]
@@ -2248,6 +2254,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -2290,12 +2303,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Describes the status of the elastic IP (EIP) address.</p>
 #[non_exhaustive]
@@ -2318,6 +2325,13 @@ impl ElasticIpStatus {
         self.status.as_deref()
     }
 }
+impl ElasticIpStatus {
+    /// Creates a new builder-style object to manufacture [`ElasticIpStatus`](crate::model::ElasticIpStatus).
+    pub fn builder() -> crate::model::elastic_ip_status::Builder {
+        crate::model::elastic_ip_status::Builder::default()
+    }
+}
+
 /// See [`ElasticIpStatus`](crate::model::ElasticIpStatus).
 pub mod elastic_ip_status {
     
@@ -2360,12 +2374,6 @@ pub mod elastic_ip_status {
     
     
 }
-impl ElasticIpStatus {
-    /// Creates a new builder-style object to manufacture [`ElasticIpStatus`](crate::model::ElasticIpStatus).
-    pub fn builder() -> crate::model::elastic_ip_status::Builder {
-        crate::model::elastic_ip_status::Builder::default()
-    }
-}
 
 /// <p>The identifier of a node in a cluster.</p>
 #[non_exhaustive]
@@ -2395,6 +2403,13 @@ impl ClusterNode {
         self.public_ip_address.as_deref()
     }
 }
+impl ClusterNode {
+    /// Creates a new builder-style object to manufacture [`ClusterNode`](crate::model::ClusterNode).
+    pub fn builder() -> crate::model::cluster_node::Builder {
+        crate::model::cluster_node::Builder::default()
+    }
+}
+
 /// See [`ClusterNode`](crate::model::ClusterNode).
 pub mod cluster_node {
     
@@ -2449,12 +2464,6 @@ pub mod cluster_node {
     
     
 }
-impl ClusterNode {
-    /// Creates a new builder-style object to manufacture [`ClusterNode`](crate::model::ClusterNode).
-    pub fn builder() -> crate::model::cluster_node::Builder {
-        crate::model::cluster_node::Builder::default()
-    }
-}
 
 /// <p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
 #[non_exhaustive]
@@ -2493,6 +2502,13 @@ impl ClusterSnapshotCopyStatus {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
+impl ClusterSnapshotCopyStatus {
+    /// Creates a new builder-style object to manufacture [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
+    pub fn builder() -> crate::model::cluster_snapshot_copy_status::Builder {
+        crate::model::cluster_snapshot_copy_status::Builder::default()
+    }
+}
+
 /// See [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
 pub mod cluster_snapshot_copy_status {
     
@@ -2563,12 +2579,6 @@ pub mod cluster_snapshot_copy_status {
     
     
 }
-impl ClusterSnapshotCopyStatus {
-    /// Creates a new builder-style object to manufacture [`ClusterSnapshotCopyStatus`](crate::model::ClusterSnapshotCopyStatus).
-    pub fn builder() -> crate::model::cluster_snapshot_copy_status::Builder {
-        crate::model::cluster_snapshot_copy_status::Builder::default()
-    }
-}
 
 /// <p>Describes the status of changes to HSM settings.</p>
 #[non_exhaustive]
@@ -2600,6 +2610,13 @@ impl HsmStatus {
         self.status.as_deref()
     }
 }
+impl HsmStatus {
+    /// Creates a new builder-style object to manufacture [`HsmStatus`](crate::model::HsmStatus).
+    pub fn builder() -> crate::model::hsm_status::Builder {
+        crate::model::hsm_status::Builder::default()
+    }
+}
+
 /// See [`HsmStatus`](crate::model::HsmStatus).
 pub mod hsm_status {
     
@@ -2656,12 +2673,6 @@ pub mod hsm_status {
     
     
 }
-impl HsmStatus {
-    /// Creates a new builder-style object to manufacture [`HsmStatus`](crate::model::HsmStatus).
-    pub fn builder() -> crate::model::hsm_status::Builder {
-        crate::model::hsm_status::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a cluster while it is in the process of resizing with an incremental resize.</p>
 #[non_exhaustive]
@@ -2712,6 +2723,13 @@ impl DataTransferProgress {
         self.elapsed_time_in_seconds
     }
 }
+impl DataTransferProgress {
+    /// Creates a new builder-style object to manufacture [`DataTransferProgress`](crate::model::DataTransferProgress).
+    pub fn builder() -> crate::model::data_transfer_progress::Builder {
+        crate::model::data_transfer_progress::Builder::default()
+    }
+}
+
 /// See [`DataTransferProgress`](crate::model::DataTransferProgress).
 pub mod data_transfer_progress {
     
@@ -2804,12 +2822,6 @@ pub mod data_transfer_progress {
     
     
 }
-impl DataTransferProgress {
-    /// Creates a new builder-style object to manufacture [`DataTransferProgress`](crate::model::DataTransferProgress).
-    pub fn builder() -> crate::model::data_transfer_progress::Builder {
-        crate::model::data_transfer_progress::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
 #[non_exhaustive]
@@ -2860,6 +2872,13 @@ impl RestoreStatus {
         self.estimated_time_to_completion_in_seconds
     }
 }
+impl RestoreStatus {
+    /// Creates a new builder-style object to manufacture [`RestoreStatus`](crate::model::RestoreStatus).
+    pub fn builder() -> crate::model::restore_status::Builder {
+        crate::model::restore_status::Builder::default()
+    }
+}
+
 /// See [`RestoreStatus`](crate::model::RestoreStatus).
 pub mod restore_status {
     
@@ -2955,12 +2974,6 @@ pub mod restore_status {
     
     
 }
-impl RestoreStatus {
-    /// Creates a new builder-style object to manufacture [`RestoreStatus`](crate::model::RestoreStatus).
-    pub fn builder() -> crate::model::restore_status::Builder {
-        crate::model::restore_status::Builder::default()
-    }
-}
 
 /// <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
 #[non_exhaustive]
@@ -3050,6 +3063,13 @@ impl PendingModifiedValues {
         self.encryption_type.as_deref()
     }
 }
+impl PendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
+    pub fn builder() -> crate::model::pending_modified_values::Builder {
+        crate::model::pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
 pub mod pending_modified_values {
     
@@ -3204,12 +3224,6 @@ pub mod pending_modified_values {
     
     
 }
-impl PendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
-    pub fn builder() -> crate::model::pending_modified_values::Builder {
-        crate::model::pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
@@ -3241,6 +3255,13 @@ impl ClusterParameterGroupStatus {
         self.cluster_parameter_status_list.as_deref()
     }
 }
+impl ClusterParameterGroupStatus {
+    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
+    pub fn builder() -> crate::model::cluster_parameter_group_status::Builder {
+        crate::model::cluster_parameter_group_status::Builder::default()
+    }
+}
+
 /// See [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
 pub mod cluster_parameter_group_status {
     
@@ -3303,12 +3324,6 @@ pub mod cluster_parameter_group_status {
     
     
 }
-impl ClusterParameterGroupStatus {
-    /// Creates a new builder-style object to manufacture [`ClusterParameterGroupStatus`](crate::model::ClusterParameterGroupStatus).
-    pub fn builder() -> crate::model::cluster_parameter_group_status::Builder {
-        crate::model::cluster_parameter_group_status::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
@@ -3358,6 +3373,13 @@ impl ClusterParameterStatus {
         self.parameter_apply_error_description.as_deref()
     }
 }
+impl ClusterParameterStatus {
+    /// Creates a new builder-style object to manufacture [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
+    pub fn builder() -> crate::model::cluster_parameter_status::Builder {
+        crate::model::cluster_parameter_status::Builder::default()
+    }
+}
+
 /// See [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
 pub mod cluster_parameter_status {
     
@@ -3432,12 +3454,6 @@ pub mod cluster_parameter_status {
     
     
 }
-impl ClusterParameterStatus {
-    /// Creates a new builder-style object to manufacture [`ClusterParameterStatus`](crate::model::ClusterParameterStatus).
-    pub fn builder() -> crate::model::cluster_parameter_status::Builder {
-        crate::model::cluster_parameter_status::Builder::default()
-    }
-}
 
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
@@ -3460,6 +3476,13 @@ impl VpcSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl VpcSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
+    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
+        crate::model::vpc_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
     
@@ -3502,12 +3525,6 @@ pub mod vpc_security_group_membership {
     
     
 }
-impl VpcSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
-    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
-        crate::model::vpc_security_group_membership::Builder::default()
-    }
-}
 
 /// <p>Describes a cluster security group.</p>
 #[non_exhaustive]
@@ -3530,6 +3547,13 @@ impl ClusterSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl ClusterSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
+    pub fn builder() -> crate::model::cluster_security_group_membership::Builder {
+        crate::model::cluster_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
 pub mod cluster_security_group_membership {
     
@@ -3572,12 +3596,6 @@ pub mod cluster_security_group_membership {
     
     
 }
-impl ClusterSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroupMembership`](crate::model::ClusterSecurityGroupMembership).
-    pub fn builder() -> crate::model::cluster_security_group_membership::Builder {
-        crate::model::cluster_security_group_membership::Builder::default()
-    }
-}
 
 /// <p>Describes a connection endpoint.</p>
 #[non_exhaustive]
@@ -3607,6 +3625,13 @@ impl Endpoint {
         self.vpc_endpoints.as_deref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
     
@@ -3668,12 +3693,6 @@ pub mod endpoint {
     
     
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
 #[non_exhaustive]
@@ -3703,6 +3722,13 @@ impl VpcEndpoint {
         self.network_interfaces.as_deref()
     }
 }
+impl VpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
+    pub fn builder() -> crate::model::vpc_endpoint::Builder {
+        crate::model::vpc_endpoint::Builder::default()
+    }
+}
+
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
 pub mod vpc_endpoint {
     
@@ -3763,12 +3789,6 @@ pub mod vpc_endpoint {
     
     
 }
-impl VpcEndpoint {
-    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
-    pub fn builder() -> crate::model::vpc_endpoint::Builder {
-        crate::model::vpc_endpoint::Builder::default()
-    }
-}
 
 /// <p>Describes a network interface. </p>
 #[non_exhaustive]
@@ -3805,6 +3825,13 @@ impl NetworkInterface {
         self.availability_zone.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
     
@@ -3870,12 +3897,6 @@ pub mod network_interface {
     }
     
     
-}
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
 }
 
 /// <p>Describes a snapshot.</p>
@@ -4139,6 +4160,13 @@ impl Snapshot {
         self.snapshot_retention_start_time.as_ref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
     
@@ -4610,12 +4638,6 @@ pub mod snapshot {
     
     
 }
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon Web Services account authorized to restore a snapshot.</p>
 #[non_exhaustive]
@@ -4638,6 +4660,13 @@ impl AccountWithRestoreAccess {
         self.account_alias.as_deref()
     }
 }
+impl AccountWithRestoreAccess {
+    /// Creates a new builder-style object to manufacture [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
+    pub fn builder() -> crate::model::account_with_restore_access::Builder {
+        crate::model::account_with_restore_access::Builder::default()
+    }
+}
+
 /// See [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
 pub mod account_with_restore_access {
     
@@ -4679,12 +4708,6 @@ pub mod account_with_restore_access {
     }
     
     
-}
-impl AccountWithRestoreAccess {
-    /// Creates a new builder-style object to manufacture [`AccountWithRestoreAccess`](crate::model::AccountWithRestoreAccess).
-    pub fn builder() -> crate::model::account_with_restore_access::Builder {
-        crate::model::account_with_restore_access::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthorizationStatus`, it is important to ensure
@@ -4811,6 +4834,13 @@ impl ClusterSecurityGroup {
         self.tags.as_deref()
     }
 }
+impl ClusterSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
+    pub fn builder() -> crate::model::cluster_security_group::Builder {
+        crate::model::cluster_security_group::Builder::default()
+    }
+}
+
 /// See [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
 pub mod cluster_security_group {
     
@@ -4907,12 +4937,6 @@ pub mod cluster_security_group {
     
     
 }
-impl ClusterSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`ClusterSecurityGroup`](crate::model::ClusterSecurityGroup).
-    pub fn builder() -> crate::model::cluster_security_group::Builder {
-        crate::model::cluster_security_group::Builder::default()
-    }
-}
 
 /// <p>Describes an IP range used in a security group.</p>
 #[non_exhaustive]
@@ -4942,6 +4966,13 @@ impl IpRange {
         self.tags.as_deref()
     }
 }
+impl IpRange {
+    /// Creates a new builder-style object to manufacture [`IpRange`](crate::model::IpRange).
+    pub fn builder() -> crate::model::ip_range::Builder {
+        crate::model::ip_range::Builder::default()
+    }
+}
+
 /// See [`IpRange`](crate::model::IpRange).
 pub mod ip_range {
     
@@ -5002,12 +5033,6 @@ pub mod ip_range {
     
     
 }
-impl IpRange {
-    /// Creates a new builder-style object to manufacture [`IpRange`](crate::model::IpRange).
-    pub fn builder() -> crate::model::ip_range::Builder {
-        crate::model::ip_range::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon EC2 security group.</p>
 #[non_exhaustive]
@@ -5044,6 +5069,13 @@ impl Ec2SecurityGroup {
         self.tags.as_deref()
     }
 }
+impl Ec2SecurityGroup {
+    /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
+    pub fn builder() -> crate::model::ec2_security_group::Builder {
+        crate::model::ec2_security_group::Builder::default()
+    }
+}
+
 /// See [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
 pub mod ec2_security_group {
     
@@ -5115,12 +5147,6 @@ pub mod ec2_security_group {
     }
     
     
-}
-impl Ec2SecurityGroup {
-    /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
-    pub fn builder() -> crate::model::ec2_security_group::Builder {
-        crate::model::ec2_security_group::Builder::default()
-    }
 }
 
 /// <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
@@ -5230,6 +5256,13 @@ impl TableRestoreStatus {
         self.new_table_name.as_deref()
     }
 }
+impl TableRestoreStatus {
+    /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+    pub fn builder() -> crate::model::table_restore_status::Builder {
+        crate::model::table_restore_status::Builder::default()
+    }
+}
+
 /// See [`TableRestoreStatus`](crate::model::TableRestoreStatus).
 pub mod table_restore_status {
     
@@ -5418,12 +5451,6 @@ pub mod table_restore_status {
     
     
 }
-impl TableRestoreStatus {
-    /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
-    pub fn builder() -> crate::model::table_restore_status::Builder {
-        crate::model::table_restore_status::Builder::default()
-    }
-}
 
 /// When writing a match expression against `TableRestoreStatusType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5592,6 +5619,13 @@ impl Parameter {
         self.minimum_engine_version.as_deref()
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
     
@@ -5719,12 +5753,6 @@ pub mod parameter {
     
     
 }
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ParameterApplyType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5850,6 +5878,13 @@ impl DataShareAssociation {
         self.status_change_date.as_ref()
     }
 }
+impl DataShareAssociation {
+    /// Creates a new builder-style object to manufacture [`DataShareAssociation`](crate::model::DataShareAssociation).
+    pub fn builder() -> crate::model::data_share_association::Builder {
+        crate::model::data_share_association::Builder::default()
+    }
+}
+
 /// See [`DataShareAssociation`](crate::model::DataShareAssociation).
 pub mod data_share_association {
     
@@ -5927,12 +5962,6 @@ pub mod data_share_association {
     }
     
     
-}
-impl DataShareAssociation {
-    /// Creates a new builder-style object to manufacture [`DataShareAssociation`](crate::model::DataShareAssociation).
-    pub fn builder() -> crate::model::data_share_association::Builder {
-        crate::model::data_share_association::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataShareStatus`, it is important to ensure
@@ -6151,6 +6180,13 @@ impl ReservedNode {
         self.reserved_node_offering_type.as_ref()
     }
 }
+impl ReservedNode {
+    /// Creates a new builder-style object to manufacture [`ReservedNode`](crate::model::ReservedNode).
+    pub fn builder() -> crate::model::reserved_node::Builder {
+        crate::model::reserved_node::Builder::default()
+    }
+}
+
 /// See [`ReservedNode`](crate::model::ReservedNode).
 pub mod reserved_node {
     
@@ -6351,12 +6387,6 @@ pub mod reserved_node {
     
     
 }
-impl ReservedNode {
-    /// Creates a new builder-style object to manufacture [`ReservedNode`](crate::model::ReservedNode).
-    pub fn builder() -> crate::model::reserved_node::Builder {
-        crate::model::reserved_node::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReservedNodeOfferingType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6461,6 +6491,13 @@ impl RecurringCharge {
         self.recurring_charge_frequency.as_deref()
     }
 }
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
     
@@ -6503,12 +6540,6 @@ pub mod recurring_charge {
     }
     
     
-}
-impl RecurringCharge {
-    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
-    pub fn builder() -> crate::model::recurring_charge::Builder {
-        crate::model::recurring_charge::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UsageLimitBreachAction`, it is important to ensure
@@ -6875,6 +6906,13 @@ impl ClusterAssociatedToSchedule {
         self.schedule_association_state.as_ref()
     }
 }
+impl ClusterAssociatedToSchedule {
+    /// Creates a new builder-style object to manufacture [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
+    pub fn builder() -> crate::model::cluster_associated_to_schedule::Builder {
+        crate::model::cluster_associated_to_schedule::Builder::default()
+    }
+}
+
 /// See [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
 pub mod cluster_associated_to_schedule {
     
@@ -6916,12 +6954,6 @@ pub mod cluster_associated_to_schedule {
     }
     
     
-}
-impl ClusterAssociatedToSchedule {
-    /// Creates a new builder-style object to manufacture [`ClusterAssociatedToSchedule`](crate::model::ClusterAssociatedToSchedule).
-    pub fn builder() -> crate::model::cluster_associated_to_schedule::Builder {
-        crate::model::cluster_associated_to_schedule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduledActionState`, it is important to ensure
@@ -7034,6 +7066,13 @@ impl ScheduledActionType {
         self.resume_cluster.as_ref()
     }
 }
+impl ScheduledActionType {
+    /// Creates a new builder-style object to manufacture [`ScheduledActionType`](crate::model::ScheduledActionType).
+    pub fn builder() -> crate::model::scheduled_action_type::Builder {
+        crate::model::scheduled_action_type::Builder::default()
+    }
+}
+
 /// See [`ScheduledActionType`](crate::model::ScheduledActionType).
 pub mod scheduled_action_type {
     
@@ -7088,12 +7127,6 @@ pub mod scheduled_action_type {
     
     
 }
-impl ScheduledActionType {
-    /// Creates a new builder-style object to manufacture [`ScheduledActionType`](crate::model::ScheduledActionType).
-    pub fn builder() -> crate::model::scheduled_action_type::Builder {
-        crate::model::scheduled_action_type::Builder::default()
-    }
-}
 
 /// <p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. </p>
 #[non_exhaustive]
@@ -7109,6 +7142,13 @@ impl ResumeClusterMessage {
         self.cluster_identifier.as_deref()
     }
 }
+impl ResumeClusterMessage {
+    /// Creates a new builder-style object to manufacture [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
+    pub fn builder() -> crate::model::resume_cluster_message::Builder {
+        crate::model::resume_cluster_message::Builder::default()
+    }
+}
+
 /// See [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
 pub mod resume_cluster_message {
     
@@ -7139,12 +7179,6 @@ pub mod resume_cluster_message {
     
     
 }
-impl ResumeClusterMessage {
-    /// Creates a new builder-style object to manufacture [`ResumeClusterMessage`](crate::model::ResumeClusterMessage).
-    pub fn builder() -> crate::model::resume_cluster_message::Builder {
-        crate::model::resume_cluster_message::Builder::default()
-    }
-}
 
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>
 #[non_exhaustive]
@@ -7160,6 +7194,13 @@ impl PauseClusterMessage {
         self.cluster_identifier.as_deref()
     }
 }
+impl PauseClusterMessage {
+    /// Creates a new builder-style object to manufacture [`PauseClusterMessage`](crate::model::PauseClusterMessage).
+    pub fn builder() -> crate::model::pause_cluster_message::Builder {
+        crate::model::pause_cluster_message::Builder::default()
+    }
+}
+
 /// See [`PauseClusterMessage`](crate::model::PauseClusterMessage).
 pub mod pause_cluster_message {
     
@@ -7189,12 +7230,6 @@ pub mod pause_cluster_message {
     }
     
     
-}
-impl PauseClusterMessage {
-    /// Creates a new builder-style object to manufacture [`PauseClusterMessage`](crate::model::PauseClusterMessage).
-    pub fn builder() -> crate::model::pause_cluster_message::Builder {
-        crate::model::pause_cluster_message::Builder::default()
-    }
 }
 
 /// <p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. </p>
@@ -7253,6 +7288,13 @@ impl ResizeClusterMessage {
         self.target_reserved_node_offering_id.as_deref()
     }
 }
+impl ResizeClusterMessage {
+    /// Creates a new builder-style object to manufacture [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
+    pub fn builder() -> crate::model::resize_cluster_message::Builder {
+        crate::model::resize_cluster_message::Builder::default()
+    }
+}
+
 /// See [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
 pub mod resize_cluster_message {
     
@@ -7355,12 +7397,6 @@ pub mod resize_cluster_message {
     
     
 }
-impl ResizeClusterMessage {
-    /// Creates a new builder-style object to manufacture [`ResizeClusterMessage`](crate::model::ResizeClusterMessage).
-    pub fn builder() -> crate::model::resize_cluster_message::Builder {
-        crate::model::resize_cluster_message::Builder::default()
-    }
-}
 
 /// <p>Describes event subscriptions.</p>
 #[non_exhaustive]
@@ -7460,6 +7496,13 @@ impl EventSubscription {
         self.tags.as_deref()
     }
 }
+impl EventSubscription {
+    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
+    pub fn builder() -> crate::model::event_subscription::Builder {
+        crate::model::event_subscription::Builder::default()
+    }
+}
+
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
     
@@ -7643,12 +7686,6 @@ pub mod event_subscription {
     
     
 }
-impl EventSubscription {
-    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
-    pub fn builder() -> crate::model::event_subscription::Builder {
-        crate::model::event_subscription::Builder::default()
-    }
-}
 
 /// <p>Describes a subnet group.</p>
 #[non_exhaustive]
@@ -7699,6 +7736,13 @@ impl ClusterSubnetGroup {
         self.tags.as_deref()
     }
 }
+impl ClusterSubnetGroup {
+    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
+    pub fn builder() -> crate::model::cluster_subnet_group::Builder {
+        crate::model::cluster_subnet_group::Builder::default()
+    }
+}
+
 /// See [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
 pub mod cluster_subnet_group {
     
@@ -7801,12 +7845,6 @@ pub mod cluster_subnet_group {
     
     
 }
-impl ClusterSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`ClusterSubnetGroup`](crate::model::ClusterSubnetGroup).
-    pub fn builder() -> crate::model::cluster_subnet_group::Builder {
-        crate::model::cluster_subnet_group::Builder::default()
-    }
-}
 
 /// <p>Describes a subnet.</p>
 #[non_exhaustive]
@@ -7836,6 +7874,13 @@ impl Subnet {
         self.subnet_status.as_deref()
     }
 }
+impl Subnet {
+    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
+    pub fn builder() -> crate::model::subnet::Builder {
+        crate::model::subnet::Builder::default()
+    }
+}
+
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
     
@@ -7890,12 +7935,6 @@ pub mod subnet {
     
     
 }
-impl Subnet {
-    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
-    pub fn builder() -> crate::model::subnet::Builder {
-        crate::model::subnet::Builder::default()
-    }
-}
 
 /// <p>Describes an availability zone.</p>
 #[non_exhaustive]
@@ -7918,6 +7957,13 @@ impl AvailabilityZone {
         self.supported_platforms.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
     
@@ -7966,12 +8012,6 @@ pub mod availability_zone {
     
     
 }
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
-    }
-}
 
 /// <p>A list of supported platforms for orderable clusters.</p>
 #[non_exhaustive]
@@ -7987,6 +8027,13 @@ impl SupportedPlatform {
         self.name.as_deref()
     }
 }
+impl SupportedPlatform {
+    /// Creates a new builder-style object to manufacture [`SupportedPlatform`](crate::model::SupportedPlatform).
+    pub fn builder() -> crate::model::supported_platform::Builder {
+        crate::model::supported_platform::Builder::default()
+    }
+}
+
 /// See [`SupportedPlatform`](crate::model::SupportedPlatform).
 pub mod supported_platform {
     
@@ -8016,12 +8063,6 @@ pub mod supported_platform {
     }
     
     
-}
-impl SupportedPlatform {
-    /// Creates a new builder-style object to manufacture [`SupportedPlatform`](crate::model::SupportedPlatform).
-    pub fn builder() -> crate::model::supported_platform::Builder {
-        crate::model::supported_platform::Builder::default()
-    }
 }
 
 /// <p>Describes a reserved node offering.</p>
@@ -8094,6 +8135,13 @@ impl ReservedNodeOffering {
         self.reserved_node_offering_type.as_ref()
     }
 }
+impl ReservedNodeOffering {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
+    pub fn builder() -> crate::model::reserved_node_offering::Builder {
+        crate::model::reserved_node_offering::Builder::default()
+    }
+}
+
 /// See [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
 pub mod reserved_node_offering {
     
@@ -8229,12 +8277,6 @@ pub mod reserved_node_offering {
     
     
 }
-impl ReservedNodeOffering {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeOffering`](crate::model::ReservedNodeOffering).
-    pub fn builder() -> crate::model::reserved_node_offering::Builder {
-        crate::model::reserved_node_offering::Builder::default()
-    }
-}
 
 /// <p>Details for a reserved-node exchange. Examples include the node type for a reserved node, the price for a node, the node's state, and other details.</p>
 #[non_exhaustive]
@@ -8264,6 +8306,13 @@ impl ReservedNodeConfigurationOption {
         self.target_reserved_node_offering.as_ref()
     }
 }
+impl ReservedNodeConfigurationOption {
+    /// Creates a new builder-style object to manufacture [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
+    pub fn builder() -> crate::model::reserved_node_configuration_option::Builder {
+        crate::model::reserved_node_configuration_option::Builder::default()
+    }
+}
+
 /// See [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
 pub mod reserved_node_configuration_option {
     
@@ -8318,12 +8367,6 @@ pub mod reserved_node_configuration_option {
     }
     
     
-}
-impl ReservedNodeConfigurationOption {
-    /// Creates a new builder-style object to manufacture [`ReservedNodeConfigurationOption`](crate::model::ReservedNodeConfigurationOption).
-    pub fn builder() -> crate::model::reserved_node_configuration_option::Builder {
-        crate::model::reserved_node_configuration_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReservedNodeExchangeActionType`, it is important to ensure
@@ -8563,6 +8606,13 @@ impl UsageLimit {
         self.tags.as_deref()
     }
 }
+impl UsageLimit {
+    /// Creates a new builder-style object to manufacture [`UsageLimit`](crate::model::UsageLimit).
+    pub fn builder() -> crate::model::usage_limit::Builder {
+        crate::model::usage_limit::Builder::default()
+    }
+}
+
 /// See [`UsageLimit`](crate::model::UsageLimit).
 pub mod usage_limit {
     
@@ -8694,12 +8744,6 @@ pub mod usage_limit {
     
     
 }
-impl UsageLimit {
-    /// Creates a new builder-style object to manufacture [`UsageLimit`](crate::model::UsageLimit).
-    pub fn builder() -> crate::model::usage_limit::Builder {
-        crate::model::usage_limit::Builder::default()
-    }
-}
 
 /// <p>A tag and its associated resource.</p>
 #[non_exhaustive]
@@ -8753,6 +8797,13 @@ impl TaggedResource {
         self.resource_type.as_deref()
     }
 }
+impl TaggedResource {
+    /// Creates a new builder-style object to manufacture [`TaggedResource`](crate::model::TaggedResource).
+    pub fn builder() -> crate::model::tagged_resource::Builder {
+        crate::model::tagged_resource::Builder::default()
+    }
+}
+
 /// See [`TaggedResource`](crate::model::TaggedResource).
 pub mod tagged_resource {
     
@@ -8831,12 +8882,6 @@ pub mod tagged_resource {
     
     
 }
-impl TaggedResource {
-    /// Creates a new builder-style object to manufacture [`TaggedResource`](crate::model::TaggedResource).
-    pub fn builder() -> crate::model::tagged_resource::Builder {
-        crate::model::tagged_resource::Builder::default()
-    }
-}
 
 /// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
 #[non_exhaustive]
@@ -8894,6 +8939,13 @@ impl SnapshotSchedule {
         self.associated_clusters.as_deref()
     }
 }
+impl SnapshotSchedule {
+    /// Creates a new builder-style object to manufacture [`SnapshotSchedule`](crate::model::SnapshotSchedule).
+    pub fn builder() -> crate::model::snapshot_schedule::Builder {
+        crate::model::snapshot_schedule::Builder::default()
+    }
+}
+
 /// See [`SnapshotSchedule`](crate::model::SnapshotSchedule).
 pub mod snapshot_schedule {
     
@@ -9020,12 +9072,6 @@ pub mod snapshot_schedule {
     
     
 }
-impl SnapshotSchedule {
-    /// Creates a new builder-style object to manufacture [`SnapshotSchedule`](crate::model::SnapshotSchedule).
-    pub fn builder() -> crate::model::snapshot_schedule::Builder {
-        crate::model::snapshot_schedule::Builder::default()
-    }
-}
 
 /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p> 
 /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
@@ -9056,6 +9102,13 @@ impl SnapshotCopyGrant {
         self.tags.as_deref()
     }
 }
+impl SnapshotCopyGrant {
+    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
+    pub fn builder() -> crate::model::snapshot_copy_grant::Builder {
+        crate::model::snapshot_copy_grant::Builder::default()
+    }
+}
+
 /// See [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
 pub mod snapshot_copy_grant {
     
@@ -9115,12 +9168,6 @@ pub mod snapshot_copy_grant {
     }
     
     
-}
-impl SnapshotCopyGrant {
-    /// Creates a new builder-style object to manufacture [`SnapshotCopyGrant`](crate::model::SnapshotCopyGrant).
-    pub fn builder() -> crate::model::snapshot_copy_grant::Builder {
-        crate::model::snapshot_copy_grant::Builder::default()
-    }
 }
 
 /// <p>Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <code>ScheduledActionType</code>. </p>
@@ -9199,6 +9246,13 @@ impl ScheduledAction {
         self.end_time.as_ref()
     }
 }
+impl ScheduledAction {
+    /// Creates a new builder-style object to manufacture [`ScheduledAction`](crate::model::ScheduledAction).
+    pub fn builder() -> crate::model::scheduled_action::Builder {
+        crate::model::scheduled_action::Builder::default()
+    }
+}
+
 /// See [`ScheduledAction`](crate::model::ScheduledAction).
 pub mod scheduled_action {
     
@@ -9337,12 +9391,6 @@ pub mod scheduled_action {
     
     
 }
-impl ScheduledAction {
-    /// Creates a new builder-style object to manufacture [`ScheduledAction`](crate::model::ScheduledAction).
-    pub fn builder() -> crate::model::scheduled_action::Builder {
-        crate::model::scheduled_action::Builder::default()
-    }
-}
 
 /// <p>A set of elements to filter the returned scheduled actions. </p>
 #[non_exhaustive]
@@ -9365,6 +9413,13 @@ impl ScheduledActionFilter {
         self.values.as_deref()
     }
 }
+impl ScheduledActionFilter {
+    /// Creates a new builder-style object to manufacture [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
+    pub fn builder() -> crate::model::scheduled_action_filter::Builder {
+        crate::model::scheduled_action_filter::Builder::default()
+    }
+}
+
 /// See [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
 pub mod scheduled_action_filter {
     
@@ -9412,12 +9467,6 @@ pub mod scheduled_action_filter {
     }
     
     
-}
-impl ScheduledActionFilter {
-    /// Creates a new builder-style object to manufacture [`ScheduledActionFilter`](crate::model::ScheduledActionFilter).
-    pub fn builder() -> crate::model::scheduled_action_filter::Builder {
-        crate::model::scheduled_action_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduledActionFilterName`, it is important to ensure
@@ -9638,6 +9687,13 @@ impl PartnerIntegrationInfo {
         self.updated_at.as_ref()
     }
 }
+impl PartnerIntegrationInfo {
+    /// Creates a new builder-style object to manufacture [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
+    pub fn builder() -> crate::model::partner_integration_info::Builder {
+        crate::model::partner_integration_info::Builder::default()
+    }
+}
+
 /// See [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
 pub mod partner_integration_info {
     
@@ -9728,12 +9784,6 @@ pub mod partner_integration_info {
     
     
 }
-impl PartnerIntegrationInfo {
-    /// Creates a new builder-style object to manufacture [`PartnerIntegrationInfo`](crate::model::PartnerIntegrationInfo).
-    pub fn builder() -> crate::model::partner_integration_info::Builder {
-        crate::model::partner_integration_info::Builder::default()
-    }
-}
 
 /// <p>Describes an orderable cluster option.</p>
 #[non_exhaustive]
@@ -9770,6 +9820,13 @@ impl OrderableClusterOption {
         self.availability_zones.as_deref()
     }
 }
+impl OrderableClusterOption {
+    /// Creates a new builder-style object to manufacture [`OrderableClusterOption`](crate::model::OrderableClusterOption).
+    pub fn builder() -> crate::model::orderable_cluster_option::Builder {
+        crate::model::orderable_cluster_option::Builder::default()
+    }
+}
+
 /// See [`OrderableClusterOption`](crate::model::OrderableClusterOption).
 pub mod orderable_cluster_option {
     
@@ -9842,12 +9899,6 @@ pub mod orderable_cluster_option {
     
     
 }
-impl OrderableClusterOption {
-    /// Creates a new builder-style object to manufacture [`OrderableClusterOption`](crate::model::OrderableClusterOption).
-    pub fn builder() -> crate::model::orderable_cluster_option::Builder {
-        crate::model::orderable_cluster_option::Builder::default()
-    }
-}
 
 /// <p>A list of node configurations.</p>
 #[non_exhaustive]
@@ -9884,6 +9935,13 @@ impl NodeConfigurationOption {
         self.mode.as_ref()
     }
 }
+impl NodeConfigurationOption {
+    /// Creates a new builder-style object to manufacture [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
+    pub fn builder() -> crate::model::node_configuration_option::Builder {
+        crate::model::node_configuration_option::Builder::default()
+    }
+}
+
 /// See [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
 pub mod node_configuration_option {
     
@@ -9950,12 +10008,6 @@ pub mod node_configuration_option {
     }
     
     
-}
-impl NodeConfigurationOption {
-    /// Creates a new builder-style object to manufacture [`NodeConfigurationOption`](crate::model::NodeConfigurationOption).
-    pub fn builder() -> crate::model::node_configuration_option::Builder {
-        crate::model::node_configuration_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Mode`, it is important to ensure
@@ -10068,6 +10120,13 @@ impl NodeConfigurationOptionsFilter {
         self.values.as_deref()
     }
 }
+impl NodeConfigurationOptionsFilter {
+    /// Creates a new builder-style object to manufacture [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
+    pub fn builder() -> crate::model::node_configuration_options_filter::Builder {
+        crate::model::node_configuration_options_filter::Builder::default()
+    }
+}
+
 /// See [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
 pub mod node_configuration_options_filter {
     
@@ -10127,12 +10186,6 @@ pub mod node_configuration_options_filter {
     }
     
     
-}
-impl NodeConfigurationOptionsFilter {
-    /// Creates a new builder-style object to manufacture [`NodeConfigurationOptionsFilter`](crate::model::NodeConfigurationOptionsFilter).
-    pub fn builder() -> crate::model::node_configuration_options_filter::Builder {
-        crate::model::node_configuration_options_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperatorType`, it is important to ensure
@@ -10463,6 +10516,13 @@ impl HsmConfiguration {
         self.tags.as_deref()
     }
 }
+impl HsmConfiguration {
+    /// Creates a new builder-style object to manufacture [`HsmConfiguration`](crate::model::HsmConfiguration).
+    pub fn builder() -> crate::model::hsm_configuration::Builder {
+        crate::model::hsm_configuration::Builder::default()
+    }
+}
+
 /// See [`HsmConfiguration`](crate::model::HsmConfiguration).
 pub mod hsm_configuration {
     
@@ -10547,12 +10607,6 @@ pub mod hsm_configuration {
     
     
 }
-impl HsmConfiguration {
-    /// Creates a new builder-style object to manufacture [`HsmConfiguration`](crate::model::HsmConfiguration).
-    pub fn builder() -> crate::model::hsm_configuration::Builder {
-        crate::model::hsm_configuration::Builder::default()
-    }
-}
 
 /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
 #[non_exhaustive]
@@ -10582,6 +10636,13 @@ impl HsmClientCertificate {
         self.tags.as_deref()
     }
 }
+impl HsmClientCertificate {
+    /// Creates a new builder-style object to manufacture [`HsmClientCertificate`](crate::model::HsmClientCertificate).
+    pub fn builder() -> crate::model::hsm_client_certificate::Builder {
+        crate::model::hsm_client_certificate::Builder::default()
+    }
+}
+
 /// See [`HsmClientCertificate`](crate::model::HsmClientCertificate).
 pub mod hsm_client_certificate {
     
@@ -10641,12 +10702,6 @@ pub mod hsm_client_certificate {
     }
     
     
-}
-impl HsmClientCertificate {
-    /// Creates a new builder-style object to manufacture [`HsmClientCertificate`](crate::model::HsmClientCertificate).
-    pub fn builder() -> crate::model::hsm_client_certificate::Builder {
-        crate::model::hsm_client_certificate::Builder::default()
-    }
 }
 
 /// <p>Describes an event.</p>
@@ -10709,6 +10764,13 @@ impl Event {
         self.event_id.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -10820,12 +10882,6 @@ pub mod event {
     }
     
     
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceType`, it is important to ensure
@@ -10946,6 +11002,13 @@ impl EventCategoriesMap {
         self.events.as_deref()
     }
 }
+impl EventCategoriesMap {
+    /// Creates a new builder-style object to manufacture [`EventCategoriesMap`](crate::model::EventCategoriesMap).
+    pub fn builder() -> crate::model::event_categories_map::Builder {
+        crate::model::event_categories_map::Builder::default()
+    }
+}
+
 /// See [`EventCategoriesMap`](crate::model::EventCategoriesMap).
 pub mod event_categories_map {
     
@@ -10994,12 +11057,6 @@ pub mod event_categories_map {
     
     
 }
-impl EventCategoriesMap {
-    /// Creates a new builder-style object to manufacture [`EventCategoriesMap`](crate::model::EventCategoriesMap).
-    pub fn builder() -> crate::model::event_categories_map::Builder {
-        crate::model::event_categories_map::Builder::default()
-    }
-}
 
 /// <p>Describes event information.</p>
 #[non_exhaustive]
@@ -11038,6 +11095,13 @@ impl EventInfoMap {
         self.severity.as_deref()
     }
 }
+impl EventInfoMap {
+    /// Creates a new builder-style object to manufacture [`EventInfoMap`](crate::model::EventInfoMap).
+    pub fn builder() -> crate::model::event_info_map::Builder {
+        crate::model::event_info_map::Builder::default()
+    }
+}
+
 /// See [`EventInfoMap`](crate::model::EventInfoMap).
 pub mod event_info_map {
     
@@ -11112,12 +11176,6 @@ pub mod event_info_map {
     
     
 }
-impl EventInfoMap {
-    /// Creates a new builder-style object to manufacture [`EventInfoMap`](crate::model::EventInfoMap).
-    pub fn builder() -> crate::model::event_info_map::Builder {
-        crate::model::event_info_map::Builder::default()
-    }
-}
 
 /// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
@@ -11189,6 +11247,13 @@ impl EndpointAuthorization {
         self.endpoint_count
     }
 }
+impl EndpointAuthorization {
+    /// Creates a new builder-style object to manufacture [`EndpointAuthorization`](crate::model::EndpointAuthorization).
+    pub fn builder() -> crate::model::endpoint_authorization::Builder {
+        crate::model::endpoint_authorization::Builder::default()
+    }
+}
+
 /// See [`EndpointAuthorization`](crate::model::EndpointAuthorization).
 pub mod endpoint_authorization {
     
@@ -11323,12 +11388,6 @@ pub mod endpoint_authorization {
     
     
 }
-impl EndpointAuthorization {
-    /// Creates a new builder-style object to manufacture [`EndpointAuthorization`](crate::model::EndpointAuthorization).
-    pub fn builder() -> crate::model::endpoint_authorization::Builder {
-        crate::model::endpoint_authorization::Builder::default()
-    }
-}
 
 /// <p>Describes a Redshift-managed VPC endpoint.</p>
 #[non_exhaustive]
@@ -11407,6 +11466,13 @@ impl EndpointAccess {
         self.vpc_endpoint.as_ref()
     }
 }
+impl EndpointAccess {
+    /// Creates a new builder-style object to manufacture [`EndpointAccess`](crate::model::EndpointAccess).
+    pub fn builder() -> crate::model::endpoint_access::Builder {
+        crate::model::endpoint_access::Builder::default()
+    }
+}
+
 /// See [`EndpointAccess`](crate::model::EndpointAccess).
 pub mod endpoint_access {
     
@@ -11552,12 +11618,6 @@ pub mod endpoint_access {
     
     
 }
-impl EndpointAccess {
-    /// Creates a new builder-style object to manufacture [`EndpointAccess`](crate::model::EndpointAccess).
-    pub fn builder() -> crate::model::endpoint_access::Builder {
-        crate::model::endpoint_access::Builder::default()
-    }
-}
 
 /// <p>Describes the default cluster parameters for a parameter group family.</p>
 #[non_exhaustive]
@@ -11587,6 +11647,13 @@ impl DefaultClusterParameters {
         self.parameters.as_deref()
     }
 }
+impl DefaultClusterParameters {
+    /// Creates a new builder-style object to manufacture [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
+    pub fn builder() -> crate::model::default_cluster_parameters::Builder {
+        crate::model::default_cluster_parameters::Builder::default()
+    }
+}
+
 /// See [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
 pub mod default_cluster_parameters {
     
@@ -11647,12 +11714,6 @@ pub mod default_cluster_parameters {
     
     
 }
-impl DefaultClusterParameters {
-    /// Creates a new builder-style object to manufacture [`DefaultClusterParameters`](crate::model::DefaultClusterParameters).
-    pub fn builder() -> crate::model::default_cluster_parameters::Builder {
-        crate::model::default_cluster_parameters::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11696,6 +11757,13 @@ impl DataShare {
         self.managed_by.as_deref()
     }
 }
+impl DataShare {
+    /// Creates a new builder-style object to manufacture [`DataShare`](crate::model::DataShare).
+    pub fn builder() -> crate::model::data_share::Builder {
+        crate::model::data_share::Builder::default()
+    }
+}
+
 /// See [`DataShare`](crate::model::DataShare).
 pub mod data_share {
     
@@ -11780,12 +11848,6 @@ pub mod data_share {
     }
     
     
-}
-impl DataShare {
-    /// Creates a new builder-style object to manufacture [`DataShare`](crate::model::DataShare).
-    pub fn builder() -> crate::model::data_share::Builder {
-        crate::model::data_share::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataShareStatusForProducer`, it is important to ensure
@@ -11995,6 +12057,13 @@ impl ClusterVersion {
         self.description.as_deref()
     }
 }
+impl ClusterVersion {
+    /// Creates a new builder-style object to manufacture [`ClusterVersion`](crate::model::ClusterVersion).
+    pub fn builder() -> crate::model::cluster_version::Builder {
+        crate::model::cluster_version::Builder::default()
+    }
+}
+
 /// See [`ClusterVersion`](crate::model::ClusterVersion).
 pub mod cluster_version {
     
@@ -12049,12 +12118,6 @@ pub mod cluster_version {
     
     
 }
-impl ClusterVersion {
-    /// Creates a new builder-style object to manufacture [`ClusterVersion`](crate::model::ClusterVersion).
-    pub fn builder() -> crate::model::cluster_version::Builder {
-        crate::model::cluster_version::Builder::default()
-    }
-}
 
 /// <p>Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. </p>
 #[non_exhaustive]
@@ -12084,6 +12147,13 @@ impl MaintenanceTrack {
         self.update_targets.as_deref()
     }
 }
+impl MaintenanceTrack {
+    /// Creates a new builder-style object to manufacture [`MaintenanceTrack`](crate::model::MaintenanceTrack).
+    pub fn builder() -> crate::model::maintenance_track::Builder {
+        crate::model::maintenance_track::Builder::default()
+    }
+}
+
 /// See [`MaintenanceTrack`](crate::model::MaintenanceTrack).
 pub mod maintenance_track {
     
@@ -12144,12 +12214,6 @@ pub mod maintenance_track {
     
     
 }
-impl MaintenanceTrack {
-    /// Creates a new builder-style object to manufacture [`MaintenanceTrack`](crate::model::MaintenanceTrack).
-    pub fn builder() -> crate::model::maintenance_track::Builder {
-        crate::model::maintenance_track::Builder::default()
-    }
-}
 
 /// <p>A maintenance track that you can switch the current track to.</p>
 #[non_exhaustive]
@@ -12179,6 +12243,13 @@ impl UpdateTarget {
         self.supported_operations.as_deref()
     }
 }
+impl UpdateTarget {
+    /// Creates a new builder-style object to manufacture [`UpdateTarget`](crate::model::UpdateTarget).
+    pub fn builder() -> crate::model::update_target::Builder {
+        crate::model::update_target::Builder::default()
+    }
+}
+
 /// See [`UpdateTarget`](crate::model::UpdateTarget).
 pub mod update_target {
     
@@ -12239,12 +12310,6 @@ pub mod update_target {
     
     
 }
-impl UpdateTarget {
-    /// Creates a new builder-style object to manufacture [`UpdateTarget`](crate::model::UpdateTarget).
-    pub fn builder() -> crate::model::update_target::Builder {
-        crate::model::update_target::Builder::default()
-    }
-}
 
 /// <p>Describes the operations that are allowed on a maintenance track.</p>
 #[non_exhaustive]
@@ -12260,6 +12325,13 @@ impl SupportedOperation {
         self.operation_name.as_deref()
     }
 }
+impl SupportedOperation {
+    /// Creates a new builder-style object to manufacture [`SupportedOperation`](crate::model::SupportedOperation).
+    pub fn builder() -> crate::model::supported_operation::Builder {
+        crate::model::supported_operation::Builder::default()
+    }
+}
+
 /// See [`SupportedOperation`](crate::model::SupportedOperation).
 pub mod supported_operation {
     
@@ -12290,12 +12362,6 @@ pub mod supported_operation {
     
     
 }
-impl SupportedOperation {
-    /// Creates a new builder-style object to manufacture [`SupportedOperation`](crate::model::SupportedOperation).
-    pub fn builder() -> crate::model::supported_operation::Builder {
-        crate::model::supported_operation::Builder::default()
-    }
-}
 
 /// <p>Describes a sorting entity</p>
 #[non_exhaustive]
@@ -12318,6 +12384,13 @@ impl SnapshotSortingEntity {
         self.sort_order.as_ref()
     }
 }
+impl SnapshotSortingEntity {
+    /// Creates a new builder-style object to manufacture [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
+    pub fn builder() -> crate::model::snapshot_sorting_entity::Builder {
+        crate::model::snapshot_sorting_entity::Builder::default()
+    }
+}
+
 /// See [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
 pub mod snapshot_sorting_entity {
     
@@ -12359,12 +12432,6 @@ pub mod snapshot_sorting_entity {
     }
     
     
-}
-impl SnapshotSortingEntity {
-    /// Creates a new builder-style object to manufacture [`SnapshotSortingEntity`](crate::model::SnapshotSortingEntity).
-    pub fn builder() -> crate::model::snapshot_sorting_entity::Builder {
-        crate::model::snapshot_sorting_entity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortByOrder`, it is important to ensure
@@ -12571,6 +12638,13 @@ impl ClusterParameterGroup {
         self.tags.as_deref()
     }
 }
+impl ClusterParameterGroup {
+    /// Creates a new builder-style object to manufacture [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
+    pub fn builder() -> crate::model::cluster_parameter_group::Builder {
+        crate::model::cluster_parameter_group::Builder::default()
+    }
+}
+
 /// See [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
 pub mod cluster_parameter_group {
     
@@ -12643,12 +12717,6 @@ pub mod cluster_parameter_group {
     
     
 }
-impl ClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ClusterParameterGroup`](crate::model::ClusterParameterGroup).
-    pub fn builder() -> crate::model::cluster_parameter_group::Builder {
-        crate::model::cluster_parameter_group::Builder::default()
-    }
-}
 
 /// <p>Describes a <code>ClusterDbRevision</code>.</p>
 #[non_exhaustive]
@@ -12685,6 +12753,13 @@ impl ClusterDbRevision {
         self.revision_targets.as_deref()
     }
 }
+impl ClusterDbRevision {
+    /// Creates a new builder-style object to manufacture [`ClusterDbRevision`](crate::model::ClusterDbRevision).
+    pub fn builder() -> crate::model::cluster_db_revision::Builder {
+        crate::model::cluster_db_revision::Builder::default()
+    }
+}
+
 /// See [`ClusterDbRevision`](crate::model::ClusterDbRevision).
 pub mod cluster_db_revision {
     
@@ -12757,12 +12832,6 @@ pub mod cluster_db_revision {
     
     
 }
-impl ClusterDbRevision {
-    /// Creates a new builder-style object to manufacture [`ClusterDbRevision`](crate::model::ClusterDbRevision).
-    pub fn builder() -> crate::model::cluster_db_revision::Builder {
-        crate::model::cluster_db_revision::Builder::default()
-    }
-}
 
 /// <p>Describes a <code>RevisionTarget</code>.</p>
 #[non_exhaustive]
@@ -12792,6 +12861,13 @@ impl RevisionTarget {
         self.database_revision_release_date.as_ref()
     }
 }
+impl RevisionTarget {
+    /// Creates a new builder-style object to manufacture [`RevisionTarget`](crate::model::RevisionTarget).
+    pub fn builder() -> crate::model::revision_target::Builder {
+        crate::model::revision_target::Builder::default()
+    }
+}
+
 /// See [`RevisionTarget`](crate::model::RevisionTarget).
 pub mod revision_target {
     
@@ -12846,12 +12922,6 @@ pub mod revision_target {
     
     
 }
-impl RevisionTarget {
-    /// Creates a new builder-style object to manufacture [`RevisionTarget`](crate::model::RevisionTarget).
-    pub fn builder() -> crate::model::revision_target::Builder {
-        crate::model::revision_target::Builder::default()
-    }
-}
 
 /// <p>Describes an authentication profile.</p>
 #[non_exhaustive]
@@ -12874,6 +12944,13 @@ impl AuthenticationProfile {
         self.authentication_profile_content.as_deref()
     }
 }
+impl AuthenticationProfile {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfile`](crate::model::AuthenticationProfile).
+    pub fn builder() -> crate::model::authentication_profile::Builder {
+        crate::model::authentication_profile::Builder::default()
+    }
+}
+
 /// See [`AuthenticationProfile`](crate::model::AuthenticationProfile).
 pub mod authentication_profile {
     
@@ -12916,12 +12993,6 @@ pub mod authentication_profile {
     
     
 }
-impl AuthenticationProfile {
-    /// Creates a new builder-style object to manufacture [`AuthenticationProfile`](crate::model::AuthenticationProfile).
-    pub fn builder() -> crate::model::authentication_profile::Builder {
-        crate::model::authentication_profile::Builder::default()
-    }
-}
 
 /// <p>A name value pair that describes an aspect of an account. </p>
 #[non_exhaustive]
@@ -12944,6 +13015,13 @@ impl AccountAttribute {
         self.attribute_values.as_deref()
     }
 }
+impl AccountAttribute {
+    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
+    pub fn builder() -> crate::model::account_attribute::Builder {
+        crate::model::account_attribute::Builder::default()
+    }
+}
+
 /// See [`AccountAttribute`](crate::model::AccountAttribute).
 pub mod account_attribute {
     
@@ -12992,12 +13070,6 @@ pub mod account_attribute {
     
     
 }
-impl AccountAttribute {
-    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
-    pub fn builder() -> crate::model::account_attribute::Builder {
-        crate::model::account_attribute::Builder::default()
-    }
-}
 
 /// <p>Describes an attribute value.</p>
 #[non_exhaustive]
@@ -13013,6 +13085,13 @@ impl AttributeValueTarget {
         self.attribute_value.as_deref()
     }
 }
+impl AttributeValueTarget {
+    /// Creates a new builder-style object to manufacture [`AttributeValueTarget`](crate::model::AttributeValueTarget).
+    pub fn builder() -> crate::model::attribute_value_target::Builder {
+        crate::model::attribute_value_target::Builder::default()
+    }
+}
+
 /// See [`AttributeValueTarget`](crate::model::AttributeValueTarget).
 pub mod attribute_value_target {
     
@@ -13042,12 +13121,6 @@ pub mod attribute_value_target {
     }
     
     
-}
-impl AttributeValueTarget {
-    /// Creates a new builder-style object to manufacture [`AttributeValueTarget`](crate::model::AttributeValueTarget).
-    pub fn builder() -> crate::model::attribute_value_target::Builder {
-        crate::model::attribute_value_target::Builder::default()
-    }
 }
 
 /// <p>Describes the errors returned by a snapshot.</p>
@@ -13085,6 +13158,13 @@ impl SnapshotErrorMessage {
         self.failure_reason.as_deref()
     }
 }
+impl SnapshotErrorMessage {
+    /// Creates a new builder-style object to manufacture [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
+    pub fn builder() -> crate::model::snapshot_error_message::Builder {
+        crate::model::snapshot_error_message::Builder::default()
+    }
+}
+
 /// See [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
 pub mod snapshot_error_message {
     
@@ -13151,12 +13231,6 @@ pub mod snapshot_error_message {
     
     
 }
-impl SnapshotErrorMessage {
-    /// Creates a new builder-style object to manufacture [`SnapshotErrorMessage`](crate::model::SnapshotErrorMessage).
-    pub fn builder() -> crate::model::snapshot_error_message::Builder {
-        crate::model::snapshot_error_message::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -13183,6 +13257,13 @@ impl DeleteClusterSnapshotMessage {
         self.snapshot_cluster_identifier.as_deref()
     }
 }
+impl DeleteClusterSnapshotMessage {
+    /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
+    pub fn builder() -> crate::model::delete_cluster_snapshot_message::Builder {
+        crate::model::delete_cluster_snapshot_message::Builder::default()
+    }
+}
+
 /// See [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
 pub mod delete_cluster_snapshot_message {
     
@@ -13228,11 +13309,5 @@ pub mod delete_cluster_snapshot_message {
     }
     
     
-}
-impl DeleteClusterSnapshotMessage {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotMessage`](crate::model::DeleteClusterSnapshotMessage).
-    pub fn builder() -> crate::model::delete_cluster_snapshot_message::Builder {
-        crate::model::delete_cluster_snapshot_message::Builder::default()
-    }
 }
 

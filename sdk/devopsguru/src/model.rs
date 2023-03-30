@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -193,6 +194,13 @@ impl UpdateServiceIntegrationConfig {
         self.logs_anomaly_detection.as_ref()
     }
 }
+impl UpdateServiceIntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
+    pub fn builder() -> crate::model::update_service_integration_config::Builder {
+        crate::model::update_service_integration_config::Builder::default()
+    }
+}
+
 /// See [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
 pub mod update_service_integration_config {
     
@@ -235,12 +243,6 @@ pub mod update_service_integration_config {
     
     
 }
-impl UpdateServiceIntegrationConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceIntegrationConfig`](crate::model::UpdateServiceIntegrationConfig).
-    pub fn builder() -> crate::model::update_service_integration_config::Builder {
-        crate::model::update_service_integration_config::Builder::default()
-    }
-}
 
 /// <p> Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. You can use this to update the configuration. </p>
 #[non_exhaustive]
@@ -256,6 +258,13 @@ impl LogsAnomalyDetectionIntegrationConfig {
         self.opt_in_status.as_ref()
     }
 }
+impl LogsAnomalyDetectionIntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
+    pub fn builder() -> crate::model::logs_anomaly_detection_integration_config::Builder {
+        crate::model::logs_anomaly_detection_integration_config::Builder::default()
+    }
+}
+
 /// See [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
 pub mod logs_anomaly_detection_integration_config {
     
@@ -285,12 +294,6 @@ pub mod logs_anomaly_detection_integration_config {
     }
     
     
-}
-impl LogsAnomalyDetectionIntegrationConfig {
-    /// Creates a new builder-style object to manufacture [`LogsAnomalyDetectionIntegrationConfig`](crate::model::LogsAnomalyDetectionIntegrationConfig).
-    pub fn builder() -> crate::model::logs_anomaly_detection_integration_config::Builder {
-        crate::model::logs_anomaly_detection_integration_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OptInStatus`, it is important to ensure
@@ -390,6 +393,13 @@ impl OpsCenterIntegrationConfig {
         self.opt_in_status.as_ref()
     }
 }
+impl OpsCenterIntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
+    pub fn builder() -> crate::model::ops_center_integration_config::Builder {
+        crate::model::ops_center_integration_config::Builder::default()
+    }
+}
+
 /// See [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
 pub mod ops_center_integration_config {
     
@@ -419,12 +429,6 @@ pub mod ops_center_integration_config {
     }
     
     
-}
-impl OpsCenterIntegrationConfig {
-    /// Creates a new builder-style object to manufacture [`OpsCenterIntegrationConfig`](crate::model::OpsCenterIntegrationConfig).
-    pub fn builder() -> crate::model::ops_center_integration_config::Builder {
-        crate::model::ops_center_integration_config::Builder::default()
-    }
 }
 
 /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
@@ -466,6 +470,13 @@ impl UpdateResourceCollectionFilter {
         self.tags.as_deref()
     }
 }
+impl UpdateResourceCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceCollectionFilter`](crate::model::UpdateResourceCollectionFilter).
+    pub fn builder() -> crate::model::update_resource_collection_filter::Builder {
+        crate::model::update_resource_collection_filter::Builder::default()
+    }
+}
+
 /// See [`UpdateResourceCollectionFilter`](crate::model::UpdateResourceCollectionFilter).
 pub mod update_resource_collection_filter {
     
@@ -532,12 +543,6 @@ pub mod update_resource_collection_filter {
     
     
 }
-impl UpdateResourceCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceCollectionFilter`](crate::model::UpdateResourceCollectionFilter).
-    pub fn builder() -> crate::model::update_resource_collection_filter::Builder {
-        crate::model::update_resource_collection_filter::Builder::default()
-    }
-}
 
 /// <p>A new collection of Amazon Web Services resources that are defined by an Amazon Web Services tag or tag <i>key</i>/<i>value</i> pair.</p>
 #[non_exhaustive]
@@ -566,6 +571,13 @@ impl UpdateTagCollectionFilter {
         self.tag_values.as_deref()
     }
 }
+impl UpdateTagCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`UpdateTagCollectionFilter`](crate::model::UpdateTagCollectionFilter).
+    pub fn builder() -> crate::model::update_tag_collection_filter::Builder {
+        crate::model::update_tag_collection_filter::Builder::default()
+    }
+}
+
 /// See [`UpdateTagCollectionFilter`](crate::model::UpdateTagCollectionFilter).
 pub mod update_tag_collection_filter {
     
@@ -620,12 +632,6 @@ pub mod update_tag_collection_filter {
     
     
 }
-impl UpdateTagCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`UpdateTagCollectionFilter`](crate::model::UpdateTagCollectionFilter).
-    pub fn builder() -> crate::model::update_tag_collection_filter::Builder {
-        crate::model::update_tag_collection_filter::Builder::default()
-    }
-}
 
 /// <p> Contains the names of Amazon Web Services CloudFormation stacks used to update a collection of stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
 #[non_exhaustive]
@@ -641,6 +647,13 @@ impl UpdateCloudFormationCollectionFilter {
         self.stack_names.as_deref()
     }
 }
+impl UpdateCloudFormationCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`UpdateCloudFormationCollectionFilter`](crate::model::UpdateCloudFormationCollectionFilter).
+    pub fn builder() -> crate::model::update_cloud_formation_collection_filter::Builder {
+        crate::model::update_cloud_formation_collection_filter::Builder::default()
+    }
+}
+
 /// See [`UpdateCloudFormationCollectionFilter`](crate::model::UpdateCloudFormationCollectionFilter).
 pub mod update_cloud_formation_collection_filter {
     
@@ -676,12 +689,6 @@ pub mod update_cloud_formation_collection_filter {
     }
     
     
-}
-impl UpdateCloudFormationCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`UpdateCloudFormationCollectionFilter`](crate::model::UpdateCloudFormationCollectionFilter).
-    pub fn builder() -> crate::model::update_cloud_formation_collection_filter::Builder {
-        crate::model::update_cloud_formation_collection_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UpdateResourceCollectionAction`, it is important to ensure
@@ -780,6 +787,13 @@ impl EventSourcesConfig {
         self.amazon_code_guru_profiler.as_ref()
     }
 }
+impl EventSourcesConfig {
+    /// Creates a new builder-style object to manufacture [`EventSourcesConfig`](crate::model::EventSourcesConfig).
+    pub fn builder() -> crate::model::event_sources_config::Builder {
+        crate::model::event_sources_config::Builder::default()
+    }
+}
+
 /// See [`EventSourcesConfig`](crate::model::EventSourcesConfig).
 pub mod event_sources_config {
     
@@ -810,12 +824,6 @@ pub mod event_sources_config {
     
     
 }
-impl EventSourcesConfig {
-    /// Creates a new builder-style object to manufacture [`EventSourcesConfig`](crate::model::EventSourcesConfig).
-    pub fn builder() -> crate::model::event_sources_config::Builder {
-        crate::model::event_sources_config::Builder::default()
-    }
-}
 
 /// <p>Information about your account's integration with Amazon CodeGuru Profiler. This returns whether DevOps Guru is configured to consume recommendations generated from Amazon CodeGuru Profiler.</p>
 #[non_exhaustive]
@@ -831,6 +839,13 @@ impl AmazonCodeGuruProfilerIntegration {
         self.status.as_ref()
     }
 }
+impl AmazonCodeGuruProfilerIntegration {
+    /// Creates a new builder-style object to manufacture [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration).
+    pub fn builder() -> crate::model::amazon_code_guru_profiler_integration::Builder {
+        crate::model::amazon_code_guru_profiler_integration::Builder::default()
+    }
+}
+
 /// See [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration).
 pub mod amazon_code_guru_profiler_integration {
     
@@ -860,12 +875,6 @@ pub mod amazon_code_guru_profiler_integration {
     }
     
     
-}
-impl AmazonCodeGuruProfilerIntegration {
-    /// Creates a new builder-style object to manufacture [`AmazonCodeGuruProfilerIntegration`](crate::model::AmazonCodeGuruProfilerIntegration).
-    pub fn builder() -> crate::model::amazon_code_guru_profiler_integration::Builder {
-        crate::model::amazon_code_guru_profiler_integration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventSourceOptInStatus`, it is important to ensure
@@ -989,6 +998,13 @@ impl CostEstimationResourceCollectionFilter {
         self.tags.as_deref()
     }
 }
+impl CostEstimationResourceCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`CostEstimationResourceCollectionFilter`](crate::model::CostEstimationResourceCollectionFilter).
+    pub fn builder() -> crate::model::cost_estimation_resource_collection_filter::Builder {
+        crate::model::cost_estimation_resource_collection_filter::Builder::default()
+    }
+}
+
 /// See [`CostEstimationResourceCollectionFilter`](crate::model::CostEstimationResourceCollectionFilter).
 pub mod cost_estimation_resource_collection_filter {
     
@@ -1055,12 +1071,6 @@ pub mod cost_estimation_resource_collection_filter {
     
     
 }
-impl CostEstimationResourceCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`CostEstimationResourceCollectionFilter`](crate::model::CostEstimationResourceCollectionFilter).
-    pub fn builder() -> crate::model::cost_estimation_resource_collection_filter::Builder {
-        crate::model::cost_estimation_resource_collection_filter::Builder::default()
-    }
-}
 
 /// <p>Information about a collection of Amazon Web Services resources that are identified by an Amazon Web Services tag. This collection of resources is used to create a monthly cost estimate for DevOps Guru to analyze Amazon Web Services resources. The maximum number of tags you can specify for a cost estimate is one. The estimate created is for the cost to analyze the Amazon Web Services resources defined by the tag. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
@@ -1089,6 +1099,13 @@ impl TagCostEstimationResourceCollectionFilter {
         self.tag_values.as_deref()
     }
 }
+impl TagCostEstimationResourceCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`TagCostEstimationResourceCollectionFilter`](crate::model::TagCostEstimationResourceCollectionFilter).
+    pub fn builder() -> crate::model::tag_cost_estimation_resource_collection_filter::Builder {
+        crate::model::tag_cost_estimation_resource_collection_filter::Builder::default()
+    }
+}
+
 /// See [`TagCostEstimationResourceCollectionFilter`](crate::model::TagCostEstimationResourceCollectionFilter).
 pub mod tag_cost_estimation_resource_collection_filter {
     
@@ -1143,12 +1160,6 @@ pub mod tag_cost_estimation_resource_collection_filter {
     
     
 }
-impl TagCostEstimationResourceCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`TagCostEstimationResourceCollectionFilter`](crate::model::TagCostEstimationResourceCollectionFilter).
-    pub fn builder() -> crate::model::tag_cost_estimation_resource_collection_filter::Builder {
-        crate::model::tag_cost_estimation_resource_collection_filter::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon Web Services CloudFormation stack used to create a monthly cost estimate for DevOps Guru to analyze Amazon Web Services resources. The maximum number of stacks you can specify for a cost estimate is one. The estimate created is for the cost to analyze the Amazon Web Services resources defined by the stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
@@ -1164,6 +1175,13 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
         self.stack_names.as_deref()
     }
 }
+impl CloudFormationCostEstimationResourceCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`CloudFormationCostEstimationResourceCollectionFilter`](crate::model::CloudFormationCostEstimationResourceCollectionFilter).
+    pub fn builder() -> crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder {
+        crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder::default()
+    }
+}
+
 /// See [`CloudFormationCostEstimationResourceCollectionFilter`](crate::model::CloudFormationCostEstimationResourceCollectionFilter).
 pub mod cloud_formation_cost_estimation_resource_collection_filter {
     
@@ -1199,12 +1217,6 @@ pub mod cloud_formation_cost_estimation_resource_collection_filter {
     }
     
     
-}
-impl CloudFormationCostEstimationResourceCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`CloudFormationCostEstimationResourceCollectionFilter`](crate::model::CloudFormationCostEstimationResourceCollectionFilter).
-    pub fn builder() -> crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder {
-        crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder::default()
-    }
 }
 
 /// <p> Information about a reactive insight. This object is returned by <code>DescribeInsight.</code> </p>
@@ -1270,6 +1282,13 @@ impl ReactiveInsightSummary {
         self.associated_resource_arns.as_deref()
     }
 }
+impl ReactiveInsightSummary {
+    /// Creates a new builder-style object to manufacture [`ReactiveInsightSummary`](crate::model::ReactiveInsightSummary).
+    pub fn builder() -> crate::model::reactive_insight_summary::Builder {
+        crate::model::reactive_insight_summary::Builder::default()
+    }
+}
+
 /// See [`ReactiveInsightSummary`](crate::model::ReactiveInsightSummary).
 pub mod reactive_insight_summary {
     
@@ -1390,12 +1409,6 @@ pub mod reactive_insight_summary {
     
     
 }
-impl ReactiveInsightSummary {
-    /// Creates a new builder-style object to manufacture [`ReactiveInsightSummary`](crate::model::ReactiveInsightSummary).
-    pub fn builder() -> crate::model::reactive_insight_summary::Builder {
-        crate::model::reactive_insight_summary::Builder::default()
-    }
-}
 
 /// <p>A collection of the names of Amazon Web Services services.</p>
 #[non_exhaustive]
@@ -1411,6 +1424,13 @@ impl ServiceCollection {
         self.service_names.as_deref()
     }
 }
+impl ServiceCollection {
+    /// Creates a new builder-style object to manufacture [`ServiceCollection`](crate::model::ServiceCollection).
+    pub fn builder() -> crate::model::service_collection::Builder {
+        crate::model::service_collection::Builder::default()
+    }
+}
+
 /// See [`ServiceCollection`](crate::model::ServiceCollection).
 pub mod service_collection {
     
@@ -1446,12 +1466,6 @@ pub mod service_collection {
     }
     
     
-}
-impl ServiceCollection {
-    /// Creates a new builder-style object to manufacture [`ServiceCollection`](crate::model::ServiceCollection).
-    pub fn builder() -> crate::model::service_collection::Builder {
-        crate::model::service_collection::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceName`, it is important to ensure
@@ -1690,6 +1704,13 @@ impl ResourceCollection {
         self.tags.as_deref()
     }
 }
+impl ResourceCollection {
+    /// Creates a new builder-style object to manufacture [`ResourceCollection`](crate::model::ResourceCollection).
+    pub fn builder() -> crate::model::resource_collection::Builder {
+        crate::model::resource_collection::Builder::default()
+    }
+}
+
 /// See [`ResourceCollection`](crate::model::ResourceCollection).
 pub mod resource_collection {
     
@@ -1756,12 +1777,6 @@ pub mod resource_collection {
     
     
 }
-impl ResourceCollection {
-    /// Creates a new builder-style object to manufacture [`ResourceCollection`](crate::model::ResourceCollection).
-    pub fn builder() -> crate::model::resource_collection::Builder {
-        crate::model::resource_collection::Builder::default()
-    }
-}
 
 /// <p>A collection of Amazon Web Services tags.</p> 
 /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper. </p> 
@@ -1799,6 +1814,13 @@ impl TagCollection {
         self.tag_values.as_deref()
     }
 }
+impl TagCollection {
+    /// Creates a new builder-style object to manufacture [`TagCollection`](crate::model::TagCollection).
+    pub fn builder() -> crate::model::tag_collection::Builder {
+        crate::model::tag_collection::Builder::default()
+    }
+}
+
 /// See [`TagCollection`](crate::model::TagCollection).
 pub mod tag_collection {
     
@@ -1853,12 +1875,6 @@ pub mod tag_collection {
     
     
 }
-impl TagCollection {
-    /// Creates a new builder-style object to manufacture [`TagCollection`](crate::model::TagCollection).
-    pub fn builder() -> crate::model::tag_collection::Builder {
-        crate::model::tag_collection::Builder::default()
-    }
-}
 
 /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 #[non_exhaustive]
@@ -1874,6 +1890,13 @@ impl CloudFormationCollection {
         self.stack_names.as_deref()
     }
 }
+impl CloudFormationCollection {
+    /// Creates a new builder-style object to manufacture [`CloudFormationCollection`](crate::model::CloudFormationCollection).
+    pub fn builder() -> crate::model::cloud_formation_collection::Builder {
+        crate::model::cloud_formation_collection::Builder::default()
+    }
+}
+
 /// See [`CloudFormationCollection`](crate::model::CloudFormationCollection).
 pub mod cloud_formation_collection {
     
@@ -1910,12 +1933,6 @@ pub mod cloud_formation_collection {
     
     
 }
-impl CloudFormationCollection {
-    /// Creates a new builder-style object to manufacture [`CloudFormationCollection`](crate::model::CloudFormationCollection).
-    pub fn builder() -> crate::model::cloud_formation_collection::Builder {
-        crate::model::cloud_formation_collection::Builder::default()
-    }
-}
 
 /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
 #[non_exhaustive]
@@ -1938,6 +1955,13 @@ impl InsightTimeRange {
         self.end_time.as_ref()
     }
 }
+impl InsightTimeRange {
+    /// Creates a new builder-style object to manufacture [`InsightTimeRange`](crate::model::InsightTimeRange).
+    pub fn builder() -> crate::model::insight_time_range::Builder {
+        crate::model::insight_time_range::Builder::default()
+    }
+}
+
 /// See [`InsightTimeRange`](crate::model::InsightTimeRange).
 pub mod insight_time_range {
     
@@ -1979,12 +2003,6 @@ pub mod insight_time_range {
     }
     
     
-}
-impl InsightTimeRange {
-    /// Creates a new builder-style object to manufacture [`InsightTimeRange`](crate::model::InsightTimeRange).
-    pub fn builder() -> crate::model::insight_time_range::Builder {
-        crate::model::insight_time_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InsightStatus`, it is important to ensure
@@ -2226,6 +2244,13 @@ impl ProactiveInsightSummary {
         self.associated_resource_arns.as_deref()
     }
 }
+impl ProactiveInsightSummary {
+    /// Creates a new builder-style object to manufacture [`ProactiveInsightSummary`](crate::model::ProactiveInsightSummary).
+    pub fn builder() -> crate::model::proactive_insight_summary::Builder {
+        crate::model::proactive_insight_summary::Builder::default()
+    }
+}
+
 /// See [`ProactiveInsightSummary`](crate::model::ProactiveInsightSummary).
 pub mod proactive_insight_summary {
     
@@ -2358,12 +2383,6 @@ pub mod proactive_insight_summary {
     
     
 }
-impl ProactiveInsightSummary {
-    /// Creates a new builder-style object to manufacture [`ProactiveInsightSummary`](crate::model::ProactiveInsightSummary).
-    pub fn builder() -> crate::model::proactive_insight_summary::Builder {
-        crate::model::proactive_insight_summary::Builder::default()
-    }
-}
 
 /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
 #[non_exhaustive]
@@ -2386,6 +2405,13 @@ impl PredictionTimeRange {
         self.end_time.as_ref()
     }
 }
+impl PredictionTimeRange {
+    /// Creates a new builder-style object to manufacture [`PredictionTimeRange`](crate::model::PredictionTimeRange).
+    pub fn builder() -> crate::model::prediction_time_range::Builder {
+        crate::model::prediction_time_range::Builder::default()
+    }
+}
+
 /// See [`PredictionTimeRange`](crate::model::PredictionTimeRange).
 pub mod prediction_time_range {
     
@@ -2427,12 +2453,6 @@ pub mod prediction_time_range {
     }
     
     
-}
-impl PredictionTimeRange {
-    /// Creates a new builder-style object to manufacture [`PredictionTimeRange`](crate::model::PredictionTimeRange).
-    pub fn builder() -> crate::model::prediction_time_range::Builder {
-        crate::model::prediction_time_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InsightType`, it is important to ensure
@@ -2552,6 +2572,13 @@ impl SearchOrganizationInsightsFilters {
         self.service_collection.as_ref()
     }
 }
+impl SearchOrganizationInsightsFilters {
+    /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsFilters`](crate::model::SearchOrganizationInsightsFilters).
+    pub fn builder() -> crate::model::search_organization_insights_filters::Builder {
+        crate::model::search_organization_insights_filters::Builder::default()
+    }
+}
+
 /// See [`SearchOrganizationInsightsFilters`](crate::model::SearchOrganizationInsightsFilters).
 pub mod search_organization_insights_filters {
     
@@ -2630,12 +2657,6 @@ pub mod search_organization_insights_filters {
     
     
 }
-impl SearchOrganizationInsightsFilters {
-    /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsFilters`](crate::model::SearchOrganizationInsightsFilters).
-    pub fn builder() -> crate::model::search_organization_insights_filters::Builder {
-        crate::model::search_organization_insights_filters::Builder::default()
-    }
-}
 
 /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
 #[non_exhaustive]
@@ -2658,6 +2679,13 @@ impl StartTimeRange {
         self.to_time.as_ref()
     }
 }
+impl StartTimeRange {
+    /// Creates a new builder-style object to manufacture [`StartTimeRange`](crate::model::StartTimeRange).
+    pub fn builder() -> crate::model::start_time_range::Builder {
+        crate::model::start_time_range::Builder::default()
+    }
+}
+
 /// See [`StartTimeRange`](crate::model::StartTimeRange).
 pub mod start_time_range {
     
@@ -2700,12 +2728,6 @@ pub mod start_time_range {
     
     
 }
-impl StartTimeRange {
-    /// Creates a new builder-style object to manufacture [`StartTimeRange`](crate::model::StartTimeRange).
-    pub fn builder() -> crate::model::start_time_range::Builder {
-        crate::model::start_time_range::Builder::default()
-    }
-}
 
 /// <p> Specifies one or more severity values and one or more status values that are used to search for insights. </p>
 #[non_exhaustive]
@@ -2742,6 +2764,13 @@ impl SearchInsightsFilters {
         self.service_collection.as_ref()
     }
 }
+impl SearchInsightsFilters {
+    /// Creates a new builder-style object to manufacture [`SearchInsightsFilters`](crate::model::SearchInsightsFilters).
+    pub fn builder() -> crate::model::search_insights_filters::Builder {
+        crate::model::search_insights_filters::Builder::default()
+    }
+}
+
 /// See [`SearchInsightsFilters`](crate::model::SearchInsightsFilters).
 pub mod search_insights_filters {
     
@@ -2820,12 +2849,6 @@ pub mod search_insights_filters {
     
     
 }
-impl SearchInsightsFilters {
-    /// Creates a new builder-style object to manufacture [`SearchInsightsFilters`](crate::model::SearchInsightsFilters).
-    pub fn builder() -> crate::model::search_insights_filters::Builder {
-        crate::model::search_insights_filters::Builder::default()
-    }
-}
 
 /// <p> Information about insight feedback received from a customer. </p>
 #[non_exhaustive]
@@ -2848,6 +2871,13 @@ impl InsightFeedback {
         self.feedback.as_ref()
     }
 }
+impl InsightFeedback {
+    /// Creates a new builder-style object to manufacture [`InsightFeedback`](crate::model::InsightFeedback).
+    pub fn builder() -> crate::model::insight_feedback::Builder {
+        crate::model::insight_feedback::Builder::default()
+    }
+}
+
 /// See [`InsightFeedback`](crate::model::InsightFeedback).
 pub mod insight_feedback {
     
@@ -2889,12 +2919,6 @@ pub mod insight_feedback {
     }
     
     
-}
-impl InsightFeedback {
-    /// Creates a new builder-style object to manufacture [`InsightFeedback`](crate::model::InsightFeedback).
-    pub fn builder() -> crate::model::insight_feedback::Builder {
-        crate::model::insight_feedback::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InsightFeedbackOption`, it is important to ensure
@@ -3050,6 +3074,13 @@ impl Recommendation {
         self.category.as_deref()
     }
 }
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
     
@@ -3164,12 +3195,6 @@ pub mod recommendation {
     
     
 }
-impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
-    pub fn builder() -> crate::model::recommendation::Builder {
-        crate::model::recommendation::Builder::default()
-    }
-}
 
 /// <p> Information about an anomaly that is related to a recommendation. </p>
 #[non_exhaustive]
@@ -3199,6 +3224,13 @@ impl RecommendationRelatedAnomaly {
         self.anomaly_id.as_deref()
     }
 }
+impl RecommendationRelatedAnomaly {
+    /// Creates a new builder-style object to manufacture [`RecommendationRelatedAnomaly`](crate::model::RecommendationRelatedAnomaly).
+    pub fn builder() -> crate::model::recommendation_related_anomaly::Builder {
+        crate::model::recommendation_related_anomaly::Builder::default()
+    }
+}
+
 /// See [`RecommendationRelatedAnomaly`](crate::model::RecommendationRelatedAnomaly).
 pub mod recommendation_related_anomaly {
     
@@ -3265,12 +3297,6 @@ pub mod recommendation_related_anomaly {
     
     
 }
-impl RecommendationRelatedAnomaly {
-    /// Creates a new builder-style object to manufacture [`RecommendationRelatedAnomaly`](crate::model::RecommendationRelatedAnomaly).
-    pub fn builder() -> crate::model::recommendation_related_anomaly::Builder {
-        crate::model::recommendation_related_anomaly::Builder::default()
-    }
-}
 
 /// <p> Contains an array of <code>RecommendationRelatedCloudWatchMetricsSourceDetail</code> objects that contain the name and namespace of an Amazon CloudWatch metric. </p>
 #[non_exhaustive]
@@ -3286,6 +3312,13 @@ impl RecommendationRelatedAnomalySourceDetail {
         self.cloud_watch_metrics.as_deref()
     }
 }
+impl RecommendationRelatedAnomalySourceDetail {
+    /// Creates a new builder-style object to manufacture [`RecommendationRelatedAnomalySourceDetail`](crate::model::RecommendationRelatedAnomalySourceDetail).
+    pub fn builder() -> crate::model::recommendation_related_anomaly_source_detail::Builder {
+        crate::model::recommendation_related_anomaly_source_detail::Builder::default()
+    }
+}
+
 /// See [`RecommendationRelatedAnomalySourceDetail`](crate::model::RecommendationRelatedAnomalySourceDetail).
 pub mod recommendation_related_anomaly_source_detail {
     
@@ -3322,12 +3355,6 @@ pub mod recommendation_related_anomaly_source_detail {
     
     
 }
-impl RecommendationRelatedAnomalySourceDetail {
-    /// Creates a new builder-style object to manufacture [`RecommendationRelatedAnomalySourceDetail`](crate::model::RecommendationRelatedAnomalySourceDetail).
-    pub fn builder() -> crate::model::recommendation_related_anomaly_source_detail::Builder {
-        crate::model::recommendation_related_anomaly_source_detail::Builder::default()
-    }
-}
 
 /// <p> Information about an Amazon CloudWatch metric that is analyzed by DevOps Guru. It is one of many analyzed metrics that are used to generate insights. </p>
 #[non_exhaustive]
@@ -3350,6 +3377,13 @@ impl RecommendationRelatedCloudWatchMetricsSourceDetail {
         self.namespace.as_deref()
     }
 }
+impl RecommendationRelatedCloudWatchMetricsSourceDetail {
+    /// Creates a new builder-style object to manufacture [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail).
+    pub fn builder() -> crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder {
+        crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder::default()
+    }
+}
+
 /// See [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail).
 pub mod recommendation_related_cloud_watch_metrics_source_detail {
     
@@ -3392,12 +3426,6 @@ pub mod recommendation_related_cloud_watch_metrics_source_detail {
     
     
 }
-impl RecommendationRelatedCloudWatchMetricsSourceDetail {
-    /// Creates a new builder-style object to manufacture [`RecommendationRelatedCloudWatchMetricsSourceDetail`](crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail).
-    pub fn builder() -> crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder {
-        crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder::default()
-    }
-}
 
 /// <p> Information about a resource in which DevOps Guru detected anomalous behavior. </p>
 #[non_exhaustive]
@@ -3420,6 +3448,13 @@ impl RecommendationRelatedAnomalyResource {
         self.r#type.as_deref()
     }
 }
+impl RecommendationRelatedAnomalyResource {
+    /// Creates a new builder-style object to manufacture [`RecommendationRelatedAnomalyResource`](crate::model::RecommendationRelatedAnomalyResource).
+    pub fn builder() -> crate::model::recommendation_related_anomaly_resource::Builder {
+        crate::model::recommendation_related_anomaly_resource::Builder::default()
+    }
+}
+
 /// See [`RecommendationRelatedAnomalyResource`](crate::model::RecommendationRelatedAnomalyResource).
 pub mod recommendation_related_anomaly_resource {
     
@@ -3462,12 +3497,6 @@ pub mod recommendation_related_anomaly_resource {
     
     
 }
-impl RecommendationRelatedAnomalyResource {
-    /// Creates a new builder-style object to manufacture [`RecommendationRelatedAnomalyResource`](crate::model::RecommendationRelatedAnomalyResource).
-    pub fn builder() -> crate::model::recommendation_related_anomaly_resource::Builder {
-        crate::model::recommendation_related_anomaly_resource::Builder::default()
-    }
-}
 
 /// <p> Information about an event that is related to a recommendation. </p>
 #[non_exhaustive]
@@ -3490,6 +3519,13 @@ impl RecommendationRelatedEvent {
         self.resources.as_deref()
     }
 }
+impl RecommendationRelatedEvent {
+    /// Creates a new builder-style object to manufacture [`RecommendationRelatedEvent`](crate::model::RecommendationRelatedEvent).
+    pub fn builder() -> crate::model::recommendation_related_event::Builder {
+        crate::model::recommendation_related_event::Builder::default()
+    }
+}
+
 /// See [`RecommendationRelatedEvent`](crate::model::RecommendationRelatedEvent).
 pub mod recommendation_related_event {
     
@@ -3538,12 +3574,6 @@ pub mod recommendation_related_event {
     
     
 }
-impl RecommendationRelatedEvent {
-    /// Creates a new builder-style object to manufacture [`RecommendationRelatedEvent`](crate::model::RecommendationRelatedEvent).
-    pub fn builder() -> crate::model::recommendation_related_event::Builder {
-        crate::model::recommendation_related_event::Builder::default()
-    }
-}
 
 /// <p> Information about an Amazon Web Services resource that emitted and event that is related to a recommendation in an insight. </p>
 #[non_exhaustive]
@@ -3566,6 +3596,13 @@ impl RecommendationRelatedEventResource {
         self.r#type.as_deref()
     }
 }
+impl RecommendationRelatedEventResource {
+    /// Creates a new builder-style object to manufacture [`RecommendationRelatedEventResource`](crate::model::RecommendationRelatedEventResource).
+    pub fn builder() -> crate::model::recommendation_related_event_resource::Builder {
+        crate::model::recommendation_related_event_resource::Builder::default()
+    }
+}
+
 /// See [`RecommendationRelatedEventResource`](crate::model::RecommendationRelatedEventResource).
 pub mod recommendation_related_event_resource {
     
@@ -3607,12 +3644,6 @@ pub mod recommendation_related_event_resource {
     }
     
     
-}
-impl RecommendationRelatedEventResource {
-    /// Creates a new builder-style object to manufacture [`RecommendationRelatedEventResource`](crate::model::RecommendationRelatedEventResource).
-    pub fn builder() -> crate::model::recommendation_related_event_resource::Builder {
-        crate::model::recommendation_related_event_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Locale`, it is important to ensure
@@ -3812,6 +3843,13 @@ impl ReactiveOrganizationInsightSummary {
         self.service_collection.as_ref()
     }
 }
+impl ReactiveOrganizationInsightSummary {
+    /// Creates a new builder-style object to manufacture [`ReactiveOrganizationInsightSummary`](crate::model::ReactiveOrganizationInsightSummary).
+    pub fn builder() -> crate::model::reactive_organization_insight_summary::Builder {
+        crate::model::reactive_organization_insight_summary::Builder::default()
+    }
+}
+
 /// See [`ReactiveOrganizationInsightSummary`](crate::model::ReactiveOrganizationInsightSummary).
 pub mod reactive_organization_insight_summary {
     
@@ -3938,12 +3976,6 @@ pub mod reactive_organization_insight_summary {
     
     
 }
-impl ReactiveOrganizationInsightSummary {
-    /// Creates a new builder-style object to manufacture [`ReactiveOrganizationInsightSummary`](crate::model::ReactiveOrganizationInsightSummary).
-    pub fn builder() -> crate::model::reactive_organization_insight_summary::Builder {
-        crate::model::reactive_organization_insight_summary::Builder::default()
-    }
-}
 
 /// <p>Details about a proactive insight. This object is returned by <code>DescribeInsight</code>.</p>
 #[non_exhaustive]
@@ -4022,6 +4054,13 @@ impl ProactiveOrganizationInsightSummary {
         self.service_collection.as_ref()
     }
 }
+impl ProactiveOrganizationInsightSummary {
+    /// Creates a new builder-style object to manufacture [`ProactiveOrganizationInsightSummary`](crate::model::ProactiveOrganizationInsightSummary).
+    pub fn builder() -> crate::model::proactive_organization_insight_summary::Builder {
+        crate::model::proactive_organization_insight_summary::Builder::default()
+    }
+}
+
 /// See [`ProactiveOrganizationInsightSummary`](crate::model::ProactiveOrganizationInsightSummary).
 pub mod proactive_organization_insight_summary {
     
@@ -4160,12 +4199,6 @@ pub mod proactive_organization_insight_summary {
     
     
 }
-impl ProactiveOrganizationInsightSummary {
-    /// Creates a new builder-style object to manufacture [`ProactiveOrganizationInsightSummary`](crate::model::ProactiveOrganizationInsightSummary).
-    pub fn builder() -> crate::model::proactive_organization_insight_summary::Builder {
-        crate::model::proactive_organization_insight_summary::Builder::default()
-    }
-}
 
 /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
 #[non_exhaustive]
@@ -4195,6 +4228,13 @@ impl ListInsightsStatusFilter {
         self.any.as_ref()
     }
 }
+impl ListInsightsStatusFilter {
+    /// Creates a new builder-style object to manufacture [`ListInsightsStatusFilter`](crate::model::ListInsightsStatusFilter).
+    pub fn builder() -> crate::model::list_insights_status_filter::Builder {
+        crate::model::list_insights_status_filter::Builder::default()
+    }
+}
+
 /// See [`ListInsightsStatusFilter`](crate::model::ListInsightsStatusFilter).
 pub mod list_insights_status_filter {
     
@@ -4249,12 +4289,6 @@ pub mod list_insights_status_filter {
     
     
 }
-impl ListInsightsStatusFilter {
-    /// Creates a new builder-style object to manufacture [`ListInsightsStatusFilter`](crate::model::ListInsightsStatusFilter).
-    pub fn builder() -> crate::model::list_insights_status_filter::Builder {
-        crate::model::list_insights_status_filter::Builder::default()
-    }
-}
 
 /// <p> Used to filter for insights that have any status. </p>
 #[non_exhaustive]
@@ -4277,6 +4311,13 @@ impl ListInsightsAnyStatusFilter {
         self.start_time_range.as_ref()
     }
 }
+impl ListInsightsAnyStatusFilter {
+    /// Creates a new builder-style object to manufacture [`ListInsightsAnyStatusFilter`](crate::model::ListInsightsAnyStatusFilter).
+    pub fn builder() -> crate::model::list_insights_any_status_filter::Builder {
+        crate::model::list_insights_any_status_filter::Builder::default()
+    }
+}
+
 /// See [`ListInsightsAnyStatusFilter`](crate::model::ListInsightsAnyStatusFilter).
 pub mod list_insights_any_status_filter {
     
@@ -4319,12 +4360,6 @@ pub mod list_insights_any_status_filter {
     
     
 }
-impl ListInsightsAnyStatusFilter {
-    /// Creates a new builder-style object to manufacture [`ListInsightsAnyStatusFilter`](crate::model::ListInsightsAnyStatusFilter).
-    pub fn builder() -> crate::model::list_insights_any_status_filter::Builder {
-        crate::model::list_insights_any_status_filter::Builder::default()
-    }
-}
 
 /// <p> Used to filter for insights that have the status <code>CLOSED</code>. </p>
 #[non_exhaustive]
@@ -4347,6 +4382,13 @@ impl ListInsightsClosedStatusFilter {
         self.end_time_range.as_ref()
     }
 }
+impl ListInsightsClosedStatusFilter {
+    /// Creates a new builder-style object to manufacture [`ListInsightsClosedStatusFilter`](crate::model::ListInsightsClosedStatusFilter).
+    pub fn builder() -> crate::model::list_insights_closed_status_filter::Builder {
+        crate::model::list_insights_closed_status_filter::Builder::default()
+    }
+}
+
 /// See [`ListInsightsClosedStatusFilter`](crate::model::ListInsightsClosedStatusFilter).
 pub mod list_insights_closed_status_filter {
     
@@ -4389,12 +4431,6 @@ pub mod list_insights_closed_status_filter {
     
     
 }
-impl ListInsightsClosedStatusFilter {
-    /// Creates a new builder-style object to manufacture [`ListInsightsClosedStatusFilter`](crate::model::ListInsightsClosedStatusFilter).
-    pub fn builder() -> crate::model::list_insights_closed_status_filter::Builder {
-        crate::model::list_insights_closed_status_filter::Builder::default()
-    }
-}
 
 /// <p> A range of time that specifies when anomalous behavior in an anomaly or insight ended. </p>
 #[non_exhaustive]
@@ -4417,6 +4453,13 @@ impl EndTimeRange {
         self.to_time.as_ref()
     }
 }
+impl EndTimeRange {
+    /// Creates a new builder-style object to manufacture [`EndTimeRange`](crate::model::EndTimeRange).
+    pub fn builder() -> crate::model::end_time_range::Builder {
+        crate::model::end_time_range::Builder::default()
+    }
+}
+
 /// See [`EndTimeRange`](crate::model::EndTimeRange).
 pub mod end_time_range {
     
@@ -4459,12 +4502,6 @@ pub mod end_time_range {
     
     
 }
-impl EndTimeRange {
-    /// Creates a new builder-style object to manufacture [`EndTimeRange`](crate::model::EndTimeRange).
-    pub fn builder() -> crate::model::end_time_range::Builder {
-        crate::model::end_time_range::Builder::default()
-    }
-}
 
 /// <p> Used to filter for insights that have the status <code>ONGOING</code>. </p>
 #[non_exhaustive]
@@ -4480,6 +4517,13 @@ impl ListInsightsOngoingStatusFilter {
         self.r#type.as_ref()
     }
 }
+impl ListInsightsOngoingStatusFilter {
+    /// Creates a new builder-style object to manufacture [`ListInsightsOngoingStatusFilter`](crate::model::ListInsightsOngoingStatusFilter).
+    pub fn builder() -> crate::model::list_insights_ongoing_status_filter::Builder {
+        crate::model::list_insights_ongoing_status_filter::Builder::default()
+    }
+}
+
 /// See [`ListInsightsOngoingStatusFilter`](crate::model::ListInsightsOngoingStatusFilter).
 pub mod list_insights_ongoing_status_filter {
     
@@ -4510,12 +4554,6 @@ pub mod list_insights_ongoing_status_filter {
     
     
 }
-impl ListInsightsOngoingStatusFilter {
-    /// Creates a new builder-style object to manufacture [`ListInsightsOngoingStatusFilter`](crate::model::ListInsightsOngoingStatusFilter).
-    pub fn builder() -> crate::model::list_insights_ongoing_status_filter::Builder {
-        crate::model::list_insights_ongoing_status_filter::Builder::default()
-    }
-}
 
 /// <p> Information about a notification channel. A notification channel is used to notify you when DevOps Guru creates an insight. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p> 
 /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions for cross account Amazon SNS topics</a>.</p> 
@@ -4541,6 +4579,13 @@ impl NotificationChannel {
         self.config.as_ref()
     }
 }
+impl NotificationChannel {
+    /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
+    pub fn builder() -> crate::model::notification_channel::Builder {
+        crate::model::notification_channel::Builder::default()
+    }
+}
+
 /// See [`NotificationChannel`](crate::model::NotificationChannel).
 pub mod notification_channel {
     
@@ -4583,12 +4628,6 @@ pub mod notification_channel {
     
     
 }
-impl NotificationChannel {
-    /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
-    pub fn builder() -> crate::model::notification_channel::Builder {
-        crate::model::notification_channel::Builder::default()
-    }
-}
 
 /// <p> Information about notification channels you have configured with DevOps Guru. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).</p>
 #[non_exhaustive]
@@ -4617,6 +4656,13 @@ impl NotificationChannelConfig {
         self.filters.as_ref()
     }
 }
+impl NotificationChannelConfig {
+    /// Creates a new builder-style object to manufacture [`NotificationChannelConfig`](crate::model::NotificationChannelConfig).
+    pub fn builder() -> crate::model::notification_channel_config::Builder {
+        crate::model::notification_channel_config::Builder::default()
+    }
+}
+
 /// See [`NotificationChannelConfig`](crate::model::NotificationChannelConfig).
 pub mod notification_channel_config {
     
@@ -4665,12 +4711,6 @@ pub mod notification_channel_config {
     
     
 }
-impl NotificationChannelConfig {
-    /// Creates a new builder-style object to manufacture [`NotificationChannelConfig`](crate::model::NotificationChannelConfig).
-    pub fn builder() -> crate::model::notification_channel_config::Builder {
-        crate::model::notification_channel_config::Builder::default()
-    }
-}
 
 /// <p> The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. You can choose to specify which events or message types to receive notifications for. You can also choose to specify which severity levels to receive notifications for. </p>
 #[non_exhaustive]
@@ -4693,6 +4733,13 @@ impl NotificationFilterConfig {
         self.message_types.as_deref()
     }
 }
+impl NotificationFilterConfig {
+    /// Creates a new builder-style object to manufacture [`NotificationFilterConfig`](crate::model::NotificationFilterConfig).
+    pub fn builder() -> crate::model::notification_filter_config::Builder {
+        crate::model::notification_filter_config::Builder::default()
+    }
+}
+
 /// See [`NotificationFilterConfig`](crate::model::NotificationFilterConfig).
 pub mod notification_filter_config {
     
@@ -4746,12 +4793,6 @@ pub mod notification_filter_config {
     }
     
     
-}
-impl NotificationFilterConfig {
-    /// Creates a new builder-style object to manufacture [`NotificationFilterConfig`](crate::model::NotificationFilterConfig).
-    pub fn builder() -> crate::model::notification_filter_config::Builder {
-        crate::model::notification_filter_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NotificationMessageType`, it is important to ensure
@@ -4868,6 +4909,13 @@ impl SnsChannelConfig {
         self.topic_arn.as_deref()
     }
 }
+impl SnsChannelConfig {
+    /// Creates a new builder-style object to manufacture [`SnsChannelConfig`](crate::model::SnsChannelConfig).
+    pub fn builder() -> crate::model::sns_channel_config::Builder {
+        crate::model::sns_channel_config::Builder::default()
+    }
+}
+
 /// See [`SnsChannelConfig`](crate::model::SnsChannelConfig).
 pub mod sns_channel_config {
     
@@ -4897,12 +4945,6 @@ pub mod sns_channel_config {
     }
     
     
-}
-impl SnsChannelConfig {
-    /// Creates a new builder-style object to manufacture [`SnsChannelConfig`](crate::model::SnsChannelConfig).
-    pub fn builder() -> crate::model::sns_channel_config::Builder {
-        crate::model::sns_channel_config::Builder::default()
-    }
 }
 
 /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
@@ -4947,6 +4989,13 @@ impl MonitoredResourceIdentifier {
         self.resource_collection.as_ref()
     }
 }
+impl MonitoredResourceIdentifier {
+    /// Creates a new builder-style object to manufacture [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
+    pub fn builder() -> crate::model::monitored_resource_identifier::Builder {
+        crate::model::monitored_resource_identifier::Builder::default()
+    }
+}
+
 /// See [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
 pub mod monitored_resource_identifier {
     
@@ -5024,12 +5073,6 @@ pub mod monitored_resource_identifier {
     }
     
     
-}
-impl MonitoredResourceIdentifier {
-    /// Creates a new builder-style object to manufacture [`MonitoredResourceIdentifier`](crate::model::MonitoredResourceIdentifier).
-    pub fn builder() -> crate::model::monitored_resource_identifier::Builder {
-        crate::model::monitored_resource_identifier::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourcePermission`, it is important to ensure
@@ -5135,6 +5178,13 @@ impl ListMonitoredResourcesFilters {
         self.resource_type_filters.as_deref()
     }
 }
+impl ListMonitoredResourcesFilters {
+    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
+    pub fn builder() -> crate::model::list_monitored_resources_filters::Builder {
+        crate::model::list_monitored_resources_filters::Builder::default()
+    }
+}
+
 /// See [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
 pub mod list_monitored_resources_filters {
     
@@ -5182,12 +5232,6 @@ pub mod list_monitored_resources_filters {
     }
     
     
-}
-impl ListMonitoredResourcesFilters {
-    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesFilters`](crate::model::ListMonitoredResourcesFilters).
-    pub fn builder() -> crate::model::list_monitored_resources_filters::Builder {
-        crate::model::list_monitored_resources_filters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceTypeFilter`, it is important to ensure
@@ -5460,6 +5504,13 @@ impl Event {
         self.resources.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -5580,12 +5631,6 @@ pub mod event {
     
     
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p> The Amazon Web Services resource that emitted an event. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
@@ -5615,6 +5660,13 @@ impl EventResource {
         self.arn.as_deref()
     }
 }
+impl EventResource {
+    /// Creates a new builder-style object to manufacture [`EventResource`](crate::model::EventResource).
+    pub fn builder() -> crate::model::event_resource::Builder {
+        crate::model::event_resource::Builder::default()
+    }
+}
+
 /// See [`EventResource`](crate::model::EventResource).
 pub mod event_resource {
     
@@ -5668,12 +5720,6 @@ pub mod event_resource {
     }
     
     
-}
-impl EventResource {
-    /// Creates a new builder-style object to manufacture [`EventResource`](crate::model::EventResource).
-    pub fn builder() -> crate::model::event_resource::Builder {
-        crate::model::event_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventClass`, it is important to ensure
@@ -5904,6 +5950,13 @@ impl ListEventsFilters {
         self.resource_collection.as_ref()
     }
 }
+impl ListEventsFilters {
+    /// Creates a new builder-style object to manufacture [`ListEventsFilters`](crate::model::ListEventsFilters).
+    pub fn builder() -> crate::model::list_events_filters::Builder {
+        crate::model::list_events_filters::Builder::default()
+    }
+}
+
 /// See [`ListEventsFilters`](crate::model::ListEventsFilters).
 pub mod list_events_filters {
     
@@ -5994,12 +6047,6 @@ pub mod list_events_filters {
     
     
 }
-impl ListEventsFilters {
-    /// Creates a new builder-style object to manufacture [`ListEventsFilters`](crate::model::ListEventsFilters).
-    pub fn builder() -> crate::model::list_events_filters::Builder {
-        crate::model::list_events_filters::Builder::default()
-    }
-}
 
 /// <p> The time range during which an Amazon Web Services event occurred. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
@@ -6022,6 +6069,13 @@ impl EventTimeRange {
         self.to_time.as_ref()
     }
 }
+impl EventTimeRange {
+    /// Creates a new builder-style object to manufacture [`EventTimeRange`](crate::model::EventTimeRange).
+    pub fn builder() -> crate::model::event_time_range::Builder {
+        crate::model::event_time_range::Builder::default()
+    }
+}
+
 /// See [`EventTimeRange`](crate::model::EventTimeRange).
 pub mod event_time_range {
     
@@ -6063,12 +6117,6 @@ pub mod event_time_range {
     }
     
     
-}
-impl EventTimeRange {
-    /// Creates a new builder-style object to manufacture [`EventTimeRange`](crate::model::EventTimeRange).
-    pub fn builder() -> crate::model::event_time_range::Builder {
-        crate::model::event_time_range::Builder::default()
-    }
 }
 
 /// <p> An Amazon CloudWatch log group that contains log anomalies and is used to generate an insight. </p>
@@ -6113,6 +6161,13 @@ impl AnomalousLogGroup {
         self.log_anomaly_showcases.as_deref()
     }
 }
+impl AnomalousLogGroup {
+    /// Creates a new builder-style object to manufacture [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
+    pub fn builder() -> crate::model::anomalous_log_group::Builder {
+        crate::model::anomalous_log_group::Builder::default()
+    }
+}
+
 /// See [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
 pub mod anomalous_log_group {
     
@@ -6198,12 +6253,6 @@ pub mod anomalous_log_group {
     
     
 }
-impl AnomalousLogGroup {
-    /// Creates a new builder-style object to manufacture [`AnomalousLogGroup`](crate::model::AnomalousLogGroup).
-    pub fn builder() -> crate::model::anomalous_log_group::Builder {
-        crate::model::anomalous_log_group::Builder::default()
-    }
-}
 
 /// <p> A cluster of similar anomalous log events found within a log group. </p>
 #[non_exhaustive]
@@ -6219,6 +6268,13 @@ impl LogAnomalyShowcase {
         self.log_anomaly_classes.as_deref()
     }
 }
+impl LogAnomalyShowcase {
+    /// Creates a new builder-style object to manufacture [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
+    pub fn builder() -> crate::model::log_anomaly_showcase::Builder {
+        crate::model::log_anomaly_showcase::Builder::default()
+    }
+}
+
 /// See [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
 pub mod log_anomaly_showcase {
     
@@ -6254,12 +6310,6 @@ pub mod log_anomaly_showcase {
     }
     
     
-}
-impl LogAnomalyShowcase {
-    /// Creates a new builder-style object to manufacture [`LogAnomalyShowcase`](crate::model::LogAnomalyShowcase).
-    pub fn builder() -> crate::model::log_anomaly_showcase::Builder {
-        crate::model::log_anomaly_showcase::Builder::default()
-    }
 }
 
 /// <p> Information about an anomalous log event found within a log group. </p>
@@ -6318,6 +6368,13 @@ impl LogAnomalyClass {
         self.log_event_timestamp.as_ref()
     }
 }
+impl LogAnomalyClass {
+    /// Creates a new builder-style object to manufacture [`LogAnomalyClass`](crate::model::LogAnomalyClass).
+    pub fn builder() -> crate::model::log_anomaly_class::Builder {
+        crate::model::log_anomaly_class::Builder::default()
+    }
+}
+
 /// See [`LogAnomalyClass`](crate::model::LogAnomalyClass).
 pub mod log_anomaly_class {
     
@@ -6420,12 +6477,6 @@ pub mod log_anomaly_class {
     }
     
     
-}
-impl LogAnomalyClass {
-    /// Creates a new builder-style object to manufacture [`LogAnomalyClass`](crate::model::LogAnomalyClass).
-    pub fn builder() -> crate::model::log_anomaly_class::Builder {
-        crate::model::log_anomaly_class::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LogAnomalyType`, it is important to ensure
@@ -6646,6 +6697,13 @@ impl ReactiveAnomalySummary {
         self.anomaly_resources.as_deref()
     }
 }
+impl ReactiveAnomalySummary {
+    /// Creates a new builder-style object to manufacture [`ReactiveAnomalySummary`](crate::model::ReactiveAnomalySummary).
+    pub fn builder() -> crate::model::reactive_anomaly_summary::Builder {
+        crate::model::reactive_anomaly_summary::Builder::default()
+    }
+}
+
 /// See [`ReactiveAnomalySummary`](crate::model::ReactiveAnomalySummary).
 pub mod reactive_anomaly_summary {
     
@@ -6834,12 +6892,6 @@ pub mod reactive_anomaly_summary {
     
     
 }
-impl ReactiveAnomalySummary {
-    /// Creates a new builder-style object to manufacture [`ReactiveAnomalySummary`](crate::model::ReactiveAnomalySummary).
-    pub fn builder() -> crate::model::reactive_anomaly_summary::Builder {
-        crate::model::reactive_anomaly_summary::Builder::default()
-    }
-}
 
 /// <p>The Amazon Web Services resources in which DevOps Guru detected unusual behavior that resulted in the generation of an anomaly. When DevOps Guru detects multiple related anomalies, it creates and insight with details about the anomalous behavior and suggestions about how to correct the problem.</p>
 #[non_exhaustive]
@@ -6862,6 +6914,13 @@ impl AnomalyResource {
         self.r#type.as_deref()
     }
 }
+impl AnomalyResource {
+    /// Creates a new builder-style object to manufacture [`AnomalyResource`](crate::model::AnomalyResource).
+    pub fn builder() -> crate::model::anomaly_resource::Builder {
+        crate::model::anomaly_resource::Builder::default()
+    }
+}
+
 /// See [`AnomalyResource`](crate::model::AnomalyResource).
 pub mod anomaly_resource {
     
@@ -6903,12 +6962,6 @@ pub mod anomaly_resource {
     }
     
     
-}
-impl AnomalyResource {
-    /// Creates a new builder-style object to manufacture [`AnomalyResource`](crate::model::AnomalyResource).
-    pub fn builder() -> crate::model::anomaly_resource::Builder {
-        crate::model::anomaly_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnomalyType`, it is important to ensure
@@ -7014,6 +7067,13 @@ impl AnomalySourceDetails {
         self.performance_insights_metrics.as_deref()
     }
 }
+impl AnomalySourceDetails {
+    /// Creates a new builder-style object to manufacture [`AnomalySourceDetails`](crate::model::AnomalySourceDetails).
+    pub fn builder() -> crate::model::anomaly_source_details::Builder {
+        crate::model::anomaly_source_details::Builder::default()
+    }
+}
+
 /// See [`AnomalySourceDetails`](crate::model::AnomalySourceDetails).
 pub mod anomaly_source_details {
     
@@ -7067,12 +7127,6 @@ pub mod anomaly_source_details {
     }
     
     
-}
-impl AnomalySourceDetails {
-    /// Creates a new builder-style object to manufacture [`AnomalySourceDetails`](crate::model::AnomalySourceDetails).
-    pub fn builder() -> crate::model::anomaly_source_details::Builder {
-        crate::model::anomaly_source_details::Builder::default()
-    }
 }
 
 /// <p>Details about Performance Insights metrics.</p> 
@@ -7129,6 +7183,13 @@ impl PerformanceInsightsMetricsDetail {
         self.stats_at_baseline.as_deref()
     }
 }
+impl PerformanceInsightsMetricsDetail {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetricsDetail`](crate::model::PerformanceInsightsMetricsDetail).
+    pub fn builder() -> crate::model::performance_insights_metrics_detail::Builder {
+        crate::model::performance_insights_metrics_detail::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsMetricsDetail`](crate::model::PerformanceInsightsMetricsDetail).
 pub mod performance_insights_metrics_detail {
     
@@ -7237,12 +7298,6 @@ pub mod performance_insights_metrics_detail {
     
     
 }
-impl PerformanceInsightsMetricsDetail {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetricsDetail`](crate::model::PerformanceInsightsMetricsDetail).
-    pub fn builder() -> crate::model::performance_insights_metrics_detail::Builder {
-        crate::model::performance_insights_metrics_detail::Builder::default()
-    }
-}
 
 /// <p>A statistic in a Performance Insights collection.</p>
 #[non_exhaustive]
@@ -7265,6 +7320,13 @@ impl PerformanceInsightsStat {
         self.value
     }
 }
+impl PerformanceInsightsStat {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsStat`](crate::model::PerformanceInsightsStat).
+    pub fn builder() -> crate::model::performance_insights_stat::Builder {
+        crate::model::performance_insights_stat::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsStat`](crate::model::PerformanceInsightsStat).
 pub mod performance_insights_stat {
     
@@ -7307,12 +7369,6 @@ pub mod performance_insights_stat {
     
     
 }
-impl PerformanceInsightsStat {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsStat`](crate::model::PerformanceInsightsStat).
-    pub fn builder() -> crate::model::performance_insights_stat::Builder {
-        crate::model::performance_insights_stat::Builder::default()
-    }
-}
 
 /// <p>Reference data used to evaluate Performance Insights to determine if its performance is anomalous or not.</p>
 #[non_exhaustive]
@@ -7335,6 +7391,13 @@ impl PerformanceInsightsReferenceData {
         self.comparison_values.as_ref()
     }
 }
+impl PerformanceInsightsReferenceData {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceData`](crate::model::PerformanceInsightsReferenceData).
+    pub fn builder() -> crate::model::performance_insights_reference_data::Builder {
+        crate::model::performance_insights_reference_data::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsReferenceData`](crate::model::PerformanceInsightsReferenceData).
 pub mod performance_insights_reference_data {
     
@@ -7377,12 +7440,6 @@ pub mod performance_insights_reference_data {
     
     
 }
-impl PerformanceInsightsReferenceData {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceData`](crate::model::PerformanceInsightsReferenceData).
-    pub fn builder() -> crate::model::performance_insights_reference_data::Builder {
-        crate::model::performance_insights_reference_data::Builder::default()
-    }
-}
 
 /// <p>Reference scalar values and other metrics that DevOps Guru displays on a graph in its console along with the actual metrics it analyzed. Compare these reference values to your actual metrics to help you understand anomalous behavior that DevOps Guru detected.</p>
 #[non_exhaustive]
@@ -7405,6 +7462,13 @@ impl PerformanceInsightsReferenceComparisonValues {
         self.reference_metric.as_ref()
     }
 }
+impl PerformanceInsightsReferenceComparisonValues {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceComparisonValues`](crate::model::PerformanceInsightsReferenceComparisonValues).
+    pub fn builder() -> crate::model::performance_insights_reference_comparison_values::Builder {
+        crate::model::performance_insights_reference_comparison_values::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsReferenceComparisonValues`](crate::model::PerformanceInsightsReferenceComparisonValues).
 pub mod performance_insights_reference_comparison_values {
     
@@ -7447,12 +7511,6 @@ pub mod performance_insights_reference_comparison_values {
     
     
 }
-impl PerformanceInsightsReferenceComparisonValues {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceComparisonValues`](crate::model::PerformanceInsightsReferenceComparisonValues).
-    pub fn builder() -> crate::model::performance_insights_reference_comparison_values::Builder {
-        crate::model::performance_insights_reference_comparison_values::Builder::default()
-    }
-}
 
 /// <p>Information about a reference metric used to evaluate Performance Insights.</p>
 #[non_exhaustive]
@@ -7468,6 +7526,13 @@ impl PerformanceInsightsReferenceMetric {
         self.metric_query.as_ref()
     }
 }
+impl PerformanceInsightsReferenceMetric {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceMetric`](crate::model::PerformanceInsightsReferenceMetric).
+    pub fn builder() -> crate::model::performance_insights_reference_metric::Builder {
+        crate::model::performance_insights_reference_metric::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsReferenceMetric`](crate::model::PerformanceInsightsReferenceMetric).
 pub mod performance_insights_reference_metric {
     
@@ -7497,12 +7562,6 @@ pub mod performance_insights_reference_metric {
     }
     
     
-}
-impl PerformanceInsightsReferenceMetric {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceMetric`](crate::model::PerformanceInsightsReferenceMetric).
-    pub fn builder() -> crate::model::performance_insights_reference_metric::Builder {
-        crate::model::performance_insights_reference_metric::Builder::default()
-    }
 }
 
 /// <p>A single query to be processed. Use these parameters to query the Performance Insights <code>GetResourceMetrics</code> API to retrieve the metrics for an anomaly. For more information, see <code> <a href="https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetResourceMetrics.html">GetResourceMetrics</a> </code> in the <i>Amazon RDS Performance Insights API Reference</i>.</p> 
@@ -7558,6 +7617,13 @@ impl PerformanceInsightsMetricQuery {
         self.filter.as_ref()
     }
 }
+impl PerformanceInsightsMetricQuery {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetricQuery`](crate::model::PerformanceInsightsMetricQuery).
+    pub fn builder() -> crate::model::performance_insights_metric_query::Builder {
+        crate::model::performance_insights_metric_query::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsMetricQuery`](crate::model::PerformanceInsightsMetricQuery).
 pub mod performance_insights_metric_query {
     
@@ -7637,12 +7703,6 @@ pub mod performance_insights_metric_query {
     }
     
     
-}
-impl PerformanceInsightsMetricQuery {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetricQuery`](crate::model::PerformanceInsightsMetricQuery).
-    pub fn builder() -> crate::model::performance_insights_metric_query::Builder {
-        crate::model::performance_insights_metric_query::Builder::default()
-    }
 }
 
 /// <p>A logical grouping of Performance Insights metrics for a related subject area. For example, the <code>db.sql</code> dimension group consists of the following dimensions: <code>db.sql.id</code>, <code>db.sql.db_id</code>, <code>db.sql.statement</code>, and <code>db.sql.tokenized_id</code>.</p> <note> 
@@ -7742,6 +7802,13 @@ impl PerformanceInsightsMetricDimensionGroup {
         self.limit
     }
 }
+impl PerformanceInsightsMetricDimensionGroup {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetricDimensionGroup`](crate::model::PerformanceInsightsMetricDimensionGroup).
+    pub fn builder() -> crate::model::performance_insights_metric_dimension_group::Builder {
+        crate::model::performance_insights_metric_dimension_group::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsMetricDimensionGroup`](crate::model::PerformanceInsightsMetricDimensionGroup).
 pub mod performance_insights_metric_dimension_group {
     
@@ -7864,12 +7931,6 @@ pub mod performance_insights_metric_dimension_group {
     
     
 }
-impl PerformanceInsightsMetricDimensionGroup {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetricDimensionGroup`](crate::model::PerformanceInsightsMetricDimensionGroup).
-    pub fn builder() -> crate::model::performance_insights_metric_dimension_group::Builder {
-        crate::model::performance_insights_metric_dimension_group::Builder::default()
-    }
-}
 
 /// <p>A reference value to compare Performance Insights metrics against to determine if the metrics demonstrate anomalous behavior.</p>
 #[non_exhaustive]
@@ -7885,6 +7946,13 @@ impl PerformanceInsightsReferenceScalar {
         self.value
     }
 }
+impl PerformanceInsightsReferenceScalar {
+    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceScalar`](crate::model::PerformanceInsightsReferenceScalar).
+    pub fn builder() -> crate::model::performance_insights_reference_scalar::Builder {
+        crate::model::performance_insights_reference_scalar::Builder::default()
+    }
+}
+
 /// See [`PerformanceInsightsReferenceScalar`](crate::model::PerformanceInsightsReferenceScalar).
 pub mod performance_insights_reference_scalar {
     
@@ -7914,12 +7982,6 @@ pub mod performance_insights_reference_scalar {
     }
     
     
-}
-impl PerformanceInsightsReferenceScalar {
-    /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceScalar`](crate::model::PerformanceInsightsReferenceScalar).
-    pub fn builder() -> crate::model::performance_insights_reference_scalar::Builder {
-        crate::model::performance_insights_reference_scalar::Builder::default()
-    }
 }
 
 /// <p> Information about an Amazon CloudWatch metric. </p>
@@ -7978,6 +8040,13 @@ impl CloudWatchMetricsDetail {
         self.metric_data_summary.as_ref()
     }
 }
+impl CloudWatchMetricsDetail {
+    /// Creates a new builder-style object to manufacture [`CloudWatchMetricsDetail`](crate::model::CloudWatchMetricsDetail).
+    pub fn builder() -> crate::model::cloud_watch_metrics_detail::Builder {
+        crate::model::cloud_watch_metrics_detail::Builder::default()
+    }
+}
+
 /// See [`CloudWatchMetricsDetail`](crate::model::CloudWatchMetricsDetail).
 pub mod cloud_watch_metrics_detail {
     
@@ -8087,12 +8156,6 @@ pub mod cloud_watch_metrics_detail {
     
     
 }
-impl CloudWatchMetricsDetail {
-    /// Creates a new builder-style object to manufacture [`CloudWatchMetricsDetail`](crate::model::CloudWatchMetricsDetail).
-    pub fn builder() -> crate::model::cloud_watch_metrics_detail::Builder {
-        crate::model::cloud_watch_metrics_detail::Builder::default()
-    }
-}
 
 /// <p>Contains information about the analyzed metrics that displayed anomalous behavior. </p>
 #[non_exhaustive]
@@ -8115,6 +8178,13 @@ impl CloudWatchMetricsDataSummary {
         self.status_code.as_ref()
     }
 }
+impl CloudWatchMetricsDataSummary {
+    /// Creates a new builder-style object to manufacture [`CloudWatchMetricsDataSummary`](crate::model::CloudWatchMetricsDataSummary).
+    pub fn builder() -> crate::model::cloud_watch_metrics_data_summary::Builder {
+        crate::model::cloud_watch_metrics_data_summary::Builder::default()
+    }
+}
+
 /// See [`CloudWatchMetricsDataSummary`](crate::model::CloudWatchMetricsDataSummary).
 pub mod cloud_watch_metrics_data_summary {
     
@@ -8162,12 +8232,6 @@ pub mod cloud_watch_metrics_data_summary {
     }
     
     
-}
-impl CloudWatchMetricsDataSummary {
-    /// Creates a new builder-style object to manufacture [`CloudWatchMetricsDataSummary`](crate::model::CloudWatchMetricsDataSummary).
-    pub fn builder() -> crate::model::cloud_watch_metrics_data_summary::Builder {
-        crate::model::cloud_watch_metrics_data_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloudWatchMetricDataStatusCode`, it is important to ensure
@@ -8278,6 +8342,13 @@ impl TimestampMetricValuePair {
         self.metric_value
     }
 }
+impl TimestampMetricValuePair {
+    /// Creates a new builder-style object to manufacture [`TimestampMetricValuePair`](crate::model::TimestampMetricValuePair).
+    pub fn builder() -> crate::model::timestamp_metric_value_pair::Builder {
+        crate::model::timestamp_metric_value_pair::Builder::default()
+    }
+}
+
 /// See [`TimestampMetricValuePair`](crate::model::TimestampMetricValuePair).
 pub mod timestamp_metric_value_pair {
     
@@ -8319,12 +8390,6 @@ pub mod timestamp_metric_value_pair {
     }
     
     
-}
-impl TimestampMetricValuePair {
-    /// Creates a new builder-style object to manufacture [`TimestampMetricValuePair`](crate::model::TimestampMetricValuePair).
-    pub fn builder() -> crate::model::timestamp_metric_value_pair::Builder {
-        crate::model::timestamp_metric_value_pair::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloudWatchMetricsStat`, it is important to ensure
@@ -8460,6 +8525,13 @@ impl CloudWatchMetricsDimension {
         self.value.as_deref()
     }
 }
+impl CloudWatchMetricsDimension {
+    /// Creates a new builder-style object to manufacture [`CloudWatchMetricsDimension`](crate::model::CloudWatchMetricsDimension).
+    pub fn builder() -> crate::model::cloud_watch_metrics_dimension::Builder {
+        crate::model::cloud_watch_metrics_dimension::Builder::default()
+    }
+}
+
 /// See [`CloudWatchMetricsDimension`](crate::model::CloudWatchMetricsDimension).
 pub mod cloud_watch_metrics_dimension {
     
@@ -8502,12 +8574,6 @@ pub mod cloud_watch_metrics_dimension {
     
     
 }
-impl CloudWatchMetricsDimension {
-    /// Creates a new builder-style object to manufacture [`CloudWatchMetricsDimension`](crate::model::CloudWatchMetricsDimension).
-    pub fn builder() -> crate::model::cloud_watch_metrics_dimension::Builder {
-        crate::model::cloud_watch_metrics_dimension::Builder::default()
-    }
-}
 
 /// <p> A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes the anomalous behavior. </p>
 #[non_exhaustive]
@@ -8530,6 +8596,13 @@ impl AnomalyReportedTimeRange {
         self.close_time.as_ref()
     }
 }
+impl AnomalyReportedTimeRange {
+    /// Creates a new builder-style object to manufacture [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange).
+    pub fn builder() -> crate::model::anomaly_reported_time_range::Builder {
+        crate::model::anomaly_reported_time_range::Builder::default()
+    }
+}
+
 /// See [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange).
 pub mod anomaly_reported_time_range {
     
@@ -8572,12 +8645,6 @@ pub mod anomaly_reported_time_range {
     
     
 }
-impl AnomalyReportedTimeRange {
-    /// Creates a new builder-style object to manufacture [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange).
-    pub fn builder() -> crate::model::anomaly_reported_time_range::Builder {
-        crate::model::anomaly_reported_time_range::Builder::default()
-    }
-}
 
 /// <p> A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes an anomaly. </p>
 #[non_exhaustive]
@@ -8600,6 +8667,13 @@ impl AnomalyTimeRange {
         self.end_time.as_ref()
     }
 }
+impl AnomalyTimeRange {
+    /// Creates a new builder-style object to manufacture [`AnomalyTimeRange`](crate::model::AnomalyTimeRange).
+    pub fn builder() -> crate::model::anomaly_time_range::Builder {
+        crate::model::anomaly_time_range::Builder::default()
+    }
+}
+
 /// See [`AnomalyTimeRange`](crate::model::AnomalyTimeRange).
 pub mod anomaly_time_range {
     
@@ -8641,12 +8715,6 @@ pub mod anomaly_time_range {
     }
     
     
-}
-impl AnomalyTimeRange {
-    /// Creates a new builder-style object to manufacture [`AnomalyTimeRange`](crate::model::AnomalyTimeRange).
-    pub fn builder() -> crate::model::anomaly_time_range::Builder {
-        crate::model::anomaly_time_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnomalyStatus`, it is important to ensure
@@ -8916,6 +8984,13 @@ impl ProactiveAnomalySummary {
         self.anomaly_resources.as_deref()
     }
 }
+impl ProactiveAnomalySummary {
+    /// Creates a new builder-style object to manufacture [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary).
+    pub fn builder() -> crate::model::proactive_anomaly_summary::Builder {
+        crate::model::proactive_anomaly_summary::Builder::default()
+    }
+}
+
 /// See [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary).
 pub mod proactive_anomaly_summary {
     
@@ -9096,12 +9171,6 @@ pub mod proactive_anomaly_summary {
     
     
 }
-impl ProactiveAnomalySummary {
-    /// Creates a new builder-style object to manufacture [`ProactiveAnomalySummary`](crate::model::ProactiveAnomalySummary).
-    pub fn builder() -> crate::model::proactive_anomaly_summary::Builder {
-        crate::model::proactive_anomaly_summary::Builder::default()
-    }
-}
 
 /// <p>Metadata about the detection source that generates proactive anomalies. The anomaly is detected using analysis of the metric data  over a period of time</p>
 #[non_exhaustive]
@@ -9131,6 +9200,13 @@ impl AnomalySourceMetadata {
         self.source_resource_type.as_deref()
     }
 }
+impl AnomalySourceMetadata {
+    /// Creates a new builder-style object to manufacture [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata).
+    pub fn builder() -> crate::model::anomaly_source_metadata::Builder {
+        crate::model::anomaly_source_metadata::Builder::default()
+    }
+}
+
 /// See [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata).
 pub mod anomaly_source_metadata {
     
@@ -9185,12 +9261,6 @@ pub mod anomaly_source_metadata {
     
     
 }
-impl AnomalySourceMetadata {
-    /// Creates a new builder-style object to manufacture [`AnomalySourceMetadata`](crate::model::AnomalySourceMetadata).
-    pub fn builder() -> crate::model::anomaly_source_metadata::Builder {
-        crate::model::anomaly_source_metadata::Builder::default()
-    }
-}
 
 /// <p> Information about a filter used to specify which Amazon Web Services resources are analyzed for anomalous behavior by DevOps Guru. </p>
 #[non_exhaustive]
@@ -9231,6 +9301,13 @@ impl ResourceCollectionFilter {
         self.tags.as_deref()
     }
 }
+impl ResourceCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`ResourceCollectionFilter`](crate::model::ResourceCollectionFilter).
+    pub fn builder() -> crate::model::resource_collection_filter::Builder {
+        crate::model::resource_collection_filter::Builder::default()
+    }
+}
+
 /// See [`ResourceCollectionFilter`](crate::model::ResourceCollectionFilter).
 pub mod resource_collection_filter {
     
@@ -9297,12 +9374,6 @@ pub mod resource_collection_filter {
     
     
 }
-impl ResourceCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`ResourceCollectionFilter`](crate::model::ResourceCollectionFilter).
-    pub fn builder() -> crate::model::resource_collection_filter::Builder {
-        crate::model::resource_collection_filter::Builder::default()
-    }
-}
 
 /// <p>A collection of Amazon Web Services tags used to filter insights. This is used to return insights generated from only resources that contain the tags in the tag collection.</p>
 #[non_exhaustive]
@@ -9331,6 +9402,13 @@ impl TagCollectionFilter {
         self.tag_values.as_deref()
     }
 }
+impl TagCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`TagCollectionFilter`](crate::model::TagCollectionFilter).
+    pub fn builder() -> crate::model::tag_collection_filter::Builder {
+        crate::model::tag_collection_filter::Builder::default()
+    }
+}
+
 /// See [`TagCollectionFilter`](crate::model::TagCollectionFilter).
 pub mod tag_collection_filter {
     
@@ -9385,12 +9463,6 @@ pub mod tag_collection_filter {
     
     
 }
-impl TagCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`TagCollectionFilter`](crate::model::TagCollectionFilter).
-    pub fn builder() -> crate::model::tag_collection_filter::Builder {
-        crate::model::tag_collection_filter::Builder::default()
-    }
-}
 
 /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 #[non_exhaustive]
@@ -9406,6 +9478,13 @@ impl CloudFormationCollectionFilter {
         self.stack_names.as_deref()
     }
 }
+impl CloudFormationCollectionFilter {
+    /// Creates a new builder-style object to manufacture [`CloudFormationCollectionFilter`](crate::model::CloudFormationCollectionFilter).
+    pub fn builder() -> crate::model::cloud_formation_collection_filter::Builder {
+        crate::model::cloud_formation_collection_filter::Builder::default()
+    }
+}
+
 /// See [`CloudFormationCollectionFilter`](crate::model::CloudFormationCollectionFilter).
 pub mod cloud_formation_collection_filter {
     
@@ -9441,12 +9520,6 @@ pub mod cloud_formation_collection_filter {
     }
     
     
-}
-impl CloudFormationCollectionFilter {
-    /// Creates a new builder-style object to manufacture [`CloudFormationCollectionFilter`](crate::model::CloudFormationCollectionFilter).
-    pub fn builder() -> crate::model::cloud_formation_collection_filter::Builder {
-        crate::model::cloud_formation_collection_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceCollectionType`, it is important to ensure
@@ -9557,6 +9630,13 @@ impl CostEstimationTimeRange {
         self.end_time.as_ref()
     }
 }
+impl CostEstimationTimeRange {
+    /// Creates a new builder-style object to manufacture [`CostEstimationTimeRange`](crate::model::CostEstimationTimeRange).
+    pub fn builder() -> crate::model::cost_estimation_time_range::Builder {
+        crate::model::cost_estimation_time_range::Builder::default()
+    }
+}
+
 /// See [`CostEstimationTimeRange`](crate::model::CostEstimationTimeRange).
 pub mod cost_estimation_time_range {
     
@@ -9598,12 +9678,6 @@ pub mod cost_estimation_time_range {
     }
     
     
-}
-impl CostEstimationTimeRange {
-    /// Creates a new builder-style object to manufacture [`CostEstimationTimeRange`](crate::model::CostEstimationTimeRange).
-    pub fn builder() -> crate::model::cost_estimation_time_range::Builder {
-        crate::model::cost_estimation_time_range::Builder::default()
-    }
 }
 
 /// <p>An object that contains information about the estimated monthly cost to analyze an Amazon Web Services resource. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
@@ -9648,6 +9722,13 @@ impl ServiceResourceCost {
         self.cost
     }
 }
+impl ServiceResourceCost {
+    /// Creates a new builder-style object to manufacture [`ServiceResourceCost`](crate::model::ServiceResourceCost).
+    pub fn builder() -> crate::model::service_resource_cost::Builder {
+        crate::model::service_resource_cost::Builder::default()
+    }
+}
+
 /// See [`ServiceResourceCost`](crate::model::ServiceResourceCost).
 pub mod service_resource_cost {
     
@@ -9728,12 +9809,6 @@ pub mod service_resource_cost {
     }
     
     
-}
-impl ServiceResourceCost {
-    /// Creates a new builder-style object to manufacture [`ServiceResourceCost`](crate::model::ServiceResourceCost).
-    pub fn builder() -> crate::model::service_resource_cost::Builder {
-        crate::model::service_resource_cost::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CostEstimationServiceResourceState`, it is important to ensure
@@ -9921,6 +9996,13 @@ impl ServiceIntegrationConfig {
         self.logs_anomaly_detection.as_ref()
     }
 }
+impl ServiceIntegrationConfig {
+    /// Creates a new builder-style object to manufacture [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
+    pub fn builder() -> crate::model::service_integration_config::Builder {
+        crate::model::service_integration_config::Builder::default()
+    }
+}
+
 /// See [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
 pub mod service_integration_config {
     
@@ -9963,12 +10045,6 @@ pub mod service_integration_config {
     
     
 }
-impl ServiceIntegrationConfig {
-    /// Creates a new builder-style object to manufacture [`ServiceIntegrationConfig`](crate::model::ServiceIntegrationConfig).
-    pub fn builder() -> crate::model::service_integration_config::Builder {
-        crate::model::service_integration_config::Builder::default()
-    }
-}
 
 /// <p> Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. </p>
 #[non_exhaustive]
@@ -9984,6 +10060,13 @@ impl LogsAnomalyDetectionIntegration {
         self.opt_in_status.as_ref()
     }
 }
+impl LogsAnomalyDetectionIntegration {
+    /// Creates a new builder-style object to manufacture [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
+    pub fn builder() -> crate::model::logs_anomaly_detection_integration::Builder {
+        crate::model::logs_anomaly_detection_integration::Builder::default()
+    }
+}
+
 /// See [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
 pub mod logs_anomaly_detection_integration {
     
@@ -10014,12 +10097,6 @@ pub mod logs_anomaly_detection_integration {
     
     
 }
-impl LogsAnomalyDetectionIntegration {
-    /// Creates a new builder-style object to manufacture [`LogsAnomalyDetectionIntegration`](crate::model::LogsAnomalyDetectionIntegration).
-    pub fn builder() -> crate::model::logs_anomaly_detection_integration::Builder {
-        crate::model::logs_anomaly_detection_integration::Builder::default()
-    }
-}
 
 /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
 #[non_exhaustive]
@@ -10035,6 +10112,13 @@ impl OpsCenterIntegration {
         self.opt_in_status.as_ref()
     }
 }
+impl OpsCenterIntegration {
+    /// Creates a new builder-style object to manufacture [`OpsCenterIntegration`](crate::model::OpsCenterIntegration).
+    pub fn builder() -> crate::model::ops_center_integration::Builder {
+        crate::model::ops_center_integration::Builder::default()
+    }
+}
+
 /// See [`OpsCenterIntegration`](crate::model::OpsCenterIntegration).
 pub mod ops_center_integration {
     
@@ -10064,12 +10148,6 @@ pub mod ops_center_integration {
     }
     
     
-}
-impl OpsCenterIntegration {
-    /// Creates a new builder-style object to manufacture [`OpsCenterIntegration`](crate::model::OpsCenterIntegration).
-    pub fn builder() -> crate::model::ops_center_integration::Builder {
-        crate::model::ops_center_integration::Builder::default()
-    }
 }
 
 /// <p> Information about the health of Amazon Web Services resources in your account that are specified by an Amazon Web Services tag <i>key</i>. </p>
@@ -10113,6 +10191,13 @@ impl TagHealth {
         self.analyzed_resource_count
     }
 }
+impl TagHealth {
+    /// Creates a new builder-style object to manufacture [`TagHealth`](crate::model::TagHealth).
+    pub fn builder() -> crate::model::tag_health::Builder {
+        crate::model::tag_health::Builder::default()
+    }
+}
+
 /// See [`TagHealth`](crate::model::TagHealth).
 pub mod tag_health {
     
@@ -10185,12 +10270,6 @@ pub mod tag_health {
     
     
 }
-impl TagHealth {
-    /// Creates a new builder-style object to manufacture [`TagHealth`](crate::model::TagHealth).
-    pub fn builder() -> crate::model::tag_health::Builder {
-        crate::model::tag_health::Builder::default()
-    }
-}
 
 /// <p> Information about the number of open reactive and proactive insights that can be used to gauge the health of your system. </p>
 #[non_exhaustive]
@@ -10220,6 +10299,13 @@ impl InsightHealth {
         self.mean_time_to_recover_in_milliseconds
     }
 }
+impl InsightHealth {
+    /// Creates a new builder-style object to manufacture [`InsightHealth`](crate::model::InsightHealth).
+    pub fn builder() -> crate::model::insight_health::Builder {
+        crate::model::insight_health::Builder::default()
+    }
+}
+
 /// See [`InsightHealth`](crate::model::InsightHealth).
 pub mod insight_health {
     
@@ -10276,12 +10362,6 @@ pub mod insight_health {
     
     
 }
-impl InsightHealth {
-    /// Creates a new builder-style object to manufacture [`InsightHealth`](crate::model::InsightHealth).
-    pub fn builder() -> crate::model::insight_health::Builder {
-        crate::model::insight_health::Builder::default()
-    }
-}
 
 /// <p>Represents the health of an Amazon Web Services service.</p>
 #[non_exhaustive]
@@ -10311,6 +10391,13 @@ impl ServiceHealth {
         self.analyzed_resource_count
     }
 }
+impl ServiceHealth {
+    /// Creates a new builder-style object to manufacture [`ServiceHealth`](crate::model::ServiceHealth).
+    pub fn builder() -> crate::model::service_health::Builder {
+        crate::model::service_health::Builder::default()
+    }
+}
+
 /// See [`ServiceHealth`](crate::model::ServiceHealth).
 pub mod service_health {
     
@@ -10365,12 +10452,6 @@ pub mod service_health {
     
     
 }
-impl ServiceHealth {
-    /// Creates a new builder-style object to manufacture [`ServiceHealth`](crate::model::ServiceHealth).
-    pub fn builder() -> crate::model::service_health::Builder {
-        crate::model::service_health::Builder::default()
-    }
-}
 
 /// <p>Contains the number of open proactive and reactive insights in an analyzed Amazon Web Services service.</p>
 #[non_exhaustive]
@@ -10393,6 +10474,13 @@ impl ServiceInsightHealth {
         self.open_reactive_insights
     }
 }
+impl ServiceInsightHealth {
+    /// Creates a new builder-style object to manufacture [`ServiceInsightHealth`](crate::model::ServiceInsightHealth).
+    pub fn builder() -> crate::model::service_insight_health::Builder {
+        crate::model::service_insight_health::Builder::default()
+    }
+}
+
 /// See [`ServiceInsightHealth`](crate::model::ServiceInsightHealth).
 pub mod service_insight_health {
     
@@ -10437,12 +10525,6 @@ pub mod service_insight_health {
     
     
 }
-impl ServiceInsightHealth {
-    /// Creates a new builder-style object to manufacture [`ServiceInsightHealth`](crate::model::ServiceInsightHealth).
-    pub fn builder() -> crate::model::service_insight_health::Builder {
-        crate::model::service_insight_health::Builder::default()
-    }
-}
 
 /// <p> Information about the health of Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
 #[non_exhaustive]
@@ -10472,6 +10554,13 @@ impl CloudFormationHealth {
         self.analyzed_resource_count
     }
 }
+impl CloudFormationHealth {
+    /// Creates a new builder-style object to manufacture [`CloudFormationHealth`](crate::model::CloudFormationHealth).
+    pub fn builder() -> crate::model::cloud_formation_health::Builder {
+        crate::model::cloud_formation_health::Builder::default()
+    }
+}
+
 /// See [`CloudFormationHealth`](crate::model::CloudFormationHealth).
 pub mod cloud_formation_health {
     
@@ -10526,12 +10615,6 @@ pub mod cloud_formation_health {
     
     
 }
-impl CloudFormationHealth {
-    /// Creates a new builder-style object to manufacture [`CloudFormationHealth`](crate::model::CloudFormationHealth).
-    pub fn builder() -> crate::model::cloud_formation_health::Builder {
-        crate::model::cloud_formation_health::Builder::default()
-    }
-}
 
 /// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>
 #[non_exhaustive]
@@ -10554,6 +10637,13 @@ impl AccountHealth {
         self.insight.as_ref()
     }
 }
+impl AccountHealth {
+    /// Creates a new builder-style object to manufacture [`AccountHealth`](crate::model::AccountHealth).
+    pub fn builder() -> crate::model::account_health::Builder {
+        crate::model::account_health::Builder::default()
+    }
+}
+
 /// See [`AccountHealth`](crate::model::AccountHealth).
 pub mod account_health {
     
@@ -10596,12 +10686,6 @@ pub mod account_health {
     
     
 }
-impl AccountHealth {
-    /// Creates a new builder-style object to manufacture [`AccountHealth`](crate::model::AccountHealth).
-    pub fn builder() -> crate::model::account_health::Builder {
-        crate::model::account_health::Builder::default()
-    }
-}
 
 /// <p> Information about the number of open reactive and proactive insights that can be used to gauge the health of your system. </p>
 #[non_exhaustive]
@@ -10624,6 +10708,13 @@ impl AccountInsightHealth {
         self.open_reactive_insights
     }
 }
+impl AccountInsightHealth {
+    /// Creates a new builder-style object to manufacture [`AccountInsightHealth`](crate::model::AccountInsightHealth).
+    pub fn builder() -> crate::model::account_insight_health::Builder {
+        crate::model::account_insight_health::Builder::default()
+    }
+}
+
 /// See [`AccountInsightHealth`](crate::model::AccountInsightHealth).
 pub mod account_insight_health {
     
@@ -10667,12 +10758,6 @@ pub mod account_insight_health {
     }
     
     
-}
-impl AccountInsightHealth {
-    /// Creates a new builder-style object to manufacture [`AccountInsightHealth`](crate::model::AccountInsightHealth).
-    pub fn builder() -> crate::model::account_insight_health::Builder {
-        crate::model::account_insight_health::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OrganizationResourceCollectionType`, it is important to ensure
@@ -10830,6 +10915,13 @@ impl ReactiveInsight {
         self.description.as_deref()
     }
 }
+impl ReactiveInsight {
+    /// Creates a new builder-style object to manufacture [`ReactiveInsight`](crate::model::ReactiveInsight).
+    pub fn builder() -> crate::model::reactive_insight::Builder {
+        crate::model::reactive_insight::Builder::default()
+    }
+}
+
 /// See [`ReactiveInsight`](crate::model::ReactiveInsight).
 pub mod reactive_insight {
     
@@ -10944,12 +11036,6 @@ pub mod reactive_insight {
     
     
 }
-impl ReactiveInsight {
-    /// Creates a new builder-style object to manufacture [`ReactiveInsight`](crate::model::ReactiveInsight).
-    pub fn builder() -> crate::model::reactive_insight::Builder {
-        crate::model::reactive_insight::Builder::default()
-    }
-}
 
 /// <p>Details about a proactive insight. This object is returned by <code>ListInsights</code>.</p>
 #[non_exhaustive]
@@ -11021,6 +11107,13 @@ impl ProactiveInsight {
         self.description.as_deref()
     }
 }
+impl ProactiveInsight {
+    /// Creates a new builder-style object to manufacture [`ProactiveInsight`](crate::model::ProactiveInsight).
+    pub fn builder() -> crate::model::proactive_insight::Builder {
+        crate::model::proactive_insight::Builder::default()
+    }
+}
+
 /// See [`ProactiveInsight`](crate::model::ProactiveInsight).
 pub mod proactive_insight {
     
@@ -11147,12 +11240,6 @@ pub mod proactive_insight {
     
     
 }
-impl ProactiveInsight {
-    /// Creates a new builder-style object to manufacture [`ProactiveInsight`](crate::model::ProactiveInsight).
-    pub fn builder() -> crate::model::proactive_insight::Builder {
-        crate::model::proactive_insight::Builder::default()
-    }
-}
 
 /// <p>Details about a reactive anomaly. This object is returned by <code>ListAnomalies</code>.</p>
 #[non_exhaustive]
@@ -11260,6 +11347,13 @@ impl ReactiveAnomaly {
         self.anomaly_resources.as_deref()
     }
 }
+impl ReactiveAnomaly {
+    /// Creates a new builder-style object to manufacture [`ReactiveAnomaly`](crate::model::ReactiveAnomaly).
+    pub fn builder() -> crate::model::reactive_anomaly::Builder {
+        crate::model::reactive_anomaly::Builder::default()
+    }
+}
+
 /// See [`ReactiveAnomaly`](crate::model::ReactiveAnomaly).
 pub mod reactive_anomaly {
     
@@ -11448,12 +11542,6 @@ pub mod reactive_anomaly {
     
     
 }
-impl ReactiveAnomaly {
-    /// Creates a new builder-style object to manufacture [`ReactiveAnomaly`](crate::model::ReactiveAnomaly).
-    pub fn builder() -> crate::model::reactive_anomaly::Builder {
-        crate::model::reactive_anomaly::Builder::default()
-    }
-}
 
 /// <p>Information about an anomaly. This object is returned by <code>ListAnomalies</code>.</p>
 #[non_exhaustive]
@@ -11553,6 +11641,13 @@ impl ProactiveAnomaly {
         self.anomaly_resources.as_deref()
     }
 }
+impl ProactiveAnomaly {
+    /// Creates a new builder-style object to manufacture [`ProactiveAnomaly`](crate::model::ProactiveAnomaly).
+    pub fn builder() -> crate::model::proactive_anomaly::Builder {
+        crate::model::proactive_anomaly::Builder::default()
+    }
+}
+
 /// See [`ProactiveAnomaly`](crate::model::ProactiveAnomaly).
 pub mod proactive_anomaly {
     
@@ -11732,11 +11827,5 @@ pub mod proactive_anomaly {
     }
     
     
-}
-impl ProactiveAnomaly {
-    /// Creates a new builder-style object to manufacture [`ProactiveAnomaly`](crate::model::ProactiveAnomaly).
-    pub fn builder() -> crate::model::proactive_anomaly::Builder {
-        crate::model::proactive_anomaly::Builder::default()
-    }
 }
 

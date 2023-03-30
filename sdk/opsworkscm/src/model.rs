@@ -195,6 +195,13 @@ impl Server {
         self.server_arn.as_deref()
     }
 }
+impl Server {
+    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
+    pub fn builder() -> crate::model::server::Builder {
+        crate::model::server::Builder::default()
+    }
+}
+
 /// See [`Server`](crate::model::Server).
 pub mod server {
     
@@ -539,12 +546,6 @@ pub mod server {
     
     
 }
-impl Server {
-    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
-    pub fn builder() -> crate::model::server::Builder {
-        crate::model::server::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ServerStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -794,6 +795,13 @@ impl  std::fmt::Debug for EngineAttribute  {
         formatter.finish()
     }
 }
+impl EngineAttribute {
+    /// Creates a new builder-style object to manufacture [`EngineAttribute`](crate::model::EngineAttribute).
+    pub fn builder() -> crate::model::engine_attribute::Builder {
+        crate::model::engine_attribute::Builder::default()
+    }
+}
+
 /// See [`EngineAttribute`](crate::model::EngineAttribute).
 pub mod engine_attribute {
     
@@ -844,12 +852,6 @@ pub mod engine_attribute {
     
     
 }
-impl EngineAttribute {
-    /// Creates a new builder-style object to manufacture [`EngineAttribute`](crate::model::EngineAttribute).
-    pub fn builder() -> crate::model::engine_attribute::Builder {
-        crate::model::engine_attribute::Builder::default()
-    }
-}
 
 /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
 #[non_exhaustive]
@@ -872,6 +874,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -913,12 +922,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NodeAssociationStatus`, it is important to ensure
@@ -1064,6 +1067,13 @@ impl ServerEvent {
         self.log_url.as_deref()
     }
 }
+impl ServerEvent {
+    /// Creates a new builder-style object to manufacture [`ServerEvent`](crate::model::ServerEvent).
+    pub fn builder() -> crate::model::server_event::Builder {
+        crate::model::server_event::Builder::default()
+    }
+}
+
 /// See [`ServerEvent`](crate::model::ServerEvent).
 pub mod server_event {
     
@@ -1129,12 +1139,6 @@ pub mod server_event {
     }
     
     
-}
-impl ServerEvent {
-    /// Creates a new builder-style object to manufacture [`ServerEvent`](crate::model::ServerEvent).
-    pub fn builder() -> crate::model::server_event::Builder {
-        crate::model::server_event::Builder::default()
-    }
 }
 
 /// <p>Describes a single backup. </p>
@@ -1316,6 +1320,13 @@ impl Backup {
         self.user_arn.as_deref()
     }
 }
+impl Backup {
+    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
+    pub fn builder() -> crate::model::backup::Builder {
+        crate::model::backup::Builder::default()
+    }
+}
+
 /// See [`Backup`](crate::model::Backup).
 pub mod backup {
     
@@ -1638,12 +1649,6 @@ pub mod backup {
     
     
 }
-impl Backup {
-    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
-    pub fn builder() -> crate::model::backup::Builder {
-        crate::model::backup::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BackupStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1855,6 +1860,13 @@ impl AccountAttribute {
         self.used
     }
 }
+impl AccountAttribute {
+    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
+    pub fn builder() -> crate::model::account_attribute::Builder {
+        crate::model::account_attribute::Builder::default()
+    }
+}
+
 /// See [`AccountAttribute`](crate::model::AccountAttribute).
 pub mod account_attribute {
     
@@ -1916,11 +1928,5 @@ pub mod account_attribute {
     }
     
     
-}
-impl AccountAttribute {
-    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
-    pub fn builder() -> crate::model::account_attribute::Builder {
-        crate::model::account_attribute::Builder::default()
-    }
 }
 

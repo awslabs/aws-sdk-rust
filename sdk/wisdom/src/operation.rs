@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_assistant`](crate::client::Client::create_assistant).
             ///
-            /// See [`crate::client::fluent_builders::CreateAssistant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAssistant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAssistant {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssistant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_assistant_association`](crate::client::Client::create_assistant_association).
             ///
-            /// See [`crate::client::fluent_builders::CreateAssistantAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAssistantAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAssistantAssociation {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssistantAssociati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_content`](crate::client::Client::create_content).
             ///
-            /// See [`crate::client::fluent_builders::CreateContent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateContent {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_knowledge_base`](crate::client::Client::create_knowledge_base).
             ///
-            /// See [`crate::client::fluent_builders::CreateKnowledgeBase`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateKnowledgeBase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateKnowledgeBase {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKnowledgeBase {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_session`](crate::client::Client::create_session).
             ///
-            /// See [`crate::client::fluent_builders::CreateSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSession {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSession {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_assistant`](crate::client::Client::delete_assistant).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAssistant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAssistant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAssistant {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssistant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_assistant_association`](crate::client::Client::delete_assistant_association).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAssistantAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAssistantAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAssistantAssociation {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssistantAssociati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_content`](crate::client::Client::delete_content).
             ///
-            /// See [`crate::client::fluent_builders::DeleteContent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteContent {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_knowledge_base`](crate::client::Client::delete_knowledge_base).
             ///
-            /// See [`crate::client::fluent_builders::DeleteKnowledgeBase`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteKnowledgeBase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteKnowledgeBase {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKnowledgeBase {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_assistant`](crate::client::Client::get_assistant).
             ///
-            /// See [`crate::client::fluent_builders::GetAssistant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAssistant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAssistant {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssistant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_assistant_association`](crate::client::Client::get_assistant_association).
             ///
-            /// See [`crate::client::fluent_builders::GetAssistantAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAssistantAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAssistantAssociation {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssistantAssociation 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_content`](crate::client::Client::get_content).
             ///
-            /// See [`crate::client::fluent_builders::GetContent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContent {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_content_summary`](crate::client::Client::get_content_summary).
             ///
-            /// See [`crate::client::fluent_builders::GetContentSummary`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetContentSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetContentSummary {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContentSummary {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_knowledge_base`](crate::client::Client::get_knowledge_base).
             ///
-            /// See [`crate::client::fluent_builders::GetKnowledgeBase`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetKnowledgeBase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetKnowledgeBase {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKnowledgeBase {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_recommendations`](crate::client::Client::get_recommendations).
             ///
-            /// See [`crate::client::fluent_builders::GetRecommendations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendations {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_session`](crate::client::Client::get_session).
             ///
-            /// See [`crate::client::fluent_builders::GetSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSession {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_assistant_associations`](crate::client::Client::list_assistant_associations).
             ///
-            /// See [`crate::client::fluent_builders::ListAssistantAssociations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAssistantAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssistantAssociations {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssistantAssociation
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_assistants`](crate::client::Client::list_assistants).
             ///
-            /// See [`crate::client::fluent_builders::ListAssistants`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAssistants`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssistants {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssistants {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_contents`](crate::client::Client::list_contents).
             ///
-            /// See [`crate::client::fluent_builders::ListContents`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListContents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListContents {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContents {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_knowledge_bases`](crate::client::Client::list_knowledge_bases).
             ///
-            /// See [`crate::client::fluent_builders::ListKnowledgeBases`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListKnowledgeBases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListKnowledgeBases {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKnowledgeBases {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`notify_recommendations_received`](crate::client::Client::notify_recommendations_received).
             ///
-            /// See [`crate::client::fluent_builders::NotifyRecommendationsReceived`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `NotifyRecommendationsReceived`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyRecommendationsReceived {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyRecommendationsRec
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`query_assistant`](crate::client::Client::query_assistant).
             ///
-            /// See [`crate::client::fluent_builders::QueryAssistant`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `QueryAssistant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct QueryAssistant {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryAssistant {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`remove_knowledge_base_template_uri`](crate::client::Client::remove_knowledge_base_template_uri).
             ///
-            /// See [`crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RemoveKnowledgeBaseTemplateUri`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveKnowledgeBaseTemplateUri {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveKnowledgeBaseTempl
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`search_content`](crate::client::Client::search_content).
             ///
-            /// See [`crate::client::fluent_builders::SearchContent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SearchContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchContent {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchContent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`search_sessions`](crate::client::Client::search_sessions).
             ///
-            /// See [`crate::client::fluent_builders::SearchSessions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SearchSessions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchSessions {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSessions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_content_upload`](crate::client::Client::start_content_upload).
             ///
-            /// See [`crate::client::fluent_builders::StartContentUpload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartContentUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartContentUpload {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartContentUpload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_content`](crate::client::Client::update_content).
             ///
-            /// See [`crate::client::fluent_builders::UpdateContent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateContent {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_knowledge_base_template_uri`](crate::client::Client::update_knowledge_base_template_uri).
             ///
-            /// See [`crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateKnowledgeBaseTemplateUri`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUri {
     _private: ()

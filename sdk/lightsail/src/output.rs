@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateRelationalDatabaseParametersOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRelationalDatabaseParametersOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
+    pub fn builder() -> crate::output::update_relational_database_parameters_output::Builder {
+        crate::output::update_relational_database_parameters_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
 pub mod update_relational_database_parameters_output {
     
@@ -66,12 +73,6 @@ pub mod update_relational_database_parameters_output {
     
     
 }
-impl UpdateRelationalDatabaseParametersOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput).
-    pub fn builder() -> crate::output::update_relational_database_parameters_output::Builder {
-        crate::output::update_relational_database_parameters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -93,6 +94,13 @@ impl aws_http::request_id::RequestId for UpdateRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::update_relational_database_output::Builder {
+        crate::output::update_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
 pub mod update_relational_database_output {
     
@@ -140,12 +148,6 @@ pub mod update_relational_database_output {
     
     
 }
-impl UpdateRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::update_relational_database_output::Builder {
-        crate::output::update_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -167,6 +169,13 @@ impl aws_http::request_id::RequestId for UpdateLoadBalancerAttributeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateLoadBalancerAttributeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
+    pub fn builder() -> crate::output::update_load_balancer_attribute_output::Builder {
+        crate::output::update_load_balancer_attribute_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
 pub mod update_load_balancer_attribute_output {
     
@@ -214,12 +223,6 @@ pub mod update_load_balancer_attribute_output {
     
     
 }
-impl UpdateLoadBalancerAttributeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput).
-    pub fn builder() -> crate::output::update_load_balancer_attribute_output::Builder {
-        crate::output::update_load_balancer_attribute_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -241,6 +244,13 @@ impl aws_http::request_id::RequestId for UpdateInstanceMetadataOptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateInstanceMetadataOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
+    pub fn builder() -> crate::output::update_instance_metadata_options_output::Builder {
+        crate::output::update_instance_metadata_options_output::Builder::default()
+    }
+}
+
 /// See [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
 pub mod update_instance_metadata_options_output {
     
@@ -282,12 +292,6 @@ pub mod update_instance_metadata_options_output {
     
     
 }
-impl UpdateInstanceMetadataOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInstanceMetadataOptionsOutput`](crate::output::UpdateInstanceMetadataOptionsOutput).
-    pub fn builder() -> crate::output::update_instance_metadata_options_output::Builder {
-        crate::output::update_instance_metadata_options_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -309,6 +313,13 @@ impl aws_http::request_id::RequestId for UpdateDomainEntryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDomainEntryOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
+    pub fn builder() -> crate::output::update_domain_entry_output::Builder {
+        crate::output::update_domain_entry_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
 pub mod update_domain_entry_output {
     
@@ -356,12 +367,6 @@ pub mod update_domain_entry_output {
     
     
 }
-impl UpdateDomainEntryOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput).
-    pub fn builder() -> crate::output::update_domain_entry_output::Builder {
-        crate::output::update_domain_entry_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -383,6 +388,13 @@ impl aws_http::request_id::RequestId for UpdateDistributionBundleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDistributionBundleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
+    pub fn builder() -> crate::output::update_distribution_bundle_output::Builder {
+        crate::output::update_distribution_bundle_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
 pub mod update_distribution_bundle_output {
     
@@ -424,12 +436,6 @@ pub mod update_distribution_bundle_output {
     
     
 }
-impl UpdateDistributionBundleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput).
-    pub fn builder() -> crate::output::update_distribution_bundle_output::Builder {
-        crate::output::update_distribution_bundle_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -451,6 +457,13 @@ impl aws_http::request_id::RequestId for UpdateDistributionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
+    pub fn builder() -> crate::output::update_distribution_output::Builder {
+        crate::output::update_distribution_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
 pub mod update_distribution_output {
     
@@ -492,12 +505,6 @@ pub mod update_distribution_output {
     
     
 }
-impl UpdateDistributionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput).
-    pub fn builder() -> crate::output::update_distribution_output::Builder {
-        crate::output::update_distribution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -519,6 +526,13 @@ impl aws_http::request_id::RequestId for UpdateContainerServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateContainerServiceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
+    pub fn builder() -> crate::output::update_container_service_output::Builder {
+        crate::output::update_container_service_output::Builder::default()
+    }
+}
+
 /// See [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
 pub mod update_container_service_output {
     
@@ -560,12 +574,6 @@ pub mod update_container_service_output {
     
     
 }
-impl UpdateContainerServiceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput).
-    pub fn builder() -> crate::output::update_container_service_output::Builder {
-        crate::output::update_container_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -587,6 +595,13 @@ impl aws_http::request_id::RequestId for UpdateBucketBundleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBucketBundleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
+    pub fn builder() -> crate::output::update_bucket_bundle_output::Builder {
+        crate::output::update_bucket_bundle_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
 pub mod update_bucket_bundle_output {
     
@@ -634,12 +649,6 @@ pub mod update_bucket_bundle_output {
     
     
 }
-impl UpdateBucketBundleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput).
-    pub fn builder() -> crate::output::update_bucket_bundle_output::Builder {
-        crate::output::update_bucket_bundle_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -668,6 +677,13 @@ impl aws_http::request_id::RequestId for UpdateBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBucketOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
+    pub fn builder() -> crate::output::update_bucket_output::Builder {
+        crate::output::update_bucket_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
 pub mod update_bucket_output {
     
@@ -727,12 +743,6 @@ pub mod update_bucket_output {
     
     
 }
-impl UpdateBucketOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBucketOutput`](crate::output::UpdateBucketOutput).
-    pub fn builder() -> crate::output::update_bucket_output::Builder {
-        crate::output::update_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -754,6 +764,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -801,12 +818,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -828,6 +839,13 @@ impl aws_http::request_id::RequestId for UnpeerVpcOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UnpeerVpcOutput {
+    /// Creates a new builder-style object to manufacture [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
+    pub fn builder() -> crate::output::unpeer_vpc_output::Builder {
+        crate::output::unpeer_vpc_output::Builder::default()
+    }
+}
+
 /// See [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
 pub mod unpeer_vpc_output {
     
@@ -869,12 +887,6 @@ pub mod unpeer_vpc_output {
     
     
 }
-impl UnpeerVpcOutput {
-    /// Creates a new builder-style object to manufacture [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput).
-    pub fn builder() -> crate::output::unpeer_vpc_output::Builder {
-        crate::output::unpeer_vpc_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -896,6 +908,13 @@ impl aws_http::request_id::RequestId for TestAlarmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TestAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`TestAlarmOutput`](crate::output::TestAlarmOutput).
+    pub fn builder() -> crate::output::test_alarm_output::Builder {
+        crate::output::test_alarm_output::Builder::default()
+    }
+}
+
 /// See [`TestAlarmOutput`](crate::output::TestAlarmOutput).
 pub mod test_alarm_output {
     
@@ -943,12 +962,6 @@ pub mod test_alarm_output {
     
     
 }
-impl TestAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`TestAlarmOutput`](crate::output::TestAlarmOutput).
-    pub fn builder() -> crate::output::test_alarm_output::Builder {
-        crate::output::test_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -970,6 +983,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -1017,12 +1037,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1044,6 +1058,13 @@ impl aws_http::request_id::RequestId for StopRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::stop_relational_database_output::Builder {
+        crate::output::stop_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
 pub mod stop_relational_database_output {
     
@@ -1091,12 +1112,6 @@ pub mod stop_relational_database_output {
     
     
 }
-impl StopRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::stop_relational_database_output::Builder {
-        crate::output::stop_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1118,6 +1133,13 @@ impl aws_http::request_id::RequestId for StopInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`StopInstanceOutput`](crate::output::StopInstanceOutput).
+    pub fn builder() -> crate::output::stop_instance_output::Builder {
+        crate::output::stop_instance_output::Builder::default()
+    }
+}
+
 /// See [`StopInstanceOutput`](crate::output::StopInstanceOutput).
 pub mod stop_instance_output {
     
@@ -1165,12 +1187,6 @@ pub mod stop_instance_output {
     
     
 }
-impl StopInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`StopInstanceOutput`](crate::output::StopInstanceOutput).
-    pub fn builder() -> crate::output::stop_instance_output::Builder {
-        crate::output::stop_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1192,6 +1208,13 @@ impl aws_http::request_id::RequestId for StartRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::start_relational_database_output::Builder {
+        crate::output::start_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
 pub mod start_relational_database_output {
     
@@ -1239,12 +1262,6 @@ pub mod start_relational_database_output {
     
     
 }
-impl StartRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::start_relational_database_output::Builder {
-        crate::output::start_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1266,6 +1283,13 @@ impl aws_http::request_id::RequestId for StartInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`StartInstanceOutput`](crate::output::StartInstanceOutput).
+    pub fn builder() -> crate::output::start_instance_output::Builder {
+        crate::output::start_instance_output::Builder::default()
+    }
+}
+
 /// See [`StartInstanceOutput`](crate::output::StartInstanceOutput).
 pub mod start_instance_output {
     
@@ -1313,12 +1337,6 @@ pub mod start_instance_output {
     
     
 }
-impl StartInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`StartInstanceOutput`](crate::output::StartInstanceOutput).
-    pub fn builder() -> crate::output::start_instance_output::Builder {
-        crate::output::start_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1340,6 +1358,13 @@ impl aws_http::request_id::RequestId for SetResourceAccessForBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetResourceAccessForBucketOutput {
+    /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
+    pub fn builder() -> crate::output::set_resource_access_for_bucket_output::Builder {
+        crate::output::set_resource_access_for_bucket_output::Builder::default()
+    }
+}
+
 /// See [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
 pub mod set_resource_access_for_bucket_output {
     
@@ -1387,12 +1412,6 @@ pub mod set_resource_access_for_bucket_output {
     
     
 }
-impl SetResourceAccessForBucketOutput {
-    /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput).
-    pub fn builder() -> crate::output::set_resource_access_for_bucket_output::Builder {
-        crate::output::set_resource_access_for_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1414,6 +1433,13 @@ impl aws_http::request_id::RequestId for SetIpAddressTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetIpAddressTypeOutput {
+    /// Creates a new builder-style object to manufacture [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
+    pub fn builder() -> crate::output::set_ip_address_type_output::Builder {
+        crate::output::set_ip_address_type_output::Builder::default()
+    }
+}
+
 /// See [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
 pub mod set_ip_address_type_output {
     
@@ -1461,12 +1487,6 @@ pub mod set_ip_address_type_output {
     
     
 }
-impl SetIpAddressTypeOutput {
-    /// Creates a new builder-style object to manufacture [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput).
-    pub fn builder() -> crate::output::set_ip_address_type_output::Builder {
-        crate::output::set_ip_address_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1488,6 +1508,13 @@ impl aws_http::request_id::RequestId for SendContactMethodVerificationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendContactMethodVerificationOutput {
+    /// Creates a new builder-style object to manufacture [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
+    pub fn builder() -> crate::output::send_contact_method_verification_output::Builder {
+        crate::output::send_contact_method_verification_output::Builder::default()
+    }
+}
+
 /// See [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
 pub mod send_contact_method_verification_output {
     
@@ -1535,12 +1562,6 @@ pub mod send_contact_method_verification_output {
     
     
 }
-impl SendContactMethodVerificationOutput {
-    /// Creates a new builder-style object to manufacture [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput).
-    pub fn builder() -> crate::output::send_contact_method_verification_output::Builder {
-        crate::output::send_contact_method_verification_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1576,6 +1597,13 @@ impl aws_http::request_id::RequestId for ResetDistributionCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResetDistributionCacheOutput {
+    /// Creates a new builder-style object to manufacture [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
+    pub fn builder() -> crate::output::reset_distribution_cache_output::Builder {
+        crate::output::reset_distribution_cache_output::Builder::default()
+    }
+}
+
 /// See [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
 pub mod reset_distribution_cache_output {
     
@@ -1641,12 +1669,6 @@ pub mod reset_distribution_cache_output {
     
     
 }
-impl ResetDistributionCacheOutput {
-    /// Creates a new builder-style object to manufacture [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput).
-    pub fn builder() -> crate::output::reset_distribution_cache_output::Builder {
-        crate::output::reset_distribution_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1668,6 +1690,13 @@ impl aws_http::request_id::RequestId for ReleaseStaticIpOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReleaseStaticIpOutput {
+    /// Creates a new builder-style object to manufacture [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
+    pub fn builder() -> crate::output::release_static_ip_output::Builder {
+        crate::output::release_static_ip_output::Builder::default()
+    }
+}
+
 /// See [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
 pub mod release_static_ip_output {
     
@@ -1715,12 +1744,6 @@ pub mod release_static_ip_output {
     
     
 }
-impl ReleaseStaticIpOutput {
-    /// Creates a new builder-style object to manufacture [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput).
-    pub fn builder() -> crate::output::release_static_ip_output::Builder {
-        crate::output::release_static_ip_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1742,6 +1765,13 @@ impl aws_http::request_id::RequestId for RegisterContainerImageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterContainerImageOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
+    pub fn builder() -> crate::output::register_container_image_output::Builder {
+        crate::output::register_container_image_output::Builder::default()
+    }
+}
+
 /// See [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
 pub mod register_container_image_output {
     
@@ -1783,12 +1813,6 @@ pub mod register_container_image_output {
     
     
 }
-impl RegisterContainerImageOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput).
-    pub fn builder() -> crate::output::register_container_image_output::Builder {
-        crate::output::register_container_image_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1810,6 +1834,13 @@ impl aws_http::request_id::RequestId for RebootRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RebootRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::reboot_relational_database_output::Builder {
+        crate::output::reboot_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
 pub mod reboot_relational_database_output {
     
@@ -1857,12 +1888,6 @@ pub mod reboot_relational_database_output {
     
     
 }
-impl RebootRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::reboot_relational_database_output::Builder {
-        crate::output::reboot_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1884,6 +1909,13 @@ impl aws_http::request_id::RequestId for RebootInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RebootInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
+    pub fn builder() -> crate::output::reboot_instance_output::Builder {
+        crate::output::reboot_instance_output::Builder::default()
+    }
+}
+
 /// See [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
 pub mod reboot_instance_output {
     
@@ -1931,12 +1963,6 @@ pub mod reboot_instance_output {
     
     
 }
-impl RebootInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`RebootInstanceOutput`](crate::output::RebootInstanceOutput).
-    pub fn builder() -> crate::output::reboot_instance_output::Builder {
-        crate::output::reboot_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1958,6 +1984,13 @@ impl aws_http::request_id::RequestId for PutInstancePublicPortsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutInstancePublicPortsOutput {
+    /// Creates a new builder-style object to manufacture [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
+    pub fn builder() -> crate::output::put_instance_public_ports_output::Builder {
+        crate::output::put_instance_public_ports_output::Builder::default()
+    }
+}
+
 /// See [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
 pub mod put_instance_public_ports_output {
     
@@ -1999,12 +2032,6 @@ pub mod put_instance_public_ports_output {
     
     
 }
-impl PutInstancePublicPortsOutput {
-    /// Creates a new builder-style object to manufacture [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput).
-    pub fn builder() -> crate::output::put_instance_public_ports_output::Builder {
-        crate::output::put_instance_public_ports_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2026,6 +2053,13 @@ impl aws_http::request_id::RequestId for PutAlarmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`PutAlarmOutput`](crate::output::PutAlarmOutput).
+    pub fn builder() -> crate::output::put_alarm_output::Builder {
+        crate::output::put_alarm_output::Builder::default()
+    }
+}
+
 /// See [`PutAlarmOutput`](crate::output::PutAlarmOutput).
 pub mod put_alarm_output {
     
@@ -2073,12 +2107,6 @@ pub mod put_alarm_output {
     
     
 }
-impl PutAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`PutAlarmOutput`](crate::output::PutAlarmOutput).
-    pub fn builder() -> crate::output::put_alarm_output::Builder {
-        crate::output::put_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2100,6 +2128,13 @@ impl aws_http::request_id::RequestId for PeerVpcOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PeerVpcOutput {
+    /// Creates a new builder-style object to manufacture [`PeerVpcOutput`](crate::output::PeerVpcOutput).
+    pub fn builder() -> crate::output::peer_vpc_output::Builder {
+        crate::output::peer_vpc_output::Builder::default()
+    }
+}
+
 /// See [`PeerVpcOutput`](crate::output::PeerVpcOutput).
 pub mod peer_vpc_output {
     
@@ -2141,12 +2176,6 @@ pub mod peer_vpc_output {
     
     
 }
-impl PeerVpcOutput {
-    /// Creates a new builder-style object to manufacture [`PeerVpcOutput`](crate::output::PeerVpcOutput).
-    pub fn builder() -> crate::output::peer_vpc_output::Builder {
-        crate::output::peer_vpc_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2168,6 +2197,13 @@ impl aws_http::request_id::RequestId for OpenInstancePublicPortsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl OpenInstancePublicPortsOutput {
+    /// Creates a new builder-style object to manufacture [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
+    pub fn builder() -> crate::output::open_instance_public_ports_output::Builder {
+        crate::output::open_instance_public_ports_output::Builder::default()
+    }
+}
+
 /// See [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
 pub mod open_instance_public_ports_output {
     
@@ -2209,12 +2245,6 @@ pub mod open_instance_public_ports_output {
     
     
 }
-impl OpenInstancePublicPortsOutput {
-    /// Creates a new builder-style object to manufacture [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput).
-    pub fn builder() -> crate::output::open_instance_public_ports_output::Builder {
-        crate::output::open_instance_public_ports_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2236,6 +2266,13 @@ impl aws_http::request_id::RequestId for IsVpcPeeredOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl IsVpcPeeredOutput {
+    /// Creates a new builder-style object to manufacture [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
+    pub fn builder() -> crate::output::is_vpc_peered_output::Builder {
+        crate::output::is_vpc_peered_output::Builder::default()
+    }
+}
+
 /// See [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
 pub mod is_vpc_peered_output {
     
@@ -2277,12 +2314,6 @@ pub mod is_vpc_peered_output {
     
     
 }
-impl IsVpcPeeredOutput {
-    /// Creates a new builder-style object to manufacture [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput).
-    pub fn builder() -> crate::output::is_vpc_peered_output::Builder {
-        crate::output::is_vpc_peered_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2304,6 +2335,13 @@ impl aws_http::request_id::RequestId for ImportKeyPairOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ImportKeyPairOutput {
+    /// Creates a new builder-style object to manufacture [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
+    pub fn builder() -> crate::output::import_key_pair_output::Builder {
+        crate::output::import_key_pair_output::Builder::default()
+    }
+}
+
 /// See [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
 pub mod import_key_pair_output {
     
@@ -2345,12 +2383,6 @@ pub mod import_key_pair_output {
     
     
 }
-impl ImportKeyPairOutput {
-    /// Creates a new builder-style object to manufacture [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput).
-    pub fn builder() -> crate::output::import_key_pair_output::Builder {
-        crate::output::import_key_pair_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2383,6 +2415,13 @@ impl aws_http::request_id::RequestId for GetStaticIpsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetStaticIpsOutput {
+    /// Creates a new builder-style object to manufacture [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
+    pub fn builder() -> crate::output::get_static_ips_output::Builder {
+        crate::output::get_static_ips_output::Builder::default()
+    }
+}
+
 /// See [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
 pub mod get_static_ips_output {
     
@@ -2446,12 +2485,6 @@ pub mod get_static_ips_output {
     
     
 }
-impl GetStaticIpsOutput {
-    /// Creates a new builder-style object to manufacture [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput).
-    pub fn builder() -> crate::output::get_static_ips_output::Builder {
-        crate::output::get_static_ips_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2473,6 +2506,13 @@ impl aws_http::request_id::RequestId for GetStaticIpOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetStaticIpOutput {
+    /// Creates a new builder-style object to manufacture [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
+    pub fn builder() -> crate::output::get_static_ip_output::Builder {
+        crate::output::get_static_ip_output::Builder::default()
+    }
+}
+
 /// See [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
 pub mod get_static_ip_output {
     
@@ -2514,12 +2554,6 @@ pub mod get_static_ip_output {
     
     
 }
-impl GetStaticIpOutput {
-    /// Creates a new builder-style object to manufacture [`GetStaticIpOutput`](crate::output::GetStaticIpOutput).
-    pub fn builder() -> crate::output::get_static_ip_output::Builder {
-        crate::output::get_static_ip_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2552,6 +2586,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
+    pub fn builder() -> crate::output::get_relational_database_snapshots_output::Builder {
+        crate::output::get_relational_database_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
 pub mod get_relational_database_snapshots_output {
     
@@ -2615,12 +2656,6 @@ pub mod get_relational_database_snapshots_output {
     
     
 }
-impl GetRelationalDatabaseSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput).
-    pub fn builder() -> crate::output::get_relational_database_snapshots_output::Builder {
-        crate::output::get_relational_database_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2642,6 +2677,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
+    pub fn builder() -> crate::output::get_relational_database_snapshot_output::Builder {
+        crate::output::get_relational_database_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
 pub mod get_relational_database_snapshot_output {
     
@@ -2683,12 +2725,6 @@ pub mod get_relational_database_snapshot_output {
     
     
 }
-impl GetRelationalDatabaseSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput).
-    pub fn builder() -> crate::output::get_relational_database_snapshot_output::Builder {
-        crate::output::get_relational_database_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2721,6 +2757,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabasesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabasesOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
+    pub fn builder() -> crate::output::get_relational_databases_output::Builder {
+        crate::output::get_relational_databases_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
 pub mod get_relational_databases_output {
     
@@ -2784,12 +2827,6 @@ pub mod get_relational_databases_output {
     
     
 }
-impl GetRelationalDatabasesOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput).
-    pub fn builder() -> crate::output::get_relational_databases_output::Builder {
-        crate::output::get_relational_databases_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2822,6 +2859,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseParametersOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
+    pub fn builder() -> crate::output::get_relational_database_parameters_output::Builder {
+        crate::output::get_relational_database_parameters_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
 pub mod get_relational_database_parameters_output {
     
@@ -2885,12 +2929,6 @@ pub mod get_relational_database_parameters_output {
     
     
 }
-impl GetRelationalDatabaseParametersOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput).
-    pub fn builder() -> crate::output::get_relational_database_parameters_output::Builder {
-        crate::output::get_relational_database_parameters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2919,6 +2957,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseMetricDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
+    pub fn builder() -> crate::output::get_relational_database_metric_data_output::Builder {
+        crate::output::get_relational_database_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
 pub mod get_relational_database_metric_data_output {
     
@@ -2978,12 +3023,6 @@ pub mod get_relational_database_metric_data_output {
     
     
 }
-impl GetRelationalDatabaseMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput).
-    pub fn builder() -> crate::output::get_relational_database_metric_data_output::Builder {
-        crate::output::get_relational_database_metric_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3021,6 +3060,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseMasterUserPassword
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseMasterUserPasswordOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
+    pub fn builder() -> crate::output::get_relational_database_master_user_password_output::Builder {
+        crate::output::get_relational_database_master_user_password_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
 pub mod get_relational_database_master_user_password_output {
     
@@ -3083,12 +3129,6 @@ pub mod get_relational_database_master_user_password_output {
     
     
 }
-impl GetRelationalDatabaseMasterUserPasswordOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput).
-    pub fn builder() -> crate::output::get_relational_database_master_user_password_output::Builder {
-        crate::output::get_relational_database_master_user_password_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3110,6 +3150,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseLogStreamsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseLogStreamsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
+    pub fn builder() -> crate::output::get_relational_database_log_streams_output::Builder {
+        crate::output::get_relational_database_log_streams_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
 pub mod get_relational_database_log_streams_output {
     
@@ -3157,12 +3204,6 @@ pub mod get_relational_database_log_streams_output {
     
     
 }
-impl GetRelationalDatabaseLogStreamsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput).
-    pub fn builder() -> crate::output::get_relational_database_log_streams_output::Builder {
-        crate::output::get_relational_database_log_streams_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3198,6 +3239,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseLogEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseLogEventsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
+    pub fn builder() -> crate::output::get_relational_database_log_events_output::Builder {
+        crate::output::get_relational_database_log_events_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
 pub mod get_relational_database_log_events_output {
     
@@ -3269,12 +3317,6 @@ pub mod get_relational_database_log_events_output {
     
     
 }
-impl GetRelationalDatabaseLogEventsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput).
-    pub fn builder() -> crate::output::get_relational_database_log_events_output::Builder {
-        crate::output::get_relational_database_log_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3307,6 +3349,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseEventsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
+    pub fn builder() -> crate::output::get_relational_database_events_output::Builder {
+        crate::output::get_relational_database_events_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
 pub mod get_relational_database_events_output {
     
@@ -3370,12 +3419,6 @@ pub mod get_relational_database_events_output {
     
     
 }
-impl GetRelationalDatabaseEventsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput).
-    pub fn builder() -> crate::output::get_relational_database_events_output::Builder {
-        crate::output::get_relational_database_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3408,6 +3451,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseBundlesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
+    pub fn builder() -> crate::output::get_relational_database_bundles_output::Builder {
+        crate::output::get_relational_database_bundles_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
 pub mod get_relational_database_bundles_output {
     
@@ -3471,12 +3521,6 @@ pub mod get_relational_database_bundles_output {
     
     
 }
-impl GetRelationalDatabaseBundlesOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput).
-    pub fn builder() -> crate::output::get_relational_database_bundles_output::Builder {
-        crate::output::get_relational_database_bundles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3509,6 +3553,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseBlueprintsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseBlueprintsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
+    pub fn builder() -> crate::output::get_relational_database_blueprints_output::Builder {
+        crate::output::get_relational_database_blueprints_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
 pub mod get_relational_database_blueprints_output {
     
@@ -3572,12 +3623,6 @@ pub mod get_relational_database_blueprints_output {
     
     
 }
-impl GetRelationalDatabaseBlueprintsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput).
-    pub fn builder() -> crate::output::get_relational_database_blueprints_output::Builder {
-        crate::output::get_relational_database_blueprints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3599,6 +3644,13 @@ impl aws_http::request_id::RequestId for GetRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::get_relational_database_output::Builder {
+        crate::output::get_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
 pub mod get_relational_database_output {
     
@@ -3640,12 +3692,6 @@ pub mod get_relational_database_output {
     
     
 }
-impl GetRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::get_relational_database_output::Builder {
-        crate::output::get_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3667,6 +3713,13 @@ impl aws_http::request_id::RequestId for GetRegionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRegionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRegionsOutput`](crate::output::GetRegionsOutput).
+    pub fn builder() -> crate::output::get_regions_output::Builder {
+        crate::output::get_regions_output::Builder::default()
+    }
+}
+
 /// See [`GetRegionsOutput`](crate::output::GetRegionsOutput).
 pub mod get_regions_output {
     
@@ -3714,12 +3767,6 @@ pub mod get_regions_output {
     
     
 }
-impl GetRegionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRegionsOutput`](crate::output::GetRegionsOutput).
-    pub fn builder() -> crate::output::get_regions_output::Builder {
-        crate::output::get_regions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3765,6 +3812,13 @@ impl aws_http::request_id::RequestId for GetOperationsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetOperationsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
+    pub fn builder() -> crate::output::get_operations_for_resource_output::Builder {
+        crate::output::get_operations_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
 pub mod get_operations_for_resource_output {
     
@@ -3846,12 +3900,6 @@ pub mod get_operations_for_resource_output {
     
     
 }
-impl GetOperationsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput).
-    pub fn builder() -> crate::output::get_operations_for_resource_output::Builder {
-        crate::output::get_operations_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3884,6 +3932,13 @@ impl aws_http::request_id::RequestId for GetOperationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetOperationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetOperationsOutput`](crate::output::GetOperationsOutput).
+    pub fn builder() -> crate::output::get_operations_output::Builder {
+        crate::output::get_operations_output::Builder::default()
+    }
+}
+
 /// See [`GetOperationsOutput`](crate::output::GetOperationsOutput).
 pub mod get_operations_output {
     
@@ -3947,12 +4002,6 @@ pub mod get_operations_output {
     
     
 }
-impl GetOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationsOutput`](crate::output::GetOperationsOutput).
-    pub fn builder() -> crate::output::get_operations_output::Builder {
-        crate::output::get_operations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3974,6 +4023,13 @@ impl aws_http::request_id::RequestId for GetOperationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetOperationOutput {
+    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
+    pub fn builder() -> crate::output::get_operation_output::Builder {
+        crate::output::get_operation_output::Builder::default()
+    }
+}
+
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
     
@@ -4015,12 +4071,6 @@ pub mod get_operation_output {
     
     
 }
-impl GetOperationOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
-    pub fn builder() -> crate::output::get_operation_output::Builder {
-        crate::output::get_operation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4053,6 +4103,13 @@ impl aws_http::request_id::RequestId for GetLoadBalancerTlsPoliciesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLoadBalancerTlsPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
+    pub fn builder() -> crate::output::get_load_balancer_tls_policies_output::Builder {
+        crate::output::get_load_balancer_tls_policies_output::Builder::default()
+    }
+}
+
 /// See [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
 pub mod get_load_balancer_tls_policies_output {
     
@@ -4116,12 +4173,6 @@ pub mod get_load_balancer_tls_policies_output {
     
     
 }
-impl GetLoadBalancerTlsPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsPoliciesOutput`](crate::output::GetLoadBalancerTlsPoliciesOutput).
-    pub fn builder() -> crate::output::get_load_balancer_tls_policies_output::Builder {
-        crate::output::get_load_balancer_tls_policies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4143,6 +4194,13 @@ impl aws_http::request_id::RequestId for GetLoadBalancerTlsCertificatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLoadBalancerTlsCertificatesOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
+    pub fn builder() -> crate::output::get_load_balancer_tls_certificates_output::Builder {
+        crate::output::get_load_balancer_tls_certificates_output::Builder::default()
+    }
+}
+
 /// See [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
 pub mod get_load_balancer_tls_certificates_output {
     
@@ -4190,12 +4248,6 @@ pub mod get_load_balancer_tls_certificates_output {
     
     
 }
-impl GetLoadBalancerTlsCertificatesOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput).
-    pub fn builder() -> crate::output::get_load_balancer_tls_certificates_output::Builder {
-        crate::output::get_load_balancer_tls_certificates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4228,6 +4280,13 @@ impl aws_http::request_id::RequestId for GetLoadBalancersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLoadBalancersOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
+    pub fn builder() -> crate::output::get_load_balancers_output::Builder {
+        crate::output::get_load_balancers_output::Builder::default()
+    }
+}
+
 /// See [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
 pub mod get_load_balancers_output {
     
@@ -4291,12 +4350,6 @@ pub mod get_load_balancers_output {
     
     
 }
-impl GetLoadBalancersOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput).
-    pub fn builder() -> crate::output::get_load_balancers_output::Builder {
-        crate::output::get_load_balancers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4325,6 +4378,13 @@ impl aws_http::request_id::RequestId for GetLoadBalancerMetricDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLoadBalancerMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
+    pub fn builder() -> crate::output::get_load_balancer_metric_data_output::Builder {
+        crate::output::get_load_balancer_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
 pub mod get_load_balancer_metric_data_output {
     
@@ -4384,12 +4444,6 @@ pub mod get_load_balancer_metric_data_output {
     
     
 }
-impl GetLoadBalancerMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput).
-    pub fn builder() -> crate::output::get_load_balancer_metric_data_output::Builder {
-        crate::output::get_load_balancer_metric_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4411,6 +4465,13 @@ impl aws_http::request_id::RequestId for GetLoadBalancerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
+    pub fn builder() -> crate::output::get_load_balancer_output::Builder {
+        crate::output::get_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
 pub mod get_load_balancer_output {
     
@@ -4452,12 +4513,6 @@ pub mod get_load_balancer_output {
     
     
 }
-impl GetLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput).
-    pub fn builder() -> crate::output::get_load_balancer_output::Builder {
-        crate::output::get_load_balancer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4490,6 +4545,13 @@ impl aws_http::request_id::RequestId for GetKeyPairsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetKeyPairsOutput {
+    /// Creates a new builder-style object to manufacture [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
+    pub fn builder() -> crate::output::get_key_pairs_output::Builder {
+        crate::output::get_key_pairs_output::Builder::default()
+    }
+}
+
 /// See [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
 pub mod get_key_pairs_output {
     
@@ -4553,12 +4615,6 @@ pub mod get_key_pairs_output {
     
     
 }
-impl GetKeyPairsOutput {
-    /// Creates a new builder-style object to manufacture [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput).
-    pub fn builder() -> crate::output::get_key_pairs_output::Builder {
-        crate::output::get_key_pairs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4580,6 +4636,13 @@ impl aws_http::request_id::RequestId for GetKeyPairOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetKeyPairOutput {
+    /// Creates a new builder-style object to manufacture [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
+    pub fn builder() -> crate::output::get_key_pair_output::Builder {
+        crate::output::get_key_pair_output::Builder::default()
+    }
+}
+
 /// See [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
 pub mod get_key_pair_output {
     
@@ -4621,12 +4684,6 @@ pub mod get_key_pair_output {
     
     
 }
-impl GetKeyPairOutput {
-    /// Creates a new builder-style object to manufacture [`GetKeyPairOutput`](crate::output::GetKeyPairOutput).
-    pub fn builder() -> crate::output::get_key_pair_output::Builder {
-        crate::output::get_key_pair_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4648,6 +4705,13 @@ impl aws_http::request_id::RequestId for GetInstanceStateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstanceStateOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
+    pub fn builder() -> crate::output::get_instance_state_output::Builder {
+        crate::output::get_instance_state_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
 pub mod get_instance_state_output {
     
@@ -4689,12 +4753,6 @@ pub mod get_instance_state_output {
     
     
 }
-impl GetInstanceStateOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput).
-    pub fn builder() -> crate::output::get_instance_state_output::Builder {
-        crate::output::get_instance_state_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4727,6 +4785,13 @@ impl aws_http::request_id::RequestId for GetInstanceSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstanceSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
+    pub fn builder() -> crate::output::get_instance_snapshots_output::Builder {
+        crate::output::get_instance_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
 pub mod get_instance_snapshots_output {
     
@@ -4790,12 +4855,6 @@ pub mod get_instance_snapshots_output {
     
     
 }
-impl GetInstanceSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput).
-    pub fn builder() -> crate::output::get_instance_snapshots_output::Builder {
-        crate::output::get_instance_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4817,6 +4876,13 @@ impl aws_http::request_id::RequestId for GetInstanceSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstanceSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
+    pub fn builder() -> crate::output::get_instance_snapshot_output::Builder {
+        crate::output::get_instance_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
 pub mod get_instance_snapshot_output {
     
@@ -4858,12 +4924,6 @@ pub mod get_instance_snapshot_output {
     
     
 }
-impl GetInstanceSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput).
-    pub fn builder() -> crate::output::get_instance_snapshot_output::Builder {
-        crate::output::get_instance_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4896,6 +4956,13 @@ impl aws_http::request_id::RequestId for GetInstancesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstancesOutput`](crate::output::GetInstancesOutput).
+    pub fn builder() -> crate::output::get_instances_output::Builder {
+        crate::output::get_instances_output::Builder::default()
+    }
+}
+
 /// See [`GetInstancesOutput`](crate::output::GetInstancesOutput).
 pub mod get_instances_output {
     
@@ -4959,12 +5026,6 @@ pub mod get_instances_output {
     
     
 }
-impl GetInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstancesOutput`](crate::output::GetInstancesOutput).
-    pub fn builder() -> crate::output::get_instances_output::Builder {
-        crate::output::get_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4986,6 +5047,13 @@ impl aws_http::request_id::RequestId for GetInstancePortStatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstancePortStatesOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
+    pub fn builder() -> crate::output::get_instance_port_states_output::Builder {
+        crate::output::get_instance_port_states_output::Builder::default()
+    }
+}
+
 /// See [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
 pub mod get_instance_port_states_output {
     
@@ -5033,12 +5101,6 @@ pub mod get_instance_port_states_output {
     
     
 }
-impl GetInstancePortStatesOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput).
-    pub fn builder() -> crate::output::get_instance_port_states_output::Builder {
-        crate::output::get_instance_port_states_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5067,6 +5129,13 @@ impl aws_http::request_id::RequestId for GetInstanceMetricDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstanceMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
+    pub fn builder() -> crate::output::get_instance_metric_data_output::Builder {
+        crate::output::get_instance_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
 pub mod get_instance_metric_data_output {
     
@@ -5126,12 +5195,6 @@ pub mod get_instance_metric_data_output {
     
     
 }
-impl GetInstanceMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput).
-    pub fn builder() -> crate::output::get_instance_metric_data_output::Builder {
-        crate::output::get_instance_metric_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5153,6 +5216,13 @@ impl aws_http::request_id::RequestId for GetInstanceAccessDetailsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstanceAccessDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
+    pub fn builder() -> crate::output::get_instance_access_details_output::Builder {
+        crate::output::get_instance_access_details_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
 pub mod get_instance_access_details_output {
     
@@ -5194,12 +5264,6 @@ pub mod get_instance_access_details_output {
     
     
 }
-impl GetInstanceAccessDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput).
-    pub fn builder() -> crate::output::get_instance_access_details_output::Builder {
-        crate::output::get_instance_access_details_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5221,6 +5285,13 @@ impl aws_http::request_id::RequestId for GetInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
+    pub fn builder() -> crate::output::get_instance_output::Builder {
+        crate::output::get_instance_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceOutput`](crate::output::GetInstanceOutput).
 pub mod get_instance_output {
     
@@ -5262,12 +5333,6 @@ pub mod get_instance_output {
     
     
 }
-impl GetInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
-    pub fn builder() -> crate::output::get_instance_output::Builder {
-        crate::output::get_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5300,6 +5365,13 @@ impl aws_http::request_id::RequestId for GetExportSnapshotRecordsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetExportSnapshotRecordsOutput {
+    /// Creates a new builder-style object to manufacture [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
+    pub fn builder() -> crate::output::get_export_snapshot_records_output::Builder {
+        crate::output::get_export_snapshot_records_output::Builder::default()
+    }
+}
+
 /// See [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
 pub mod get_export_snapshot_records_output {
     
@@ -5363,12 +5435,6 @@ pub mod get_export_snapshot_records_output {
     
     
 }
-impl GetExportSnapshotRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput).
-    pub fn builder() -> crate::output::get_export_snapshot_records_output::Builder {
-        crate::output::get_export_snapshot_records_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5401,6 +5467,13 @@ impl aws_http::request_id::RequestId for GetDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainsOutput`](crate::output::GetDomainsOutput).
+    pub fn builder() -> crate::output::get_domains_output::Builder {
+        crate::output::get_domains_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainsOutput`](crate::output::GetDomainsOutput).
 pub mod get_domains_output {
     
@@ -5464,12 +5537,6 @@ pub mod get_domains_output {
     
     
 }
-impl GetDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainsOutput`](crate::output::GetDomainsOutput).
-    pub fn builder() -> crate::output::get_domains_output::Builder {
-        crate::output::get_domains_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5491,6 +5558,13 @@ impl aws_http::request_id::RequestId for GetDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDomainOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::output::GetDomainOutput).
+    pub fn builder() -> crate::output::get_domain_output::Builder {
+        crate::output::get_domain_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainOutput`](crate::output::GetDomainOutput).
 pub mod get_domain_output {
     
@@ -5532,12 +5606,6 @@ pub mod get_domain_output {
     
     
 }
-impl GetDomainOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainOutput`](crate::output::GetDomainOutput).
-    pub fn builder() -> crate::output::get_domain_output::Builder {
-        crate::output::get_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5570,6 +5638,13 @@ impl aws_http::request_id::RequestId for GetDistributionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDistributionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
+    pub fn builder() -> crate::output::get_distributions_output::Builder {
+        crate::output::get_distributions_output::Builder::default()
+    }
+}
+
 /// See [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
 pub mod get_distributions_output {
     
@@ -5633,12 +5708,6 @@ pub mod get_distributions_output {
     
     
 }
-impl GetDistributionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDistributionsOutput`](crate::output::GetDistributionsOutput).
-    pub fn builder() -> crate::output::get_distributions_output::Builder {
-        crate::output::get_distributions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5667,6 +5736,13 @@ impl aws_http::request_id::RequestId for GetDistributionMetricDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDistributionMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
+    pub fn builder() -> crate::output::get_distribution_metric_data_output::Builder {
+        crate::output::get_distribution_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
 pub mod get_distribution_metric_data_output {
     
@@ -5726,12 +5802,6 @@ pub mod get_distribution_metric_data_output {
     
     
 }
-impl GetDistributionMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput).
-    pub fn builder() -> crate::output::get_distribution_metric_data_output::Builder {
-        crate::output::get_distribution_metric_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5760,6 +5830,13 @@ impl aws_http::request_id::RequestId for GetDistributionLatestCacheResetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDistributionLatestCacheResetOutput {
+    /// Creates a new builder-style object to manufacture [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
+    pub fn builder() -> crate::output::get_distribution_latest_cache_reset_output::Builder {
+        crate::output::get_distribution_latest_cache_reset_output::Builder::default()
+    }
+}
+
 /// See [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
 pub mod get_distribution_latest_cache_reset_output {
     
@@ -5813,12 +5890,6 @@ pub mod get_distribution_latest_cache_reset_output {
     
     
 }
-impl GetDistributionLatestCacheResetOutput {
-    /// Creates a new builder-style object to manufacture [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput).
-    pub fn builder() -> crate::output::get_distribution_latest_cache_reset_output::Builder {
-        crate::output::get_distribution_latest_cache_reset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5840,6 +5911,13 @@ impl aws_http::request_id::RequestId for GetDistributionBundlesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDistributionBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
+    pub fn builder() -> crate::output::get_distribution_bundles_output::Builder {
+        crate::output::get_distribution_bundles_output::Builder::default()
+    }
+}
+
 /// See [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
 pub mod get_distribution_bundles_output {
     
@@ -5887,12 +5965,6 @@ pub mod get_distribution_bundles_output {
     
     
 }
-impl GetDistributionBundlesOutput {
-    /// Creates a new builder-style object to manufacture [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput).
-    pub fn builder() -> crate::output::get_distribution_bundles_output::Builder {
-        crate::output::get_distribution_bundles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5925,6 +5997,13 @@ impl aws_http::request_id::RequestId for GetDiskSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDiskSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
+    pub fn builder() -> crate::output::get_disk_snapshots_output::Builder {
+        crate::output::get_disk_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
 pub mod get_disk_snapshots_output {
     
@@ -5988,12 +6067,6 @@ pub mod get_disk_snapshots_output {
     
     
 }
-impl GetDiskSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput).
-    pub fn builder() -> crate::output::get_disk_snapshots_output::Builder {
-        crate::output::get_disk_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6015,6 +6088,13 @@ impl aws_http::request_id::RequestId for GetDiskSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDiskSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
+    pub fn builder() -> crate::output::get_disk_snapshot_output::Builder {
+        crate::output::get_disk_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
 pub mod get_disk_snapshot_output {
     
@@ -6056,12 +6136,6 @@ pub mod get_disk_snapshot_output {
     
     
 }
-impl GetDiskSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput).
-    pub fn builder() -> crate::output::get_disk_snapshot_output::Builder {
-        crate::output::get_disk_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6094,6 +6168,13 @@ impl aws_http::request_id::RequestId for GetDisksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDisksOutput {
+    /// Creates a new builder-style object to manufacture [`GetDisksOutput`](crate::output::GetDisksOutput).
+    pub fn builder() -> crate::output::get_disks_output::Builder {
+        crate::output::get_disks_output::Builder::default()
+    }
+}
+
 /// See [`GetDisksOutput`](crate::output::GetDisksOutput).
 pub mod get_disks_output {
     
@@ -6157,12 +6238,6 @@ pub mod get_disks_output {
     
     
 }
-impl GetDisksOutput {
-    /// Creates a new builder-style object to manufacture [`GetDisksOutput`](crate::output::GetDisksOutput).
-    pub fn builder() -> crate::output::get_disks_output::Builder {
-        crate::output::get_disks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6184,6 +6259,13 @@ impl aws_http::request_id::RequestId for GetDiskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDiskOutput {
+    /// Creates a new builder-style object to manufacture [`GetDiskOutput`](crate::output::GetDiskOutput).
+    pub fn builder() -> crate::output::get_disk_output::Builder {
+        crate::output::get_disk_output::Builder::default()
+    }
+}
+
 /// See [`GetDiskOutput`](crate::output::GetDiskOutput).
 pub mod get_disk_output {
     
@@ -6225,12 +6307,6 @@ pub mod get_disk_output {
     
     
 }
-impl GetDiskOutput {
-    /// Creates a new builder-style object to manufacture [`GetDiskOutput`](crate::output::GetDiskOutput).
-    pub fn builder() -> crate::output::get_disk_output::Builder {
-        crate::output::get_disk_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6252,6 +6328,13 @@ impl aws_http::request_id::RequestId for GetContainerServicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerServicesOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
+    pub fn builder() -> crate::output::get_container_services_output::Builder {
+        crate::output::get_container_services_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
 pub mod get_container_services_output {
     
@@ -6299,12 +6382,6 @@ pub mod get_container_services_output {
     
     
 }
-impl GetContainerServicesOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput).
-    pub fn builder() -> crate::output::get_container_services_output::Builder {
-        crate::output::get_container_services_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6326,6 +6403,13 @@ impl aws_http::request_id::RequestId for GetContainerServicePowersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerServicePowersOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
+    pub fn builder() -> crate::output::get_container_service_powers_output::Builder {
+        crate::output::get_container_service_powers_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
 pub mod get_container_service_powers_output {
     
@@ -6373,12 +6457,6 @@ pub mod get_container_service_powers_output {
     
     
 }
-impl GetContainerServicePowersOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput).
-    pub fn builder() -> crate::output::get_container_service_powers_output::Builder {
-        crate::output::get_container_service_powers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6407,6 +6485,13 @@ impl aws_http::request_id::RequestId for GetContainerServiceMetricDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerServiceMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
+    pub fn builder() -> crate::output::get_container_service_metric_data_output::Builder {
+        crate::output::get_container_service_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
 pub mod get_container_service_metric_data_output {
     
@@ -6466,12 +6551,6 @@ pub mod get_container_service_metric_data_output {
     
     
 }
-impl GetContainerServiceMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput).
-    pub fn builder() -> crate::output::get_container_service_metric_data_output::Builder {
-        crate::output::get_container_service_metric_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6493,6 +6572,13 @@ impl aws_http::request_id::RequestId for GetContainerServiceDeploymentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerServiceDeploymentsOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
+    pub fn builder() -> crate::output::get_container_service_deployments_output::Builder {
+        crate::output::get_container_service_deployments_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
 pub mod get_container_service_deployments_output {
     
@@ -6540,12 +6626,6 @@ pub mod get_container_service_deployments_output {
     
     
 }
-impl GetContainerServiceDeploymentsOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput).
-    pub fn builder() -> crate::output::get_container_service_deployments_output::Builder {
-        crate::output::get_container_service_deployments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6578,6 +6658,13 @@ impl aws_http::request_id::RequestId for GetContainerLogOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerLogOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
+    pub fn builder() -> crate::output::get_container_log_output::Builder {
+        crate::output::get_container_log_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
 pub mod get_container_log_output {
     
@@ -6641,12 +6728,6 @@ pub mod get_container_log_output {
     
     
 }
-impl GetContainerLogOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerLogOutput`](crate::output::GetContainerLogOutput).
-    pub fn builder() -> crate::output::get_container_log_output::Builder {
-        crate::output::get_container_log_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6668,6 +6749,13 @@ impl aws_http::request_id::RequestId for GetContainerImagesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerImagesOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
+    pub fn builder() -> crate::output::get_container_images_output::Builder {
+        crate::output::get_container_images_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
 pub mod get_container_images_output {
     
@@ -6715,12 +6803,6 @@ pub mod get_container_images_output {
     
     
 }
-impl GetContainerImagesOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput).
-    pub fn builder() -> crate::output::get_container_images_output::Builder {
-        crate::output::get_container_images_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6742,6 +6824,13 @@ impl aws_http::request_id::RequestId for GetContainerApiMetadataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContainerApiMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
+    pub fn builder() -> crate::output::get_container_api_metadata_output::Builder {
+        crate::output::get_container_api_metadata_output::Builder::default()
+    }
+}
+
 /// See [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
 pub mod get_container_api_metadata_output {
     
@@ -6789,12 +6878,6 @@ pub mod get_container_api_metadata_output {
     
     
 }
-impl GetContainerApiMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput).
-    pub fn builder() -> crate::output::get_container_api_metadata_output::Builder {
-        crate::output::get_container_api_metadata_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6816,6 +6899,13 @@ impl aws_http::request_id::RequestId for GetContactMethodsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContactMethodsOutput {
+    /// Creates a new builder-style object to manufacture [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
+    pub fn builder() -> crate::output::get_contact_methods_output::Builder {
+        crate::output::get_contact_methods_output::Builder::default()
+    }
+}
+
 /// See [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
 pub mod get_contact_methods_output {
     
@@ -6863,12 +6953,6 @@ pub mod get_contact_methods_output {
     
     
 }
-impl GetContactMethodsOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput).
-    pub fn builder() -> crate::output::get_contact_methods_output::Builder {
-        crate::output::get_contact_methods_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6901,6 +6985,13 @@ impl aws_http::request_id::RequestId for GetCloudFormationStackRecordsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCloudFormationStackRecordsOutput {
+    /// Creates a new builder-style object to manufacture [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
+    pub fn builder() -> crate::output::get_cloud_formation_stack_records_output::Builder {
+        crate::output::get_cloud_formation_stack_records_output::Builder::default()
+    }
+}
+
 /// See [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
 pub mod get_cloud_formation_stack_records_output {
     
@@ -6964,12 +7055,6 @@ pub mod get_cloud_formation_stack_records_output {
     
     
 }
-impl GetCloudFormationStackRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput).
-    pub fn builder() -> crate::output::get_cloud_formation_stack_records_output::Builder {
-        crate::output::get_cloud_formation_stack_records_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6991,6 +7076,13 @@ impl aws_http::request_id::RequestId for GetCertificatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCertificatesOutput {
+    /// Creates a new builder-style object to manufacture [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
+    pub fn builder() -> crate::output::get_certificates_output::Builder {
+        crate::output::get_certificates_output::Builder::default()
+    }
+}
+
 /// See [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
 pub mod get_certificates_output {
     
@@ -7038,12 +7130,6 @@ pub mod get_certificates_output {
     
     
 }
-impl GetCertificatesOutput {
-    /// Creates a new builder-style object to manufacture [`GetCertificatesOutput`](crate::output::GetCertificatesOutput).
-    pub fn builder() -> crate::output::get_certificates_output::Builder {
-        crate::output::get_certificates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7076,6 +7162,13 @@ impl aws_http::request_id::RequestId for GetBundlesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`GetBundlesOutput`](crate::output::GetBundlesOutput).
+    pub fn builder() -> crate::output::get_bundles_output::Builder {
+        crate::output::get_bundles_output::Builder::default()
+    }
+}
+
 /// See [`GetBundlesOutput`](crate::output::GetBundlesOutput).
 pub mod get_bundles_output {
     
@@ -7139,12 +7232,6 @@ pub mod get_bundles_output {
     
     
 }
-impl GetBundlesOutput {
-    /// Creates a new builder-style object to manufacture [`GetBundlesOutput`](crate::output::GetBundlesOutput).
-    pub fn builder() -> crate::output::get_bundles_output::Builder {
-        crate::output::get_bundles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7186,6 +7273,13 @@ impl aws_http::request_id::RequestId for GetBucketsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketsOutput`](crate::output::GetBucketsOutput).
+    pub fn builder() -> crate::output::get_buckets_output::Builder {
+        crate::output::get_buckets_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketsOutput`](crate::output::GetBucketsOutput).
 pub mod get_buckets_output {
     
@@ -7263,12 +7357,6 @@ pub mod get_buckets_output {
     
     
 }
-impl GetBucketsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketsOutput`](crate::output::GetBucketsOutput).
-    pub fn builder() -> crate::output::get_buckets_output::Builder {
-        crate::output::get_buckets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7297,6 +7385,13 @@ impl aws_http::request_id::RequestId for GetBucketMetricDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
+    pub fn builder() -> crate::output::get_bucket_metric_data_output::Builder {
+        crate::output::get_bucket_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
 pub mod get_bucket_metric_data_output {
     
@@ -7356,12 +7451,6 @@ pub mod get_bucket_metric_data_output {
     
     
 }
-impl GetBucketMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput).
-    pub fn builder() -> crate::output::get_bucket_metric_data_output::Builder {
-        crate::output::get_bucket_metric_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7383,6 +7472,13 @@ impl aws_http::request_id::RequestId for GetBucketBundlesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
+    pub fn builder() -> crate::output::get_bucket_bundles_output::Builder {
+        crate::output::get_bucket_bundles_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
 pub mod get_bucket_bundles_output {
     
@@ -7430,12 +7526,6 @@ pub mod get_bucket_bundles_output {
     
     
 }
-impl GetBucketBundlesOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput).
-    pub fn builder() -> crate::output::get_bucket_bundles_output::Builder {
-        crate::output::get_bucket_bundles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7457,6 +7547,13 @@ impl aws_http::request_id::RequestId for GetBucketAccessKeysOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBucketAccessKeysOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
+    pub fn builder() -> crate::output::get_bucket_access_keys_output::Builder {
+        crate::output::get_bucket_access_keys_output::Builder::default()
+    }
+}
+
 /// See [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
 pub mod get_bucket_access_keys_output {
     
@@ -7504,12 +7601,6 @@ pub mod get_bucket_access_keys_output {
     
     
 }
-impl GetBucketAccessKeysOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput).
-    pub fn builder() -> crate::output::get_bucket_access_keys_output::Builder {
-        crate::output::get_bucket_access_keys_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7542,6 +7633,13 @@ impl aws_http::request_id::RequestId for GetBlueprintsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBlueprintsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
+    pub fn builder() -> crate::output::get_blueprints_output::Builder {
+        crate::output::get_blueprints_output::Builder::default()
+    }
+}
+
 /// See [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
 pub mod get_blueprints_output {
     
@@ -7605,12 +7703,6 @@ pub mod get_blueprints_output {
     
     
 }
-impl GetBlueprintsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput).
-    pub fn builder() -> crate::output::get_blueprints_output::Builder {
-        crate::output::get_blueprints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7646,6 +7738,13 @@ impl aws_http::request_id::RequestId for GetAutoSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAutoSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
+    pub fn builder() -> crate::output::get_auto_snapshots_output::Builder {
+        crate::output::get_auto_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
 pub mod get_auto_snapshots_output {
     
@@ -7717,12 +7816,6 @@ pub mod get_auto_snapshots_output {
     
     
 }
-impl GetAutoSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput).
-    pub fn builder() -> crate::output::get_auto_snapshots_output::Builder {
-        crate::output::get_auto_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7755,6 +7848,13 @@ impl aws_http::request_id::RequestId for GetAlarmsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAlarmsOutput {
+    /// Creates a new builder-style object to manufacture [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
+    pub fn builder() -> crate::output::get_alarms_output::Builder {
+        crate::output::get_alarms_output::Builder::default()
+    }
+}
+
 /// See [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
 pub mod get_alarms_output {
     
@@ -7818,12 +7918,6 @@ pub mod get_alarms_output {
     
     
 }
-impl GetAlarmsOutput {
-    /// Creates a new builder-style object to manufacture [`GetAlarmsOutput`](crate::output::GetAlarmsOutput).
-    pub fn builder() -> crate::output::get_alarms_output::Builder {
-        crate::output::get_alarms_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7856,6 +7950,13 @@ impl aws_http::request_id::RequestId for GetActiveNamesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetActiveNamesOutput {
+    /// Creates a new builder-style object to manufacture [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
+    pub fn builder() -> crate::output::get_active_names_output::Builder {
+        crate::output::get_active_names_output::Builder::default()
+    }
+}
+
 /// See [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
 pub mod get_active_names_output {
     
@@ -7919,12 +8020,6 @@ pub mod get_active_names_output {
     
     
 }
-impl GetActiveNamesOutput {
-    /// Creates a new builder-style object to manufacture [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput).
-    pub fn builder() -> crate::output::get_active_names_output::Builder {
-        crate::output::get_active_names_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7946,6 +8041,13 @@ impl aws_http::request_id::RequestId for ExportSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ExportSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
+    pub fn builder() -> crate::output::export_snapshot_output::Builder {
+        crate::output::export_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
 pub mod export_snapshot_output {
     
@@ -7993,12 +8095,6 @@ pub mod export_snapshot_output {
     
     
 }
-impl ExportSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput).
-    pub fn builder() -> crate::output::export_snapshot_output::Builder {
-        crate::output::export_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8020,6 +8116,13 @@ impl aws_http::request_id::RequestId for EnableAddOnOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl EnableAddOnOutput {
+    /// Creates a new builder-style object to manufacture [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
+    pub fn builder() -> crate::output::enable_add_on_output::Builder {
+        crate::output::enable_add_on_output::Builder::default()
+    }
+}
+
 /// See [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
 pub mod enable_add_on_output {
     
@@ -8067,12 +8170,6 @@ pub mod enable_add_on_output {
     
     
 }
-impl EnableAddOnOutput {
-    /// Creates a new builder-style object to manufacture [`EnableAddOnOutput`](crate::output::EnableAddOnOutput).
-    pub fn builder() -> crate::output::enable_add_on_output::Builder {
-        crate::output::enable_add_on_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8108,6 +8205,13 @@ impl aws_http::request_id::RequestId for DownloadDefaultKeyPairOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DownloadDefaultKeyPairOutput {
+    /// Creates a new builder-style object to manufacture [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
+    pub fn builder() -> crate::output::download_default_key_pair_output::Builder {
+        crate::output::download_default_key_pair_output::Builder::default()
+    }
+}
+
 /// See [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
 pub mod download_default_key_pair_output {
     
@@ -8173,12 +8277,6 @@ pub mod download_default_key_pair_output {
     
     
 }
-impl DownloadDefaultKeyPairOutput {
-    /// Creates a new builder-style object to manufacture [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput).
-    pub fn builder() -> crate::output::download_default_key_pair_output::Builder {
-        crate::output::download_default_key_pair_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8200,6 +8298,13 @@ impl aws_http::request_id::RequestId for DisableAddOnOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisableAddOnOutput {
+    /// Creates a new builder-style object to manufacture [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
+    pub fn builder() -> crate::output::disable_add_on_output::Builder {
+        crate::output::disable_add_on_output::Builder::default()
+    }
+}
+
 /// See [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
 pub mod disable_add_on_output {
     
@@ -8247,12 +8352,6 @@ pub mod disable_add_on_output {
     
     
 }
-impl DisableAddOnOutput {
-    /// Creates a new builder-style object to manufacture [`DisableAddOnOutput`](crate::output::DisableAddOnOutput).
-    pub fn builder() -> crate::output::disable_add_on_output::Builder {
-        crate::output::disable_add_on_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8274,6 +8373,13 @@ impl aws_http::request_id::RequestId for DetachStaticIpOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetachStaticIpOutput {
+    /// Creates a new builder-style object to manufacture [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
+    pub fn builder() -> crate::output::detach_static_ip_output::Builder {
+        crate::output::detach_static_ip_output::Builder::default()
+    }
+}
+
 /// See [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
 pub mod detach_static_ip_output {
     
@@ -8321,12 +8427,6 @@ pub mod detach_static_ip_output {
     
     
 }
-impl DetachStaticIpOutput {
-    /// Creates a new builder-style object to manufacture [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput).
-    pub fn builder() -> crate::output::detach_static_ip_output::Builder {
-        crate::output::detach_static_ip_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8348,6 +8448,13 @@ impl aws_http::request_id::RequestId for DetachInstancesFromLoadBalancerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetachInstancesFromLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
+    pub fn builder() -> crate::output::detach_instances_from_load_balancer_output::Builder {
+        crate::output::detach_instances_from_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
 pub mod detach_instances_from_load_balancer_output {
     
@@ -8395,12 +8502,6 @@ pub mod detach_instances_from_load_balancer_output {
     
     
 }
-impl DetachInstancesFromLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput).
-    pub fn builder() -> crate::output::detach_instances_from_load_balancer_output::Builder {
-        crate::output::detach_instances_from_load_balancer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8422,6 +8523,13 @@ impl aws_http::request_id::RequestId for DetachDiskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetachDiskOutput {
+    /// Creates a new builder-style object to manufacture [`DetachDiskOutput`](crate::output::DetachDiskOutput).
+    pub fn builder() -> crate::output::detach_disk_output::Builder {
+        crate::output::detach_disk_output::Builder::default()
+    }
+}
+
 /// See [`DetachDiskOutput`](crate::output::DetachDiskOutput).
 pub mod detach_disk_output {
     
@@ -8469,12 +8577,6 @@ pub mod detach_disk_output {
     
     
 }
-impl DetachDiskOutput {
-    /// Creates a new builder-style object to manufacture [`DetachDiskOutput`](crate::output::DetachDiskOutput).
-    pub fn builder() -> crate::output::detach_disk_output::Builder {
-        crate::output::detach_disk_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8496,6 +8598,13 @@ impl aws_http::request_id::RequestId for DetachCertificateFromDistributionOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetachCertificateFromDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
+    pub fn builder() -> crate::output::detach_certificate_from_distribution_output::Builder {
+        crate::output::detach_certificate_from_distribution_output::Builder::default()
+    }
+}
+
 /// See [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
 pub mod detach_certificate_from_distribution_output {
     
@@ -8537,12 +8646,6 @@ pub mod detach_certificate_from_distribution_output {
     
     
 }
-impl DetachCertificateFromDistributionOutput {
-    /// Creates a new builder-style object to manufacture [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput).
-    pub fn builder() -> crate::output::detach_certificate_from_distribution_output::Builder {
-        crate::output::detach_certificate_from_distribution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8564,6 +8667,13 @@ impl aws_http::request_id::RequestId for DeleteRelationalDatabaseSnapshotOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRelationalDatabaseSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
+    pub fn builder() -> crate::output::delete_relational_database_snapshot_output::Builder {
+        crate::output::delete_relational_database_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
 pub mod delete_relational_database_snapshot_output {
     
@@ -8611,12 +8721,6 @@ pub mod delete_relational_database_snapshot_output {
     
     
 }
-impl DeleteRelationalDatabaseSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput).
-    pub fn builder() -> crate::output::delete_relational_database_snapshot_output::Builder {
-        crate::output::delete_relational_database_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8638,6 +8742,13 @@ impl aws_http::request_id::RequestId for DeleteRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::delete_relational_database_output::Builder {
+        crate::output::delete_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
 pub mod delete_relational_database_output {
     
@@ -8685,12 +8796,6 @@ pub mod delete_relational_database_output {
     
     
 }
-impl DeleteRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::delete_relational_database_output::Builder {
-        crate::output::delete_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8712,6 +8817,13 @@ impl aws_http::request_id::RequestId for DeleteLoadBalancerTlsCertificateOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLoadBalancerTlsCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
+    pub fn builder() -> crate::output::delete_load_balancer_tls_certificate_output::Builder {
+        crate::output::delete_load_balancer_tls_certificate_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
 pub mod delete_load_balancer_tls_certificate_output {
     
@@ -8759,12 +8871,6 @@ pub mod delete_load_balancer_tls_certificate_output {
     
     
 }
-impl DeleteLoadBalancerTlsCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput).
-    pub fn builder() -> crate::output::delete_load_balancer_tls_certificate_output::Builder {
-        crate::output::delete_load_balancer_tls_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8786,6 +8892,13 @@ impl aws_http::request_id::RequestId for DeleteLoadBalancerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
+    pub fn builder() -> crate::output::delete_load_balancer_output::Builder {
+        crate::output::delete_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
 pub mod delete_load_balancer_output {
     
@@ -8833,12 +8946,6 @@ pub mod delete_load_balancer_output {
     
     
 }
-impl DeleteLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
-    pub fn builder() -> crate::output::delete_load_balancer_output::Builder {
-        crate::output::delete_load_balancer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8860,6 +8967,13 @@ impl aws_http::request_id::RequestId for DeleteKnownHostKeysOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteKnownHostKeysOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
+    pub fn builder() -> crate::output::delete_known_host_keys_output::Builder {
+        crate::output::delete_known_host_keys_output::Builder::default()
+    }
+}
+
 /// See [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
 pub mod delete_known_host_keys_output {
     
@@ -8907,12 +9021,6 @@ pub mod delete_known_host_keys_output {
     
     
 }
-impl DeleteKnownHostKeysOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput).
-    pub fn builder() -> crate::output::delete_known_host_keys_output::Builder {
-        crate::output::delete_known_host_keys_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8934,6 +9042,13 @@ impl aws_http::request_id::RequestId for DeleteKeyPairOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteKeyPairOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
+    pub fn builder() -> crate::output::delete_key_pair_output::Builder {
+        crate::output::delete_key_pair_output::Builder::default()
+    }
+}
+
 /// See [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
 pub mod delete_key_pair_output {
     
@@ -8975,12 +9090,6 @@ pub mod delete_key_pair_output {
     
     
 }
-impl DeleteKeyPairOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput).
-    pub fn builder() -> crate::output::delete_key_pair_output::Builder {
-        crate::output::delete_key_pair_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9002,6 +9111,13 @@ impl aws_http::request_id::RequestId for DeleteInstanceSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteInstanceSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
+    pub fn builder() -> crate::output::delete_instance_snapshot_output::Builder {
+        crate::output::delete_instance_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
 pub mod delete_instance_snapshot_output {
     
@@ -9049,12 +9165,6 @@ pub mod delete_instance_snapshot_output {
     
     
 }
-impl DeleteInstanceSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput).
-    pub fn builder() -> crate::output::delete_instance_snapshot_output::Builder {
-        crate::output::delete_instance_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9076,6 +9186,13 @@ impl aws_http::request_id::RequestId for DeleteInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
+    pub fn builder() -> crate::output::delete_instance_output::Builder {
+        crate::output::delete_instance_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
 pub mod delete_instance_output {
     
@@ -9123,12 +9240,6 @@ pub mod delete_instance_output {
     
     
 }
-impl DeleteInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput).
-    pub fn builder() -> crate::output::delete_instance_output::Builder {
-        crate::output::delete_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9150,6 +9261,13 @@ impl aws_http::request_id::RequestId for DeleteDomainEntryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDomainEntryOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
+    pub fn builder() -> crate::output::delete_domain_entry_output::Builder {
+        crate::output::delete_domain_entry_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
 pub mod delete_domain_entry_output {
     
@@ -9191,12 +9309,6 @@ pub mod delete_domain_entry_output {
     
     
 }
-impl DeleteDomainEntryOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput).
-    pub fn builder() -> crate::output::delete_domain_entry_output::Builder {
-        crate::output::delete_domain_entry_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9218,6 +9330,13 @@ impl aws_http::request_id::RequestId for DeleteDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    pub fn builder() -> crate::output::delete_domain_output::Builder {
+        crate::output::delete_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
     
@@ -9259,12 +9378,6 @@ pub mod delete_domain_output {
     
     
 }
-impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    pub fn builder() -> crate::output::delete_domain_output::Builder {
-        crate::output::delete_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9286,6 +9399,13 @@ impl aws_http::request_id::RequestId for DeleteDistributionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
+    pub fn builder() -> crate::output::delete_distribution_output::Builder {
+        crate::output::delete_distribution_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
 pub mod delete_distribution_output {
     
@@ -9327,12 +9447,6 @@ pub mod delete_distribution_output {
     
     
 }
-impl DeleteDistributionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput).
-    pub fn builder() -> crate::output::delete_distribution_output::Builder {
-        crate::output::delete_distribution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9354,6 +9468,13 @@ impl aws_http::request_id::RequestId for DeleteDiskSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDiskSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
+    pub fn builder() -> crate::output::delete_disk_snapshot_output::Builder {
+        crate::output::delete_disk_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
 pub mod delete_disk_snapshot_output {
     
@@ -9401,12 +9522,6 @@ pub mod delete_disk_snapshot_output {
     
     
 }
-impl DeleteDiskSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput).
-    pub fn builder() -> crate::output::delete_disk_snapshot_output::Builder {
-        crate::output::delete_disk_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9428,6 +9543,13 @@ impl aws_http::request_id::RequestId for DeleteDiskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDiskOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
+    pub fn builder() -> crate::output::delete_disk_output::Builder {
+        crate::output::delete_disk_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
 pub mod delete_disk_output {
     
@@ -9475,12 +9597,6 @@ pub mod delete_disk_output {
     
     
 }
-impl DeleteDiskOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDiskOutput`](crate::output::DeleteDiskOutput).
-    pub fn builder() -> crate::output::delete_disk_output::Builder {
-        crate::output::delete_disk_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9493,6 +9609,13 @@ impl aws_http::request_id::RequestId for DeleteContainerServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteContainerServiceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
+    pub fn builder() -> crate::output::delete_container_service_output::Builder {
+        crate::output::delete_container_service_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
 pub mod delete_container_service_output {
     
@@ -9522,12 +9645,6 @@ pub mod delete_container_service_output {
     
     
 }
-impl DeleteContainerServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput).
-    pub fn builder() -> crate::output::delete_container_service_output::Builder {
-        crate::output::delete_container_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9540,6 +9657,13 @@ impl aws_http::request_id::RequestId for DeleteContainerImageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteContainerImageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
+    pub fn builder() -> crate::output::delete_container_image_output::Builder {
+        crate::output::delete_container_image_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
 pub mod delete_container_image_output {
     
@@ -9569,12 +9693,6 @@ pub mod delete_container_image_output {
     
     
 }
-impl DeleteContainerImageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput).
-    pub fn builder() -> crate::output::delete_container_image_output::Builder {
-        crate::output::delete_container_image_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9596,6 +9714,13 @@ impl aws_http::request_id::RequestId for DeleteContactMethodOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteContactMethodOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
+    pub fn builder() -> crate::output::delete_contact_method_output::Builder {
+        crate::output::delete_contact_method_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
 pub mod delete_contact_method_output {
     
@@ -9643,12 +9768,6 @@ pub mod delete_contact_method_output {
     
     
 }
-impl DeleteContactMethodOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput).
-    pub fn builder() -> crate::output::delete_contact_method_output::Builder {
-        crate::output::delete_contact_method_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9670,6 +9789,13 @@ impl aws_http::request_id::RequestId for DeleteCertificateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
+    pub fn builder() -> crate::output::delete_certificate_output::Builder {
+        crate::output::delete_certificate_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
     
@@ -9717,12 +9843,6 @@ pub mod delete_certificate_output {
     
     
 }
-impl DeleteCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
-    pub fn builder() -> crate::output::delete_certificate_output::Builder {
-        crate::output::delete_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9744,6 +9864,13 @@ impl aws_http::request_id::RequestId for DeleteBucketAccessKeyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBucketAccessKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
+    pub fn builder() -> crate::output::delete_bucket_access_key_output::Builder {
+        crate::output::delete_bucket_access_key_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
 pub mod delete_bucket_access_key_output {
     
@@ -9791,12 +9918,6 @@ pub mod delete_bucket_access_key_output {
     
     
 }
-impl DeleteBucketAccessKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput).
-    pub fn builder() -> crate::output::delete_bucket_access_key_output::Builder {
-        crate::output::delete_bucket_access_key_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9818,6 +9939,13 @@ impl aws_http::request_id::RequestId for DeleteBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBucketOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
+    pub fn builder() -> crate::output::delete_bucket_output::Builder {
+        crate::output::delete_bucket_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
 pub mod delete_bucket_output {
     
@@ -9865,12 +9993,6 @@ pub mod delete_bucket_output {
     
     
 }
-impl DeleteBucketOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
-    pub fn builder() -> crate::output::delete_bucket_output::Builder {
-        crate::output::delete_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9892,6 +10014,13 @@ impl aws_http::request_id::RequestId for DeleteAutoSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAutoSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
+    pub fn builder() -> crate::output::delete_auto_snapshot_output::Builder {
+        crate::output::delete_auto_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
 pub mod delete_auto_snapshot_output {
     
@@ -9939,12 +10068,6 @@ pub mod delete_auto_snapshot_output {
     
     
 }
-impl DeleteAutoSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput).
-    pub fn builder() -> crate::output::delete_auto_snapshot_output::Builder {
-        crate::output::delete_auto_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9966,6 +10089,13 @@ impl aws_http::request_id::RequestId for DeleteAlarmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
+    pub fn builder() -> crate::output::delete_alarm_output::Builder {
+        crate::output::delete_alarm_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
 pub mod delete_alarm_output {
     
@@ -10013,12 +10143,6 @@ pub mod delete_alarm_output {
     
     
 }
-impl DeleteAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput).
-    pub fn builder() -> crate::output::delete_alarm_output::Builder {
-        crate::output::delete_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10040,6 +10164,13 @@ impl aws_http::request_id::RequestId for CreateRelationalDatabaseSnapshotOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRelationalDatabaseSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
+    pub fn builder() -> crate::output::create_relational_database_snapshot_output::Builder {
+        crate::output::create_relational_database_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
 pub mod create_relational_database_snapshot_output {
     
@@ -10087,12 +10218,6 @@ pub mod create_relational_database_snapshot_output {
     
     
 }
-impl CreateRelationalDatabaseSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput).
-    pub fn builder() -> crate::output::create_relational_database_snapshot_output::Builder {
-        crate::output::create_relational_database_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10114,6 +10239,13 @@ impl aws_http::request_id::RequestId for CreateRelationalDatabaseFromSnapshotOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRelationalDatabaseFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
+    pub fn builder() -> crate::output::create_relational_database_from_snapshot_output::Builder {
+        crate::output::create_relational_database_from_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
 pub mod create_relational_database_from_snapshot_output {
     
@@ -10161,12 +10293,6 @@ pub mod create_relational_database_from_snapshot_output {
     
     
 }
-impl CreateRelationalDatabaseFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput).
-    pub fn builder() -> crate::output::create_relational_database_from_snapshot_output::Builder {
-        crate::output::create_relational_database_from_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10188,6 +10314,13 @@ impl aws_http::request_id::RequestId for CreateRelationalDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRelationalDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
+    pub fn builder() -> crate::output::create_relational_database_output::Builder {
+        crate::output::create_relational_database_output::Builder::default()
+    }
+}
+
 /// See [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
 pub mod create_relational_database_output {
     
@@ -10235,12 +10368,6 @@ pub mod create_relational_database_output {
     
     
 }
-impl CreateRelationalDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput).
-    pub fn builder() -> crate::output::create_relational_database_output::Builder {
-        crate::output::create_relational_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10262,6 +10389,13 @@ impl aws_http::request_id::RequestId for CreateLoadBalancerTlsCertificateOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLoadBalancerTlsCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
+    pub fn builder() -> crate::output::create_load_balancer_tls_certificate_output::Builder {
+        crate::output::create_load_balancer_tls_certificate_output::Builder::default()
+    }
+}
+
 /// See [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
 pub mod create_load_balancer_tls_certificate_output {
     
@@ -10309,12 +10443,6 @@ pub mod create_load_balancer_tls_certificate_output {
     
     
 }
-impl CreateLoadBalancerTlsCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput).
-    pub fn builder() -> crate::output::create_load_balancer_tls_certificate_output::Builder {
-        crate::output::create_load_balancer_tls_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10336,6 +10464,13 @@ impl aws_http::request_id::RequestId for CreateLoadBalancerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
+    pub fn builder() -> crate::output::create_load_balancer_output::Builder {
+        crate::output::create_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
 pub mod create_load_balancer_output {
     
@@ -10383,12 +10518,6 @@ pub mod create_load_balancer_output {
     
     
 }
-impl CreateLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
-    pub fn builder() -> crate::output::create_load_balancer_output::Builder {
-        crate::output::create_load_balancer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10431,6 +10560,13 @@ impl aws_http::request_id::RequestId for CreateKeyPairOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateKeyPairOutput {
+    /// Creates a new builder-style object to manufacture [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
+    pub fn builder() -> crate::output::create_key_pair_output::Builder {
+        crate::output::create_key_pair_output::Builder::default()
+    }
+}
+
 /// See [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
 pub mod create_key_pair_output {
     
@@ -10508,12 +10644,6 @@ pub mod create_key_pair_output {
     
     
 }
-impl CreateKeyPairOutput {
-    /// Creates a new builder-style object to manufacture [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput).
-    pub fn builder() -> crate::output::create_key_pair_output::Builder {
-        crate::output::create_key_pair_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10535,6 +10665,13 @@ impl aws_http::request_id::RequestId for CreateInstanceSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateInstanceSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
+    pub fn builder() -> crate::output::create_instance_snapshot_output::Builder {
+        crate::output::create_instance_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
 pub mod create_instance_snapshot_output {
     
@@ -10582,12 +10719,6 @@ pub mod create_instance_snapshot_output {
     
     
 }
-impl CreateInstanceSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput).
-    pub fn builder() -> crate::output::create_instance_snapshot_output::Builder {
-        crate::output::create_instance_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10609,6 +10740,13 @@ impl aws_http::request_id::RequestId for CreateInstancesFromSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateInstancesFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
+    pub fn builder() -> crate::output::create_instances_from_snapshot_output::Builder {
+        crate::output::create_instances_from_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
 pub mod create_instances_from_snapshot_output {
     
@@ -10656,12 +10794,6 @@ pub mod create_instances_from_snapshot_output {
     
     
 }
-impl CreateInstancesFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput).
-    pub fn builder() -> crate::output::create_instances_from_snapshot_output::Builder {
-        crate::output::create_instances_from_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10683,6 +10815,13 @@ impl aws_http::request_id::RequestId for CreateInstancesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
+    pub fn builder() -> crate::output::create_instances_output::Builder {
+        crate::output::create_instances_output::Builder::default()
+    }
+}
+
 /// See [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
 pub mod create_instances_output {
     
@@ -10730,12 +10869,6 @@ pub mod create_instances_output {
     
     
 }
-impl CreateInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInstancesOutput`](crate::output::CreateInstancesOutput).
-    pub fn builder() -> crate::output::create_instances_output::Builder {
-        crate::output::create_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10757,6 +10890,13 @@ impl aws_http::request_id::RequestId for CreateDomainEntryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDomainEntryOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
+    pub fn builder() -> crate::output::create_domain_entry_output::Builder {
+        crate::output::create_domain_entry_output::Builder::default()
+    }
+}
+
 /// See [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
 pub mod create_domain_entry_output {
     
@@ -10798,12 +10938,6 @@ pub mod create_domain_entry_output {
     
     
 }
-impl CreateDomainEntryOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput).
-    pub fn builder() -> crate::output::create_domain_entry_output::Builder {
-        crate::output::create_domain_entry_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10825,6 +10959,13 @@ impl aws_http::request_id::RequestId for CreateDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    pub fn builder() -> crate::output::create_domain_output::Builder {
+        crate::output::create_domain_output::Builder::default()
+    }
+}
+
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
     
@@ -10866,12 +11007,6 @@ pub mod create_domain_output {
     
     
 }
-impl CreateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    pub fn builder() -> crate::output::create_domain_output::Builder {
-        crate::output::create_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10900,6 +11035,13 @@ impl aws_http::request_id::RequestId for CreateDistributionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
+    pub fn builder() -> crate::output::create_distribution_output::Builder {
+        crate::output::create_distribution_output::Builder::default()
+    }
+}
+
 /// See [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
 pub mod create_distribution_output {
     
@@ -10953,12 +11095,6 @@ pub mod create_distribution_output {
     
     
 }
-impl CreateDistributionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDistributionOutput`](crate::output::CreateDistributionOutput).
-    pub fn builder() -> crate::output::create_distribution_output::Builder {
-        crate::output::create_distribution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10980,6 +11116,13 @@ impl aws_http::request_id::RequestId for CreateDiskSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDiskSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
+    pub fn builder() -> crate::output::create_disk_snapshot_output::Builder {
+        crate::output::create_disk_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
 pub mod create_disk_snapshot_output {
     
@@ -11027,12 +11170,6 @@ pub mod create_disk_snapshot_output {
     
     
 }
-impl CreateDiskSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput).
-    pub fn builder() -> crate::output::create_disk_snapshot_output::Builder {
-        crate::output::create_disk_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11054,6 +11191,13 @@ impl aws_http::request_id::RequestId for CreateDiskFromSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDiskFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
+    pub fn builder() -> crate::output::create_disk_from_snapshot_output::Builder {
+        crate::output::create_disk_from_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
 pub mod create_disk_from_snapshot_output {
     
@@ -11101,12 +11245,6 @@ pub mod create_disk_from_snapshot_output {
     
     
 }
-impl CreateDiskFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput).
-    pub fn builder() -> crate::output::create_disk_from_snapshot_output::Builder {
-        crate::output::create_disk_from_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11128,6 +11266,13 @@ impl aws_http::request_id::RequestId for CreateDiskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDiskOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDiskOutput`](crate::output::CreateDiskOutput).
+    pub fn builder() -> crate::output::create_disk_output::Builder {
+        crate::output::create_disk_output::Builder::default()
+    }
+}
+
 /// See [`CreateDiskOutput`](crate::output::CreateDiskOutput).
 pub mod create_disk_output {
     
@@ -11175,12 +11320,6 @@ pub mod create_disk_output {
     
     
 }
-impl CreateDiskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDiskOutput`](crate::output::CreateDiskOutput).
-    pub fn builder() -> crate::output::create_disk_output::Builder {
-        crate::output::create_disk_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11202,6 +11341,13 @@ impl aws_http::request_id::RequestId for CreateContainerServiceRegistryLoginOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateContainerServiceRegistryLoginOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
+    pub fn builder() -> crate::output::create_container_service_registry_login_output::Builder {
+        crate::output::create_container_service_registry_login_output::Builder::default()
+    }
+}
+
 /// See [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
 pub mod create_container_service_registry_login_output {
     
@@ -11243,12 +11389,6 @@ pub mod create_container_service_registry_login_output {
     
     
 }
-impl CreateContainerServiceRegistryLoginOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput).
-    pub fn builder() -> crate::output::create_container_service_registry_login_output::Builder {
-        crate::output::create_container_service_registry_login_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11270,6 +11410,13 @@ impl aws_http::request_id::RequestId for CreateContainerServiceDeploymentOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateContainerServiceDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
+    pub fn builder() -> crate::output::create_container_service_deployment_output::Builder {
+        crate::output::create_container_service_deployment_output::Builder::default()
+    }
+}
+
 /// See [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
 pub mod create_container_service_deployment_output {
     
@@ -11311,12 +11458,6 @@ pub mod create_container_service_deployment_output {
     
     
 }
-impl CreateContainerServiceDeploymentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput).
-    pub fn builder() -> crate::output::create_container_service_deployment_output::Builder {
-        crate::output::create_container_service_deployment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11338,6 +11479,13 @@ impl aws_http::request_id::RequestId for CreateContainerServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateContainerServiceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
+    pub fn builder() -> crate::output::create_container_service_output::Builder {
+        crate::output::create_container_service_output::Builder::default()
+    }
+}
+
 /// See [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
 pub mod create_container_service_output {
     
@@ -11379,12 +11527,6 @@ pub mod create_container_service_output {
     
     
 }
-impl CreateContainerServiceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput).
-    pub fn builder() -> crate::output::create_container_service_output::Builder {
-        crate::output::create_container_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11406,6 +11548,13 @@ impl aws_http::request_id::RequestId for CreateContactMethodOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateContactMethodOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
+    pub fn builder() -> crate::output::create_contact_method_output::Builder {
+        crate::output::create_contact_method_output::Builder::default()
+    }
+}
+
 /// See [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
 pub mod create_contact_method_output {
     
@@ -11453,12 +11602,6 @@ pub mod create_contact_method_output {
     
     
 }
-impl CreateContactMethodOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput).
-    pub fn builder() -> crate::output::create_contact_method_output::Builder {
-        crate::output::create_contact_method_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11480,6 +11623,13 @@ impl aws_http::request_id::RequestId for CreateCloudFormationStackOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCloudFormationStackOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
+    pub fn builder() -> crate::output::create_cloud_formation_stack_output::Builder {
+        crate::output::create_cloud_formation_stack_output::Builder::default()
+    }
+}
+
 /// See [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
 pub mod create_cloud_formation_stack_output {
     
@@ -11527,12 +11677,6 @@ pub mod create_cloud_formation_stack_output {
     
     
 }
-impl CreateCloudFormationStackOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput).
-    pub fn builder() -> crate::output::create_cloud_formation_stack_output::Builder {
-        crate::output::create_cloud_formation_stack_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11561,6 +11705,13 @@ impl aws_http::request_id::RequestId for CreateCertificateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
+    pub fn builder() -> crate::output::create_certificate_output::Builder {
+        crate::output::create_certificate_output::Builder::default()
+    }
+}
+
 /// See [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
 pub mod create_certificate_output {
     
@@ -11620,12 +11771,6 @@ pub mod create_certificate_output {
     
     
 }
-impl CreateCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCertificateOutput`](crate::output::CreateCertificateOutput).
-    pub fn builder() -> crate::output::create_certificate_output::Builder {
-        crate::output::create_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11654,6 +11799,13 @@ impl aws_http::request_id::RequestId for CreateBucketAccessKeyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBucketAccessKeyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
+    pub fn builder() -> crate::output::create_bucket_access_key_output::Builder {
+        crate::output::create_bucket_access_key_output::Builder::default()
+    }
+}
+
 /// See [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
 pub mod create_bucket_access_key_output {
     
@@ -11713,12 +11865,6 @@ pub mod create_bucket_access_key_output {
     
     
 }
-impl CreateBucketAccessKeyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput).
-    pub fn builder() -> crate::output::create_bucket_access_key_output::Builder {
-        crate::output::create_bucket_access_key_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11747,6 +11893,13 @@ impl aws_http::request_id::RequestId for CreateBucketOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBucketOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
+    pub fn builder() -> crate::output::create_bucket_output::Builder {
+        crate::output::create_bucket_output::Builder::default()
+    }
+}
+
 /// See [`CreateBucketOutput`](crate::output::CreateBucketOutput).
 pub mod create_bucket_output {
     
@@ -11806,12 +11959,6 @@ pub mod create_bucket_output {
     
     
 }
-impl CreateBucketOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
-    pub fn builder() -> crate::output::create_bucket_output::Builder {
-        crate::output::create_bucket_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11833,6 +11980,13 @@ impl aws_http::request_id::RequestId for CopySnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CopySnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
+    pub fn builder() -> crate::output::copy_snapshot_output::Builder {
+        crate::output::copy_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
 pub mod copy_snapshot_output {
     
@@ -11880,12 +12034,6 @@ pub mod copy_snapshot_output {
     
     
 }
-impl CopySnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
-    pub fn builder() -> crate::output::copy_snapshot_output::Builder {
-        crate::output::copy_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11907,6 +12055,13 @@ impl aws_http::request_id::RequestId for CloseInstancePublicPortsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CloseInstancePublicPortsOutput {
+    /// Creates a new builder-style object to manufacture [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
+    pub fn builder() -> crate::output::close_instance_public_ports_output::Builder {
+        crate::output::close_instance_public_ports_output::Builder::default()
+    }
+}
+
 /// See [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
 pub mod close_instance_public_ports_output {
     
@@ -11948,12 +12103,6 @@ pub mod close_instance_public_ports_output {
     
     
 }
-impl CloseInstancePublicPortsOutput {
-    /// Creates a new builder-style object to manufacture [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput).
-    pub fn builder() -> crate::output::close_instance_public_ports_output::Builder {
-        crate::output::close_instance_public_ports_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11975,6 +12124,13 @@ impl aws_http::request_id::RequestId for AttachStaticIpOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AttachStaticIpOutput {
+    /// Creates a new builder-style object to manufacture [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
+    pub fn builder() -> crate::output::attach_static_ip_output::Builder {
+        crate::output::attach_static_ip_output::Builder::default()
+    }
+}
+
 /// See [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
 pub mod attach_static_ip_output {
     
@@ -12022,12 +12178,6 @@ pub mod attach_static_ip_output {
     
     
 }
-impl AttachStaticIpOutput {
-    /// Creates a new builder-style object to manufacture [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput).
-    pub fn builder() -> crate::output::attach_static_ip_output::Builder {
-        crate::output::attach_static_ip_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12051,6 +12201,13 @@ impl aws_http::request_id::RequestId for AttachLoadBalancerTlsCertificateOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl AttachLoadBalancerTlsCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
+    pub fn builder() -> crate::output::attach_load_balancer_tls_certificate_output::Builder {
+        crate::output::attach_load_balancer_tls_certificate_output::Builder::default()
+    }
+}
+
 /// See [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
 pub mod attach_load_balancer_tls_certificate_output {
     
@@ -12100,12 +12257,6 @@ pub mod attach_load_balancer_tls_certificate_output {
     
     
 }
-impl AttachLoadBalancerTlsCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput).
-    pub fn builder() -> crate::output::attach_load_balancer_tls_certificate_output::Builder {
-        crate::output::attach_load_balancer_tls_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12127,6 +12278,13 @@ impl aws_http::request_id::RequestId for AttachInstancesToLoadBalancerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AttachInstancesToLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
+    pub fn builder() -> crate::output::attach_instances_to_load_balancer_output::Builder {
+        crate::output::attach_instances_to_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
 pub mod attach_instances_to_load_balancer_output {
     
@@ -12174,12 +12332,6 @@ pub mod attach_instances_to_load_balancer_output {
     
     
 }
-impl AttachInstancesToLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput).
-    pub fn builder() -> crate::output::attach_instances_to_load_balancer_output::Builder {
-        crate::output::attach_instances_to_load_balancer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12201,6 +12353,13 @@ impl aws_http::request_id::RequestId for AttachDiskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AttachDiskOutput {
+    /// Creates a new builder-style object to manufacture [`AttachDiskOutput`](crate::output::AttachDiskOutput).
+    pub fn builder() -> crate::output::attach_disk_output::Builder {
+        crate::output::attach_disk_output::Builder::default()
+    }
+}
+
 /// See [`AttachDiskOutput`](crate::output::AttachDiskOutput).
 pub mod attach_disk_output {
     
@@ -12248,12 +12407,6 @@ pub mod attach_disk_output {
     
     
 }
-impl AttachDiskOutput {
-    /// Creates a new builder-style object to manufacture [`AttachDiskOutput`](crate::output::AttachDiskOutput).
-    pub fn builder() -> crate::output::attach_disk_output::Builder {
-        crate::output::attach_disk_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12275,6 +12428,13 @@ impl aws_http::request_id::RequestId for AttachCertificateToDistributionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AttachCertificateToDistributionOutput {
+    /// Creates a new builder-style object to manufacture [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
+    pub fn builder() -> crate::output::attach_certificate_to_distribution_output::Builder {
+        crate::output::attach_certificate_to_distribution_output::Builder::default()
+    }
+}
+
 /// See [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
 pub mod attach_certificate_to_distribution_output {
     
@@ -12316,12 +12476,6 @@ pub mod attach_certificate_to_distribution_output {
     
     
 }
-impl AttachCertificateToDistributionOutput {
-    /// Creates a new builder-style object to manufacture [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput).
-    pub fn builder() -> crate::output::attach_certificate_to_distribution_output::Builder {
-        crate::output::attach_certificate_to_distribution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -12343,6 +12497,13 @@ impl aws_http::request_id::RequestId for AllocateStaticIpOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AllocateStaticIpOutput {
+    /// Creates a new builder-style object to manufacture [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
+    pub fn builder() -> crate::output::allocate_static_ip_output::Builder {
+        crate::output::allocate_static_ip_output::Builder::default()
+    }
+}
+
 /// See [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
 pub mod allocate_static_ip_output {
     
@@ -12389,11 +12550,5 @@ pub mod allocate_static_ip_output {
     }
     
     
-}
-impl AllocateStaticIpOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput).
-    pub fn builder() -> crate::output::allocate_static_ip_output::Builder {
-        crate::output::allocate_static_ip_output::Builder::default()
-    }
 }
 

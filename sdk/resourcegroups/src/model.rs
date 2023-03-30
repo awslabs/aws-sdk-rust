@@ -21,6 +21,13 @@ impl GroupQuery {
         self.resource_query.as_ref()
     }
 }
+impl GroupQuery {
+    /// Creates a new builder-style object to manufacture [`GroupQuery`](crate::model::GroupQuery).
+    pub fn builder() -> crate::model::group_query::Builder {
+        crate::model::group_query::Builder::default()
+    }
+}
+
 /// See [`GroupQuery`](crate::model::GroupQuery).
 pub mod group_query {
     
@@ -62,12 +69,6 @@ pub mod group_query {
     }
     
     
-}
-impl GroupQuery {
-    /// Creates a new builder-style object to manufacture [`GroupQuery`](crate::model::GroupQuery).
-    pub fn builder() -> crate::model::group_query::Builder {
-        crate::model::group_query::Builder::default()
-    }
 }
 
 /// <p>The query you can use to define a resource group or a search for resources. A <code>ResourceQuery</code> specifies both a query <code>Type</code> and a <code>Query</code> string as JSON string objects. See the examples section for example JSON strings. For more information about creating a resource group with a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html">Build queries and groups in Resource Groups</a> in the <i>Resource Groups User Guide</i> </p> 
@@ -138,6 +139,13 @@ impl ResourceQuery {
         self.query.as_deref()
     }
 }
+impl ResourceQuery {
+    /// Creates a new builder-style object to manufacture [`ResourceQuery`](crate::model::ResourceQuery).
+    pub fn builder() -> crate::model::resource_query::Builder {
+        crate::model::resource_query::Builder::default()
+    }
+}
+
 /// See [`ResourceQuery`](crate::model::ResourceQuery).
 pub mod resource_query {
     
@@ -221,12 +229,6 @@ pub mod resource_query {
     }
     
     
-}
-impl ResourceQuery {
-    /// Creates a new builder-style object to manufacture [`ResourceQuery`](crate::model::ResourceQuery).
-    pub fn builder() -> crate::model::resource_query::Builder {
-        crate::model::resource_query::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryType`, it is important to ensure
@@ -343,6 +345,13 @@ impl Group {
         self.description.as_deref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
     
@@ -397,12 +406,6 @@ pub mod group {
     
     
 }
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
-}
 
 /// <p>The Resource Groups settings for this Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -432,6 +435,13 @@ impl AccountSettings {
         self.group_lifecycle_events_status_message.as_deref()
     }
 }
+impl AccountSettings {
+    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
+    pub fn builder() -> crate::model::account_settings::Builder {
+        crate::model::account_settings::Builder::default()
+    }
+}
+
 /// See [`AccountSettings`](crate::model::AccountSettings).
 pub mod account_settings {
     
@@ -485,12 +495,6 @@ pub mod account_settings {
     }
     
     
-}
-impl AccountSettings {
-    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
-    pub fn builder() -> crate::model::account_settings::Builder {
-        crate::model::account_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GroupLifecycleEventsStatus`, it is important to ensure
@@ -681,6 +685,13 @@ impl PendingResource {
         self.resource_arn.as_deref()
     }
 }
+impl PendingResource {
+    /// Creates a new builder-style object to manufacture [`PendingResource`](crate::model::PendingResource).
+    pub fn builder() -> crate::model::pending_resource::Builder {
+        crate::model::pending_resource::Builder::default()
+    }
+}
+
 /// See [`PendingResource`](crate::model::PendingResource).
 pub mod pending_resource {
     
@@ -711,12 +722,6 @@ pub mod pending_resource {
     
     
 }
-impl PendingResource {
-    /// Creates a new builder-style object to manufacture [`PendingResource`](crate::model::PendingResource).
-    pub fn builder() -> crate::model::pending_resource::Builder {
-        crate::model::pending_resource::Builder::default()
-    }
-}
 
 /// <p>A resource that failed to be added to or removed from a group.</p>
 #[non_exhaustive]
@@ -746,6 +751,13 @@ impl FailedResource {
         self.error_code.as_deref()
     }
 }
+impl FailedResource {
+    /// Creates a new builder-style object to manufacture [`FailedResource`](crate::model::FailedResource).
+    pub fn builder() -> crate::model::failed_resource::Builder {
+        crate::model::failed_resource::Builder::default()
+    }
+}
+
 /// See [`FailedResource`](crate::model::FailedResource).
 pub mod failed_resource {
     
@@ -800,12 +812,6 @@ pub mod failed_resource {
     
     
 }
-impl FailedResource {
-    /// Creates a new builder-style object to manufacture [`FailedResource`](crate::model::FailedResource).
-    pub fn builder() -> crate::model::failed_resource::Builder {
-        crate::model::failed_resource::Builder::default()
-    }
-}
 
 /// <p>A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFront stack-based queries. The error occurs if the CloudFront stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that Resource Groups could not complete the operation, but the resulting group might have no member resources.</p>
 #[non_exhaustive]
@@ -828,6 +834,13 @@ impl QueryError {
         self.message.as_deref()
     }
 }
+impl QueryError {
+    /// Creates a new builder-style object to manufacture [`QueryError`](crate::model::QueryError).
+    pub fn builder() -> crate::model::query_error::Builder {
+        crate::model::query_error::Builder::default()
+    }
+}
+
 /// See [`QueryError`](crate::model::QueryError).
 pub mod query_error {
     
@@ -869,12 +882,6 @@ pub mod query_error {
     }
     
     
-}
-impl QueryError {
-    /// Creates a new builder-style object to manufacture [`QueryError`](crate::model::QueryError).
-    pub fn builder() -> crate::model::query_error::Builder {
-        crate::model::query_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryErrorCode`, it is important to ensure
@@ -985,6 +992,13 @@ impl ResourceIdentifier {
         self.resource_type.as_deref()
     }
 }
+impl ResourceIdentifier {
+    /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
+    pub fn builder() -> crate::model::resource_identifier::Builder {
+        crate::model::resource_identifier::Builder::default()
+    }
+}
+
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
 pub mod resource_identifier {
     
@@ -1027,12 +1041,6 @@ pub mod resource_identifier {
     
     
 }
-impl ResourceIdentifier {
-    /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
-    pub fn builder() -> crate::model::resource_identifier::Builder {
-        crate::model::resource_identifier::Builder::default()
-    }
-}
 
 /// <p>An item in a group configuration. A group service configuration can have one or more items. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
@@ -1055,6 +1063,13 @@ impl GroupConfigurationItem {
         self.parameters.as_deref()
     }
 }
+impl GroupConfigurationItem {
+    /// Creates a new builder-style object to manufacture [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
+    pub fn builder() -> crate::model::group_configuration_item::Builder {
+        crate::model::group_configuration_item::Builder::default()
+    }
+}
+
 /// See [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
 pub mod group_configuration_item {
     
@@ -1103,12 +1118,6 @@ pub mod group_configuration_item {
     
     
 }
-impl GroupConfigurationItem {
-    /// Creates a new builder-style object to manufacture [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
-    pub fn builder() -> crate::model::group_configuration_item::Builder {
-        crate::model::group_configuration_item::Builder::default()
-    }
-}
 
 /// <p>A parameter for a group configuration item. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
@@ -1131,6 +1140,13 @@ impl GroupConfigurationParameter {
         self.values.as_deref()
     }
 }
+impl GroupConfigurationParameter {
+    /// Creates a new builder-style object to manufacture [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
+    pub fn builder() -> crate::model::group_configuration_parameter::Builder {
+        crate::model::group_configuration_parameter::Builder::default()
+    }
+}
+
 /// See [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
 pub mod group_configuration_parameter {
     
@@ -1179,12 +1195,6 @@ pub mod group_configuration_parameter {
     
     
 }
-impl GroupConfigurationParameter {
-    /// Creates a new builder-style object to manufacture [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
-    pub fn builder() -> crate::model::group_configuration_parameter::Builder {
-        crate::model::group_configuration_parameter::Builder::default()
-    }
-}
 
 /// <p>The unique identifiers for a resource group.</p>
 #[non_exhaustive]
@@ -1207,6 +1217,13 @@ impl GroupIdentifier {
         self.group_arn.as_deref()
     }
 }
+impl GroupIdentifier {
+    /// Creates a new builder-style object to manufacture [`GroupIdentifier`](crate::model::GroupIdentifier).
+    pub fn builder() -> crate::model::group_identifier::Builder {
+        crate::model::group_identifier::Builder::default()
+    }
+}
+
 /// See [`GroupIdentifier`](crate::model::GroupIdentifier).
 pub mod group_identifier {
     
@@ -1249,12 +1266,6 @@ pub mod group_identifier {
     
     
 }
-impl GroupIdentifier {
-    /// Creates a new builder-style object to manufacture [`GroupIdentifier`](crate::model::GroupIdentifier).
-    pub fn builder() -> crate::model::group_identifier::Builder {
-        crate::model::group_identifier::Builder::default()
-    }
-}
 
 /// <p>A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.</p>
 #[non_exhaustive]
@@ -1277,6 +1288,13 @@ impl GroupFilter {
         self.values.as_deref()
     }
 }
+impl GroupFilter {
+    /// Creates a new builder-style object to manufacture [`GroupFilter`](crate::model::GroupFilter).
+    pub fn builder() -> crate::model::group_filter::Builder {
+        crate::model::group_filter::Builder::default()
+    }
+}
+
 /// See [`GroupFilter`](crate::model::GroupFilter).
 pub mod group_filter {
     
@@ -1324,12 +1342,6 @@ pub mod group_filter {
     }
     
     
-}
-impl GroupFilter {
-    /// Creates a new builder-style object to manufacture [`GroupFilter`](crate::model::GroupFilter).
-    pub fn builder() -> crate::model::group_filter::Builder {
-        crate::model::group_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GroupFilterName`, it is important to ensure
@@ -1439,6 +1451,13 @@ impl ListGroupResourcesItem {
         self.status.as_ref()
     }
 }
+impl ListGroupResourcesItem {
+    /// Creates a new builder-style object to manufacture [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
+    pub fn builder() -> crate::model::list_group_resources_item::Builder {
+        crate::model::list_group_resources_item::Builder::default()
+    }
+}
+
 /// See [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
 pub mod list_group_resources_item {
     
@@ -1485,12 +1504,6 @@ pub mod list_group_resources_item {
     
     
 }
-impl ListGroupResourcesItem {
-    /// Creates a new builder-style object to manufacture [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
-    pub fn builder() -> crate::model::list_group_resources_item::Builder {
-        crate::model::list_group_resources_item::Builder::default()
-    }
-}
 
 /// <p>A structure that identifies the current group membership status for a resource. Adding a resource to a resource group is performed asynchronously as a background task. A <code>PENDING</code> status indicates, for this resource, that the process isn't completed yet.</p>
 #[non_exhaustive]
@@ -1506,6 +1519,13 @@ impl ResourceStatus {
         self.name.as_ref()
     }
 }
+impl ResourceStatus {
+    /// Creates a new builder-style object to manufacture [`ResourceStatus`](crate::model::ResourceStatus).
+    pub fn builder() -> crate::model::resource_status::Builder {
+        crate::model::resource_status::Builder::default()
+    }
+}
+
 /// See [`ResourceStatus`](crate::model::ResourceStatus).
 pub mod resource_status {
     
@@ -1535,12 +1555,6 @@ pub mod resource_status {
     }
     
     
-}
-impl ResourceStatus {
-    /// Creates a new builder-style object to manufacture [`ResourceStatus`](crate::model::ResourceStatus).
-    pub fn builder() -> crate::model::resource_status::Builder {
-        crate::model::resource_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceStatusValue`, it is important to ensure
@@ -1641,6 +1655,13 @@ impl ResourceFilter {
         self.values.as_deref()
     }
 }
+impl ResourceFilter {
+    /// Creates a new builder-style object to manufacture [`ResourceFilter`](crate::model::ResourceFilter).
+    pub fn builder() -> crate::model::resource_filter::Builder {
+        crate::model::resource_filter::Builder::default()
+    }
+}
+
 /// See [`ResourceFilter`](crate::model::ResourceFilter).
 pub mod resource_filter {
     
@@ -1688,12 +1709,6 @@ pub mod resource_filter {
     }
     
     
-}
-impl ResourceFilter {
-    /// Creates a new builder-style object to manufacture [`ResourceFilter`](crate::model::ResourceFilter).
-    pub fn builder() -> crate::model::resource_filter::Builder {
-        crate::model::resource_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceFilterName`, it is important to ensure
@@ -1808,6 +1823,13 @@ impl GroupConfiguration {
         self.failure_reason.as_deref()
     }
 }
+impl GroupConfiguration {
+    /// Creates a new builder-style object to manufacture [`GroupConfiguration`](crate::model::GroupConfiguration).
+    pub fn builder() -> crate::model::group_configuration::Builder {
+        crate::model::group_configuration::Builder::default()
+    }
+}
+
 /// See [`GroupConfiguration`](crate::model::GroupConfiguration).
 pub mod group_configuration {
     
@@ -1885,12 +1907,6 @@ pub mod group_configuration {
     }
     
     
-}
-impl GroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`GroupConfiguration`](crate::model::GroupConfiguration).
-    pub fn builder() -> crate::model::group_configuration::Builder {
-        crate::model::group_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GroupConfigurationStatus`, it is important to ensure

@@ -42,6 +42,13 @@ impl VpceConfiguration {
         self.vpce_configuration_description.as_deref()
     }
 }
+impl VpceConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpceConfiguration`](crate::model::VpceConfiguration).
+    pub fn builder() -> crate::model::vpce_configuration::Builder {
+        crate::model::vpce_configuration::Builder::default()
+    }
+}
+
 /// See [`VpceConfiguration`](crate::model::VpceConfiguration).
 pub mod vpce_configuration {
     
@@ -119,12 +126,6 @@ pub mod vpce_configuration {
     }
     
     
-}
-impl VpceConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpceConfiguration`](crate::model::VpceConfiguration).
-    pub fn builder() -> crate::model::vpce_configuration::Builder {
-        crate::model::vpce_configuration::Builder::default()
-    }
 }
 
 /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
@@ -312,6 +313,13 @@ impl  std::fmt::Debug for Upload  {
         formatter.finish()
     }
 }
+impl Upload {
+    /// Creates a new builder-style object to manufacture [`Upload`](crate::model::Upload).
+    pub fn builder() -> crate::model::upload::Builder {
+        crate::model::upload::Builder::default()
+    }
+}
+
 /// See [`Upload`](crate::model::Upload).
 pub mod upload {
     
@@ -557,12 +565,6 @@ pub mod upload {
     }
     
     
-}
-impl Upload {
-    /// Creates a new builder-style object to manufacture [`Upload`](crate::model::Upload).
-    pub fn builder() -> crate::model::upload::Builder {
-        crate::model::upload::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UploadCategory`, it is important to ensure
@@ -1013,6 +1015,13 @@ impl TestGridProject {
         self.created.as_ref()
     }
 }
+impl TestGridProject {
+    /// Creates a new builder-style object to manufacture [`TestGridProject`](crate::model::TestGridProject).
+    pub fn builder() -> crate::model::test_grid_project::Builder {
+        crate::model::test_grid_project::Builder::default()
+    }
+}
+
 /// See [`TestGridProject`](crate::model::TestGridProject).
 pub mod test_grid_project {
     
@@ -1091,12 +1100,6 @@ pub mod test_grid_project {
     
     
 }
-impl TestGridProject {
-    /// Creates a new builder-style object to manufacture [`TestGridProject`](crate::model::TestGridProject).
-    pub fn builder() -> crate::model::test_grid_project::Builder {
-        crate::model::test_grid_project::Builder::default()
-    }
-}
 
 /// <p>The VPC security groups and subnets that are attached to a project.</p>
 #[non_exhaustive]
@@ -1126,6 +1129,13 @@ impl TestGridVpcConfig {
         self.vpc_id.as_deref()
     }
 }
+impl TestGridVpcConfig {
+    /// Creates a new builder-style object to manufacture [`TestGridVpcConfig`](crate::model::TestGridVpcConfig).
+    pub fn builder() -> crate::model::test_grid_vpc_config::Builder {
+        crate::model::test_grid_vpc_config::Builder::default()
+    }
+}
+
 /// See [`TestGridVpcConfig`](crate::model::TestGridVpcConfig).
 pub mod test_grid_vpc_config {
     
@@ -1192,12 +1202,6 @@ pub mod test_grid_vpc_config {
     
     
 }
-impl TestGridVpcConfig {
-    /// Creates a new builder-style object to manufacture [`TestGridVpcConfig`](crate::model::TestGridVpcConfig).
-    pub fn builder() -> crate::model::test_grid_vpc_config::Builder {
-        crate::model::test_grid_vpc_config::Builder::default()
-    }
-}
 
 /// <p>Represents an operating-system neutral workspace for running and managing tests.</p>
 #[non_exhaustive]
@@ -1241,6 +1245,13 @@ impl Project {
         self.vpc_config.as_ref()
     }
 }
+impl Project {
+    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
+    pub fn builder() -> crate::model::project::Builder {
+        crate::model::project::Builder::default()
+    }
+}
+
 /// See [`Project`](crate::model::Project).
 pub mod project {
     
@@ -1319,12 +1330,6 @@ pub mod project {
     
     
 }
-impl Project {
-    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
-    pub fn builder() -> crate::model::project::Builder {
-        crate::model::project::Builder::default()
-    }
-}
 
 /// <p>Contains the VPC configuration data necessary to interface with AWS Device Farm's services.</p>
 #[non_exhaustive]
@@ -1354,6 +1359,13 @@ impl VpcConfig {
         self.vpc_id.as_deref()
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
     
@@ -1419,12 +1431,6 @@ pub mod vpc_config {
     }
     
     
-}
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
-    }
 }
 
 /// <p>An array of settings that describes characteristics of a network profile.</p>
@@ -1518,6 +1524,13 @@ impl NetworkProfile {
         self.downlink_loss_percent
     }
 }
+impl NetworkProfile {
+    /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
+    pub fn builder() -> crate::model::network_profile::Builder {
+        crate::model::network_profile::Builder::default()
+    }
+}
+
 /// See [`NetworkProfile`](crate::model::NetworkProfile).
 pub mod network_profile {
     
@@ -1682,12 +1695,6 @@ pub mod network_profile {
     
     
 }
-impl NetworkProfile {
-    /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
-    pub fn builder() -> crate::model::network_profile::Builder {
-        crate::model::network_profile::Builder::default()
-    }
-}
 
 /// When writing a match expression against `NetworkProfileType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1822,6 +1829,13 @@ impl InstanceProfile {
         self.description.as_deref()
     }
 }
+impl InstanceProfile {
+    /// Creates a new builder-style object to manufacture [`InstanceProfile`](crate::model::InstanceProfile).
+    pub fn builder() -> crate::model::instance_profile::Builder {
+        crate::model::instance_profile::Builder::default()
+    }
+}
+
 /// See [`InstanceProfile`](crate::model::InstanceProfile).
 pub mod instance_profile {
     
@@ -1920,12 +1934,6 @@ pub mod instance_profile {
     
     
 }
-impl InstanceProfile {
-    /// Creates a new builder-style object to manufacture [`InstanceProfile`](crate::model::InstanceProfile).
-    pub fn builder() -> crate::model::instance_profile::Builder {
-        crate::model::instance_profile::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of device types.</p>
 #[non_exhaustive]
@@ -1988,6 +1996,13 @@ impl DevicePool {
         self.max_devices
     }
 }
+impl DevicePool {
+    /// Creates a new builder-style object to manufacture [`DevicePool`](crate::model::DevicePool).
+    pub fn builder() -> crate::model::device_pool::Builder {
+        crate::model::device_pool::Builder::default()
+    }
+}
+
 /// See [`DevicePool`](crate::model::DevicePool).
 pub mod device_pool {
     
@@ -2095,12 +2110,6 @@ pub mod device_pool {
     }
     
     
-}
-impl DevicePool {
-    /// Creates a new builder-style object to manufacture [`DevicePool`](crate::model::DevicePool).
-    pub fn builder() -> crate::model::device_pool::Builder {
-        crate::model::device_pool::Builder::default()
-    }
 }
 
 /// <p>Represents a condition for a device pool.</p>
@@ -2321,6 +2330,13 @@ impl Rule {
         self.value.as_deref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
     
@@ -2564,12 +2580,6 @@ pub mod rule {
     }
     
     
-}
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RuleOperator`, it is important to ensure
@@ -2952,6 +2962,13 @@ impl DeviceInstance {
         self.instance_profile.as_ref()
     }
 }
+impl DeviceInstance {
+    /// Creates a new builder-style object to manufacture [`DeviceInstance`](crate::model::DeviceInstance).
+    pub fn builder() -> crate::model::device_instance::Builder {
+        crate::model::device_instance::Builder::default()
+    }
+}
+
 /// See [`DeviceInstance`](crate::model::DeviceInstance).
 pub mod device_instance {
     
@@ -3047,12 +3064,6 @@ pub mod device_instance {
     }
     
     
-}
-impl DeviceInstance {
-    /// Creates a new builder-style object to manufacture [`DeviceInstance`](crate::model::DeviceInstance).
-    pub fn builder() -> crate::model::device_instance::Builder {
-        crate::model::device_instance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceStatus`, it is important to ensure
@@ -3168,6 +3179,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -3209,12 +3227,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Represents a test run on a set of devices with a given app package, test parameters, and so on.</p>
@@ -3554,6 +3566,13 @@ impl Run {
         self.vpc_config.as_ref()
     }
 }
+impl Run {
+    /// Creates a new builder-style object to manufacture [`Run`](crate::model::Run).
+    pub fn builder() -> crate::model::run::Builder {
+        crate::model::run::Builder::default()
+    }
+}
+
 /// See [`Run`](crate::model::Run).
 pub mod run {
     
@@ -4062,12 +4081,6 @@ pub mod run {
     
     
 }
-impl Run {
-    /// Creates a new builder-style object to manufacture [`Run`](crate::model::Run).
-    pub fn builder() -> crate::model::run::Builder {
-        crate::model::run::Builder::default()
-    }
-}
 
 /// <p>Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
@@ -4097,6 +4110,13 @@ impl DeviceSelectionResult {
         self.max_devices
     }
 }
+impl DeviceSelectionResult {
+    /// Creates a new builder-style object to manufacture [`DeviceSelectionResult`](crate::model::DeviceSelectionResult).
+    pub fn builder() -> crate::model::device_selection_result::Builder {
+        crate::model::device_selection_result::Builder::default()
+    }
+}
+
 /// See [`DeviceSelectionResult`](crate::model::DeviceSelectionResult).
 pub mod device_selection_result {
     
@@ -4156,12 +4176,6 @@ pub mod device_selection_result {
     }
     
     
-}
-impl DeviceSelectionResult {
-    /// Creates a new builder-style object to manufacture [`DeviceSelectionResult`](crate::model::DeviceSelectionResult).
-    pub fn builder() -> crate::model::device_selection_result::Builder {
-        crate::model::device_selection_result::Builder::default()
-    }
 }
 
 /// <p>Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p> 
@@ -4393,6 +4407,13 @@ impl DeviceFilter {
         self.values.as_deref()
     }
 }
+impl DeviceFilter {
+    /// Creates a new builder-style object to manufacture [`DeviceFilter`](crate::model::DeviceFilter).
+    pub fn builder() -> crate::model::device_filter::Builder {
+        crate::model::device_filter::Builder::default()
+    }
+}
+
 /// See [`DeviceFilter`](crate::model::DeviceFilter).
 pub mod device_filter {
     
@@ -4653,12 +4674,6 @@ pub mod device_filter {
     
     
 }
-impl DeviceFilter {
-    /// Creates a new builder-style object to manufacture [`DeviceFilter`](crate::model::DeviceFilter).
-    pub fn builder() -> crate::model::device_filter::Builder {
-        crate::model::device_filter::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DeviceFilterAttribute`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4822,6 +4837,13 @@ impl CustomerArtifactPaths {
         self.device_host_paths.as_deref()
     }
 }
+impl CustomerArtifactPaths {
+    /// Creates a new builder-style object to manufacture [`CustomerArtifactPaths`](crate::model::CustomerArtifactPaths).
+    pub fn builder() -> crate::model::customer_artifact_paths::Builder {
+        crate::model::customer_artifact_paths::Builder::default()
+    }
+}
+
 /// See [`CustomerArtifactPaths`](crate::model::CustomerArtifactPaths).
 pub mod customer_artifact_paths {
     
@@ -4894,12 +4916,6 @@ pub mod customer_artifact_paths {
     
     
 }
-impl CustomerArtifactPaths {
-    /// Creates a new builder-style object to manufacture [`CustomerArtifactPaths`](crate::model::CustomerArtifactPaths).
-    pub fn builder() -> crate::model::customer_artifact_paths::Builder {
-        crate::model::customer_artifact_paths::Builder::default()
-    }
-}
 
 /// <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> 
 /// <p>Elevation is currently not supported.</p>
@@ -4923,6 +4939,13 @@ impl Location {
         self.longitude
     }
 }
+impl Location {
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
+    pub fn builder() -> crate::model::location::Builder {
+        crate::model::location::Builder::default()
+    }
+}
+
 /// See [`Location`](crate::model::Location).
 pub mod location {
     
@@ -4965,12 +4988,6 @@ pub mod location {
     
     
 }
-impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
-    pub fn builder() -> crate::model::location::Builder {
-        crate::model::location::Builder::default()
-    }
-}
 
 /// <p>Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.</p>
 #[non_exhaustive]
@@ -5007,6 +5024,13 @@ impl Radios {
         self.gps
     }
 }
+impl Radios {
+    /// Creates a new builder-style object to manufacture [`Radios`](crate::model::Radios).
+    pub fn builder() -> crate::model::radios::Builder {
+        crate::model::radios::Builder::default()
+    }
+}
+
 /// See [`Radios`](crate::model::Radios).
 pub mod radios {
     
@@ -5072,12 +5096,6 @@ pub mod radios {
     }
     
     
-}
-impl Radios {
-    /// Creates a new builder-style object to manufacture [`Radios`](crate::model::Radios).
-    pub fn builder() -> crate::model::radios::Builder {
-        crate::model::radios::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExecutionResultCode`, it is important to ensure
@@ -5190,6 +5208,13 @@ impl DeviceMinutes {
         self.unmetered
     }
 }
+impl DeviceMinutes {
+    /// Creates a new builder-style object to manufacture [`DeviceMinutes`](crate::model::DeviceMinutes).
+    pub fn builder() -> crate::model::device_minutes::Builder {
+        crate::model::device_minutes::Builder::default()
+    }
+}
+
 /// See [`DeviceMinutes`](crate::model::DeviceMinutes).
 pub mod device_minutes {
     
@@ -5243,12 +5268,6 @@ pub mod device_minutes {
     }
     
     
-}
-impl DeviceMinutes {
-    /// Creates a new builder-style object to manufacture [`DeviceMinutes`](crate::model::DeviceMinutes).
-    pub fn builder() -> crate::model::device_minutes::Builder {
-        crate::model::device_minutes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BillingMethod`, it is important to ensure
@@ -5389,6 +5408,13 @@ impl Counters {
         self.skipped
     }
 }
+impl Counters {
+    /// Creates a new builder-style object to manufacture [`Counters`](crate::model::Counters).
+    pub fn builder() -> crate::model::counters::Builder {
+        crate::model::counters::Builder::default()
+    }
+}
+
 /// See [`Counters`](crate::model::Counters).
 pub mod counters {
     
@@ -5490,12 +5516,6 @@ pub mod counters {
     }
     
     
-}
-impl Counters {
-    /// Creates a new builder-style object to manufacture [`Counters`](crate::model::Counters).
-    pub fn builder() -> crate::model::counters::Builder {
-        crate::model::counters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExecutionResult`, it is important to ensure
@@ -6202,6 +6222,13 @@ impl RemoteAccessSession {
         self.vpc_config.as_ref()
     }
 }
+impl RemoteAccessSession {
+    /// Creates a new builder-style object to manufacture [`RemoteAccessSession`](crate::model::RemoteAccessSession).
+    pub fn builder() -> crate::model::remote_access_session::Builder {
+        crate::model::remote_access_session::Builder::default()
+    }
+}
+
 /// See [`RemoteAccessSession`](crate::model::RemoteAccessSession).
 pub mod remote_access_session {
     
@@ -6544,12 +6571,6 @@ pub mod remote_access_session {
     
     
 }
-impl RemoteAccessSession {
-    /// Creates a new builder-style object to manufacture [`RemoteAccessSession`](crate::model::RemoteAccessSession).
-    pub fn builder() -> crate::model::remote_access_session::Builder {
-        crate::model::remote_access_session::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InteractionMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6814,6 +6835,13 @@ impl Device {
         self.availability.as_ref()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
     
@@ -7112,12 +7140,6 @@ pub mod device {
     
     
 }
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DeviceAvailability`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7232,6 +7254,13 @@ impl Resolution {
         self.height
     }
 }
+impl Resolution {
+    /// Creates a new builder-style object to manufacture [`Resolution`](crate::model::Resolution).
+    pub fn builder() -> crate::model::resolution::Builder {
+        crate::model::resolution::Builder::default()
+    }
+}
+
 /// See [`Resolution`](crate::model::Resolution).
 pub mod resolution {
     
@@ -7274,12 +7303,6 @@ pub mod resolution {
     
     
 }
-impl Resolution {
-    /// Creates a new builder-style object to manufacture [`Resolution`](crate::model::Resolution).
-    pub fn builder() -> crate::model::resolution::Builder {
-        crate::model::resolution::Builder::default()
-    }
-}
 
 /// <p>Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage.</p>
 #[non_exhaustive]
@@ -7309,6 +7332,13 @@ impl Cpu {
         self.clock
     }
 }
+impl Cpu {
+    /// Creates a new builder-style object to manufacture [`Cpu`](crate::model::Cpu).
+    pub fn builder() -> crate::model::cpu::Builder {
+        crate::model::cpu::Builder::default()
+    }
+}
+
 /// See [`Cpu`](crate::model::Cpu).
 pub mod cpu {
     
@@ -7362,12 +7392,6 @@ pub mod cpu {
     }
     
     
-}
-impl Cpu {
-    /// Creates a new builder-style object to manufacture [`Cpu`](crate::model::Cpu).
-    pub fn builder() -> crate::model::cpu::Builder {
-        crate::model::cpu::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeviceFormFactor`, it is important to ensure
@@ -7650,6 +7674,13 @@ impl Job {
         self.video_capture
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
     
@@ -7934,12 +7965,6 @@ pub mod job {
     
     
 }
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
-    }
-}
 
 /// <p>Represents configuration information about a test run, such as the execution timeout (in minutes).</p>
 #[non_exhaustive]
@@ -7985,6 +8010,13 @@ impl ExecutionConfiguration {
         self.skip_app_resign
     }
 }
+impl ExecutionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExecutionConfiguration`](crate::model::ExecutionConfiguration).
+    pub fn builder() -> crate::model::execution_configuration::Builder {
+        crate::model::execution_configuration::Builder::default()
+    }
+}
+
 /// See [`ExecutionConfiguration`](crate::model::ExecutionConfiguration).
 pub mod execution_configuration {
     
@@ -8065,12 +8097,6 @@ pub mod execution_configuration {
     
     
 }
-impl ExecutionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExecutionConfiguration`](crate::model::ExecutionConfiguration).
-    pub fn builder() -> crate::model::execution_configuration::Builder {
-        crate::model::execution_configuration::Builder::default()
-    }
-}
 
 /// <p>Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.</p>
 #[non_exhaustive]
@@ -8146,6 +8172,13 @@ impl ScheduleRunConfiguration {
         self.billing_method.as_ref()
     }
 }
+impl ScheduleRunConfiguration {
+    /// Creates a new builder-style object to manufacture [`ScheduleRunConfiguration`](crate::model::ScheduleRunConfiguration).
+    pub fn builder() -> crate::model::schedule_run_configuration::Builder {
+        crate::model::schedule_run_configuration::Builder::default()
+    }
+}
+
 /// See [`ScheduleRunConfiguration`](crate::model::ScheduleRunConfiguration).
 pub mod schedule_run_configuration {
     
@@ -8287,12 +8320,6 @@ pub mod schedule_run_configuration {
     }
     
     
-}
-impl ScheduleRunConfiguration {
-    /// Creates a new builder-style object to manufacture [`ScheduleRunConfiguration`](crate::model::ScheduleRunConfiguration).
-    pub fn builder() -> crate::model::schedule_run_configuration::Builder {
-        crate::model::schedule_run_configuration::Builder::default()
-    }
 }
 
 /// <p>Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
@@ -8493,6 +8520,13 @@ impl ScheduleRunTest {
         self.parameters.as_ref()
     }
 }
+impl ScheduleRunTest {
+    /// Creates a new builder-style object to manufacture [`ScheduleRunTest`](crate::model::ScheduleRunTest).
+    pub fn builder() -> crate::model::schedule_run_test::Builder {
+        crate::model::schedule_run_test::Builder::default()
+    }
+}
+
 /// See [`ScheduleRunTest`](crate::model::ScheduleRunTest).
 pub mod schedule_run_test {
     
@@ -8733,12 +8767,6 @@ pub mod schedule_run_test {
     
     
 }
-impl ScheduleRunTest {
-    /// Creates a new builder-style object to manufacture [`ScheduleRunTest`](crate::model::ScheduleRunTest).
-    pub fn builder() -> crate::model::schedule_run_test::Builder {
-        crate::model::schedule_run_test::Builder::default()
-    }
-}
 
 /// <p>Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
@@ -8831,6 +8859,13 @@ impl DeviceSelectionConfiguration {
         self.max_devices
     }
 }
+impl DeviceSelectionConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeviceSelectionConfiguration`](crate::model::DeviceSelectionConfiguration).
+    pub fn builder() -> crate::model::device_selection_configuration::Builder {
+        crate::model::device_selection_configuration::Builder::default()
+    }
+}
+
 /// See [`DeviceSelectionConfiguration`](crate::model::DeviceSelectionConfiguration).
 pub mod device_selection_configuration {
     
@@ -8949,12 +8984,6 @@ pub mod device_selection_configuration {
     
     
 }
-impl DeviceSelectionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeviceSelectionConfiguration`](crate::model::DeviceSelectionConfiguration).
-    pub fn builder() -> crate::model::device_selection_configuration::Builder {
-        crate::model::device_selection_configuration::Builder::default()
-    }
-}
 
 /// <p>Represents the metadata of an offering transaction.</p>
 #[non_exhaustive]
@@ -8998,6 +9027,13 @@ impl OfferingTransaction {
         self.cost.as_ref()
     }
 }
+impl OfferingTransaction {
+    /// Creates a new builder-style object to manufacture [`OfferingTransaction`](crate::model::OfferingTransaction).
+    pub fn builder() -> crate::model::offering_transaction::Builder {
+        crate::model::offering_transaction::Builder::default()
+    }
+}
+
 /// See [`OfferingTransaction`](crate::model::OfferingTransaction).
 pub mod offering_transaction {
     
@@ -9076,12 +9112,6 @@ pub mod offering_transaction {
     
     
 }
-impl OfferingTransaction {
-    /// Creates a new builder-style object to manufacture [`OfferingTransaction`](crate::model::OfferingTransaction).
-    pub fn builder() -> crate::model::offering_transaction::Builder {
-        crate::model::offering_transaction::Builder::default()
-    }
-}
 
 /// <p>A number that represents the monetary amount for an offering or transaction.</p>
 #[non_exhaustive]
@@ -9104,6 +9134,13 @@ impl MonetaryAmount {
         self.currency_code.as_ref()
     }
 }
+impl MonetaryAmount {
+    /// Creates a new builder-style object to manufacture [`MonetaryAmount`](crate::model::MonetaryAmount).
+    pub fn builder() -> crate::model::monetary_amount::Builder {
+        crate::model::monetary_amount::Builder::default()
+    }
+}
+
 /// See [`MonetaryAmount`](crate::model::MonetaryAmount).
 pub mod monetary_amount {
     
@@ -9145,12 +9182,6 @@ pub mod monetary_amount {
     }
     
     
-}
-impl MonetaryAmount {
-    /// Creates a new builder-style object to manufacture [`MonetaryAmount`](crate::model::MonetaryAmount).
-    pub fn builder() -> crate::model::monetary_amount::Builder {
-        crate::model::monetary_amount::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CurrencyCode`, it is important to ensure
@@ -9265,6 +9296,13 @@ impl OfferingStatus {
         self.effective_on.as_ref()
     }
 }
+impl OfferingStatus {
+    /// Creates a new builder-style object to manufacture [`OfferingStatus`](crate::model::OfferingStatus).
+    pub fn builder() -> crate::model::offering_status::Builder {
+        crate::model::offering_status::Builder::default()
+    }
+}
+
 /// See [`OfferingStatus`](crate::model::OfferingStatus).
 pub mod offering_status {
     
@@ -9331,12 +9369,6 @@ pub mod offering_status {
     
     
 }
-impl OfferingStatus {
-    /// Creates a new builder-style object to manufacture [`OfferingStatus`](crate::model::OfferingStatus).
-    pub fn builder() -> crate::model::offering_status::Builder {
-        crate::model::offering_status::Builder::default()
-    }
-}
 
 /// <p>Represents the metadata of a device offering.</p>
 #[non_exhaustive]
@@ -9380,6 +9412,13 @@ impl Offering {
         self.recurring_charges.as_deref()
     }
 }
+impl Offering {
+    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
+    pub fn builder() -> crate::model::offering::Builder {
+        crate::model::offering::Builder::default()
+    }
+}
+
 /// See [`Offering`](crate::model::Offering).
 pub mod offering {
     
@@ -9464,12 +9503,6 @@ pub mod offering {
     
     
 }
-impl Offering {
-    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
-    pub fn builder() -> crate::model::offering::Builder {
-        crate::model::offering::Builder::default()
-    }
-}
 
 /// <p>Specifies whether charges for devices are recurring.</p>
 #[non_exhaustive]
@@ -9492,6 +9525,13 @@ impl RecurringCharge {
         self.frequency.as_ref()
     }
 }
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
     
@@ -9533,12 +9573,6 @@ pub mod recurring_charge {
     }
     
     
-}
-impl RecurringCharge {
-    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
-    pub fn builder() -> crate::model::recurring_charge::Builder {
-        crate::model::recurring_charge::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecurringChargeFrequency`, it is important to ensure
@@ -9803,6 +9837,13 @@ impl UniqueProblem {
         self.problems.as_deref()
     }
 }
+impl UniqueProblem {
+    /// Creates a new builder-style object to manufacture [`UniqueProblem`](crate::model::UniqueProblem).
+    pub fn builder() -> crate::model::unique_problem::Builder {
+        crate::model::unique_problem::Builder::default()
+    }
+}
+
 /// See [`UniqueProblem`](crate::model::UniqueProblem).
 pub mod unique_problem {
     
@@ -9850,12 +9891,6 @@ pub mod unique_problem {
     }
     
     
-}
-impl UniqueProblem {
-    /// Creates a new builder-style object to manufacture [`UniqueProblem`](crate::model::UniqueProblem).
-    pub fn builder() -> crate::model::unique_problem::Builder {
-        crate::model::unique_problem::Builder::default()
-    }
 }
 
 /// <p>Represents a specific warning or failure.</p>
@@ -9934,6 +9969,13 @@ impl Problem {
         self.message.as_deref()
     }
 }
+impl Problem {
+    /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem).
+    pub fn builder() -> crate::model::problem::Builder {
+        crate::model::problem::Builder::default()
+    }
+}
+
 /// See [`Problem`](crate::model::Problem).
 pub mod problem {
     
@@ -10056,12 +10098,6 @@ pub mod problem {
     
     
 }
-impl Problem {
-    /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem).
-    pub fn builder() -> crate::model::problem::Builder {
-        crate::model::problem::Builder::default()
-    }
-}
 
 /// <p>Information about a problem detail.</p>
 #[non_exhaustive]
@@ -10084,6 +10120,13 @@ impl ProblemDetail {
         self.name.as_deref()
     }
 }
+impl ProblemDetail {
+    /// Creates a new builder-style object to manufacture [`ProblemDetail`](crate::model::ProblemDetail).
+    pub fn builder() -> crate::model::problem_detail::Builder {
+        crate::model::problem_detail::Builder::default()
+    }
+}
+
 /// See [`ProblemDetail`](crate::model::ProblemDetail).
 pub mod problem_detail {
     
@@ -10125,12 +10168,6 @@ pub mod problem_detail {
     }
     
     
-}
-impl ProblemDetail {
-    /// Creates a new builder-style object to manufacture [`ProblemDetail`](crate::model::ProblemDetail).
-    pub fn builder() -> crate::model::problem_detail::Builder {
-        crate::model::problem_detail::Builder::default()
-    }
 }
 
 /// <p>Represents a condition that is evaluated.</p>
@@ -10307,6 +10344,13 @@ impl Test {
         self.device_minutes.as_ref()
     }
 }
+impl Test {
+    /// Creates a new builder-style object to manufacture [`Test`](crate::model::Test).
+    pub fn builder() -> crate::model::test::Builder {
+        crate::model::test::Builder::default()
+    }
+}
+
 /// See [`Test`](crate::model::Test).
 pub mod test {
     
@@ -10547,12 +10591,6 @@ pub mod test {
     
     
 }
-impl Test {
-    /// Creates a new builder-style object to manufacture [`Test`](crate::model::Test).
-    pub fn builder() -> crate::model::test::Builder {
-        crate::model::test::Builder::default()
-    }
-}
 
 /// <p>A <code>TestGridSession</code> is a single instance of a browser launched from the URL provided by a call to <code>CreateTestGridUrl</code>.</p>
 #[non_exhaustive]
@@ -10603,6 +10641,13 @@ impl TestGridSession {
         self.selenium_properties.as_deref()
     }
 }
+impl TestGridSession {
+    /// Creates a new builder-style object to manufacture [`TestGridSession`](crate::model::TestGridSession).
+    pub fn builder() -> crate::model::test_grid_session::Builder {
+        crate::model::test_grid_session::Builder::default()
+    }
+}
+
 /// See [`TestGridSession`](crate::model::TestGridSession).
 pub mod test_grid_session {
     
@@ -10692,12 +10737,6 @@ pub mod test_grid_session {
     }
     
     
-}
-impl TestGridSession {
-    /// Creates a new builder-style object to manufacture [`TestGridSession`](crate::model::TestGridSession).
-    pub fn builder() -> crate::model::test_grid_session::Builder {
-        crate::model::test_grid_session::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TestGridSessionStatus`, it is important to ensure
@@ -10826,6 +10865,13 @@ impl  std::fmt::Debug for TestGridSessionArtifact  {
         formatter.finish()
     }
 }
+impl TestGridSessionArtifact {
+    /// Creates a new builder-style object to manufacture [`TestGridSessionArtifact`](crate::model::TestGridSessionArtifact).
+    pub fn builder() -> crate::model::test_grid_session_artifact::Builder {
+        crate::model::test_grid_session_artifact::Builder::default()
+    }
+}
+
 /// See [`TestGridSessionArtifact`](crate::model::TestGridSessionArtifact).
 pub mod test_grid_session_artifact {
     
@@ -10888,12 +10934,6 @@ pub mod test_grid_session_artifact {
     }
     
     
-}
-impl TestGridSessionArtifact {
-    /// Creates a new builder-style object to manufacture [`TestGridSessionArtifact`](crate::model::TestGridSessionArtifact).
-    pub fn builder() -> crate::model::test_grid_session_artifact::Builder {
-        crate::model::test_grid_session_artifact::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TestGridSessionArtifactType`, it is important to ensure
@@ -11107,6 +11147,13 @@ impl TestGridSessionAction {
         self.request_method.as_deref()
     }
 }
+impl TestGridSessionAction {
+    /// Creates a new builder-style object to manufacture [`TestGridSessionAction`](crate::model::TestGridSessionAction).
+    pub fn builder() -> crate::model::test_grid_session_action::Builder {
+        crate::model::test_grid_session_action::Builder::default()
+    }
+}
+
 /// See [`TestGridSessionAction`](crate::model::TestGridSessionAction).
 pub mod test_grid_session_action {
     
@@ -11184,12 +11231,6 @@ pub mod test_grid_session_action {
     }
     
     
-}
-impl TestGridSessionAction {
-    /// Creates a new builder-style object to manufacture [`TestGridSessionAction`](crate::model::TestGridSessionAction).
-    pub fn builder() -> crate::model::test_grid_session_action::Builder {
-        crate::model::test_grid_session_action::Builder::default()
-    }
 }
 
 /// <p>Represents a collection of one or more tests.</p>
@@ -11366,6 +11407,13 @@ impl Suite {
         self.device_minutes.as_ref()
     }
 }
+impl Suite {
+    /// Creates a new builder-style object to manufacture [`Suite`](crate::model::Suite).
+    pub fn builder() -> crate::model::suite::Builder {
+        crate::model::suite::Builder::default()
+    }
+}
+
 /// See [`Suite`](crate::model::Suite).
 pub mod suite {
     
@@ -11606,12 +11654,6 @@ pub mod suite {
     
     
 }
-impl Suite {
-    /// Creates a new builder-style object to manufacture [`Suite`](crate::model::Suite).
-    pub fn builder() -> crate::model::suite::Builder {
-        crate::model::suite::Builder::default()
-    }
-}
 
 /// <p>Represents a sample of performance data.</p>
 #[non_exhaustive]
@@ -11681,6 +11723,13 @@ impl Sample {
         self.url.as_deref()
     }
 }
+impl Sample {
+    /// Creates a new builder-style object to manufacture [`Sample`](crate::model::Sample).
+    pub fn builder() -> crate::model::sample::Builder {
+        crate::model::sample::Builder::default()
+    }
+}
+
 /// See [`Sample`](crate::model::Sample).
 pub mod sample {
     
@@ -11774,12 +11823,6 @@ pub mod sample {
     }
     
     
-}
-impl Sample {
-    /// Creates a new builder-style object to manufacture [`Sample`](crate::model::Sample).
-    pub fn builder() -> crate::model::sample::Builder {
-        crate::model::sample::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SampleType`, it is important to ensure
@@ -11960,6 +12003,13 @@ impl OfferingPromotion {
         self.description.as_deref()
     }
 }
+impl OfferingPromotion {
+    /// Creates a new builder-style object to manufacture [`OfferingPromotion`](crate::model::OfferingPromotion).
+    pub fn builder() -> crate::model::offering_promotion::Builder {
+        crate::model::offering_promotion::Builder::default()
+    }
+}
+
 /// See [`OfferingPromotion`](crate::model::OfferingPromotion).
 pub mod offering_promotion {
     
@@ -12001,12 +12051,6 @@ pub mod offering_promotion {
     }
     
     
-}
-impl OfferingPromotion {
-    /// Creates a new builder-style object to manufacture [`OfferingPromotion`](crate::model::OfferingPromotion).
-    pub fn builder() -> crate::model::offering_promotion::Builder {
-        crate::model::offering_promotion::Builder::default()
-    }
 }
 
 /// <p>Represents the output of a test. Examples of artifacts include logs and screenshots.</p>
@@ -12113,6 +12157,13 @@ impl Artifact {
         self.url.as_deref()
     }
 }
+impl Artifact {
+    /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
+    pub fn builder() -> crate::model::artifact::Builder {
+        crate::model::artifact::Builder::default()
+    }
+}
+
 /// See [`Artifact`](crate::model::Artifact).
 pub mod artifact {
     
@@ -12252,12 +12303,6 @@ pub mod artifact {
     }
     
     
-}
-impl Artifact {
-    /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
-    pub fn builder() -> crate::model::artifact::Builder {
-        crate::model::artifact::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ArtifactType`, it is important to ensure
@@ -12587,6 +12632,13 @@ impl DevicePoolCompatibilityResult {
         self.incompatibility_messages.as_deref()
     }
 }
+impl DevicePoolCompatibilityResult {
+    /// Creates a new builder-style object to manufacture [`DevicePoolCompatibilityResult`](crate::model::DevicePoolCompatibilityResult).
+    pub fn builder() -> crate::model::device_pool_compatibility_result::Builder {
+        crate::model::device_pool_compatibility_result::Builder::default()
+    }
+}
+
 /// See [`DevicePoolCompatibilityResult`](crate::model::DevicePoolCompatibilityResult).
 pub mod device_pool_compatibility_result {
     
@@ -12647,12 +12699,6 @@ pub mod device_pool_compatibility_result {
     
     
 }
-impl DevicePoolCompatibilityResult {
-    /// Creates a new builder-style object to manufacture [`DevicePoolCompatibilityResult`](crate::model::DevicePoolCompatibilityResult).
-    pub fn builder() -> crate::model::device_pool_compatibility_result::Builder {
-        crate::model::device_pool_compatibility_result::Builder::default()
-    }
-}
 
 /// <p>Represents information about incompatibility.</p>
 #[non_exhaustive]
@@ -12693,6 +12739,13 @@ impl IncompatibilityMessage {
         self.r#type.as_ref()
     }
 }
+impl IncompatibilityMessage {
+    /// Creates a new builder-style object to manufacture [`IncompatibilityMessage`](crate::model::IncompatibilityMessage).
+    pub fn builder() -> crate::model::incompatibility_message::Builder {
+        crate::model::incompatibility_message::Builder::default()
+    }
+}
+
 /// See [`IncompatibilityMessage`](crate::model::IncompatibilityMessage).
 pub mod incompatibility_message {
     
@@ -12752,12 +12805,6 @@ pub mod incompatibility_message {
     }
     
     
-}
-impl IncompatibilityMessage {
-    /// Creates a new builder-style object to manufacture [`IncompatibilityMessage`](crate::model::IncompatibilityMessage).
-    pub fn builder() -> crate::model::incompatibility_message::Builder {
-        crate::model::incompatibility_message::Builder::default()
-    }
 }
 
 /// <p>A container for account-level settings in AWS Device Farm.</p>
@@ -12825,6 +12872,13 @@ impl AccountSettings {
         self.skip_app_resign
     }
 }
+impl AccountSettings {
+    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
+    pub fn builder() -> crate::model::account_settings::Builder {
+        crate::model::account_settings::Builder::default()
+    }
+}
+
 /// See [`AccountSettings`](crate::model::AccountSettings).
 pub mod account_settings {
     
@@ -12959,12 +13013,6 @@ pub mod account_settings {
     
     
 }
-impl AccountSettings {
-    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
-    pub fn builder() -> crate::model::account_settings::Builder {
-        crate::model::account_settings::Builder::default()
-    }
-}
 
 /// <p>Represents information about free trial device minutes for an AWS account.</p>
 #[non_exhaustive]
@@ -12987,6 +13035,13 @@ impl TrialMinutes {
         self.remaining
     }
 }
+impl TrialMinutes {
+    /// Creates a new builder-style object to manufacture [`TrialMinutes`](crate::model::TrialMinutes).
+    pub fn builder() -> crate::model::trial_minutes::Builder {
+        crate::model::trial_minutes::Builder::default()
+    }
+}
+
 /// See [`TrialMinutes`](crate::model::TrialMinutes).
 pub mod trial_minutes {
     
@@ -13029,12 +13084,6 @@ pub mod trial_minutes {
     
     
 }
-impl TrialMinutes {
-    /// Creates a new builder-style object to manufacture [`TrialMinutes`](crate::model::TrialMinutes).
-    pub fn builder() -> crate::model::trial_minutes::Builder {
-        crate::model::trial_minutes::Builder::default()
-    }
-}
 
 /// <p>Configuration settings for a remote access session, including billing method.</p>
 #[non_exhaustive]
@@ -13057,6 +13106,13 @@ impl CreateRemoteAccessSessionConfiguration {
         self.vpce_configuration_arns.as_deref()
     }
 }
+impl CreateRemoteAccessSessionConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateRemoteAccessSessionConfiguration`](crate::model::CreateRemoteAccessSessionConfiguration).
+    pub fn builder() -> crate::model::create_remote_access_session_configuration::Builder {
+        crate::model::create_remote_access_session_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateRemoteAccessSessionConfiguration`](crate::model::CreateRemoteAccessSessionConfiguration).
 pub mod create_remote_access_session_configuration {
     
@@ -13104,11 +13160,5 @@ pub mod create_remote_access_session_configuration {
     }
     
     
-}
-impl CreateRemoteAccessSessionConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateRemoteAccessSessionConfiguration`](crate::model::CreateRemoteAccessSessionConfiguration).
-    pub fn builder() -> crate::model::create_remote_access_session_configuration::Builder {
-        crate::model::create_remote_access_session_configuration::Builder::default()
-    }
 }
 

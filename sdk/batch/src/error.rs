@@ -129,55 +129,6 @@ pub struct ServerException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ServerException {
-    /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException).
-    pub fn builder() -> crate::error::server_exception::Builder {
-        crate::error::server_exception::Builder::default()
-    }
-}
-/// See [`ServerException`](crate::error::ServerException).
-pub mod server_exception {
-    
-    /// A builder for [`ServerException`](crate::error::ServerException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException).
-        pub fn build(self) -> crate::error::ServerException {
-            crate::error::ServerException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ServerException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -202,26 +153,17 @@ impl aws_http::request_id::RequestId for crate::error::ServerException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServerException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>These errors are usually caused by a client action. One example cause is using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying an identifier that's not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ClientException {
-    /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException).
-    pub fn builder() -> crate::error::client_exception::Builder {
-        crate::error::client_exception::Builder::default()
+impl ServerException {
+    /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException).
+    pub fn builder() -> crate::error::server_exception::Builder {
+        crate::error::server_exception::Builder::default()
     }
 }
-/// See [`ClientException`](crate::error::ClientException).
-pub mod client_exception {
+
+/// See [`ServerException`](crate::error::ServerException).
+pub mod server_exception {
     
-    /// A builder for [`ClientException`](crate::error::ClientException).
+    /// A builder for [`ServerException`](crate::error::ServerException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -239,19 +181,19 @@ pub mod client_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException).
-        pub fn build(self) -> crate::error::ClientException {
-            crate::error::ClientException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException).
+        pub fn build(self) -> crate::error::ServerException {
+            crate::error::ServerException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -260,6 +202,16 @@ pub mod client_exception {
     }
     
     
+}
+
+/// <p>These errors are usually caused by a client action. One example cause is using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying an identifier that's not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ClientException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ClientException {
     /// Returns the error message.
@@ -285,6 +237,56 @@ impl aws_http::request_id::RequestId for crate::error::ClientException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ClientException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl ClientException {
+    /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException).
+    pub fn builder() -> crate::error::client_exception::Builder {
+        crate::error::client_exception::Builder::default()
+    }
+}
+
+/// See [`ClientException`](crate::error::ClientException).
+pub mod client_exception {
+    
+    /// A builder for [`ClientException`](crate::error::ClientException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException).
+        pub fn build(self) -> crate::error::ClientException {
+            crate::error::ClientException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

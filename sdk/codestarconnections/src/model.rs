@@ -35,6 +35,13 @@ impl VpcConfiguration {
         self.tls_certificate.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
     
@@ -113,12 +120,6 @@ pub mod vpc_configuration {
     
     
 }
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
-}
 
 /// <p>A tag is a key-value pair that is used to manage the resource.</p> 
 /// <p>This tag is available for use by AWS services that support tags.</p>
@@ -142,6 +143,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -183,12 +191,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>A resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p> <note> 
@@ -249,6 +251,13 @@ impl Host {
         self.status_message.as_deref()
     }
 }
+impl Host {
+    /// Creates a new builder-style object to manufacture [`Host`](crate::model::Host).
+    pub fn builder() -> crate::model::host::Builder {
+        crate::model::host::Builder::default()
+    }
+}
+
 /// See [`Host`](crate::model::Host).
 pub mod host {
     
@@ -350,12 +359,6 @@ pub mod host {
     }
     
     
-}
-impl Host {
-    /// Creates a new builder-style object to manufacture [`Host`](crate::model::Host).
-    pub fn builder() -> crate::model::host::Builder {
-        crate::model::host::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProviderType`, it is important to ensure
@@ -499,6 +502,13 @@ impl Connection {
         self.host_arn.as_deref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
     
@@ -592,12 +602,6 @@ pub mod connection {
     }
     
     
-}
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionStatus`, it is important to ensure

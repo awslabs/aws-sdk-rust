@@ -56,6 +56,13 @@ impl TrustAnchorDetail {
         self.updated_at.as_ref()
     }
 }
+impl TrustAnchorDetail {
+    /// Creates a new builder-style object to manufacture [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
+    pub fn builder() -> crate::model::trust_anchor_detail::Builder {
+        crate::model::trust_anchor_detail::Builder::default()
+    }
+}
+
 /// See [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
 pub mod trust_anchor_detail {
     
@@ -158,12 +165,6 @@ pub mod trust_anchor_detail {
     
     
 }
-impl TrustAnchorDetail {
-    /// Creates a new builder-style object to manufacture [`TrustAnchorDetail`](crate::model::TrustAnchorDetail).
-    pub fn builder() -> crate::model::trust_anchor_detail::Builder {
-        crate::model::trust_anchor_detail::Builder::default()
-    }
-}
 
 /// <p>The trust anchor type and its related certificate data.</p>
 #[non_exhaustive]
@@ -186,6 +187,13 @@ impl Source {
         self.source_data.as_ref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
     
@@ -227,12 +235,6 @@ pub mod source {
     }
     
     
-}
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
-    }
 }
 
 /// <p>The data field of the trust anchor depending on its type. </p>
@@ -394,6 +396,13 @@ impl  std::fmt::Debug for Tag  {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -443,12 +452,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>A summary representation of Subject resources returned in read operations; primarily ListSubjects.</p>
@@ -507,6 +510,13 @@ impl SubjectSummary {
         self.updated_at.as_ref()
     }
 }
+impl SubjectSummary {
+    /// Creates a new builder-style object to manufacture [`SubjectSummary`](crate::model::SubjectSummary).
+    pub fn builder() -> crate::model::subject_summary::Builder {
+        crate::model::subject_summary::Builder::default()
+    }
+}
+
 /// See [`SubjectSummary`](crate::model::SubjectSummary).
 pub mod subject_summary {
     
@@ -609,12 +619,6 @@ pub mod subject_summary {
     
     
 }
-impl SubjectSummary {
-    /// Creates a new builder-style object to manufacture [`SubjectSummary`](crate::model::SubjectSummary).
-    pub fn builder() -> crate::model::subject_summary::Builder {
-        crate::model::subject_summary::Builder::default()
-    }
-}
 
 /// <p>The state of the subject after a read or write operation.</p>
 #[non_exhaustive]
@@ -686,6 +690,13 @@ impl SubjectDetail {
         self.instance_properties.as_deref()
     }
 }
+impl SubjectDetail {
+    /// Creates a new builder-style object to manufacture [`SubjectDetail`](crate::model::SubjectDetail).
+    pub fn builder() -> crate::model::subject_detail::Builder {
+        crate::model::subject_detail::Builder::default()
+    }
+}
+
 /// See [`SubjectDetail`](crate::model::SubjectDetail).
 pub mod subject_detail {
     
@@ -824,12 +835,6 @@ pub mod subject_detail {
     
     
 }
-impl SubjectDetail {
-    /// Creates a new builder-style object to manufacture [`SubjectDetail`](crate::model::SubjectDetail).
-    pub fn builder() -> crate::model::subject_detail::Builder {
-        crate::model::subject_detail::Builder::default()
-    }
-}
 
 /// <p>A key-value pair you set that identifies a property of the authenticating instance.</p>
 #[non_exhaustive]
@@ -859,6 +864,13 @@ impl InstanceProperty {
         self.failed
     }
 }
+impl InstanceProperty {
+    /// Creates a new builder-style object to manufacture [`InstanceProperty`](crate::model::InstanceProperty).
+    pub fn builder() -> crate::model::instance_property::Builder {
+        crate::model::instance_property::Builder::default()
+    }
+}
+
 /// See [`InstanceProperty`](crate::model::InstanceProperty).
 pub mod instance_property {
     
@@ -919,12 +931,6 @@ pub mod instance_property {
     
     
 }
-impl InstanceProperty {
-    /// Creates a new builder-style object to manufacture [`InstanceProperty`](crate::model::InstanceProperty).
-    pub fn builder() -> crate::model::instance_property::Builder {
-        crate::model::instance_property::Builder::default()
-    }
-}
 
 /// <p>A record of a presented X509 credential to <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>. </p>
 #[non_exhaustive]
@@ -975,6 +981,13 @@ impl CredentialSummary {
         self.failed
     }
 }
+impl CredentialSummary {
+    /// Creates a new builder-style object to manufacture [`CredentialSummary`](crate::model::CredentialSummary).
+    pub fn builder() -> crate::model::credential_summary::Builder {
+        crate::model::credential_summary::Builder::default()
+    }
+}
+
 /// See [`CredentialSummary`](crate::model::CredentialSummary).
 pub mod credential_summary {
     
@@ -1064,12 +1077,6 @@ pub mod credential_summary {
     }
     
     
-}
-impl CredentialSummary {
-    /// Creates a new builder-style object to manufacture [`CredentialSummary`](crate::model::CredentialSummary).
-    pub fn builder() -> crate::model::credential_summary::Builder {
-        crate::model::credential_summary::Builder::default()
-    }
 }
 
 /// <p>The state of the profile after a read or write operation.</p>
@@ -1163,6 +1170,13 @@ impl ProfileDetail {
         self.duration_seconds
     }
 }
+impl ProfileDetail {
+    /// Creates a new builder-style object to manufacture [`ProfileDetail`](crate::model::ProfileDetail).
+    pub fn builder() -> crate::model::profile_detail::Builder {
+        crate::model::profile_detail::Builder::default()
+    }
+}
+
 /// See [`ProfileDetail`](crate::model::ProfileDetail).
 pub mod profile_detail {
     
@@ -1337,12 +1351,6 @@ pub mod profile_detail {
     
     
 }
-impl ProfileDetail {
-    /// Creates a new builder-style object to manufacture [`ProfileDetail`](crate::model::ProfileDetail).
-    pub fn builder() -> crate::model::profile_detail::Builder {
-        crate::model::profile_detail::Builder::default()
-    }
-}
 
 /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
 #[non_exhaustive]
@@ -1407,6 +1415,13 @@ impl CrlDetail {
         self.updated_at.as_ref()
     }
 }
+impl CrlDetail {
+    /// Creates a new builder-style object to manufacture [`CrlDetail`](crate::model::CrlDetail).
+    pub fn builder() -> crate::model::crl_detail::Builder {
+        crate::model::crl_detail::Builder::default()
+    }
+}
+
 /// See [`CrlDetail`](crate::model::CrlDetail).
 pub mod crl_detail {
     
@@ -1520,11 +1535,5 @@ pub mod crl_detail {
     }
     
     
-}
-impl CrlDetail {
-    /// Creates a new builder-style object to manufacture [`CrlDetail`](crate::model::CrlDetail).
-    pub fn builder() -> crate::model::crl_detail::Builder {
-        crate::model::crl_detail::Builder::default()
-    }
 }
 

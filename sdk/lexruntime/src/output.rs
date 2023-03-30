@@ -149,6 +149,13 @@ impl aws_http::request_id::RequestId for PutSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutSessionOutput {
+    /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput).
+    pub fn builder() -> crate::output::put_session_output::Builder {
+        crate::output::put_session_output::Builder::default()
+    }
+}
+
 /// See [`PutSessionOutput`](crate::output::PutSessionOutput).
 pub mod put_session_output {
     
@@ -378,12 +385,6 @@ pub mod put_session_output {
     
     
 }
-impl PutSessionOutput {
-    /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput).
-    pub fn builder() -> crate::output::put_session_output::Builder {
-        crate::output::put_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -561,6 +562,13 @@ impl aws_http::request_id::RequestId for PostTextOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PostTextOutput {
+    /// Creates a new builder-style object to manufacture [`PostTextOutput`](crate::output::PostTextOutput).
+    pub fn builder() -> crate::output::post_text_output::Builder {
+        crate::output::post_text_output::Builder::default()
+    }
+}
+
 /// See [`PostTextOutput`](crate::output::PostTextOutput).
 pub mod post_text_output {
     
@@ -847,12 +855,6 @@ pub mod post_text_output {
     
     
 }
-impl PostTextOutput {
-    /// Creates a new builder-style object to manufacture [`PostTextOutput`](crate::output::PostTextOutput).
-    pub fn builder() -> crate::output::post_text_output::Builder {
-        crate::output::post_text_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1082,6 +1084,13 @@ impl aws_http::request_id::RequestId for PostContentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PostContentOutput {
+    /// Creates a new builder-style object to manufacture [`PostContentOutput`](crate::output::PostContentOutput).
+    pub fn builder() -> crate::output::post_content_output::Builder {
+        crate::output::post_content_output::Builder::default()
+    }
+}
+
 /// See [`PostContentOutput`](crate::output::PostContentOutput).
 pub mod post_content_output {
     
@@ -1419,12 +1428,6 @@ pub mod post_content_output {
     
     
 }
-impl PostContentOutput {
-    /// Creates a new builder-style object to manufacture [`PostContentOutput`](crate::output::PostContentOutput).
-    pub fn builder() -> crate::output::post_content_output::Builder {
-        crate::output::post_content_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1490,6 +1493,13 @@ impl aws_http::request_id::RequestId for GetSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
+    pub fn builder() -> crate::output::get_session_output::Builder {
+        crate::output::get_session_output::Builder::default()
+    }
+}
+
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput).
 pub mod get_session_output {
     
@@ -1613,12 +1623,6 @@ pub mod get_session_output {
     
     
 }
-impl GetSessionOutput {
-    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
-    pub fn builder() -> crate::output::get_session_output::Builder {
-        crate::output::get_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1661,6 +1665,13 @@ impl aws_http::request_id::RequestId for DeleteSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSessionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
+    pub fn builder() -> crate::output::delete_session_output::Builder {
+        crate::output::delete_session_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
 pub mod delete_session_output {
     
@@ -1737,11 +1748,5 @@ pub mod delete_session_output {
     }
     
     
-}
-impl DeleteSessionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
-    pub fn builder() -> crate::output::delete_session_output::Builder {
-        crate::output::delete_session_output::Builder::default()
-    }
 }
 

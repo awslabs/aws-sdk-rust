@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_device_with_placement`](crate::client::Client::associate_device_with_placement).
             ///
-            /// See [`crate::client::fluent_builders::AssociateDeviceWithPlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateDeviceWithPlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateDeviceWithPlacement {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDeviceWithPlace
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_placement`](crate::client::Client::create_placement).
             ///
-            /// See [`crate::client::fluent_builders::CreatePlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreatePlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePlacement {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlacement {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_project`](crate::client::Client::create_project).
             ///
-            /// See [`crate::client::fluent_builders::CreateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProject {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_placement`](crate::client::Client::delete_placement).
             ///
-            /// See [`crate::client::fluent_builders::DeletePlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePlacement {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlacement {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_project`](crate::client::Client::delete_project).
             ///
-            /// See [`crate::client::fluent_builders::DeleteProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProject {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_placement`](crate::client::Client::describe_placement).
             ///
-            /// See [`crate::client::fluent_builders::DescribePlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribePlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePlacement {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePlacement {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_project`](crate::client::Client::describe_project).
             ///
-            /// See [`crate::client::fluent_builders::DescribeProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProject {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_device_from_placement`](crate::client::Client::disassociate_device_from_placement).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateDeviceFromPlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateDeviceFromPlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateDeviceFromPlacement {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDeviceFromPl
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_devices_in_placement`](crate::client::Client::get_devices_in_placement).
             ///
-            /// See [`crate::client::fluent_builders::GetDevicesInPlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDevicesInPlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevicesInPlacement {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicesInPlacement {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_placements`](crate::client::Client::list_placements).
             ///
-            /// See [`crate::client::fluent_builders::ListPlacements`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPlacements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPlacements {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlacements {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_projects`](crate::client::Client::list_projects).
             ///
-            /// See [`crate::client::fluent_builders::ListProjects`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProjects {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_placement`](crate::client::Client::update_placement).
             ///
-            /// See [`crate::client::fluent_builders::UpdatePlacement`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdatePlacement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePlacement {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePlacement {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_project`](crate::client::Client::update_project).
             ///
-            /// See [`crate::client::fluent_builders::UpdateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProject {
     _private: ()

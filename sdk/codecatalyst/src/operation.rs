@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_access_token`](crate::client::Client::create_access_token).
             ///
-            /// See [`crate::client::fluent_builders::CreateAccessToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAccessToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccessToken {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_dev_environment`](crate::client::Client::create_dev_environment).
             ///
-            /// See [`crate::client::fluent_builders::CreateDevEnvironment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDevEnvironment {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDevEnvironment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_project`](crate::client::Client::create_project).
             ///
-            /// See [`crate::client::fluent_builders::CreateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProject {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_source_repository_branch`](crate::client::Client::create_source_repository_branch).
             ///
-            /// See [`crate::client::fluent_builders::CreateSourceRepositoryBranch`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSourceRepositoryBranch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSourceRepositoryBranch {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSourceRepositoryBr
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_access_token`](crate::client::Client::delete_access_token).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAccessToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAccessToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccessToken {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_dev_environment`](crate::client::Client::delete_dev_environment).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDevEnvironment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDevEnvironment {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDevEnvironment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_dev_environment`](crate::client::Client::get_dev_environment).
             ///
-            /// See [`crate::client::fluent_builders::GetDevEnvironment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevEnvironment {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevEnvironment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_project`](crate::client::Client::get_project).
             ///
-            /// See [`crate::client::fluent_builders::GetProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProject {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_source_repository_clone_urls`](crate::client::Client::get_source_repository_clone_urls).
             ///
-            /// See [`crate::client::fluent_builders::GetSourceRepositoryCloneUrls`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSourceRepositoryCloneUrls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrls {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSourceRepositoryClone
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_space`](crate::client::Client::get_space).
             ///
-            /// See [`crate::client::fluent_builders::GetSpace`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSpace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSpace {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpace {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_subscription`](crate::client::Client::get_subscription).
             ///
-            /// See [`crate::client::fluent_builders::GetSubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSubscription {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubscription {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_user_details`](crate::client::Client::get_user_details).
             ///
-            /// See [`crate::client::fluent_builders::GetUserDetails`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetUserDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUserDetails {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserDetails {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_access_tokens`](crate::client::Client::list_access_tokens).
             ///
-            /// See [`crate::client::fluent_builders::ListAccessTokens`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAccessTokens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccessTokens {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessTokens {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_dev_environments`](crate::client::Client::list_dev_environments).
             ///
-            /// See [`crate::client::fluent_builders::ListDevEnvironments`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDevEnvironments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDevEnvironments {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevEnvironments {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_event_logs`](crate::client::Client::list_event_logs).
             ///
-            /// See [`crate::client::fluent_builders::ListEventLogs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListEventLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventLogs {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventLogs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_projects`](crate::client::Client::list_projects).
             ///
-            /// See [`crate::client::fluent_builders::ListProjects`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProjects {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_source_repositories`](crate::client::Client::list_source_repositories).
             ///
-            /// See [`crate::client::fluent_builders::ListSourceRepositories`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSourceRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSourceRepositories {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceRepositories {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_source_repository_branches`](crate::client::Client::list_source_repository_branches).
             ///
-            /// See [`crate::client::fluent_builders::ListSourceRepositoryBranches`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSourceRepositoryBranches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSourceRepositoryBranches {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceRepositoryBran
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_spaces`](crate::client::Client::list_spaces).
             ///
-            /// See [`crate::client::fluent_builders::ListSpaces`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSpaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSpaces {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpaces {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_dev_environment`](crate::client::Client::start_dev_environment).
             ///
-            /// See [`crate::client::fluent_builders::StartDevEnvironment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDevEnvironment {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDevEnvironment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_dev_environment_session`](crate::client::Client::start_dev_environment_session).
             ///
-            /// See [`crate::client::fluent_builders::StartDevEnvironmentSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartDevEnvironmentSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDevEnvironmentSession {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDevEnvironmentSessi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`stop_dev_environment`](crate::client::Client::stop_dev_environment).
             ///
-            /// See [`crate::client::fluent_builders::StopDevEnvironment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StopDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopDevEnvironment {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDevEnvironment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_dev_environment`](crate::client::Client::update_dev_environment).
             ///
-            /// See [`crate::client::fluent_builders::UpdateDevEnvironment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDevEnvironment {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDevEnvironment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`verify_session`](crate::client::Client::verify_session).
             ///
-            /// See [`crate::client::fluent_builders::VerifySession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `VerifySession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifySession {
     _private: ()

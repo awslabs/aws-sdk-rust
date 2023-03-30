@@ -35,6 +35,13 @@ impl Credentials {
         self.expiration.as_ref()
     }
 }
+impl Credentials {
+    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
+    pub fn builder() -> crate::model::credentials::Builder {
+        crate::model::credentials::Builder::default()
+    }
+}
+
 /// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
     
@@ -101,12 +108,6 @@ pub mod credentials {
     
     
 }
-impl Credentials {
-    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
-    pub fn builder() -> crate::model::credentials::Builder {
-        crate::model::credentials::Builder::default()
-    }
-}
 
 /// <p>Identifiers for the federated user that is associated with the credentials.</p>
 #[non_exhaustive]
@@ -129,6 +130,13 @@ impl FederatedUser {
         self.arn.as_deref()
     }
 }
+impl FederatedUser {
+    /// Creates a new builder-style object to manufacture [`FederatedUser`](crate::model::FederatedUser).
+    pub fn builder() -> crate::model::federated_user::Builder {
+        crate::model::federated_user::Builder::default()
+    }
+}
+
 /// See [`FederatedUser`](crate::model::FederatedUser).
 pub mod federated_user {
     
@@ -171,12 +179,6 @@ pub mod federated_user {
     
     
 }
-impl FederatedUser {
-    /// Creates a new builder-style object to manufacture [`FederatedUser`](crate::model::FederatedUser).
-    pub fn builder() -> crate::model::federated_user::Builder {
-        crate::model::federated_user::Builder::default()
-    }
-}
 
 /// <p>You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
@@ -203,6 +205,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -249,12 +258,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.</p>
 #[non_exhaustive]
@@ -270,6 +273,13 @@ impl PolicyDescriptorType {
         self.arn.as_deref()
     }
 }
+impl PolicyDescriptorType {
+    /// Creates a new builder-style object to manufacture [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
+    pub fn builder() -> crate::model::policy_descriptor_type::Builder {
+        crate::model::policy_descriptor_type::Builder::default()
+    }
+}
+
 /// See [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
 pub mod policy_descriptor_type {
     
@@ -300,12 +310,6 @@ pub mod policy_descriptor_type {
     
     
 }
-impl PolicyDescriptorType {
-    /// Creates a new builder-style object to manufacture [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
-    pub fn builder() -> crate::model::policy_descriptor_type::Builder {
-        crate::model::policy_descriptor_type::Builder::default()
-    }
-}
 
 /// <p>The identifiers for the temporary security credentials that the operation returns.</p>
 #[non_exhaustive]
@@ -328,6 +332,13 @@ impl AssumedRoleUser {
         self.arn.as_deref()
     }
 }
+impl AssumedRoleUser {
+    /// Creates a new builder-style object to manufacture [`AssumedRoleUser`](crate::model::AssumedRoleUser).
+    pub fn builder() -> crate::model::assumed_role_user::Builder {
+        crate::model::assumed_role_user::Builder::default()
+    }
+}
+
 /// See [`AssumedRoleUser`](crate::model::AssumedRoleUser).
 pub mod assumed_role_user {
     
@@ -369,11 +380,5 @@ pub mod assumed_role_user {
     }
     
     
-}
-impl AssumedRoleUser {
-    /// Creates a new builder-style object to manufacture [`AssumedRoleUser`](crate::model::AssumedRoleUser).
-    pub fn builder() -> crate::model::assumed_role_user::Builder {
-        crate::model::assumed_role_user::Builder::default()
-    }
 }
 

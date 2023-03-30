@@ -121,6 +121,13 @@ impl EndpointEventBus {
         self.event_bus_arn.as_deref()
     }
 }
+impl EndpointEventBus {
+    /// Creates a new builder-style object to manufacture [`EndpointEventBus`](crate::model::EndpointEventBus).
+    pub fn builder() -> crate::model::endpoint_event_bus::Builder {
+        crate::model::endpoint_event_bus::Builder::default()
+    }
+}
+
 /// See [`EndpointEventBus`](crate::model::EndpointEventBus).
 pub mod endpoint_event_bus {
     
@@ -151,12 +158,6 @@ pub mod endpoint_event_bus {
     
     
 }
-impl EndpointEventBus {
-    /// Creates a new builder-style object to manufacture [`EndpointEventBus`](crate::model::EndpointEventBus).
-    pub fn builder() -> crate::model::endpoint_event_bus::Builder {
-        crate::model::endpoint_event_bus::Builder::default()
-    }
-}
 
 /// <p>Endpoints can replicate all events to the secondary Region.</p>
 #[non_exhaustive]
@@ -172,6 +173,13 @@ impl ReplicationConfig {
         self.state.as_ref()
     }
 }
+impl ReplicationConfig {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfig`](crate::model::ReplicationConfig).
+    pub fn builder() -> crate::model::replication_config::Builder {
+        crate::model::replication_config::Builder::default()
+    }
+}
+
 /// See [`ReplicationConfig`](crate::model::ReplicationConfig).
 pub mod replication_config {
     
@@ -201,12 +209,6 @@ pub mod replication_config {
     }
     
     
-}
-impl ReplicationConfig {
-    /// Creates a new builder-style object to manufacture [`ReplicationConfig`](crate::model::ReplicationConfig).
-    pub fn builder() -> crate::model::replication_config::Builder {
-        crate::model::replication_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationState`, it is important to ensure
@@ -305,6 +307,13 @@ impl RoutingConfig {
         self.failover_config.as_ref()
     }
 }
+impl RoutingConfig {
+    /// Creates a new builder-style object to manufacture [`RoutingConfig`](crate::model::RoutingConfig).
+    pub fn builder() -> crate::model::routing_config::Builder {
+        crate::model::routing_config::Builder::default()
+    }
+}
+
 /// See [`RoutingConfig`](crate::model::RoutingConfig).
 pub mod routing_config {
     
@@ -335,12 +344,6 @@ pub mod routing_config {
     
     
 }
-impl RoutingConfig {
-    /// Creates a new builder-style object to manufacture [`RoutingConfig`](crate::model::RoutingConfig).
-    pub fn builder() -> crate::model::routing_config::Builder {
-        crate::model::routing_config::Builder::default()
-    }
-}
 
 /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
 #[non_exhaustive]
@@ -363,6 +366,13 @@ impl FailoverConfig {
         self.secondary.as_ref()
     }
 }
+impl FailoverConfig {
+    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig).
+    pub fn builder() -> crate::model::failover_config::Builder {
+        crate::model::failover_config::Builder::default()
+    }
+}
+
 /// See [`FailoverConfig`](crate::model::FailoverConfig).
 pub mod failover_config {
     
@@ -405,12 +415,6 @@ pub mod failover_config {
     
     
 }
-impl FailoverConfig {
-    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig).
-    pub fn builder() -> crate::model::failover_config::Builder {
-        crate::model::failover_config::Builder::default()
-    }
-}
 
 /// <p>The secondary Region that processes events when failover is triggered or replication is enabled.</p>
 #[non_exhaustive]
@@ -426,6 +430,13 @@ impl Secondary {
         self.route.as_deref()
     }
 }
+impl Secondary {
+    /// Creates a new builder-style object to manufacture [`Secondary`](crate::model::Secondary).
+    pub fn builder() -> crate::model::secondary::Builder {
+        crate::model::secondary::Builder::default()
+    }
+}
+
 /// See [`Secondary`](crate::model::Secondary).
 pub mod secondary {
     
@@ -456,12 +467,6 @@ pub mod secondary {
     
     
 }
-impl Secondary {
-    /// Creates a new builder-style object to manufacture [`Secondary`](crate::model::Secondary).
-    pub fn builder() -> crate::model::secondary::Builder {
-        crate::model::secondary::Builder::default()
-    }
-}
 
 /// <p>The primary Region of the endpoint.</p>
 #[non_exhaustive]
@@ -477,6 +482,13 @@ impl Primary {
         self.health_check.as_deref()
     }
 }
+impl Primary {
+    /// Creates a new builder-style object to manufacture [`Primary`](crate::model::Primary).
+    pub fn builder() -> crate::model::primary::Builder {
+        crate::model::primary::Builder::default()
+    }
+}
+
 /// See [`Primary`](crate::model::Primary).
 pub mod primary {
     
@@ -506,12 +518,6 @@ pub mod primary {
     }
     
     
-}
-impl Primary {
-    /// Creates a new builder-style object to manufacture [`Primary`](crate::model::Primary).
-    pub fn builder() -> crate::model::primary::Builder {
-        crate::model::primary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionState`, it is important to ensure
@@ -656,6 +662,13 @@ impl UpdateConnectionAuthRequestParameters {
         self.invocation_http_parameters.as_ref()
     }
 }
+impl UpdateConnectionAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionAuthRequestParameters`](crate::model::UpdateConnectionAuthRequestParameters).
+    pub fn builder() -> crate::model::update_connection_auth_request_parameters::Builder {
+        crate::model::update_connection_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionAuthRequestParameters`](crate::model::UpdateConnectionAuthRequestParameters).
 pub mod update_connection_auth_request_parameters {
     
@@ -722,12 +735,6 @@ pub mod update_connection_auth_request_parameters {
     
     
 }
-impl UpdateConnectionAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionAuthRequestParameters`](crate::model::UpdateConnectionAuthRequestParameters).
-    pub fn builder() -> crate::model::update_connection_auth_request_parameters::Builder {
-        crate::model::update_connection_auth_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains additional parameters for the connection.</p>
 #[non_exhaustive]
@@ -757,6 +764,13 @@ impl ConnectionHttpParameters {
         self.body_parameters.as_deref()
     }
 }
+impl ConnectionHttpParameters {
+    /// Creates a new builder-style object to manufacture [`ConnectionHttpParameters`](crate::model::ConnectionHttpParameters).
+    pub fn builder() -> crate::model::connection_http_parameters::Builder {
+        crate::model::connection_http_parameters::Builder::default()
+    }
+}
+
 /// See [`ConnectionHttpParameters`](crate::model::ConnectionHttpParameters).
 pub mod connection_http_parameters {
     
@@ -829,12 +843,6 @@ pub mod connection_http_parameters {
     
     
 }
-impl ConnectionHttpParameters {
-    /// Creates a new builder-style object to manufacture [`ConnectionHttpParameters`](crate::model::ConnectionHttpParameters).
-    pub fn builder() -> crate::model::connection_http_parameters::Builder {
-        crate::model::connection_http_parameters::Builder::default()
-    }
-}
 
 /// <p>Additional parameter included in the body. You can include up to 100 additional body parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
@@ -864,6 +872,13 @@ impl ConnectionBodyParameter {
         self.is_value_secret
     }
 }
+impl ConnectionBodyParameter {
+    /// Creates a new builder-style object to manufacture [`ConnectionBodyParameter`](crate::model::ConnectionBodyParameter).
+    pub fn builder() -> crate::model::connection_body_parameter::Builder {
+        crate::model::connection_body_parameter::Builder::default()
+    }
+}
+
 /// See [`ConnectionBodyParameter`](crate::model::ConnectionBodyParameter).
 pub mod connection_body_parameter {
     
@@ -919,12 +934,6 @@ pub mod connection_body_parameter {
     
     
 }
-impl ConnectionBodyParameter {
-    /// Creates a new builder-style object to manufacture [`ConnectionBodyParameter`](crate::model::ConnectionBodyParameter).
-    pub fn builder() -> crate::model::connection_body_parameter::Builder {
-        crate::model::connection_body_parameter::Builder::default()
-    }
-}
 
 /// <p>Additional query string parameter for the connection. You can include up to 100 additional query string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB.</p>
 #[non_exhaustive]
@@ -954,6 +963,13 @@ impl ConnectionQueryStringParameter {
         self.is_value_secret
     }
 }
+impl ConnectionQueryStringParameter {
+    /// Creates a new builder-style object to manufacture [`ConnectionQueryStringParameter`](crate::model::ConnectionQueryStringParameter).
+    pub fn builder() -> crate::model::connection_query_string_parameter::Builder {
+        crate::model::connection_query_string_parameter::Builder::default()
+    }
+}
+
 /// See [`ConnectionQueryStringParameter`](crate::model::ConnectionQueryStringParameter).
 pub mod connection_query_string_parameter {
     
@@ -1009,12 +1025,6 @@ pub mod connection_query_string_parameter {
     
     
 }
-impl ConnectionQueryStringParameter {
-    /// Creates a new builder-style object to manufacture [`ConnectionQueryStringParameter`](crate::model::ConnectionQueryStringParameter).
-    pub fn builder() -> crate::model::connection_query_string_parameter::Builder {
-        crate::model::connection_query_string_parameter::Builder::default()
-    }
-}
 
 /// <p>Additional parameter included in the header. You can include up to 100 additional header parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
@@ -1044,6 +1054,13 @@ impl ConnectionHeaderParameter {
         self.is_value_secret
     }
 }
+impl ConnectionHeaderParameter {
+    /// Creates a new builder-style object to manufacture [`ConnectionHeaderParameter`](crate::model::ConnectionHeaderParameter).
+    pub fn builder() -> crate::model::connection_header_parameter::Builder {
+        crate::model::connection_header_parameter::Builder::default()
+    }
+}
+
 /// See [`ConnectionHeaderParameter`](crate::model::ConnectionHeaderParameter).
 pub mod connection_header_parameter {
     
@@ -1099,12 +1116,6 @@ pub mod connection_header_parameter {
     
     
 }
-impl ConnectionHeaderParameter {
-    /// Creates a new builder-style object to manufacture [`ConnectionHeaderParameter`](crate::model::ConnectionHeaderParameter).
-    pub fn builder() -> crate::model::connection_header_parameter::Builder {
-        crate::model::connection_header_parameter::Builder::default()
-    }
-}
 
 /// <p>Contains the API key authorization parameters to use to update the connection.</p>
 #[non_exhaustive]
@@ -1127,6 +1138,13 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
         self.api_key_value.as_deref()
     }
 }
+impl UpdateConnectionApiKeyAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionApiKeyAuthRequestParameters`](crate::model::UpdateConnectionApiKeyAuthRequestParameters).
+    pub fn builder() -> crate::model::update_connection_api_key_auth_request_parameters::Builder {
+        crate::model::update_connection_api_key_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionApiKeyAuthRequestParameters`](crate::model::UpdateConnectionApiKeyAuthRequestParameters).
 pub mod update_connection_api_key_auth_request_parameters {
     
@@ -1169,12 +1187,6 @@ pub mod update_connection_api_key_auth_request_parameters {
     
     
 }
-impl UpdateConnectionApiKeyAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionApiKeyAuthRequestParameters`](crate::model::UpdateConnectionApiKeyAuthRequestParameters).
-    pub fn builder() -> crate::model::update_connection_api_key_auth_request_parameters::Builder {
-        crate::model::update_connection_api_key_auth_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the OAuth request parameters to use for the connection.</p>
 #[non_exhaustive]
@@ -1211,6 +1223,13 @@ impl UpdateConnectionOAuthRequestParameters {
         self.o_auth_http_parameters.as_ref()
     }
 }
+impl UpdateConnectionOAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionOAuthRequestParameters`](crate::model::UpdateConnectionOAuthRequestParameters).
+    pub fn builder() -> crate::model::update_connection_o_auth_request_parameters::Builder {
+        crate::model::update_connection_o_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionOAuthRequestParameters`](crate::model::UpdateConnectionOAuthRequestParameters).
 pub mod update_connection_o_auth_request_parameters {
     
@@ -1276,12 +1295,6 @@ pub mod update_connection_o_auth_request_parameters {
     }
     
     
-}
-impl UpdateConnectionOAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionOAuthRequestParameters`](crate::model::UpdateConnectionOAuthRequestParameters).
-    pub fn builder() -> crate::model::update_connection_o_auth_request_parameters::Builder {
-        crate::model::update_connection_o_auth_request_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionOAuthHttpMethod`, it is important to ensure
@@ -1392,6 +1405,13 @@ impl UpdateConnectionOAuthClientRequestParameters {
         self.client_secret.as_deref()
     }
 }
+impl UpdateConnectionOAuthClientRequestParameters {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionOAuthClientRequestParameters`](crate::model::UpdateConnectionOAuthClientRequestParameters).
+    pub fn builder() -> crate::model::update_connection_o_auth_client_request_parameters::Builder {
+        crate::model::update_connection_o_auth_client_request_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionOAuthClientRequestParameters`](crate::model::UpdateConnectionOAuthClientRequestParameters).
 pub mod update_connection_o_auth_client_request_parameters {
     
@@ -1434,12 +1454,6 @@ pub mod update_connection_o_auth_client_request_parameters {
     
     
 }
-impl UpdateConnectionOAuthClientRequestParameters {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionOAuthClientRequestParameters`](crate::model::UpdateConnectionOAuthClientRequestParameters).
-    pub fn builder() -> crate::model::update_connection_o_auth_client_request_parameters::Builder {
-        crate::model::update_connection_o_auth_client_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the Basic authorization parameters for the connection.</p>
 #[non_exhaustive]
@@ -1462,6 +1476,13 @@ impl UpdateConnectionBasicAuthRequestParameters {
         self.password.as_deref()
     }
 }
+impl UpdateConnectionBasicAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionBasicAuthRequestParameters`](crate::model::UpdateConnectionBasicAuthRequestParameters).
+    pub fn builder() -> crate::model::update_connection_basic_auth_request_parameters::Builder {
+        crate::model::update_connection_basic_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionBasicAuthRequestParameters`](crate::model::UpdateConnectionBasicAuthRequestParameters).
 pub mod update_connection_basic_auth_request_parameters {
     
@@ -1503,12 +1524,6 @@ pub mod update_connection_basic_auth_request_parameters {
     }
     
     
-}
-impl UpdateConnectionBasicAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionBasicAuthRequestParameters`](crate::model::UpdateConnectionBasicAuthRequestParameters).
-    pub fn builder() -> crate::model::update_connection_basic_auth_request_parameters::Builder {
-        crate::model::update_connection_basic_auth_request_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionAuthorizationType`, it is important to ensure
@@ -1910,6 +1925,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1951,12 +1973,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplayState`, it is important to ensure
@@ -2082,6 +2098,13 @@ impl ReplayDestination {
         self.filter_arns.as_deref()
     }
 }
+impl ReplayDestination {
+    /// Creates a new builder-style object to manufacture [`ReplayDestination`](crate::model::ReplayDestination).
+    pub fn builder() -> crate::model::replay_destination::Builder {
+        crate::model::replay_destination::Builder::default()
+    }
+}
+
 /// See [`ReplayDestination`](crate::model::ReplayDestination).
 pub mod replay_destination {
     
@@ -2130,12 +2153,6 @@ pub mod replay_destination {
     
     
 }
-impl ReplayDestination {
-    /// Creates a new builder-style object to manufacture [`ReplayDestination`](crate::model::ReplayDestination).
-    pub fn builder() -> crate::model::replay_destination::Builder {
-        crate::model::replay_destination::Builder::default()
-    }
-}
 
 /// <p>Represents a target that failed to be removed from a rule.</p>
 #[non_exhaustive]
@@ -2165,6 +2182,13 @@ impl RemoveTargetsResultEntry {
         self.error_message.as_deref()
     }
 }
+impl RemoveTargetsResultEntry {
+    /// Creates a new builder-style object to manufacture [`RemoveTargetsResultEntry`](crate::model::RemoveTargetsResultEntry).
+    pub fn builder() -> crate::model::remove_targets_result_entry::Builder {
+        crate::model::remove_targets_result_entry::Builder::default()
+    }
+}
+
 /// See [`RemoveTargetsResultEntry`](crate::model::RemoveTargetsResultEntry).
 pub mod remove_targets_result_entry {
     
@@ -2219,12 +2243,6 @@ pub mod remove_targets_result_entry {
     
     
 }
-impl RemoveTargetsResultEntry {
-    /// Creates a new builder-style object to manufacture [`RemoveTargetsResultEntry`](crate::model::RemoveTargetsResultEntry).
-    pub fn builder() -> crate::model::remove_targets_result_entry::Builder {
-        crate::model::remove_targets_result_entry::Builder::default()
-    }
-}
 
 /// <p>Represents a target that failed to be added to a rule.</p>
 #[non_exhaustive]
@@ -2254,6 +2272,13 @@ impl PutTargetsResultEntry {
         self.error_message.as_deref()
     }
 }
+impl PutTargetsResultEntry {
+    /// Creates a new builder-style object to manufacture [`PutTargetsResultEntry`](crate::model::PutTargetsResultEntry).
+    pub fn builder() -> crate::model::put_targets_result_entry::Builder {
+        crate::model::put_targets_result_entry::Builder::default()
+    }
+}
+
 /// See [`PutTargetsResultEntry`](crate::model::PutTargetsResultEntry).
 pub mod put_targets_result_entry {
     
@@ -2307,12 +2332,6 @@ pub mod put_targets_result_entry {
     }
     
     
-}
-impl PutTargetsResultEntry {
-    /// Creates a new builder-style object to manufacture [`PutTargetsResultEntry`](crate::model::PutTargetsResultEntry).
-    pub fn builder() -> crate::model::put_targets_result_entry::Builder {
-        crate::model::put_targets_result_entry::Builder::default()
-    }
 }
 
 /// <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p> 
@@ -2443,6 +2462,13 @@ impl Target {
         self.retry_policy.as_ref()
     }
 }
+impl Target {
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
+    pub fn builder() -> crate::model::target::Builder {
+        crate::model::target::Builder::default()
+    }
+}
+
 /// See [`Target`](crate::model::Target).
 pub mod target {
     
@@ -2661,12 +2687,6 @@ pub mod target {
     
     
 }
-impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
-    pub fn builder() -> crate::model::target::Builder {
-        crate::model::target::Builder::default()
-    }
-}
 
 /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings.</p>
 #[non_exhaustive]
@@ -2689,6 +2709,13 @@ impl RetryPolicy {
         self.maximum_event_age_in_seconds
     }
 }
+impl RetryPolicy {
+    /// Creates a new builder-style object to manufacture [`RetryPolicy`](crate::model::RetryPolicy).
+    pub fn builder() -> crate::model::retry_policy::Builder {
+        crate::model::retry_policy::Builder::default()
+    }
+}
+
 /// See [`RetryPolicy`](crate::model::RetryPolicy).
 pub mod retry_policy {
     
@@ -2731,12 +2758,6 @@ pub mod retry_policy {
     
     
 }
-impl RetryPolicy {
-    /// Creates a new builder-style object to manufacture [`RetryPolicy`](crate::model::RetryPolicy).
-    pub fn builder() -> crate::model::retry_policy::Builder {
-        crate::model::retry_policy::Builder::default()
-    }
-}
 
 /// <p>A <code>DeadLetterConfig</code> object that contains information about a dead-letter queue configuration.</p>
 #[non_exhaustive]
@@ -2752,6 +2773,13 @@ impl DeadLetterConfig {
         self.arn.as_deref()
     }
 }
+impl DeadLetterConfig {
+    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
+    pub fn builder() -> crate::model::dead_letter_config::Builder {
+        crate::model::dead_letter_config::Builder::default()
+    }
+}
+
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
     
@@ -2782,12 +2810,6 @@ pub mod dead_letter_config {
     
     
 }
-impl DeadLetterConfig {
-    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
-    pub fn builder() -> crate::model::dead_letter_config::Builder {
-        crate::model::dead_letter_config::Builder::default()
-    }
-}
 
 /// <p>These are custom parameters to use when the target is a SageMaker Model Building Pipeline that starts based on EventBridge events.</p>
 #[non_exhaustive]
@@ -2803,6 +2825,13 @@ impl SageMakerPipelineParameters {
         self.pipeline_parameter_list.as_deref()
     }
 }
+impl SageMakerPipelineParameters {
+    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
+    pub fn builder() -> crate::model::sage_maker_pipeline_parameters::Builder {
+        crate::model::sage_maker_pipeline_parameters::Builder::default()
+    }
+}
+
 /// See [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
 pub mod sage_maker_pipeline_parameters {
     
@@ -2839,12 +2868,6 @@ pub mod sage_maker_pipeline_parameters {
     
     
 }
-impl SageMakerPipelineParameters {
-    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
-    pub fn builder() -> crate::model::sage_maker_pipeline_parameters::Builder {
-        crate::model::sage_maker_pipeline_parameters::Builder::default()
-    }
-}
 
 /// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
@@ -2867,6 +2890,13 @@ impl SageMakerPipelineParameter {
         self.value.as_deref()
     }
 }
+impl SageMakerPipelineParameter {
+    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
+    pub fn builder() -> crate::model::sage_maker_pipeline_parameter::Builder {
+        crate::model::sage_maker_pipeline_parameter::Builder::default()
+    }
+}
+
 /// See [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
 pub mod sage_maker_pipeline_parameter {
     
@@ -2908,12 +2938,6 @@ pub mod sage_maker_pipeline_parameter {
     }
     
     
-}
-impl SageMakerPipelineParameter {
-    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
-    pub fn builder() -> crate::model::sage_maker_pipeline_parameter::Builder {
-        crate::model::sage_maker_pipeline_parameter::Builder::default()
-    }
 }
 
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
@@ -2965,6 +2989,13 @@ impl RedshiftDataParameters {
         self.with_event
     }
 }
+impl RedshiftDataParameters {
+    /// Creates a new builder-style object to manufacture [`RedshiftDataParameters`](crate::model::RedshiftDataParameters).
+    pub fn builder() -> crate::model::redshift_data_parameters::Builder {
+        crate::model::redshift_data_parameters::Builder::default()
+    }
+}
+
 /// See [`RedshiftDataParameters`](crate::model::RedshiftDataParameters).
 pub mod redshift_data_parameters {
     
@@ -3056,12 +3087,6 @@ pub mod redshift_data_parameters {
     
     
 }
-impl RedshiftDataParameters {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataParameters`](crate::model::RedshiftDataParameters).
-    pub fn builder() -> crate::model::redshift_data_parameters::Builder {
-        crate::model::redshift_data_parameters::Builder::default()
-    }
-}
 
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.</p>
 #[non_exhaustive]
@@ -3091,6 +3116,13 @@ impl HttpParameters {
         self.query_string_parameters.as_ref()
     }
 }
+impl HttpParameters {
+    /// Creates a new builder-style object to manufacture [`HttpParameters`](crate::model::HttpParameters).
+    pub fn builder() -> crate::model::http_parameters::Builder {
+        crate::model::http_parameters::Builder::default()
+    }
+}
+
 /// See [`HttpParameters`](crate::model::HttpParameters).
 pub mod http_parameters {
     
@@ -3163,12 +3195,6 @@ pub mod http_parameters {
     
     
 }
-impl HttpParameters {
-    /// Creates a new builder-style object to manufacture [`HttpParameters`](crate::model::HttpParameters).
-    pub fn builder() -> crate::model::http_parameters::Builder {
-        crate::model::http_parameters::Builder::default()
-    }
-}
 
 /// <p>This structure includes the custom parameter to be used when the target is an SQS FIFO queue.</p>
 #[non_exhaustive]
@@ -3184,6 +3210,13 @@ impl SqsParameters {
         self.message_group_id.as_deref()
     }
 }
+impl SqsParameters {
+    /// Creates a new builder-style object to manufacture [`SqsParameters`](crate::model::SqsParameters).
+    pub fn builder() -> crate::model::sqs_parameters::Builder {
+        crate::model::sqs_parameters::Builder::default()
+    }
+}
+
 /// See [`SqsParameters`](crate::model::SqsParameters).
 pub mod sqs_parameters {
     
@@ -3213,12 +3246,6 @@ pub mod sqs_parameters {
     }
     
     
-}
-impl SqsParameters {
-    /// Creates a new builder-style object to manufacture [`SqsParameters`](crate::model::SqsParameters).
-    pub fn builder() -> crate::model::sqs_parameters::Builder {
-        crate::model::sqs_parameters::Builder::default()
-    }
 }
 
 /// <p>The custom parameters to be used when the target is an Batch job.</p>
@@ -3256,6 +3283,13 @@ impl BatchParameters {
         self.retry_strategy.as_ref()
     }
 }
+impl BatchParameters {
+    /// Creates a new builder-style object to manufacture [`BatchParameters`](crate::model::BatchParameters).
+    pub fn builder() -> crate::model::batch_parameters::Builder {
+        crate::model::batch_parameters::Builder::default()
+    }
+}
+
 /// See [`BatchParameters`](crate::model::BatchParameters).
 pub mod batch_parameters {
     
@@ -3322,12 +3356,6 @@ pub mod batch_parameters {
     
     
 }
-impl BatchParameters {
-    /// Creates a new builder-style object to manufacture [`BatchParameters`](crate::model::BatchParameters).
-    pub fn builder() -> crate::model::batch_parameters::Builder {
-        crate::model::batch_parameters::Builder::default()
-    }
-}
 
 /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
 #[non_exhaustive]
@@ -3343,6 +3371,13 @@ impl BatchRetryStrategy {
         self.attempts
     }
 }
+impl BatchRetryStrategy {
+    /// Creates a new builder-style object to manufacture [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
+    pub fn builder() -> crate::model::batch_retry_strategy::Builder {
+        crate::model::batch_retry_strategy::Builder::default()
+    }
+}
+
 /// See [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
 pub mod batch_retry_strategy {
     
@@ -3374,12 +3409,6 @@ pub mod batch_retry_strategy {
     
     
 }
-impl BatchRetryStrategy {
-    /// Creates a new builder-style object to manufacture [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
-    pub fn builder() -> crate::model::batch_retry_strategy::Builder {
-        crate::model::batch_retry_strategy::Builder::default()
-    }
-}
 
 /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
@@ -3395,6 +3424,13 @@ impl BatchArrayProperties {
         self.size
     }
 }
+impl BatchArrayProperties {
+    /// Creates a new builder-style object to manufacture [`BatchArrayProperties`](crate::model::BatchArrayProperties).
+    pub fn builder() -> crate::model::batch_array_properties::Builder {
+        crate::model::batch_array_properties::Builder::default()
+    }
+}
+
 /// See [`BatchArrayProperties`](crate::model::BatchArrayProperties).
 pub mod batch_array_properties {
     
@@ -3425,12 +3461,6 @@ pub mod batch_array_properties {
     }
     
     
-}
-impl BatchArrayProperties {
-    /// Creates a new builder-style object to manufacture [`BatchArrayProperties`](crate::model::BatchArrayProperties).
-    pub fn builder() -> crate::model::batch_array_properties::Builder {
-        crate::model::batch_array_properties::Builder::default()
-    }
 }
 
 /// <p>The custom parameters to be used when the target is an Amazon ECS task.</p>
@@ -3544,6 +3574,13 @@ impl EcsParameters {
         self.tags.as_deref()
     }
 }
+impl EcsParameters {
+    /// Creates a new builder-style object to manufacture [`EcsParameters`](crate::model::EcsParameters).
+    pub fn builder() -> crate::model::ecs_parameters::Builder {
+        crate::model::ecs_parameters::Builder::default()
+    }
+}
+
 /// See [`EcsParameters`](crate::model::EcsParameters).
 pub mod ecs_parameters {
     
@@ -3762,12 +3799,6 @@ pub mod ecs_parameters {
     
     
 }
-impl EcsParameters {
-    /// Creates a new builder-style object to manufacture [`EcsParameters`](crate::model::EcsParameters).
-    pub fn builder() -> crate::model::ecs_parameters::Builder {
-        crate::model::ecs_parameters::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PropagateTags`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3867,6 +3898,13 @@ impl PlacementStrategy {
         self.field.as_deref()
     }
 }
+impl PlacementStrategy {
+    /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
+    pub fn builder() -> crate::model::placement_strategy::Builder {
+        crate::model::placement_strategy::Builder::default()
+    }
+}
+
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
 pub mod placement_strategy {
     
@@ -3908,12 +3946,6 @@ pub mod placement_strategy {
     }
     
     
-}
-impl PlacementStrategy {
-    /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
-    pub fn builder() -> crate::model::placement_strategy::Builder {
-        crate::model::placement_strategy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlacementStrategyType`, it is important to ensure
@@ -4024,6 +4056,13 @@ impl PlacementConstraint {
         self.expression.as_deref()
     }
 }
+impl PlacementConstraint {
+    /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
+    pub fn builder() -> crate::model::placement_constraint::Builder {
+        crate::model::placement_constraint::Builder::default()
+    }
+}
+
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
 pub mod placement_constraint {
     
@@ -4065,12 +4104,6 @@ pub mod placement_constraint {
     }
     
     
-}
-impl PlacementConstraint {
-    /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
-    pub fn builder() -> crate::model::placement_constraint::Builder {
-        crate::model::placement_constraint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlacementConstraintType`, it is important to ensure
@@ -4183,6 +4216,13 @@ impl CapacityProviderStrategyItem {
         self.base
     }
 }
+impl CapacityProviderStrategyItem {
+    /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
+    pub fn builder() -> crate::model::capacity_provider_strategy_item::Builder {
+        crate::model::capacity_provider_strategy_item::Builder::default()
+    }
+}
+
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
 pub mod capacity_provider_strategy_item {
     
@@ -4239,12 +4279,6 @@ pub mod capacity_provider_strategy_item {
     
     
 }
-impl CapacityProviderStrategyItem {
-    /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
-    pub fn builder() -> crate::model::capacity_provider_strategy_item::Builder {
-        crate::model::capacity_provider_strategy_item::Builder::default()
-    }
-}
 
 /// <p>This structure specifies the network configuration for an ECS task.</p>
 #[non_exhaustive]
@@ -4260,6 +4294,13 @@ impl NetworkConfiguration {
         self.awsvpc_configuration.as_ref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
     
@@ -4290,12 +4331,6 @@ pub mod network_configuration {
     
     
 }
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
-    }
-}
 
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
@@ -4325,6 +4360,13 @@ impl AwsVpcConfiguration {
         self.assign_public_ip.as_ref()
     }
 }
+impl AwsVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
+    pub fn builder() -> crate::model::aws_vpc_configuration::Builder {
+        crate::model::aws_vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
 pub mod aws_vpc_configuration {
     
@@ -4390,12 +4432,6 @@ pub mod aws_vpc_configuration {
     }
     
     
-}
-impl AwsVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
-    pub fn builder() -> crate::model::aws_vpc_configuration::Builder {
-        crate::model::aws_vpc_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssignPublicIp`, it is important to ensure
@@ -4581,6 +4617,13 @@ impl RunCommandParameters {
         self.run_command_targets.as_deref()
     }
 }
+impl RunCommandParameters {
+    /// Creates a new builder-style object to manufacture [`RunCommandParameters`](crate::model::RunCommandParameters).
+    pub fn builder() -> crate::model::run_command_parameters::Builder {
+        crate::model::run_command_parameters::Builder::default()
+    }
+}
+
 /// See [`RunCommandParameters`](crate::model::RunCommandParameters).
 pub mod run_command_parameters {
     
@@ -4617,12 +4660,6 @@ pub mod run_command_parameters {
     
     
 }
-impl RunCommandParameters {
-    /// Creates a new builder-style object to manufacture [`RunCommandParameters`](crate::model::RunCommandParameters).
-    pub fn builder() -> crate::model::run_command_parameters::Builder {
-        crate::model::run_command_parameters::Builder::default()
-    }
-}
 
 /// <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>
 #[non_exhaustive]
@@ -4645,6 +4682,13 @@ impl RunCommandTarget {
         self.values.as_deref()
     }
 }
+impl RunCommandTarget {
+    /// Creates a new builder-style object to manufacture [`RunCommandTarget`](crate::model::RunCommandTarget).
+    pub fn builder() -> crate::model::run_command_target::Builder {
+        crate::model::run_command_target::Builder::default()
+    }
+}
+
 /// See [`RunCommandTarget`](crate::model::RunCommandTarget).
 pub mod run_command_target {
     
@@ -4693,12 +4737,6 @@ pub mod run_command_target {
     
     
 }
-impl RunCommandTarget {
-    /// Creates a new builder-style object to manufacture [`RunCommandTarget`](crate::model::RunCommandTarget).
-    pub fn builder() -> crate::model::run_command_target::Builder {
-        crate::model::run_command_target::Builder::default()
-    }
-}
 
 /// <p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
 #[non_exhaustive]
@@ -4714,6 +4752,13 @@ impl KinesisParameters {
         self.partition_key_path.as_deref()
     }
 }
+impl KinesisParameters {
+    /// Creates a new builder-style object to manufacture [`KinesisParameters`](crate::model::KinesisParameters).
+    pub fn builder() -> crate::model::kinesis_parameters::Builder {
+        crate::model::kinesis_parameters::Builder::default()
+    }
+}
+
 /// See [`KinesisParameters`](crate::model::KinesisParameters).
 pub mod kinesis_parameters {
     
@@ -4743,12 +4788,6 @@ pub mod kinesis_parameters {
     }
     
     
-}
-impl KinesisParameters {
-    /// Creates a new builder-style object to manufacture [`KinesisParameters`](crate::model::KinesisParameters).
-    pub fn builder() -> crate::model::kinesis_parameters::Builder {
-        crate::model::kinesis_parameters::Builder::default()
-    }
 }
 
 /// <p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>
@@ -4862,6 +4901,13 @@ impl InputTransformer {
         self.input_template.as_deref()
     }
 }
+impl InputTransformer {
+    /// Creates a new builder-style object to manufacture [`InputTransformer`](crate::model::InputTransformer).
+    pub fn builder() -> crate::model::input_transformer::Builder {
+        crate::model::input_transformer::Builder::default()
+    }
+}
+
 /// See [`InputTransformer`](crate::model::InputTransformer).
 pub mod input_transformer {
     
@@ -5000,12 +5046,6 @@ pub mod input_transformer {
     
     
 }
-impl InputTransformer {
-    /// Creates a new builder-style object to manufacture [`InputTransformer`](crate::model::InputTransformer).
-    pub fn builder() -> crate::model::input_transformer::Builder {
-        crate::model::input_transformer::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RuleState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5118,6 +5158,13 @@ impl Condition {
         self.value.as_deref()
     }
 }
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
     
@@ -5172,12 +5219,6 @@ pub mod condition {
     
     
 }
-impl Condition {
-    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
-    pub fn builder() -> crate::model::condition::Builder {
-        crate::model::condition::Builder::default()
-    }
-}
 
 /// <p>Represents an event that a partner tried to generate, but failed.</p>
 #[non_exhaustive]
@@ -5207,6 +5248,13 @@ impl PutPartnerEventsResultEntry {
         self.error_message.as_deref()
     }
 }
+impl PutPartnerEventsResultEntry {
+    /// Creates a new builder-style object to manufacture [`PutPartnerEventsResultEntry`](crate::model::PutPartnerEventsResultEntry).
+    pub fn builder() -> crate::model::put_partner_events_result_entry::Builder {
+        crate::model::put_partner_events_result_entry::Builder::default()
+    }
+}
+
 /// See [`PutPartnerEventsResultEntry`](crate::model::PutPartnerEventsResultEntry).
 pub mod put_partner_events_result_entry {
     
@@ -5261,12 +5309,6 @@ pub mod put_partner_events_result_entry {
     
     
 }
-impl PutPartnerEventsResultEntry {
-    /// Creates a new builder-style object to manufacture [`PutPartnerEventsResultEntry`](crate::model::PutPartnerEventsResultEntry).
-    pub fn builder() -> crate::model::put_partner_events_result_entry::Builder {
-        crate::model::put_partner_events_result_entry::Builder::default()
-    }
-}
 
 /// <p>The details about an event generated by an SaaS partner.</p>
 #[non_exhaustive]
@@ -5310,6 +5352,13 @@ impl PutPartnerEventsRequestEntry {
         self.detail.as_deref()
     }
 }
+impl PutPartnerEventsRequestEntry {
+    /// Creates a new builder-style object to manufacture [`PutPartnerEventsRequestEntry`](crate::model::PutPartnerEventsRequestEntry).
+    pub fn builder() -> crate::model::put_partner_events_request_entry::Builder {
+        crate::model::put_partner_events_request_entry::Builder::default()
+    }
+}
+
 /// See [`PutPartnerEventsRequestEntry`](crate::model::PutPartnerEventsRequestEntry).
 pub mod put_partner_events_request_entry {
     
@@ -5394,12 +5443,6 @@ pub mod put_partner_events_request_entry {
     
     
 }
-impl PutPartnerEventsRequestEntry {
-    /// Creates a new builder-style object to manufacture [`PutPartnerEventsRequestEntry`](crate::model::PutPartnerEventsRequestEntry).
-    pub fn builder() -> crate::model::put_partner_events_request_entry::Builder {
-        crate::model::put_partner_events_request_entry::Builder::default()
-    }
-}
 
 /// <p>Represents an event that failed to be submitted. For information about the errors that are common to all actions, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
 #[non_exhaustive]
@@ -5429,6 +5472,13 @@ impl PutEventsResultEntry {
         self.error_message.as_deref()
     }
 }
+impl PutEventsResultEntry {
+    /// Creates a new builder-style object to manufacture [`PutEventsResultEntry`](crate::model::PutEventsResultEntry).
+    pub fn builder() -> crate::model::put_events_result_entry::Builder {
+        crate::model::put_events_result_entry::Builder::default()
+    }
+}
+
 /// See [`PutEventsResultEntry`](crate::model::PutEventsResultEntry).
 pub mod put_events_result_entry {
     
@@ -5482,12 +5532,6 @@ pub mod put_events_result_entry {
     }
     
     
-}
-impl PutEventsResultEntry {
-    /// Creates a new builder-style object to manufacture [`PutEventsResultEntry`](crate::model::PutEventsResultEntry).
-    pub fn builder() -> crate::model::put_events_result_entry::Builder {
-        crate::model::put_events_result_entry::Builder::default()
-    }
 }
 
 /// <p>Represents an event to be submitted.</p>
@@ -5552,6 +5596,13 @@ impl PutEventsRequestEntry {
         self.trace_header.as_deref()
     }
 }
+impl PutEventsRequestEntry {
+    /// Creates a new builder-style object to manufacture [`PutEventsRequestEntry`](crate::model::PutEventsRequestEntry).
+    pub fn builder() -> crate::model::put_events_request_entry::Builder {
+        crate::model::put_events_request_entry::Builder::default()
+    }
+}
+
 /// See [`PutEventsRequestEntry`](crate::model::PutEventsRequestEntry).
 pub mod put_events_request_entry {
     
@@ -5666,12 +5717,6 @@ pub mod put_events_request_entry {
     
     
 }
-impl PutEventsRequestEntry {
-    /// Creates a new builder-style object to manufacture [`PutEventsRequestEntry`](crate::model::PutEventsRequestEntry).
-    pub fn builder() -> crate::model::put_events_request_entry::Builder {
-        crate::model::put_events_request_entry::Builder::default()
-    }
-}
 
 /// <p>Contains information about a rule in Amazon EventBridge.</p>
 #[non_exhaustive]
@@ -5745,6 +5790,13 @@ impl Rule {
         self.event_bus_name.as_deref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
     
@@ -5873,12 +5925,6 @@ pub mod rule {
     
     
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <p>A <code>Replay</code> object that contains details about a replay.</p>
 #[non_exhaustive]
@@ -5950,6 +5996,13 @@ impl Replay {
         self.replay_end_time.as_ref()
     }
 }
+impl Replay {
+    /// Creates a new builder-style object to manufacture [`Replay`](crate::model::Replay).
+    pub fn builder() -> crate::model::replay::Builder {
+        crate::model::replay::Builder::default()
+    }
+}
+
 /// See [`Replay`](crate::model::Replay).
 pub mod replay {
     
@@ -6076,12 +6129,6 @@ pub mod replay {
     
     
 }
-impl Replay {
-    /// Creates a new builder-style object to manufacture [`Replay`](crate::model::Replay).
-    pub fn builder() -> crate::model::replay::Builder {
-        crate::model::replay::Builder::default()
-    }
-}
 
 /// <p>A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.</p>
 #[non_exhaustive]
@@ -6104,6 +6151,13 @@ impl PartnerEventSource {
         self.name.as_deref()
     }
 }
+impl PartnerEventSource {
+    /// Creates a new builder-style object to manufacture [`PartnerEventSource`](crate::model::PartnerEventSource).
+    pub fn builder() -> crate::model::partner_event_source::Builder {
+        crate::model::partner_event_source::Builder::default()
+    }
+}
+
 /// See [`PartnerEventSource`](crate::model::PartnerEventSource).
 pub mod partner_event_source {
     
@@ -6146,12 +6200,6 @@ pub mod partner_event_source {
     
     
 }
-impl PartnerEventSource {
-    /// Creates a new builder-style object to manufacture [`PartnerEventSource`](crate::model::PartnerEventSource).
-    pub fn builder() -> crate::model::partner_event_source::Builder {
-        crate::model::partner_event_source::Builder::default()
-    }
-}
 
 /// <p>The Amazon Web Services account that a partner event source has been offered to.</p>
 #[non_exhaustive]
@@ -6188,6 +6236,13 @@ impl PartnerEventSourceAccount {
         self.state.as_ref()
     }
 }
+impl PartnerEventSourceAccount {
+    /// Creates a new builder-style object to manufacture [`PartnerEventSourceAccount`](crate::model::PartnerEventSourceAccount).
+    pub fn builder() -> crate::model::partner_event_source_account::Builder {
+        crate::model::partner_event_source_account::Builder::default()
+    }
+}
+
 /// See [`PartnerEventSourceAccount`](crate::model::PartnerEventSourceAccount).
 pub mod partner_event_source_account {
     
@@ -6253,12 +6308,6 @@ pub mod partner_event_source_account {
     }
     
     
-}
-impl PartnerEventSourceAccount {
-    /// Creates a new builder-style object to manufacture [`PartnerEventSourceAccount`](crate::model::PartnerEventSourceAccount).
-    pub fn builder() -> crate::model::partner_event_source_account::Builder {
-        crate::model::partner_event_source_account::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventSourceState`, it is important to ensure
@@ -6397,6 +6446,13 @@ impl EventSource {
         self.state.as_ref()
     }
 }
+impl EventSource {
+    /// Creates a new builder-style object to manufacture [`EventSource`](crate::model::EventSource).
+    pub fn builder() -> crate::model::event_source::Builder {
+        crate::model::event_source::Builder::default()
+    }
+}
+
 /// See [`EventSource`](crate::model::EventSource).
 pub mod event_source {
     
@@ -6487,12 +6543,6 @@ pub mod event_source {
     
     
 }
-impl EventSource {
-    /// Creates a new builder-style object to manufacture [`EventSource`](crate::model::EventSource).
-    pub fn builder() -> crate::model::event_source::Builder {
-        crate::model::event_source::Builder::default()
-    }
-}
 
 /// <p>An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event bus can receive events from your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.</p>
 #[non_exhaustive]
@@ -6522,6 +6572,13 @@ impl EventBus {
         self.policy.as_deref()
     }
 }
+impl EventBus {
+    /// Creates a new builder-style object to manufacture [`EventBus`](crate::model::EventBus).
+    pub fn builder() -> crate::model::event_bus::Builder {
+        crate::model::event_bus::Builder::default()
+    }
+}
+
 /// See [`EventBus`](crate::model::EventBus).
 pub mod event_bus {
     
@@ -6575,12 +6632,6 @@ pub mod event_bus {
     }
     
     
-}
-impl EventBus {
-    /// Creates a new builder-style object to manufacture [`EventBus`](crate::model::EventBus).
-    pub fn builder() -> crate::model::event_bus::Builder {
-        crate::model::event_bus::Builder::default()
-    }
 }
 
 /// <p>An global endpoint used to improve your application's availability by making it regional-fault tolerant. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>
@@ -6681,6 +6732,13 @@ impl Endpoint {
         self.last_modified_time.as_ref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
     
@@ -6861,12 +6919,6 @@ pub mod endpoint {
     
     
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>Contains information about a connection.</p>
 #[non_exhaustive]
@@ -6931,6 +6983,13 @@ impl Connection {
         self.last_authorized_time.as_ref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
     
@@ -7045,12 +7104,6 @@ pub mod connection {
     
     
 }
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
-    }
-}
 
 /// <p>An <code>Archive</code> object that contains details about an archive.</p>
 #[non_exhaustive]
@@ -7115,6 +7168,13 @@ impl Archive {
         self.creation_time.as_ref()
     }
 }
+impl Archive {
+    /// Creates a new builder-style object to manufacture [`Archive`](crate::model::Archive).
+    pub fn builder() -> crate::model::archive::Builder {
+        crate::model::archive::Builder::default()
+    }
+}
+
 /// See [`Archive`](crate::model::Archive).
 pub mod archive {
     
@@ -7231,12 +7291,6 @@ pub mod archive {
     
     
 }
-impl Archive {
-    /// Creates a new builder-style object to manufacture [`Archive`](crate::model::Archive).
-    pub fn builder() -> crate::model::archive::Builder {
-        crate::model::archive::Builder::default()
-    }
-}
 
 /// <p>Contains details about an API destination.</p>
 #[non_exhaustive]
@@ -7308,6 +7362,13 @@ impl ApiDestination {
         self.last_modified_time.as_ref()
     }
 }
+impl ApiDestination {
+    /// Creates a new builder-style object to manufacture [`ApiDestination`](crate::model::ApiDestination).
+    pub fn builder() -> crate::model::api_destination::Builder {
+        crate::model::api_destination::Builder::default()
+    }
+}
+
 /// See [`ApiDestination`](crate::model::ApiDestination).
 pub mod api_destination {
     
@@ -7434,12 +7495,6 @@ pub mod api_destination {
     
     
 }
-impl ApiDestination {
-    /// Creates a new builder-style object to manufacture [`ApiDestination`](crate::model::ApiDestination).
-    pub fn builder() -> crate::model::api_destination::Builder {
-        crate::model::api_destination::Builder::default()
-    }
-}
 
 /// <p>Contains the authorization parameters to use for the connection.</p>
 #[non_exhaustive]
@@ -7476,6 +7531,13 @@ impl ConnectionAuthResponseParameters {
         self.invocation_http_parameters.as_ref()
     }
 }
+impl ConnectionAuthResponseParameters {
+    /// Creates a new builder-style object to manufacture [`ConnectionAuthResponseParameters`](crate::model::ConnectionAuthResponseParameters).
+    pub fn builder() -> crate::model::connection_auth_response_parameters::Builder {
+        crate::model::connection_auth_response_parameters::Builder::default()
+    }
+}
+
 /// See [`ConnectionAuthResponseParameters`](crate::model::ConnectionAuthResponseParameters).
 pub mod connection_auth_response_parameters {
     
@@ -7542,12 +7604,6 @@ pub mod connection_auth_response_parameters {
     
     
 }
-impl ConnectionAuthResponseParameters {
-    /// Creates a new builder-style object to manufacture [`ConnectionAuthResponseParameters`](crate::model::ConnectionAuthResponseParameters).
-    pub fn builder() -> crate::model::connection_auth_response_parameters::Builder {
-        crate::model::connection_auth_response_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the authorization parameters for the connection if API Key is specified as the authorization type.</p>
 #[non_exhaustive]
@@ -7563,6 +7619,13 @@ impl ConnectionApiKeyAuthResponseParameters {
         self.api_key_name.as_deref()
     }
 }
+impl ConnectionApiKeyAuthResponseParameters {
+    /// Creates a new builder-style object to manufacture [`ConnectionApiKeyAuthResponseParameters`](crate::model::ConnectionApiKeyAuthResponseParameters).
+    pub fn builder() -> crate::model::connection_api_key_auth_response_parameters::Builder {
+        crate::model::connection_api_key_auth_response_parameters::Builder::default()
+    }
+}
+
 /// See [`ConnectionApiKeyAuthResponseParameters`](crate::model::ConnectionApiKeyAuthResponseParameters).
 pub mod connection_api_key_auth_response_parameters {
     
@@ -7592,12 +7655,6 @@ pub mod connection_api_key_auth_response_parameters {
     }
     
     
-}
-impl ConnectionApiKeyAuthResponseParameters {
-    /// Creates a new builder-style object to manufacture [`ConnectionApiKeyAuthResponseParameters`](crate::model::ConnectionApiKeyAuthResponseParameters).
-    pub fn builder() -> crate::model::connection_api_key_auth_response_parameters::Builder {
-        crate::model::connection_api_key_auth_response_parameters::Builder::default()
-    }
 }
 
 /// <p>Contains the response parameters when OAuth is specified as the authorization type.</p>
@@ -7635,6 +7692,13 @@ impl ConnectionOAuthResponseParameters {
         self.o_auth_http_parameters.as_ref()
     }
 }
+impl ConnectionOAuthResponseParameters {
+    /// Creates a new builder-style object to manufacture [`ConnectionOAuthResponseParameters`](crate::model::ConnectionOAuthResponseParameters).
+    pub fn builder() -> crate::model::connection_o_auth_response_parameters::Builder {
+        crate::model::connection_o_auth_response_parameters::Builder::default()
+    }
+}
+
 /// See [`ConnectionOAuthResponseParameters`](crate::model::ConnectionOAuthResponseParameters).
 pub mod connection_o_auth_response_parameters {
     
@@ -7701,12 +7765,6 @@ pub mod connection_o_auth_response_parameters {
     
     
 }
-impl ConnectionOAuthResponseParameters {
-    /// Creates a new builder-style object to manufacture [`ConnectionOAuthResponseParameters`](crate::model::ConnectionOAuthResponseParameters).
-    pub fn builder() -> crate::model::connection_o_auth_response_parameters::Builder {
-        crate::model::connection_o_auth_response_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the client response parameters for the connection when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
@@ -7722,6 +7780,13 @@ impl ConnectionOAuthClientResponseParameters {
         self.client_id.as_deref()
     }
 }
+impl ConnectionOAuthClientResponseParameters {
+    /// Creates a new builder-style object to manufacture [`ConnectionOAuthClientResponseParameters`](crate::model::ConnectionOAuthClientResponseParameters).
+    pub fn builder() -> crate::model::connection_o_auth_client_response_parameters::Builder {
+        crate::model::connection_o_auth_client_response_parameters::Builder::default()
+    }
+}
+
 /// See [`ConnectionOAuthClientResponseParameters`](crate::model::ConnectionOAuthClientResponseParameters).
 pub mod connection_o_auth_client_response_parameters {
     
@@ -7752,12 +7817,6 @@ pub mod connection_o_auth_client_response_parameters {
     
     
 }
-impl ConnectionOAuthClientResponseParameters {
-    /// Creates a new builder-style object to manufacture [`ConnectionOAuthClientResponseParameters`](crate::model::ConnectionOAuthClientResponseParameters).
-    pub fn builder() -> crate::model::connection_o_auth_client_response_parameters::Builder {
-        crate::model::connection_o_auth_client_response_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the authorization parameters for the connection if Basic is specified as the authorization type.</p>
 #[non_exhaustive]
@@ -7773,6 +7832,13 @@ impl ConnectionBasicAuthResponseParameters {
         self.username.as_deref()
     }
 }
+impl ConnectionBasicAuthResponseParameters {
+    /// Creates a new builder-style object to manufacture [`ConnectionBasicAuthResponseParameters`](crate::model::ConnectionBasicAuthResponseParameters).
+    pub fn builder() -> crate::model::connection_basic_auth_response_parameters::Builder {
+        crate::model::connection_basic_auth_response_parameters::Builder::default()
+    }
+}
+
 /// See [`ConnectionBasicAuthResponseParameters`](crate::model::ConnectionBasicAuthResponseParameters).
 pub mod connection_basic_auth_response_parameters {
     
@@ -7802,12 +7868,6 @@ pub mod connection_basic_auth_response_parameters {
     }
     
     
-}
-impl ConnectionBasicAuthResponseParameters {
-    /// Creates a new builder-style object to manufacture [`ConnectionBasicAuthResponseParameters`](crate::model::ConnectionBasicAuthResponseParameters).
-    pub fn builder() -> crate::model::connection_basic_auth_response_parameters::Builder {
-        crate::model::connection_basic_auth_response_parameters::Builder::default()
-    }
 }
 
 /// <p>Contains the authorization parameters for the connection.</p>
@@ -7845,6 +7905,13 @@ impl CreateConnectionAuthRequestParameters {
         self.invocation_http_parameters.as_ref()
     }
 }
+impl CreateConnectionAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionAuthRequestParameters`](crate::model::CreateConnectionAuthRequestParameters).
+    pub fn builder() -> crate::model::create_connection_auth_request_parameters::Builder {
+        crate::model::create_connection_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionAuthRequestParameters`](crate::model::CreateConnectionAuthRequestParameters).
 pub mod create_connection_auth_request_parameters {
     
@@ -7911,12 +7978,6 @@ pub mod create_connection_auth_request_parameters {
     
     
 }
-impl CreateConnectionAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionAuthRequestParameters`](crate::model::CreateConnectionAuthRequestParameters).
-    pub fn builder() -> crate::model::create_connection_auth_request_parameters::Builder {
-        crate::model::create_connection_auth_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the API key authorization parameters for the connection.</p>
 #[non_exhaustive]
@@ -7939,6 +8000,13 @@ impl CreateConnectionApiKeyAuthRequestParameters {
         self.api_key_value.as_deref()
     }
 }
+impl CreateConnectionApiKeyAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionApiKeyAuthRequestParameters`](crate::model::CreateConnectionApiKeyAuthRequestParameters).
+    pub fn builder() -> crate::model::create_connection_api_key_auth_request_parameters::Builder {
+        crate::model::create_connection_api_key_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionApiKeyAuthRequestParameters`](crate::model::CreateConnectionApiKeyAuthRequestParameters).
 pub mod create_connection_api_key_auth_request_parameters {
     
@@ -7981,12 +8049,6 @@ pub mod create_connection_api_key_auth_request_parameters {
     
     
 }
-impl CreateConnectionApiKeyAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionApiKeyAuthRequestParameters`](crate::model::CreateConnectionApiKeyAuthRequestParameters).
-    pub fn builder() -> crate::model::create_connection_api_key_auth_request_parameters::Builder {
-        crate::model::create_connection_api_key_auth_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the OAuth authorization parameters to use for the connection.</p>
 #[non_exhaustive]
@@ -8023,6 +8085,13 @@ impl CreateConnectionOAuthRequestParameters {
         self.o_auth_http_parameters.as_ref()
     }
 }
+impl CreateConnectionOAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionOAuthRequestParameters`](crate::model::CreateConnectionOAuthRequestParameters).
+    pub fn builder() -> crate::model::create_connection_o_auth_request_parameters::Builder {
+        crate::model::create_connection_o_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionOAuthRequestParameters`](crate::model::CreateConnectionOAuthRequestParameters).
 pub mod create_connection_o_auth_request_parameters {
     
@@ -8089,12 +8158,6 @@ pub mod create_connection_o_auth_request_parameters {
     
     
 }
-impl CreateConnectionOAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionOAuthRequestParameters`](crate::model::CreateConnectionOAuthRequestParameters).
-    pub fn builder() -> crate::model::create_connection_o_auth_request_parameters::Builder {
-        crate::model::create_connection_o_auth_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
@@ -8117,6 +8180,13 @@ impl CreateConnectionOAuthClientRequestParameters {
         self.client_secret.as_deref()
     }
 }
+impl CreateConnectionOAuthClientRequestParameters {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionOAuthClientRequestParameters`](crate::model::CreateConnectionOAuthClientRequestParameters).
+    pub fn builder() -> crate::model::create_connection_o_auth_client_request_parameters::Builder {
+        crate::model::create_connection_o_auth_client_request_parameters::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionOAuthClientRequestParameters`](crate::model::CreateConnectionOAuthClientRequestParameters).
 pub mod create_connection_o_auth_client_request_parameters {
     
@@ -8159,12 +8229,6 @@ pub mod create_connection_o_auth_client_request_parameters {
     
     
 }
-impl CreateConnectionOAuthClientRequestParameters {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionOAuthClientRequestParameters`](crate::model::CreateConnectionOAuthClientRequestParameters).
-    pub fn builder() -> crate::model::create_connection_o_auth_client_request_parameters::Builder {
-        crate::model::create_connection_o_auth_client_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
@@ -8187,6 +8251,13 @@ impl CreateConnectionBasicAuthRequestParameters {
         self.password.as_deref()
     }
 }
+impl CreateConnectionBasicAuthRequestParameters {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionBasicAuthRequestParameters`](crate::model::CreateConnectionBasicAuthRequestParameters).
+    pub fn builder() -> crate::model::create_connection_basic_auth_request_parameters::Builder {
+        crate::model::create_connection_basic_auth_request_parameters::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionBasicAuthRequestParameters`](crate::model::CreateConnectionBasicAuthRequestParameters).
 pub mod create_connection_basic_auth_request_parameters {
     
@@ -8228,11 +8299,5 @@ pub mod create_connection_basic_auth_request_parameters {
     }
     
     
-}
-impl CreateConnectionBasicAuthRequestParameters {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionBasicAuthRequestParameters`](crate::model::CreateConnectionBasicAuthRequestParameters).
-    pub fn builder() -> crate::model::create_connection_basic_auth_request_parameters::Builder {
-        crate::model::create_connection_basic_auth_request_parameters::Builder::default()
-    }
 }
 

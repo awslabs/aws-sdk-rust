@@ -35,6 +35,13 @@ impl TaskSummary {
         self.tags.as_ref()
     }
 }
+impl TaskSummary {
+    /// Creates a new builder-style object to manufacture [`TaskSummary`](crate::model::TaskSummary).
+    pub fn builder() -> crate::model::task_summary::Builder {
+        crate::model::task_summary::Builder::default()
+    }
+}
+
 /// See [`TaskSummary`](crate::model::TaskSummary).
 pub mod task_summary {
     
@@ -106,12 +113,6 @@ pub mod task_summary {
     }
     
     
-}
-impl TaskSummary {
-    /// Creates a new builder-style object to manufacture [`TaskSummary`](crate::model::TaskSummary).
-    pub fn builder() -> crate::model::task_summary::Builder {
-        crate::model::task_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TaskState`, it is important to ensure
@@ -249,6 +250,13 @@ impl Command {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Reboot  {
 }
+impl Reboot {
+    /// Creates a new builder-style object to manufacture [`Reboot`](crate::model::Reboot).
+    pub fn builder() -> crate::model::reboot::Builder {
+        crate::model::reboot::Builder::default()
+    }
+}
+
 /// See [`Reboot`](crate::model::Reboot).
 pub mod reboot {
     
@@ -267,18 +275,19 @@ pub mod reboot {
     
     
 }
-impl Reboot {
-    /// Creates a new builder-style object to manufacture [`Reboot`](crate::model::Reboot).
-    pub fn builder() -> crate::model::reboot::Builder {
-        crate::model::reboot::Builder::default()
-    }
-}
 
 /// <p>A structure used to unlock a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Unlock  {
 }
+impl Unlock {
+    /// Creates a new builder-style object to manufacture [`Unlock`](crate::model::Unlock).
+    pub fn builder() -> crate::model::unlock::Builder {
+        crate::model::unlock::Builder::default()
+    }
+}
+
 /// See [`Unlock`](crate::model::Unlock).
 pub mod unlock {
     
@@ -296,12 +305,6 @@ pub mod unlock {
     }
     
     
-}
-impl Unlock {
-    /// Creates a new builder-style object to manufacture [`Unlock`](crate::model::Unlock).
-    pub fn builder() -> crate::model::unlock::Builder {
-        crate::model::unlock::Builder::default()
-    }
 }
 
 /// <p>The summary of a task execution on a specified device.</p>
@@ -339,6 +342,13 @@ impl ExecutionSummary {
         self.state.as_ref()
     }
 }
+impl ExecutionSummary {
+    /// Creates a new builder-style object to manufacture [`ExecutionSummary`](crate::model::ExecutionSummary).
+    pub fn builder() -> crate::model::execution_summary::Builder {
+        crate::model::execution_summary::Builder::default()
+    }
+}
+
 /// See [`ExecutionSummary`](crate::model::ExecutionSummary).
 pub mod execution_summary {
     
@@ -404,12 +414,6 @@ pub mod execution_summary {
     }
     
     
-}
-impl ExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`ExecutionSummary`](crate::model::ExecutionSummary).
-    pub fn builder() -> crate::model::execution_summary::Builder {
-        crate::model::execution_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExecutionState`, it is important to ensure
@@ -547,6 +551,13 @@ impl ResourceSummary {
         self.id.as_deref()
     }
 }
+impl ResourceSummary {
+    /// Creates a new builder-style object to manufacture [`ResourceSummary`](crate::model::ResourceSummary).
+    pub fn builder() -> crate::model::resource_summary::Builder {
+        crate::model::resource_summary::Builder::default()
+    }
+}
+
 /// See [`ResourceSummary`](crate::model::ResourceSummary).
 pub mod resource_summary {
     
@@ -601,12 +612,6 @@ pub mod resource_summary {
     
     
 }
-impl ResourceSummary {
-    /// Creates a new builder-style object to manufacture [`ResourceSummary`](crate::model::ResourceSummary).
-    pub fn builder() -> crate::model::resource_summary::Builder {
-        crate::model::resource_summary::Builder::default()
-    }
-}
 
 /// <p>The details about the instance.</p>
 #[non_exhaustive]
@@ -629,6 +634,13 @@ impl InstanceSummary {
         self.last_updated_at.as_ref()
     }
 }
+impl InstanceSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
+    pub fn builder() -> crate::model::instance_summary::Builder {
+        crate::model::instance_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
     
@@ -670,12 +682,6 @@ pub mod instance_summary {
     }
     
     
-}
-impl InstanceSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
-    pub fn builder() -> crate::model::instance_summary::Builder {
-        crate::model::instance_summary::Builder::default()
-    }
 }
 
 /// <p>The description of an instance. Currently, Amazon EC2 instances are the only supported instance type.</p>
@@ -776,6 +782,13 @@ impl Instance {
         self.root_device_name.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -962,12 +975,6 @@ pub mod instance {
     
     
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// <p>The options for how a device's CPU is configured.</p>
 #[non_exhaustive]
@@ -990,6 +997,13 @@ impl CpuOptions {
         self.threads_per_core
     }
 }
+impl CpuOptions {
+    /// Creates a new builder-style object to manufacture [`CpuOptions`](crate::model::CpuOptions).
+    pub fn builder() -> crate::model::cpu_options::Builder {
+        crate::model::cpu_options::Builder::default()
+    }
+}
+
 /// See [`CpuOptions`](crate::model::CpuOptions).
 pub mod cpu_options {
     
@@ -1032,12 +1046,6 @@ pub mod cpu_options {
     
     
 }
-impl CpuOptions {
-    /// Creates a new builder-style object to manufacture [`CpuOptions`](crate::model::CpuOptions).
-    pub fn builder() -> crate::model::cpu_options::Builder {
-        crate::model::cpu_options::Builder::default()
-    }
-}
 
 /// <p>Information about the device's security group.</p>
 #[non_exhaustive]
@@ -1060,6 +1068,13 @@ impl SecurityGroupIdentifier {
         self.group_name.as_deref()
     }
 }
+impl SecurityGroupIdentifier {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
+    pub fn builder() -> crate::model::security_group_identifier::Builder {
+        crate::model::security_group_identifier::Builder::default()
+    }
+}
+
 /// See [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
 pub mod security_group_identifier {
     
@@ -1102,12 +1117,6 @@ pub mod security_group_identifier {
     
     
 }
-impl SecurityGroupIdentifier {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
-    pub fn builder() -> crate::model::security_group_identifier::Builder {
-        crate::model::security_group_identifier::Builder::default()
-    }
-}
 
 /// <p>The description of a block device mapping.</p>
 #[non_exhaustive]
@@ -1130,6 +1139,13 @@ impl InstanceBlockDeviceMapping {
         self.ebs.as_ref()
     }
 }
+impl InstanceBlockDeviceMapping {
+    /// Creates a new builder-style object to manufacture [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
+    pub fn builder() -> crate::model::instance_block_device_mapping::Builder {
+        crate::model::instance_block_device_mapping::Builder::default()
+    }
+}
+
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
 pub mod instance_block_device_mapping {
     
@@ -1172,12 +1188,6 @@ pub mod instance_block_device_mapping {
     
     
 }
-impl InstanceBlockDeviceMapping {
-    /// Creates a new builder-style object to manufacture [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
-    pub fn builder() -> crate::model::instance_block_device_mapping::Builder {
-        crate::model::instance_block_device_mapping::Builder::default()
-    }
-}
 
 /// <p>Describes a parameter used to set up an Amazon Elastic Block Store (Amazon EBS) volume in a block device mapping.</p>
 #[non_exhaustive]
@@ -1214,6 +1224,13 @@ impl EbsInstanceBlockDevice {
         self.volume_id.as_deref()
     }
 }
+impl EbsInstanceBlockDevice {
+    /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
+    pub fn builder() -> crate::model::ebs_instance_block_device::Builder {
+        crate::model::ebs_instance_block_device::Builder::default()
+    }
+}
+
 /// See [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
 pub mod ebs_instance_block_device {
     
@@ -1279,12 +1296,6 @@ pub mod ebs_instance_block_device {
     }
     
     
-}
-impl EbsInstanceBlockDevice {
-    /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
-    pub fn builder() -> crate::model::ebs_instance_block_device::Builder {
-        crate::model::ebs_instance_block_device::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AttachmentStatus`, it is important to ensure
@@ -1424,6 +1435,13 @@ impl InstanceState {
         self.name.as_ref()
     }
 }
+impl InstanceState {
+    /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
+    pub fn builder() -> crate::model::instance_state::Builder {
+        crate::model::instance_state::Builder::default()
+    }
+}
+
 /// See [`InstanceState`](crate::model::InstanceState).
 pub mod instance_state {
     
@@ -1489,12 +1507,6 @@ pub mod instance_state {
     }
     
     
-}
-impl InstanceState {
-    /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
-    pub fn builder() -> crate::model::instance_state::Builder {
-        crate::model::instance_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceStateName`, it is important to ensure
@@ -1634,6 +1646,13 @@ impl DeviceSummary {
         self.tags.as_ref()
     }
 }
+impl DeviceSummary {
+    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
+    pub fn builder() -> crate::model::device_summary::Builder {
+        crate::model::device_summary::Builder::default()
+    }
+}
+
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
 pub mod device_summary {
     
@@ -1706,12 +1725,6 @@ pub mod device_summary {
     
     
 }
-impl DeviceSummary {
-    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
-    pub fn builder() -> crate::model::device_summary::Builder {
-        crate::model::device_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the software on the device.</p>
 #[non_exhaustive]
@@ -1741,6 +1754,13 @@ impl SoftwareInformation {
         self.install_state.as_deref()
     }
 }
+impl SoftwareInformation {
+    /// Creates a new builder-style object to manufacture [`SoftwareInformation`](crate::model::SoftwareInformation).
+    pub fn builder() -> crate::model::software_information::Builder {
+        crate::model::software_information::Builder::default()
+    }
+}
+
 /// See [`SoftwareInformation`](crate::model::SoftwareInformation).
 pub mod software_information {
     
@@ -1795,12 +1815,6 @@ pub mod software_information {
     
     
 }
-impl SoftwareInformation {
-    /// Creates a new builder-style object to manufacture [`SoftwareInformation`](crate::model::SoftwareInformation).
-    pub fn builder() -> crate::model::software_information::Builder {
-        crate::model::software_information::Builder::default()
-    }
-}
 
 /// <p>The physical capacity of the Amazon Web Services Snow Family device. </p>
 #[non_exhaustive]
@@ -1844,6 +1858,13 @@ impl Capacity {
         self.available
     }
 }
+impl Capacity {
+    /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
+    pub fn builder() -> crate::model::capacity::Builder {
+        crate::model::capacity::Builder::default()
+    }
+}
+
 /// See [`Capacity`](crate::model::Capacity).
 pub mod capacity {
     
@@ -1922,12 +1943,6 @@ pub mod capacity {
     
     
 }
-impl Capacity {
-    /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
-    pub fn builder() -> crate::model::capacity::Builder {
-        crate::model::capacity::Builder::default()
-    }
-}
 
 /// <p>The details about the physical network interface for the device.</p>
 #[non_exhaustive]
@@ -1985,6 +2000,13 @@ impl PhysicalNetworkInterface {
         self.mac_address.as_deref()
     }
 }
+impl PhysicalNetworkInterface {
+    /// Creates a new builder-style object to manufacture [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
+    pub fn builder() -> crate::model::physical_network_interface::Builder {
+        crate::model::physical_network_interface::Builder::default()
+    }
+}
+
 /// See [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
 pub mod physical_network_interface {
     
@@ -2086,12 +2108,6 @@ pub mod physical_network_interface {
     }
     
     
-}
-impl PhysicalNetworkInterface {
-    /// Creates a new builder-style object to manufacture [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
-    pub fn builder() -> crate::model::physical_network_interface::Builder {
-        crate::model::physical_network_interface::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IpAddressAssignment`, it is important to ensure

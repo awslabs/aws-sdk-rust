@@ -109,6 +109,13 @@ impl  std::fmt::Debug for ContactInformation  {
         formatter.finish()
     }
 }
+impl ContactInformation {
+    /// Creates a new builder-style object to manufacture [`ContactInformation`](crate::model::ContactInformation).
+    pub fn builder() -> crate::model::contact_information::Builder {
+        crate::model::contact_information::Builder::default()
+    }
+}
+
 /// See [`ContactInformation`](crate::model::ContactInformation).
 pub mod contact_information {
     
@@ -289,12 +296,6 @@ pub mod contact_information {
     
     
 }
-impl ContactInformation {
-    /// Creates a new builder-style object to manufacture [`ContactInformation`](crate::model::ContactInformation).
-    pub fn builder() -> crate::model::contact_information::Builder {
-        crate::model::contact_information::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AlternateContactType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -436,6 +437,13 @@ impl  std::fmt::Debug for AlternateContact  {
         formatter.finish()
     }
 }
+impl AlternateContact {
+    /// Creates a new builder-style object to manufacture [`AlternateContact`](crate::model::AlternateContact).
+    pub fn builder() -> crate::model::alternate_contact::Builder {
+        crate::model::alternate_contact::Builder::default()
+    }
+}
+
 /// See [`AlternateContact`](crate::model::AlternateContact).
 pub mod alternate_contact {
     
@@ -524,11 +532,5 @@ pub mod alternate_contact {
     }
     
     
-}
-impl AlternateContact {
-    /// Creates a new builder-style object to manufacture [`AlternateContact`](crate::model::AlternateContact).
-    pub fn builder() -> crate::model::alternate_contact::Builder {
-        crate::model::alternate_contact::Builder::default()
-    }
 }
 

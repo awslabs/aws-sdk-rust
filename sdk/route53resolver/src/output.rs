@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateResolverRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateResolverRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
+    pub fn builder() -> crate::output::update_resolver_rule_output::Builder {
+        crate::output::update_resolver_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
 pub mod update_resolver_rule_output {
     
@@ -60,12 +67,6 @@ pub mod update_resolver_rule_output {
     
     
 }
-impl UpdateResolverRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverRuleOutput`](crate::output::UpdateResolverRuleOutput).
-    pub fn builder() -> crate::output::update_resolver_rule_output::Builder {
-        crate::output::update_resolver_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for UpdateResolverEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateResolverEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
+    pub fn builder() -> crate::output::update_resolver_endpoint_output::Builder {
+        crate::output::update_resolver_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
 pub mod update_resolver_endpoint_output {
     
@@ -128,12 +136,6 @@ pub mod update_resolver_endpoint_output {
     
     
 }
-impl UpdateResolverEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointOutput`](crate::output::UpdateResolverEndpointOutput).
-    pub fn builder() -> crate::output::update_resolver_endpoint_output::Builder {
-        crate::output::update_resolver_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for UpdateResolverDnssecConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateResolverDnssecConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
+    pub fn builder() -> crate::output::update_resolver_dnssec_config_output::Builder {
+        crate::output::update_resolver_dnssec_config_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
 pub mod update_resolver_dnssec_config_output {
     
@@ -196,12 +205,6 @@ pub mod update_resolver_dnssec_config_output {
     
     
 }
-impl UpdateResolverDnssecConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigOutput`](crate::output::UpdateResolverDnssecConfigOutput).
-    pub fn builder() -> crate::output::update_resolver_dnssec_config_output::Builder {
-        crate::output::update_resolver_dnssec_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -223,6 +226,13 @@ impl aws_http::request_id::RequestId for UpdateResolverConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateResolverConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
+    pub fn builder() -> crate::output::update_resolver_config_output::Builder {
+        crate::output::update_resolver_config_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
 pub mod update_resolver_config_output {
     
@@ -264,12 +274,6 @@ pub mod update_resolver_config_output {
     
     
 }
-impl UpdateResolverConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverConfigOutput`](crate::output::UpdateResolverConfigOutput).
-    pub fn builder() -> crate::output::update_resolver_config_output::Builder {
-        crate::output::update_resolver_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -291,6 +295,13 @@ impl aws_http::request_id::RequestId for UpdateFirewallRuleGroupAssociationOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFirewallRuleGroupAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
+    pub fn builder() -> crate::output::update_firewall_rule_group_association_output::Builder {
+        crate::output::update_firewall_rule_group_association_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
 pub mod update_firewall_rule_group_association_output {
     
@@ -332,12 +343,6 @@ pub mod update_firewall_rule_group_association_output {
     
     
 }
-impl UpdateFirewallRuleGroupAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationOutput`](crate::output::UpdateFirewallRuleGroupAssociationOutput).
-    pub fn builder() -> crate::output::update_firewall_rule_group_association_output::Builder {
-        crate::output::update_firewall_rule_group_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -359,6 +364,13 @@ impl aws_http::request_id::RequestId for UpdateFirewallRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFirewallRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
+    pub fn builder() -> crate::output::update_firewall_rule_output::Builder {
+        crate::output::update_firewall_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
 pub mod update_firewall_rule_output {
     
@@ -399,12 +411,6 @@ pub mod update_firewall_rule_output {
     }
     
     
-}
-impl UpdateFirewallRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleOutput`](crate::output::UpdateFirewallRuleOutput).
-    pub fn builder() -> crate::output::update_firewall_rule_output::Builder {
-        crate::output::update_firewall_rule_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -448,6 +454,13 @@ impl aws_http::request_id::RequestId for UpdateFirewallDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFirewallDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
+    pub fn builder() -> crate::output::update_firewall_domains_output::Builder {
+        crate::output::update_firewall_domains_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
 pub mod update_firewall_domains_output {
     
@@ -525,12 +538,6 @@ pub mod update_firewall_domains_output {
     
     
 }
-impl UpdateFirewallDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsOutput`](crate::output::UpdateFirewallDomainsOutput).
-    pub fn builder() -> crate::output::update_firewall_domains_output::Builder {
-        crate::output::update_firewall_domains_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -552,6 +559,13 @@ impl aws_http::request_id::RequestId for UpdateFirewallConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFirewallConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
+    pub fn builder() -> crate::output::update_firewall_config_output::Builder {
+        crate::output::update_firewall_config_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
 pub mod update_firewall_config_output {
     
@@ -593,12 +607,6 @@ pub mod update_firewall_config_output {
     
     
 }
-impl UpdateFirewallConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigOutput`](crate::output::UpdateFirewallConfigOutput).
-    pub fn builder() -> crate::output::update_firewall_config_output::Builder {
-        crate::output::update_firewall_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -611,6 +619,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -640,12 +655,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -658,6 +667,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -687,12 +703,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>PutResolverRulePolicy</code> request.</p>
 #[non_exhaustive]
@@ -714,6 +724,13 @@ impl aws_http::request_id::RequestId for PutResolverRulePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutResolverRulePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
+    pub fn builder() -> crate::output::put_resolver_rule_policy_output::Builder {
+        crate::output::put_resolver_rule_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
 pub mod put_resolver_rule_policy_output {
     
@@ -756,12 +773,6 @@ pub mod put_resolver_rule_policy_output {
     
     
 }
-impl PutResolverRulePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyOutput`](crate::output::PutResolverRulePolicyOutput).
-    pub fn builder() -> crate::output::put_resolver_rule_policy_output::Builder {
-        crate::output::put_resolver_rule_policy_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>PutResolverQueryLogConfigPolicy</code> request.</p>
 #[non_exhaustive]
@@ -783,6 +794,13 @@ impl aws_http::request_id::RequestId for PutResolverQueryLogConfigPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutResolverQueryLogConfigPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
+    pub fn builder() -> crate::output::put_resolver_query_log_config_policy_output::Builder {
+        crate::output::put_resolver_query_log_config_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
 pub mod put_resolver_query_log_config_policy_output {
     
@@ -825,12 +843,6 @@ pub mod put_resolver_query_log_config_policy_output {
     
     
 }
-impl PutResolverQueryLogConfigPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyOutput`](crate::output::PutResolverQueryLogConfigPolicyOutput).
-    pub fn builder() -> crate::output::put_resolver_query_log_config_policy_output::Builder {
-        crate::output::put_resolver_query_log_config_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -852,6 +864,13 @@ impl aws_http::request_id::RequestId for PutFirewallRuleGroupPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutFirewallRuleGroupPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
+    pub fn builder() -> crate::output::put_firewall_rule_group_policy_output::Builder {
+        crate::output::put_firewall_rule_group_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
 pub mod put_firewall_rule_group_policy_output {
     
@@ -894,12 +913,6 @@ pub mod put_firewall_rule_group_policy_output {
     
     
 }
-impl PutFirewallRuleGroupPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyOutput`](crate::output::PutFirewallRuleGroupPolicyOutput).
-    pub fn builder() -> crate::output::put_firewall_rule_group_policy_output::Builder {
-        crate::output::put_firewall_rule_group_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -928,6 +941,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -987,12 +1007,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1028,6 +1042,13 @@ impl aws_http::request_id::RequestId for ListResolverRulesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
+    pub fn builder() -> crate::output::list_resolver_rules_output::Builder {
+        crate::output::list_resolver_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
 pub mod list_resolver_rules_output {
     
@@ -1099,12 +1120,6 @@ pub mod list_resolver_rules_output {
     
     
 }
-impl ListResolverRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverRulesOutput`](crate::output::ListResolverRulesOutput).
-    pub fn builder() -> crate::output::list_resolver_rules_output::Builder {
-        crate::output::list_resolver_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1140,6 +1155,13 @@ impl aws_http::request_id::RequestId for ListResolverRuleAssociationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverRuleAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
+    pub fn builder() -> crate::output::list_resolver_rule_associations_output::Builder {
+        crate::output::list_resolver_rule_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
 pub mod list_resolver_rule_associations_output {
     
@@ -1211,12 +1233,6 @@ pub mod list_resolver_rule_associations_output {
     
     
 }
-impl ListResolverRuleAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsOutput`](crate::output::ListResolverRuleAssociationsOutput).
-    pub fn builder() -> crate::output::list_resolver_rule_associations_output::Builder {
-        crate::output::list_resolver_rule_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1259,6 +1275,13 @@ impl aws_http::request_id::RequestId for ListResolverQueryLogConfigsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverQueryLogConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
+    pub fn builder() -> crate::output::list_resolver_query_log_configs_output::Builder {
+        crate::output::list_resolver_query_log_configs_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
 pub mod list_resolver_query_log_configs_output {
     
@@ -1344,12 +1367,6 @@ pub mod list_resolver_query_log_configs_output {
     
     
 }
-impl ListResolverQueryLogConfigsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsOutput`](crate::output::ListResolverQueryLogConfigsOutput).
-    pub fn builder() -> crate::output::list_resolver_query_log_configs_output::Builder {
-        crate::output::list_resolver_query_log_configs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1392,6 +1409,13 @@ impl aws_http::request_id::RequestId for ListResolverQueryLogConfigAssociationsO
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverQueryLogConfigAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
+    pub fn builder() -> crate::output::list_resolver_query_log_config_associations_output::Builder {
+        crate::output::list_resolver_query_log_config_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
 pub mod list_resolver_query_log_config_associations_output {
     
@@ -1477,12 +1501,6 @@ pub mod list_resolver_query_log_config_associations_output {
     
     
 }
-impl ListResolverQueryLogConfigAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsOutput`](crate::output::ListResolverQueryLogConfigAssociationsOutput).
-    pub fn builder() -> crate::output::list_resolver_query_log_config_associations_output::Builder {
-        crate::output::list_resolver_query_log_config_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1518,6 +1536,13 @@ impl aws_http::request_id::RequestId for ListResolverEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
+    pub fn builder() -> crate::output::list_resolver_endpoints_output::Builder {
+        crate::output::list_resolver_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
 pub mod list_resolver_endpoints_output {
     
@@ -1589,12 +1614,6 @@ pub mod list_resolver_endpoints_output {
     
     
 }
-impl ListResolverEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverEndpointsOutput`](crate::output::ListResolverEndpointsOutput).
-    pub fn builder() -> crate::output::list_resolver_endpoints_output::Builder {
-        crate::output::list_resolver_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1630,6 +1649,13 @@ impl aws_http::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverEndpointIpAddressesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
+    pub fn builder() -> crate::output::list_resolver_endpoint_ip_addresses_output::Builder {
+        crate::output::list_resolver_endpoint_ip_addresses_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
 pub mod list_resolver_endpoint_ip_addresses_output {
     
@@ -1701,12 +1727,6 @@ pub mod list_resolver_endpoint_ip_addresses_output {
     
     
 }
-impl ListResolverEndpointIpAddressesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesOutput`](crate::output::ListResolverEndpointIpAddressesOutput).
-    pub fn builder() -> crate::output::list_resolver_endpoint_ip_addresses_output::Builder {
-        crate::output::list_resolver_endpoint_ip_addresses_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1737,6 +1757,13 @@ impl aws_http::request_id::RequestId for ListResolverDnssecConfigsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverDnssecConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
+    pub fn builder() -> crate::output::list_resolver_dnssec_configs_output::Builder {
+        crate::output::list_resolver_dnssec_configs_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
 pub mod list_resolver_dnssec_configs_output {
     
@@ -1798,12 +1825,6 @@ pub mod list_resolver_dnssec_configs_output {
     
     
 }
-impl ListResolverDnssecConfigsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsOutput`](crate::output::ListResolverDnssecConfigsOutput).
-    pub fn builder() -> crate::output::list_resolver_dnssec_configs_output::Builder {
-        crate::output::list_resolver_dnssec_configs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1834,6 +1855,13 @@ impl aws_http::request_id::RequestId for ListResolverConfigsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListResolverConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
+    pub fn builder() -> crate::output::list_resolver_configs_output::Builder {
+        crate::output::list_resolver_configs_output::Builder::default()
+    }
+}
+
 /// See [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
 pub mod list_resolver_configs_output {
     
@@ -1895,12 +1923,6 @@ pub mod list_resolver_configs_output {
     
     
 }
-impl ListResolverConfigsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResolverConfigsOutput`](crate::output::ListResolverConfigsOutput).
-    pub fn builder() -> crate::output::list_resolver_configs_output::Builder {
-        crate::output::list_resolver_configs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1931,6 +1953,13 @@ impl aws_http::request_id::RequestId for ListFirewallRulesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFirewallRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
+    pub fn builder() -> crate::output::list_firewall_rules_output::Builder {
+        crate::output::list_firewall_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
 pub mod list_firewall_rules_output {
     
@@ -1992,12 +2021,6 @@ pub mod list_firewall_rules_output {
     
     
 }
-impl ListFirewallRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallRulesOutput`](crate::output::ListFirewallRulesOutput).
-    pub fn builder() -> crate::output::list_firewall_rules_output::Builder {
-        crate::output::list_firewall_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2028,6 +2051,13 @@ impl aws_http::request_id::RequestId for ListFirewallRuleGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFirewallRuleGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
+    pub fn builder() -> crate::output::list_firewall_rule_groups_output::Builder {
+        crate::output::list_firewall_rule_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
 pub mod list_firewall_rule_groups_output {
     
@@ -2089,12 +2119,6 @@ pub mod list_firewall_rule_groups_output {
     
     
 }
-impl ListFirewallRuleGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsOutput`](crate::output::ListFirewallRuleGroupsOutput).
-    pub fn builder() -> crate::output::list_firewall_rule_groups_output::Builder {
-        crate::output::list_firewall_rule_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2125,6 +2149,13 @@ impl aws_http::request_id::RequestId for ListFirewallRuleGroupAssociationsOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFirewallRuleGroupAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
+    pub fn builder() -> crate::output::list_firewall_rule_group_associations_output::Builder {
+        crate::output::list_firewall_rule_group_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
 pub mod list_firewall_rule_group_associations_output {
     
@@ -2186,12 +2217,6 @@ pub mod list_firewall_rule_group_associations_output {
     
     
 }
-impl ListFirewallRuleGroupAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsOutput`](crate::output::ListFirewallRuleGroupAssociationsOutput).
-    pub fn builder() -> crate::output::list_firewall_rule_group_associations_output::Builder {
-        crate::output::list_firewall_rule_group_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2222,6 +2247,13 @@ impl aws_http::request_id::RequestId for ListFirewallDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFirewallDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
+    pub fn builder() -> crate::output::list_firewall_domains_output::Builder {
+        crate::output::list_firewall_domains_output::Builder::default()
+    }
+}
+
 /// See [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
 pub mod list_firewall_domains_output {
     
@@ -2283,12 +2315,6 @@ pub mod list_firewall_domains_output {
     
     
 }
-impl ListFirewallDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallDomainsOutput`](crate::output::ListFirewallDomainsOutput).
-    pub fn builder() -> crate::output::list_firewall_domains_output::Builder {
-        crate::output::list_firewall_domains_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2319,6 +2345,13 @@ impl aws_http::request_id::RequestId for ListFirewallDomainListsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFirewallDomainListsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
+    pub fn builder() -> crate::output::list_firewall_domain_lists_output::Builder {
+        crate::output::list_firewall_domain_lists_output::Builder::default()
+    }
+}
+
 /// See [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
 pub mod list_firewall_domain_lists_output {
     
@@ -2380,12 +2413,6 @@ pub mod list_firewall_domain_lists_output {
     
     
 }
-impl ListFirewallDomainListsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsOutput`](crate::output::ListFirewallDomainListsOutput).
-    pub fn builder() -> crate::output::list_firewall_domain_lists_output::Builder {
-        crate::output::list_firewall_domain_lists_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2414,6 +2441,13 @@ impl aws_http::request_id::RequestId for ListFirewallConfigsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFirewallConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
+    pub fn builder() -> crate::output::list_firewall_configs_output::Builder {
+        crate::output::list_firewall_configs_output::Builder::default()
+    }
+}
+
 /// See [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
 pub mod list_firewall_configs_output {
     
@@ -2473,12 +2507,6 @@ pub mod list_firewall_configs_output {
     
     
 }
-impl ListFirewallConfigsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallConfigsOutput`](crate::output::ListFirewallConfigsOutput).
-    pub fn builder() -> crate::output::list_firewall_configs_output::Builder {
-        crate::output::list_firewall_configs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2521,6 +2549,13 @@ impl aws_http::request_id::RequestId for ImportFirewallDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ImportFirewallDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
+    pub fn builder() -> crate::output::import_firewall_domains_output::Builder {
+        crate::output::import_firewall_domains_output::Builder::default()
+    }
+}
+
 /// See [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
 pub mod import_firewall_domains_output {
     
@@ -2598,12 +2633,6 @@ pub mod import_firewall_domains_output {
     
     
 }
-impl ImportFirewallDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsOutput`](crate::output::ImportFirewallDomainsOutput).
-    pub fn builder() -> crate::output::import_firewall_domains_output::Builder {
-        crate::output::import_firewall_domains_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2625,6 +2654,13 @@ impl aws_http::request_id::RequestId for GetResolverRulePolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverRulePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
+    pub fn builder() -> crate::output::get_resolver_rule_policy_output::Builder {
+        crate::output::get_resolver_rule_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
 pub mod get_resolver_rule_policy_output {
     
@@ -2666,12 +2702,6 @@ pub mod get_resolver_rule_policy_output {
     
     
 }
-impl GetResolverRulePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyOutput`](crate::output::GetResolverRulePolicyOutput).
-    pub fn builder() -> crate::output::get_resolver_rule_policy_output::Builder {
-        crate::output::get_resolver_rule_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2693,6 +2723,13 @@ impl aws_http::request_id::RequestId for GetResolverRuleAssociationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverRuleAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
+    pub fn builder() -> crate::output::get_resolver_rule_association_output::Builder {
+        crate::output::get_resolver_rule_association_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
 pub mod get_resolver_rule_association_output {
     
@@ -2734,12 +2771,6 @@ pub mod get_resolver_rule_association_output {
     
     
 }
-impl GetResolverRuleAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationOutput`](crate::output::GetResolverRuleAssociationOutput).
-    pub fn builder() -> crate::output::get_resolver_rule_association_output::Builder {
-        crate::output::get_resolver_rule_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2761,6 +2792,13 @@ impl aws_http::request_id::RequestId for GetResolverRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverRuleOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
+    pub fn builder() -> crate::output::get_resolver_rule_output::Builder {
+        crate::output::get_resolver_rule_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
 pub mod get_resolver_rule_output {
     
@@ -2802,12 +2840,6 @@ pub mod get_resolver_rule_output {
     
     
 }
-impl GetResolverRuleOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverRuleOutput`](crate::output::GetResolverRuleOutput).
-    pub fn builder() -> crate::output::get_resolver_rule_output::Builder {
-        crate::output::get_resolver_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2829,6 +2861,13 @@ impl aws_http::request_id::RequestId for GetResolverQueryLogConfigPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverQueryLogConfigPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
+    pub fn builder() -> crate::output::get_resolver_query_log_config_policy_output::Builder {
+        crate::output::get_resolver_query_log_config_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
 pub mod get_resolver_query_log_config_policy_output {
     
@@ -2870,12 +2909,6 @@ pub mod get_resolver_query_log_config_policy_output {
     
     
 }
-impl GetResolverQueryLogConfigPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyOutput`](crate::output::GetResolverQueryLogConfigPolicyOutput).
-    pub fn builder() -> crate::output::get_resolver_query_log_config_policy_output::Builder {
-        crate::output::get_resolver_query_log_config_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2897,6 +2930,13 @@ impl aws_http::request_id::RequestId for GetResolverQueryLogConfigAssociationOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverQueryLogConfigAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
+    pub fn builder() -> crate::output::get_resolver_query_log_config_association_output::Builder {
+        crate::output::get_resolver_query_log_config_association_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
 pub mod get_resolver_query_log_config_association_output {
     
@@ -2938,12 +2978,6 @@ pub mod get_resolver_query_log_config_association_output {
     
     
 }
-impl GetResolverQueryLogConfigAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationOutput`](crate::output::GetResolverQueryLogConfigAssociationOutput).
-    pub fn builder() -> crate::output::get_resolver_query_log_config_association_output::Builder {
-        crate::output::get_resolver_query_log_config_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2965,6 +2999,13 @@ impl aws_http::request_id::RequestId for GetResolverQueryLogConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverQueryLogConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
+    pub fn builder() -> crate::output::get_resolver_query_log_config_output::Builder {
+        crate::output::get_resolver_query_log_config_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
 pub mod get_resolver_query_log_config_output {
     
@@ -3006,12 +3047,6 @@ pub mod get_resolver_query_log_config_output {
     
     
 }
-impl GetResolverQueryLogConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigOutput`](crate::output::GetResolverQueryLogConfigOutput).
-    pub fn builder() -> crate::output::get_resolver_query_log_config_output::Builder {
-        crate::output::get_resolver_query_log_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3033,6 +3068,13 @@ impl aws_http::request_id::RequestId for GetResolverEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
+    pub fn builder() -> crate::output::get_resolver_endpoint_output::Builder {
+        crate::output::get_resolver_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
 pub mod get_resolver_endpoint_output {
     
@@ -3074,12 +3116,6 @@ pub mod get_resolver_endpoint_output {
     
     
 }
-impl GetResolverEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverEndpointOutput`](crate::output::GetResolverEndpointOutput).
-    pub fn builder() -> crate::output::get_resolver_endpoint_output::Builder {
-        crate::output::get_resolver_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3101,6 +3137,13 @@ impl aws_http::request_id::RequestId for GetResolverDnssecConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverDnssecConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
+    pub fn builder() -> crate::output::get_resolver_dnssec_config_output::Builder {
+        crate::output::get_resolver_dnssec_config_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
 pub mod get_resolver_dnssec_config_output {
     
@@ -3142,12 +3185,6 @@ pub mod get_resolver_dnssec_config_output {
     
     
 }
-impl GetResolverDnssecConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigOutput`](crate::output::GetResolverDnssecConfigOutput).
-    pub fn builder() -> crate::output::get_resolver_dnssec_config_output::Builder {
-        crate::output::get_resolver_dnssec_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3169,6 +3206,13 @@ impl aws_http::request_id::RequestId for GetResolverConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResolverConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
+    pub fn builder() -> crate::output::get_resolver_config_output::Builder {
+        crate::output::get_resolver_config_output::Builder::default()
+    }
+}
+
 /// See [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
 pub mod get_resolver_config_output {
     
@@ -3210,12 +3254,6 @@ pub mod get_resolver_config_output {
     
     
 }
-impl GetResolverConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetResolverConfigOutput`](crate::output::GetResolverConfigOutput).
-    pub fn builder() -> crate::output::get_resolver_config_output::Builder {
-        crate::output::get_resolver_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3237,6 +3275,13 @@ impl aws_http::request_id::RequestId for GetFirewallRuleGroupPolicyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFirewallRuleGroupPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
+    pub fn builder() -> crate::output::get_firewall_rule_group_policy_output::Builder {
+        crate::output::get_firewall_rule_group_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
 pub mod get_firewall_rule_group_policy_output {
     
@@ -3278,12 +3323,6 @@ pub mod get_firewall_rule_group_policy_output {
     
     
 }
-impl GetFirewallRuleGroupPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyOutput`](crate::output::GetFirewallRuleGroupPolicyOutput).
-    pub fn builder() -> crate::output::get_firewall_rule_group_policy_output::Builder {
-        crate::output::get_firewall_rule_group_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3305,6 +3344,13 @@ impl aws_http::request_id::RequestId for GetFirewallRuleGroupAssociationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFirewallRuleGroupAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
+    pub fn builder() -> crate::output::get_firewall_rule_group_association_output::Builder {
+        crate::output::get_firewall_rule_group_association_output::Builder::default()
+    }
+}
+
 /// See [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
 pub mod get_firewall_rule_group_association_output {
     
@@ -3346,12 +3392,6 @@ pub mod get_firewall_rule_group_association_output {
     
     
 }
-impl GetFirewallRuleGroupAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationOutput`](crate::output::GetFirewallRuleGroupAssociationOutput).
-    pub fn builder() -> crate::output::get_firewall_rule_group_association_output::Builder {
-        crate::output::get_firewall_rule_group_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3373,6 +3413,13 @@ impl aws_http::request_id::RequestId for GetFirewallRuleGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFirewallRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
+    pub fn builder() -> crate::output::get_firewall_rule_group_output::Builder {
+        crate::output::get_firewall_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
 pub mod get_firewall_rule_group_output {
     
@@ -3414,12 +3461,6 @@ pub mod get_firewall_rule_group_output {
     
     
 }
-impl GetFirewallRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupOutput`](crate::output::GetFirewallRuleGroupOutput).
-    pub fn builder() -> crate::output::get_firewall_rule_group_output::Builder {
-        crate::output::get_firewall_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3441,6 +3482,13 @@ impl aws_http::request_id::RequestId for GetFirewallDomainListOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFirewallDomainListOutput {
+    /// Creates a new builder-style object to manufacture [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
+    pub fn builder() -> crate::output::get_firewall_domain_list_output::Builder {
+        crate::output::get_firewall_domain_list_output::Builder::default()
+    }
+}
+
 /// See [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
 pub mod get_firewall_domain_list_output {
     
@@ -3482,12 +3530,6 @@ pub mod get_firewall_domain_list_output {
     
     
 }
-impl GetFirewallDomainListOutput {
-    /// Creates a new builder-style object to manufacture [`GetFirewallDomainListOutput`](crate::output::GetFirewallDomainListOutput).
-    pub fn builder() -> crate::output::get_firewall_domain_list_output::Builder {
-        crate::output::get_firewall_domain_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3509,6 +3551,13 @@ impl aws_http::request_id::RequestId for GetFirewallConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFirewallConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
+    pub fn builder() -> crate::output::get_firewall_config_output::Builder {
+        crate::output::get_firewall_config_output::Builder::default()
+    }
+}
+
 /// See [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
 pub mod get_firewall_config_output {
     
@@ -3550,12 +3599,6 @@ pub mod get_firewall_config_output {
     
     
 }
-impl GetFirewallConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetFirewallConfigOutput`](crate::output::GetFirewallConfigOutput).
-    pub fn builder() -> crate::output::get_firewall_config_output::Builder {
-        crate::output::get_firewall_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3577,6 +3620,13 @@ impl aws_http::request_id::RequestId for DisassociateResolverRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateResolverRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
+    pub fn builder() -> crate::output::disassociate_resolver_rule_output::Builder {
+        crate::output::disassociate_resolver_rule_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
 pub mod disassociate_resolver_rule_output {
     
@@ -3618,12 +3668,6 @@ pub mod disassociate_resolver_rule_output {
     
     
 }
-impl DisassociateResolverRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleOutput`](crate::output::DisassociateResolverRuleOutput).
-    pub fn builder() -> crate::output::disassociate_resolver_rule_output::Builder {
-        crate::output::disassociate_resolver_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3645,6 +3689,13 @@ impl aws_http::request_id::RequestId for DisassociateResolverQueryLogConfigOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateResolverQueryLogConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
+    pub fn builder() -> crate::output::disassociate_resolver_query_log_config_output::Builder {
+        crate::output::disassociate_resolver_query_log_config_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
 pub mod disassociate_resolver_query_log_config_output {
     
@@ -3686,12 +3737,6 @@ pub mod disassociate_resolver_query_log_config_output {
     
     
 }
-impl DisassociateResolverQueryLogConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigOutput`](crate::output::DisassociateResolverQueryLogConfigOutput).
-    pub fn builder() -> crate::output::disassociate_resolver_query_log_config_output::Builder {
-        crate::output::disassociate_resolver_query_log_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3713,6 +3758,13 @@ impl aws_http::request_id::RequestId for DisassociateResolverEndpointIpAddressOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateResolverEndpointIpAddressOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
+    pub fn builder() -> crate::output::disassociate_resolver_endpoint_ip_address_output::Builder {
+        crate::output::disassociate_resolver_endpoint_ip_address_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
 pub mod disassociate_resolver_endpoint_ip_address_output {
     
@@ -3754,12 +3806,6 @@ pub mod disassociate_resolver_endpoint_ip_address_output {
     
     
 }
-impl DisassociateResolverEndpointIpAddressOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressOutput`](crate::output::DisassociateResolverEndpointIpAddressOutput).
-    pub fn builder() -> crate::output::disassociate_resolver_endpoint_ip_address_output::Builder {
-        crate::output::disassociate_resolver_endpoint_ip_address_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3781,6 +3827,13 @@ impl aws_http::request_id::RequestId for DisassociateFirewallRuleGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateFirewallRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
+    pub fn builder() -> crate::output::disassociate_firewall_rule_group_output::Builder {
+        crate::output::disassociate_firewall_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
 pub mod disassociate_firewall_rule_group_output {
     
@@ -3822,12 +3875,6 @@ pub mod disassociate_firewall_rule_group_output {
     
     
 }
-impl DisassociateFirewallRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateFirewallRuleGroupOutput`](crate::output::DisassociateFirewallRuleGroupOutput).
-    pub fn builder() -> crate::output::disassociate_firewall_rule_group_output::Builder {
-        crate::output::disassociate_firewall_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3849,6 +3896,13 @@ impl aws_http::request_id::RequestId for DeleteResolverRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteResolverRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
+    pub fn builder() -> crate::output::delete_resolver_rule_output::Builder {
+        crate::output::delete_resolver_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
 pub mod delete_resolver_rule_output {
     
@@ -3890,12 +3944,6 @@ pub mod delete_resolver_rule_output {
     
     
 }
-impl DeleteResolverRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverRuleOutput`](crate::output::DeleteResolverRuleOutput).
-    pub fn builder() -> crate::output::delete_resolver_rule_output::Builder {
-        crate::output::delete_resolver_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3917,6 +3965,13 @@ impl aws_http::request_id::RequestId for DeleteResolverQueryLogConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteResolverQueryLogConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
+    pub fn builder() -> crate::output::delete_resolver_query_log_config_output::Builder {
+        crate::output::delete_resolver_query_log_config_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
 pub mod delete_resolver_query_log_config_output {
     
@@ -3958,12 +4013,6 @@ pub mod delete_resolver_query_log_config_output {
     
     
 }
-impl DeleteResolverQueryLogConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigOutput`](crate::output::DeleteResolverQueryLogConfigOutput).
-    pub fn builder() -> crate::output::delete_resolver_query_log_config_output::Builder {
-        crate::output::delete_resolver_query_log_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3985,6 +4034,13 @@ impl aws_http::request_id::RequestId for DeleteResolverEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteResolverEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
+    pub fn builder() -> crate::output::delete_resolver_endpoint_output::Builder {
+        crate::output::delete_resolver_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
 pub mod delete_resolver_endpoint_output {
     
@@ -4026,12 +4082,6 @@ pub mod delete_resolver_endpoint_output {
     
     
 }
-impl DeleteResolverEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointOutput`](crate::output::DeleteResolverEndpointOutput).
-    pub fn builder() -> crate::output::delete_resolver_endpoint_output::Builder {
-        crate::output::delete_resolver_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4053,6 +4103,13 @@ impl aws_http::request_id::RequestId for DeleteFirewallRuleGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFirewallRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
+    pub fn builder() -> crate::output::delete_firewall_rule_group_output::Builder {
+        crate::output::delete_firewall_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
 pub mod delete_firewall_rule_group_output {
     
@@ -4094,12 +4151,6 @@ pub mod delete_firewall_rule_group_output {
     
     
 }
-impl DeleteFirewallRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupOutput`](crate::output::DeleteFirewallRuleGroupOutput).
-    pub fn builder() -> crate::output::delete_firewall_rule_group_output::Builder {
-        crate::output::delete_firewall_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4121,6 +4172,13 @@ impl aws_http::request_id::RequestId for DeleteFirewallRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFirewallRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
+    pub fn builder() -> crate::output::delete_firewall_rule_output::Builder {
+        crate::output::delete_firewall_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
 pub mod delete_firewall_rule_output {
     
@@ -4162,12 +4220,6 @@ pub mod delete_firewall_rule_output {
     
     
 }
-impl DeleteFirewallRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleOutput`](crate::output::DeleteFirewallRuleOutput).
-    pub fn builder() -> crate::output::delete_firewall_rule_output::Builder {
-        crate::output::delete_firewall_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4189,6 +4241,13 @@ impl aws_http::request_id::RequestId for DeleteFirewallDomainListOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFirewallDomainListOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
+    pub fn builder() -> crate::output::delete_firewall_domain_list_output::Builder {
+        crate::output::delete_firewall_domain_list_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
 pub mod delete_firewall_domain_list_output {
     
@@ -4230,12 +4289,6 @@ pub mod delete_firewall_domain_list_output {
     
     
 }
-impl DeleteFirewallDomainListOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallDomainListOutput`](crate::output::DeleteFirewallDomainListOutput).
-    pub fn builder() -> crate::output::delete_firewall_domain_list_output::Builder {
-        crate::output::delete_firewall_domain_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4257,6 +4310,13 @@ impl aws_http::request_id::RequestId for CreateResolverRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateResolverRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
+    pub fn builder() -> crate::output::create_resolver_rule_output::Builder {
+        crate::output::create_resolver_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
 pub mod create_resolver_rule_output {
     
@@ -4298,12 +4358,6 @@ pub mod create_resolver_rule_output {
     
     
 }
-impl CreateResolverRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResolverRuleOutput`](crate::output::CreateResolverRuleOutput).
-    pub fn builder() -> crate::output::create_resolver_rule_output::Builder {
-        crate::output::create_resolver_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4325,6 +4379,13 @@ impl aws_http::request_id::RequestId for CreateResolverQueryLogConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateResolverQueryLogConfigOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
+    pub fn builder() -> crate::output::create_resolver_query_log_config_output::Builder {
+        crate::output::create_resolver_query_log_config_output::Builder::default()
+    }
+}
+
 /// See [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
 pub mod create_resolver_query_log_config_output {
     
@@ -4366,12 +4427,6 @@ pub mod create_resolver_query_log_config_output {
     
     
 }
-impl CreateResolverQueryLogConfigOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigOutput`](crate::output::CreateResolverQueryLogConfigOutput).
-    pub fn builder() -> crate::output::create_resolver_query_log_config_output::Builder {
-        crate::output::create_resolver_query_log_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4393,6 +4448,13 @@ impl aws_http::request_id::RequestId for CreateResolverEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateResolverEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
+    pub fn builder() -> crate::output::create_resolver_endpoint_output::Builder {
+        crate::output::create_resolver_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
 pub mod create_resolver_endpoint_output {
     
@@ -4434,12 +4496,6 @@ pub mod create_resolver_endpoint_output {
     
     
 }
-impl CreateResolverEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResolverEndpointOutput`](crate::output::CreateResolverEndpointOutput).
-    pub fn builder() -> crate::output::create_resolver_endpoint_output::Builder {
-        crate::output::create_resolver_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4461,6 +4517,13 @@ impl aws_http::request_id::RequestId for CreateFirewallRuleGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFirewallRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
+    pub fn builder() -> crate::output::create_firewall_rule_group_output::Builder {
+        crate::output::create_firewall_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
 pub mod create_firewall_rule_group_output {
     
@@ -4502,12 +4565,6 @@ pub mod create_firewall_rule_group_output {
     
     
 }
-impl CreateFirewallRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupOutput`](crate::output::CreateFirewallRuleGroupOutput).
-    pub fn builder() -> crate::output::create_firewall_rule_group_output::Builder {
-        crate::output::create_firewall_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4529,6 +4586,13 @@ impl aws_http::request_id::RequestId for CreateFirewallRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFirewallRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
+    pub fn builder() -> crate::output::create_firewall_rule_output::Builder {
+        crate::output::create_firewall_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
 pub mod create_firewall_rule_output {
     
@@ -4570,12 +4634,6 @@ pub mod create_firewall_rule_output {
     
     
 }
-impl CreateFirewallRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleOutput`](crate::output::CreateFirewallRuleOutput).
-    pub fn builder() -> crate::output::create_firewall_rule_output::Builder {
-        crate::output::create_firewall_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4597,6 +4655,13 @@ impl aws_http::request_id::RequestId for CreateFirewallDomainListOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFirewallDomainListOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
+    pub fn builder() -> crate::output::create_firewall_domain_list_output::Builder {
+        crate::output::create_firewall_domain_list_output::Builder::default()
+    }
+}
+
 /// See [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
 pub mod create_firewall_domain_list_output {
     
@@ -4638,12 +4703,6 @@ pub mod create_firewall_domain_list_output {
     
     
 }
-impl CreateFirewallDomainListOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListOutput`](crate::output::CreateFirewallDomainListOutput).
-    pub fn builder() -> crate::output::create_firewall_domain_list_output::Builder {
-        crate::output::create_firewall_domain_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4665,6 +4724,13 @@ impl aws_http::request_id::RequestId for AssociateResolverRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateResolverRuleOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
+    pub fn builder() -> crate::output::associate_resolver_rule_output::Builder {
+        crate::output::associate_resolver_rule_output::Builder::default()
+    }
+}
+
 /// See [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
 pub mod associate_resolver_rule_output {
     
@@ -4706,12 +4772,6 @@ pub mod associate_resolver_rule_output {
     
     
 }
-impl AssociateResolverRuleOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResolverRuleOutput`](crate::output::AssociateResolverRuleOutput).
-    pub fn builder() -> crate::output::associate_resolver_rule_output::Builder {
-        crate::output::associate_resolver_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4733,6 +4793,13 @@ impl aws_http::request_id::RequestId for AssociateResolverQueryLogConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateResolverQueryLogConfigOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
+    pub fn builder() -> crate::output::associate_resolver_query_log_config_output::Builder {
+        crate::output::associate_resolver_query_log_config_output::Builder::default()
+    }
+}
+
 /// See [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
 pub mod associate_resolver_query_log_config_output {
     
@@ -4774,12 +4841,6 @@ pub mod associate_resolver_query_log_config_output {
     
     
 }
-impl AssociateResolverQueryLogConfigOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigOutput`](crate::output::AssociateResolverQueryLogConfigOutput).
-    pub fn builder() -> crate::output::associate_resolver_query_log_config_output::Builder {
-        crate::output::associate_resolver_query_log_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4801,6 +4862,13 @@ impl aws_http::request_id::RequestId for AssociateResolverEndpointIpAddressOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateResolverEndpointIpAddressOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
+    pub fn builder() -> crate::output::associate_resolver_endpoint_ip_address_output::Builder {
+        crate::output::associate_resolver_endpoint_ip_address_output::Builder::default()
+    }
+}
+
 /// See [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
 pub mod associate_resolver_endpoint_ip_address_output {
     
@@ -4842,12 +4910,6 @@ pub mod associate_resolver_endpoint_ip_address_output {
     
     
 }
-impl AssociateResolverEndpointIpAddressOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressOutput`](crate::output::AssociateResolverEndpointIpAddressOutput).
-    pub fn builder() -> crate::output::associate_resolver_endpoint_ip_address_output::Builder {
-        crate::output::associate_resolver_endpoint_ip_address_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4869,6 +4931,13 @@ impl aws_http::request_id::RequestId for AssociateFirewallRuleGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateFirewallRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
+    pub fn builder() -> crate::output::associate_firewall_rule_group_output::Builder {
+        crate::output::associate_firewall_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
 pub mod associate_firewall_rule_group_output {
     
@@ -4909,11 +4978,5 @@ pub mod associate_firewall_rule_group_output {
     }
     
     
-}
-impl AssociateFirewallRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupOutput`](crate::output::AssociateFirewallRuleGroupOutput).
-    pub fn builder() -> crate::output::associate_firewall_rule_group_output::Builder {
-        crate::output::associate_firewall_rule_group_output::Builder::default()
-    }
 }
 

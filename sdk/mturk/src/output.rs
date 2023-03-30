@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateQualificationTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateQualificationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
+    pub fn builder() -> crate::output::update_qualification_type_output::Builder {
+        crate::output::update_qualification_type_output::Builder::default()
+    }
+}
+
 /// See [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
 pub mod update_qualification_type_output {
     
@@ -60,12 +67,6 @@ pub mod update_qualification_type_output {
     
     
 }
-impl UpdateQualificationTypeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
-    pub fn builder() -> crate::output::update_qualification_type_output::Builder {
-        crate::output::update_qualification_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -78,6 +79,13 @@ impl aws_http::request_id::RequestId for UpdateNotificationSettingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateNotificationSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
+    pub fn builder() -> crate::output::update_notification_settings_output::Builder {
+        crate::output::update_notification_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
 pub mod update_notification_settings_output {
     
@@ -107,12 +115,6 @@ pub mod update_notification_settings_output {
     
     
 }
-impl UpdateNotificationSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
-    pub fn builder() -> crate::output::update_notification_settings_output::Builder {
-        crate::output::update_notification_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -125,6 +127,13 @@ impl aws_http::request_id::RequestId for UpdateHitTypeOfHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateHitTypeOfHitOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
+    pub fn builder() -> crate::output::update_hit_type_of_hit_output::Builder {
+        crate::output::update_hit_type_of_hit_output::Builder::default()
+    }
+}
+
 /// See [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
 pub mod update_hit_type_of_hit_output {
     
@@ -154,12 +163,6 @@ pub mod update_hit_type_of_hit_output {
     
     
 }
-impl UpdateHitTypeOfHitOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
-    pub fn builder() -> crate::output::update_hit_type_of_hit_output::Builder {
-        crate::output::update_hit_type_of_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -172,6 +175,13 @@ impl aws_http::request_id::RequestId for UpdateHitReviewStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateHitReviewStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
+    pub fn builder() -> crate::output::update_hit_review_status_output::Builder {
+        crate::output::update_hit_review_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
 pub mod update_hit_review_status_output {
     
@@ -201,12 +211,6 @@ pub mod update_hit_review_status_output {
     
     
 }
-impl UpdateHitReviewStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
-    pub fn builder() -> crate::output::update_hit_review_status_output::Builder {
-        crate::output::update_hit_review_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -219,6 +223,13 @@ impl aws_http::request_id::RequestId for UpdateExpirationForHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateExpirationForHitOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
+    pub fn builder() -> crate::output::update_expiration_for_hit_output::Builder {
+        crate::output::update_expiration_for_hit_output::Builder::default()
+    }
+}
+
 /// See [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
 pub mod update_expiration_for_hit_output {
     
@@ -248,12 +259,6 @@ pub mod update_expiration_for_hit_output {
     
     
 }
-impl UpdateExpirationForHitOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
-    pub fn builder() -> crate::output::update_expiration_for_hit_output::Builder {
-        crate::output::update_expiration_for_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -266,6 +271,13 @@ impl aws_http::request_id::RequestId for SendTestEventNotificationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendTestEventNotificationOutput {
+    /// Creates a new builder-style object to manufacture [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
+    pub fn builder() -> crate::output::send_test_event_notification_output::Builder {
+        crate::output::send_test_event_notification_output::Builder::default()
+    }
+}
+
 /// See [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
 pub mod send_test_event_notification_output {
     
@@ -295,12 +307,6 @@ pub mod send_test_event_notification_output {
     
     
 }
-impl SendTestEventNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
-    pub fn builder() -> crate::output::send_test_event_notification_output::Builder {
-        crate::output::send_test_event_notification_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -313,6 +319,13 @@ impl aws_http::request_id::RequestId for SendBonusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendBonusOutput {
+    /// Creates a new builder-style object to manufacture [`SendBonusOutput`](crate::output::SendBonusOutput).
+    pub fn builder() -> crate::output::send_bonus_output::Builder {
+        crate::output::send_bonus_output::Builder::default()
+    }
+}
+
 /// See [`SendBonusOutput`](crate::output::SendBonusOutput).
 pub mod send_bonus_output {
     
@@ -342,12 +355,6 @@ pub mod send_bonus_output {
     
     
 }
-impl SendBonusOutput {
-    /// Creates a new builder-style object to manufacture [`SendBonusOutput`](crate::output::SendBonusOutput).
-    pub fn builder() -> crate::output::send_bonus_output::Builder {
-        crate::output::send_bonus_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -360,6 +367,13 @@ impl aws_http::request_id::RequestId for RejectQualificationRequestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RejectQualificationRequestOutput {
+    /// Creates a new builder-style object to manufacture [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
+    pub fn builder() -> crate::output::reject_qualification_request_output::Builder {
+        crate::output::reject_qualification_request_output::Builder::default()
+    }
+}
+
 /// See [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
 pub mod reject_qualification_request_output {
     
@@ -389,12 +403,6 @@ pub mod reject_qualification_request_output {
     
     
 }
-impl RejectQualificationRequestOutput {
-    /// Creates a new builder-style object to manufacture [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
-    pub fn builder() -> crate::output::reject_qualification_request_output::Builder {
-        crate::output::reject_qualification_request_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -407,6 +415,13 @@ impl aws_http::request_id::RequestId for RejectAssignmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RejectAssignmentOutput {
+    /// Creates a new builder-style object to manufacture [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
+    pub fn builder() -> crate::output::reject_assignment_output::Builder {
+        crate::output::reject_assignment_output::Builder::default()
+    }
+}
+
 /// See [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
 pub mod reject_assignment_output {
     
@@ -436,12 +451,6 @@ pub mod reject_assignment_output {
     
     
 }
-impl RejectAssignmentOutput {
-    /// Creates a new builder-style object to manufacture [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
-    pub fn builder() -> crate::output::reject_assignment_output::Builder {
-        crate::output::reject_assignment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -463,6 +472,13 @@ impl aws_http::request_id::RequestId for NotifyWorkersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl NotifyWorkersOutput {
+    /// Creates a new builder-style object to manufacture [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
+    pub fn builder() -> crate::output::notify_workers_output::Builder {
+        crate::output::notify_workers_output::Builder::default()
+    }
+}
+
 /// See [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
 pub mod notify_workers_output {
     
@@ -510,12 +526,6 @@ pub mod notify_workers_output {
     
     
 }
-impl NotifyWorkersOutput {
-    /// Creates a new builder-style object to manufacture [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
-    pub fn builder() -> crate::output::notify_workers_output::Builder {
-        crate::output::notify_workers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -551,6 +561,13 @@ impl aws_http::request_id::RequestId for ListWorkersWithQualificationTypeOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorkersWithQualificationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
+    pub fn builder() -> crate::output::list_workers_with_qualification_type_output::Builder {
+        crate::output::list_workers_with_qualification_type_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
 pub mod list_workers_with_qualification_type_output {
     
@@ -622,12 +639,6 @@ pub mod list_workers_with_qualification_type_output {
     
     
 }
-impl ListWorkersWithQualificationTypeOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
-    pub fn builder() -> crate::output::list_workers_with_qualification_type_output::Builder {
-        crate::output::list_workers_with_qualification_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -663,6 +674,13 @@ impl aws_http::request_id::RequestId for ListWorkerBlocksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorkerBlocksOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
+    pub fn builder() -> crate::output::list_worker_blocks_output::Builder {
+        crate::output::list_worker_blocks_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
 pub mod list_worker_blocks_output {
     
@@ -734,12 +752,6 @@ pub mod list_worker_blocks_output {
     
     
 }
-impl ListWorkerBlocksOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
-    pub fn builder() -> crate::output::list_worker_blocks_output::Builder {
-        crate::output::list_worker_blocks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -796,6 +808,13 @@ impl aws_http::request_id::RequestId for ListReviewPolicyResultsForHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListReviewPolicyResultsForHitOutput {
+    /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
+    pub fn builder() -> crate::output::list_review_policy_results_for_hit_output::Builder {
+        crate::output::list_review_policy_results_for_hit_output::Builder::default()
+    }
+}
+
 /// See [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
 pub mod list_review_policy_results_for_hit_output {
     
@@ -897,12 +916,6 @@ pub mod list_review_policy_results_for_hit_output {
     
     
 }
-impl ListReviewPolicyResultsForHitOutput {
-    /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
-    pub fn builder() -> crate::output::list_review_policy_results_for_hit_output::Builder {
-        crate::output::list_review_policy_results_for_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -938,6 +951,13 @@ impl aws_http::request_id::RequestId for ListReviewableHiTsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListReviewableHiTsOutput {
+    /// Creates a new builder-style object to manufacture [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
+    pub fn builder() -> crate::output::list_reviewable_hi_ts_output::Builder {
+        crate::output::list_reviewable_hi_ts_output::Builder::default()
+    }
+}
+
 /// See [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
 pub mod list_reviewable_hi_ts_output {
     
@@ -1009,12 +1029,6 @@ pub mod list_reviewable_hi_ts_output {
     
     
 }
-impl ListReviewableHiTsOutput {
-    /// Creates a new builder-style object to manufacture [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
-    pub fn builder() -> crate::output::list_reviewable_hi_ts_output::Builder {
-        crate::output::list_reviewable_hi_ts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1050,6 +1064,13 @@ impl aws_http::request_id::RequestId for ListQualificationTypesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListQualificationTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
+    pub fn builder() -> crate::output::list_qualification_types_output::Builder {
+        crate::output::list_qualification_types_output::Builder::default()
+    }
+}
+
 /// See [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
 pub mod list_qualification_types_output {
     
@@ -1121,12 +1142,6 @@ pub mod list_qualification_types_output {
     
     
 }
-impl ListQualificationTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
-    pub fn builder() -> crate::output::list_qualification_types_output::Builder {
-        crate::output::list_qualification_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1162,6 +1177,13 @@ impl aws_http::request_id::RequestId for ListQualificationRequestsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListQualificationRequestsOutput {
+    /// Creates a new builder-style object to manufacture [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
+    pub fn builder() -> crate::output::list_qualification_requests_output::Builder {
+        crate::output::list_qualification_requests_output::Builder::default()
+    }
+}
+
 /// See [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
 pub mod list_qualification_requests_output {
     
@@ -1233,12 +1255,6 @@ pub mod list_qualification_requests_output {
     
     
 }
-impl ListQualificationRequestsOutput {
-    /// Creates a new builder-style object to manufacture [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
-    pub fn builder() -> crate::output::list_qualification_requests_output::Builder {
-        crate::output::list_qualification_requests_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1274,6 +1290,13 @@ impl aws_http::request_id::RequestId for ListHiTsForQualificationTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListHiTsForQualificationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
+    pub fn builder() -> crate::output::list_hi_ts_for_qualification_type_output::Builder {
+        crate::output::list_hi_ts_for_qualification_type_output::Builder::default()
+    }
+}
+
 /// See [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
 pub mod list_hi_ts_for_qualification_type_output {
     
@@ -1345,12 +1368,6 @@ pub mod list_hi_ts_for_qualification_type_output {
     
     
 }
-impl ListHiTsForQualificationTypeOutput {
-    /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
-    pub fn builder() -> crate::output::list_hi_ts_for_qualification_type_output::Builder {
-        crate::output::list_hi_ts_for_qualification_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1386,6 +1403,13 @@ impl aws_http::request_id::RequestId for ListHiTsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListHiTsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHiTsOutput`](crate::output::ListHiTsOutput).
+    pub fn builder() -> crate::output::list_hi_ts_output::Builder {
+        crate::output::list_hi_ts_output::Builder::default()
+    }
+}
+
 /// See [`ListHiTsOutput`](crate::output::ListHiTsOutput).
 pub mod list_hi_ts_output {
     
@@ -1457,12 +1481,6 @@ pub mod list_hi_ts_output {
     
     
 }
-impl ListHiTsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHiTsOutput`](crate::output::ListHiTsOutput).
-    pub fn builder() -> crate::output::list_hi_ts_output::Builder {
-        crate::output::list_hi_ts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1498,6 +1516,13 @@ impl aws_http::request_id::RequestId for ListBonusPaymentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListBonusPaymentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
+    pub fn builder() -> crate::output::list_bonus_payments_output::Builder {
+        crate::output::list_bonus_payments_output::Builder::default()
+    }
+}
+
 /// See [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
 pub mod list_bonus_payments_output {
     
@@ -1569,12 +1594,6 @@ pub mod list_bonus_payments_output {
     
     
 }
-impl ListBonusPaymentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
-    pub fn builder() -> crate::output::list_bonus_payments_output::Builder {
-        crate::output::list_bonus_payments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1610,6 +1629,13 @@ impl aws_http::request_id::RequestId for ListAssignmentsForHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssignmentsForHitOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
+    pub fn builder() -> crate::output::list_assignments_for_hit_output::Builder {
+        crate::output::list_assignments_for_hit_output::Builder::default()
+    }
+}
+
 /// See [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
 pub mod list_assignments_for_hit_output {
     
@@ -1681,12 +1707,6 @@ pub mod list_assignments_for_hit_output {
     
     
 }
-impl ListAssignmentsForHitOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
-    pub fn builder() -> crate::output::list_assignments_for_hit_output::Builder {
-        crate::output::list_assignments_for_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1708,6 +1728,13 @@ impl aws_http::request_id::RequestId for GetQualificationTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetQualificationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
+    pub fn builder() -> crate::output::get_qualification_type_output::Builder {
+        crate::output::get_qualification_type_output::Builder::default()
+    }
+}
+
 /// See [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
 pub mod get_qualification_type_output {
     
@@ -1749,12 +1776,6 @@ pub mod get_qualification_type_output {
     
     
 }
-impl GetQualificationTypeOutput {
-    /// Creates a new builder-style object to manufacture [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
-    pub fn builder() -> crate::output::get_qualification_type_output::Builder {
-        crate::output::get_qualification_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1776,6 +1797,13 @@ impl aws_http::request_id::RequestId for GetQualificationScoreOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetQualificationScoreOutput {
+    /// Creates a new builder-style object to manufacture [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
+    pub fn builder() -> crate::output::get_qualification_score_output::Builder {
+        crate::output::get_qualification_score_output::Builder::default()
+    }
+}
+
 /// See [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
 pub mod get_qualification_score_output {
     
@@ -1817,12 +1845,6 @@ pub mod get_qualification_score_output {
     
     
 }
-impl GetQualificationScoreOutput {
-    /// Creates a new builder-style object to manufacture [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
-    pub fn builder() -> crate::output::get_qualification_score_output::Builder {
-        crate::output::get_qualification_score_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1844,6 +1866,13 @@ impl aws_http::request_id::RequestId for GetHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetHitOutput {
+    /// Creates a new builder-style object to manufacture [`GetHitOutput`](crate::output::GetHitOutput).
+    pub fn builder() -> crate::output::get_hit_output::Builder {
+        crate::output::get_hit_output::Builder::default()
+    }
+}
+
 /// See [`GetHitOutput`](crate::output::GetHitOutput).
 pub mod get_hit_output {
     
@@ -1885,12 +1914,6 @@ pub mod get_hit_output {
     
     
 }
-impl GetHitOutput {
-    /// Creates a new builder-style object to manufacture [`GetHitOutput`](crate::output::GetHitOutput).
-    pub fn builder() -> crate::output::get_hit_output::Builder {
-        crate::output::get_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1912,6 +1935,13 @@ impl aws_http::request_id::RequestId for GetFileUploadUrlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFileUploadUrlOutput {
+    /// Creates a new builder-style object to manufacture [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
+    pub fn builder() -> crate::output::get_file_upload_url_output::Builder {
+        crate::output::get_file_upload_url_output::Builder::default()
+    }
+}
+
 /// See [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
 pub mod get_file_upload_url_output {
     
@@ -1953,12 +1983,6 @@ pub mod get_file_upload_url_output {
     
     
 }
-impl GetFileUploadUrlOutput {
-    /// Creates a new builder-style object to manufacture [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
-    pub fn builder() -> crate::output::get_file_upload_url_output::Builder {
-        crate::output::get_file_upload_url_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1987,6 +2011,13 @@ impl aws_http::request_id::RequestId for GetAssignmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAssignmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
+    pub fn builder() -> crate::output::get_assignment_output::Builder {
+        crate::output::get_assignment_output::Builder::default()
+    }
+}
+
 /// See [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
 pub mod get_assignment_output {
     
@@ -2040,12 +2071,6 @@ pub mod get_assignment_output {
     
     
 }
-impl GetAssignmentOutput {
-    /// Creates a new builder-style object to manufacture [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
-    pub fn builder() -> crate::output::get_assignment_output::Builder {
-        crate::output::get_assignment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2074,6 +2099,13 @@ impl aws_http::request_id::RequestId for GetAccountBalanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccountBalanceOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
+    pub fn builder() -> crate::output::get_account_balance_output::Builder {
+        crate::output::get_account_balance_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
 pub mod get_account_balance_output {
     
@@ -2127,12 +2159,6 @@ pub mod get_account_balance_output {
     
     
 }
-impl GetAccountBalanceOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
-    pub fn builder() -> crate::output::get_account_balance_output::Builder {
-        crate::output::get_account_balance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2145,6 +2171,13 @@ impl aws_http::request_id::RequestId for DisassociateQualificationFromWorkerOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateQualificationFromWorkerOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
+    pub fn builder() -> crate::output::disassociate_qualification_from_worker_output::Builder {
+        crate::output::disassociate_qualification_from_worker_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
 pub mod disassociate_qualification_from_worker_output {
     
@@ -2174,12 +2207,6 @@ pub mod disassociate_qualification_from_worker_output {
     
     
 }
-impl DisassociateQualificationFromWorkerOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
-    pub fn builder() -> crate::output::disassociate_qualification_from_worker_output::Builder {
-        crate::output::disassociate_qualification_from_worker_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2192,6 +2219,13 @@ impl aws_http::request_id::RequestId for DeleteWorkerBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteWorkerBlockOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
+    pub fn builder() -> crate::output::delete_worker_block_output::Builder {
+        crate::output::delete_worker_block_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
 pub mod delete_worker_block_output {
     
@@ -2221,12 +2255,6 @@ pub mod delete_worker_block_output {
     
     
 }
-impl DeleteWorkerBlockOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
-    pub fn builder() -> crate::output::delete_worker_block_output::Builder {
-        crate::output::delete_worker_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2239,6 +2267,13 @@ impl aws_http::request_id::RequestId for DeleteQualificationTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteQualificationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
+    pub fn builder() -> crate::output::delete_qualification_type_output::Builder {
+        crate::output::delete_qualification_type_output::Builder::default()
+    }
+}
+
 /// See [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
 pub mod delete_qualification_type_output {
     
@@ -2268,12 +2303,6 @@ pub mod delete_qualification_type_output {
     
     
 }
-impl DeleteQualificationTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
-    pub fn builder() -> crate::output::delete_qualification_type_output::Builder {
-        crate::output::delete_qualification_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2286,6 +2315,13 @@ impl aws_http::request_id::RequestId for DeleteHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteHitOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHitOutput`](crate::output::DeleteHitOutput).
+    pub fn builder() -> crate::output::delete_hit_output::Builder {
+        crate::output::delete_hit_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHitOutput`](crate::output::DeleteHitOutput).
 pub mod delete_hit_output {
     
@@ -2315,12 +2351,6 @@ pub mod delete_hit_output {
     
     
 }
-impl DeleteHitOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHitOutput`](crate::output::DeleteHitOutput).
-    pub fn builder() -> crate::output::delete_hit_output::Builder {
-        crate::output::delete_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2333,6 +2363,13 @@ impl aws_http::request_id::RequestId for CreateWorkerBlockOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateWorkerBlockOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
+    pub fn builder() -> crate::output::create_worker_block_output::Builder {
+        crate::output::create_worker_block_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
 pub mod create_worker_block_output {
     
@@ -2362,12 +2399,6 @@ pub mod create_worker_block_output {
     
     
 }
-impl CreateWorkerBlockOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
-    pub fn builder() -> crate::output::create_worker_block_output::Builder {
-        crate::output::create_worker_block_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2389,6 +2420,13 @@ impl aws_http::request_id::RequestId for CreateQualificationTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateQualificationTypeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
+    pub fn builder() -> crate::output::create_qualification_type_output::Builder {
+        crate::output::create_qualification_type_output::Builder::default()
+    }
+}
+
 /// See [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
 pub mod create_qualification_type_output {
     
@@ -2430,12 +2468,6 @@ pub mod create_qualification_type_output {
     
     
 }
-impl CreateQualificationTypeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
-    pub fn builder() -> crate::output::create_qualification_type_output::Builder {
-        crate::output::create_qualification_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2457,6 +2489,13 @@ impl aws_http::request_id::RequestId for CreateHitWithHitTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateHitWithHitTypeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
+    pub fn builder() -> crate::output::create_hit_with_hit_type_output::Builder {
+        crate::output::create_hit_with_hit_type_output::Builder::default()
+    }
+}
+
 /// See [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
 pub mod create_hit_with_hit_type_output {
     
@@ -2498,12 +2537,6 @@ pub mod create_hit_with_hit_type_output {
     
     
 }
-impl CreateHitWithHitTypeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
-    pub fn builder() -> crate::output::create_hit_with_hit_type_output::Builder {
-        crate::output::create_hit_with_hit_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2525,6 +2558,13 @@ impl aws_http::request_id::RequestId for CreateHitTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateHitTypeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
+    pub fn builder() -> crate::output::create_hit_type_output::Builder {
+        crate::output::create_hit_type_output::Builder::default()
+    }
+}
+
 /// See [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
 pub mod create_hit_type_output {
     
@@ -2566,12 +2606,6 @@ pub mod create_hit_type_output {
     
     
 }
-impl CreateHitTypeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
-    pub fn builder() -> crate::output::create_hit_type_output::Builder {
-        crate::output::create_hit_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2593,6 +2627,13 @@ impl aws_http::request_id::RequestId for CreateHitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateHitOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHitOutput`](crate::output::CreateHitOutput).
+    pub fn builder() -> crate::output::create_hit_output::Builder {
+        crate::output::create_hit_output::Builder::default()
+    }
+}
+
 /// See [`CreateHitOutput`](crate::output::CreateHitOutput).
 pub mod create_hit_output {
     
@@ -2634,12 +2675,6 @@ pub mod create_hit_output {
     
     
 }
-impl CreateHitOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHitOutput`](crate::output::CreateHitOutput).
-    pub fn builder() -> crate::output::create_hit_output::Builder {
-        crate::output::create_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2652,6 +2687,13 @@ impl aws_http::request_id::RequestId for CreateAdditionalAssignmentsForHitOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAdditionalAssignmentsForHitOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
+    pub fn builder() -> crate::output::create_additional_assignments_for_hit_output::Builder {
+        crate::output::create_additional_assignments_for_hit_output::Builder::default()
+    }
+}
+
 /// See [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
 pub mod create_additional_assignments_for_hit_output {
     
@@ -2681,12 +2723,6 @@ pub mod create_additional_assignments_for_hit_output {
     
     
 }
-impl CreateAdditionalAssignmentsForHitOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
-    pub fn builder() -> crate::output::create_additional_assignments_for_hit_output::Builder {
-        crate::output::create_additional_assignments_for_hit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2699,6 +2735,13 @@ impl aws_http::request_id::RequestId for AssociateQualificationWithWorkerOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateQualificationWithWorkerOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
+    pub fn builder() -> crate::output::associate_qualification_with_worker_output::Builder {
+        crate::output::associate_qualification_with_worker_output::Builder::default()
+    }
+}
+
 /// See [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
 pub mod associate_qualification_with_worker_output {
     
@@ -2728,12 +2771,6 @@ pub mod associate_qualification_with_worker_output {
     
     
 }
-impl AssociateQualificationWithWorkerOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
-    pub fn builder() -> crate::output::associate_qualification_with_worker_output::Builder {
-        crate::output::associate_qualification_with_worker_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2746,6 +2783,13 @@ impl aws_http::request_id::RequestId for ApproveAssignmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ApproveAssignmentOutput {
+    /// Creates a new builder-style object to manufacture [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
+    pub fn builder() -> crate::output::approve_assignment_output::Builder {
+        crate::output::approve_assignment_output::Builder::default()
+    }
+}
+
 /// See [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
 pub mod approve_assignment_output {
     
@@ -2775,12 +2819,6 @@ pub mod approve_assignment_output {
     
     
 }
-impl ApproveAssignmentOutput {
-    /// Creates a new builder-style object to manufacture [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
-    pub fn builder() -> crate::output::approve_assignment_output::Builder {
-        crate::output::approve_assignment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2793,6 +2831,13 @@ impl aws_http::request_id::RequestId for AcceptQualificationRequestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AcceptQualificationRequestOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
+    pub fn builder() -> crate::output::accept_qualification_request_output::Builder {
+        crate::output::accept_qualification_request_output::Builder::default()
+    }
+}
+
 /// See [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
 pub mod accept_qualification_request_output {
     
@@ -2821,11 +2866,5 @@ pub mod accept_qualification_request_output {
     }
     
     
-}
-impl AcceptQualificationRequestOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
-    pub fn builder() -> crate::output::accept_qualification_request_output::Builder {
-        crate::output::accept_qualification_request_output::Builder::default()
-    }
 }
 

@@ -40,6 +40,13 @@ impl aws_http::request_id::RequestId for UpdateBackendStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
+    pub fn builder() -> crate::output::update_backend_storage_output::Builder {
+        crate::output::update_backend_storage_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
 pub mod update_backend_storage_output {
     
@@ -117,12 +124,6 @@ pub mod update_backend_storage_output {
     
     
 }
-impl UpdateBackendStorageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
-    pub fn builder() -> crate::output::update_backend_storage_output::Builder {
-        crate::output::update_backend_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -193,6 +194,13 @@ impl aws_http::request_id::RequestId for UpdateBackendJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBackendJobOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
+    pub fn builder() -> crate::output::update_backend_job_output::Builder {
+        crate::output::update_backend_job_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
 pub mod update_backend_job_output {
     
@@ -318,12 +326,6 @@ pub mod update_backend_job_output {
     
     
 }
-impl UpdateBackendJobOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
-    pub fn builder() -> crate::output::update_backend_job_output::Builder {
-        crate::output::update_backend_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -366,6 +368,13 @@ impl aws_http::request_id::RequestId for UpdateBackendConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBackendConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
+    pub fn builder() -> crate::output::update_backend_config_output::Builder {
+        crate::output::update_backend_config_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
 pub mod update_backend_config_output {
     
@@ -443,12 +452,6 @@ pub mod update_backend_config_output {
     
     
 }
-impl UpdateBackendConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
-    pub fn builder() -> crate::output::update_backend_config_output::Builder {
-        crate::output::update_backend_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -505,6 +508,13 @@ impl aws_http::request_id::RequestId for UpdateBackendAuthOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBackendAuthOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
+    pub fn builder() -> crate::output::update_backend_auth_output::Builder {
+        crate::output::update_backend_auth_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
 pub mod update_backend_auth_output {
     
@@ -606,12 +616,6 @@ pub mod update_backend_auth_output {
     
     
 }
-impl UpdateBackendAuthOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
-    pub fn builder() -> crate::output::update_backend_auth_output::Builder {
-        crate::output::update_backend_auth_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -668,6 +672,13 @@ impl aws_http::request_id::RequestId for UpdateBackendApiOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBackendApiOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
+    pub fn builder() -> crate::output::update_backend_api_output::Builder {
+        crate::output::update_backend_api_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
 pub mod update_backend_api_output {
     
@@ -769,12 +780,6 @@ pub mod update_backend_api_output {
     
     
 }
-impl UpdateBackendApiOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
-    pub fn builder() -> crate::output::update_backend_api_output::Builder {
-        crate::output::update_backend_api_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -796,6 +801,13 @@ impl aws_http::request_id::RequestId for RemoveBackendConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveBackendConfigOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
+    pub fn builder() -> crate::output::remove_backend_config_output::Builder {
+        crate::output::remove_backend_config_output::Builder::default()
+    }
+}
+
 /// See [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
 pub mod remove_backend_config_output {
     
@@ -836,12 +848,6 @@ pub mod remove_backend_config_output {
     }
     
     
-}
-impl RemoveBackendConfigOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
-    pub fn builder() -> crate::output::remove_backend_config_output::Builder {
-        crate::output::remove_backend_config_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -892,6 +898,13 @@ impl aws_http::request_id::RequestId for RemoveAllBackendsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveAllBackendsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
+    pub fn builder() -> crate::output::remove_all_backends_output::Builder {
+        crate::output::remove_all_backends_output::Builder::default()
+    }
+}
+
 /// See [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
 pub mod remove_all_backends_output {
     
@@ -981,12 +994,6 @@ pub mod remove_all_backends_output {
     
     
 }
-impl RemoveAllBackendsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
-    pub fn builder() -> crate::output::remove_all_backends_output::Builder {
-        crate::output::remove_all_backends_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1015,6 +1022,13 @@ impl aws_http::request_id::RequestId for ListS3BucketsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListS3BucketsOutput {
+    /// Creates a new builder-style object to manufacture [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
+    pub fn builder() -> crate::output::list_s3_buckets_output::Builder {
+        crate::output::list_s3_buckets_output::Builder::default()
+    }
+}
+
 /// See [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
 pub mod list_s3_buckets_output {
     
@@ -1074,12 +1088,6 @@ pub mod list_s3_buckets_output {
     
     
 }
-impl ListS3BucketsOutput {
-    /// Creates a new builder-style object to manufacture [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
-    pub fn builder() -> crate::output::list_s3_buckets_output::Builder {
-        crate::output::list_s3_buckets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1108,6 +1116,13 @@ impl aws_http::request_id::RequestId for ListBackendJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListBackendJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
+    pub fn builder() -> crate::output::list_backend_jobs_output::Builder {
+        crate::output::list_backend_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
 pub mod list_backend_jobs_output {
     
@@ -1167,12 +1182,6 @@ pub mod list_backend_jobs_output {
     
     
 }
-impl ListBackendJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
-    pub fn builder() -> crate::output::list_backend_jobs_output::Builder {
-        crate::output::list_backend_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1215,6 +1224,13 @@ impl aws_http::request_id::RequestId for ImportBackendStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ImportBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
+    pub fn builder() -> crate::output::import_backend_storage_output::Builder {
+        crate::output::import_backend_storage_output::Builder::default()
+    }
+}
+
 /// See [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
 pub mod import_backend_storage_output {
     
@@ -1292,12 +1308,6 @@ pub mod import_backend_storage_output {
     
     
 }
-impl ImportBackendStorageOutput {
-    /// Creates a new builder-style object to manufacture [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
-    pub fn builder() -> crate::output::import_backend_storage_output::Builder {
-        crate::output::import_backend_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1354,6 +1364,13 @@ impl aws_http::request_id::RequestId for ImportBackendAuthOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ImportBackendAuthOutput {
+    /// Creates a new builder-style object to manufacture [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
+    pub fn builder() -> crate::output::import_backend_auth_output::Builder {
+        crate::output::import_backend_auth_output::Builder::default()
+    }
+}
+
 /// See [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
 pub mod import_backend_auth_output {
     
@@ -1455,12 +1472,6 @@ pub mod import_backend_auth_output {
     
     
 }
-impl ImportBackendAuthOutput {
-    /// Creates a new builder-style object to manufacture [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
-    pub fn builder() -> crate::output::import_backend_auth_output::Builder {
-        crate::output::import_backend_auth_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1503,6 +1514,13 @@ impl aws_http::request_id::RequestId for GetTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetTokenOutput {
+    /// Creates a new builder-style object to manufacture [`GetTokenOutput`](crate::output::GetTokenOutput).
+    pub fn builder() -> crate::output::get_token_output::Builder {
+        crate::output::get_token_output::Builder::default()
+    }
+}
+
 /// See [`GetTokenOutput`](crate::output::GetTokenOutput).
 pub mod get_token_output {
     
@@ -1580,12 +1598,6 @@ pub mod get_token_output {
     
     
 }
-impl GetTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetTokenOutput`](crate::output::GetTokenOutput).
-    pub fn builder() -> crate::output::get_token_output::Builder {
-        crate::output::get_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1628,6 +1640,13 @@ impl aws_http::request_id::RequestId for GetBackendStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
+    pub fn builder() -> crate::output::get_backend_storage_output::Builder {
+        crate::output::get_backend_storage_output::Builder::default()
+    }
+}
+
 /// See [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
 pub mod get_backend_storage_output {
     
@@ -1705,12 +1724,6 @@ pub mod get_backend_storage_output {
     
     
 }
-impl GetBackendStorageOutput {
-    /// Creates a new builder-style object to manufacture [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
-    pub fn builder() -> crate::output::get_backend_storage_output::Builder {
-        crate::output::get_backend_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1781,6 +1794,13 @@ impl aws_http::request_id::RequestId for GetBackendJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBackendJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
+    pub fn builder() -> crate::output::get_backend_job_output::Builder {
+        crate::output::get_backend_job_output::Builder::default()
+    }
+}
+
 /// See [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
 pub mod get_backend_job_output {
     
@@ -1906,12 +1926,6 @@ pub mod get_backend_job_output {
     
     
 }
-impl GetBackendJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
-    pub fn builder() -> crate::output::get_backend_job_output::Builder {
-        crate::output::get_backend_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1961,6 +1975,13 @@ impl aws_http::request_id::RequestId for GetBackendAuthOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBackendAuthOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
+    pub fn builder() -> crate::output::get_backend_auth_output::Builder {
+        crate::output::get_backend_auth_output::Builder::default()
+    }
+}
+
 /// See [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
 pub mod get_backend_auth_output {
     
@@ -2050,12 +2071,6 @@ pub mod get_backend_auth_output {
     
     
 }
-impl GetBackendAuthOutput {
-    /// Creates a new builder-style object to manufacture [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
-    pub fn builder() -> crate::output::get_backend_auth_output::Builder {
-        crate::output::get_backend_auth_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2091,6 +2106,13 @@ impl aws_http::request_id::RequestId for GetBackendApiModelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBackendApiModelsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
+    pub fn builder() -> crate::output::get_backend_api_models_output::Builder {
+        crate::output::get_backend_api_models_output::Builder::default()
+    }
+}
+
 /// See [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
 pub mod get_backend_api_models_output {
     
@@ -2156,12 +2178,6 @@ pub mod get_backend_api_models_output {
     
     
 }
-impl GetBackendApiModelsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
-    pub fn builder() -> crate::output::get_backend_api_models_output::Builder {
-        crate::output::get_backend_api_models_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2211,6 +2227,13 @@ impl aws_http::request_id::RequestId for GetBackendApiOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBackendApiOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
+    pub fn builder() -> crate::output::get_backend_api_output::Builder {
+        crate::output::get_backend_api_output::Builder::default()
+    }
+}
+
 /// See [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
 pub mod get_backend_api_output {
     
@@ -2300,12 +2323,6 @@ pub mod get_backend_api_output {
     
     
 }
-impl GetBackendApiOutput {
-    /// Creates a new builder-style object to manufacture [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
-    pub fn builder() -> crate::output::get_backend_api_output::Builder {
-        crate::output::get_backend_api_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2369,6 +2386,13 @@ impl aws_http::request_id::RequestId for GetBackendOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBackendOutput {
+    /// Creates a new builder-style object to manufacture [`GetBackendOutput`](crate::output::GetBackendOutput).
+    pub fn builder() -> crate::output::get_backend_output::Builder {
+        crate::output::get_backend_output::Builder::default()
+    }
+}
+
 /// See [`GetBackendOutput`](crate::output::GetBackendOutput).
 pub mod get_backend_output {
     
@@ -2488,12 +2512,6 @@ pub mod get_backend_output {
     
     
 }
-impl GetBackendOutput {
-    /// Creates a new builder-style object to manufacture [`GetBackendOutput`](crate::output::GetBackendOutput).
-    pub fn builder() -> crate::output::get_backend_output::Builder {
-        crate::output::get_backend_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2550,6 +2568,13 @@ impl aws_http::request_id::RequestId for GenerateBackendApiModelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GenerateBackendApiModelsOutput {
+    /// Creates a new builder-style object to manufacture [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
+    pub fn builder() -> crate::output::generate_backend_api_models_output::Builder {
+        crate::output::generate_backend_api_models_output::Builder::default()
+    }
+}
+
 /// See [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
 pub mod generate_backend_api_models_output {
     
@@ -2651,12 +2676,6 @@ pub mod generate_backend_api_models_output {
     
     
 }
-impl GenerateBackendApiModelsOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
-    pub fn builder() -> crate::output::generate_backend_api_models_output::Builder {
-        crate::output::generate_backend_api_models_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2678,6 +2697,13 @@ impl aws_http::request_id::RequestId for DeleteTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteTokenOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
+    pub fn builder() -> crate::output::delete_token_output::Builder {
+        crate::output::delete_token_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
 pub mod delete_token_output {
     
@@ -2719,12 +2745,6 @@ pub mod delete_token_output {
     }
     
     
-}
-impl DeleteTokenOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
-    pub fn builder() -> crate::output::delete_token_output::Builder {
-        crate::output::delete_token_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -2768,6 +2788,13 @@ impl aws_http::request_id::RequestId for DeleteBackendStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
+    pub fn builder() -> crate::output::delete_backend_storage_output::Builder {
+        crate::output::delete_backend_storage_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
 pub mod delete_backend_storage_output {
     
@@ -2845,12 +2872,6 @@ pub mod delete_backend_storage_output {
     
     
 }
-impl DeleteBackendStorageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
-    pub fn builder() -> crate::output::delete_backend_storage_output::Builder {
-        crate::output::delete_backend_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2907,6 +2928,13 @@ impl aws_http::request_id::RequestId for DeleteBackendAuthOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBackendAuthOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
+    pub fn builder() -> crate::output::delete_backend_auth_output::Builder {
+        crate::output::delete_backend_auth_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
 pub mod delete_backend_auth_output {
     
@@ -3008,12 +3036,6 @@ pub mod delete_backend_auth_output {
     
     
 }
-impl DeleteBackendAuthOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
-    pub fn builder() -> crate::output::delete_backend_auth_output::Builder {
-        crate::output::delete_backend_auth_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3070,6 +3092,13 @@ impl aws_http::request_id::RequestId for DeleteBackendApiOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBackendApiOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
+    pub fn builder() -> crate::output::delete_backend_api_output::Builder {
+        crate::output::delete_backend_api_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
 pub mod delete_backend_api_output {
     
@@ -3171,12 +3200,6 @@ pub mod delete_backend_api_output {
     
     
 }
-impl DeleteBackendApiOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
-    pub fn builder() -> crate::output::delete_backend_api_output::Builder {
-        crate::output::delete_backend_api_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3233,6 +3256,13 @@ impl aws_http::request_id::RequestId for DeleteBackendOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBackendOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
+    pub fn builder() -> crate::output::delete_backend_output::Builder {
+        crate::output::delete_backend_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
 pub mod delete_backend_output {
     
@@ -3334,12 +3364,6 @@ pub mod delete_backend_output {
     
     
 }
-impl DeleteBackendOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
-    pub fn builder() -> crate::output::delete_backend_output::Builder {
-        crate::output::delete_backend_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3382,6 +3406,13 @@ impl aws_http::request_id::RequestId for CreateTokenOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateTokenOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
+    pub fn builder() -> crate::output::create_token_output::Builder {
+        crate::output::create_token_output::Builder::default()
+    }
+}
+
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
     
@@ -3459,12 +3490,6 @@ pub mod create_token_output {
     
     
 }
-impl CreateTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
-    pub fn builder() -> crate::output::create_token_output::Builder {
-        crate::output::create_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3507,6 +3532,13 @@ impl aws_http::request_id::RequestId for CreateBackendStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBackendStorageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
+    pub fn builder() -> crate::output::create_backend_storage_output::Builder {
+        crate::output::create_backend_storage_output::Builder::default()
+    }
+}
+
 /// See [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
 pub mod create_backend_storage_output {
     
@@ -3584,12 +3616,6 @@ pub mod create_backend_storage_output {
     
     
 }
-impl CreateBackendStorageOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
-    pub fn builder() -> crate::output::create_backend_storage_output::Builder {
-        crate::output::create_backend_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3632,6 +3658,13 @@ impl aws_http::request_id::RequestId for CreateBackendConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBackendConfigOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
+    pub fn builder() -> crate::output::create_backend_config_output::Builder {
+        crate::output::create_backend_config_output::Builder::default()
+    }
+}
+
 /// See [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
 pub mod create_backend_config_output {
     
@@ -3709,12 +3742,6 @@ pub mod create_backend_config_output {
     
     
 }
-impl CreateBackendConfigOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
-    pub fn builder() -> crate::output::create_backend_config_output::Builder {
-        crate::output::create_backend_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3771,6 +3798,13 @@ impl aws_http::request_id::RequestId for CreateBackendAuthOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBackendAuthOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
+    pub fn builder() -> crate::output::create_backend_auth_output::Builder {
+        crate::output::create_backend_auth_output::Builder::default()
+    }
+}
+
 /// See [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
 pub mod create_backend_auth_output {
     
@@ -3872,12 +3906,6 @@ pub mod create_backend_auth_output {
     
     
 }
-impl CreateBackendAuthOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
-    pub fn builder() -> crate::output::create_backend_auth_output::Builder {
-        crate::output::create_backend_auth_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3934,6 +3962,13 @@ impl aws_http::request_id::RequestId for CreateBackendApiOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBackendApiOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
+    pub fn builder() -> crate::output::create_backend_api_output::Builder {
+        crate::output::create_backend_api_output::Builder::default()
+    }
+}
+
 /// See [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
 pub mod create_backend_api_output {
     
@@ -4035,12 +4070,6 @@ pub mod create_backend_api_output {
     
     
 }
-impl CreateBackendApiOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
-    pub fn builder() -> crate::output::create_backend_api_output::Builder {
-        crate::output::create_backend_api_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4097,6 +4126,13 @@ impl aws_http::request_id::RequestId for CreateBackendOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBackendOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBackendOutput`](crate::output::CreateBackendOutput).
+    pub fn builder() -> crate::output::create_backend_output::Builder {
+        crate::output::create_backend_output::Builder::default()
+    }
+}
+
 /// See [`CreateBackendOutput`](crate::output::CreateBackendOutput).
 pub mod create_backend_output {
     
@@ -4198,12 +4234,6 @@ pub mod create_backend_output {
     
     
 }
-impl CreateBackendOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBackendOutput`](crate::output::CreateBackendOutput).
-    pub fn builder() -> crate::output::create_backend_output::Builder {
-        crate::output::create_backend_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4260,6 +4290,13 @@ impl aws_http::request_id::RequestId for CloneBackendOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CloneBackendOutput {
+    /// Creates a new builder-style object to manufacture [`CloneBackendOutput`](crate::output::CloneBackendOutput).
+    pub fn builder() -> crate::output::clone_backend_output::Builder {
+        crate::output::clone_backend_output::Builder::default()
+    }
+}
+
 /// See [`CloneBackendOutput`](crate::output::CloneBackendOutput).
 pub mod clone_backend_output {
     
@@ -4360,11 +4397,5 @@ pub mod clone_backend_output {
     }
     
     
-}
-impl CloneBackendOutput {
-    /// Creates a new builder-style object to manufacture [`CloneBackendOutput`](crate::output::CloneBackendOutput).
-    pub fn builder() -> crate::output::clone_backend_output::Builder {
-        crate::output::clone_backend_output::Builder::default()
-    }
 }
 

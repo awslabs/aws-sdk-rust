@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -197,6 +198,13 @@ impl ConnectivityInfo {
         self.metadata.as_deref()
     }
 }
+impl ConnectivityInfo {
+    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
+    pub fn builder() -> crate::model::connectivity_info::Builder {
+        crate::model::connectivity_info::Builder::default()
+    }
+}
+
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
 pub mod connectivity_info {
     
@@ -264,12 +272,6 @@ pub mod connectivity_info {
     
     
 }
-impl ConnectivityInfo {
-    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
-    pub fn builder() -> crate::model::connectivity_info::Builder {
-        crate::model::connectivity_info::Builder::default()
-    }
-}
 
 /// <p>Contains information about a component version that is compatible to run on a Greengrass core device.</p>
 #[non_exhaustive]
@@ -330,6 +332,13 @@ impl ResolvedComponentVersion {
         self.message.as_deref()
     }
 }
+impl ResolvedComponentVersion {
+    /// Creates a new builder-style object to manufacture [`ResolvedComponentVersion`](crate::model::ResolvedComponentVersion).
+    pub fn builder() -> crate::model::resolved_component_version::Builder {
+        crate::model::resolved_component_version::Builder::default()
+    }
+}
+
 /// See [`ResolvedComponentVersion`](crate::model::ResolvedComponentVersion).
 pub mod resolved_component_version {
     
@@ -429,12 +438,6 @@ pub mod resolved_component_version {
     }
     
     
-}
-impl ResolvedComponentVersion {
-    /// Creates a new builder-style object to manufacture [`ResolvedComponentVersion`](crate::model::ResolvedComponentVersion).
-    pub fn builder() -> crate::model::resolved_component_version::Builder {
-        crate::model::resolved_component_version::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VendorGuidance`, it is important to ensure
@@ -554,6 +557,13 @@ impl ComponentCandidate {
         self.version_requirements.as_ref()
     }
 }
+impl ComponentCandidate {
+    /// Creates a new builder-style object to manufacture [`ComponentCandidate`](crate::model::ComponentCandidate).
+    pub fn builder() -> crate::model::component_candidate::Builder {
+        crate::model::component_candidate::Builder::default()
+    }
+}
+
 /// See [`ComponentCandidate`](crate::model::ComponentCandidate).
 pub mod component_candidate {
     
@@ -616,12 +626,6 @@ pub mod component_candidate {
     
     
 }
-impl ComponentCandidate {
-    /// Creates a new builder-style object to manufacture [`ComponentCandidate`](crate::model::ComponentCandidate).
-    pub fn builder() -> crate::model::component_candidate::Builder {
-        crate::model::component_candidate::Builder::default()
-    }
-}
 
 /// <p>Contains information about a platform that a component supports.</p>
 #[non_exhaustive]
@@ -646,6 +650,13 @@ impl ComponentPlatform {
         self.attributes.as_ref()
     }
 }
+impl ComponentPlatform {
+    /// Creates a new builder-style object to manufacture [`ComponentPlatform`](crate::model::ComponentPlatform).
+    pub fn builder() -> crate::model::component_platform::Builder {
+        crate::model::component_platform::Builder::default()
+    }
+}
+
 /// See [`ComponentPlatform`](crate::model::ComponentPlatform).
 pub mod component_platform {
     
@@ -695,12 +706,6 @@ pub mod component_platform {
     }
     
     
-}
-impl ComponentPlatform {
-    /// Creates a new builder-style object to manufacture [`ComponentPlatform`](crate::model::ComponentPlatform).
-    pub fn builder() -> crate::model::component_platform::Builder {
-        crate::model::component_platform::Builder::default()
-    }
 }
 
 /// <p>Contains information about a component on a Greengrass core device.</p>
@@ -781,6 +786,13 @@ impl InstalledComponent {
         self.lifecycle_status_codes.as_deref()
     }
 }
+impl InstalledComponent {
+    /// Creates a new builder-style object to manufacture [`InstalledComponent`](crate::model::InstalledComponent).
+    pub fn builder() -> crate::model::installed_component::Builder {
+        crate::model::installed_component::Builder::default()
+    }
+}
+
 /// See [`InstalledComponent`](crate::model::InstalledComponent).
 pub mod installed_component {
     
@@ -921,12 +933,6 @@ pub mod installed_component {
     }
     
     
-}
-impl InstalledComponent {
-    /// Creates a new builder-style object to manufacture [`InstalledComponent`](crate::model::InstalledComponent).
-    pub fn builder() -> crate::model::installed_component::Builder {
-        crate::model::installed_component::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstalledComponentLifecycleState`, it is important to ensure
@@ -1207,6 +1213,13 @@ impl EffectiveDeployment {
         self.status_details.as_ref()
     }
 }
+impl EffectiveDeployment {
+    /// Creates a new builder-style object to manufacture [`EffectiveDeployment`](crate::model::EffectiveDeployment).
+    pub fn builder() -> crate::model::effective_deployment::Builder {
+        crate::model::effective_deployment::Builder::default()
+    }
+}
+
 /// See [`EffectiveDeployment`](crate::model::EffectiveDeployment).
 pub mod effective_deployment {
     
@@ -1357,12 +1370,6 @@ pub mod effective_deployment {
     
     
 }
-impl EffectiveDeployment {
-    /// Creates a new builder-style object to manufacture [`EffectiveDeployment`](crate::model::EffectiveDeployment).
-    pub fn builder() -> crate::model::effective_deployment::Builder {
-        crate::model::effective_deployment::Builder::default()
-    }
-}
 
 /// <p>Contains all error-related information for the deployment record. The status details will be null if the deployment is in a success state.</p> <note> 
 /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>errorStack</code> and <code>errorTypes</code> response. This field will not be returned for earlier Greengrass nucleus versions.</p> 
@@ -1387,6 +1394,13 @@ impl EffectiveDeploymentStatusDetails {
         self.error_types.as_deref()
     }
 }
+impl EffectiveDeploymentStatusDetails {
+    /// Creates a new builder-style object to manufacture [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
+    pub fn builder() -> crate::model::effective_deployment_status_details::Builder {
+        crate::model::effective_deployment_status_details::Builder::default()
+    }
+}
+
 /// See [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
 pub mod effective_deployment_status_details {
     
@@ -1440,12 +1454,6 @@ pub mod effective_deployment_status_details {
     }
     
     
-}
-impl EffectiveDeploymentStatusDetails {
-    /// Creates a new builder-style object to manufacture [`EffectiveDeploymentStatusDetails`](crate::model::EffectiveDeploymentStatusDetails).
-    pub fn builder() -> crate::model::effective_deployment_status_details::Builder {
-        crate::model::effective_deployment_status_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EffectiveDeploymentExecutionStatus`, it is important to ensure
@@ -1618,6 +1626,13 @@ impl Deployment {
         self.parent_target_arn.as_deref()
     }
 }
+impl Deployment {
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
+    pub fn builder() -> crate::model::deployment::Builder {
+        crate::model::deployment::Builder::default()
+    }
+}
+
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
     
@@ -1732,12 +1747,6 @@ pub mod deployment {
     }
     
     
-}
-impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
-    pub fn builder() -> crate::model::deployment::Builder {
-        crate::model::deployment::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentStatus`, it is important to ensure
@@ -1955,6 +1964,13 @@ impl CoreDevice {
         self.last_status_update_timestamp.as_ref()
     }
 }
+impl CoreDevice {
+    /// Creates a new builder-style object to manufacture [`CoreDevice`](crate::model::CoreDevice).
+    pub fn builder() -> crate::model::core_device::Builder {
+        crate::model::core_device::Builder::default()
+    }
+}
+
 /// See [`CoreDevice`](crate::model::CoreDevice).
 pub mod core_device {
     
@@ -2016,12 +2032,6 @@ pub mod core_device {
     }
     
     
-}
-impl CoreDevice {
-    /// Creates a new builder-style object to manufacture [`CoreDevice`](crate::model::CoreDevice).
-    pub fn builder() -> crate::model::core_device::Builder {
-        crate::model::core_device::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CoreDeviceStatus`, it is important to ensure
@@ -2134,6 +2144,13 @@ impl ComponentVersionListItem {
         self.arn.as_deref()
     }
 }
+impl ComponentVersionListItem {
+    /// Creates a new builder-style object to manufacture [`ComponentVersionListItem`](crate::model::ComponentVersionListItem).
+    pub fn builder() -> crate::model::component_version_list_item::Builder {
+        crate::model::component_version_list_item::Builder::default()
+    }
+}
+
 /// See [`ComponentVersionListItem`](crate::model::ComponentVersionListItem).
 pub mod component_version_list_item {
     
@@ -2188,12 +2205,6 @@ pub mod component_version_list_item {
     
     
 }
-impl ComponentVersionListItem {
-    /// Creates a new builder-style object to manufacture [`ComponentVersionListItem`](crate::model::ComponentVersionListItem).
-    pub fn builder() -> crate::model::component_version_list_item::Builder {
-        crate::model::component_version_list_item::Builder::default()
-    }
-}
 
 /// <p>Contains information about a component.</p>
 #[non_exhaustive]
@@ -2223,6 +2234,13 @@ impl Component {
         self.latest_version.as_ref()
     }
 }
+impl Component {
+    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
+    pub fn builder() -> crate::model::component::Builder {
+        crate::model::component::Builder::default()
+    }
+}
+
 /// See [`Component`](crate::model::Component).
 pub mod component {
     
@@ -2277,12 +2295,6 @@ pub mod component {
     
     
 }
-impl Component {
-    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
-    pub fn builder() -> crate::model::component::Builder {
-        crate::model::component::Builder::default()
-    }
-}
 
 /// <p>Contains information about the latest version of a component.</p>
 #[non_exhaustive]
@@ -2333,6 +2345,13 @@ impl ComponentLatestVersion {
         self.platforms.as_deref()
     }
 }
+impl ComponentLatestVersion {
+    /// Creates a new builder-style object to manufacture [`ComponentLatestVersion`](crate::model::ComponentLatestVersion).
+    pub fn builder() -> crate::model::component_latest_version::Builder {
+        crate::model::component_latest_version::Builder::default()
+    }
+}
+
 /// See [`ComponentLatestVersion`](crate::model::ComponentLatestVersion).
 pub mod component_latest_version {
     
@@ -2428,12 +2447,6 @@ pub mod component_latest_version {
     }
     
     
-}
-impl ComponentLatestVersion {
-    /// Creates a new builder-style object to manufacture [`ComponentLatestVersion`](crate::model::ComponentLatestVersion).
-    pub fn builder() -> crate::model::component_latest_version::Builder {
-        crate::model::component_latest_version::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComponentVisibilityScope`, it is important to ensure
@@ -2539,6 +2552,13 @@ impl AssociatedClientDevice {
         self.association_timestamp.as_ref()
     }
 }
+impl AssociatedClientDevice {
+    /// Creates a new builder-style object to manufacture [`AssociatedClientDevice`](crate::model::AssociatedClientDevice).
+    pub fn builder() -> crate::model::associated_client_device::Builder {
+        crate::model::associated_client_device::Builder::default()
+    }
+}
+
 /// See [`AssociatedClientDevice`](crate::model::AssociatedClientDevice).
 pub mod associated_client_device {
     
@@ -2581,12 +2601,6 @@ pub mod associated_client_device {
     
     
 }
-impl AssociatedClientDevice {
-    /// Creates a new builder-style object to manufacture [`AssociatedClientDevice`](crate::model::AssociatedClientDevice).
-    pub fn builder() -> crate::model::associated_client_device::Builder {
-        crate::model::associated_client_device::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IoT job configuration.</p>
 #[non_exhaustive]
@@ -2616,6 +2630,13 @@ impl DeploymentIoTJobConfiguration {
         self.timeout_config.as_ref()
     }
 }
+impl DeploymentIoTJobConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeploymentIoTJobConfiguration`](crate::model::DeploymentIoTJobConfiguration).
+    pub fn builder() -> crate::model::deployment_io_t_job_configuration::Builder {
+        crate::model::deployment_io_t_job_configuration::Builder::default()
+    }
+}
+
 /// See [`DeploymentIoTJobConfiguration`](crate::model::DeploymentIoTJobConfiguration).
 pub mod deployment_io_t_job_configuration {
     
@@ -2670,12 +2691,6 @@ pub mod deployment_io_t_job_configuration {
     
     
 }
-impl DeploymentIoTJobConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeploymentIoTJobConfiguration`](crate::model::DeploymentIoTJobConfiguration).
-    pub fn builder() -> crate::model::deployment_io_t_job_configuration::Builder {
-        crate::model::deployment_io_t_job_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains information about the timeout configuration for a job.</p>
 #[non_exhaustive]
@@ -2693,6 +2708,13 @@ impl IoTJobTimeoutConfig {
         self.in_progress_timeout_in_minutes
     }
 }
+impl IoTJobTimeoutConfig {
+    /// Creates a new builder-style object to manufacture [`IoTJobTimeoutConfig`](crate::model::IoTJobTimeoutConfig).
+    pub fn builder() -> crate::model::io_t_job_timeout_config::Builder {
+        crate::model::io_t_job_timeout_config::Builder::default()
+    }
+}
+
 /// See [`IoTJobTimeoutConfig`](crate::model::IoTJobTimeoutConfig).
 pub mod io_t_job_timeout_config {
     
@@ -2725,12 +2747,6 @@ pub mod io_t_job_timeout_config {
     
     
 }
-impl IoTJobTimeoutConfig {
-    /// Creates a new builder-style object to manufacture [`IoTJobTimeoutConfig`](crate::model::IoTJobTimeoutConfig).
-    pub fn builder() -> crate::model::io_t_job_timeout_config::Builder {
-        crate::model::io_t_job_timeout_config::Builder::default()
-    }
-}
 
 /// <p>Contains a list of criteria that define when and how to cancel a configuration deployment.</p>
 #[non_exhaustive]
@@ -2746,6 +2762,13 @@ impl IoTJobAbortConfig {
         self.criteria_list.as_deref()
     }
 }
+impl IoTJobAbortConfig {
+    /// Creates a new builder-style object to manufacture [`IoTJobAbortConfig`](crate::model::IoTJobAbortConfig).
+    pub fn builder() -> crate::model::io_t_job_abort_config::Builder {
+        crate::model::io_t_job_abort_config::Builder::default()
+    }
+}
+
 /// See [`IoTJobAbortConfig`](crate::model::IoTJobAbortConfig).
 pub mod io_t_job_abort_config {
     
@@ -2781,12 +2804,6 @@ pub mod io_t_job_abort_config {
     }
     
     
-}
-impl IoTJobAbortConfig {
-    /// Creates a new builder-style object to manufacture [`IoTJobAbortConfig`](crate::model::IoTJobAbortConfig).
-    pub fn builder() -> crate::model::io_t_job_abort_config::Builder {
-        crate::model::io_t_job_abort_config::Builder::default()
-    }
 }
 
 /// <p>Contains criteria that define when and how to cancel a job.</p> 
@@ -2831,6 +2848,13 @@ impl IoTJobAbortCriteria {
         self.min_number_of_executed_things
     }
 }
+impl IoTJobAbortCriteria {
+    /// Creates a new builder-style object to manufacture [`IoTJobAbortCriteria`](crate::model::IoTJobAbortCriteria).
+    pub fn builder() -> crate::model::io_t_job_abort_criteria::Builder {
+        crate::model::io_t_job_abort_criteria::Builder::default()
+    }
+}
+
 /// See [`IoTJobAbortCriteria`](crate::model::IoTJobAbortCriteria).
 pub mod io_t_job_abort_criteria {
     
@@ -2900,12 +2924,6 @@ pub mod io_t_job_abort_criteria {
     }
     
     
-}
-impl IoTJobAbortCriteria {
-    /// Creates a new builder-style object to manufacture [`IoTJobAbortCriteria`](crate::model::IoTJobAbortCriteria).
-    pub fn builder() -> crate::model::io_t_job_abort_criteria::Builder {
-        crate::model::io_t_job_abort_criteria::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IoTJobAbortAction`, it is important to ensure
@@ -3098,6 +3116,13 @@ impl IoTJobExecutionsRolloutConfig {
         self.maximum_per_minute
     }
 }
+impl IoTJobExecutionsRolloutConfig {
+    /// Creates a new builder-style object to manufacture [`IoTJobExecutionsRolloutConfig`](crate::model::IoTJobExecutionsRolloutConfig).
+    pub fn builder() -> crate::model::io_t_job_executions_rollout_config::Builder {
+        crate::model::io_t_job_executions_rollout_config::Builder::default()
+    }
+}
+
 /// See [`IoTJobExecutionsRolloutConfig`](crate::model::IoTJobExecutionsRolloutConfig).
 pub mod io_t_job_executions_rollout_config {
     
@@ -3140,12 +3165,6 @@ pub mod io_t_job_executions_rollout_config {
     
     
 }
-impl IoTJobExecutionsRolloutConfig {
-    /// Creates a new builder-style object to manufacture [`IoTJobExecutionsRolloutConfig`](crate::model::IoTJobExecutionsRolloutConfig).
-    pub fn builder() -> crate::model::io_t_job_executions_rollout_config::Builder {
-        crate::model::io_t_job_executions_rollout_config::Builder::default()
-    }
-}
 
 /// <p>Contains information about an exponential rollout rate for a configuration deployment job.</p>
 #[non_exhaustive]
@@ -3177,6 +3196,13 @@ impl IoTJobExponentialRolloutRate {
         self.rate_increase_criteria.as_ref()
     }
 }
+impl IoTJobExponentialRolloutRate {
+    /// Creates a new builder-style object to manufacture [`IoTJobExponentialRolloutRate`](crate::model::IoTJobExponentialRolloutRate).
+    pub fn builder() -> crate::model::io_t_job_exponential_rollout_rate::Builder {
+        crate::model::io_t_job_exponential_rollout_rate::Builder::default()
+    }
+}
+
 /// See [`IoTJobExponentialRolloutRate`](crate::model::IoTJobExponentialRolloutRate).
 pub mod io_t_job_exponential_rollout_rate {
     
@@ -3235,12 +3261,6 @@ pub mod io_t_job_exponential_rollout_rate {
     
     
 }
-impl IoTJobExponentialRolloutRate {
-    /// Creates a new builder-style object to manufacture [`IoTJobExponentialRolloutRate`](crate::model::IoTJobExponentialRolloutRate).
-    pub fn builder() -> crate::model::io_t_job_exponential_rollout_rate::Builder {
-        crate::model::io_t_job_exponential_rollout_rate::Builder::default()
-    }
-}
 
 /// <p>Contains information about criteria to meet before a job increases its rollout rate. Specify either <code>numberOfNotifiedThings</code> or <code>numberOfSucceededThings</code>.</p>
 #[non_exhaustive]
@@ -3263,6 +3283,13 @@ impl IoTJobRateIncreaseCriteria {
         self.number_of_succeeded_things
     }
 }
+impl IoTJobRateIncreaseCriteria {
+    /// Creates a new builder-style object to manufacture [`IoTJobRateIncreaseCriteria`](crate::model::IoTJobRateIncreaseCriteria).
+    pub fn builder() -> crate::model::io_t_job_rate_increase_criteria::Builder {
+        crate::model::io_t_job_rate_increase_criteria::Builder::default()
+    }
+}
+
 /// See [`IoTJobRateIncreaseCriteria`](crate::model::IoTJobRateIncreaseCriteria).
 pub mod io_t_job_rate_increase_criteria {
     
@@ -3305,12 +3332,6 @@ pub mod io_t_job_rate_increase_criteria {
     
     
 }
-impl IoTJobRateIncreaseCriteria {
-    /// Creates a new builder-style object to manufacture [`IoTJobRateIncreaseCriteria`](crate::model::IoTJobRateIncreaseCriteria).
-    pub fn builder() -> crate::model::io_t_job_rate_increase_criteria::Builder {
-        crate::model::io_t_job_rate_increase_criteria::Builder::default()
-    }
-}
 
 /// <p>Contains information about policies that define how a deployment updates components and handles failure.</p>
 #[non_exhaustive]
@@ -3342,6 +3363,13 @@ impl DeploymentPolicies {
         self.configuration_validation_policy.as_ref()
     }
 }
+impl DeploymentPolicies {
+    /// Creates a new builder-style object to manufacture [`DeploymentPolicies`](crate::model::DeploymentPolicies).
+    pub fn builder() -> crate::model::deployment_policies::Builder {
+        crate::model::deployment_policies::Builder::default()
+    }
+}
+
 /// See [`DeploymentPolicies`](crate::model::DeploymentPolicies).
 pub mod deployment_policies {
     
@@ -3398,12 +3426,6 @@ pub mod deployment_policies {
     
     
 }
-impl DeploymentPolicies {
-    /// Creates a new builder-style object to manufacture [`DeploymentPolicies`](crate::model::DeploymentPolicies).
-    pub fn builder() -> crate::model::deployment_policies::Builder {
-        crate::model::deployment_policies::Builder::default()
-    }
-}
 
 /// <p>Contains information about how long a component on a core device can validate its configuration updates before it times out. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates">SubscribeToValidateConfigurationUpdates</a> IPC operation to receive notifications when a deployment specifies a configuration update. Then, components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -3421,6 +3443,13 @@ impl DeploymentConfigurationValidationPolicy {
         self.timeout_in_seconds
     }
 }
+impl DeploymentConfigurationValidationPolicy {
+    /// Creates a new builder-style object to manufacture [`DeploymentConfigurationValidationPolicy`](crate::model::DeploymentConfigurationValidationPolicy).
+    pub fn builder() -> crate::model::deployment_configuration_validation_policy::Builder {
+        crate::model::deployment_configuration_validation_policy::Builder::default()
+    }
+}
+
 /// See [`DeploymentConfigurationValidationPolicy`](crate::model::DeploymentConfigurationValidationPolicy).
 pub mod deployment_configuration_validation_policy {
     
@@ -3452,12 +3481,6 @@ pub mod deployment_configuration_validation_policy {
     }
     
     
-}
-impl DeploymentConfigurationValidationPolicy {
-    /// Creates a new builder-style object to manufacture [`DeploymentConfigurationValidationPolicy`](crate::model::DeploymentConfigurationValidationPolicy).
-    pub fn builder() -> crate::model::deployment_configuration_validation_policy::Builder {
-        crate::model::deployment_configuration_validation_policy::Builder::default()
-    }
 }
 
 /// <p>Contains information about a deployment's policy that defines when components are safe to update.</p> 
@@ -3494,6 +3517,13 @@ impl DeploymentComponentUpdatePolicy {
         self.action.as_ref()
     }
 }
+impl DeploymentComponentUpdatePolicy {
+    /// Creates a new builder-style object to manufacture [`DeploymentComponentUpdatePolicy`](crate::model::DeploymentComponentUpdatePolicy).
+    pub fn builder() -> crate::model::deployment_component_update_policy::Builder {
+        crate::model::deployment_component_update_policy::Builder::default()
+    }
+}
+
 /// See [`DeploymentComponentUpdatePolicy`](crate::model::DeploymentComponentUpdatePolicy).
 pub mod deployment_component_update_policy {
     
@@ -3547,12 +3577,6 @@ pub mod deployment_component_update_policy {
     }
     
     
-}
-impl DeploymentComponentUpdatePolicy {
-    /// Creates a new builder-style object to manufacture [`DeploymentComponentUpdatePolicy`](crate::model::DeploymentComponentUpdatePolicy).
-    pub fn builder() -> crate::model::deployment_component_update_policy::Builder {
-        crate::model::deployment_component_update_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentComponentUpdatePolicyAction`, it is important to ensure
@@ -3747,6 +3771,13 @@ impl ComponentDeploymentSpecification {
         self.run_with.as_ref()
     }
 }
+impl ComponentDeploymentSpecification {
+    /// Creates a new builder-style object to manufacture [`ComponentDeploymentSpecification`](crate::model::ComponentDeploymentSpecification).
+    pub fn builder() -> crate::model::component_deployment_specification::Builder {
+        crate::model::component_deployment_specification::Builder::default()
+    }
+}
+
 /// See [`ComponentDeploymentSpecification`](crate::model::ComponentDeploymentSpecification).
 pub mod component_deployment_specification {
     
@@ -3801,12 +3832,6 @@ pub mod component_deployment_specification {
     
     
 }
-impl ComponentDeploymentSpecification {
-    /// Creates a new builder-style object to manufacture [`ComponentDeploymentSpecification`](crate::model::ComponentDeploymentSpecification).
-    pub fn builder() -> crate::model::component_deployment_specification::Builder {
-        crate::model::component_deployment_specification::Builder::default()
-    }
-}
 
 /// <p>Contains information system user and group that the IoT Greengrass Core software uses to run component processes on the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -3842,6 +3867,13 @@ impl ComponentRunWith {
         self.windows_user.as_deref()
     }
 }
+impl ComponentRunWith {
+    /// Creates a new builder-style object to manufacture [`ComponentRunWith`](crate::model::ComponentRunWith).
+    pub fn builder() -> crate::model::component_run_with::Builder {
+        crate::model::component_run_with::Builder::default()
+    }
+}
+
 /// See [`ComponentRunWith`](crate::model::ComponentRunWith).
 pub mod component_run_with {
     
@@ -3902,12 +3934,6 @@ pub mod component_run_with {
     
     
 }
-impl ComponentRunWith {
-    /// Creates a new builder-style object to manufacture [`ComponentRunWith`](crate::model::ComponentRunWith).
-    pub fn builder() -> crate::model::component_run_with::Builder {
-        crate::model::component_run_with::Builder::default()
-    }
-}
 
 /// <p>Contains information about system resource limits that the IoT Greengrass Core software applies to a component's processes. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
 #[non_exhaustive]
@@ -3930,6 +3956,13 @@ impl SystemResourceLimits {
         self.cpus
     }
 }
+impl SystemResourceLimits {
+    /// Creates a new builder-style object to manufacture [`SystemResourceLimits`](crate::model::SystemResourceLimits).
+    pub fn builder() -> crate::model::system_resource_limits::Builder {
+        crate::model::system_resource_limits::Builder::default()
+    }
+}
+
 /// See [`SystemResourceLimits`](crate::model::SystemResourceLimits).
 pub mod system_resource_limits {
     
@@ -3974,12 +4007,6 @@ pub mod system_resource_limits {
     
     
 }
-impl SystemResourceLimits {
-    /// Creates a new builder-style object to manufacture [`SystemResourceLimits`](crate::model::SystemResourceLimits).
-    pub fn builder() -> crate::model::system_resource_limits::Builder {
-        crate::model::system_resource_limits::Builder::default()
-    }
-}
 
 /// <p>Contains information about a deployment's update to a component's configuration on Greengrass core devices. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -4002,6 +4029,13 @@ impl ComponentConfigurationUpdate {
         self.reset.as_deref()
     }
 }
+impl ComponentConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ComponentConfigurationUpdate`](crate::model::ComponentConfigurationUpdate).
+    pub fn builder() -> crate::model::component_configuration_update::Builder {
+        crate::model::component_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ComponentConfigurationUpdate`](crate::model::ComponentConfigurationUpdate).
 pub mod component_configuration_update {
     
@@ -4049,12 +4083,6 @@ pub mod component_configuration_update {
     }
     
     
-}
-impl ComponentConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ComponentConfigurationUpdate`](crate::model::ComponentConfigurationUpdate).
-    pub fn builder() -> crate::model::component_configuration_update::Builder {
-        crate::model::component_configuration_update::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecipeOutputFormat`, it is important to ensure
@@ -4191,6 +4219,13 @@ impl CloudComponentStatus {
         self.vendor_guidance_message.as_deref()
     }
 }
+impl CloudComponentStatus {
+    /// Creates a new builder-style object to manufacture [`CloudComponentStatus`](crate::model::CloudComponentStatus).
+    pub fn builder() -> crate::model::cloud_component_status::Builder {
+        crate::model::cloud_component_status::Builder::default()
+    }
+}
+
 /// See [`CloudComponentStatus`](crate::model::CloudComponentStatus).
 pub mod cloud_component_status {
     
@@ -4284,12 +4319,6 @@ pub mod cloud_component_status {
     }
     
     
-}
-impl CloudComponentStatus {
-    /// Creates a new builder-style object to manufacture [`CloudComponentStatus`](crate::model::CloudComponentStatus).
-    pub fn builder() -> crate::model::cloud_component_status::Builder {
-        crate::model::cloud_component_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CloudComponentState`, it is important to ensure
@@ -4442,6 +4471,13 @@ impl LambdaFunctionRecipeSource {
         self.component_lambda_parameters.as_ref()
     }
 }
+impl LambdaFunctionRecipeSource {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionRecipeSource`](crate::model::LambdaFunctionRecipeSource).
+    pub fn builder() -> crate::model::lambda_function_recipe_source::Builder {
+        crate::model::lambda_function_recipe_source::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionRecipeSource`](crate::model::LambdaFunctionRecipeSource).
 pub mod lambda_function_recipe_source {
     
@@ -4548,12 +4584,6 @@ pub mod lambda_function_recipe_source {
     
     
 }
-impl LambdaFunctionRecipeSource {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionRecipeSource`](crate::model::LambdaFunctionRecipeSource).
-    pub fn builder() -> crate::model::lambda_function_recipe_source::Builder {
-        crate::model::lambda_function_recipe_source::Builder::default()
-    }
-}
 
 /// <p>Contains parameters for a Lambda function that runs on IoT Greengrass.</p>
 #[non_exhaustive]
@@ -4651,6 +4681,13 @@ impl LambdaExecutionParameters {
         self.linux_process_params.as_ref()
     }
 }
+impl LambdaExecutionParameters {
+    /// Creates a new builder-style object to manufacture [`LambdaExecutionParameters`](crate::model::LambdaExecutionParameters).
+    pub fn builder() -> crate::model::lambda_execution_parameters::Builder {
+        crate::model::lambda_execution_parameters::Builder::default()
+    }
+}
+
 /// See [`LambdaExecutionParameters`](crate::model::LambdaExecutionParameters).
 pub mod lambda_execution_parameters {
     
@@ -4831,12 +4868,6 @@ pub mod lambda_execution_parameters {
     
     
 }
-impl LambdaExecutionParameters {
-    /// Creates a new builder-style object to manufacture [`LambdaExecutionParameters`](crate::model::LambdaExecutionParameters).
-    pub fn builder() -> crate::model::lambda_execution_parameters::Builder {
-        crate::model::lambda_execution_parameters::Builder::default()
-    }
-}
 
 /// <p>Contains parameters for a Linux process that contains an Lambda function.</p>
 #[non_exhaustive]
@@ -4861,6 +4892,13 @@ impl LambdaLinuxProcessParams {
         self.container_params.as_ref()
     }
 }
+impl LambdaLinuxProcessParams {
+    /// Creates a new builder-style object to manufacture [`LambdaLinuxProcessParams`](crate::model::LambdaLinuxProcessParams).
+    pub fn builder() -> crate::model::lambda_linux_process_params::Builder {
+        crate::model::lambda_linux_process_params::Builder::default()
+    }
+}
+
 /// See [`LambdaLinuxProcessParams`](crate::model::LambdaLinuxProcessParams).
 pub mod lambda_linux_process_params {
     
@@ -4905,12 +4943,6 @@ pub mod lambda_linux_process_params {
     
     
 }
-impl LambdaLinuxProcessParams {
-    /// Creates a new builder-style object to manufacture [`LambdaLinuxProcessParams`](crate::model::LambdaLinuxProcessParams).
-    pub fn builder() -> crate::model::lambda_linux_process_params::Builder {
-        crate::model::lambda_linux_process_params::Builder::default()
-    }
-}
 
 /// <p>Contains information about a container in which Lambda functions run on Greengrass core devices.</p>
 #[non_exhaustive]
@@ -4951,6 +4983,13 @@ impl LambdaContainerParams {
         self.devices.as_deref()
     }
 }
+impl LambdaContainerParams {
+    /// Creates a new builder-style object to manufacture [`LambdaContainerParams`](crate::model::LambdaContainerParams).
+    pub fn builder() -> crate::model::lambda_container_params::Builder {
+        crate::model::lambda_container_params::Builder::default()
+    }
+}
+
 /// See [`LambdaContainerParams`](crate::model::LambdaContainerParams).
 pub mod lambda_container_params {
     
@@ -5033,12 +5072,6 @@ pub mod lambda_container_params {
     
     
 }
-impl LambdaContainerParams {
-    /// Creates a new builder-style object to manufacture [`LambdaContainerParams`](crate::model::LambdaContainerParams).
-    pub fn builder() -> crate::model::lambda_container_params::Builder {
-        crate::model::lambda_container_params::Builder::default()
-    }
-}
 
 /// <p>Contains information about a device that Linux processes in a container can access.</p>
 #[non_exhaustive]
@@ -5072,6 +5105,13 @@ impl LambdaDeviceMount {
         self.add_group_owner
     }
 }
+impl LambdaDeviceMount {
+    /// Creates a new builder-style object to manufacture [`LambdaDeviceMount`](crate::model::LambdaDeviceMount).
+    pub fn builder() -> crate::model::lambda_device_mount::Builder {
+        crate::model::lambda_device_mount::Builder::default()
+    }
+}
+
 /// See [`LambdaDeviceMount`](crate::model::LambdaDeviceMount).
 pub mod lambda_device_mount {
     
@@ -5129,12 +5169,6 @@ pub mod lambda_device_mount {
     }
     
     
-}
-impl LambdaDeviceMount {
-    /// Creates a new builder-style object to manufacture [`LambdaDeviceMount`](crate::model::LambdaDeviceMount).
-    pub fn builder() -> crate::model::lambda_device_mount::Builder {
-        crate::model::lambda_device_mount::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LambdaFilesystemPermission`, it is important to ensure
@@ -5258,6 +5292,13 @@ impl LambdaVolumeMount {
         self.add_group_owner
     }
 }
+impl LambdaVolumeMount {
+    /// Creates a new builder-style object to manufacture [`LambdaVolumeMount`](crate::model::LambdaVolumeMount).
+    pub fn builder() -> crate::model::lambda_volume_mount::Builder {
+        crate::model::lambda_volume_mount::Builder::default()
+    }
+}
+
 /// See [`LambdaVolumeMount`](crate::model::LambdaVolumeMount).
 pub mod lambda_volume_mount {
     
@@ -5327,12 +5368,6 @@ pub mod lambda_volume_mount {
     }
     
     
-}
-impl LambdaVolumeMount {
-    /// Creates a new builder-style object to manufacture [`LambdaVolumeMount`](crate::model::LambdaVolumeMount).
-    pub fn builder() -> crate::model::lambda_volume_mount::Builder {
-        crate::model::lambda_volume_mount::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LambdaIsolationMode`, it is important to ensure
@@ -5528,6 +5563,13 @@ impl LambdaEventSource {
         self.r#type.as_ref()
     }
 }
+impl LambdaEventSource {
+    /// Creates a new builder-style object to manufacture [`LambdaEventSource`](crate::model::LambdaEventSource).
+    pub fn builder() -> crate::model::lambda_event_source::Builder {
+        crate::model::lambda_event_source::Builder::default()
+    }
+}
+
 /// See [`LambdaEventSource`](crate::model::LambdaEventSource).
 pub mod lambda_event_source {
     
@@ -5577,12 +5619,6 @@ pub mod lambda_event_source {
     }
     
     
-}
-impl LambdaEventSource {
-    /// Creates a new builder-style object to manufacture [`LambdaEventSource`](crate::model::LambdaEventSource).
-    pub fn builder() -> crate::model::lambda_event_source::Builder {
-        crate::model::lambda_event_source::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LambdaEventSourceType`, it is important to ensure
@@ -5700,6 +5736,13 @@ impl ComponentDependencyRequirement {
         self.dependency_type.as_ref()
     }
 }
+impl ComponentDependencyRequirement {
+    /// Creates a new builder-style object to manufacture [`ComponentDependencyRequirement`](crate::model::ComponentDependencyRequirement).
+    pub fn builder() -> crate::model::component_dependency_requirement::Builder {
+        crate::model::component_dependency_requirement::Builder::default()
+    }
+}
+
 /// See [`ComponentDependencyRequirement`](crate::model::ComponentDependencyRequirement).
 pub mod component_dependency_requirement {
     
@@ -5753,12 +5796,6 @@ pub mod component_dependency_requirement {
     }
     
     
-}
-impl ComponentDependencyRequirement {
-    /// Creates a new builder-style object to manufacture [`ComponentDependencyRequirement`](crate::model::ComponentDependencyRequirement).
-    pub fn builder() -> crate::model::component_dependency_requirement::Builder {
-        crate::model::component_dependency_requirement::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComponentDependencyType`, it is important to ensure
@@ -5871,6 +5908,13 @@ impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
         self.message.as_deref()
     }
 }
+impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
+    /// Creates a new builder-style object to manufacture [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry).
+    pub fn builder() -> crate::model::disassociate_client_device_from_core_device_error_entry::Builder {
+        crate::model::disassociate_client_device_from_core_device_error_entry::Builder::default()
+    }
+}
+
 /// See [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry).
 pub mod disassociate_client_device_from_core_device_error_entry {
     
@@ -5925,12 +5969,6 @@ pub mod disassociate_client_device_from_core_device_error_entry {
     
     
 }
-impl DisassociateClientDeviceFromCoreDeviceErrorEntry {
-    /// Creates a new builder-style object to manufacture [`DisassociateClientDeviceFromCoreDeviceErrorEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry).
-    pub fn builder() -> crate::model::disassociate_client_device_from_core_device_error_entry::Builder {
-        crate::model::disassociate_client_device_from_core_device_error_entry::Builder::default()
-    }
-}
 
 /// <p>Contains a request to disassociate a client device from a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html">BatchDisassociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
@@ -5946,6 +5984,13 @@ impl DisassociateClientDeviceFromCoreDeviceEntry {
         self.thing_name.as_deref()
     }
 }
+impl DisassociateClientDeviceFromCoreDeviceEntry {
+    /// Creates a new builder-style object to manufacture [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceEntry).
+    pub fn builder() -> crate::model::disassociate_client_device_from_core_device_entry::Builder {
+        crate::model::disassociate_client_device_from_core_device_entry::Builder::default()
+    }
+}
+
 /// See [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceEntry).
 pub mod disassociate_client_device_from_core_device_entry {
     
@@ -5976,12 +6021,6 @@ pub mod disassociate_client_device_from_core_device_entry {
     
     
 }
-impl DisassociateClientDeviceFromCoreDeviceEntry {
-    /// Creates a new builder-style object to manufacture [`DisassociateClientDeviceFromCoreDeviceEntry`](crate::model::DisassociateClientDeviceFromCoreDeviceEntry).
-    pub fn builder() -> crate::model::disassociate_client_device_from_core_device_entry::Builder {
-        crate::model::disassociate_client_device_from_core_device_entry::Builder::default()
-    }
-}
 
 /// <p>Contains an error that occurs from a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation returns a list of these errors.</p>
 #[non_exhaustive]
@@ -6011,6 +6050,13 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntry {
         self.message.as_deref()
     }
 }
+impl AssociateClientDeviceWithCoreDeviceErrorEntry {
+    /// Creates a new builder-style object to manufacture [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry).
+    pub fn builder() -> crate::model::associate_client_device_with_core_device_error_entry::Builder {
+        crate::model::associate_client_device_with_core_device_error_entry::Builder::default()
+    }
+}
+
 /// See [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry).
 pub mod associate_client_device_with_core_device_error_entry {
     
@@ -6065,12 +6111,6 @@ pub mod associate_client_device_with_core_device_error_entry {
     
     
 }
-impl AssociateClientDeviceWithCoreDeviceErrorEntry {
-    /// Creates a new builder-style object to manufacture [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry).
-    pub fn builder() -> crate::model::associate_client_device_with_core_device_error_entry::Builder {
-        crate::model::associate_client_device_with_core_device_error_entry::Builder::default()
-    }
-}
 
 /// <p>Contains a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
@@ -6086,6 +6126,13 @@ impl AssociateClientDeviceWithCoreDeviceEntry {
         self.thing_name.as_deref()
     }
 }
+impl AssociateClientDeviceWithCoreDeviceEntry {
+    /// Creates a new builder-style object to manufacture [`AssociateClientDeviceWithCoreDeviceEntry`](crate::model::AssociateClientDeviceWithCoreDeviceEntry).
+    pub fn builder() -> crate::model::associate_client_device_with_core_device_entry::Builder {
+        crate::model::associate_client_device_with_core_device_entry::Builder::default()
+    }
+}
+
 /// See [`AssociateClientDeviceWithCoreDeviceEntry`](crate::model::AssociateClientDeviceWithCoreDeviceEntry).
 pub mod associate_client_device_with_core_device_entry {
     
@@ -6115,11 +6162,5 @@ pub mod associate_client_device_with_core_device_entry {
     }
     
     
-}
-impl AssociateClientDeviceWithCoreDeviceEntry {
-    /// Creates a new builder-style object to manufacture [`AssociateClientDeviceWithCoreDeviceEntry`](crate::model::AssociateClientDeviceWithCoreDeviceEntry).
-    pub fn builder() -> crate::model::associate_client_device_with_core_device_entry::Builder {
-        crate::model::associate_client_device_with_core_device_entry::Builder::default()
-    }
 }
 

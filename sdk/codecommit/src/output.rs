@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateRepositoryNameOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRepositoryNameOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput).
+    pub fn builder() -> crate::output::update_repository_name_output::Builder {
+        crate::output::update_repository_name_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput).
 pub mod update_repository_name_output {
     
@@ -39,12 +46,6 @@ pub mod update_repository_name_output {
     
     
 }
-impl UpdateRepositoryNameOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput).
-    pub fn builder() -> crate::output::update_repository_name_output::Builder {
-        crate::output::update_repository_name_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for UpdateRepositoryDescriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRepositoryDescriptionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput).
+    pub fn builder() -> crate::output::update_repository_description_output::Builder {
+        crate::output::update_repository_description_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput).
 pub mod update_repository_description_output {
     
@@ -86,12 +94,6 @@ pub mod update_repository_description_output {
     
     
 }
-impl UpdateRepositoryDescriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput).
-    pub fn builder() -> crate::output::update_repository_description_output::Builder {
-        crate::output::update_repository_description_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -113,6 +115,13 @@ impl aws_http::request_id::RequestId for UpdatePullRequestTitleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePullRequestTitleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput).
+    pub fn builder() -> crate::output::update_pull_request_title_output::Builder {
+        crate::output::update_pull_request_title_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput).
 pub mod update_pull_request_title_output {
     
@@ -154,12 +163,6 @@ pub mod update_pull_request_title_output {
     
     
 }
-impl UpdatePullRequestTitleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput).
-    pub fn builder() -> crate::output::update_pull_request_title_output::Builder {
-        crate::output::update_pull_request_title_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -181,6 +184,13 @@ impl aws_http::request_id::RequestId for UpdatePullRequestStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePullRequestStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput).
+    pub fn builder() -> crate::output::update_pull_request_status_output::Builder {
+        crate::output::update_pull_request_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput).
 pub mod update_pull_request_status_output {
     
@@ -222,12 +232,6 @@ pub mod update_pull_request_status_output {
     
     
 }
-impl UpdatePullRequestStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput).
-    pub fn builder() -> crate::output::update_pull_request_status_output::Builder {
-        crate::output::update_pull_request_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -249,6 +253,13 @@ impl aws_http::request_id::RequestId for UpdatePullRequestDescriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePullRequestDescriptionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput).
+    pub fn builder() -> crate::output::update_pull_request_description_output::Builder {
+        crate::output::update_pull_request_description_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput).
 pub mod update_pull_request_description_output {
     
@@ -290,12 +301,6 @@ pub mod update_pull_request_description_output {
     
     
 }
-impl UpdatePullRequestDescriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput).
-    pub fn builder() -> crate::output::update_pull_request_description_output::Builder {
-        crate::output::update_pull_request_description_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -308,6 +313,13 @@ impl aws_http::request_id::RequestId for UpdatePullRequestApprovalStateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePullRequestApprovalStateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput).
+    pub fn builder() -> crate::output::update_pull_request_approval_state_output::Builder {
+        crate::output::update_pull_request_approval_state_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput).
 pub mod update_pull_request_approval_state_output {
     
@@ -337,12 +349,6 @@ pub mod update_pull_request_approval_state_output {
     
     
 }
-impl UpdatePullRequestApprovalStateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput).
-    pub fn builder() -> crate::output::update_pull_request_approval_state_output::Builder {
-        crate::output::update_pull_request_approval_state_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -364,6 +370,13 @@ impl aws_http::request_id::RequestId for UpdatePullRequestApprovalRuleContentOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePullRequestApprovalRuleContentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput).
+    pub fn builder() -> crate::output::update_pull_request_approval_rule_content_output::Builder {
+        crate::output::update_pull_request_approval_rule_content_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput).
 pub mod update_pull_request_approval_rule_content_output {
     
@@ -405,12 +418,6 @@ pub mod update_pull_request_approval_rule_content_output {
     
     
 }
-impl UpdatePullRequestApprovalRuleContentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput).
-    pub fn builder() -> crate::output::update_pull_request_approval_rule_content_output::Builder {
-        crate::output::update_pull_request_approval_rule_content_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -423,6 +430,13 @@ impl aws_http::request_id::RequestId for UpdateDefaultBranchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDefaultBranchOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput).
+    pub fn builder() -> crate::output::update_default_branch_output::Builder {
+        crate::output::update_default_branch_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput).
 pub mod update_default_branch_output {
     
@@ -452,12 +466,6 @@ pub mod update_default_branch_output {
     
     
 }
-impl UpdateDefaultBranchOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput).
-    pub fn builder() -> crate::output::update_default_branch_output::Builder {
-        crate::output::update_default_branch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -479,6 +487,13 @@ impl aws_http::request_id::RequestId for UpdateCommentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateCommentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCommentOutput`](crate::output::UpdateCommentOutput).
+    pub fn builder() -> crate::output::update_comment_output::Builder {
+        crate::output::update_comment_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCommentOutput`](crate::output::UpdateCommentOutput).
 pub mod update_comment_output {
     
@@ -520,12 +535,6 @@ pub mod update_comment_output {
     
     
 }
-impl UpdateCommentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCommentOutput`](crate::output::UpdateCommentOutput).
-    pub fn builder() -> crate::output::update_comment_output::Builder {
-        crate::output::update_comment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -547,6 +556,13 @@ impl aws_http::request_id::RequestId for UpdateApprovalRuleTemplateNameOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateApprovalRuleTemplateNameOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput).
+    pub fn builder() -> crate::output::update_approval_rule_template_name_output::Builder {
+        crate::output::update_approval_rule_template_name_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput).
 pub mod update_approval_rule_template_name_output {
     
@@ -588,12 +604,6 @@ pub mod update_approval_rule_template_name_output {
     
     
 }
-impl UpdateApprovalRuleTemplateNameOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput).
-    pub fn builder() -> crate::output::update_approval_rule_template_name_output::Builder {
-        crate::output::update_approval_rule_template_name_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -615,6 +625,13 @@ impl aws_http::request_id::RequestId for UpdateApprovalRuleTemplateDescriptionOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateApprovalRuleTemplateDescriptionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput).
+    pub fn builder() -> crate::output::update_approval_rule_template_description_output::Builder {
+        crate::output::update_approval_rule_template_description_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput).
 pub mod update_approval_rule_template_description_output {
     
@@ -656,12 +673,6 @@ pub mod update_approval_rule_template_description_output {
     
     
 }
-impl UpdateApprovalRuleTemplateDescriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput).
-    pub fn builder() -> crate::output::update_approval_rule_template_description_output::Builder {
-        crate::output::update_approval_rule_template_description_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -683,6 +694,13 @@ impl aws_http::request_id::RequestId for UpdateApprovalRuleTemplateContentOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateApprovalRuleTemplateContentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput).
+    pub fn builder() -> crate::output::update_approval_rule_template_content_output::Builder {
+        crate::output::update_approval_rule_template_content_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput).
 pub mod update_approval_rule_template_content_output {
     
@@ -724,12 +742,6 @@ pub mod update_approval_rule_template_content_output {
     
     
 }
-impl UpdateApprovalRuleTemplateContentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput).
-    pub fn builder() -> crate::output::update_approval_rule_template_content_output::Builder {
-        crate::output::update_approval_rule_template_content_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -742,6 +754,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -771,12 +790,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a test repository triggers operation.</p>
 #[non_exhaustive]
@@ -805,6 +818,13 @@ impl aws_http::request_id::RequestId for TestRepositoryTriggersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TestRepositoryTriggersOutput {
+    /// Creates a new builder-style object to manufacture [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput).
+    pub fn builder() -> crate::output::test_repository_triggers_output::Builder {
+        crate::output::test_repository_triggers_output::Builder::default()
+    }
+}
+
 /// See [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput).
 pub mod test_repository_triggers_output {
     
@@ -870,12 +890,6 @@ pub mod test_repository_triggers_output {
     
     
 }
-impl TestRepositoryTriggersOutput {
-    /// Creates a new builder-style object to manufacture [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput).
-    pub fn builder() -> crate::output::test_repository_triggers_output::Builder {
-        crate::output::test_repository_triggers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -888,6 +902,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -917,12 +938,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a put repository triggers operation.</p>
 #[non_exhaustive]
@@ -944,6 +959,13 @@ impl aws_http::request_id::RequestId for PutRepositoryTriggersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutRepositoryTriggersOutput {
+    /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput).
+    pub fn builder() -> crate::output::put_repository_triggers_output::Builder {
+        crate::output::put_repository_triggers_output::Builder::default()
+    }
+}
+
 /// See [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput).
 pub mod put_repository_triggers_output {
     
@@ -985,12 +1007,6 @@ pub mod put_repository_triggers_output {
     
     
 }
-impl PutRepositoryTriggersOutput {
-    /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput).
-    pub fn builder() -> crate::output::put_repository_triggers_output::Builder {
-        crate::output::put_repository_triggers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1026,6 +1042,13 @@ impl aws_http::request_id::RequestId for PutFileOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutFileOutput {
+    /// Creates a new builder-style object to manufacture [`PutFileOutput`](crate::output::PutFileOutput).
+    pub fn builder() -> crate::output::put_file_output::Builder {
+        crate::output::put_file_output::Builder::default()
+    }
+}
+
 /// See [`PutFileOutput`](crate::output::PutFileOutput).
 pub mod put_file_output {
     
@@ -1091,12 +1114,6 @@ pub mod put_file_output {
     
     
 }
-impl PutFileOutput {
-    /// Creates a new builder-style object to manufacture [`PutFileOutput`](crate::output::PutFileOutput).
-    pub fn builder() -> crate::output::put_file_output::Builder {
-        crate::output::put_file_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1109,6 +1126,13 @@ impl aws_http::request_id::RequestId for PutCommentReactionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutCommentReactionOutput {
+    /// Creates a new builder-style object to manufacture [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput).
+    pub fn builder() -> crate::output::put_comment_reaction_output::Builder {
+        crate::output::put_comment_reaction_output::Builder::default()
+    }
+}
+
 /// See [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput).
 pub mod put_comment_reaction_output {
     
@@ -1138,12 +1162,6 @@ pub mod put_comment_reaction_output {
     
     
 }
-impl PutCommentReactionOutput {
-    /// Creates a new builder-style object to manufacture [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput).
-    pub fn builder() -> crate::output::put_comment_reaction_output::Builder {
-        crate::output::put_comment_reaction_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1165,6 +1183,13 @@ impl aws_http::request_id::RequestId for PostCommentReplyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PostCommentReplyOutput {
+    /// Creates a new builder-style object to manufacture [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput).
+    pub fn builder() -> crate::output::post_comment_reply_output::Builder {
+        crate::output::post_comment_reply_output::Builder::default()
+    }
+}
+
 /// See [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput).
 pub mod post_comment_reply_output {
     
@@ -1205,12 +1230,6 @@ pub mod post_comment_reply_output {
     }
     
     
-}
-impl PostCommentReplyOutput {
-    /// Creates a new builder-style object to manufacture [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput).
-    pub fn builder() -> crate::output::post_comment_reply_output::Builder {
-        crate::output::post_comment_reply_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1282,6 +1301,13 @@ impl aws_http::request_id::RequestId for PostCommentForPullRequestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PostCommentForPullRequestOutput {
+    /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput).
+    pub fn builder() -> crate::output::post_comment_for_pull_request_output::Builder {
+        crate::output::post_comment_for_pull_request_output::Builder::default()
+    }
+}
+
 /// See [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput).
 pub mod post_comment_for_pull_request_output {
     
@@ -1407,12 +1433,6 @@ pub mod post_comment_for_pull_request_output {
     
     
 }
-impl PostCommentForPullRequestOutput {
-    /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput).
-    pub fn builder() -> crate::output::post_comment_for_pull_request_output::Builder {
-        crate::output::post_comment_for_pull_request_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1476,6 +1496,13 @@ impl aws_http::request_id::RequestId for PostCommentForComparedCommitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PostCommentForComparedCommitOutput {
+    /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput).
+    pub fn builder() -> crate::output::post_comment_for_compared_commit_output::Builder {
+        crate::output::post_comment_for_compared_commit_output::Builder::default()
+    }
+}
+
 /// See [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput).
 pub mod post_comment_for_compared_commit_output {
     
@@ -1589,12 +1616,6 @@ pub mod post_comment_for_compared_commit_output {
     
     
 }
-impl PostCommentForComparedCommitOutput {
-    /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput).
-    pub fn builder() -> crate::output::post_comment_for_compared_commit_output::Builder {
-        crate::output::post_comment_for_compared_commit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1607,6 +1628,13 @@ impl aws_http::request_id::RequestId for OverridePullRequestApprovalRulesOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl OverridePullRequestApprovalRulesOutput {
+    /// Creates a new builder-style object to manufacture [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput).
+    pub fn builder() -> crate::output::override_pull_request_approval_rules_output::Builder {
+        crate::output::override_pull_request_approval_rules_output::Builder::default()
+    }
+}
+
 /// See [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput).
 pub mod override_pull_request_approval_rules_output {
     
@@ -1636,12 +1664,6 @@ pub mod override_pull_request_approval_rules_output {
     
     
 }
-impl OverridePullRequestApprovalRulesOutput {
-    /// Creates a new builder-style object to manufacture [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput).
-    pub fn builder() -> crate::output::override_pull_request_approval_rules_output::Builder {
-        crate::output::override_pull_request_approval_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1663,6 +1685,13 @@ impl aws_http::request_id::RequestId for MergePullRequestByThreeWayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl MergePullRequestByThreeWayOutput {
+    /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput).
+    pub fn builder() -> crate::output::merge_pull_request_by_three_way_output::Builder {
+        crate::output::merge_pull_request_by_three_way_output::Builder::default()
+    }
+}
+
 /// See [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput).
 pub mod merge_pull_request_by_three_way_output {
     
@@ -1704,12 +1733,6 @@ pub mod merge_pull_request_by_three_way_output {
     
     
 }
-impl MergePullRequestByThreeWayOutput {
-    /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput).
-    pub fn builder() -> crate::output::merge_pull_request_by_three_way_output::Builder {
-        crate::output::merge_pull_request_by_three_way_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1731,6 +1754,13 @@ impl aws_http::request_id::RequestId for MergePullRequestBySquashOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl MergePullRequestBySquashOutput {
+    /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput).
+    pub fn builder() -> crate::output::merge_pull_request_by_squash_output::Builder {
+        crate::output::merge_pull_request_by_squash_output::Builder::default()
+    }
+}
+
 /// See [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput).
 pub mod merge_pull_request_by_squash_output {
     
@@ -1772,12 +1802,6 @@ pub mod merge_pull_request_by_squash_output {
     
     
 }
-impl MergePullRequestBySquashOutput {
-    /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput).
-    pub fn builder() -> crate::output::merge_pull_request_by_squash_output::Builder {
-        crate::output::merge_pull_request_by_squash_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1799,6 +1823,13 @@ impl aws_http::request_id::RequestId for MergePullRequestByFastForwardOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl MergePullRequestByFastForwardOutput {
+    /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput).
+    pub fn builder() -> crate::output::merge_pull_request_by_fast_forward_output::Builder {
+        crate::output::merge_pull_request_by_fast_forward_output::Builder::default()
+    }
+}
+
 /// See [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput).
 pub mod merge_pull_request_by_fast_forward_output {
     
@@ -1840,12 +1871,6 @@ pub mod merge_pull_request_by_fast_forward_output {
     
     
 }
-impl MergePullRequestByFastForwardOutput {
-    /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput).
-    pub fn builder() -> crate::output::merge_pull_request_by_fast_forward_output::Builder {
-        crate::output::merge_pull_request_by_fast_forward_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1874,6 +1899,13 @@ impl aws_http::request_id::RequestId for MergeBranchesByThreeWayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl MergeBranchesByThreeWayOutput {
+    /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput).
+    pub fn builder() -> crate::output::merge_branches_by_three_way_output::Builder {
+        crate::output::merge_branches_by_three_way_output::Builder::default()
+    }
+}
+
 /// See [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput).
 pub mod merge_branches_by_three_way_output {
     
@@ -1927,12 +1959,6 @@ pub mod merge_branches_by_three_way_output {
     
     
 }
-impl MergeBranchesByThreeWayOutput {
-    /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput).
-    pub fn builder() -> crate::output::merge_branches_by_three_way_output::Builder {
-        crate::output::merge_branches_by_three_way_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1961,6 +1987,13 @@ impl aws_http::request_id::RequestId for MergeBranchesBySquashOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl MergeBranchesBySquashOutput {
+    /// Creates a new builder-style object to manufacture [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput).
+    pub fn builder() -> crate::output::merge_branches_by_squash_output::Builder {
+        crate::output::merge_branches_by_squash_output::Builder::default()
+    }
+}
+
 /// See [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput).
 pub mod merge_branches_by_squash_output {
     
@@ -2014,12 +2047,6 @@ pub mod merge_branches_by_squash_output {
     
     
 }
-impl MergeBranchesBySquashOutput {
-    /// Creates a new builder-style object to manufacture [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput).
-    pub fn builder() -> crate::output::merge_branches_by_squash_output::Builder {
-        crate::output::merge_branches_by_squash_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2048,6 +2075,13 @@ impl aws_http::request_id::RequestId for MergeBranchesByFastForwardOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl MergeBranchesByFastForwardOutput {
+    /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput).
+    pub fn builder() -> crate::output::merge_branches_by_fast_forward_output::Builder {
+        crate::output::merge_branches_by_fast_forward_output::Builder::default()
+    }
+}
+
 /// See [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput).
 pub mod merge_branches_by_fast_forward_output {
     
@@ -2101,12 +2135,6 @@ pub mod merge_branches_by_fast_forward_output {
     
     
 }
-impl MergeBranchesByFastForwardOutput {
-    /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput).
-    pub fn builder() -> crate::output::merge_branches_by_fast_forward_output::Builder {
-        crate::output::merge_branches_by_fast_forward_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2135,6 +2163,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -2194,12 +2229,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2228,6 +2257,13 @@ impl aws_http::request_id::RequestId for ListRepositoriesForApprovalRuleTemplate
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRepositoriesForApprovalRuleTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput).
+    pub fn builder() -> crate::output::list_repositories_for_approval_rule_template_output::Builder {
+        crate::output::list_repositories_for_approval_rule_template_output::Builder::default()
+    }
+}
+
 /// See [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput).
 pub mod list_repositories_for_approval_rule_template_output {
     
@@ -2287,12 +2323,6 @@ pub mod list_repositories_for_approval_rule_template_output {
     
     
 }
-impl ListRepositoriesForApprovalRuleTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::output::list_repositories_for_approval_rule_template_output::Builder {
-        crate::output::list_repositories_for_approval_rule_template_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a list repositories operation.</p>
 #[non_exhaustive]
@@ -2321,6 +2351,13 @@ impl aws_http::request_id::RequestId for ListRepositoriesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRepositoriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput).
+    pub fn builder() -> crate::output::list_repositories_output::Builder {
+        crate::output::list_repositories_output::Builder::default()
+    }
+}
+
 /// See [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput).
 pub mod list_repositories_output {
     
@@ -2380,12 +2417,6 @@ pub mod list_repositories_output {
     
     
 }
-impl ListRepositoriesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput).
-    pub fn builder() -> crate::output::list_repositories_output::Builder {
-        crate::output::list_repositories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2414,6 +2445,13 @@ impl aws_http::request_id::RequestId for ListPullRequestsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPullRequestsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput).
+    pub fn builder() -> crate::output::list_pull_requests_output::Builder {
+        crate::output::list_pull_requests_output::Builder::default()
+    }
+}
+
 /// See [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput).
 pub mod list_pull_requests_output {
     
@@ -2473,12 +2511,6 @@ pub mod list_pull_requests_output {
     
     
 }
-impl ListPullRequestsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput).
-    pub fn builder() -> crate::output::list_pull_requests_output::Builder {
-        crate::output::list_pull_requests_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a list branches operation.</p>
 #[non_exhaustive]
@@ -2507,6 +2539,13 @@ impl aws_http::request_id::RequestId for ListBranchesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListBranchesOutput {
+    /// Creates a new builder-style object to manufacture [`ListBranchesOutput`](crate::output::ListBranchesOutput).
+    pub fn builder() -> crate::output::list_branches_output::Builder {
+        crate::output::list_branches_output::Builder::default()
+    }
+}
+
 /// See [`ListBranchesOutput`](crate::output::ListBranchesOutput).
 pub mod list_branches_output {
     
@@ -2566,12 +2605,6 @@ pub mod list_branches_output {
     
     
 }
-impl ListBranchesOutput {
-    /// Creates a new builder-style object to manufacture [`ListBranchesOutput`](crate::output::ListBranchesOutput).
-    pub fn builder() -> crate::output::list_branches_output::Builder {
-        crate::output::list_branches_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2600,6 +2633,13 @@ impl aws_http::request_id::RequestId for ListAssociatedApprovalRuleTemplatesForR
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
+    pub fn builder() -> crate::output::list_associated_approval_rule_templates_for_repository_output::Builder {
+        crate::output::list_associated_approval_rule_templates_for_repository_output::Builder::default()
+    }
+}
+
 /// See [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
 pub mod list_associated_approval_rule_templates_for_repository_output {
     
@@ -2659,12 +2699,6 @@ pub mod list_associated_approval_rule_templates_for_repository_output {
     
     
 }
-impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
-    pub fn builder() -> crate::output::list_associated_approval_rule_templates_for_repository_output::Builder {
-        crate::output::list_associated_approval_rule_templates_for_repository_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2693,6 +2727,13 @@ impl aws_http::request_id::RequestId for ListApprovalRuleTemplatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListApprovalRuleTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput).
+    pub fn builder() -> crate::output::list_approval_rule_templates_output::Builder {
+        crate::output::list_approval_rule_templates_output::Builder::default()
+    }
+}
+
 /// See [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput).
 pub mod list_approval_rule_templates_output {
     
@@ -2752,12 +2793,6 @@ pub mod list_approval_rule_templates_output {
     
     
 }
-impl ListApprovalRuleTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput).
-    pub fn builder() -> crate::output::list_approval_rule_templates_output::Builder {
-        crate::output::list_approval_rule_templates_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a get repository triggers operation.</p>
 #[non_exhaustive]
@@ -2786,6 +2821,13 @@ impl aws_http::request_id::RequestId for GetRepositoryTriggersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRepositoryTriggersOutput {
+    /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput).
+    pub fn builder() -> crate::output::get_repository_triggers_output::Builder {
+        crate::output::get_repository_triggers_output::Builder::default()
+    }
+}
+
 /// See [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput).
 pub mod get_repository_triggers_output {
     
@@ -2845,12 +2887,6 @@ pub mod get_repository_triggers_output {
     
     
 }
-impl GetRepositoryTriggersOutput {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput).
-    pub fn builder() -> crate::output::get_repository_triggers_output::Builder {
-        crate::output::get_repository_triggers_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a get repository operation.</p>
 #[non_exhaustive]
@@ -2872,6 +2908,13 @@ impl aws_http::request_id::RequestId for GetRepositoryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetRepositoryOutput`](crate::output::GetRepositoryOutput).
+    pub fn builder() -> crate::output::get_repository_output::Builder {
+        crate::output::get_repository_output::Builder::default()
+    }
+}
+
 /// See [`GetRepositoryOutput`](crate::output::GetRepositoryOutput).
 pub mod get_repository_output {
     
@@ -2913,12 +2956,6 @@ pub mod get_repository_output {
     
     
 }
-impl GetRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryOutput`](crate::output::GetRepositoryOutput).
-    pub fn builder() -> crate::output::get_repository_output::Builder {
-        crate::output::get_repository_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2947,6 +2984,13 @@ impl aws_http::request_id::RequestId for GetPullRequestOverrideStateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPullRequestOverrideStateOutput {
+    /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput).
+    pub fn builder() -> crate::output::get_pull_request_override_state_output::Builder {
+        crate::output::get_pull_request_override_state_output::Builder::default()
+    }
+}
+
 /// See [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput).
 pub mod get_pull_request_override_state_output {
     
@@ -3001,12 +3045,6 @@ pub mod get_pull_request_override_state_output {
     
     
 }
-impl GetPullRequestOverrideStateOutput {
-    /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput).
-    pub fn builder() -> crate::output::get_pull_request_override_state_output::Builder {
-        crate::output::get_pull_request_override_state_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3028,6 +3066,13 @@ impl aws_http::request_id::RequestId for GetPullRequestApprovalStatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPullRequestApprovalStatesOutput {
+    /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput).
+    pub fn builder() -> crate::output::get_pull_request_approval_states_output::Builder {
+        crate::output::get_pull_request_approval_states_output::Builder::default()
+    }
+}
+
 /// See [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput).
 pub mod get_pull_request_approval_states_output {
     
@@ -3075,12 +3120,6 @@ pub mod get_pull_request_approval_states_output {
     
     
 }
-impl GetPullRequestApprovalStatesOutput {
-    /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput).
-    pub fn builder() -> crate::output::get_pull_request_approval_states_output::Builder {
-        crate::output::get_pull_request_approval_states_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3102,6 +3141,13 @@ impl aws_http::request_id::RequestId for GetPullRequestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPullRequestOutput {
+    /// Creates a new builder-style object to manufacture [`GetPullRequestOutput`](crate::output::GetPullRequestOutput).
+    pub fn builder() -> crate::output::get_pull_request_output::Builder {
+        crate::output::get_pull_request_output::Builder::default()
+    }
+}
+
 /// See [`GetPullRequestOutput`](crate::output::GetPullRequestOutput).
 pub mod get_pull_request_output {
     
@@ -3142,12 +3188,6 @@ pub mod get_pull_request_output {
     }
     
     
-}
-impl GetPullRequestOutput {
-    /// Creates a new builder-style object to manufacture [`GetPullRequestOutput`](crate::output::GetPullRequestOutput).
-    pub fn builder() -> crate::output::get_pull_request_output::Builder {
-        crate::output::get_pull_request_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -3191,6 +3231,13 @@ impl aws_http::request_id::RequestId for GetMergeOptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMergeOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput).
+    pub fn builder() -> crate::output::get_merge_options_output::Builder {
+        crate::output::get_merge_options_output::Builder::default()
+    }
+}
+
 /// See [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput).
 pub mod get_merge_options_output {
     
@@ -3274,12 +3321,6 @@ pub mod get_merge_options_output {
     
     
 }
-impl GetMergeOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput).
-    pub fn builder() -> crate::output::get_merge_options_output::Builder {
-        crate::output::get_merge_options_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3336,6 +3377,13 @@ impl aws_http::request_id::RequestId for GetMergeConflictsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMergeConflictsOutput {
+    /// Creates a new builder-style object to manufacture [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput).
+    pub fn builder() -> crate::output::get_merge_conflicts_output::Builder {
+        crate::output::get_merge_conflicts_output::Builder::default()
+    }
+}
+
 /// See [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput).
 pub mod get_merge_conflicts_output {
     
@@ -3444,12 +3492,6 @@ pub mod get_merge_conflicts_output {
     
     
 }
-impl GetMergeConflictsOutput {
-    /// Creates a new builder-style object to manufacture [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput).
-    pub fn builder() -> crate::output::get_merge_conflicts_output::Builder {
-        crate::output::get_merge_conflicts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3492,6 +3534,13 @@ impl aws_http::request_id::RequestId for GetMergeCommitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetMergeCommitOutput {
+    /// Creates a new builder-style object to manufacture [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput).
+    pub fn builder() -> crate::output::get_merge_commit_output::Builder {
+        crate::output::get_merge_commit_output::Builder::default()
+    }
+}
+
 /// See [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput).
 pub mod get_merge_commit_output {
     
@@ -3569,12 +3618,6 @@ pub mod get_merge_commit_output {
     
     
 }
-impl GetMergeCommitOutput {
-    /// Creates a new builder-style object to manufacture [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput).
-    pub fn builder() -> crate::output::get_merge_commit_output::Builder {
-        crate::output::get_merge_commit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3638,6 +3681,13 @@ impl aws_http::request_id::RequestId for GetFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFolderOutput {
+    /// Creates a new builder-style object to manufacture [`GetFolderOutput`](crate::output::GetFolderOutput).
+    pub fn builder() -> crate::output::get_folder_output::Builder {
+        crate::output::get_folder_output::Builder::default()
+    }
+}
+
 /// See [`GetFolderOutput`](crate::output::GetFolderOutput).
 pub mod get_folder_output {
     
@@ -3775,12 +3825,6 @@ pub mod get_folder_output {
     
     
 }
-impl GetFolderOutput {
-    /// Creates a new builder-style object to manufacture [`GetFolderOutput`](crate::output::GetFolderOutput).
-    pub fn builder() -> crate::output::get_folder_output::Builder {
-        crate::output::get_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3841,6 +3885,13 @@ impl aws_http::request_id::RequestId for GetFileOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetFileOutput {
+    /// Creates a new builder-style object to manufacture [`GetFileOutput`](crate::output::GetFileOutput).
+    pub fn builder() -> crate::output::get_file_output::Builder {
+        crate::output::get_file_output::Builder::default()
+    }
+}
+
 /// See [`GetFileOutput`](crate::output::GetFileOutput).
 pub mod get_file_output {
     
@@ -3947,12 +3998,6 @@ pub mod get_file_output {
     
     
 }
-impl GetFileOutput {
-    /// Creates a new builder-style object to manufacture [`GetFileOutput`](crate::output::GetFileOutput).
-    pub fn builder() -> crate::output::get_file_output::Builder {
-        crate::output::get_file_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3981,6 +4026,13 @@ impl aws_http::request_id::RequestId for GetDifferencesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDifferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetDifferencesOutput`](crate::output::GetDifferencesOutput).
+    pub fn builder() -> crate::output::get_differences_output::Builder {
+        crate::output::get_differences_output::Builder::default()
+    }
+}
+
 /// See [`GetDifferencesOutput`](crate::output::GetDifferencesOutput).
 pub mod get_differences_output {
     
@@ -4040,12 +4092,6 @@ pub mod get_differences_output {
     
     
 }
-impl GetDifferencesOutput {
-    /// Creates a new builder-style object to manufacture [`GetDifferencesOutput`](crate::output::GetDifferencesOutput).
-    pub fn builder() -> crate::output::get_differences_output::Builder {
-        crate::output::get_differences_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a get commit operation.</p>
 #[non_exhaustive]
@@ -4067,6 +4113,13 @@ impl aws_http::request_id::RequestId for GetCommitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCommitOutput {
+    /// Creates a new builder-style object to manufacture [`GetCommitOutput`](crate::output::GetCommitOutput).
+    pub fn builder() -> crate::output::get_commit_output::Builder {
+        crate::output::get_commit_output::Builder::default()
+    }
+}
+
 /// See [`GetCommitOutput`](crate::output::GetCommitOutput).
 pub mod get_commit_output {
     
@@ -4108,12 +4161,6 @@ pub mod get_commit_output {
     
     
 }
-impl GetCommitOutput {
-    /// Creates a new builder-style object to manufacture [`GetCommitOutput`](crate::output::GetCommitOutput).
-    pub fn builder() -> crate::output::get_commit_output::Builder {
-        crate::output::get_commit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4142,6 +4189,13 @@ impl aws_http::request_id::RequestId for GetCommentsForPullRequestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCommentsForPullRequestOutput {
+    /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput).
+    pub fn builder() -> crate::output::get_comments_for_pull_request_output::Builder {
+        crate::output::get_comments_for_pull_request_output::Builder::default()
+    }
+}
+
 /// See [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput).
 pub mod get_comments_for_pull_request_output {
     
@@ -4201,12 +4255,6 @@ pub mod get_comments_for_pull_request_output {
     
     
 }
-impl GetCommentsForPullRequestOutput {
-    /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput).
-    pub fn builder() -> crate::output::get_comments_for_pull_request_output::Builder {
-        crate::output::get_comments_for_pull_request_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4235,6 +4283,13 @@ impl aws_http::request_id::RequestId for GetCommentsForComparedCommitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCommentsForComparedCommitOutput {
+    /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput).
+    pub fn builder() -> crate::output::get_comments_for_compared_commit_output::Builder {
+        crate::output::get_comments_for_compared_commit_output::Builder::default()
+    }
+}
+
 /// See [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput).
 pub mod get_comments_for_compared_commit_output {
     
@@ -4294,12 +4349,6 @@ pub mod get_comments_for_compared_commit_output {
     
     
 }
-impl GetCommentsForComparedCommitOutput {
-    /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput).
-    pub fn builder() -> crate::output::get_comments_for_compared_commit_output::Builder {
-        crate::output::get_comments_for_compared_commit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4328,6 +4377,13 @@ impl aws_http::request_id::RequestId for GetCommentReactionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCommentReactionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput).
+    pub fn builder() -> crate::output::get_comment_reactions_output::Builder {
+        crate::output::get_comment_reactions_output::Builder::default()
+    }
+}
+
 /// See [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput).
 pub mod get_comment_reactions_output {
     
@@ -4387,12 +4443,6 @@ pub mod get_comment_reactions_output {
     
     
 }
-impl GetCommentReactionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput).
-    pub fn builder() -> crate::output::get_comment_reactions_output::Builder {
-        crate::output::get_comment_reactions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4414,6 +4464,13 @@ impl aws_http::request_id::RequestId for GetCommentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCommentOutput {
+    /// Creates a new builder-style object to manufacture [`GetCommentOutput`](crate::output::GetCommentOutput).
+    pub fn builder() -> crate::output::get_comment_output::Builder {
+        crate::output::get_comment_output::Builder::default()
+    }
+}
+
 /// See [`GetCommentOutput`](crate::output::GetCommentOutput).
 pub mod get_comment_output {
     
@@ -4455,12 +4512,6 @@ pub mod get_comment_output {
     
     
 }
-impl GetCommentOutput {
-    /// Creates a new builder-style object to manufacture [`GetCommentOutput`](crate::output::GetCommentOutput).
-    pub fn builder() -> crate::output::get_comment_output::Builder {
-        crate::output::get_comment_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a get branch operation.</p>
 #[non_exhaustive]
@@ -4482,6 +4533,13 @@ impl aws_http::request_id::RequestId for GetBranchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBranchOutput {
+    /// Creates a new builder-style object to manufacture [`GetBranchOutput`](crate::output::GetBranchOutput).
+    pub fn builder() -> crate::output::get_branch_output::Builder {
+        crate::output::get_branch_output::Builder::default()
+    }
+}
+
 /// See [`GetBranchOutput`](crate::output::GetBranchOutput).
 pub mod get_branch_output {
     
@@ -4523,12 +4581,6 @@ pub mod get_branch_output {
     
     
 }
-impl GetBranchOutput {
-    /// Creates a new builder-style object to manufacture [`GetBranchOutput`](crate::output::GetBranchOutput).
-    pub fn builder() -> crate::output::get_branch_output::Builder {
-        crate::output::get_branch_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a get blob operation.</p>
 #[non_exhaustive]
@@ -4550,6 +4602,13 @@ impl aws_http::request_id::RequestId for GetBlobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBlobOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlobOutput`](crate::output::GetBlobOutput).
+    pub fn builder() -> crate::output::get_blob_output::Builder {
+        crate::output::get_blob_output::Builder::default()
+    }
+}
+
 /// See [`GetBlobOutput`](crate::output::GetBlobOutput).
 pub mod get_blob_output {
     
@@ -4591,12 +4650,6 @@ pub mod get_blob_output {
     
     
 }
-impl GetBlobOutput {
-    /// Creates a new builder-style object to manufacture [`GetBlobOutput`](crate::output::GetBlobOutput).
-    pub fn builder() -> crate::output::get_blob_output::Builder {
-        crate::output::get_blob_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4618,6 +4671,13 @@ impl aws_http::request_id::RequestId for GetApprovalRuleTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetApprovalRuleTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput).
+    pub fn builder() -> crate::output::get_approval_rule_template_output::Builder {
+        crate::output::get_approval_rule_template_output::Builder::default()
+    }
+}
+
 /// See [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput).
 pub mod get_approval_rule_template_output {
     
@@ -4659,12 +4719,6 @@ pub mod get_approval_rule_template_output {
     
     
 }
-impl GetApprovalRuleTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::output::get_approval_rule_template_output::Builder {
-        crate::output::get_approval_rule_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4686,6 +4740,13 @@ impl aws_http::request_id::RequestId for EvaluatePullRequestApprovalRulesOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl EvaluatePullRequestApprovalRulesOutput {
+    /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput).
+    pub fn builder() -> crate::output::evaluate_pull_request_approval_rules_output::Builder {
+        crate::output::evaluate_pull_request_approval_rules_output::Builder::default()
+    }
+}
+
 /// See [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput).
 pub mod evaluate_pull_request_approval_rules_output {
     
@@ -4727,12 +4788,6 @@ pub mod evaluate_pull_request_approval_rules_output {
     
     
 }
-impl EvaluatePullRequestApprovalRulesOutput {
-    /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput).
-    pub fn builder() -> crate::output::evaluate_pull_request_approval_rules_output::Builder {
-        crate::output::evaluate_pull_request_approval_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4745,6 +4800,13 @@ impl aws_http::request_id::RequestId for DisassociateApprovalRuleTemplateFromRep
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateApprovalRuleTemplateFromRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput).
+    pub fn builder() -> crate::output::disassociate_approval_rule_template_from_repository_output::Builder {
+        crate::output::disassociate_approval_rule_template_from_repository_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput).
 pub mod disassociate_approval_rule_template_from_repository_output {
     
@@ -4774,12 +4836,6 @@ pub mod disassociate_approval_rule_template_from_repository_output {
     
     
 }
-impl DisassociateApprovalRuleTemplateFromRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput).
-    pub fn builder() -> crate::output::disassociate_approval_rule_template_from_repository_output::Builder {
-        crate::output::disassociate_approval_rule_template_from_repository_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4808,6 +4864,13 @@ impl aws_http::request_id::RequestId for DescribePullRequestEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribePullRequestEventsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput).
+    pub fn builder() -> crate::output::describe_pull_request_events_output::Builder {
+        crate::output::describe_pull_request_events_output::Builder::default()
+    }
+}
+
 /// See [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput).
 pub mod describe_pull_request_events_output {
     
@@ -4867,12 +4930,6 @@ pub mod describe_pull_request_events_output {
     
     
 }
-impl DescribePullRequestEventsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput).
-    pub fn builder() -> crate::output::describe_pull_request_events_output::Builder {
-        crate::output::describe_pull_request_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4929,6 +4986,13 @@ impl aws_http::request_id::RequestId for DescribeMergeConflictsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeMergeConflictsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput).
+    pub fn builder() -> crate::output::describe_merge_conflicts_output::Builder {
+        crate::output::describe_merge_conflicts_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput).
 pub mod describe_merge_conflicts_output {
     
@@ -5036,12 +5100,6 @@ pub mod describe_merge_conflicts_output {
     
     
 }
-impl DescribeMergeConflictsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput).
-    pub fn builder() -> crate::output::describe_merge_conflicts_output::Builder {
-        crate::output::describe_merge_conflicts_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a delete repository operation.</p>
 #[non_exhaustive]
@@ -5063,6 +5121,13 @@ impl aws_http::request_id::RequestId for DeleteRepositoryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
+    pub fn builder() -> crate::output::delete_repository_output::Builder {
+        crate::output::delete_repository_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
 pub mod delete_repository_output {
     
@@ -5104,12 +5169,6 @@ pub mod delete_repository_output {
     
     
 }
-impl DeleteRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
-    pub fn builder() -> crate::output::delete_repository_output::Builder {
-        crate::output::delete_repository_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5135,6 +5194,13 @@ impl aws_http::request_id::RequestId for DeletePullRequestApprovalRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePullRequestApprovalRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput).
+    pub fn builder() -> crate::output::delete_pull_request_approval_rule_output::Builder {
+        crate::output::delete_pull_request_approval_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput).
 pub mod delete_pull_request_approval_rule_output {
     
@@ -5180,12 +5246,6 @@ pub mod delete_pull_request_approval_rule_output {
     
     
 }
-impl DeletePullRequestApprovalRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput).
-    pub fn builder() -> crate::output::delete_pull_request_approval_rule_output::Builder {
-        crate::output::delete_pull_request_approval_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5228,6 +5288,13 @@ impl aws_http::request_id::RequestId for DeleteFileOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFileOutput`](crate::output::DeleteFileOutput).
+    pub fn builder() -> crate::output::delete_file_output::Builder {
+        crate::output::delete_file_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFileOutput`](crate::output::DeleteFileOutput).
 pub mod delete_file_output {
     
@@ -5305,12 +5372,6 @@ pub mod delete_file_output {
     
     
 }
-impl DeleteFileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFileOutput`](crate::output::DeleteFileOutput).
-    pub fn builder() -> crate::output::delete_file_output::Builder {
-        crate::output::delete_file_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5332,6 +5393,13 @@ impl aws_http::request_id::RequestId for DeleteCommentContentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCommentContentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput).
+    pub fn builder() -> crate::output::delete_comment_content_output::Builder {
+        crate::output::delete_comment_content_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput).
 pub mod delete_comment_content_output {
     
@@ -5373,12 +5441,6 @@ pub mod delete_comment_content_output {
     
     
 }
-impl DeleteCommentContentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput).
-    pub fn builder() -> crate::output::delete_comment_content_output::Builder {
-        crate::output::delete_comment_content_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a delete branch operation.</p>
 #[non_exhaustive]
@@ -5400,6 +5462,13 @@ impl aws_http::request_id::RequestId for DeleteBranchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBranchOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
+    pub fn builder() -> crate::output::delete_branch_output::Builder {
+        crate::output::delete_branch_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
 pub mod delete_branch_output {
     
@@ -5441,12 +5510,6 @@ pub mod delete_branch_output {
     
     
 }
-impl DeleteBranchOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
-    pub fn builder() -> crate::output::delete_branch_output::Builder {
-        crate::output::delete_branch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5468,6 +5531,13 @@ impl aws_http::request_id::RequestId for DeleteApprovalRuleTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteApprovalRuleTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput).
+    pub fn builder() -> crate::output::delete_approval_rule_template_output::Builder {
+        crate::output::delete_approval_rule_template_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput).
 pub mod delete_approval_rule_template_output {
     
@@ -5509,12 +5579,6 @@ pub mod delete_approval_rule_template_output {
     
     
 }
-impl DeleteApprovalRuleTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::output::delete_approval_rule_template_output::Builder {
-        crate::output::delete_approval_rule_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5543,6 +5607,13 @@ impl aws_http::request_id::RequestId for CreateUnreferencedMergeCommitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateUnreferencedMergeCommitOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput).
+    pub fn builder() -> crate::output::create_unreferenced_merge_commit_output::Builder {
+        crate::output::create_unreferenced_merge_commit_output::Builder::default()
+    }
+}
+
 /// See [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput).
 pub mod create_unreferenced_merge_commit_output {
     
@@ -5596,12 +5667,6 @@ pub mod create_unreferenced_merge_commit_output {
     
     
 }
-impl CreateUnreferencedMergeCommitOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput).
-    pub fn builder() -> crate::output::create_unreferenced_merge_commit_output::Builder {
-        crate::output::create_unreferenced_merge_commit_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a create repository operation.</p>
 #[non_exhaustive]
@@ -5623,6 +5688,13 @@ impl aws_http::request_id::RequestId for CreateRepositoryOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
+    pub fn builder() -> crate::output::create_repository_output::Builder {
+        crate::output::create_repository_output::Builder::default()
+    }
+}
+
 /// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
 pub mod create_repository_output {
     
@@ -5664,12 +5736,6 @@ pub mod create_repository_output {
     
     
 }
-impl CreateRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
-    pub fn builder() -> crate::output::create_repository_output::Builder {
-        crate::output::create_repository_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5691,6 +5757,13 @@ impl aws_http::request_id::RequestId for CreatePullRequestApprovalRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePullRequestApprovalRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput).
+    pub fn builder() -> crate::output::create_pull_request_approval_rule_output::Builder {
+        crate::output::create_pull_request_approval_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput).
 pub mod create_pull_request_approval_rule_output {
     
@@ -5732,12 +5805,6 @@ pub mod create_pull_request_approval_rule_output {
     
     
 }
-impl CreatePullRequestApprovalRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput).
-    pub fn builder() -> crate::output::create_pull_request_approval_rule_output::Builder {
-        crate::output::create_pull_request_approval_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5759,6 +5826,13 @@ impl aws_http::request_id::RequestId for CreatePullRequestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePullRequestOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput).
+    pub fn builder() -> crate::output::create_pull_request_output::Builder {
+        crate::output::create_pull_request_output::Builder::default()
+    }
+}
+
 /// See [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput).
 pub mod create_pull_request_output {
     
@@ -5799,12 +5873,6 @@ pub mod create_pull_request_output {
     }
     
     
-}
-impl CreatePullRequestOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput).
-    pub fn builder() -> crate::output::create_pull_request_output::Builder {
-        crate::output::create_pull_request_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -5855,6 +5923,13 @@ impl aws_http::request_id::RequestId for CreateCommitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCommitOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCommitOutput`](crate::output::CreateCommitOutput).
+    pub fn builder() -> crate::output::create_commit_output::Builder {
+        crate::output::create_commit_output::Builder::default()
+    }
+}
+
 /// See [`CreateCommitOutput`](crate::output::CreateCommitOutput).
 pub mod create_commit_output {
     
@@ -5962,12 +6037,6 @@ pub mod create_commit_output {
     
     
 }
-impl CreateCommitOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCommitOutput`](crate::output::CreateCommitOutput).
-    pub fn builder() -> crate::output::create_commit_output::Builder {
-        crate::output::create_commit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5980,6 +6049,13 @@ impl aws_http::request_id::RequestId for CreateBranchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateBranchOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBranchOutput`](crate::output::CreateBranchOutput).
+    pub fn builder() -> crate::output::create_branch_output::Builder {
+        crate::output::create_branch_output::Builder::default()
+    }
+}
+
 /// See [`CreateBranchOutput`](crate::output::CreateBranchOutput).
 pub mod create_branch_output {
     
@@ -6009,12 +6085,6 @@ pub mod create_branch_output {
     
     
 }
-impl CreateBranchOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBranchOutput`](crate::output::CreateBranchOutput).
-    pub fn builder() -> crate::output::create_branch_output::Builder {
-        crate::output::create_branch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6036,6 +6106,13 @@ impl aws_http::request_id::RequestId for CreateApprovalRuleTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateApprovalRuleTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput).
+    pub fn builder() -> crate::output::create_approval_rule_template_output::Builder {
+        crate::output::create_approval_rule_template_output::Builder::default()
+    }
+}
+
 /// See [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput).
 pub mod create_approval_rule_template_output {
     
@@ -6077,12 +6154,6 @@ pub mod create_approval_rule_template_output {
     
     
 }
-impl CreateApprovalRuleTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput).
-    pub fn builder() -> crate::output::create_approval_rule_template_output::Builder {
-        crate::output::create_approval_rule_template_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a batch get repositories operation.</p>
 #[non_exhaustive]
@@ -6111,6 +6182,13 @@ impl aws_http::request_id::RequestId for BatchGetRepositoriesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchGetRepositoriesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput).
+    pub fn builder() -> crate::output::batch_get_repositories_output::Builder {
+        crate::output::batch_get_repositories_output::Builder::default()
+    }
+}
+
 /// See [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput).
 pub mod batch_get_repositories_output {
     
@@ -6176,12 +6254,6 @@ pub mod batch_get_repositories_output {
     
     
 }
-impl BatchGetRepositoriesOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput).
-    pub fn builder() -> crate::output::batch_get_repositories_output::Builder {
-        crate::output::batch_get_repositories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6210,6 +6282,13 @@ impl aws_http::request_id::RequestId for BatchGetCommitsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchGetCommitsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput).
+    pub fn builder() -> crate::output::batch_get_commits_output::Builder {
+        crate::output::batch_get_commits_output::Builder::default()
+    }
+}
+
 /// See [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput).
 pub mod batch_get_commits_output {
     
@@ -6275,12 +6354,6 @@ pub mod batch_get_commits_output {
     
     
 }
-impl BatchGetCommitsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput).
-    pub fn builder() -> crate::output::batch_get_commits_output::Builder {
-        crate::output::batch_get_commits_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6309,6 +6382,13 @@ impl aws_http::request_id::RequestId for BatchDisassociateApprovalRuleTemplateFr
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
+    pub fn builder() -> crate::output::batch_disassociate_approval_rule_template_from_repositories_output::Builder {
+        crate::output::batch_disassociate_approval_rule_template_from_repositories_output::Builder::default()
+    }
+}
+
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
 pub mod batch_disassociate_approval_rule_template_from_repositories_output {
     
@@ -6374,12 +6454,6 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
     
     
 }
-impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
-    pub fn builder() -> crate::output::batch_disassociate_approval_rule_template_from_repositories_output::Builder {
-        crate::output::batch_disassociate_approval_rule_template_from_repositories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6436,6 +6510,13 @@ impl aws_http::request_id::RequestId for BatchDescribeMergeConflictsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDescribeMergeConflictsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput).
+    pub fn builder() -> crate::output::batch_describe_merge_conflicts_output::Builder {
+        crate::output::batch_describe_merge_conflicts_output::Builder::default()
+    }
+}
+
 /// See [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput).
 pub mod batch_describe_merge_conflicts_output {
     
@@ -6549,12 +6630,6 @@ pub mod batch_describe_merge_conflicts_output {
     
     
 }
-impl BatchDescribeMergeConflictsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput).
-    pub fn builder() -> crate::output::batch_describe_merge_conflicts_output::Builder {
-        crate::output::batch_describe_merge_conflicts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6583,6 +6658,13 @@ impl aws_http::request_id::RequestId for BatchAssociateApprovalRuleTemplateWithR
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
+    pub fn builder() -> crate::output::batch_associate_approval_rule_template_with_repositories_output::Builder {
+        crate::output::batch_associate_approval_rule_template_with_repositories_output::Builder::default()
+    }
+}
+
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
 pub mod batch_associate_approval_rule_template_with_repositories_output {
     
@@ -6648,12 +6730,6 @@ pub mod batch_associate_approval_rule_template_with_repositories_output {
     
     
 }
-impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
-    pub fn builder() -> crate::output::batch_associate_approval_rule_template_with_repositories_output::Builder {
-        crate::output::batch_associate_approval_rule_template_with_repositories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6666,6 +6742,13 @@ impl aws_http::request_id::RequestId for AssociateApprovalRuleTemplateWithReposi
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateApprovalRuleTemplateWithRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput).
+    pub fn builder() -> crate::output::associate_approval_rule_template_with_repository_output::Builder {
+        crate::output::associate_approval_rule_template_with_repository_output::Builder::default()
+    }
+}
+
 /// See [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput).
 pub mod associate_approval_rule_template_with_repository_output {
     
@@ -6694,11 +6777,5 @@ pub mod associate_approval_rule_template_with_repository_output {
     }
     
     
-}
-impl AssociateApprovalRuleTemplateWithRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput).
-    pub fn builder() -> crate::output::associate_approval_rule_template_with_repository_output::Builder {
-        crate::output::associate_approval_rule_template_with_repository_output::Builder::default()
-    }
 }
 

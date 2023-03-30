@@ -21,6 +21,13 @@ impl ErrorDetail {
         self.detailed_error_message.as_deref()
     }
 }
+impl ErrorDetail {
+    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
+    pub fn builder() -> crate::model::error_detail::Builder {
+        crate::model::error_detail::Builder::default()
+    }
+}
+
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
     
@@ -63,12 +70,6 @@ pub mod error_detail {
     
     
 }
-impl ErrorDetail {
-    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
-    pub fn builder() -> crate::model::error_detail::Builder {
-        crate::model::error_detail::Builder::default()
-    }
-}
 
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
@@ -84,6 +85,13 @@ impl TelemetryConfigurationUpdate {
         self.telemetry.as_ref()
     }
 }
+impl TelemetryConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
+    pub fn builder() -> crate::model::telemetry_configuration_update::Builder {
+        crate::model::telemetry_configuration_update::Builder::default()
+    }
+}
+
 /// See [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
 pub mod telemetry_configuration_update {
     
@@ -113,12 +121,6 @@ pub mod telemetry_configuration_update {
     }
     
     
-}
-impl TelemetryConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`TelemetryConfigurationUpdate`](crate::model::TelemetryConfigurationUpdate).
-    pub fn builder() -> crate::model::telemetry_configuration_update::Builder {
-        crate::model::telemetry_configuration_update::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Telemetry`, it is important to ensure
@@ -238,6 +240,13 @@ impl ConnectivityInfo {
         self.port_number
     }
 }
+impl ConnectivityInfo {
+    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
+    pub fn builder() -> crate::model::connectivity_info::Builder {
+        crate::model::connectivity_info::Builder::default()
+    }
+}
+
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
 pub mod connectivity_info {
     
@@ -305,12 +314,6 @@ pub mod connectivity_info {
     
     
 }
-impl ConnectivityInfo {
-    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
-    pub fn builder() -> crate::model::connectivity_info::Builder {
-        crate::model::connectivity_info::Builder::default()
-    }
-}
 
 /// Information about a version.
 #[non_exhaustive]
@@ -347,6 +350,13 @@ impl VersionInformation {
         self.version.as_deref()
     }
 }
+impl VersionInformation {
+    /// Creates a new builder-style object to manufacture [`VersionInformation`](crate::model::VersionInformation).
+    pub fn builder() -> crate::model::version_information::Builder {
+        crate::model::version_information::Builder::default()
+    }
+}
+
 /// See [`VersionInformation`](crate::model::VersionInformation).
 pub mod version_information {
     
@@ -413,12 +423,6 @@ pub mod version_information {
     
     
 }
-impl VersionInformation {
-    /// Creates a new builder-style object to manufacture [`VersionInformation`](crate::model::VersionInformation).
-    pub fn builder() -> crate::model::version_information::Builder {
-        crate::model::version_information::Builder::default()
-    }
-}
 
 /// Information about a definition.
 #[non_exhaustive]
@@ -483,6 +487,13 @@ impl DefinitionInformation {
         self.tags.as_ref()
     }
 }
+impl DefinitionInformation {
+    /// Creates a new builder-style object to manufacture [`DefinitionInformation`](crate::model::DefinitionInformation).
+    pub fn builder() -> crate::model::definition_information::Builder {
+        crate::model::definition_information::Builder::default()
+    }
+}
+
 /// See [`DefinitionInformation`](crate::model::DefinitionInformation).
 pub mod definition_information {
     
@@ -603,12 +614,6 @@ pub mod definition_information {
     
     
 }
-impl DefinitionInformation {
-    /// Creates a new builder-style object to manufacture [`DefinitionInformation`](crate::model::DefinitionInformation).
-    pub fn builder() -> crate::model::definition_information::Builder {
-        crate::model::definition_information::Builder::default()
-    }
-}
 
 /// Information about a group.
 #[non_exhaustive]
@@ -666,6 +671,13 @@ impl GroupInformation {
         self.name.as_deref()
     }
 }
+impl GroupInformation {
+    /// Creates a new builder-style object to manufacture [`GroupInformation`](crate::model::GroupInformation).
+    pub fn builder() -> crate::model::group_information::Builder {
+        crate::model::group_information::Builder::default()
+    }
+}
+
 /// See [`GroupInformation`](crate::model::GroupInformation).
 pub mod group_information {
     
@@ -768,12 +780,6 @@ pub mod group_information {
     
     
 }
-impl GroupInformation {
-    /// Creates a new builder-style object to manufacture [`GroupInformation`](crate::model::GroupInformation).
-    pub fn builder() -> crate::model::group_information::Builder {
-        crate::model::group_information::Builder::default()
-    }
-}
 
 /// Information about a certificate authority for a group.
 #[non_exhaustive]
@@ -796,6 +802,13 @@ impl GroupCertificateAuthorityProperties {
         self.group_certificate_authority_id.as_deref()
     }
 }
+impl GroupCertificateAuthorityProperties {
+    /// Creates a new builder-style object to manufacture [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
+    pub fn builder() -> crate::model::group_certificate_authority_properties::Builder {
+        crate::model::group_certificate_authority_properties::Builder::default()
+    }
+}
+
 /// See [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
 pub mod group_certificate_authority_properties {
     
@@ -837,12 +850,6 @@ pub mod group_certificate_authority_properties {
     }
     
     
-}
-impl GroupCertificateAuthorityProperties {
-    /// Creates a new builder-style object to manufacture [`GroupCertificateAuthorityProperties`](crate::model::GroupCertificateAuthorityProperties).
-    pub fn builder() -> crate::model::group_certificate_authority_properties::Builder {
-        crate::model::group_certificate_authority_properties::Builder::default()
-    }
 }
 
 /// Information about a deployment.
@@ -887,6 +894,13 @@ impl Deployment {
         self.group_arn.as_deref()
     }
 }
+impl Deployment {
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
+    pub fn builder() -> crate::model::deployment::Builder {
+        crate::model::deployment::Builder::default()
+    }
+}
+
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
     
@@ -964,12 +978,6 @@ pub mod deployment {
     }
     
     
-}
-impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
-    pub fn builder() -> crate::model::deployment::Builder {
-        crate::model::deployment::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentType`, it is important to ensure
@@ -1092,6 +1100,13 @@ impl BulkDeployment {
         self.created_at.as_deref()
     }
 }
+impl BulkDeployment {
+    /// Creates a new builder-style object to manufacture [`BulkDeployment`](crate::model::BulkDeployment).
+    pub fn builder() -> crate::model::bulk_deployment::Builder {
+        crate::model::bulk_deployment::Builder::default()
+    }
+}
+
 /// See [`BulkDeployment`](crate::model::BulkDeployment).
 pub mod bulk_deployment {
     
@@ -1145,12 +1160,6 @@ pub mod bulk_deployment {
     }
     
     
-}
-impl BulkDeployment {
-    /// Creates a new builder-style object to manufacture [`BulkDeployment`](crate::model::BulkDeployment).
-    pub fn builder() -> crate::model::bulk_deployment::Builder {
-        crate::model::bulk_deployment::Builder::default()
-    }
 }
 
 /// Information about an individual group deployment in a bulk deployment operation.
@@ -1216,6 +1225,13 @@ impl BulkDeploymentResult {
         self.group_arn.as_deref()
     }
 }
+impl BulkDeploymentResult {
+    /// Creates a new builder-style object to manufacture [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
+    pub fn builder() -> crate::model::bulk_deployment_result::Builder {
+        crate::model::bulk_deployment_result::Builder::default()
+    }
+}
+
 /// See [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
 pub mod bulk_deployment_result {
     
@@ -1336,12 +1352,6 @@ pub mod bulk_deployment_result {
     
     
 }
-impl BulkDeploymentResult {
-    /// Creates a new builder-style object to manufacture [`BulkDeploymentResult`](crate::model::BulkDeploymentResult).
-    pub fn builder() -> crate::model::bulk_deployment_result::Builder {
-        crate::model::bulk_deployment_result::Builder::default()
-    }
-}
 
 /// Runtime configuration for a thing.
 #[non_exhaustive]
@@ -1357,6 +1367,13 @@ impl RuntimeConfiguration {
         self.telemetry_configuration.as_ref()
     }
 }
+impl RuntimeConfiguration {
+    /// Creates a new builder-style object to manufacture [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
+    pub fn builder() -> crate::model::runtime_configuration::Builder {
+        crate::model::runtime_configuration::Builder::default()
+    }
+}
+
 /// See [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
 pub mod runtime_configuration {
     
@@ -1387,12 +1404,6 @@ pub mod runtime_configuration {
     
     
 }
-impl RuntimeConfiguration {
-    /// Creates a new builder-style object to manufacture [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
-    pub fn builder() -> crate::model::runtime_configuration::Builder {
-        crate::model::runtime_configuration::Builder::default()
-    }
-}
 
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
@@ -1415,6 +1426,13 @@ impl TelemetryConfiguration {
         self.telemetry.as_ref()
     }
 }
+impl TelemetryConfiguration {
+    /// Creates a new builder-style object to manufacture [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
+    pub fn builder() -> crate::model::telemetry_configuration::Builder {
+        crate::model::telemetry_configuration::Builder::default()
+    }
+}
+
 /// See [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
 pub mod telemetry_configuration {
     
@@ -1456,12 +1474,6 @@ pub mod telemetry_configuration {
     }
     
     
-}
-impl TelemetryConfiguration {
-    /// Creates a new builder-style object to manufacture [`TelemetryConfiguration`](crate::model::TelemetryConfiguration).
-    pub fn builder() -> crate::model::telemetry_configuration::Builder {
-        crate::model::telemetry_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigurationSyncStatus`, it is important to ensure
@@ -1560,6 +1572,13 @@ impl SubscriptionDefinitionVersion {
         self.subscriptions.as_deref()
     }
 }
+impl SubscriptionDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
+    pub fn builder() -> crate::model::subscription_definition_version::Builder {
+        crate::model::subscription_definition_version::Builder::default()
+    }
+}
+
 /// See [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
 pub mod subscription_definition_version {
     
@@ -1595,12 +1614,6 @@ pub mod subscription_definition_version {
     }
     
     
-}
-impl SubscriptionDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`SubscriptionDefinitionVersion`](crate::model::SubscriptionDefinitionVersion).
-    pub fn builder() -> crate::model::subscription_definition_version::Builder {
-        crate::model::subscription_definition_version::Builder::default()
-    }
 }
 
 /// Information about a subscription.
@@ -1638,6 +1651,13 @@ impl Subscription {
         self.target.as_deref()
     }
 }
+impl Subscription {
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
+    pub fn builder() -> crate::model::subscription::Builder {
+        crate::model::subscription::Builder::default()
+    }
+}
+
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
     
@@ -1704,12 +1724,6 @@ pub mod subscription {
     
     
 }
-impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
-    pub fn builder() -> crate::model::subscription::Builder {
-        crate::model::subscription::Builder::default()
-    }
-}
 
 /// Information about a resource definition version.
 #[non_exhaustive]
@@ -1725,6 +1739,13 @@ impl ResourceDefinitionVersion {
         self.resources.as_deref()
     }
 }
+impl ResourceDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
+    pub fn builder() -> crate::model::resource_definition_version::Builder {
+        crate::model::resource_definition_version::Builder::default()
+    }
+}
+
 /// See [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
 pub mod resource_definition_version {
     
@@ -1761,12 +1782,6 @@ pub mod resource_definition_version {
     
     
 }
-impl ResourceDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`ResourceDefinitionVersion`](crate::model::ResourceDefinitionVersion).
-    pub fn builder() -> crate::model::resource_definition_version::Builder {
-        crate::model::resource_definition_version::Builder::default()
-    }
-}
 
 /// Information about a resource.
 #[non_exhaustive]
@@ -1796,6 +1811,13 @@ impl Resource {
         self.resource_data_container.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -1850,12 +1872,6 @@ pub mod resource {
     
     
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
 #[non_exhaustive]
@@ -1899,6 +1915,13 @@ impl ResourceDataContainer {
         self.secrets_manager_secret_resource_data.as_ref()
     }
 }
+impl ResourceDataContainer {
+    /// Creates a new builder-style object to manufacture [`ResourceDataContainer`](crate::model::ResourceDataContainer).
+    pub fn builder() -> crate::model::resource_data_container::Builder {
+        crate::model::resource_data_container::Builder::default()
+    }
+}
+
 /// See [`ResourceDataContainer`](crate::model::ResourceDataContainer).
 pub mod resource_data_container {
     
@@ -1977,12 +2000,6 @@ pub mod resource_data_container {
     
     
 }
-impl ResourceDataContainer {
-    /// Creates a new builder-style object to manufacture [`ResourceDataContainer`](crate::model::ResourceDataContainer).
-    pub fn builder() -> crate::model::resource_data_container::Builder {
-        crate::model::resource_data_container::Builder::default()
-    }
-}
 
 /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
 #[non_exhaustive]
@@ -2005,6 +2022,13 @@ impl SecretsManagerSecretResourceData {
         self.additional_staging_labels_to_download.as_deref()
     }
 }
+impl SecretsManagerSecretResourceData {
+    /// Creates a new builder-style object to manufacture [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
+    pub fn builder() -> crate::model::secrets_manager_secret_resource_data::Builder {
+        crate::model::secrets_manager_secret_resource_data::Builder::default()
+    }
+}
+
 /// See [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
 pub mod secrets_manager_secret_resource_data {
     
@@ -2053,12 +2077,6 @@ pub mod secrets_manager_secret_resource_data {
     
     
 }
-impl SecretsManagerSecretResourceData {
-    /// Creates a new builder-style object to manufacture [`SecretsManagerSecretResourceData`](crate::model::SecretsManagerSecretResourceData).
-    pub fn builder() -> crate::model::secrets_manager_secret_resource_data::Builder {
-        crate::model::secrets_manager_secret_resource_data::Builder::default()
-    }
-}
 
 /// Attributes that define an Amazon SageMaker machine learning resource.
 #[non_exhaustive]
@@ -2088,6 +2106,13 @@ impl SageMakerMachineLearningModelResourceData {
         self.sage_maker_job_arn.as_deref()
     }
 }
+impl SageMakerMachineLearningModelResourceData {
+    /// Creates a new builder-style object to manufacture [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
+    pub fn builder() -> crate::model::sage_maker_machine_learning_model_resource_data::Builder {
+        crate::model::sage_maker_machine_learning_model_resource_data::Builder::default()
+    }
+}
+
 /// See [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
 pub mod sage_maker_machine_learning_model_resource_data {
     
@@ -2142,12 +2167,6 @@ pub mod sage_maker_machine_learning_model_resource_data {
     
     
 }
-impl SageMakerMachineLearningModelResourceData {
-    /// Creates a new builder-style object to manufacture [`SageMakerMachineLearningModelResourceData`](crate::model::SageMakerMachineLearningModelResourceData).
-    pub fn builder() -> crate::model::sage_maker_machine_learning_model_resource_data::Builder {
-        crate::model::sage_maker_machine_learning_model_resource_data::Builder::default()
-    }
-}
 
 /// The owner setting for downloaded machine learning resources.
 #[non_exhaustive]
@@ -2170,6 +2189,13 @@ impl ResourceDownloadOwnerSetting {
         self.group_permission.as_ref()
     }
 }
+impl ResourceDownloadOwnerSetting {
+    /// Creates a new builder-style object to manufacture [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
+    pub fn builder() -> crate::model::resource_download_owner_setting::Builder {
+        crate::model::resource_download_owner_setting::Builder::default()
+    }
+}
+
 /// See [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
 pub mod resource_download_owner_setting {
     
@@ -2211,12 +2237,6 @@ pub mod resource_download_owner_setting {
     }
     
     
-}
-impl ResourceDownloadOwnerSetting {
-    /// Creates a new builder-style object to manufacture [`ResourceDownloadOwnerSetting`](crate::model::ResourceDownloadOwnerSetting).
-    pub fn builder() -> crate::model::resource_download_owner_setting::Builder {
-        crate::model::resource_download_owner_setting::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Permission`, it is important to ensure
@@ -2329,6 +2349,13 @@ impl S3MachineLearningModelResourceData {
         self.s3_uri.as_deref()
     }
 }
+impl S3MachineLearningModelResourceData {
+    /// Creates a new builder-style object to manufacture [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
+    pub fn builder() -> crate::model::s3_machine_learning_model_resource_data::Builder {
+        crate::model::s3_machine_learning_model_resource_data::Builder::default()
+    }
+}
+
 /// See [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
 pub mod s3_machine_learning_model_resource_data {
     
@@ -2383,12 +2410,6 @@ pub mod s3_machine_learning_model_resource_data {
     
     
 }
-impl S3MachineLearningModelResourceData {
-    /// Creates a new builder-style object to manufacture [`S3MachineLearningModelResourceData`](crate::model::S3MachineLearningModelResourceData).
-    pub fn builder() -> crate::model::s3_machine_learning_model_resource_data::Builder {
-        crate::model::s3_machine_learning_model_resource_data::Builder::default()
-    }
-}
 
 /// Attributes that define a local volume resource.
 #[non_exhaustive]
@@ -2418,6 +2439,13 @@ impl LocalVolumeResourceData {
         self.source_path.as_deref()
     }
 }
+impl LocalVolumeResourceData {
+    /// Creates a new builder-style object to manufacture [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
+    pub fn builder() -> crate::model::local_volume_resource_data::Builder {
+        crate::model::local_volume_resource_data::Builder::default()
+    }
+}
+
 /// See [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
 pub mod local_volume_resource_data {
     
@@ -2472,12 +2500,6 @@ pub mod local_volume_resource_data {
     
     
 }
-impl LocalVolumeResourceData {
-    /// Creates a new builder-style object to manufacture [`LocalVolumeResourceData`](crate::model::LocalVolumeResourceData).
-    pub fn builder() -> crate::model::local_volume_resource_data::Builder {
-        crate::model::local_volume_resource_data::Builder::default()
-    }
-}
 
 /// Group owner related settings for local resources.
 #[non_exhaustive]
@@ -2500,6 +2522,13 @@ impl GroupOwnerSetting {
         self.group_owner.as_deref()
     }
 }
+impl GroupOwnerSetting {
+    /// Creates a new builder-style object to manufacture [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
+    pub fn builder() -> crate::model::group_owner_setting::Builder {
+        crate::model::group_owner_setting::Builder::default()
+    }
+}
+
 /// See [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
 pub mod group_owner_setting {
     
@@ -2543,12 +2572,6 @@ pub mod group_owner_setting {
     
     
 }
-impl GroupOwnerSetting {
-    /// Creates a new builder-style object to manufacture [`GroupOwnerSetting`](crate::model::GroupOwnerSetting).
-    pub fn builder() -> crate::model::group_owner_setting::Builder {
-        crate::model::group_owner_setting::Builder::default()
-    }
-}
 
 /// Attributes that define a local device resource.
 #[non_exhaustive]
@@ -2571,6 +2594,13 @@ impl LocalDeviceResourceData {
         self.source_path.as_deref()
     }
 }
+impl LocalDeviceResourceData {
+    /// Creates a new builder-style object to manufacture [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
+    pub fn builder() -> crate::model::local_device_resource_data::Builder {
+        crate::model::local_device_resource_data::Builder::default()
+    }
+}
+
 /// See [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
 pub mod local_device_resource_data {
     
@@ -2613,12 +2643,6 @@ pub mod local_device_resource_data {
     
     
 }
-impl LocalDeviceResourceData {
-    /// Creates a new builder-style object to manufacture [`LocalDeviceResourceData`](crate::model::LocalDeviceResourceData).
-    pub fn builder() -> crate::model::local_device_resource_data::Builder {
-        crate::model::local_device_resource_data::Builder::default()
-    }
-}
 
 /// Information about a logger definition version.
 #[non_exhaustive]
@@ -2634,6 +2658,13 @@ impl LoggerDefinitionVersion {
         self.loggers.as_deref()
     }
 }
+impl LoggerDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
+    pub fn builder() -> crate::model::logger_definition_version::Builder {
+        crate::model::logger_definition_version::Builder::default()
+    }
+}
+
 /// See [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
 pub mod logger_definition_version {
     
@@ -2669,12 +2700,6 @@ pub mod logger_definition_version {
     }
     
     
-}
-impl LoggerDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`LoggerDefinitionVersion`](crate::model::LoggerDefinitionVersion).
-    pub fn builder() -> crate::model::logger_definition_version::Builder {
-        crate::model::logger_definition_version::Builder::default()
-    }
 }
 
 /// Information about a logger
@@ -2719,6 +2744,13 @@ impl Logger {
         self.r#type.as_ref()
     }
 }
+impl Logger {
+    /// Creates a new builder-style object to manufacture [`Logger`](crate::model::Logger).
+    pub fn builder() -> crate::model::logger::Builder {
+        crate::model::logger::Builder::default()
+    }
+}
+
 /// See [`Logger`](crate::model::Logger).
 pub mod logger {
     
@@ -2797,12 +2829,6 @@ pub mod logger {
     }
     
     
-}
-impl Logger {
-    /// Creates a new builder-style object to manufacture [`Logger`](crate::model::Logger).
-    pub fn builder() -> crate::model::logger::Builder {
-        crate::model::logger::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoggerType`, it is important to ensure
@@ -3122,6 +3148,13 @@ impl GroupVersion {
         self.subscription_definition_version_arn.as_deref()
     }
 }
+impl GroupVersion {
+    /// Creates a new builder-style object to manufacture [`GroupVersion`](crate::model::GroupVersion).
+    pub fn builder() -> crate::model::group_version::Builder {
+        crate::model::group_version::Builder::default()
+    }
+}
+
 /// See [`GroupVersion`](crate::model::GroupVersion).
 pub mod group_version {
     
@@ -3224,12 +3257,6 @@ pub mod group_version {
     
     
 }
-impl GroupVersion {
-    /// Creates a new builder-style object to manufacture [`GroupVersion`](crate::model::GroupVersion).
-    pub fn builder() -> crate::model::group_version::Builder {
-        crate::model::group_version::Builder::default()
-    }
-}
 
 /// Information about a function definition version.
 #[non_exhaustive]
@@ -3252,6 +3279,13 @@ impl FunctionDefinitionVersion {
         self.functions.as_deref()
     }
 }
+impl FunctionDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
+    pub fn builder() -> crate::model::function_definition_version::Builder {
+        crate::model::function_definition_version::Builder::default()
+    }
+}
+
 /// See [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
 pub mod function_definition_version {
     
@@ -3300,12 +3334,6 @@ pub mod function_definition_version {
     
     
 }
-impl FunctionDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`FunctionDefinitionVersion`](crate::model::FunctionDefinitionVersion).
-    pub fn builder() -> crate::model::function_definition_version::Builder {
-        crate::model::function_definition_version::Builder::default()
-    }
-}
 
 /// Information about a Lambda function.
 #[non_exhaustive]
@@ -3335,6 +3363,13 @@ impl Function {
         self.id.as_deref()
     }
 }
+impl Function {
+    /// Creates a new builder-style object to manufacture [`Function`](crate::model::Function).
+    pub fn builder() -> crate::model::function::Builder {
+        crate::model::function::Builder::default()
+    }
+}
+
 /// See [`Function`](crate::model::Function).
 pub mod function {
     
@@ -3388,12 +3423,6 @@ pub mod function {
     }
     
     
-}
-impl Function {
-    /// Creates a new builder-style object to manufacture [`Function`](crate::model::Function).
-    pub fn builder() -> crate::model::function::Builder {
-        crate::model::function::Builder::default()
-    }
 }
 
 /// The configuration of the Lambda function.
@@ -3459,6 +3488,13 @@ impl FunctionConfiguration {
         self.function_runtime_override.as_deref()
     }
 }
+impl FunctionConfiguration {
+    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
+    pub fn builder() -> crate::model::function_configuration::Builder {
+        crate::model::function_configuration::Builder::default()
+    }
+}
+
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
     
@@ -3576,12 +3612,6 @@ pub mod function_configuration {
     
     
 }
-impl FunctionConfiguration {
-    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
-    pub fn builder() -> crate::model::function_configuration::Builder {
-        crate::model::function_configuration::Builder::default()
-    }
-}
 
 /// The environment configuration of the function.
 #[non_exhaustive]
@@ -3618,6 +3648,13 @@ impl FunctionConfigurationEnvironment {
         self.variables.as_ref()
     }
 }
+impl FunctionConfigurationEnvironment {
+    /// Creates a new builder-style object to manufacture [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
+    pub fn builder() -> crate::model::function_configuration_environment::Builder {
+        crate::model::function_configuration_environment::Builder::default()
+    }
+}
+
 /// See [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
 pub mod function_configuration_environment {
     
@@ -3697,12 +3734,6 @@ pub mod function_configuration_environment {
     
     
 }
-impl FunctionConfigurationEnvironment {
-    /// Creates a new builder-style object to manufacture [`FunctionConfigurationEnvironment`](crate::model::FunctionConfigurationEnvironment).
-    pub fn builder() -> crate::model::function_configuration_environment::Builder {
-        crate::model::function_configuration_environment::Builder::default()
-    }
-}
 
 /// A policy used by the function to access a resource.
 #[non_exhaustive]
@@ -3725,6 +3756,13 @@ impl ResourceAccessPolicy {
         self.resource_id.as_deref()
     }
 }
+impl ResourceAccessPolicy {
+    /// Creates a new builder-style object to manufacture [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
+    pub fn builder() -> crate::model::resource_access_policy::Builder {
+        crate::model::resource_access_policy::Builder::default()
+    }
+}
+
 /// See [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
 pub mod resource_access_policy {
     
@@ -3767,12 +3805,6 @@ pub mod resource_access_policy {
     
     
 }
-impl ResourceAccessPolicy {
-    /// Creates a new builder-style object to manufacture [`ResourceAccessPolicy`](crate::model::ResourceAccessPolicy).
-    pub fn builder() -> crate::model::resource_access_policy::Builder {
-        crate::model::resource_access_policy::Builder::default()
-    }
-}
 
 /// Configuration information that specifies how a Lambda function runs.
 #[non_exhaustive]
@@ -3795,6 +3827,13 @@ impl FunctionExecutionConfig {
         self.run_as.as_ref()
     }
 }
+impl FunctionExecutionConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
+    pub fn builder() -> crate::model::function_execution_config::Builder {
+        crate::model::function_execution_config::Builder::default()
+    }
+}
+
 /// See [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
 pub mod function_execution_config {
     
@@ -3837,12 +3876,6 @@ pub mod function_execution_config {
     
     
 }
-impl FunctionExecutionConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionExecutionConfig`](crate::model::FunctionExecutionConfig).
-    pub fn builder() -> crate::model::function_execution_config::Builder {
-        crate::model::function_execution_config::Builder::default()
-    }
-}
 
 /// Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''.
 #[non_exhaustive]
@@ -3865,6 +3898,13 @@ impl FunctionRunAsConfig {
         self.uid
     }
 }
+impl FunctionRunAsConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
+    pub fn builder() -> crate::model::function_run_as_config::Builder {
+        crate::model::function_run_as_config::Builder::default()
+    }
+}
+
 /// See [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
 pub mod function_run_as_config {
     
@@ -3908,12 +3948,6 @@ pub mod function_run_as_config {
     }
     
     
-}
-impl FunctionRunAsConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionRunAsConfig`](crate::model::FunctionRunAsConfig).
-    pub fn builder() -> crate::model::function_run_as_config::Builder {
-        crate::model::function_run_as_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FunctionIsolationMode`, it is important to ensure
@@ -4094,6 +4128,13 @@ impl FunctionDefaultConfig {
         self.execution.as_ref()
     }
 }
+impl FunctionDefaultConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
+    pub fn builder() -> crate::model::function_default_config::Builder {
+        crate::model::function_default_config::Builder::default()
+    }
+}
+
 /// See [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
 pub mod function_default_config {
     
@@ -4124,12 +4165,6 @@ pub mod function_default_config {
     
     
 }
-impl FunctionDefaultConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionDefaultConfig`](crate::model::FunctionDefaultConfig).
-    pub fn builder() -> crate::model::function_default_config::Builder {
-        crate::model::function_default_config::Builder::default()
-    }
-}
 
 /// Configuration information that specifies how a Lambda function runs.
 #[non_exhaustive]
@@ -4152,6 +4187,13 @@ impl FunctionDefaultExecutionConfig {
         self.run_as.as_ref()
     }
 }
+impl FunctionDefaultExecutionConfig {
+    /// Creates a new builder-style object to manufacture [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
+    pub fn builder() -> crate::model::function_default_execution_config::Builder {
+        crate::model::function_default_execution_config::Builder::default()
+    }
+}
+
 /// See [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
 pub mod function_default_execution_config {
     
@@ -4194,12 +4236,6 @@ pub mod function_default_execution_config {
     
     
 }
-impl FunctionDefaultExecutionConfig {
-    /// Creates a new builder-style object to manufacture [`FunctionDefaultExecutionConfig`](crate::model::FunctionDefaultExecutionConfig).
-    pub fn builder() -> crate::model::function_default_execution_config::Builder {
-        crate::model::function_default_execution_config::Builder::default()
-    }
-}
 
 /// Information about a device definition version.
 #[non_exhaustive]
@@ -4215,6 +4251,13 @@ impl DeviceDefinitionVersion {
         self.devices.as_deref()
     }
 }
+impl DeviceDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
+    pub fn builder() -> crate::model::device_definition_version::Builder {
+        crate::model::device_definition_version::Builder::default()
+    }
+}
+
 /// See [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
 pub mod device_definition_version {
     
@@ -4250,12 +4293,6 @@ pub mod device_definition_version {
     }
     
     
-}
-impl DeviceDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`DeviceDefinitionVersion`](crate::model::DeviceDefinitionVersion).
-    pub fn builder() -> crate::model::device_definition_version::Builder {
-        crate::model::device_definition_version::Builder::default()
-    }
 }
 
 /// Information about a device.
@@ -4293,6 +4330,13 @@ impl Device {
         self.thing_arn.as_deref()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
     
@@ -4360,12 +4404,6 @@ pub mod device {
     
     
 }
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
-    }
-}
 
 /// Information about a core definition version.
 #[non_exhaustive]
@@ -4381,6 +4419,13 @@ impl CoreDefinitionVersion {
         self.cores.as_deref()
     }
 }
+impl CoreDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
+    pub fn builder() -> crate::model::core_definition_version::Builder {
+        crate::model::core_definition_version::Builder::default()
+    }
+}
+
 /// See [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
 pub mod core_definition_version {
     
@@ -4416,12 +4461,6 @@ pub mod core_definition_version {
     }
     
     
-}
-impl CoreDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`CoreDefinitionVersion`](crate::model::CoreDefinitionVersion).
-    pub fn builder() -> crate::model::core_definition_version::Builder {
-        crate::model::core_definition_version::Builder::default()
-    }
 }
 
 /// Information about a core.
@@ -4459,6 +4498,13 @@ impl Core {
         self.thing_arn.as_deref()
     }
 }
+impl Core {
+    /// Creates a new builder-style object to manufacture [`Core`](crate::model::Core).
+    pub fn builder() -> crate::model::core::Builder {
+        crate::model::core::Builder::default()
+    }
+}
+
 /// See [`Core`](crate::model::Core).
 pub mod core {
     
@@ -4526,12 +4572,6 @@ pub mod core {
     
     
 }
-impl Core {
-    /// Creates a new builder-style object to manufacture [`Core`](crate::model::Core).
-    pub fn builder() -> crate::model::core::Builder {
-        crate::model::core::Builder::default()
-    }
-}
 
 /// Information about the connector definition version, which is a container for connectors.
 #[non_exhaustive]
@@ -4547,6 +4587,13 @@ impl ConnectorDefinitionVersion {
         self.connectors.as_deref()
     }
 }
+impl ConnectorDefinitionVersion {
+    /// Creates a new builder-style object to manufacture [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
+    pub fn builder() -> crate::model::connector_definition_version::Builder {
+        crate::model::connector_definition_version::Builder::default()
+    }
+}
+
 /// See [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
 pub mod connector_definition_version {
     
@@ -4583,12 +4630,6 @@ pub mod connector_definition_version {
     
     
 }
-impl ConnectorDefinitionVersion {
-    /// Creates a new builder-style object to manufacture [`ConnectorDefinitionVersion`](crate::model::ConnectorDefinitionVersion).
-    pub fn builder() -> crate::model::connector_definition_version::Builder {
-        crate::model::connector_definition_version::Builder::default()
-    }
-}
 
 /// Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
 #[non_exhaustive]
@@ -4618,6 +4659,13 @@ impl Connector {
         self.parameters.as_ref()
     }
 }
+impl Connector {
+    /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
+    pub fn builder() -> crate::model::connector::Builder {
+        crate::model::connector::Builder::default()
+    }
+}
+
 /// See [`Connector`](crate::model::Connector).
 pub mod connector {
     
@@ -4677,12 +4725,6 @@ pub mod connector {
     }
     
     
-}
-impl Connector {
-    /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
-    pub fn builder() -> crate::model::connector::Builder {
-        crate::model::connector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BulkDeploymentStatus`, it is important to ensure
@@ -4815,6 +4857,13 @@ impl BulkDeploymentMetrics {
         self.retry_attempts
     }
 }
+impl BulkDeploymentMetrics {
+    /// Creates a new builder-style object to manufacture [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
+    pub fn builder() -> crate::model::bulk_deployment_metrics::Builder {
+        crate::model::bulk_deployment_metrics::Builder::default()
+    }
+}
+
 /// See [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
 pub mod bulk_deployment_metrics {
     
@@ -4871,12 +4920,6 @@ pub mod bulk_deployment_metrics {
     }
     
     
-}
-impl BulkDeploymentMetrics {
-    /// Creates a new builder-style object to manufacture [`BulkDeploymentMetrics`](crate::model::BulkDeploymentMetrics).
-    pub fn builder() -> crate::model::bulk_deployment_metrics::Builder {
-        crate::model::bulk_deployment_metrics::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UpdateTargetsOperatingSystem`, it is important to ensure

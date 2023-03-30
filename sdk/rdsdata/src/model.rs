@@ -279,6 +279,13 @@ impl ColumnMetadata {
         self.array_base_column_type
     }
 }
+impl ColumnMetadata {
+    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
+    pub fn builder() -> crate::model::column_metadata::Builder {
+        crate::model::column_metadata::Builder::default()
+    }
+}
+
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
     
@@ -474,12 +481,6 @@ pub mod column_metadata {
     
     
 }
-impl ColumnMetadata {
-    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
-    pub fn builder() -> crate::model::column_metadata::Builder {
-        crate::model::column_metadata::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RecordsFormatType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -588,6 +589,13 @@ impl ResultSetOptions {
         self.long_return_type.as_ref()
     }
 }
+impl ResultSetOptions {
+    /// Creates a new builder-style object to manufacture [`ResultSetOptions`](crate::model::ResultSetOptions).
+    pub fn builder() -> crate::model::result_set_options::Builder {
+        crate::model::result_set_options::Builder::default()
+    }
+}
+
 /// See [`ResultSetOptions`](crate::model::ResultSetOptions).
 pub mod result_set_options {
     
@@ -633,12 +641,6 @@ pub mod result_set_options {
     }
     
     
-}
-impl ResultSetOptions {
-    /// Creates a new builder-style object to manufacture [`ResultSetOptions`](crate::model::ResultSetOptions).
-    pub fn builder() -> crate::model::result_set_options::Builder {
-        crate::model::result_set_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LongReturnType`, it is important to ensure
@@ -849,6 +851,13 @@ impl SqlParameter {
         self.type_hint.as_ref()
     }
 }
+impl SqlParameter {
+    /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter).
+    pub fn builder() -> crate::model::sql_parameter::Builder {
+        crate::model::sql_parameter::Builder::default()
+    }
+}
+
 /// See [`SqlParameter`](crate::model::SqlParameter).
 pub mod sql_parameter {
     
@@ -918,12 +927,6 @@ pub mod sql_parameter {
     }
     
     
-}
-impl SqlParameter {
-    /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter).
-    pub fn builder() -> crate::model::sql_parameter::Builder {
-        crate::model::sql_parameter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TypeHint`, it is important to ensure
@@ -1051,6 +1054,13 @@ impl SqlStatementResult {
         self.number_of_records_updated
     }
 }
+impl SqlStatementResult {
+    /// Creates a new builder-style object to manufacture [`SqlStatementResult`](crate::model::SqlStatementResult).
+    pub fn builder() -> crate::model::sql_statement_result::Builder {
+        crate::model::sql_statement_result::Builder::default()
+    }
+}
+
 /// See [`SqlStatementResult`](crate::model::SqlStatementResult).
 pub mod sql_statement_result {
     
@@ -1094,12 +1104,6 @@ pub mod sql_statement_result {
     
     
 }
-impl SqlStatementResult {
-    /// Creates a new builder-style object to manufacture [`SqlStatementResult`](crate::model::SqlStatementResult).
-    pub fn builder() -> crate::model::sql_statement_result::Builder {
-        crate::model::sql_statement_result::Builder::default()
-    }
-}
 
 /// <p>The result set returned by a SQL statement.</p> <note> 
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
@@ -1124,6 +1128,13 @@ impl ResultFrame {
         self.records.as_deref()
     }
 }
+impl ResultFrame {
+    /// Creates a new builder-style object to manufacture [`ResultFrame`](crate::model::ResultFrame).
+    pub fn builder() -> crate::model::result_frame::Builder {
+        crate::model::result_frame::Builder::default()
+    }
+}
+
 /// See [`ResultFrame`](crate::model::ResultFrame).
 pub mod result_frame {
     
@@ -1172,12 +1183,6 @@ pub mod result_frame {
     
     
 }
-impl ResultFrame {
-    /// Creates a new builder-style object to manufacture [`ResultFrame`](crate::model::ResultFrame).
-    pub fn builder() -> crate::model::result_frame::Builder {
-        crate::model::result_frame::Builder::default()
-    }
-}
 
 /// <p>A record returned by a call.</p> <note> 
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p> 
@@ -1195,6 +1200,13 @@ impl Record {
         self.values.as_deref()
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
     
@@ -1230,12 +1242,6 @@ pub mod record {
     }
     
     
-}
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
-    }
 }
 
 /// <p>Contains the value of a column.</p> <note> 
@@ -1387,6 +1393,13 @@ impl StructValue {
         self.attributes.as_deref()
     }
 }
+impl StructValue {
+    /// Creates a new builder-style object to manufacture [`StructValue`](crate::model::StructValue).
+    pub fn builder() -> crate::model::struct_value::Builder {
+        crate::model::struct_value::Builder::default()
+    }
+}
+
 /// See [`StructValue`](crate::model::StructValue).
 pub mod struct_value {
     
@@ -1423,12 +1436,6 @@ pub mod struct_value {
     
     
 }
-impl StructValue {
-    /// Creates a new builder-style object to manufacture [`StructValue`](crate::model::StructValue).
-    pub fn builder() -> crate::model::struct_value::Builder {
-        crate::model::struct_value::Builder::default()
-    }
-}
 
 /// <p>The metadata of the result set returned by a SQL statement.</p>
 #[non_exhaustive]
@@ -1451,6 +1458,13 @@ impl ResultSetMetadata {
         self.column_metadata.as_deref()
     }
 }
+impl ResultSetMetadata {
+    /// Creates a new builder-style object to manufacture [`ResultSetMetadata`](crate::model::ResultSetMetadata).
+    pub fn builder() -> crate::model::result_set_metadata::Builder {
+        crate::model::result_set_metadata::Builder::default()
+    }
+}
+
 /// See [`ResultSetMetadata`](crate::model::ResultSetMetadata).
 pub mod result_set_metadata {
     
@@ -1500,12 +1514,6 @@ pub mod result_set_metadata {
     
     
 }
-impl ResultSetMetadata {
-    /// Creates a new builder-style object to manufacture [`ResultSetMetadata`](crate::model::ResultSetMetadata).
-    pub fn builder() -> crate::model::result_set_metadata::Builder {
-        crate::model::result_set_metadata::Builder::default()
-    }
-}
 
 /// <p>The response elements represent the results of an update.</p>
 #[non_exhaustive]
@@ -1521,6 +1529,13 @@ impl UpdateResult {
         self.generated_fields.as_deref()
     }
 }
+impl UpdateResult {
+    /// Creates a new builder-style object to manufacture [`UpdateResult`](crate::model::UpdateResult).
+    pub fn builder() -> crate::model::update_result::Builder {
+        crate::model::update_result::Builder::default()
+    }
+}
+
 /// See [`UpdateResult`](crate::model::UpdateResult).
 pub mod update_result {
     
@@ -1556,11 +1571,5 @@ pub mod update_result {
     }
     
     
-}
-impl UpdateResult {
-    /// Creates a new builder-style object to manufacture [`UpdateResult`](crate::model::UpdateResult).
-    pub fn builder() -> crate::model::update_result::Builder {
-        crate::model::update_result::Builder::default()
-    }
 }
 

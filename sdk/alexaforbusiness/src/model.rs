@@ -35,6 +35,13 @@ impl UpdateMeetingRoomConfiguration {
         self.require_check_in.as_ref()
     }
 }
+impl UpdateMeetingRoomConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
+    pub fn builder() -> crate::model::update_meeting_room_configuration::Builder {
+        crate::model::update_meeting_room_configuration::Builder::default()
+    }
+}
+
 /// See [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
 pub mod update_meeting_room_configuration {
     
@@ -101,12 +108,6 @@ pub mod update_meeting_room_configuration {
     
     
 }
-impl UpdateMeetingRoomConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
-    pub fn builder() -> crate::model::update_meeting_room_configuration::Builder {
-        crate::model::update_meeting_room_configuration::Builder::default()
-    }
-}
 
 /// <p>Updates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released. </p>
 #[non_exhaustive]
@@ -129,6 +130,13 @@ impl UpdateRequireCheckIn {
         self.enabled
     }
 }
+impl UpdateRequireCheckIn {
+    /// Creates a new builder-style object to manufacture [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
+    pub fn builder() -> crate::model::update_require_check_in::Builder {
+        crate::model::update_require_check_in::Builder::default()
+    }
+}
+
 /// See [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
 pub mod update_require_check_in {
     
@@ -171,12 +179,6 @@ pub mod update_require_check_in {
     
     
 }
-impl UpdateRequireCheckIn {
-    /// Creates a new builder-style object to manufacture [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
-    pub fn builder() -> crate::model::update_require_check_in::Builder {
-        crate::model::update_require_check_in::Builder::default()
-    }
-}
 
 /// <p>Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.</p>
 #[non_exhaustive]
@@ -199,6 +201,13 @@ impl UpdateInstantBooking {
         self.enabled
     }
 }
+impl UpdateInstantBooking {
+    /// Creates a new builder-style object to manufacture [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
+    pub fn builder() -> crate::model::update_instant_booking::Builder {
+        crate::model::update_instant_booking::Builder::default()
+    }
+}
+
 /// See [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
 pub mod update_instant_booking {
     
@@ -241,12 +250,6 @@ pub mod update_instant_booking {
     
     
 }
-impl UpdateInstantBooking {
-    /// Creates a new builder-style object to manufacture [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
-    pub fn builder() -> crate::model::update_instant_booking::Builder {
-        crate::model::update_instant_booking::Builder::default()
-    }
-}
 
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
@@ -276,6 +279,13 @@ impl UpdateEndOfMeetingReminder {
         self.enabled
     }
 }
+impl UpdateEndOfMeetingReminder {
+    /// Creates a new builder-style object to manufacture [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
+    pub fn builder() -> crate::model::update_end_of_meeting_reminder::Builder {
+        crate::model::update_end_of_meeting_reminder::Builder::default()
+    }
+}
+
 /// See [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
 pub mod update_end_of_meeting_reminder {
     
@@ -335,12 +345,6 @@ pub mod update_end_of_meeting_reminder {
     }
     
     
-}
-impl UpdateEndOfMeetingReminder {
-    /// Creates a new builder-style object to manufacture [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
-    pub fn builder() -> crate::model::update_end_of_meeting_reminder::Builder {
-        crate::model::update_end_of_meeting_reminder::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndOfMeetingReminderType`, it is important to ensure
@@ -720,6 +724,13 @@ impl  std::fmt::Debug for SipAddress  {
         formatter.finish()
     }
 }
+impl SipAddress {
+    /// Creates a new builder-style object to manufacture [`SipAddress`](crate::model::SipAddress).
+    pub fn builder() -> crate::model::sip_address::Builder {
+        crate::model::sip_address::Builder::default()
+    }
+}
+
 /// See [`SipAddress`](crate::model::SipAddress).
 pub mod sip_address {
     
@@ -769,12 +780,6 @@ pub mod sip_address {
     }
     
     
-}
-impl SipAddress {
-    /// Creates a new builder-style object to manufacture [`SipAddress`](crate::model::SipAddress).
-    pub fn builder() -> crate::model::sip_address::Builder {
-        crate::model::sip_address::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SipType`, it is important to ensure
@@ -888,6 +893,13 @@ impl  std::fmt::Debug for PhoneNumber  {
         formatter.finish()
     }
 }
+impl PhoneNumber {
+    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
+    pub fn builder() -> crate::model::phone_number::Builder {
+        crate::model::phone_number::Builder::default()
+    }
+}
+
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
     
@@ -937,12 +949,6 @@ pub mod phone_number {
     }
     
     
-}
-impl PhoneNumber {
-    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
-    pub fn builder() -> crate::model::phone_number::Builder {
-        crate::model::phone_number::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PhoneNumberType`, it is important to ensure
@@ -1056,6 +1062,13 @@ impl MeetingSetting {
         self.require_pin.as_ref()
     }
 }
+impl MeetingSetting {
+    /// Creates a new builder-style object to manufacture [`MeetingSetting`](crate::model::MeetingSetting).
+    pub fn builder() -> crate::model::meeting_setting::Builder {
+        crate::model::meeting_setting::Builder::default()
+    }
+}
+
 /// See [`MeetingSetting`](crate::model::MeetingSetting).
 pub mod meeting_setting {
     
@@ -1085,12 +1098,6 @@ pub mod meeting_setting {
     }
     
     
-}
-impl MeetingSetting {
-    /// Creates a new builder-style object to manufacture [`MeetingSetting`](crate::model::MeetingSetting).
-    pub fn builder() -> crate::model::meeting_setting::Builder {
-        crate::model::meeting_setting::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RequirePin`, it is important to ensure
@@ -1215,6 +1222,13 @@ impl PstnDialIn {
         self.one_click_pin_delay.as_deref()
     }
 }
+impl PstnDialIn {
+    /// Creates a new builder-style object to manufacture [`PstnDialIn`](crate::model::PstnDialIn).
+    pub fn builder() -> crate::model::pstn_dial_in::Builder {
+        crate::model::pstn_dial_in::Builder::default()
+    }
+}
+
 /// See [`PstnDialIn`](crate::model::PstnDialIn).
 pub mod pstn_dial_in {
     
@@ -1281,12 +1295,6 @@ pub mod pstn_dial_in {
     
     
 }
-impl PstnDialIn {
-    /// Creates a new builder-style object to manufacture [`PstnDialIn`](crate::model::PstnDialIn).
-    pub fn builder() -> crate::model::pstn_dial_in::Builder {
-        crate::model::pstn_dial_in::Builder::default()
-    }
-}
 
 /// <p>The IP endpoint and protocol for calling.</p>
 #[non_exhaustive]
@@ -1309,6 +1317,13 @@ impl IpDialIn {
         self.comms_protocol.as_ref()
     }
 }
+impl IpDialIn {
+    /// Creates a new builder-style object to manufacture [`IpDialIn`](crate::model::IpDialIn).
+    pub fn builder() -> crate::model::ip_dial_in::Builder {
+        crate::model::ip_dial_in::Builder::default()
+    }
+}
+
 /// See [`IpDialIn`](crate::model::IpDialIn).
 pub mod ip_dial_in {
     
@@ -1350,12 +1365,6 @@ pub mod ip_dial_in {
     }
     
     
-}
-impl IpDialIn {
-    /// Creates a new builder-style object to manufacture [`IpDialIn`](crate::model::IpDialIn).
-    pub fn builder() -> crate::model::ip_dial_in::Builder {
-        crate::model::ip_dial_in::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CommsProtocol`, it is important to ensure
@@ -1581,6 +1590,13 @@ impl BusinessReportRecurrence {
         self.start_date.as_deref()
     }
 }
+impl BusinessReportRecurrence {
+    /// Creates a new builder-style object to manufacture [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
+    pub fn builder() -> crate::model::business_report_recurrence::Builder {
+        crate::model::business_report_recurrence::Builder::default()
+    }
+}
+
 /// See [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
 pub mod business_report_recurrence {
     
@@ -1610,12 +1626,6 @@ pub mod business_report_recurrence {
     }
     
     
-}
-impl BusinessReportRecurrence {
-    /// Creates a new builder-style object to manufacture [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
-    pub fn builder() -> crate::model::business_report_recurrence::Builder {
-        crate::model::business_report_recurrence::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BusinessReportFormat`, it is important to ensure
@@ -1721,6 +1731,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1762,12 +1779,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Feature`, it is important to ensure
@@ -1910,6 +1921,13 @@ impl Content {
         self.audio_list.as_deref()
     }
 }
+impl Content {
+    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
+    pub fn builder() -> crate::model::content::Builder {
+        crate::model::content::Builder::default()
+    }
+}
+
 /// See [`Content`](crate::model::Content).
 pub mod content {
     
@@ -1982,12 +2000,6 @@ pub mod content {
     
     
 }
-impl Content {
-    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
-    pub fn builder() -> crate::model::content::Builder {
-        crate::model::content::Builder::default()
-    }
-}
 
 /// <p>The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly, </p> 
 /// <p>required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the provided <input-file>
@@ -2018,6 +2030,13 @@ impl Audio {
         self.location.as_deref()
     }
 }
+impl Audio {
+    /// Creates a new builder-style object to manufacture [`Audio`](crate::model::Audio).
+    pub fn builder() -> crate::model::audio::Builder {
+        crate::model::audio::Builder::default()
+    }
+}
+
 /// See [`Audio`](crate::model::Audio).
 pub mod audio {
     
@@ -2059,12 +2078,6 @@ pub mod audio {
     }
     
     
-}
-impl Audio {
-    /// Creates a new builder-style object to manufacture [`Audio`](crate::model::Audio).
-    pub fn builder() -> crate::model::audio::Builder {
-        crate::model::audio::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Locale`, it is important to ensure
@@ -2165,6 +2178,13 @@ impl Ssml {
         self.value.as_deref()
     }
 }
+impl Ssml {
+    /// Creates a new builder-style object to manufacture [`Ssml`](crate::model::Ssml).
+    pub fn builder() -> crate::model::ssml::Builder {
+        crate::model::ssml::Builder::default()
+    }
+}
+
 /// See [`Ssml`](crate::model::Ssml).
 pub mod ssml {
     
@@ -2207,12 +2227,6 @@ pub mod ssml {
     
     
 }
-impl Ssml {
-    /// Creates a new builder-style object to manufacture [`Ssml`](crate::model::Ssml).
-    pub fn builder() -> crate::model::ssml::Builder {
-        crate::model::ssml::Builder::default()
-    }
-}
 
 /// <p>The text message.</p>
 #[non_exhaustive]
@@ -2235,6 +2249,13 @@ impl Text {
         self.value.as_deref()
     }
 }
+impl Text {
+    /// Creates a new builder-style object to manufacture [`Text`](crate::model::Text).
+    pub fn builder() -> crate::model::text::Builder {
+        crate::model::text::Builder::default()
+    }
+}
+
 /// See [`Text`](crate::model::Text).
 pub mod text {
     
@@ -2277,12 +2298,6 @@ pub mod text {
     
     
 }
-impl Text {
-    /// Creates a new builder-style object to manufacture [`Text`](crate::model::Text).
-    pub fn builder() -> crate::model::text::Builder {
-        crate::model::text::Builder::default()
-    }
-}
 
 /// <p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.</p>
 #[non_exhaustive]
@@ -2305,6 +2320,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -2352,12 +2374,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// <p>Information related to a user.</p>
@@ -2409,6 +2425,13 @@ impl UserData {
         self.enrollment_id.as_deref()
     }
 }
+impl UserData {
+    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
+    pub fn builder() -> crate::model::user_data::Builder {
+        crate::model::user_data::Builder::default()
+    }
+}
+
 /// See [`UserData`](crate::model::UserData).
 pub mod user_data {
     
@@ -2498,12 +2521,6 @@ pub mod user_data {
     }
     
     
-}
-impl UserData {
-    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
-    pub fn builder() -> crate::model::user_data::Builder {
-        crate::model::user_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnrollmentStatus`, it is important to ensure
@@ -2624,6 +2641,13 @@ impl Sort {
         self.value.as_ref()
     }
 }
+impl Sort {
+    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
+    pub fn builder() -> crate::model::sort::Builder {
+        crate::model::sort::Builder::default()
+    }
+}
+
 /// See [`Sort`](crate::model::Sort).
 pub mod sort {
     
@@ -2665,12 +2689,6 @@ pub mod sort {
     }
     
     
-}
-impl Sort {
-    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
-    pub fn builder() -> crate::model::sort::Builder {
-        crate::model::sort::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortValue`, it is important to ensure
@@ -2783,6 +2801,13 @@ impl SkillGroupData {
         self.description.as_deref()
     }
 }
+impl SkillGroupData {
+    /// Creates a new builder-style object to manufacture [`SkillGroupData`](crate::model::SkillGroupData).
+    pub fn builder() -> crate::model::skill_group_data::Builder {
+        crate::model::skill_group_data::Builder::default()
+    }
+}
+
 /// See [`SkillGroupData`](crate::model::SkillGroupData).
 pub mod skill_group_data {
     
@@ -2837,12 +2862,6 @@ pub mod skill_group_data {
     
     
 }
-impl SkillGroupData {
-    /// Creates a new builder-style object to manufacture [`SkillGroupData`](crate::model::SkillGroupData).
-    pub fn builder() -> crate::model::skill_group_data::Builder {
-        crate::model::skill_group_data::Builder::default()
-    }
-}
 
 /// <p>The data of a room.</p>
 #[non_exhaustive]
@@ -2893,6 +2912,13 @@ impl RoomData {
         self.profile_name.as_deref()
     }
 }
+impl RoomData {
+    /// Creates a new builder-style object to manufacture [`RoomData`](crate::model::RoomData).
+    pub fn builder() -> crate::model::room_data::Builder {
+        crate::model::room_data::Builder::default()
+    }
+}
+
 /// See [`RoomData`](crate::model::RoomData).
 pub mod room_data {
     
@@ -2983,12 +3009,6 @@ pub mod room_data {
     
     
 }
-impl RoomData {
-    /// Creates a new builder-style object to manufacture [`RoomData`](crate::model::RoomData).
-    pub fn builder() -> crate::model::room_data::Builder {
-        crate::model::room_data::Builder::default()
-    }
-}
 
 /// <p>The data of a room profile.</p>
 #[non_exhaustive]
@@ -3060,6 +3080,13 @@ impl ProfileData {
         self.locale.as_deref()
     }
 }
+impl ProfileData {
+    /// Creates a new builder-style object to manufacture [`ProfileData`](crate::model::ProfileData).
+    pub fn builder() -> crate::model::profile_data::Builder {
+        crate::model::profile_data::Builder::default()
+    }
+}
+
 /// See [`ProfileData`](crate::model::ProfileData).
 pub mod profile_data {
     
@@ -3186,12 +3213,6 @@ pub mod profile_data {
     
     
 }
-impl ProfileData {
-    /// Creates a new builder-style object to manufacture [`ProfileData`](crate::model::ProfileData).
-    pub fn builder() -> crate::model::profile_data::Builder {
-        crate::model::profile_data::Builder::default()
-    }
-}
 
 /// <p>The data associated with a network profile.</p>
 #[non_exhaustive]
@@ -3249,6 +3270,13 @@ impl NetworkProfileData {
         self.certificate_authority_arn.as_deref()
     }
 }
+impl NetworkProfileData {
+    /// Creates a new builder-style object to manufacture [`NetworkProfileData`](crate::model::NetworkProfileData).
+    pub fn builder() -> crate::model::network_profile_data::Builder {
+        crate::model::network_profile_data::Builder::default()
+    }
+}
+
 /// See [`NetworkProfileData`](crate::model::NetworkProfileData).
 pub mod network_profile_data {
     
@@ -3350,12 +3378,6 @@ pub mod network_profile_data {
     }
     
     
-}
-impl NetworkProfileData {
-    /// Creates a new builder-style object to manufacture [`NetworkProfileData`](crate::model::NetworkProfileData).
-    pub fn builder() -> crate::model::network_profile_data::Builder {
-        crate::model::network_profile_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NetworkEapMethod`, it is important to ensure
@@ -3630,6 +3652,13 @@ impl DeviceData {
         self.created_time.as_ref()
     }
 }
+impl DeviceData {
+    /// Creates a new builder-style object to manufacture [`DeviceData`](crate::model::DeviceData).
+    pub fn builder() -> crate::model::device_data::Builder {
+        crate::model::device_data::Builder::default()
+    }
+}
+
 /// See [`DeviceData`](crate::model::DeviceData).
 pub mod device_data {
     
@@ -3804,12 +3833,6 @@ pub mod device_data {
     
     
 }
-impl DeviceData {
-    /// Creates a new builder-style object to manufacture [`DeviceData`](crate::model::DeviceData).
-    pub fn builder() -> crate::model::device_data::Builder {
-        crate::model::device_data::Builder::default()
-    }
-}
 
 /// <p>Detailed information about a device's status.</p>
 #[non_exhaustive]
@@ -3839,6 +3862,13 @@ impl DeviceStatusInfo {
         self.connection_status_updated_time.as_ref()
     }
 }
+impl DeviceStatusInfo {
+    /// Creates a new builder-style object to manufacture [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
+    pub fn builder() -> crate::model::device_status_info::Builder {
+        crate::model::device_status_info::Builder::default()
+    }
+}
+
 /// See [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
 pub mod device_status_info {
     
@@ -3898,12 +3928,6 @@ pub mod device_status_info {
     }
     
     
-}
-impl DeviceStatusInfo {
-    /// Creates a new builder-style object to manufacture [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
-    pub fn builder() -> crate::model::device_status_info::Builder {
-        crate::model::device_status_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConnectionStatus`, it is important to ensure
@@ -4009,6 +4033,13 @@ impl DeviceStatusDetail {
         self.code.as_ref()
     }
 }
+impl DeviceStatusDetail {
+    /// Creates a new builder-style object to manufacture [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
+    pub fn builder() -> crate::model::device_status_detail::Builder {
+        crate::model::device_status_detail::Builder::default()
+    }
+}
+
 /// See [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
 pub mod device_status_detail {
     
@@ -4050,12 +4081,6 @@ pub mod device_status_detail {
     }
     
     
-}
-impl DeviceStatusDetail {
-    /// Creates a new builder-style object to manufacture [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
-    pub fn builder() -> crate::model::device_status_detail::Builder {
-        crate::model::device_status_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeviceStatusDetailCode`, it is important to ensure
@@ -4381,6 +4406,13 @@ impl  std::fmt::Debug for ContactData  {
         formatter.finish()
     }
 }
+impl ContactData {
+    /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
+    pub fn builder() -> crate::model::contact_data::Builder {
+        crate::model::contact_data::Builder::default()
+    }
+}
+
 /// See [`ContactData`](crate::model::ContactData).
 pub mod contact_data {
     
@@ -4508,12 +4540,6 @@ pub mod contact_data {
     
     
 }
-impl ContactData {
-    /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
-    pub fn builder() -> crate::model::contact_data::Builder {
-        crate::model::contact_data::Builder::default()
-    }
-}
 
 /// <p>Information related to an address book.</p>
 #[non_exhaustive]
@@ -4543,6 +4569,13 @@ impl AddressBookData {
         self.description.as_deref()
     }
 }
+impl AddressBookData {
+    /// Creates a new builder-style object to manufacture [`AddressBookData`](crate::model::AddressBookData).
+    pub fn builder() -> crate::model::address_book_data::Builder {
+        crate::model::address_book_data::Builder::default()
+    }
+}
+
 /// See [`AddressBookData`](crate::model::AddressBookData).
 pub mod address_book_data {
     
@@ -4597,12 +4630,6 @@ pub mod address_book_data {
     
     
 }
-impl AddressBookData {
-    /// Creates a new builder-style object to manufacture [`AddressBookData`](crate::model::AddressBookData).
-    pub fn builder() -> crate::model::address_book_data::Builder {
-        crate::model::address_book_data::Builder::default()
-    }
-}
 
 /// <p>A skill parameter associated with a room.</p>
 #[non_exhaustive]
@@ -4625,6 +4652,13 @@ impl RoomSkillParameter {
         self.parameter_value.as_deref()
     }
 }
+impl RoomSkillParameter {
+    /// Creates a new builder-style object to manufacture [`RoomSkillParameter`](crate::model::RoomSkillParameter).
+    pub fn builder() -> crate::model::room_skill_parameter::Builder {
+        crate::model::room_skill_parameter::Builder::default()
+    }
+}
+
 /// See [`RoomSkillParameter`](crate::model::RoomSkillParameter).
 pub mod room_skill_parameter {
     
@@ -4667,12 +4701,6 @@ pub mod room_skill_parameter {
     
     
 }
-impl RoomSkillParameter {
-    /// Creates a new builder-style object to manufacture [`RoomSkillParameter`](crate::model::RoomSkillParameter).
-    pub fn builder() -> crate::model::room_skill_parameter::Builder {
-        crate::model::room_skill_parameter::Builder::default()
-    }
-}
 
 /// <p>The default conference provider that is used if no other scheduled meetings are detected.</p>
 #[non_exhaustive]
@@ -4688,6 +4716,13 @@ impl ConferencePreference {
         self.default_conference_provider_arn.as_deref()
     }
 }
+impl ConferencePreference {
+    /// Creates a new builder-style object to manufacture [`ConferencePreference`](crate::model::ConferencePreference).
+    pub fn builder() -> crate::model::conference_preference::Builder {
+        crate::model::conference_preference::Builder::default()
+    }
+}
+
 /// See [`ConferencePreference`](crate::model::ConferencePreference).
 pub mod conference_preference {
     
@@ -4718,12 +4753,6 @@ pub mod conference_preference {
     
     
 }
-impl ConferencePreference {
-    /// Creates a new builder-style object to manufacture [`ConferencePreference`](crate::model::ConferencePreference).
-    pub fn builder() -> crate::model::conference_preference::Builder {
-        crate::model::conference_preference::Builder::default()
-    }
-}
 
 /// <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>
 #[non_exhaustive]
@@ -4753,6 +4782,13 @@ impl SmartHomeAppliance {
         self.manufacturer_name.as_deref()
     }
 }
+impl SmartHomeAppliance {
+    /// Creates a new builder-style object to manufacture [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
+    pub fn builder() -> crate::model::smart_home_appliance::Builder {
+        crate::model::smart_home_appliance::Builder::default()
+    }
+}
+
 /// See [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
 pub mod smart_home_appliance {
     
@@ -4806,12 +4842,6 @@ pub mod smart_home_appliance {
     }
     
     
-}
-impl SmartHomeAppliance {
-    /// Creates a new builder-style object to manufacture [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
-    pub fn builder() -> crate::model::smart_home_appliance::Builder {
-        crate::model::smart_home_appliance::Builder::default()
-    }
 }
 
 /// <p>The detailed information about an Alexa skill.</p>
@@ -4870,6 +4900,13 @@ impl SkillsStoreSkill {
         self.supports_linking
     }
 }
+impl SkillsStoreSkill {
+    /// Creates a new builder-style object to manufacture [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
+    pub fn builder() -> crate::model::skills_store_skill::Builder {
+        crate::model::skills_store_skill::Builder::default()
+    }
+}
+
 /// See [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
 pub mod skills_store_skill {
     
@@ -4979,12 +5016,6 @@ pub mod skills_store_skill {
     
     
 }
-impl SkillsStoreSkill {
-    /// Creates a new builder-style object to manufacture [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
-    pub fn builder() -> crate::model::skills_store_skill::Builder {
-        crate::model::skills_store_skill::Builder::default()
-    }
-}
 
 /// <p>Granular information about the skill.</p>
 #[non_exhaustive]
@@ -5065,6 +5096,13 @@ impl SkillDetails {
         self.developer_info.as_ref()
     }
 }
+impl SkillDetails {
+    /// Creates a new builder-style object to manufacture [`SkillDetails`](crate::model::SkillDetails).
+    pub fn builder() -> crate::model::skill_details::Builder {
+        crate::model::skill_details::Builder::default()
+    }
+}
+
 /// See [`SkillDetails`](crate::model::SkillDetails).
 pub mod skill_details {
     
@@ -5235,12 +5273,6 @@ pub mod skill_details {
     
     
 }
-impl SkillDetails {
-    /// Creates a new builder-style object to manufacture [`SkillDetails`](crate::model::SkillDetails).
-    pub fn builder() -> crate::model::skill_details::Builder {
-        crate::model::skill_details::Builder::default()
-    }
-}
 
 /// <p>The details about the developer that published the skill.</p>
 #[non_exhaustive]
@@ -5277,6 +5309,13 @@ impl DeveloperInfo {
         self.url.as_deref()
     }
 }
+impl DeveloperInfo {
+    /// Creates a new builder-style object to manufacture [`DeveloperInfo`](crate::model::DeveloperInfo).
+    pub fn builder() -> crate::model::developer_info::Builder {
+        crate::model::developer_info::Builder::default()
+    }
+}
+
 /// See [`DeveloperInfo`](crate::model::DeveloperInfo).
 pub mod developer_info {
     
@@ -5343,12 +5382,6 @@ pub mod developer_info {
     
     
 }
-impl DeveloperInfo {
-    /// Creates a new builder-style object to manufacture [`DeveloperInfo`](crate::model::DeveloperInfo).
-    pub fn builder() -> crate::model::developer_info::Builder {
-        crate::model::developer_info::Builder::default()
-    }
-}
 
 /// <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
 #[non_exhaustive]
@@ -5371,6 +5404,13 @@ impl Category {
         self.category_name.as_deref()
     }
 }
+impl Category {
+    /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category).
+    pub fn builder() -> crate::model::category::Builder {
+        crate::model::category::Builder::default()
+    }
+}
+
 /// See [`Category`](crate::model::Category).
 pub mod category {
     
@@ -5412,12 +5452,6 @@ pub mod category {
     }
     
     
-}
-impl Category {
-    /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category).
-    pub fn builder() -> crate::model::category::Builder {
-        crate::model::category::Builder::default()
-    }
 }
 
 /// <p>The summary of skills.</p>
@@ -5462,6 +5496,13 @@ impl SkillSummary {
         self.skill_type.as_ref()
     }
 }
+impl SkillSummary {
+    /// Creates a new builder-style object to manufacture [`SkillSummary`](crate::model::SkillSummary).
+    pub fn builder() -> crate::model::skill_summary::Builder {
+        crate::model::skill_summary::Builder::default()
+    }
+}
+
 /// See [`SkillSummary`](crate::model::SkillSummary).
 pub mod skill_summary {
     
@@ -5540,12 +5581,6 @@ pub mod skill_summary {
     }
     
     
-}
-impl SkillSummary {
-    /// Creates a new builder-style object to manufacture [`SkillSummary`](crate::model::SkillSummary).
-    pub fn builder() -> crate::model::skill_summary::Builder {
-        crate::model::skill_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SkillType`, it is important to ensure
@@ -5923,6 +5958,13 @@ impl GatewaySummary {
         self.software_version.as_deref()
     }
 }
+impl GatewaySummary {
+    /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
+    pub fn builder() -> crate::model::gateway_summary::Builder {
+        crate::model::gateway_summary::Builder::default()
+    }
+}
+
 /// See [`GatewaySummary`](crate::model::GatewaySummary).
 pub mod gateway_summary {
     
@@ -6001,12 +6043,6 @@ pub mod gateway_summary {
     
     
 }
-impl GatewaySummary {
-    /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
-    pub fn builder() -> crate::model::gateway_summary::Builder {
-        crate::model::gateway_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of a gateway group.</p>
 #[non_exhaustive]
@@ -6036,6 +6072,13 @@ impl GatewayGroupSummary {
         self.description.as_deref()
     }
 }
+impl GatewayGroupSummary {
+    /// Creates a new builder-style object to manufacture [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
+    pub fn builder() -> crate::model::gateway_group_summary::Builder {
+        crate::model::gateway_group_summary::Builder::default()
+    }
+}
+
 /// See [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
 pub mod gateway_group_summary {
     
@@ -6090,12 +6133,6 @@ pub mod gateway_group_summary {
     
     
 }
-impl GatewayGroupSummary {
-    /// Creates a new builder-style object to manufacture [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
-    pub fn builder() -> crate::model::gateway_group_summary::Builder {
-        crate::model::gateway_group_summary::Builder::default()
-    }
-}
 
 /// <p>The list of device events.</p>
 #[non_exhaustive]
@@ -6125,6 +6162,13 @@ impl DeviceEvent {
         self.timestamp.as_ref()
     }
 }
+impl DeviceEvent {
+    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
+    pub fn builder() -> crate::model::device_event::Builder {
+        crate::model::device_event::Builder::default()
+    }
+}
+
 /// See [`DeviceEvent`](crate::model::DeviceEvent).
 pub mod device_event {
     
@@ -6178,12 +6222,6 @@ pub mod device_event {
     }
     
     
-}
-impl DeviceEvent {
-    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
-    pub fn builder() -> crate::model::device_event::Builder {
-        crate::model::device_event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeviceEventType`, it is important to ensure
@@ -6317,6 +6355,13 @@ impl ConferenceProvider {
         self.meeting_setting.as_ref()
     }
 }
+impl ConferenceProvider {
+    /// Creates a new builder-style object to manufacture [`ConferenceProvider`](crate::model::ConferenceProvider).
+    pub fn builder() -> crate::model::conference_provider::Builder {
+        crate::model::conference_provider::Builder::default()
+    }
+}
+
 /// See [`ConferenceProvider`](crate::model::ConferenceProvider).
 pub mod conference_provider {
     
@@ -6407,12 +6452,6 @@ pub mod conference_provider {
     
     
 }
-impl ConferenceProvider {
-    /// Creates a new builder-style object to manufacture [`ConferenceProvider`](crate::model::ConferenceProvider).
-    pub fn builder() -> crate::model::conference_provider::Builder {
-        crate::model::conference_provider::Builder::default()
-    }
-}
 
 /// <p>The schedule of the usage report.</p>
 #[non_exhaustive]
@@ -6477,6 +6516,13 @@ impl BusinessReportSchedule {
         self.last_business_report.as_ref()
     }
 }
+impl BusinessReportSchedule {
+    /// Creates a new builder-style object to manufacture [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
+    pub fn builder() -> crate::model::business_report_schedule::Builder {
+        crate::model::business_report_schedule::Builder::default()
+    }
+}
+
 /// See [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
 pub mod business_report_schedule {
     
@@ -6591,12 +6637,6 @@ pub mod business_report_schedule {
     
     
 }
-impl BusinessReportSchedule {
-    /// Creates a new builder-style object to manufacture [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
-    pub fn builder() -> crate::model::business_report_schedule::Builder {
-        crate::model::business_report_schedule::Builder::default()
-    }
-}
 
 /// <p>Usage report with specified parameters.</p>
 #[non_exhaustive]
@@ -6640,6 +6680,13 @@ impl BusinessReport {
         self.download_url.as_deref()
     }
 }
+impl BusinessReport {
+    /// Creates a new builder-style object to manufacture [`BusinessReport`](crate::model::BusinessReport).
+    pub fn builder() -> crate::model::business_report::Builder {
+        crate::model::business_report::Builder::default()
+    }
+}
+
 /// See [`BusinessReport`](crate::model::BusinessReport).
 pub mod business_report {
     
@@ -6718,12 +6765,6 @@ pub mod business_report {
     
     
 }
-impl BusinessReport {
-    /// Creates a new builder-style object to manufacture [`BusinessReport`](crate::model::BusinessReport).
-    pub fn builder() -> crate::model::business_report::Builder {
-        crate::model::business_report::Builder::default()
-    }
-}
 
 /// <p>The S3 location of the output reports.</p>
 #[non_exhaustive]
@@ -6746,6 +6787,13 @@ impl BusinessReportS3Location {
         self.bucket_name.as_deref()
     }
 }
+impl BusinessReportS3Location {
+    /// Creates a new builder-style object to manufacture [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
+    pub fn builder() -> crate::model::business_report_s3_location::Builder {
+        crate::model::business_report_s3_location::Builder::default()
+    }
+}
+
 /// See [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
 pub mod business_report_s3_location {
     
@@ -6787,12 +6835,6 @@ pub mod business_report_s3_location {
     }
     
     
-}
-impl BusinessReportS3Location {
-    /// Creates a new builder-style object to manufacture [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
-    pub fn builder() -> crate::model::business_report_s3_location::Builder {
-        crate::model::business_report_s3_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BusinessReportFailureCode`, it is important to ensure
@@ -6983,6 +7025,13 @@ impl BusinessReportContentRange {
         self.interval.as_ref()
     }
 }
+impl BusinessReportContentRange {
+    /// Creates a new builder-style object to manufacture [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
+    pub fn builder() -> crate::model::business_report_content_range::Builder {
+        crate::model::business_report_content_range::Builder::default()
+    }
+}
+
 /// See [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
 pub mod business_report_content_range {
     
@@ -7012,12 +7061,6 @@ pub mod business_report_content_range {
     }
     
     
-}
-impl BusinessReportContentRange {
-    /// Creates a new builder-style object to manufacture [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
-    pub fn builder() -> crate::model::business_report_content_range::Builder {
-        crate::model::business_report_content_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BusinessReportInterval`, it is important to ensure
@@ -7135,6 +7178,13 @@ impl SkillGroup {
         self.description.as_deref()
     }
 }
+impl SkillGroup {
+    /// Creates a new builder-style object to manufacture [`SkillGroup`](crate::model::SkillGroup).
+    pub fn builder() -> crate::model::skill_group::Builder {
+        crate::model::skill_group::Builder::default()
+    }
+}
+
 /// See [`SkillGroup`](crate::model::SkillGroup).
 pub mod skill_group {
     
@@ -7189,12 +7239,6 @@ pub mod skill_group {
     
     
 }
-impl SkillGroup {
-    /// Creates a new builder-style object to manufacture [`SkillGroup`](crate::model::SkillGroup).
-    pub fn builder() -> crate::model::skill_group::Builder {
-        crate::model::skill_group::Builder::default()
-    }
-}
 
 /// <p>A room with attributes.</p>
 #[non_exhaustive]
@@ -7238,6 +7282,13 @@ impl Room {
         self.profile_arn.as_deref()
     }
 }
+impl Room {
+    /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room).
+    pub fn builder() -> crate::model::room::Builder {
+        crate::model::room::Builder::default()
+    }
+}
+
 /// See [`Room`](crate::model::Room).
 pub mod room {
     
@@ -7315,12 +7366,6 @@ pub mod room {
     }
     
     
-}
-impl Room {
-    /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room).
-    pub fn builder() -> crate::model::room::Builder {
-        crate::model::room::Builder::default()
-    }
 }
 
 /// <p>A room profile with attributes.</p>
@@ -7435,6 +7480,13 @@ impl Profile {
         self.meeting_room_configuration.as_ref()
     }
 }
+impl Profile {
+    /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
+    pub fn builder() -> crate::model::profile::Builder {
+        crate::model::profile::Builder::default()
+    }
+}
+
 /// See [`Profile`](crate::model::Profile).
 pub mod profile {
     
@@ -7633,12 +7685,6 @@ pub mod profile {
     
     
 }
-impl Profile {
-    /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
-    pub fn builder() -> crate::model::profile::Builder {
-        crate::model::profile::Builder::default()
-    }
-}
 
 /// <p>Meeting room settings of a room profile.</p>
 #[non_exhaustive]
@@ -7675,6 +7721,13 @@ impl MeetingRoomConfiguration {
         self.require_check_in.as_ref()
     }
 }
+impl MeetingRoomConfiguration {
+    /// Creates a new builder-style object to manufacture [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
+    pub fn builder() -> crate::model::meeting_room_configuration::Builder {
+        crate::model::meeting_room_configuration::Builder::default()
+    }
+}
+
 /// See [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
 pub mod meeting_room_configuration {
     
@@ -7741,12 +7794,6 @@ pub mod meeting_room_configuration {
     
     
 }
-impl MeetingRoomConfiguration {
-    /// Creates a new builder-style object to manufacture [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
-    pub fn builder() -> crate::model::meeting_room_configuration::Builder {
-        crate::model::meeting_room_configuration::Builder::default()
-    }
-}
 
 /// <p>Settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released. </p>
 #[non_exhaustive]
@@ -7769,6 +7816,13 @@ impl RequireCheckIn {
         self.enabled
     }
 }
+impl RequireCheckIn {
+    /// Creates a new builder-style object to manufacture [`RequireCheckIn`](crate::model::RequireCheckIn).
+    pub fn builder() -> crate::model::require_check_in::Builder {
+        crate::model::require_check_in::Builder::default()
+    }
+}
+
 /// See [`RequireCheckIn`](crate::model::RequireCheckIn).
 pub mod require_check_in {
     
@@ -7811,12 +7865,6 @@ pub mod require_check_in {
     
     
 }
-impl RequireCheckIn {
-    /// Creates a new builder-style object to manufacture [`RequireCheckIn`](crate::model::RequireCheckIn).
-    pub fn builder() -> crate::model::require_check_in::Builder {
-        crate::model::require_check_in::Builder::default()
-    }
-}
 
 /// <p>Settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
@@ -7839,6 +7887,13 @@ impl InstantBooking {
         self.enabled
     }
 }
+impl InstantBooking {
+    /// Creates a new builder-style object to manufacture [`InstantBooking`](crate::model::InstantBooking).
+    pub fn builder() -> crate::model::instant_booking::Builder {
+        crate::model::instant_booking::Builder::default()
+    }
+}
+
 /// See [`InstantBooking`](crate::model::InstantBooking).
 pub mod instant_booking {
     
@@ -7881,12 +7936,6 @@ pub mod instant_booking {
     
     
 }
-impl InstantBooking {
-    /// Creates a new builder-style object to manufacture [`InstantBooking`](crate::model::InstantBooking).
-    pub fn builder() -> crate::model::instant_booking::Builder {
-        crate::model::instant_booking::Builder::default()
-    }
-}
 
 /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
@@ -7916,6 +7965,13 @@ impl EndOfMeetingReminder {
         self.enabled
     }
 }
+impl EndOfMeetingReminder {
+    /// Creates a new builder-style object to manufacture [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
+    pub fn builder() -> crate::model::end_of_meeting_reminder::Builder {
+        crate::model::end_of_meeting_reminder::Builder::default()
+    }
+}
+
 /// See [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
 pub mod end_of_meeting_reminder {
     
@@ -7975,12 +8031,6 @@ pub mod end_of_meeting_reminder {
     }
     
     
-}
-impl EndOfMeetingReminder {
-    /// Creates a new builder-style object to manufacture [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
-    pub fn builder() -> crate::model::end_of_meeting_reminder::Builder {
-        crate::model::end_of_meeting_reminder::Builder::default()
-    }
 }
 
 /// <p>The network profile associated with a device.</p>
@@ -8076,6 +8126,13 @@ impl  std::fmt::Debug for NetworkProfile  {
         formatter.finish()
     }
 }
+impl NetworkProfile {
+    /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
+    pub fn builder() -> crate::model::network_profile::Builder {
+        crate::model::network_profile::Builder::default()
+    }
+}
+
 /// See [`NetworkProfile`](crate::model::NetworkProfile).
 pub mod network_profile {
     
@@ -8236,12 +8293,6 @@ pub mod network_profile {
     
     
 }
-impl NetworkProfile {
-    /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
-    pub fn builder() -> crate::model::network_profile::Builder {
-        crate::model::network_profile::Builder::default()
-    }
-}
 
 /// <p>The details of the gateway group.</p>
 #[non_exhaustive]
@@ -8271,6 +8322,13 @@ impl GatewayGroup {
         self.description.as_deref()
     }
 }
+impl GatewayGroup {
+    /// Creates a new builder-style object to manufacture [`GatewayGroup`](crate::model::GatewayGroup).
+    pub fn builder() -> crate::model::gateway_group::Builder {
+        crate::model::gateway_group::Builder::default()
+    }
+}
+
 /// See [`GatewayGroup`](crate::model::GatewayGroup).
 pub mod gateway_group {
     
@@ -8325,12 +8383,6 @@ pub mod gateway_group {
     
     
 }
-impl GatewayGroup {
-    /// Creates a new builder-style object to manufacture [`GatewayGroup`](crate::model::GatewayGroup).
-    pub fn builder() -> crate::model::gateway_group::Builder {
-        crate::model::gateway_group::Builder::default()
-    }
-}
 
 /// <p>The details of the gateway. </p>
 #[non_exhaustive]
@@ -8374,6 +8426,13 @@ impl Gateway {
         self.software_version.as_deref()
     }
 }
+impl Gateway {
+    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
+    pub fn builder() -> crate::model::gateway::Builder {
+        crate::model::gateway::Builder::default()
+    }
+}
+
 /// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
     
@@ -8451,12 +8510,6 @@ pub mod gateway {
     }
     
     
-}
-impl Gateway {
-    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
-    pub fn builder() -> crate::model::gateway::Builder {
-        crate::model::gateway::Builder::default()
-    }
 }
 
 /// <p>A device with attributes.</p>
@@ -8536,6 +8589,13 @@ impl Device {
         self.network_profile_info.as_ref()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
     
@@ -8674,12 +8734,6 @@ pub mod device {
     
     
 }
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
-    }
-}
 
 /// <p>Detailed information about a device's network profile.</p>
 #[non_exhaustive]
@@ -8709,6 +8763,13 @@ impl DeviceNetworkProfileInfo {
         self.certificate_expiration_time.as_ref()
     }
 }
+impl DeviceNetworkProfileInfo {
+    /// Creates a new builder-style object to manufacture [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
+    pub fn builder() -> crate::model::device_network_profile_info::Builder {
+        crate::model::device_network_profile_info::Builder::default()
+    }
+}
+
 /// See [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
 pub mod device_network_profile_info {
     
@@ -8762,12 +8823,6 @@ pub mod device_network_profile_info {
     }
     
     
-}
-impl DeviceNetworkProfileInfo {
-    /// Creates a new builder-style object to manufacture [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
-    pub fn builder() -> crate::model::device_network_profile_info::Builder {
-        crate::model::device_network_profile_info::Builder::default()
-    }
 }
 
 /// <p>A contact with attributes.</p>
@@ -8839,6 +8894,13 @@ impl  std::fmt::Debug for Contact  {
         formatter.finish()
     }
 }
+impl Contact {
+    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
+    pub fn builder() -> crate::model::contact::Builder {
+        crate::model::contact::Builder::default()
+    }
+}
+
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
     
@@ -8966,12 +9028,6 @@ pub mod contact {
     
     
 }
-impl Contact {
-    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
-    pub fn builder() -> crate::model::contact::Builder {
-        crate::model::contact::Builder::default()
-    }
-}
 
 /// <p>An address book with attributes.</p>
 #[non_exhaustive]
@@ -9001,6 +9057,13 @@ impl AddressBook {
         self.description.as_deref()
     }
 }
+impl AddressBook {
+    /// Creates a new builder-style object to manufacture [`AddressBook`](crate::model::AddressBook).
+    pub fn builder() -> crate::model::address_book::Builder {
+        crate::model::address_book::Builder::default()
+    }
+}
+
 /// See [`AddressBook`](crate::model::AddressBook).
 pub mod address_book {
     
@@ -9054,12 +9117,6 @@ pub mod address_book {
     }
     
     
-}
-impl AddressBook {
-    /// Creates a new builder-style object to manufacture [`AddressBook`](crate::model::AddressBook).
-    pub fn builder() -> crate::model::address_book::Builder {
-        crate::model::address_book::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeviceUsageType`, it is important to ensure
@@ -9174,6 +9231,13 @@ impl CreateMeetingRoomConfiguration {
         self.require_check_in.as_ref()
     }
 }
+impl CreateMeetingRoomConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
+    pub fn builder() -> crate::model::create_meeting_room_configuration::Builder {
+        crate::model::create_meeting_room_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
 pub mod create_meeting_room_configuration {
     
@@ -9240,12 +9304,6 @@ pub mod create_meeting_room_configuration {
     
     
 }
-impl CreateMeetingRoomConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
-    pub fn builder() -> crate::model::create_meeting_room_configuration::Builder {
-        crate::model::create_meeting_room_configuration::Builder::default()
-    }
-}
 
 /// <p>Creates settings for the require check in feature that are applied to a room profile. Require check in allows a meeting room’s Alexa or AVS device to prompt the user to check in; otherwise, the room will be released.</p>
 #[non_exhaustive]
@@ -9268,6 +9326,13 @@ impl CreateRequireCheckIn {
         self.enabled
     }
 }
+impl CreateRequireCheckIn {
+    /// Creates a new builder-style object to manufacture [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
+    pub fn builder() -> crate::model::create_require_check_in::Builder {
+        crate::model::create_require_check_in::Builder::default()
+    }
+}
+
 /// See [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
 pub mod create_require_check_in {
     
@@ -9310,12 +9375,6 @@ pub mod create_require_check_in {
     
     
 }
-impl CreateRequireCheckIn {
-    /// Creates a new builder-style object to manufacture [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
-    pub fn builder() -> crate::model::create_require_check_in::Builder {
-        crate::model::create_require_check_in::Builder::default()
-    }
-}
 
 /// <p>Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
@@ -9338,6 +9397,13 @@ impl CreateInstantBooking {
         self.enabled
     }
 }
+impl CreateInstantBooking {
+    /// Creates a new builder-style object to manufacture [`CreateInstantBooking`](crate::model::CreateInstantBooking).
+    pub fn builder() -> crate::model::create_instant_booking::Builder {
+        crate::model::create_instant_booking::Builder::default()
+    }
+}
+
 /// See [`CreateInstantBooking`](crate::model::CreateInstantBooking).
 pub mod create_instant_booking {
     
@@ -9380,12 +9446,6 @@ pub mod create_instant_booking {
     
     
 }
-impl CreateInstantBooking {
-    /// Creates a new builder-style object to manufacture [`CreateInstantBooking`](crate::model::CreateInstantBooking).
-    pub fn builder() -> crate::model::create_instant_booking::Builder {
-        crate::model::create_instant_booking::Builder::default()
-    }
-}
 
 /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
 #[non_exhaustive]
@@ -9415,6 +9475,13 @@ impl CreateEndOfMeetingReminder {
         self.enabled
     }
 }
+impl CreateEndOfMeetingReminder {
+    /// Creates a new builder-style object to manufacture [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
+    pub fn builder() -> crate::model::create_end_of_meeting_reminder::Builder {
+        crate::model::create_end_of_meeting_reminder::Builder::default()
+    }
+}
+
 /// See [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
 pub mod create_end_of_meeting_reminder {
     
@@ -9474,11 +9541,5 @@ pub mod create_end_of_meeting_reminder {
     }
     
     
-}
-impl CreateEndOfMeetingReminder {
-    /// Creates a new builder-style object to manufacture [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
-    pub fn builder() -> crate::model::create_end_of_meeting_reminder::Builder {
-        crate::model::create_end_of_meeting_reminder::Builder::default()
-    }
 }
 

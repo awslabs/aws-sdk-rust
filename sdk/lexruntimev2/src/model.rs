@@ -30,6 +30,13 @@ impl Interpretation {
         self.intent.as_ref()
     }
 }
+impl Interpretation {
+    /// Creates a new builder-style object to manufacture [`Interpretation`](crate::model::Interpretation).
+    pub fn builder() -> crate::model::interpretation::Builder {
+        crate::model::interpretation::Builder::default()
+    }
+}
+
 /// See [`Interpretation`](crate::model::Interpretation).
 pub mod interpretation {
     
@@ -86,12 +93,6 @@ pub mod interpretation {
     
     
 }
-impl Interpretation {
-    /// Creates a new builder-style object to manufacture [`Interpretation`](crate::model::Interpretation).
-    pub fn builder() -> crate::model::interpretation::Builder {
-        crate::model::interpretation::Builder::default()
-    }
-}
 
 /// <p>The current intent that Amazon Lex V2 is attempting to fulfill.</p>
 #[non_exhaustive]
@@ -128,6 +129,13 @@ impl Intent {
         self.confirmation_state.as_ref()
     }
 }
+impl Intent {
+    /// Creates a new builder-style object to manufacture [`Intent`](crate::model::Intent).
+    pub fn builder() -> crate::model::intent::Builder {
+        crate::model::intent::Builder::default()
+    }
+}
+
 /// See [`Intent`](crate::model::Intent).
 pub mod intent {
     
@@ -199,12 +207,6 @@ pub mod intent {
     }
     
     
-}
-impl Intent {
-    /// Creates a new builder-style object to manufacture [`Intent`](crate::model::Intent).
-    pub fn builder() -> crate::model::intent::Builder {
-        crate::model::intent::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfirmationState`, it is important to ensure
@@ -431,6 +433,13 @@ impl Slot {
         self.sub_slots.as_ref()
     }
 }
+impl Slot {
+    /// Creates a new builder-style object to manufacture [`Slot`](crate::model::Slot).
+    pub fn builder() -> crate::model::slot::Builder {
+        crate::model::slot::Builder::default()
+    }
+}
+
 /// See [`Slot`](crate::model::Slot).
 pub mod slot {
     
@@ -508,12 +517,6 @@ pub mod slot {
     }
     
     
-}
-impl Slot {
-    /// Creates a new builder-style object to manufacture [`Slot`](crate::model::Slot).
-    pub fn builder() -> crate::model::slot::Builder {
-        crate::model::slot::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Shape`, it is important to ensure
@@ -631,6 +634,13 @@ impl Value {
         self.resolved_values.as_deref()
     }
 }
+impl Value {
+    /// Creates a new builder-style object to manufacture [`Value`](crate::model::Value).
+    pub fn builder() -> crate::model::value::Builder {
+        crate::model::value::Builder::default()
+    }
+}
+
 /// See [`Value`](crate::model::Value).
 pub mod value {
     
@@ -691,12 +701,6 @@ pub mod value {
     
     
 }
-impl Value {
-    /// Creates a new builder-style object to manufacture [`Value`](crate::model::Value).
-    pub fn builder() -> crate::model::value::Builder {
-        crate::model::value::Builder::default()
-    }
-}
 
 /// <p>Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html"> Determine Sentiment </a> in the <i>Amazon Comprehend developer guide</i>.</p>
@@ -720,6 +724,13 @@ impl SentimentResponse {
         self.sentiment_score.as_ref()
     }
 }
+impl SentimentResponse {
+    /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse).
+    pub fn builder() -> crate::model::sentiment_response::Builder {
+        crate::model::sentiment_response::Builder::default()
+    }
+}
+
 /// See [`SentimentResponse`](crate::model::SentimentResponse).
 pub mod sentiment_response {
     
@@ -762,12 +773,6 @@ pub mod sentiment_response {
     
     
 }
-impl SentimentResponse {
-    /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse).
-    pub fn builder() -> crate::model::sentiment_response::Builder {
-        crate::model::sentiment_response::Builder::default()
-    }
-}
 
 /// <p>The individual sentiment responses for the utterance.</p>
 #[non_exhaustive]
@@ -804,6 +809,13 @@ impl SentimentScore {
         self.mixed
     }
 }
+impl SentimentScore {
+    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
+    pub fn builder() -> crate::model::sentiment_score::Builder {
+        crate::model::sentiment_score::Builder::default()
+    }
+}
+
 /// See [`SentimentScore`](crate::model::SentimentScore).
 pub mod sentiment_score {
     
@@ -873,12 +885,6 @@ pub mod sentiment_score {
     }
     
     
-}
-impl SentimentScore {
-    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
-    pub fn builder() -> crate::model::sentiment_score::Builder {
-        crate::model::sentiment_score::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SentimentType`, it is important to ensure
@@ -987,6 +993,13 @@ impl ConfidenceScore {
         self.score
     }
 }
+impl ConfidenceScore {
+    /// Creates a new builder-style object to manufacture [`ConfidenceScore`](crate::model::ConfidenceScore).
+    pub fn builder() -> crate::model::confidence_score::Builder {
+        crate::model::confidence_score::Builder::default()
+    }
+}
+
 /// See [`ConfidenceScore`](crate::model::ConfidenceScore).
 pub mod confidence_score {
     
@@ -1017,12 +1030,6 @@ pub mod confidence_score {
     }
     
     
-}
-impl ConfidenceScore {
-    /// Creates a new builder-style object to manufacture [`ConfidenceScore`](crate::model::ConfidenceScore).
-    pub fn builder() -> crate::model::confidence_score::Builder {
-        crate::model::confidence_score::Builder::default()
-    }
 }
 
 /// <p>The state of the user's session with Amazon Lex V2.</p>
@@ -1074,6 +1081,13 @@ impl SessionState {
         self.runtime_hints.as_ref()
     }
 }
+impl SessionState {
+    /// Creates a new builder-style object to manufacture [`SessionState`](crate::model::SessionState).
+    pub fn builder() -> crate::model::session_state::Builder {
+        crate::model::session_state::Builder::default()
+    }
+}
+
 /// See [`SessionState`](crate::model::SessionState).
 pub mod session_state {
     
@@ -1176,12 +1190,6 @@ pub mod session_state {
     
     
 }
-impl SessionState {
-    /// Creates a new builder-style object to manufacture [`SessionState`](crate::model::SessionState).
-    pub fn builder() -> crate::model::session_state::Builder {
-        crate::model::session_state::Builder::default()
-    }
-}
 
 /// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p> 
 /// <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p> 
@@ -1203,6 +1211,13 @@ impl RuntimeHints {
         self.slot_hints.as_ref()
     }
 }
+impl RuntimeHints {
+    /// Creates a new builder-style object to manufacture [`RuntimeHints`](crate::model::RuntimeHints).
+    pub fn builder() -> crate::model::runtime_hints::Builder {
+        crate::model::runtime_hints::Builder::default()
+    }
+}
+
 /// See [`RuntimeHints`](crate::model::RuntimeHints).
 pub mod runtime_hints {
     
@@ -1243,12 +1258,6 @@ pub mod runtime_hints {
     
     
 }
-impl RuntimeHints {
-    /// Creates a new builder-style object to manufacture [`RuntimeHints`](crate::model::RuntimeHints).
-    pub fn builder() -> crate::model::runtime_hints::Builder {
-        crate::model::runtime_hints::Builder::default()
-    }
-}
 
 /// <p>Provides an array of phrases that should be given preference when resolving values for a slot.</p>
 #[non_exhaustive]
@@ -1271,6 +1280,13 @@ impl RuntimeHintDetails {
         self.sub_slot_hints.as_ref()
     }
 }
+impl RuntimeHintDetails {
+    /// Creates a new builder-style object to manufacture [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
+    pub fn builder() -> crate::model::runtime_hint_details::Builder {
+        crate::model::runtime_hint_details::Builder::default()
+    }
+}
+
 /// See [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
 pub mod runtime_hint_details {
     
@@ -1325,12 +1341,6 @@ pub mod runtime_hint_details {
     
     
 }
-impl RuntimeHintDetails {
-    /// Creates a new builder-style object to manufacture [`RuntimeHintDetails`](crate::model::RuntimeHintDetails).
-    pub fn builder() -> crate::model::runtime_hint_details::Builder {
-        crate::model::runtime_hint_details::Builder::default()
-    }
-}
 
 /// <p>Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
 #[non_exhaustive]
@@ -1346,6 +1356,13 @@ impl RuntimeHintValue {
         self.phrase.as_deref()
     }
 }
+impl RuntimeHintValue {
+    /// Creates a new builder-style object to manufacture [`RuntimeHintValue`](crate::model::RuntimeHintValue).
+    pub fn builder() -> crate::model::runtime_hint_value::Builder {
+        crate::model::runtime_hint_value::Builder::default()
+    }
+}
+
 /// See [`RuntimeHintValue`](crate::model::RuntimeHintValue).
 pub mod runtime_hint_value {
     
@@ -1375,12 +1392,6 @@ pub mod runtime_hint_value {
     }
     
     
-}
-impl RuntimeHintValue {
-    /// Creates a new builder-style object to manufacture [`RuntimeHintValue`](crate::model::RuntimeHintValue).
-    pub fn builder() -> crate::model::runtime_hint_value::Builder {
-        crate::model::runtime_hint_value::Builder::default()
-    }
 }
 
 /// <p>Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations.</p> 
@@ -1414,6 +1425,13 @@ impl ActiveContext {
         self.context_attributes.as_ref()
     }
 }
+impl ActiveContext {
+    /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext).
+    pub fn builder() -> crate::model::active_context::Builder {
+        crate::model::active_context::Builder::default()
+    }
+}
+
 /// See [`ActiveContext`](crate::model::ActiveContext).
 pub mod active_context {
     
@@ -1476,12 +1494,6 @@ pub mod active_context {
     
     
 }
-impl ActiveContext {
-    /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext).
-    pub fn builder() -> crate::model::active_context::Builder {
-        crate::model::active_context::Builder::default()
-    }
-}
 
 /// <p>The time that a context is active. You can specify the time to live in seconds or in conversation turns.</p>
 #[non_exhaustive]
@@ -1504,6 +1516,13 @@ impl ActiveContextTimeToLive {
         self.turns_to_live
     }
 }
+impl ActiveContextTimeToLive {
+    /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
+    pub fn builder() -> crate::model::active_context_time_to_live::Builder {
+        crate::model::active_context_time_to_live::Builder::default()
+    }
+}
+
 /// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
 pub mod active_context_time_to_live {
     
@@ -1545,12 +1564,6 @@ pub mod active_context_time_to_live {
     }
     
     
-}
-impl ActiveContextTimeToLive {
-    /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
-    pub fn builder() -> crate::model::active_context_time_to_live::Builder {
-        crate::model::active_context_time_to_live::Builder::default()
-    }
 }
 
 /// <p>The next action that Amazon Lex V2 should take.</p>
@@ -1612,6 +1625,13 @@ impl DialogAction {
         self.sub_slot_to_elicit.as_ref()
     }
 }
+impl DialogAction {
+    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
+    pub fn builder() -> crate::model::dialog_action::Builder {
+        crate::model::dialog_action::Builder::default()
+    }
+}
+
 /// See [`DialogAction`](crate::model::DialogAction).
 pub mod dialog_action {
     
@@ -1702,12 +1722,6 @@ pub mod dialog_action {
     
     
 }
-impl DialogAction {
-    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
-    pub fn builder() -> crate::model::dialog_action::Builder {
-        crate::model::dialog_action::Builder::default()
-    }
-}
 
 /// <p>The specific constituent sub slot of the composite slot to elicit in dialog action.</p>
 #[non_exhaustive]
@@ -1730,6 +1744,13 @@ impl ElicitSubSlot {
         self.sub_slot_to_elicit.as_deref()
     }
 }
+impl ElicitSubSlot {
+    /// Creates a new builder-style object to manufacture [`ElicitSubSlot`](crate::model::ElicitSubSlot).
+    pub fn builder() -> crate::model::elicit_sub_slot::Builder {
+        crate::model::elicit_sub_slot::Builder::default()
+    }
+}
+
 /// See [`ElicitSubSlot`](crate::model::ElicitSubSlot).
 pub mod elicit_sub_slot {
     
@@ -1771,12 +1792,6 @@ pub mod elicit_sub_slot {
     }
     
     
-}
-impl ElicitSubSlot {
-    /// Creates a new builder-style object to manufacture [`ElicitSubSlot`](crate::model::ElicitSubSlot).
-    pub fn builder() -> crate::model::elicit_sub_slot::Builder {
-        crate::model::elicit_sub_slot::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StyleType`, it is important to ensure
@@ -2007,6 +2022,13 @@ impl  std::fmt::Debug for Message  {
         formatter.finish()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
     
@@ -2072,12 +2094,6 @@ pub mod message {
     
     
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p> 
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
@@ -2115,6 +2131,13 @@ impl ImageResponseCard {
         self.buttons.as_deref()
     }
 }
+impl ImageResponseCard {
+    /// Creates a new builder-style object to manufacture [`ImageResponseCard`](crate::model::ImageResponseCard).
+    pub fn builder() -> crate::model::image_response_card::Builder {
+        crate::model::image_response_card::Builder::default()
+    }
+}
+
 /// See [`ImageResponseCard`](crate::model::ImageResponseCard).
 pub mod image_response_card {
     
@@ -2187,12 +2210,6 @@ pub mod image_response_card {
     
     
 }
-impl ImageResponseCard {
-    /// Creates a new builder-style object to manufacture [`ImageResponseCard`](crate::model::ImageResponseCard).
-    pub fn builder() -> crate::model::image_response_card::Builder {
-        crate::model::image_response_card::Builder::default()
-    }
-}
 
 /// <p>A button that appears on a response card show to the user.</p>
 #[non_exhaustive]
@@ -2215,6 +2232,13 @@ impl Button {
         self.value.as_deref()
     }
 }
+impl Button {
+    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
+    pub fn builder() -> crate::model::button::Builder {
+        crate::model::button::Builder::default()
+    }
+}
+
 /// See [`Button`](crate::model::Button).
 pub mod button {
     
@@ -2256,12 +2280,6 @@ pub mod button {
     }
     
     
-}
-impl Button {
-    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
-    pub fn builder() -> crate::model::button::Builder {
-        crate::model::button::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MessageContentType`, it is important to ensure

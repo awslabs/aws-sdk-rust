@@ -21,6 +21,13 @@ impl aws_http::request_id::RequestId for StopDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StopDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
+    pub fn builder() -> crate::output::stop_db_cluster_output::Builder {
+        crate::output::stop_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
 pub mod stop_db_cluster_output {
     
@@ -64,12 +71,6 @@ pub mod stop_db_cluster_output {
     
     
 }
-impl StopDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
-    pub fn builder() -> crate::output::stop_db_cluster_output::Builder {
-        crate::output::stop_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -93,6 +94,13 @@ impl aws_http::request_id::RequestId for StartDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
+    pub fn builder() -> crate::output::start_db_cluster_output::Builder {
+        crate::output::start_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
 pub mod start_db_cluster_output {
     
@@ -136,12 +144,6 @@ pub mod start_db_cluster_output {
     
     
 }
-impl StartDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
-    pub fn builder() -> crate::output::start_db_cluster_output::Builder {
-        crate::output::start_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -165,6 +167,13 @@ impl aws_http::request_id::RequestId for RestoreDbClusterToPointInTimeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestoreDbClusterToPointInTimeOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
+    pub fn builder() -> crate::output::restore_db_cluster_to_point_in_time_output::Builder {
+        crate::output::restore_db_cluster_to_point_in_time_output::Builder::default()
+    }
+}
+
 /// See [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
 pub mod restore_db_cluster_to_point_in_time_output {
     
@@ -208,12 +217,6 @@ pub mod restore_db_cluster_to_point_in_time_output {
     
     
 }
-impl RestoreDbClusterToPointInTimeOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
-    pub fn builder() -> crate::output::restore_db_cluster_to_point_in_time_output::Builder {
-        crate::output::restore_db_cluster_to_point_in_time_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -237,6 +240,13 @@ impl aws_http::request_id::RequestId for RestoreDbClusterFromSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestoreDbClusterFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
+    pub fn builder() -> crate::output::restore_db_cluster_from_snapshot_output::Builder {
+        crate::output::restore_db_cluster_from_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
 pub mod restore_db_cluster_from_snapshot_output {
     
@@ -280,12 +290,6 @@ pub mod restore_db_cluster_from_snapshot_output {
     
     
 }
-impl RestoreDbClusterFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
-    pub fn builder() -> crate::output::restore_db_cluster_from_snapshot_output::Builder {
-        crate::output::restore_db_cluster_from_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -307,6 +311,13 @@ impl aws_http::request_id::RequestId for ResetDbParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResetDbParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
+    pub fn builder() -> crate::output::reset_db_parameter_group_output::Builder {
+        crate::output::reset_db_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
 pub mod reset_db_parameter_group_output {
     
@@ -348,12 +359,6 @@ pub mod reset_db_parameter_group_output {
     
     
 }
-impl ResetDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
-    pub fn builder() -> crate::output::reset_db_parameter_group_output::Builder {
-        crate::output::reset_db_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -391,6 +396,13 @@ impl aws_http::request_id::RequestId for ResetDbClusterParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResetDbClusterParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
+    pub fn builder() -> crate::output::reset_db_cluster_parameter_group_output::Builder {
+        crate::output::reset_db_cluster_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
 pub mod reset_db_cluster_parameter_group_output {
     
@@ -448,12 +460,6 @@ pub mod reset_db_cluster_parameter_group_output {
     
     
 }
-impl ResetDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::output::reset_db_cluster_parameter_group_output::Builder {
-        crate::output::reset_db_cluster_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -466,6 +472,13 @@ impl aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveTagsFromResourceOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
+    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
+        crate::output::remove_tags_from_resource_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
     
@@ -495,12 +508,6 @@ pub mod remove_tags_from_resource_output {
     
     
 }
-impl RemoveTagsFromResourceOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
-        crate::output::remove_tags_from_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -522,6 +529,13 @@ impl aws_http::request_id::RequestId for RemoveSourceIdentifierFromSubscriptionO
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveSourceIdentifierFromSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
+    pub fn builder() -> crate::output::remove_source_identifier_from_subscription_output::Builder {
+        crate::output::remove_source_identifier_from_subscription_output::Builder::default()
+    }
+}
+
 /// See [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
 pub mod remove_source_identifier_from_subscription_output {
     
@@ -563,12 +577,6 @@ pub mod remove_source_identifier_from_subscription_output {
     
     
 }
-impl RemoveSourceIdentifierFromSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
-    pub fn builder() -> crate::output::remove_source_identifier_from_subscription_output::Builder {
-        crate::output::remove_source_identifier_from_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -581,6 +589,13 @@ impl aws_http::request_id::RequestId for RemoveRoleFromDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveRoleFromDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
+    pub fn builder() -> crate::output::remove_role_from_db_cluster_output::Builder {
+        crate::output::remove_role_from_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
 pub mod remove_role_from_db_cluster_output {
     
@@ -610,12 +625,6 @@ pub mod remove_role_from_db_cluster_output {
     
     
 }
-impl RemoveRoleFromDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
-    pub fn builder() -> crate::output::remove_role_from_db_cluster_output::Builder {
-        crate::output::remove_role_from_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -639,6 +648,13 @@ impl aws_http::request_id::RequestId for RemoveFromGlobalClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveFromGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
+    pub fn builder() -> crate::output::remove_from_global_cluster_output::Builder {
+        crate::output::remove_from_global_cluster_output::Builder::default()
+    }
+}
+
 /// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
 pub mod remove_from_global_cluster_output {
     
@@ -682,12 +698,6 @@ pub mod remove_from_global_cluster_output {
     
     
 }
-impl RemoveFromGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
-    pub fn builder() -> crate::output::remove_from_global_cluster_output::Builder {
-        crate::output::remove_from_global_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -711,6 +721,13 @@ impl aws_http::request_id::RequestId for RebootDbInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RebootDbInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
+    pub fn builder() -> crate::output::reboot_db_instance_output::Builder {
+        crate::output::reboot_db_instance_output::Builder::default()
+    }
+}
+
 /// See [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
 pub mod reboot_db_instance_output {
     
@@ -754,12 +771,6 @@ pub mod reboot_db_instance_output {
     
     
 }
-impl RebootDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
-    pub fn builder() -> crate::output::reboot_db_instance_output::Builder {
-        crate::output::reboot_db_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -783,6 +794,13 @@ impl aws_http::request_id::RequestId for PromoteReadReplicaDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PromoteReadReplicaDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
+    pub fn builder() -> crate::output::promote_read_replica_db_cluster_output::Builder {
+        crate::output::promote_read_replica_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
 pub mod promote_read_replica_db_cluster_output {
     
@@ -826,12 +844,6 @@ pub mod promote_read_replica_db_cluster_output {
     
     
 }
-impl PromoteReadReplicaDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
-    pub fn builder() -> crate::output::promote_read_replica_db_cluster_output::Builder {
-        crate::output::promote_read_replica_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -855,6 +867,13 @@ impl aws_http::request_id::RequestId for ModifyGlobalClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
+    pub fn builder() -> crate::output::modify_global_cluster_output::Builder {
+        crate::output::modify_global_cluster_output::Builder::default()
+    }
+}
+
 /// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
 pub mod modify_global_cluster_output {
     
@@ -898,12 +917,6 @@ pub mod modify_global_cluster_output {
     
     
 }
-impl ModifyGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
-    pub fn builder() -> crate::output::modify_global_cluster_output::Builder {
-        crate::output::modify_global_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -925,6 +938,13 @@ impl aws_http::request_id::RequestId for ModifyEventSubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyEventSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
+    pub fn builder() -> crate::output::modify_event_subscription_output::Builder {
+        crate::output::modify_event_subscription_output::Builder::default()
+    }
+}
+
 /// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
 pub mod modify_event_subscription_output {
     
@@ -966,12 +986,6 @@ pub mod modify_event_subscription_output {
     
     
 }
-impl ModifyEventSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
-    pub fn builder() -> crate::output::modify_event_subscription_output::Builder {
-        crate::output::modify_event_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -995,6 +1009,13 @@ impl aws_http::request_id::RequestId for ModifyDbSubnetGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbSubnetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
+    pub fn builder() -> crate::output::modify_db_subnet_group_output::Builder {
+        crate::output::modify_db_subnet_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
 pub mod modify_db_subnet_group_output {
     
@@ -1038,12 +1059,6 @@ pub mod modify_db_subnet_group_output {
     
     
 }
-impl ModifyDbSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
-    pub fn builder() -> crate::output::modify_db_subnet_group_output::Builder {
-        crate::output::modify_db_subnet_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1065,6 +1080,13 @@ impl aws_http::request_id::RequestId for ModifyDbParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
+    pub fn builder() -> crate::output::modify_db_parameter_group_output::Builder {
+        crate::output::modify_db_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
 pub mod modify_db_parameter_group_output {
     
@@ -1106,12 +1128,6 @@ pub mod modify_db_parameter_group_output {
     
     
 }
-impl ModifyDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
-    pub fn builder() -> crate::output::modify_db_parameter_group_output::Builder {
-        crate::output::modify_db_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1135,6 +1151,13 @@ impl aws_http::request_id::RequestId for ModifyDbInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
+    pub fn builder() -> crate::output::modify_db_instance_output::Builder {
+        crate::output::modify_db_instance_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
 pub mod modify_db_instance_output {
     
@@ -1178,12 +1201,6 @@ pub mod modify_db_instance_output {
     
     
 }
-impl ModifyDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
-    pub fn builder() -> crate::output::modify_db_instance_output::Builder {
-        crate::output::modify_db_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1207,6 +1224,13 @@ impl aws_http::request_id::RequestId for ModifyDbClusterSnapshotAttributeOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbClusterSnapshotAttributeOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
+    pub fn builder() -> crate::output::modify_db_cluster_snapshot_attribute_output::Builder {
+        crate::output::modify_db_cluster_snapshot_attribute_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
 pub mod modify_db_cluster_snapshot_attribute_output {
     
@@ -1250,12 +1274,6 @@ pub mod modify_db_cluster_snapshot_attribute_output {
     
     
 }
-impl ModifyDbClusterSnapshotAttributeOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
-    pub fn builder() -> crate::output::modify_db_cluster_snapshot_attribute_output::Builder {
-        crate::output::modify_db_cluster_snapshot_attribute_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1293,6 +1311,13 @@ impl aws_http::request_id::RequestId for ModifyDbClusterParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbClusterParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
+    pub fn builder() -> crate::output::modify_db_cluster_parameter_group_output::Builder {
+        crate::output::modify_db_cluster_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
 pub mod modify_db_cluster_parameter_group_output {
     
@@ -1349,12 +1374,6 @@ pub mod modify_db_cluster_parameter_group_output {
     }
     
     
-}
-impl ModifyDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::output::modify_db_cluster_parameter_group_output::Builder {
-        crate::output::modify_db_cluster_parameter_group_output::Builder::default()
-    }
 }
 
 /// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> 
@@ -1447,6 +1466,13 @@ impl aws_http::request_id::RequestId for ModifyDbClusterEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbClusterEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
+    pub fn builder() -> crate::output::modify_db_cluster_endpoint_output::Builder {
+        crate::output::modify_db_cluster_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
 pub mod modify_db_cluster_endpoint_output {
     
@@ -1608,12 +1634,6 @@ pub mod modify_db_cluster_endpoint_output {
     
     
 }
-impl ModifyDbClusterEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
-    pub fn builder() -> crate::output::modify_db_cluster_endpoint_output::Builder {
-        crate::output::modify_db_cluster_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1637,6 +1657,13 @@ impl aws_http::request_id::RequestId for ModifyDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
+    pub fn builder() -> crate::output::modify_db_cluster_output::Builder {
+        crate::output::modify_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
 pub mod modify_db_cluster_output {
     
@@ -1680,12 +1707,6 @@ pub mod modify_db_cluster_output {
     
     
 }
-impl ModifyDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
-    pub fn builder() -> crate::output::modify_db_cluster_output::Builder {
-        crate::output::modify_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1707,6 +1728,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1754,12 +1782,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1783,6 +1805,13 @@ impl aws_http::request_id::RequestId for FailoverGlobalClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl FailoverGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
+    pub fn builder() -> crate::output::failover_global_cluster_output::Builder {
+        crate::output::failover_global_cluster_output::Builder::default()
+    }
+}
+
 /// See [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
 pub mod failover_global_cluster_output {
     
@@ -1826,12 +1855,6 @@ pub mod failover_global_cluster_output {
     
     
 }
-impl FailoverGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
-    pub fn builder() -> crate::output::failover_global_cluster_output::Builder {
-        crate::output::failover_global_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1855,6 +1878,13 @@ impl aws_http::request_id::RequestId for FailoverDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl FailoverDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
+    pub fn builder() -> crate::output::failover_db_cluster_output::Builder {
+        crate::output::failover_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
 pub mod failover_db_cluster_output {
     
@@ -1898,12 +1928,6 @@ pub mod failover_db_cluster_output {
     
     
 }
-impl FailoverDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
-    pub fn builder() -> crate::output::failover_db_cluster_output::Builder {
-        crate::output::failover_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1925,6 +1949,13 @@ impl aws_http::request_id::RequestId for DescribeValidDbInstanceModificationsOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeValidDbInstanceModificationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
+    pub fn builder() -> crate::output::describe_valid_db_instance_modifications_output::Builder {
+        crate::output::describe_valid_db_instance_modifications_output::Builder::default()
+    }
+}
+
 /// See [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
 pub mod describe_valid_db_instance_modifications_output {
     
@@ -1966,12 +1997,6 @@ pub mod describe_valid_db_instance_modifications_output {
     
     
 }
-impl DescribeValidDbInstanceModificationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
-    pub fn builder() -> crate::output::describe_valid_db_instance_modifications_output::Builder {
-        crate::output::describe_valid_db_instance_modifications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2000,6 +2025,13 @@ impl aws_http::request_id::RequestId for DescribePendingMaintenanceActionsOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribePendingMaintenanceActionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
+    pub fn builder() -> crate::output::describe_pending_maintenance_actions_output::Builder {
+        crate::output::describe_pending_maintenance_actions_output::Builder::default()
+    }
+}
+
 /// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
 pub mod describe_pending_maintenance_actions_output {
     
@@ -2059,12 +2091,6 @@ pub mod describe_pending_maintenance_actions_output {
     
     
 }
-impl DescribePendingMaintenanceActionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
-    pub fn builder() -> crate::output::describe_pending_maintenance_actions_output::Builder {
-        crate::output::describe_pending_maintenance_actions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2093,6 +2119,13 @@ impl aws_http::request_id::RequestId for DescribeOrderableDbInstanceOptionsOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeOrderableDbInstanceOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
+    pub fn builder() -> crate::output::describe_orderable_db_instance_options_output::Builder {
+        crate::output::describe_orderable_db_instance_options_output::Builder::default()
+    }
+}
+
 /// See [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
 pub mod describe_orderable_db_instance_options_output {
     
@@ -2152,12 +2185,6 @@ pub mod describe_orderable_db_instance_options_output {
     
     
 }
-impl DescribeOrderableDbInstanceOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
-    pub fn builder() -> crate::output::describe_orderable_db_instance_options_output::Builder {
-        crate::output::describe_orderable_db_instance_options_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2186,6 +2213,13 @@ impl aws_http::request_id::RequestId for DescribeGlobalClustersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeGlobalClustersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
+    pub fn builder() -> crate::output::describe_global_clusters_output::Builder {
+        crate::output::describe_global_clusters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
 pub mod describe_global_clusters_output {
     
@@ -2245,12 +2279,6 @@ pub mod describe_global_clusters_output {
     
     
 }
-impl DescribeGlobalClustersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
-    pub fn builder() -> crate::output::describe_global_clusters_output::Builder {
-        crate::output::describe_global_clusters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2279,6 +2307,13 @@ impl aws_http::request_id::RequestId for DescribeEventSubscriptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEventSubscriptionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
+    pub fn builder() -> crate::output::describe_event_subscriptions_output::Builder {
+        crate::output::describe_event_subscriptions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
 pub mod describe_event_subscriptions_output {
     
@@ -2338,12 +2373,6 @@ pub mod describe_event_subscriptions_output {
     
     
 }
-impl DescribeEventSubscriptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
-    pub fn builder() -> crate::output::describe_event_subscriptions_output::Builder {
-        crate::output::describe_event_subscriptions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2372,6 +2401,13 @@ impl aws_http::request_id::RequestId for DescribeEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEventsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
+    pub fn builder() -> crate::output::describe_events_output::Builder {
+        crate::output::describe_events_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
     
@@ -2431,12 +2467,6 @@ pub mod describe_events_output {
     
     
 }
-impl DescribeEventsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    pub fn builder() -> crate::output::describe_events_output::Builder {
-        crate::output::describe_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2458,6 +2488,13 @@ impl aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEventCategoriesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
+    pub fn builder() -> crate::output::describe_event_categories_output::Builder {
+        crate::output::describe_event_categories_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
 pub mod describe_event_categories_output {
     
@@ -2505,12 +2542,6 @@ pub mod describe_event_categories_output {
     
     
 }
-impl DescribeEventCategoriesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
-    pub fn builder() -> crate::output::describe_event_categories_output::Builder {
-        crate::output::describe_event_categories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2532,6 +2563,13 @@ impl aws_http::request_id::RequestId for DescribeEngineDefaultParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEngineDefaultParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
+    pub fn builder() -> crate::output::describe_engine_default_parameters_output::Builder {
+        crate::output::describe_engine_default_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
 pub mod describe_engine_default_parameters_output {
     
@@ -2573,12 +2611,6 @@ pub mod describe_engine_default_parameters_output {
     
     
 }
-impl DescribeEngineDefaultParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
-    pub fn builder() -> crate::output::describe_engine_default_parameters_output::Builder {
-        crate::output::describe_engine_default_parameters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2600,6 +2632,13 @@ impl aws_http::request_id::RequestId for DescribeEngineDefaultClusterParametersO
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEngineDefaultClusterParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
+    pub fn builder() -> crate::output::describe_engine_default_cluster_parameters_output::Builder {
+        crate::output::describe_engine_default_cluster_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
 pub mod describe_engine_default_cluster_parameters_output {
     
@@ -2641,12 +2680,6 @@ pub mod describe_engine_default_cluster_parameters_output {
     
     
 }
-impl DescribeEngineDefaultClusterParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
-    pub fn builder() -> crate::output::describe_engine_default_cluster_parameters_output::Builder {
-        crate::output::describe_engine_default_cluster_parameters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2675,6 +2708,13 @@ impl aws_http::request_id::RequestId for DescribeDbSubnetGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbSubnetGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
+    pub fn builder() -> crate::output::describe_db_subnet_groups_output::Builder {
+        crate::output::describe_db_subnet_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
 pub mod describe_db_subnet_groups_output {
     
@@ -2734,12 +2774,6 @@ pub mod describe_db_subnet_groups_output {
     
     
 }
-impl DescribeDbSubnetGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
-    pub fn builder() -> crate::output::describe_db_subnet_groups_output::Builder {
-        crate::output::describe_db_subnet_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2768,6 +2802,13 @@ impl aws_http::request_id::RequestId for DescribeDbParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
+    pub fn builder() -> crate::output::describe_db_parameters_output::Builder {
+        crate::output::describe_db_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
 pub mod describe_db_parameters_output {
     
@@ -2827,12 +2868,6 @@ pub mod describe_db_parameters_output {
     
     
 }
-impl DescribeDbParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
-    pub fn builder() -> crate::output::describe_db_parameters_output::Builder {
-        crate::output::describe_db_parameters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2861,6 +2896,13 @@ impl aws_http::request_id::RequestId for DescribeDbParameterGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbParameterGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
+    pub fn builder() -> crate::output::describe_db_parameter_groups_output::Builder {
+        crate::output::describe_db_parameter_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
 pub mod describe_db_parameter_groups_output {
     
@@ -2920,12 +2962,6 @@ pub mod describe_db_parameter_groups_output {
     
     
 }
-impl DescribeDbParameterGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
-    pub fn builder() -> crate::output::describe_db_parameter_groups_output::Builder {
-        crate::output::describe_db_parameter_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2954,6 +2990,13 @@ impl aws_http::request_id::RequestId for DescribeDbInstancesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
+    pub fn builder() -> crate::output::describe_db_instances_output::Builder {
+        crate::output::describe_db_instances_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
 pub mod describe_db_instances_output {
     
@@ -3013,12 +3056,6 @@ pub mod describe_db_instances_output {
     
     
 }
-impl DescribeDbInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
-    pub fn builder() -> crate::output::describe_db_instances_output::Builder {
-        crate::output::describe_db_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3047,6 +3084,13 @@ impl aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbEngineVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
+    pub fn builder() -> crate::output::describe_db_engine_versions_output::Builder {
+        crate::output::describe_db_engine_versions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
 pub mod describe_db_engine_versions_output {
     
@@ -3106,12 +3150,6 @@ pub mod describe_db_engine_versions_output {
     
     
 }
-impl DescribeDbEngineVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
-    pub fn builder() -> crate::output::describe_db_engine_versions_output::Builder {
-        crate::output::describe_db_engine_versions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3140,6 +3178,13 @@ impl aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbClusterSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
+    pub fn builder() -> crate::output::describe_db_cluster_snapshots_output::Builder {
+        crate::output::describe_db_cluster_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
 pub mod describe_db_cluster_snapshots_output {
     
@@ -3199,12 +3244,6 @@ pub mod describe_db_cluster_snapshots_output {
     
     
 }
-impl DescribeDbClusterSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
-    pub fn builder() -> crate::output::describe_db_cluster_snapshots_output::Builder {
-        crate::output::describe_db_cluster_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3228,6 +3267,13 @@ impl aws_http::request_id::RequestId for DescribeDbClusterSnapshotAttributesOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbClusterSnapshotAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
+    pub fn builder() -> crate::output::describe_db_cluster_snapshot_attributes_output::Builder {
+        crate::output::describe_db_cluster_snapshot_attributes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
 pub mod describe_db_cluster_snapshot_attributes_output {
     
@@ -3271,12 +3317,6 @@ pub mod describe_db_cluster_snapshot_attributes_output {
     
     
 }
-impl DescribeDbClusterSnapshotAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
-    pub fn builder() -> crate::output::describe_db_cluster_snapshot_attributes_output::Builder {
-        crate::output::describe_db_cluster_snapshot_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3305,6 +3345,13 @@ impl aws_http::request_id::RequestId for DescribeDbClustersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbClustersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
+    pub fn builder() -> crate::output::describe_db_clusters_output::Builder {
+        crate::output::describe_db_clusters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
 pub mod describe_db_clusters_output {
     
@@ -3364,12 +3411,6 @@ pub mod describe_db_clusters_output {
     
     
 }
-impl DescribeDbClustersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
-    pub fn builder() -> crate::output::describe_db_clusters_output::Builder {
-        crate::output::describe_db_clusters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3398,6 +3439,13 @@ impl aws_http::request_id::RequestId for DescribeDbClusterParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbClusterParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
+    pub fn builder() -> crate::output::describe_db_cluster_parameters_output::Builder {
+        crate::output::describe_db_cluster_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
 pub mod describe_db_cluster_parameters_output {
     
@@ -3457,12 +3505,6 @@ pub mod describe_db_cluster_parameters_output {
     
     
 }
-impl DescribeDbClusterParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
-    pub fn builder() -> crate::output::describe_db_cluster_parameters_output::Builder {
-        crate::output::describe_db_cluster_parameters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3491,6 +3533,13 @@ impl aws_http::request_id::RequestId for DescribeDbClusterParameterGroupsOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbClusterParameterGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
+    pub fn builder() -> crate::output::describe_db_cluster_parameter_groups_output::Builder {
+        crate::output::describe_db_cluster_parameter_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
 pub mod describe_db_cluster_parameter_groups_output {
     
@@ -3550,12 +3599,6 @@ pub mod describe_db_cluster_parameter_groups_output {
     
     
 }
-impl DescribeDbClusterParameterGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
-    pub fn builder() -> crate::output::describe_db_cluster_parameter_groups_output::Builder {
-        crate::output::describe_db_cluster_parameter_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3584,6 +3627,13 @@ impl aws_http::request_id::RequestId for DescribeDbClusterEndpointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDbClusterEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
+    pub fn builder() -> crate::output::describe_db_cluster_endpoints_output::Builder {
+        crate::output::describe_db_cluster_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
 pub mod describe_db_cluster_endpoints_output {
     
@@ -3643,12 +3693,6 @@ pub mod describe_db_cluster_endpoints_output {
     
     
 }
-impl DescribeDbClusterEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
-    pub fn builder() -> crate::output::describe_db_cluster_endpoints_output::Builder {
-        crate::output::describe_db_cluster_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3672,6 +3716,13 @@ impl aws_http::request_id::RequestId for DeleteGlobalClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
+    pub fn builder() -> crate::output::delete_global_cluster_output::Builder {
+        crate::output::delete_global_cluster_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
 pub mod delete_global_cluster_output {
     
@@ -3715,12 +3766,6 @@ pub mod delete_global_cluster_output {
     
     
 }
-impl DeleteGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
-    pub fn builder() -> crate::output::delete_global_cluster_output::Builder {
-        crate::output::delete_global_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3742,6 +3787,13 @@ impl aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteEventSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
+    pub fn builder() -> crate::output::delete_event_subscription_output::Builder {
+        crate::output::delete_event_subscription_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
 pub mod delete_event_subscription_output {
     
@@ -3783,12 +3835,6 @@ pub mod delete_event_subscription_output {
     
     
 }
-impl DeleteEventSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
-    pub fn builder() -> crate::output::delete_event_subscription_output::Builder {
-        crate::output::delete_event_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3801,6 +3847,13 @@ impl aws_http::request_id::RequestId for DeleteDbSubnetGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbSubnetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
+    pub fn builder() -> crate::output::delete_db_subnet_group_output::Builder {
+        crate::output::delete_db_subnet_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
 pub mod delete_db_subnet_group_output {
     
@@ -3830,12 +3883,6 @@ pub mod delete_db_subnet_group_output {
     
     
 }
-impl DeleteDbSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
-    pub fn builder() -> crate::output::delete_db_subnet_group_output::Builder {
-        crate::output::delete_db_subnet_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3848,6 +3895,13 @@ impl aws_http::request_id::RequestId for DeleteDbParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
+    pub fn builder() -> crate::output::delete_db_parameter_group_output::Builder {
+        crate::output::delete_db_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
 pub mod delete_db_parameter_group_output {
     
@@ -3877,12 +3931,6 @@ pub mod delete_db_parameter_group_output {
     
     
 }
-impl DeleteDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
-    pub fn builder() -> crate::output::delete_db_parameter_group_output::Builder {
-        crate::output::delete_db_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3906,6 +3954,13 @@ impl aws_http::request_id::RequestId for DeleteDbInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
+    pub fn builder() -> crate::output::delete_db_instance_output::Builder {
+        crate::output::delete_db_instance_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
 pub mod delete_db_instance_output {
     
@@ -3949,12 +4004,6 @@ pub mod delete_db_instance_output {
     
     
 }
-impl DeleteDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
-    pub fn builder() -> crate::output::delete_db_instance_output::Builder {
-        crate::output::delete_db_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3978,6 +4027,13 @@ impl aws_http::request_id::RequestId for DeleteDbClusterSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbClusterSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
+    pub fn builder() -> crate::output::delete_db_cluster_snapshot_output::Builder {
+        crate::output::delete_db_cluster_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
 pub mod delete_db_cluster_snapshot_output {
     
@@ -4021,12 +4077,6 @@ pub mod delete_db_cluster_snapshot_output {
     
     
 }
-impl DeleteDbClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
-    pub fn builder() -> crate::output::delete_db_cluster_snapshot_output::Builder {
-        crate::output::delete_db_cluster_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4039,6 +4089,13 @@ impl aws_http::request_id::RequestId for DeleteDbClusterParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbClusterParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
+    pub fn builder() -> crate::output::delete_db_cluster_parameter_group_output::Builder {
+        crate::output::delete_db_cluster_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
 pub mod delete_db_cluster_parameter_group_output {
     
@@ -4067,12 +4124,6 @@ pub mod delete_db_cluster_parameter_group_output {
     }
     
     
-}
-impl DeleteDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::output::delete_db_cluster_parameter_group_output::Builder {
-        crate::output::delete_db_cluster_parameter_group_output::Builder::default()
-    }
 }
 
 /// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> 
@@ -4165,6 +4216,13 @@ impl aws_http::request_id::RequestId for DeleteDbClusterEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbClusterEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
+    pub fn builder() -> crate::output::delete_db_cluster_endpoint_output::Builder {
+        crate::output::delete_db_cluster_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
 pub mod delete_db_cluster_endpoint_output {
     
@@ -4326,12 +4384,6 @@ pub mod delete_db_cluster_endpoint_output {
     
     
 }
-impl DeleteDbClusterEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
-    pub fn builder() -> crate::output::delete_db_cluster_endpoint_output::Builder {
-        crate::output::delete_db_cluster_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4355,6 +4407,13 @@ impl aws_http::request_id::RequestId for DeleteDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
+    pub fn builder() -> crate::output::delete_db_cluster_output::Builder {
+        crate::output::delete_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
 pub mod delete_db_cluster_output {
     
@@ -4398,12 +4457,6 @@ pub mod delete_db_cluster_output {
     
     
 }
-impl DeleteDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
-    pub fn builder() -> crate::output::delete_db_cluster_output::Builder {
-        crate::output::delete_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4427,6 +4480,13 @@ impl aws_http::request_id::RequestId for CreateGlobalClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateGlobalClusterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
+    pub fn builder() -> crate::output::create_global_cluster_output::Builder {
+        crate::output::create_global_cluster_output::Builder::default()
+    }
+}
+
 /// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
 pub mod create_global_cluster_output {
     
@@ -4470,12 +4530,6 @@ pub mod create_global_cluster_output {
     
     
 }
-impl CreateGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
-    pub fn builder() -> crate::output::create_global_cluster_output::Builder {
-        crate::output::create_global_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4497,6 +4551,13 @@ impl aws_http::request_id::RequestId for CreateEventSubscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateEventSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
+    pub fn builder() -> crate::output::create_event_subscription_output::Builder {
+        crate::output::create_event_subscription_output::Builder::default()
+    }
+}
+
 /// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
 pub mod create_event_subscription_output {
     
@@ -4538,12 +4599,6 @@ pub mod create_event_subscription_output {
     
     
 }
-impl CreateEventSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
-    pub fn builder() -> crate::output::create_event_subscription_output::Builder {
-        crate::output::create_event_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4567,6 +4622,13 @@ impl aws_http::request_id::RequestId for CreateDbSubnetGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbSubnetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
+    pub fn builder() -> crate::output::create_db_subnet_group_output::Builder {
+        crate::output::create_db_subnet_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
 pub mod create_db_subnet_group_output {
     
@@ -4610,12 +4672,6 @@ pub mod create_db_subnet_group_output {
     
     
 }
-impl CreateDbSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
-    pub fn builder() -> crate::output::create_db_subnet_group_output::Builder {
-        crate::output::create_db_subnet_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4639,6 +4695,13 @@ impl aws_http::request_id::RequestId for CreateDbParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
+    pub fn builder() -> crate::output::create_db_parameter_group_output::Builder {
+        crate::output::create_db_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
 pub mod create_db_parameter_group_output {
     
@@ -4682,12 +4745,6 @@ pub mod create_db_parameter_group_output {
     
     
 }
-impl CreateDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
-    pub fn builder() -> crate::output::create_db_parameter_group_output::Builder {
-        crate::output::create_db_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4711,6 +4768,13 @@ impl aws_http::request_id::RequestId for CreateDbInstanceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
+    pub fn builder() -> crate::output::create_db_instance_output::Builder {
+        crate::output::create_db_instance_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
 pub mod create_db_instance_output {
     
@@ -4754,12 +4818,6 @@ pub mod create_db_instance_output {
     
     
 }
-impl CreateDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
-    pub fn builder() -> crate::output::create_db_instance_output::Builder {
-        crate::output::create_db_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4783,6 +4841,13 @@ impl aws_http::request_id::RequestId for CreateDbClusterSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbClusterSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
+    pub fn builder() -> crate::output::create_db_cluster_snapshot_output::Builder {
+        crate::output::create_db_cluster_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
 pub mod create_db_cluster_snapshot_output {
     
@@ -4826,12 +4891,6 @@ pub mod create_db_cluster_snapshot_output {
     
     
 }
-impl CreateDbClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
-    pub fn builder() -> crate::output::create_db_cluster_snapshot_output::Builder {
-        crate::output::create_db_cluster_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4855,6 +4914,13 @@ impl aws_http::request_id::RequestId for CreateDbClusterParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbClusterParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
+    pub fn builder() -> crate::output::create_db_cluster_parameter_group_output::Builder {
+        crate::output::create_db_cluster_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
 pub mod create_db_cluster_parameter_group_output {
     
@@ -4897,12 +4963,6 @@ pub mod create_db_cluster_parameter_group_output {
     }
     
     
-}
-impl CreateDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::output::create_db_cluster_parameter_group_output::Builder {
-        crate::output::create_db_cluster_parameter_group_output::Builder::default()
-    }
 }
 
 /// <p>This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions:</p> 
@@ -4995,6 +5055,13 @@ impl aws_http::request_id::RequestId for CreateDbClusterEndpointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbClusterEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
+    pub fn builder() -> crate::output::create_db_cluster_endpoint_output::Builder {
+        crate::output::create_db_cluster_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
 pub mod create_db_cluster_endpoint_output {
     
@@ -5156,12 +5223,6 @@ pub mod create_db_cluster_endpoint_output {
     
     
 }
-impl CreateDbClusterEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
-    pub fn builder() -> crate::output::create_db_cluster_endpoint_output::Builder {
-        crate::output::create_db_cluster_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5185,6 +5246,13 @@ impl aws_http::request_id::RequestId for CreateDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
+    pub fn builder() -> crate::output::create_db_cluster_output::Builder {
+        crate::output::create_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
 pub mod create_db_cluster_output {
     
@@ -5228,12 +5296,6 @@ pub mod create_db_cluster_output {
     
     
 }
-impl CreateDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
-    pub fn builder() -> crate::output::create_db_cluster_output::Builder {
-        crate::output::create_db_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5257,6 +5319,13 @@ impl aws_http::request_id::RequestId for CopyDbParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CopyDbParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
+    pub fn builder() -> crate::output::copy_db_parameter_group_output::Builder {
+        crate::output::copy_db_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
 pub mod copy_db_parameter_group_output {
     
@@ -5300,12 +5369,6 @@ pub mod copy_db_parameter_group_output {
     
     
 }
-impl CopyDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
-    pub fn builder() -> crate::output::copy_db_parameter_group_output::Builder {
-        crate::output::copy_db_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5329,6 +5392,13 @@ impl aws_http::request_id::RequestId for CopyDbClusterSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CopyDbClusterSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
+    pub fn builder() -> crate::output::copy_db_cluster_snapshot_output::Builder {
+        crate::output::copy_db_cluster_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
 pub mod copy_db_cluster_snapshot_output {
     
@@ -5372,12 +5442,6 @@ pub mod copy_db_cluster_snapshot_output {
     
     
 }
-impl CopyDbClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
-    pub fn builder() -> crate::output::copy_db_cluster_snapshot_output::Builder {
-        crate::output::copy_db_cluster_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5401,6 +5465,13 @@ impl aws_http::request_id::RequestId for CopyDbClusterParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CopyDbClusterParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
+    pub fn builder() -> crate::output::copy_db_cluster_parameter_group_output::Builder {
+        crate::output::copy_db_cluster_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
 pub mod copy_db_cluster_parameter_group_output {
     
@@ -5444,12 +5515,6 @@ pub mod copy_db_cluster_parameter_group_output {
     
     
 }
-impl CopyDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
-    pub fn builder() -> crate::output::copy_db_cluster_parameter_group_output::Builder {
-        crate::output::copy_db_cluster_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5471,6 +5536,13 @@ impl aws_http::request_id::RequestId for ApplyPendingMaintenanceActionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ApplyPendingMaintenanceActionOutput {
+    /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
+    pub fn builder() -> crate::output::apply_pending_maintenance_action_output::Builder {
+        crate::output::apply_pending_maintenance_action_output::Builder::default()
+    }
+}
+
 /// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
 pub mod apply_pending_maintenance_action_output {
     
@@ -5512,12 +5584,6 @@ pub mod apply_pending_maintenance_action_output {
     
     
 }
-impl ApplyPendingMaintenanceActionOutput {
-    /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
-    pub fn builder() -> crate::output::apply_pending_maintenance_action_output::Builder {
-        crate::output::apply_pending_maintenance_action_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5530,6 +5596,13 @@ impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddTagsToResourceOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
+    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
+        crate::output::add_tags_to_resource_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
     
@@ -5559,12 +5632,6 @@ pub mod add_tags_to_resource_output {
     
     
 }
-impl AddTagsToResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
-        crate::output::add_tags_to_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5586,6 +5653,13 @@ impl aws_http::request_id::RequestId for AddSourceIdentifierToSubscriptionOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddSourceIdentifierToSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
+    pub fn builder() -> crate::output::add_source_identifier_to_subscription_output::Builder {
+        crate::output::add_source_identifier_to_subscription_output::Builder::default()
+    }
+}
+
 /// See [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
 pub mod add_source_identifier_to_subscription_output {
     
@@ -5627,12 +5701,6 @@ pub mod add_source_identifier_to_subscription_output {
     
     
 }
-impl AddSourceIdentifierToSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
-    pub fn builder() -> crate::output::add_source_identifier_to_subscription_output::Builder {
-        crate::output::add_source_identifier_to_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5645,6 +5713,13 @@ impl aws_http::request_id::RequestId for AddRoleToDbClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddRoleToDbClusterOutput {
+    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
+    pub fn builder() -> crate::output::add_role_to_db_cluster_output::Builder {
+        crate::output::add_role_to_db_cluster_output::Builder::default()
+    }
+}
+
 /// See [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
 pub mod add_role_to_db_cluster_output {
     
@@ -5673,11 +5748,5 @@ pub mod add_role_to_db_cluster_output {
     }
     
     
-}
-impl AddRoleToDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
-    pub fn builder() -> crate::output::add_role_to_db_cluster_output::Builder {
-        crate::output::add_role_to_db_cluster_output::Builder::default()
-    }
 }
 

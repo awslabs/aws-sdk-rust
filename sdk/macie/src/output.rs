@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateS3ResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateS3ResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
+    pub fn builder() -> crate::output::update_s3_resources_output::Builder {
+        crate::output::update_s3_resources_output::Builder::default()
+    }
+}
+
 /// See [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
 pub mod update_s3_resources_output {
     
@@ -66,12 +73,6 @@ pub mod update_s3_resources_output {
     
     
 }
-impl UpdateS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
-    pub fn builder() -> crate::output::update_s3_resources_output::Builder {
-        crate::output::update_s3_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +101,13 @@ impl aws_http::request_id::RequestId for ListS3ResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListS3ResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
+    pub fn builder() -> crate::output::list_s3_resources_output::Builder {
+        crate::output::list_s3_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
 pub mod list_s3_resources_output {
     
@@ -159,12 +167,6 @@ pub mod list_s3_resources_output {
     
     
 }
-impl ListS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
-    pub fn builder() -> crate::output::list_s3_resources_output::Builder {
-        crate::output::list_s3_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -193,6 +195,13 @@ impl aws_http::request_id::RequestId for ListMemberAccountsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListMemberAccountsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
+    pub fn builder() -> crate::output::list_member_accounts_output::Builder {
+        crate::output::list_member_accounts_output::Builder::default()
+    }
+}
+
 /// See [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
 pub mod list_member_accounts_output {
     
@@ -252,12 +261,6 @@ pub mod list_member_accounts_output {
     
     
 }
-impl ListMemberAccountsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
-    pub fn builder() -> crate::output::list_member_accounts_output::Builder {
-        crate::output::list_member_accounts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -279,6 +282,13 @@ impl aws_http::request_id::RequestId for DisassociateS3ResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateS3ResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
+    pub fn builder() -> crate::output::disassociate_s3_resources_output::Builder {
+        crate::output::disassociate_s3_resources_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
 pub mod disassociate_s3_resources_output {
     
@@ -326,12 +336,6 @@ pub mod disassociate_s3_resources_output {
     
     
 }
-impl DisassociateS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
-    pub fn builder() -> crate::output::disassociate_s3_resources_output::Builder {
-        crate::output::disassociate_s3_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -344,6 +348,13 @@ impl aws_http::request_id::RequestId for DisassociateMemberAccountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateMemberAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
+    pub fn builder() -> crate::output::disassociate_member_account_output::Builder {
+        crate::output::disassociate_member_account_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
 pub mod disassociate_member_account_output {
     
@@ -373,12 +384,6 @@ pub mod disassociate_member_account_output {
     
     
 }
-impl DisassociateMemberAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
-    pub fn builder() -> crate::output::disassociate_member_account_output::Builder {
-        crate::output::disassociate_member_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -400,6 +405,13 @@ impl aws_http::request_id::RequestId for AssociateS3ResourcesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateS3ResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
+    pub fn builder() -> crate::output::associate_s3_resources_output::Builder {
+        crate::output::associate_s3_resources_output::Builder::default()
+    }
+}
+
 /// See [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
 pub mod associate_s3_resources_output {
     
@@ -447,12 +459,6 @@ pub mod associate_s3_resources_output {
     
     
 }
-impl AssociateS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
-    pub fn builder() -> crate::output::associate_s3_resources_output::Builder {
-        crate::output::associate_s3_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -465,6 +471,13 @@ impl aws_http::request_id::RequestId for AssociateMemberAccountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateMemberAccountOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
+    pub fn builder() -> crate::output::associate_member_account_output::Builder {
+        crate::output::associate_member_account_output::Builder::default()
+    }
+}
+
 /// See [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
 pub mod associate_member_account_output {
     
@@ -493,11 +506,5 @@ pub mod associate_member_account_output {
     }
     
     
-}
-impl AssociateMemberAccountOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
-    pub fn builder() -> crate::output::associate_member_account_output::Builder {
-        crate::output::associate_member_account_output::Builder::default()
-    }
 }
 

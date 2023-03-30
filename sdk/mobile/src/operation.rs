@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_project`](crate::client::Client::create_project).
             ///
-            /// See [`crate::client::fluent_builders::CreateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProject {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_project`](crate::client::Client::delete_project).
             ///
-            /// See [`crate::client::fluent_builders::DeleteProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProject {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_bundle`](crate::client::Client::describe_bundle).
             ///
-            /// See [`crate::client::fluent_builders::DescribeBundle`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeBundle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBundle {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBundle {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_project`](crate::client::Client::describe_project).
             ///
-            /// See [`crate::client::fluent_builders::DescribeProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProject {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`export_bundle`](crate::client::Client::export_bundle).
             ///
-            /// See [`crate::client::fluent_builders::ExportBundle`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ExportBundle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportBundle {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportBundle {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`export_project`](crate::client::Client::export_project).
             ///
-            /// See [`crate::client::fluent_builders::ExportProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ExportProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportProject {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportProject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_bundles`](crate::client::Client::list_bundles).
             ///
-            /// See [`crate::client::fluent_builders::ListBundles`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListBundles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBundles {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBundles {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_projects`](crate::client::Client::list_projects).
             ///
-            /// See [`crate::client::fluent_builders::ListProjects`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProjects {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_project`](crate::client::Client::update_project).
             ///
-            /// See [`crate::client::fluent_builders::UpdateProject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProject {
     _private: ()

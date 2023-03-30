@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_alarm_model`](crate::client::Client::create_alarm_model).
             ///
-            /// See [`crate::client::fluent_builders::CreateAlarmModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAlarmModel {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlarmModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_detector_model`](crate::client::Client::create_detector_model).
             ///
-            /// See [`crate::client::fluent_builders::CreateDetectorModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDetectorModel {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDetectorModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_input`](crate::client::Client::create_input).
             ///
-            /// See [`crate::client::fluent_builders::CreateInput`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateInput {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInput {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_alarm_model`](crate::client::Client::delete_alarm_model).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAlarmModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAlarmModel {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlarmModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_detector_model`](crate::client::Client::delete_detector_model).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDetectorModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDetectorModel {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDetectorModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_input`](crate::client::Client::delete_input).
             ///
-            /// See [`crate::client::fluent_builders::DeleteInput`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInput {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInput {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_alarm_model`](crate::client::Client::describe_alarm_model).
             ///
-            /// See [`crate::client::fluent_builders::DescribeAlarmModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAlarmModel {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarmModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_detector_model`](crate::client::Client::describe_detector_model).
             ///
-            /// See [`crate::client::fluent_builders::DescribeDetectorModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDetectorModel {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetectorModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_detector_model_analysis`](crate::client::Client::describe_detector_model_analysis).
             ///
-            /// See [`crate::client::fluent_builders::DescribeDetectorModelAnalysis`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeDetectorModelAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDetectorModelAnalysis {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetectorModelAna
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_input`](crate::client::Client::describe_input).
             ///
-            /// See [`crate::client::fluent_builders::DescribeInput`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInput {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInput {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_logging_options`](crate::client::Client::describe_logging_options).
             ///
-            /// See [`crate::client::fluent_builders::DescribeLoggingOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeLoggingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoggingOptions {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingOptions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_detector_model_analysis_results`](crate::client::Client::get_detector_model_analysis_results).
             ///
-            /// See [`crate::client::fluent_builders::GetDetectorModelAnalysisResults`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDetectorModelAnalysisResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDetectorModelAnalysisResults {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDetectorModelAnalysis
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_alarm_models`](crate::client::Client::list_alarm_models).
             ///
-            /// See [`crate::client::fluent_builders::ListAlarmModels`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAlarmModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAlarmModels {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmModels {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_alarm_model_versions`](crate::client::Client::list_alarm_model_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListAlarmModelVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAlarmModelVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAlarmModelVersions {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmModelVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_detector_models`](crate::client::Client::list_detector_models).
             ///
-            /// See [`crate::client::fluent_builders::ListDetectorModels`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDetectorModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDetectorModels {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectorModels {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_detector_model_versions`](crate::client::Client::list_detector_model_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListDetectorModelVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDetectorModelVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDetectorModelVersions {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectorModelVersion
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_input_routings`](crate::client::Client::list_input_routings).
             ///
-            /// See [`crate::client::fluent_builders::ListInputRoutings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListInputRoutings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInputRoutings {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputRoutings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_inputs`](crate::client::Client::list_inputs).
             ///
-            /// See [`crate::client::fluent_builders::ListInputs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListInputs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInputs {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_logging_options`](crate::client::Client::put_logging_options).
             ///
-            /// See [`crate::client::fluent_builders::PutLoggingOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutLoggingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLoggingOptions {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLoggingOptions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_detector_model_analysis`](crate::client::Client::start_detector_model_analysis).
             ///
-            /// See [`crate::client::fluent_builders::StartDetectorModelAnalysis`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartDetectorModelAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDetectorModelAnalysis {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDetectorModelAnalys
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_alarm_model`](crate::client::Client::update_alarm_model).
             ///
-            /// See [`crate::client::fluent_builders::UpdateAlarmModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateAlarmModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAlarmModel {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlarmModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_detector_model`](crate::client::Client::update_detector_model).
             ///
-            /// See [`crate::client::fluent_builders::UpdateDetectorModel`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateDetectorModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDetectorModel {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDetectorModel {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_input`](crate::client::Client::update_input).
             ///
-            /// See [`crate::client::fluent_builders::UpdateInput`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInput {
     _private: ()

@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for QueryWhatIfForecastOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl QueryWhatIfForecastOutput {
+    /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
+    pub fn builder() -> crate::output::query_what_if_forecast_output::Builder {
+        crate::output::query_what_if_forecast_output::Builder::default()
+    }
+}
+
 /// See [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
 pub mod query_what_if_forecast_output {
     
@@ -60,12 +67,6 @@ pub mod query_what_if_forecast_output {
     
     
 }
-impl QueryWhatIfForecastOutput {
-    /// Creates a new builder-style object to manufacture [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
-    pub fn builder() -> crate::output::query_what_if_forecast_output::Builder {
-        crate::output::query_what_if_forecast_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for QueryForecastOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl QueryForecastOutput {
+    /// Creates a new builder-style object to manufacture [`QueryForecastOutput`](crate::output::QueryForecastOutput).
+    pub fn builder() -> crate::output::query_forecast_output::Builder {
+        crate::output::query_forecast_output::Builder::default()
+    }
+}
+
 /// See [`QueryForecastOutput`](crate::output::QueryForecastOutput).
 pub mod query_forecast_output {
     
@@ -127,11 +135,5 @@ pub mod query_forecast_output {
     }
     
     
-}
-impl QueryForecastOutput {
-    /// Creates a new builder-style object to manufacture [`QueryForecastOutput`](crate::output::QueryForecastOutput).
-    pub fn builder() -> crate::output::query_forecast_output::Builder {
-        crate::output::query_forecast_output::Builder::default()
-    }
 }
 

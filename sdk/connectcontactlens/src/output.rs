@@ -36,6 +36,13 @@ impl aws_http::request_id::RequestId for ListRealtimeContactAnalysisSegmentsOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRealtimeContactAnalysisSegmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
+    pub fn builder() -> crate::output::list_realtime_contact_analysis_segments_output::Builder {
+        crate::output::list_realtime_contact_analysis_segments_output::Builder::default()
+    }
+}
+
 /// See [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
 pub mod list_realtime_contact_analysis_segments_output {
     
@@ -104,11 +111,5 @@ pub mod list_realtime_contact_analysis_segments_output {
     }
     
     
-}
-impl ListRealtimeContactAnalysisSegmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
-    pub fn builder() -> crate::output::list_realtime_contact_analysis_segments_output::Builder {
-        crate::output::list_realtime_contact_analysis_segments_output::Builder::default()
-    }
 }
 

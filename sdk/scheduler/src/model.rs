@@ -42,6 +42,13 @@ impl ScheduleGroupSummary {
         self.last_modification_date.as_ref()
     }
 }
+impl ScheduleGroupSummary {
+    /// Creates a new builder-style object to manufacture [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
+    pub fn builder() -> crate::model::schedule_group_summary::Builder {
+        crate::model::schedule_group_summary::Builder::default()
+    }
+}
+
 /// See [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
 pub mod schedule_group_summary {
     
@@ -119,12 +126,6 @@ pub mod schedule_group_summary {
     }
     
     
-}
-impl ScheduleGroupSummary {
-    /// Creates a new builder-style object to manufacture [`ScheduleGroupSummary`](crate::model::ScheduleGroupSummary).
-    pub fn builder() -> crate::model::schedule_group_summary::Builder {
-        crate::model::schedule_group_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduleGroupState`, it is important to ensure
@@ -230,6 +231,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -271,12 +279,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>The details of a schedule.</p>
@@ -335,6 +337,13 @@ impl ScheduleSummary {
         self.target.as_ref()
     }
 }
+impl ScheduleSummary {
+    /// Creates a new builder-style object to manufacture [`ScheduleSummary`](crate::model::ScheduleSummary).
+    pub fn builder() -> crate::model::schedule_summary::Builder {
+        crate::model::schedule_summary::Builder::default()
+    }
+}
+
 /// See [`ScheduleSummary`](crate::model::ScheduleSummary).
 pub mod schedule_summary {
     
@@ -437,12 +446,6 @@ pub mod schedule_summary {
     
     
 }
-impl ScheduleSummary {
-    /// Creates a new builder-style object to manufacture [`ScheduleSummary`](crate::model::ScheduleSummary).
-    pub fn builder() -> crate::model::schedule_summary::Builder {
-        crate::model::schedule_summary::Builder::default()
-    }
-}
 
 /// <p>The details of a target.</p>
 #[non_exhaustive]
@@ -458,6 +461,13 @@ impl TargetSummary {
         self.arn.as_deref()
     }
 }
+impl TargetSummary {
+    /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
+    pub fn builder() -> crate::model::target_summary::Builder {
+        crate::model::target_summary::Builder::default()
+    }
+}
+
 /// See [`TargetSummary`](crate::model::TargetSummary).
 pub mod target_summary {
     
@@ -487,12 +497,6 @@ pub mod target_summary {
     }
     
     
-}
-impl TargetSummary {
-    /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
-    pub fn builder() -> crate::model::target_summary::Builder {
-        crate::model::target_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScheduleState`, it is important to ensure
@@ -598,6 +602,13 @@ impl FlexibleTimeWindow {
         self.maximum_window_in_minutes
     }
 }
+impl FlexibleTimeWindow {
+    /// Creates a new builder-style object to manufacture [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
+    pub fn builder() -> crate::model::flexible_time_window::Builder {
+        crate::model::flexible_time_window::Builder::default()
+    }
+}
+
 /// See [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
 pub mod flexible_time_window {
     
@@ -639,12 +650,6 @@ pub mod flexible_time_window {
     }
     
     
-}
-impl FlexibleTimeWindow {
-    /// Creates a new builder-style object to manufacture [`FlexibleTimeWindow`](crate::model::FlexibleTimeWindow).
-    pub fn builder() -> crate::model::flexible_time_window::Builder {
-        crate::model::flexible_time_window::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FlexibleTimeWindowMode`, it is important to ensure
@@ -806,6 +811,13 @@ impl Target {
         self.sqs_parameters.as_ref()
     }
 }
+impl Target {
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
+    pub fn builder() -> crate::model::target::Builder {
+        crate::model::target::Builder::default()
+    }
+}
+
 /// See [`Target`](crate::model::Target).
 pub mod target {
     
@@ -944,12 +956,6 @@ pub mod target {
     
     
 }
-impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
-    pub fn builder() -> crate::model::target::Builder {
-        crate::model::target::Builder::default()
-    }
-}
 
 /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>. </p>
 #[non_exhaustive]
@@ -965,6 +971,13 @@ impl SqsParameters {
         self.message_group_id.as_deref()
     }
 }
+impl SqsParameters {
+    /// Creates a new builder-style object to manufacture [`SqsParameters`](crate::model::SqsParameters).
+    pub fn builder() -> crate::model::sqs_parameters::Builder {
+        crate::model::sqs_parameters::Builder::default()
+    }
+}
+
 /// See [`SqsParameters`](crate::model::SqsParameters).
 pub mod sqs_parameters {
     
@@ -995,12 +1008,6 @@ pub mod sqs_parameters {
     
     
 }
-impl SqsParameters {
-    /// Creates a new builder-style object to manufacture [`SqsParameters`](crate::model::SqsParameters).
-    pub fn builder() -> crate::model::sqs_parameters::Builder {
-        crate::model::sqs_parameters::Builder::default()
-    }
-}
 
 /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
 #[non_exhaustive]
@@ -1016,6 +1023,13 @@ impl SageMakerPipelineParameters {
         self.pipeline_parameter_list.as_deref()
     }
 }
+impl SageMakerPipelineParameters {
+    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
+    pub fn builder() -> crate::model::sage_maker_pipeline_parameters::Builder {
+        crate::model::sage_maker_pipeline_parameters::Builder::default()
+    }
+}
+
 /// See [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
 pub mod sage_maker_pipeline_parameters {
     
@@ -1052,12 +1066,6 @@ pub mod sage_maker_pipeline_parameters {
     
     
 }
-impl SageMakerPipelineParameters {
-    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameters`](crate::model::SageMakerPipelineParameters).
-    pub fn builder() -> crate::model::sage_maker_pipeline_parameters::Builder {
-        crate::model::sage_maker_pipeline_parameters::Builder::default()
-    }
-}
 
 /// <p>The name and value pair of a parameter to use to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
@@ -1080,6 +1088,13 @@ impl SageMakerPipelineParameter {
         self.value.as_deref()
     }
 }
+impl SageMakerPipelineParameter {
+    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
+    pub fn builder() -> crate::model::sage_maker_pipeline_parameter::Builder {
+        crate::model::sage_maker_pipeline_parameter::Builder::default()
+    }
+}
+
 /// See [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
 pub mod sage_maker_pipeline_parameter {
     
@@ -1122,12 +1137,6 @@ pub mod sage_maker_pipeline_parameter {
     
     
 }
-impl SageMakerPipelineParameter {
-    /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
-    pub fn builder() -> crate::model::sage_maker_pipeline_parameter::Builder {
-        crate::model::sage_maker_pipeline_parameter::Builder::default()
-    }
-}
 
 /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
 #[non_exhaustive]
@@ -1143,6 +1152,13 @@ impl KinesisParameters {
         self.partition_key.as_deref()
     }
 }
+impl KinesisParameters {
+    /// Creates a new builder-style object to manufacture [`KinesisParameters`](crate::model::KinesisParameters).
+    pub fn builder() -> crate::model::kinesis_parameters::Builder {
+        crate::model::kinesis_parameters::Builder::default()
+    }
+}
+
 /// See [`KinesisParameters`](crate::model::KinesisParameters).
 pub mod kinesis_parameters {
     
@@ -1173,12 +1189,6 @@ pub mod kinesis_parameters {
     
     
 }
-impl KinesisParameters {
-    /// Creates a new builder-style object to manufacture [`KinesisParameters`](crate::model::KinesisParameters).
-    pub fn builder() -> crate::model::kinesis_parameters::Builder {
-        crate::model::kinesis_parameters::Builder::default()
-    }
-}
 
 /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
 #[non_exhaustive]
@@ -1201,6 +1211,13 @@ impl EventBridgeParameters {
         self.source.as_deref()
     }
 }
+impl EventBridgeParameters {
+    /// Creates a new builder-style object to manufacture [`EventBridgeParameters`](crate::model::EventBridgeParameters).
+    pub fn builder() -> crate::model::event_bridge_parameters::Builder {
+        crate::model::event_bridge_parameters::Builder::default()
+    }
+}
+
 /// See [`EventBridgeParameters`](crate::model::EventBridgeParameters).
 pub mod event_bridge_parameters {
     
@@ -1242,12 +1259,6 @@ pub mod event_bridge_parameters {
     }
     
     
-}
-impl EventBridgeParameters {
-    /// Creates a new builder-style object to manufacture [`EventBridgeParameters`](crate::model::EventBridgeParameters).
-    pub fn builder() -> crate::model::event_bridge_parameters::Builder {
-        crate::model::event_bridge_parameters::Builder::default()
-    }
 }
 
 /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
@@ -1355,6 +1366,13 @@ impl EcsParameters {
         self.tags.as_deref()
     }
 }
+impl EcsParameters {
+    /// Creates a new builder-style object to manufacture [`EcsParameters`](crate::model::EcsParameters).
+    pub fn builder() -> crate::model::ecs_parameters::Builder {
+        crate::model::ecs_parameters::Builder::default()
+    }
+}
+
 /// See [`EcsParameters`](crate::model::EcsParameters).
 pub mod ecs_parameters {
     
@@ -1565,12 +1583,6 @@ pub mod ecs_parameters {
     
     
 }
-impl EcsParameters {
-    /// Creates a new builder-style object to manufacture [`EcsParameters`](crate::model::EcsParameters).
-    pub fn builder() -> crate::model::ecs_parameters::Builder {
-        crate::model::ecs_parameters::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PropagateTags`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1670,6 +1682,13 @@ impl PlacementStrategy {
         self.field.as_deref()
     }
 }
+impl PlacementStrategy {
+    /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
+    pub fn builder() -> crate::model::placement_strategy::Builder {
+        crate::model::placement_strategy::Builder::default()
+    }
+}
+
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
 pub mod placement_strategy {
     
@@ -1711,12 +1730,6 @@ pub mod placement_strategy {
     }
     
     
-}
-impl PlacementStrategy {
-    /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
-    pub fn builder() -> crate::model::placement_strategy::Builder {
-        crate::model::placement_strategy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlacementStrategyType`, it is important to ensure
@@ -1827,6 +1840,13 @@ impl PlacementConstraint {
         self.expression.as_deref()
     }
 }
+impl PlacementConstraint {
+    /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
+    pub fn builder() -> crate::model::placement_constraint::Builder {
+        crate::model::placement_constraint::Builder::default()
+    }
+}
+
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
 pub mod placement_constraint {
     
@@ -1868,12 +1888,6 @@ pub mod placement_constraint {
     }
     
     
-}
-impl PlacementConstraint {
-    /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
-    pub fn builder() -> crate::model::placement_constraint::Builder {
-        crate::model::placement_constraint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlacementConstraintType`, it is important to ensure
@@ -1986,6 +2000,13 @@ impl CapacityProviderStrategyItem {
         self.base
     }
 }
+impl CapacityProviderStrategyItem {
+    /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
+    pub fn builder() -> crate::model::capacity_provider_strategy_item::Builder {
+        crate::model::capacity_provider_strategy_item::Builder::default()
+    }
+}
+
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
 pub mod capacity_provider_strategy_item {
     
@@ -2042,12 +2063,6 @@ pub mod capacity_provider_strategy_item {
     
     
 }
-impl CapacityProviderStrategyItem {
-    /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
-    pub fn builder() -> crate::model::capacity_provider_strategy_item::Builder {
-        crate::model::capacity_provider_strategy_item::Builder::default()
-    }
-}
 
 /// <p>Specifies the network configuration for an ECS task.</p>
 #[non_exhaustive]
@@ -2063,6 +2078,13 @@ impl NetworkConfiguration {
         self.awsvpc_configuration.as_ref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
     
@@ -2093,12 +2115,6 @@ pub mod network_configuration {
     
     
 }
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
-    }
-}
 
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
 #[non_exhaustive]
@@ -2128,6 +2144,13 @@ impl AwsVpcConfiguration {
         self.assign_public_ip.as_ref()
     }
 }
+impl AwsVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
+    pub fn builder() -> crate::model::aws_vpc_configuration::Builder {
+        crate::model::aws_vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
 pub mod aws_vpc_configuration {
     
@@ -2193,12 +2216,6 @@ pub mod aws_vpc_configuration {
     }
     
     
-}
-impl AwsVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
-    pub fn builder() -> crate::model::aws_vpc_configuration::Builder {
-        crate::model::aws_vpc_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssignPublicIp`, it is important to ensure
@@ -2391,6 +2408,13 @@ impl RetryPolicy {
         self.maximum_retry_attempts
     }
 }
+impl RetryPolicy {
+    /// Creates a new builder-style object to manufacture [`RetryPolicy`](crate::model::RetryPolicy).
+    pub fn builder() -> crate::model::retry_policy::Builder {
+        crate::model::retry_policy::Builder::default()
+    }
+}
+
 /// See [`RetryPolicy`](crate::model::RetryPolicy).
 pub mod retry_policy {
     
@@ -2433,12 +2457,6 @@ pub mod retry_policy {
     
     
 }
-impl RetryPolicy {
-    /// Creates a new builder-style object to manufacture [`RetryPolicy`](crate::model::RetryPolicy).
-    pub fn builder() -> crate::model::retry_policy::Builder {
-        crate::model::retry_policy::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
 #[non_exhaustive]
@@ -2454,6 +2472,13 @@ impl DeadLetterConfig {
         self.arn.as_deref()
     }
 }
+impl DeadLetterConfig {
+    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
+    pub fn builder() -> crate::model::dead_letter_config::Builder {
+        crate::model::dead_letter_config::Builder::default()
+    }
+}
+
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
     
@@ -2483,11 +2508,5 @@ pub mod dead_letter_config {
     }
     
     
-}
-impl DeadLetterConfig {
-    /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
-    pub fn builder() -> crate::model::dead_letter_config::Builder {
-        crate::model::dead_letter_config::Builder::default()
-    }
 }
 

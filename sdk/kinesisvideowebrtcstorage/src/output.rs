@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for JoinStorageSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl JoinStorageSessionOutput {
+    /// Creates a new builder-style object to manufacture [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
+    pub fn builder() -> crate::output::join_storage_session_output::Builder {
+        crate::output::join_storage_session_output::Builder::default()
+    }
+}
+
 /// See [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
 pub mod join_storage_session_output {
     
@@ -38,11 +45,5 @@ pub mod join_storage_session_output {
     }
     
     
-}
-impl JoinStorageSessionOutput {
-    /// Creates a new builder-style object to manufacture [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
-    pub fn builder() -> crate::output::join_storage_session_output::Builder {
-        crate::output::join_storage_session_output::Builder::default()
-    }
 }
 

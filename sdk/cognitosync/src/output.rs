@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateRecordsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRecordsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
+    pub fn builder() -> crate::output::update_records_output::Builder {
+        crate::output::update_records_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
 pub mod update_records_output {
     
@@ -67,12 +74,6 @@ pub mod update_records_output {
     
     
 }
-impl UpdateRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
-    pub fn builder() -> crate::output::update_records_output::Builder {
-        crate::output::update_records_output::Builder::default()
-    }
-}
 
 /// <p>Response to an UnsubscribeFromDataset request.</p>
 #[non_exhaustive]
@@ -85,6 +86,13 @@ impl aws_http::request_id::RequestId for UnsubscribeFromDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UnsubscribeFromDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
+    pub fn builder() -> crate::output::unsubscribe_from_dataset_output::Builder {
+        crate::output::unsubscribe_from_dataset_output::Builder::default()
+    }
+}
+
 /// See [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
 pub mod unsubscribe_from_dataset_output {
     
@@ -114,12 +122,6 @@ pub mod unsubscribe_from_dataset_output {
     
     
 }
-impl UnsubscribeFromDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
-    pub fn builder() -> crate::output::unsubscribe_from_dataset_output::Builder {
-        crate::output::unsubscribe_from_dataset_output::Builder::default()
-    }
-}
 
 /// <p>Response to a SubscribeToDataset request.</p>
 #[non_exhaustive]
@@ -132,6 +134,13 @@ impl aws_http::request_id::RequestId for SubscribeToDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SubscribeToDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
+    pub fn builder() -> crate::output::subscribe_to_dataset_output::Builder {
+        crate::output::subscribe_to_dataset_output::Builder::default()
+    }
+}
+
 /// See [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
 pub mod subscribe_to_dataset_output {
     
@@ -160,12 +169,6 @@ pub mod subscribe_to_dataset_output {
     }
     
     
-}
-impl SubscribeToDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
-    pub fn builder() -> crate::output::subscribe_to_dataset_output::Builder {
-        crate::output::subscribe_to_dataset_output::Builder::default()
-    }
 }
 
 /// <p>The output for the SetIdentityPoolConfiguration operation</p>
@@ -202,6 +205,13 @@ impl aws_http::request_id::RequestId for SetIdentityPoolConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetIdentityPoolConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
+    pub fn builder() -> crate::output::set_identity_pool_configuration_output::Builder {
+        crate::output::set_identity_pool_configuration_output::Builder::default()
+    }
+}
+
 /// See [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
 pub mod set_identity_pool_configuration_output {
     
@@ -267,12 +277,6 @@ pub mod set_identity_pool_configuration_output {
     
     
 }
-impl SetIdentityPoolConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
-    pub fn builder() -> crate::output::set_identity_pool_configuration_output::Builder {
-        crate::output::set_identity_pool_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -285,6 +289,13 @@ impl aws_http::request_id::RequestId for SetCognitoEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetCognitoEventsOutput {
+    /// Creates a new builder-style object to manufacture [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
+    pub fn builder() -> crate::output::set_cognito_events_output::Builder {
+        crate::output::set_cognito_events_output::Builder::default()
+    }
+}
+
 /// See [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
 pub mod set_cognito_events_output {
     
@@ -314,12 +325,6 @@ pub mod set_cognito_events_output {
     
     
 }
-impl SetCognitoEventsOutput {
-    /// Creates a new builder-style object to manufacture [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
-    pub fn builder() -> crate::output::set_cognito_events_output::Builder {
-        crate::output::set_cognito_events_output::Builder::default()
-    }
-}
 
 /// <p>Response to a RegisterDevice request.</p>
 #[non_exhaustive]
@@ -341,6 +346,13 @@ impl aws_http::request_id::RequestId for RegisterDeviceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
+    pub fn builder() -> crate::output::register_device_output::Builder {
+        crate::output::register_device_output::Builder::default()
+    }
+}
+
 /// See [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
 pub mod register_device_output {
     
@@ -381,12 +393,6 @@ pub mod register_device_output {
     }
     
     
-}
-impl RegisterDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
-    pub fn builder() -> crate::output::register_device_output::Builder {
-        crate::output::register_device_output::Builder::default()
-    }
 }
 
 /// Returned for a successful ListRecordsRequest.
@@ -465,6 +471,13 @@ impl aws_http::request_id::RequestId for ListRecordsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRecordsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecordsOutput`](crate::output::ListRecordsOutput).
+    pub fn builder() -> crate::output::list_records_output::Builder {
+        crate::output::list_records_output::Builder::default()
+    }
+}
+
 /// See [`ListRecordsOutput`](crate::output::ListRecordsOutput).
 pub mod list_records_output {
     
@@ -617,12 +630,6 @@ pub mod list_records_output {
     
     
 }
-impl ListRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRecordsOutput`](crate::output::ListRecordsOutput).
-    pub fn builder() -> crate::output::list_records_output::Builder {
-        crate::output::list_records_output::Builder::default()
-    }
-}
 
 /// Returned for a successful ListIdentityPoolUsage request.
 #[non_exhaustive]
@@ -665,6 +672,13 @@ impl aws_http::request_id::RequestId for ListIdentityPoolUsageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListIdentityPoolUsageOutput {
+    /// Creates a new builder-style object to manufacture [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
+    pub fn builder() -> crate::output::list_identity_pool_usage_output::Builder {
+        crate::output::list_identity_pool_usage_output::Builder::default()
+    }
+}
+
 /// See [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
 pub mod list_identity_pool_usage_output {
     
@@ -750,12 +764,6 @@ pub mod list_identity_pool_usage_output {
     
     
 }
-impl ListIdentityPoolUsageOutput {
-    /// Creates a new builder-style object to manufacture [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
-    pub fn builder() -> crate::output::list_identity_pool_usage_output::Builder {
-        crate::output::list_identity_pool_usage_output::Builder::default()
-    }
-}
 
 /// Returned for a successful ListDatasets request.
 #[non_exhaustive]
@@ -791,6 +799,13 @@ impl aws_http::request_id::RequestId for ListDatasetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDatasetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
+    pub fn builder() -> crate::output::list_datasets_output::Builder {
+        crate::output::list_datasets_output::Builder::default()
+    }
+}
+
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
     
@@ -863,12 +878,6 @@ pub mod list_datasets_output {
     
     
 }
-impl ListDatasetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
-    pub fn builder() -> crate::output::list_datasets_output::Builder {
-        crate::output::list_datasets_output::Builder::default()
-    }
-}
 
 /// <p>The output for the GetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
@@ -904,6 +913,13 @@ impl aws_http::request_id::RequestId for GetIdentityPoolConfigurationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetIdentityPoolConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
+    pub fn builder() -> crate::output::get_identity_pool_configuration_output::Builder {
+        crate::output::get_identity_pool_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
 pub mod get_identity_pool_configuration_output {
     
@@ -969,12 +985,6 @@ pub mod get_identity_pool_configuration_output {
     
     
 }
-impl GetIdentityPoolConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
-    pub fn builder() -> crate::output::get_identity_pool_configuration_output::Builder {
-        crate::output::get_identity_pool_configuration_output::Builder::default()
-    }
-}
 
 /// <p>The response from the GetCognitoEvents request</p>
 #[non_exhaustive]
@@ -996,6 +1006,13 @@ impl aws_http::request_id::RequestId for GetCognitoEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetCognitoEventsOutput {
+    /// Creates a new builder-style object to manufacture [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
+    pub fn builder() -> crate::output::get_cognito_events_output::Builder {
+        crate::output::get_cognito_events_output::Builder::default()
+    }
+}
+
 /// See [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
 pub mod get_cognito_events_output {
     
@@ -1042,12 +1059,6 @@ pub mod get_cognito_events_output {
     }
     
     
-}
-impl GetCognitoEventsOutput {
-    /// Creates a new builder-style object to manufacture [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
-    pub fn builder() -> crate::output::get_cognito_events_output::Builder {
-        crate::output::get_cognito_events_output::Builder::default()
-    }
 }
 
 /// The output for the GetBulkPublishDetails operation.
@@ -1106,6 +1117,13 @@ impl aws_http::request_id::RequestId for GetBulkPublishDetailsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetBulkPublishDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
+    pub fn builder() -> crate::output::get_bulk_publish_details_output::Builder {
+        crate::output::get_bulk_publish_details_output::Builder::default()
+    }
+}
+
 /// See [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
 pub mod get_bulk_publish_details_output {
     
@@ -1203,12 +1221,6 @@ pub mod get_bulk_publish_details_output {
     
     
 }
-impl GetBulkPublishDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
-    pub fn builder() -> crate::output::get_bulk_publish_details_output::Builder {
-        crate::output::get_bulk_publish_details_output::Builder::default()
-    }
-}
 
 /// The response to a successful DescribeIdentityUsage request.
 #[non_exhaustive]
@@ -1230,6 +1242,13 @@ impl aws_http::request_id::RequestId for DescribeIdentityUsageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeIdentityUsageOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
+    pub fn builder() -> crate::output::describe_identity_usage_output::Builder {
+        crate::output::describe_identity_usage_output::Builder::default()
+    }
+}
+
 /// See [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
 pub mod describe_identity_usage_output {
     
@@ -1271,12 +1290,6 @@ pub mod describe_identity_usage_output {
     
     
 }
-impl DescribeIdentityUsageOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
-    pub fn builder() -> crate::output::describe_identity_usage_output::Builder {
-        crate::output::describe_identity_usage_output::Builder::default()
-    }
-}
 
 /// Response to a successful DescribeIdentityPoolUsage request.
 #[non_exhaustive]
@@ -1298,6 +1311,13 @@ impl aws_http::request_id::RequestId for DescribeIdentityPoolUsageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeIdentityPoolUsageOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
+    pub fn builder() -> crate::output::describe_identity_pool_usage_output::Builder {
+        crate::output::describe_identity_pool_usage_output::Builder::default()
+    }
+}
+
 /// See [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
 pub mod describe_identity_pool_usage_output {
     
@@ -1339,12 +1359,6 @@ pub mod describe_identity_pool_usage_output {
     
     
 }
-impl DescribeIdentityPoolUsageOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
-    pub fn builder() -> crate::output::describe_identity_pool_usage_output::Builder {
-        crate::output::describe_identity_pool_usage_output::Builder::default()
-    }
-}
 
 /// Response to a successful DescribeDataset request.
 #[non_exhaustive]
@@ -1366,6 +1380,13 @@ impl aws_http::request_id::RequestId for DescribeDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
+    pub fn builder() -> crate::output::describe_dataset_output::Builder {
+        crate::output::describe_dataset_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
 pub mod describe_dataset_output {
     
@@ -1407,12 +1428,6 @@ pub mod describe_dataset_output {
     
     
 }
-impl DescribeDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
-    pub fn builder() -> crate::output::describe_dataset_output::Builder {
-        crate::output::describe_dataset_output::Builder::default()
-    }
-}
 
 /// Response to a successful DeleteDataset request.
 #[non_exhaustive]
@@ -1434,6 +1449,13 @@ impl aws_http::request_id::RequestId for DeleteDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
+    pub fn builder() -> crate::output::delete_dataset_output::Builder {
+        crate::output::delete_dataset_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
 pub mod delete_dataset_output {
     
@@ -1475,12 +1497,6 @@ pub mod delete_dataset_output {
     
     
 }
-impl DeleteDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
-    pub fn builder() -> crate::output::delete_dataset_output::Builder {
-        crate::output::delete_dataset_output::Builder::default()
-    }
-}
 
 /// The output for the BulkPublish operation.
 #[non_exhaustive]
@@ -1502,6 +1518,13 @@ impl aws_http::request_id::RequestId for BulkPublishOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BulkPublishOutput {
+    /// Creates a new builder-style object to manufacture [`BulkPublishOutput`](crate::output::BulkPublishOutput).
+    pub fn builder() -> crate::output::bulk_publish_output::Builder {
+        crate::output::bulk_publish_output::Builder::default()
+    }
+}
+
 /// See [`BulkPublishOutput`](crate::output::BulkPublishOutput).
 pub mod bulk_publish_output {
     
@@ -1542,11 +1565,5 @@ pub mod bulk_publish_output {
     }
     
     
-}
-impl BulkPublishOutput {
-    /// Creates a new builder-style object to manufacture [`BulkPublishOutput`](crate::output::BulkPublishOutput).
-    pub fn builder() -> crate::output::bulk_publish_output::Builder {
-        crate::output::bulk_publish_output::Builder::default()
-    }
 }
 

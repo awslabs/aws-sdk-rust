@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateClusterOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
+    pub fn builder() -> crate::output::update_cluster_output::Builder {
+        crate::output::update_cluster_output::Builder::default()
+    }
+}
+
 /// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
 pub mod update_cluster_output {
     
@@ -60,12 +67,6 @@ pub mod update_cluster_output {
     
     
 }
-impl UpdateClusterOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
-    pub fn builder() -> crate::output::update_cluster_output::Builder {
-        crate::output::update_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -78,6 +79,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -107,12 +115,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -125,6 +127,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -154,12 +163,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -181,6 +184,13 @@ impl aws_http::request_id::RequestId for RestoreClusterFromSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestoreClusterFromSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreClusterFromSnapshotOutput`](crate::output::RestoreClusterFromSnapshotOutput).
+    pub fn builder() -> crate::output::restore_cluster_from_snapshot_output::Builder {
+        crate::output::restore_cluster_from_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`RestoreClusterFromSnapshotOutput`](crate::output::RestoreClusterFromSnapshotOutput).
 pub mod restore_cluster_from_snapshot_output {
     
@@ -222,12 +232,6 @@ pub mod restore_cluster_from_snapshot_output {
     
     
 }
-impl RestoreClusterFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreClusterFromSnapshotOutput`](crate::output::RestoreClusterFromSnapshotOutput).
-    pub fn builder() -> crate::output::restore_cluster_from_snapshot_output::Builder {
-        crate::output::restore_cluster_from_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -249,6 +253,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -296,12 +307,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -332,6 +337,13 @@ impl aws_http::request_id::RequestId for ListClusterSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListClusterSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`ListClusterSnapshotsOutput`](crate::output::ListClusterSnapshotsOutput).
+    pub fn builder() -> crate::output::list_cluster_snapshots_output::Builder {
+        crate::output::list_cluster_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`ListClusterSnapshotsOutput`](crate::output::ListClusterSnapshotsOutput).
 pub mod list_cluster_snapshots_output {
     
@@ -393,12 +405,6 @@ pub mod list_cluster_snapshots_output {
     
     
 }
-impl ListClusterSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`ListClusterSnapshotsOutput`](crate::output::ListClusterSnapshotsOutput).
-    pub fn builder() -> crate::output::list_cluster_snapshots_output::Builder {
-        crate::output::list_cluster_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -429,6 +435,13 @@ impl aws_http::request_id::RequestId for ListClustersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListClustersOutput {
+    /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput).
+    pub fn builder() -> crate::output::list_clusters_output::Builder {
+        crate::output::list_clusters_output::Builder::default()
+    }
+}
+
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput).
 pub mod list_clusters_output {
     
@@ -490,12 +503,6 @@ pub mod list_clusters_output {
     
     
 }
-impl ListClustersOutput {
-    /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput).
-    pub fn builder() -> crate::output::list_clusters_output::Builder {
-        crate::output::list_clusters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -517,6 +524,13 @@ impl aws_http::request_id::RequestId for GetClusterSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetClusterSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`GetClusterSnapshotOutput`](crate::output::GetClusterSnapshotOutput).
+    pub fn builder() -> crate::output::get_cluster_snapshot_output::Builder {
+        crate::output::get_cluster_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`GetClusterSnapshotOutput`](crate::output::GetClusterSnapshotOutput).
 pub mod get_cluster_snapshot_output {
     
@@ -558,12 +572,6 @@ pub mod get_cluster_snapshot_output {
     
     
 }
-impl GetClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`GetClusterSnapshotOutput`](crate::output::GetClusterSnapshotOutput).
-    pub fn builder() -> crate::output::get_cluster_snapshot_output::Builder {
-        crate::output::get_cluster_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -585,6 +593,13 @@ impl aws_http::request_id::RequestId for GetClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetClusterOutput {
+    /// Creates a new builder-style object to manufacture [`GetClusterOutput`](crate::output::GetClusterOutput).
+    pub fn builder() -> crate::output::get_cluster_output::Builder {
+        crate::output::get_cluster_output::Builder::default()
+    }
+}
+
 /// See [`GetClusterOutput`](crate::output::GetClusterOutput).
 pub mod get_cluster_output {
     
@@ -626,12 +641,6 @@ pub mod get_cluster_output {
     
     
 }
-impl GetClusterOutput {
-    /// Creates a new builder-style object to manufacture [`GetClusterOutput`](crate::output::GetClusterOutput).
-    pub fn builder() -> crate::output::get_cluster_output::Builder {
-        crate::output::get_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -653,6 +662,13 @@ impl aws_http::request_id::RequestId for DeleteClusterSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteClusterSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput).
+    pub fn builder() -> crate::output::delete_cluster_snapshot_output::Builder {
+        crate::output::delete_cluster_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput).
 pub mod delete_cluster_snapshot_output {
     
@@ -694,12 +710,6 @@ pub mod delete_cluster_snapshot_output {
     
     
 }
-impl DeleteClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput).
-    pub fn builder() -> crate::output::delete_cluster_snapshot_output::Builder {
-        crate::output::delete_cluster_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -721,6 +731,13 @@ impl aws_http::request_id::RequestId for DeleteClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
+    pub fn builder() -> crate::output::delete_cluster_output::Builder {
+        crate::output::delete_cluster_output::Builder::default()
+    }
+}
+
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
 pub mod delete_cluster_output {
     
@@ -762,12 +779,6 @@ pub mod delete_cluster_output {
     
     
 }
-impl DeleteClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
-    pub fn builder() -> crate::output::delete_cluster_output::Builder {
-        crate::output::delete_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -789,6 +800,13 @@ impl aws_http::request_id::RequestId for CreateClusterSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateClusterSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput).
+    pub fn builder() -> crate::output::create_cluster_snapshot_output::Builder {
+        crate::output::create_cluster_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput).
 pub mod create_cluster_snapshot_output {
     
@@ -830,12 +848,6 @@ pub mod create_cluster_snapshot_output {
     
     
 }
-impl CreateClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput).
-    pub fn builder() -> crate::output::create_cluster_snapshot_output::Builder {
-        crate::output::create_cluster_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -857,6 +869,13 @@ impl aws_http::request_id::RequestId for CreateClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateClusterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput).
+    pub fn builder() -> crate::output::create_cluster_output::Builder {
+        crate::output::create_cluster_output::Builder::default()
+    }
+}
+
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
 pub mod create_cluster_output {
     
@@ -897,11 +916,5 @@ pub mod create_cluster_output {
     }
     
     
-}
-impl CreateClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput).
-    pub fn builder() -> crate::output::create_cluster_output::Builder {
-        crate::output::create_cluster_output::Builder::default()
-    }
 }
 

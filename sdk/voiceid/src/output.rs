@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    pub fn builder() -> crate::output::list_domains_output::Builder {
+        crate::output::list_domains_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
     
@@ -85,12 +92,6 @@ pub mod list_domains_output {
     
     
 }
-impl ListDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    pub fn builder() -> crate::output::list_domains_output::Builder {
-        crate::output::list_domains_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -112,6 +113,13 @@ impl aws_http::request_id::RequestId for CreateDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    pub fn builder() -> crate::output::create_domain_output::Builder {
+        crate::output::create_domain_output::Builder::default()
+    }
+}
+
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
     
@@ -153,12 +161,6 @@ pub mod create_domain_output {
     
     
 }
-impl CreateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    pub fn builder() -> crate::output::create_domain_output::Builder {
-        crate::output::create_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -171,6 +173,13 @@ impl aws_http::request_id::RequestId for DeleteDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    pub fn builder() -> crate::output::delete_domain_output::Builder {
+        crate::output::delete_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
     
@@ -200,12 +209,6 @@ pub mod delete_domain_output {
     
     
 }
-impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    pub fn builder() -> crate::output::delete_domain_output::Builder {
-        crate::output::delete_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -227,6 +230,13 @@ impl aws_http::request_id::RequestId for UpdateDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
+    pub fn builder() -> crate::output::update_domain_output::Builder {
+        crate::output::update_domain_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
 pub mod update_domain_output {
     
@@ -268,12 +278,6 @@ pub mod update_domain_output {
     
     
 }
-impl UpdateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainOutput`](crate::output::UpdateDomainOutput).
-    pub fn builder() -> crate::output::update_domain_output::Builder {
-        crate::output::update_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -295,6 +299,13 @@ impl aws_http::request_id::RequestId for DescribeDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
+    pub fn builder() -> crate::output::describe_domain_output::Builder {
+        crate::output::describe_domain_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
     
@@ -336,12 +347,6 @@ pub mod describe_domain_output {
     
     
 }
-impl DescribeDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
-    pub fn builder() -> crate::output::describe_domain_output::Builder {
-        crate::output::describe_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -354,6 +359,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -383,12 +395,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -401,6 +407,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -430,12 +443,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -457,6 +464,13 @@ impl aws_http::request_id::RequestId for StartSpeakerEnrollmentJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartSpeakerEnrollmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
+    pub fn builder() -> crate::output::start_speaker_enrollment_job_output::Builder {
+        crate::output::start_speaker_enrollment_job_output::Builder::default()
+    }
+}
+
 /// See [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
 pub mod start_speaker_enrollment_job_output {
     
@@ -498,12 +512,6 @@ pub mod start_speaker_enrollment_job_output {
     
     
 }
-impl StartSpeakerEnrollmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput).
-    pub fn builder() -> crate::output::start_speaker_enrollment_job_output::Builder {
-        crate::output::start_speaker_enrollment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -525,6 +533,13 @@ impl aws_http::request_id::RequestId for StartFraudsterRegistrationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartFraudsterRegistrationJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
+    pub fn builder() -> crate::output::start_fraudster_registration_job_output::Builder {
+        crate::output::start_fraudster_registration_job_output::Builder::default()
+    }
+}
+
 /// See [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
 pub mod start_fraudster_registration_job_output {
     
@@ -566,12 +581,6 @@ pub mod start_fraudster_registration_job_output {
     
     
 }
-impl StartFraudsterRegistrationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput).
-    pub fn builder() -> crate::output::start_fraudster_registration_job_output::Builder {
-        crate::output::start_fraudster_registration_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -593,6 +602,13 @@ impl aws_http::request_id::RequestId for OptOutSpeakerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl OptOutSpeakerOutput {
+    /// Creates a new builder-style object to manufacture [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
+    pub fn builder() -> crate::output::opt_out_speaker_output::Builder {
+        crate::output::opt_out_speaker_output::Builder::default()
+    }
+}
+
 /// See [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
 pub mod opt_out_speaker_output {
     
@@ -634,12 +650,6 @@ pub mod opt_out_speaker_output {
     
     
 }
-impl OptOutSpeakerOutput {
-    /// Creates a new builder-style object to manufacture [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput).
-    pub fn builder() -> crate::output::opt_out_speaker_output::Builder {
-        crate::output::opt_out_speaker_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -661,6 +671,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -708,12 +725,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -742,6 +753,13 @@ impl aws_http::request_id::RequestId for ListSpeakersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSpeakersOutput {
+    /// Creates a new builder-style object to manufacture [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
+    pub fn builder() -> crate::output::list_speakers_output::Builder {
+        crate::output::list_speakers_output::Builder::default()
+    }
+}
+
 /// See [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
 pub mod list_speakers_output {
     
@@ -801,12 +819,6 @@ pub mod list_speakers_output {
     
     
 }
-impl ListSpeakersOutput {
-    /// Creates a new builder-style object to manufacture [`ListSpeakersOutput`](crate::output::ListSpeakersOutput).
-    pub fn builder() -> crate::output::list_speakers_output::Builder {
-        crate::output::list_speakers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -835,6 +847,13 @@ impl aws_http::request_id::RequestId for ListSpeakerEnrollmentJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSpeakerEnrollmentJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
+    pub fn builder() -> crate::output::list_speaker_enrollment_jobs_output::Builder {
+        crate::output::list_speaker_enrollment_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
 pub mod list_speaker_enrollment_jobs_output {
     
@@ -894,12 +913,6 @@ pub mod list_speaker_enrollment_jobs_output {
     
     
 }
-impl ListSpeakerEnrollmentJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput).
-    pub fn builder() -> crate::output::list_speaker_enrollment_jobs_output::Builder {
-        crate::output::list_speaker_enrollment_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -928,6 +941,13 @@ impl aws_http::request_id::RequestId for ListFraudsterRegistrationJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFraudsterRegistrationJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
+    pub fn builder() -> crate::output::list_fraudster_registration_jobs_output::Builder {
+        crate::output::list_fraudster_registration_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
 pub mod list_fraudster_registration_jobs_output {
     
@@ -987,12 +1007,6 @@ pub mod list_fraudster_registration_jobs_output {
     
     
 }
-impl ListFraudsterRegistrationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput).
-    pub fn builder() -> crate::output::list_fraudster_registration_jobs_output::Builder {
-        crate::output::list_fraudster_registration_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1049,6 +1063,13 @@ impl aws_http::request_id::RequestId for EvaluateSessionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl EvaluateSessionOutput {
+    /// Creates a new builder-style object to manufacture [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
+    pub fn builder() -> crate::output::evaluate_session_output::Builder {
+        crate::output::evaluate_session_output::Builder::default()
+    }
+}
+
 /// See [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
 pub mod evaluate_session_output {
     
@@ -1150,12 +1171,6 @@ pub mod evaluate_session_output {
     
     
 }
-impl EvaluateSessionOutput {
-    /// Creates a new builder-style object to manufacture [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput).
-    pub fn builder() -> crate::output::evaluate_session_output::Builder {
-        crate::output::evaluate_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1177,6 +1192,13 @@ impl aws_http::request_id::RequestId for DescribeSpeakerEnrollmentJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSpeakerEnrollmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
+    pub fn builder() -> crate::output::describe_speaker_enrollment_job_output::Builder {
+        crate::output::describe_speaker_enrollment_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
 pub mod describe_speaker_enrollment_job_output {
     
@@ -1218,12 +1240,6 @@ pub mod describe_speaker_enrollment_job_output {
     
     
 }
-impl DescribeSpeakerEnrollmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput).
-    pub fn builder() -> crate::output::describe_speaker_enrollment_job_output::Builder {
-        crate::output::describe_speaker_enrollment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1245,6 +1261,13 @@ impl aws_http::request_id::RequestId for DescribeSpeakerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSpeakerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
+    pub fn builder() -> crate::output::describe_speaker_output::Builder {
+        crate::output::describe_speaker_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
 pub mod describe_speaker_output {
     
@@ -1286,12 +1309,6 @@ pub mod describe_speaker_output {
     
     
 }
-impl DescribeSpeakerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput).
-    pub fn builder() -> crate::output::describe_speaker_output::Builder {
-        crate::output::describe_speaker_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1313,6 +1330,13 @@ impl aws_http::request_id::RequestId for DescribeFraudsterRegistrationJobOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFraudsterRegistrationJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
+    pub fn builder() -> crate::output::describe_fraudster_registration_job_output::Builder {
+        crate::output::describe_fraudster_registration_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
 pub mod describe_fraudster_registration_job_output {
     
@@ -1354,12 +1378,6 @@ pub mod describe_fraudster_registration_job_output {
     
     
 }
-impl DescribeFraudsterRegistrationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput).
-    pub fn builder() -> crate::output::describe_fraudster_registration_job_output::Builder {
-        crate::output::describe_fraudster_registration_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1381,6 +1399,13 @@ impl aws_http::request_id::RequestId for DescribeFraudsterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFraudsterOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
+    pub fn builder() -> crate::output::describe_fraudster_output::Builder {
+        crate::output::describe_fraudster_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
 pub mod describe_fraudster_output {
     
@@ -1422,12 +1447,6 @@ pub mod describe_fraudster_output {
     
     
 }
-impl DescribeFraudsterOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput).
-    pub fn builder() -> crate::output::describe_fraudster_output::Builder {
-        crate::output::describe_fraudster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1440,6 +1459,13 @@ impl aws_http::request_id::RequestId for DeleteSpeakerOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSpeakerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
+    pub fn builder() -> crate::output::delete_speaker_output::Builder {
+        crate::output::delete_speaker_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
 pub mod delete_speaker_output {
     
@@ -1469,12 +1495,6 @@ pub mod delete_speaker_output {
     
     
 }
-impl DeleteSpeakerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput).
-    pub fn builder() -> crate::output::delete_speaker_output::Builder {
-        crate::output::delete_speaker_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1487,6 +1507,13 @@ impl aws_http::request_id::RequestId for DeleteFraudsterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFraudsterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
+    pub fn builder() -> crate::output::delete_fraudster_output::Builder {
+        crate::output::delete_fraudster_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
 pub mod delete_fraudster_output {
     
@@ -1515,11 +1542,5 @@ pub mod delete_fraudster_output {
     }
     
     
-}
-impl DeleteFraudsterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput).
-    pub fn builder() -> crate::output::delete_fraudster_output::Builder {
-        crate::output::delete_fraudster_output::Builder::default()
-    }
 }
 

@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateHostOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateHostOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHostOutput`](crate::output::UpdateHostOutput).
+    pub fn builder() -> crate::output::update_host_output::Builder {
+        crate::output::update_host_output::Builder::default()
+    }
+}
+
 /// See [`UpdateHostOutput`](crate::output::UpdateHostOutput).
 pub mod update_host_output {
     
@@ -39,12 +46,6 @@ pub mod update_host_output {
     
     
 }
-impl UpdateHostOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHostOutput`](crate::output::UpdateHostOutput).
-    pub fn builder() -> crate::output::update_host_output::Builder {
-        crate::output::update_host_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -133,12 +142,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -160,6 +163,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -207,12 +217,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -241,6 +245,13 @@ impl aws_http::request_id::RequestId for ListHostsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListHostsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHostsOutput`](crate::output::ListHostsOutput).
+    pub fn builder() -> crate::output::list_hosts_output::Builder {
+        crate::output::list_hosts_output::Builder::default()
+    }
+}
+
 /// See [`ListHostsOutput`](crate::output::ListHostsOutput).
 pub mod list_hosts_output {
     
@@ -300,12 +311,6 @@ pub mod list_hosts_output {
     
     
 }
-impl ListHostsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHostsOutput`](crate::output::ListHostsOutput).
-    pub fn builder() -> crate::output::list_hosts_output::Builder {
-        crate::output::list_hosts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -334,6 +339,13 @@ impl aws_http::request_id::RequestId for ListConnectionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListConnectionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
+    pub fn builder() -> crate::output::list_connections_output::Builder {
+        crate::output::list_connections_output::Builder::default()
+    }
+}
+
 /// See [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
 pub mod list_connections_output {
     
@@ -393,12 +405,6 @@ pub mod list_connections_output {
     
     
 }
-impl ListConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListConnectionsOutput`](crate::output::ListConnectionsOutput).
-    pub fn builder() -> crate::output::list_connections_output::Builder {
-        crate::output::list_connections_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -448,6 +454,13 @@ impl aws_http::request_id::RequestId for GetHostOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetHostOutput {
+    /// Creates a new builder-style object to manufacture [`GetHostOutput`](crate::output::GetHostOutput).
+    pub fn builder() -> crate::output::get_host_output::Builder {
+        crate::output::get_host_output::Builder::default()
+    }
+}
+
 /// See [`GetHostOutput`](crate::output::GetHostOutput).
 pub mod get_host_output {
     
@@ -537,12 +550,6 @@ pub mod get_host_output {
     
     
 }
-impl GetHostOutput {
-    /// Creates a new builder-style object to manufacture [`GetHostOutput`](crate::output::GetHostOutput).
-    pub fn builder() -> crate::output::get_host_output::Builder {
-        crate::output::get_host_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -564,6 +571,13 @@ impl aws_http::request_id::RequestId for GetConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput).
+    pub fn builder() -> crate::output::get_connection_output::Builder {
+        crate::output::get_connection_output::Builder::default()
+    }
+}
+
 /// See [`GetConnectionOutput`](crate::output::GetConnectionOutput).
 pub mod get_connection_output {
     
@@ -605,12 +619,6 @@ pub mod get_connection_output {
     
     
 }
-impl GetConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput).
-    pub fn builder() -> crate::output::get_connection_output::Builder {
-        crate::output::get_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -623,6 +631,13 @@ impl aws_http::request_id::RequestId for DeleteHostOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteHostOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHostOutput`](crate::output::DeleteHostOutput).
+    pub fn builder() -> crate::output::delete_host_output::Builder {
+        crate::output::delete_host_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHostOutput`](crate::output::DeleteHostOutput).
 pub mod delete_host_output {
     
@@ -652,12 +667,6 @@ pub mod delete_host_output {
     
     
 }
-impl DeleteHostOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHostOutput`](crate::output::DeleteHostOutput).
-    pub fn builder() -> crate::output::delete_host_output::Builder {
-        crate::output::delete_host_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -670,6 +679,13 @@ impl aws_http::request_id::RequestId for DeleteConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    pub fn builder() -> crate::output::delete_connection_output::Builder {
+        crate::output::delete_connection_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
     
@@ -699,12 +715,6 @@ pub mod delete_connection_output {
     
     
 }
-impl DeleteConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
-    pub fn builder() -> crate::output::delete_connection_output::Builder {
-        crate::output::delete_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -733,6 +743,13 @@ impl aws_http::request_id::RequestId for CreateHostOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateHostOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHostOutput`](crate::output::CreateHostOutput).
+    pub fn builder() -> crate::output::create_host_output::Builder {
+        crate::output::create_host_output::Builder::default()
+    }
+}
+
 /// See [`CreateHostOutput`](crate::output::CreateHostOutput).
 pub mod create_host_output {
     
@@ -791,12 +808,6 @@ pub mod create_host_output {
     
     
 }
-impl CreateHostOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHostOutput`](crate::output::CreateHostOutput).
-    pub fn builder() -> crate::output::create_host_output::Builder {
-        crate::output::create_host_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -829,6 +840,13 @@ impl aws_http::request_id::RequestId for CreateConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
+    pub fn builder() -> crate::output::create_connection_output::Builder {
+        crate::output::create_connection_output::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
     
@@ -891,11 +909,5 @@ pub mod create_connection_output {
     }
     
     
-}
-impl CreateConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
-    pub fn builder() -> crate::output::create_connection_output::Builder {
-        crate::output::create_connection_output::Builder::default()
-    }
 }
 

@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -186,6 +187,13 @@ impl ContactChannelAddress {
         self.simple_address.as_deref()
     }
 }
+impl ContactChannelAddress {
+    /// Creates a new builder-style object to manufacture [`ContactChannelAddress`](crate::model::ContactChannelAddress).
+    pub fn builder() -> crate::model::contact_channel_address::Builder {
+        crate::model::contact_channel_address::Builder::default()
+    }
+}
+
 /// See [`ContactChannelAddress`](crate::model::ContactChannelAddress).
 pub mod contact_channel_address {
     
@@ -226,12 +234,6 @@ pub mod contact_channel_address {
     
     
 }
-impl ContactChannelAddress {
-    /// Creates a new builder-style object to manufacture [`ContactChannelAddress`](crate::model::ContactChannelAddress).
-    pub fn builder() -> crate::model::contact_channel_address::Builder {
-        crate::model::contact_channel_address::Builder::default()
-    }
-}
 
 /// <p>The stages that an escalation plan or engagement plan engages contacts and contact methods in.</p>
 #[non_exhaustive]
@@ -247,6 +249,13 @@ impl Plan {
         self.stages.as_deref()
     }
 }
+impl Plan {
+    /// Creates a new builder-style object to manufacture [`Plan`](crate::model::Plan).
+    pub fn builder() -> crate::model::plan::Builder {
+        crate::model::plan::Builder::default()
+    }
+}
+
 /// See [`Plan`](crate::model::Plan).
 pub mod plan {
     
@@ -283,12 +292,6 @@ pub mod plan {
     
     
 }
-impl Plan {
-    /// Creates a new builder-style object to manufacture [`Plan`](crate::model::Plan).
-    pub fn builder() -> crate::model::plan::Builder {
-        crate::model::plan::Builder::default()
-    }
-}
 
 /// <p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>
 #[non_exhaustive]
@@ -311,6 +314,13 @@ impl Stage {
         self.targets.as_deref()
     }
 }
+impl Stage {
+    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
+    pub fn builder() -> crate::model::stage::Builder {
+        crate::model::stage::Builder::default()
+    }
+}
+
 /// See [`Stage`](crate::model::Stage).
 pub mod stage {
     
@@ -359,12 +369,6 @@ pub mod stage {
     
     
 }
-impl Stage {
-    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
-    pub fn builder() -> crate::model::stage::Builder {
-        crate::model::stage::Builder::default()
-    }
-}
 
 /// <p>The contact or contact channel that's being engaged.</p>
 #[non_exhaustive]
@@ -387,6 +391,13 @@ impl Target {
         self.contact_target_info.as_ref()
     }
 }
+impl Target {
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
+    pub fn builder() -> crate::model::target::Builder {
+        crate::model::target::Builder::default()
+    }
+}
+
 /// See [`Target`](crate::model::Target).
 pub mod target {
     
@@ -429,12 +440,6 @@ pub mod target {
     
     
 }
-impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
-    pub fn builder() -> crate::model::target::Builder {
-        crate::model::target::Builder::default()
-    }
-}
 
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
@@ -457,6 +462,13 @@ impl ContactTargetInfo {
         self.is_essential
     }
 }
+impl ContactTargetInfo {
+    /// Creates a new builder-style object to manufacture [`ContactTargetInfo`](crate::model::ContactTargetInfo).
+    pub fn builder() -> crate::model::contact_target_info::Builder {
+        crate::model::contact_target_info::Builder::default()
+    }
+}
+
 /// See [`ContactTargetInfo`](crate::model::ContactTargetInfo).
 pub mod contact_target_info {
     
@@ -499,12 +511,6 @@ pub mod contact_target_info {
     
     
 }
-impl ContactTargetInfo {
-    /// Creates a new builder-style object to manufacture [`ContactTargetInfo`](crate::model::ContactTargetInfo).
-    pub fn builder() -> crate::model::contact_target_info::Builder {
-        crate::model::contact_target_info::Builder::default()
-    }
-}
 
 /// <p>Information about the contact channel that Incident Manager uses to engage the contact.</p>
 #[non_exhaustive]
@@ -527,6 +533,13 @@ impl ChannelTargetInfo {
         self.retry_interval_in_minutes
     }
 }
+impl ChannelTargetInfo {
+    /// Creates a new builder-style object to manufacture [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
+    pub fn builder() -> crate::model::channel_target_info::Builder {
+        crate::model::channel_target_info::Builder::default()
+    }
+}
+
 /// See [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
 pub mod channel_target_info {
     
@@ -569,12 +582,6 @@ pub mod channel_target_info {
     
     
 }
-impl ChannelTargetInfo {
-    /// Creates a new builder-style object to manufacture [`ChannelTargetInfo`](crate::model::ChannelTargetInfo).
-    pub fn builder() -> crate::model::channel_target_info::Builder {
-        crate::model::channel_target_info::Builder::default()
-    }
-}
 
 /// <p>A container of a key-value name pair.</p>
 #[non_exhaustive]
@@ -597,6 +604,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -638,12 +652,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Incident Manager engaging a contact's contact channel.</p>
@@ -709,6 +717,13 @@ impl Page {
         self.read_time.as_ref()
     }
 }
+impl Page {
+    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
+    pub fn builder() -> crate::model::page::Builder {
+        crate::model::page::Builder::default()
+    }
+}
+
 /// See [`Page`](crate::model::Page).
 pub mod page {
     
@@ -823,12 +838,6 @@ pub mod page {
     
     
 }
-impl Page {
-    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
-    pub fn builder() -> crate::model::page::Builder {
-        crate::model::page::Builder::default()
-    }
-}
 
 /// <p>Records events during an engagement.</p>
 #[non_exhaustive]
@@ -865,6 +874,13 @@ impl Receipt {
         self.receipt_time.as_ref()
     }
 }
+impl Receipt {
+    /// Creates a new builder-style object to manufacture [`Receipt`](crate::model::Receipt).
+    pub fn builder() -> crate::model::receipt::Builder {
+        crate::model::receipt::Builder::default()
+    }
+}
+
 /// See [`Receipt`](crate::model::Receipt).
 pub mod receipt {
     
@@ -930,12 +946,6 @@ pub mod receipt {
     }
     
     
-}
-impl Receipt {
-    /// Creates a new builder-style object to manufacture [`Receipt`](crate::model::Receipt).
-    pub fn builder() -> crate::model::receipt::Builder {
-        crate::model::receipt::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReceiptType`, it is important to ensure
@@ -1084,6 +1094,13 @@ impl Engagement {
         self.stop_time.as_ref()
     }
 }
+impl Engagement {
+    /// Creates a new builder-style object to manufacture [`Engagement`](crate::model::Engagement).
+    pub fn builder() -> crate::model::engagement::Builder {
+        crate::model::engagement::Builder::default()
+    }
+}
+
 /// See [`Engagement`](crate::model::Engagement).
 pub mod engagement {
     
@@ -1174,12 +1191,6 @@ pub mod engagement {
     
     
 }
-impl Engagement {
-    /// Creates a new builder-style object to manufacture [`Engagement`](crate::model::Engagement).
-    pub fn builder() -> crate::model::engagement::Builder {
-        crate::model::engagement::Builder::default()
-    }
-}
 
 /// <p>A range of between two set times</p>
 #[non_exhaustive]
@@ -1202,6 +1213,13 @@ impl TimeRange {
         self.end_time.as_ref()
     }
 }
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
     
@@ -1244,12 +1262,6 @@ pub mod time_range {
     
     
 }
-impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
-    pub fn builder() -> crate::model::time_range::Builder {
-        crate::model::time_range::Builder::default()
-    }
-}
 
 /// <p>A personal contact or escalation plan that Incident Manager engages during an incident.</p>
 #[non_exhaustive]
@@ -1286,6 +1298,13 @@ impl Contact {
         self.r#type.as_ref()
     }
 }
+impl Contact {
+    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
+    pub fn builder() -> crate::model::contact::Builder {
+        crate::model::contact::Builder::default()
+    }
+}
+
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
     
@@ -1351,12 +1370,6 @@ pub mod contact {
     }
     
     
-}
-impl Contact {
-    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
-    pub fn builder() -> crate::model::contact::Builder {
-        crate::model::contact::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContactType`, it is important to ensure
@@ -1500,6 +1513,13 @@ impl ContactChannel {
         self.activation_status.as_ref()
     }
 }
+impl ContactChannel {
+    /// Creates a new builder-style object to manufacture [`ContactChannel`](crate::model::ContactChannel).
+    pub fn builder() -> crate::model::contact_channel::Builder {
+        crate::model::contact_channel::Builder::default()
+    }
+}
+
 /// See [`ContactChannel`](crate::model::ContactChannel).
 pub mod contact_channel {
     
@@ -1599,12 +1619,6 @@ pub mod contact_channel {
     }
     
     
-}
-impl ContactChannel {
-    /// Creates a new builder-style object to manufacture [`ContactChannel`](crate::model::ContactChannel).
-    pub fn builder() -> crate::model::contact_channel::Builder {
-        crate::model::contact_channel::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActivationStatus`, it is important to ensure

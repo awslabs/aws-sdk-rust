@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateApplicationSettingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateApplicationSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
+    pub fn builder() -> crate::output::update_application_settings_output::Builder {
+        crate::output::update_application_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
 pub mod update_application_settings_output {
     
@@ -85,12 +92,6 @@ pub mod update_application_settings_output {
     
     
 }
-impl UpdateApplicationSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput).
-    pub fn builder() -> crate::output::update_application_settings_output::Builder {
-        crate::output::update_application_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -103,6 +104,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -132,12 +140,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -150,6 +152,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -179,12 +188,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -213,6 +216,13 @@ impl aws_http::request_id::RequestId for RegisterApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
+    pub fn builder() -> crate::output::register_application_output::Builder {
+        crate::output::register_application_output::Builder::default()
+    }
+}
+
 /// See [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
 pub mod register_application_output {
     
@@ -266,12 +276,6 @@ pub mod register_application_output {
     
     
 }
-impl RegisterApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput).
-    pub fn builder() -> crate::output::register_application_output::Builder {
-        crate::output::register_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -293,6 +297,13 @@ impl aws_http::request_id::RequestId for PutResourcePermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutResourcePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
+    pub fn builder() -> crate::output::put_resource_permission_output::Builder {
+        crate::output::put_resource_permission_output::Builder::default()
+    }
+}
+
 /// See [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
 pub mod put_resource_permission_output {
     
@@ -334,12 +345,6 @@ pub mod put_resource_permission_output {
     
     
 }
-impl PutResourcePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput).
-    pub fn builder() -> crate::output::put_resource_permission_output::Builder {
-        crate::output::put_resource_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -361,6 +366,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -408,12 +420,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -442,6 +448,13 @@ impl aws_http::request_id::RequestId for ListOperationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListOperationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+    pub fn builder() -> crate::output::list_operations_output::Builder {
+        crate::output::list_operations_output::Builder::default()
+    }
+}
+
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
     
@@ -501,12 +514,6 @@ pub mod list_operations_output {
     
     
 }
-impl ListOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
-    pub fn builder() -> crate::output::list_operations_output::Builder {
-        crate::output::list_operations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -535,6 +542,13 @@ impl aws_http::request_id::RequestId for ListDatabasesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDatabasesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
+    pub fn builder() -> crate::output::list_databases_output::Builder {
+        crate::output::list_databases_output::Builder::default()
+    }
+}
+
 /// See [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
 pub mod list_databases_output {
     
@@ -594,12 +608,6 @@ pub mod list_databases_output {
     
     
 }
-impl ListDatabasesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
-    pub fn builder() -> crate::output::list_databases_output::Builder {
-        crate::output::list_databases_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -628,6 +636,13 @@ impl aws_http::request_id::RequestId for ListComponentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListComponentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::output::ListComponentsOutput).
+    pub fn builder() -> crate::output::list_components_output::Builder {
+        crate::output::list_components_output::Builder::default()
+    }
+}
+
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput).
 pub mod list_components_output {
     
@@ -687,12 +702,6 @@ pub mod list_components_output {
     
     
 }
-impl ListComponentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::output::ListComponentsOutput).
-    pub fn builder() -> crate::output::list_components_output::Builder {
-        crate::output::list_components_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -721,6 +730,13 @@ impl aws_http::request_id::RequestId for ListApplicationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListApplicationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    pub fn builder() -> crate::output::list_applications_output::Builder {
+        crate::output::list_applications_output::Builder::default()
+    }
+}
+
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
     
@@ -780,12 +796,6 @@ pub mod list_applications_output {
     
     
 }
-impl ListApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
-    pub fn builder() -> crate::output::list_applications_output::Builder {
-        crate::output::list_applications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -807,6 +817,13 @@ impl aws_http::request_id::RequestId for GetResourcePermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetResourcePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
+    pub fn builder() -> crate::output::get_resource_permission_output::Builder {
+        crate::output::get_resource_permission_output::Builder::default()
+    }
+}
+
 /// See [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
 pub mod get_resource_permission_output {
     
@@ -848,12 +865,6 @@ pub mod get_resource_permission_output {
     
     
 }
-impl GetResourcePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput).
-    pub fn builder() -> crate::output::get_resource_permission_output::Builder {
-        crate::output::get_resource_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -875,6 +886,13 @@ impl aws_http::request_id::RequestId for GetOperationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetOperationOutput {
+    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
+    pub fn builder() -> crate::output::get_operation_output::Builder {
+        crate::output::get_operation_output::Builder::default()
+    }
+}
+
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
     
@@ -916,12 +934,6 @@ pub mod get_operation_output {
     
     
 }
-impl GetOperationOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
-    pub fn builder() -> crate::output::get_operation_output::Builder {
-        crate::output::get_operation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -950,6 +962,13 @@ impl aws_http::request_id::RequestId for GetDatabaseOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
+    pub fn builder() -> crate::output::get_database_output::Builder {
+        crate::output::get_database_output::Builder::default()
+    }
+}
+
 /// See [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
 pub mod get_database_output {
     
@@ -1009,12 +1028,6 @@ pub mod get_database_output {
     
     
 }
-impl GetDatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatabaseOutput`](crate::output::GetDatabaseOutput).
-    pub fn builder() -> crate::output::get_database_output::Builder {
-        crate::output::get_database_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1036,6 +1049,13 @@ impl aws_http::request_id::RequestId for GetComponentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetComponentOutput {
+    /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::output::GetComponentOutput).
+    pub fn builder() -> crate::output::get_component_output::Builder {
+        crate::output::get_component_output::Builder::default()
+    }
+}
+
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput).
 pub mod get_component_output {
     
@@ -1077,12 +1097,6 @@ pub mod get_component_output {
     
     
 }
-impl GetComponentOutput {
-    /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::output::GetComponentOutput).
-    pub fn builder() -> crate::output::get_component_output::Builder {
-        crate::output::get_component_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1111,6 +1125,13 @@ impl aws_http::request_id::RequestId for GetApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
+    pub fn builder() -> crate::output::get_application_output::Builder {
+        crate::output::get_application_output::Builder::default()
+    }
+}
+
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
     
@@ -1170,12 +1191,6 @@ pub mod get_application_output {
     
     
 }
-impl GetApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
-    pub fn builder() -> crate::output::get_application_output::Builder {
-        crate::output::get_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1188,6 +1203,13 @@ impl aws_http::request_id::RequestId for DeregisterApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeregisterApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
+    pub fn builder() -> crate::output::deregister_application_output::Builder {
+        crate::output::deregister_application_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
 pub mod deregister_application_output {
     
@@ -1217,12 +1239,6 @@ pub mod deregister_application_output {
     
     
 }
-impl DeregisterApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput).
-    pub fn builder() -> crate::output::deregister_application_output::Builder {
-        crate::output::deregister_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1244,6 +1260,13 @@ impl aws_http::request_id::RequestId for DeleteResourcePermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteResourcePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
+    pub fn builder() -> crate::output::delete_resource_permission_output::Builder {
+        crate::output::delete_resource_permission_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
 pub mod delete_resource_permission_output {
     
@@ -1284,11 +1307,5 @@ pub mod delete_resource_permission_output {
     }
     
     
-}
-impl DeleteResourcePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput).
-    pub fn builder() -> crate::output::delete_resource_permission_output::Builder {
-        crate::output::delete_resource_permission_output::Builder::default()
-    }
 }
 

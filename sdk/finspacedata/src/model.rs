@@ -285,6 +285,13 @@ impl SchemaUnion {
         self.tabular_schema_config.as_ref()
     }
 }
+impl SchemaUnion {
+    /// Creates a new builder-style object to manufacture [`SchemaUnion`](crate::model::SchemaUnion).
+    pub fn builder() -> crate::model::schema_union::Builder {
+        crate::model::schema_union::Builder::default()
+    }
+}
+
 /// See [`SchemaUnion`](crate::model::SchemaUnion).
 pub mod schema_union {
     
@@ -315,12 +322,6 @@ pub mod schema_union {
     
     
 }
-impl SchemaUnion {
-    /// Creates a new builder-style object to manufacture [`SchemaUnion`](crate::model::SchemaUnion).
-    pub fn builder() -> crate::model::schema_union::Builder {
-        crate::model::schema_union::Builder::default()
-    }
-}
 
 /// <p>Definition for a schema on a tabular Dataset.</p>
 #[non_exhaustive]
@@ -343,6 +344,13 @@ impl SchemaDefinition {
         self.primary_key_columns.as_deref()
     }
 }
+impl SchemaDefinition {
+    /// Creates a new builder-style object to manufacture [`SchemaDefinition`](crate::model::SchemaDefinition).
+    pub fn builder() -> crate::model::schema_definition::Builder {
+        crate::model::schema_definition::Builder::default()
+    }
+}
+
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
 pub mod schema_definition {
     
@@ -397,12 +405,6 @@ pub mod schema_definition {
     
     
 }
-impl SchemaDefinition {
-    /// Creates a new builder-style object to manufacture [`SchemaDefinition`](crate::model::SchemaDefinition).
-    pub fn builder() -> crate::model::schema_definition::Builder {
-        crate::model::schema_definition::Builder::default()
-    }
-}
 
 /// <p>The definition of a column in a tabular Dataset.</p>
 #[non_exhaustive]
@@ -438,6 +440,13 @@ impl ColumnDefinition {
         self.column_description.as_deref()
     }
 }
+impl ColumnDefinition {
+    /// Creates a new builder-style object to manufacture [`ColumnDefinition`](crate::model::ColumnDefinition).
+    pub fn builder() -> crate::model::column_definition::Builder {
+        crate::model::column_definition::Builder::default()
+    }
+}
+
 /// See [`ColumnDefinition`](crate::model::ColumnDefinition).
 pub mod column_definition {
     
@@ -497,12 +506,6 @@ pub mod column_definition {
     }
     
     
-}
-impl ColumnDefinition {
-    /// Creates a new builder-style object to manufacture [`ColumnDefinition`](crate::model::ColumnDefinition).
-    pub fn builder() -> crate::model::column_definition::Builder {
-        crate::model::column_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ColumnDataType`, it is important to ensure
@@ -840,6 +843,13 @@ impl  std::fmt::Debug for UserByPermissionGroup  {
         formatter.finish()
     }
 }
+impl UserByPermissionGroup {
+    /// Creates a new builder-style object to manufacture [`UserByPermissionGroup`](crate::model::UserByPermissionGroup).
+    pub fn builder() -> crate::model::user_by_permission_group::Builder {
+        crate::model::user_by_permission_group::Builder::default()
+    }
+}
+
 /// See [`UserByPermissionGroup`](crate::model::UserByPermissionGroup).
 pub mod user_by_permission_group {
     
@@ -1016,12 +1026,6 @@ pub mod user_by_permission_group {
     }
     
     
-}
-impl UserByPermissionGroup {
-    /// Creates a new builder-style object to manufacture [`UserByPermissionGroup`](crate::model::UserByPermissionGroup).
-    pub fn builder() -> crate::model::user_by_permission_group::Builder {
-        crate::model::user_by_permission_group::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PermissionGroupMembershipStatus`, it is important to ensure
@@ -1341,6 +1345,13 @@ impl  std::fmt::Debug for User  {
         formatter.finish()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
     
@@ -1565,12 +1576,6 @@ pub mod user {
     
     
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>The structure of a permission group associated with a user account.</p>
 #[non_exhaustive]
@@ -1619,6 +1624,13 @@ impl  std::fmt::Debug for PermissionGroupByUser  {
         formatter.finish()
     }
 }
+impl PermissionGroupByUser {
+    /// Creates a new builder-style object to manufacture [`PermissionGroupByUser`](crate::model::PermissionGroupByUser).
+    pub fn builder() -> crate::model::permission_group_by_user::Builder {
+        crate::model::permission_group_by_user::Builder::default()
+    }
+}
+
 /// See [`PermissionGroupByUser`](crate::model::PermissionGroupByUser).
 pub mod permission_group_by_user {
     
@@ -1691,12 +1703,6 @@ pub mod permission_group_by_user {
     }
     
     
-}
-impl PermissionGroupByUser {
-    /// Creates a new builder-style object to manufacture [`PermissionGroupByUser`](crate::model::PermissionGroupByUser).
-    pub fn builder() -> crate::model::permission_group_by_user::Builder {
-        crate::model::permission_group_by_user::Builder::default()
-    }
 }
 
 /// <p>The structure for a permission group.</p>
@@ -1800,6 +1806,13 @@ impl  std::fmt::Debug for PermissionGroup  {
         formatter.finish()
     }
 }
+impl PermissionGroup {
+    /// Creates a new builder-style object to manufacture [`PermissionGroup`](crate::model::PermissionGroup).
+    pub fn builder() -> crate::model::permission_group::Builder {
+        crate::model::permission_group::Builder::default()
+    }
+}
+
 /// See [`PermissionGroup`](crate::model::PermissionGroup).
 pub mod permission_group {
     
@@ -1955,12 +1968,6 @@ pub mod permission_group {
     
     
 }
-impl PermissionGroup {
-    /// Creates a new builder-style object to manufacture [`PermissionGroup`](crate::model::PermissionGroup).
-    pub fn builder() -> crate::model::permission_group::Builder {
-        crate::model::permission_group::Builder::default()
-    }
-}
 
 /// <p>Structure for the summary of a Dataview.</p>
 #[non_exhaustive]
@@ -2073,6 +2080,13 @@ impl DataViewSummary {
         self.last_modified_time
     }
 }
+impl DataViewSummary {
+    /// Creates a new builder-style object to manufacture [`DataViewSummary`](crate::model::DataViewSummary).
+    pub fn builder() -> crate::model::data_view_summary::Builder {
+        crate::model::data_view_summary::Builder::default()
+    }
+}
+
 /// See [`DataViewSummary`](crate::model::DataViewSummary).
 pub mod data_view_summary {
     
@@ -2270,12 +2284,6 @@ pub mod data_view_summary {
     
     
 }
-impl DataViewSummary {
-    /// Creates a new builder-style object to manufacture [`DataViewSummary`](crate::model::DataViewSummary).
-    pub fn builder() -> crate::model::data_view_summary::Builder {
-        crate::model::data_view_summary::Builder::default()
-    }
-}
 
 /// <p>Structure for the Dataview destination type parameters.</p>
 #[non_exhaustive]
@@ -2325,6 +2333,13 @@ impl DataViewDestinationTypeParams {
         self.s3_destination_export_file_format_options.as_ref()
     }
 }
+impl DataViewDestinationTypeParams {
+    /// Creates a new builder-style object to manufacture [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams).
+    pub fn builder() -> crate::model::data_view_destination_type_params::Builder {
+        crate::model::data_view_destination_type_params::Builder::default()
+    }
+}
+
 /// See [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams).
 pub mod data_view_destination_type_params {
     
@@ -2404,12 +2419,6 @@ pub mod data_view_destination_type_params {
     }
     
     
-}
-impl DataViewDestinationTypeParams {
-    /// Creates a new builder-style object to manufacture [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams).
-    pub fn builder() -> crate::model::data_view_destination_type_params::Builder {
-        crate::model::data_view_destination_type_params::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExportFileFormat`, it is important to ensure
@@ -2535,6 +2544,13 @@ impl DataViewErrorInfo {
         self.error_category.as_ref()
     }
 }
+impl DataViewErrorInfo {
+    /// Creates a new builder-style object to manufacture [`DataViewErrorInfo`](crate::model::DataViewErrorInfo).
+    pub fn builder() -> crate::model::data_view_error_info::Builder {
+        crate::model::data_view_error_info::Builder::default()
+    }
+}
+
 /// See [`DataViewErrorInfo`](crate::model::DataViewErrorInfo).
 pub mod data_view_error_info {
     
@@ -2596,12 +2612,6 @@ pub mod data_view_error_info {
     }
     
     
-}
-impl DataViewErrorInfo {
-    /// Creates a new builder-style object to manufacture [`DataViewErrorInfo`](crate::model::DataViewErrorInfo).
-    pub fn builder() -> crate::model::data_view_error_info::Builder {
-        crate::model::data_view_error_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorCategory`, it is important to ensure
@@ -2913,6 +2923,13 @@ impl Dataset {
         self.alias.as_deref()
     }
 }
+impl Dataset {
+    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
+    pub fn builder() -> crate::model::dataset::Builder {
+        crate::model::dataset::Builder::default()
+    }
+}
+
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
     
@@ -3061,12 +3078,6 @@ pub mod dataset {
     
     
 }
-impl Dataset {
-    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
-    pub fn builder() -> crate::model::dataset::Builder {
-        crate::model::dataset::Builder::default()
-    }
-}
 
 /// <p>A structure for Dataset owner info.</p>
 #[non_exhaustive]
@@ -3105,6 +3116,13 @@ impl  std::fmt::Debug for DatasetOwnerInfo  {
         formatter.finish()
     }
 }
+impl DatasetOwnerInfo {
+    /// Creates a new builder-style object to manufacture [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo).
+    pub fn builder() -> crate::model::dataset_owner_info::Builder {
+        crate::model::dataset_owner_info::Builder::default()
+    }
+}
+
 /// See [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo).
 pub mod dataset_owner_info {
     
@@ -3167,12 +3185,6 @@ pub mod dataset_owner_info {
     }
     
     
-}
-impl DatasetOwnerInfo {
-    /// Creates a new builder-style object to manufacture [`DatasetOwnerInfo`](crate::model::DatasetOwnerInfo).
-    pub fn builder() -> crate::model::dataset_owner_info::Builder {
-        crate::model::dataset_owner_info::Builder::default()
-    }
 }
 
 /// <p>A Changeset is unit of data in a Dataset.</p>
@@ -3297,6 +3309,13 @@ impl ChangesetSummary {
         self.updated_by_changeset_id.as_deref()
     }
 }
+impl ChangesetSummary {
+    /// Creates a new builder-style object to manufacture [`ChangesetSummary`](crate::model::ChangesetSummary).
+    pub fn builder() -> crate::model::changeset_summary::Builder {
+        crate::model::changeset_summary::Builder::default()
+    }
+}
+
 /// See [`ChangesetSummary`](crate::model::ChangesetSummary).
 pub mod changeset_summary {
     
@@ -3508,12 +3527,6 @@ pub mod changeset_summary {
     
     
 }
-impl ChangesetSummary {
-    /// Creates a new builder-style object to manufacture [`ChangesetSummary`](crate::model::ChangesetSummary).
-    pub fn builder() -> crate::model::changeset_summary::Builder {
-        crate::model::changeset_summary::Builder::default()
-    }
-}
 
 /// <p>The structure with error messages.</p>
 #[non_exhaustive]
@@ -3556,6 +3569,13 @@ impl ChangesetErrorInfo {
         self.error_category.as_ref()
     }
 }
+impl ChangesetErrorInfo {
+    /// Creates a new builder-style object to manufacture [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo).
+    pub fn builder() -> crate::model::changeset_error_info::Builder {
+        crate::model::changeset_error_info::Builder::default()
+    }
+}
+
 /// See [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo).
 pub mod changeset_error_info {
     
@@ -3617,12 +3637,6 @@ pub mod changeset_error_info {
     }
     
     
-}
-impl ChangesetErrorInfo {
-    /// Creates a new builder-style object to manufacture [`ChangesetErrorInfo`](crate::model::ChangesetErrorInfo).
-    pub fn builder() -> crate::model::changeset_error_info::Builder {
-        crate::model::changeset_error_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IngestionStatus`, it is important to ensure
@@ -3919,6 +3933,13 @@ impl Credentials {
         self.session_token.as_deref()
     }
 }
+impl Credentials {
+    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
+    pub fn builder() -> crate::model::credentials::Builder {
+        crate::model::credentials::Builder::default()
+    }
+}
+
 /// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
     
@@ -3973,12 +3994,6 @@ pub mod credentials {
     
     
 }
-impl Credentials {
-    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
-    pub fn builder() -> crate::model::credentials::Builder {
-        crate::model::credentials::Builder::default()
-    }
-}
 
 /// <p>The location of an external Dataview in an S3 bucket.</p>
 #[non_exhaustive]
@@ -4001,6 +4016,13 @@ impl S3Location {
         self.key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -4042,12 +4064,6 @@ pub mod s3_location {
     }
     
     
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
 }
 
 /// <p> The credentials required to access the external Dataview from the S3 location.</p>
@@ -4095,6 +4111,13 @@ impl  std::fmt::Debug for AwsCredentials  {
         formatter.finish()
     }
 }
+impl AwsCredentials {
+    /// Creates a new builder-style object to manufacture [`AwsCredentials`](crate::model::AwsCredentials).
+    pub fn builder() -> crate::model::aws_credentials::Builder {
+        crate::model::aws_credentials::Builder::default()
+    }
+}
+
 /// See [`AwsCredentials`](crate::model::AwsCredentials).
 pub mod aws_credentials {
     
@@ -4171,12 +4194,6 @@ pub mod aws_credentials {
     }
     
     
-}
-impl AwsCredentials {
-    /// Creates a new builder-style object to manufacture [`AwsCredentials`](crate::model::AwsCredentials).
-    pub fn builder() -> crate::model::aws_credentials::Builder {
-        crate::model::aws_credentials::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DatasetStatus`, it is important to ensure
@@ -4294,6 +4311,13 @@ impl PermissionGroupParams {
         self.dataset_permissions.as_deref()
     }
 }
+impl PermissionGroupParams {
+    /// Creates a new builder-style object to manufacture [`PermissionGroupParams`](crate::model::PermissionGroupParams).
+    pub fn builder() -> crate::model::permission_group_params::Builder {
+        crate::model::permission_group_params::Builder::default()
+    }
+}
+
 /// See [`PermissionGroupParams`](crate::model::PermissionGroupParams).
 pub mod permission_group_params {
     
@@ -4342,12 +4366,6 @@ pub mod permission_group_params {
     
     
 }
-impl PermissionGroupParams {
-    /// Creates a new builder-style object to manufacture [`PermissionGroupParams`](crate::model::PermissionGroupParams).
-    pub fn builder() -> crate::model::permission_group_params::Builder {
-        crate::model::permission_group_params::Builder::default()
-    }
-}
 
 /// <p>Resource permission for a dataset. When you create a dataset, all the other members of the same user group inherit access to the dataset. You can only create a dataset if your user group has application permission for Create Datasets.</p> 
 /// <p>The following is a list of valid dataset permissions that you can apply: </p> 
@@ -4373,6 +4391,13 @@ impl ResourcePermission {
         self.permission.as_deref()
     }
 }
+impl ResourcePermission {
+    /// Creates a new builder-style object to manufacture [`ResourcePermission`](crate::model::ResourcePermission).
+    pub fn builder() -> crate::model::resource_permission::Builder {
+        crate::model::resource_permission::Builder::default()
+    }
+}
+
 /// See [`ResourcePermission`](crate::model::ResourcePermission).
 pub mod resource_permission {
     
@@ -4402,11 +4427,5 @@ pub mod resource_permission {
     }
     
     
-}
-impl ResourcePermission {
-    /// Creates a new builder-style object to manufacture [`ResourcePermission`](crate::model::ResourcePermission).
-    pub fn builder() -> crate::model::resource_permission::Builder {
-        crate::model::resource_permission::Builder::default()
-    }
 }
 

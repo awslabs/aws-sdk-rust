@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateSafetyRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSafetyRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSafetyRuleOutput`](crate::output::UpdateSafetyRuleOutput).
+    pub fn builder() -> crate::output::update_safety_rule_output::Builder {
+        crate::output::update_safety_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSafetyRuleOutput`](crate::output::UpdateSafetyRuleOutput).
 pub mod update_safety_rule_output {
     
@@ -79,12 +86,6 @@ pub mod update_safety_rule_output {
     
     
 }
-impl UpdateSafetyRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSafetyRuleOutput`](crate::output::UpdateSafetyRuleOutput).
-    pub fn builder() -> crate::output::update_safety_rule_output::Builder {
-        crate::output::update_safety_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -106,6 +107,13 @@ impl aws_http::request_id::RequestId for UpdateRoutingControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRoutingControlOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlOutput`](crate::output::UpdateRoutingControlOutput).
+    pub fn builder() -> crate::output::update_routing_control_output::Builder {
+        crate::output::update_routing_control_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRoutingControlOutput`](crate::output::UpdateRoutingControlOutput).
 pub mod update_routing_control_output {
     
@@ -147,12 +155,6 @@ pub mod update_routing_control_output {
     
     
 }
-impl UpdateRoutingControlOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlOutput`](crate::output::UpdateRoutingControlOutput).
-    pub fn builder() -> crate::output::update_routing_control_output::Builder {
-        crate::output::update_routing_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -174,6 +176,13 @@ impl aws_http::request_id::RequestId for UpdateControlPanelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateControlPanelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateControlPanelOutput`](crate::output::UpdateControlPanelOutput).
+    pub fn builder() -> crate::output::update_control_panel_output::Builder {
+        crate::output::update_control_panel_output::Builder::default()
+    }
+}
+
 /// See [`UpdateControlPanelOutput`](crate::output::UpdateControlPanelOutput).
 pub mod update_control_panel_output {
     
@@ -215,12 +224,6 @@ pub mod update_control_panel_output {
     
     
 }
-impl UpdateControlPanelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateControlPanelOutput`](crate::output::UpdateControlPanelOutput).
-    pub fn builder() -> crate::output::update_control_panel_output::Builder {
-        crate::output::update_control_panel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -233,6 +236,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -262,12 +272,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -280,6 +284,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -309,12 +320,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -336,6 +341,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -383,12 +395,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -417,6 +423,13 @@ impl aws_http::request_id::RequestId for ListSafetyRulesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSafetyRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSafetyRulesOutput`](crate::output::ListSafetyRulesOutput).
+    pub fn builder() -> crate::output::list_safety_rules_output::Builder {
+        crate::output::list_safety_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListSafetyRulesOutput`](crate::output::ListSafetyRulesOutput).
 pub mod list_safety_rules_output {
     
@@ -476,12 +489,6 @@ pub mod list_safety_rules_output {
     
     
 }
-impl ListSafetyRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListSafetyRulesOutput`](crate::output::ListSafetyRulesOutput).
-    pub fn builder() -> crate::output::list_safety_rules_output::Builder {
-        crate::output::list_safety_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -510,6 +517,13 @@ impl aws_http::request_id::RequestId for ListRoutingControlsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRoutingControlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
+    pub fn builder() -> crate::output::list_routing_controls_output::Builder {
+        crate::output::list_routing_controls_output::Builder::default()
+    }
+}
+
 /// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
 pub mod list_routing_controls_output {
     
@@ -569,12 +583,6 @@ pub mod list_routing_controls_output {
     
     
 }
-impl ListRoutingControlsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
-    pub fn builder() -> crate::output::list_routing_controls_output::Builder {
-        crate::output::list_routing_controls_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -603,6 +611,13 @@ impl aws_http::request_id::RequestId for ListControlPanelsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListControlPanelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListControlPanelsOutput`](crate::output::ListControlPanelsOutput).
+    pub fn builder() -> crate::output::list_control_panels_output::Builder {
+        crate::output::list_control_panels_output::Builder::default()
+    }
+}
+
 /// See [`ListControlPanelsOutput`](crate::output::ListControlPanelsOutput).
 pub mod list_control_panels_output {
     
@@ -662,12 +677,6 @@ pub mod list_control_panels_output {
     
     
 }
-impl ListControlPanelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListControlPanelsOutput`](crate::output::ListControlPanelsOutput).
-    pub fn builder() -> crate::output::list_control_panels_output::Builder {
-        crate::output::list_control_panels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -696,6 +705,13 @@ impl aws_http::request_id::RequestId for ListClustersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListClustersOutput {
+    /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput).
+    pub fn builder() -> crate::output::list_clusters_output::Builder {
+        crate::output::list_clusters_output::Builder::default()
+    }
+}
+
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput).
 pub mod list_clusters_output {
     
@@ -755,12 +771,6 @@ pub mod list_clusters_output {
     
     
 }
-impl ListClustersOutput {
-    /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput).
-    pub fn builder() -> crate::output::list_clusters_output::Builder {
-        crate::output::list_clusters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -789,6 +799,13 @@ impl aws_http::request_id::RequestId for ListAssociatedRoute53HealthChecksOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssociatedRoute53HealthChecksOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksOutput`](crate::output::ListAssociatedRoute53HealthChecksOutput).
+    pub fn builder() -> crate::output::list_associated_route53_health_checks_output::Builder {
+        crate::output::list_associated_route53_health_checks_output::Builder::default()
+    }
+}
+
 /// See [`ListAssociatedRoute53HealthChecksOutput`](crate::output::ListAssociatedRoute53HealthChecksOutput).
 pub mod list_associated_route53_health_checks_output {
     
@@ -848,12 +865,6 @@ pub mod list_associated_route53_health_checks_output {
     
     
 }
-impl ListAssociatedRoute53HealthChecksOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksOutput`](crate::output::ListAssociatedRoute53HealthChecksOutput).
-    pub fn builder() -> crate::output::list_associated_route53_health_checks_output::Builder {
-        crate::output::list_associated_route53_health_checks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -882,6 +893,13 @@ impl aws_http::request_id::RequestId for DescribeSafetyRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSafetyRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSafetyRuleOutput`](crate::output::DescribeSafetyRuleOutput).
+    pub fn builder() -> crate::output::describe_safety_rule_output::Builder {
+        crate::output::describe_safety_rule_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSafetyRuleOutput`](crate::output::DescribeSafetyRuleOutput).
 pub mod describe_safety_rule_output {
     
@@ -935,12 +953,6 @@ pub mod describe_safety_rule_output {
     
     
 }
-impl DescribeSafetyRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSafetyRuleOutput`](crate::output::DescribeSafetyRuleOutput).
-    pub fn builder() -> crate::output::describe_safety_rule_output::Builder {
-        crate::output::describe_safety_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -962,6 +974,13 @@ impl aws_http::request_id::RequestId for DescribeRoutingControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRoutingControlOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRoutingControlOutput`](crate::output::DescribeRoutingControlOutput).
+    pub fn builder() -> crate::output::describe_routing_control_output::Builder {
+        crate::output::describe_routing_control_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRoutingControlOutput`](crate::output::DescribeRoutingControlOutput).
 pub mod describe_routing_control_output {
     
@@ -1003,12 +1022,6 @@ pub mod describe_routing_control_output {
     
     
 }
-impl DescribeRoutingControlOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRoutingControlOutput`](crate::output::DescribeRoutingControlOutput).
-    pub fn builder() -> crate::output::describe_routing_control_output::Builder {
-        crate::output::describe_routing_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1030,6 +1043,13 @@ impl aws_http::request_id::RequestId for DescribeControlPanelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeControlPanelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeControlPanelOutput`](crate::output::DescribeControlPanelOutput).
+    pub fn builder() -> crate::output::describe_control_panel_output::Builder {
+        crate::output::describe_control_panel_output::Builder::default()
+    }
+}
+
 /// See [`DescribeControlPanelOutput`](crate::output::DescribeControlPanelOutput).
 pub mod describe_control_panel_output {
     
@@ -1071,12 +1091,6 @@ pub mod describe_control_panel_output {
     
     
 }
-impl DescribeControlPanelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeControlPanelOutput`](crate::output::DescribeControlPanelOutput).
-    pub fn builder() -> crate::output::describe_control_panel_output::Builder {
-        crate::output::describe_control_panel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1098,6 +1112,13 @@ impl aws_http::request_id::RequestId for DescribeClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
+    pub fn builder() -> crate::output::describe_cluster_output::Builder {
+        crate::output::describe_cluster_output::Builder::default()
+    }
+}
+
 /// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
 pub mod describe_cluster_output {
     
@@ -1139,12 +1160,6 @@ pub mod describe_cluster_output {
     
     
 }
-impl DescribeClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
-    pub fn builder() -> crate::output::describe_cluster_output::Builder {
-        crate::output::describe_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1157,6 +1172,13 @@ impl aws_http::request_id::RequestId for DeleteSafetyRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSafetyRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput).
+    pub fn builder() -> crate::output::delete_safety_rule_output::Builder {
+        crate::output::delete_safety_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput).
 pub mod delete_safety_rule_output {
     
@@ -1186,12 +1208,6 @@ pub mod delete_safety_rule_output {
     
     
 }
-impl DeleteSafetyRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput).
-    pub fn builder() -> crate::output::delete_safety_rule_output::Builder {
-        crate::output::delete_safety_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1204,6 +1220,13 @@ impl aws_http::request_id::RequestId for DeleteRoutingControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRoutingControlOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput).
+    pub fn builder() -> crate::output::delete_routing_control_output::Builder {
+        crate::output::delete_routing_control_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput).
 pub mod delete_routing_control_output {
     
@@ -1233,12 +1256,6 @@ pub mod delete_routing_control_output {
     
     
 }
-impl DeleteRoutingControlOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput).
-    pub fn builder() -> crate::output::delete_routing_control_output::Builder {
-        crate::output::delete_routing_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1251,6 +1268,13 @@ impl aws_http::request_id::RequestId for DeleteControlPanelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteControlPanelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput).
+    pub fn builder() -> crate::output::delete_control_panel_output::Builder {
+        crate::output::delete_control_panel_output::Builder::default()
+    }
+}
+
 /// See [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput).
 pub mod delete_control_panel_output {
     
@@ -1280,12 +1304,6 @@ pub mod delete_control_panel_output {
     
     
 }
-impl DeleteControlPanelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput).
-    pub fn builder() -> crate::output::delete_control_panel_output::Builder {
-        crate::output::delete_control_panel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1298,6 +1316,13 @@ impl aws_http::request_id::RequestId for DeleteClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
+    pub fn builder() -> crate::output::delete_cluster_output::Builder {
+        crate::output::delete_cluster_output::Builder::default()
+    }
+}
+
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
 pub mod delete_cluster_output {
     
@@ -1327,12 +1352,6 @@ pub mod delete_cluster_output {
     
     
 }
-impl DeleteClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
-    pub fn builder() -> crate::output::delete_cluster_output::Builder {
-        crate::output::delete_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1361,6 +1380,13 @@ impl aws_http::request_id::RequestId for CreateSafetyRuleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSafetyRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSafetyRuleOutput`](crate::output::CreateSafetyRuleOutput).
+    pub fn builder() -> crate::output::create_safety_rule_output::Builder {
+        crate::output::create_safety_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateSafetyRuleOutput`](crate::output::CreateSafetyRuleOutput).
 pub mod create_safety_rule_output {
     
@@ -1414,12 +1440,6 @@ pub mod create_safety_rule_output {
     
     
 }
-impl CreateSafetyRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSafetyRuleOutput`](crate::output::CreateSafetyRuleOutput).
-    pub fn builder() -> crate::output::create_safety_rule_output::Builder {
-        crate::output::create_safety_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1441,6 +1461,13 @@ impl aws_http::request_id::RequestId for CreateRoutingControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRoutingControlOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRoutingControlOutput`](crate::output::CreateRoutingControlOutput).
+    pub fn builder() -> crate::output::create_routing_control_output::Builder {
+        crate::output::create_routing_control_output::Builder::default()
+    }
+}
+
 /// See [`CreateRoutingControlOutput`](crate::output::CreateRoutingControlOutput).
 pub mod create_routing_control_output {
     
@@ -1482,12 +1509,6 @@ pub mod create_routing_control_output {
     
     
 }
-impl CreateRoutingControlOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRoutingControlOutput`](crate::output::CreateRoutingControlOutput).
-    pub fn builder() -> crate::output::create_routing_control_output::Builder {
-        crate::output::create_routing_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1509,6 +1530,13 @@ impl aws_http::request_id::RequestId for CreateControlPanelOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateControlPanelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateControlPanelOutput`](crate::output::CreateControlPanelOutput).
+    pub fn builder() -> crate::output::create_control_panel_output::Builder {
+        crate::output::create_control_panel_output::Builder::default()
+    }
+}
+
 /// See [`CreateControlPanelOutput`](crate::output::CreateControlPanelOutput).
 pub mod create_control_panel_output {
     
@@ -1550,12 +1578,6 @@ pub mod create_control_panel_output {
     
     
 }
-impl CreateControlPanelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateControlPanelOutput`](crate::output::CreateControlPanelOutput).
-    pub fn builder() -> crate::output::create_control_panel_output::Builder {
-        crate::output::create_control_panel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1577,6 +1599,13 @@ impl aws_http::request_id::RequestId for CreateClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateClusterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput).
+    pub fn builder() -> crate::output::create_cluster_output::Builder {
+        crate::output::create_cluster_output::Builder::default()
+    }
+}
+
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
 pub mod create_cluster_output {
     
@@ -1617,11 +1646,5 @@ pub mod create_cluster_output {
     }
     
     
-}
-impl CreateClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput).
-    pub fn builder() -> crate::output::create_cluster_output::Builder {
-        crate::output::create_cluster_output::Builder::default()
-    }
 }
 

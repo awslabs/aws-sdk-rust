@@ -40,6 +40,13 @@ impl aws_http::request_id::RequestId for UpdateWorldTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateWorldTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
+    pub fn builder() -> crate::output::update_world_template_output::Builder {
+        crate::output::update_world_template_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
 pub mod update_world_template_output {
     
@@ -116,12 +123,6 @@ pub mod update_world_template_output {
     }
     
     
-}
-impl UpdateWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
-    pub fn builder() -> crate::output::update_world_template_output::Builder {
-        crate::output::update_world_template_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -207,6 +208,13 @@ impl aws_http::request_id::RequestId for UpdateSimulationApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSimulationApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
+    pub fn builder() -> crate::output::update_simulation_application_output::Builder {
+        crate::output::update_simulation_application_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
 pub mod update_simulation_application_output {
     
@@ -362,12 +370,6 @@ pub mod update_simulation_application_output {
     
     
 }
-impl UpdateSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
-    pub fn builder() -> crate::output::update_simulation_application_output::Builder {
-        crate::output::update_simulation_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -438,6 +440,13 @@ impl aws_http::request_id::RequestId for UpdateRobotApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRobotApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
+    pub fn builder() -> crate::output::update_robot_application_output::Builder {
+        crate::output::update_robot_application_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
 pub mod update_robot_application_output {
     
@@ -569,12 +578,6 @@ pub mod update_robot_application_output {
     
     
 }
-impl UpdateRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
-    pub fn builder() -> crate::output::update_robot_application_output::Builder {
-        crate::output::update_robot_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -587,6 +590,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -616,12 +626,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -634,6 +638,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -662,12 +673,6 @@ pub mod tag_resource_output {
     }
     
     
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -912,6 +917,13 @@ impl aws_http::request_id::RequestId for SyncDeploymentJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SyncDeploymentJobOutput {
+    /// Creates a new builder-style object to manufacture [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
+    pub fn builder() -> crate::output::sync_deployment_job_output::Builder {
+        crate::output::sync_deployment_job_output::Builder::default()
+    }
+}
+
 /// See [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
 pub mod sync_deployment_job_output {
     
@@ -1215,12 +1227,6 @@ pub mod sync_deployment_job_output {
     
     
 }
-impl SyncDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
-    pub fn builder() -> crate::output::sync_deployment_job_output::Builder {
-        crate::output::sync_deployment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1426,6 +1432,13 @@ impl aws_http::request_id::RequestId for StartSimulationJobBatchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartSimulationJobBatchOutput {
+    /// Creates a new builder-style object to manufacture [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
+    pub fn builder() -> crate::output::start_simulation_job_batch_output::Builder {
+        crate::output::start_simulation_job_batch_output::Builder::default()
+    }
+}
+
 /// See [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
 pub mod start_simulation_job_batch_output {
     
@@ -1725,12 +1738,6 @@ pub mod start_simulation_job_batch_output {
     
     
 }
-impl StartSimulationJobBatchOutput {
-    /// Creates a new builder-style object to manufacture [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
-    pub fn builder() -> crate::output::start_simulation_job_batch_output::Builder {
-        crate::output::start_simulation_job_batch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1743,6 +1750,13 @@ impl aws_http::request_id::RequestId for RestartSimulationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RestartSimulationJobOutput {
+    /// Creates a new builder-style object to manufacture [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
+    pub fn builder() -> crate::output::restart_simulation_job_output::Builder {
+        crate::output::restart_simulation_job_output::Builder::default()
+    }
+}
+
 /// See [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
 pub mod restart_simulation_job_output {
     
@@ -1771,12 +1785,6 @@ pub mod restart_simulation_job_output {
     }
     
     
-}
-impl RestartSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
-    pub fn builder() -> crate::output::restart_simulation_job_output::Builder {
-        crate::output::restart_simulation_job_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1807,6 +1815,13 @@ impl aws_http::request_id::RequestId for RegisterRobotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterRobotOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
+    pub fn builder() -> crate::output::register_robot_output::Builder {
+        crate::output::register_robot_output::Builder::default()
+    }
+}
+
 /// See [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
 pub mod register_robot_output {
     
@@ -1860,12 +1875,6 @@ pub mod register_robot_output {
     
     
 }
-impl RegisterRobotOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
-    pub fn builder() -> crate::output::register_robot_output::Builder {
-        crate::output::register_robot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1894,6 +1903,13 @@ impl aws_http::request_id::RequestId for ListWorldTemplatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorldTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
+    pub fn builder() -> crate::output::list_world_templates_output::Builder {
+        crate::output::list_world_templates_output::Builder::default()
+    }
+}
+
 /// See [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
 pub mod list_world_templates_output {
     
@@ -1953,12 +1969,6 @@ pub mod list_world_templates_output {
     
     
 }
-impl ListWorldTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
-    pub fn builder() -> crate::output::list_world_templates_output::Builder {
-        crate::output::list_world_templates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1987,6 +1997,13 @@ impl aws_http::request_id::RequestId for ListWorldsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorldsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorldsOutput`](crate::output::ListWorldsOutput).
+    pub fn builder() -> crate::output::list_worlds_output::Builder {
+        crate::output::list_worlds_output::Builder::default()
+    }
+}
+
 /// See [`ListWorldsOutput`](crate::output::ListWorldsOutput).
 pub mod list_worlds_output {
     
@@ -2046,12 +2063,6 @@ pub mod list_worlds_output {
     
     
 }
-impl ListWorldsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldsOutput`](crate::output::ListWorldsOutput).
-    pub fn builder() -> crate::output::list_worlds_output::Builder {
-        crate::output::list_worlds_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2080,6 +2091,13 @@ impl aws_http::request_id::RequestId for ListWorldGenerationJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorldGenerationJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
+    pub fn builder() -> crate::output::list_world_generation_jobs_output::Builder {
+        crate::output::list_world_generation_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
 pub mod list_world_generation_jobs_output {
     
@@ -2139,12 +2157,6 @@ pub mod list_world_generation_jobs_output {
     
     
 }
-impl ListWorldGenerationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
-    pub fn builder() -> crate::output::list_world_generation_jobs_output::Builder {
-        crate::output::list_world_generation_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2173,6 +2185,13 @@ impl aws_http::request_id::RequestId for ListWorldExportJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListWorldExportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
+    pub fn builder() -> crate::output::list_world_export_jobs_output::Builder {
+        crate::output::list_world_export_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
 pub mod list_world_export_jobs_output {
     
@@ -2232,12 +2251,6 @@ pub mod list_world_export_jobs_output {
     
     
 }
-impl ListWorldExportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
-    pub fn builder() -> crate::output::list_world_export_jobs_output::Builder {
-        crate::output::list_world_export_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2259,6 +2272,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -2306,12 +2326,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2340,6 +2354,13 @@ impl aws_http::request_id::RequestId for ListSimulationJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSimulationJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
+    pub fn builder() -> crate::output::list_simulation_jobs_output::Builder {
+        crate::output::list_simulation_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
 pub mod list_simulation_jobs_output {
     
@@ -2399,12 +2420,6 @@ pub mod list_simulation_jobs_output {
     
     
 }
-impl ListSimulationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
-    pub fn builder() -> crate::output::list_simulation_jobs_output::Builder {
-        crate::output::list_simulation_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2433,6 +2448,13 @@ impl aws_http::request_id::RequestId for ListSimulationJobBatchesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSimulationJobBatchesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
+    pub fn builder() -> crate::output::list_simulation_job_batches_output::Builder {
+        crate::output::list_simulation_job_batches_output::Builder::default()
+    }
+}
+
 /// See [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
 pub mod list_simulation_job_batches_output {
     
@@ -2492,12 +2514,6 @@ pub mod list_simulation_job_batches_output {
     
     
 }
-impl ListSimulationJobBatchesOutput {
-    /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
-    pub fn builder() -> crate::output::list_simulation_job_batches_output::Builder {
-        crate::output::list_simulation_job_batches_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2526,6 +2542,13 @@ impl aws_http::request_id::RequestId for ListSimulationApplicationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSimulationApplicationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
+    pub fn builder() -> crate::output::list_simulation_applications_output::Builder {
+        crate::output::list_simulation_applications_output::Builder::default()
+    }
+}
+
 /// See [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
 pub mod list_simulation_applications_output {
     
@@ -2585,12 +2608,6 @@ pub mod list_simulation_applications_output {
     
     
 }
-impl ListSimulationApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
-    pub fn builder() -> crate::output::list_simulation_applications_output::Builder {
-        crate::output::list_simulation_applications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -2620,6 +2637,13 @@ impl aws_http::request_id::RequestId for ListRobotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRobotsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRobotsOutput`](crate::output::ListRobotsOutput).
+    pub fn builder() -> crate::output::list_robots_output::Builder {
+        crate::output::list_robots_output::Builder::default()
+    }
+}
+
 /// See [`ListRobotsOutput`](crate::output::ListRobotsOutput).
 pub mod list_robots_output {
     
@@ -2679,12 +2703,6 @@ pub mod list_robots_output {
     
     
 }
-impl ListRobotsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRobotsOutput`](crate::output::ListRobotsOutput).
-    pub fn builder() -> crate::output::list_robots_output::Builder {
-        crate::output::list_robots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2713,6 +2731,13 @@ impl aws_http::request_id::RequestId for ListRobotApplicationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRobotApplicationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
+    pub fn builder() -> crate::output::list_robot_applications_output::Builder {
+        crate::output::list_robot_applications_output::Builder::default()
+    }
+}
+
 /// See [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
 pub mod list_robot_applications_output {
     
@@ -2772,12 +2797,6 @@ pub mod list_robot_applications_output {
     
     
 }
-impl ListRobotApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
-    pub fn builder() -> crate::output::list_robot_applications_output::Builder {
-        crate::output::list_robot_applications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -2807,6 +2826,13 @@ impl aws_http::request_id::RequestId for ListFleetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFleetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::output::ListFleetsOutput).
+    pub fn builder() -> crate::output::list_fleets_output::Builder {
+        crate::output::list_fleets_output::Builder::default()
+    }
+}
+
 /// See [`ListFleetsOutput`](crate::output::ListFleetsOutput).
 pub mod list_fleets_output {
     
@@ -2866,12 +2892,6 @@ pub mod list_fleets_output {
     
     
 }
-impl ListFleetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::output::ListFleetsOutput).
-    pub fn builder() -> crate::output::list_fleets_output::Builder {
-        crate::output::list_fleets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -2901,6 +2921,13 @@ impl aws_http::request_id::RequestId for ListDeploymentJobsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDeploymentJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
+    pub fn builder() -> crate::output::list_deployment_jobs_output::Builder {
+        crate::output::list_deployment_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
 pub mod list_deployment_jobs_output {
     
@@ -2960,12 +2987,6 @@ pub mod list_deployment_jobs_output {
     
     
 }
-impl ListDeploymentJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
-    pub fn builder() -> crate::output::list_deployment_jobs_output::Builder {
-        crate::output::list_deployment_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2987,6 +3008,13 @@ impl aws_http::request_id::RequestId for GetWorldTemplateBodyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetWorldTemplateBodyOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
+    pub fn builder() -> crate::output::get_world_template_body_output::Builder {
+        crate::output::get_world_template_body_output::Builder::default()
+    }
+}
+
 /// See [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
 pub mod get_world_template_body_output {
     
@@ -3027,12 +3055,6 @@ pub mod get_world_template_body_output {
     }
     
     
-}
-impl GetWorldTemplateBodyOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
-    pub fn builder() -> crate::output::get_world_template_body_output::Builder {
-        crate::output::get_world_template_body_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -3097,6 +3119,13 @@ impl aws_http::request_id::RequestId for DescribeWorldTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorldTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
+    pub fn builder() -> crate::output::describe_world_template_output::Builder {
+        crate::output::describe_world_template_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
 pub mod describe_world_template_output {
     
@@ -3215,12 +3244,6 @@ pub mod describe_world_template_output {
     }
     
     
-}
-impl DescribeWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
-    pub fn builder() -> crate::output::describe_world_template_output::Builder {
-        crate::output::describe_world_template_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -3465,6 +3488,13 @@ impl aws_http::request_id::RequestId for DescribeWorldGenerationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorldGenerationJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
+    pub fn builder() -> crate::output::describe_world_generation_job_output::Builder {
+        crate::output::describe_world_generation_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
 pub mod describe_world_generation_job_output {
     
@@ -3790,12 +3820,6 @@ pub mod describe_world_generation_job_output {
     
     
 }
-impl DescribeWorldGenerationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
-    pub fn builder() -> crate::output::describe_world_generation_job_output::Builder {
-        crate::output::describe_world_generation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4020,6 +4044,13 @@ impl aws_http::request_id::RequestId for DescribeWorldExportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorldExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
+    pub fn builder() -> crate::output::describe_world_export_job_output::Builder {
+        crate::output::describe_world_export_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
 pub mod describe_world_export_job_output {
     
@@ -4321,12 +4352,6 @@ pub mod describe_world_export_job_output {
     
     
 }
-impl DescribeWorldExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
-    pub fn builder() -> crate::output::describe_world_export_job_output::Builder {
-        crate::output::describe_world_export_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4383,6 +4408,13 @@ impl aws_http::request_id::RequestId for DescribeWorldOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorldOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
+    pub fn builder() -> crate::output::describe_world_output::Builder {
+        crate::output::describe_world_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
 pub mod describe_world_output {
     
@@ -4489,12 +4521,6 @@ pub mod describe_world_output {
     }
     
     
-}
-impl DescribeWorldOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
-    pub fn builder() -> crate::output::describe_world_output::Builder {
-        crate::output::describe_world_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -4708,6 +4734,13 @@ impl aws_http::request_id::RequestId for DescribeSimulationJobBatchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSimulationJobBatchOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
+    pub fn builder() -> crate::output::describe_simulation_job_batch_output::Builder {
+        crate::output::describe_simulation_job_batch_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
 pub mod describe_simulation_job_batch_output {
     
@@ -5018,12 +5051,6 @@ pub mod describe_simulation_job_batch_output {
     }
     
     
-}
-impl DescribeSimulationJobBatchOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
-    pub fn builder() -> crate::output::describe_simulation_job_batch_output::Builder {
-        crate::output::describe_simulation_job_batch_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -5358,6 +5385,13 @@ impl aws_http::request_id::RequestId for DescribeSimulationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSimulationJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
+    pub fn builder() -> crate::output::describe_simulation_job_output::Builder {
+        crate::output::describe_simulation_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
 pub mod describe_simulation_job_output {
     
@@ -5837,12 +5871,6 @@ pub mod describe_simulation_job_output {
     
     
 }
-impl DescribeSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
-    pub fn builder() -> crate::output::describe_simulation_job_output::Builder {
-        crate::output::describe_simulation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5941,6 +5969,13 @@ impl aws_http::request_id::RequestId for DescribeSimulationApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSimulationApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
+    pub fn builder() -> crate::output::describe_simulation_application_output::Builder {
+        crate::output::describe_simulation_application_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
 pub mod describe_simulation_application_output {
     
@@ -6126,12 +6161,6 @@ pub mod describe_simulation_application_output {
     
     
 }
-impl DescribeSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
-    pub fn builder() -> crate::output::describe_simulation_application_output::Builder {
-        crate::output::describe_simulation_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6216,6 +6245,13 @@ impl aws_http::request_id::RequestId for DescribeRobotApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRobotApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
+    pub fn builder() -> crate::output::describe_robot_application_output::Builder {
+        crate::output::describe_robot_application_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
 pub mod describe_robot_application_output {
     
@@ -6377,12 +6413,6 @@ pub mod describe_robot_application_output {
     
     
 }
-impl DescribeRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
-    pub fn builder() -> crate::output::describe_robot_application_output::Builder {
-        crate::output::describe_robot_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -6468,6 +6498,13 @@ impl aws_http::request_id::RequestId for DescribeRobotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRobotOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
+    pub fn builder() -> crate::output::describe_robot_output::Builder {
+        crate::output::describe_robot_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
 pub mod describe_robot_output {
     
@@ -6623,12 +6660,6 @@ pub mod describe_robot_output {
     
     
 }
-impl DescribeRobotOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
-    pub fn builder() -> crate::output::describe_robot_output::Builder {
-        crate::output::describe_robot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -6700,6 +6731,13 @@ impl aws_http::request_id::RequestId for DescribeFleetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFleetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
+    pub fn builder() -> crate::output::describe_fleet_output::Builder {
+        crate::output::describe_fleet_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
 pub mod describe_fleet_output {
     
@@ -6837,12 +6875,6 @@ pub mod describe_fleet_output {
     
     
 }
-impl DescribeFleetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
-    pub fn builder() -> crate::output::describe_fleet_output::Builder {
-        crate::output::describe_fleet_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -6928,6 +6960,13 @@ impl aws_http::request_id::RequestId for DescribeDeploymentJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDeploymentJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
+    pub fn builder() -> crate::output::describe_deployment_job_output::Builder {
+        crate::output::describe_deployment_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
 pub mod describe_deployment_job_output {
     
@@ -7095,12 +7134,6 @@ pub mod describe_deployment_job_output {
     
     
 }
-impl DescribeDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
-    pub fn builder() -> crate::output::describe_deployment_job_output::Builder {
-        crate::output::describe_deployment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -7130,6 +7163,13 @@ impl aws_http::request_id::RequestId for DeregisterRobotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeregisterRobotOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
+    pub fn builder() -> crate::output::deregister_robot_output::Builder {
+        crate::output::deregister_robot_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
 pub mod deregister_robot_output {
     
@@ -7183,12 +7223,6 @@ pub mod deregister_robot_output {
     
     
 }
-impl DeregisterRobotOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
-    pub fn builder() -> crate::output::deregister_robot_output::Builder {
-        crate::output::deregister_robot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7201,6 +7235,13 @@ impl aws_http::request_id::RequestId for DeleteWorldTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteWorldTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
+    pub fn builder() -> crate::output::delete_world_template_output::Builder {
+        crate::output::delete_world_template_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
 pub mod delete_world_template_output {
     
@@ -7230,12 +7271,6 @@ pub mod delete_world_template_output {
     
     
 }
-impl DeleteWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
-    pub fn builder() -> crate::output::delete_world_template_output::Builder {
-        crate::output::delete_world_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7248,6 +7283,13 @@ impl aws_http::request_id::RequestId for DeleteSimulationApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSimulationApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
+    pub fn builder() -> crate::output::delete_simulation_application_output::Builder {
+        crate::output::delete_simulation_application_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
 pub mod delete_simulation_application_output {
     
@@ -7277,12 +7319,6 @@ pub mod delete_simulation_application_output {
     
     
 }
-impl DeleteSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
-    pub fn builder() -> crate::output::delete_simulation_application_output::Builder {
-        crate::output::delete_simulation_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7295,6 +7331,13 @@ impl aws_http::request_id::RequestId for DeleteRobotApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRobotApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
+    pub fn builder() -> crate::output::delete_robot_application_output::Builder {
+        crate::output::delete_robot_application_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
 pub mod delete_robot_application_output {
     
@@ -7324,12 +7367,6 @@ pub mod delete_robot_application_output {
     
     
 }
-impl DeleteRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
-    pub fn builder() -> crate::output::delete_robot_application_output::Builder {
-        crate::output::delete_robot_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -7343,6 +7380,13 @@ impl aws_http::request_id::RequestId for DeleteRobotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRobotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
+    pub fn builder() -> crate::output::delete_robot_output::Builder {
+        crate::output::delete_robot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
 pub mod delete_robot_output {
     
@@ -7372,12 +7416,6 @@ pub mod delete_robot_output {
     
     
 }
-impl DeleteRobotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
-    pub fn builder() -> crate::output::delete_robot_output::Builder {
-        crate::output::delete_robot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -7391,6 +7429,13 @@ impl aws_http::request_id::RequestId for DeleteFleetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFleetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
+    pub fn builder() -> crate::output::delete_fleet_output::Builder {
+        crate::output::delete_fleet_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
 pub mod delete_fleet_output {
     
@@ -7419,12 +7464,6 @@ pub mod delete_fleet_output {
     }
     
     
-}
-impl DeleteFleetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
-    pub fn builder() -> crate::output::delete_fleet_output::Builder {
-        crate::output::delete_fleet_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -7475,6 +7514,13 @@ impl aws_http::request_id::RequestId for CreateWorldTemplateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateWorldTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
+    pub fn builder() -> crate::output::create_world_template_output::Builder {
+        crate::output::create_world_template_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
 pub mod create_world_template_output {
     
@@ -7569,12 +7615,6 @@ pub mod create_world_template_output {
     }
     
     
-}
-impl CreateWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
-    pub fn builder() -> crate::output::create_world_template_output::Builder {
-        crate::output::create_world_template_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -7805,6 +7845,13 @@ impl aws_http::request_id::RequestId for CreateWorldGenerationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateWorldGenerationJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
+    pub fn builder() -> crate::output::create_world_generation_job_output::Builder {
+        crate::output::create_world_generation_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
 pub mod create_world_generation_job_output {
     
@@ -8106,12 +8153,6 @@ pub mod create_world_generation_job_output {
     
     
 }
-impl CreateWorldGenerationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
-    pub fn builder() -> crate::output::create_world_generation_job_output::Builder {
-        crate::output::create_world_generation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8336,6 +8377,13 @@ impl aws_http::request_id::RequestId for CreateWorldExportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateWorldExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
+    pub fn builder() -> crate::output::create_world_export_job_output::Builder {
+        crate::output::create_world_export_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
 pub mod create_world_export_job_output {
     
@@ -8620,12 +8668,6 @@ pub mod create_world_export_job_output {
     }
     
     
-}
-impl CreateWorldExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
-    pub fn builder() -> crate::output::create_world_export_job_output::Builder {
-        crate::output::create_world_export_job_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -8939,6 +8981,13 @@ impl aws_http::request_id::RequestId for CreateSimulationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSimulationJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
+    pub fn builder() -> crate::output::create_simulation_job_output::Builder {
+        crate::output::create_simulation_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
 pub mod create_simulation_job_output {
     
@@ -9382,12 +9431,6 @@ pub mod create_simulation_job_output {
     
     
 }
-impl CreateSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
-    pub fn builder() -> crate::output::create_simulation_job_output::Builder {
-        crate::output::create_simulation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9472,6 +9515,13 @@ impl aws_http::request_id::RequestId for CreateSimulationApplicationVersionOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSimulationApplicationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
+    pub fn builder() -> crate::output::create_simulation_application_version_output::Builder {
+        crate::output::create_simulation_application_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
 pub mod create_simulation_application_version_output {
     
@@ -9627,12 +9677,6 @@ pub mod create_simulation_application_version_output {
     
     
 }
-impl CreateSimulationApplicationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
-    pub fn builder() -> crate::output::create_simulation_application_version_output::Builder {
-        crate::output::create_simulation_application_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9724,6 +9768,13 @@ impl aws_http::request_id::RequestId for CreateSimulationApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSimulationApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
+    pub fn builder() -> crate::output::create_simulation_application_output::Builder {
+        crate::output::create_simulation_application_output::Builder::default()
+    }
+}
+
 /// See [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
 pub mod create_simulation_application_output {
     
@@ -9897,12 +9948,6 @@ pub mod create_simulation_application_output {
     
     
 }
-impl CreateSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
-    pub fn builder() -> crate::output::create_simulation_application_output::Builder {
-        crate::output::create_simulation_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -9973,6 +10018,13 @@ impl aws_http::request_id::RequestId for CreateRobotApplicationVersionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRobotApplicationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
+    pub fn builder() -> crate::output::create_robot_application_version_output::Builder {
+        crate::output::create_robot_application_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
 pub mod create_robot_application_version_output {
     
@@ -10104,12 +10156,6 @@ pub mod create_robot_application_version_output {
     
     
 }
-impl CreateRobotApplicationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
-    pub fn builder() -> crate::output::create_robot_application_version_output::Builder {
-        crate::output::create_robot_application_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -10187,6 +10233,13 @@ impl aws_http::request_id::RequestId for CreateRobotApplicationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRobotApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
+    pub fn builder() -> crate::output::create_robot_application_output::Builder {
+        crate::output::create_robot_application_output::Builder::default()
+    }
+}
+
 /// See [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
 pub mod create_robot_application_output {
     
@@ -10336,12 +10389,6 @@ pub mod create_robot_application_output {
     
     
 }
-impl CreateRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
-    pub fn builder() -> crate::output::create_robot_application_output::Builder {
-        crate::output::create_robot_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -10399,6 +10446,13 @@ impl aws_http::request_id::RequestId for CreateRobotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRobotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRobotOutput`](crate::output::CreateRobotOutput).
+    pub fn builder() -> crate::output::create_robot_output::Builder {
+        crate::output::create_robot_output::Builder::default()
+    }
+}
+
 /// See [`CreateRobotOutput`](crate::output::CreateRobotOutput).
 pub mod create_robot_output {
     
@@ -10506,12 +10560,6 @@ pub mod create_robot_output {
     
     
 }
-impl CreateRobotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRobotOutput`](crate::output::CreateRobotOutput).
-    pub fn builder() -> crate::output::create_robot_output::Builder {
-        crate::output::create_robot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -10555,6 +10603,13 @@ impl aws_http::request_id::RequestId for CreateFleetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateFleetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::output::CreateFleetOutput).
+    pub fn builder() -> crate::output::create_fleet_output::Builder {
+        crate::output::create_fleet_output::Builder::default()
+    }
+}
+
 /// See [`CreateFleetOutput`](crate::output::CreateFleetOutput).
 pub mod create_fleet_output {
     
@@ -10637,12 +10692,6 @@ pub mod create_fleet_output {
     }
     
     
-}
-impl CreateFleetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::output::CreateFleetOutput).
-    pub fn builder() -> crate::output::create_fleet_output::Builder {
-        crate::output::create_fleet_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -10870,6 +10919,13 @@ impl aws_http::request_id::RequestId for CreateDeploymentJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDeploymentJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
+    pub fn builder() -> crate::output::create_deployment_job_output::Builder {
+        crate::output::create_deployment_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
 pub mod create_deployment_job_output {
     
@@ -11167,12 +11223,6 @@ pub mod create_deployment_job_output {
     
     
 }
-impl CreateDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
-    pub fn builder() -> crate::output::create_deployment_job_output::Builder {
-        crate::output::create_deployment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11185,6 +11235,13 @@ impl aws_http::request_id::RequestId for CancelWorldGenerationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelWorldGenerationJobOutput {
+    /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
+    pub fn builder() -> crate::output::cancel_world_generation_job_output::Builder {
+        crate::output::cancel_world_generation_job_output::Builder::default()
+    }
+}
+
 /// See [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
 pub mod cancel_world_generation_job_output {
     
@@ -11214,12 +11271,6 @@ pub mod cancel_world_generation_job_output {
     
     
 }
-impl CancelWorldGenerationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
-    pub fn builder() -> crate::output::cancel_world_generation_job_output::Builder {
-        crate::output::cancel_world_generation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11232,6 +11283,13 @@ impl aws_http::request_id::RequestId for CancelWorldExportJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelWorldExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
+    pub fn builder() -> crate::output::cancel_world_export_job_output::Builder {
+        crate::output::cancel_world_export_job_output::Builder::default()
+    }
+}
+
 /// See [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
 pub mod cancel_world_export_job_output {
     
@@ -11261,12 +11319,6 @@ pub mod cancel_world_export_job_output {
     
     
 }
-impl CancelWorldExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
-    pub fn builder() -> crate::output::cancel_world_export_job_output::Builder {
-        crate::output::cancel_world_export_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11279,6 +11331,13 @@ impl aws_http::request_id::RequestId for CancelSimulationJobBatchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelSimulationJobBatchOutput {
+    /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
+    pub fn builder() -> crate::output::cancel_simulation_job_batch_output::Builder {
+        crate::output::cancel_simulation_job_batch_output::Builder::default()
+    }
+}
+
 /// See [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
 pub mod cancel_simulation_job_batch_output {
     
@@ -11308,12 +11367,6 @@ pub mod cancel_simulation_job_batch_output {
     
     
 }
-impl CancelSimulationJobBatchOutput {
-    /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
-    pub fn builder() -> crate::output::cancel_simulation_job_batch_output::Builder {
-        crate::output::cancel_simulation_job_batch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11326,6 +11379,13 @@ impl aws_http::request_id::RequestId for CancelSimulationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelSimulationJobOutput {
+    /// Creates a new builder-style object to manufacture [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
+    pub fn builder() -> crate::output::cancel_simulation_job_output::Builder {
+        crate::output::cancel_simulation_job_output::Builder::default()
+    }
+}
+
 /// See [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
 pub mod cancel_simulation_job_output {
     
@@ -11355,12 +11415,6 @@ pub mod cancel_simulation_job_output {
     
     
 }
-impl CancelSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
-    pub fn builder() -> crate::output::cancel_simulation_job_output::Builder {
-        crate::output::cancel_simulation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
@@ -11374,6 +11428,13 @@ impl aws_http::request_id::RequestId for CancelDeploymentJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelDeploymentJobOutput {
+    /// Creates a new builder-style object to manufacture [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
+    pub fn builder() -> crate::output::cancel_deployment_job_output::Builder {
+        crate::output::cancel_deployment_job_output::Builder::default()
+    }
+}
+
 /// See [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
 pub mod cancel_deployment_job_output {
     
@@ -11403,12 +11464,6 @@ pub mod cancel_deployment_job_output {
     
     
 }
-impl CancelDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
-    pub fn builder() -> crate::output::cancel_deployment_job_output::Builder {
-        crate::output::cancel_deployment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11437,6 +11492,13 @@ impl aws_http::request_id::RequestId for BatchDescribeSimulationJobOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDescribeSimulationJobOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
+    pub fn builder() -> crate::output::batch_describe_simulation_job_output::Builder {
+        crate::output::batch_describe_simulation_job_output::Builder::default()
+    }
+}
+
 /// See [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
 pub mod batch_describe_simulation_job_output {
     
@@ -11502,12 +11564,6 @@ pub mod batch_describe_simulation_job_output {
     
     
 }
-impl BatchDescribeSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
-    pub fn builder() -> crate::output::batch_describe_simulation_job_output::Builder {
-        crate::output::batch_describe_simulation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -11529,6 +11585,13 @@ impl aws_http::request_id::RequestId for BatchDeleteWorldsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDeleteWorldsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
+    pub fn builder() -> crate::output::batch_delete_worlds_output::Builder {
+        crate::output::batch_delete_worlds_output::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
 pub mod batch_delete_worlds_output {
     
@@ -11575,11 +11638,5 @@ pub mod batch_delete_worlds_output {
     }
     
     
-}
-impl BatchDeleteWorldsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
-    pub fn builder() -> crate::output::batch_delete_worlds_output::Builder {
-        crate::output::batch_delete_worlds_output::Builder::default()
-    }
 }
 

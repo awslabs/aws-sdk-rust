@@ -35,6 +35,13 @@ impl Site {
         self.created_at.as_ref()
     }
 }
+impl Site {
+    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
+    pub fn builder() -> crate::model::site::Builder {
+        crate::model::site::Builder::default()
+    }
+}
+
 /// See [`Site`](crate::model::Site).
 pub mod site {
     
@@ -101,12 +108,6 @@ pub mod site {
     
     
 }
-impl Site {
-    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
-    pub fn builder() -> crate::model::site::Builder {
-        crate::model::site::Builder::default()
-    }
-}
 
 /// A collection of workers organized within a facility.
 #[non_exhaustive]
@@ -164,6 +165,13 @@ impl WorkerFleet {
         self.additional_fixed_properties.as_deref()
     }
 }
+impl WorkerFleet {
+    /// Creates a new builder-style object to manufacture [`WorkerFleet`](crate::model::WorkerFleet).
+    pub fn builder() -> crate::model::worker_fleet::Builder {
+        crate::model::worker_fleet::Builder::default()
+    }
+}
+
 /// See [`WorkerFleet`](crate::model::WorkerFleet).
 pub mod worker_fleet {
     
@@ -266,12 +274,6 @@ pub mod worker_fleet {
     
     
 }
-impl WorkerFleet {
-    /// Creates a new builder-style object to manufacture [`WorkerFleet`](crate::model::WorkerFleet).
-    pub fn builder() -> crate::model::worker_fleet::Builder {
-        crate::model::worker_fleet::Builder::default()
-    }
-}
 
 /// Area within a facility where work can be performed.
 #[non_exhaustive]
@@ -336,6 +338,13 @@ impl Destination {
         self.additional_fixed_properties.as_deref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
     
@@ -449,12 +458,6 @@ pub mod destination {
     }
     
     
-}
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DestinationState`, it is important to ensure
@@ -605,6 +608,13 @@ impl CartesianCoordinates {
         self.z
     }
 }
+impl CartesianCoordinates {
+    /// Creates a new builder-style object to manufacture [`CartesianCoordinates`](crate::model::CartesianCoordinates).
+    pub fn builder() -> crate::model::cartesian_coordinates::Builder {
+        crate::model::cartesian_coordinates::Builder::default()
+    }
+}
+
 /// See [`CartesianCoordinates`](crate::model::CartesianCoordinates).
 pub mod cartesian_coordinates {
     
@@ -659,12 +669,6 @@ pub mod cartesian_coordinates {
     
     
 }
-impl CartesianCoordinates {
-    /// Creates a new builder-style object to manufacture [`CartesianCoordinates`](crate::model::CartesianCoordinates).
-    pub fn builder() -> crate::model::cartesian_coordinates::Builder {
-        crate::model::cartesian_coordinates::Builder::default()
-    }
-}
 
 /// Properties of the worker that are provided by the vendor FMS.
 #[non_exhaustive]
@@ -701,6 +705,13 @@ impl VendorProperties {
         self.vendor_additional_fixed_properties.as_deref()
     }
 }
+impl VendorProperties {
+    /// Creates a new builder-style object to manufacture [`VendorProperties`](crate::model::VendorProperties).
+    pub fn builder() -> crate::model::vendor_properties::Builder {
+        crate::model::vendor_properties::Builder::default()
+    }
+}
+
 /// See [`VendorProperties`](crate::model::VendorProperties).
 pub mod vendor_properties {
     
@@ -766,12 +777,6 @@ pub mod vendor_properties {
     }
     
     
-}
-impl VendorProperties {
-    /// Creates a new builder-style object to manufacture [`VendorProperties`](crate::model::VendorProperties).
-    pub fn builder() -> crate::model::vendor_properties::Builder {
-        crate::model::vendor_properties::Builder::default()
-    }
 }
 
 /// Worker orientation measured in units clockwise from north.
@@ -898,6 +903,13 @@ impl Worker {
         self.orientation.as_ref()
     }
 }
+impl Worker {
+    /// Creates a new builder-style object to manufacture [`Worker`](crate::model::Worker).
+    pub fn builder() -> crate::model::worker::Builder {
+        crate::model::worker::Builder::default()
+    }
+}
+
 /// See [`Worker`](crate::model::Worker).
 pub mod worker {
     
@@ -1059,11 +1071,5 @@ pub mod worker {
     }
     
     
-}
-impl Worker {
-    /// Creates a new builder-style object to manufacture [`Worker`](crate::model::Worker).
-    pub fn builder() -> crate::model::worker::Builder {
-        crate::model::worker::Builder::default()
-    }
 }
 

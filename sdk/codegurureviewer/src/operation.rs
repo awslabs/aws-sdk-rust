@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_repository`](crate::client::Client::associate_repository).
             ///
-            /// See [`crate::client::fluent_builders::AssociateRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateRepository {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_code_review`](crate::client::Client::create_code_review).
             ///
-            /// See [`crate::client::fluent_builders::CreateCodeReview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateCodeReview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCodeReview {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCodeReview {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_code_review`](crate::client::Client::describe_code_review).
             ///
-            /// See [`crate::client::fluent_builders::DescribeCodeReview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeCodeReview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCodeReview {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeReview {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_recommendation_feedback`](crate::client::Client::describe_recommendation_feedback).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRecommendationFeedback`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRecommendationFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRecommendationFeedback {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationFe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_repository_association`](crate::client::Client::describe_repository_association).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRepositoryAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRepositoryAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRepositoryAssociation {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositoryAssoci
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_repository`](crate::client::Client::disassociate_repository).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateRepository {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_code_reviews`](crate::client::Client::list_code_reviews).
             ///
-            /// See [`crate::client::fluent_builders::ListCodeReviews`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCodeReviews`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCodeReviews {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCodeReviews {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_recommendation_feedback`](crate::client::Client::list_recommendation_feedback).
             ///
-            /// See [`crate::client::fluent_builders::ListRecommendationFeedback`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRecommendationFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecommendationFeedback {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommendationFeedba
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_recommendations`](crate::client::Client::list_recommendations).
             ///
-            /// See [`crate::client::fluent_builders::ListRecommendations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecommendations {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommendations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_repository_associations`](crate::client::Client::list_repository_associations).
             ///
-            /// See [`crate::client::fluent_builders::ListRepositoryAssociations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRepositoryAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRepositoryAssociations {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoryAssociatio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_recommendation_feedback`](crate::client::Client::put_recommendation_feedback).
             ///
-            /// See [`crate::client::fluent_builders::PutRecommendationFeedback`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutRecommendationFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRecommendationFeedback {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationFeedbac
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()

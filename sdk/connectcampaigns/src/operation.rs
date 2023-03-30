@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_campaign`](crate::client::Client::create_campaign).
             ///
-            /// See [`crate::client::fluent_builders::CreateCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCampaign {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_campaign`](crate::client::Client::delete_campaign).
             ///
-            /// See [`crate::client::fluent_builders::DeleteCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCampaign {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_connect_instance_config`](crate::client::Client::delete_connect_instance_config).
             ///
-            /// See [`crate::client::fluent_builders::DeleteConnectInstanceConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteConnectInstanceConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfig {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectInstanceCon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_instance_onboarding_job`](crate::client::Client::delete_instance_onboarding_job).
             ///
-            /// See [`crate::client::fluent_builders::DeleteInstanceOnboardingJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteInstanceOnboardingJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInstanceOnboardingJob {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInstanceOnboarding
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_campaign`](crate::client::Client::describe_campaign).
             ///
-            /// See [`crate::client::fluent_builders::DescribeCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCampaign {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_campaign_state`](crate::client::Client::get_campaign_state).
             ///
-            /// See [`crate::client::fluent_builders::GetCampaignState`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCampaignState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCampaignState {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignState {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_campaign_state_batch`](crate::client::Client::get_campaign_state_batch).
             ///
-            /// See [`crate::client::fluent_builders::GetCampaignStateBatch`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCampaignStateBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCampaignStateBatch {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignStateBatch {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_connect_instance_config`](crate::client::Client::get_connect_instance_config).
             ///
-            /// See [`crate::client::fluent_builders::GetConnectInstanceConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetConnectInstanceConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConnectInstanceConfig {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectInstanceConfig
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_instance_onboarding_job_status`](crate::client::Client::get_instance_onboarding_job_status).
             ///
-            /// See [`crate::client::fluent_builders::GetInstanceOnboardingJobStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetInstanceOnboardingJobStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatus {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceOnboardingJob
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_campaigns`](crate::client::Client::list_campaigns).
             ///
-            /// See [`crate::client::fluent_builders::ListCampaigns`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCampaigns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCampaigns {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCampaigns {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`pause_campaign`](crate::client::Client::pause_campaign).
             ///
-            /// See [`crate::client::fluent_builders::PauseCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PauseCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PauseCampaign {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_dial_request_batch`](crate::client::Client::put_dial_request_batch).
             ///
-            /// See [`crate::client::fluent_builders::PutDialRequestBatch`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutDialRequestBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDialRequestBatch {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDialRequestBatch {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`resume_campaign`](crate::client::Client::resume_campaign).
             ///
-            /// See [`crate::client::fluent_builders::ResumeCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ResumeCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResumeCampaign {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_campaign`](crate::client::Client::start_campaign).
             ///
-            /// See [`crate::client::fluent_builders::StartCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartCampaign {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_instance_onboarding_job`](crate::client::Client::start_instance_onboarding_job).
             ///
-            /// See [`crate::client::fluent_builders::StartInstanceOnboardingJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartInstanceOnboardingJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartInstanceOnboardingJob {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInstanceOnboardingJ
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`stop_campaign`](crate::client::Client::stop_campaign).
             ///
-            /// See [`crate::client::fluent_builders::StopCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StopCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopCampaign {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCampaign {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_campaign_dialer_config`](crate::client::Client::update_campaign_dialer_config).
             ///
-            /// See [`crate::client::fluent_builders::UpdateCampaignDialerConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateCampaignDialerConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfig {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignDialerConf
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_campaign_name`](crate::client::Client::update_campaign_name).
             ///
-            /// See [`crate::client::fluent_builders::UpdateCampaignName`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateCampaignName`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaignName {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaignName {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_campaign_outbound_call_config`](crate::client::Client::update_campaign_outbound_call_config).
             ///
-            /// See [`crate::client::fluent_builders::UpdateCampaignOutboundCallConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateCampaignOutboundCallConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfig {
     _private: ()

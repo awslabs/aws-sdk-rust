@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_session`](crate::client::Client::delete_session).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSession {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSession {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_session`](crate::client::Client::get_session).
             ///
-            /// See [`crate::client::fluent_builders::GetSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSession {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_session`](crate::client::Client::put_session).
             ///
-            /// See [`crate::client::fluent_builders::PutSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSession {
     _private: ()
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseHttpResponse for PutSession {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`recognize_text`](crate::client::Client::recognize_text).
             ///
-            /// See [`crate::client::fluent_builders::RecognizeText`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RecognizeText`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RecognizeText {
     _private: ()
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecognizeText {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`recognize_utterance`](crate::client::Client::recognize_utterance).
             ///
-            /// See [`crate::client::fluent_builders::RecognizeUtterance`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RecognizeUtterance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RecognizeUtterance {
     _private: ()

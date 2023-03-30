@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_check_layer_availability`](crate::client::Client::batch_check_layer_availability).
             ///
-            /// See [`crate::client::fluent_builders::BatchCheckLayerAvailability`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchCheckLayerAvailability`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCheckLayerAvailability {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCheckLayerAvailabil
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_delete_image`](crate::client::Client::batch_delete_image).
             ///
-            /// See [`crate::client::fluent_builders::BatchDeleteImage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchDeleteImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteImage {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteImage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_get_image`](crate::client::Client::batch_get_image).
             ///
-            /// See [`crate::client::fluent_builders::BatchGetImage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchGetImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetImage {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetImage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_get_repository_scanning_configuration`](crate::client::Client::batch_get_repository_scanning_configuration).
             ///
-            /// See [`crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchGetRepositoryScanningConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfiguration {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositoryScanni
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`complete_layer_upload`](crate::client::Client::complete_layer_upload).
             ///
-            /// See [`crate::client::fluent_builders::CompleteLayerUpload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CompleteLayerUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CompleteLayerUpload {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteLayerUpload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_pull_through_cache_rule`](crate::client::Client::create_pull_through_cache_rule).
             ///
-            /// See [`crate::client::fluent_builders::CreatePullThroughCacheRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreatePullThroughCacheRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePullThroughCacheRule {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePullThroughCacheRu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_repository`](crate::client::Client::create_repository).
             ///
-            /// See [`crate::client::fluent_builders::CreateRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRepository {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_lifecycle_policy`](crate::client::Client::delete_lifecycle_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLifecyclePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLifecyclePolicy {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_pull_through_cache_rule`](crate::client::Client::delete_pull_through_cache_rule).
             ///
-            /// See [`crate::client::fluent_builders::DeletePullThroughCacheRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePullThroughCacheRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePullThroughCacheRule {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePullThroughCacheRu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_registry_policy`](crate::client::Client::delete_registry_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRegistryPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRegistryPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRegistryPolicy {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegistryPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_repository`](crate::client::Client::delete_repository).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRepository`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepository {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_repository_policy`](crate::client::Client::delete_repository_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRepositoryPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRepositoryPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRepositoryPolicy {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_image_replication_status`](crate::client::Client::describe_image_replication_status).
             ///
-            /// See [`crate::client::fluent_builders::DescribeImageReplicationStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeImageReplicationStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImageReplicationStatus {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageReplication
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_images`](crate::client::Client::describe_images).
             ///
-            /// See [`crate::client::fluent_builders::DescribeImages`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImages {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImages {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_image_scan_findings`](crate::client::Client::describe_image_scan_findings).
             ///
-            /// See [`crate::client::fluent_builders::DescribeImageScanFindings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeImageScanFindings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImageScanFindings {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageScanFinding
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_pull_through_cache_rules`](crate::client::Client::describe_pull_through_cache_rules).
             ///
-            /// See [`crate::client::fluent_builders::DescribePullThroughCacheRules`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribePullThroughCacheRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePullThroughCacheRules {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePullThroughCache
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_registry`](crate::client::Client::describe_registry).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRegistry`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRegistry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRegistry {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegistry {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_repositories`](crate::client::Client::describe_repositories).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRepositories`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRepositories {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositories {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_authorization_token`](crate::client::Client::get_authorization_token).
             ///
-            /// See [`crate::client::fluent_builders::GetAuthorizationToken`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAuthorizationToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAuthorizationToken {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizationToken {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_download_url_for_layer`](crate::client::Client::get_download_url_for_layer).
             ///
-            /// See [`crate::client::fluent_builders::GetDownloadUrlForLayer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDownloadUrlForLayer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDownloadUrlForLayer {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDownloadUrlForLayer {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_lifecycle_policy`](crate::client::Client::get_lifecycle_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetLifecyclePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLifecyclePolicy {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_lifecycle_policy_preview`](crate::client::Client::get_lifecycle_policy_preview).
             ///
-            /// See [`crate::client::fluent_builders::GetLifecyclePolicyPreview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLifecyclePolicyPreview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreview {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicyPrevie
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_registry_policy`](crate::client::Client::get_registry_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetRegistryPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRegistryPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRegistryPolicy {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegistryPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_registry_scanning_configuration`](crate::client::Client::get_registry_scanning_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetRegistryScanningConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRegistryScanningConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRegistryScanningConfiguration {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegistryScanningConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_repository_policy`](crate::client::Client::get_repository_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetRepositoryPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRepositoryPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRepositoryPolicy {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`initiate_layer_upload`](crate::client::Client::initiate_layer_upload).
             ///
-            /// See [`crate::client::fluent_builders::InitiateLayerUpload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `InitiateLayerUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InitiateLayerUpload {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateLayerUpload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_images`](crate::client::Client::list_images).
             ///
-            /// See [`crate::client::fluent_builders::ListImages`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListImages {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImages {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_image`](crate::client::Client::put_image).
             ///
-            /// See [`crate::client::fluent_builders::PutImage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutImage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutImage {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_image_scanning_configuration`](crate::client::Client::put_image_scanning_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutImageScanningConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutImageScanningConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutImageScanningConfiguration {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImageScanningConfigur
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_image_tag_mutability`](crate::client::Client::put_image_tag_mutability).
             ///
-            /// See [`crate::client::fluent_builders::PutImageTagMutability`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutImageTagMutability`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutImageTagMutability {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImageTagMutability {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_lifecycle_policy`](crate::client::Client::put_lifecycle_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutLifecyclePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutLifecyclePolicy {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecyclePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_registry_policy`](crate::client::Client::put_registry_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutRegistryPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutRegistryPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRegistryPolicy {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRegistryPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_registry_scanning_configuration`](crate::client::Client::put_registry_scanning_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutRegistryScanningConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutRegistryScanningConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRegistryScanningConfiguration {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRegistryScanningConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_replication_configuration`](crate::client::Client::put_replication_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutReplicationConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutReplicationConfiguration {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutReplicationConfigurat
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`set_repository_policy`](crate::client::Client::set_repository_policy).
             ///
-            /// See [`crate::client::fluent_builders::SetRepositoryPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SetRepositoryPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetRepositoryPolicy {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetRepositoryPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_image_scan`](crate::client::Client::start_image_scan).
             ///
-            /// See [`crate::client::fluent_builders::StartImageScan`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartImageScan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartImageScan {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImageScan {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_lifecycle_policy_preview`](crate::client::Client::start_lifecycle_policy_preview).
             ///
-            /// See [`crate::client::fluent_builders::StartLifecyclePolicyPreview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartLifecyclePolicyPreview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartLifecyclePolicyPreview {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLifecyclePolicyPrev
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`upload_layer_part`](crate::client::Client::upload_layer_part).
             ///
-            /// See [`crate::client::fluent_builders::UploadLayerPart`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UploadLayerPart`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadLayerPart {
     _private: ()

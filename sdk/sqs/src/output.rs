@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagQueueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagQueueOutput {
+    /// Creates a new builder-style object to manufacture [`UntagQueueOutput`](crate::output::UntagQueueOutput).
+    pub fn builder() -> crate::output::untag_queue_output::Builder {
+        crate::output::untag_queue_output::Builder::default()
+    }
+}
+
 /// See [`UntagQueueOutput`](crate::output::UntagQueueOutput).
 pub mod untag_queue_output {
     
@@ -39,12 +46,6 @@ pub mod untag_queue_output {
     
     
 }
-impl UntagQueueOutput {
-    /// Creates a new builder-style object to manufacture [`UntagQueueOutput`](crate::output::UntagQueueOutput).
-    pub fn builder() -> crate::output::untag_queue_output::Builder {
-        crate::output::untag_queue_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagQueueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagQueueOutput {
+    /// Creates a new builder-style object to manufacture [`TagQueueOutput`](crate::output::TagQueueOutput).
+    pub fn builder() -> crate::output::tag_queue_output::Builder {
+        crate::output::tag_queue_output::Builder::default()
+    }
+}
+
 /// See [`TagQueueOutput`](crate::output::TagQueueOutput).
 pub mod tag_queue_output {
     
@@ -86,12 +94,6 @@ pub mod tag_queue_output {
     
     
 }
-impl TagQueueOutput {
-    /// Creates a new builder-style object to manufacture [`TagQueueOutput`](crate::output::TagQueueOutput).
-    pub fn builder() -> crate::output::tag_queue_output::Builder {
-        crate::output::tag_queue_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for SetQueueAttributesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetQueueAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
+    pub fn builder() -> crate::output::set_queue_attributes_output::Builder {
+        crate::output::set_queue_attributes_output::Builder::default()
+    }
+}
+
 /// See [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
 pub mod set_queue_attributes_output {
     
@@ -133,12 +142,6 @@ pub mod set_queue_attributes_output {
     
     
 }
-impl SetQueueAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`SetQueueAttributesOutput`](crate::output::SetQueueAttributesOutput).
-    pub fn builder() -> crate::output::set_queue_attributes_output::Builder {
-        crate::output::set_queue_attributes_output::Builder::default()
-    }
-}
 
 /// <p>For each message in the batch, the response contains a <code> <code>SendMessageBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
@@ -167,6 +170,13 @@ impl aws_http::request_id::RequestId for SendMessageBatchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendMessageBatchOutput {
+    /// Creates a new builder-style object to manufacture [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
+    pub fn builder() -> crate::output::send_message_batch_output::Builder {
+        crate::output::send_message_batch_output::Builder::default()
+    }
+}
+
 /// See [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
 pub mod send_message_batch_output {
     
@@ -232,12 +242,6 @@ pub mod send_message_batch_output {
     
     
 }
-impl SendMessageBatchOutput {
-    /// Creates a new builder-style object to manufacture [`SendMessageBatchOutput`](crate::output::SendMessageBatchOutput).
-    pub fn builder() -> crate::output::send_message_batch_output::Builder {
-        crate::output::send_message_batch_output::Builder::default()
-    }
-}
 
 /// <p>The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.</p>
 #[non_exhaustive]
@@ -291,6 +295,13 @@ impl aws_http::request_id::RequestId for SendMessageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendMessageOutput {
+    /// Creates a new builder-style object to manufacture [`SendMessageOutput`](crate::output::SendMessageOutput).
+    pub fn builder() -> crate::output::send_message_output::Builder {
+        crate::output::send_message_output::Builder::default()
+    }
+}
+
 /// See [`SendMessageOutput`](crate::output::SendMessageOutput).
 pub mod send_message_output {
     
@@ -384,12 +395,6 @@ pub mod send_message_output {
     
     
 }
-impl SendMessageOutput {
-    /// Creates a new builder-style object to manufacture [`SendMessageOutput`](crate::output::SendMessageOutput).
-    pub fn builder() -> crate::output::send_message_output::Builder {
-        crate::output::send_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -402,6 +407,13 @@ impl aws_http::request_id::RequestId for RemovePermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemovePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
+    pub fn builder() -> crate::output::remove_permission_output::Builder {
+        crate::output::remove_permission_output::Builder::default()
+    }
+}
+
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
     
@@ -431,12 +443,6 @@ pub mod remove_permission_output {
     
     
 }
-impl RemovePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
-    pub fn builder() -> crate::output::remove_permission_output::Builder {
-        crate::output::remove_permission_output::Builder::default()
-    }
-}
 
 /// <p>A list of received messages.</p>
 #[non_exhaustive]
@@ -458,6 +464,13 @@ impl aws_http::request_id::RequestId for ReceiveMessageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ReceiveMessageOutput {
+    /// Creates a new builder-style object to manufacture [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
+    pub fn builder() -> crate::output::receive_message_output::Builder {
+        crate::output::receive_message_output::Builder::default()
+    }
+}
+
 /// See [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
 pub mod receive_message_output {
     
@@ -505,12 +518,6 @@ pub mod receive_message_output {
     
     
 }
-impl ReceiveMessageOutput {
-    /// Creates a new builder-style object to manufacture [`ReceiveMessageOutput`](crate::output::ReceiveMessageOutput).
-    pub fn builder() -> crate::output::receive_message_output::Builder {
-        crate::output::receive_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -523,6 +530,13 @@ impl aws_http::request_id::RequestId for PurgeQueueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PurgeQueueOutput {
+    /// Creates a new builder-style object to manufacture [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
+    pub fn builder() -> crate::output::purge_queue_output::Builder {
+        crate::output::purge_queue_output::Builder::default()
+    }
+}
+
 /// See [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
 pub mod purge_queue_output {
     
@@ -552,12 +566,6 @@ pub mod purge_queue_output {
     
     
 }
-impl PurgeQueueOutput {
-    /// Creates a new builder-style object to manufacture [`PurgeQueueOutput`](crate::output::PurgeQueueOutput).
-    pub fn builder() -> crate::output::purge_queue_output::Builder {
-        crate::output::purge_queue_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -579,6 +587,13 @@ impl aws_http::request_id::RequestId for ListQueueTagsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListQueueTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
+    pub fn builder() -> crate::output::list_queue_tags_output::Builder {
+        crate::output::list_queue_tags_output::Builder::default()
+    }
+}
+
 /// See [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
 pub mod list_queue_tags_output {
     
@@ -626,12 +641,6 @@ pub mod list_queue_tags_output {
     
     
 }
-impl ListQueueTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListQueueTagsOutput`](crate::output::ListQueueTagsOutput).
-    pub fn builder() -> crate::output::list_queue_tags_output::Builder {
-        crate::output::list_queue_tags_output::Builder::default()
-    }
-}
 
 /// <p>A list of your queues.</p>
 #[non_exhaustive]
@@ -660,6 +669,13 @@ impl aws_http::request_id::RequestId for ListQueuesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListQueuesOutput {
+    /// Creates a new builder-style object to manufacture [`ListQueuesOutput`](crate::output::ListQueuesOutput).
+    pub fn builder() -> crate::output::list_queues_output::Builder {
+        crate::output::list_queues_output::Builder::default()
+    }
+}
+
 /// See [`ListQueuesOutput`](crate::output::ListQueuesOutput).
 pub mod list_queues_output {
     
@@ -719,12 +735,6 @@ pub mod list_queues_output {
     
     
 }
-impl ListQueuesOutput {
-    /// Creates a new builder-style object to manufacture [`ListQueuesOutput`](crate::output::ListQueuesOutput).
-    pub fn builder() -> crate::output::list_queues_output::Builder {
-        crate::output::list_queues_output::Builder::default()
-    }
-}
 
 /// <p>A list of your dead letter source queues.</p>
 #[non_exhaustive]
@@ -753,6 +763,13 @@ impl aws_http::request_id::RequestId for ListDeadLetterSourceQueuesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDeadLetterSourceQueuesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
+    pub fn builder() -> crate::output::list_dead_letter_source_queues_output::Builder {
+        crate::output::list_dead_letter_source_queues_output::Builder::default()
+    }
+}
+
 /// See [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
 pub mod list_dead_letter_source_queues_output {
     
@@ -812,12 +829,6 @@ pub mod list_dead_letter_source_queues_output {
     
     
 }
-impl ListDeadLetterSourceQueuesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesOutput`](crate::output::ListDeadLetterSourceQueuesOutput).
-    pub fn builder() -> crate::output::list_dead_letter_source_queues_output::Builder {
-        crate::output::list_dead_letter_source_queues_output::Builder::default()
-    }
-}
 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -839,6 +850,13 @@ impl aws_http::request_id::RequestId for GetQueueUrlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetQueueUrlOutput {
+    /// Creates a new builder-style object to manufacture [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
+    pub fn builder() -> crate::output::get_queue_url_output::Builder {
+        crate::output::get_queue_url_output::Builder::default()
+    }
+}
+
 /// See [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
 pub mod get_queue_url_output {
     
@@ -880,12 +898,6 @@ pub mod get_queue_url_output {
     
     
 }
-impl GetQueueUrlOutput {
-    /// Creates a new builder-style object to manufacture [`GetQueueUrlOutput`](crate::output::GetQueueUrlOutput).
-    pub fn builder() -> crate::output::get_queue_url_output::Builder {
-        crate::output::get_queue_url_output::Builder::default()
-    }
-}
 
 /// <p>A list of returned queue attributes.</p>
 #[non_exhaustive]
@@ -907,6 +919,13 @@ impl aws_http::request_id::RequestId for GetQueueAttributesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetQueueAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
+    pub fn builder() -> crate::output::get_queue_attributes_output::Builder {
+        crate::output::get_queue_attributes_output::Builder::default()
+    }
+}
+
 /// See [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
 pub mod get_queue_attributes_output {
     
@@ -954,12 +973,6 @@ pub mod get_queue_attributes_output {
     
     
 }
-impl GetQueueAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`GetQueueAttributesOutput`](crate::output::GetQueueAttributesOutput).
-    pub fn builder() -> crate::output::get_queue_attributes_output::Builder {
-        crate::output::get_queue_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -972,6 +985,13 @@ impl aws_http::request_id::RequestId for DeleteQueueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteQueueOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
+    pub fn builder() -> crate::output::delete_queue_output::Builder {
+        crate::output::delete_queue_output::Builder::default()
+    }
+}
+
 /// See [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
 pub mod delete_queue_output {
     
@@ -1001,12 +1021,6 @@ pub mod delete_queue_output {
     
     
 }
-impl DeleteQueueOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteQueueOutput`](crate::output::DeleteQueueOutput).
-    pub fn builder() -> crate::output::delete_queue_output::Builder {
-        crate::output::delete_queue_output::Builder::default()
-    }
-}
 
 /// <p>For each message in the batch, the response contains a <code> <code>DeleteMessageBatchResultEntry</code> </code> tag if the message is deleted or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message can't be deleted.</p>
 #[non_exhaustive]
@@ -1035,6 +1049,13 @@ impl aws_http::request_id::RequestId for DeleteMessageBatchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMessageBatchOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
+    pub fn builder() -> crate::output::delete_message_batch_output::Builder {
+        crate::output::delete_message_batch_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
 pub mod delete_message_batch_output {
     
@@ -1100,12 +1121,6 @@ pub mod delete_message_batch_output {
     
     
 }
-impl DeleteMessageBatchOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchOutput`](crate::output::DeleteMessageBatchOutput).
-    pub fn builder() -> crate::output::delete_message_batch_output::Builder {
-        crate::output::delete_message_batch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1118,6 +1133,13 @@ impl aws_http::request_id::RequestId for DeleteMessageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMessageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
+    pub fn builder() -> crate::output::delete_message_output::Builder {
+        crate::output::delete_message_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
 pub mod delete_message_output {
     
@@ -1147,12 +1169,6 @@ pub mod delete_message_output {
     
     
 }
-impl DeleteMessageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageOutput`](crate::output::DeleteMessageOutput).
-    pub fn builder() -> crate::output::delete_message_output::Builder {
-        crate::output::delete_message_output::Builder::default()
-    }
-}
 
 /// <p>Returns the <code>QueueUrl</code> attribute of the created queue.</p>
 #[non_exhaustive]
@@ -1174,6 +1190,13 @@ impl aws_http::request_id::RequestId for CreateQueueOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateQueueOutput {
+    /// Creates a new builder-style object to manufacture [`CreateQueueOutput`](crate::output::CreateQueueOutput).
+    pub fn builder() -> crate::output::create_queue_output::Builder {
+        crate::output::create_queue_output::Builder::default()
+    }
+}
+
 /// See [`CreateQueueOutput`](crate::output::CreateQueueOutput).
 pub mod create_queue_output {
     
@@ -1215,12 +1238,6 @@ pub mod create_queue_output {
     
     
 }
-impl CreateQueueOutput {
-    /// Creates a new builder-style object to manufacture [`CreateQueueOutput`](crate::output::CreateQueueOutput).
-    pub fn builder() -> crate::output::create_queue_output::Builder {
-        crate::output::create_queue_output::Builder::default()
-    }
-}
 
 /// <p>For each message in the batch, the response contains a <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
@@ -1249,6 +1266,13 @@ impl aws_http::request_id::RequestId for ChangeMessageVisibilityBatchOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ChangeMessageVisibilityBatchOutput {
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
+    pub fn builder() -> crate::output::change_message_visibility_batch_output::Builder {
+        crate::output::change_message_visibility_batch_output::Builder::default()
+    }
+}
+
 /// See [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
 pub mod change_message_visibility_batch_output {
     
@@ -1314,12 +1338,6 @@ pub mod change_message_visibility_batch_output {
     
     
 }
-impl ChangeMessageVisibilityBatchOutput {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchOutput`](crate::output::ChangeMessageVisibilityBatchOutput).
-    pub fn builder() -> crate::output::change_message_visibility_batch_output::Builder {
-        crate::output::change_message_visibility_batch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1332,6 +1350,13 @@ impl aws_http::request_id::RequestId for ChangeMessageVisibilityOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ChangeMessageVisibilityOutput {
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
+    pub fn builder() -> crate::output::change_message_visibility_output::Builder {
+        crate::output::change_message_visibility_output::Builder::default()
+    }
+}
+
 /// See [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
 pub mod change_message_visibility_output {
     
@@ -1361,12 +1386,6 @@ pub mod change_message_visibility_output {
     
     
 }
-impl ChangeMessageVisibilityOutput {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityOutput`](crate::output::ChangeMessageVisibilityOutput).
-    pub fn builder() -> crate::output::change_message_visibility_output::Builder {
-        crate::output::change_message_visibility_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1379,6 +1398,13 @@ impl aws_http::request_id::RequestId for AddPermissionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddPermissionOutput {
+    /// Creates a new builder-style object to manufacture [`AddPermissionOutput`](crate::output::AddPermissionOutput).
+    pub fn builder() -> crate::output::add_permission_output::Builder {
+        crate::output::add_permission_output::Builder::default()
+    }
+}
+
 /// See [`AddPermissionOutput`](crate::output::AddPermissionOutput).
 pub mod add_permission_output {
     
@@ -1407,11 +1433,5 @@ pub mod add_permission_output {
     }
     
     
-}
-impl AddPermissionOutput {
-    /// Creates a new builder-style object to manufacture [`AddPermissionOutput`](crate::output::AddPermissionOutput).
-    pub fn builder() -> crate::output::add_permission_output::Builder {
-        crate::output::add_permission_output::Builder::default()
-    }
 }
 

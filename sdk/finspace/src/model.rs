@@ -91,6 +91,13 @@ impl Environment {
         self.federation_parameters.as_ref()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
     
@@ -253,12 +260,6 @@ pub mod environment {
     
     
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 /// <p>Configuration information when authentication mode is FEDERATED.</p>
 #[non_exhaustive]
@@ -309,6 +310,13 @@ impl FederationParameters {
         self.attribute_map.as_ref()
     }
 }
+impl FederationParameters {
+    /// Creates a new builder-style object to manufacture [`FederationParameters`](crate::model::FederationParameters).
+    pub fn builder() -> crate::model::federation_parameters::Builder {
+        crate::model::federation_parameters::Builder::default()
+    }
+}
+
 /// See [`FederationParameters`](crate::model::FederationParameters).
 pub mod federation_parameters {
     
@@ -404,12 +412,6 @@ pub mod federation_parameters {
     }
     
     
-}
-impl FederationParameters {
-    /// Creates a new builder-style object to manufacture [`FederationParameters`](crate::model::FederationParameters).
-    pub fn builder() -> crate::model::federation_parameters::Builder {
-        crate::model::federation_parameters::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FederationMode`, it is important to ensure
@@ -653,6 +655,13 @@ impl  std::fmt::Debug for SuperuserParameters  {
         formatter.finish()
     }
 }
+impl SuperuserParameters {
+    /// Creates a new builder-style object to manufacture [`SuperuserParameters`](crate::model::SuperuserParameters).
+    pub fn builder() -> crate::model::superuser_parameters::Builder {
+        crate::model::superuser_parameters::Builder::default()
+    }
+}
+
 /// See [`SuperuserParameters`](crate::model::SuperuserParameters).
 pub mod superuser_parameters {
     
@@ -715,11 +724,5 @@ pub mod superuser_parameters {
     }
     
     
-}
-impl SuperuserParameters {
-    /// Creates a new builder-style object to manufacture [`SuperuserParameters`](crate::model::SuperuserParameters).
-    pub fn builder() -> crate::model::superuser_parameters::Builder {
-        crate::model::superuser_parameters::Builder::default()
-    }
 }
 

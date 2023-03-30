@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveTagsFromResourceOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
+    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
+        crate::output::remove_tags_from_resource_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
     
@@ -60,12 +67,6 @@ pub mod remove_tags_from_resource_output {
     
     
 }
-impl RemoveTagsFromResourceOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
-        crate::output::remove_tags_from_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for ModifyLunaClientOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyLunaClientOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
+    pub fn builder() -> crate::output::modify_luna_client_output::Builder {
+        crate::output::modify_luna_client_output::Builder::default()
+    }
+}
+
 /// See [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
 pub mod modify_luna_client_output {
     
@@ -128,12 +136,6 @@ pub mod modify_luna_client_output {
     
     
 }
-impl ModifyLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
-    pub fn builder() -> crate::output::modify_luna_client_output::Builder {
-        crate::output::modify_luna_client_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>ModifyHsm</code> operation.</p>
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for ModifyHsmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyHsmOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
+    pub fn builder() -> crate::output::modify_hsm_output::Builder {
+        crate::output::modify_hsm_output::Builder::default()
+    }
+}
+
 /// See [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
 pub mod modify_hsm_output {
     
@@ -196,12 +205,6 @@ pub mod modify_hsm_output {
     
     
 }
-impl ModifyHsmOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
-    pub fn builder() -> crate::output::modify_hsm_output::Builder {
-        crate::output::modify_hsm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -223,6 +226,13 @@ impl aws_http::request_id::RequestId for ModifyHapgOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyHapgOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
+    pub fn builder() -> crate::output::modify_hapg_output::Builder {
+        crate::output::modify_hapg_output::Builder::default()
+    }
+}
+
 /// See [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
 pub mod modify_hapg_output {
     
@@ -264,12 +274,6 @@ pub mod modify_hapg_output {
     
     
 }
-impl ModifyHapgOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
-    pub fn builder() -> crate::output::modify_hapg_output::Builder {
-        crate::output::modify_hapg_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -291,6 +295,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -338,12 +349,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -372,6 +377,13 @@ impl aws_http::request_id::RequestId for ListLunaClientsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListLunaClientsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
+    pub fn builder() -> crate::output::list_luna_clients_output::Builder {
+        crate::output::list_luna_clients_output::Builder::default()
+    }
+}
+
 /// See [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
 pub mod list_luna_clients_output {
     
@@ -431,12 +443,6 @@ pub mod list_luna_clients_output {
     
     
 }
-impl ListLunaClientsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
-    pub fn builder() -> crate::output::list_luna_clients_output::Builder {
-        crate::output::list_luna_clients_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>ListHsms</code> operation.</p>
 #[non_exhaustive]
@@ -465,6 +471,13 @@ impl aws_http::request_id::RequestId for ListHsmsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListHsmsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHsmsOutput`](crate::output::ListHsmsOutput).
+    pub fn builder() -> crate::output::list_hsms_output::Builder {
+        crate::output::list_hsms_output::Builder::default()
+    }
+}
+
 /// See [`ListHsmsOutput`](crate::output::ListHsmsOutput).
 pub mod list_hsms_output {
     
@@ -524,12 +537,6 @@ pub mod list_hsms_output {
     
     
 }
-impl ListHsmsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHsmsOutput`](crate::output::ListHsmsOutput).
-    pub fn builder() -> crate::output::list_hsms_output::Builder {
-        crate::output::list_hsms_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -558,6 +565,13 @@ impl aws_http::request_id::RequestId for ListHapgsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListHapgsOutput {
+    /// Creates a new builder-style object to manufacture [`ListHapgsOutput`](crate::output::ListHapgsOutput).
+    pub fn builder() -> crate::output::list_hapgs_output::Builder {
+        crate::output::list_hapgs_output::Builder::default()
+    }
+}
+
 /// See [`ListHapgsOutput`](crate::output::ListHapgsOutput).
 pub mod list_hapgs_output {
     
@@ -617,12 +631,6 @@ pub mod list_hapgs_output {
     
     
 }
-impl ListHapgsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHapgsOutput`](crate::output::ListHapgsOutput).
-    pub fn builder() -> crate::output::list_hapgs_output::Builder {
-        crate::output::list_hapgs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -644,6 +652,13 @@ impl aws_http::request_id::RequestId for ListAvailableZonesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAvailableZonesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
+    pub fn builder() -> crate::output::list_available_zones_output::Builder {
+        crate::output::list_available_zones_output::Builder::default()
+    }
+}
+
 /// See [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
 pub mod list_available_zones_output {
     
@@ -691,12 +706,6 @@ pub mod list_available_zones_output {
     
     
 }
-impl ListAvailableZonesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
-    pub fn builder() -> crate::output::list_available_zones_output::Builder {
-        crate::output::list_available_zones_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -732,6 +741,13 @@ impl aws_http::request_id::RequestId for GetConfigOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::output::GetConfigOutput).
+    pub fn builder() -> crate::output::get_config_output::Builder {
+        crate::output::get_config_output::Builder::default()
+    }
+}
+
 /// See [`GetConfigOutput`](crate::output::GetConfigOutput).
 pub mod get_config_output {
     
@@ -797,12 +813,6 @@ pub mod get_config_output {
     
     
 }
-impl GetConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::output::GetConfigOutput).
-    pub fn builder() -> crate::output::get_config_output::Builder {
-        crate::output::get_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -852,6 +862,13 @@ impl aws_http::request_id::RequestId for DescribeLunaClientOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeLunaClientOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
+    pub fn builder() -> crate::output::describe_luna_client_output::Builder {
+        crate::output::describe_luna_client_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
 pub mod describe_luna_client_output {
     
@@ -940,12 +957,6 @@ pub mod describe_luna_client_output {
     }
     
     
-}
-impl DescribeLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
-    pub fn builder() -> crate::output::describe_luna_client_output::Builder {
-        crate::output::describe_luna_client_output::Builder::default()
-    }
 }
 
 /// <p>Contains the output of the <code>DescribeHsm</code> operation.</p>
@@ -1116,6 +1127,13 @@ impl aws_http::request_id::RequestId for DescribeHsmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeHsmOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
+    pub fn builder() -> crate::output::describe_hsm_output::Builder {
+        crate::output::describe_hsm_output::Builder::default()
+    }
+}
+
 /// See [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
 pub mod describe_hsm_output {
     
@@ -1411,12 +1429,6 @@ pub mod describe_hsm_output {
     
     
 }
-impl DescribeHsmOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
-    pub fn builder() -> crate::output::describe_hsm_output::Builder {
-        crate::output::describe_hsm_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
@@ -1494,6 +1506,13 @@ impl aws_http::request_id::RequestId for DescribeHapgOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeHapgOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
+    pub fn builder() -> crate::output::describe_hapg_output::Builder {
+        crate::output::describe_hapg_output::Builder::default()
+    }
+}
+
 /// See [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
 pub mod describe_hapg_output {
     
@@ -1655,12 +1674,6 @@ pub mod describe_hapg_output {
     
     
 }
-impl DescribeHapgOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
-    pub fn builder() -> crate::output::describe_hapg_output::Builder {
-        crate::output::describe_hapg_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1682,6 +1695,13 @@ impl aws_http::request_id::RequestId for DeleteLunaClientOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLunaClientOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
+    pub fn builder() -> crate::output::delete_luna_client_output::Builder {
+        crate::output::delete_luna_client_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
 pub mod delete_luna_client_output {
     
@@ -1723,12 +1743,6 @@ pub mod delete_luna_client_output {
     
     
 }
-impl DeleteLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
-    pub fn builder() -> crate::output::delete_luna_client_output::Builder {
-        crate::output::delete_luna_client_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
@@ -1750,6 +1764,13 @@ impl aws_http::request_id::RequestId for DeleteHsmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteHsmOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
+    pub fn builder() -> crate::output::delete_hsm_output::Builder {
+        crate::output::delete_hsm_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
 pub mod delete_hsm_output {
     
@@ -1791,12 +1812,6 @@ pub mod delete_hsm_output {
     
     
 }
-impl DeleteHsmOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
-    pub fn builder() -> crate::output::delete_hsm_output::Builder {
-        crate::output::delete_hsm_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>DeleteHapg</code> action.</p>
 #[non_exhaustive]
@@ -1818,6 +1833,13 @@ impl aws_http::request_id::RequestId for DeleteHapgOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteHapgOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
+    pub fn builder() -> crate::output::delete_hapg_output::Builder {
+        crate::output::delete_hapg_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
 pub mod delete_hapg_output {
     
@@ -1859,12 +1881,6 @@ pub mod delete_hapg_output {
     
     
 }
-impl DeleteHapgOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
-    pub fn builder() -> crate::output::delete_hapg_output::Builder {
-        crate::output::delete_hapg_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
@@ -1886,6 +1902,13 @@ impl aws_http::request_id::RequestId for CreateLunaClientOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateLunaClientOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
+    pub fn builder() -> crate::output::create_luna_client_output::Builder {
+        crate::output::create_luna_client_output::Builder::default()
+    }
+}
+
 /// See [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
 pub mod create_luna_client_output {
     
@@ -1927,12 +1950,6 @@ pub mod create_luna_client_output {
     
     
 }
-impl CreateLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
-    pub fn builder() -> crate::output::create_luna_client_output::Builder {
-        crate::output::create_luna_client_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>CreateHsm</code> operation.</p>
 #[non_exhaustive]
@@ -1954,6 +1971,13 @@ impl aws_http::request_id::RequestId for CreateHsmOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateHsmOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::output::CreateHsmOutput).
+    pub fn builder() -> crate::output::create_hsm_output::Builder {
+        crate::output::create_hsm_output::Builder::default()
+    }
+}
+
 /// See [`CreateHsmOutput`](crate::output::CreateHsmOutput).
 pub mod create_hsm_output {
     
@@ -1995,12 +2019,6 @@ pub mod create_hsm_output {
     
     
 }
-impl CreateHsmOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::output::CreateHsmOutput).
-    pub fn builder() -> crate::output::create_hsm_output::Builder {
-        crate::output::create_hsm_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of the <code>CreateHAPartitionGroup</code> action.</p>
 #[non_exhaustive]
@@ -2022,6 +2040,13 @@ impl aws_http::request_id::RequestId for CreateHapgOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateHapgOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHapgOutput`](crate::output::CreateHapgOutput).
+    pub fn builder() -> crate::output::create_hapg_output::Builder {
+        crate::output::create_hapg_output::Builder::default()
+    }
+}
+
 /// See [`CreateHapgOutput`](crate::output::CreateHapgOutput).
 pub mod create_hapg_output {
     
@@ -2063,12 +2088,6 @@ pub mod create_hapg_output {
     
     
 }
-impl CreateHapgOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHapgOutput`](crate::output::CreateHapgOutput).
-    pub fn builder() -> crate::output::create_hapg_output::Builder {
-        crate::output::create_hapg_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2090,6 +2109,13 @@ impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddTagsToResourceOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
+    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
+        crate::output::add_tags_to_resource_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
     
@@ -2130,11 +2156,5 @@ pub mod add_tags_to_resource_output {
     }
     
     
-}
-impl AddTagsToResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
-        crate::output::add_tags_to_resource_output::Builder::default()
-    }
 }
 

@@ -21,6 +21,13 @@ impl S3Path {
         self.key.as_deref()
     }
 }
+impl S3Path {
+    /// Creates a new builder-style object to manufacture [`S3Path`](crate::model::S3Path).
+    pub fn builder() -> crate::model::s3_path::Builder {
+        crate::model::s3_path::Builder::default()
+    }
+}
+
 /// See [`S3Path`](crate::model::S3Path).
 pub mod s3_path {
     
@@ -62,12 +69,6 @@ pub mod s3_path {
     }
     
     
-}
-impl S3Path {
-    /// Creates a new builder-style object to manufacture [`S3Path`](crate::model::S3Path).
-    pub fn builder() -> crate::model::s3_path::Builder {
-        crate::model::s3_path::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Mode`, it is important to ensure
@@ -168,6 +169,13 @@ impl UserGroupResolutionConfiguration {
         self.user_group_resolution_mode.as_ref()
     }
 }
+impl UserGroupResolutionConfiguration {
+    /// Creates a new builder-style object to manufacture [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration).
+    pub fn builder() -> crate::model::user_group_resolution_configuration::Builder {
+        crate::model::user_group_resolution_configuration::Builder::default()
+    }
+}
+
 /// See [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration).
 pub mod user_group_resolution_configuration {
     
@@ -197,12 +205,6 @@ pub mod user_group_resolution_configuration {
     }
     
     
-}
-impl UserGroupResolutionConfiguration {
-    /// Creates a new builder-style object to manufacture [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration).
-    pub fn builder() -> crate::model::user_group_resolution_configuration::Builder {
-        crate::model::user_group_resolution_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UserGroupResolutionMode`, it is important to ensure
@@ -390,6 +392,13 @@ impl UserTokenConfiguration {
         self.json_token_type_configuration.as_ref()
     }
 }
+impl UserTokenConfiguration {
+    /// Creates a new builder-style object to manufacture [`UserTokenConfiguration`](crate::model::UserTokenConfiguration).
+    pub fn builder() -> crate::model::user_token_configuration::Builder {
+        crate::model::user_token_configuration::Builder::default()
+    }
+}
+
 /// See [`UserTokenConfiguration`](crate::model::UserTokenConfiguration).
 pub mod user_token_configuration {
     
@@ -432,12 +441,6 @@ pub mod user_token_configuration {
     
     
 }
-impl UserTokenConfiguration {
-    /// Creates a new builder-style object to manufacture [`UserTokenConfiguration`](crate::model::UserTokenConfiguration).
-    pub fn builder() -> crate::model::user_token_configuration::Builder {
-        crate::model::user_token_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for the JSON token type.</p>
 #[non_exhaustive]
@@ -460,6 +463,13 @@ impl JsonTokenTypeConfiguration {
         self.group_attribute_field.as_deref()
     }
 }
+impl JsonTokenTypeConfiguration {
+    /// Creates a new builder-style object to manufacture [`JsonTokenTypeConfiguration`](crate::model::JsonTokenTypeConfiguration).
+    pub fn builder() -> crate::model::json_token_type_configuration::Builder {
+        crate::model::json_token_type_configuration::Builder::default()
+    }
+}
+
 /// See [`JsonTokenTypeConfiguration`](crate::model::JsonTokenTypeConfiguration).
 pub mod json_token_type_configuration {
     
@@ -501,12 +511,6 @@ pub mod json_token_type_configuration {
     }
     
     
-}
-impl JsonTokenTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`JsonTokenTypeConfiguration`](crate::model::JsonTokenTypeConfiguration).
-    pub fn builder() -> crate::model::json_token_type_configuration::Builder {
-        crate::model::json_token_type_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides the configuration information for the JWT token type.</p>
@@ -565,6 +569,13 @@ impl JwtTokenTypeConfiguration {
         self.claim_regex.as_deref()
     }
 }
+impl JwtTokenTypeConfiguration {
+    /// Creates a new builder-style object to manufacture [`JwtTokenTypeConfiguration`](crate::model::JwtTokenTypeConfiguration).
+    pub fn builder() -> crate::model::jwt_token_type_configuration::Builder {
+        crate::model::jwt_token_type_configuration::Builder::default()
+    }
+}
+
 /// See [`JwtTokenTypeConfiguration`](crate::model::JwtTokenTypeConfiguration).
 pub mod jwt_token_type_configuration {
     
@@ -666,12 +677,6 @@ pub mod jwt_token_type_configuration {
     }
     
     
-}
-impl JwtTokenTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`JwtTokenTypeConfiguration`](crate::model::JwtTokenTypeConfiguration).
-    pub fn builder() -> crate::model::jwt_token_type_configuration::Builder {
-        crate::model::jwt_token_type_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `KeyLocation`, it is important to ensure
@@ -781,6 +786,13 @@ impl CapacityUnitsConfiguration {
         self.query_capacity_units
     }
 }
+impl CapacityUnitsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
+    pub fn builder() -> crate::model::capacity_units_configuration::Builder {
+        crate::model::capacity_units_configuration::Builder::default()
+    }
+}
+
 /// See [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
 pub mod capacity_units_configuration {
     
@@ -827,12 +839,6 @@ pub mod capacity_units_configuration {
     
     
 }
-impl CapacityUnitsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
-    pub fn builder() -> crate::model::capacity_units_configuration::Builder {
-        crate::model::capacity_units_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the properties, such as relevance tuning and searchability, of an index field.</p>
 #[non_exhaustive]
@@ -869,6 +875,13 @@ impl DocumentMetadataConfiguration {
         self.search.as_ref()
     }
 }
+impl DocumentMetadataConfiguration {
+    /// Creates a new builder-style object to manufacture [`DocumentMetadataConfiguration`](crate::model::DocumentMetadataConfiguration).
+    pub fn builder() -> crate::model::document_metadata_configuration::Builder {
+        crate::model::document_metadata_configuration::Builder::default()
+    }
+}
+
 /// See [`DocumentMetadataConfiguration`](crate::model::DocumentMetadataConfiguration).
 pub mod document_metadata_configuration {
     
@@ -935,12 +948,6 @@ pub mod document_metadata_configuration {
     
     
 }
-impl DocumentMetadataConfiguration {
-    /// Creates a new builder-style object to manufacture [`DocumentMetadataConfiguration`](crate::model::DocumentMetadataConfiguration).
-    pub fn builder() -> crate::model::document_metadata_configuration::Builder {
-        crate::model::document_metadata_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides information about how a custom index field is used during a search.</p>
 #[non_exhaustive]
@@ -977,6 +984,13 @@ impl Search {
         self.sortable
     }
 }
+impl Search {
+    /// Creates a new builder-style object to manufacture [`Search`](crate::model::Search).
+    pub fn builder() -> crate::model::search::Builder {
+        crate::model::search::Builder::default()
+    }
+}
+
 /// See [`Search`](crate::model::Search).
 pub mod search {
     
@@ -1047,12 +1061,6 @@ pub mod search {
     
     
 }
-impl Search {
-    /// Creates a new builder-style object to manufacture [`Search`](crate::model::Search).
-    pub fn builder() -> crate::model::search::Builder {
-        crate::model::search::Builder::default()
-    }
-}
 
 /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
 #[non_exhaustive]
@@ -1106,6 +1114,13 @@ impl Relevance {
         self.value_importance_map.as_ref()
     }
 }
+impl Relevance {
+    /// Creates a new builder-style object to manufacture [`Relevance`](crate::model::Relevance).
+    pub fn builder() -> crate::model::relevance::Builder {
+        crate::model::relevance::Builder::default()
+    }
+}
+
 /// See [`Relevance`](crate::model::Relevance).
 pub mod relevance {
     
@@ -1199,12 +1214,6 @@ pub mod relevance {
     }
     
     
-}
-impl Relevance {
-    /// Creates a new builder-style object to manufacture [`Relevance`](crate::model::Relevance).
-    pub fn builder() -> crate::model::relevance::Builder {
-        crate::model::relevance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Order`, it is important to ensure
@@ -1402,6 +1411,13 @@ impl ExperienceConfiguration {
         self.user_identity_configuration.as_ref()
     }
 }
+impl ExperienceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExperienceConfiguration`](crate::model::ExperienceConfiguration).
+    pub fn builder() -> crate::model::experience_configuration::Builder {
+        crate::model::experience_configuration::Builder::default()
+    }
+}
+
 /// See [`ExperienceConfiguration`](crate::model::ExperienceConfiguration).
 pub mod experience_configuration {
     
@@ -1444,12 +1460,6 @@ pub mod experience_configuration {
     
     
 }
-impl ExperienceConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExperienceConfiguration`](crate::model::ExperienceConfiguration).
-    pub fn builder() -> crate::model::experience_configuration::Builder {
-        crate::model::experience_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for the identifiers of your users.</p>
 #[non_exhaustive]
@@ -1465,6 +1475,13 @@ impl UserIdentityConfiguration {
         self.identity_attribute_name.as_deref()
     }
 }
+impl UserIdentityConfiguration {
+    /// Creates a new builder-style object to manufacture [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration).
+    pub fn builder() -> crate::model::user_identity_configuration::Builder {
+        crate::model::user_identity_configuration::Builder::default()
+    }
+}
+
 /// See [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration).
 pub mod user_identity_configuration {
     
@@ -1495,12 +1512,6 @@ pub mod user_identity_configuration {
     
     
 }
-impl UserIdentityConfiguration {
-    /// Creates a new builder-style object to manufacture [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration).
-    pub fn builder() -> crate::model::user_identity_configuration::Builder {
-        crate::model::user_identity_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for your content sources, such as data sources, FAQs, and content indexed directly via <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.</p>
 #[non_exhaustive]
@@ -1530,6 +1541,13 @@ impl ContentSourceConfiguration {
         self.direct_put_content
     }
 }
+impl ContentSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration).
+    pub fn builder() -> crate::model::content_source_configuration::Builder {
+        crate::model::content_source_configuration::Builder::default()
+    }
+}
+
 /// See [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration).
 pub mod content_source_configuration {
     
@@ -1597,12 +1615,6 @@ pub mod content_source_configuration {
     
     
 }
-impl ContentSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration).
-    pub fn builder() -> crate::model::content_source_configuration::Builder {
-        crate::model::content_source_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -1640,6 +1652,13 @@ impl CustomDocumentEnrichmentConfiguration {
         self.role_arn.as_deref()
     }
 }
+impl CustomDocumentEnrichmentConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration).
+    pub fn builder() -> crate::model::custom_document_enrichment_configuration::Builder {
+        crate::model::custom_document_enrichment_configuration::Builder::default()
+    }
+}
+
 /// See [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration).
 pub mod custom_document_enrichment_configuration {
     
@@ -1712,12 +1731,6 @@ pub mod custom_document_enrichment_configuration {
     
     
 }
-impl CustomDocumentEnrichmentConfiguration {
-    /// Creates a new builder-style object to manufacture [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration).
-    pub fn builder() -> crate::model::custom_document_enrichment_configuration::Builder {
-        crate::model::custom_document_enrichment_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>. You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -1750,6 +1763,13 @@ impl HookConfiguration {
         self.s3_bucket.as_deref()
     }
 }
+impl HookConfiguration {
+    /// Creates a new builder-style object to manufacture [`HookConfiguration`](crate::model::HookConfiguration).
+    pub fn builder() -> crate::model::hook_configuration::Builder {
+        crate::model::hook_configuration::Builder::default()
+    }
+}
+
 /// See [`HookConfiguration`](crate::model::HookConfiguration).
 pub mod hook_configuration {
     
@@ -1806,12 +1826,6 @@ pub mod hook_configuration {
     
     
 }
-impl HookConfiguration {
-    /// Creates a new builder-style object to manufacture [`HookConfiguration`](crate::model::HookConfiguration).
-    pub fn builder() -> crate::model::hook_configuration::Builder {
-        crate::model::hook_configuration::Builder::default()
-    }
-}
 
 /// <p>The condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra. You use this with <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_DocumentAttributeTarget.html">DocumentAttributeTarget to apply the condition</a>.</p> 
 /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p> 
@@ -1851,6 +1865,13 @@ impl DocumentAttributeCondition {
         self.condition_on_value.as_ref()
     }
 }
+impl DocumentAttributeCondition {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition).
+    pub fn builder() -> crate::model::document_attribute_condition::Builder {
+        crate::model::document_attribute_condition::Builder::default()
+    }
+}
+
 /// See [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition).
 pub mod document_attribute_condition {
     
@@ -1913,12 +1934,6 @@ pub mod document_attribute_condition {
     
     
 }
-impl DocumentAttributeCondition {
-    /// Creates a new builder-style object to manufacture [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition).
-    pub fn builder() -> crate::model::document_attribute_condition::Builder {
-        crate::model::document_attribute_condition::Builder::default()
-    }
-}
 
 /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
 #[non_exhaustive]
@@ -1957,6 +1972,13 @@ impl DocumentAttributeValue {
         self.date_value.as_ref()
     }
 }
+impl DocumentAttributeValue {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeValue`](crate::model::DocumentAttributeValue).
+    pub fn builder() -> crate::model::document_attribute_value::Builder {
+        crate::model::document_attribute_value::Builder::default()
+    }
+}
+
 /// See [`DocumentAttributeValue`](crate::model::DocumentAttributeValue).
 pub mod document_attribute_value {
     
@@ -2030,12 +2052,6 @@ pub mod document_attribute_value {
     }
     
     
-}
-impl DocumentAttributeValue {
-    /// Creates a new builder-style object to manufacture [`DocumentAttributeValue`](crate::model::DocumentAttributeValue).
-    pub fn builder() -> crate::model::document_attribute_value::Builder {
-        crate::model::document_attribute_value::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConditionOperator`, it is important to ensure
@@ -2194,6 +2210,13 @@ impl InlineCustomDocumentEnrichmentConfiguration {
         self.document_content_deletion
     }
 }
+impl InlineCustomDocumentEnrichmentConfiguration {
+    /// Creates a new builder-style object to manufacture [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration).
+    pub fn builder() -> crate::model::inline_custom_document_enrichment_configuration::Builder {
+        crate::model::inline_custom_document_enrichment_configuration::Builder::default()
+    }
+}
+
 /// See [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration).
 pub mod inline_custom_document_enrichment_configuration {
     
@@ -2249,12 +2272,6 @@ pub mod inline_custom_document_enrichment_configuration {
     
     
 }
-impl InlineCustomDocumentEnrichmentConfiguration {
-    /// Creates a new builder-style object to manufacture [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration).
-    pub fn builder() -> crate::model::inline_custom_document_enrichment_configuration::Builder {
-        crate::model::inline_custom_document_enrichment_configuration::Builder::default()
-    }
-}
 
 /// <p>The target document attribute or metadata field you want to alter when ingesting documents into Amazon Kendra.</p> 
 /// <p>For example, you can delete customer identification numbers associated with the documents, stored in the document metadata field called 'Customer_ID'. You set the target key as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes all customer ID values in the field 'Customer_ID'. This would scrub personally identifiable information from each document's metadata.</p> 
@@ -2291,6 +2308,13 @@ impl DocumentAttributeTarget {
         self.target_document_attribute_value.as_ref()
     }
 }
+impl DocumentAttributeTarget {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget).
+    pub fn builder() -> crate::model::document_attribute_target::Builder {
+        crate::model::document_attribute_target::Builder::default()
+    }
+}
+
 /// See [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget).
 pub mod document_attribute_target {
     
@@ -2350,12 +2374,6 @@ pub mod document_attribute_target {
     
     
 }
-impl DocumentAttributeTarget {
-    /// Creates a new builder-style object to manufacture [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget).
-    pub fn builder() -> crate::model::document_attribute_target::Builder {
-        crate::model::document_attribute_target::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
 #[non_exhaustive]
@@ -2378,6 +2396,13 @@ impl DataSourceVpcConfiguration {
         self.security_group_ids.as_deref()
     }
 }
+impl DataSourceVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
+    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
+        crate::model::data_source_vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
 pub mod data_source_vpc_configuration {
     
@@ -2431,12 +2456,6 @@ pub mod data_source_vpc_configuration {
     }
     
     
-}
-impl DataSourceVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
-    pub fn builder() -> crate::model::data_source_vpc_configuration::Builder {
-        crate::model::data_source_vpc_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides the configuration information for an Amazon Kendra data source.</p>
@@ -2572,6 +2591,13 @@ impl DataSourceConfiguration {
         self.template_configuration.as_ref()
     }
 }
+impl DataSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
+    pub fn builder() -> crate::model::data_source_configuration::Builder {
+        crate::model::data_source_configuration::Builder::default()
+    }
+}
+
 /// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
 pub mod data_source_configuration {
     
@@ -2806,12 +2832,6 @@ pub mod data_source_configuration {
     
     
 }
-impl DataSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
-    pub fn builder() -> crate::model::data_source_configuration::Builder {
-        crate::model::data_source_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides a template for the configuration information to connect to your data source.</p>
 #[non_exhaustive]
@@ -2829,6 +2849,13 @@ impl TemplateConfiguration {
         self.template.as_ref()
     }
 }
+impl TemplateConfiguration {
+    /// Creates a new builder-style object to manufacture [`TemplateConfiguration`](crate::model::TemplateConfiguration).
+    pub fn builder() -> crate::model::template_configuration::Builder {
+        crate::model::template_configuration::Builder::default()
+    }
+}
+
 /// See [`TemplateConfiguration`](crate::model::TemplateConfiguration).
 pub mod template_configuration {
     
@@ -2860,12 +2887,6 @@ pub mod template_configuration {
     }
     
     
-}
-impl TemplateConfiguration {
-    /// Creates a new builder-style object to manufacture [`TemplateConfiguration`](crate::model::TemplateConfiguration).
-    pub fn builder() -> crate::model::template_configuration::Builder {
-        crate::model::template_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides the configuration information to connect to Alfresco as your data source.</p> <note> 
@@ -2978,6 +2999,13 @@ impl AlfrescoConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl AlfrescoConfiguration {
+    /// Creates a new builder-style object to manufacture [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
+    pub fn builder() -> crate::model::alfresco_configuration::Builder {
+        crate::model::alfresco_configuration::Builder::default()
+    }
+}
+
 /// See [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
 pub mod alfresco_configuration {
     
@@ -3200,12 +3228,6 @@ pub mod alfresco_configuration {
     
     
 }
-impl AlfrescoConfiguration {
-    /// Creates a new builder-style object to manufacture [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
-    pub fn builder() -> crate::model::alfresco_configuration::Builder {
-        crate::model::alfresco_configuration::Builder::default()
-    }
-}
 
 /// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
 #[non_exhaustive]
@@ -3235,6 +3257,13 @@ impl DataSourceToIndexFieldMapping {
         self.index_field_name.as_deref()
     }
 }
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
+    }
+}
+
 /// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
 pub mod data_source_to_index_field_mapping {
     
@@ -3288,12 +3317,6 @@ pub mod data_source_to_index_field_mapping {
     }
     
     
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlfrescoEntity`, it is important to ensure
@@ -3550,6 +3573,13 @@ impl GitHubConfiguration {
         self.git_hub_pull_request_document_attachment_configuration_field_mappings.as_deref()
     }
 }
+impl GitHubConfiguration {
+    /// Creates a new builder-style object to manufacture [`GitHubConfiguration`](crate::model::GitHubConfiguration).
+    pub fn builder() -> crate::model::git_hub_configuration::Builder {
+        crate::model::git_hub_configuration::Builder::default()
+    }
+}
+
 /// See [`GitHubConfiguration`](crate::model::GitHubConfiguration).
 pub mod git_hub_configuration {
     
@@ -3929,12 +3959,6 @@ pub mod git_hub_configuration {
     
     
 }
-impl GitHubConfiguration {
-    /// Creates a new builder-style object to manufacture [`GitHubConfiguration`](crate::model::GitHubConfiguration).
-    pub fn builder() -> crate::model::git_hub_configuration::Builder {
-        crate::model::git_hub_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
 #[non_exhaustive]
@@ -3992,6 +4016,13 @@ impl GitHubDocumentCrawlProperties {
         self.crawl_pull_request_comment_attachment
     }
 }
+impl GitHubDocumentCrawlProperties {
+    /// Creates a new builder-style object to manufacture [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties).
+    pub fn builder() -> crate::model::git_hub_document_crawl_properties::Builder {
+        crate::model::git_hub_document_crawl_properties::Builder::default()
+    }
+}
+
 /// See [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties).
 pub mod git_hub_document_crawl_properties {
     
@@ -4100,12 +4131,6 @@ pub mod git_hub_document_crawl_properties {
     }
     
     
-}
-impl GitHubDocumentCrawlProperties {
-    /// Creates a new builder-style object to manufacture [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties).
-    pub fn builder() -> crate::model::git_hub_document_crawl_properties::Builder {
-        crate::model::git_hub_document_crawl_properties::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Type`, it is important to ensure
@@ -4220,6 +4245,13 @@ impl OnPremiseConfiguration {
         self.ssl_certificate_s3_path.as_ref()
     }
 }
+impl OnPremiseConfiguration {
+    /// Creates a new builder-style object to manufacture [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration).
+    pub fn builder() -> crate::model::on_premise_configuration::Builder {
+        crate::model::on_premise_configuration::Builder::default()
+    }
+}
+
 /// See [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration).
 pub mod on_premise_configuration {
     
@@ -4276,12 +4308,6 @@ pub mod on_premise_configuration {
     
     
 }
-impl OnPremiseConfiguration {
-    /// Creates a new builder-style object to manufacture [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration).
-    pub fn builder() -> crate::model::on_premise_configuration::Builder {
-        crate::model::on_premise_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
 #[non_exhaustive]
@@ -4304,6 +4330,13 @@ impl SaaSConfiguration {
         self.host_url.as_deref()
     }
 }
+impl SaaSConfiguration {
+    /// Creates a new builder-style object to manufacture [`SaaSConfiguration`](crate::model::SaaSConfiguration).
+    pub fn builder() -> crate::model::saa_s_configuration::Builder {
+        crate::model::saa_s_configuration::Builder::default()
+    }
+}
+
 /// See [`SaaSConfiguration`](crate::model::SaaSConfiguration).
 pub mod saa_s_configuration {
     
@@ -4345,12 +4378,6 @@ pub mod saa_s_configuration {
     }
     
     
-}
-impl SaaSConfiguration {
-    /// Creates a new builder-style object to manufacture [`SaaSConfiguration`](crate::model::SaaSConfiguration).
-    pub fn builder() -> crate::model::saa_s_configuration::Builder {
-        crate::model::saa_s_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides the configuration information to connect to Jira as your data source.</p>
@@ -4473,6 +4500,13 @@ impl JiraConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl JiraConfiguration {
+    /// Creates a new builder-style object to manufacture [`JiraConfiguration`](crate::model::JiraConfiguration).
+    pub fn builder() -> crate::model::jira_configuration::Builder {
+        crate::model::jira_configuration::Builder::default()
+    }
+}
+
 /// See [`JiraConfiguration`](crate::model::JiraConfiguration).
 pub mod jira_configuration {
     
@@ -4746,12 +4780,6 @@ pub mod jira_configuration {
     
     
 }
-impl JiraConfiguration {
-    /// Creates a new builder-style object to manufacture [`JiraConfiguration`](crate::model::JiraConfiguration).
-    pub fn builder() -> crate::model::jira_configuration::Builder {
-        crate::model::jira_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `IssueSubEntity`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4937,6 +4965,13 @@ impl QuipConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl QuipConfiguration {
+    /// Creates a new builder-style object to manufacture [`QuipConfiguration`](crate::model::QuipConfiguration).
+    pub fn builder() -> crate::model::quip_configuration::Builder {
+        crate::model::quip_configuration::Builder::default()
+    }
+}
+
 /// See [`QuipConfiguration`](crate::model::QuipConfiguration).
 pub mod quip_configuration {
     
@@ -5144,12 +5179,6 @@ pub mod quip_configuration {
     
     
 }
-impl QuipConfiguration {
-    /// Creates a new builder-style object to manufacture [`QuipConfiguration`](crate::model::QuipConfiguration).
-    pub fn builder() -> crate::model::quip_configuration::Builder {
-        crate::model::quip_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to Box as your data source.</p>
 #[non_exhaustive]
@@ -5265,6 +5294,13 @@ impl BoxConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl BoxConfiguration {
+    /// Creates a new builder-style object to manufacture [`BoxConfiguration`](crate::model::BoxConfiguration).
+    pub fn builder() -> crate::model::box_configuration::Builder {
+        crate::model::box_configuration::Builder::default()
+    }
+}
+
 /// See [`BoxConfiguration`](crate::model::BoxConfiguration).
 pub mod box_configuration {
     
@@ -5495,12 +5531,6 @@ pub mod box_configuration {
     
     
 }
-impl BoxConfiguration {
-    /// Creates a new builder-style object to manufacture [`BoxConfiguration`](crate::model::BoxConfiguration).
-    pub fn builder() -> crate::model::box_configuration::Builder {
-        crate::model::box_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to Slack as your data source.</p>
 #[non_exhaustive]
@@ -5617,6 +5647,13 @@ impl SlackConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl SlackConfiguration {
+    /// Creates a new builder-style object to manufacture [`SlackConfiguration`](crate::model::SlackConfiguration).
+    pub fn builder() -> crate::model::slack_configuration::Builder {
+        crate::model::slack_configuration::Builder::default()
+    }
+}
+
 /// See [`SlackConfiguration`](crate::model::SlackConfiguration).
 pub mod slack_configuration {
     
@@ -5852,12 +5889,6 @@ pub mod slack_configuration {
     
     
 }
-impl SlackConfiguration {
-    /// Creates a new builder-style object to manufacture [`SlackConfiguration`](crate::model::SlackConfiguration).
-    pub fn builder() -> crate::model::slack_configuration::Builder {
-        crate::model::slack_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SlackEntity`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6017,6 +6048,13 @@ impl FsxConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl FsxConfiguration {
+    /// Creates a new builder-style object to manufacture [`FsxConfiguration`](crate::model::FsxConfiguration).
+    pub fn builder() -> crate::model::fsx_configuration::Builder {
+        crate::model::fsx_configuration::Builder::default()
+    }
+}
+
 /// See [`FsxConfiguration`](crate::model::FsxConfiguration).
 pub mod fsx_configuration {
     
@@ -6146,12 +6184,6 @@ pub mod fsx_configuration {
     }
     
     
-}
-impl FsxConfiguration {
-    /// Creates a new builder-style object to manufacture [`FsxConfiguration`](crate::model::FsxConfiguration).
-    pub fn builder() -> crate::model::fsx_configuration::Builder {
-        crate::model::fsx_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FsxFileSystemType`, it is important to ensure
@@ -6285,6 +6317,13 @@ impl WorkDocsConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl WorkDocsConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration).
+    pub fn builder() -> crate::model::work_docs_configuration::Builder {
+        crate::model::work_docs_configuration::Builder::default()
+    }
+}
+
 /// See [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration).
 pub mod work_docs_configuration {
     
@@ -6399,12 +6438,6 @@ pub mod work_docs_configuration {
     
     
 }
-impl WorkDocsConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration).
-    pub fn builder() -> crate::model::work_docs_configuration::Builder {
-        crate::model::work_docs_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
 #[non_exhaustive]
@@ -6506,6 +6539,13 @@ impl WebCrawlerConfiguration {
         self.authentication_configuration.as_ref()
     }
 }
+impl WebCrawlerConfiguration {
+    /// Creates a new builder-style object to manufacture [`WebCrawlerConfiguration`](crate::model::WebCrawlerConfiguration).
+    pub fn builder() -> crate::model::web_crawler_configuration::Builder {
+        crate::model::web_crawler_configuration::Builder::default()
+    }
+}
+
 /// See [`WebCrawlerConfiguration`](crate::model::WebCrawlerConfiguration).
 pub mod web_crawler_configuration {
     
@@ -6674,12 +6714,6 @@ pub mod web_crawler_configuration {
     
     
 }
-impl WebCrawlerConfiguration {
-    /// Creates a new builder-style object to manufacture [`WebCrawlerConfiguration`](crate::model::WebCrawlerConfiguration).
-    pub fn builder() -> crate::model::web_crawler_configuration::Builder {
-        crate::model::web_crawler_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to websites that require user authentication.</p>
 #[non_exhaustive]
@@ -6697,6 +6731,13 @@ impl AuthenticationConfiguration {
         self.basic_authentication.as_deref()
     }
 }
+impl AuthenticationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
+    pub fn builder() -> crate::model::authentication_configuration::Builder {
+        crate::model::authentication_configuration::Builder::default()
+    }
+}
+
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
 pub mod authentication_configuration {
     
@@ -6735,12 +6776,6 @@ pub mod authentication_configuration {
     
     
 }
-impl AuthenticationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
-    pub fn builder() -> crate::model::authentication_configuration::Builder {
-        crate::model::authentication_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to websites that require basic user authentication.</p>
 #[non_exhaustive]
@@ -6776,6 +6811,13 @@ impl BasicAuthenticationConfiguration {
         self.credentials.as_deref()
     }
 }
+impl BasicAuthenticationConfiguration {
+    /// Creates a new builder-style object to manufacture [`BasicAuthenticationConfiguration`](crate::model::BasicAuthenticationConfiguration).
+    pub fn builder() -> crate::model::basic_authentication_configuration::Builder {
+        crate::model::basic_authentication_configuration::Builder::default()
+    }
+}
+
 /// See [`BasicAuthenticationConfiguration`](crate::model::BasicAuthenticationConfiguration).
 pub mod basic_authentication_configuration {
     
@@ -6836,12 +6878,6 @@ pub mod basic_authentication_configuration {
     
     
 }
-impl BasicAuthenticationConfiguration {
-    /// Creates a new builder-style object to manufacture [`BasicAuthenticationConfiguration`](crate::model::BasicAuthenticationConfiguration).
-    pub fn builder() -> crate::model::basic_authentication_configuration::Builder {
-        crate::model::basic_authentication_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for a web proxy to connect to website hosts.</p>
 #[non_exhaustive]
@@ -6877,6 +6913,13 @@ impl ProxyConfiguration {
         self.credentials.as_deref()
     }
 }
+impl ProxyConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProxyConfiguration`](crate::model::ProxyConfiguration).
+    pub fn builder() -> crate::model::proxy_configuration::Builder {
+        crate::model::proxy_configuration::Builder::default()
+    }
+}
+
 /// See [`ProxyConfiguration`](crate::model::ProxyConfiguration).
 pub mod proxy_configuration {
     
@@ -6937,12 +6980,6 @@ pub mod proxy_configuration {
     
     
 }
-impl ProxyConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProxyConfiguration`](crate::model::ProxyConfiguration).
-    pub fn builder() -> crate::model::proxy_configuration::Builder {
-        crate::model::proxy_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information of the URLs to crawl.</p> 
 /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p> 
@@ -6973,6 +7010,13 @@ impl Urls {
         self.site_maps_configuration.as_ref()
     }
 }
+impl Urls {
+    /// Creates a new builder-style object to manufacture [`Urls`](crate::model::Urls).
+    pub fn builder() -> crate::model::urls::Builder {
+        crate::model::urls::Builder::default()
+    }
+}
+
 /// See [`Urls`](crate::model::Urls).
 pub mod urls {
     
@@ -7021,12 +7065,6 @@ pub mod urls {
     
     
 }
-impl Urls {
-    /// Creates a new builder-style object to manufacture [`Urls`](crate::model::Urls).
-    pub fn builder() -> crate::model::urls::Builder {
-        crate::model::urls::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for the sitemap URLs to crawl.</p> 
 /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
@@ -7045,6 +7083,13 @@ impl SiteMapsConfiguration {
         self.site_maps.as_deref()
     }
 }
+impl SiteMapsConfiguration {
+    /// Creates a new builder-style object to manufacture [`SiteMapsConfiguration`](crate::model::SiteMapsConfiguration).
+    pub fn builder() -> crate::model::site_maps_configuration::Builder {
+        crate::model::site_maps_configuration::Builder::default()
+    }
+}
+
 /// See [`SiteMapsConfiguration`](crate::model::SiteMapsConfiguration).
 pub mod site_maps_configuration {
     
@@ -7083,12 +7128,6 @@ pub mod site_maps_configuration {
     
     
 }
-impl SiteMapsConfiguration {
-    /// Creates a new builder-style object to manufacture [`SiteMapsConfiguration`](crate::model::SiteMapsConfiguration).
-    pub fn builder() -> crate::model::site_maps_configuration::Builder {
-        crate::model::site_maps_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for the seed or starting point URLs to crawl.</p> 
 /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
@@ -7126,6 +7165,13 @@ impl SeedUrlConfiguration {
         self.web_crawler_mode.as_ref()
     }
 }
+impl SeedUrlConfiguration {
+    /// Creates a new builder-style object to manufacture [`SeedUrlConfiguration`](crate::model::SeedUrlConfiguration).
+    pub fn builder() -> crate::model::seed_url_configuration::Builder {
+        crate::model::seed_url_configuration::Builder::default()
+    }
+}
+
 /// See [`SeedUrlConfiguration`](crate::model::SeedUrlConfiguration).
 pub mod seed_url_configuration {
     
@@ -7187,12 +7233,6 @@ pub mod seed_url_configuration {
     }
     
     
-}
-impl SeedUrlConfiguration {
-    /// Creates a new builder-style object to manufacture [`SeedUrlConfiguration`](crate::model::SeedUrlConfiguration).
-    pub fn builder() -> crate::model::seed_url_configuration::Builder {
-        crate::model::seed_url_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WebCrawlerMode`, it is important to ensure
@@ -7340,6 +7380,13 @@ impl GoogleDriveConfiguration {
         self.exclude_shared_drives.as_deref()
     }
 }
+impl GoogleDriveConfiguration {
+    /// Creates a new builder-style object to manufacture [`GoogleDriveConfiguration`](crate::model::GoogleDriveConfiguration).
+    pub fn builder() -> crate::model::google_drive_configuration::Builder {
+        crate::model::google_drive_configuration::Builder::default()
+    }
+}
+
 /// See [`GoogleDriveConfiguration`](crate::model::GoogleDriveConfiguration).
 pub mod google_drive_configuration {
     
@@ -7480,12 +7527,6 @@ pub mod google_drive_configuration {
     
     
 }
-impl GoogleDriveConfiguration {
-    /// Creates a new builder-style object to manufacture [`GoogleDriveConfiguration`](crate::model::GoogleDriveConfiguration).
-    pub fn builder() -> crate::model::google_drive_configuration::Builder {
-        crate::model::google_drive_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
 #[non_exhaustive]
@@ -7586,6 +7627,13 @@ impl ConfluenceConfiguration {
         self.authentication_type.as_ref()
     }
 }
+impl ConfluenceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConfluenceConfiguration`](crate::model::ConfluenceConfiguration).
+    pub fn builder() -> crate::model::confluence_configuration::Builder {
+        crate::model::confluence_configuration::Builder::default()
+    }
+}
+
 /// See [`ConfluenceConfiguration`](crate::model::ConfluenceConfiguration).
 pub mod confluence_configuration {
     
@@ -7768,12 +7816,6 @@ pub mod confluence_configuration {
     
     
 }
-impl ConfluenceConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConfluenceConfiguration`](crate::model::ConfluenceConfiguration).
-    pub fn builder() -> crate::model::confluence_configuration::Builder {
-        crate::model::confluence_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ConfluenceAuthenticationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7880,6 +7922,13 @@ impl ConfluenceAttachmentConfiguration {
         self.attachment_field_mappings.as_deref()
     }
 }
+impl ConfluenceAttachmentConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConfluenceAttachmentConfiguration`](crate::model::ConfluenceAttachmentConfiguration).
+    pub fn builder() -> crate::model::confluence_attachment_configuration::Builder {
+        crate::model::confluence_attachment_configuration::Builder::default()
+    }
+}
+
 /// See [`ConfluenceAttachmentConfiguration`](crate::model::ConfluenceAttachmentConfiguration).
 pub mod confluence_attachment_configuration {
     
@@ -7931,12 +7980,6 @@ pub mod confluence_attachment_configuration {
     
     
 }
-impl ConfluenceAttachmentConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConfluenceAttachmentConfiguration`](crate::model::ConfluenceAttachmentConfiguration).
-    pub fn builder() -> crate::model::confluence_attachment_configuration::Builder {
-        crate::model::confluence_attachment_configuration::Builder::default()
-    }
-}
 
 /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confuence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
@@ -7968,6 +8011,13 @@ impl ConfluenceAttachmentToIndexFieldMapping {
         self.index_field_name.as_deref()
     }
 }
+impl ConfluenceAttachmentToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`ConfluenceAttachmentToIndexFieldMapping`](crate::model::ConfluenceAttachmentToIndexFieldMapping).
+    pub fn builder() -> crate::model::confluence_attachment_to_index_field_mapping::Builder {
+        crate::model::confluence_attachment_to_index_field_mapping::Builder::default()
+    }
+}
+
 /// See [`ConfluenceAttachmentToIndexFieldMapping`](crate::model::ConfluenceAttachmentToIndexFieldMapping).
 pub mod confluence_attachment_to_index_field_mapping {
     
@@ -8023,12 +8073,6 @@ pub mod confluence_attachment_to_index_field_mapping {
     }
     
     
-}
-impl ConfluenceAttachmentToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`ConfluenceAttachmentToIndexFieldMapping`](crate::model::ConfluenceAttachmentToIndexFieldMapping).
-    pub fn builder() -> crate::model::confluence_attachment_to_index_field_mapping::Builder {
-        crate::model::confluence_attachment_to_index_field_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfluenceAttachmentFieldName`, it is important to ensure
@@ -8174,6 +8218,13 @@ impl ConfluenceBlogConfiguration {
         self.blog_field_mappings.as_deref()
     }
 }
+impl ConfluenceBlogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConfluenceBlogConfiguration`](crate::model::ConfluenceBlogConfiguration).
+    pub fn builder() -> crate::model::confluence_blog_configuration::Builder {
+        crate::model::confluence_blog_configuration::Builder::default()
+    }
+}
+
 /// See [`ConfluenceBlogConfiguration`](crate::model::ConfluenceBlogConfiguration).
 pub mod confluence_blog_configuration {
     
@@ -8212,12 +8263,6 @@ pub mod confluence_blog_configuration {
     
     
 }
-impl ConfluenceBlogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConfluenceBlogConfiguration`](crate::model::ConfluenceBlogConfiguration).
-    pub fn builder() -> crate::model::confluence_blog_configuration::Builder {
-        crate::model::confluence_blog_configuration::Builder::default()
-    }
-}
 
 /// <p>Maps attributes or field names of Confluence blog to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
@@ -8247,6 +8292,13 @@ impl ConfluenceBlogToIndexFieldMapping {
         self.index_field_name.as_deref()
     }
 }
+impl ConfluenceBlogToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`ConfluenceBlogToIndexFieldMapping`](crate::model::ConfluenceBlogToIndexFieldMapping).
+    pub fn builder() -> crate::model::confluence_blog_to_index_field_mapping::Builder {
+        crate::model::confluence_blog_to_index_field_mapping::Builder::default()
+    }
+}
+
 /// See [`ConfluenceBlogToIndexFieldMapping`](crate::model::ConfluenceBlogToIndexFieldMapping).
 pub mod confluence_blog_to_index_field_mapping {
     
@@ -8300,12 +8352,6 @@ pub mod confluence_blog_to_index_field_mapping {
     }
     
     
-}
-impl ConfluenceBlogToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`ConfluenceBlogToIndexFieldMapping`](crate::model::ConfluenceBlogToIndexFieldMapping).
-    pub fn builder() -> crate::model::confluence_blog_to_index_field_mapping::Builder {
-        crate::model::confluence_blog_to_index_field_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfluenceBlogFieldName`, it is important to ensure
@@ -8441,6 +8487,13 @@ impl ConfluencePageConfiguration {
         self.page_field_mappings.as_deref()
     }
 }
+impl ConfluencePageConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConfluencePageConfiguration`](crate::model::ConfluencePageConfiguration).
+    pub fn builder() -> crate::model::confluence_page_configuration::Builder {
+        crate::model::confluence_page_configuration::Builder::default()
+    }
+}
+
 /// See [`ConfluencePageConfiguration`](crate::model::ConfluencePageConfiguration).
 pub mod confluence_page_configuration {
     
@@ -8479,12 +8532,6 @@ pub mod confluence_page_configuration {
     
     
 }
-impl ConfluencePageConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConfluencePageConfiguration`](crate::model::ConfluencePageConfiguration).
-    pub fn builder() -> crate::model::confluence_page_configuration::Builder {
-        crate::model::confluence_page_configuration::Builder::default()
-    }
-}
 
 /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
@@ -8514,6 +8561,13 @@ impl ConfluencePageToIndexFieldMapping {
         self.index_field_name.as_deref()
     }
 }
+impl ConfluencePageToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`ConfluencePageToIndexFieldMapping`](crate::model::ConfluencePageToIndexFieldMapping).
+    pub fn builder() -> crate::model::confluence_page_to_index_field_mapping::Builder {
+        crate::model::confluence_page_to_index_field_mapping::Builder::default()
+    }
+}
+
 /// See [`ConfluencePageToIndexFieldMapping`](crate::model::ConfluencePageToIndexFieldMapping).
 pub mod confluence_page_to_index_field_mapping {
     
@@ -8567,12 +8621,6 @@ pub mod confluence_page_to_index_field_mapping {
     }
     
     
-}
-impl ConfluencePageToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`ConfluencePageToIndexFieldMapping`](crate::model::ConfluencePageToIndexFieldMapping).
-    pub fn builder() -> crate::model::confluence_page_to_index_field_mapping::Builder {
-        crate::model::confluence_page_to_index_field_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfluencePageFieldName`, it is important to ensure
@@ -8751,6 +8799,13 @@ impl ConfluenceSpaceConfiguration {
         self.space_field_mappings.as_deref()
     }
 }
+impl ConfluenceSpaceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConfluenceSpaceConfiguration`](crate::model::ConfluenceSpaceConfiguration).
+    pub fn builder() -> crate::model::confluence_space_configuration::Builder {
+        crate::model::confluence_space_configuration::Builder::default()
+    }
+}
+
 /// See [`ConfluenceSpaceConfiguration`](crate::model::ConfluenceSpaceConfiguration).
 pub mod confluence_space_configuration {
     
@@ -8851,12 +8906,6 @@ pub mod confluence_space_configuration {
     
     
 }
-impl ConfluenceSpaceConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConfluenceSpaceConfiguration`](crate::model::ConfluenceSpaceConfiguration).
-    pub fn builder() -> crate::model::confluence_space_configuration::Builder {
-        crate::model::confluence_space_configuration::Builder::default()
-    }
-}
 
 /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
@@ -8886,6 +8935,13 @@ impl ConfluenceSpaceToIndexFieldMapping {
         self.index_field_name.as_deref()
     }
 }
+impl ConfluenceSpaceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`ConfluenceSpaceToIndexFieldMapping`](crate::model::ConfluenceSpaceToIndexFieldMapping).
+    pub fn builder() -> crate::model::confluence_space_to_index_field_mapping::Builder {
+        crate::model::confluence_space_to_index_field_mapping::Builder::default()
+    }
+}
+
 /// See [`ConfluenceSpaceToIndexFieldMapping`](crate::model::ConfluenceSpaceToIndexFieldMapping).
 pub mod confluence_space_to_index_field_mapping {
     
@@ -8939,12 +8995,6 @@ pub mod confluence_space_to_index_field_mapping {
     }
     
     
-}
-impl ConfluenceSpaceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`ConfluenceSpaceToIndexFieldMapping`](crate::model::ConfluenceSpaceToIndexFieldMapping).
-    pub fn builder() -> crate::model::confluence_space_to_index_field_mapping::Builder {
-        crate::model::confluence_space_to_index_field_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfluenceSpaceFieldName`, it is important to ensure
@@ -9172,6 +9222,13 @@ impl ServiceNowConfiguration {
         self.authentication_type.as_ref()
     }
 }
+impl ServiceNowConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceNowConfiguration`](crate::model::ServiceNowConfiguration).
+    pub fn builder() -> crate::model::service_now_configuration::Builder {
+        crate::model::service_now_configuration::Builder::default()
+    }
+}
+
 /// See [`ServiceNowConfiguration`](crate::model::ServiceNowConfiguration).
 pub mod service_now_configuration {
     
@@ -9263,12 +9320,6 @@ pub mod service_now_configuration {
     }
     
     
-}
-impl ServiceNowConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServiceNowConfiguration`](crate::model::ServiceNowConfiguration).
-    pub fn builder() -> crate::model::service_now_configuration::Builder {
-        crate::model::service_now_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceNowAuthenticationType`, it is important to ensure
@@ -9406,6 +9457,13 @@ impl ServiceNowServiceCatalogConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl ServiceNowServiceCatalogConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceNowServiceCatalogConfiguration`](crate::model::ServiceNowServiceCatalogConfiguration).
+    pub fn builder() -> crate::model::service_now_service_catalog_configuration::Builder {
+        crate::model::service_now_service_catalog_configuration::Builder::default()
+    }
+}
+
 /// See [`ServiceNowServiceCatalogConfiguration`](crate::model::ServiceNowServiceCatalogConfiguration).
 pub mod service_now_service_catalog_configuration {
     
@@ -9519,12 +9577,6 @@ pub mod service_now_service_catalog_configuration {
     
     
 }
-impl ServiceNowServiceCatalogConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServiceNowServiceCatalogConfiguration`](crate::model::ServiceNowServiceCatalogConfiguration).
-    pub fn builder() -> crate::model::service_now_service_catalog_configuration::Builder {
-        crate::model::service_now_service_catalog_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for crawling knowledge articles in the ServiceNow site.</p>
 #[non_exhaustive]
@@ -9588,6 +9640,13 @@ impl ServiceNowKnowledgeArticleConfiguration {
         self.filter_query.as_deref()
     }
 }
+impl ServiceNowKnowledgeArticleConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceNowKnowledgeArticleConfiguration`](crate::model::ServiceNowKnowledgeArticleConfiguration).
+    pub fn builder() -> crate::model::service_now_knowledge_article_configuration::Builder {
+        crate::model::service_now_knowledge_article_configuration::Builder::default()
+    }
+}
+
 /// See [`ServiceNowKnowledgeArticleConfiguration`](crate::model::ServiceNowKnowledgeArticleConfiguration).
 pub mod service_now_knowledge_article_configuration {
     
@@ -9714,12 +9773,6 @@ pub mod service_now_knowledge_article_configuration {
     }
     
     
-}
-impl ServiceNowKnowledgeArticleConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServiceNowKnowledgeArticleConfiguration`](crate::model::ServiceNowKnowledgeArticleConfiguration).
-    pub fn builder() -> crate::model::service_now_knowledge_article_configuration::Builder {
-        crate::model::service_now_knowledge_article_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceNowBuildVersionType`, it is important to ensure
@@ -9864,6 +9917,13 @@ impl OneDriveConfiguration {
         self.disable_local_groups
     }
 }
+impl OneDriveConfiguration {
+    /// Creates a new builder-style object to manufacture [`OneDriveConfiguration`](crate::model::OneDriveConfiguration).
+    pub fn builder() -> crate::model::one_drive_configuration::Builder {
+        crate::model::one_drive_configuration::Builder::default()
+    }
+}
+
 /// See [`OneDriveConfiguration`](crate::model::OneDriveConfiguration).
 pub mod one_drive_configuration {
     
@@ -9989,12 +10049,6 @@ pub mod one_drive_configuration {
     
     
 }
-impl OneDriveConfiguration {
-    /// Creates a new builder-style object to manufacture [`OneDriveConfiguration`](crate::model::OneDriveConfiguration).
-    pub fn builder() -> crate::model::one_drive_configuration::Builder {
-        crate::model::one_drive_configuration::Builder::default()
-    }
-}
 
 /// <p>User accounts whose documents should be indexed.</p>
 #[non_exhaustive]
@@ -10017,6 +10071,13 @@ impl OneDriveUsers {
         self.one_drive_user_s3_path.as_ref()
     }
 }
+impl OneDriveUsers {
+    /// Creates a new builder-style object to manufacture [`OneDriveUsers`](crate::model::OneDriveUsers).
+    pub fn builder() -> crate::model::one_drive_users::Builder {
+        crate::model::one_drive_users::Builder::default()
+    }
+}
+
 /// See [`OneDriveUsers`](crate::model::OneDriveUsers).
 pub mod one_drive_users {
     
@@ -10064,12 +10125,6 @@ pub mod one_drive_users {
     }
     
     
-}
-impl OneDriveUsers {
-    /// Creates a new builder-style object to manufacture [`OneDriveUsers`](crate::model::OneDriveUsers).
-    pub fn builder() -> crate::model::one_drive_users::Builder {
-        crate::model::one_drive_users::Builder::default()
-    }
 }
 
 /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
@@ -10162,6 +10217,13 @@ impl SalesforceConfiguration {
         self.exclude_attachment_file_patterns.as_deref()
     }
 }
+impl SalesforceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceConfiguration`](crate::model::SalesforceConfiguration).
+    pub fn builder() -> crate::model::salesforce_configuration::Builder {
+        crate::model::salesforce_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceConfiguration`](crate::model::SalesforceConfiguration).
 pub mod salesforce_configuration {
     
@@ -10327,12 +10389,6 @@ pub mod salesforce_configuration {
     
     
 }
-impl SalesforceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceConfiguration`](crate::model::SalesforceConfiguration).
-    pub fn builder() -> crate::model::salesforce_configuration::Builder {
-        crate::model::salesforce_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for processing attachments to Salesforce standard objects.</p>
 #[non_exhaustive]
@@ -10355,6 +10411,13 @@ impl SalesforceStandardObjectAttachmentConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl SalesforceStandardObjectAttachmentConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceStandardObjectAttachmentConfiguration`](crate::model::SalesforceStandardObjectAttachmentConfiguration).
+    pub fn builder() -> crate::model::salesforce_standard_object_attachment_configuration::Builder {
+        crate::model::salesforce_standard_object_attachment_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceStandardObjectAttachmentConfiguration`](crate::model::SalesforceStandardObjectAttachmentConfiguration).
 pub mod salesforce_standard_object_attachment_configuration {
     
@@ -10403,12 +10466,6 @@ pub mod salesforce_standard_object_attachment_configuration {
     
     
 }
-impl SalesforceStandardObjectAttachmentConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceStandardObjectAttachmentConfiguration`](crate::model::SalesforceStandardObjectAttachmentConfiguration).
-    pub fn builder() -> crate::model::salesforce_standard_object_attachment_configuration::Builder {
-        crate::model::salesforce_standard_object_attachment_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration information for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.</p>
 #[non_exhaustive]
@@ -10445,6 +10502,13 @@ impl SalesforceChatterFeedConfiguration {
         self.include_filter_types.as_deref()
     }
 }
+impl SalesforceChatterFeedConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceChatterFeedConfiguration`](crate::model::SalesforceChatterFeedConfiguration).
+    pub fn builder() -> crate::model::salesforce_chatter_feed_configuration::Builder {
+        crate::model::salesforce_chatter_feed_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceChatterFeedConfiguration`](crate::model::SalesforceChatterFeedConfiguration).
 pub mod salesforce_chatter_feed_configuration {
     
@@ -10522,12 +10586,6 @@ pub mod salesforce_chatter_feed_configuration {
     }
     
     
-}
-impl SalesforceChatterFeedConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceChatterFeedConfiguration`](crate::model::SalesforceChatterFeedConfiguration).
-    pub fn builder() -> crate::model::salesforce_chatter_feed_configuration::Builder {
-        crate::model::salesforce_chatter_feed_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SalesforceChatterFeedIncludeFilterType`, it is important to ensure
@@ -10640,6 +10698,13 @@ impl SalesforceKnowledgeArticleConfiguration {
         self.custom_knowledge_article_type_configurations.as_deref()
     }
 }
+impl SalesforceKnowledgeArticleConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceKnowledgeArticleConfiguration`](crate::model::SalesforceKnowledgeArticleConfiguration).
+    pub fn builder() -> crate::model::salesforce_knowledge_article_configuration::Builder {
+        crate::model::salesforce_knowledge_article_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceKnowledgeArticleConfiguration`](crate::model::SalesforceKnowledgeArticleConfiguration).
 pub mod salesforce_knowledge_article_configuration {
     
@@ -10706,12 +10771,6 @@ pub mod salesforce_knowledge_article_configuration {
     
     
 }
-impl SalesforceKnowledgeArticleConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceKnowledgeArticleConfiguration`](crate::model::SalesforceKnowledgeArticleConfiguration).
-    pub fn builder() -> crate::model::salesforce_knowledge_article_configuration::Builder {
-        crate::model::salesforce_knowledge_article_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for indexing Salesforce custom articles.</p>
 #[non_exhaustive]
@@ -10748,6 +10807,13 @@ impl SalesforceCustomKnowledgeArticleTypeConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl SalesforceCustomKnowledgeArticleTypeConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceCustomKnowledgeArticleTypeConfiguration`](crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration).
+    pub fn builder() -> crate::model::salesforce_custom_knowledge_article_type_configuration::Builder {
+        crate::model::salesforce_custom_knowledge_article_type_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceCustomKnowledgeArticleTypeConfiguration`](crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration).
 pub mod salesforce_custom_knowledge_article_type_configuration {
     
@@ -10820,12 +10886,6 @@ pub mod salesforce_custom_knowledge_article_type_configuration {
     
     
 }
-impl SalesforceCustomKnowledgeArticleTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceCustomKnowledgeArticleTypeConfiguration`](crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration).
-    pub fn builder() -> crate::model::salesforce_custom_knowledge_article_type_configuration::Builder {
-        crate::model::salesforce_custom_knowledge_article_type_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for standard Salesforce knowledge articles.</p>
 #[non_exhaustive]
@@ -10855,6 +10915,13 @@ impl SalesforceStandardKnowledgeArticleTypeConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl SalesforceStandardKnowledgeArticleTypeConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceStandardKnowledgeArticleTypeConfiguration`](crate::model::SalesforceStandardKnowledgeArticleTypeConfiguration).
+    pub fn builder() -> crate::model::salesforce_standard_knowledge_article_type_configuration::Builder {
+        crate::model::salesforce_standard_knowledge_article_type_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceStandardKnowledgeArticleTypeConfiguration`](crate::model::SalesforceStandardKnowledgeArticleTypeConfiguration).
 pub mod salesforce_standard_knowledge_article_type_configuration {
     
@@ -10914,12 +10981,6 @@ pub mod salesforce_standard_knowledge_article_type_configuration {
     }
     
     
-}
-impl SalesforceStandardKnowledgeArticleTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceStandardKnowledgeArticleTypeConfiguration`](crate::model::SalesforceStandardKnowledgeArticleTypeConfiguration).
-    pub fn builder() -> crate::model::salesforce_standard_knowledge_article_type_configuration::Builder {
-        crate::model::salesforce_standard_knowledge_article_type_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SalesforceKnowledgeArticleState`, it is important to ensure
@@ -11044,6 +11105,13 @@ impl SalesforceStandardObjectConfiguration {
         self.field_mappings.as_deref()
     }
 }
+impl SalesforceStandardObjectConfiguration {
+    /// Creates a new builder-style object to manufacture [`SalesforceStandardObjectConfiguration`](crate::model::SalesforceStandardObjectConfiguration).
+    pub fn builder() -> crate::model::salesforce_standard_object_configuration::Builder {
+        crate::model::salesforce_standard_object_configuration::Builder::default()
+    }
+}
+
 /// See [`SalesforceStandardObjectConfiguration`](crate::model::SalesforceStandardObjectConfiguration).
 pub mod salesforce_standard_object_configuration {
     
@@ -11115,12 +11183,6 @@ pub mod salesforce_standard_object_configuration {
     }
     
     
-}
-impl SalesforceStandardObjectConfiguration {
-    /// Creates a new builder-style object to manufacture [`SalesforceStandardObjectConfiguration`](crate::model::SalesforceStandardObjectConfiguration).
-    pub fn builder() -> crate::model::salesforce_standard_object_configuration::Builder {
-        crate::model::salesforce_standard_object_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SalesforceStandardObjectName`, it is important to ensure
@@ -11329,6 +11391,13 @@ impl DatabaseConfiguration {
         self.sql_configuration.as_ref()
     }
 }
+impl DatabaseConfiguration {
+    /// Creates a new builder-style object to manufacture [`DatabaseConfiguration`](crate::model::DatabaseConfiguration).
+    pub fn builder() -> crate::model::database_configuration::Builder {
+        crate::model::database_configuration::Builder::default()
+    }
+}
+
 /// See [`DatabaseConfiguration`](crate::model::DatabaseConfiguration).
 pub mod database_configuration {
     
@@ -11419,12 +11488,6 @@ pub mod database_configuration {
     
     
 }
-impl DatabaseConfiguration {
-    /// Creates a new builder-style object to manufacture [`DatabaseConfiguration`](crate::model::DatabaseConfiguration).
-    pub fn builder() -> crate::model::database_configuration::Builder {
-        crate::model::database_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information to use a SQL database.</p>
 #[non_exhaustive]
@@ -11446,6 +11509,13 @@ impl SqlConfiguration {
         self.query_identifiers_enclosing_option.as_ref()
     }
 }
+impl SqlConfiguration {
+    /// Creates a new builder-style object to manufacture [`SqlConfiguration`](crate::model::SqlConfiguration).
+    pub fn builder() -> crate::model::sql_configuration::Builder {
+        crate::model::sql_configuration::Builder::default()
+    }
+}
+
 /// See [`SqlConfiguration`](crate::model::SqlConfiguration).
 pub mod sql_configuration {
     
@@ -11481,12 +11551,6 @@ pub mod sql_configuration {
     }
     
     
-}
-impl SqlConfiguration {
-    /// Creates a new builder-style object to manufacture [`SqlConfiguration`](crate::model::SqlConfiguration).
-    pub fn builder() -> crate::model::sql_configuration::Builder {
-        crate::model::sql_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryIdentifiersEnclosingOption`, it is important to ensure
@@ -11585,6 +11649,13 @@ impl AclConfiguration {
         self.allowed_groups_column_name.as_deref()
     }
 }
+impl AclConfiguration {
+    /// Creates a new builder-style object to manufacture [`AclConfiguration`](crate::model::AclConfiguration).
+    pub fn builder() -> crate::model::acl_configuration::Builder {
+        crate::model::acl_configuration::Builder::default()
+    }
+}
+
 /// See [`AclConfiguration`](crate::model::AclConfiguration).
 pub mod acl_configuration {
     
@@ -11614,12 +11685,6 @@ pub mod acl_configuration {
     }
     
     
-}
-impl AclConfiguration {
-    /// Creates a new builder-style object to manufacture [`AclConfiguration`](crate::model::AclConfiguration).
-    pub fn builder() -> crate::model::acl_configuration::Builder {
-        crate::model::acl_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides information about how Amazon Kendra should use the columns of a database in an index.</p>
@@ -11664,6 +11729,13 @@ impl ColumnConfiguration {
         self.change_detecting_columns.as_deref()
     }
 }
+impl ColumnConfiguration {
+    /// Creates a new builder-style object to manufacture [`ColumnConfiguration`](crate::model::ColumnConfiguration).
+    pub fn builder() -> crate::model::column_configuration::Builder {
+        crate::model::column_configuration::Builder::default()
+    }
+}
+
 /// See [`ColumnConfiguration`](crate::model::ColumnConfiguration).
 pub mod column_configuration {
     
@@ -11754,12 +11826,6 @@ pub mod column_configuration {
     
     
 }
-impl ColumnConfiguration {
-    /// Creates a new builder-style object to manufacture [`ColumnConfiguration`](crate::model::ColumnConfiguration).
-    pub fn builder() -> crate::model::column_configuration::Builder {
-        crate::model::column_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information that's required to connect to a database.</p>
 #[non_exhaustive]
@@ -11803,6 +11869,13 @@ impl ConnectionConfiguration {
         self.secret_arn.as_deref()
     }
 }
+impl ConnectionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectionConfiguration`](crate::model::ConnectionConfiguration).
+    pub fn builder() -> crate::model::connection_configuration::Builder {
+        crate::model::connection_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectionConfiguration`](crate::model::ConnectionConfiguration).
 pub mod connection_configuration {
     
@@ -11880,12 +11953,6 @@ pub mod connection_configuration {
     }
     
     
-}
-impl ConnectionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectionConfiguration`](crate::model::ConnectionConfiguration).
-    pub fn builder() -> crate::model::connection_configuration::Builder {
-        crate::model::connection_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DatabaseEngineType`, it is important to ensure
@@ -12099,6 +12166,13 @@ impl SharePointConfiguration {
         self.proxy_configuration.as_ref()
     }
 }
+impl SharePointConfiguration {
+    /// Creates a new builder-style object to manufacture [`SharePointConfiguration`](crate::model::SharePointConfiguration).
+    pub fn builder() -> crate::model::share_point_configuration::Builder {
+        crate::model::share_point_configuration::Builder::default()
+    }
+}
+
 /// See [`SharePointConfiguration`](crate::model::SharePointConfiguration).
 pub mod share_point_configuration {
     
@@ -12325,12 +12399,6 @@ pub mod share_point_configuration {
     }
     
     
-}
-impl SharePointConfiguration {
-    /// Creates a new builder-style object to manufacture [`SharePointConfiguration`](crate::model::SharePointConfiguration).
-    pub fn builder() -> crate::model::share_point_configuration::Builder {
-        crate::model::share_point_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SharePointOnlineAuthenticationType`, it is important to ensure
@@ -12580,6 +12648,13 @@ impl S3DataSourceConfiguration {
         self.access_control_list_configuration.as_ref()
     }
 }
+impl S3DataSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DataSourceConfiguration`](crate::model::S3DataSourceConfiguration).
+    pub fn builder() -> crate::model::s3_data_source_configuration::Builder {
+        crate::model::s3_data_source_configuration::Builder::default()
+    }
+}
+
 /// See [`S3DataSourceConfiguration`](crate::model::S3DataSourceConfiguration).
 pub mod s3_data_source_configuration {
     
@@ -12712,12 +12787,6 @@ pub mod s3_data_source_configuration {
     
     
 }
-impl S3DataSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DataSourceConfiguration`](crate::model::S3DataSourceConfiguration).
-    pub fn builder() -> crate::model::s3_data_source_configuration::Builder {
-        crate::model::s3_data_source_configuration::Builder::default()
-    }
-}
 
 /// <p>Access Control List files for the documents in a data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
 #[non_exhaustive]
@@ -12733,6 +12802,13 @@ impl AccessControlListConfiguration {
         self.key_path.as_deref()
     }
 }
+impl AccessControlListConfiguration {
+    /// Creates a new builder-style object to manufacture [`AccessControlListConfiguration`](crate::model::AccessControlListConfiguration).
+    pub fn builder() -> crate::model::access_control_list_configuration::Builder {
+        crate::model::access_control_list_configuration::Builder::default()
+    }
+}
+
 /// See [`AccessControlListConfiguration`](crate::model::AccessControlListConfiguration).
 pub mod access_control_list_configuration {
     
@@ -12763,12 +12839,6 @@ pub mod access_control_list_configuration {
     
     
 }
-impl AccessControlListConfiguration {
-    /// Creates a new builder-style object to manufacture [`AccessControlListConfiguration`](crate::model::AccessControlListConfiguration).
-    pub fn builder() -> crate::model::access_control_list_configuration::Builder {
-        crate::model::access_control_list_configuration::Builder::default()
-    }
-}
 
 /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
 #[non_exhaustive]
@@ -12784,6 +12854,13 @@ impl DocumentsMetadataConfiguration {
         self.s3_prefix.as_deref()
     }
 }
+impl DocumentsMetadataConfiguration {
+    /// Creates a new builder-style object to manufacture [`DocumentsMetadataConfiguration`](crate::model::DocumentsMetadataConfiguration).
+    pub fn builder() -> crate::model::documents_metadata_configuration::Builder {
+        crate::model::documents_metadata_configuration::Builder::default()
+    }
+}
+
 /// See [`DocumentsMetadataConfiguration`](crate::model::DocumentsMetadataConfiguration).
 pub mod documents_metadata_configuration {
     
@@ -12814,12 +12891,6 @@ pub mod documents_metadata_configuration {
     
     
 }
-impl DocumentsMetadataConfiguration {
-    /// Creates a new builder-style object to manufacture [`DocumentsMetadataConfiguration`](crate::model::DocumentsMetadataConfiguration).
-    pub fn builder() -> crate::model::documents_metadata_configuration::Builder {
-        crate::model::documents_metadata_configuration::Builder::default()
-    }
-}
 
 /// <p> Information to define the hierarchy for which documents users should have access to. </p>
 #[non_exhaustive]
@@ -12835,6 +12906,13 @@ impl HierarchicalPrincipal {
         self.principal_list.as_deref()
     }
 }
+impl HierarchicalPrincipal {
+    /// Creates a new builder-style object to manufacture [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
+    pub fn builder() -> crate::model::hierarchical_principal::Builder {
+        crate::model::hierarchical_principal::Builder::default()
+    }
+}
+
 /// See [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
 pub mod hierarchical_principal {
     
@@ -12870,12 +12948,6 @@ pub mod hierarchical_principal {
     }
     
     
-}
-impl HierarchicalPrincipal {
-    /// Creates a new builder-style object to manufacture [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
-    pub fn builder() -> crate::model::hierarchical_principal::Builder {
-        crate::model::hierarchical_principal::Builder::default()
-    }
 }
 
 /// <p>Provides user and group information for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>.</p>
@@ -12913,6 +12985,13 @@ impl Principal {
         self.data_source_id.as_deref()
     }
 }
+impl Principal {
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
+    pub fn builder() -> crate::model::principal::Builder {
+        crate::model::principal::Builder::default()
+    }
+}
+
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
     
@@ -12978,12 +13057,6 @@ pub mod principal {
     }
     
     
-}
-impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
-    pub fn builder() -> crate::model::principal::Builder {
-        crate::model::principal::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReadAccessType`, it is important to ensure
@@ -13171,6 +13244,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -13213,12 +13293,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.</p>
 #[non_exhaustive]
@@ -13241,6 +13315,13 @@ impl RelevanceFeedback {
         self.relevance_value.as_ref()
     }
 }
+impl RelevanceFeedback {
+    /// Creates a new builder-style object to manufacture [`RelevanceFeedback`](crate::model::RelevanceFeedback).
+    pub fn builder() -> crate::model::relevance_feedback::Builder {
+        crate::model::relevance_feedback::Builder::default()
+    }
+}
+
 /// See [`RelevanceFeedback`](crate::model::RelevanceFeedback).
 pub mod relevance_feedback {
     
@@ -13282,12 +13363,6 @@ pub mod relevance_feedback {
     }
     
     
-}
-impl RelevanceFeedback {
-    /// Creates a new builder-style object to manufacture [`RelevanceFeedback`](crate::model::RelevanceFeedback).
-    pub fn builder() -> crate::model::relevance_feedback::Builder {
-        crate::model::relevance_feedback::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RelevanceType`, it is important to ensure
@@ -13393,6 +13468,13 @@ impl ClickFeedback {
         self.click_time.as_ref()
     }
 }
+impl ClickFeedback {
+    /// Creates a new builder-style object to manufacture [`ClickFeedback`](crate::model::ClickFeedback).
+    pub fn builder() -> crate::model::click_feedback::Builder {
+        crate::model::click_feedback::Builder::default()
+    }
+}
+
 /// See [`ClickFeedback`](crate::model::ClickFeedback).
 pub mod click_feedback {
     
@@ -13435,12 +13517,6 @@ pub mod click_feedback {
     
     
 }
-impl ClickFeedback {
-    /// Creates a new builder-style object to manufacture [`ClickFeedback`](crate::model::ClickFeedback).
-    pub fn builder() -> crate::model::click_feedback::Builder {
-        crate::model::click_feedback::Builder::default()
-    }
-}
 
 /// <p>A query with suggested spell corrections. </p>
 #[non_exhaustive]
@@ -13463,6 +13539,13 @@ impl SpellCorrectedQuery {
         self.corrections.as_deref()
     }
 }
+impl SpellCorrectedQuery {
+    /// Creates a new builder-style object to manufacture [`SpellCorrectedQuery`](crate::model::SpellCorrectedQuery).
+    pub fn builder() -> crate::model::spell_corrected_query::Builder {
+        crate::model::spell_corrected_query::Builder::default()
+    }
+}
+
 /// See [`SpellCorrectedQuery`](crate::model::SpellCorrectedQuery).
 pub mod spell_corrected_query {
     
@@ -13511,12 +13594,6 @@ pub mod spell_corrected_query {
     
     
 }
-impl SpellCorrectedQuery {
-    /// Creates a new builder-style object to manufacture [`SpellCorrectedQuery`](crate::model::SpellCorrectedQuery).
-    pub fn builder() -> crate::model::spell_corrected_query::Builder {
-        crate::model::spell_corrected_query::Builder::default()
-    }
-}
 
 /// <p>A corrected misspelled word in a query.</p>
 #[non_exhaustive]
@@ -13553,6 +13630,13 @@ impl Correction {
         self.corrected_term.as_deref()
     }
 }
+impl Correction {
+    /// Creates a new builder-style object to manufacture [`Correction`](crate::model::Correction).
+    pub fn builder() -> crate::model::correction::Builder {
+        crate::model::correction::Builder::default()
+    }
+}
+
 /// See [`Correction`](crate::model::Correction).
 pub mod correction {
     
@@ -13619,12 +13703,6 @@ pub mod correction {
     
     
 }
-impl Correction {
-    /// Creates a new builder-style object to manufacture [`Correction`](crate::model::Correction).
-    pub fn builder() -> crate::model::correction::Builder {
-        crate::model::correction::Builder::default()
-    }
-}
 
 /// <p>The warning code and message that explains a problem with a query.</p>
 #[non_exhaustive]
@@ -13647,6 +13725,13 @@ impl Warning {
         self.code.as_ref()
     }
 }
+impl Warning {
+    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning).
+    pub fn builder() -> crate::model::warning::Builder {
+        crate::model::warning::Builder::default()
+    }
+}
+
 /// See [`Warning`](crate::model::Warning).
 pub mod warning {
     
@@ -13688,12 +13773,6 @@ pub mod warning {
     }
     
     
-}
-impl Warning {
-    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning).
-    pub fn builder() -> crate::model::warning::Builder {
-        crate::model::warning::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WarningCode`, it is important to ensure
@@ -13801,6 +13880,13 @@ impl FacetResult {
         self.document_attribute_value_count_pairs.as_deref()
     }
 }
+impl FacetResult {
+    /// Creates a new builder-style object to manufacture [`FacetResult`](crate::model::FacetResult).
+    pub fn builder() -> crate::model::facet_result::Builder {
+        crate::model::facet_result::Builder::default()
+    }
+}
+
 /// See [`FacetResult`](crate::model::FacetResult).
 pub mod facet_result {
     
@@ -13861,12 +13947,6 @@ pub mod facet_result {
     
     
 }
-impl FacetResult {
-    /// Creates a new builder-style object to manufacture [`FacetResult`](crate::model::FacetResult).
-    pub fn builder() -> crate::model::facet_result::Builder {
-        crate::model::facet_result::Builder::default()
-    }
-}
 
 /// <p>Provides the count of documents that match a particular attribute when doing a faceted search.</p>
 #[non_exhaustive]
@@ -13898,6 +13978,13 @@ impl DocumentAttributeValueCountPair {
         self.facet_results.as_deref()
     }
 }
+impl DocumentAttributeValueCountPair {
+    /// Creates a new builder-style object to manufacture [`DocumentAttributeValueCountPair`](crate::model::DocumentAttributeValueCountPair).
+    pub fn builder() -> crate::model::document_attribute_value_count_pair::Builder {
+        crate::model::document_attribute_value_count_pair::Builder::default()
+    }
+}
+
 /// See [`DocumentAttributeValueCountPair`](crate::model::DocumentAttributeValueCountPair).
 pub mod document_attribute_value_count_pair {
     
@@ -13959,12 +14046,6 @@ pub mod document_attribute_value_count_pair {
     }
     
     
-}
-impl DocumentAttributeValueCountPair {
-    /// Creates a new builder-style object to manufacture [`DocumentAttributeValueCountPair`](crate::model::DocumentAttributeValueCountPair).
-    pub fn builder() -> crate::model::document_attribute_value_count_pair::Builder {
-        crate::model::document_attribute_value_count_pair::Builder::default()
-    }
 }
 
 /// <p>A single query result.</p> 
@@ -14061,6 +14142,13 @@ impl QueryResultItem {
         self.table_excerpt.as_ref()
     }
 }
+impl QueryResultItem {
+    /// Creates a new builder-style object to manufacture [`QueryResultItem`](crate::model::QueryResultItem).
+    pub fn builder() -> crate::model::query_result_item::Builder {
+        crate::model::query_result_item::Builder::default()
+    }
+}
+
 /// See [`QueryResultItem`](crate::model::QueryResultItem).
 pub mod query_result_item {
     
@@ -14237,12 +14325,6 @@ pub mod query_result_item {
     
     
 }
-impl QueryResultItem {
-    /// Creates a new builder-style object to manufacture [`QueryResultItem`](crate::model::QueryResultItem).
-    pub fn builder() -> crate::model::query_result_item::Builder {
-        crate::model::query_result_item::Builder::default()
-    }
-}
 
 /// <p>An excerpt from a table within a document. The table excerpt displays up to five columns and three rows, depending on how many table cells are relevant to the query and how many columns are available in the original table. The top most relevant cell is displayed in the table excerpt, along with the next most relevant cells.</p>
 #[non_exhaustive]
@@ -14265,6 +14347,13 @@ impl TableExcerpt {
         self.total_number_of_rows
     }
 }
+impl TableExcerpt {
+    /// Creates a new builder-style object to manufacture [`TableExcerpt`](crate::model::TableExcerpt).
+    pub fn builder() -> crate::model::table_excerpt::Builder {
+        crate::model::table_excerpt::Builder::default()
+    }
+}
+
 /// See [`TableExcerpt`](crate::model::TableExcerpt).
 pub mod table_excerpt {
     
@@ -14313,12 +14402,6 @@ pub mod table_excerpt {
     
     
 }
-impl TableExcerpt {
-    /// Creates a new builder-style object to manufacture [`TableExcerpt`](crate::model::TableExcerpt).
-    pub fn builder() -> crate::model::table_excerpt::Builder {
-        crate::model::table_excerpt::Builder::default()
-    }
-}
 
 /// <p>Information about a row in a table excerpt.</p>
 #[non_exhaustive]
@@ -14334,6 +14417,13 @@ impl TableRow {
         self.cells.as_deref()
     }
 }
+impl TableRow {
+    /// Creates a new builder-style object to manufacture [`TableRow`](crate::model::TableRow).
+    pub fn builder() -> crate::model::table_row::Builder {
+        crate::model::table_row::Builder::default()
+    }
+}
+
 /// See [`TableRow`](crate::model::TableRow).
 pub mod table_row {
     
@@ -14369,12 +14459,6 @@ pub mod table_row {
     }
     
     
-}
-impl TableRow {
-    /// Creates a new builder-style object to manufacture [`TableRow`](crate::model::TableRow).
-    pub fn builder() -> crate::model::table_row::Builder {
-        crate::model::table_row::Builder::default()
-    }
 }
 
 /// <p>Provides information about a table cell in a table excerpt.</p>
@@ -14412,6 +14496,13 @@ impl TableCell {
         self.header
     }
 }
+impl TableCell {
+    /// Creates a new builder-style object to manufacture [`TableCell`](crate::model::TableCell).
+    pub fn builder() -> crate::model::table_cell::Builder {
+        crate::model::table_cell::Builder::default()
+    }
+}
+
 /// See [`TableCell`](crate::model::TableCell).
 pub mod table_cell {
     
@@ -14481,12 +14572,6 @@ pub mod table_cell {
     
     
 }
-impl TableCell {
-    /// Creates a new builder-style object to manufacture [`TableCell`](crate::model::TableCell).
-    pub fn builder() -> crate::model::table_cell::Builder {
-        crate::model::table_cell::Builder::default()
-    }
-}
 
 /// <p>Provides a relative ranking that indicates how confident Amazon Kendra is that the response matches the query.</p>
 #[non_exhaustive]
@@ -14502,6 +14587,13 @@ impl ScoreAttributes {
         self.score_confidence.as_ref()
     }
 }
+impl ScoreAttributes {
+    /// Creates a new builder-style object to manufacture [`ScoreAttributes`](crate::model::ScoreAttributes).
+    pub fn builder() -> crate::model::score_attributes::Builder {
+        crate::model::score_attributes::Builder::default()
+    }
+}
+
 /// See [`ScoreAttributes`](crate::model::ScoreAttributes).
 pub mod score_attributes {
     
@@ -14531,12 +14623,6 @@ pub mod score_attributes {
     }
     
     
-}
-impl ScoreAttributes {
-    /// Creates a new builder-style object to manufacture [`ScoreAttributes`](crate::model::ScoreAttributes).
-    pub fn builder() -> crate::model::score_attributes::Builder {
-        crate::model::score_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScoreConfidence`, it is important to ensure
@@ -14657,6 +14743,13 @@ impl DocumentAttribute {
         self.value.as_ref()
     }
 }
+impl DocumentAttribute {
+    /// Creates a new builder-style object to manufacture [`DocumentAttribute`](crate::model::DocumentAttribute).
+    pub fn builder() -> crate::model::document_attribute::Builder {
+        crate::model::document_attribute::Builder::default()
+    }
+}
+
 /// See [`DocumentAttribute`](crate::model::DocumentAttribute).
 pub mod document_attribute {
     
@@ -14699,12 +14792,6 @@ pub mod document_attribute {
     
     
 }
-impl DocumentAttribute {
-    /// Creates a new builder-style object to manufacture [`DocumentAttribute`](crate::model::DocumentAttribute).
-    pub fn builder() -> crate::model::document_attribute::Builder {
-        crate::model::document_attribute::Builder::default()
-    }
-}
 
 /// <p>Provides text and information about where to highlight the text.</p>
 #[non_exhaustive]
@@ -14727,6 +14814,13 @@ impl TextWithHighlights {
         self.highlights.as_deref()
     }
 }
+impl TextWithHighlights {
+    /// Creates a new builder-style object to manufacture [`TextWithHighlights`](crate::model::TextWithHighlights).
+    pub fn builder() -> crate::model::text_with_highlights::Builder {
+        crate::model::text_with_highlights::Builder::default()
+    }
+}
+
 /// See [`TextWithHighlights`](crate::model::TextWithHighlights).
 pub mod text_with_highlights {
     
@@ -14775,12 +14869,6 @@ pub mod text_with_highlights {
     
     
 }
-impl TextWithHighlights {
-    /// Creates a new builder-style object to manufacture [`TextWithHighlights`](crate::model::TextWithHighlights).
-    pub fn builder() -> crate::model::text_with_highlights::Builder {
-        crate::model::text_with_highlights::Builder::default()
-    }
-}
 
 /// <p>Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.</p>
 #[non_exhaustive]
@@ -14817,6 +14905,13 @@ impl Highlight {
         self.r#type.as_ref()
     }
 }
+impl Highlight {
+    /// Creates a new builder-style object to manufacture [`Highlight`](crate::model::Highlight).
+    pub fn builder() -> crate::model::highlight::Builder {
+        crate::model::highlight::Builder::default()
+    }
+}
+
 /// See [`Highlight`](crate::model::Highlight).
 pub mod highlight {
     
@@ -14883,12 +14978,6 @@ pub mod highlight {
     }
     
     
-}
-impl Highlight {
-    /// Creates a new builder-style object to manufacture [`Highlight`](crate::model::Highlight).
-    pub fn builder() -> crate::model::highlight::Builder {
-        crate::model::highlight::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HighlightType`, it is important to ensure
@@ -15001,6 +15090,13 @@ impl AdditionalResultAttribute {
         self.value.as_ref()
     }
 }
+impl AdditionalResultAttribute {
+    /// Creates a new builder-style object to manufacture [`AdditionalResultAttribute`](crate::model::AdditionalResultAttribute).
+    pub fn builder() -> crate::model::additional_result_attribute::Builder {
+        crate::model::additional_result_attribute::Builder::default()
+    }
+}
+
 /// See [`AdditionalResultAttribute`](crate::model::AdditionalResultAttribute).
 pub mod additional_result_attribute {
     
@@ -15055,12 +15151,6 @@ pub mod additional_result_attribute {
     
     
 }
-impl AdditionalResultAttribute {
-    /// Creates a new builder-style object to manufacture [`AdditionalResultAttribute`](crate::model::AdditionalResultAttribute).
-    pub fn builder() -> crate::model::additional_result_attribute::Builder {
-        crate::model::additional_result_attribute::Builder::default()
-    }
-}
 
 /// <p>An attribute returned with a document from a search.</p>
 #[non_exhaustive]
@@ -15076,6 +15166,13 @@ impl AdditionalResultAttributeValue {
         self.text_with_highlights_value.as_ref()
     }
 }
+impl AdditionalResultAttributeValue {
+    /// Creates a new builder-style object to manufacture [`AdditionalResultAttributeValue`](crate::model::AdditionalResultAttributeValue).
+    pub fn builder() -> crate::model::additional_result_attribute_value::Builder {
+        crate::model::additional_result_attribute_value::Builder::default()
+    }
+}
+
 /// See [`AdditionalResultAttributeValue`](crate::model::AdditionalResultAttributeValue).
 pub mod additional_result_attribute_value {
     
@@ -15105,12 +15202,6 @@ pub mod additional_result_attribute_value {
     }
     
     
-}
-impl AdditionalResultAttributeValue {
-    /// Creates a new builder-style object to manufacture [`AdditionalResultAttributeValue`](crate::model::AdditionalResultAttributeValue).
-    pub fn builder() -> crate::model::additional_result_attribute_value::Builder {
-        crate::model::additional_result_attribute_value::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AdditionalResultAttributeValueType`, it is important to ensure
@@ -15375,6 +15466,13 @@ impl SpellCorrectionConfiguration {
         self.include_query_spell_check_suggestions
     }
 }
+impl SpellCorrectionConfiguration {
+    /// Creates a new builder-style object to manufacture [`SpellCorrectionConfiguration`](crate::model::SpellCorrectionConfiguration).
+    pub fn builder() -> crate::model::spell_correction_configuration::Builder {
+        crate::model::spell_correction_configuration::Builder::default()
+    }
+}
+
 /// See [`SpellCorrectionConfiguration`](crate::model::SpellCorrectionConfiguration).
 pub mod spell_correction_configuration {
     
@@ -15405,12 +15503,6 @@ pub mod spell_correction_configuration {
     }
     
     
-}
-impl SpellCorrectionConfiguration {
-    /// Creates a new builder-style object to manufacture [`SpellCorrectionConfiguration`](crate::model::SpellCorrectionConfiguration).
-    pub fn builder() -> crate::model::spell_correction_configuration::Builder {
-        crate::model::spell_correction_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides information about the user context for an Amazon Kendra index.</p> 
@@ -15455,6 +15547,13 @@ impl UserContext {
         self.data_source_groups.as_deref()
     }
 }
+impl UserContext {
+    /// Creates a new builder-style object to manufacture [`UserContext`](crate::model::UserContext).
+    pub fn builder() -> crate::model::user_context::Builder {
+        crate::model::user_context::Builder::default()
+    }
+}
+
 /// See [`UserContext`](crate::model::UserContext).
 pub mod user_context {
     
@@ -15533,12 +15632,6 @@ pub mod user_context {
     
     
 }
-impl UserContext {
-    /// Creates a new builder-style object to manufacture [`UserContext`](crate::model::UserContext).
-    pub fn builder() -> crate::model::user_context::Builder {
-        crate::model::user_context::Builder::default()
-    }
-}
 
 /// <p>Data source information for user context filtering.</p>
 #[non_exhaustive]
@@ -15561,6 +15654,13 @@ impl DataSourceGroup {
         self.data_source_id.as_deref()
     }
 }
+impl DataSourceGroup {
+    /// Creates a new builder-style object to manufacture [`DataSourceGroup`](crate::model::DataSourceGroup).
+    pub fn builder() -> crate::model::data_source_group::Builder {
+        crate::model::data_source_group::Builder::default()
+    }
+}
+
 /// See [`DataSourceGroup`](crate::model::DataSourceGroup).
 pub mod data_source_group {
     
@@ -15602,12 +15702,6 @@ pub mod data_source_group {
     }
     
     
-}
-impl DataSourceGroup {
-    /// Creates a new builder-style object to manufacture [`DataSourceGroup`](crate::model::DataSourceGroup).
-    pub fn builder() -> crate::model::data_source_group::Builder {
-        crate::model::data_source_group::Builder::default()
-    }
 }
 
 /// <p>Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.</p> 
@@ -15657,6 +15751,13 @@ impl SortingConfiguration {
         self.sort_order.as_ref()
     }
 }
+impl SortingConfiguration {
+    /// Creates a new builder-style object to manufacture [`SortingConfiguration`](crate::model::SortingConfiguration).
+    pub fn builder() -> crate::model::sorting_configuration::Builder {
+        crate::model::sorting_configuration::Builder::default()
+    }
+}
+
 /// See [`SortingConfiguration`](crate::model::SortingConfiguration).
 pub mod sorting_configuration {
     
@@ -15714,12 +15815,6 @@ pub mod sorting_configuration {
     }
     
     
-}
-impl SortingConfiguration {
-    /// Creates a new builder-style object to manufacture [`SortingConfiguration`](crate::model::SortingConfiguration).
-    pub fn builder() -> crate::model::sorting_configuration::Builder {
-        crate::model::sorting_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
@@ -15825,6 +15920,13 @@ impl DocumentRelevanceConfiguration {
         self.relevance.as_ref()
     }
 }
+impl DocumentRelevanceConfiguration {
+    /// Creates a new builder-style object to manufacture [`DocumentRelevanceConfiguration`](crate::model::DocumentRelevanceConfiguration).
+    pub fn builder() -> crate::model::document_relevance_configuration::Builder {
+        crate::model::document_relevance_configuration::Builder::default()
+    }
+}
+
 /// See [`DocumentRelevanceConfiguration`](crate::model::DocumentRelevanceConfiguration).
 pub mod document_relevance_configuration {
     
@@ -15867,12 +15969,6 @@ pub mod document_relevance_configuration {
     
     
 }
-impl DocumentRelevanceConfiguration {
-    /// Creates a new builder-style object to manufacture [`DocumentRelevanceConfiguration`](crate::model::DocumentRelevanceConfiguration).
-    pub fn builder() -> crate::model::document_relevance_configuration::Builder {
-        crate::model::document_relevance_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about a document attribute. You can use document attributes as facets.</p> 
 /// <p>For example, the document attribute or facet "Department" includes the values "HR", "Engineering", and "Accounting". You can display these values in the search results so that documents can be searched by department.</p> 
@@ -15908,6 +16004,13 @@ impl Facet {
         self.max_results
     }
 }
+impl Facet {
+    /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet).
+    pub fn builder() -> crate::model::facet::Builder {
+        crate::model::facet::Builder::default()
+    }
+}
+
 /// See [`Facet`](crate::model::Facet).
 pub mod facet {
     
@@ -15972,12 +16075,6 @@ pub mod facet {
     }
     
     
-}
-impl Facet {
-    /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet).
-    pub fn builder() -> crate::model::facet::Builder {
-        crate::model::facet::Builder::default()
-    }
 }
 
 /// <p>Provides filtering the query results based on document attributes or metadata fields.</p> 
@@ -16068,6 +16165,13 @@ impl AttributeFilter {
         self.less_than_or_equals.as_ref()
     }
 }
+impl AttributeFilter {
+    /// Creates a new builder-style object to manufacture [`AttributeFilter`](crate::model::AttributeFilter).
+    pub fn builder() -> crate::model::attribute_filter::Builder {
+        crate::model::attribute_filter::Builder::default()
+    }
+}
+
 /// See [`AttributeFilter`](crate::model::AttributeFilter).
 pub mod attribute_filter {
     
@@ -16218,12 +16322,6 @@ pub mod attribute_filter {
     
     
 }
-impl AttributeFilter {
-    /// Creates a new builder-style object to manufacture [`AttributeFilter`](crate::model::AttributeFilter).
-    pub fn builder() -> crate::model::attribute_filter::Builder {
-        crate::model::attribute_filter::Builder::default()
-    }
-}
 
 /// <p>A list of users or sub groups that belong to a group. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 #[non_exhaustive]
@@ -16255,6 +16353,13 @@ impl GroupMembers {
         self.s3_pathfor_group_members.as_ref()
     }
 }
+impl GroupMembers {
+    /// Creates a new builder-style object to manufacture [`GroupMembers`](crate::model::GroupMembers).
+    pub fn builder() -> crate::model::group_members::Builder {
+        crate::model::group_members::Builder::default()
+    }
+}
+
 /// See [`GroupMembers`](crate::model::GroupMembers).
 pub mod group_members {
     
@@ -16323,12 +16428,6 @@ pub mod group_members {
     
     
 }
-impl GroupMembers {
-    /// Creates a new builder-style object to manufacture [`GroupMembers`](crate::model::GroupMembers).
-    pub fn builder() -> crate::model::group_members::Builder {
-        crate::model::group_members::Builder::default()
-    }
-}
 
 /// <p>The users that belong to a group.</p>
 #[non_exhaustive]
@@ -16344,6 +16443,13 @@ impl MemberUser {
         self.user_id.as_deref()
     }
 }
+impl MemberUser {
+    /// Creates a new builder-style object to manufacture [`MemberUser`](crate::model::MemberUser).
+    pub fn builder() -> crate::model::member_user::Builder {
+        crate::model::member_user::Builder::default()
+    }
+}
+
 /// See [`MemberUser`](crate::model::MemberUser).
 pub mod member_user {
     
@@ -16374,12 +16480,6 @@ pub mod member_user {
     
     
 }
-impl MemberUser {
-    /// Creates a new builder-style object to manufacture [`MemberUser`](crate::model::MemberUser).
-    pub fn builder() -> crate::model::member_user::Builder {
-        crate::model::member_user::Builder::default()
-    }
-}
 
 /// <p>The sub groups that belong to a group.</p>
 #[non_exhaustive]
@@ -16402,6 +16502,13 @@ impl MemberGroup {
         self.data_source_id.as_deref()
     }
 }
+impl MemberGroup {
+    /// Creates a new builder-style object to manufacture [`MemberGroup`](crate::model::MemberGroup).
+    pub fn builder() -> crate::model::member_group::Builder {
+        crate::model::member_group::Builder::default()
+    }
+}
+
 /// See [`MemberGroup`](crate::model::MemberGroup).
 pub mod member_group {
     
@@ -16443,12 +16550,6 @@ pub mod member_group {
     }
     
     
-}
-impl MemberGroup {
-    /// Creates a new builder-style object to manufacture [`MemberGroup`](crate::model::MemberGroup).
-    pub fn builder() -> crate::model::member_group::Builder {
-        crate::model::member_group::Builder::default()
-    }
 }
 
 /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
@@ -16493,6 +16594,13 @@ impl ThesaurusSummary {
         self.updated_at.as_ref()
     }
 }
+impl ThesaurusSummary {
+    /// Creates a new builder-style object to manufacture [`ThesaurusSummary`](crate::model::ThesaurusSummary).
+    pub fn builder() -> crate::model::thesaurus_summary::Builder {
+        crate::model::thesaurus_summary::Builder::default()
+    }
+}
+
 /// See [`ThesaurusSummary`](crate::model::ThesaurusSummary).
 pub mod thesaurus_summary {
     
@@ -16570,12 +16678,6 @@ pub mod thesaurus_summary {
     }
     
     
-}
-impl ThesaurusSummary {
-    /// Creates a new builder-style object to manufacture [`ThesaurusSummary`](crate::model::ThesaurusSummary).
-    pub fn builder() -> crate::model::thesaurus_summary::Builder {
-        crate::model::thesaurus_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ThesaurusStatus`, it is important to ensure
@@ -16731,6 +16833,13 @@ impl QuerySuggestionsBlockListSummary {
         self.item_count
     }
 }
+impl QuerySuggestionsBlockListSummary {
+    /// Creates a new builder-style object to manufacture [`QuerySuggestionsBlockListSummary`](crate::model::QuerySuggestionsBlockListSummary).
+    pub fn builder() -> crate::model::query_suggestions_block_list_summary::Builder {
+        crate::model::query_suggestions_block_list_summary::Builder::default()
+    }
+}
+
 /// See [`QuerySuggestionsBlockListSummary`](crate::model::QuerySuggestionsBlockListSummary).
 pub mod query_suggestions_block_list_summary {
     
@@ -16820,12 +16929,6 @@ pub mod query_suggestions_block_list_summary {
     }
     
     
-}
-impl QuerySuggestionsBlockListSummary {
-    /// Creates a new builder-style object to manufacture [`QuerySuggestionsBlockListSummary`](crate::model::QuerySuggestionsBlockListSummary).
-    pub fn builder() -> crate::model::query_suggestions_block_list_summary::Builder {
-        crate::model::query_suggestions_block_list_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QuerySuggestionsBlockListStatus`, it is important to ensure
@@ -16979,6 +17082,13 @@ impl IndexConfigurationSummary {
         self.status.as_ref()
     }
 }
+impl IndexConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`IndexConfigurationSummary`](crate::model::IndexConfigurationSummary).
+    pub fn builder() -> crate::model::index_configuration_summary::Builder {
+        crate::model::index_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`IndexConfigurationSummary`](crate::model::IndexConfigurationSummary).
 pub mod index_configuration_summary {
     
@@ -17068,12 +17178,6 @@ pub mod index_configuration_summary {
     }
     
     
-}
-impl IndexConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`IndexConfigurationSummary`](crate::model::IndexConfigurationSummary).
-    pub fn builder() -> crate::model::index_configuration_summary::Builder {
-        crate::model::index_configuration_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IndexStatus`, it is important to ensure
@@ -17281,6 +17385,13 @@ impl GroupSummary {
         self.ordering_id
     }
 }
+impl GroupSummary {
+    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
+    pub fn builder() -> crate::model::group_summary::Builder {
+        crate::model::group_summary::Builder::default()
+    }
+}
+
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
     
@@ -17322,12 +17433,6 @@ pub mod group_summary {
     }
     
     
-}
-impl GroupSummary {
-    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
-    pub fn builder() -> crate::model::group_summary::Builder {
-        crate::model::group_summary::Builder::default()
-    }
 }
 
 /// <p>Summary information for frequently asked questions and answers included in an index.</p>
@@ -17386,6 +17491,13 @@ impl FaqSummary {
         self.language_code.as_deref()
     }
 }
+impl FaqSummary {
+    /// Creates a new builder-style object to manufacture [`FaqSummary`](crate::model::FaqSummary).
+    pub fn builder() -> crate::model::faq_summary::Builder {
+        crate::model::faq_summary::Builder::default()
+    }
+}
+
 /// See [`FaqSummary`](crate::model::FaqSummary).
 pub mod faq_summary {
     
@@ -17487,12 +17599,6 @@ pub mod faq_summary {
     }
     
     
-}
-impl FaqSummary {
-    /// Creates a new builder-style object to manufacture [`FaqSummary`](crate::model::FaqSummary).
-    pub fn builder() -> crate::model::faq_summary::Builder {
-        crate::model::faq_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FaqFileFormat`, it is important to ensure
@@ -17721,6 +17827,13 @@ impl ExperiencesSummary {
         self.endpoints.as_deref()
     }
 }
+impl ExperiencesSummary {
+    /// Creates a new builder-style object to manufacture [`ExperiencesSummary`](crate::model::ExperiencesSummary).
+    pub fn builder() -> crate::model::experiences_summary::Builder {
+        crate::model::experiences_summary::Builder::default()
+    }
+}
+
 /// See [`ExperiencesSummary`](crate::model::ExperiencesSummary).
 pub mod experiences_summary {
     
@@ -17805,12 +17918,6 @@ pub mod experiences_summary {
     
     
 }
-impl ExperiencesSummary {
-    /// Creates a new builder-style object to manufacture [`ExperiencesSummary`](crate::model::ExperiencesSummary).
-    pub fn builder() -> crate::model::experiences_summary::Builder {
-        crate::model::experiences_summary::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for the endpoint for your Amazon Kendra experience.</p>
 #[non_exhaustive]
@@ -17833,6 +17940,13 @@ impl ExperienceEndpoint {
         self.endpoint.as_deref()
     }
 }
+impl ExperienceEndpoint {
+    /// Creates a new builder-style object to manufacture [`ExperienceEndpoint`](crate::model::ExperienceEndpoint).
+    pub fn builder() -> crate::model::experience_endpoint::Builder {
+        crate::model::experience_endpoint::Builder::default()
+    }
+}
+
 /// See [`ExperienceEndpoint`](crate::model::ExperienceEndpoint).
 pub mod experience_endpoint {
     
@@ -17874,12 +17988,6 @@ pub mod experience_endpoint {
     }
     
     
-}
-impl ExperienceEndpoint {
-    /// Creates a new builder-style object to manufacture [`ExperienceEndpoint`](crate::model::ExperienceEndpoint).
-    pub fn builder() -> crate::model::experience_endpoint::Builder {
-        crate::model::experience_endpoint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndpointType`, it is important to ensure
@@ -18079,6 +18187,13 @@ impl ExperienceEntitiesSummary {
         self.display_data.as_ref()
     }
 }
+impl ExperienceEntitiesSummary {
+    /// Creates a new builder-style object to manufacture [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary).
+    pub fn builder() -> crate::model::experience_entities_summary::Builder {
+        crate::model::experience_entities_summary::Builder::default()
+    }
+}
+
 /// See [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary).
 pub mod experience_entities_summary {
     
@@ -18132,12 +18247,6 @@ pub mod experience_entities_summary {
     }
     
     
-}
-impl ExperienceEntitiesSummary {
-    /// Creates a new builder-style object to manufacture [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary).
-    pub fn builder() -> crate::model::experience_entities_summary::Builder {
-        crate::model::experience_entities_summary::Builder::default()
-    }
 }
 
 /// <p>Information about the user entity.</p>
@@ -18193,6 +18302,13 @@ impl  std::fmt::Debug for EntityDisplayData  {
         formatter.finish()
     }
 }
+impl EntityDisplayData {
+    /// Creates a new builder-style object to manufacture [`EntityDisplayData`](crate::model::EntityDisplayData).
+    pub fn builder() -> crate::model::entity_display_data::Builder {
+        crate::model::entity_display_data::Builder::default()
+    }
+}
+
 /// See [`EntityDisplayData`](crate::model::EntityDisplayData).
 pub mod entity_display_data {
     
@@ -18281,12 +18397,6 @@ pub mod entity_display_data {
     }
     
     
-}
-impl EntityDisplayData {
-    /// Creates a new builder-style object to manufacture [`EntityDisplayData`](crate::model::EntityDisplayData).
-    pub fn builder() -> crate::model::entity_display_data::Builder {
-        crate::model::entity_display_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntityType`, it is important to ensure
@@ -18406,6 +18516,13 @@ impl PersonasSummary {
         self.updated_at.as_ref()
     }
 }
+impl PersonasSummary {
+    /// Creates a new builder-style object to manufacture [`PersonasSummary`](crate::model::PersonasSummary).
+    pub fn builder() -> crate::model::personas_summary::Builder {
+        crate::model::personas_summary::Builder::default()
+    }
+}
+
 /// See [`PersonasSummary`](crate::model::PersonasSummary).
 pub mod personas_summary {
     
@@ -18471,12 +18588,6 @@ pub mod personas_summary {
     }
     
     
-}
-impl PersonasSummary {
-    /// Creates a new builder-style object to manufacture [`PersonasSummary`](crate::model::PersonasSummary).
-    pub fn builder() -> crate::model::personas_summary::Builder {
-        crate::model::personas_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Persona`, it is important to ensure
@@ -18624,6 +18735,13 @@ impl DataSourceSyncJob {
         self.metrics.as_ref()
     }
 }
+impl DataSourceSyncJob {
+    /// Creates a new builder-style object to manufacture [`DataSourceSyncJob`](crate::model::DataSourceSyncJob).
+    pub fn builder() -> crate::model::data_source_sync_job::Builder {
+        crate::model::data_source_sync_job::Builder::default()
+    }
+}
+
 /// See [`DataSourceSyncJob`](crate::model::DataSourceSyncJob).
 pub mod data_source_sync_job {
     
@@ -18738,12 +18856,6 @@ pub mod data_source_sync_job {
     
     
 }
-impl DataSourceSyncJob {
-    /// Creates a new builder-style object to manufacture [`DataSourceSyncJob`](crate::model::DataSourceSyncJob).
-    pub fn builder() -> crate::model::data_source_sync_job::Builder {
-        crate::model::data_source_sync_job::Builder::default()
-    }
-}
 
 /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
 #[non_exhaustive]
@@ -18787,6 +18899,13 @@ impl DataSourceSyncJobMetrics {
         self.documents_scanned.as_deref()
     }
 }
+impl DataSourceSyncJobMetrics {
+    /// Creates a new builder-style object to manufacture [`DataSourceSyncJobMetrics`](crate::model::DataSourceSyncJobMetrics).
+    pub fn builder() -> crate::model::data_source_sync_job_metrics::Builder {
+        crate::model::data_source_sync_job_metrics::Builder::default()
+    }
+}
+
 /// See [`DataSourceSyncJobMetrics`](crate::model::DataSourceSyncJobMetrics).
 pub mod data_source_sync_job_metrics {
     
@@ -18864,12 +18983,6 @@ pub mod data_source_sync_job_metrics {
     }
     
     
-}
-impl DataSourceSyncJobMetrics {
-    /// Creates a new builder-style object to manufacture [`DataSourceSyncJobMetrics`](crate::model::DataSourceSyncJobMetrics).
-    pub fn builder() -> crate::model::data_source_sync_job_metrics::Builder {
-        crate::model::data_source_sync_job_metrics::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorCode`, it is important to ensure
@@ -19082,6 +19195,13 @@ impl TimeRange {
         self.end_time.as_ref()
     }
 }
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
     
@@ -19123,12 +19243,6 @@ pub mod time_range {
     }
     
     
-}
-impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
-    pub fn builder() -> crate::model::time_range::Builder {
-        crate::model::time_range::Builder::default()
-    }
 }
 
 /// <p>Summary information for a Amazon Kendra data source.</p>
@@ -19187,6 +19301,13 @@ impl DataSourceSummary {
         self.language_code.as_deref()
     }
 }
+impl DataSourceSummary {
+    /// Creates a new builder-style object to manufacture [`DataSourceSummary`](crate::model::DataSourceSummary).
+    pub fn builder() -> crate::model::data_source_summary::Builder {
+        crate::model::data_source_summary::Builder::default()
+    }
+}
+
 /// See [`DataSourceSummary`](crate::model::DataSourceSummary).
 pub mod data_source_summary {
     
@@ -19288,12 +19409,6 @@ pub mod data_source_summary {
     }
     
     
-}
-impl DataSourceSummary {
-    /// Creates a new builder-style object to manufacture [`DataSourceSummary`](crate::model::DataSourceSummary).
-    pub fn builder() -> crate::model::data_source_summary::Builder {
-        crate::model::data_source_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataSourceStatus`, it is important to ensure
@@ -19574,6 +19689,13 @@ impl AccessControlConfigurationSummary {
         self.id.as_deref()
     }
 }
+impl AccessControlConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
+    pub fn builder() -> crate::model::access_control_configuration_summary::Builder {
+        crate::model::access_control_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
 pub mod access_control_configuration_summary {
     
@@ -19603,12 +19725,6 @@ pub mod access_control_configuration_summary {
     }
     
     
-}
-impl AccessControlConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
-    pub fn builder() -> crate::model::access_control_configuration_summary::Builder {
-        crate::model::access_control_configuration_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetricType`, it is important to ensure
@@ -19838,6 +19954,13 @@ impl Suggestion {
         self.value.as_ref()
     }
 }
+impl Suggestion {
+    /// Creates a new builder-style object to manufacture [`Suggestion`](crate::model::Suggestion).
+    pub fn builder() -> crate::model::suggestion::Builder {
+        crate::model::suggestion::Builder::default()
+    }
+}
+
 /// See [`Suggestion`](crate::model::Suggestion).
 pub mod suggestion {
     
@@ -19882,12 +20005,6 @@ pub mod suggestion {
     
     
 }
-impl Suggestion {
-    /// Creates a new builder-style object to manufacture [`Suggestion`](crate::model::Suggestion).
-    pub fn builder() -> crate::model::suggestion::Builder {
-        crate::model::suggestion::Builder::default()
-    }
-}
 
 /// <p>The <code>SuggestionTextWithHighlights</code> structure information.</p>
 #[non_exhaustive]
@@ -19903,6 +20020,13 @@ impl SuggestionValue {
         self.text.as_ref()
     }
 }
+impl SuggestionValue {
+    /// Creates a new builder-style object to manufacture [`SuggestionValue`](crate::model::SuggestionValue).
+    pub fn builder() -> crate::model::suggestion_value::Builder {
+        crate::model::suggestion_value::Builder::default()
+    }
+}
+
 /// See [`SuggestionValue`](crate::model::SuggestionValue).
 pub mod suggestion_value {
     
@@ -19933,12 +20057,6 @@ pub mod suggestion_value {
     
     
 }
-impl SuggestionValue {
-    /// Creates a new builder-style object to manufacture [`SuggestionValue`](crate::model::SuggestionValue).
-    pub fn builder() -> crate::model::suggestion_value::Builder {
-        crate::model::suggestion_value::Builder::default()
-    }
-}
 
 /// <p>Provides text and information about where to highlight the query suggestion text.</p>
 #[non_exhaustive]
@@ -19961,6 +20079,13 @@ impl SuggestionTextWithHighlights {
         self.highlights.as_deref()
     }
 }
+impl SuggestionTextWithHighlights {
+    /// Creates a new builder-style object to manufacture [`SuggestionTextWithHighlights`](crate::model::SuggestionTextWithHighlights).
+    pub fn builder() -> crate::model::suggestion_text_with_highlights::Builder {
+        crate::model::suggestion_text_with_highlights::Builder::default()
+    }
+}
+
 /// See [`SuggestionTextWithHighlights`](crate::model::SuggestionTextWithHighlights).
 pub mod suggestion_text_with_highlights {
     
@@ -20009,12 +20134,6 @@ pub mod suggestion_text_with_highlights {
     
     
 }
-impl SuggestionTextWithHighlights {
-    /// Creates a new builder-style object to manufacture [`SuggestionTextWithHighlights`](crate::model::SuggestionTextWithHighlights).
-    pub fn builder() -> crate::model::suggestion_text_with_highlights::Builder {
-        crate::model::suggestion_text_with_highlights::Builder::default()
-    }
-}
 
 /// <p>The text highlights for a single query suggestion.</p>
 #[non_exhaustive]
@@ -20037,6 +20156,13 @@ impl SuggestionHighlight {
         self.end_offset
     }
 }
+impl SuggestionHighlight {
+    /// Creates a new builder-style object to manufacture [`SuggestionHighlight`](crate::model::SuggestionHighlight).
+    pub fn builder() -> crate::model::suggestion_highlight::Builder {
+        crate::model::suggestion_highlight::Builder::default()
+    }
+}
+
 /// See [`SuggestionHighlight`](crate::model::SuggestionHighlight).
 pub mod suggestion_highlight {
     
@@ -20079,12 +20205,6 @@ pub mod suggestion_highlight {
     
     
 }
-impl SuggestionHighlight {
-    /// Creates a new builder-style object to manufacture [`SuggestionHighlight`](crate::model::SuggestionHighlight).
-    pub fn builder() -> crate::model::suggestion_highlight::Builder {
-        crate::model::suggestion_highlight::Builder::default()
-    }
-}
 
 /// <p>Information on the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
 #[non_exhaustive]
@@ -20107,6 +20227,13 @@ impl FailedEntity {
         self.error_message.as_deref()
     }
 }
+impl FailedEntity {
+    /// Creates a new builder-style object to manufacture [`FailedEntity`](crate::model::FailedEntity).
+    pub fn builder() -> crate::model::failed_entity::Builder {
+        crate::model::failed_entity::Builder::default()
+    }
+}
+
 /// See [`FailedEntity`](crate::model::FailedEntity).
 pub mod failed_entity {
     
@@ -20149,12 +20276,6 @@ pub mod failed_entity {
     
     
 }
-impl FailedEntity {
-    /// Creates a new builder-style object to manufacture [`FailedEntity`](crate::model::FailedEntity).
-    pub fn builder() -> crate::model::failed_entity::Builder {
-        crate::model::failed_entity::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source to grant access your Amazon Kendra experience.</p>
 #[non_exhaustive]
@@ -20177,6 +20298,13 @@ impl EntityConfiguration {
         self.entity_type.as_ref()
     }
 }
+impl EntityConfiguration {
+    /// Creates a new builder-style object to manufacture [`EntityConfiguration`](crate::model::EntityConfiguration).
+    pub fn builder() -> crate::model::entity_configuration::Builder {
+        crate::model::entity_configuration::Builder::default()
+    }
+}
+
 /// See [`EntityConfiguration`](crate::model::EntityConfiguration).
 pub mod entity_configuration {
     
@@ -20218,12 +20346,6 @@ pub mod entity_configuration {
     }
     
     
-}
-impl EntityConfiguration {
-    /// Creates a new builder-style object to manufacture [`EntityConfiguration`](crate::model::EntityConfiguration).
-    pub fn builder() -> crate::model::entity_configuration::Builder {
-        crate::model::entity_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QuerySuggestionsStatus`, it is important to ensure
@@ -20350,6 +20472,13 @@ impl GroupOrderingIdSummary {
         self.failure_reason.as_deref()
     }
 }
+impl GroupOrderingIdSummary {
+    /// Creates a new builder-style object to manufacture [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary).
+    pub fn builder() -> crate::model::group_ordering_id_summary::Builder {
+        crate::model::group_ordering_id_summary::Builder::default()
+    }
+}
+
 /// See [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary).
 pub mod group_ordering_id_summary {
     
@@ -20427,12 +20556,6 @@ pub mod group_ordering_id_summary {
     }
     
     
-}
-impl GroupOrderingIdSummary {
-    /// Creates a new builder-style object to manufacture [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary).
-    pub fn builder() -> crate::model::group_ordering_id_summary::Builder {
-        crate::model::group_ordering_id_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PrincipalMappingStatus`, it is important to ensure
@@ -20553,6 +20676,13 @@ impl IndexStatistics {
         self.text_document_statistics.as_ref()
     }
 }
+impl IndexStatistics {
+    /// Creates a new builder-style object to manufacture [`IndexStatistics`](crate::model::IndexStatistics).
+    pub fn builder() -> crate::model::index_statistics::Builder {
+        crate::model::index_statistics::Builder::default()
+    }
+}
+
 /// See [`IndexStatistics`](crate::model::IndexStatistics).
 pub mod index_statistics {
     
@@ -20595,12 +20725,6 @@ pub mod index_statistics {
     
     
 }
-impl IndexStatistics {
-    /// Creates a new builder-style object to manufacture [`IndexStatistics`](crate::model::IndexStatistics).
-    pub fn builder() -> crate::model::index_statistics::Builder {
-        crate::model::index_statistics::Builder::default()
-    }
-}
 
 /// <p>Provides information about text documents indexed in an index.</p>
 #[non_exhaustive]
@@ -20623,6 +20747,13 @@ impl TextDocumentStatistics {
         self.indexed_text_bytes
     }
 }
+impl TextDocumentStatistics {
+    /// Creates a new builder-style object to manufacture [`TextDocumentStatistics`](crate::model::TextDocumentStatistics).
+    pub fn builder() -> crate::model::text_document_statistics::Builder {
+        crate::model::text_document_statistics::Builder::default()
+    }
+}
+
 /// See [`TextDocumentStatistics`](crate::model::TextDocumentStatistics).
 pub mod text_document_statistics {
     
@@ -20667,12 +20798,6 @@ pub mod text_document_statistics {
     
     
 }
-impl TextDocumentStatistics {
-    /// Creates a new builder-style object to manufacture [`TextDocumentStatistics`](crate::model::TextDocumentStatistics).
-    pub fn builder() -> crate::model::text_document_statistics::Builder {
-        crate::model::text_document_statistics::Builder::default()
-    }
-}
 
 /// <p>Provides statistical information about the FAQ questions and answers contained in an index.</p>
 #[non_exhaustive]
@@ -20688,6 +20813,13 @@ impl FaqStatistics {
         self.indexed_question_answers_count
     }
 }
+impl FaqStatistics {
+    /// Creates a new builder-style object to manufacture [`FaqStatistics`](crate::model::FaqStatistics).
+    pub fn builder() -> crate::model::faq_statistics::Builder {
+        crate::model::faq_statistics::Builder::default()
+    }
+}
+
 /// See [`FaqStatistics`](crate::model::FaqStatistics).
 pub mod faq_statistics {
     
@@ -20719,12 +20851,6 @@ pub mod faq_statistics {
     
     
 }
-impl FaqStatistics {
-    /// Creates a new builder-style object to manufacture [`FaqStatistics`](crate::model::FaqStatistics).
-    pub fn builder() -> crate::model::faq_statistics::Builder {
-        crate::model::faq_statistics::Builder::default()
-    }
-}
 
 /// <p>Provides the identifier of the KMS key used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric keys.</p>
 #[non_exhaustive]
@@ -20747,6 +20873,13 @@ impl  std::fmt::Debug for ServerSideEncryptionConfiguration  {
         formatter.finish()
     }
 }
+impl ServerSideEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
+    pub fn builder() -> crate::model::server_side_encryption_configuration::Builder {
+        crate::model::server_side_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
 pub mod server_side_encryption_configuration {
     
@@ -20784,12 +20917,6 @@ pub mod server_side_encryption_configuration {
     
     
 }
-impl ServerSideEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
-    pub fn builder() -> crate::model::server_side_encryption_configuration::Builder {
-        crate::model::server_side_encryption_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides information about a document that could not be indexed.</p>
 #[non_exhaustive]
@@ -20819,6 +20946,13 @@ impl BatchPutDocumentResponseFailedDocument {
         self.error_message.as_deref()
     }
 }
+impl BatchPutDocumentResponseFailedDocument {
+    /// Creates a new builder-style object to manufacture [`BatchPutDocumentResponseFailedDocument`](crate::model::BatchPutDocumentResponseFailedDocument).
+    pub fn builder() -> crate::model::batch_put_document_response_failed_document::Builder {
+        crate::model::batch_put_document_response_failed_document::Builder::default()
+    }
+}
+
 /// See [`BatchPutDocumentResponseFailedDocument`](crate::model::BatchPutDocumentResponseFailedDocument).
 pub mod batch_put_document_response_failed_document {
     
@@ -20872,12 +21006,6 @@ pub mod batch_put_document_response_failed_document {
     }
     
     
-}
-impl BatchPutDocumentResponseFailedDocument {
-    /// Creates a new builder-style object to manufacture [`BatchPutDocumentResponseFailedDocument`](crate::model::BatchPutDocumentResponseFailedDocument).
-    pub fn builder() -> crate::model::batch_put_document_response_failed_document::Builder {
-        crate::model::batch_put_document_response_failed_document::Builder::default()
-    }
 }
 
 /// <p>A document in an index.</p>
@@ -20956,6 +21084,13 @@ impl Document {
         self.access_control_configuration_id.as_deref()
     }
 }
+impl Document {
+    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
+    pub fn builder() -> crate::model::document::Builder {
+        crate::model::document::Builder::default()
+    }
+}
+
 /// See [`Document`](crate::model::Document).
 pub mod document {
     
@@ -21105,12 +21240,6 @@ pub mod document {
     }
     
     
-}
-impl Document {
-    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
-    pub fn builder() -> crate::model::document::Builder {
-        crate::model::document::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContentType`, it is important to ensure
@@ -21282,6 +21411,13 @@ impl Status {
         self.failure_reason.as_deref()
     }
 }
+impl Status {
+    /// Creates a new builder-style object to manufacture [`Status`](crate::model::Status).
+    pub fn builder() -> crate::model::status::Builder {
+        crate::model::status::Builder::default()
+    }
+}
+
 /// See [`Status`](crate::model::Status).
 pub mod status {
     
@@ -21349,12 +21485,6 @@ pub mod status {
     }
     
     
-}
-impl Status {
-    /// Creates a new builder-style object to manufacture [`Status`](crate::model::Status).
-    pub fn builder() -> crate::model::status::Builder {
-        crate::model::status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DocumentStatus`, it is important to ensure
@@ -21487,6 +21617,13 @@ impl BatchGetDocumentStatusResponseError {
         self.error_message.as_deref()
     }
 }
+impl BatchGetDocumentStatusResponseError {
+    /// Creates a new builder-style object to manufacture [`BatchGetDocumentStatusResponseError`](crate::model::BatchGetDocumentStatusResponseError).
+    pub fn builder() -> crate::model::batch_get_document_status_response_error::Builder {
+        crate::model::batch_get_document_status_response_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetDocumentStatusResponseError`](crate::model::BatchGetDocumentStatusResponseError).
 pub mod batch_get_document_status_response_error {
     
@@ -21541,12 +21678,6 @@ pub mod batch_get_document_status_response_error {
     
     
 }
-impl BatchGetDocumentStatusResponseError {
-    /// Creates a new builder-style object to manufacture [`BatchGetDocumentStatusResponseError`](crate::model::BatchGetDocumentStatusResponseError).
-    pub fn builder() -> crate::model::batch_get_document_status_response_error::Builder {
-        crate::model::batch_get_document_status_response_error::Builder::default()
-    }
-}
 
 /// <p>Identifies a document for which to retrieve status information</p>
 #[non_exhaustive]
@@ -21593,6 +21724,13 @@ impl DocumentInfo {
         self.attributes.as_deref()
     }
 }
+impl DocumentInfo {
+    /// Creates a new builder-style object to manufacture [`DocumentInfo`](crate::model::DocumentInfo).
+    pub fn builder() -> crate::model::document_info::Builder {
+        crate::model::document_info::Builder::default()
+    }
+}
+
 /// See [`DocumentInfo`](crate::model::DocumentInfo).
 pub mod document_info {
     
@@ -21665,12 +21803,6 @@ pub mod document_info {
     
     
 }
-impl DocumentInfo {
-    /// Creates a new builder-style object to manufacture [`DocumentInfo`](crate::model::DocumentInfo).
-    pub fn builder() -> crate::model::document_info::Builder {
-        crate::model::document_info::Builder::default()
-    }
-}
 
 /// <p>Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> API.</p>
 #[non_exhaustive]
@@ -21700,6 +21832,13 @@ impl BatchDeleteDocumentResponseFailedDocument {
         self.error_message.as_deref()
     }
 }
+impl BatchDeleteDocumentResponseFailedDocument {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDocumentResponseFailedDocument`](crate::model::BatchDeleteDocumentResponseFailedDocument).
+    pub fn builder() -> crate::model::batch_delete_document_response_failed_document::Builder {
+        crate::model::batch_delete_document_response_failed_document::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteDocumentResponseFailedDocument`](crate::model::BatchDeleteDocumentResponseFailedDocument).
 pub mod batch_delete_document_response_failed_document {
     
@@ -21754,12 +21893,6 @@ pub mod batch_delete_document_response_failed_document {
     
     
 }
-impl BatchDeleteDocumentResponseFailedDocument {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDocumentResponseFailedDocument`](crate::model::BatchDeleteDocumentResponseFailedDocument).
-    pub fn builder() -> crate::model::batch_delete_document_response_failed_document::Builder {
-        crate::model::batch_delete_document_response_failed_document::Builder::default()
-    }
-}
 
 /// <p>Maps a particular data source sync job to a particular data source.</p>
 #[non_exhaustive]
@@ -21786,6 +21919,13 @@ impl DataSourceSyncJobMetricTarget {
         self.data_source_sync_job_id.as_deref()
     }
 }
+impl DataSourceSyncJobMetricTarget {
+    /// Creates a new builder-style object to manufacture [`DataSourceSyncJobMetricTarget`](crate::model::DataSourceSyncJobMetricTarget).
+    pub fn builder() -> crate::model::data_source_sync_job_metric_target::Builder {
+        crate::model::data_source_sync_job_metric_target::Builder::default()
+    }
+}
+
 /// See [`DataSourceSyncJobMetricTarget`](crate::model::DataSourceSyncJobMetricTarget).
 pub mod data_source_sync_job_metric_target {
     
@@ -21832,12 +21972,6 @@ pub mod data_source_sync_job_metric_target {
     
     
 }
-impl DataSourceSyncJobMetricTarget {
-    /// Creates a new builder-style object to manufacture [`DataSourceSyncJobMetricTarget`](crate::model::DataSourceSyncJobMetricTarget).
-    pub fn builder() -> crate::model::data_source_sync_job_metric_target::Builder {
-        crate::model::data_source_sync_job_metric_target::Builder::default()
-    }
-}
 
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.</p>
 #[non_exhaustive]
@@ -21860,6 +21994,13 @@ impl EntityPersonaConfiguration {
         self.persona.as_ref()
     }
 }
+impl EntityPersonaConfiguration {
+    /// Creates a new builder-style object to manufacture [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration).
+    pub fn builder() -> crate::model::entity_persona_configuration::Builder {
+        crate::model::entity_persona_configuration::Builder::default()
+    }
+}
+
 /// See [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration).
 pub mod entity_persona_configuration {
     
@@ -21901,11 +22042,5 @@ pub mod entity_persona_configuration {
     }
     
     
-}
-impl EntityPersonaConfiguration {
-    /// Creates a new builder-style object to manufacture [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration).
-    pub fn builder() -> crate::model::entity_persona_configuration::Builder {
-        crate::model::entity_persona_configuration::Builder::default()
-    }
 }
 

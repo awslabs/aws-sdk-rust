@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_tracker_consumer`](crate::client::Client::associate_tracker_consumer).
             ///
-            /// See [`crate::client::fluent_builders::AssociateTrackerConsumer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateTrackerConsumer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateTrackerConsumer {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrackerConsumer
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_delete_device_position_history`](crate::client::Client::batch_delete_device_position_history).
             ///
-            /// See [`crate::client::fluent_builders::BatchDeleteDevicePositionHistory`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchDeleteDevicePositionHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistory {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDevicePositio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_delete_geofence`](crate::client::Client::batch_delete_geofence).
             ///
-            /// See [`crate::client::fluent_builders::BatchDeleteGeofence`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchDeleteGeofence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteGeofence {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteGeofence {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_evaluate_geofences`](crate::client::Client::batch_evaluate_geofences).
             ///
-            /// See [`crate::client::fluent_builders::BatchEvaluateGeofences`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchEvaluateGeofences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchEvaluateGeofences {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEvaluateGeofences {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_get_device_position`](crate::client::Client::batch_get_device_position).
             ///
-            /// See [`crate::client::fluent_builders::BatchGetDevicePosition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchGetDevicePosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetDevicePosition {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetDevicePosition {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_put_geofence`](crate::client::Client::batch_put_geofence).
             ///
-            /// See [`crate::client::fluent_builders::BatchPutGeofence`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchPutGeofence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutGeofence {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutGeofence {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_update_device_position`](crate::client::Client::batch_update_device_position).
             ///
-            /// See [`crate::client::fluent_builders::BatchUpdateDevicePosition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchUpdateDevicePosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateDevicePosition {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDevicePositio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`calculate_route`](crate::client::Client::calculate_route).
             ///
-            /// See [`crate::client::fluent_builders::CalculateRoute`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CalculateRoute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CalculateRoute {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRoute {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`calculate_route_matrix`](crate::client::Client::calculate_route_matrix).
             ///
-            /// See [`crate::client::fluent_builders::CalculateRouteMatrix`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CalculateRouteMatrix`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CalculateRouteMatrix {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRouteMatrix {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_geofence_collection`](crate::client::Client::create_geofence_collection).
             ///
-            /// See [`crate::client::fluent_builders::CreateGeofenceCollection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateGeofenceCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGeofenceCollection {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGeofenceCollection
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_map`](crate::client::Client::create_map).
             ///
-            /// See [`crate::client::fluent_builders::CreateMap`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMap {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMap {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_place_index`](crate::client::Client::create_place_index).
             ///
-            /// See [`crate::client::fluent_builders::CreatePlaceIndex`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreatePlaceIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePlaceIndex {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlaceIndex {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_route_calculator`](crate::client::Client::create_route_calculator).
             ///
-            /// See [`crate::client::fluent_builders::CreateRouteCalculator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRouteCalculator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRouteCalculator {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRouteCalculator {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_tracker`](crate::client::Client::create_tracker).
             ///
-            /// See [`crate::client::fluent_builders::CreateTracker`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTracker {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTracker {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_geofence_collection`](crate::client::Client::delete_geofence_collection).
             ///
-            /// See [`crate::client::fluent_builders::DeleteGeofenceCollection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteGeofenceCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGeofenceCollection {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGeofenceCollection
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_map`](crate::client::Client::delete_map).
             ///
-            /// See [`crate::client::fluent_builders::DeleteMap`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMap {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMap {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_place_index`](crate::client::Client::delete_place_index).
             ///
-            /// See [`crate::client::fluent_builders::DeletePlaceIndex`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePlaceIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePlaceIndex {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlaceIndex {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_route_calculator`](crate::client::Client::delete_route_calculator).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRouteCalculator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRouteCalculator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRouteCalculator {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRouteCalculator {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_tracker`](crate::client::Client::delete_tracker).
             ///
-            /// See [`crate::client::fluent_builders::DeleteTracker`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTracker {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTracker {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_geofence_collection`](crate::client::Client::describe_geofence_collection).
             ///
-            /// See [`crate::client::fluent_builders::DescribeGeofenceCollection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeGeofenceCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeGeofenceCollection {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGeofenceCollecti
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_map`](crate::client::Client::describe_map).
             ///
-            /// See [`crate::client::fluent_builders::DescribeMap`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMap {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMap {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_place_index`](crate::client::Client::describe_place_index).
             ///
-            /// See [`crate::client::fluent_builders::DescribePlaceIndex`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribePlaceIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePlaceIndex {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePlaceIndex {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_route_calculator`](crate::client::Client::describe_route_calculator).
             ///
-            /// See [`crate::client::fluent_builders::DescribeRouteCalculator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeRouteCalculator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRouteCalculator {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRouteCalculator 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_tracker`](crate::client::Client::describe_tracker).
             ///
-            /// See [`crate::client::fluent_builders::DescribeTracker`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTracker {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTracker {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_tracker_consumer`](crate::client::Client::disassociate_tracker_consumer).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateTrackerConsumer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateTrackerConsumer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateTrackerConsumer {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrackerConsu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_device_position`](crate::client::Client::get_device_position).
             ///
-            /// See [`crate::client::fluent_builders::GetDevicePosition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDevicePosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevicePosition {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePosition {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_device_position_history`](crate::client::Client::get_device_position_history).
             ///
-            /// See [`crate::client::fluent_builders::GetDevicePositionHistory`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDevicePositionHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevicePositionHistory {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePositionHistory
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_geofence`](crate::client::Client::get_geofence).
             ///
-            /// See [`crate::client::fluent_builders::GetGeofence`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGeofence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGeofence {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeofence {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_map_glyphs`](crate::client::Client::get_map_glyphs).
             ///
-            /// See [`crate::client::fluent_builders::GetMapGlyphs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMapGlyphs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapGlyphs {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapGlyphs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_map_sprites`](crate::client::Client::get_map_sprites).
             ///
-            /// See [`crate::client::fluent_builders::GetMapSprites`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMapSprites`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapSprites {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapSprites {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_map_style_descriptor`](crate::client::Client::get_map_style_descriptor).
             ///
-            /// See [`crate::client::fluent_builders::GetMapStyleDescriptor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMapStyleDescriptor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapStyleDescriptor {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapStyleDescriptor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_map_tile`](crate::client::Client::get_map_tile).
             ///
-            /// See [`crate::client::fluent_builders::GetMapTile`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMapTile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMapTile {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapTile {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_place`](crate::client::Client::get_place).
             ///
-            /// See [`crate::client::fluent_builders::GetPlace`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPlace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPlace {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlace {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_device_positions`](crate::client::Client::list_device_positions).
             ///
-            /// See [`crate::client::fluent_builders::ListDevicePositions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDevicePositions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDevicePositions {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevicePositions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_geofence_collections`](crate::client::Client::list_geofence_collections).
             ///
-            /// See [`crate::client::fluent_builders::ListGeofenceCollections`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGeofenceCollections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeofenceCollections {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeofenceCollections 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_geofences`](crate::client::Client::list_geofences).
             ///
-            /// See [`crate::client::fluent_builders::ListGeofences`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGeofences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeofences {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeofences {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_maps`](crate::client::Client::list_maps).
             ///
-            /// See [`crate::client::fluent_builders::ListMaps`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMaps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMaps {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMaps {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_place_indexes`](crate::client::Client::list_place_indexes).
             ///
-            /// See [`crate::client::fluent_builders::ListPlaceIndexes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPlaceIndexes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPlaceIndexes {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlaceIndexes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_route_calculators`](crate::client::Client::list_route_calculators).
             ///
-            /// See [`crate::client::fluent_builders::ListRouteCalculators`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRouteCalculators`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRouteCalculators {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRouteCalculators {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tracker_consumers`](crate::client::Client::list_tracker_consumers).
             ///
-            /// See [`crate::client::fluent_builders::ListTrackerConsumers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTrackerConsumers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrackerConsumers {
     _private: ()
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrackerConsumers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_trackers`](crate::client::Client::list_trackers).
             ///
-            /// See [`crate::client::fluent_builders::ListTrackers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTrackers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrackers {
     _private: ()
@@ -1348,7 +1348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrackers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_geofence`](crate::client::Client::put_geofence).
             ///
-            /// See [`crate::client::fluent_builders::PutGeofence`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutGeofence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutGeofence {
     _private: ()
@@ -1380,7 +1380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGeofence {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`search_place_index_for_position`](crate::client::Client::search_place_index_for_position).
             ///
-            /// See [`crate::client::fluent_builders::SearchPlaceIndexForPosition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SearchPlaceIndexForPosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchPlaceIndexForPosition {
     _private: ()
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosit
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`search_place_index_for_suggestions`](crate::client::Client::search_place_index_for_suggestions).
             ///
-            /// See [`crate::client::fluent_builders::SearchPlaceIndexForSuggestions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SearchPlaceIndexForSuggestions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestions {
     _private: ()
@@ -1444,7 +1444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForSugge
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`search_place_index_for_text`](crate::client::Client::search_place_index_for_text).
             ///
-            /// See [`crate::client::fluent_builders::SearchPlaceIndexForText`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SearchPlaceIndexForText`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchPlaceIndexForText {
     _private: ()
@@ -1476,7 +1476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForText 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1508,7 +1508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1540,7 +1540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_geofence_collection`](crate::client::Client::update_geofence_collection).
             ///
-            /// See [`crate::client::fluent_builders::UpdateGeofenceCollection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateGeofenceCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGeofenceCollection {
     _private: ()
@@ -1572,7 +1572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGeofenceCollection
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_map`](crate::client::Client::update_map).
             ///
-            /// See [`crate::client::fluent_builders::UpdateMap`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMap {
     _private: ()
@@ -1604,7 +1604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMap {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_place_index`](crate::client::Client::update_place_index).
             ///
-            /// See [`crate::client::fluent_builders::UpdatePlaceIndex`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdatePlaceIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdatePlaceIndex {
     _private: ()
@@ -1636,7 +1636,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePlaceIndex {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_route_calculator`](crate::client::Client::update_route_calculator).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRouteCalculator`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRouteCalculator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRouteCalculator {
     _private: ()
@@ -1668,7 +1668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRouteCalculator {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_tracker`](crate::client::Client::update_tracker).
             ///
-            /// See [`crate::client::fluent_builders::UpdateTracker`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTracker {
     _private: ()

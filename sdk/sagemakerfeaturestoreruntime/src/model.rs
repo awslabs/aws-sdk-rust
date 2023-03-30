@@ -103,6 +103,13 @@ impl FeatureValue {
         self.value_as_string.as_deref()
     }
 }
+impl FeatureValue {
+    /// Creates a new builder-style object to manufacture [`FeatureValue`](crate::model::FeatureValue).
+    pub fn builder() -> crate::model::feature_value::Builder {
+        crate::model::feature_value::Builder::default()
+    }
+}
+
 /// See [`FeatureValue`](crate::model::FeatureValue).
 pub mod feature_value {
     
@@ -145,12 +152,6 @@ pub mod feature_value {
     
     
 }
-impl FeatureValue {
-    /// Creates a new builder-style object to manufacture [`FeatureValue`](crate::model::FeatureValue).
-    pub fn builder() -> crate::model::feature_value::Builder {
-        crate::model::feature_value::Builder::default()
-    }
-}
 
 /// <p>The identifier that identifies the batch of Records you are retrieving in a batch.</p>
 #[non_exhaustive]
@@ -180,6 +181,13 @@ impl BatchGetRecordIdentifier {
         self.feature_names.as_deref()
     }
 }
+impl BatchGetRecordIdentifier {
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
+    pub fn builder() -> crate::model::batch_get_record_identifier::Builder {
+        crate::model::batch_get_record_identifier::Builder::default()
+    }
+}
+
 /// See [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
 pub mod batch_get_record_identifier {
     
@@ -246,12 +254,6 @@ pub mod batch_get_record_identifier {
     
     
 }
-impl BatchGetRecordIdentifier {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
-    pub fn builder() -> crate::model::batch_get_record_identifier::Builder {
-        crate::model::batch_get_record_identifier::Builder::default()
-    }
-}
 
 /// <p>The error that has occurred when attempting to retrieve a batch of Records.</p>
 #[non_exhaustive]
@@ -288,6 +290,13 @@ impl BatchGetRecordError {
         self.error_message.as_deref()
     }
 }
+impl BatchGetRecordError {
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordError`](crate::model::BatchGetRecordError).
+    pub fn builder() -> crate::model::batch_get_record_error::Builder {
+        crate::model::batch_get_record_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetRecordError`](crate::model::BatchGetRecordError).
 pub mod batch_get_record_error {
     
@@ -354,12 +363,6 @@ pub mod batch_get_record_error {
     
     
 }
-impl BatchGetRecordError {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordError`](crate::model::BatchGetRecordError).
-    pub fn builder() -> crate::model::batch_get_record_error::Builder {
-        crate::model::batch_get_record_error::Builder::default()
-    }
-}
 
 /// <p>The output of Records that have been retrieved in a batch.</p>
 #[non_exhaustive]
@@ -389,6 +392,13 @@ impl BatchGetRecordResultDetail {
         self.record.as_deref()
     }
 }
+impl BatchGetRecordResultDetail {
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
+    pub fn builder() -> crate::model::batch_get_record_result_detail::Builder {
+        crate::model::batch_get_record_result_detail::Builder::default()
+    }
+}
+
 /// See [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
 pub mod batch_get_record_result_detail {
     
@@ -448,11 +458,5 @@ pub mod batch_get_record_result_detail {
     }
     
     
-}
-impl BatchGetRecordResultDetail {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
-    pub fn builder() -> crate::model::batch_get_record_result_detail::Builder {
-        crate::model::batch_get_record_result_detail::Builder::default()
-    }
 }
 

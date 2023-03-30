@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_savings_plan`](crate::client::Client::create_savings_plan).
             ///
-            /// See [`crate::client::fluent_builders::CreateSavingsPlan`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSavingsPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSavingsPlan {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSavingsPlan {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_queued_savings_plan`](crate::client::Client::delete_queued_savings_plan).
             ///
-            /// See [`crate::client::fluent_builders::DeleteQueuedSavingsPlan`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteQueuedSavingsPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlan {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedSavingsPlan 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_savings_plan_rates`](crate::client::Client::describe_savings_plan_rates).
             ///
-            /// See [`crate::client::fluent_builders::DescribeSavingsPlanRates`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeSavingsPlanRates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSavingsPlanRates {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlanRates
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_savings_plans`](crate::client::Client::describe_savings_plans).
             ///
-            /// See [`crate::client::fluent_builders::DescribeSavingsPlans`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeSavingsPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSavingsPlans {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlans {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_savings_plans_offering_rates`](crate::client::Client::describe_savings_plans_offering_rates).
             ///
-            /// See [`crate::client::fluent_builders::DescribeSavingsPlansOfferingRates`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeSavingsPlansOfferingRates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRates {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlansOffe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_savings_plans_offerings`](crate::client::Client::describe_savings_plans_offerings).
             ///
-            /// See [`crate::client::fluent_builders::DescribeSavingsPlansOfferings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeSavingsPlansOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferings {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlansOffe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()

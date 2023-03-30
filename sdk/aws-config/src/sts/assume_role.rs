@@ -5,19 +5,18 @@
 
 //! Assume credentials for a role through the AWS Security Token Service (STS).
 
+use crate::provider_config::ProviderConfig;
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_sdk_sts::error::AssumeRoleError;
+use aws_sdk_sts::input::AssumeRoleInput;
 use aws_sdk_sts::middleware::DefaultMiddleware;
 use aws_sdk_sts::model::PolicyDescriptorType;
-use aws_sdk_sts::operation::AssumeRole;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_http::result::SdkError;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::region::Region;
 use std::time::Duration;
-
-use crate::provider_config::ProviderConfig;
-use aws_smithy_types::error::display::DisplayErrorContext;
 use tracing::Instrument;
 
 /// Credentials provider that uses credentials provided by another provider to assume a role
@@ -225,7 +224,7 @@ impl AssumeRoleProviderBuilder {
             .session_name
             .unwrap_or_else(|| super::util::default_session_name("assume-role-provider"));
 
-        let operation = AssumeRole::builder()
+        let operation = AssumeRoleInput::builder()
             .set_role_arn(Some(self.role_arn))
             .set_external_id(self.external_id)
             .set_role_session_name(Some(session_name))

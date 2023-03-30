@@ -172,6 +172,13 @@ impl aws_http::request_id::RequestId for StartStreamTranscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartStreamTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
+    pub fn builder() -> crate::output::start_stream_transcription_output::Builder {
+        crate::output::start_stream_transcription_output::Builder::default()
+    }
+}
+
 /// See [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
 pub mod start_stream_transcription_output {
     
@@ -486,12 +493,6 @@ pub mod start_stream_transcription_output {
     
     
 }
-impl StartStreamTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
-    pub fn builder() -> crate::output::start_stream_transcription_output::Builder {
-        crate::output::start_stream_transcription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -596,6 +597,13 @@ impl aws_http::request_id::RequestId for StartMedicalStreamTranscriptionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartMedicalStreamTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
+    pub fn builder() -> crate::output::start_medical_stream_transcription_output::Builder {
+        crate::output::start_medical_stream_transcription_output::Builder::default()
+    }
+}
+
 /// See [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
 pub mod start_medical_stream_transcription_output {
     
@@ -788,12 +796,6 @@ pub mod start_medical_stream_transcription_output {
     
     
 }
-impl StartMedicalStreamTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
-    pub fn builder() -> crate::output::start_medical_stream_transcription_output::Builder {
-        crate::output::start_medical_stream_transcription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -912,6 +914,13 @@ impl aws_http::request_id::RequestId for StartCallAnalyticsStreamTranscriptionOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartCallAnalyticsStreamTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
+    pub fn builder() -> crate::output::start_call_analytics_stream_transcription_output::Builder {
+        crate::output::start_call_analytics_stream_transcription_output::Builder::default()
+    }
+}
+
 /// See [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
 pub mod start_call_analytics_stream_transcription_output {
     
@@ -1126,11 +1135,5 @@ pub mod start_call_analytics_stream_transcription_output {
     }
     
     
-}
-impl StartCallAnalyticsStreamTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
-    pub fn builder() -> crate::output::start_call_analytics_stream_transcription_output::Builder {
-        crate::output::start_call_analytics_stream_transcription_output::Builder::default()
-    }
 }
 

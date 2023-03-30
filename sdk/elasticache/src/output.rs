@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for TestFailoverOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TestFailoverOutput {
+    /// Creates a new builder-style object to manufacture [`TestFailoverOutput`](crate::output::TestFailoverOutput).
+    pub fn builder() -> crate::output::test_failover_output::Builder {
+        crate::output::test_failover_output::Builder::default()
+    }
+}
+
 /// See [`TestFailoverOutput`](crate::output::TestFailoverOutput).
 pub mod test_failover_output {
     
@@ -60,12 +67,6 @@ pub mod test_failover_output {
     
     
 }
-impl TestFailoverOutput {
-    /// Creates a new builder-style object to manufacture [`TestFailoverOutput`](crate::output::TestFailoverOutput).
-    pub fn builder() -> crate::output::test_failover_output::Builder {
-        crate::output::test_failover_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for StartMigrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartMigrationOutput {
+    /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::output::StartMigrationOutput).
+    pub fn builder() -> crate::output::start_migration_output::Builder {
+        crate::output::start_migration_output::Builder::default()
+    }
+}
+
 /// See [`StartMigrationOutput`](crate::output::StartMigrationOutput).
 pub mod start_migration_output {
     
@@ -128,12 +136,6 @@ pub mod start_migration_output {
     
     
 }
-impl StartMigrationOutput {
-    /// Creates a new builder-style object to manufacture [`StartMigrationOutput`](crate::output::StartMigrationOutput).
-    pub fn builder() -> crate::output::start_migration_output::Builder {
-        crate::output::start_migration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -165,6 +167,13 @@ impl aws_http::request_id::RequestId for RevokeCacheSecurityGroupIngressOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RevokeCacheSecurityGroupIngressOutput {
+    /// Creates a new builder-style object to manufacture [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
+    pub fn builder() -> crate::output::revoke_cache_security_group_ingress_output::Builder {
+        crate::output::revoke_cache_security_group_ingress_output::Builder::default()
+    }
+}
+
 /// See [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
 pub mod revoke_cache_security_group_ingress_output {
     
@@ -216,12 +225,6 @@ pub mod revoke_cache_security_group_ingress_output {
     
     
 }
-impl RevokeCacheSecurityGroupIngressOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput).
-    pub fn builder() -> crate::output::revoke_cache_security_group_ingress_output::Builder {
-        crate::output::revoke_cache_security_group_ingress_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of one of the following operations:</p> 
 /// <ul> 
@@ -247,6 +250,13 @@ impl aws_http::request_id::RequestId for ResetCacheParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResetCacheParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
+    pub fn builder() -> crate::output::reset_cache_parameter_group_output::Builder {
+        crate::output::reset_cache_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
 pub mod reset_cache_parameter_group_output {
     
@@ -288,12 +298,6 @@ pub mod reset_cache_parameter_group_output {
     
     
 }
-impl ResetCacheParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput).
-    pub fn builder() -> crate::output::reset_cache_parameter_group_output::Builder {
-        crate::output::reset_cache_parameter_group_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
@@ -315,6 +319,13 @@ impl aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveTagsFromResourceOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
+    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
+        crate::output::remove_tags_from_resource_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
     
@@ -362,12 +373,6 @@ pub mod remove_tags_from_resource_output {
     
     
 }
-impl RemoveTagsFromResourceOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
-        crate::output::remove_tags_from_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -389,6 +394,13 @@ impl aws_http::request_id::RequestId for RebootCacheClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RebootCacheClusterOutput {
+    /// Creates a new builder-style object to manufacture [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
+    pub fn builder() -> crate::output::reboot_cache_cluster_output::Builder {
+        crate::output::reboot_cache_cluster_output::Builder::default()
+    }
+}
+
 /// See [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
 pub mod reboot_cache_cluster_output {
     
@@ -430,12 +442,6 @@ pub mod reboot_cache_cluster_output {
     
     
 }
-impl RebootCacheClusterOutput {
-    /// Creates a new builder-style object to manufacture [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput).
-    pub fn builder() -> crate::output::reboot_cache_cluster_output::Builder {
-        crate::output::reboot_cache_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -463,6 +469,13 @@ impl aws_http::request_id::RequestId for RebalanceSlotsInGlobalReplicationGroupO
                                     self._request_id.as_deref()
                                 }
                             }
+impl RebalanceSlotsInGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::rebalance_slots_in_global_replication_group_output::Builder {
+        crate::output::rebalance_slots_in_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
 pub mod rebalance_slots_in_global_replication_group_output {
     
@@ -510,12 +523,6 @@ pub mod rebalance_slots_in_global_replication_group_output {
     
     
 }
-impl RebalanceSlotsInGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::rebalance_slots_in_global_replication_group_output::Builder {
-        crate::output::rebalance_slots_in_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -537,6 +544,13 @@ impl aws_http::request_id::RequestId for PurchaseReservedCacheNodesOfferingOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl PurchaseReservedCacheNodesOfferingOutput {
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
+    pub fn builder() -> crate::output::purchase_reserved_cache_nodes_offering_output::Builder {
+        crate::output::purchase_reserved_cache_nodes_offering_output::Builder::default()
+    }
+}
+
 /// See [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
 pub mod purchase_reserved_cache_nodes_offering_output {
     
@@ -577,12 +591,6 @@ pub mod purchase_reserved_cache_nodes_offering_output {
     }
     
     
-}
-impl PurchaseReservedCacheNodesOfferingOutput {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput).
-    pub fn builder() -> crate::output::purchase_reserved_cache_nodes_offering_output::Builder {
-        crate::output::purchase_reserved_cache_nodes_offering_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -654,6 +662,13 @@ impl aws_http::request_id::RequestId for ModifyUserGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyUserGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
+    pub fn builder() -> crate::output::modify_user_group_output::Builder {
+        crate::output::modify_user_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
 pub mod modify_user_group_output {
     
@@ -791,12 +806,6 @@ pub mod modify_user_group_output {
     
     
 }
-impl ModifyUserGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput).
-    pub fn builder() -> crate::output::modify_user_group_output::Builder {
-        crate::output::modify_user_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -874,6 +883,13 @@ impl aws_http::request_id::RequestId for ModifyUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyUserOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyUserOutput`](crate::output::ModifyUserOutput).
+    pub fn builder() -> crate::output::modify_user_output::Builder {
+        crate::output::modify_user_output::Builder::default()
+    }
+}
+
 /// See [`ModifyUserOutput`](crate::output::ModifyUserOutput).
 pub mod modify_user_output {
     
@@ -1017,12 +1033,6 @@ pub mod modify_user_output {
     
     
 }
-impl ModifyUserOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyUserOutput`](crate::output::ModifyUserOutput).
-    pub fn builder() -> crate::output::modify_user_output::Builder {
-        crate::output::modify_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1044,6 +1054,13 @@ impl aws_http::request_id::RequestId for ModifyReplicationGroupShardConfiguratio
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyReplicationGroupShardConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
+    pub fn builder() -> crate::output::modify_replication_group_shard_configuration_output::Builder {
+        crate::output::modify_replication_group_shard_configuration_output::Builder::default()
+    }
+}
+
 /// See [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
 pub mod modify_replication_group_shard_configuration_output {
     
@@ -1085,12 +1102,6 @@ pub mod modify_replication_group_shard_configuration_output {
     
     
 }
-impl ModifyReplicationGroupShardConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput).
-    pub fn builder() -> crate::output::modify_replication_group_shard_configuration_output::Builder {
-        crate::output::modify_replication_group_shard_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1112,6 +1123,13 @@ impl aws_http::request_id::RequestId for ModifyReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
+    pub fn builder() -> crate::output::modify_replication_group_output::Builder {
+        crate::output::modify_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
 pub mod modify_replication_group_output {
     
@@ -1153,12 +1171,6 @@ pub mod modify_replication_group_output {
     
     
 }
-impl ModifyReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput).
-    pub fn builder() -> crate::output::modify_replication_group_output::Builder {
-        crate::output::modify_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1186,6 +1198,13 @@ impl aws_http::request_id::RequestId for ModifyGlobalReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::modify_global_replication_group_output::Builder {
+        crate::output::modify_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
 pub mod modify_global_replication_group_output {
     
@@ -1233,12 +1252,6 @@ pub mod modify_global_replication_group_output {
     
     
 }
-impl ModifyGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::modify_global_replication_group_output::Builder {
-        crate::output::modify_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1268,6 +1281,13 @@ impl aws_http::request_id::RequestId for ModifyCacheSubnetGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyCacheSubnetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
+    pub fn builder() -> crate::output::modify_cache_subnet_group_output::Builder {
+        crate::output::modify_cache_subnet_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
 pub mod modify_cache_subnet_group_output {
     
@@ -1317,12 +1337,6 @@ pub mod modify_cache_subnet_group_output {
     
     
 }
-impl ModifyCacheSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput).
-    pub fn builder() -> crate::output::modify_cache_subnet_group_output::Builder {
-        crate::output::modify_cache_subnet_group_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of one of the following operations:</p> 
 /// <ul> 
@@ -1348,6 +1362,13 @@ impl aws_http::request_id::RequestId for ModifyCacheParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyCacheParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
+    pub fn builder() -> crate::output::modify_cache_parameter_group_output::Builder {
+        crate::output::modify_cache_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
 pub mod modify_cache_parameter_group_output {
     
@@ -1389,12 +1410,6 @@ pub mod modify_cache_parameter_group_output {
     
     
 }
-impl ModifyCacheParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput).
-    pub fn builder() -> crate::output::modify_cache_parameter_group_output::Builder {
-        crate::output::modify_cache_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1416,6 +1431,13 @@ impl aws_http::request_id::RequestId for ModifyCacheClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ModifyCacheClusterOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
+    pub fn builder() -> crate::output::modify_cache_cluster_output::Builder {
+        crate::output::modify_cache_cluster_output::Builder::default()
+    }
+}
+
 /// See [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
 pub mod modify_cache_cluster_output {
     
@@ -1457,12 +1479,6 @@ pub mod modify_cache_cluster_output {
     
     
 }
-impl ModifyCacheClusterOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput).
-    pub fn builder() -> crate::output::modify_cache_cluster_output::Builder {
-        crate::output::modify_cache_cluster_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
@@ -1484,6 +1500,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1531,12 +1554,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>Represents the allowed node types you can use to modify your cluster or replication group.</p>
 #[non_exhaustive]
@@ -1567,6 +1584,13 @@ impl aws_http::request_id::RequestId for ListAllowedNodeTypeModificationsOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAllowedNodeTypeModificationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
+    pub fn builder() -> crate::output::list_allowed_node_type_modifications_output::Builder {
+        crate::output::list_allowed_node_type_modifications_output::Builder::default()
+    }
+}
+
 /// See [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
 pub mod list_allowed_node_type_modifications_output {
     
@@ -1634,12 +1658,6 @@ pub mod list_allowed_node_type_modifications_output {
     
     
 }
-impl ListAllowedNodeTypeModificationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput).
-    pub fn builder() -> crate::output::list_allowed_node_type_modifications_output::Builder {
-        crate::output::list_allowed_node_type_modifications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1661,6 +1679,13 @@ impl aws_http::request_id::RequestId for IncreaseReplicaCountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl IncreaseReplicaCountOutput {
+    /// Creates a new builder-style object to manufacture [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
+    pub fn builder() -> crate::output::increase_replica_count_output::Builder {
+        crate::output::increase_replica_count_output::Builder::default()
+    }
+}
+
 /// See [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
 pub mod increase_replica_count_output {
     
@@ -1702,12 +1727,6 @@ pub mod increase_replica_count_output {
     
     
 }
-impl IncreaseReplicaCountOutput {
-    /// Creates a new builder-style object to manufacture [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput).
-    pub fn builder() -> crate::output::increase_replica_count_output::Builder {
-        crate::output::increase_replica_count_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1735,6 +1754,13 @@ impl aws_http::request_id::RequestId for IncreaseNodeGroupsInGlobalReplicationGr
                                     self._request_id.as_deref()
                                 }
                             }
+impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::increase_node_groups_in_global_replication_group_output::Builder {
+        crate::output::increase_node_groups_in_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
 pub mod increase_node_groups_in_global_replication_group_output {
     
@@ -1782,12 +1808,6 @@ pub mod increase_node_groups_in_global_replication_group_output {
     
     
 }
-impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::increase_node_groups_in_global_replication_group_output::Builder {
-        crate::output::increase_node_groups_in_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1815,6 +1835,13 @@ impl aws_http::request_id::RequestId for FailoverGlobalReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl FailoverGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::failover_global_replication_group_output::Builder {
+        crate::output::failover_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
 pub mod failover_global_replication_group_output {
     
@@ -1862,12 +1889,6 @@ pub mod failover_global_replication_group_output {
     
     
 }
-impl FailoverGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::failover_global_replication_group_output::Builder {
-        crate::output::failover_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1895,6 +1916,13 @@ impl aws_http::request_id::RequestId for DisassociateGlobalReplicationGroupOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::disassociate_global_replication_group_output::Builder {
+        crate::output::disassociate_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
 pub mod disassociate_global_replication_group_output {
     
@@ -1942,12 +1970,6 @@ pub mod disassociate_global_replication_group_output {
     
     
 }
-impl DisassociateGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::disassociate_global_replication_group_output::Builder {
-        crate::output::disassociate_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1976,6 +1998,13 @@ impl aws_http::request_id::RequestId for DescribeUsersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeUsersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
+    pub fn builder() -> crate::output::describe_users_output::Builder {
+        crate::output::describe_users_output::Builder::default()
+    }
+}
+
 /// See [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
 pub mod describe_users_output {
     
@@ -2035,12 +2064,6 @@ pub mod describe_users_output {
     
     
 }
-impl DescribeUsersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeUsersOutput`](crate::output::DescribeUsersOutput).
-    pub fn builder() -> crate::output::describe_users_output::Builder {
-        crate::output::describe_users_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2069,6 +2092,13 @@ impl aws_http::request_id::RequestId for DescribeUserGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeUserGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
+    pub fn builder() -> crate::output::describe_user_groups_output::Builder {
+        crate::output::describe_user_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
 pub mod describe_user_groups_output {
     
@@ -2128,12 +2158,6 @@ pub mod describe_user_groups_output {
     
     
 }
-impl DescribeUserGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput).
-    pub fn builder() -> crate::output::describe_user_groups_output::Builder {
-        crate::output::describe_user_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2162,6 +2186,13 @@ impl aws_http::request_id::RequestId for DescribeUpdateActionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeUpdateActionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
+    pub fn builder() -> crate::output::describe_update_actions_output::Builder {
+        crate::output::describe_update_actions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
 pub mod describe_update_actions_output {
     
@@ -2221,12 +2252,6 @@ pub mod describe_update_actions_output {
     
     
 }
-impl DescribeUpdateActionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput).
-    pub fn builder() -> crate::output::describe_update_actions_output::Builder {
-        crate::output::describe_update_actions_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
@@ -2255,6 +2280,13 @@ impl aws_http::request_id::RequestId for DescribeSnapshotsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
+    pub fn builder() -> crate::output::describe_snapshots_output::Builder {
+        crate::output::describe_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
 pub mod describe_snapshots_output {
     
@@ -2314,12 +2346,6 @@ pub mod describe_snapshots_output {
     
     
 }
-impl DescribeSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput).
-    pub fn builder() -> crate::output::describe_snapshots_output::Builder {
-        crate::output::describe_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2348,6 +2374,13 @@ impl aws_http::request_id::RequestId for DescribeServiceUpdatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeServiceUpdatesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
+    pub fn builder() -> crate::output::describe_service_updates_output::Builder {
+        crate::output::describe_service_updates_output::Builder::default()
+    }
+}
+
 /// See [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
 pub mod describe_service_updates_output {
     
@@ -2407,12 +2440,6 @@ pub mod describe_service_updates_output {
     
     
 }
-impl DescribeServiceUpdatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput).
-    pub fn builder() -> crate::output::describe_service_updates_output::Builder {
-        crate::output::describe_service_updates_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeReservedCacheNodesOfferings</code> operation.</p>
 #[non_exhaustive]
@@ -2441,6 +2468,13 @@ impl aws_http::request_id::RequestId for DescribeReservedCacheNodesOfferingsOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeReservedCacheNodesOfferingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
+    pub fn builder() -> crate::output::describe_reserved_cache_nodes_offerings_output::Builder {
+        crate::output::describe_reserved_cache_nodes_offerings_output::Builder::default()
+    }
+}
+
 /// See [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
 pub mod describe_reserved_cache_nodes_offerings_output {
     
@@ -2500,12 +2534,6 @@ pub mod describe_reserved_cache_nodes_offerings_output {
     
     
 }
-impl DescribeReservedCacheNodesOfferingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput).
-    pub fn builder() -> crate::output::describe_reserved_cache_nodes_offerings_output::Builder {
-        crate::output::describe_reserved_cache_nodes_offerings_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeReservedCacheNodes</code> operation.</p>
 #[non_exhaustive]
@@ -2534,6 +2562,13 @@ impl aws_http::request_id::RequestId for DescribeReservedCacheNodesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeReservedCacheNodesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
+    pub fn builder() -> crate::output::describe_reserved_cache_nodes_output::Builder {
+        crate::output::describe_reserved_cache_nodes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
 pub mod describe_reserved_cache_nodes_output {
     
@@ -2593,12 +2628,6 @@ pub mod describe_reserved_cache_nodes_output {
     
     
 }
-impl DescribeReservedCacheNodesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput).
-    pub fn builder() -> crate::output::describe_reserved_cache_nodes_output::Builder {
-        crate::output::describe_reserved_cache_nodes_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeReplicationGroups</code> operation.</p>
 #[non_exhaustive]
@@ -2627,6 +2656,13 @@ impl aws_http::request_id::RequestId for DescribeReplicationGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeReplicationGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
+    pub fn builder() -> crate::output::describe_replication_groups_output::Builder {
+        crate::output::describe_replication_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
 pub mod describe_replication_groups_output {
     
@@ -2686,12 +2722,6 @@ pub mod describe_replication_groups_output {
     
     
 }
-impl DescribeReplicationGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput).
-    pub fn builder() -> crate::output::describe_replication_groups_output::Builder {
-        crate::output::describe_replication_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2720,6 +2750,13 @@ impl aws_http::request_id::RequestId for DescribeGlobalReplicationGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeGlobalReplicationGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
+    pub fn builder() -> crate::output::describe_global_replication_groups_output::Builder {
+        crate::output::describe_global_replication_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
 pub mod describe_global_replication_groups_output {
     
@@ -2779,12 +2816,6 @@ pub mod describe_global_replication_groups_output {
     
     
 }
-impl DescribeGlobalReplicationGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput).
-    pub fn builder() -> crate::output::describe_global_replication_groups_output::Builder {
-        crate::output::describe_global_replication_groups_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeEvents</code> operation.</p>
 #[non_exhaustive]
@@ -2813,6 +2844,13 @@ impl aws_http::request_id::RequestId for DescribeEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEventsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
+    pub fn builder() -> crate::output::describe_events_output::Builder {
+        crate::output::describe_events_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
     
@@ -2872,12 +2910,6 @@ pub mod describe_events_output {
     
     
 }
-impl DescribeEventsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    pub fn builder() -> crate::output::describe_events_output::Builder {
-        crate::output::describe_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2899,6 +2931,13 @@ impl aws_http::request_id::RequestId for DescribeEngineDefaultParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeEngineDefaultParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
+    pub fn builder() -> crate::output::describe_engine_default_parameters_output::Builder {
+        crate::output::describe_engine_default_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
 pub mod describe_engine_default_parameters_output {
     
@@ -2940,12 +2979,6 @@ pub mod describe_engine_default_parameters_output {
     
     
 }
-impl DescribeEngineDefaultParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
-    pub fn builder() -> crate::output::describe_engine_default_parameters_output::Builder {
-        crate::output::describe_engine_default_parameters_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
 #[non_exhaustive]
@@ -2974,6 +3007,13 @@ impl aws_http::request_id::RequestId for DescribeCacheSubnetGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheSubnetGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
+    pub fn builder() -> crate::output::describe_cache_subnet_groups_output::Builder {
+        crate::output::describe_cache_subnet_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
 pub mod describe_cache_subnet_groups_output {
     
@@ -3033,12 +3073,6 @@ pub mod describe_cache_subnet_groups_output {
     
     
 }
-impl DescribeCacheSubnetGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput).
-    pub fn builder() -> crate::output::describe_cache_subnet_groups_output::Builder {
-        crate::output::describe_cache_subnet_groups_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeCacheSecurityGroups</code> operation.</p>
 #[non_exhaustive]
@@ -3067,6 +3101,13 @@ impl aws_http::request_id::RequestId for DescribeCacheSecurityGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheSecurityGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
+    pub fn builder() -> crate::output::describe_cache_security_groups_output::Builder {
+        crate::output::describe_cache_security_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
 pub mod describe_cache_security_groups_output {
     
@@ -3126,12 +3167,6 @@ pub mod describe_cache_security_groups_output {
     
     
 }
-impl DescribeCacheSecurityGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput).
-    pub fn builder() -> crate::output::describe_cache_security_groups_output::Builder {
-        crate::output::describe_cache_security_groups_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
 #[non_exhaustive]
@@ -3167,6 +3202,13 @@ impl aws_http::request_id::RequestId for DescribeCacheParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
+    pub fn builder() -> crate::output::describe_cache_parameters_output::Builder {
+        crate::output::describe_cache_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
 pub mod describe_cache_parameters_output {
     
@@ -3244,12 +3286,6 @@ pub mod describe_cache_parameters_output {
     
     
 }
-impl DescribeCacheParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput).
-    pub fn builder() -> crate::output::describe_cache_parameters_output::Builder {
-        crate::output::describe_cache_parameters_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeCacheParameterGroups</code> operation.</p>
 #[non_exhaustive]
@@ -3278,6 +3314,13 @@ impl aws_http::request_id::RequestId for DescribeCacheParameterGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheParameterGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
+    pub fn builder() -> crate::output::describe_cache_parameter_groups_output::Builder {
+        crate::output::describe_cache_parameter_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
 pub mod describe_cache_parameter_groups_output {
     
@@ -3337,12 +3380,6 @@ pub mod describe_cache_parameter_groups_output {
     
     
 }
-impl DescribeCacheParameterGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput).
-    pub fn builder() -> crate::output::describe_cache_parameter_groups_output::Builder {
-        crate::output::describe_cache_parameter_groups_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeCacheEngineVersions</code> operation.</p>
 #[non_exhaustive]
@@ -3371,6 +3408,13 @@ impl aws_http::request_id::RequestId for DescribeCacheEngineVersionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheEngineVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
+    pub fn builder() -> crate::output::describe_cache_engine_versions_output::Builder {
+        crate::output::describe_cache_engine_versions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
 pub mod describe_cache_engine_versions_output {
     
@@ -3430,12 +3474,6 @@ pub mod describe_cache_engine_versions_output {
     
     
 }
-impl DescribeCacheEngineVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput).
-    pub fn builder() -> crate::output::describe_cache_engine_versions_output::Builder {
-        crate::output::describe_cache_engine_versions_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
 #[non_exhaustive]
@@ -3464,6 +3502,13 @@ impl aws_http::request_id::RequestId for DescribeCacheClustersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheClustersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
+    pub fn builder() -> crate::output::describe_cache_clusters_output::Builder {
+        crate::output::describe_cache_clusters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
 pub mod describe_cache_clusters_output {
     
@@ -3522,12 +3567,6 @@ pub mod describe_cache_clusters_output {
     }
     
     
-}
-impl DescribeCacheClustersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput).
-    pub fn builder() -> crate::output::describe_cache_clusters_output::Builder {
-        crate::output::describe_cache_clusters_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -3599,6 +3638,13 @@ impl aws_http::request_id::RequestId for DeleteUserGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteUserGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
+    pub fn builder() -> crate::output::delete_user_group_output::Builder {
+        crate::output::delete_user_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
 pub mod delete_user_group_output {
     
@@ -3736,12 +3782,6 @@ pub mod delete_user_group_output {
     
     
 }
-impl DeleteUserGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput).
-    pub fn builder() -> crate::output::delete_user_group_output::Builder {
-        crate::output::delete_user_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3819,6 +3859,13 @@ impl aws_http::request_id::RequestId for DeleteUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteUserOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
+    pub fn builder() -> crate::output::delete_user_output::Builder {
+        crate::output::delete_user_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUserOutput`](crate::output::DeleteUserOutput).
 pub mod delete_user_output {
     
@@ -3962,12 +4009,6 @@ pub mod delete_user_output {
     
     
 }
-impl DeleteUserOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUserOutput`](crate::output::DeleteUserOutput).
-    pub fn builder() -> crate::output::delete_user_output::Builder {
-        crate::output::delete_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3989,6 +4030,13 @@ impl aws_http::request_id::RequestId for DeleteSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
+    pub fn builder() -> crate::output::delete_snapshot_output::Builder {
+        crate::output::delete_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
 pub mod delete_snapshot_output {
     
@@ -4030,12 +4078,6 @@ pub mod delete_snapshot_output {
     
     
 }
-impl DeleteSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput).
-    pub fn builder() -> crate::output::delete_snapshot_output::Builder {
-        crate::output::delete_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4057,6 +4099,13 @@ impl aws_http::request_id::RequestId for DeleteReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
+    pub fn builder() -> crate::output::delete_replication_group_output::Builder {
+        crate::output::delete_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
 pub mod delete_replication_group_output {
     
@@ -4098,12 +4147,6 @@ pub mod delete_replication_group_output {
     
     
 }
-impl DeleteReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput).
-    pub fn builder() -> crate::output::delete_replication_group_output::Builder {
-        crate::output::delete_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4131,6 +4174,13 @@ impl aws_http::request_id::RequestId for DeleteGlobalReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::delete_global_replication_group_output::Builder {
+        crate::output::delete_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
 pub mod delete_global_replication_group_output {
     
@@ -4178,12 +4228,6 @@ pub mod delete_global_replication_group_output {
     
     
 }
-impl DeleteGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::delete_global_replication_group_output::Builder {
-        crate::output::delete_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4196,6 +4240,13 @@ impl aws_http::request_id::RequestId for DeleteCacheSubnetGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCacheSubnetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
+    pub fn builder() -> crate::output::delete_cache_subnet_group_output::Builder {
+        crate::output::delete_cache_subnet_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
 pub mod delete_cache_subnet_group_output {
     
@@ -4225,12 +4276,6 @@ pub mod delete_cache_subnet_group_output {
     
     
 }
-impl DeleteCacheSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput).
-    pub fn builder() -> crate::output::delete_cache_subnet_group_output::Builder {
-        crate::output::delete_cache_subnet_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4243,6 +4288,13 @@ impl aws_http::request_id::RequestId for DeleteCacheSecurityGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCacheSecurityGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
+    pub fn builder() -> crate::output::delete_cache_security_group_output::Builder {
+        crate::output::delete_cache_security_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
 pub mod delete_cache_security_group_output {
     
@@ -4272,12 +4324,6 @@ pub mod delete_cache_security_group_output {
     
     
 }
-impl DeleteCacheSecurityGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput).
-    pub fn builder() -> crate::output::delete_cache_security_group_output::Builder {
-        crate::output::delete_cache_security_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4290,6 +4336,13 @@ impl aws_http::request_id::RequestId for DeleteCacheParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCacheParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
+    pub fn builder() -> crate::output::delete_cache_parameter_group_output::Builder {
+        crate::output::delete_cache_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
 pub mod delete_cache_parameter_group_output {
     
@@ -4319,12 +4372,6 @@ pub mod delete_cache_parameter_group_output {
     
     
 }
-impl DeleteCacheParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput).
-    pub fn builder() -> crate::output::delete_cache_parameter_group_output::Builder {
-        crate::output::delete_cache_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4346,6 +4393,13 @@ impl aws_http::request_id::RequestId for DeleteCacheClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteCacheClusterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
+    pub fn builder() -> crate::output::delete_cache_cluster_output::Builder {
+        crate::output::delete_cache_cluster_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
 pub mod delete_cache_cluster_output {
     
@@ -4387,12 +4441,6 @@ pub mod delete_cache_cluster_output {
     
     
 }
-impl DeleteCacheClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput).
-    pub fn builder() -> crate::output::delete_cache_cluster_output::Builder {
-        crate::output::delete_cache_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4414,6 +4462,13 @@ impl aws_http::request_id::RequestId for DecreaseReplicaCountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DecreaseReplicaCountOutput {
+    /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
+    pub fn builder() -> crate::output::decrease_replica_count_output::Builder {
+        crate::output::decrease_replica_count_output::Builder::default()
+    }
+}
+
 /// See [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
 pub mod decrease_replica_count_output {
     
@@ -4455,12 +4510,6 @@ pub mod decrease_replica_count_output {
     
     
 }
-impl DecreaseReplicaCountOutput {
-    /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput).
-    pub fn builder() -> crate::output::decrease_replica_count_output::Builder {
-        crate::output::decrease_replica_count_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4488,6 +4537,13 @@ impl aws_http::request_id::RequestId for DecreaseNodeGroupsInGlobalReplicationGr
                                     self._request_id.as_deref()
                                 }
                             }
+impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::decrease_node_groups_in_global_replication_group_output::Builder {
+        crate::output::decrease_node_groups_in_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
 pub mod decrease_node_groups_in_global_replication_group_output {
     
@@ -4534,12 +4590,6 @@ pub mod decrease_node_groups_in_global_replication_group_output {
     }
     
     
-}
-impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::decrease_node_groups_in_global_replication_group_output::Builder {
-        crate::output::decrease_node_groups_in_global_replication_group_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -4611,6 +4661,13 @@ impl aws_http::request_id::RequestId for CreateUserGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateUserGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
+    pub fn builder() -> crate::output::create_user_group_output::Builder {
+        crate::output::create_user_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
 pub mod create_user_group_output {
     
@@ -4748,12 +4805,6 @@ pub mod create_user_group_output {
     
     
 }
-impl CreateUserGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput).
-    pub fn builder() -> crate::output::create_user_group_output::Builder {
-        crate::output::create_user_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4831,6 +4882,13 @@ impl aws_http::request_id::RequestId for CreateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateUserOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
+    pub fn builder() -> crate::output::create_user_output::Builder {
+        crate::output::create_user_output::Builder::default()
+    }
+}
+
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
     
@@ -4974,12 +5032,6 @@ pub mod create_user_output {
     
     
 }
-impl CreateUserOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
-    pub fn builder() -> crate::output::create_user_output::Builder {
-        crate::output::create_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5001,6 +5053,13 @@ impl aws_http::request_id::RequestId for CreateSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
+    pub fn builder() -> crate::output::create_snapshot_output::Builder {
+        crate::output::create_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
 pub mod create_snapshot_output {
     
@@ -5042,12 +5101,6 @@ pub mod create_snapshot_output {
     
     
 }
-impl CreateSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    pub fn builder() -> crate::output::create_snapshot_output::Builder {
-        crate::output::create_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5069,6 +5122,13 @@ impl aws_http::request_id::RequestId for CreateReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
+    pub fn builder() -> crate::output::create_replication_group_output::Builder {
+        crate::output::create_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
 pub mod create_replication_group_output {
     
@@ -5110,12 +5170,6 @@ pub mod create_replication_group_output {
     
     
 }
-impl CreateReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput).
-    pub fn builder() -> crate::output::create_replication_group_output::Builder {
-        crate::output::create_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5143,6 +5197,13 @@ impl aws_http::request_id::RequestId for CreateGlobalReplicationGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateGlobalReplicationGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
+    pub fn builder() -> crate::output::create_global_replication_group_output::Builder {
+        crate::output::create_global_replication_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
 pub mod create_global_replication_group_output {
     
@@ -5190,12 +5251,6 @@ pub mod create_global_replication_group_output {
     
     
 }
-impl CreateGlobalReplicationGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput).
-    pub fn builder() -> crate::output::create_global_replication_group_output::Builder {
-        crate::output::create_global_replication_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5225,6 +5280,13 @@ impl aws_http::request_id::RequestId for CreateCacheSubnetGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCacheSubnetGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
+    pub fn builder() -> crate::output::create_cache_subnet_group_output::Builder {
+        crate::output::create_cache_subnet_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
 pub mod create_cache_subnet_group_output {
     
@@ -5274,12 +5336,6 @@ pub mod create_cache_subnet_group_output {
     
     
 }
-impl CreateCacheSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput).
-    pub fn builder() -> crate::output::create_cache_subnet_group_output::Builder {
-        crate::output::create_cache_subnet_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5311,6 +5367,13 @@ impl aws_http::request_id::RequestId for CreateCacheSecurityGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCacheSecurityGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
+    pub fn builder() -> crate::output::create_cache_security_group_output::Builder {
+        crate::output::create_cache_security_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
 pub mod create_cache_security_group_output {
     
@@ -5362,12 +5425,6 @@ pub mod create_cache_security_group_output {
     
     
 }
-impl CreateCacheSecurityGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput).
-    pub fn builder() -> crate::output::create_cache_security_group_output::Builder {
-        crate::output::create_cache_security_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5389,6 +5446,13 @@ impl aws_http::request_id::RequestId for CreateCacheParameterGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCacheParameterGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
+    pub fn builder() -> crate::output::create_cache_parameter_group_output::Builder {
+        crate::output::create_cache_parameter_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
 pub mod create_cache_parameter_group_output {
     
@@ -5430,12 +5494,6 @@ pub mod create_cache_parameter_group_output {
     
     
 }
-impl CreateCacheParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput).
-    pub fn builder() -> crate::output::create_cache_parameter_group_output::Builder {
-        crate::output::create_cache_parameter_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5457,6 +5515,13 @@ impl aws_http::request_id::RequestId for CreateCacheClusterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCacheClusterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
+    pub fn builder() -> crate::output::create_cache_cluster_output::Builder {
+        crate::output::create_cache_cluster_output::Builder::default()
+    }
+}
+
 /// See [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
 pub mod create_cache_cluster_output {
     
@@ -5498,12 +5563,6 @@ pub mod create_cache_cluster_output {
     
     
 }
-impl CreateCacheClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput).
-    pub fn builder() -> crate::output::create_cache_cluster_output::Builder {
-        crate::output::create_cache_cluster_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5525,6 +5584,13 @@ impl aws_http::request_id::RequestId for CopySnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CopySnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
+    pub fn builder() -> crate::output::copy_snapshot_output::Builder {
+        crate::output::copy_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
 pub mod copy_snapshot_output {
     
@@ -5566,12 +5632,6 @@ pub mod copy_snapshot_output {
     
     
 }
-impl CopySnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CopySnapshotOutput`](crate::output::CopySnapshotOutput).
-    pub fn builder() -> crate::output::copy_snapshot_output::Builder {
-        crate::output::copy_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5593,6 +5653,13 @@ impl aws_http::request_id::RequestId for CompleteMigrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CompleteMigrationOutput {
+    /// Creates a new builder-style object to manufacture [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
+    pub fn builder() -> crate::output::complete_migration_output::Builder {
+        crate::output::complete_migration_output::Builder::default()
+    }
+}
+
 /// See [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
 pub mod complete_migration_output {
     
@@ -5634,12 +5701,6 @@ pub mod complete_migration_output {
     
     
 }
-impl CompleteMigrationOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput).
-    pub fn builder() -> crate::output::complete_migration_output::Builder {
-        crate::output::complete_migration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5668,6 +5729,13 @@ impl aws_http::request_id::RequestId for BatchStopUpdateActionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchStopUpdateActionOutput {
+    /// Creates a new builder-style object to manufacture [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
+    pub fn builder() -> crate::output::batch_stop_update_action_output::Builder {
+        crate::output::batch_stop_update_action_output::Builder::default()
+    }
+}
+
 /// See [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
 pub mod batch_stop_update_action_output {
     
@@ -5733,12 +5801,6 @@ pub mod batch_stop_update_action_output {
     
     
 }
-impl BatchStopUpdateActionOutput {
-    /// Creates a new builder-style object to manufacture [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput).
-    pub fn builder() -> crate::output::batch_stop_update_action_output::Builder {
-        crate::output::batch_stop_update_action_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5767,6 +5829,13 @@ impl aws_http::request_id::RequestId for BatchApplyUpdateActionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchApplyUpdateActionOutput {
+    /// Creates a new builder-style object to manufacture [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
+    pub fn builder() -> crate::output::batch_apply_update_action_output::Builder {
+        crate::output::batch_apply_update_action_output::Builder::default()
+    }
+}
+
 /// See [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
 pub mod batch_apply_update_action_output {
     
@@ -5832,12 +5901,6 @@ pub mod batch_apply_update_action_output {
     
     
 }
-impl BatchApplyUpdateActionOutput {
-    /// Creates a new builder-style object to manufacture [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput).
-    pub fn builder() -> crate::output::batch_apply_update_action_output::Builder {
-        crate::output::batch_apply_update_action_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5869,6 +5932,13 @@ impl aws_http::request_id::RequestId for AuthorizeCacheSecurityGroupIngressOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl AuthorizeCacheSecurityGroupIngressOutput {
+    /// Creates a new builder-style object to manufacture [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
+    pub fn builder() -> crate::output::authorize_cache_security_group_ingress_output::Builder {
+        crate::output::authorize_cache_security_group_ingress_output::Builder::default()
+    }
+}
+
 /// See [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
 pub mod authorize_cache_security_group_ingress_output {
     
@@ -5920,12 +5990,6 @@ pub mod authorize_cache_security_group_ingress_output {
     
     
 }
-impl AuthorizeCacheSecurityGroupIngressOutput {
-    /// Creates a new builder-style object to manufacture [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput).
-    pub fn builder() -> crate::output::authorize_cache_security_group_ingress_output::Builder {
-        crate::output::authorize_cache_security_group_ingress_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
@@ -5947,6 +6011,13 @@ impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddTagsToResourceOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
+    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
+        crate::output::add_tags_to_resource_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
     
@@ -5993,11 +6064,5 @@ pub mod add_tags_to_resource_output {
     }
     
     
-}
-impl AddTagsToResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
-        crate::output::add_tags_to_resource_output::Builder::default()
-    }
 }
 

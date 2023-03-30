@@ -101,6 +101,13 @@ impl  std::fmt::Debug for WorkspaceSummary  {
         formatter.finish()
     }
 }
+impl WorkspaceSummary {
+    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
+    pub fn builder() -> crate::model::workspace_summary::Builder {
+        crate::model::workspace_summary::Builder::default()
+    }
+}
+
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
     
@@ -280,12 +287,6 @@ pub mod workspace_summary {
     
     
 }
-impl WorkspaceSummary {
-    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
-    pub fn builder() -> crate::model::workspace_summary::Builder {
-        crate::model::workspace_summary::Builder::default()
-    }
-}
 
 /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured.</p>
 #[non_exhaustive]
@@ -308,6 +309,13 @@ impl AuthenticationSummary {
         self.saml_configuration_status.as_ref()
     }
 }
+impl AuthenticationSummary {
+    /// Creates a new builder-style object to manufacture [`AuthenticationSummary`](crate::model::AuthenticationSummary).
+    pub fn builder() -> crate::model::authentication_summary::Builder {
+        crate::model::authentication_summary::Builder::default()
+    }
+}
+
 /// See [`AuthenticationSummary`](crate::model::AuthenticationSummary).
 pub mod authentication_summary {
     
@@ -355,12 +363,6 @@ pub mod authentication_summary {
     }
     
     
-}
-impl AuthenticationSummary {
-    /// Creates a new builder-style object to manufacture [`AuthenticationSummary`](crate::model::AuthenticationSummary).
-    pub fn builder() -> crate::model::authentication_summary::Builder {
-        crate::model::authentication_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SamlConfigurationStatus`, it is important to ensure
@@ -752,6 +754,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -793,12 +802,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -1094,6 +1097,13 @@ impl  std::fmt::Debug for WorkspaceDescription  {
         formatter.finish()
     }
 }
+impl WorkspaceDescription {
+    /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
+    pub fn builder() -> crate::model::workspace_description::Builder {
+        crate::model::workspace_description::Builder::default()
+    }
+}
+
 /// See [`WorkspaceDescription`](crate::model::WorkspaceDescription).
 pub mod workspace_description {
     
@@ -1445,12 +1455,6 @@ pub mod workspace_description {
     
     
 }
-impl WorkspaceDescription {
-    /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
-    pub fn builder() -> crate::model::workspace_description::Builder {
-        crate::model::workspace_description::Builder::default()
-    }
-}
 
 /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
 #[non_exhaustive]
@@ -1473,6 +1477,13 @@ impl VpcConfiguration {
         self.subnet_ids.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
     
@@ -1526,12 +1537,6 @@ pub mod vpc_configuration {
     }
     
     
-}
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LicenseType`, it is important to ensure
@@ -1925,6 +1930,13 @@ impl UpdateError {
         self.caused_by.as_ref()
     }
 }
+impl UpdateError {
+    /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError).
+    pub fn builder() -> crate::model::update_error::Builder {
+        crate::model::update_error::Builder::default()
+    }
+}
+
 /// See [`UpdateError`](crate::model::UpdateError).
 pub mod update_error {
     
@@ -1979,12 +1991,6 @@ pub mod update_error {
     
     
 }
-impl UpdateError {
-    /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError).
-    pub fn builder() -> crate::model::update_error::Builder {
-        crate::model::update_error::Builder::default()
-    }
-}
 
 /// <p>Contains the instructions for one Grafana role permission update in a <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
@@ -2014,6 +2020,13 @@ impl UpdateInstruction {
         self.users.as_deref()
     }
 }
+impl UpdateInstruction {
+    /// Creates a new builder-style object to manufacture [`UpdateInstruction`](crate::model::UpdateInstruction).
+    pub fn builder() -> crate::model::update_instruction::Builder {
+        crate::model::update_instruction::Builder::default()
+    }
+}
+
 /// See [`UpdateInstruction`](crate::model::UpdateInstruction).
 pub mod update_instruction {
     
@@ -2074,12 +2087,6 @@ pub mod update_instruction {
     
     
 }
-impl UpdateInstruction {
-    /// Creates a new builder-style object to manufacture [`UpdateInstruction`](crate::model::UpdateInstruction).
-    pub fn builder() -> crate::model::update_instruction::Builder {
-        crate::model::update_instruction::Builder::default()
-    }
-}
 
 /// <p>A structure that specifies one user or group in the workspace.</p>
 #[non_exhaustive]
@@ -2104,6 +2111,13 @@ impl User {
         self.r#type.as_ref()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
     
@@ -2147,12 +2161,6 @@ pub mod user {
     }
     
     
-}
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UserType`, it is important to ensure
@@ -2427,6 +2435,13 @@ impl PermissionEntry {
         self.role.as_ref()
     }
 }
+impl PermissionEntry {
+    /// Creates a new builder-style object to manufacture [`PermissionEntry`](crate::model::PermissionEntry).
+    pub fn builder() -> crate::model::permission_entry::Builder {
+        crate::model::permission_entry::Builder::default()
+    }
+}
+
 /// See [`PermissionEntry`](crate::model::PermissionEntry).
 pub mod permission_entry {
     
@@ -2469,12 +2484,6 @@ pub mod permission_entry {
     
     
 }
-impl PermissionEntry {
-    /// Creates a new builder-style object to manufacture [`PermissionEntry`](crate::model::PermissionEntry).
-    pub fn builder() -> crate::model::permission_entry::Builder {
-        crate::model::permission_entry::Builder::default()
-    }
-}
 
 /// <p>A structure containing information about the user authentication methods used by the workspace.</p>
 #[non_exhaustive]
@@ -2504,6 +2513,13 @@ impl AuthenticationDescription {
         self.aws_sso.as_ref()
     }
 }
+impl AuthenticationDescription {
+    /// Creates a new builder-style object to manufacture [`AuthenticationDescription`](crate::model::AuthenticationDescription).
+    pub fn builder() -> crate::model::authentication_description::Builder {
+        crate::model::authentication_description::Builder::default()
+    }
+}
+
 /// See [`AuthenticationDescription`](crate::model::AuthenticationDescription).
 pub mod authentication_description {
     
@@ -2564,12 +2580,6 @@ pub mod authentication_description {
     
     
 }
-impl AuthenticationDescription {
-    /// Creates a new builder-style object to manufacture [`AuthenticationDescription`](crate::model::AuthenticationDescription).
-    pub fn builder() -> crate::model::authentication_description::Builder {
-        crate::model::authentication_description::Builder::default()
-    }
-}
 
 /// <p>A structure containing information about how this workspace works with IAM Identity Center. </p>
 #[non_exhaustive]
@@ -2585,6 +2595,13 @@ impl AwsSsoAuthentication {
         self.sso_client_id.as_deref()
     }
 }
+impl AwsSsoAuthentication {
+    /// Creates a new builder-style object to manufacture [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
+    pub fn builder() -> crate::model::aws_sso_authentication::Builder {
+        crate::model::aws_sso_authentication::Builder::default()
+    }
+}
+
 /// See [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
 pub mod aws_sso_authentication {
     
@@ -2615,12 +2632,6 @@ pub mod aws_sso_authentication {
     
     
 }
-impl AwsSsoAuthentication {
-    /// Creates a new builder-style object to manufacture [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
-    pub fn builder() -> crate::model::aws_sso_authentication::Builder {
-        crate::model::aws_sso_authentication::Builder::default()
-    }
-}
 
 /// <p>A structure containing information about how this workspace works with SAML. </p>
 #[non_exhaustive]
@@ -2643,6 +2654,13 @@ impl SamlAuthentication {
         self.configuration.as_ref()
     }
 }
+impl SamlAuthentication {
+    /// Creates a new builder-style object to manufacture [`SamlAuthentication`](crate::model::SamlAuthentication).
+    pub fn builder() -> crate::model::saml_authentication::Builder {
+        crate::model::saml_authentication::Builder::default()
+    }
+}
+
 /// See [`SamlAuthentication`](crate::model::SamlAuthentication).
 pub mod saml_authentication {
     
@@ -2684,12 +2702,6 @@ pub mod saml_authentication {
     }
     
     
-}
-impl SamlAuthentication {
-    /// Creates a new builder-style object to manufacture [`SamlAuthentication`](crate::model::SamlAuthentication).
-    pub fn builder() -> crate::model::saml_authentication::Builder {
-        crate::model::saml_authentication::Builder::default()
-    }
 }
 
 /// <p>A structure containing information about how this workspace works with SAML. </p>
@@ -2734,6 +2746,13 @@ impl SamlConfiguration {
         self.login_validity_duration
     }
 }
+impl SamlConfiguration {
+    /// Creates a new builder-style object to manufacture [`SamlConfiguration`](crate::model::SamlConfiguration).
+    pub fn builder() -> crate::model::saml_configuration::Builder {
+        crate::model::saml_configuration::Builder::default()
+    }
+}
+
 /// See [`SamlConfiguration`](crate::model::SamlConfiguration).
 pub mod saml_configuration {
     
@@ -2819,12 +2838,6 @@ pub mod saml_configuration {
     
     
 }
-impl SamlConfiguration {
-    /// Creates a new builder-style object to manufacture [`SamlConfiguration`](crate::model::SamlConfiguration).
-    pub fn builder() -> crate::model::saml_configuration::Builder {
-        crate::model::saml_configuration::Builder::default()
-    }
-}
 
 /// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.</p>
 #[non_exhaustive]
@@ -2847,6 +2860,13 @@ impl RoleValues {
         self.admin.as_deref()
     }
 }
+impl RoleValues {
+    /// Creates a new builder-style object to manufacture [`RoleValues`](crate::model::RoleValues).
+    pub fn builder() -> crate::model::role_values::Builder {
+        crate::model::role_values::Builder::default()
+    }
+}
+
 /// See [`RoleValues`](crate::model::RoleValues).
 pub mod role_values {
     
@@ -2901,12 +2921,6 @@ pub mod role_values {
     
     
 }
-impl RoleValues {
-    /// Creates a new builder-style object to manufacture [`RoleValues`](crate::model::RoleValues).
-    pub fn builder() -> crate::model::role_values::Builder {
-        crate::model::role_values::Builder::default()
-    }
-}
 
 /// <p>A structure that defines which attributes in the IdP assertion are to be used to define information about the users authenticated by the IdP to use the workspace.</p>
 #[non_exhaustive]
@@ -2957,6 +2971,13 @@ impl AssertionAttributes {
         self.org.as_deref()
     }
 }
+impl AssertionAttributes {
+    /// Creates a new builder-style object to manufacture [`AssertionAttributes`](crate::model::AssertionAttributes).
+    pub fn builder() -> crate::model::assertion_attributes::Builder {
+        crate::model::assertion_attributes::Builder::default()
+    }
+}
+
 /// See [`AssertionAttributes`](crate::model::AssertionAttributes).
 pub mod assertion_attributes {
     
@@ -3046,12 +3067,6 @@ pub mod assertion_attributes {
     }
     
     
-}
-impl AssertionAttributes {
-    /// Creates a new builder-style object to manufacture [`AssertionAttributes`](crate::model::AssertionAttributes).
-    pub fn builder() -> crate::model::assertion_attributes::Builder {
-        crate::model::assertion_attributes::Builder::default()
-    }
 }
 
 /// <p>A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter, or by specifying the full metadata in XML format in the <code>xml</code> parameter. Specifying both will cause an error.</p>

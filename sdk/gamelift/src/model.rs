@@ -58,6 +58,13 @@ impl Script {
         self.storage_location.as_ref()
     }
 }
+impl Script {
+    /// Creates a new builder-style object to manufacture [`Script`](crate::model::Script).
+    pub fn builder() -> crate::model::script::Builder {
+        crate::model::script::Builder::default()
+    }
+}
+
 /// See [`Script`](crate::model::Script).
 pub mod script {
     
@@ -160,12 +167,6 @@ pub mod script {
     
     
 }
-impl Script {
-    /// Creates a new builder-style object to manufacture [`Script`](crate::model::Script).
-    pub fn builder() -> crate::model::script::Builder {
-        crate::model::script::Builder::default()
-    }
-}
 
 /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.</p>
 #[non_exhaustive]
@@ -206,6 +207,13 @@ impl S3Location {
         self.object_version.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -276,12 +284,6 @@ pub mod s3_location {
     
     
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. </p> 
 /// <p>A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple Processes on a Fleet</a>.</p>
@@ -312,6 +314,13 @@ impl RuntimeConfiguration {
         self.game_session_activation_timeout_seconds
     }
 }
+impl RuntimeConfiguration {
+    /// Creates a new builder-style object to manufacture [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
+    pub fn builder() -> crate::model::runtime_configuration::Builder {
+        crate::model::runtime_configuration::Builder::default()
+    }
+}
+
 /// See [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
 pub mod runtime_configuration {
     
@@ -372,12 +381,6 @@ pub mod runtime_configuration {
     
     
 }
-impl RuntimeConfiguration {
-    /// Creates a new builder-style object to manufacture [`RuntimeConfiguration`](crate::model::RuntimeConfiguration).
-    pub fn builder() -> crate::model::runtime_configuration::Builder {
-        crate::model::runtime_configuration::Builder::default()
-    }
-}
 
 /// <p>A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.</p>
 #[non_exhaustive]
@@ -415,6 +418,13 @@ impl ServerProcess {
         self.concurrent_executions
     }
 }
+impl ServerProcess {
+    /// Creates a new builder-style object to manufacture [`ServerProcess`](crate::model::ServerProcess).
+    pub fn builder() -> crate::model::server_process::Builder {
+        crate::model::server_process::Builder::default()
+    }
+}
+
 /// See [`ServerProcess`](crate::model::ServerProcess).
 pub mod server_process {
     
@@ -476,12 +486,6 @@ pub mod server_process {
     }
     
     
-}
-impl ServerProcess {
-    /// Creates a new builder-style object to manufacture [`ServerProcess`](crate::model::ServerProcess).
-    pub fn builder() -> crate::model::server_process::Builder {
-        crate::model::server_process::Builder::default()
-    }
 }
 
 /// <p>Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration.</p>
@@ -634,6 +638,13 @@ impl MatchmakingConfiguration {
         self.flex_match_mode.as_ref()
     }
 }
+impl MatchmakingConfiguration {
+    /// Creates a new builder-style object to manufacture [`MatchmakingConfiguration`](crate::model::MatchmakingConfiguration).
+    pub fn builder() -> crate::model::matchmaking_configuration::Builder {
+        crate::model::matchmaking_configuration::Builder::default()
+    }
+}
+
 /// See [`MatchmakingConfiguration`](crate::model::MatchmakingConfiguration).
 pub mod matchmaking_configuration {
     
@@ -892,12 +903,6 @@ pub mod matchmaking_configuration {
     
     
 }
-impl MatchmakingConfiguration {
-    /// Creates a new builder-style object to manufacture [`MatchmakingConfiguration`](crate::model::MatchmakingConfiguration).
-    pub fn builder() -> crate::model::matchmaking_configuration::Builder {
-        crate::model::matchmaking_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FlexMatchMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1084,6 +1089,13 @@ impl GameProperty {
         self.value.as_deref()
     }
 }
+impl GameProperty {
+    /// Creates a new builder-style object to manufacture [`GameProperty`](crate::model::GameProperty).
+    pub fn builder() -> crate::model::game_property::Builder {
+        crate::model::game_property::Builder::default()
+    }
+}
+
 /// See [`GameProperty`](crate::model::GameProperty).
 pub mod game_property {
     
@@ -1125,12 +1137,6 @@ pub mod game_property {
     }
     
     
-}
-impl GameProperty {
-    /// Creates a new builder-style object to manufacture [`GameProperty`](crate::model::GameProperty).
-    pub fn builder() -> crate::model::game_property::Builder {
-        crate::model::game_property::Builder::default()
-    }
 }
 
 /// <p>Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.</p>
@@ -1211,6 +1217,13 @@ impl GameSessionQueue {
         self.notification_target.as_deref()
     }
 }
+impl GameSessionQueue {
+    /// Creates a new builder-style object to manufacture [`GameSessionQueue`](crate::model::GameSessionQueue).
+    pub fn builder() -> crate::model::game_session_queue::Builder {
+        crate::model::game_session_queue::Builder::default()
+    }
+}
+
 /// See [`GameSessionQueue`](crate::model::GameSessionQueue).
 pub mod game_session_queue {
     
@@ -1357,12 +1370,6 @@ pub mod game_session_queue {
     
     
 }
-impl GameSessionQueue {
-    /// Creates a new builder-style object to manufacture [`GameSessionQueue`](crate::model::GameSessionQueue).
-    pub fn builder() -> crate::model::game_session_queue::Builder {
-        crate::model::game_session_queue::Builder::default()
-    }
-}
 
 /// <p>Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows:</p> 
 /// <ul> 
@@ -1402,6 +1409,13 @@ impl PriorityConfiguration {
         self.location_order.as_deref()
     }
 }
+impl PriorityConfiguration {
+    /// Creates a new builder-style object to manufacture [`PriorityConfiguration`](crate::model::PriorityConfiguration).
+    pub fn builder() -> crate::model::priority_configuration::Builder {
+        crate::model::priority_configuration::Builder::default()
+    }
+}
+
 /// See [`PriorityConfiguration`](crate::model::PriorityConfiguration).
 pub mod priority_configuration {
     
@@ -1467,12 +1481,6 @@ pub mod priority_configuration {
     }
     
     
-}
-impl PriorityConfiguration {
-    /// Creates a new builder-style object to manufacture [`PriorityConfiguration`](crate::model::PriorityConfiguration).
-    pub fn builder() -> crate::model::priority_configuration::Builder {
-        crate::model::priority_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PriorityType`, it is important to ensure
@@ -1581,6 +1589,13 @@ impl FilterConfiguration {
         self.allowed_locations.as_deref()
     }
 }
+impl FilterConfiguration {
+    /// Creates a new builder-style object to manufacture [`FilterConfiguration`](crate::model::FilterConfiguration).
+    pub fn builder() -> crate::model::filter_configuration::Builder {
+        crate::model::filter_configuration::Builder::default()
+    }
+}
+
 /// See [`FilterConfiguration`](crate::model::FilterConfiguration).
 pub mod filter_configuration {
     
@@ -1617,12 +1632,6 @@ pub mod filter_configuration {
     
     
 }
-impl FilterConfiguration {
-    /// Creates a new builder-style object to manufacture [`FilterConfiguration`](crate::model::FilterConfiguration).
-    pub fn builder() -> crate::model::filter_configuration::Builder {
-        crate::model::filter_configuration::Builder::default()
-    }
-}
 
 /// <p>A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations. </p>
 #[non_exhaustive]
@@ -1638,6 +1647,13 @@ impl GameSessionQueueDestination {
         self.destination_arn.as_deref()
     }
 }
+impl GameSessionQueueDestination {
+    /// Creates a new builder-style object to manufacture [`GameSessionQueueDestination`](crate::model::GameSessionQueueDestination).
+    pub fn builder() -> crate::model::game_session_queue_destination::Builder {
+        crate::model::game_session_queue_destination::Builder::default()
+    }
+}
+
 /// See [`GameSessionQueueDestination`](crate::model::GameSessionQueueDestination).
 pub mod game_session_queue_destination {
     
@@ -1668,12 +1684,6 @@ pub mod game_session_queue_destination {
     
     
 }
-impl GameSessionQueueDestination {
-    /// Creates a new builder-style object to manufacture [`GameSessionQueueDestination`](crate::model::GameSessionQueueDestination).
-    pub fn builder() -> crate::model::game_session_queue_destination::Builder {
-        crate::model::game_session_queue_destination::Builder::default()
-    }
-}
 
 /// <p>Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. </p>
 #[non_exhaustive]
@@ -1696,6 +1706,13 @@ impl PlayerLatencyPolicy {
         self.policy_duration_seconds
     }
 }
+impl PlayerLatencyPolicy {
+    /// Creates a new builder-style object to manufacture [`PlayerLatencyPolicy`](crate::model::PlayerLatencyPolicy).
+    pub fn builder() -> crate::model::player_latency_policy::Builder {
+        crate::model::player_latency_policy::Builder::default()
+    }
+}
+
 /// See [`PlayerLatencyPolicy`](crate::model::PlayerLatencyPolicy).
 pub mod player_latency_policy {
     
@@ -1737,12 +1754,6 @@ pub mod player_latency_policy {
     }
     
     
-}
-impl PlayerLatencyPolicy {
-    /// Creates a new builder-style object to manufacture [`PlayerLatencyPolicy`](crate::model::PlayerLatencyPolicy).
-    pub fn builder() -> crate::model::player_latency_policy::Builder {
-        crate::model::player_latency_policy::Builder::default()
-    }
 }
 
 /// <p>Properties describing a game session.</p> 
@@ -1930,6 +1941,13 @@ impl GameSession {
         self.location.as_deref()
     }
 }
+impl GameSession {
+    /// Creates a new builder-style object to manufacture [`GameSession`](crate::model::GameSession).
+    pub fn builder() -> crate::model::game_session::Builder {
+        crate::model::game_session::Builder::default()
+    }
+}
+
 /// See [`GameSession`](crate::model::GameSession).
 pub mod game_session {
     
@@ -2223,12 +2241,6 @@ pub mod game_session {
     }
     
     
-}
-impl GameSession {
-    /// Creates a new builder-style object to manufacture [`GameSession`](crate::model::GameSession).
-    pub fn builder() -> crate::model::game_session::Builder {
-        crate::model::game_session::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PlayerSessionCreationPolicy`, it is important to ensure
@@ -2690,6 +2702,13 @@ impl GameServerGroup {
         self.last_updated_time.as_ref()
     }
 }
+impl GameServerGroup {
+    /// Creates a new builder-style object to manufacture [`GameServerGroup`](crate::model::GameServerGroup).
+    pub fn builder() -> crate::model::game_server_group::Builder {
+        crate::model::game_server_group::Builder::default()
+    }
+}
+
 /// See [`GameServerGroup`](crate::model::GameServerGroup).
 pub mod game_server_group {
     
@@ -2891,12 +2910,6 @@ pub mod game_server_group {
     }
     
     
-}
-impl GameServerGroup {
-    /// Creates a new builder-style object to manufacture [`GameServerGroup`](crate::model::GameServerGroup).
-    pub fn builder() -> crate::model::game_server_group::Builder {
-        crate::model::game_server_group::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GameServerGroupAction`, it is important to ensure
@@ -3274,6 +3287,13 @@ impl InstanceDefinition {
         self.weighted_capacity.as_deref()
     }
 }
+impl InstanceDefinition {
+    /// Creates a new builder-style object to manufacture [`InstanceDefinition`](crate::model::InstanceDefinition).
+    pub fn builder() -> crate::model::instance_definition::Builder {
+        crate::model::instance_definition::Builder::default()
+    }
+}
+
 /// See [`InstanceDefinition`](crate::model::InstanceDefinition).
 pub mod instance_definition {
     
@@ -3315,12 +3335,6 @@ pub mod instance_definition {
     }
     
     
-}
-impl InstanceDefinition {
-    /// Creates a new builder-style object to manufacture [`InstanceDefinition`](crate::model::InstanceDefinition).
-    pub fn builder() -> crate::model::instance_definition::Builder {
-        crate::model::instance_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GameServerGroupInstanceType`, it is important to ensure
@@ -3929,6 +3943,13 @@ impl GameServer {
         self.last_health_check_time.as_ref()
     }
 }
+impl GameServer {
+    /// Creates a new builder-style object to manufacture [`GameServer`](crate::model::GameServer).
+    pub fn builder() -> crate::model::game_server::Builder {
+        crate::model::game_server::Builder::default()
+    }
+}
+
 /// See [`GameServer`](crate::model::GameServer).
 pub mod game_server {
     
@@ -4086,12 +4107,6 @@ pub mod game_server {
     }
     
     
-}
-impl GameServer {
-    /// Creates a new builder-style object to manufacture [`GameServer`](crate::model::GameServer).
-    pub fn builder() -> crate::model::game_server::Builder {
-        crate::model::game_server::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GameServerUtilizationStatus`, it is important to ensure
@@ -4369,6 +4384,13 @@ impl IpPermission {
         self.protocol.as_ref()
     }
 }
+impl IpPermission {
+    /// Creates a new builder-style object to manufacture [`IpPermission`](crate::model::IpPermission).
+    pub fn builder() -> crate::model::ip_permission::Builder {
+        crate::model::ip_permission::Builder::default()
+    }
+}
+
 /// See [`IpPermission`](crate::model::IpPermission).
 pub mod ip_permission {
     
@@ -4438,12 +4460,6 @@ pub mod ip_permission {
     }
     
     
-}
-impl IpPermission {
-    /// Creates a new builder-style object to manufacture [`IpPermission`](crate::model::IpPermission).
-    pub fn builder() -> crate::model::ip_permission::Builder {
-        crate::model::ip_permission::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IpProtocol`, it is important to ensure
@@ -4542,6 +4558,13 @@ impl AnywhereConfiguration {
         self.cost.as_deref()
     }
 }
+impl AnywhereConfiguration {
+    /// Creates a new builder-style object to manufacture [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
+    pub fn builder() -> crate::model::anywhere_configuration::Builder {
+        crate::model::anywhere_configuration::Builder::default()
+    }
+}
+
 /// See [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
 pub mod anywhere_configuration {
     
@@ -4572,12 +4595,6 @@ pub mod anywhere_configuration {
     
     
 }
-impl AnywhereConfiguration {
-    /// Creates a new builder-style object to manufacture [`AnywhereConfiguration`](crate::model::AnywhereConfiguration).
-    pub fn builder() -> crate::model::anywhere_configuration::Builder {
-        crate::model::anywhere_configuration::Builder::default()
-    }
-}
 
 /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p> 
 /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
@@ -4603,6 +4620,13 @@ impl ResourceCreationLimitPolicy {
         self.policy_period_in_minutes
     }
 }
+impl ResourceCreationLimitPolicy {
+    /// Creates a new builder-style object to manufacture [`ResourceCreationLimitPolicy`](crate::model::ResourceCreationLimitPolicy).
+    pub fn builder() -> crate::model::resource_creation_limit_policy::Builder {
+        crate::model::resource_creation_limit_policy::Builder::default()
+    }
+}
+
 /// See [`ResourceCreationLimitPolicy`](crate::model::ResourceCreationLimitPolicy).
 pub mod resource_creation_limit_policy {
     
@@ -4646,12 +4670,6 @@ pub mod resource_creation_limit_policy {
     }
     
     
-}
-impl ResourceCreationLimitPolicy {
-    /// Creates a new builder-style object to manufacture [`ResourceCreationLimitPolicy`](crate::model::ResourceCreationLimitPolicy).
-    pub fn builder() -> crate::model::resource_creation_limit_policy::Builder {
-        crate::model::resource_creation_limit_policy::Builder::default()
-    }
 }
 
 /// <p>Properties describing a custom game build.</p> 
@@ -4743,6 +4761,13 @@ impl Build {
         self.server_sdk_version.as_deref()
     }
 }
+impl Build {
+    /// Creates a new builder-style object to manufacture [`Build`](crate::model::Build).
+    pub fn builder() -> crate::model::build::Builder {
+        crate::model::build::Builder::default()
+    }
+}
+
 /// See [`Build`](crate::model::Build).
 pub mod build {
     
@@ -4886,12 +4911,6 @@ pub mod build {
     }
     
     
-}
-impl Build {
-    /// Creates a new builder-style object to manufacture [`Build`](crate::model::Build).
-    pub fn builder() -> crate::model::build::Builder {
-        crate::model::build::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperatingSystem`, it is important to ensure
@@ -5132,6 +5151,13 @@ impl Alias {
         self.last_updated_time.as_ref()
     }
 }
+impl Alias {
+    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
+    pub fn builder() -> crate::model::alias::Builder {
+        crate::model::alias::Builder::default()
+    }
+}
+
 /// See [`Alias`](crate::model::Alias).
 pub mod alias {
     
@@ -5240,12 +5266,6 @@ pub mod alias {
     
     
 }
-impl Alias {
-    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
-    pub fn builder() -> crate::model::alias::Builder {
-        crate::model::alias::Builder::default()
-    }
-}
 
 /// <p>The routing configuration for a fleet alias.</p> 
 /// <p> <b>Related actions</b> </p> 
@@ -5287,6 +5307,13 @@ impl RoutingStrategy {
         self.message.as_deref()
     }
 }
+impl RoutingStrategy {
+    /// Creates a new builder-style object to manufacture [`RoutingStrategy`](crate::model::RoutingStrategy).
+    pub fn builder() -> crate::model::routing_strategy::Builder {
+        crate::model::routing_strategy::Builder::default()
+    }
+}
+
 /// See [`RoutingStrategy`](crate::model::RoutingStrategy).
 pub mod routing_strategy {
     
@@ -5350,12 +5377,6 @@ pub mod routing_strategy {
     }
     
     
-}
-impl RoutingStrategy {
-    /// Creates a new builder-style object to manufacture [`RoutingStrategy`](crate::model::RoutingStrategy).
-    pub fn builder() -> crate::model::routing_strategy::Builder {
-        crate::model::routing_strategy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RoutingStrategyType`, it is important to ensure
@@ -5466,6 +5487,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -5507,12 +5535,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>This object includes the full details of the original request plus the current status and start/end time stamps.</p>
@@ -5690,6 +5712,13 @@ impl GameSessionPlacement {
         self.matchmaker_data.as_deref()
     }
 }
+impl GameSessionPlacement {
+    /// Creates a new builder-style object to manufacture [`GameSessionPlacement`](crate::model::GameSessionPlacement).
+    pub fn builder() -> crate::model::game_session_placement::Builder {
+        crate::model::game_session_placement::Builder::default()
+    }
+}
+
 /// See [`GameSessionPlacement`](crate::model::GameSessionPlacement).
 pub mod game_session_placement {
     
@@ -5984,12 +6013,6 @@ pub mod game_session_placement {
     
     
 }
-impl GameSessionPlacement {
-    /// Creates a new builder-style object to manufacture [`GameSessionPlacement`](crate::model::GameSessionPlacement).
-    pub fn builder() -> crate::model::game_session_placement::Builder {
-        crate::model::game_session_placement::Builder::default()
-    }
-}
 
 /// <p>Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.</p>
 #[non_exhaustive]
@@ -6012,6 +6035,13 @@ impl PlacedPlayerSession {
         self.player_session_id.as_deref()
     }
 }
+impl PlacedPlayerSession {
+    /// Creates a new builder-style object to manufacture [`PlacedPlayerSession`](crate::model::PlacedPlayerSession).
+    pub fn builder() -> crate::model::placed_player_session::Builder {
+        crate::model::placed_player_session::Builder::default()
+    }
+}
+
 /// See [`PlacedPlayerSession`](crate::model::PlacedPlayerSession).
 pub mod placed_player_session {
     
@@ -6054,12 +6084,6 @@ pub mod placed_player_session {
     
     
 }
-impl PlacedPlayerSession {
-    /// Creates a new builder-style object to manufacture [`PlacedPlayerSession`](crate::model::PlacedPlayerSession).
-    pub fn builder() -> crate::model::placed_player_session::Builder {
-        crate::model::placed_player_session::Builder::default()
-    }
-}
 
 /// <p>Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. </p>
 #[non_exhaustive]
@@ -6089,6 +6113,13 @@ impl PlayerLatency {
         self.latency_in_milliseconds
     }
 }
+impl PlayerLatency {
+    /// Creates a new builder-style object to manufacture [`PlayerLatency`](crate::model::PlayerLatency).
+    pub fn builder() -> crate::model::player_latency::Builder {
+        crate::model::player_latency::Builder::default()
+    }
+}
+
 /// See [`PlayerLatency`](crate::model::PlayerLatency).
 pub mod player_latency {
     
@@ -6143,12 +6174,6 @@ pub mod player_latency {
     }
     
     
-}
-impl PlayerLatency {
-    /// Creates a new builder-style object to manufacture [`PlayerLatency`](crate::model::PlayerLatency).
-    pub fn builder() -> crate::model::player_latency::Builder {
-        crate::model::player_latency::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GameSessionPlacementState`, it is important to ensure
@@ -6433,6 +6458,13 @@ impl MatchmakingTicket {
         self.estimated_wait_time
     }
 }
+impl MatchmakingTicket {
+    /// Creates a new builder-style object to manufacture [`MatchmakingTicket`](crate::model::MatchmakingTicket).
+    pub fn builder() -> crate::model::matchmaking_ticket::Builder {
+        crate::model::matchmaking_ticket::Builder::default()
+    }
+}
+
 /// See [`MatchmakingTicket`](crate::model::MatchmakingTicket).
 pub mod matchmaking_ticket {
     
@@ -6613,12 +6645,6 @@ pub mod matchmaking_ticket {
     
     
 }
-impl MatchmakingTicket {
-    /// Creates a new builder-style object to manufacture [`MatchmakingTicket`](crate::model::MatchmakingTicket).
-    pub fn builder() -> crate::model::matchmaking_ticket::Builder {
-        crate::model::matchmaking_ticket::Builder::default()
-    }
-}
 
 /// <p>Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.</p>
 #[non_exhaustive]
@@ -6690,6 +6716,13 @@ impl GameSessionConnectionInfo {
         self.matched_player_sessions.as_deref()
     }
 }
+impl GameSessionConnectionInfo {
+    /// Creates a new builder-style object to manufacture [`GameSessionConnectionInfo`](crate::model::GameSessionConnectionInfo).
+    pub fn builder() -> crate::model::game_session_connection_info::Builder {
+        crate::model::game_session_connection_info::Builder::default()
+    }
+}
+
 /// See [`GameSessionConnectionInfo`](crate::model::GameSessionConnectionInfo).
 pub mod game_session_connection_info {
     
@@ -6802,12 +6835,6 @@ pub mod game_session_connection_info {
     
     
 }
-impl GameSessionConnectionInfo {
-    /// Creates a new builder-style object to manufacture [`GameSessionConnectionInfo`](crate::model::GameSessionConnectionInfo).
-    pub fn builder() -> crate::model::game_session_connection_info::Builder {
-        crate::model::game_session_connection_info::Builder::default()
-    }
-}
 
 /// <p>Represents a new player session that is created as a result of a successful FlexMatch match. A successful match automatically creates new player sessions for every player ID in the original matchmaking request. </p> 
 /// <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p>
@@ -6831,6 +6858,13 @@ impl MatchedPlayerSession {
         self.player_session_id.as_deref()
     }
 }
+impl MatchedPlayerSession {
+    /// Creates a new builder-style object to manufacture [`MatchedPlayerSession`](crate::model::MatchedPlayerSession).
+    pub fn builder() -> crate::model::matched_player_session::Builder {
+        crate::model::matched_player_session::Builder::default()
+    }
+}
+
 /// See [`MatchedPlayerSession`](crate::model::MatchedPlayerSession).
 pub mod matched_player_session {
     
@@ -6873,12 +6907,6 @@ pub mod matched_player_session {
     
     
 }
-impl MatchedPlayerSession {
-    /// Creates a new builder-style object to manufacture [`MatchedPlayerSession`](crate::model::MatchedPlayerSession).
-    pub fn builder() -> crate::model::matched_player_session::Builder {
-        crate::model::matched_player_session::Builder::default()
-    }
-}
 
 /// <p>Represents a player in matchmaking. When starting a matchmaking request, a player has a player ID, attributes, and may have latency data. Team information is added after a match has been successfully completed.</p>
 #[non_exhaustive]
@@ -6919,6 +6947,13 @@ impl Player {
         self.latency_in_ms.as_ref()
     }
 }
+impl Player {
+    /// Creates a new builder-style object to manufacture [`Player`](crate::model::Player).
+    pub fn builder() -> crate::model::player::Builder {
+        crate::model::player::Builder::default()
+    }
+}
+
 /// See [`Player`](crate::model::Player).
 pub mod player {
     
@@ -7001,12 +7036,6 @@ pub mod player {
     
     
 }
-impl Player {
-    /// Creates a new builder-style object to manufacture [`Player`](crate::model::Player).
-    pub fn builder() -> crate::model::player::Builder {
-        crate::model::player::Builder::default()
-    }
-}
 
 /// <p>Values for use in player attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.</p>
 #[non_exhaustive]
@@ -7043,6 +7072,13 @@ impl AttributeValue {
         self.sdm.as_ref()
     }
 }
+impl AttributeValue {
+    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
+    pub fn builder() -> crate::model::attribute_value::Builder {
+        crate::model::attribute_value::Builder::default()
+    }
+}
+
 /// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
     
@@ -7120,12 +7156,6 @@ pub mod attribute_value {
     }
     
     
-}
-impl AttributeValue {
-    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
-    pub fn builder() -> crate::model::attribute_value::Builder {
-        crate::model::attribute_value::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MatchmakingConfigurationStatus`, it is important to ensure
@@ -7261,6 +7291,13 @@ impl DesiredPlayerSession {
         self.player_data.as_deref()
     }
 }
+impl DesiredPlayerSession {
+    /// Creates a new builder-style object to manufacture [`DesiredPlayerSession`](crate::model::DesiredPlayerSession).
+    pub fn builder() -> crate::model::desired_player_session::Builder {
+        crate::model::desired_player_session::Builder::default()
+    }
+}
+
 /// See [`DesiredPlayerSession`](crate::model::DesiredPlayerSession).
 pub mod desired_player_session {
     
@@ -7303,12 +7340,6 @@ pub mod desired_player_session {
     
     
 }
-impl DesiredPlayerSession {
-    /// Creates a new builder-style object to manufacture [`DesiredPlayerSession`](crate::model::DesiredPlayerSession).
-    pub fn builder() -> crate::model::desired_player_session::Builder {
-        crate::model::desired_player_session::Builder::default()
-    }
-}
 
 /// <p>Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
 #[non_exhaustive]
@@ -7347,6 +7378,13 @@ impl  std::fmt::Debug for AwsCredentials  {
         formatter.finish()
     }
 }
+impl AwsCredentials {
+    /// Creates a new builder-style object to manufacture [`AwsCredentials`](crate::model::AwsCredentials).
+    pub fn builder() -> crate::model::aws_credentials::Builder {
+        crate::model::aws_credentials::Builder::default()
+    }
+}
+
 /// See [`AwsCredentials`](crate::model::AwsCredentials).
 pub mod aws_credentials {
     
@@ -7409,12 +7447,6 @@ pub mod aws_credentials {
     }
     
     
-}
-impl AwsCredentials {
-    /// Creates a new builder-style object to manufacture [`AwsCredentials`](crate::model::AwsCredentials).
-    pub fn builder() -> crate::model::aws_credentials::Builder {
-        crate::model::aws_credentials::Builder::default()
-    }
 }
 
 /// <p>Resources used to host your game servers. A compute resource can be managed GameLift Amazon EC2 instances or your own resources.</p>
@@ -7508,6 +7540,13 @@ impl Compute {
         self.game_lift_service_sdk_endpoint.as_deref()
     }
 }
+impl Compute {
+    /// Creates a new builder-style object to manufacture [`Compute`](crate::model::Compute).
+    pub fn builder() -> crate::model::compute::Builder {
+        crate::model::compute::Builder::default()
+    }
+}
+
 /// See [`Compute`](crate::model::Compute).
 pub mod compute {
     
@@ -7669,12 +7708,6 @@ pub mod compute {
     }
     
     
-}
-impl Compute {
-    /// Creates a new builder-style object to manufacture [`Compute`](crate::model::Compute).
-    pub fn builder() -> crate::model::compute::Builder {
-        crate::model::compute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Ec2InstanceType`, it is important to ensure
@@ -8420,6 +8453,13 @@ impl TargetConfiguration {
         self.target_value
     }
 }
+impl TargetConfiguration {
+    /// Creates a new builder-style object to manufacture [`TargetConfiguration`](crate::model::TargetConfiguration).
+    pub fn builder() -> crate::model::target_configuration::Builder {
+        crate::model::target_configuration::Builder::default()
+    }
+}
+
 /// See [`TargetConfiguration`](crate::model::TargetConfiguration).
 pub mod target_configuration {
     
@@ -8450,12 +8490,6 @@ pub mod target_configuration {
     }
     
     
-}
-impl TargetConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetConfiguration`](crate::model::TargetConfiguration).
-    pub fn builder() -> crate::model::target_configuration::Builder {
-        crate::model::target_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PolicyType`, it is important to ensure
@@ -8878,6 +8912,13 @@ impl LocationModel {
         self.location_arn.as_deref()
     }
 }
+impl LocationModel {
+    /// Creates a new builder-style object to manufacture [`LocationModel`](crate::model::LocationModel).
+    pub fn builder() -> crate::model::location_model::Builder {
+        crate::model::location_model::Builder::default()
+    }
+}
+
 /// See [`LocationModel`](crate::model::LocationModel).
 pub mod location_model {
     
@@ -8925,12 +8966,6 @@ pub mod location_model {
     }
     
     
-}
-impl LocationModel {
-    /// Creates a new builder-style object to manufacture [`LocationModel`](crate::model::LocationModel).
-    pub fn builder() -> crate::model::location_model::Builder {
-        crate::model::location_model::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LocationFilter`, it is important to ensure
@@ -9150,6 +9185,13 @@ impl  std::fmt::Debug for InstanceAccess  {
         formatter.finish()
     }
 }
+impl InstanceAccess {
+    /// Creates a new builder-style object to manufacture [`InstanceAccess`](crate::model::InstanceAccess).
+    pub fn builder() -> crate::model::instance_access::Builder {
+        crate::model::instance_access::Builder::default()
+    }
+}
+
 /// See [`InstanceAccess`](crate::model::InstanceAccess).
 pub mod instance_access {
     
@@ -9239,12 +9281,6 @@ pub mod instance_access {
     
     
 }
-impl InstanceAccess {
-    /// Creates a new builder-style object to manufacture [`InstanceAccess`](crate::model::InstanceAccess).
-    pub fn builder() -> crate::model::instance_access::Builder {
-        crate::model::instance_access::Builder::default()
-    }
-}
 
 /// <p>Set of credentials required to remotely access a fleet instance.</p>
 #[non_exhaustive]
@@ -9275,6 +9311,13 @@ impl  std::fmt::Debug for InstanceCredentials  {
         formatter.finish()
     }
 }
+impl InstanceCredentials {
+    /// Creates a new builder-style object to manufacture [`InstanceCredentials`](crate::model::InstanceCredentials).
+    pub fn builder() -> crate::model::instance_credentials::Builder {
+        crate::model::instance_credentials::Builder::default()
+    }
+}
+
 /// See [`InstanceCredentials`](crate::model::InstanceCredentials).
 pub mod instance_credentials {
     
@@ -9324,12 +9367,6 @@ pub mod instance_credentials {
     }
     
     
-}
-impl InstanceCredentials {
-    /// Creates a new builder-style object to manufacture [`InstanceCredentials`](crate::model::InstanceCredentials).
-    pub fn builder() -> crate::model::instance_credentials::Builder {
-        crate::model::instance_credentials::Builder::default()
-    }
 }
 
 /// <p>Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.</p> 
@@ -9390,6 +9427,13 @@ impl VpcPeeringConnection {
         self.game_lift_vpc_id.as_deref()
     }
 }
+impl VpcPeeringConnection {
+    /// Creates a new builder-style object to manufacture [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
+    pub fn builder() -> crate::model::vpc_peering_connection::Builder {
+        crate::model::vpc_peering_connection::Builder::default()
+    }
+}
+
 /// See [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
 pub mod vpc_peering_connection {
     
@@ -9492,12 +9536,6 @@ pub mod vpc_peering_connection {
     
     
 }
-impl VpcPeeringConnection {
-    /// Creates a new builder-style object to manufacture [`VpcPeeringConnection`](crate::model::VpcPeeringConnection).
-    pub fn builder() -> crate::model::vpc_peering_connection::Builder {
-        crate::model::vpc_peering_connection::Builder::default()
-    }
-}
 
 /// <p>Represents status information for a VPC peering connection. Status codes and messages are provided from EC2 (see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>). Connection status information is also communicated as a fleet event.</p>
 #[non_exhaustive]
@@ -9520,6 +9558,13 @@ impl VpcPeeringConnectionStatus {
         self.message.as_deref()
     }
 }
+impl VpcPeeringConnectionStatus {
+    /// Creates a new builder-style object to manufacture [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
+    pub fn builder() -> crate::model::vpc_peering_connection_status::Builder {
+        crate::model::vpc_peering_connection_status::Builder::default()
+    }
+}
+
 /// See [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
 pub mod vpc_peering_connection_status {
     
@@ -9561,12 +9606,6 @@ pub mod vpc_peering_connection_status {
     }
     
     
-}
-impl VpcPeeringConnectionStatus {
-    /// Creates a new builder-style object to manufacture [`VpcPeeringConnectionStatus`](crate::model::VpcPeeringConnectionStatus).
-    pub fn builder() -> crate::model::vpc_peering_connection_status::Builder {
-        crate::model::vpc_peering_connection_status::Builder::default()
-    }
 }
 
 /// <p>Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.</p> 
@@ -9613,6 +9652,13 @@ impl VpcPeeringAuthorization {
         self.expiration_time.as_ref()
     }
 }
+impl VpcPeeringAuthorization {
+    /// Creates a new builder-style object to manufacture [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
+    pub fn builder() -> crate::model::vpc_peering_authorization::Builder {
+        crate::model::vpc_peering_authorization::Builder::default()
+    }
+}
+
 /// See [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
 pub mod vpc_peering_authorization {
     
@@ -9690,12 +9736,6 @@ pub mod vpc_peering_authorization {
     }
     
     
-}
-impl VpcPeeringAuthorization {
-    /// Creates a new builder-style object to manufacture [`VpcPeeringAuthorization`](crate::model::VpcPeeringAuthorization).
-    pub fn builder() -> crate::model::vpc_peering_authorization::Builder {
-        crate::model::vpc_peering_authorization::Builder::default()
-    }
 }
 
 /// <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.</p>
@@ -9863,6 +9903,13 @@ impl ScalingPolicy {
         self.location.as_deref()
     }
 }
+impl ScalingPolicy {
+    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
+    pub fn builder() -> crate::model::scaling_policy::Builder {
+        crate::model::scaling_policy::Builder::default()
+    }
+}
+
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
     
@@ -10110,12 +10157,6 @@ pub mod scaling_policy {
     }
     
     
-}
-impl ScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
-    pub fn builder() -> crate::model::scaling_policy::Builder {
-        crate::model::scaling_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LocationUpdateStatus`, it is important to ensure
@@ -10437,6 +10478,13 @@ impl PlayerSession {
         self.player_data.as_deref()
     }
 }
+impl PlayerSession {
+    /// Creates a new builder-style object to manufacture [`PlayerSession`](crate::model::PlayerSession).
+    pub fn builder() -> crate::model::player_session::Builder {
+        crate::model::player_session::Builder::default()
+    }
+}
+
 /// See [`PlayerSession`](crate::model::PlayerSession).
 pub mod player_session {
     
@@ -10641,12 +10689,6 @@ pub mod player_session {
     
     
 }
-impl PlayerSession {
-    /// Creates a new builder-style object to manufacture [`PlayerSession`](crate::model::PlayerSession).
-    pub fn builder() -> crate::model::player_session::Builder {
-        crate::model::player_session::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PlayerSessionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10790,6 +10832,13 @@ impl MatchmakingRuleSet {
         self.creation_time.as_ref()
     }
 }
+impl MatchmakingRuleSet {
+    /// Creates a new builder-style object to manufacture [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
+    pub fn builder() -> crate::model::matchmaking_rule_set::Builder {
+        crate::model::matchmaking_rule_set::Builder::default()
+    }
+}
+
 /// See [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
 pub mod matchmaking_rule_set {
     
@@ -10863,12 +10912,6 @@ pub mod matchmaking_rule_set {
     }
     
     
-}
-impl MatchmakingRuleSet {
-    /// Creates a new builder-style object to manufacture [`MatchmakingRuleSet`](crate::model::MatchmakingRuleSet).
-    pub fn builder() -> crate::model::matchmaking_rule_set::Builder {
-        crate::model::matchmaking_rule_set::Builder::default()
-    }
 }
 
 /// <p>Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet can contain zero or more instances.</p> 
@@ -10993,6 +11036,13 @@ impl Instance {
         self.location.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -11175,12 +11225,6 @@ pub mod instance {
     
     
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InstanceStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11298,6 +11342,13 @@ impl GameSessionDetail {
         self.protection_policy.as_ref()
     }
 }
+impl GameSessionDetail {
+    /// Creates a new builder-style object to manufacture [`GameSessionDetail`](crate::model::GameSessionDetail).
+    pub fn builder() -> crate::model::game_session_detail::Builder {
+        crate::model::game_session_detail::Builder::default()
+    }
+}
+
 /// See [`GameSessionDetail`](crate::model::GameSessionDetail).
 pub mod game_session_detail {
     
@@ -11348,12 +11399,6 @@ pub mod game_session_detail {
     
     
 }
-impl GameSessionDetail {
-    /// Creates a new builder-style object to manufacture [`GameSessionDetail`](crate::model::GameSessionDetail).
-    pub fn builder() -> crate::model::game_session_detail::Builder {
-        crate::model::game_session_detail::Builder::default()
-    }
-}
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
 /// <p> Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. </p> 
@@ -11392,6 +11437,13 @@ impl GameServerInstance {
         self.instance_status.as_ref()
     }
 }
+impl GameServerInstance {
+    /// Creates a new builder-style object to manufacture [`GameServerInstance`](crate::model::GameServerInstance).
+    pub fn builder() -> crate::model::game_server_instance::Builder {
+        crate::model::game_server_instance::Builder::default()
+    }
+}
+
 /// See [`GameServerInstance`](crate::model::GameServerInstance).
 pub mod game_server_instance {
     
@@ -11457,12 +11509,6 @@ pub mod game_server_instance {
     }
     
     
-}
-impl GameServerInstance {
-    /// Creates a new builder-style object to manufacture [`GameServerInstance`](crate::model::GameServerInstance).
-    pub fn builder() -> crate::model::game_server_instance::Builder {
-        crate::model::game_server_instance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GameServerInstanceStatus`, it is important to ensure
@@ -11615,6 +11661,13 @@ impl FleetUtilization {
         self.location.as_deref()
     }
 }
+impl FleetUtilization {
+    /// Creates a new builder-style object to manufacture [`FleetUtilization`](crate::model::FleetUtilization).
+    pub fn builder() -> crate::model::fleet_utilization::Builder {
+        crate::model::fleet_utilization::Builder::default()
+    }
+}
+
 /// See [`FleetUtilization`](crate::model::FleetUtilization).
 pub mod fleet_utilization {
     
@@ -11723,12 +11776,6 @@ pub mod fleet_utilization {
     
     
 }
-impl FleetUtilization {
-    /// Creates a new builder-style object to manufacture [`FleetUtilization`](crate::model::FleetUtilization).
-    pub fn builder() -> crate::model::fleet_utilization::Builder {
-        crate::model::fleet_utilization::Builder::default()
-    }
-}
 
 /// <p>Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region. </p> 
 /// <p> <b>Related actions</b> </p> 
@@ -11780,6 +11827,13 @@ impl FleetCapacity {
         self.location.as_deref()
     }
 }
+impl FleetCapacity {
+    /// Creates a new builder-style object to manufacture [`FleetCapacity`](crate::model::FleetCapacity).
+    pub fn builder() -> crate::model::fleet_capacity::Builder {
+        crate::model::fleet_capacity::Builder::default()
+    }
+}
+
 /// See [`FleetCapacity`](crate::model::FleetCapacity).
 pub mod fleet_capacity {
     
@@ -11864,12 +11918,6 @@ pub mod fleet_capacity {
     
     
 }
-impl FleetCapacity {
-    /// Creates a new builder-style object to manufacture [`FleetCapacity`](crate::model::FleetCapacity).
-    pub fn builder() -> crate::model::fleet_capacity::Builder {
-        crate::model::fleet_capacity::Builder::default()
-    }
-}
 
 /// <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.</p>
 #[non_exhaustive]
@@ -11927,6 +11975,13 @@ impl Ec2InstanceCounts {
         self.terminating
     }
 }
+impl Ec2InstanceCounts {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceCounts`](crate::model::Ec2InstanceCounts).
+    pub fn builder() -> crate::model::ec2_instance_counts::Builder {
+        crate::model::ec2_instance_counts::Builder::default()
+    }
+}
+
 /// See [`Ec2InstanceCounts`](crate::model::Ec2InstanceCounts).
 pub mod ec2_instance_counts {
     
@@ -12029,12 +12084,6 @@ pub mod ec2_instance_counts {
     
     
 }
-impl Ec2InstanceCounts {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceCounts`](crate::model::Ec2InstanceCounts).
-    pub fn builder() -> crate::model::ec2_instance_counts::Builder {
-        crate::model::ec2_instance_counts::Builder::default()
-    }
-}
 
 /// <p>Details about a location in a multi-location fleet.</p>
 #[non_exhaustive]
@@ -12064,6 +12113,13 @@ impl LocationAttributes {
         self.update_status.as_ref()
     }
 }
+impl LocationAttributes {
+    /// Creates a new builder-style object to manufacture [`LocationAttributes`](crate::model::LocationAttributes).
+    pub fn builder() -> crate::model::location_attributes::Builder {
+        crate::model::location_attributes::Builder::default()
+    }
+}
+
 /// See [`LocationAttributes`](crate::model::LocationAttributes).
 pub mod location_attributes {
     
@@ -12124,12 +12180,6 @@ pub mod location_attributes {
     
     
 }
-impl LocationAttributes {
-    /// Creates a new builder-style object to manufacture [`LocationAttributes`](crate::model::LocationAttributes).
-    pub fn builder() -> crate::model::location_attributes::Builder {
-        crate::model::location_attributes::Builder::default()
-    }
-}
 
 /// <p>A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet.</p> 
 /// <ul> 
@@ -12161,6 +12211,13 @@ impl LocationState {
         self.status.as_ref()
     }
 }
+impl LocationState {
+    /// Creates a new builder-style object to manufacture [`LocationState`](crate::model::LocationState).
+    pub fn builder() -> crate::model::location_state::Builder {
+        crate::model::location_state::Builder::default()
+    }
+}
+
 /// See [`LocationState`](crate::model::LocationState).
 pub mod location_state {
     
@@ -12202,12 +12259,6 @@ pub mod location_state {
     }
     
     
-}
-impl LocationState {
-    /// Creates a new builder-style object to manufacture [`LocationState`](crate::model::LocationState).
-    pub fn builder() -> crate::model::location_state::Builder {
-        crate::model::location_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FleetStatus`, it is important to ensure
@@ -12489,6 +12540,13 @@ impl Event {
         self.pre_signed_log_url.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -12686,12 +12744,6 @@ pub mod event {
     }
     
     
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventCode`, it is important to ensure
@@ -13151,6 +13203,13 @@ impl FleetAttributes {
         self.anywhere_configuration.as_ref()
     }
 }
+impl FleetAttributes {
+    /// Creates a new builder-style object to manufacture [`FleetAttributes`](crate::model::FleetAttributes).
+    pub fn builder() -> crate::model::fleet_attributes::Builder {
+        crate::model::fleet_attributes::Builder::default()
+    }
+}
+
 /// See [`FleetAttributes`](crate::model::FleetAttributes).
 pub mod fleet_attributes {
     
@@ -13519,12 +13578,6 @@ pub mod fleet_attributes {
     
     
 }
-impl FleetAttributes {
-    /// Creates a new builder-style object to manufacture [`FleetAttributes`](crate::model::FleetAttributes).
-    pub fn builder() -> crate::model::fleet_attributes::Builder {
-        crate::model::fleet_attributes::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ComputeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -13632,6 +13685,13 @@ impl CertificateConfiguration {
         self.certificate_type.as_ref()
     }
 }
+impl CertificateConfiguration {
+    /// Creates a new builder-style object to manufacture [`CertificateConfiguration`](crate::model::CertificateConfiguration).
+    pub fn builder() -> crate::model::certificate_configuration::Builder {
+        crate::model::certificate_configuration::Builder::default()
+    }
+}
+
 /// See [`CertificateConfiguration`](crate::model::CertificateConfiguration).
 pub mod certificate_configuration {
     
@@ -13671,12 +13731,6 @@ pub mod certificate_configuration {
     }
     
     
-}
-impl CertificateConfiguration {
-    /// Creates a new builder-style object to manufacture [`CertificateConfiguration`](crate::model::CertificateConfiguration).
-    pub fn builder() -> crate::model::certificate_configuration::Builder {
-        crate::model::certificate_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CertificateType`, it is important to ensure
@@ -13878,6 +13932,13 @@ impl Ec2InstanceLimit {
         self.location.as_deref()
     }
 }
+impl Ec2InstanceLimit {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceLimit`](crate::model::Ec2InstanceLimit).
+    pub fn builder() -> crate::model::ec2_instance_limit::Builder {
+        crate::model::ec2_instance_limit::Builder::default()
+    }
+}
+
 /// See [`Ec2InstanceLimit`](crate::model::Ec2InstanceLimit).
 pub mod ec2_instance_limit {
     
@@ -13943,12 +14004,6 @@ pub mod ec2_instance_limit {
     }
     
     
-}
-impl Ec2InstanceLimit {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceLimit`](crate::model::Ec2InstanceLimit).
-    pub fn builder() -> crate::model::ec2_instance_limit::Builder {
-        crate::model::ec2_instance_limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GameServerGroupDeleteOption`, it is important to ensure
@@ -14060,6 +14115,13 @@ impl GameServerGroupAutoScalingPolicy {
         self.target_tracking_configuration.as_ref()
     }
 }
+impl GameServerGroupAutoScalingPolicy {
+    /// Creates a new builder-style object to manufacture [`GameServerGroupAutoScalingPolicy`](crate::model::GameServerGroupAutoScalingPolicy).
+    pub fn builder() -> crate::model::game_server_group_auto_scaling_policy::Builder {
+        crate::model::game_server_group_auto_scaling_policy::Builder::default()
+    }
+}
+
 /// See [`GameServerGroupAutoScalingPolicy`](crate::model::GameServerGroupAutoScalingPolicy).
 pub mod game_server_group_auto_scaling_policy {
     
@@ -14102,12 +14164,6 @@ pub mod game_server_group_auto_scaling_policy {
     
     
 }
-impl GameServerGroupAutoScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`GameServerGroupAutoScalingPolicy`](crate::model::GameServerGroupAutoScalingPolicy).
-    pub fn builder() -> crate::model::game_server_group_auto_scaling_policy::Builder {
-        crate::model::game_server_group_auto_scaling_policy::Builder::default()
-    }
-}
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
 /// <p>Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value. </p>
@@ -14124,6 +14180,13 @@ impl TargetTrackingConfiguration {
         self.target_value
     }
 }
+impl TargetTrackingConfiguration {
+    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
+    pub fn builder() -> crate::model::target_tracking_configuration::Builder {
+        crate::model::target_tracking_configuration::Builder::default()
+    }
+}
+
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
 pub mod target_tracking_configuration {
     
@@ -14153,12 +14216,6 @@ pub mod target_tracking_configuration {
     }
     
     
-}
-impl TargetTrackingConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
-    pub fn builder() -> crate::model::target_tracking_configuration::Builder {
-        crate::model::target_tracking_configuration::Builder::default()
-    }
 }
 
 /// <p> <b>This data type is used with the GameLift FleetIQ and game server groups.</b> </p> 
@@ -14190,6 +14247,13 @@ impl LaunchTemplateSpecification {
         self.version.as_deref()
     }
 }
+impl LaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
+    pub fn builder() -> crate::model::launch_template_specification::Builder {
+        crate::model::launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
 pub mod launch_template_specification {
     
@@ -14244,12 +14308,6 @@ pub mod launch_template_specification {
     
     
 }
-impl LaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
-    pub fn builder() -> crate::model::launch_template_specification::Builder {
-        crate::model::launch_template_specification::Builder::default()
-    }
-}
 
 /// <p>A remote location where a multi-location fleet can deploy EC2 instances for game hosting. </p>
 #[non_exhaustive]
@@ -14265,6 +14323,13 @@ impl LocationConfiguration {
         self.location.as_deref()
     }
 }
+impl LocationConfiguration {
+    /// Creates a new builder-style object to manufacture [`LocationConfiguration`](crate::model::LocationConfiguration).
+    pub fn builder() -> crate::model::location_configuration::Builder {
+        crate::model::location_configuration::Builder::default()
+    }
+}
+
 /// See [`LocationConfiguration`](crate::model::LocationConfiguration).
 pub mod location_configuration {
     
@@ -14294,12 +14359,6 @@ pub mod location_configuration {
     }
     
     
-}
-impl LocationConfiguration {
-    /// Creates a new builder-style object to manufacture [`LocationConfiguration`](crate::model::LocationConfiguration).
-    pub fn builder() -> crate::model::location_configuration::Builder {
-        crate::model::location_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AcceptanceType`, it is important to ensure

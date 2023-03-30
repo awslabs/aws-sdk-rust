@@ -84,6 +84,13 @@ impl SavingsPlanOffering {
         self.properties.as_deref()
     }
 }
+impl SavingsPlanOffering {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
+    pub fn builder() -> crate::model::savings_plan_offering::Builder {
+        crate::model::savings_plan_offering::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
 pub mod savings_plan_offering {
     
@@ -247,12 +254,6 @@ pub mod savings_plan_offering {
     
     
 }
-impl SavingsPlanOffering {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
-    pub fn builder() -> crate::model::savings_plan_offering::Builder {
-        crate::model::savings_plan_offering::Builder::default()
-    }
-}
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
@@ -275,6 +276,13 @@ impl SavingsPlanOfferingProperty {
         self.value.as_deref()
     }
 }
+impl SavingsPlanOfferingProperty {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
+    pub fn builder() -> crate::model::savings_plan_offering_property::Builder {
+        crate::model::savings_plan_offering_property::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
 pub mod savings_plan_offering_property {
     
@@ -316,12 +324,6 @@ pub mod savings_plan_offering_property {
     }
     
     
-}
-impl SavingsPlanOfferingProperty {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
-    pub fn builder() -> crate::model::savings_plan_offering_property::Builder {
-        crate::model::savings_plan_offering_property::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlanOfferingPropertyKey`, it is important to ensure
@@ -775,6 +777,13 @@ impl SavingsPlanOfferingFilterElement {
         self.values.as_deref()
     }
 }
+impl SavingsPlanOfferingFilterElement {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
+    pub fn builder() -> crate::model::savings_plan_offering_filter_element::Builder {
+        crate::model::savings_plan_offering_filter_element::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
 pub mod savings_plan_offering_filter_element {
     
@@ -822,12 +831,6 @@ pub mod savings_plan_offering_filter_element {
     }
     
     
-}
-impl SavingsPlanOfferingFilterElement {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
-    pub fn builder() -> crate::model::savings_plan_offering_filter_element::Builder {
-        crate::model::savings_plan_offering_filter_element::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlanOfferingFilterAttribute`, it is important to ensure
@@ -975,6 +978,13 @@ impl SavingsPlanOfferingRate {
         self.properties.as_deref()
     }
 }
+impl SavingsPlanOfferingRate {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
+    pub fn builder() -> crate::model::savings_plan_offering_rate::Builder {
+        crate::model::savings_plan_offering_rate::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
 pub mod savings_plan_offering_rate {
     
@@ -1095,12 +1105,6 @@ pub mod savings_plan_offering_rate {
     
     
 }
-impl SavingsPlanOfferingRate {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
-    pub fn builder() -> crate::model::savings_plan_offering_rate::Builder {
-        crate::model::savings_plan_offering_rate::Builder::default()
-    }
-}
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
@@ -1123,6 +1127,13 @@ impl SavingsPlanOfferingRateProperty {
         self.value.as_deref()
     }
 }
+impl SavingsPlanOfferingRateProperty {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
+    pub fn builder() -> crate::model::savings_plan_offering_rate_property::Builder {
+        crate::model::savings_plan_offering_rate_property::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
 pub mod savings_plan_offering_rate_property {
     
@@ -1164,12 +1175,6 @@ pub mod savings_plan_offering_rate_property {
     }
     
     
-}
-impl SavingsPlanOfferingRateProperty {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
-    pub fn builder() -> crate::model::savings_plan_offering_rate_property::Builder {
-        crate::model::savings_plan_offering_rate_property::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlanRateServiceCode`, it is important to ensure
@@ -1405,6 +1410,13 @@ impl ParentSavingsPlanOffering {
         self.plan_description.as_deref()
     }
 }
+impl ParentSavingsPlanOffering {
+    /// Creates a new builder-style object to manufacture [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
+    pub fn builder() -> crate::model::parent_savings_plan_offering::Builder {
+        crate::model::parent_savings_plan_offering::Builder::default()
+    }
+}
+
 /// See [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
 pub mod parent_savings_plan_offering {
     
@@ -1496,12 +1508,6 @@ pub mod parent_savings_plan_offering {
     
     
 }
-impl ParentSavingsPlanOffering {
-    /// Creates a new builder-style object to manufacture [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
-    pub fn builder() -> crate::model::parent_savings_plan_offering::Builder {
-        crate::model::parent_savings_plan_offering::Builder::default()
-    }
-}
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
@@ -1524,6 +1530,13 @@ impl SavingsPlanOfferingRateFilterElement {
         self.values.as_deref()
     }
 }
+impl SavingsPlanOfferingRateFilterElement {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
+    pub fn builder() -> crate::model::savings_plan_offering_rate_filter_element::Builder {
+        crate::model::savings_plan_offering_rate_filter_element::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
 pub mod savings_plan_offering_rate_filter_element {
     
@@ -1571,12 +1584,6 @@ pub mod savings_plan_offering_rate_filter_element {
     }
     
     
-}
-impl SavingsPlanOfferingRateFilterElement {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
-    pub fn builder() -> crate::model::savings_plan_offering_rate_filter_element::Builder {
-        crate::model::savings_plan_offering_rate_filter_element::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlanRateFilterAttribute`, it is important to ensure
@@ -1814,6 +1821,13 @@ impl SavingsPlan {
         self.tags.as_ref()
     }
 }
+impl SavingsPlan {
+    /// Creates a new builder-style object to manufacture [`SavingsPlan`](crate::model::SavingsPlan).
+    pub fn builder() -> crate::model::savings_plan::Builder {
+        crate::model::savings_plan::Builder::default()
+    }
+}
+
 /// See [`SavingsPlan`](crate::model::SavingsPlan).
 pub mod savings_plan {
     
@@ -2061,12 +2075,6 @@ pub mod savings_plan {
     
     
 }
-impl SavingsPlan {
-    /// Creates a new builder-style object to manufacture [`SavingsPlan`](crate::model::SavingsPlan).
-    pub fn builder() -> crate::model::savings_plan::Builder {
-        crate::model::savings_plan::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SavingsPlanState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2191,6 +2199,13 @@ impl SavingsPlanFilter {
         self.values.as_deref()
     }
 }
+impl SavingsPlanFilter {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
+    pub fn builder() -> crate::model::savings_plan_filter::Builder {
+        crate::model::savings_plan_filter::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
 pub mod savings_plan_filter {
     
@@ -2238,12 +2253,6 @@ pub mod savings_plan_filter {
     }
     
     
-}
-impl SavingsPlanFilter {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
-    pub fn builder() -> crate::model::savings_plan_filter::Builder {
-        crate::model::savings_plan_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlansFilterName`, it is important to ensure
@@ -2426,6 +2435,13 @@ impl SavingsPlanRate {
         self.properties.as_deref()
     }
 }
+impl SavingsPlanRate {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanRate`](crate::model::SavingsPlanRate).
+    pub fn builder() -> crate::model::savings_plan_rate::Builder {
+        crate::model::savings_plan_rate::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanRate`](crate::model::SavingsPlanRate).
 pub mod savings_plan_rate {
     
@@ -2546,12 +2562,6 @@ pub mod savings_plan_rate {
     
     
 }
-impl SavingsPlanRate {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanRate`](crate::model::SavingsPlanRate).
-    pub fn builder() -> crate::model::savings_plan_rate::Builder {
-        crate::model::savings_plan_rate::Builder::default()
-    }
-}
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
@@ -2574,6 +2584,13 @@ impl SavingsPlanRateProperty {
         self.value.as_deref()
     }
 }
+impl SavingsPlanRateProperty {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
+    pub fn builder() -> crate::model::savings_plan_rate_property::Builder {
+        crate::model::savings_plan_rate_property::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
 pub mod savings_plan_rate_property {
     
@@ -2615,12 +2632,6 @@ pub mod savings_plan_rate_property {
     }
     
     
-}
-impl SavingsPlanRateProperty {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
-    pub fn builder() -> crate::model::savings_plan_rate_property::Builder {
-        crate::model::savings_plan_rate_property::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlanRatePropertyKey`, it is important to ensure
@@ -2741,6 +2752,13 @@ impl SavingsPlanRateFilter {
         self.values.as_deref()
     }
 }
+impl SavingsPlanRateFilter {
+    /// Creates a new builder-style object to manufacture [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
+    pub fn builder() -> crate::model::savings_plan_rate_filter::Builder {
+        crate::model::savings_plan_rate_filter::Builder::default()
+    }
+}
+
 /// See [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
 pub mod savings_plan_rate_filter {
     
@@ -2788,12 +2806,6 @@ pub mod savings_plan_rate_filter {
     }
     
     
-}
-impl SavingsPlanRateFilter {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
-    pub fn builder() -> crate::model::savings_plan_rate_filter::Builder {
-        crate::model::savings_plan_rate_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SavingsPlanRateFilterName`, it is important to ensure

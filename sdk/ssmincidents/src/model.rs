@@ -278,6 +278,13 @@ impl PagerDutyConfiguration {
         self.pager_duty_incident_configuration.as_ref()
     }
 }
+impl PagerDutyConfiguration {
+    /// Creates a new builder-style object to manufacture [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
+    pub fn builder() -> crate::model::pager_duty_configuration::Builder {
+        crate::model::pager_duty_configuration::Builder::default()
+    }
+}
+
 /// See [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
 pub mod pager_duty_configuration {
     
@@ -332,12 +339,6 @@ pub mod pager_duty_configuration {
     
     
 }
-impl PagerDutyConfiguration {
-    /// Creates a new builder-style object to manufacture [`PagerDutyConfiguration`](crate::model::PagerDutyConfiguration).
-    pub fn builder() -> crate::model::pager_duty_configuration::Builder {
-        crate::model::pager_duty_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about the PagerDuty service where the response plan creates an incident.</p>
 #[non_exhaustive]
@@ -353,6 +354,13 @@ impl PagerDutyIncidentConfiguration {
         self.service_id.as_deref()
     }
 }
+impl PagerDutyIncidentConfiguration {
+    /// Creates a new builder-style object to manufacture [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
+    pub fn builder() -> crate::model::pager_duty_incident_configuration::Builder {
+        crate::model::pager_duty_incident_configuration::Builder::default()
+    }
+}
+
 /// See [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
 pub mod pager_duty_incident_configuration {
     
@@ -382,12 +390,6 @@ pub mod pager_duty_incident_configuration {
     }
     
     
-}
-impl PagerDutyIncidentConfiguration {
-    /// Creates a new builder-style object to manufacture [`PagerDutyIncidentConfiguration`](crate::model::PagerDutyIncidentConfiguration).
-    pub fn builder() -> crate::model::pager_duty_incident_configuration::Builder {
-        crate::model::pager_duty_incident_configuration::Builder::default()
-    }
 }
 
 /// <p>The action that starts at the beginning of an incident. The response plan defines the action.</p>
@@ -472,6 +474,13 @@ impl SsmAutomation {
         self.dynamic_parameters.as_ref()
     }
 }
+impl SsmAutomation {
+    /// Creates a new builder-style object to manufacture [`SsmAutomation`](crate::model::SsmAutomation).
+    pub fn builder() -> crate::model::ssm_automation::Builder {
+        crate::model::ssm_automation::Builder::default()
+    }
+}
+
 /// See [`SsmAutomation`](crate::model::SsmAutomation).
 pub mod ssm_automation {
     
@@ -573,12 +582,6 @@ pub mod ssm_automation {
     }
     
     
-}
-impl SsmAutomation {
-    /// Creates a new builder-style object to manufacture [`SsmAutomation`](crate::model::SsmAutomation).
-    pub fn builder() -> crate::model::ssm_automation::Builder {
-        crate::model::ssm_automation::Builder::default()
-    }
 }
 
 /// <p>The dynamic SSM parameter value.</p>
@@ -826,6 +829,13 @@ impl ChatChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmptyChatChannel  {
 }
+impl EmptyChatChannel {
+    /// Creates a new builder-style object to manufacture [`EmptyChatChannel`](crate::model::EmptyChatChannel).
+    pub fn builder() -> crate::model::empty_chat_channel::Builder {
+        crate::model::empty_chat_channel::Builder::default()
+    }
+}
+
 /// See [`EmptyChatChannel`](crate::model::EmptyChatChannel).
 pub mod empty_chat_channel {
     
@@ -843,12 +853,6 @@ pub mod empty_chat_channel {
     }
     
     
-}
-impl EmptyChatChannel {
-    /// Creates a new builder-style object to manufacture [`EmptyChatChannel`](crate::model::EmptyChatChannel).
-    pub fn builder() -> crate::model::empty_chat_channel::Builder {
-        crate::model::empty_chat_channel::Builder::default()
-    }
 }
 
 /// <p>The SNS targets that are notified when updates are made to an incident.</p>
@@ -941,6 +945,13 @@ impl DeleteRegionAction {
         self.region_name.as_deref()
     }
 }
+impl DeleteRegionAction {
+    /// Creates a new builder-style object to manufacture [`DeleteRegionAction`](crate::model::DeleteRegionAction).
+    pub fn builder() -> crate::model::delete_region_action::Builder {
+        crate::model::delete_region_action::Builder::default()
+    }
+}
+
 /// See [`DeleteRegionAction`](crate::model::DeleteRegionAction).
 pub mod delete_region_action {
     
@@ -971,12 +982,6 @@ pub mod delete_region_action {
     
     
 }
-impl DeleteRegionAction {
-    /// Creates a new builder-style object to manufacture [`DeleteRegionAction`](crate::model::DeleteRegionAction).
-    pub fn builder() -> crate::model::delete_region_action::Builder {
-        crate::model::delete_region_action::Builder::default()
-    }
-}
 
 /// <p>Defines the Amazon Web Services Region and KMS key to add to the replication set. </p>
 #[non_exhaustive]
@@ -999,6 +1004,13 @@ impl AddRegionAction {
         self.sse_kms_key_id.as_deref()
     }
 }
+impl AddRegionAction {
+    /// Creates a new builder-style object to manufacture [`AddRegionAction`](crate::model::AddRegionAction).
+    pub fn builder() -> crate::model::add_region_action::Builder {
+        crate::model::add_region_action::Builder::default()
+    }
+}
+
 /// See [`AddRegionAction`](crate::model::AddRegionAction).
 pub mod add_region_action {
     
@@ -1040,12 +1052,6 @@ pub mod add_region_action {
     }
     
     
-}
-impl AddRegionAction {
-    /// Creates a new builder-style object to manufacture [`AddRegionAction`](crate::model::AddRegionAction).
-    pub fn builder() -> crate::model::add_region_action::Builder {
-        crate::model::add_region_action::Builder::default()
-    }
 }
 
 /// <p>Details about the related item you're adding.</p>
@@ -1112,6 +1118,13 @@ impl ItemIdentifier {
         self.r#type.as_ref()
     }
 }
+impl ItemIdentifier {
+    /// Creates a new builder-style object to manufacture [`ItemIdentifier`](crate::model::ItemIdentifier).
+    pub fn builder() -> crate::model::item_identifier::Builder {
+        crate::model::item_identifier::Builder::default()
+    }
+}
+
 /// See [`ItemIdentifier`](crate::model::ItemIdentifier).
 pub mod item_identifier {
     
@@ -1153,12 +1166,6 @@ pub mod item_identifier {
     }
     
     
-}
-impl ItemIdentifier {
-    /// Creates a new builder-style object to manufacture [`ItemIdentifier`](crate::model::ItemIdentifier).
-    pub fn builder() -> crate::model::item_identifier::Builder {
-        crate::model::item_identifier::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ItemType`, it is important to ensure
@@ -1371,6 +1378,13 @@ impl PagerDutyIncidentDetail {
         self.secret_id.as_deref()
     }
 }
+impl PagerDutyIncidentDetail {
+    /// Creates a new builder-style object to manufacture [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
+    pub fn builder() -> crate::model::pager_duty_incident_detail::Builder {
+        crate::model::pager_duty_incident_detail::Builder::default()
+    }
+}
+
 /// See [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
 pub mod pager_duty_incident_detail {
     
@@ -1425,12 +1439,6 @@ pub mod pager_duty_incident_detail {
     
     
 }
-impl PagerDutyIncidentDetail {
-    /// Creates a new builder-style object to manufacture [`PagerDutyIncidentDetail`](crate::model::PagerDutyIncidentDetail).
-    pub fn builder() -> crate::model::pager_duty_incident_detail::Builder {
-        crate::model::pager_duty_incident_detail::Builder::default()
-    }
-}
 
 /// <p>Resources that responders use to triage and mitigate the incident.</p>
 #[non_exhaustive]
@@ -1464,6 +1472,13 @@ impl RelatedItem {
         self.generated_id.as_deref()
     }
 }
+impl RelatedItem {
+    /// Creates a new builder-style object to manufacture [`RelatedItem`](crate::model::RelatedItem).
+    pub fn builder() -> crate::model::related_item::Builder {
+        crate::model::related_item::Builder::default()
+    }
+}
+
 /// See [`RelatedItem`](crate::model::RelatedItem).
 pub mod related_item {
     
@@ -1521,12 +1536,6 @@ pub mod related_item {
     }
     
     
-}
-impl RelatedItem {
-    /// Creates a new builder-style object to manufacture [`RelatedItem`](crate::model::RelatedItem).
-    pub fn builder() -> crate::model::related_item::Builder {
-        crate::model::related_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IncidentRecordStatus`, it is important to ensure
@@ -1646,6 +1655,13 @@ impl TriggerDetails {
         self.raw_data.as_deref()
     }
 }
+impl TriggerDetails {
+    /// Creates a new builder-style object to manufacture [`TriggerDetails`](crate::model::TriggerDetails).
+    pub fn builder() -> crate::model::trigger_details::Builder {
+        crate::model::trigger_details::Builder::default()
+    }
+}
+
 /// See [`TriggerDetails`](crate::model::TriggerDetails).
 pub mod trigger_details {
     
@@ -1712,12 +1728,6 @@ pub mod trigger_details {
     
     
 }
-impl TriggerDetails {
-    /// Creates a new builder-style object to manufacture [`TriggerDetails`](crate::model::TriggerDetails).
-    pub fn builder() -> crate::model::trigger_details::Builder {
-        crate::model::trigger_details::Builder::default()
-    }
-}
 
 /// <p>Details about a timeline event during an incident.</p>
 #[non_exhaustive]
@@ -1768,6 +1778,13 @@ impl EventSummary {
         self.event_references.as_deref()
     }
 }
+impl EventSummary {
+    /// Creates a new builder-style object to manufacture [`EventSummary`](crate::model::EventSummary).
+    pub fn builder() -> crate::model::event_summary::Builder {
+        crate::model::event_summary::Builder::default()
+    }
+}
+
 /// See [`EventSummary`](crate::model::EventSummary).
 pub mod event_summary {
     
@@ -1863,12 +1880,6 @@ pub mod event_summary {
     }
     
     
-}
-impl EventSummary {
-    /// Creates a new builder-style object to manufacture [`EventSummary`](crate::model::EventSummary).
-    pub fn builder() -> crate::model::event_summary::Builder {
-        crate::model::event_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
@@ -2051,6 +2062,13 @@ impl Filter {
         self.condition.as_ref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -2092,12 +2110,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// <p>A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.</p>
@@ -2225,6 +2237,13 @@ impl ResponsePlanSummary {
         self.display_name.as_deref()
     }
 }
+impl ResponsePlanSummary {
+    /// Creates a new builder-style object to manufacture [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
+    pub fn builder() -> crate::model::response_plan_summary::Builder {
+        crate::model::response_plan_summary::Builder::default()
+    }
+}
+
 /// See [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
 pub mod response_plan_summary {
     
@@ -2278,12 +2297,6 @@ pub mod response_plan_summary {
     }
     
     
-}
-impl ResponsePlanSummary {
-    /// Creates a new builder-style object to manufacture [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
-    pub fn builder() -> crate::model::response_plan_summary::Builder {
-        crate::model::response_plan_summary::Builder::default()
-    }
 }
 
 /// <p>Details describing an incident record.</p>
@@ -2342,6 +2355,13 @@ impl IncidentRecordSummary {
         self.incident_record_source.as_ref()
     }
 }
+impl IncidentRecordSummary {
+    /// Creates a new builder-style object to manufacture [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
+    pub fn builder() -> crate::model::incident_record_summary::Builder {
+        crate::model::incident_record_summary::Builder::default()
+    }
+}
+
 /// See [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
 pub mod incident_record_summary {
     
@@ -2444,12 +2464,6 @@ pub mod incident_record_summary {
     
     
 }
-impl IncidentRecordSummary {
-    /// Creates a new builder-style object to manufacture [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
-    pub fn builder() -> crate::model::incident_record_summary::Builder {
-        crate::model::incident_record_summary::Builder::default()
-    }
-}
 
 /// <p>Details about what created the incident record and when it was created.</p>
 #[non_exhaustive]
@@ -2486,6 +2500,13 @@ impl IncidentRecordSource {
         self.source.as_deref()
     }
 }
+impl IncidentRecordSource {
+    /// Creates a new builder-style object to manufacture [`IncidentRecordSource`](crate::model::IncidentRecordSource).
+    pub fn builder() -> crate::model::incident_record_source::Builder {
+        crate::model::incident_record_source::Builder::default()
+    }
+}
+
 /// See [`IncidentRecordSource`](crate::model::IncidentRecordSource).
 pub mod incident_record_source {
     
@@ -2552,12 +2573,6 @@ pub mod incident_record_source {
     
     
 }
-impl IncidentRecordSource {
-    /// Creates a new builder-style object to manufacture [`IncidentRecordSource`](crate::model::IncidentRecordSource).
-    pub fn builder() -> crate::model::incident_record_source::Builder {
-        crate::model::incident_record_source::Builder::default()
-    }
-}
 
 /// <p>A significant event that happened during the incident. </p>
 #[non_exhaustive]
@@ -2615,6 +2630,13 @@ impl TimelineEvent {
         self.event_references.as_deref()
     }
 }
+impl TimelineEvent {
+    /// Creates a new builder-style object to manufacture [`TimelineEvent`](crate::model::TimelineEvent).
+    pub fn builder() -> crate::model::timeline_event::Builder {
+        crate::model::timeline_event::Builder::default()
+    }
+}
+
 /// See [`TimelineEvent`](crate::model::TimelineEvent).
 pub mod timeline_event {
     
@@ -2723,12 +2745,6 @@ pub mod timeline_event {
     
     
 }
-impl TimelineEvent {
-    /// Creates a new builder-style object to manufacture [`TimelineEvent`](crate::model::TimelineEvent).
-    pub fn builder() -> crate::model::timeline_event::Builder {
-        crate::model::timeline_event::Builder::default()
-    }
-}
 
 /// <p>Basic details used in creating a response plan. The response plan is then used to create an incident record.</p>
 #[non_exhaustive]
@@ -2779,6 +2795,13 @@ impl IncidentTemplate {
         self.incident_tags.as_ref()
     }
 }
+impl IncidentTemplate {
+    /// Creates a new builder-style object to manufacture [`IncidentTemplate`](crate::model::IncidentTemplate).
+    pub fn builder() -> crate::model::incident_template::Builder {
+        crate::model::incident_template::Builder::default()
+    }
+}
+
 /// See [`IncidentTemplate`](crate::model::IncidentTemplate).
 pub mod incident_template {
     
@@ -2881,12 +2904,6 @@ pub mod incident_template {
     
     
 }
-impl IncidentTemplate {
-    /// Creates a new builder-style object to manufacture [`IncidentTemplate`](crate::model::IncidentTemplate).
-    pub fn builder() -> crate::model::incident_template::Builder {
-        crate::model::incident_template::Builder::default()
-    }
-}
 
 /// <p>The resource policy that allows Incident Manager to perform actions on resources on your behalf.</p>
 #[non_exhaustive]
@@ -2916,6 +2933,13 @@ impl ResourcePolicy {
         self.ram_resource_share_region.as_deref()
     }
 }
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
     
@@ -2969,12 +2993,6 @@ pub mod resource_policy {
     }
     
     
-}
-impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
-    pub fn builder() -> crate::model::resource_policy::Builder {
-        crate::model::resource_policy::Builder::default()
-    }
 }
 
 /// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. </p>
@@ -3040,6 +3058,13 @@ impl ReplicationSet {
         self.last_modified_by.as_deref()
     }
 }
+impl ReplicationSet {
+    /// Creates a new builder-style object to manufacture [`ReplicationSet`](crate::model::ReplicationSet).
+    pub fn builder() -> crate::model::replication_set::Builder {
+        crate::model::replication_set::Builder::default()
+    }
+}
+
 /// See [`ReplicationSet`](crate::model::ReplicationSet).
 pub mod replication_set {
     
@@ -3159,12 +3184,6 @@ pub mod replication_set {
     }
     
     
-}
-impl ReplicationSet {
-    /// Creates a new builder-style object to manufacture [`ReplicationSet`](crate::model::ReplicationSet).
-    pub fn builder() -> crate::model::replication_set::Builder {
-        crate::model::replication_set::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationSetStatus`, it is important to ensure
@@ -3299,6 +3318,13 @@ impl RegionInfo {
         self.status_update_date_time.as_ref()
     }
 }
+impl RegionInfo {
+    /// Creates a new builder-style object to manufacture [`RegionInfo`](crate::model::RegionInfo).
+    pub fn builder() -> crate::model::region_info::Builder {
+        crate::model::region_info::Builder::default()
+    }
+}
+
 /// See [`RegionInfo`](crate::model::RegionInfo).
 pub mod region_info {
     
@@ -3364,12 +3390,6 @@ pub mod region_info {
     }
     
     
-}
-impl RegionInfo {
-    /// Creates a new builder-style object to manufacture [`RegionInfo`](crate::model::RegionInfo).
-    pub fn builder() -> crate::model::region_info::Builder {
-        crate::model::region_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RegionStatus`, it is important to ensure
@@ -3569,6 +3589,13 @@ impl IncidentRecord {
         self.notification_targets.as_deref()
     }
 }
+impl IncidentRecord {
+    /// Creates a new builder-style object to manufacture [`IncidentRecord`](crate::model::IncidentRecord).
+    pub fn builder() -> crate::model::incident_record::Builder {
+        crate::model::incident_record::Builder::default()
+    }
+}
+
 /// See [`IncidentRecord`](crate::model::IncidentRecord).
 pub mod incident_record {
     
@@ -3767,12 +3794,6 @@ pub mod incident_record {
     
     
 }
-impl IncidentRecord {
-    /// Creates a new builder-style object to manufacture [`IncidentRecord`](crate::model::IncidentRecord).
-    pub fn builder() -> crate::model::incident_record::Builder {
-        crate::model::incident_record::Builder::default()
-    }
-}
 
 /// <p>The Systems Manager automation document process to start as the runbook at the beginning of the incident.</p>
 #[non_exhaustive]
@@ -3821,6 +3842,13 @@ impl RegionMapInputValue {
         self.sse_kms_key_id.as_deref()
     }
 }
+impl RegionMapInputValue {
+    /// Creates a new builder-style object to manufacture [`RegionMapInputValue`](crate::model::RegionMapInputValue).
+    pub fn builder() -> crate::model::region_map_input_value::Builder {
+        crate::model::region_map_input_value::Builder::default()
+    }
+}
+
 /// See [`RegionMapInputValue`](crate::model::RegionMapInputValue).
 pub mod region_map_input_value {
     
@@ -3850,11 +3878,5 @@ pub mod region_map_input_value {
     }
     
     
-}
-impl RegionMapInputValue {
-    /// Creates a new builder-style object to manufacture [`RegionMapInputValue`](crate::model::RegionMapInputValue).
-    pub fn builder() -> crate::model::region_map_input_value::Builder {
-        crate::model::region_map_input_value::Builder::default()
-    }
 }
 

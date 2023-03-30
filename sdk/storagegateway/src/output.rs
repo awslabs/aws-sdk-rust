@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateVtlDeviceTypeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVtlDeviceTypeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput).
+    pub fn builder() -> crate::output::update_vtl_device_type_output::Builder {
+        crate::output::update_vtl_device_type_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput).
 pub mod update_vtl_device_type_output {
     
@@ -61,12 +68,6 @@ pub mod update_vtl_device_type_output {
     
     
 }
-impl UpdateVtlDeviceTypeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput).
-    pub fn builder() -> crate::output::update_vtl_device_type_output::Builder {
-        crate::output::update_vtl_device_type_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.</p>
 #[non_exhaustive]
@@ -88,6 +89,13 @@ impl aws_http::request_id::RequestId for UpdateSnapshotScheduleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSnapshotScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput).
+    pub fn builder() -> crate::output::update_snapshot_schedule_output::Builder {
+        crate::output::update_snapshot_schedule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput).
 pub mod update_snapshot_schedule_output {
     
@@ -129,12 +137,6 @@ pub mod update_snapshot_schedule_output {
     
     
 }
-impl UpdateSnapshotScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput).
-    pub fn builder() -> crate::output::update_snapshot_schedule_output::Builder {
-        crate::output::update_snapshot_schedule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -156,6 +158,13 @@ impl aws_http::request_id::RequestId for UpdateSmbSecurityStrategyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSmbSecurityStrategyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput).
+    pub fn builder() -> crate::output::update_smb_security_strategy_output::Builder {
+        crate::output::update_smb_security_strategy_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput).
 pub mod update_smb_security_strategy_output {
     
@@ -197,12 +206,6 @@ pub mod update_smb_security_strategy_output {
     
     
 }
-impl UpdateSmbSecurityStrategyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput).
-    pub fn builder() -> crate::output::update_smb_security_strategy_output::Builder {
-        crate::output::update_smb_security_strategy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -224,6 +227,13 @@ impl aws_http::request_id::RequestId for UpdateSmbLocalGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSmbLocalGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput).
+    pub fn builder() -> crate::output::update_smb_local_groups_output::Builder {
+        crate::output::update_smb_local_groups_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput).
 pub mod update_smb_local_groups_output {
     
@@ -265,12 +275,6 @@ pub mod update_smb_local_groups_output {
     
     
 }
-impl UpdateSmbLocalGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput).
-    pub fn builder() -> crate::output::update_smb_local_groups_output::Builder {
-        crate::output::update_smb_local_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -292,6 +296,13 @@ impl aws_http::request_id::RequestId for UpdateSmbFileShareVisibilityOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSmbFileShareVisibilityOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput).
+    pub fn builder() -> crate::output::update_smb_file_share_visibility_output::Builder {
+        crate::output::update_smb_file_share_visibility_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput).
 pub mod update_smb_file_share_visibility_output {
     
@@ -333,12 +344,6 @@ pub mod update_smb_file_share_visibility_output {
     
     
 }
-impl UpdateSmbFileShareVisibilityOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput).
-    pub fn builder() -> crate::output::update_smb_file_share_visibility_output::Builder {
-        crate::output::update_smb_file_share_visibility_output::Builder::default()
-    }
-}
 
 /// <p>UpdateSMBFileShareOutput</p>
 #[non_exhaustive]
@@ -360,6 +365,13 @@ impl aws_http::request_id::RequestId for UpdateSmbFileShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSmbFileShareOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput).
+    pub fn builder() -> crate::output::update_smb_file_share_output::Builder {
+        crate::output::update_smb_file_share_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput).
 pub mod update_smb_file_share_output {
     
@@ -401,12 +413,6 @@ pub mod update_smb_file_share_output {
     
     
 }
-impl UpdateSmbFileShareOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput).
-    pub fn builder() -> crate::output::update_smb_file_share_output::Builder {
-        crate::output::update_smb_file_share_output::Builder::default()
-    }
-}
 
 /// <p>UpdateNFSFileShareOutput</p>
 #[non_exhaustive]
@@ -428,6 +434,13 @@ impl aws_http::request_id::RequestId for UpdateNfsFileShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateNfsFileShareOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput).
+    pub fn builder() -> crate::output::update_nfs_file_share_output::Builder {
+        crate::output::update_nfs_file_share_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput).
 pub mod update_nfs_file_share_output {
     
@@ -469,12 +482,6 @@ pub mod update_nfs_file_share_output {
     
     
 }
-impl UpdateNfsFileShareOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput).
-    pub fn builder() -> crate::output::update_nfs_file_share_output::Builder {
-        crate::output::update_nfs_file_share_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated.</p>
 #[non_exhaustive]
@@ -496,6 +503,13 @@ impl aws_http::request_id::RequestId for UpdateMaintenanceStartTimeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateMaintenanceStartTimeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput).
+    pub fn builder() -> crate::output::update_maintenance_start_time_output::Builder {
+        crate::output::update_maintenance_start_time_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput).
 pub mod update_maintenance_start_time_output {
     
@@ -537,12 +551,6 @@ pub mod update_maintenance_start_time_output {
     
     
 }
-impl UpdateMaintenanceStartTimeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput).
-    pub fn builder() -> crate::output::update_maintenance_start_time_output::Builder {
-        crate::output::update_maintenance_start_time_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.</p>
 #[non_exhaustive]
@@ -564,6 +572,13 @@ impl aws_http::request_id::RequestId for UpdateGatewaySoftwareNowOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateGatewaySoftwareNowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
+    pub fn builder() -> crate::output::update_gateway_software_now_output::Builder {
+        crate::output::update_gateway_software_now_output::Builder::default()
+    }
+}
+
 /// See [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
 pub mod update_gateway_software_now_output {
     
@@ -605,12 +620,6 @@ pub mod update_gateway_software_now_output {
     
     
 }
-impl UpdateGatewaySoftwareNowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
-    pub fn builder() -> crate::output::update_gateway_software_now_output::Builder {
-        crate::output::update_gateway_software_now_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated.</p>
 #[non_exhaustive]
@@ -639,6 +648,13 @@ impl aws_http::request_id::RequestId for UpdateGatewayInformationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateGatewayInformationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
+    pub fn builder() -> crate::output::update_gateway_information_output::Builder {
+        crate::output::update_gateway_information_output::Builder::default()
+    }
+}
+
 /// See [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
 pub mod update_gateway_information_output {
     
@@ -692,12 +708,6 @@ pub mod update_gateway_information_output {
     
     
 }
-impl UpdateGatewayInformationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
-    pub fn builder() -> crate::output::update_gateway_information_output::Builder {
-        crate::output::update_gateway_information_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -719,6 +729,13 @@ impl aws_http::request_id::RequestId for UpdateFileSystemAssociationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateFileSystemAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput).
+    pub fn builder() -> crate::output::update_file_system_association_output::Builder {
+        crate::output::update_file_system_association_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput).
 pub mod update_file_system_association_output {
     
@@ -760,12 +777,6 @@ pub mod update_file_system_association_output {
     
     
 }
-impl UpdateFileSystemAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput).
-    pub fn builder() -> crate::output::update_file_system_association_output::Builder {
-        crate::output::update_file_system_association_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -794,6 +805,13 @@ impl aws_http::request_id::RequestId for UpdateChapCredentialsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateChapCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput).
+    pub fn builder() -> crate::output::update_chap_credentials_output::Builder {
+        crate::output::update_chap_credentials_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput).
 pub mod update_chap_credentials_output {
     
@@ -847,12 +865,6 @@ pub mod update_chap_credentials_output {
     
     
 }
-impl UpdateChapCredentialsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput).
-    pub fn builder() -> crate::output::update_chap_credentials_output::Builder {
-        crate::output::update_chap_credentials_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -874,6 +886,13 @@ impl aws_http::request_id::RequestId for UpdateBandwidthRateLimitScheduleOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBandwidthRateLimitScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput).
+    pub fn builder() -> crate::output::update_bandwidth_rate_limit_schedule_output::Builder {
+        crate::output::update_bandwidth_rate_limit_schedule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput).
 pub mod update_bandwidth_rate_limit_schedule_output {
     
@@ -915,12 +934,6 @@ pub mod update_bandwidth_rate_limit_schedule_output {
     
     
 }
-impl UpdateBandwidthRateLimitScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput).
-    pub fn builder() -> crate::output::update_bandwidth_rate_limit_schedule_output::Builder {
-        crate::output::update_bandwidth_rate_limit_schedule_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated.</p>
 #[non_exhaustive]
@@ -942,6 +955,13 @@ impl aws_http::request_id::RequestId for UpdateBandwidthRateLimitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateBandwidthRateLimitOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput).
+    pub fn builder() -> crate::output::update_bandwidth_rate_limit_output::Builder {
+        crate::output::update_bandwidth_rate_limit_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput).
 pub mod update_bandwidth_rate_limit_output {
     
@@ -983,12 +1003,6 @@ pub mod update_bandwidth_rate_limit_output {
     
     
 }
-impl UpdateBandwidthRateLimitOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput).
-    pub fn builder() -> crate::output::update_bandwidth_rate_limit_output::Builder {
-        crate::output::update_bandwidth_rate_limit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1010,6 +1024,13 @@ impl aws_http::request_id::RequestId for UpdateAutomaticTapeCreationPolicyOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAutomaticTapeCreationPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput).
+    pub fn builder() -> crate::output::update_automatic_tape_creation_policy_output::Builder {
+        crate::output::update_automatic_tape_creation_policy_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput).
 pub mod update_automatic_tape_creation_policy_output {
     
@@ -1051,12 +1072,6 @@ pub mod update_automatic_tape_creation_policy_output {
     
     
 }
-impl UpdateAutomaticTapeCreationPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput).
-    pub fn builder() -> crate::output::update_automatic_tape_creation_policy_output::Builder {
-        crate::output::update_automatic_tape_creation_policy_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted.</p>
 #[non_exhaustive]
@@ -1078,6 +1093,13 @@ impl aws_http::request_id::RequestId for StartGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`StartGatewayOutput`](crate::output::StartGatewayOutput).
+    pub fn builder() -> crate::output::start_gateway_output::Builder {
+        crate::output::start_gateway_output::Builder::default()
+    }
+}
+
 /// See [`StartGatewayOutput`](crate::output::StartGatewayOutput).
 pub mod start_gateway_output {
     
@@ -1119,12 +1141,6 @@ pub mod start_gateway_output {
     
     
 }
-impl StartGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`StartGatewayOutput`](crate::output::StartGatewayOutput).
-    pub fn builder() -> crate::output::start_gateway_output::Builder {
-        crate::output::start_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1146,6 +1162,13 @@ impl aws_http::request_id::RequestId for StartAvailabilityMonitorTestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartAvailabilityMonitorTestOutput {
+    /// Creates a new builder-style object to manufacture [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput).
+    pub fn builder() -> crate::output::start_availability_monitor_test_output::Builder {
+        crate::output::start_availability_monitor_test_output::Builder::default()
+    }
+}
+
 /// See [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput).
 pub mod start_availability_monitor_test_output {
     
@@ -1187,12 +1210,6 @@ pub mod start_availability_monitor_test_output {
     
     
 }
-impl StartAvailabilityMonitorTestOutput {
-    /// Creates a new builder-style object to manufacture [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput).
-    pub fn builder() -> crate::output::start_availability_monitor_test_output::Builder {
-        crate::output::start_availability_monitor_test_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.</p>
 #[non_exhaustive]
@@ -1214,6 +1231,13 @@ impl aws_http::request_id::RequestId for ShutdownGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ShutdownGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput).
+    pub fn builder() -> crate::output::shutdown_gateway_output::Builder {
+        crate::output::shutdown_gateway_output::Builder::default()
+    }
+}
+
 /// See [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput).
 pub mod shutdown_gateway_output {
     
@@ -1255,12 +1279,6 @@ pub mod shutdown_gateway_output {
     
     
 }
-impl ShutdownGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput).
-    pub fn builder() -> crate::output::shutdown_gateway_output::Builder {
-        crate::output::shutdown_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1282,6 +1300,13 @@ impl aws_http::request_id::RequestId for SetSmbGuestPasswordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetSmbGuestPasswordOutput {
+    /// Creates a new builder-style object to manufacture [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput).
+    pub fn builder() -> crate::output::set_smb_guest_password_output::Builder {
+        crate::output::set_smb_guest_password_output::Builder::default()
+    }
+}
+
 /// See [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput).
 pub mod set_smb_guest_password_output {
     
@@ -1323,12 +1348,6 @@ pub mod set_smb_guest_password_output {
     
     
 }
-impl SetSmbGuestPasswordOutput {
-    /// Creates a new builder-style object to manufacture [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput).
-    pub fn builder() -> crate::output::set_smb_guest_password_output::Builder {
-        crate::output::set_smb_guest_password_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1350,6 +1369,13 @@ impl aws_http::request_id::RequestId for SetLocalConsolePasswordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SetLocalConsolePasswordOutput {
+    /// Creates a new builder-style object to manufacture [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput).
+    pub fn builder() -> crate::output::set_local_console_password_output::Builder {
+        crate::output::set_local_console_password_output::Builder::default()
+    }
+}
+
 /// See [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput).
 pub mod set_local_console_password_output {
     
@@ -1391,12 +1417,6 @@ pub mod set_local_console_password_output {
     
     
 }
-impl SetLocalConsolePasswordOutput {
-    /// Creates a new builder-style object to manufacture [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput).
-    pub fn builder() -> crate::output::set_local_console_password_output::Builder {
-        crate::output::set_local_console_password_output::Builder::default()
-    }
-}
 
 /// <p>RetrieveTapeRecoveryPointOutput</p>
 #[non_exhaustive]
@@ -1418,6 +1438,13 @@ impl aws_http::request_id::RequestId for RetrieveTapeRecoveryPointOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RetrieveTapeRecoveryPointOutput {
+    /// Creates a new builder-style object to manufacture [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput).
+    pub fn builder() -> crate::output::retrieve_tape_recovery_point_output::Builder {
+        crate::output::retrieve_tape_recovery_point_output::Builder::default()
+    }
+}
+
 /// See [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput).
 pub mod retrieve_tape_recovery_point_output {
     
@@ -1459,12 +1486,6 @@ pub mod retrieve_tape_recovery_point_output {
     
     
 }
-impl RetrieveTapeRecoveryPointOutput {
-    /// Creates a new builder-style object to manufacture [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput).
-    pub fn builder() -> crate::output::retrieve_tape_recovery_point_output::Builder {
-        crate::output::retrieve_tape_recovery_point_output::Builder::default()
-    }
-}
 
 /// <p>RetrieveTapeArchiveOutput</p>
 #[non_exhaustive]
@@ -1486,6 +1507,13 @@ impl aws_http::request_id::RequestId for RetrieveTapeArchiveOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RetrieveTapeArchiveOutput {
+    /// Creates a new builder-style object to manufacture [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput).
+    pub fn builder() -> crate::output::retrieve_tape_archive_output::Builder {
+        crate::output::retrieve_tape_archive_output::Builder::default()
+    }
+}
+
 /// See [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput).
 pub mod retrieve_tape_archive_output {
     
@@ -1527,12 +1555,6 @@ pub mod retrieve_tape_archive_output {
     
     
 }
-impl RetrieveTapeArchiveOutput {
-    /// Creates a new builder-style object to manufacture [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput).
-    pub fn builder() -> crate::output::retrieve_tape_archive_output::Builder {
-        crate::output::retrieve_tape_archive_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1554,6 +1576,13 @@ impl aws_http::request_id::RequestId for ResetCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResetCacheOutput {
+    /// Creates a new builder-style object to manufacture [`ResetCacheOutput`](crate::output::ResetCacheOutput).
+    pub fn builder() -> crate::output::reset_cache_output::Builder {
+        crate::output::reset_cache_output::Builder::default()
+    }
+}
+
 /// See [`ResetCacheOutput`](crate::output::ResetCacheOutput).
 pub mod reset_cache_output {
     
@@ -1595,12 +1624,6 @@ pub mod reset_cache_output {
     
     
 }
-impl ResetCacheOutput {
-    /// Creates a new builder-style object to manufacture [`ResetCacheOutput`](crate::output::ResetCacheOutput).
-    pub fn builder() -> crate::output::reset_cache_output::Builder {
-        crate::output::reset_cache_output::Builder::default()
-    }
-}
 
 /// <p>RemoveTagsFromResourceOutput</p>
 #[non_exhaustive]
@@ -1622,6 +1645,13 @@ impl aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RemoveTagsFromResourceOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
+    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
+        crate::output::remove_tags_from_resource_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
     
@@ -1663,12 +1693,6 @@ pub mod remove_tags_from_resource_output {
     
     
 }
-impl RemoveTagsFromResourceOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
-    pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
-        crate::output::remove_tags_from_resource_output::Builder::default()
-    }
-}
 
 /// <p>RefreshCacheOutput</p>
 #[non_exhaustive]
@@ -1697,6 +1721,13 @@ impl aws_http::request_id::RequestId for RefreshCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RefreshCacheOutput {
+    /// Creates a new builder-style object to manufacture [`RefreshCacheOutput`](crate::output::RefreshCacheOutput).
+    pub fn builder() -> crate::output::refresh_cache_output::Builder {
+        crate::output::refresh_cache_output::Builder::default()
+    }
+}
+
 /// See [`RefreshCacheOutput`](crate::output::RefreshCacheOutput).
 pub mod refresh_cache_output {
     
@@ -1750,12 +1781,6 @@ pub mod refresh_cache_output {
     
     
 }
-impl RefreshCacheOutput {
-    /// Creates a new builder-style object to manufacture [`RefreshCacheOutput`](crate::output::RefreshCacheOutput).
-    pub fn builder() -> crate::output::refresh_cache_output::Builder {
-        crate::output::refresh_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1784,6 +1809,13 @@ impl aws_http::request_id::RequestId for NotifyWhenUploadedOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl NotifyWhenUploadedOutput {
+    /// Creates a new builder-style object to manufacture [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput).
+    pub fn builder() -> crate::output::notify_when_uploaded_output::Builder {
+        crate::output::notify_when_uploaded_output::Builder::default()
+    }
+}
+
 /// See [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput).
 pub mod notify_when_uploaded_output {
     
@@ -1837,12 +1869,6 @@ pub mod notify_when_uploaded_output {
     
     
 }
-impl NotifyWhenUploadedOutput {
-    /// Creates a new builder-style object to manufacture [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput).
-    pub fn builder() -> crate::output::notify_when_uploaded_output::Builder {
-        crate::output::notify_when_uploaded_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p> 
 /// <ul> 
@@ -1882,6 +1908,13 @@ impl aws_http::request_id::RequestId for ListVolumesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVolumesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVolumesOutput`](crate::output::ListVolumesOutput).
+    pub fn builder() -> crate::output::list_volumes_output::Builder {
+        crate::output::list_volumes_output::Builder::default()
+    }
+}
+
 /// See [`ListVolumesOutput`](crate::output::ListVolumesOutput).
 pub mod list_volumes_output {
     
@@ -1953,12 +1986,6 @@ pub mod list_volumes_output {
     
     
 }
-impl ListVolumesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVolumesOutput`](crate::output::ListVolumesOutput).
-    pub fn builder() -> crate::output::list_volumes_output::Builder {
-        crate::output::list_volumes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1987,6 +2014,13 @@ impl aws_http::request_id::RequestId for ListVolumeRecoveryPointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVolumeRecoveryPointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput).
+    pub fn builder() -> crate::output::list_volume_recovery_points_output::Builder {
+        crate::output::list_volume_recovery_points_output::Builder::default()
+    }
+}
+
 /// See [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput).
 pub mod list_volume_recovery_points_output {
     
@@ -2046,12 +2080,6 @@ pub mod list_volume_recovery_points_output {
     
     
 }
-impl ListVolumeRecoveryPointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput).
-    pub fn builder() -> crate::output::list_volume_recovery_points_output::Builder {
-        crate::output::list_volume_recovery_points_output::Builder::default()
-    }
-}
 
 /// <p>ListVolumeInitiatorsOutput</p>
 #[non_exhaustive]
@@ -2073,6 +2101,13 @@ impl aws_http::request_id::RequestId for ListVolumeInitiatorsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVolumeInitiatorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput).
+    pub fn builder() -> crate::output::list_volume_initiators_output::Builder {
+        crate::output::list_volume_initiators_output::Builder::default()
+    }
+}
+
 /// See [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput).
 pub mod list_volume_initiators_output {
     
@@ -2120,12 +2155,6 @@ pub mod list_volume_initiators_output {
     
     
 }
-impl ListVolumeInitiatorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput).
-    pub fn builder() -> crate::output::list_volume_initiators_output::Builder {
-        crate::output::list_volume_initiators_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p> 
 /// <ul> 
@@ -2158,6 +2187,13 @@ impl aws_http::request_id::RequestId for ListTapesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTapesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTapesOutput`](crate::output::ListTapesOutput).
+    pub fn builder() -> crate::output::list_tapes_output::Builder {
+        crate::output::list_tapes_output::Builder::default()
+    }
+}
+
 /// See [`ListTapesOutput`](crate::output::ListTapesOutput).
 pub mod list_tapes_output {
     
@@ -2217,12 +2253,6 @@ pub mod list_tapes_output {
     
     
 }
-impl ListTapesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTapesOutput`](crate::output::ListTapesOutput).
-    pub fn builder() -> crate::output::list_tapes_output::Builder {
-        crate::output::list_tapes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2251,6 +2281,13 @@ impl aws_http::request_id::RequestId for ListTapePoolsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTapePoolsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput).
+    pub fn builder() -> crate::output::list_tape_pools_output::Builder {
+        crate::output::list_tape_pools_output::Builder::default()
+    }
+}
+
 /// See [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput).
 pub mod list_tape_pools_output {
     
@@ -2310,12 +2347,6 @@ pub mod list_tape_pools_output {
     
     
 }
-impl ListTapePoolsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput).
-    pub fn builder() -> crate::output::list_tape_pools_output::Builder {
-        crate::output::list_tape_pools_output::Builder::default()
-    }
-}
 
 /// <p>ListTagsForResourceOutput</p>
 #[non_exhaustive]
@@ -2351,6 +2382,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -2422,12 +2460,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2462,6 +2494,13 @@ impl aws_http::request_id::RequestId for ListLocalDisksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListLocalDisksOutput {
+    /// Creates a new builder-style object to manufacture [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput).
+    pub fn builder() -> crate::output::list_local_disks_output::Builder {
+        crate::output::list_local_disks_output::Builder::default()
+    }
+}
+
 /// See [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput).
 pub mod list_local_disks_output {
     
@@ -2527,12 +2566,6 @@ pub mod list_local_disks_output {
     
     
 }
-impl ListLocalDisksOutput {
-    /// Creates a new builder-style object to manufacture [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput).
-    pub fn builder() -> crate::output::list_local_disks_output::Builder {
-        crate::output::list_local_disks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2561,6 +2594,13 @@ impl aws_http::request_id::RequestId for ListGatewaysOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListGatewaysOutput {
+    /// Creates a new builder-style object to manufacture [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
+    pub fn builder() -> crate::output::list_gateways_output::Builder {
+        crate::output::list_gateways_output::Builder::default()
+    }
+}
+
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
 pub mod list_gateways_output {
     
@@ -2620,12 +2660,6 @@ pub mod list_gateways_output {
     
     
 }
-impl ListGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
-    pub fn builder() -> crate::output::list_gateways_output::Builder {
-        crate::output::list_gateways_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2661,6 +2695,13 @@ impl aws_http::request_id::RequestId for ListFileSystemAssociationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFileSystemAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput).
+    pub fn builder() -> crate::output::list_file_system_associations_output::Builder {
+        crate::output::list_file_system_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput).
 pub mod list_file_system_associations_output {
     
@@ -2732,12 +2773,6 @@ pub mod list_file_system_associations_output {
     
     
 }
-impl ListFileSystemAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput).
-    pub fn builder() -> crate::output::list_file_system_associations_output::Builder {
-        crate::output::list_file_system_associations_output::Builder::default()
-    }
-}
 
 /// <p>ListFileShareOutput</p>
 #[non_exhaustive]
@@ -2773,6 +2808,13 @@ impl aws_http::request_id::RequestId for ListFileSharesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListFileSharesOutput {
+    /// Creates a new builder-style object to manufacture [`ListFileSharesOutput`](crate::output::ListFileSharesOutput).
+    pub fn builder() -> crate::output::list_file_shares_output::Builder {
+        crate::output::list_file_shares_output::Builder::default()
+    }
+}
+
 /// See [`ListFileSharesOutput`](crate::output::ListFileSharesOutput).
 pub mod list_file_shares_output {
     
@@ -2844,12 +2886,6 @@ pub mod list_file_shares_output {
     
     
 }
-impl ListFileSharesOutput {
-    /// Creates a new builder-style object to manufacture [`ListFileSharesOutput`](crate::output::ListFileSharesOutput).
-    pub fn builder() -> crate::output::list_file_shares_output::Builder {
-        crate::output::list_file_shares_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2871,6 +2907,13 @@ impl aws_http::request_id::RequestId for ListAutomaticTapeCreationPoliciesOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAutomaticTapeCreationPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput).
+    pub fn builder() -> crate::output::list_automatic_tape_creation_policies_output::Builder {
+        crate::output::list_automatic_tape_creation_policies_output::Builder::default()
+    }
+}
+
 /// See [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput).
 pub mod list_automatic_tape_creation_policies_output {
     
@@ -2918,12 +2961,6 @@ pub mod list_automatic_tape_creation_policies_output {
     
     
 }
-impl ListAutomaticTapeCreationPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput).
-    pub fn builder() -> crate::output::list_automatic_tape_creation_policies_output::Builder {
-        crate::output::list_automatic_tape_creation_policies_output::Builder::default()
-    }
-}
 
 /// <p>JoinDomainOutput</p>
 #[non_exhaustive]
@@ -2970,6 +3007,13 @@ impl aws_http::request_id::RequestId for JoinDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl JoinDomainOutput {
+    /// Creates a new builder-style object to manufacture [`JoinDomainOutput`](crate::output::JoinDomainOutput).
+    pub fn builder() -> crate::output::join_domain_output::Builder {
+        crate::output::join_domain_output::Builder::default()
+    }
+}
+
 /// See [`JoinDomainOutput`](crate::output::JoinDomainOutput).
 pub mod join_domain_output {
     
@@ -3041,12 +3085,6 @@ pub mod join_domain_output {
     
     
 }
-impl JoinDomainOutput {
-    /// Creates a new builder-style object to manufacture [`JoinDomainOutput`](crate::output::JoinDomainOutput).
-    pub fn builder() -> crate::output::join_domain_output::Builder {
-        crate::output::join_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3068,6 +3106,13 @@ impl aws_http::request_id::RequestId for DisassociateFileSystemOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateFileSystemOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput).
+    pub fn builder() -> crate::output::disassociate_file_system_output::Builder {
+        crate::output::disassociate_file_system_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput).
 pub mod disassociate_file_system_output {
     
@@ -3109,12 +3154,6 @@ pub mod disassociate_file_system_output {
     
     
 }
-impl DisassociateFileSystemOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput).
-    pub fn builder() -> crate::output::disassociate_file_system_output::Builder {
-        crate::output::disassociate_file_system_output::Builder::default()
-    }
-}
 
 /// <p>DisableGatewayOutput</p>
 #[non_exhaustive]
@@ -3136,6 +3175,13 @@ impl aws_http::request_id::RequestId for DisableGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisableGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`DisableGatewayOutput`](crate::output::DisableGatewayOutput).
+    pub fn builder() -> crate::output::disable_gateway_output::Builder {
+        crate::output::disable_gateway_output::Builder::default()
+    }
+}
+
 /// See [`DisableGatewayOutput`](crate::output::DisableGatewayOutput).
 pub mod disable_gateway_output {
     
@@ -3177,12 +3223,6 @@ pub mod disable_gateway_output {
     
     
 }
-impl DisableGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DisableGatewayOutput`](crate::output::DisableGatewayOutput).
-    pub fn builder() -> crate::output::disable_gateway_output::Builder {
-        crate::output::disable_gateway_output::Builder::default()
-    }
-}
 
 /// <p>AttachVolumeOutput</p>
 #[non_exhaustive]
@@ -3204,6 +3244,13 @@ impl aws_http::request_id::RequestId for DetachVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DetachVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
+    pub fn builder() -> crate::output::detach_volume_output::Builder {
+        crate::output::detach_volume_output::Builder::default()
+    }
+}
+
 /// See [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
 pub mod detach_volume_output {
     
@@ -3244,12 +3291,6 @@ pub mod detach_volume_output {
     }
     
     
-}
-impl DetachVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`DetachVolumeOutput`](crate::output::DetachVolumeOutput).
-    pub fn builder() -> crate::output::detach_volume_output::Builder {
-        crate::output::detach_volume_output::Builder::default()
-    }
 }
 
 /// <p>A JSON object containing the following fields:</p>
@@ -3293,6 +3334,13 @@ impl aws_http::request_id::RequestId for DescribeWorkingStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeWorkingStorageOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput).
+    pub fn builder() -> crate::output::describe_working_storage_output::Builder {
+        crate::output::describe_working_storage_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput).
 pub mod describe_working_storage_output {
     
@@ -3378,12 +3426,6 @@ pub mod describe_working_storage_output {
     
     
 }
-impl DescribeWorkingStorageOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput).
-    pub fn builder() -> crate::output::describe_working_storage_output::Builder {
-        crate::output::describe_working_storage_output::Builder::default()
-    }
-}
 
 /// <p>DescribeVTLDevicesOutput</p>
 #[non_exhaustive]
@@ -3419,6 +3461,13 @@ impl aws_http::request_id::RequestId for DescribeVtlDevicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVtlDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput).
+    pub fn builder() -> crate::output::describe_vtl_devices_output::Builder {
+        crate::output::describe_vtl_devices_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput).
 pub mod describe_vtl_devices_output {
     
@@ -3490,12 +3539,6 @@ pub mod describe_vtl_devices_output {
     
     
 }
-impl DescribeVtlDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput).
-    pub fn builder() -> crate::output::describe_vtl_devices_output::Builder {
-        crate::output::describe_vtl_devices_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3538,6 +3581,13 @@ impl aws_http::request_id::RequestId for DescribeUploadBufferOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeUploadBufferOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput).
+    pub fn builder() -> crate::output::describe_upload_buffer_output::Builder {
+        crate::output::describe_upload_buffer_output::Builder::default()
+    }
+}
+
 /// See [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput).
 pub mod describe_upload_buffer_output {
     
@@ -3623,12 +3673,6 @@ pub mod describe_upload_buffer_output {
     
     
 }
-impl DescribeUploadBufferOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput).
-    pub fn builder() -> crate::output::describe_upload_buffer_output::Builder {
-        crate::output::describe_upload_buffer_output::Builder::default()
-    }
-}
 
 /// <p>DescribeTapesOutput</p>
 #[non_exhaustive]
@@ -3659,6 +3703,13 @@ impl aws_http::request_id::RequestId for DescribeTapesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTapesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTapesOutput`](crate::output::DescribeTapesOutput).
+    pub fn builder() -> crate::output::describe_tapes_output::Builder {
+        crate::output::describe_tapes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTapesOutput`](crate::output::DescribeTapesOutput).
 pub mod describe_tapes_output {
     
@@ -3720,12 +3771,6 @@ pub mod describe_tapes_output {
     
     
 }
-impl DescribeTapesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTapesOutput`](crate::output::DescribeTapesOutput).
-    pub fn builder() -> crate::output::describe_tapes_output::Builder {
-        crate::output::describe_tapes_output::Builder::default()
-    }
-}
 
 /// <p>DescribeTapeRecoveryPointsOutput</p>
 #[non_exhaustive]
@@ -3763,6 +3808,13 @@ impl aws_http::request_id::RequestId for DescribeTapeRecoveryPointsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTapeRecoveryPointsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput).
+    pub fn builder() -> crate::output::describe_tape_recovery_points_output::Builder {
+        crate::output::describe_tape_recovery_points_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput).
 pub mod describe_tape_recovery_points_output {
     
@@ -3836,12 +3888,6 @@ pub mod describe_tape_recovery_points_output {
     
     
 }
-impl DescribeTapeRecoveryPointsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput).
-    pub fn builder() -> crate::output::describe_tape_recovery_points_output::Builder {
-        crate::output::describe_tape_recovery_points_output::Builder::default()
-    }
-}
 
 /// <p>DescribeTapeArchivesOutput</p>
 #[non_exhaustive]
@@ -3870,6 +3916,13 @@ impl aws_http::request_id::RequestId for DescribeTapeArchivesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeTapeArchivesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput).
+    pub fn builder() -> crate::output::describe_tape_archives_output::Builder {
+        crate::output::describe_tape_archives_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput).
 pub mod describe_tape_archives_output {
     
@@ -3929,12 +3982,6 @@ pub mod describe_tape_archives_output {
     
     
 }
-impl DescribeTapeArchivesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput).
-    pub fn builder() -> crate::output::describe_tape_archives_output::Builder {
-        crate::output::describe_tape_archives_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3992,6 +4039,13 @@ impl aws_http::request_id::RequestId for DescribeStorediScsiVolumesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeStorediScsiVolumesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput).
+    pub fn builder() -> crate::output::describe_storedi_scsi_volumes_output::Builder {
+        crate::output::describe_storedi_scsi_volumes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput).
 pub mod describe_storedi_scsi_volumes_output {
     
@@ -4075,12 +4129,6 @@ pub mod describe_storedi_scsi_volumes_output {
     
     
 }
-impl DescribeStorediScsiVolumesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput).
-    pub fn builder() -> crate::output::describe_storedi_scsi_volumes_output::Builder {
-        crate::output::describe_storedi_scsi_volumes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4137,6 +4185,13 @@ impl aws_http::request_id::RequestId for DescribeSnapshotScheduleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSnapshotScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput).
+    pub fn builder() -> crate::output::describe_snapshot_schedule_output::Builder {
+        crate::output::describe_snapshot_schedule_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput).
 pub mod describe_snapshot_schedule_output {
     
@@ -4244,12 +4299,6 @@ pub mod describe_snapshot_schedule_output {
     
     
 }
-impl DescribeSnapshotScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput).
-    pub fn builder() -> crate::output::describe_snapshot_schedule_output::Builder {
-        crate::output::describe_snapshot_schedule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4343,6 +4392,13 @@ impl aws_http::request_id::RequestId for DescribeSmbSettingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSmbSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput).
+    pub fn builder() -> crate::output::describe_smb_settings_output::Builder {
+        crate::output::describe_smb_settings_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput).
 pub mod describe_smb_settings_output {
     
@@ -4486,12 +4542,6 @@ pub mod describe_smb_settings_output {
     
     
 }
-impl DescribeSmbSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput).
-    pub fn builder() -> crate::output::describe_smb_settings_output::Builder {
-        crate::output::describe_smb_settings_output::Builder::default()
-    }
-}
 
 /// <p>DescribeSMBFileSharesOutput</p>
 #[non_exhaustive]
@@ -4513,6 +4563,13 @@ impl aws_http::request_id::RequestId for DescribeSmbFileSharesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSmbFileSharesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput).
+    pub fn builder() -> crate::output::describe_smb_file_shares_output::Builder {
+        crate::output::describe_smb_file_shares_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput).
 pub mod describe_smb_file_shares_output {
     
@@ -4560,12 +4617,6 @@ pub mod describe_smb_file_shares_output {
     
     
 }
-impl DescribeSmbFileSharesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput).
-    pub fn builder() -> crate::output::describe_smb_file_shares_output::Builder {
-        crate::output::describe_smb_file_shares_output::Builder::default()
-    }
-}
 
 /// <p>DescribeNFSFileSharesOutput</p>
 #[non_exhaustive]
@@ -4587,6 +4638,13 @@ impl aws_http::request_id::RequestId for DescribeNfsFileSharesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeNfsFileSharesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput).
+    pub fn builder() -> crate::output::describe_nfs_file_shares_output::Builder {
+        crate::output::describe_nfs_file_shares_output::Builder::default()
+    }
+}
+
 /// See [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput).
 pub mod describe_nfs_file_shares_output {
     
@@ -4633,12 +4691,6 @@ pub mod describe_nfs_file_shares_output {
     }
     
     
-}
-impl DescribeNfsFileSharesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput).
-    pub fn builder() -> crate::output::describe_nfs_file_shares_output::Builder {
-        crate::output::describe_nfs_file_shares_output::Builder::default()
-    }
 }
 
 /// <p>A JSON object containing the following fields:</p> 
@@ -4703,6 +4755,13 @@ impl aws_http::request_id::RequestId for DescribeMaintenanceStartTimeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeMaintenanceStartTimeOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput).
+    pub fn builder() -> crate::output::describe_maintenance_start_time_output::Builder {
+        crate::output::describe_maintenance_start_time_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput).
 pub mod describe_maintenance_start_time_output {
     
@@ -4803,12 +4862,6 @@ pub mod describe_maintenance_start_time_output {
     }
     
     
-}
-impl DescribeMaintenanceStartTimeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput).
-    pub fn builder() -> crate::output::describe_maintenance_start_time_output::Builder {
-        crate::output::describe_maintenance_start_time_output::Builder::default()
-    }
 }
 
 /// <p>A JSON object containing the following fields:</p>
@@ -4973,6 +5026,13 @@ impl aws_http::request_id::RequestId for DescribeGatewayInformationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeGatewayInformationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput).
+    pub fn builder() -> crate::output::describe_gateway_information_output::Builder {
+        crate::output::describe_gateway_information_output::Builder::default()
+    }
+}
+
 /// See [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput).
 pub mod describe_gateway_information_output {
     
@@ -5274,12 +5334,6 @@ pub mod describe_gateway_information_output {
     
     
 }
-impl DescribeGatewayInformationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput).
-    pub fn builder() -> crate::output::describe_gateway_information_output::Builder {
-        crate::output::describe_gateway_information_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5301,6 +5355,13 @@ impl aws_http::request_id::RequestId for DescribeFileSystemAssociationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeFileSystemAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput).
+    pub fn builder() -> crate::output::describe_file_system_associations_output::Builder {
+        crate::output::describe_file_system_associations_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput).
 pub mod describe_file_system_associations_output {
     
@@ -5348,12 +5409,6 @@ pub mod describe_file_system_associations_output {
     
     
 }
-impl DescribeFileSystemAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput).
-    pub fn builder() -> crate::output::describe_file_system_associations_output::Builder {
-        crate::output::describe_file_system_associations_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -5387,6 +5442,13 @@ impl aws_http::request_id::RequestId for DescribeChapCredentialsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeChapCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput).
+    pub fn builder() -> crate::output::describe_chap_credentials_output::Builder {
+        crate::output::describe_chap_credentials_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput).
 pub mod describe_chap_credentials_output {
     
@@ -5446,12 +5508,6 @@ pub mod describe_chap_credentials_output {
     
     
 }
-impl DescribeChapCredentialsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput).
-    pub fn builder() -> crate::output::describe_chap_credentials_output::Builder {
-        crate::output::describe_chap_credentials_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -5473,6 +5529,13 @@ impl aws_http::request_id::RequestId for DescribeCachediScsiVolumesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCachediScsiVolumesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput).
+    pub fn builder() -> crate::output::describe_cachedi_scsi_volumes_output::Builder {
+        crate::output::describe_cachedi_scsi_volumes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput).
 pub mod describe_cachedi_scsi_volumes_output {
     
@@ -5519,12 +5582,6 @@ pub mod describe_cachedi_scsi_volumes_output {
     }
     
     
-}
-impl DescribeCachediScsiVolumesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput).
-    pub fn builder() -> crate::output::describe_cachedi_scsi_volumes_output::Builder {
-        crate::output::describe_cachedi_scsi_volumes_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -5589,6 +5646,13 @@ impl aws_http::request_id::RequestId for DescribeCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeCacheOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCacheOutput`](crate::output::DescribeCacheOutput).
+    pub fn builder() -> crate::output::describe_cache_output::Builder {
+        crate::output::describe_cache_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCacheOutput`](crate::output::DescribeCacheOutput).
 pub mod describe_cache_output {
     
@@ -5713,12 +5777,6 @@ pub mod describe_cache_output {
     
     
 }
-impl DescribeCacheOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheOutput`](crate::output::DescribeCacheOutput).
-    pub fn builder() -> crate::output::describe_cache_output::Builder {
-        crate::output::describe_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5747,6 +5805,13 @@ impl aws_http::request_id::RequestId for DescribeBandwidthRateLimitScheduleOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeBandwidthRateLimitScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput).
+    pub fn builder() -> crate::output::describe_bandwidth_rate_limit_schedule_output::Builder {
+        crate::output::describe_bandwidth_rate_limit_schedule_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput).
 pub mod describe_bandwidth_rate_limit_schedule_output {
     
@@ -5806,12 +5871,6 @@ pub mod describe_bandwidth_rate_limit_schedule_output {
     
     
 }
-impl DescribeBandwidthRateLimitScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput).
-    pub fn builder() -> crate::output::describe_bandwidth_rate_limit_schedule_output::Builder {
-        crate::output::describe_bandwidth_rate_limit_schedule_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -5847,6 +5906,13 @@ impl aws_http::request_id::RequestId for DescribeBandwidthRateLimitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeBandwidthRateLimitOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput).
+    pub fn builder() -> crate::output::describe_bandwidth_rate_limit_output::Builder {
+        crate::output::describe_bandwidth_rate_limit_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput).
 pub mod describe_bandwidth_rate_limit_output {
     
@@ -5912,12 +5978,6 @@ pub mod describe_bandwidth_rate_limit_output {
     
     
 }
-impl DescribeBandwidthRateLimitOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput).
-    pub fn builder() -> crate::output::describe_bandwidth_rate_limit_output::Builder {
-        crate::output::describe_bandwidth_rate_limit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5953,6 +6013,13 @@ impl aws_http::request_id::RequestId for DescribeAvailabilityMonitorTestOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAvailabilityMonitorTestOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput).
+    pub fn builder() -> crate::output::describe_availability_monitor_test_output::Builder {
+        crate::output::describe_availability_monitor_test_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput).
 pub mod describe_availability_monitor_test_output {
     
@@ -6018,12 +6085,6 @@ pub mod describe_availability_monitor_test_output {
     
     
 }
-impl DescribeAvailabilityMonitorTestOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput).
-    pub fn builder() -> crate::output::describe_availability_monitor_test_output::Builder {
-        crate::output::describe_availability_monitor_test_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.</p>
 #[non_exhaustive]
@@ -6045,6 +6106,13 @@ impl aws_http::request_id::RequestId for DeleteVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
+    pub fn builder() -> crate::output::delete_volume_output::Builder {
+        crate::output::delete_volume_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
 pub mod delete_volume_output {
     
@@ -6086,12 +6154,6 @@ pub mod delete_volume_output {
     
     
 }
-impl DeleteVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput).
-    pub fn builder() -> crate::output::delete_volume_output::Builder {
-        crate::output::delete_volume_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6113,6 +6175,13 @@ impl aws_http::request_id::RequestId for DeleteTapePoolOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteTapePoolOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput).
+    pub fn builder() -> crate::output::delete_tape_pool_output::Builder {
+        crate::output::delete_tape_pool_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput).
 pub mod delete_tape_pool_output {
     
@@ -6154,12 +6223,6 @@ pub mod delete_tape_pool_output {
     
     
 }
-impl DeleteTapePoolOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput).
-    pub fn builder() -> crate::output::delete_tape_pool_output::Builder {
-        crate::output::delete_tape_pool_output::Builder::default()
-    }
-}
 
 /// <p>DeleteTapeArchiveOutput</p>
 #[non_exhaustive]
@@ -6181,6 +6244,13 @@ impl aws_http::request_id::RequestId for DeleteTapeArchiveOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteTapeArchiveOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput).
+    pub fn builder() -> crate::output::delete_tape_archive_output::Builder {
+        crate::output::delete_tape_archive_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput).
 pub mod delete_tape_archive_output {
     
@@ -6222,12 +6292,6 @@ pub mod delete_tape_archive_output {
     
     
 }
-impl DeleteTapeArchiveOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput).
-    pub fn builder() -> crate::output::delete_tape_archive_output::Builder {
-        crate::output::delete_tape_archive_output::Builder::default()
-    }
-}
 
 /// <p>DeleteTapeOutput</p>
 #[non_exhaustive]
@@ -6249,6 +6313,13 @@ impl aws_http::request_id::RequestId for DeleteTapeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteTapeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTapeOutput`](crate::output::DeleteTapeOutput).
+    pub fn builder() -> crate::output::delete_tape_output::Builder {
+        crate::output::delete_tape_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTapeOutput`](crate::output::DeleteTapeOutput).
 pub mod delete_tape_output {
     
@@ -6290,12 +6361,6 @@ pub mod delete_tape_output {
     
     
 }
-impl DeleteTapeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTapeOutput`](crate::output::DeleteTapeOutput).
-    pub fn builder() -> crate::output::delete_tape_output::Builder {
-        crate::output::delete_tape_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6317,6 +6382,13 @@ impl aws_http::request_id::RequestId for DeleteSnapshotScheduleOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSnapshotScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput).
+    pub fn builder() -> crate::output::delete_snapshot_schedule_output::Builder {
+        crate::output::delete_snapshot_schedule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput).
 pub mod delete_snapshot_schedule_output {
     
@@ -6358,12 +6430,6 @@ pub mod delete_snapshot_schedule_output {
     
     
 }
-impl DeleteSnapshotScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput).
-    pub fn builder() -> crate::output::delete_snapshot_schedule_output::Builder {
-        crate::output::delete_snapshot_schedule_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the ID of the deleted gateway.</p>
 #[non_exhaustive]
@@ -6385,6 +6451,13 @@ impl aws_http::request_id::RequestId for DeleteGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
+    pub fn builder() -> crate::output::delete_gateway_output::Builder {
+        crate::output::delete_gateway_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
 pub mod delete_gateway_output {
     
@@ -6426,12 +6499,6 @@ pub mod delete_gateway_output {
     
     
 }
-impl DeleteGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
-    pub fn builder() -> crate::output::delete_gateway_output::Builder {
-        crate::output::delete_gateway_output::Builder::default()
-    }
-}
 
 /// <p>DeleteFileShareOutput</p>
 #[non_exhaustive]
@@ -6453,6 +6520,13 @@ impl aws_http::request_id::RequestId for DeleteFileShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteFileShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput).
+    pub fn builder() -> crate::output::delete_file_share_output::Builder {
+        crate::output::delete_file_share_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput).
 pub mod delete_file_share_output {
     
@@ -6494,12 +6568,6 @@ pub mod delete_file_share_output {
     
     
 }
-impl DeleteFileShareOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput).
-    pub fn builder() -> crate::output::delete_file_share_output::Builder {
-        crate::output::delete_file_share_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -6528,6 +6596,13 @@ impl aws_http::request_id::RequestId for DeleteChapCredentialsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteChapCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput).
+    pub fn builder() -> crate::output::delete_chap_credentials_output::Builder {
+        crate::output::delete_chap_credentials_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput).
 pub mod delete_chap_credentials_output {
     
@@ -6581,12 +6656,6 @@ pub mod delete_chap_credentials_output {
     
     
 }
-impl DeleteChapCredentialsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput).
-    pub fn builder() -> crate::output::delete_chap_credentials_output::Builder {
-        crate::output::delete_chap_credentials_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted.</p>
 #[non_exhaustive]
@@ -6608,6 +6677,13 @@ impl aws_http::request_id::RequestId for DeleteBandwidthRateLimitOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteBandwidthRateLimitOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput).
+    pub fn builder() -> crate::output::delete_bandwidth_rate_limit_output::Builder {
+        crate::output::delete_bandwidth_rate_limit_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput).
 pub mod delete_bandwidth_rate_limit_output {
     
@@ -6649,12 +6725,6 @@ pub mod delete_bandwidth_rate_limit_output {
     
     
 }
-impl DeleteBandwidthRateLimitOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput).
-    pub fn builder() -> crate::output::delete_bandwidth_rate_limit_output::Builder {
-        crate::output::delete_bandwidth_rate_limit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6676,6 +6746,13 @@ impl aws_http::request_id::RequestId for DeleteAutomaticTapeCreationPolicyOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAutomaticTapeCreationPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput).
+    pub fn builder() -> crate::output::delete_automatic_tape_creation_policy_output::Builder {
+        crate::output::delete_automatic_tape_creation_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput).
 pub mod delete_automatic_tape_creation_policy_output {
     
@@ -6717,12 +6794,6 @@ pub mod delete_automatic_tape_creation_policy_output {
     
     
 }
-impl DeleteAutomaticTapeCreationPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput).
-    pub fn builder() -> crate::output::delete_automatic_tape_creation_policy_output::Builder {
-        crate::output::delete_automatic_tape_creation_policy_output::Builder::default()
-    }
-}
 
 /// <p>CreateTapeOutput</p>
 #[non_exhaustive]
@@ -6744,6 +6815,13 @@ impl aws_http::request_id::RequestId for CreateTapeWithBarcodeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateTapeWithBarcodeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput).
+    pub fn builder() -> crate::output::create_tape_with_barcode_output::Builder {
+        crate::output::create_tape_with_barcode_output::Builder::default()
+    }
+}
+
 /// See [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput).
 pub mod create_tape_with_barcode_output {
     
@@ -6785,12 +6863,6 @@ pub mod create_tape_with_barcode_output {
     
     
 }
-impl CreateTapeWithBarcodeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput).
-    pub fn builder() -> crate::output::create_tape_with_barcode_output::Builder {
-        crate::output::create_tape_with_barcode_output::Builder::default()
-    }
-}
 
 /// <p>CreateTapeOutput</p>
 #[non_exhaustive]
@@ -6812,6 +6884,13 @@ impl aws_http::request_id::RequestId for CreateTapesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateTapesOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTapesOutput`](crate::output::CreateTapesOutput).
+    pub fn builder() -> crate::output::create_tapes_output::Builder {
+        crate::output::create_tapes_output::Builder::default()
+    }
+}
+
 /// See [`CreateTapesOutput`](crate::output::CreateTapesOutput).
 pub mod create_tapes_output {
     
@@ -6859,12 +6938,6 @@ pub mod create_tapes_output {
     
     
 }
-impl CreateTapesOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTapesOutput`](crate::output::CreateTapesOutput).
-    pub fn builder() -> crate::output::create_tapes_output::Builder {
-        crate::output::create_tapes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6886,6 +6959,13 @@ impl aws_http::request_id::RequestId for CreateTapePoolOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateTapePoolOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput).
+    pub fn builder() -> crate::output::create_tape_pool_output::Builder {
+        crate::output::create_tape_pool_output::Builder::default()
+    }
+}
+
 /// See [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput).
 pub mod create_tape_pool_output {
     
@@ -6927,12 +7007,6 @@ pub mod create_tape_pool_output {
     
     
 }
-impl CreateTapePoolOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput).
-    pub fn builder() -> crate::output::create_tape_pool_output::Builder {
-        crate::output::create_tape_pool_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -6968,6 +7042,13 @@ impl aws_http::request_id::RequestId for CreateStorediScsiVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateStorediScsiVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput).
+    pub fn builder() -> crate::output::create_storedi_scsi_volume_output::Builder {
+        crate::output::create_storedi_scsi_volume_output::Builder::default()
+    }
+}
+
 /// See [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput).
 pub mod create_storedi_scsi_volume_output {
     
@@ -7034,12 +7115,6 @@ pub mod create_storedi_scsi_volume_output {
     
     
 }
-impl CreateStorediScsiVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput).
-    pub fn builder() -> crate::output::create_storedi_scsi_volume_output::Builder {
-        crate::output::create_storedi_scsi_volume_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7075,6 +7150,13 @@ impl aws_http::request_id::RequestId for CreateSnapshotFromVolumeRecoveryPointOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSnapshotFromVolumeRecoveryPointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput).
+    pub fn builder() -> crate::output::create_snapshot_from_volume_recovery_point_output::Builder {
+        crate::output::create_snapshot_from_volume_recovery_point_output::Builder::default()
+    }
+}
+
 /// See [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput).
 pub mod create_snapshot_from_volume_recovery_point_output {
     
@@ -7140,12 +7222,6 @@ pub mod create_snapshot_from_volume_recovery_point_output {
     
     
 }
-impl CreateSnapshotFromVolumeRecoveryPointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput).
-    pub fn builder() -> crate::output::create_snapshot_from_volume_recovery_point_output::Builder {
-        crate::output::create_snapshot_from_volume_recovery_point_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
@@ -7174,6 +7250,13 @@ impl aws_http::request_id::RequestId for CreateSnapshotOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
+    pub fn builder() -> crate::output::create_snapshot_output::Builder {
+        crate::output::create_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
 pub mod create_snapshot_output {
     
@@ -7227,12 +7310,6 @@ pub mod create_snapshot_output {
     
     
 }
-impl CreateSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput).
-    pub fn builder() -> crate::output::create_snapshot_output::Builder {
-        crate::output::create_snapshot_output::Builder::default()
-    }
-}
 
 /// <p>CreateSMBFileShareOutput</p>
 #[non_exhaustive]
@@ -7254,6 +7331,13 @@ impl aws_http::request_id::RequestId for CreateSmbFileShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSmbFileShareOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput).
+    pub fn builder() -> crate::output::create_smb_file_share_output::Builder {
+        crate::output::create_smb_file_share_output::Builder::default()
+    }
+}
+
 /// See [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput).
 pub mod create_smb_file_share_output {
     
@@ -7295,12 +7379,6 @@ pub mod create_smb_file_share_output {
     
     
 }
-impl CreateSmbFileShareOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput).
-    pub fn builder() -> crate::output::create_smb_file_share_output::Builder {
-        crate::output::create_smb_file_share_output::Builder::default()
-    }
-}
 
 /// <p>CreateNFSFileShareOutput</p>
 #[non_exhaustive]
@@ -7322,6 +7400,13 @@ impl aws_http::request_id::RequestId for CreateNfsFileShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateNfsFileShareOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput).
+    pub fn builder() -> crate::output::create_nfs_file_share_output::Builder {
+        crate::output::create_nfs_file_share_output::Builder::default()
+    }
+}
+
 /// See [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput).
 pub mod create_nfs_file_share_output {
     
@@ -7363,12 +7448,6 @@ pub mod create_nfs_file_share_output {
     
     
 }
-impl CreateNfsFileShareOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput).
-    pub fn builder() -> crate::output::create_nfs_file_share_output::Builder {
-        crate::output::create_nfs_file_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7397,6 +7476,13 @@ impl aws_http::request_id::RequestId for CreateCachediScsiVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateCachediScsiVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput).
+    pub fn builder() -> crate::output::create_cachedi_scsi_volume_output::Builder {
+        crate::output::create_cachedi_scsi_volume_output::Builder::default()
+    }
+}
+
 /// See [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput).
 pub mod create_cachedi_scsi_volume_output {
     
@@ -7450,12 +7536,6 @@ pub mod create_cachedi_scsi_volume_output {
     
     
 }
-impl CreateCachediScsiVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput).
-    pub fn builder() -> crate::output::create_cachedi_scsi_volume_output::Builder {
-        crate::output::create_cachedi_scsi_volume_output::Builder::default()
-    }
-}
 
 /// <p>CancelRetrievalOutput</p>
 #[non_exhaustive]
@@ -7477,6 +7557,13 @@ impl aws_http::request_id::RequestId for CancelRetrievalOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelRetrievalOutput {
+    /// Creates a new builder-style object to manufacture [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput).
+    pub fn builder() -> crate::output::cancel_retrieval_output::Builder {
+        crate::output::cancel_retrieval_output::Builder::default()
+    }
+}
+
 /// See [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput).
 pub mod cancel_retrieval_output {
     
@@ -7518,12 +7605,6 @@ pub mod cancel_retrieval_output {
     
     
 }
-impl CancelRetrievalOutput {
-    /// Creates a new builder-style object to manufacture [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput).
-    pub fn builder() -> crate::output::cancel_retrieval_output::Builder {
-        crate::output::cancel_retrieval_output::Builder::default()
-    }
-}
 
 /// <p>CancelArchivalOutput</p>
 #[non_exhaustive]
@@ -7545,6 +7626,13 @@ impl aws_http::request_id::RequestId for CancelArchivalOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CancelArchivalOutput {
+    /// Creates a new builder-style object to manufacture [`CancelArchivalOutput`](crate::output::CancelArchivalOutput).
+    pub fn builder() -> crate::output::cancel_archival_output::Builder {
+        crate::output::cancel_archival_output::Builder::default()
+    }
+}
+
 /// See [`CancelArchivalOutput`](crate::output::CancelArchivalOutput).
 pub mod cancel_archival_output {
     
@@ -7586,12 +7674,6 @@ pub mod cancel_archival_output {
     
     
 }
-impl CancelArchivalOutput {
-    /// Creates a new builder-style object to manufacture [`CancelArchivalOutput`](crate::output::CancelArchivalOutput).
-    pub fn builder() -> crate::output::cancel_archival_output::Builder {
-        crate::output::cancel_archival_output::Builder::default()
-    }
-}
 
 /// <p>AttachVolumeOutput</p>
 #[non_exhaustive]
@@ -7620,6 +7702,13 @@ impl aws_http::request_id::RequestId for AttachVolumeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AttachVolumeOutput {
+    /// Creates a new builder-style object to manufacture [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
+    pub fn builder() -> crate::output::attach_volume_output::Builder {
+        crate::output::attach_volume_output::Builder::default()
+    }
+}
+
 /// See [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
 pub mod attach_volume_output {
     
@@ -7673,12 +7762,6 @@ pub mod attach_volume_output {
     
     
 }
-impl AttachVolumeOutput {
-    /// Creates a new builder-style object to manufacture [`AttachVolumeOutput`](crate::output::AttachVolumeOutput).
-    pub fn builder() -> crate::output::attach_volume_output::Builder {
-        crate::output::attach_volume_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7700,6 +7783,13 @@ impl aws_http::request_id::RequestId for AssociateFileSystemOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateFileSystemOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput).
+    pub fn builder() -> crate::output::associate_file_system_output::Builder {
+        crate::output::associate_file_system_output::Builder::default()
+    }
+}
+
 /// See [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput).
 pub mod associate_file_system_output {
     
@@ -7741,12 +7831,6 @@ pub mod associate_file_system_output {
     
     
 }
-impl AssociateFileSystemOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput).
-    pub fn builder() -> crate::output::associate_file_system_output::Builder {
-        crate::output::associate_file_system_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7768,6 +7852,13 @@ impl aws_http::request_id::RequestId for AssignTapePoolOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssignTapePoolOutput {
+    /// Creates a new builder-style object to manufacture [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput).
+    pub fn builder() -> crate::output::assign_tape_pool_output::Builder {
+        crate::output::assign_tape_pool_output::Builder::default()
+    }
+}
+
 /// See [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput).
 pub mod assign_tape_pool_output {
     
@@ -7809,12 +7900,6 @@ pub mod assign_tape_pool_output {
     
     
 }
-impl AssignTapePoolOutput {
-    /// Creates a new builder-style object to manufacture [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput).
-    pub fn builder() -> crate::output::assign_tape_pool_output::Builder {
-        crate::output::assign_tape_pool_output::Builder::default()
-    }
-}
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.</p>
 #[non_exhaustive]
@@ -7836,6 +7921,13 @@ impl aws_http::request_id::RequestId for AddWorkingStorageOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddWorkingStorageOutput {
+    /// Creates a new builder-style object to manufacture [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput).
+    pub fn builder() -> crate::output::add_working_storage_output::Builder {
+        crate::output::add_working_storage_output::Builder::default()
+    }
+}
+
 /// See [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput).
 pub mod add_working_storage_output {
     
@@ -7877,12 +7969,6 @@ pub mod add_working_storage_output {
     
     
 }
-impl AddWorkingStorageOutput {
-    /// Creates a new builder-style object to manufacture [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput).
-    pub fn builder() -> crate::output::add_working_storage_output::Builder {
-        crate::output::add_working_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7904,6 +7990,13 @@ impl aws_http::request_id::RequestId for AddUploadBufferOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddUploadBufferOutput {
+    /// Creates a new builder-style object to manufacture [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput).
+    pub fn builder() -> crate::output::add_upload_buffer_output::Builder {
+        crate::output::add_upload_buffer_output::Builder::default()
+    }
+}
+
 /// See [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput).
 pub mod add_upload_buffer_output {
     
@@ -7945,12 +8038,6 @@ pub mod add_upload_buffer_output {
     
     
 }
-impl AddUploadBufferOutput {
-    /// Creates a new builder-style object to manufacture [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput).
-    pub fn builder() -> crate::output::add_upload_buffer_output::Builder {
-        crate::output::add_upload_buffer_output::Builder::default()
-    }
-}
 
 /// <p>AddTagsToResourceOutput</p>
 #[non_exhaustive]
@@ -7972,6 +8059,13 @@ impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddTagsToResourceOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
+    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
+        crate::output::add_tags_to_resource_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
     
@@ -8013,12 +8107,6 @@ pub mod add_tags_to_resource_output {
     
     
 }
-impl AddTagsToResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
-    pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
-        crate::output::add_tags_to_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8040,6 +8128,13 @@ impl aws_http::request_id::RequestId for AddCacheOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AddCacheOutput {
+    /// Creates a new builder-style object to manufacture [`AddCacheOutput`](crate::output::AddCacheOutput).
+    pub fn builder() -> crate::output::add_cache_output::Builder {
+        crate::output::add_cache_output::Builder::default()
+    }
+}
+
 /// See [`AddCacheOutput`](crate::output::AddCacheOutput).
 pub mod add_cache_output {
     
@@ -8081,12 +8176,6 @@ pub mod add_cache_output {
     
     
 }
-impl AddCacheOutput {
-    /// Creates a new builder-style object to manufacture [`AddCacheOutput`](crate::output::AddCacheOutput).
-    pub fn builder() -> crate::output::add_cache_output::Builder {
-        crate::output::add_cache_output::Builder::default()
-    }
-}
 
 /// <p>Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and Amazon Web Services Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note> 
 /// <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.</p> 
@@ -8110,6 +8199,13 @@ impl aws_http::request_id::RequestId for ActivateGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ActivateGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput).
+    pub fn builder() -> crate::output::activate_gateway_output::Builder {
+        crate::output::activate_gateway_output::Builder::default()
+    }
+}
+
 /// See [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput).
 pub mod activate_gateway_output {
     
@@ -8150,11 +8246,5 @@ pub mod activate_gateway_output {
     }
     
     
-}
-impl ActivateGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput).
-    pub fn builder() -> crate::output::activate_gateway_output::Builder {
-        crate::output::activate_gateway_output::Builder::default()
-    }
 }
 

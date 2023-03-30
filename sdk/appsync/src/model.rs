@@ -14,6 +14,13 @@ impl BadRequestDetail {
         self.code_errors.as_deref()
     }
 }
+impl BadRequestDetail {
+    /// Creates a new builder-style object to manufacture [`BadRequestDetail`](crate::model::BadRequestDetail).
+    pub fn builder() -> crate::model::bad_request_detail::Builder {
+        crate::model::bad_request_detail::Builder::default()
+    }
+}
+
 /// See [`BadRequestDetail`](crate::model::BadRequestDetail).
 pub mod bad_request_detail {
     
@@ -50,12 +57,6 @@ pub mod bad_request_detail {
     
     
 }
-impl BadRequestDetail {
-    /// Creates a new builder-style object to manufacture [`BadRequestDetail`](crate::model::BadRequestDetail).
-    pub fn builder() -> crate::model::bad_request_detail::Builder {
-        crate::model::bad_request_detail::Builder::default()
-    }
-}
 
 /// <p>Describes an AppSync error.</p>
 #[non_exhaustive]
@@ -89,6 +90,13 @@ impl CodeError {
         self.location.as_ref()
     }
 }
+impl CodeError {
+    /// Creates a new builder-style object to manufacture [`CodeError`](crate::model::CodeError).
+    pub fn builder() -> crate::model::code_error::Builder {
+        crate::model::code_error::Builder::default()
+    }
+}
+
 /// See [`CodeError`](crate::model::CodeError).
 pub mod code_error {
     
@@ -147,12 +155,6 @@ pub mod code_error {
     
     
 }
-impl CodeError {
-    /// Creates a new builder-style object to manufacture [`CodeError`](crate::model::CodeError).
-    pub fn builder() -> crate::model::code_error::Builder {
-        crate::model::code_error::Builder::default()
-    }
-}
 
 /// <p>Describes the location of the error in a code sample.</p>
 #[non_exhaustive]
@@ -182,6 +184,13 @@ impl CodeErrorLocation {
         self.span
     }
 }
+impl CodeErrorLocation {
+    /// Creates a new builder-style object to manufacture [`CodeErrorLocation`](crate::model::CodeErrorLocation).
+    pub fn builder() -> crate::model::code_error_location::Builder {
+        crate::model::code_error_location::Builder::default()
+    }
+}
+
 /// See [`CodeErrorLocation`](crate::model::CodeErrorLocation).
 pub mod code_error_location {
     
@@ -238,12 +247,6 @@ pub mod code_error_location {
     }
     
     
-}
-impl CodeErrorLocation {
-    /// Creates a new builder-style object to manufacture [`CodeErrorLocation`](crate::model::CodeErrorLocation).
-    pub fn builder() -> crate::model::code_error_location::Builder {
-        crate::model::code_error_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BadRequestReason`, it is important to ensure
@@ -366,6 +369,13 @@ impl Type {
         self.format.as_ref()
     }
 }
+impl Type {
+    /// Creates a new builder-style object to manufacture [`Type`](crate::model::Type).
+    pub fn builder() -> crate::model::r#type::Builder {
+        crate::model::r#type::Builder::default()
+    }
+}
+
 /// See [`Type`](crate::model::Type).
 pub mod r#type {
     
@@ -443,12 +453,6 @@ pub mod r#type {
     }
     
     
-}
-impl Type {
-    /// Creates a new builder-style object to manufacture [`Type`](crate::model::Type).
-    pub fn builder() -> crate::model::r#type::Builder {
-        crate::model::r#type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TypeDefinitionFormat`, it is important to ensure
@@ -639,6 +643,13 @@ impl Resolver {
         self.code.as_deref()
     }
 }
+impl Resolver {
+    /// Creates a new builder-style object to manufacture [`Resolver`](crate::model::Resolver).
+    pub fn builder() -> crate::model::resolver::Builder {
+        crate::model::resolver::Builder::default()
+    }
+}
+
 /// See [`Resolver`](crate::model::Resolver).
 pub mod resolver {
     
@@ -822,12 +833,6 @@ pub mod resolver {
     
     
 }
-impl Resolver {
-    /// Creates a new builder-style object to manufacture [`Resolver`](crate::model::Resolver).
-    pub fn builder() -> crate::model::resolver::Builder {
-        crate::model::resolver::Builder::default()
-    }
-}
 
 /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
 #[non_exhaustive]
@@ -850,6 +855,13 @@ impl AppSyncRuntime {
         self.runtime_version.as_deref()
     }
 }
+impl AppSyncRuntime {
+    /// Creates a new builder-style object to manufacture [`AppSyncRuntime`](crate::model::AppSyncRuntime).
+    pub fn builder() -> crate::model::app_sync_runtime::Builder {
+        crate::model::app_sync_runtime::Builder::default()
+    }
+}
+
 /// See [`AppSyncRuntime`](crate::model::AppSyncRuntime).
 pub mod app_sync_runtime {
     
@@ -891,12 +903,6 @@ pub mod app_sync_runtime {
     }
     
     
-}
-impl AppSyncRuntime {
-    /// Creates a new builder-style object to manufacture [`AppSyncRuntime`](crate::model::AppSyncRuntime).
-    pub fn builder() -> crate::model::app_sync_runtime::Builder {
-        crate::model::app_sync_runtime::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RuntimeName`, it is important to ensure
@@ -1001,6 +1007,13 @@ impl CachingConfig {
         self.caching_keys.as_deref()
     }
 }
+impl CachingConfig {
+    /// Creates a new builder-style object to manufacture [`CachingConfig`](crate::model::CachingConfig).
+    pub fn builder() -> crate::model::caching_config::Builder {
+        crate::model::caching_config::Builder::default()
+    }
+}
+
 /// See [`CachingConfig`](crate::model::CachingConfig).
 pub mod caching_config {
     
@@ -1054,12 +1067,6 @@ pub mod caching_config {
     
     
 }
-impl CachingConfig {
-    /// Creates a new builder-style object to manufacture [`CachingConfig`](crate::model::CachingConfig).
-    pub fn builder() -> crate::model::caching_config::Builder {
-        crate::model::caching_config::Builder::default()
-    }
-}
 
 /// <p>Describes a Sync configuration for a resolver.</p> 
 /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
@@ -1108,6 +1115,13 @@ impl SyncConfig {
         self.lambda_conflict_handler_config.as_ref()
     }
 }
+impl SyncConfig {
+    /// Creates a new builder-style object to manufacture [`SyncConfig`](crate::model::SyncConfig).
+    pub fn builder() -> crate::model::sync_config::Builder {
+        crate::model::sync_config::Builder::default()
+    }
+}
+
 /// See [`SyncConfig`](crate::model::SyncConfig).
 pub mod sync_config {
     
@@ -1180,12 +1194,6 @@ pub mod sync_config {
     
     
 }
-impl SyncConfig {
-    /// Creates a new builder-style object to manufacture [`SyncConfig`](crate::model::SyncConfig).
-    pub fn builder() -> crate::model::sync_config::Builder {
-        crate::model::sync_config::Builder::default()
-    }
-}
 
 /// <p>The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
 #[non_exhaustive]
@@ -1201,6 +1209,13 @@ impl LambdaConflictHandlerConfig {
         self.lambda_conflict_handler_arn.as_deref()
     }
 }
+impl LambdaConflictHandlerConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
+    pub fn builder() -> crate::model::lambda_conflict_handler_config::Builder {
+        crate::model::lambda_conflict_handler_config::Builder::default()
+    }
+}
+
 /// See [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
 pub mod lambda_conflict_handler_config {
     
@@ -1230,12 +1245,6 @@ pub mod lambda_conflict_handler_config {
     }
     
     
-}
-impl LambdaConflictHandlerConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
-    pub fn builder() -> crate::model::lambda_conflict_handler_config::Builder {
-        crate::model::lambda_conflict_handler_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConflictDetectionType`, it is important to ensure
@@ -1426,6 +1435,13 @@ impl PipelineConfig {
         self.functions.as_deref()
     }
 }
+impl PipelineConfig {
+    /// Creates a new builder-style object to manufacture [`PipelineConfig`](crate::model::PipelineConfig).
+    pub fn builder() -> crate::model::pipeline_config::Builder {
+        crate::model::pipeline_config::Builder::default()
+    }
+}
+
 /// See [`PipelineConfig`](crate::model::PipelineConfig).
 pub mod pipeline_config {
     
@@ -1461,12 +1477,6 @@ pub mod pipeline_config {
     }
     
     
-}
-impl PipelineConfig {
-    /// Creates a new builder-style object to manufacture [`PipelineConfig`](crate::model::PipelineConfig).
-    pub fn builder() -> crate::model::pipeline_config::Builder {
-        crate::model::pipeline_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResolverKind`, it is important to ensure
@@ -1649,6 +1659,13 @@ impl GraphqlApi {
         self.lambda_authorizer_config.as_ref()
     }
 }
+impl GraphqlApi {
+    /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::model::GraphqlApi).
+    pub fn builder() -> crate::model::graphql_api::Builder {
+        crate::model::graphql_api::Builder::default()
+    }
+}
+
 /// See [`GraphqlApi`](crate::model::GraphqlApi).
 pub mod graphql_api {
     
@@ -1842,12 +1859,6 @@ pub mod graphql_api {
     
     
 }
-impl GraphqlApi {
-    /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::model::GraphqlApi).
-    pub fn builder() -> crate::model::graphql_api::Builder {
-        crate::model::graphql_api::Builder::default()
-    }
-}
 
 /// <p>A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API can have only one Lambda authorizer configured at a time.</p>
 #[non_exhaustive]
@@ -1881,6 +1892,13 @@ impl LambdaAuthorizerConfig {
         self.identity_validation_expression.as_deref()
     }
 }
+impl LambdaAuthorizerConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
+    pub fn builder() -> crate::model::lambda_authorizer_config::Builder {
+        crate::model::lambda_authorizer_config::Builder::default()
+    }
+}
+
 /// See [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
 pub mod lambda_authorizer_config {
     
@@ -1940,12 +1958,6 @@ pub mod lambda_authorizer_config {
     
     
 }
-impl LambdaAuthorizerConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
-    pub fn builder() -> crate::model::lambda_authorizer_config::Builder {
-        crate::model::lambda_authorizer_config::Builder::default()
-    }
-}
 
 /// <p>Describes an additional authentication provider.</p>
 #[non_exhaustive]
@@ -1982,6 +1994,13 @@ impl AdditionalAuthenticationProvider {
         self.lambda_authorizer_config.as_ref()
     }
 }
+impl AdditionalAuthenticationProvider {
+    /// Creates a new builder-style object to manufacture [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
+    pub fn builder() -> crate::model::additional_authentication_provider::Builder {
+        crate::model::additional_authentication_provider::Builder::default()
+    }
+}
+
 /// See [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
 pub mod additional_authentication_provider {
     
@@ -2048,12 +2067,6 @@ pub mod additional_authentication_provider {
     
     
 }
-impl AdditionalAuthenticationProvider {
-    /// Creates a new builder-style object to manufacture [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
-    pub fn builder() -> crate::model::additional_authentication_provider::Builder {
-        crate::model::additional_authentication_provider::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
@@ -2083,6 +2096,13 @@ impl CognitoUserPoolConfig {
         self.app_id_client_regex.as_deref()
     }
 }
+impl CognitoUserPoolConfig {
+    /// Creates a new builder-style object to manufacture [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
+    pub fn builder() -> crate::model::cognito_user_pool_config::Builder {
+        crate::model::cognito_user_pool_config::Builder::default()
+    }
+}
+
 /// See [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
 pub mod cognito_user_pool_config {
     
@@ -2137,12 +2157,6 @@ pub mod cognito_user_pool_config {
     
     
 }
-impl CognitoUserPoolConfig {
-    /// Creates a new builder-style object to manufacture [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
-    pub fn builder() -> crate::model::cognito_user_pool_config::Builder {
-        crate::model::cognito_user_pool_config::Builder::default()
-    }
-}
 
 /// <p>Describes an OpenID Connect (OIDC) configuration.</p>
 #[non_exhaustive]
@@ -2179,6 +2193,13 @@ impl OpenIdConnectConfig {
         self.auth_ttl
     }
 }
+impl OpenIdConnectConfig {
+    /// Creates a new builder-style object to manufacture [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
+    pub fn builder() -> crate::model::open_id_connect_config::Builder {
+        crate::model::open_id_connect_config::Builder::default()
+    }
+}
+
 /// See [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
 pub mod open_id_connect_config {
     
@@ -2246,12 +2267,6 @@ pub mod open_id_connect_config {
     }
     
     
-}
-impl OpenIdConnectConfig {
-    /// Creates a new builder-style object to manufacture [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
-    pub fn builder() -> crate::model::open_id_connect_config::Builder {
-        crate::model::open_id_connect_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthenticationType`, it is important to ensure
@@ -2386,6 +2401,13 @@ impl UserPoolConfig {
         self.app_id_client_regex.as_deref()
     }
 }
+impl UserPoolConfig {
+    /// Creates a new builder-style object to manufacture [`UserPoolConfig`](crate::model::UserPoolConfig).
+    pub fn builder() -> crate::model::user_pool_config::Builder {
+        crate::model::user_pool_config::Builder::default()
+    }
+}
+
 /// See [`UserPoolConfig`](crate::model::UserPoolConfig).
 pub mod user_pool_config {
     
@@ -2451,12 +2473,6 @@ pub mod user_pool_config {
     }
     
     
-}
-impl UserPoolConfig {
-    /// Creates a new builder-style object to manufacture [`UserPoolConfig`](crate::model::UserPoolConfig).
-    pub fn builder() -> crate::model::user_pool_config::Builder {
-        crate::model::user_pool_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DefaultAction`, it is important to ensure
@@ -2597,6 +2613,13 @@ impl LogConfig {
         self.exclude_verbose_content
     }
 }
+impl LogConfig {
+    /// Creates a new builder-style object to manufacture [`LogConfig`](crate::model::LogConfig).
+    pub fn builder() -> crate::model::log_config::Builder {
+        crate::model::log_config::Builder::default()
+    }
+}
+
 /// See [`LogConfig`](crate::model::LogConfig).
 pub mod log_config {
     
@@ -2679,12 +2702,6 @@ pub mod log_config {
     }
     
     
-}
-impl LogConfig {
-    /// Creates a new builder-style object to manufacture [`LogConfig`](crate::model::LogConfig).
-    pub fn builder() -> crate::model::log_config::Builder {
-        crate::model::log_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FieldLogLevel`, it is important to ensure
@@ -2867,6 +2884,13 @@ impl FunctionConfiguration {
         self.code.as_deref()
     }
 }
+impl FunctionConfiguration {
+    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
+    pub fn builder() -> crate::model::function_configuration::Builder {
+        crate::model::function_configuration::Builder::default()
+    }
+}
+
 /// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
     
@@ -3032,12 +3056,6 @@ pub mod function_configuration {
     
     
 }
-impl FunctionConfiguration {
-    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
-    pub fn builder() -> crate::model::function_configuration::Builder {
-        crate::model::function_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a configuration for a custom domain.</p>
 #[non_exhaustive]
@@ -3081,6 +3099,13 @@ impl DomainNameConfig {
         self.hosted_zone_id.as_deref()
     }
 }
+impl DomainNameConfig {
+    /// Creates a new builder-style object to manufacture [`DomainNameConfig`](crate::model::DomainNameConfig).
+    pub fn builder() -> crate::model::domain_name_config::Builder {
+        crate::model::domain_name_config::Builder::default()
+    }
+}
+
 /// See [`DomainNameConfig`](crate::model::DomainNameConfig).
 pub mod domain_name_config {
     
@@ -3158,12 +3183,6 @@ pub mod domain_name_config {
     }
     
     
-}
-impl DomainNameConfig {
-    /// Creates a new builder-style object to manufacture [`DomainNameConfig`](crate::model::DomainNameConfig).
-    pub fn builder() -> crate::model::domain_name_config::Builder {
-        crate::model::domain_name_config::Builder::default()
-    }
 }
 
 /// <p>Describes a data source.</p>
@@ -3268,6 +3287,13 @@ impl DataSource {
         self.relational_database_config.as_ref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
     
@@ -3436,12 +3462,6 @@ pub mod data_source {
     
     
 }
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
-    }
-}
 
 /// <p>Describes a relational database data source configuration.</p>
 #[non_exhaustive]
@@ -3470,6 +3490,13 @@ impl RelationalDatabaseDataSourceConfig {
         self.rds_http_endpoint_config.as_ref()
     }
 }
+impl RelationalDatabaseDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
+    pub fn builder() -> crate::model::relational_database_data_source_config::Builder {
+        crate::model::relational_database_data_source_config::Builder::default()
+    }
+}
+
 /// See [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
 pub mod relational_database_data_source_config {
     
@@ -3518,12 +3545,6 @@ pub mod relational_database_data_source_config {
     
     
 }
-impl RelationalDatabaseDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
-    pub fn builder() -> crate::model::relational_database_data_source_config::Builder {
-        crate::model::relational_database_data_source_config::Builder::default()
-    }
-}
 
 /// <p>The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration.</p>
 #[non_exhaustive]
@@ -3567,6 +3588,13 @@ impl RdsHttpEndpointConfig {
         self.aws_secret_store_arn.as_deref()
     }
 }
+impl RdsHttpEndpointConfig {
+    /// Creates a new builder-style object to manufacture [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
+    pub fn builder() -> crate::model::rds_http_endpoint_config::Builder {
+        crate::model::rds_http_endpoint_config::Builder::default()
+    }
+}
+
 /// See [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
 pub mod rds_http_endpoint_config {
     
@@ -3644,12 +3672,6 @@ pub mod rds_http_endpoint_config {
     }
     
     
-}
-impl RdsHttpEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
-    pub fn builder() -> crate::model::rds_http_endpoint_config::Builder {
-        crate::model::rds_http_endpoint_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RelationalDatabaseSourceType`, it is important to ensure
@@ -3750,6 +3772,13 @@ impl HttpDataSourceConfig {
         self.authorization_config.as_ref()
     }
 }
+impl HttpDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
+    pub fn builder() -> crate::model::http_data_source_config::Builder {
+        crate::model::http_data_source_config::Builder::default()
+    }
+}
+
 /// See [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
 pub mod http_data_source_config {
     
@@ -3792,12 +3821,6 @@ pub mod http_data_source_config {
     
     
 }
-impl HttpDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
-    pub fn builder() -> crate::model::http_data_source_config::Builder {
-        crate::model::http_data_source_config::Builder::default()
-    }
-}
 
 /// <p>The authorization configuration in case the HTTP endpoint requires authorization.</p>
 #[non_exhaustive]
@@ -3826,6 +3849,13 @@ impl AuthorizationConfig {
         self.aws_iam_config.as_ref()
     }
 }
+impl AuthorizationConfig {
+    /// Creates a new builder-style object to manufacture [`AuthorizationConfig`](crate::model::AuthorizationConfig).
+    pub fn builder() -> crate::model::authorization_config::Builder {
+        crate::model::authorization_config::Builder::default()
+    }
+}
+
 /// See [`AuthorizationConfig`](crate::model::AuthorizationConfig).
 pub mod authorization_config {
     
@@ -3874,12 +3904,6 @@ pub mod authorization_config {
     
     
 }
-impl AuthorizationConfig {
-    /// Creates a new builder-style object to manufacture [`AuthorizationConfig`](crate::model::AuthorizationConfig).
-    pub fn builder() -> crate::model::authorization_config::Builder {
-        crate::model::authorization_config::Builder::default()
-    }
-}
 
 /// <p>The Identity and Access Management (IAM) configuration.</p>
 #[non_exhaustive]
@@ -3902,6 +3926,13 @@ impl AwsIamConfig {
         self.signing_service_name.as_deref()
     }
 }
+impl AwsIamConfig {
+    /// Creates a new builder-style object to manufacture [`AwsIamConfig`](crate::model::AwsIamConfig).
+    pub fn builder() -> crate::model::aws_iam_config::Builder {
+        crate::model::aws_iam_config::Builder::default()
+    }
+}
+
 /// See [`AwsIamConfig`](crate::model::AwsIamConfig).
 pub mod aws_iam_config {
     
@@ -3943,12 +3974,6 @@ pub mod aws_iam_config {
     }
     
     
-}
-impl AwsIamConfig {
-    /// Creates a new builder-style object to manufacture [`AwsIamConfig`](crate::model::AwsIamConfig).
-    pub fn builder() -> crate::model::aws_iam_config::Builder {
-        crate::model::aws_iam_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthorizationType`, it is important to ensure
@@ -4049,6 +4074,13 @@ impl OpenSearchServiceDataSourceConfig {
         self.aws_region.as_deref()
     }
 }
+impl OpenSearchServiceDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
+    pub fn builder() -> crate::model::open_search_service_data_source_config::Builder {
+        crate::model::open_search_service_data_source_config::Builder::default()
+    }
+}
+
 /// See [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
 pub mod open_search_service_data_source_config {
     
@@ -4091,12 +4123,6 @@ pub mod open_search_service_data_source_config {
     
     
 }
-impl OpenSearchServiceDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
-    pub fn builder() -> crate::model::open_search_service_data_source_config::Builder {
-        crate::model::open_search_service_data_source_config::Builder::default()
-    }
-}
 
 /// <p>Describes an OpenSearch data source configuration.</p> 
 /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <code>OpenSearchServiceDataSourceConfig</code> to specify an OpenSearch data source.</p>
@@ -4120,6 +4146,13 @@ impl ElasticsearchDataSourceConfig {
         self.aws_region.as_deref()
     }
 }
+impl ElasticsearchDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
+    pub fn builder() -> crate::model::elasticsearch_data_source_config::Builder {
+        crate::model::elasticsearch_data_source_config::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
 pub mod elasticsearch_data_source_config {
     
@@ -4162,12 +4195,6 @@ pub mod elasticsearch_data_source_config {
     
     
 }
-impl ElasticsearchDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
-    pub fn builder() -> crate::model::elasticsearch_data_source_config::Builder {
-        crate::model::elasticsearch_data_source_config::Builder::default()
-    }
-}
 
 /// <p>Describes an Lambda data source configuration.</p>
 #[non_exhaustive]
@@ -4183,6 +4210,13 @@ impl LambdaDataSourceConfig {
         self.lambda_function_arn.as_deref()
     }
 }
+impl LambdaDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
+    pub fn builder() -> crate::model::lambda_data_source_config::Builder {
+        crate::model::lambda_data_source_config::Builder::default()
+    }
+}
+
 /// See [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
 pub mod lambda_data_source_config {
     
@@ -4212,12 +4246,6 @@ pub mod lambda_data_source_config {
     }
     
     
-}
-impl LambdaDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
-    pub fn builder() -> crate::model::lambda_data_source_config::Builder {
-        crate::model::lambda_data_source_config::Builder::default()
-    }
 }
 
 /// <p>Describes an Amazon DynamoDB data source configuration.</p>
@@ -4262,6 +4290,13 @@ impl DynamodbDataSourceConfig {
         self.versioned
     }
 }
+impl DynamodbDataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
+    pub fn builder() -> crate::model::dynamodb_data_source_config::Builder {
+        crate::model::dynamodb_data_source_config::Builder::default()
+    }
+}
+
 /// See [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
 pub mod dynamodb_data_source_config {
     
@@ -4342,12 +4377,6 @@ pub mod dynamodb_data_source_config {
     
     
 }
-impl DynamodbDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
-    pub fn builder() -> crate::model::dynamodb_data_source_config::Builder {
-        crate::model::dynamodb_data_source_config::Builder::default()
-    }
-}
 
 /// <p>Describes a Delta Sync configuration.</p>
 #[non_exhaustive]
@@ -4377,6 +4406,13 @@ impl DeltaSyncConfig {
         self.delta_sync_table_ttl
     }
 }
+impl DeltaSyncConfig {
+    /// Creates a new builder-style object to manufacture [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
+    pub fn builder() -> crate::model::delta_sync_config::Builder {
+        crate::model::delta_sync_config::Builder::default()
+    }
+}
+
 /// See [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
 pub mod delta_sync_config {
     
@@ -4432,12 +4468,6 @@ pub mod delta_sync_config {
     }
     
     
-}
-impl DeltaSyncConfig {
-    /// Creates a new builder-style object to manufacture [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
-    pub fn builder() -> crate::model::delta_sync_config::Builder {
-        crate::model::delta_sync_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataSourceType`, it is important to ensure
@@ -4600,6 +4630,13 @@ impl ApiKey {
         self.deletes
     }
 }
+impl ApiKey {
+    /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey).
+    pub fn builder() -> crate::model::api_key::Builder {
+        crate::model::api_key::Builder::default()
+    }
+}
+
 /// See [`ApiKey`](crate::model::ApiKey).
 pub mod api_key {
     
@@ -4667,12 +4704,6 @@ pub mod api_key {
     }
     
     
-}
-impl ApiKey {
-    /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey).
-    pub fn builder() -> crate::model::api_key::Builder {
-        crate::model::api_key::Builder::default()
-    }
 }
 
 /// <p>The <code>ApiCache</code> object.</p>
@@ -4790,6 +4821,13 @@ impl ApiCache {
         self.status.as_ref()
     }
 }
+impl ApiCache {
+    /// Creates a new builder-style object to manufacture [`ApiCache`](crate::model::ApiCache).
+    pub fn builder() -> crate::model::api_cache::Builder {
+        crate::model::api_cache::Builder::default()
+    }
+}
+
 /// See [`ApiCache`](crate::model::ApiCache).
 pub mod api_cache {
     
@@ -4948,12 +4986,6 @@ pub mod api_cache {
     }
     
     
-}
-impl ApiCache {
-    /// Creates a new builder-style object to manufacture [`ApiCache`](crate::model::ApiCache).
-    pub fn builder() -> crate::model::api_cache::Builder {
-        crate::model::api_cache::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ApiCacheStatus`, it is important to ensure
@@ -5511,6 +5543,13 @@ impl ApiAssociation {
         self.deployment_detail.as_deref()
     }
 }
+impl ApiAssociation {
+    /// Creates a new builder-style object to manufacture [`ApiAssociation`](crate::model::ApiAssociation).
+    pub fn builder() -> crate::model::api_association::Builder {
+        crate::model::api_association::Builder::default()
+    }
+}
+
 /// See [`ApiAssociation`](crate::model::ApiAssociation).
 pub mod api_association {
     
@@ -5586,12 +5625,6 @@ pub mod api_association {
     }
     
     
-}
-impl ApiAssociation {
-    /// Creates a new builder-style object to manufacture [`ApiAssociation`](crate::model::ApiAssociation).
-    pub fn builder() -> crate::model::api_association::Builder {
-        crate::model::api_association::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssociationStatus`, it is important to ensure
@@ -5695,6 +5728,13 @@ impl ErrorDetail {
         self.message.as_deref()
     }
 }
+impl ErrorDetail {
+    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
+    pub fn builder() -> crate::model::error_detail::Builder {
+        crate::model::error_detail::Builder::default()
+    }
+}
+
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
     
@@ -5725,12 +5765,6 @@ pub mod error_detail {
     
     
 }
-impl ErrorDetail {
-    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
-    pub fn builder() -> crate::model::error_detail::Builder {
-        crate::model::error_detail::Builder::default()
-    }
-}
 
 /// <p>Contains the list of errors from a code evaluation response.</p>
 #[non_exhaustive]
@@ -5753,6 +5787,13 @@ impl EvaluateCodeErrorDetail {
         self.code_errors.as_deref()
     }
 }
+impl EvaluateCodeErrorDetail {
+    /// Creates a new builder-style object to manufacture [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
+    pub fn builder() -> crate::model::evaluate_code_error_detail::Builder {
+        crate::model::evaluate_code_error_detail::Builder::default()
+    }
+}
+
 /// See [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
 pub mod evaluate_code_error_detail {
     
@@ -5800,11 +5841,5 @@ pub mod evaluate_code_error_detail {
     }
     
     
-}
-impl EvaluateCodeErrorDetail {
-    /// Creates a new builder-style object to manufacture [`EvaluateCodeErrorDetail`](crate::model::EvaluateCodeErrorDetail).
-    pub fn builder() -> crate::model::evaluate_code_error_detail::Builder {
-        crate::model::evaluate_code_error_detail::Builder::default()
-    }
 }
 

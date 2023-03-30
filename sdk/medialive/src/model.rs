@@ -140,6 +140,13 @@ impl Reservation {
         self.usage_price
     }
 }
+impl Reservation {
+    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
+    pub fn builder() -> crate::model::reservation::Builder {
+        crate::model::reservation::Builder::default()
+    }
+}
+
 /// See [`Reservation`](crate::model::Reservation).
 pub mod reservation {
     
@@ -396,12 +403,6 @@ pub mod reservation {
     
     
 }
-impl Reservation {
-    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
-    pub fn builder() -> crate::model::reservation::Builder {
-        crate::model::reservation::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReservationState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -558,6 +559,13 @@ impl ReservationResourceSpecification {
         self.video_quality.as_ref()
     }
 }
+impl ReservationResourceSpecification {
+    /// Creates a new builder-style object to manufacture [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
+    pub fn builder() -> crate::model::reservation_resource_specification::Builder {
+        crate::model::reservation_resource_specification::Builder::default()
+    }
+}
+
 /// See [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
 pub mod reservation_resource_specification {
     
@@ -671,12 +679,6 @@ pub mod reservation_resource_specification {
     }
     
     
-}
-impl ReservationResourceSpecification {
-    /// Creates a new builder-style object to manufacture [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
-    pub fn builder() -> crate::model::reservation_resource_specification::Builder {
-        crate::model::reservation_resource_specification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReservationVideoQuality`, it is important to ensure
@@ -1411,6 +1413,13 @@ impl RenewalSettings {
         self.renewal_count
     }
 }
+impl RenewalSettings {
+    /// Creates a new builder-style object to manufacture [`RenewalSettings`](crate::model::RenewalSettings).
+    pub fn builder() -> crate::model::renewal_settings::Builder {
+        crate::model::renewal_settings::Builder::default()
+    }
+}
+
 /// See [`RenewalSettings`](crate::model::RenewalSettings).
 pub mod renewal_settings {
     
@@ -1453,12 +1462,6 @@ pub mod renewal_settings {
     }
     
     
-}
-impl RenewalSettings {
-    /// Creates a new builder-style object to manufacture [`RenewalSettings`](crate::model::RenewalSettings).
-    pub fn builder() -> crate::model::renewal_settings::Builder {
-        crate::model::renewal_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReservationAutomaticRenewal`, it is important to ensure
@@ -1723,6 +1726,13 @@ impl ValidationError {
         self.error_message.as_deref()
     }
 }
+impl ValidationError {
+    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError).
+    pub fn builder() -> crate::model::validation_error::Builder {
+        crate::model::validation_error::Builder::default()
+    }
+}
+
 /// See [`ValidationError`](crate::model::ValidationError).
 pub mod validation_error {
     
@@ -1764,12 +1774,6 @@ pub mod validation_error {
     }
     
     
-}
-impl ValidationError {
-    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError).
-    pub fn builder() -> crate::model::validation_error::Builder {
-        crate::model::validation_error::Builder::default()
-    }
 }
 
 /// The multiplex program object.
@@ -1814,6 +1818,13 @@ impl MultiplexProgram {
         self.program_name.as_deref()
     }
 }
+impl MultiplexProgram {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgram`](crate::model::MultiplexProgram).
+    pub fn builder() -> crate::model::multiplex_program::Builder {
+        crate::model::multiplex_program::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgram`](crate::model::MultiplexProgram).
 pub mod multiplex_program {
     
@@ -1898,12 +1909,6 @@ pub mod multiplex_program {
     
     
 }
-impl MultiplexProgram {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgram`](crate::model::MultiplexProgram).
-    pub fn builder() -> crate::model::multiplex_program::Builder {
-        crate::model::multiplex_program::Builder::default()
-    }
-}
 
 /// The current source for one of the pipelines in the multiplex.
 #[non_exhaustive]
@@ -1926,6 +1931,13 @@ impl MultiplexProgramPipelineDetail {
         self.pipeline_id.as_deref()
     }
 }
+impl MultiplexProgramPipelineDetail {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
+    pub fn builder() -> crate::model::multiplex_program_pipeline_detail::Builder {
+        crate::model::multiplex_program_pipeline_detail::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
 pub mod multiplex_program_pipeline_detail {
     
@@ -1967,12 +1979,6 @@ pub mod multiplex_program_pipeline_detail {
     }
     
     
-}
-impl MultiplexProgramPipelineDetail {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
-    pub fn builder() -> crate::model::multiplex_program_pipeline_detail::Builder {
-        crate::model::multiplex_program_pipeline_detail::Builder::default()
-    }
 }
 
 /// Packet identifiers map for a given Multiplex program.
@@ -2073,6 +2079,13 @@ impl MultiplexProgramPacketIdentifiersMap {
         self.video_pid
     }
 }
+impl MultiplexProgramPacketIdentifiersMap {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
+    pub fn builder() -> crate::model::multiplex_program_packet_identifiers_map::Builder {
+        crate::model::multiplex_program_packet_identifiers_map::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
 pub mod multiplex_program_packet_identifiers_map {
     
@@ -2280,12 +2293,6 @@ pub mod multiplex_program_packet_identifiers_map {
     
     
 }
-impl MultiplexProgramPacketIdentifiersMap {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
-    pub fn builder() -> crate::model::multiplex_program_packet_identifiers_map::Builder {
-        crate::model::multiplex_program_packet_identifiers_map::Builder::default()
-    }
-}
 
 /// Multiplex Program settings configuration.
 #[non_exhaustive]
@@ -2322,6 +2329,13 @@ impl MultiplexProgramSettings {
         self.video_settings.as_ref()
     }
 }
+impl MultiplexProgramSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
+    pub fn builder() -> crate::model::multiplex_program_settings::Builder {
+        crate::model::multiplex_program_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
 pub mod multiplex_program_settings {
     
@@ -2389,12 +2403,6 @@ pub mod multiplex_program_settings {
     
     
 }
-impl MultiplexProgramSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
-    pub fn builder() -> crate::model::multiplex_program_settings::Builder {
-        crate::model::multiplex_program_settings::Builder::default()
-    }
-}
 
 /// The video configuration for each program in a multiplex.
 #[non_exhaustive]
@@ -2417,6 +2425,13 @@ impl MultiplexVideoSettings {
         self.statmux_settings.as_ref()
     }
 }
+impl MultiplexVideoSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
+    pub fn builder() -> crate::model::multiplex_video_settings::Builder {
+        crate::model::multiplex_video_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
 pub mod multiplex_video_settings {
     
@@ -2460,12 +2475,6 @@ pub mod multiplex_video_settings {
     
     
 }
-impl MultiplexVideoSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
-    pub fn builder() -> crate::model::multiplex_video_settings::Builder {
-        crate::model::multiplex_video_settings::Builder::default()
-    }
-}
 
 /// Statmux rate control settings
 #[non_exhaustive]
@@ -2495,6 +2504,13 @@ impl MultiplexStatmuxVideoSettings {
         self.priority
     }
 }
+impl MultiplexStatmuxVideoSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
+    pub fn builder() -> crate::model::multiplex_statmux_video_settings::Builder {
+        crate::model::multiplex_statmux_video_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
 pub mod multiplex_statmux_video_settings {
     
@@ -2552,12 +2568,6 @@ pub mod multiplex_statmux_video_settings {
     
     
 }
-impl MultiplexStatmuxVideoSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
-    pub fn builder() -> crate::model::multiplex_statmux_video_settings::Builder {
-        crate::model::multiplex_statmux_video_settings::Builder::default()
-    }
-}
 
 /// Transport stream service descriptor configuration for the Multiplex program.
 #[non_exhaustive]
@@ -2580,6 +2590,13 @@ impl MultiplexProgramServiceDescriptor {
         self.service_name.as_deref()
     }
 }
+impl MultiplexProgramServiceDescriptor {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
+    pub fn builder() -> crate::model::multiplex_program_service_descriptor::Builder {
+        crate::model::multiplex_program_service_descriptor::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
 pub mod multiplex_program_service_descriptor {
     
@@ -2621,12 +2638,6 @@ pub mod multiplex_program_service_descriptor {
     }
     
     
-}
-impl MultiplexProgramServiceDescriptor {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
-    pub fn builder() -> crate::model::multiplex_program_service_descriptor::Builder {
-        crate::model::multiplex_program_service_descriptor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PreferredChannelPipeline`, it is important to ensure
@@ -2797,6 +2808,13 @@ impl Multiplex {
         self.tags.as_ref()
     }
 }
+impl Multiplex {
+    /// Creates a new builder-style object to manufacture [`Multiplex`](crate::model::Multiplex).
+    pub fn builder() -> crate::model::multiplex::Builder {
+        crate::model::multiplex::Builder::default()
+    }
+}
+
 /// See [`Multiplex`](crate::model::Multiplex).
 pub mod multiplex {
     
@@ -2955,12 +2973,6 @@ pub mod multiplex {
     
     
 }
-impl Multiplex {
-    /// Creates a new builder-style object to manufacture [`Multiplex`](crate::model::Multiplex).
-    pub fn builder() -> crate::model::multiplex::Builder {
-        crate::model::multiplex::Builder::default()
-    }
-}
 
 /// When writing a match expression against `MultiplexState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3114,6 +3126,13 @@ impl MultiplexSettings {
         self.transport_stream_reserved_bitrate
     }
 }
+impl MultiplexSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexSettings`](crate::model::MultiplexSettings).
+    pub fn builder() -> crate::model::multiplex_settings::Builder {
+        crate::model::multiplex_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexSettings`](crate::model::MultiplexSettings).
 pub mod multiplex_settings {
     
@@ -3184,12 +3203,6 @@ pub mod multiplex_settings {
     
     
 }
-impl MultiplexSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexSettings`](crate::model::MultiplexSettings).
-    pub fn builder() -> crate::model::multiplex_settings::Builder {
-        crate::model::multiplex_settings::Builder::default()
-    }
-}
 
 /// Multiplex output destination settings
 #[non_exhaustive]
@@ -3205,6 +3218,13 @@ impl MultiplexOutputDestination {
         self.media_connect_settings.as_ref()
     }
 }
+impl MultiplexOutputDestination {
+    /// Creates a new builder-style object to manufacture [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
+    pub fn builder() -> crate::model::multiplex_output_destination::Builder {
+        crate::model::multiplex_output_destination::Builder::default()
+    }
+}
+
 /// See [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
 pub mod multiplex_output_destination {
     
@@ -3235,12 +3255,6 @@ pub mod multiplex_output_destination {
     
     
 }
-impl MultiplexOutputDestination {
-    /// Creates a new builder-style object to manufacture [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
-    pub fn builder() -> crate::model::multiplex_output_destination::Builder {
-        crate::model::multiplex_output_destination::Builder::default()
-    }
-}
 
 /// Multiplex MediaConnect output destination settings.
 #[non_exhaustive]
@@ -3256,6 +3270,13 @@ impl MultiplexMediaConnectOutputDestinationSettings {
         self.entitlement_arn.as_deref()
     }
 }
+impl MultiplexMediaConnectOutputDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
+    pub fn builder() -> crate::model::multiplex_media_connect_output_destination_settings::Builder {
+        crate::model::multiplex_media_connect_output_destination_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
 pub mod multiplex_media_connect_output_destination_settings {
     
@@ -3285,12 +3306,6 @@ pub mod multiplex_media_connect_output_destination_settings {
     }
     
     
-}
-impl MultiplexMediaConnectOutputDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
-    pub fn builder() -> crate::model::multiplex_media_connect_output_destination_settings::Builder {
-        crate::model::multiplex_media_connect_output_destination_settings::Builder::default()
-    }
 }
 
 /// An Input Security Group
@@ -3342,6 +3357,13 @@ impl InputSecurityGroup {
         self.whitelist_rules.as_deref()
     }
 }
+impl InputSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`InputSecurityGroup`](crate::model::InputSecurityGroup).
+    pub fn builder() -> crate::model::input_security_group::Builder {
+        crate::model::input_security_group::Builder::default()
+    }
+}
+
 /// See [`InputSecurityGroup`](crate::model::InputSecurityGroup).
 pub mod input_security_group {
     
@@ -3450,12 +3472,6 @@ pub mod input_security_group {
     
     
 }
-impl InputSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`InputSecurityGroup`](crate::model::InputSecurityGroup).
-    pub fn builder() -> crate::model::input_security_group::Builder {
-        crate::model::input_security_group::Builder::default()
-    }
-}
 
 /// Whitelist rule
 #[non_exhaustive]
@@ -3471,6 +3487,13 @@ impl InputWhitelistRule {
         self.cidr.as_deref()
     }
 }
+impl InputWhitelistRule {
+    /// Creates a new builder-style object to manufacture [`InputWhitelistRule`](crate::model::InputWhitelistRule).
+    pub fn builder() -> crate::model::input_whitelist_rule::Builder {
+        crate::model::input_whitelist_rule::Builder::default()
+    }
+}
+
 /// See [`InputWhitelistRule`](crate::model::InputWhitelistRule).
 pub mod input_whitelist_rule {
     
@@ -3500,12 +3523,6 @@ pub mod input_whitelist_rule {
     }
     
     
-}
-impl InputWhitelistRule {
-    /// Creates a new builder-style object to manufacture [`InputWhitelistRule`](crate::model::InputWhitelistRule).
-    pub fn builder() -> crate::model::input_whitelist_rule::Builder {
-        crate::model::input_whitelist_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputSecurityGroupState`, it is important to ensure
@@ -3614,6 +3631,13 @@ impl InputWhitelistRuleCidr {
         self.cidr.as_deref()
     }
 }
+impl InputWhitelistRuleCidr {
+    /// Creates a new builder-style object to manufacture [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
+    pub fn builder() -> crate::model::input_whitelist_rule_cidr::Builder {
+        crate::model::input_whitelist_rule_cidr::Builder::default()
+    }
+}
+
 /// See [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
 pub mod input_whitelist_rule_cidr {
     
@@ -3643,12 +3667,6 @@ pub mod input_whitelist_rule_cidr {
     }
     
     
-}
-impl InputWhitelistRuleCidr {
-    /// Creates a new builder-style object to manufacture [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
-    pub fn builder() -> crate::model::input_whitelist_rule_cidr::Builder {
-        crate::model::input_whitelist_rule_cidr::Builder::default()
-    }
 }
 
 /// Settings that describe the active source from the input device, and the video characteristics of that source.
@@ -3721,6 +3739,13 @@ impl InputDeviceUhdSettings {
         self.latency_ms
     }
 }
+impl InputDeviceUhdSettings {
+    /// Creates a new builder-style object to manufacture [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
+    pub fn builder() -> crate::model::input_device_uhd_settings::Builder {
+        crate::model::input_device_uhd_settings::Builder::default()
+    }
+}
+
 /// See [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
 pub mod input_device_uhd_settings {
     
@@ -3851,12 +3876,6 @@ pub mod input_device_uhd_settings {
     }
     
     
-}
-impl InputDeviceUhdSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
-    pub fn builder() -> crate::model::input_device_uhd_settings::Builder {
-        crate::model::input_device_uhd_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputDeviceScanType`, it is important to ensure
@@ -4316,6 +4335,13 @@ impl InputDeviceNetworkSettings {
         self.subnet_mask.as_deref()
     }
 }
+impl InputDeviceNetworkSettings {
+    /// Creates a new builder-style object to manufacture [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
+    pub fn builder() -> crate::model::input_device_network_settings::Builder {
+        crate::model::input_device_network_settings::Builder::default()
+    }
+}
+
 /// See [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
 pub mod input_device_network_settings {
     
@@ -4399,12 +4425,6 @@ pub mod input_device_network_settings {
     }
     
     
-}
-impl InputDeviceNetworkSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
-    pub fn builder() -> crate::model::input_device_network_settings::Builder {
-        crate::model::input_device_network_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputDeviceIpScheme`, it is important to ensure
@@ -4559,6 +4579,13 @@ impl InputDeviceHdSettings {
         self.latency_ms
     }
 }
+impl InputDeviceHdSettings {
+    /// Creates a new builder-style object to manufacture [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
+    pub fn builder() -> crate::model::input_device_hd_settings::Builder {
+        crate::model::input_device_hd_settings::Builder::default()
+    }
+}
+
 /// See [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
 pub mod input_device_hd_settings {
     
@@ -4689,12 +4716,6 @@ pub mod input_device_hd_settings {
     }
     
     
-}
-impl InputDeviceHdSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
-    pub fn builder() -> crate::model::input_device_hd_settings::Builder {
-        crate::model::input_device_hd_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeviceUpdateStatus`, it is important to ensure
@@ -4976,6 +4997,13 @@ impl InputDeviceConfigurableSettings {
         self.latency_ms
     }
 }
+impl InputDeviceConfigurableSettings {
+    /// Creates a new builder-style object to manufacture [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
+    pub fn builder() -> crate::model::input_device_configurable_settings::Builder {
+        crate::model::input_device_configurable_settings::Builder::default()
+    }
+}
+
 /// See [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
 pub mod input_device_configurable_settings {
     
@@ -5031,12 +5059,6 @@ pub mod input_device_configurable_settings {
     }
     
     
-}
-impl InputDeviceConfigurableSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
-    pub fn builder() -> crate::model::input_device_configurable_settings::Builder {
-        crate::model::input_device_configurable_settings::Builder::default()
-    }
 }
 
 /// Placeholder documentation for Input
@@ -5158,6 +5180,13 @@ impl Input {
         self.r#type.as_ref()
     }
 }
+impl Input {
+    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
+    pub fn builder() -> crate::model::input::Builder {
+        crate::model::input::Builder::default()
+    }
+}
+
 /// See [`Input`](crate::model::Input).
 pub mod input {
     
@@ -5416,12 +5445,6 @@ pub mod input {
     
     
 }
-impl Input {
-    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
-    pub fn builder() -> crate::model::input::Builder {
-        crate::model::input::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InputType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5670,6 +5693,13 @@ impl InputSource {
         self.username.as_deref()
     }
 }
+impl InputSource {
+    /// Creates a new builder-style object to manufacture [`InputSource`](crate::model::InputSource).
+    pub fn builder() -> crate::model::input_source::Builder {
+        crate::model::input_source::Builder::default()
+    }
+}
+
 /// See [`InputSource`](crate::model::InputSource).
 pub mod input_source {
     
@@ -5724,12 +5754,6 @@ pub mod input_source {
     
     
 }
-impl InputSource {
-    /// Creates a new builder-style object to manufacture [`InputSource`](crate::model::InputSource).
-    pub fn builder() -> crate::model::input_source::Builder {
-        crate::model::input_source::Builder::default()
-    }
-}
 
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
@@ -5745,6 +5769,13 @@ impl MediaConnectFlow {
         self.flow_arn.as_deref()
     }
 }
+impl MediaConnectFlow {
+    /// Creates a new builder-style object to manufacture [`MediaConnectFlow`](crate::model::MediaConnectFlow).
+    pub fn builder() -> crate::model::media_connect_flow::Builder {
+        crate::model::media_connect_flow::Builder::default()
+    }
+}
+
 /// See [`MediaConnectFlow`](crate::model::MediaConnectFlow).
 pub mod media_connect_flow {
     
@@ -5774,12 +5805,6 @@ pub mod media_connect_flow {
     }
     
     
-}
-impl MediaConnectFlow {
-    /// Creates a new builder-style object to manufacture [`MediaConnectFlow`](crate::model::MediaConnectFlow).
-    pub fn builder() -> crate::model::media_connect_flow::Builder {
-        crate::model::media_connect_flow::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputSourceType`, it is important to ensure
@@ -5880,6 +5905,13 @@ impl InputDeviceSettings {
         self.id.as_deref()
     }
 }
+impl InputDeviceSettings {
+    /// Creates a new builder-style object to manufacture [`InputDeviceSettings`](crate::model::InputDeviceSettings).
+    pub fn builder() -> crate::model::input_device_settings::Builder {
+        crate::model::input_device_settings::Builder::default()
+    }
+}
+
 /// See [`InputDeviceSettings`](crate::model::InputDeviceSettings).
 pub mod input_device_settings {
     
@@ -5909,12 +5941,6 @@ pub mod input_device_settings {
     }
     
     
-}
-impl InputDeviceSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceSettings`](crate::model::InputDeviceSettings).
-    pub fn builder() -> crate::model::input_device_settings::Builder {
-        crate::model::input_device_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputClass`, it is important to ensure
@@ -6034,6 +6060,13 @@ impl InputDestination {
         self.vpc.as_ref()
     }
 }
+impl InputDestination {
+    /// Creates a new builder-style object to manufacture [`InputDestination`](crate::model::InputDestination).
+    pub fn builder() -> crate::model::input_destination::Builder {
+        crate::model::input_destination::Builder::default()
+    }
+}
+
 /// See [`InputDestination`](crate::model::InputDestination).
 pub mod input_destination {
     
@@ -6100,12 +6133,6 @@ pub mod input_destination {
     
     
 }
-impl InputDestination {
-    /// Creates a new builder-style object to manufacture [`InputDestination`](crate::model::InputDestination).
-    pub fn builder() -> crate::model::input_destination::Builder {
-        crate::model::input_destination::Builder::default()
-    }
-}
 
 /// The properties for a VPC type input destination.
 #[non_exhaustive]
@@ -6128,6 +6155,13 @@ impl InputDestinationVpc {
         self.network_interface_id.as_deref()
     }
 }
+impl InputDestinationVpc {
+    /// Creates a new builder-style object to manufacture [`InputDestinationVpc`](crate::model::InputDestinationVpc).
+    pub fn builder() -> crate::model::input_destination_vpc::Builder {
+        crate::model::input_destination_vpc::Builder::default()
+    }
+}
+
 /// See [`InputDestinationVpc`](crate::model::InputDestinationVpc).
 pub mod input_destination_vpc {
     
@@ -6170,12 +6204,6 @@ pub mod input_destination_vpc {
     
     
 }
-impl InputDestinationVpc {
-    /// Creates a new builder-style object to manufacture [`InputDestinationVpc`](crate::model::InputDestinationVpc).
-    pub fn builder() -> crate::model::input_destination_vpc::Builder {
-        crate::model::input_destination_vpc::Builder::default()
-    }
-}
 
 /// Settings for for a PULL type input.
 #[non_exhaustive]
@@ -6205,6 +6233,13 @@ impl InputSourceRequest {
         self.username.as_deref()
     }
 }
+impl InputSourceRequest {
+    /// Creates a new builder-style object to manufacture [`InputSourceRequest`](crate::model::InputSourceRequest).
+    pub fn builder() -> crate::model::input_source_request::Builder {
+        crate::model::input_source_request::Builder::default()
+    }
+}
+
 /// See [`InputSourceRequest`](crate::model::InputSourceRequest).
 pub mod input_source_request {
     
@@ -6259,12 +6294,6 @@ pub mod input_source_request {
     
     
 }
-impl InputSourceRequest {
-    /// Creates a new builder-style object to manufacture [`InputSourceRequest`](crate::model::InputSourceRequest).
-    pub fn builder() -> crate::model::input_source_request::Builder {
-        crate::model::input_source_request::Builder::default()
-    }
-}
 
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
@@ -6280,6 +6309,13 @@ impl MediaConnectFlowRequest {
         self.flow_arn.as_deref()
     }
 }
+impl MediaConnectFlowRequest {
+    /// Creates a new builder-style object to manufacture [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
+    pub fn builder() -> crate::model::media_connect_flow_request::Builder {
+        crate::model::media_connect_flow_request::Builder::default()
+    }
+}
+
 /// See [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
 pub mod media_connect_flow_request {
     
@@ -6310,12 +6346,6 @@ pub mod media_connect_flow_request {
     
     
 }
-impl MediaConnectFlowRequest {
-    /// Creates a new builder-style object to manufacture [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
-    pub fn builder() -> crate::model::media_connect_flow_request::Builder {
-        crate::model::media_connect_flow_request::Builder::default()
-    }
-}
 
 /// Settings for an input device.
 #[non_exhaustive]
@@ -6331,6 +6361,13 @@ impl InputDeviceRequest {
         self.id.as_deref()
     }
 }
+impl InputDeviceRequest {
+    /// Creates a new builder-style object to manufacture [`InputDeviceRequest`](crate::model::InputDeviceRequest).
+    pub fn builder() -> crate::model::input_device_request::Builder {
+        crate::model::input_device_request::Builder::default()
+    }
+}
+
 /// See [`InputDeviceRequest`](crate::model::InputDeviceRequest).
 pub mod input_device_request {
     
@@ -6361,12 +6398,6 @@ pub mod input_device_request {
     
     
 }
-impl InputDeviceRequest {
-    /// Creates a new builder-style object to manufacture [`InputDeviceRequest`](crate::model::InputDeviceRequest).
-    pub fn builder() -> crate::model::input_device_request::Builder {
-        crate::model::input_device_request::Builder::default()
-    }
-}
 
 /// Endpoint settings for a PUSH type input.
 #[non_exhaustive]
@@ -6382,6 +6413,13 @@ impl InputDestinationRequest {
         self.stream_name.as_deref()
     }
 }
+impl InputDestinationRequest {
+    /// Creates a new builder-style object to manufacture [`InputDestinationRequest`](crate::model::InputDestinationRequest).
+    pub fn builder() -> crate::model::input_destination_request::Builder {
+        crate::model::input_destination_request::Builder::default()
+    }
+}
+
 /// See [`InputDestinationRequest`](crate::model::InputDestinationRequest).
 pub mod input_destination_request {
     
@@ -6411,12 +6449,6 @@ pub mod input_destination_request {
     }
     
     
-}
-impl InputDestinationRequest {
-    /// Creates a new builder-style object to manufacture [`InputDestinationRequest`](crate::model::InputDestinationRequest).
-    pub fn builder() -> crate::model::input_destination_request::Builder {
-        crate::model::input_destination_request::Builder::default()
-    }
 }
 
 /// Placeholder documentation for Channel
@@ -6552,6 +6584,13 @@ impl Channel {
         self.vpc.as_ref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
     
@@ -6817,12 +6856,6 @@ pub mod channel {
     
     
 }
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
-}
 
 /// The properties for a private VPC Output
 #[non_exhaustive]
@@ -6859,6 +6892,13 @@ impl VpcOutputSettingsDescription {
         self.subnet_ids.as_deref()
     }
 }
+impl VpcOutputSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
+    pub fn builder() -> crate::model::vpc_output_settings_description::Builder {
+        crate::model::vpc_output_settings_description::Builder::default()
+    }
+}
+
 /// See [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
 pub mod vpc_output_settings_description {
     
@@ -6948,12 +6988,6 @@ pub mod vpc_output_settings_description {
     }
     
     
-}
-impl VpcOutputSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
-    pub fn builder() -> crate::model::vpc_output_settings_description::Builder {
-        crate::model::vpc_output_settings_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChannelState`, it is important to ensure
@@ -7125,6 +7159,13 @@ impl PipelineDetail {
         self.pipeline_id.as_deref()
     }
 }
+impl PipelineDetail {
+    /// Creates a new builder-style object to manufacture [`PipelineDetail`](crate::model::PipelineDetail).
+    pub fn builder() -> crate::model::pipeline_detail::Builder {
+        crate::model::pipeline_detail::Builder::default()
+    }
+}
+
 /// See [`PipelineDetail`](crate::model::PipelineDetail).
 pub mod pipeline_detail {
     
@@ -7203,12 +7244,6 @@ pub mod pipeline_detail {
     
     
 }
-impl PipelineDetail {
-    /// Creates a new builder-style object to manufacture [`PipelineDetail`](crate::model::PipelineDetail).
-    pub fn builder() -> crate::model::pipeline_detail::Builder {
-        crate::model::pipeline_detail::Builder::default()
-    }
-}
 
 /// Placeholder documentation for MaintenanceStatus
 #[non_exhaustive]
@@ -7245,6 +7280,13 @@ impl MaintenanceStatus {
         self.maintenance_start_time.as_deref()
     }
 }
+impl MaintenanceStatus {
+    /// Creates a new builder-style object to manufacture [`MaintenanceStatus`](crate::model::MaintenanceStatus).
+    pub fn builder() -> crate::model::maintenance_status::Builder {
+        crate::model::maintenance_status::Builder::default()
+    }
+}
+
 /// See [`MaintenanceStatus`](crate::model::MaintenanceStatus).
 pub mod maintenance_status {
     
@@ -7310,12 +7352,6 @@ pub mod maintenance_status {
     }
     
     
-}
-impl MaintenanceStatus {
-    /// Creates a new builder-style object to manufacture [`MaintenanceStatus`](crate::model::MaintenanceStatus).
-    pub fn builder() -> crate::model::maintenance_status::Builder {
-        crate::model::maintenance_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MaintenanceDay`, it is important to ensure
@@ -7550,6 +7586,13 @@ impl InputSpecification {
         self.resolution.as_ref()
     }
 }
+impl InputSpecification {
+    /// Creates a new builder-style object to manufacture [`InputSpecification`](crate::model::InputSpecification).
+    pub fn builder() -> crate::model::input_specification::Builder {
+        crate::model::input_specification::Builder::default()
+    }
+}
+
 /// See [`InputSpecification`](crate::model::InputSpecification).
 pub mod input_specification {
     
@@ -7603,12 +7646,6 @@ pub mod input_specification {
     }
     
     
-}
-impl InputSpecification {
-    /// Creates a new builder-style object to manufacture [`InputSpecification`](crate::model::InputSpecification).
-    pub fn builder() -> crate::model::input_specification::Builder {
-        crate::model::input_specification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputResolution`, it is important to ensure
@@ -7907,6 +7944,13 @@ impl InputAttachment {
         self.input_settings.as_ref()
     }
 }
+impl InputAttachment {
+    /// Creates a new builder-style object to manufacture [`InputAttachment`](crate::model::InputAttachment).
+    pub fn builder() -> crate::model::input_attachment::Builder {
+        crate::model::input_attachment::Builder::default()
+    }
+}
+
 /// See [`InputAttachment`](crate::model::InputAttachment).
 pub mod input_attachment {
     
@@ -7972,12 +8016,6 @@ pub mod input_attachment {
     }
     
     
-}
-impl InputAttachment {
-    /// Creates a new builder-style object to manufacture [`InputAttachment`](crate::model::InputAttachment).
-    pub fn builder() -> crate::model::input_attachment::Builder {
-        crate::model::input_attachment::Builder::default()
-    }
 }
 
 /// Live Event input parameters. There can be multiple inputs in a single Live Event.
@@ -8064,6 +8102,13 @@ impl InputSettings {
         self.video_selector.as_ref()
     }
 }
+impl InputSettings {
+    /// Creates a new builder-style object to manufacture [`InputSettings`](crate::model::InputSettings).
+    pub fn builder() -> crate::model::input_settings::Builder {
+        crate::model::input_settings::Builder::default()
+    }
+}
+
 /// See [`InputSettings`](crate::model::InputSettings).
 pub mod input_settings {
     
@@ -8228,12 +8273,6 @@ pub mod input_settings {
     
     
 }
-impl InputSettings {
-    /// Creates a new builder-style object to manufacture [`InputSettings`](crate::model::InputSettings).
-    pub fn builder() -> crate::model::input_settings::Builder {
-        crate::model::input_settings::Builder::default()
-    }
-}
 
 /// Specifies a particular video stream within an input source. An input may have only a single video selector.
 #[non_exhaustive]
@@ -8270,6 +8309,13 @@ impl VideoSelector {
         self.selector_settings.as_ref()
     }
 }
+impl VideoSelector {
+    /// Creates a new builder-style object to manufacture [`VideoSelector`](crate::model::VideoSelector).
+    pub fn builder() -> crate::model::video_selector::Builder {
+        crate::model::video_selector::Builder::default()
+    }
+}
+
 /// See [`VideoSelector`](crate::model::VideoSelector).
 pub mod video_selector {
     
@@ -8336,12 +8382,6 @@ pub mod video_selector {
     
     
 }
-impl VideoSelector {
-    /// Creates a new builder-style object to manufacture [`VideoSelector`](crate::model::VideoSelector).
-    pub fn builder() -> crate::model::video_selector::Builder {
-        crate::model::video_selector::Builder::default()
-    }
-}
 
 /// Video Selector Settings
 #[non_exhaustive]
@@ -8364,6 +8404,13 @@ impl VideoSelectorSettings {
         self.video_selector_program_id.as_ref()
     }
 }
+impl VideoSelectorSettings {
+    /// Creates a new builder-style object to manufacture [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
+    pub fn builder() -> crate::model::video_selector_settings::Builder {
+        crate::model::video_selector_settings::Builder::default()
+    }
+}
+
 /// See [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
 pub mod video_selector_settings {
     
@@ -8406,12 +8453,6 @@ pub mod video_selector_settings {
     
     
 }
-impl VideoSelectorSettings {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
-    pub fn builder() -> crate::model::video_selector_settings::Builder {
-        crate::model::video_selector_settings::Builder::default()
-    }
-}
 
 /// Video Selector Program Id
 #[non_exhaustive]
@@ -8427,6 +8468,13 @@ impl VideoSelectorProgramId {
         self.program_id
     }
 }
+impl VideoSelectorProgramId {
+    /// Creates a new builder-style object to manufacture [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
+    pub fn builder() -> crate::model::video_selector_program_id::Builder {
+        crate::model::video_selector_program_id::Builder::default()
+    }
+}
+
 /// See [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
 pub mod video_selector_program_id {
     
@@ -8458,12 +8506,6 @@ pub mod video_selector_program_id {
     
     
 }
-impl VideoSelectorProgramId {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
-    pub fn builder() -> crate::model::video_selector_program_id::Builder {
-        crate::model::video_selector_program_id::Builder::default()
-    }
-}
 
 /// Video Selector Pid
 #[non_exhaustive]
@@ -8479,6 +8521,13 @@ impl VideoSelectorPid {
         self.pid
     }
 }
+impl VideoSelectorPid {
+    /// Creates a new builder-style object to manufacture [`VideoSelectorPid`](crate::model::VideoSelectorPid).
+    pub fn builder() -> crate::model::video_selector_pid::Builder {
+        crate::model::video_selector_pid::Builder::default()
+    }
+}
+
 /// See [`VideoSelectorPid`](crate::model::VideoSelectorPid).
 pub mod video_selector_pid {
     
@@ -8509,12 +8558,6 @@ pub mod video_selector_pid {
     }
     
     
-}
-impl VideoSelectorPid {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorPid`](crate::model::VideoSelectorPid).
-    pub fn builder() -> crate::model::video_selector_pid::Builder {
-        crate::model::video_selector_pid::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VideoSelectorColorSpaceUsage`, it is important to ensure
@@ -8613,6 +8656,13 @@ impl VideoSelectorColorSpaceSettings {
         self.hdr10_settings.as_ref()
     }
 }
+impl VideoSelectorColorSpaceSettings {
+    /// Creates a new builder-style object to manufacture [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
+    pub fn builder() -> crate::model::video_selector_color_space_settings::Builder {
+        crate::model::video_selector_color_space_settings::Builder::default()
+    }
+}
+
 /// See [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
 pub mod video_selector_color_space_settings {
     
@@ -8643,12 +8693,6 @@ pub mod video_selector_color_space_settings {
     
     
 }
-impl VideoSelectorColorSpaceSettings {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
-    pub fn builder() -> crate::model::video_selector_color_space_settings::Builder {
-        crate::model::video_selector_color_space_settings::Builder::default()
-    }
-}
 
 /// Hdr10 Settings
 #[non_exhaustive]
@@ -8671,6 +8715,13 @@ impl Hdr10Settings {
         self.max_fall
     }
 }
+impl Hdr10Settings {
+    /// Creates a new builder-style object to manufacture [`Hdr10Settings`](crate::model::Hdr10Settings).
+    pub fn builder() -> crate::model::hdr10_settings::Builder {
+        crate::model::hdr10_settings::Builder::default()
+    }
+}
+
 /// See [`Hdr10Settings`](crate::model::Hdr10Settings).
 pub mod hdr10_settings {
     
@@ -8714,12 +8765,6 @@ pub mod hdr10_settings {
     }
     
     
-}
-impl Hdr10Settings {
-    /// Creates a new builder-style object to manufacture [`Hdr10Settings`](crate::model::Hdr10Settings).
-    pub fn builder() -> crate::model::hdr10_settings::Builder {
-        crate::model::hdr10_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VideoSelectorColorSpace`, it is important to ensure
@@ -9004,6 +9049,13 @@ impl NetworkInputSettings {
         self.server_validation.as_ref()
     }
 }
+impl NetworkInputSettings {
+    /// Creates a new builder-style object to manufacture [`NetworkInputSettings`](crate::model::NetworkInputSettings).
+    pub fn builder() -> crate::model::network_input_settings::Builder {
+        crate::model::network_input_settings::Builder::default()
+    }
+}
+
 /// See [`NetworkInputSettings`](crate::model::NetworkInputSettings).
 pub mod network_input_settings {
     
@@ -9045,12 +9097,6 @@ pub mod network_input_settings {
     }
     
     
-}
-impl NetworkInputSettings {
-    /// Creates a new builder-style object to manufacture [`NetworkInputSettings`](crate::model::NetworkInputSettings).
-    pub fn builder() -> crate::model::network_input_settings::Builder {
-        crate::model::network_input_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NetworkInputServerValidation`, it is important to ensure
@@ -9177,6 +9223,13 @@ impl HlsInputSettings {
         self.scte35_source.as_ref()
     }
 }
+impl HlsInputSettings {
+    /// Creates a new builder-style object to manufacture [`HlsInputSettings`](crate::model::HlsInputSettings).
+    pub fn builder() -> crate::model::hls_input_settings::Builder {
+        crate::model::hls_input_settings::Builder::default()
+    }
+}
+
 /// See [`HlsInputSettings`](crate::model::HlsInputSettings).
 pub mod hls_input_settings {
     
@@ -9258,12 +9311,6 @@ pub mod hls_input_settings {
     }
     
     
-}
-impl HlsInputSettings {
-    /// Creates a new builder-style object to manufacture [`HlsInputSettings`](crate::model::HlsInputSettings).
-    pub fn builder() -> crate::model::hls_input_settings::Builder {
-        crate::model::hls_input_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsScte35SourceType`, it is important to ensure
@@ -9627,6 +9674,13 @@ impl CaptionSelector {
         self.selector_settings.as_ref()
     }
 }
+impl CaptionSelector {
+    /// Creates a new builder-style object to manufacture [`CaptionSelector`](crate::model::CaptionSelector).
+    pub fn builder() -> crate::model::caption_selector::Builder {
+        crate::model::caption_selector::Builder::default()
+    }
+}
+
 /// See [`CaptionSelector`](crate::model::CaptionSelector).
 pub mod caption_selector {
     
@@ -9680,12 +9734,6 @@ pub mod caption_selector {
     }
     
     
-}
-impl CaptionSelector {
-    /// Creates a new builder-style object to manufacture [`CaptionSelector`](crate::model::CaptionSelector).
-    pub fn builder() -> crate::model::caption_selector::Builder {
-        crate::model::caption_selector::Builder::default()
-    }
 }
 
 /// Caption Selector Settings
@@ -9744,6 +9792,13 @@ impl CaptionSelectorSettings {
         self.teletext_source_settings.as_ref()
     }
 }
+impl CaptionSelectorSettings {
+    /// Creates a new builder-style object to manufacture [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
+    pub fn builder() -> crate::model::caption_selector_settings::Builder {
+        crate::model::caption_selector_settings::Builder::default()
+    }
+}
+
 /// See [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
 pub mod caption_selector_settings {
     
@@ -9846,12 +9901,6 @@ pub mod caption_selector_settings {
     
     
 }
-impl CaptionSelectorSettings {
-    /// Creates a new builder-style object to manufacture [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
-    pub fn builder() -> crate::model::caption_selector_settings::Builder {
-        crate::model::caption_selector_settings::Builder::default()
-    }
-}
 
 /// Teletext Source Settings
 #[non_exhaustive]
@@ -9874,6 +9923,13 @@ impl TeletextSourceSettings {
         self.page_number.as_deref()
     }
 }
+impl TeletextSourceSettings {
+    /// Creates a new builder-style object to manufacture [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
+    pub fn builder() -> crate::model::teletext_source_settings::Builder {
+        crate::model::teletext_source_settings::Builder::default()
+    }
+}
+
 /// See [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
 pub mod teletext_source_settings {
     
@@ -9916,12 +9972,6 @@ pub mod teletext_source_settings {
     
     
 }
-impl TeletextSourceSettings {
-    /// Creates a new builder-style object to manufacture [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
-    pub fn builder() -> crate::model::teletext_source_settings::Builder {
-        crate::model::teletext_source_settings::Builder::default()
-    }
-}
 
 /// Caption Rectangle
 #[non_exhaustive]
@@ -9958,6 +10008,13 @@ impl CaptionRectangle {
         self.width
     }
 }
+impl CaptionRectangle {
+    /// Creates a new builder-style object to manufacture [`CaptionRectangle`](crate::model::CaptionRectangle).
+    pub fn builder() -> crate::model::caption_rectangle::Builder {
+        crate::model::caption_rectangle::Builder::default()
+    }
+}
+
 /// See [`CaptionRectangle`](crate::model::CaptionRectangle).
 pub mod caption_rectangle {
     
@@ -10028,12 +10085,6 @@ pub mod caption_rectangle {
     
     
 }
-impl CaptionRectangle {
-    /// Creates a new builder-style object to manufacture [`CaptionRectangle`](crate::model::CaptionRectangle).
-    pub fn builder() -> crate::model::caption_rectangle::Builder {
-        crate::model::caption_rectangle::Builder::default()
-    }
-}
 
 /// Scte27 Source Settings
 #[non_exhaustive]
@@ -10056,6 +10107,13 @@ impl Scte27SourceSettings {
         self.pid
     }
 }
+impl Scte27SourceSettings {
+    /// Creates a new builder-style object to manufacture [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
+    pub fn builder() -> crate::model::scte27_source_settings::Builder {
+        crate::model::scte27_source_settings::Builder::default()
+    }
+}
+
 /// See [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
 pub mod scte27_source_settings {
     
@@ -10098,12 +10156,6 @@ pub mod scte27_source_settings {
     }
     
     
-}
-impl Scte27SourceSettings {
-    /// Creates a new builder-style object to manufacture [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
-    pub fn builder() -> crate::model::scte27_source_settings::Builder {
-        crate::model::scte27_source_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Scte27OcrLanguage`, it is important to ensure
@@ -10229,6 +10281,13 @@ impl Scte20SourceSettings {
         self.source608_channel_number
     }
 }
+impl Scte20SourceSettings {
+    /// Creates a new builder-style object to manufacture [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
+    pub fn builder() -> crate::model::scte20_source_settings::Builder {
+        crate::model::scte20_source_settings::Builder::default()
+    }
+}
+
 /// See [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
 pub mod scte20_source_settings {
     
@@ -10271,12 +10330,6 @@ pub mod scte20_source_settings {
     }
     
     
-}
-impl Scte20SourceSettings {
-    /// Creates a new builder-style object to manufacture [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
-    pub fn builder() -> crate::model::scte20_source_settings::Builder {
-        crate::model::scte20_source_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Scte20Convert608To708`, it is important to ensure
@@ -10396,6 +10449,13 @@ impl EmbeddedSourceSettings {
         self.source608_track_number
     }
 }
+impl EmbeddedSourceSettings {
+    /// Creates a new builder-style object to manufacture [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
+    pub fn builder() -> crate::model::embedded_source_settings::Builder {
+        crate::model::embedded_source_settings::Builder::default()
+    }
+}
+
 /// See [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
 pub mod embedded_source_settings {
     
@@ -10463,12 +10523,6 @@ pub mod embedded_source_settings {
     }
     
     
-}
-impl EmbeddedSourceSettings {
-    /// Creates a new builder-style object to manufacture [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
-    pub fn builder() -> crate::model::embedded_source_settings::Builder {
-        crate::model::embedded_source_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EmbeddedScte20Detection`, it is important to ensure
@@ -10656,6 +10710,13 @@ impl DvbSubSourceSettings {
         self.pid
     }
 }
+impl DvbSubSourceSettings {
+    /// Creates a new builder-style object to manufacture [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
+    pub fn builder() -> crate::model::dvb_sub_source_settings::Builder {
+        crate::model::dvb_sub_source_settings::Builder::default()
+    }
+}
+
 /// See [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
 pub mod dvb_sub_source_settings {
     
@@ -10698,12 +10759,6 @@ pub mod dvb_sub_source_settings {
     }
     
     
-}
-impl DvbSubSourceSettings {
-    /// Creates a new builder-style object to manufacture [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
-    pub fn builder() -> crate::model::dvb_sub_source_settings::Builder {
-        crate::model::dvb_sub_source_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DvbSubOcrLanguage`, it is important to ensure
@@ -10813,6 +10868,13 @@ impl AsRef<str> for DvbSubOcrLanguage {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AribSourceSettings  {
 }
+impl AribSourceSettings {
+    /// Creates a new builder-style object to manufacture [`AribSourceSettings`](crate::model::AribSourceSettings).
+    pub fn builder() -> crate::model::arib_source_settings::Builder {
+        crate::model::arib_source_settings::Builder::default()
+    }
+}
+
 /// See [`AribSourceSettings`](crate::model::AribSourceSettings).
 pub mod arib_source_settings {
     
@@ -10831,12 +10893,6 @@ pub mod arib_source_settings {
     
     
 }
-impl AribSourceSettings {
-    /// Creates a new builder-style object to manufacture [`AribSourceSettings`](crate::model::AribSourceSettings).
-    pub fn builder() -> crate::model::arib_source_settings::Builder {
-        crate::model::arib_source_settings::Builder::default()
-    }
-}
 
 /// Ancillary Source Settings
 #[non_exhaustive]
@@ -10852,6 +10908,13 @@ impl AncillarySourceSettings {
         self.source_ancillary_channel_number
     }
 }
+impl AncillarySourceSettings {
+    /// Creates a new builder-style object to manufacture [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
+    pub fn builder() -> crate::model::ancillary_source_settings::Builder {
+        crate::model::ancillary_source_settings::Builder::default()
+    }
+}
+
 /// See [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
 pub mod ancillary_source_settings {
     
@@ -10883,12 +10946,6 @@ pub mod ancillary_source_settings {
     
     
 }
-impl AncillarySourceSettings {
-    /// Creates a new builder-style object to manufacture [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
-    pub fn builder() -> crate::model::ancillary_source_settings::Builder {
-        crate::model::ancillary_source_settings::Builder::default()
-    }
-}
 
 /// Audio Selector
 #[non_exhaustive]
@@ -10911,6 +10968,13 @@ impl AudioSelector {
         self.selector_settings.as_ref()
     }
 }
+impl AudioSelector {
+    /// Creates a new builder-style object to manufacture [`AudioSelector`](crate::model::AudioSelector).
+    pub fn builder() -> crate::model::audio_selector::Builder {
+        crate::model::audio_selector::Builder::default()
+    }
+}
+
 /// See [`AudioSelector`](crate::model::AudioSelector).
 pub mod audio_selector {
     
@@ -10953,12 +11017,6 @@ pub mod audio_selector {
     
     
 }
-impl AudioSelector {
-    /// Creates a new builder-style object to manufacture [`AudioSelector`](crate::model::AudioSelector).
-    pub fn builder() -> crate::model::audio_selector::Builder {
-        crate::model::audio_selector::Builder::default()
-    }
-}
 
 /// Audio Selector Settings
 #[non_exhaustive]
@@ -10995,6 +11053,13 @@ impl AudioSelectorSettings {
         self.audio_track_selection.as_ref()
     }
 }
+impl AudioSelectorSettings {
+    /// Creates a new builder-style object to manufacture [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
+    pub fn builder() -> crate::model::audio_selector_settings::Builder {
+        crate::model::audio_selector_settings::Builder::default()
+    }
+}
+
 /// See [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
 pub mod audio_selector_settings {
     
@@ -11061,12 +11126,6 @@ pub mod audio_selector_settings {
     
     
 }
-impl AudioSelectorSettings {
-    /// Creates a new builder-style object to manufacture [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
-    pub fn builder() -> crate::model::audio_selector_settings::Builder {
-        crate::model::audio_selector_settings::Builder::default()
-    }
-}
 
 /// Audio Track Selection
 #[non_exhaustive]
@@ -11089,6 +11148,13 @@ impl AudioTrackSelection {
         self.dolby_e_decode.as_ref()
     }
 }
+impl AudioTrackSelection {
+    /// Creates a new builder-style object to manufacture [`AudioTrackSelection`](crate::model::AudioTrackSelection).
+    pub fn builder() -> crate::model::audio_track_selection::Builder {
+        crate::model::audio_track_selection::Builder::default()
+    }
+}
+
 /// See [`AudioTrackSelection`](crate::model::AudioTrackSelection).
 pub mod audio_track_selection {
     
@@ -11137,12 +11203,6 @@ pub mod audio_track_selection {
     
     
 }
-impl AudioTrackSelection {
-    /// Creates a new builder-style object to manufacture [`AudioTrackSelection`](crate::model::AudioTrackSelection).
-    pub fn builder() -> crate::model::audio_track_selection::Builder {
-        crate::model::audio_track_selection::Builder::default()
-    }
-}
 
 /// Audio Dolby EDecode
 #[non_exhaustive]
@@ -11158,6 +11218,13 @@ impl AudioDolbyEDecode {
         self.program_selection.as_ref()
     }
 }
+impl AudioDolbyEDecode {
+    /// Creates a new builder-style object to manufacture [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
+    pub fn builder() -> crate::model::audio_dolby_e_decode::Builder {
+        crate::model::audio_dolby_e_decode::Builder::default()
+    }
+}
+
 /// See [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
 pub mod audio_dolby_e_decode {
     
@@ -11187,12 +11254,6 @@ pub mod audio_dolby_e_decode {
     }
     
     
-}
-impl AudioDolbyEDecode {
-    /// Creates a new builder-style object to manufacture [`AudioDolbyEDecode`](crate::model::AudioDolbyEDecode).
-    pub fn builder() -> crate::model::audio_dolby_e_decode::Builder {
-        crate::model::audio_dolby_e_decode::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DolbyEProgramSelection`, it is important to ensure
@@ -11326,6 +11387,13 @@ impl AudioTrack {
         self.track
     }
 }
+impl AudioTrack {
+    /// Creates a new builder-style object to manufacture [`AudioTrack`](crate::model::AudioTrack).
+    pub fn builder() -> crate::model::audio_track::Builder {
+        crate::model::audio_track::Builder::default()
+    }
+}
+
 /// See [`AudioTrack`](crate::model::AudioTrack).
 pub mod audio_track {
     
@@ -11357,12 +11425,6 @@ pub mod audio_track {
     
     
 }
-impl AudioTrack {
-    /// Creates a new builder-style object to manufacture [`AudioTrack`](crate::model::AudioTrack).
-    pub fn builder() -> crate::model::audio_track::Builder {
-        crate::model::audio_track::Builder::default()
-    }
-}
 
 /// Audio Pid Selection
 #[non_exhaustive]
@@ -11378,6 +11440,13 @@ impl AudioPidSelection {
         self.pid
     }
 }
+impl AudioPidSelection {
+    /// Creates a new builder-style object to manufacture [`AudioPidSelection`](crate::model::AudioPidSelection).
+    pub fn builder() -> crate::model::audio_pid_selection::Builder {
+        crate::model::audio_pid_selection::Builder::default()
+    }
+}
+
 /// See [`AudioPidSelection`](crate::model::AudioPidSelection).
 pub mod audio_pid_selection {
     
@@ -11409,12 +11478,6 @@ pub mod audio_pid_selection {
     
     
 }
-impl AudioPidSelection {
-    /// Creates a new builder-style object to manufacture [`AudioPidSelection`](crate::model::AudioPidSelection).
-    pub fn builder() -> crate::model::audio_pid_selection::Builder {
-        crate::model::audio_pid_selection::Builder::default()
-    }
-}
 
 /// Audio Language Selection
 #[non_exhaustive]
@@ -11437,6 +11500,13 @@ impl AudioLanguageSelection {
         self.language_selection_policy.as_ref()
     }
 }
+impl AudioLanguageSelection {
+    /// Creates a new builder-style object to manufacture [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
+    pub fn builder() -> crate::model::audio_language_selection::Builder {
+        crate::model::audio_language_selection::Builder::default()
+    }
+}
+
 /// See [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
 pub mod audio_language_selection {
     
@@ -11478,12 +11548,6 @@ pub mod audio_language_selection {
     }
     
     
-}
-impl AudioLanguageSelection {
-    /// Creates a new builder-style object to manufacture [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
-    pub fn builder() -> crate::model::audio_language_selection::Builder {
-        crate::model::audio_language_selection::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AudioLanguageSelectionPolicy`, it is important to ensure
@@ -11589,6 +11653,13 @@ impl AudioHlsRenditionSelection {
         self.name.as_deref()
     }
 }
+impl AudioHlsRenditionSelection {
+    /// Creates a new builder-style object to manufacture [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
+    pub fn builder() -> crate::model::audio_hls_rendition_selection::Builder {
+        crate::model::audio_hls_rendition_selection::Builder::default()
+    }
+}
+
 /// See [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
 pub mod audio_hls_rendition_selection {
     
@@ -11631,12 +11702,6 @@ pub mod audio_hls_rendition_selection {
     
     
 }
-impl AudioHlsRenditionSelection {
-    /// Creates a new builder-style object to manufacture [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
-    pub fn builder() -> crate::model::audio_hls_rendition_selection::Builder {
-        crate::model::audio_hls_rendition_selection::Builder::default()
-    }
-}
 
 /// The settings for Automatic Input Failover.
 #[non_exhaustive]
@@ -11673,6 +11738,13 @@ impl AutomaticInputFailoverSettings {
         self.secondary_input_id.as_deref()
     }
 }
+impl AutomaticInputFailoverSettings {
+    /// Creates a new builder-style object to manufacture [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
+    pub fn builder() -> crate::model::automatic_input_failover_settings::Builder {
+        crate::model::automatic_input_failover_settings::Builder::default()
+    }
+}
+
 /// See [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
 pub mod automatic_input_failover_settings {
     
@@ -11745,12 +11817,6 @@ pub mod automatic_input_failover_settings {
     }
     
     
-}
-impl AutomaticInputFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
-    pub fn builder() -> crate::model::automatic_input_failover_settings::Builder {
-        crate::model::automatic_input_failover_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputPreference`, it is important to ensure
@@ -11851,6 +11917,13 @@ impl FailoverCondition {
         self.failover_condition_settings.as_ref()
     }
 }
+impl FailoverCondition {
+    /// Creates a new builder-style object to manufacture [`FailoverCondition`](crate::model::FailoverCondition).
+    pub fn builder() -> crate::model::failover_condition::Builder {
+        crate::model::failover_condition::Builder::default()
+    }
+}
+
 /// See [`FailoverCondition`](crate::model::FailoverCondition).
 pub mod failover_condition {
     
@@ -11881,12 +11954,6 @@ pub mod failover_condition {
     
     
 }
-impl FailoverCondition {
-    /// Creates a new builder-style object to manufacture [`FailoverCondition`](crate::model::FailoverCondition).
-    pub fn builder() -> crate::model::failover_condition::Builder {
-        crate::model::failover_condition::Builder::default()
-    }
-}
 
 /// Settings for one failover condition.
 #[non_exhaustive]
@@ -11916,6 +11983,13 @@ impl FailoverConditionSettings {
         self.video_black_settings.as_ref()
     }
 }
+impl FailoverConditionSettings {
+    /// Creates a new builder-style object to manufacture [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
+    pub fn builder() -> crate::model::failover_condition_settings::Builder {
+        crate::model::failover_condition_settings::Builder::default()
+    }
+}
+
 /// See [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
 pub mod failover_condition_settings {
     
@@ -11970,12 +12044,6 @@ pub mod failover_condition_settings {
     
     
 }
-impl FailoverConditionSettings {
-    /// Creates a new builder-style object to manufacture [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
-    pub fn builder() -> crate::model::failover_condition_settings::Builder {
-        crate::model::failover_condition_settings::Builder::default()
-    }
-}
 
 /// Placeholder documentation for VideoBlackFailoverSettings
 #[non_exhaustive]
@@ -11998,6 +12066,13 @@ impl VideoBlackFailoverSettings {
         self.video_black_threshold_msec
     }
 }
+impl VideoBlackFailoverSettings {
+    /// Creates a new builder-style object to manufacture [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
+    pub fn builder() -> crate::model::video_black_failover_settings::Builder {
+        crate::model::video_black_failover_settings::Builder::default()
+    }
+}
+
 /// See [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
 pub mod video_black_failover_settings {
     
@@ -12042,12 +12117,6 @@ pub mod video_black_failover_settings {
     
     
 }
-impl VideoBlackFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
-    pub fn builder() -> crate::model::video_black_failover_settings::Builder {
-        crate::model::video_black_failover_settings::Builder::default()
-    }
-}
 
 /// MediaLive will perform a failover if content is not detected in this input for the specified period.
 #[non_exhaustive]
@@ -12063,6 +12132,13 @@ impl InputLossFailoverSettings {
         self.input_loss_threshold_msec
     }
 }
+impl InputLossFailoverSettings {
+    /// Creates a new builder-style object to manufacture [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
+    pub fn builder() -> crate::model::input_loss_failover_settings::Builder {
+        crate::model::input_loss_failover_settings::Builder::default()
+    }
+}
+
 /// See [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
 pub mod input_loss_failover_settings {
     
@@ -12094,12 +12170,6 @@ pub mod input_loss_failover_settings {
     
     
 }
-impl InputLossFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
-    pub fn builder() -> crate::model::input_loss_failover_settings::Builder {
-        crate::model::input_loss_failover_settings::Builder::default()
-    }
-}
 
 /// Placeholder documentation for AudioSilenceFailoverSettings
 #[non_exhaustive]
@@ -12122,6 +12192,13 @@ impl AudioSilenceFailoverSettings {
         self.audio_silence_threshold_msec
     }
 }
+impl AudioSilenceFailoverSettings {
+    /// Creates a new builder-style object to manufacture [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
+    pub fn builder() -> crate::model::audio_silence_failover_settings::Builder {
+        crate::model::audio_silence_failover_settings::Builder::default()
+    }
+}
+
 /// See [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
 pub mod audio_silence_failover_settings {
     
@@ -12164,12 +12241,6 @@ pub mod audio_silence_failover_settings {
     }
     
     
-}
-impl AudioSilenceFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
-    pub fn builder() -> crate::model::audio_silence_failover_settings::Builder {
-        crate::model::audio_silence_failover_settings::Builder::default()
-    }
 }
 
 /// Encoder Settings
@@ -12263,6 +12334,13 @@ impl EncoderSettings {
         self.video_descriptions.as_deref()
     }
 }
+impl EncoderSettings {
+    /// Creates a new builder-style object to manufacture [`EncoderSettings`](crate::model::EncoderSettings).
+    pub fn builder() -> crate::model::encoder_settings::Builder {
+        crate::model::encoder_settings::Builder::default()
+    }
+}
+
 /// See [`EncoderSettings`](crate::model::EncoderSettings).
 pub mod encoder_settings {
     
@@ -12449,12 +12527,6 @@ pub mod encoder_settings {
     
     
 }
-impl EncoderSettings {
-    /// Creates a new builder-style object to manufacture [`EncoderSettings`](crate::model::EncoderSettings).
-    pub fn builder() -> crate::model::encoder_settings::Builder {
-        crate::model::encoder_settings::Builder::default()
-    }
-}
 
 /// Video settings for this stream.
 #[non_exhaustive]
@@ -12512,6 +12584,13 @@ impl VideoDescription {
         self.width
     }
 }
+impl VideoDescription {
+    /// Creates a new builder-style object to manufacture [`VideoDescription`](crate::model::VideoDescription).
+    pub fn builder() -> crate::model::video_description::Builder {
+        crate::model::video_description::Builder::default()
+    }
+}
+
 /// See [`VideoDescription`](crate::model::VideoDescription).
 pub mod video_description {
     
@@ -12616,12 +12695,6 @@ pub mod video_description {
     }
     
     
-}
-impl VideoDescription {
-    /// Creates a new builder-style object to manufacture [`VideoDescription`](crate::model::VideoDescription).
-    pub fn builder() -> crate::model::video_description::Builder {
-        crate::model::video_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VideoDescriptionScalingBehavior`, it is important to ensure
@@ -12828,6 +12901,13 @@ impl VideoCodecSettings {
         self.mpeg2_settings.as_ref()
     }
 }
+impl VideoCodecSettings {
+    /// Creates a new builder-style object to manufacture [`VideoCodecSettings`](crate::model::VideoCodecSettings).
+    pub fn builder() -> crate::model::video_codec_settings::Builder {
+        crate::model::video_codec_settings::Builder::default()
+    }
+}
+
 /// See [`VideoCodecSettings`](crate::model::VideoCodecSettings).
 pub mod video_codec_settings {
     
@@ -12893,12 +12973,6 @@ pub mod video_codec_settings {
     }
     
     
-}
-impl VideoCodecSettings {
-    /// Creates a new builder-style object to manufacture [`VideoCodecSettings`](crate::model::VideoCodecSettings).
-    pub fn builder() -> crate::model::video_codec_settings::Builder {
-        crate::model::video_codec_settings::Builder::default()
-    }
 }
 
 /// Mpeg2 Settings
@@ -13027,6 +13101,13 @@ impl Mpeg2Settings {
         self.timecode_burnin_settings.as_ref()
     }
 }
+impl Mpeg2Settings {
+    /// Creates a new builder-style object to manufacture [`Mpeg2Settings`](crate::model::Mpeg2Settings).
+    pub fn builder() -> crate::model::mpeg2_settings::Builder {
+        crate::model::mpeg2_settings::Builder::default()
+    }
+}
+
 /// See [`Mpeg2Settings`](crate::model::Mpeg2Settings).
 pub mod mpeg2_settings {
     
@@ -13254,12 +13335,6 @@ pub mod mpeg2_settings {
     
     
 }
-impl Mpeg2Settings {
-    /// Creates a new builder-style object to manufacture [`Mpeg2Settings`](crate::model::Mpeg2Settings).
-    pub fn builder() -> crate::model::mpeg2_settings::Builder {
-        crate::model::mpeg2_settings::Builder::default()
-    }
-}
 
 /// Timecode Burnin Settings
 #[non_exhaustive]
@@ -13289,6 +13364,13 @@ impl TimecodeBurninSettings {
         self.prefix.as_deref()
     }
 }
+impl TimecodeBurninSettings {
+    /// Creates a new builder-style object to manufacture [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
+    pub fn builder() -> crate::model::timecode_burnin_settings::Builder {
+        crate::model::timecode_burnin_settings::Builder::default()
+    }
+}
+
 /// See [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
 pub mod timecode_burnin_settings {
     
@@ -13342,12 +13424,6 @@ pub mod timecode_burnin_settings {
     }
     
     
-}
-impl TimecodeBurninSettings {
-    /// Creates a new builder-style object to manufacture [`TimecodeBurninSettings`](crate::model::TimecodeBurninSettings).
-    pub fn builder() -> crate::model::timecode_burnin_settings::Builder {
-        crate::model::timecode_burnin_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TimecodeBurninPosition`, it is important to ensure
@@ -14028,6 +14104,13 @@ impl Mpeg2FilterSettings {
         self.temporal_filter_settings.as_ref()
     }
 }
+impl Mpeg2FilterSettings {
+    /// Creates a new builder-style object to manufacture [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
+    pub fn builder() -> crate::model::mpeg2_filter_settings::Builder {
+        crate::model::mpeg2_filter_settings::Builder::default()
+    }
+}
+
 /// See [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
 pub mod mpeg2_filter_settings {
     
@@ -14058,12 +14141,6 @@ pub mod mpeg2_filter_settings {
     
     
 }
-impl Mpeg2FilterSettings {
-    /// Creates a new builder-style object to manufacture [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
-    pub fn builder() -> crate::model::mpeg2_filter_settings::Builder {
-        crate::model::mpeg2_filter_settings::Builder::default()
-    }
-}
 
 /// Temporal Filter Settings
 #[non_exhaustive]
@@ -14086,6 +14163,13 @@ impl TemporalFilterSettings {
         self.strength.as_ref()
     }
 }
+impl TemporalFilterSettings {
+    /// Creates a new builder-style object to manufacture [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
+    pub fn builder() -> crate::model::temporal_filter_settings::Builder {
+        crate::model::temporal_filter_settings::Builder::default()
+    }
+}
+
 /// See [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
 pub mod temporal_filter_settings {
     
@@ -14127,12 +14211,6 @@ pub mod temporal_filter_settings {
     }
     
     
-}
-impl TemporalFilterSettings {
-    /// Creates a new builder-style object to manufacture [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
-    pub fn builder() -> crate::model::temporal_filter_settings::Builder {
-        crate::model::temporal_filter_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TemporalFilterStrength`, it is important to ensure
@@ -15026,6 +15104,13 @@ impl H265Settings {
         self.timecode_burnin_settings.as_ref()
     }
 }
+impl H265Settings {
+    /// Creates a new builder-style object to manufacture [`H265Settings`](crate::model::H265Settings).
+    pub fn builder() -> crate::model::h265_settings::Builder {
+        crate::model::h265_settings::Builder::default()
+    }
+}
+
 /// See [`H265Settings`](crate::model::H265Settings).
 pub mod h265_settings {
     
@@ -15415,12 +15500,6 @@ pub mod h265_settings {
     }
     
     
-}
-impl H265Settings {
-    /// Creates a new builder-style object to manufacture [`H265Settings`](crate::model::H265Settings).
-    pub fn builder() -> crate::model::h265_settings::Builder {
-        crate::model::h265_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `H265TimecodeInsertionBehavior`, it is important to ensure
@@ -16327,6 +16406,13 @@ impl H265FilterSettings {
         self.temporal_filter_settings.as_ref()
     }
 }
+impl H265FilterSettings {
+    /// Creates a new builder-style object to manufacture [`H265FilterSettings`](crate::model::H265FilterSettings).
+    pub fn builder() -> crate::model::h265_filter_settings::Builder {
+        crate::model::h265_filter_settings::Builder::default()
+    }
+}
+
 /// See [`H265FilterSettings`](crate::model::H265FilterSettings).
 pub mod h265_filter_settings {
     
@@ -16356,12 +16442,6 @@ pub mod h265_filter_settings {
     }
     
     
-}
-impl H265FilterSettings {
-    /// Creates a new builder-style object to manufacture [`H265FilterSettings`](crate::model::H265FilterSettings).
-    pub fn builder() -> crate::model::h265_filter_settings::Builder {
-        crate::model::h265_filter_settings::Builder::default()
-    }
 }
 
 /// H265 Color Space Settings
@@ -16406,6 +16486,13 @@ impl H265ColorSpaceSettings {
         self.rec709_settings.as_ref()
     }
 }
+impl H265ColorSpaceSettings {
+    /// Creates a new builder-style object to manufacture [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
+    pub fn builder() -> crate::model::h265_color_space_settings::Builder {
+        crate::model::h265_color_space_settings::Builder::default()
+    }
+}
+
 /// See [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
 pub mod h265_color_space_settings {
     
@@ -16484,18 +16571,19 @@ pub mod h265_color_space_settings {
     
     
 }
-impl H265ColorSpaceSettings {
-    /// Creates a new builder-style object to manufacture [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
-    pub fn builder() -> crate::model::h265_color_space_settings::Builder {
-        crate::model::h265_color_space_settings::Builder::default()
-    }
-}
 
 /// Rec709 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rec709Settings  {
 }
+impl Rec709Settings {
+    /// Creates a new builder-style object to manufacture [`Rec709Settings`](crate::model::Rec709Settings).
+    pub fn builder() -> crate::model::rec709_settings::Builder {
+        crate::model::rec709_settings::Builder::default()
+    }
+}
+
 /// See [`Rec709Settings`](crate::model::Rec709Settings).
 pub mod rec709_settings {
     
@@ -16514,18 +16602,19 @@ pub mod rec709_settings {
     
     
 }
-impl Rec709Settings {
-    /// Creates a new builder-style object to manufacture [`Rec709Settings`](crate::model::Rec709Settings).
-    pub fn builder() -> crate::model::rec709_settings::Builder {
-        crate::model::rec709_settings::Builder::default()
-    }
-}
 
 /// Rec601 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Rec601Settings  {
 }
+impl Rec601Settings {
+    /// Creates a new builder-style object to manufacture [`Rec601Settings`](crate::model::Rec601Settings).
+    pub fn builder() -> crate::model::rec601_settings::Builder {
+        crate::model::rec601_settings::Builder::default()
+    }
+}
+
 /// See [`Rec601Settings`](crate::model::Rec601Settings).
 pub mod rec601_settings {
     
@@ -16544,18 +16633,19 @@ pub mod rec601_settings {
     
     
 }
-impl Rec601Settings {
-    /// Creates a new builder-style object to manufacture [`Rec601Settings`](crate::model::Rec601Settings).
-    pub fn builder() -> crate::model::rec601_settings::Builder {
-        crate::model::rec601_settings::Builder::default()
-    }
-}
 
 /// Dolby Vision81 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DolbyVision81Settings  {
 }
+impl DolbyVision81Settings {
+    /// Creates a new builder-style object to manufacture [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
+    pub fn builder() -> crate::model::dolby_vision81_settings::Builder {
+        crate::model::dolby_vision81_settings::Builder::default()
+    }
+}
+
 /// See [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
 pub mod dolby_vision81_settings {
     
@@ -16574,18 +16664,19 @@ pub mod dolby_vision81_settings {
     
     
 }
-impl DolbyVision81Settings {
-    /// Creates a new builder-style object to manufacture [`DolbyVision81Settings`](crate::model::DolbyVision81Settings).
-    pub fn builder() -> crate::model::dolby_vision81_settings::Builder {
-        crate::model::dolby_vision81_settings::Builder::default()
-    }
-}
 
 /// Passthrough applies no color space conversion to the output
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColorSpacePassthroughSettings  {
 }
+impl ColorSpacePassthroughSettings {
+    /// Creates a new builder-style object to manufacture [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
+    pub fn builder() -> crate::model::color_space_passthrough_settings::Builder {
+        crate::model::color_space_passthrough_settings::Builder::default()
+    }
+}
+
 /// See [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
 pub mod color_space_passthrough_settings {
     
@@ -16603,12 +16694,6 @@ pub mod color_space_passthrough_settings {
     }
     
     
-}
-impl ColorSpacePassthroughSettings {
-    /// Creates a new builder-style object to manufacture [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
-    pub fn builder() -> crate::model::color_space_passthrough_settings::Builder {
-        crate::model::color_space_passthrough_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `H265ColorMetadata`, it is important to ensure
@@ -17183,6 +17268,13 @@ impl H264Settings {
         self.timecode_burnin_settings.as_ref()
     }
 }
+impl H264Settings {
+    /// Creates a new builder-style object to manufacture [`H264Settings`](crate::model::H264Settings).
+    pub fn builder() -> crate::model::h264_settings::Builder {
+        crate::model::h264_settings::Builder::default()
+    }
+}
+
 /// See [`H264Settings`](crate::model::H264Settings).
 pub mod h264_settings {
     
@@ -17720,12 +17812,6 @@ pub mod h264_settings {
     }
     
     
-}
-impl H264Settings {
-    /// Creates a new builder-style object to manufacture [`H264Settings`](crate::model::H264Settings).
-    pub fn builder() -> crate::model::h264_settings::Builder {
-        crate::model::h264_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `H264TimecodeInsertionBehavior`, it is important to ensure
@@ -19328,6 +19414,13 @@ impl H264FilterSettings {
         self.temporal_filter_settings.as_ref()
     }
 }
+impl H264FilterSettings {
+    /// Creates a new builder-style object to manufacture [`H264FilterSettings`](crate::model::H264FilterSettings).
+    pub fn builder() -> crate::model::h264_filter_settings::Builder {
+        crate::model::h264_filter_settings::Builder::default()
+    }
+}
+
 /// See [`H264FilterSettings`](crate::model::H264FilterSettings).
 pub mod h264_filter_settings {
     
@@ -19357,12 +19450,6 @@ pub mod h264_filter_settings {
     }
     
     
-}
-impl H264FilterSettings {
-    /// Creates a new builder-style object to manufacture [`H264FilterSettings`](crate::model::H264FilterSettings).
-    pub fn builder() -> crate::model::h264_filter_settings::Builder {
-        crate::model::h264_filter_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `H264EntropyEncoding`, it is important to ensure
@@ -19475,6 +19562,13 @@ impl H264ColorSpaceSettings {
         self.rec709_settings.as_ref()
     }
 }
+impl H264ColorSpaceSettings {
+    /// Creates a new builder-style object to manufacture [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
+    pub fn builder() -> crate::model::h264_color_space_settings::Builder {
+        crate::model::h264_color_space_settings::Builder::default()
+    }
+}
+
 /// See [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
 pub mod h264_color_space_settings {
     
@@ -19528,12 +19622,6 @@ pub mod h264_color_space_settings {
     }
     
     
-}
-impl H264ColorSpaceSettings {
-    /// Creates a new builder-style object to manufacture [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
-    pub fn builder() -> crate::model::h264_color_space_settings::Builder {
-        crate::model::h264_color_space_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `H264ColorMetadata`, it is important to ensure
@@ -19753,6 +19841,13 @@ impl FrameCaptureSettings {
         self.timecode_burnin_settings.as_ref()
     }
 }
+impl FrameCaptureSettings {
+    /// Creates a new builder-style object to manufacture [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
+    pub fn builder() -> crate::model::frame_capture_settings::Builder {
+        crate::model::frame_capture_settings::Builder::default()
+    }
+}
+
 /// See [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
 pub mod frame_capture_settings {
     
@@ -19807,12 +19902,6 @@ pub mod frame_capture_settings {
     }
     
     
-}
-impl FrameCaptureSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
-    pub fn builder() -> crate::model::frame_capture_settings::Builder {
-        crate::model::frame_capture_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FrameCaptureIntervalUnit`, it is important to ensure
@@ -19918,6 +20007,13 @@ impl TimecodeConfig {
         self.sync_threshold
     }
 }
+impl TimecodeConfig {
+    /// Creates a new builder-style object to manufacture [`TimecodeConfig`](crate::model::TimecodeConfig).
+    pub fn builder() -> crate::model::timecode_config::Builder {
+        crate::model::timecode_config::Builder::default()
+    }
+}
+
 /// See [`TimecodeConfig`](crate::model::TimecodeConfig).
 pub mod timecode_config {
     
@@ -19960,12 +20056,6 @@ pub mod timecode_config {
     }
     
     
-}
-impl TimecodeConfig {
-    /// Creates a new builder-style object to manufacture [`TimecodeConfig`](crate::model::TimecodeConfig).
-    pub fn builder() -> crate::model::timecode_config::Builder {
-        crate::model::timecode_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TimecodeConfigSource`, it is important to ensure
@@ -20083,6 +20173,13 @@ impl OutputGroup {
         self.outputs.as_deref()
     }
 }
+impl OutputGroup {
+    /// Creates a new builder-style object to manufacture [`OutputGroup`](crate::model::OutputGroup).
+    pub fn builder() -> crate::model::output_group::Builder {
+        crate::model::output_group::Builder::default()
+    }
+}
+
 /// See [`OutputGroup`](crate::model::OutputGroup).
 pub mod output_group {
     
@@ -20143,12 +20240,6 @@ pub mod output_group {
     
     
 }
-impl OutputGroup {
-    /// Creates a new builder-style object to manufacture [`OutputGroup`](crate::model::OutputGroup).
-    pub fn builder() -> crate::model::output_group::Builder {
-        crate::model::output_group::Builder::default()
-    }
-}
 
 /// Output settings. There can be multiple outputs within a group.
 #[non_exhaustive]
@@ -20192,6 +20283,13 @@ impl Output {
         self.video_description_name.as_deref()
     }
 }
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
 /// See [`Output`](crate::model::Output).
 pub mod output {
     
@@ -20282,12 +20380,6 @@ pub mod output {
     
     
 }
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
-    }
-}
 
 /// Output Settings
 #[non_exhaustive]
@@ -20352,6 +20444,13 @@ impl OutputSettings {
         self.udp_output_settings.as_ref()
     }
 }
+impl OutputSettings {
+    /// Creates a new builder-style object to manufacture [`OutputSettings`](crate::model::OutputSettings).
+    pub fn builder() -> crate::model::output_settings::Builder {
+        crate::model::output_settings::Builder::default()
+    }
+}
+
 /// See [`OutputSettings`](crate::model::OutputSettings).
 pub mod output_settings {
     
@@ -20466,12 +20565,6 @@ pub mod output_settings {
     
     
 }
-impl OutputSettings {
-    /// Creates a new builder-style object to manufacture [`OutputSettings`](crate::model::OutputSettings).
-    pub fn builder() -> crate::model::output_settings::Builder {
-        crate::model::output_settings::Builder::default()
-    }
-}
 
 /// Udp Output Settings
 #[non_exhaustive]
@@ -20508,6 +20601,13 @@ impl UdpOutputSettings {
         self.fec_output_settings.as_ref()
     }
 }
+impl UdpOutputSettings {
+    /// Creates a new builder-style object to manufacture [`UdpOutputSettings`](crate::model::UdpOutputSettings).
+    pub fn builder() -> crate::model::udp_output_settings::Builder {
+        crate::model::udp_output_settings::Builder::default()
+    }
+}
+
 /// See [`UdpOutputSettings`](crate::model::UdpOutputSettings).
 pub mod udp_output_settings {
     
@@ -20575,12 +20675,6 @@ pub mod udp_output_settings {
     
     
 }
-impl UdpOutputSettings {
-    /// Creates a new builder-style object to manufacture [`UdpOutputSettings`](crate::model::UdpOutputSettings).
-    pub fn builder() -> crate::model::udp_output_settings::Builder {
-        crate::model::udp_output_settings::Builder::default()
-    }
-}
 
 /// Fec Output Settings
 #[non_exhaustive]
@@ -20610,6 +20704,13 @@ impl FecOutputSettings {
         self.row_length
     }
 }
+impl FecOutputSettings {
+    /// Creates a new builder-style object to manufacture [`FecOutputSettings`](crate::model::FecOutputSettings).
+    pub fn builder() -> crate::model::fec_output_settings::Builder {
+        crate::model::fec_output_settings::Builder::default()
+    }
+}
+
 /// See [`FecOutputSettings`](crate::model::FecOutputSettings).
 pub mod fec_output_settings {
     
@@ -20665,12 +20766,6 @@ pub mod fec_output_settings {
     }
     
     
-}
-impl FecOutputSettings {
-    /// Creates a new builder-style object to manufacture [`FecOutputSettings`](crate::model::FecOutputSettings).
-    pub fn builder() -> crate::model::fec_output_settings::Builder {
-        crate::model::fec_output_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FecOutputIncludeFec`, it is important to ensure
@@ -20769,6 +20864,13 @@ impl OutputLocationRef {
         self.destination_ref_id.as_deref()
     }
 }
+impl OutputLocationRef {
+    /// Creates a new builder-style object to manufacture [`OutputLocationRef`](crate::model::OutputLocationRef).
+    pub fn builder() -> crate::model::output_location_ref::Builder {
+        crate::model::output_location_ref::Builder::default()
+    }
+}
+
 /// See [`OutputLocationRef`](crate::model::OutputLocationRef).
 pub mod output_location_ref {
     
@@ -20799,12 +20901,6 @@ pub mod output_location_ref {
     
     
 }
-impl OutputLocationRef {
-    /// Creates a new builder-style object to manufacture [`OutputLocationRef`](crate::model::OutputLocationRef).
-    pub fn builder() -> crate::model::output_location_ref::Builder {
-        crate::model::output_location_ref::Builder::default()
-    }
-}
 
 /// Udp Container Settings
 #[non_exhaustive]
@@ -20820,6 +20916,13 @@ impl UdpContainerSettings {
         self.m2ts_settings.as_ref()
     }
 }
+impl UdpContainerSettings {
+    /// Creates a new builder-style object to manufacture [`UdpContainerSettings`](crate::model::UdpContainerSettings).
+    pub fn builder() -> crate::model::udp_container_settings::Builder {
+        crate::model::udp_container_settings::Builder::default()
+    }
+}
+
 /// See [`UdpContainerSettings`](crate::model::UdpContainerSettings).
 pub mod udp_container_settings {
     
@@ -20849,12 +20952,6 @@ pub mod udp_container_settings {
     }
     
     
-}
-impl UdpContainerSettings {
-    /// Creates a new builder-style object to manufacture [`UdpContainerSettings`](crate::model::UdpContainerSettings).
-    pub fn builder() -> crate::model::udp_container_settings::Builder {
-        crate::model::udp_container_settings::Builder::default()
-    }
 }
 
 /// M2ts Settings
@@ -21200,6 +21297,13 @@ impl M2tsSettings {
         self.scte35_preroll_pullup_milliseconds
     }
 }
+impl M2tsSettings {
+    /// Creates a new builder-style object to manufacture [`M2tsSettings`](crate::model::M2tsSettings).
+    pub fn builder() -> crate::model::m2ts_settings::Builder {
+        crate::model::m2ts_settings::Builder::default()
+    }
+}
+
 /// See [`M2tsSettings`](crate::model::M2tsSettings).
 pub mod m2ts_settings {
     
@@ -21805,12 +21909,6 @@ pub mod m2ts_settings {
     }
     
     
-}
-impl M2tsSettings {
-    /// Creates a new builder-style object to manufacture [`M2tsSettings`](crate::model::M2tsSettings).
-    pub fn builder() -> crate::model::m2ts_settings::Builder {
-        crate::model::m2ts_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `M2tsTimedMetadataBehavior`, it is important to ensure
@@ -22831,6 +22929,13 @@ impl DvbTdtSettings {
         self.rep_interval
     }
 }
+impl DvbTdtSettings {
+    /// Creates a new builder-style object to manufacture [`DvbTdtSettings`](crate::model::DvbTdtSettings).
+    pub fn builder() -> crate::model::dvb_tdt_settings::Builder {
+        crate::model::dvb_tdt_settings::Builder::default()
+    }
+}
+
 /// See [`DvbTdtSettings`](crate::model::DvbTdtSettings).
 pub mod dvb_tdt_settings {
     
@@ -22861,12 +22966,6 @@ pub mod dvb_tdt_settings {
     }
     
     
-}
-impl DvbTdtSettings {
-    /// Creates a new builder-style object to manufacture [`DvbTdtSettings`](crate::model::DvbTdtSettings).
-    pub fn builder() -> crate::model::dvb_tdt_settings::Builder {
-        crate::model::dvb_tdt_settings::Builder::default()
-    }
 }
 
 /// DVB Service Description Table (SDT)
@@ -22904,6 +23003,13 @@ impl DvbSdtSettings {
         self.service_provider_name.as_deref()
     }
 }
+impl DvbSdtSettings {
+    /// Creates a new builder-style object to manufacture [`DvbSdtSettings`](crate::model::DvbSdtSettings).
+    pub fn builder() -> crate::model::dvb_sdt_settings::Builder {
+        crate::model::dvb_sdt_settings::Builder::default()
+    }
+}
+
 /// See [`DvbSdtSettings`](crate::model::DvbSdtSettings).
 pub mod dvb_sdt_settings {
     
@@ -22970,12 +23076,6 @@ pub mod dvb_sdt_settings {
     }
     
     
-}
-impl DvbSdtSettings {
-    /// Creates a new builder-style object to manufacture [`DvbSdtSettings`](crate::model::DvbSdtSettings).
-    pub fn builder() -> crate::model::dvb_sdt_settings::Builder {
-        crate::model::dvb_sdt_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DvbSdtOutputSdt`, it is important to ensure
@@ -23098,6 +23198,13 @@ impl DvbNitSettings {
         self.rep_interval
     }
 }
+impl DvbNitSettings {
+    /// Creates a new builder-style object to manufacture [`DvbNitSettings`](crate::model::DvbNitSettings).
+    pub fn builder() -> crate::model::dvb_nit_settings::Builder {
+        crate::model::dvb_nit_settings::Builder::default()
+    }
+}
+
 /// See [`DvbNitSettings`](crate::model::DvbNitSettings).
 pub mod dvb_nit_settings {
     
@@ -23153,12 +23260,6 @@ pub mod dvb_nit_settings {
     }
     
     
-}
-impl DvbNitSettings {
-    /// Creates a new builder-style object to manufacture [`DvbNitSettings`](crate::model::DvbNitSettings).
-    pub fn builder() -> crate::model::dvb_nit_settings::Builder {
-        crate::model::dvb_nit_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `M2tsCcDescriptor`, it is important to ensure
@@ -23770,6 +23871,13 @@ impl RtmpOutputSettings {
         self.num_retries
     }
 }
+impl RtmpOutputSettings {
+    /// Creates a new builder-style object to manufacture [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
+    pub fn builder() -> crate::model::rtmp_output_settings::Builder {
+        crate::model::rtmp_output_settings::Builder::default()
+    }
+}
+
 /// See [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
 pub mod rtmp_output_settings {
     
@@ -23837,12 +23945,6 @@ pub mod rtmp_output_settings {
     }
     
     
-}
-impl RtmpOutputSettings {
-    /// Creates a new builder-style object to manufacture [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
-    pub fn builder() -> crate::model::rtmp_output_settings::Builder {
-        crate::model::rtmp_output_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RtmpOutputCertificateMode`, it is important to ensure
@@ -23941,6 +24043,13 @@ impl MultiplexOutputSettings {
         self.destination.as_ref()
     }
 }
+impl MultiplexOutputSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
+    pub fn builder() -> crate::model::multiplex_output_settings::Builder {
+        crate::model::multiplex_output_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
 pub mod multiplex_output_settings {
     
@@ -23971,12 +24080,6 @@ pub mod multiplex_output_settings {
     
     
 }
-impl MultiplexOutputSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
-    pub fn builder() -> crate::model::multiplex_output_settings::Builder {
-        crate::model::multiplex_output_settings::Builder::default()
-    }
-}
 
 /// Ms Smooth Output Settings
 #[non_exhaustive]
@@ -23999,6 +24102,13 @@ impl MsSmoothOutputSettings {
         self.name_modifier.as_deref()
     }
 }
+impl MsSmoothOutputSettings {
+    /// Creates a new builder-style object to manufacture [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
+    pub fn builder() -> crate::model::ms_smooth_output_settings::Builder {
+        crate::model::ms_smooth_output_settings::Builder::default()
+    }
+}
+
 /// See [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
 pub mod ms_smooth_output_settings {
     
@@ -24040,12 +24150,6 @@ pub mod ms_smooth_output_settings {
     }
     
     
-}
-impl MsSmoothOutputSettings {
-    /// Creates a new builder-style object to manufacture [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
-    pub fn builder() -> crate::model::ms_smooth_output_settings::Builder {
-        crate::model::ms_smooth_output_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MsSmoothH265PackagingType`, it is important to ensure
@@ -24135,6 +24239,13 @@ impl AsRef<str> for MsSmoothH265PackagingType {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MediaPackageOutputSettings  {
 }
+impl MediaPackageOutputSettings {
+    /// Creates a new builder-style object to manufacture [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
+    pub fn builder() -> crate::model::media_package_output_settings::Builder {
+        crate::model::media_package_output_settings::Builder::default()
+    }
+}
+
 /// See [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
 pub mod media_package_output_settings {
     
@@ -24152,12 +24263,6 @@ pub mod media_package_output_settings {
     }
     
     
-}
-impl MediaPackageOutputSettings {
-    /// Creates a new builder-style object to manufacture [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
-    pub fn builder() -> crate::model::media_package_output_settings::Builder {
-        crate::model::media_package_output_settings::Builder::default()
-    }
 }
 
 /// Hls Output Settings
@@ -24195,6 +24300,13 @@ impl HlsOutputSettings {
         self.segment_modifier.as_deref()
     }
 }
+impl HlsOutputSettings {
+    /// Creates a new builder-style object to manufacture [`HlsOutputSettings`](crate::model::HlsOutputSettings).
+    pub fn builder() -> crate::model::hls_output_settings::Builder {
+        crate::model::hls_output_settings::Builder::default()
+    }
+}
+
 /// See [`HlsOutputSettings`](crate::model::HlsOutputSettings).
 pub mod hls_output_settings {
     
@@ -24261,12 +24373,6 @@ pub mod hls_output_settings {
     
     
 }
-impl HlsOutputSettings {
-    /// Creates a new builder-style object to manufacture [`HlsOutputSettings`](crate::model::HlsOutputSettings).
-    pub fn builder() -> crate::model::hls_output_settings::Builder {
-        crate::model::hls_output_settings::Builder::default()
-    }
-}
 
 /// Hls Settings
 #[non_exhaustive]
@@ -24303,6 +24409,13 @@ impl HlsSettings {
         self.standard_hls_settings.as_ref()
     }
 }
+impl HlsSettings {
+    /// Creates a new builder-style object to manufacture [`HlsSettings`](crate::model::HlsSettings).
+    pub fn builder() -> crate::model::hls_settings::Builder {
+        crate::model::hls_settings::Builder::default()
+    }
+}
+
 /// See [`HlsSettings`](crate::model::HlsSettings).
 pub mod hls_settings {
     
@@ -24369,12 +24482,6 @@ pub mod hls_settings {
     
     
 }
-impl HlsSettings {
-    /// Creates a new builder-style object to manufacture [`HlsSettings`](crate::model::HlsSettings).
-    pub fn builder() -> crate::model::hls_settings::Builder {
-        crate::model::hls_settings::Builder::default()
-    }
-}
 
 /// Standard Hls Settings
 #[non_exhaustive]
@@ -24397,6 +24504,13 @@ impl StandardHlsSettings {
         self.m3u8_settings.as_ref()
     }
 }
+impl StandardHlsSettings {
+    /// Creates a new builder-style object to manufacture [`StandardHlsSettings`](crate::model::StandardHlsSettings).
+    pub fn builder() -> crate::model::standard_hls_settings::Builder {
+        crate::model::standard_hls_settings::Builder::default()
+    }
+}
+
 /// See [`StandardHlsSettings`](crate::model::StandardHlsSettings).
 pub mod standard_hls_settings {
     
@@ -24438,12 +24552,6 @@ pub mod standard_hls_settings {
     }
     
     
-}
-impl StandardHlsSettings {
-    /// Creates a new builder-style object to manufacture [`StandardHlsSettings`](crate::model::StandardHlsSettings).
-    pub fn builder() -> crate::model::standard_hls_settings::Builder {
-        crate::model::standard_hls_settings::Builder::default()
-    }
 }
 
 /// Settings information for the .m3u8 container
@@ -24572,6 +24680,13 @@ impl M3u8Settings {
         self.video_pid.as_deref()
     }
 }
+impl M3u8Settings {
+    /// Creates a new builder-style object to manufacture [`M3u8Settings`](crate::model::M3u8Settings).
+    pub fn builder() -> crate::model::m3u8_settings::Builder {
+        crate::model::m3u8_settings::Builder::default()
+    }
+}
+
 /// See [`M3u8Settings`](crate::model::M3u8Settings).
 pub mod m3u8_settings {
     
@@ -24799,12 +24914,6 @@ pub mod m3u8_settings {
     }
     
     
-}
-impl M3u8Settings {
-    /// Creates a new builder-style object to manufacture [`M3u8Settings`](crate::model::M3u8Settings).
-    pub fn builder() -> crate::model::m3u8_settings::Builder {
-        crate::model::m3u8_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `M3u8TimedMetadataBehavior`, it is important to ensure
@@ -25140,6 +25249,13 @@ impl AsRef<str> for M3u8NielsenId3Behavior {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FrameCaptureHlsSettings  {
 }
+impl FrameCaptureHlsSettings {
+    /// Creates a new builder-style object to manufacture [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
+    pub fn builder() -> crate::model::frame_capture_hls_settings::Builder {
+        crate::model::frame_capture_hls_settings::Builder::default()
+    }
+}
+
 /// See [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
 pub mod frame_capture_hls_settings {
     
@@ -25157,12 +25273,6 @@ pub mod frame_capture_hls_settings {
     }
     
     
-}
-impl FrameCaptureHlsSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
-    pub fn builder() -> crate::model::frame_capture_hls_settings::Builder {
-        crate::model::frame_capture_hls_settings::Builder::default()
-    }
 }
 
 /// Fmp4 Hls Settings
@@ -25193,6 +25303,13 @@ impl Fmp4HlsSettings {
         self.timed_metadata_behavior.as_ref()
     }
 }
+impl Fmp4HlsSettings {
+    /// Creates a new builder-style object to manufacture [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
+    pub fn builder() -> crate::model::fmp4_hls_settings::Builder {
+        crate::model::fmp4_hls_settings::Builder::default()
+    }
+}
+
 /// See [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
 pub mod fmp4_hls_settings {
     
@@ -25246,12 +25363,6 @@ pub mod fmp4_hls_settings {
     }
     
     
-}
-impl Fmp4HlsSettings {
-    /// Creates a new builder-style object to manufacture [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
-    pub fn builder() -> crate::model::fmp4_hls_settings::Builder {
-        crate::model::fmp4_hls_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Fmp4TimedMetadataBehavior`, it is important to ensure
@@ -25453,6 +25564,13 @@ impl AudioOnlyHlsSettings {
         self.segment_type.as_ref()
     }
 }
+impl AudioOnlyHlsSettings {
+    /// Creates a new builder-style object to manufacture [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
+    pub fn builder() -> crate::model::audio_only_hls_settings::Builder {
+        crate::model::audio_only_hls_settings::Builder::default()
+    }
+}
+
 /// See [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
 pub mod audio_only_hls_settings {
     
@@ -25518,12 +25636,6 @@ pub mod audio_only_hls_settings {
     }
     
     
-}
-impl AudioOnlyHlsSettings {
-    /// Creates a new builder-style object to manufacture [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
-    pub fn builder() -> crate::model::audio_only_hls_settings::Builder {
-        crate::model::audio_only_hls_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AudioOnlyHlsSegmentType`, it is important to ensure
@@ -25728,6 +25840,13 @@ impl InputLocation {
         self.username.as_deref()
     }
 }
+impl InputLocation {
+    /// Creates a new builder-style object to manufacture [`InputLocation`](crate::model::InputLocation).
+    pub fn builder() -> crate::model::input_location::Builder {
+        crate::model::input_location::Builder::default()
+    }
+}
+
 /// See [`InputLocation`](crate::model::InputLocation).
 pub mod input_location {
     
@@ -25781,12 +25900,6 @@ pub mod input_location {
     }
     
     
-}
-impl InputLocation {
-    /// Creates a new builder-style object to manufacture [`InputLocation`](crate::model::InputLocation).
-    pub fn builder() -> crate::model::input_location::Builder {
-        crate::model::input_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsH265PackagingType`, it is important to ensure
@@ -25885,6 +25998,13 @@ impl FrameCaptureOutputSettings {
         self.name_modifier.as_deref()
     }
 }
+impl FrameCaptureOutputSettings {
+    /// Creates a new builder-style object to manufacture [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
+    pub fn builder() -> crate::model::frame_capture_output_settings::Builder {
+        crate::model::frame_capture_output_settings::Builder::default()
+    }
+}
+
 /// See [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
 pub mod frame_capture_output_settings {
     
@@ -25915,12 +26035,6 @@ pub mod frame_capture_output_settings {
     
     
 }
-impl FrameCaptureOutputSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
-    pub fn builder() -> crate::model::frame_capture_output_settings::Builder {
-        crate::model::frame_capture_output_settings::Builder::default()
-    }
-}
 
 /// Archive Output Settings
 #[non_exhaustive]
@@ -25950,6 +26064,13 @@ impl ArchiveOutputSettings {
         self.name_modifier.as_deref()
     }
 }
+impl ArchiveOutputSettings {
+    /// Creates a new builder-style object to manufacture [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
+    pub fn builder() -> crate::model::archive_output_settings::Builder {
+        crate::model::archive_output_settings::Builder::default()
+    }
+}
+
 /// See [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
 pub mod archive_output_settings {
     
@@ -26004,12 +26125,6 @@ pub mod archive_output_settings {
     
     
 }
-impl ArchiveOutputSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
-    pub fn builder() -> crate::model::archive_output_settings::Builder {
-        crate::model::archive_output_settings::Builder::default()
-    }
-}
 
 /// Archive Container Settings
 #[non_exhaustive]
@@ -26032,6 +26147,13 @@ impl ArchiveContainerSettings {
         self.raw_settings.as_ref()
     }
 }
+impl ArchiveContainerSettings {
+    /// Creates a new builder-style object to manufacture [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
+    pub fn builder() -> crate::model::archive_container_settings::Builder {
+        crate::model::archive_container_settings::Builder::default()
+    }
+}
+
 /// See [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
 pub mod archive_container_settings {
     
@@ -26074,18 +26196,19 @@ pub mod archive_container_settings {
     
     
 }
-impl ArchiveContainerSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
-    pub fn builder() -> crate::model::archive_container_settings::Builder {
-        crate::model::archive_container_settings::Builder::default()
-    }
-}
 
 /// Raw Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RawSettings  {
 }
+impl RawSettings {
+    /// Creates a new builder-style object to manufacture [`RawSettings`](crate::model::RawSettings).
+    pub fn builder() -> crate::model::raw_settings::Builder {
+        crate::model::raw_settings::Builder::default()
+    }
+}
+
 /// See [`RawSettings`](crate::model::RawSettings).
 pub mod raw_settings {
     
@@ -26103,12 +26226,6 @@ pub mod raw_settings {
     }
     
     
-}
-impl RawSettings {
-    /// Creates a new builder-style object to manufacture [`RawSettings`](crate::model::RawSettings).
-    pub fn builder() -> crate::model::raw_settings::Builder {
-        crate::model::raw_settings::Builder::default()
-    }
 }
 
 /// Output Group Settings
@@ -26174,6 +26291,13 @@ impl OutputGroupSettings {
         self.udp_group_settings.as_ref()
     }
 }
+impl OutputGroupSettings {
+    /// Creates a new builder-style object to manufacture [`OutputGroupSettings`](crate::model::OutputGroupSettings).
+    pub fn builder() -> crate::model::output_group_settings::Builder {
+        crate::model::output_group_settings::Builder::default()
+    }
+}
+
 /// See [`OutputGroupSettings`](crate::model::OutputGroupSettings).
 pub mod output_group_settings {
     
@@ -26288,12 +26412,6 @@ pub mod output_group_settings {
     
     
 }
-impl OutputGroupSettings {
-    /// Creates a new builder-style object to manufacture [`OutputGroupSettings`](crate::model::OutputGroupSettings).
-    pub fn builder() -> crate::model::output_group_settings::Builder {
-        crate::model::output_group_settings::Builder::default()
-    }
-}
 
 /// Udp Group Settings
 #[non_exhaustive]
@@ -26323,6 +26441,13 @@ impl UdpGroupSettings {
         self.timed_metadata_id3_period
     }
 }
+impl UdpGroupSettings {
+    /// Creates a new builder-style object to manufacture [`UdpGroupSettings`](crate::model::UdpGroupSettings).
+    pub fn builder() -> crate::model::udp_group_settings::Builder {
+        crate::model::udp_group_settings::Builder::default()
+    }
+}
+
 /// See [`UdpGroupSettings`](crate::model::UdpGroupSettings).
 pub mod udp_group_settings {
     
@@ -26377,12 +26502,6 @@ pub mod udp_group_settings {
     }
     
     
-}
-impl UdpGroupSettings {
-    /// Creates a new builder-style object to manufacture [`UdpGroupSettings`](crate::model::UdpGroupSettings).
-    pub fn builder() -> crate::model::udp_group_settings::Builder {
-        crate::model::udp_group_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UdpTimedMetadataId3Frame`, it is important to ensure
@@ -26615,6 +26734,13 @@ impl RtmpGroupSettings {
         self.restart_delay
     }
 }
+impl RtmpGroupSettings {
+    /// Creates a new builder-style object to manufacture [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
+    pub fn builder() -> crate::model::rtmp_group_settings::Builder {
+        crate::model::rtmp_group_settings::Builder::default()
+    }
+}
+
 /// See [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
 pub mod rtmp_group_settings {
     
@@ -26724,12 +26850,6 @@ pub mod rtmp_group_settings {
     }
     
     
-}
-impl RtmpGroupSettings {
-    /// Creates a new builder-style object to manufacture [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
-    pub fn builder() -> crate::model::rtmp_group_settings::Builder {
-        crate::model::rtmp_group_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputLossActionForRtmpOut`, it is important to ensure
@@ -27147,6 +27267,13 @@ impl AsRef<str> for RtmpAdMarkers {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultiplexGroupSettings  {
 }
+impl MultiplexGroupSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
+    pub fn builder() -> crate::model::multiplex_group_settings::Builder {
+        crate::model::multiplex_group_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
 pub mod multiplex_group_settings {
     
@@ -27164,12 +27291,6 @@ pub mod multiplex_group_settings {
     }
     
     
-}
-impl MultiplexGroupSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
-    pub fn builder() -> crate::model::multiplex_group_settings::Builder {
-        crate::model::multiplex_group_settings::Builder::default()
-    }
 }
 
 /// Ms Smooth Group Settings
@@ -27312,6 +27433,13 @@ impl MsSmoothGroupSettings {
         self.timestamp_offset_mode.as_ref()
     }
 }
+impl MsSmoothGroupSettings {
+    /// Creates a new builder-style object to manufacture [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
+    pub fn builder() -> crate::model::ms_smooth_group_settings::Builder {
+        crate::model::ms_smooth_group_settings::Builder::default()
+    }
+}
+
 /// See [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
 pub mod ms_smooth_group_settings {
     
@@ -27563,12 +27691,6 @@ pub mod ms_smooth_group_settings {
     }
     
     
-}
-impl MsSmoothGroupSettings {
-    /// Creates a new builder-style object to manufacture [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
-    pub fn builder() -> crate::model::ms_smooth_group_settings::Builder {
-        crate::model::ms_smooth_group_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SmoothGroupTimestampOffsetMode`, it is important to ensure
@@ -28333,6 +28455,13 @@ impl MediaPackageGroupSettings {
         self.destination.as_ref()
     }
 }
+impl MediaPackageGroupSettings {
+    /// Creates a new builder-style object to manufacture [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
+    pub fn builder() -> crate::model::media_package_group_settings::Builder {
+        crate::model::media_package_group_settings::Builder::default()
+    }
+}
+
 /// See [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
 pub mod media_package_group_settings {
     
@@ -28362,12 +28491,6 @@ pub mod media_package_group_settings {
     }
     
     
-}
-impl MediaPackageGroupSettings {
-    /// Creates a new builder-style object to manufacture [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
-    pub fn builder() -> crate::model::media_package_group_settings::Builder {
-        crate::model::media_package_group_settings::Builder::default()
-    }
 }
 
 /// Hls Group Settings
@@ -28678,6 +28801,13 @@ impl HlsGroupSettings {
         self.ts_file_mode.as_ref()
     }
 }
+impl HlsGroupSettings {
+    /// Creates a new builder-style object to manufacture [`HlsGroupSettings`](crate::model::HlsGroupSettings).
+    pub fn builder() -> crate::model::hls_group_settings::Builder {
+        crate::model::hls_group_settings::Builder::default()
+    }
+}
+
 /// See [`HlsGroupSettings`](crate::model::HlsGroupSettings).
 pub mod hls_group_settings {
     
@@ -29231,12 +29361,6 @@ pub mod hls_group_settings {
     }
     
     
-}
-impl HlsGroupSettings {
-    /// Creates a new builder-style object to manufacture [`HlsGroupSettings`](crate::model::HlsGroupSettings).
-    pub fn builder() -> crate::model::hls_group_settings::Builder {
-        crate::model::hls_group_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsTsFileMode`, it is important to ensure
@@ -30165,6 +30289,13 @@ impl KeyProviderSettings {
         self.static_key_settings.as_ref()
     }
 }
+impl KeyProviderSettings {
+    /// Creates a new builder-style object to manufacture [`KeyProviderSettings`](crate::model::KeyProviderSettings).
+    pub fn builder() -> crate::model::key_provider_settings::Builder {
+        crate::model::key_provider_settings::Builder::default()
+    }
+}
+
 /// See [`KeyProviderSettings`](crate::model::KeyProviderSettings).
 pub mod key_provider_settings {
     
@@ -30195,12 +30326,6 @@ pub mod key_provider_settings {
     
     
 }
-impl KeyProviderSettings {
-    /// Creates a new builder-style object to manufacture [`KeyProviderSettings`](crate::model::KeyProviderSettings).
-    pub fn builder() -> crate::model::key_provider_settings::Builder {
-        crate::model::key_provider_settings::Builder::default()
-    }
-}
 
 /// Static Key Settings
 #[non_exhaustive]
@@ -30223,6 +30348,13 @@ impl StaticKeySettings {
         self.static_key_value.as_deref()
     }
 }
+impl StaticKeySettings {
+    /// Creates a new builder-style object to manufacture [`StaticKeySettings`](crate::model::StaticKeySettings).
+    pub fn builder() -> crate::model::static_key_settings::Builder {
+        crate::model::static_key_settings::Builder::default()
+    }
+}
+
 /// See [`StaticKeySettings`](crate::model::StaticKeySettings).
 pub mod static_key_settings {
     
@@ -30264,12 +30396,6 @@ pub mod static_key_settings {
     }
     
     
-}
-impl StaticKeySettings {
-    /// Creates a new builder-style object to manufacture [`StaticKeySettings`](crate::model::StaticKeySettings).
-    pub fn builder() -> crate::model::static_key_settings::Builder {
-        crate::model::static_key_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsIvSource`, it is important to ensure
@@ -30806,6 +30932,13 @@ impl HlsCdnSettings {
         self.hls_webdav_settings.as_ref()
     }
 }
+impl HlsCdnSettings {
+    /// Creates a new builder-style object to manufacture [`HlsCdnSettings`](crate::model::HlsCdnSettings).
+    pub fn builder() -> crate::model::hls_cdn_settings::Builder {
+        crate::model::hls_cdn_settings::Builder::default()
+    }
+}
+
 /// See [`HlsCdnSettings`](crate::model::HlsCdnSettings).
 pub mod hls_cdn_settings {
     
@@ -30884,12 +31017,6 @@ pub mod hls_cdn_settings {
     
     
 }
-impl HlsCdnSettings {
-    /// Creates a new builder-style object to manufacture [`HlsCdnSettings`](crate::model::HlsCdnSettings).
-    pub fn builder() -> crate::model::hls_cdn_settings::Builder {
-        crate::model::hls_cdn_settings::Builder::default()
-    }
-}
 
 /// Hls Webdav Settings
 #[non_exhaustive]
@@ -30933,6 +31060,13 @@ impl HlsWebdavSettings {
         self.restart_delay
     }
 }
+impl HlsWebdavSettings {
+    /// Creates a new builder-style object to manufacture [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
+    pub fn builder() -> crate::model::hls_webdav_settings::Builder {
+        crate::model::hls_webdav_settings::Builder::default()
+    }
+}
+
 /// See [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
 pub mod hls_webdav_settings {
     
@@ -31014,12 +31148,6 @@ pub mod hls_webdav_settings {
     }
     
     
-}
-impl HlsWebdavSettings {
-    /// Creates a new builder-style object to manufacture [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
-    pub fn builder() -> crate::model::hls_webdav_settings::Builder {
-        crate::model::hls_webdav_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsWebdavHttpTransferMode`, it is important to ensure
@@ -31118,6 +31246,13 @@ impl HlsS3Settings {
         self.canned_acl.as_ref()
     }
 }
+impl HlsS3Settings {
+    /// Creates a new builder-style object to manufacture [`HlsS3Settings`](crate::model::HlsS3Settings).
+    pub fn builder() -> crate::model::hls_s3_settings::Builder {
+        crate::model::hls_s3_settings::Builder::default()
+    }
+}
+
 /// See [`HlsS3Settings`](crate::model::HlsS3Settings).
 pub mod hls_s3_settings {
     
@@ -31147,12 +31282,6 @@ pub mod hls_s3_settings {
     }
     
     
-}
-impl HlsS3Settings {
-    /// Creates a new builder-style object to manufacture [`HlsS3Settings`](crate::model::HlsS3Settings).
-    pub fn builder() -> crate::model::hls_s3_settings::Builder {
-        crate::model::hls_s3_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3CannedAcl`, it is important to ensure
@@ -31289,6 +31418,13 @@ impl HlsMediaStoreSettings {
         self.restart_delay
     }
 }
+impl HlsMediaStoreSettings {
+    /// Creates a new builder-style object to manufacture [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
+    pub fn builder() -> crate::model::hls_media_store_settings::Builder {
+        crate::model::hls_media_store_settings::Builder::default()
+    }
+}
+
 /// See [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
 pub mod hls_media_store_settings {
     
@@ -31370,12 +31506,6 @@ pub mod hls_media_store_settings {
     }
     
     
-}
-impl HlsMediaStoreSettings {
-    /// Creates a new builder-style object to manufacture [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
-    pub fn builder() -> crate::model::hls_media_store_settings::Builder {
-        crate::model::hls_media_store_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsMediaStoreStorageClass`, it is important to ensure
@@ -31490,6 +31620,13 @@ impl HlsBasicPutSettings {
         self.restart_delay
     }
 }
+impl HlsBasicPutSettings {
+    /// Creates a new builder-style object to manufacture [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
+    pub fn builder() -> crate::model::hls_basic_put_settings::Builder {
+        crate::model::hls_basic_put_settings::Builder::default()
+    }
+}
+
 /// See [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
 pub mod hls_basic_put_settings {
     
@@ -31560,12 +31697,6 @@ pub mod hls_basic_put_settings {
     
     
 }
-impl HlsBasicPutSettings {
-    /// Creates a new builder-style object to manufacture [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
-    pub fn builder() -> crate::model::hls_basic_put_settings::Builder {
-        crate::model::hls_basic_put_settings::Builder::default()
-    }
-}
 
 /// Hls Akamai Settings
 #[non_exhaustive]
@@ -31623,6 +31754,13 @@ impl HlsAkamaiSettings {
         self.token.as_deref()
     }
 }
+impl HlsAkamaiSettings {
+    /// Creates a new builder-style object to manufacture [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
+    pub fn builder() -> crate::model::hls_akamai_settings::Builder {
+        crate::model::hls_akamai_settings::Builder::default()
+    }
+}
+
 /// See [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
 pub mod hls_akamai_settings {
     
@@ -31728,12 +31866,6 @@ pub mod hls_akamai_settings {
     }
     
     
-}
-impl HlsAkamaiSettings {
-    /// Creates a new builder-style object to manufacture [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
-    pub fn builder() -> crate::model::hls_akamai_settings::Builder {
-        crate::model::hls_akamai_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsAkamaiHttpTransferMode`, it is important to ensure
@@ -32343,6 +32475,13 @@ impl CaptionLanguageMapping {
         self.language_description.as_deref()
     }
 }
+impl CaptionLanguageMapping {
+    /// Creates a new builder-style object to manufacture [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
+    pub fn builder() -> crate::model::caption_language_mapping::Builder {
+        crate::model::caption_language_mapping::Builder::default()
+    }
+}
+
 /// See [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
 pub mod caption_language_mapping {
     
@@ -32397,12 +32536,6 @@ pub mod caption_language_mapping {
     }
     
     
-}
-impl CaptionLanguageMapping {
-    /// Creates a new builder-style object to manufacture [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
-    pub fn builder() -> crate::model::caption_language_mapping::Builder {
-        crate::model::caption_language_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsAdMarkers`, it is important to ensure
@@ -32513,6 +32646,13 @@ impl FrameCaptureGroupSettings {
         self.frame_capture_cdn_settings.as_ref()
     }
 }
+impl FrameCaptureGroupSettings {
+    /// Creates a new builder-style object to manufacture [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
+    pub fn builder() -> crate::model::frame_capture_group_settings::Builder {
+        crate::model::frame_capture_group_settings::Builder::default()
+    }
+}
+
 /// See [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
 pub mod frame_capture_group_settings {
     
@@ -32555,12 +32695,6 @@ pub mod frame_capture_group_settings {
     
     
 }
-impl FrameCaptureGroupSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
-    pub fn builder() -> crate::model::frame_capture_group_settings::Builder {
-        crate::model::frame_capture_group_settings::Builder::default()
-    }
-}
 
 /// Frame Capture Cdn Settings
 #[non_exhaustive]
@@ -32576,6 +32710,13 @@ impl FrameCaptureCdnSettings {
         self.frame_capture_s3_settings.as_ref()
     }
 }
+impl FrameCaptureCdnSettings {
+    /// Creates a new builder-style object to manufacture [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
+    pub fn builder() -> crate::model::frame_capture_cdn_settings::Builder {
+        crate::model::frame_capture_cdn_settings::Builder::default()
+    }
+}
+
 /// See [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
 pub mod frame_capture_cdn_settings {
     
@@ -32606,12 +32747,6 @@ pub mod frame_capture_cdn_settings {
     
     
 }
-impl FrameCaptureCdnSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
-    pub fn builder() -> crate::model::frame_capture_cdn_settings::Builder {
-        crate::model::frame_capture_cdn_settings::Builder::default()
-    }
-}
 
 /// Frame Capture S3 Settings
 #[non_exhaustive]
@@ -32627,6 +32762,13 @@ impl FrameCaptureS3Settings {
         self.canned_acl.as_ref()
     }
 }
+impl FrameCaptureS3Settings {
+    /// Creates a new builder-style object to manufacture [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
+    pub fn builder() -> crate::model::frame_capture_s3_settings::Builder {
+        crate::model::frame_capture_s3_settings::Builder::default()
+    }
+}
+
 /// See [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
 pub mod frame_capture_s3_settings {
     
@@ -32657,12 +32799,6 @@ pub mod frame_capture_s3_settings {
     
     
 }
-impl FrameCaptureS3Settings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
-    pub fn builder() -> crate::model::frame_capture_s3_settings::Builder {
-        crate::model::frame_capture_s3_settings::Builder::default()
-    }
-}
 
 /// Archive Group Settings
 #[non_exhaustive]
@@ -32692,6 +32828,13 @@ impl ArchiveGroupSettings {
         self.rollover_interval
     }
 }
+impl ArchiveGroupSettings {
+    /// Creates a new builder-style object to manufacture [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
+    pub fn builder() -> crate::model::archive_group_settings::Builder {
+        crate::model::archive_group_settings::Builder::default()
+    }
+}
+
 /// See [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
 pub mod archive_group_settings {
     
@@ -32747,12 +32890,6 @@ pub mod archive_group_settings {
     
     
 }
-impl ArchiveGroupSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
-    pub fn builder() -> crate::model::archive_group_settings::Builder {
-        crate::model::archive_group_settings::Builder::default()
-    }
-}
 
 /// Archive Cdn Settings
 #[non_exhaustive]
@@ -32768,6 +32905,13 @@ impl ArchiveCdnSettings {
         self.archive_s3_settings.as_ref()
     }
 }
+impl ArchiveCdnSettings {
+    /// Creates a new builder-style object to manufacture [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
+    pub fn builder() -> crate::model::archive_cdn_settings::Builder {
+        crate::model::archive_cdn_settings::Builder::default()
+    }
+}
+
 /// See [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
 pub mod archive_cdn_settings {
     
@@ -32798,12 +32942,6 @@ pub mod archive_cdn_settings {
     
     
 }
-impl ArchiveCdnSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
-    pub fn builder() -> crate::model::archive_cdn_settings::Builder {
-        crate::model::archive_cdn_settings::Builder::default()
-    }
-}
 
 /// Archive S3 Settings
 #[non_exhaustive]
@@ -32819,6 +32957,13 @@ impl ArchiveS3Settings {
         self.canned_acl.as_ref()
     }
 }
+impl ArchiveS3Settings {
+    /// Creates a new builder-style object to manufacture [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
+    pub fn builder() -> crate::model::archive_s3_settings::Builder {
+        crate::model::archive_s3_settings::Builder::default()
+    }
+}
+
 /// See [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
 pub mod archive_s3_settings {
     
@@ -32849,12 +32994,6 @@ pub mod archive_s3_settings {
     
     
 }
-impl ArchiveS3Settings {
-    /// Creates a new builder-style object to manufacture [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
-    pub fn builder() -> crate::model::archive_s3_settings::Builder {
-        crate::model::archive_s3_settings::Builder::default()
-    }
-}
 
 /// Nielsen Configuration
 #[non_exhaustive]
@@ -32877,6 +33016,13 @@ impl NielsenConfiguration {
         self.nielsen_pcm_to_id3_tagging.as_ref()
     }
 }
+impl NielsenConfiguration {
+    /// Creates a new builder-style object to manufacture [`NielsenConfiguration`](crate::model::NielsenConfiguration).
+    pub fn builder() -> crate::model::nielsen_configuration::Builder {
+        crate::model::nielsen_configuration::Builder::default()
+    }
+}
+
 /// See [`NielsenConfiguration`](crate::model::NielsenConfiguration).
 pub mod nielsen_configuration {
     
@@ -32918,12 +33064,6 @@ pub mod nielsen_configuration {
     }
     
     
-}
-impl NielsenConfiguration {
-    /// Creates a new builder-style object to manufacture [`NielsenConfiguration`](crate::model::NielsenConfiguration).
-    pub fn builder() -> crate::model::nielsen_configuration::Builder {
-        crate::model::nielsen_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NielsenPcmToId3TaggingState`, it is important to ensure
@@ -33029,6 +33169,13 @@ impl MotionGraphicsConfiguration {
         self.motion_graphics_settings.as_ref()
     }
 }
+impl MotionGraphicsConfiguration {
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
+    pub fn builder() -> crate::model::motion_graphics_configuration::Builder {
+        crate::model::motion_graphics_configuration::Builder::default()
+    }
+}
+
 /// See [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
 pub mod motion_graphics_configuration {
     
@@ -33071,12 +33218,6 @@ pub mod motion_graphics_configuration {
     
     
 }
-impl MotionGraphicsConfiguration {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
-    pub fn builder() -> crate::model::motion_graphics_configuration::Builder {
-        crate::model::motion_graphics_configuration::Builder::default()
-    }
-}
 
 /// Motion Graphics Settings
 #[non_exhaustive]
@@ -33092,6 +33233,13 @@ impl MotionGraphicsSettings {
         self.html_motion_graphics_settings.as_ref()
     }
 }
+impl MotionGraphicsSettings {
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
+    pub fn builder() -> crate::model::motion_graphics_settings::Builder {
+        crate::model::motion_graphics_settings::Builder::default()
+    }
+}
+
 /// See [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
 pub mod motion_graphics_settings {
     
@@ -33122,18 +33270,19 @@ pub mod motion_graphics_settings {
     
     
 }
-impl MotionGraphicsSettings {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
-    pub fn builder() -> crate::model::motion_graphics_settings::Builder {
-        crate::model::motion_graphics_settings::Builder::default()
-    }
-}
 
 /// Html Motion Graphics Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HtmlMotionGraphicsSettings  {
 }
+impl HtmlMotionGraphicsSettings {
+    /// Creates a new builder-style object to manufacture [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
+    pub fn builder() -> crate::model::html_motion_graphics_settings::Builder {
+        crate::model::html_motion_graphics_settings::Builder::default()
+    }
+}
+
 /// See [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
 pub mod html_motion_graphics_settings {
     
@@ -33151,12 +33300,6 @@ pub mod html_motion_graphics_settings {
     }
     
     
-}
-impl HtmlMotionGraphicsSettings {
-    /// Creates a new builder-style object to manufacture [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
-    pub fn builder() -> crate::model::html_motion_graphics_settings::Builder {
-        crate::model::html_motion_graphics_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MotionGraphicsInsertion`, it is important to ensure
@@ -33290,6 +33433,13 @@ impl GlobalConfiguration {
         self.support_low_framerate_inputs.as_ref()
     }
 }
+impl GlobalConfiguration {
+    /// Creates a new builder-style object to manufacture [`GlobalConfiguration`](crate::model::GlobalConfiguration).
+    pub fn builder() -> crate::model::global_configuration::Builder {
+        crate::model::global_configuration::Builder::default()
+    }
+}
+
 /// See [`GlobalConfiguration`](crate::model::GlobalConfiguration).
 pub mod global_configuration {
     
@@ -33380,12 +33530,6 @@ pub mod global_configuration {
     }
     
     
-}
-impl GlobalConfiguration {
-    /// Creates a new builder-style object to manufacture [`GlobalConfiguration`](crate::model::GlobalConfiguration).
-    pub fn builder() -> crate::model::global_configuration::Builder {
-        crate::model::global_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GlobalConfigurationLowFramerateInputs`, it is important to ensure
@@ -33676,6 +33820,13 @@ impl InputLossBehavior {
         self.repeat_frame_msec
     }
 }
+impl InputLossBehavior {
+    /// Creates a new builder-style object to manufacture [`InputLossBehavior`](crate::model::InputLossBehavior).
+    pub fn builder() -> crate::model::input_loss_behavior::Builder {
+        crate::model::input_loss_behavior::Builder::default()
+    }
+}
+
 /// See [`InputLossBehavior`](crate::model::InputLossBehavior).
 pub mod input_loss_behavior {
     
@@ -33755,12 +33906,6 @@ pub mod input_loss_behavior {
     }
     
     
-}
-impl InputLossBehavior {
-    /// Creates a new builder-style object to manufacture [`InputLossBehavior`](crate::model::InputLossBehavior).
-    pub fn builder() -> crate::model::input_loss_behavior::Builder {
-        crate::model::input_loss_behavior::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputLossImageType`, it is important to ensure
@@ -33941,6 +34086,13 @@ impl FeatureActivations {
         self.input_prepare_schedule_actions.as_ref()
     }
 }
+impl FeatureActivations {
+    /// Creates a new builder-style object to manufacture [`FeatureActivations`](crate::model::FeatureActivations).
+    pub fn builder() -> crate::model::feature_activations::Builder {
+        crate::model::feature_activations::Builder::default()
+    }
+}
+
 /// See [`FeatureActivations`](crate::model::FeatureActivations).
 pub mod feature_activations {
     
@@ -33970,12 +34122,6 @@ pub mod feature_activations {
     }
     
     
-}
-impl FeatureActivations {
-    /// Creates a new builder-style object to manufacture [`FeatureActivations`](crate::model::FeatureActivations).
-    pub fn builder() -> crate::model::feature_activations::Builder {
-        crate::model::feature_activations::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FeatureActivationsInputPrepareScheduleActions`, it is important to ensure
@@ -34109,6 +34255,13 @@ impl CaptionDescription {
         self.name.as_deref()
     }
 }
+impl CaptionDescription {
+    /// Creates a new builder-style object to manufacture [`CaptionDescription`](crate::model::CaptionDescription).
+    pub fn builder() -> crate::model::caption_description::Builder {
+        crate::model::caption_description::Builder::default()
+    }
+}
+
 /// See [`CaptionDescription`](crate::model::CaptionDescription).
 pub mod caption_description {
     
@@ -34198,12 +34351,6 @@ pub mod caption_description {
     }
     
     
-}
-impl CaptionDescription {
-    /// Creates a new builder-style object to manufacture [`CaptionDescription`](crate::model::CaptionDescription).
-    pub fn builder() -> crate::model::caption_description::Builder {
-        crate::model::caption_description::Builder::default()
-    }
 }
 
 /// Caption Destination Settings
@@ -34304,6 +34451,13 @@ impl CaptionDestinationSettings {
         self.webvtt_destination_settings.as_ref()
     }
 }
+impl CaptionDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
+    pub fn builder() -> crate::model::caption_destination_settings::Builder {
+        crate::model::caption_destination_settings::Builder::default()
+    }
+}
+
 /// See [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
 pub mod caption_destination_settings {
     
@@ -34478,12 +34632,6 @@ pub mod caption_destination_settings {
     
     
 }
-impl CaptionDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
-    pub fn builder() -> crate::model::caption_destination_settings::Builder {
-        crate::model::caption_destination_settings::Builder::default()
-    }
-}
 
 /// Webvtt Destination Settings
 #[non_exhaustive]
@@ -34499,6 +34647,13 @@ impl WebvttDestinationSettings {
         self.style_control.as_ref()
     }
 }
+impl WebvttDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
+    pub fn builder() -> crate::model::webvtt_destination_settings::Builder {
+        crate::model::webvtt_destination_settings::Builder::default()
+    }
+}
+
 /// See [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
 pub mod webvtt_destination_settings {
     
@@ -34528,12 +34683,6 @@ pub mod webvtt_destination_settings {
     }
     
     
-}
-impl WebvttDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
-    pub fn builder() -> crate::model::webvtt_destination_settings::Builder {
-        crate::model::webvtt_destination_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WebvttDestinationStyleControl`, it is important to ensure
@@ -34632,6 +34781,13 @@ impl TtmlDestinationSettings {
         self.style_control.as_ref()
     }
 }
+impl TtmlDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
+    pub fn builder() -> crate::model::ttml_destination_settings::Builder {
+        crate::model::ttml_destination_settings::Builder::default()
+    }
+}
+
 /// See [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
 pub mod ttml_destination_settings {
     
@@ -34661,12 +34817,6 @@ pub mod ttml_destination_settings {
     }
     
     
-}
-impl TtmlDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
-    pub fn builder() -> crate::model::ttml_destination_settings::Builder {
-        crate::model::ttml_destination_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TtmlDestinationStyleControl`, it is important to ensure
@@ -34756,6 +34906,13 @@ impl AsRef<str> for TtmlDestinationStyleControl {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TeletextDestinationSettings  {
 }
+impl TeletextDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
+    pub fn builder() -> crate::model::teletext_destination_settings::Builder {
+        crate::model::teletext_destination_settings::Builder::default()
+    }
+}
+
 /// See [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
 pub mod teletext_destination_settings {
     
@@ -34774,18 +34931,19 @@ pub mod teletext_destination_settings {
     
     
 }
-impl TeletextDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
-    pub fn builder() -> crate::model::teletext_destination_settings::Builder {
-        crate::model::teletext_destination_settings::Builder::default()
-    }
-}
 
 /// Smpte Tt Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmpteTtDestinationSettings  {
 }
+impl SmpteTtDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
+    pub fn builder() -> crate::model::smpte_tt_destination_settings::Builder {
+        crate::model::smpte_tt_destination_settings::Builder::default()
+    }
+}
+
 /// See [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
 pub mod smpte_tt_destination_settings {
     
@@ -34804,18 +34962,19 @@ pub mod smpte_tt_destination_settings {
     
     
 }
-impl SmpteTtDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
-    pub fn builder() -> crate::model::smpte_tt_destination_settings::Builder {
-        crate::model::smpte_tt_destination_settings::Builder::default()
-    }
-}
 
 /// Scte27 Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte27DestinationSettings  {
 }
+impl Scte27DestinationSettings {
+    /// Creates a new builder-style object to manufacture [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
+    pub fn builder() -> crate::model::scte27_destination_settings::Builder {
+        crate::model::scte27_destination_settings::Builder::default()
+    }
+}
+
 /// See [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
 pub mod scte27_destination_settings {
     
@@ -34834,18 +34993,19 @@ pub mod scte27_destination_settings {
     
     
 }
-impl Scte27DestinationSettings {
-    /// Creates a new builder-style object to manufacture [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
-    pub fn builder() -> crate::model::scte27_destination_settings::Builder {
-        crate::model::scte27_destination_settings::Builder::default()
-    }
-}
 
 /// Scte20 Plus Embedded Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scte20PlusEmbeddedDestinationSettings  {
 }
+impl Scte20PlusEmbeddedDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
+    pub fn builder() -> crate::model::scte20_plus_embedded_destination_settings::Builder {
+        crate::model::scte20_plus_embedded_destination_settings::Builder::default()
+    }
+}
+
 /// See [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
 pub mod scte20_plus_embedded_destination_settings {
     
@@ -34864,18 +35024,19 @@ pub mod scte20_plus_embedded_destination_settings {
     
     
 }
-impl Scte20PlusEmbeddedDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
-    pub fn builder() -> crate::model::scte20_plus_embedded_destination_settings::Builder {
-        crate::model::scte20_plus_embedded_destination_settings::Builder::default()
-    }
-}
 
 /// Rtmp Caption Info Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RtmpCaptionInfoDestinationSettings  {
 }
+impl RtmpCaptionInfoDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
+    pub fn builder() -> crate::model::rtmp_caption_info_destination_settings::Builder {
+        crate::model::rtmp_caption_info_destination_settings::Builder::default()
+    }
+}
+
 /// See [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
 pub mod rtmp_caption_info_destination_settings {
     
@@ -34894,18 +35055,19 @@ pub mod rtmp_caption_info_destination_settings {
     
     
 }
-impl RtmpCaptionInfoDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
-    pub fn builder() -> crate::model::rtmp_caption_info_destination_settings::Builder {
-        crate::model::rtmp_caption_info_destination_settings::Builder::default()
-    }
-}
 
 /// Embedded Plus Scte20 Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmbeddedPlusScte20DestinationSettings  {
 }
+impl EmbeddedPlusScte20DestinationSettings {
+    /// Creates a new builder-style object to manufacture [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
+    pub fn builder() -> crate::model::embedded_plus_scte20_destination_settings::Builder {
+        crate::model::embedded_plus_scte20_destination_settings::Builder::default()
+    }
+}
+
 /// See [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
 pub mod embedded_plus_scte20_destination_settings {
     
@@ -34924,18 +35086,19 @@ pub mod embedded_plus_scte20_destination_settings {
     
     
 }
-impl EmbeddedPlusScte20DestinationSettings {
-    /// Creates a new builder-style object to manufacture [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
-    pub fn builder() -> crate::model::embedded_plus_scte20_destination_settings::Builder {
-        crate::model::embedded_plus_scte20_destination_settings::Builder::default()
-    }
-}
 
 /// Embedded Destination Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmbeddedDestinationSettings  {
 }
+impl EmbeddedDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
+    pub fn builder() -> crate::model::embedded_destination_settings::Builder {
+        crate::model::embedded_destination_settings::Builder::default()
+    }
+}
+
 /// See [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
 pub mod embedded_destination_settings {
     
@@ -34953,12 +35116,6 @@ pub mod embedded_destination_settings {
     }
     
     
-}
-impl EmbeddedDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
-    pub fn builder() -> crate::model::embedded_destination_settings::Builder {
-        crate::model::embedded_destination_settings::Builder::default()
-    }
 }
 
 /// Ebu Tt DDestination Settings
@@ -34996,6 +35153,13 @@ impl EbuTtDDestinationSettings {
         self.style_control.as_ref()
     }
 }
+impl EbuTtDDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
+    pub fn builder() -> crate::model::ebu_tt_d_destination_settings::Builder {
+        crate::model::ebu_tt_d_destination_settings::Builder::default()
+    }
+}
+
 /// See [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
 pub mod ebu_tt_d_destination_settings {
     
@@ -35061,12 +35225,6 @@ pub mod ebu_tt_d_destination_settings {
     }
     
     
-}
-impl EbuTtDDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
-    pub fn builder() -> crate::model::ebu_tt_d_destination_settings::Builder {
-        crate::model::ebu_tt_d_destination_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EbuTtDDestinationStyleControl`, it is important to ensure
@@ -35359,6 +35517,13 @@ impl DvbSubDestinationSettings {
         self.y_position
     }
 }
+impl DvbSubDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
+    pub fn builder() -> crate::model::dvb_sub_destination_settings::Builder {
+        crate::model::dvb_sub_destination_settings::Builder::default()
+    }
+}
+
 /// See [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
 pub mod dvb_sub_destination_settings {
     
@@ -35589,12 +35754,6 @@ pub mod dvb_sub_destination_settings {
     }
     
     
-}
-impl DvbSubDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
-    pub fn builder() -> crate::model::dvb_sub_destination_settings::Builder {
-        crate::model::dvb_sub_destination_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DvbSubDestinationTeletextGridControl`, it is important to ensure
@@ -36270,6 +36429,13 @@ impl BurnInDestinationSettings {
         self.y_position
     }
 }
+impl BurnInDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
+    pub fn builder() -> crate::model::burn_in_destination_settings::Builder {
+        crate::model::burn_in_destination_settings::Builder::default()
+    }
+}
+
 /// See [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
 pub mod burn_in_destination_settings {
     
@@ -36500,12 +36666,6 @@ pub mod burn_in_destination_settings {
     }
     
     
-}
-impl BurnInDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
-    pub fn builder() -> crate::model::burn_in_destination_settings::Builder {
-        crate::model::burn_in_destination_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BurnInTeletextGridControl`, it is important to ensure
@@ -37060,6 +37220,13 @@ impl AsRef<str> for BurnInAlignment {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AribDestinationSettings  {
 }
+impl AribDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`AribDestinationSettings`](crate::model::AribDestinationSettings).
+    pub fn builder() -> crate::model::arib_destination_settings::Builder {
+        crate::model::arib_destination_settings::Builder::default()
+    }
+}
+
 /// See [`AribDestinationSettings`](crate::model::AribDestinationSettings).
 pub mod arib_destination_settings {
     
@@ -37077,12 +37244,6 @@ pub mod arib_destination_settings {
     }
     
     
-}
-impl AribDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`AribDestinationSettings`](crate::model::AribDestinationSettings).
-    pub fn builder() -> crate::model::arib_destination_settings::Builder {
-        crate::model::arib_destination_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessibilityType`, it is important to ensure
@@ -37209,6 +37370,13 @@ impl BlackoutSlate {
         self.state.as_ref()
     }
 }
+impl BlackoutSlate {
+    /// Creates a new builder-style object to manufacture [`BlackoutSlate`](crate::model::BlackoutSlate).
+    pub fn builder() -> crate::model::blackout_slate::Builder {
+        crate::model::blackout_slate::Builder::default()
+    }
+}
+
 /// See [`BlackoutSlate`](crate::model::BlackoutSlate).
 pub mod blackout_slate {
     
@@ -37286,12 +37454,6 @@ pub mod blackout_slate {
     }
     
     
-}
-impl BlackoutSlate {
-    /// Creates a new builder-style object to manufacture [`BlackoutSlate`](crate::model::BlackoutSlate).
-    pub fn builder() -> crate::model::blackout_slate::Builder {
-        crate::model::blackout_slate::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BlackoutSlateState`, it is important to ensure
@@ -37472,6 +37634,13 @@ impl AvailConfiguration {
         self.avail_settings.as_ref()
     }
 }
+impl AvailConfiguration {
+    /// Creates a new builder-style object to manufacture [`AvailConfiguration`](crate::model::AvailConfiguration).
+    pub fn builder() -> crate::model::avail_configuration::Builder {
+        crate::model::avail_configuration::Builder::default()
+    }
+}
+
 /// See [`AvailConfiguration`](crate::model::AvailConfiguration).
 pub mod avail_configuration {
     
@@ -37502,12 +37671,6 @@ pub mod avail_configuration {
     
     
 }
-impl AvailConfiguration {
-    /// Creates a new builder-style object to manufacture [`AvailConfiguration`](crate::model::AvailConfiguration).
-    pub fn builder() -> crate::model::avail_configuration::Builder {
-        crate::model::avail_configuration::Builder::default()
-    }
-}
 
 /// Avail Settings
 #[non_exhaustive]
@@ -37537,6 +37700,13 @@ impl AvailSettings {
         self.scte35_time_signal_apos.as_ref()
     }
 }
+impl AvailSettings {
+    /// Creates a new builder-style object to manufacture [`AvailSettings`](crate::model::AvailSettings).
+    pub fn builder() -> crate::model::avail_settings::Builder {
+        crate::model::avail_settings::Builder::default()
+    }
+}
+
 /// See [`AvailSettings`](crate::model::AvailSettings).
 pub mod avail_settings {
     
@@ -37591,12 +37761,6 @@ pub mod avail_settings {
     
     
 }
-impl AvailSettings {
-    /// Creates a new builder-style object to manufacture [`AvailSettings`](crate::model::AvailSettings).
-    pub fn builder() -> crate::model::avail_settings::Builder {
-        crate::model::avail_settings::Builder::default()
-    }
-}
 
 /// Scte35 Time Signal Apos
 #[non_exhaustive]
@@ -37626,6 +37790,13 @@ impl Scte35TimeSignalApos {
         self.web_delivery_allowed_flag.as_ref()
     }
 }
+impl Scte35TimeSignalApos {
+    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
+    pub fn builder() -> crate::model::scte35_time_signal_apos::Builder {
+        crate::model::scte35_time_signal_apos::Builder::default()
+    }
+}
+
 /// See [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
 pub mod scte35_time_signal_apos {
     
@@ -37680,12 +37851,6 @@ pub mod scte35_time_signal_apos {
     }
     
     
-}
-impl Scte35TimeSignalApos {
-    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
-    pub fn builder() -> crate::model::scte35_time_signal_apos::Builder {
-        crate::model::scte35_time_signal_apos::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Scte35AposWebDeliveryAllowedBehavior`, it is important to ensure
@@ -37880,6 +38045,13 @@ impl Scte35SpliceInsert {
         self.web_delivery_allowed_flag.as_ref()
     }
 }
+impl Scte35SpliceInsert {
+    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
+    pub fn builder() -> crate::model::scte35_splice_insert::Builder {
+        crate::model::scte35_splice_insert::Builder::default()
+    }
+}
+
 /// See [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
 pub mod scte35_splice_insert {
     
@@ -37934,12 +38106,6 @@ pub mod scte35_splice_insert {
     }
     
     
-}
-impl Scte35SpliceInsert {
-    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
-    pub fn builder() -> crate::model::scte35_splice_insert::Builder {
-        crate::model::scte35_splice_insert::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Scte35SpliceInsertWebDeliveryAllowedBehavior`, it is important to ensure
@@ -38155,6 +38321,13 @@ impl Esam {
         self.zone_identity.as_deref()
     }
 }
+impl Esam {
+    /// Creates a new builder-style object to manufacture [`Esam`](crate::model::Esam).
+    pub fn builder() -> crate::model::esam::Builder {
+        crate::model::esam::Builder::default()
+    }
+}
+
 /// See [`Esam`](crate::model::Esam).
 pub mod esam {
     
@@ -38246,12 +38419,6 @@ pub mod esam {
     
     
 }
-impl Esam {
-    /// Creates a new builder-style object to manufacture [`Esam`](crate::model::Esam).
-    pub fn builder() -> crate::model::esam::Builder {
-        crate::model::esam::Builder::default()
-    }
-}
 
 /// Avail Blanking
 #[non_exhaustive]
@@ -38274,6 +38441,13 @@ impl AvailBlanking {
         self.state.as_ref()
     }
 }
+impl AvailBlanking {
+    /// Creates a new builder-style object to manufacture [`AvailBlanking`](crate::model::AvailBlanking).
+    pub fn builder() -> crate::model::avail_blanking::Builder {
+        crate::model::avail_blanking::Builder::default()
+    }
+}
+
 /// See [`AvailBlanking`](crate::model::AvailBlanking).
 pub mod avail_blanking {
     
@@ -38315,12 +38489,6 @@ pub mod avail_blanking {
     }
     
     
-}
-impl AvailBlanking {
-    /// Creates a new builder-style object to manufacture [`AvailBlanking`](crate::model::AvailBlanking).
-    pub fn builder() -> crate::model::avail_blanking::Builder {
-        crate::model::avail_blanking::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AvailBlankingState`, it is important to ensure
@@ -38489,6 +38657,13 @@ impl AudioDescription {
         self.stream_name.as_deref()
     }
 }
+impl AudioDescription {
+    /// Creates a new builder-style object to manufacture [`AudioDescription`](crate::model::AudioDescription).
+    pub fn builder() -> crate::model::audio_description::Builder {
+        crate::model::audio_description::Builder::default()
+    }
+}
+
 /// See [`AudioDescription`](crate::model::AudioDescription).
 pub mod audio_description {
     
@@ -38639,12 +38814,6 @@ pub mod audio_description {
     
     
 }
-impl AudioDescription {
-    /// Creates a new builder-style object to manufacture [`AudioDescription`](crate::model::AudioDescription).
-    pub fn builder() -> crate::model::audio_description::Builder {
-        crate::model::audio_description::Builder::default()
-    }
-}
 
 /// Remix Settings
 #[non_exhaustive]
@@ -38674,6 +38843,13 @@ impl RemixSettings {
         self.channels_out
     }
 }
+impl RemixSettings {
+    /// Creates a new builder-style object to manufacture [`RemixSettings`](crate::model::RemixSettings).
+    pub fn builder() -> crate::model::remix_settings::Builder {
+        crate::model::remix_settings::Builder::default()
+    }
+}
+
 /// See [`RemixSettings`](crate::model::RemixSettings).
 pub mod remix_settings {
     
@@ -38736,12 +38912,6 @@ pub mod remix_settings {
     
     
 }
-impl RemixSettings {
-    /// Creates a new builder-style object to manufacture [`RemixSettings`](crate::model::RemixSettings).
-    pub fn builder() -> crate::model::remix_settings::Builder {
-        crate::model::remix_settings::Builder::default()
-    }
-}
 
 /// Audio Channel Mapping
 #[non_exhaustive]
@@ -38764,6 +38934,13 @@ impl AudioChannelMapping {
         self.output_channel
     }
 }
+impl AudioChannelMapping {
+    /// Creates a new builder-style object to manufacture [`AudioChannelMapping`](crate::model::AudioChannelMapping).
+    pub fn builder() -> crate::model::audio_channel_mapping::Builder {
+        crate::model::audio_channel_mapping::Builder::default()
+    }
+}
+
 /// See [`AudioChannelMapping`](crate::model::AudioChannelMapping).
 pub mod audio_channel_mapping {
     
@@ -38813,12 +38990,6 @@ pub mod audio_channel_mapping {
     
     
 }
-impl AudioChannelMapping {
-    /// Creates a new builder-style object to manufacture [`AudioChannelMapping`](crate::model::AudioChannelMapping).
-    pub fn builder() -> crate::model::audio_channel_mapping::Builder {
-        crate::model::audio_channel_mapping::Builder::default()
-    }
-}
 
 /// Input Channel Level
 #[non_exhaustive]
@@ -38841,6 +39012,13 @@ impl InputChannelLevel {
         self.input_channel
     }
 }
+impl InputChannelLevel {
+    /// Creates a new builder-style object to manufacture [`InputChannelLevel`](crate::model::InputChannelLevel).
+    pub fn builder() -> crate::model::input_channel_level::Builder {
+        crate::model::input_channel_level::Builder::default()
+    }
+}
+
 /// See [`InputChannelLevel`](crate::model::InputChannelLevel).
 pub mod input_channel_level {
     
@@ -38884,12 +39062,6 @@ pub mod input_channel_level {
     }
     
     
-}
-impl InputChannelLevel {
-    /// Creates a new builder-style object to manufacture [`InputChannelLevel`](crate::model::InputChannelLevel).
-    pub fn builder() -> crate::model::input_channel_level::Builder {
-        crate::model::input_channel_level::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AudioDescriptionLanguageCodeControl`, it is important to ensure
@@ -39030,6 +39202,13 @@ impl AudioCodecSettings {
         self.wav_settings.as_ref()
     }
 }
+impl AudioCodecSettings {
+    /// Creates a new builder-style object to manufacture [`AudioCodecSettings`](crate::model::AudioCodecSettings).
+    pub fn builder() -> crate::model::audio_codec_settings::Builder {
+        crate::model::audio_codec_settings::Builder::default()
+    }
+}
+
 /// See [`AudioCodecSettings`](crate::model::AudioCodecSettings).
 pub mod audio_codec_settings {
     
@@ -39132,12 +39311,6 @@ pub mod audio_codec_settings {
     
     
 }
-impl AudioCodecSettings {
-    /// Creates a new builder-style object to manufacture [`AudioCodecSettings`](crate::model::AudioCodecSettings).
-    pub fn builder() -> crate::model::audio_codec_settings::Builder {
-        crate::model::audio_codec_settings::Builder::default()
-    }
-}
 
 /// Wav Settings
 #[non_exhaustive]
@@ -39167,6 +39340,13 @@ impl WavSettings {
         self.sample_rate
     }
 }
+impl WavSettings {
+    /// Creates a new builder-style object to manufacture [`WavSettings`](crate::model::WavSettings).
+    pub fn builder() -> crate::model::wav_settings::Builder {
+        crate::model::wav_settings::Builder::default()
+    }
+}
+
 /// See [`WavSettings`](crate::model::WavSettings).
 pub mod wav_settings {
     
@@ -39222,12 +39402,6 @@ pub mod wav_settings {
     }
     
     
-}
-impl WavSettings {
-    /// Creates a new builder-style object to manufacture [`WavSettings`](crate::model::WavSettings).
-    pub fn builder() -> crate::model::wav_settings::Builder {
-        crate::model::wav_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WavCodingMode`, it is important to ensure
@@ -39327,6 +39501,13 @@ impl AsRef<str> for WavCodingMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PassThroughSettings  {
 }
+impl PassThroughSettings {
+    /// Creates a new builder-style object to manufacture [`PassThroughSettings`](crate::model::PassThroughSettings).
+    pub fn builder() -> crate::model::pass_through_settings::Builder {
+        crate::model::pass_through_settings::Builder::default()
+    }
+}
+
 /// See [`PassThroughSettings`](crate::model::PassThroughSettings).
 pub mod pass_through_settings {
     
@@ -39344,12 +39525,6 @@ pub mod pass_through_settings {
     }
     
     
-}
-impl PassThroughSettings {
-    /// Creates a new builder-style object to manufacture [`PassThroughSettings`](crate::model::PassThroughSettings).
-    pub fn builder() -> crate::model::pass_through_settings::Builder {
-        crate::model::pass_through_settings::Builder::default()
-    }
 }
 
 /// Mp2 Settings
@@ -39380,6 +39555,13 @@ impl Mp2Settings {
         self.sample_rate
     }
 }
+impl Mp2Settings {
+    /// Creates a new builder-style object to manufacture [`Mp2Settings`](crate::model::Mp2Settings).
+    pub fn builder() -> crate::model::mp2_settings::Builder {
+        crate::model::mp2_settings::Builder::default()
+    }
+}
+
 /// See [`Mp2Settings`](crate::model::Mp2Settings).
 pub mod mp2_settings {
     
@@ -39435,12 +39617,6 @@ pub mod mp2_settings {
     }
     
     
-}
-impl Mp2Settings {
-    /// Creates a new builder-style object to manufacture [`Mp2Settings`](crate::model::Mp2Settings).
-    pub fn builder() -> crate::model::mp2_settings::Builder {
-        crate::model::mp2_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Mp2CodingMode`, it is important to ensure
@@ -39672,6 +39848,13 @@ impl Eac3Settings {
         self.surround_mode.as_ref()
     }
 }
+impl Eac3Settings {
+    /// Creates a new builder-style object to manufacture [`Eac3Settings`](crate::model::Eac3Settings).
+    pub fn builder() -> crate::model::eac3_settings::Builder {
+        crate::model::eac3_settings::Builder::default()
+    }
+}
+
 /// See [`Eac3Settings`](crate::model::Eac3Settings).
 pub mod eac3_settings {
     
@@ -39935,12 +40118,6 @@ pub mod eac3_settings {
     }
     
     
-}
-impl Eac3Settings {
-    /// Creates a new builder-style object to manufacture [`Eac3Settings`](crate::model::Eac3Settings).
-    pub fn builder() -> crate::model::eac3_settings::Builder {
-        crate::model::eac3_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Eac3SurroundMode`, it is important to ensure
@@ -41227,6 +41404,13 @@ impl Eac3AtmosSettings {
         self.surround_trim
     }
 }
+impl Eac3AtmosSettings {
+    /// Creates a new builder-style object to manufacture [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
+    pub fn builder() -> crate::model::eac3_atmos_settings::Builder {
+        crate::model::eac3_atmos_settings::Builder::default()
+    }
+}
+
 /// See [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
 pub mod eac3_atmos_settings {
     
@@ -41332,12 +41516,6 @@ pub mod eac3_atmos_settings {
     }
     
     
-}
-impl Eac3AtmosSettings {
-    /// Creates a new builder-style object to manufacture [`Eac3AtmosSettings`](crate::model::Eac3AtmosSettings).
-    pub fn builder() -> crate::model::eac3_atmos_settings::Builder {
-        crate::model::eac3_atmos_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Eac3AtmosDrcRf`, it is important to ensure
@@ -41687,6 +41865,13 @@ impl Ac3Settings {
         self.metadata_control.as_ref()
     }
 }
+impl Ac3Settings {
+    /// Creates a new builder-style object to manufacture [`Ac3Settings`](crate::model::Ac3Settings).
+    pub fn builder() -> crate::model::ac3_settings::Builder {
+        crate::model::ac3_settings::Builder::default()
+    }
+}
+
 /// See [`Ac3Settings`](crate::model::Ac3Settings).
 pub mod ac3_settings {
     
@@ -41790,12 +41975,6 @@ pub mod ac3_settings {
     }
     
     
-}
-impl Ac3Settings {
-    /// Creates a new builder-style object to manufacture [`Ac3Settings`](crate::model::Ac3Settings).
-    pub fn builder() -> crate::model::ac3_settings::Builder {
-        crate::model::ac3_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Ac3MetadataControl`, it is important to ensure
@@ -42318,6 +42497,13 @@ impl AacSettings {
         self.vbr_quality.as_ref()
     }
 }
+impl AacSettings {
+    /// Creates a new builder-style object to manufacture [`AacSettings`](crate::model::AacSettings).
+    pub fn builder() -> crate::model::aac_settings::Builder {
+        crate::model::aac_settings::Builder::default()
+    }
+}
+
 /// See [`AacSettings`](crate::model::AacSettings).
 pub mod aac_settings {
     
@@ -42445,12 +42631,6 @@ pub mod aac_settings {
     }
     
     
-}
-impl AacSettings {
-    /// Creates a new builder-style object to manufacture [`AacSettings`](crate::model::AacSettings).
-    pub fn builder() -> crate::model::aac_settings::Builder {
-        crate::model::aac_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AacVbrQuality`, it is important to ensure
@@ -43071,6 +43251,13 @@ impl AudioWatermarkSettings {
         self.nielsen_watermarks_settings.as_ref()
     }
 }
+impl AudioWatermarkSettings {
+    /// Creates a new builder-style object to manufacture [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
+    pub fn builder() -> crate::model::audio_watermark_settings::Builder {
+        crate::model::audio_watermark_settings::Builder::default()
+    }
+}
+
 /// See [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
 pub mod audio_watermark_settings {
     
@@ -43101,12 +43288,6 @@ pub mod audio_watermark_settings {
     
     
 }
-impl AudioWatermarkSettings {
-    /// Creates a new builder-style object to manufacture [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
-    pub fn builder() -> crate::model::audio_watermark_settings::Builder {
-        crate::model::audio_watermark_settings::Builder::default()
-    }
-}
 
 /// Nielsen Watermarks Settings
 #[non_exhaustive]
@@ -43136,6 +43317,13 @@ impl NielsenWatermarksSettings {
         self.nielsen_naes_ii_nw_settings.as_ref()
     }
 }
+impl NielsenWatermarksSettings {
+    /// Creates a new builder-style object to manufacture [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
+    pub fn builder() -> crate::model::nielsen_watermarks_settings::Builder {
+        crate::model::nielsen_watermarks_settings::Builder::default()
+    }
+}
+
 /// See [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
 pub mod nielsen_watermarks_settings {
     
@@ -43190,12 +43378,6 @@ pub mod nielsen_watermarks_settings {
     
     
 }
-impl NielsenWatermarksSettings {
-    /// Creates a new builder-style object to manufacture [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
-    pub fn builder() -> crate::model::nielsen_watermarks_settings::Builder {
-        crate::model::nielsen_watermarks_settings::Builder::default()
-    }
-}
 
 /// Nielsen Naes Ii Nw
 #[non_exhaustive]
@@ -43218,6 +43400,13 @@ impl NielsenNaesIiNw {
         self.sid
     }
 }
+impl NielsenNaesIiNw {
+    /// Creates a new builder-style object to manufacture [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
+    pub fn builder() -> crate::model::nielsen_naes_ii_nw::Builder {
+        crate::model::nielsen_naes_ii_nw::Builder::default()
+    }
+}
+
 /// See [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
 pub mod nielsen_naes_ii_nw {
     
@@ -43260,12 +43449,6 @@ pub mod nielsen_naes_ii_nw {
     }
     
     
-}
-impl NielsenNaesIiNw {
-    /// Creates a new builder-style object to manufacture [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
-    pub fn builder() -> crate::model::nielsen_naes_ii_nw::Builder {
-        crate::model::nielsen_naes_ii_nw::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NielsenWatermarksDistributionTypes`, it is important to ensure
@@ -43378,6 +43561,13 @@ impl NielsenCbet {
         self.csid.as_deref()
     }
 }
+impl NielsenCbet {
+    /// Creates a new builder-style object to manufacture [`NielsenCbet`](crate::model::NielsenCbet).
+    pub fn builder() -> crate::model::nielsen_cbet::Builder {
+        crate::model::nielsen_cbet::Builder::default()
+    }
+}
+
 /// See [`NielsenCbet`](crate::model::NielsenCbet).
 pub mod nielsen_cbet {
     
@@ -43431,12 +43621,6 @@ pub mod nielsen_cbet {
     }
     
     
-}
-impl NielsenCbet {
-    /// Creates a new builder-style object to manufacture [`NielsenCbet`](crate::model::NielsenCbet).
-    pub fn builder() -> crate::model::nielsen_cbet::Builder {
-        crate::model::nielsen_cbet::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NielsenWatermarksCbetStepaside`, it is important to ensure
@@ -43723,6 +43907,13 @@ impl AudioNormalizationSettings {
         self.target_lkfs
     }
 }
+impl AudioNormalizationSettings {
+    /// Creates a new builder-style object to manufacture [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
+    pub fn builder() -> crate::model::audio_normalization_settings::Builder {
+        crate::model::audio_normalization_settings::Builder::default()
+    }
+}
+
 /// See [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
 pub mod audio_normalization_settings {
     
@@ -43777,12 +43968,6 @@ pub mod audio_normalization_settings {
     }
     
     
-}
-impl AudioNormalizationSettings {
-    /// Creates a new builder-style object to manufacture [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
-    pub fn builder() -> crate::model::audio_normalization_settings::Builder {
-        crate::model::audio_normalization_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AudioNormalizationAlgorithmControl`, it is important to ensure
@@ -43958,6 +44143,13 @@ impl ChannelEgressEndpoint {
         self.source_ip.as_deref()
     }
 }
+impl ChannelEgressEndpoint {
+    /// Creates a new builder-style object to manufacture [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
+    pub fn builder() -> crate::model::channel_egress_endpoint::Builder {
+        crate::model::channel_egress_endpoint::Builder::default()
+    }
+}
+
 /// See [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
 pub mod channel_egress_endpoint {
     
@@ -43987,12 +44179,6 @@ pub mod channel_egress_endpoint {
     }
     
     
-}
-impl ChannelEgressEndpoint {
-    /// Creates a new builder-style object to manufacture [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
-    pub fn builder() -> crate::model::channel_egress_endpoint::Builder {
-        crate::model::channel_egress_endpoint::Builder::default()
-    }
 }
 
 /// Placeholder documentation for OutputDestination
@@ -44030,6 +44216,13 @@ impl OutputDestination {
         self.settings.as_deref()
     }
 }
+impl OutputDestination {
+    /// Creates a new builder-style object to manufacture [`OutputDestination`](crate::model::OutputDestination).
+    pub fn builder() -> crate::model::output_destination::Builder {
+        crate::model::output_destination::Builder::default()
+    }
+}
+
 /// See [`OutputDestination`](crate::model::OutputDestination).
 pub mod output_destination {
     
@@ -44108,12 +44301,6 @@ pub mod output_destination {
     
     
 }
-impl OutputDestination {
-    /// Creates a new builder-style object to manufacture [`OutputDestination`](crate::model::OutputDestination).
-    pub fn builder() -> crate::model::output_destination::Builder {
-        crate::model::output_destination::Builder::default()
-    }
-}
 
 /// Placeholder documentation for OutputDestinationSettings
 #[non_exhaustive]
@@ -44150,6 +44337,13 @@ impl OutputDestinationSettings {
         self.username.as_deref()
     }
 }
+impl OutputDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
+    pub fn builder() -> crate::model::output_destination_settings::Builder {
+        crate::model::output_destination_settings::Builder::default()
+    }
+}
+
 /// See [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
 pub mod output_destination_settings {
     
@@ -44216,12 +44410,6 @@ pub mod output_destination_settings {
     
     
 }
-impl OutputDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
-    pub fn builder() -> crate::model::output_destination_settings::Builder {
-        crate::model::output_destination_settings::Builder::default()
-    }
-}
 
 /// Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex
 #[non_exhaustive]
@@ -44244,6 +44432,13 @@ impl MultiplexProgramChannelDestinationSettings {
         self.program_name.as_deref()
     }
 }
+impl MultiplexProgramChannelDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
+    pub fn builder() -> crate::model::multiplex_program_channel_destination_settings::Builder {
+        crate::model::multiplex_program_channel_destination_settings::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
 pub mod multiplex_program_channel_destination_settings {
     
@@ -44286,12 +44481,6 @@ pub mod multiplex_program_channel_destination_settings {
     
     
 }
-impl MultiplexProgramChannelDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
-    pub fn builder() -> crate::model::multiplex_program_channel_destination_settings::Builder {
-        crate::model::multiplex_program_channel_destination_settings::Builder::default()
-    }
-}
 
 /// MediaPackage Output Destination Settings
 #[non_exhaustive]
@@ -44307,6 +44496,13 @@ impl MediaPackageOutputDestinationSettings {
         self.channel_id.as_deref()
     }
 }
+impl MediaPackageOutputDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
+    pub fn builder() -> crate::model::media_package_output_destination_settings::Builder {
+        crate::model::media_package_output_destination_settings::Builder::default()
+    }
+}
+
 /// See [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
 pub mod media_package_output_destination_settings {
     
@@ -44337,12 +44533,6 @@ pub mod media_package_output_destination_settings {
     
     
 }
-impl MediaPackageOutputDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
-    pub fn builder() -> crate::model::media_package_output_destination_settings::Builder {
-        crate::model::media_package_output_destination_settings::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CdiInputSpecification
 #[non_exhaustive]
@@ -44358,6 +44548,13 @@ impl CdiInputSpecification {
         self.resolution.as_ref()
     }
 }
+impl CdiInputSpecification {
+    /// Creates a new builder-style object to manufacture [`CdiInputSpecification`](crate::model::CdiInputSpecification).
+    pub fn builder() -> crate::model::cdi_input_specification::Builder {
+        crate::model::cdi_input_specification::Builder::default()
+    }
+}
+
 /// See [`CdiInputSpecification`](crate::model::CdiInputSpecification).
 pub mod cdi_input_specification {
     
@@ -44387,12 +44584,6 @@ pub mod cdi_input_specification {
     }
     
     
-}
-impl CdiInputSpecification {
-    /// Creates a new builder-style object to manufacture [`CdiInputSpecification`](crate::model::CdiInputSpecification).
-    pub fn builder() -> crate::model::cdi_input_specification::Builder {
-        crate::model::cdi_input_specification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CdiInputResolution`, it is important to ensure
@@ -44515,6 +44706,13 @@ impl MaintenanceUpdateSettings {
         self.maintenance_start_time.as_deref()
     }
 }
+impl MaintenanceUpdateSettings {
+    /// Creates a new builder-style object to manufacture [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
+    pub fn builder() -> crate::model::maintenance_update_settings::Builder {
+        crate::model::maintenance_update_settings::Builder::default()
+    }
+}
+
 /// See [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
 pub mod maintenance_update_settings {
     
@@ -44568,12 +44766,6 @@ pub mod maintenance_update_settings {
     }
     
     
-}
-impl MaintenanceUpdateSettings {
-    /// Creates a new builder-style object to manufacture [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
-    pub fn builder() -> crate::model::maintenance_update_settings::Builder {
-        crate::model::maintenance_update_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RebootInputDeviceForce`, it is important to ensure
@@ -44742,6 +44934,13 @@ impl Offering {
         self.usage_price
     }
 }
+impl Offering {
+    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
+    pub fn builder() -> crate::model::offering::Builder {
+        crate::model::offering::Builder::default()
+    }
+}
+
 /// See [`Offering`](crate::model::Offering).
 pub mod offering {
     
@@ -44895,12 +45094,6 @@ pub mod offering {
     
     
 }
-impl Offering {
-    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
-    pub fn builder() -> crate::model::offering::Builder {
-        crate::model::offering::Builder::default()
-    }
-}
 
 /// Placeholder documentation for MultiplexProgramSummary
 #[non_exhaustive]
@@ -44923,6 +45116,13 @@ impl MultiplexProgramSummary {
         self.program_name.as_deref()
     }
 }
+impl MultiplexProgramSummary {
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
+    pub fn builder() -> crate::model::multiplex_program_summary::Builder {
+        crate::model::multiplex_program_summary::Builder::default()
+    }
+}
+
 /// See [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
 pub mod multiplex_program_summary {
     
@@ -44964,12 +45164,6 @@ pub mod multiplex_program_summary {
     }
     
     
-}
-impl MultiplexProgramSummary {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
-    pub fn builder() -> crate::model::multiplex_program_summary::Builder {
-        crate::model::multiplex_program_summary::Builder::default()
-    }
 }
 
 /// Placeholder documentation for MultiplexSummary
@@ -45042,6 +45236,13 @@ impl MultiplexSummary {
         self.tags.as_ref()
     }
 }
+impl MultiplexSummary {
+    /// Creates a new builder-style object to manufacture [`MultiplexSummary`](crate::model::MultiplexSummary).
+    pub fn builder() -> crate::model::multiplex_summary::Builder {
+        crate::model::multiplex_summary::Builder::default()
+    }
+}
+
 /// See [`MultiplexSummary`](crate::model::MultiplexSummary).
 pub mod multiplex_summary {
     
@@ -45182,12 +45383,6 @@ pub mod multiplex_summary {
     
     
 }
-impl MultiplexSummary {
-    /// Creates a new builder-style object to manufacture [`MultiplexSummary`](crate::model::MultiplexSummary).
-    pub fn builder() -> crate::model::multiplex_summary::Builder {
-        crate::model::multiplex_summary::Builder::default()
-    }
-}
 
 /// Contains summary configuration for a Multiplex event.
 #[non_exhaustive]
@@ -45203,6 +45398,13 @@ impl MultiplexSettingsSummary {
         self.transport_stream_bitrate
     }
 }
+impl MultiplexSettingsSummary {
+    /// Creates a new builder-style object to manufacture [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
+    pub fn builder() -> crate::model::multiplex_settings_summary::Builder {
+        crate::model::multiplex_settings_summary::Builder::default()
+    }
+}
+
 /// See [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
 pub mod multiplex_settings_summary {
     
@@ -45233,12 +45435,6 @@ pub mod multiplex_settings_summary {
     }
     
     
-}
-impl MultiplexSettingsSummary {
-    /// Creates a new builder-style object to manufacture [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
-    pub fn builder() -> crate::model::multiplex_settings_summary::Builder {
-        crate::model::multiplex_settings_summary::Builder::default()
-    }
 }
 
 /// Details about the input device that is being transferred.
@@ -45276,6 +45472,13 @@ impl TransferringInputDeviceSummary {
         self.transfer_type.as_ref()
     }
 }
+impl TransferringInputDeviceSummary {
+    /// Creates a new builder-style object to manufacture [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
+    pub fn builder() -> crate::model::transferring_input_device_summary::Builder {
+        crate::model::transferring_input_device_summary::Builder::default()
+    }
+}
+
 /// See [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
 pub mod transferring_input_device_summary {
     
@@ -45341,12 +45544,6 @@ pub mod transferring_input_device_summary {
     }
     
     
-}
-impl TransferringInputDeviceSummary {
-    /// Creates a new builder-style object to manufacture [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
-    pub fn builder() -> crate::model::transferring_input_device_summary::Builder {
-        crate::model::transferring_input_device_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputDeviceTransferType`, it is important to ensure
@@ -45522,6 +45719,13 @@ impl InputDeviceSummary {
         self.uhd_device_settings.as_ref()
     }
 }
+impl InputDeviceSummary {
+    /// Creates a new builder-style object to manufacture [`InputDeviceSummary`](crate::model::InputDeviceSummary).
+    pub fn builder() -> crate::model::input_device_summary::Builder {
+        crate::model::input_device_summary::Builder::default()
+    }
+}
+
 /// See [`InputDeviceSummary`](crate::model::InputDeviceSummary).
 pub mod input_device_summary {
     
@@ -45684,12 +45888,6 @@ pub mod input_device_summary {
     
     
 }
-impl InputDeviceSummary {
-    /// Creates a new builder-style object to manufacture [`InputDeviceSummary`](crate::model::InputDeviceSummary).
-    pub fn builder() -> crate::model::input_device_summary::Builder {
-        crate::model::input_device_summary::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ChannelSummary
 #[non_exhaustive]
@@ -45810,6 +46008,13 @@ impl ChannelSummary {
         self.vpc.as_ref()
     }
 }
+impl ChannelSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
+    pub fn builder() -> crate::model::channel_summary::Builder {
+        crate::model::channel_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
     
@@ -46045,12 +46250,6 @@ pub mod channel_summary {
     
     
 }
-impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
-    pub fn builder() -> crate::model::channel_summary::Builder {
-        crate::model::channel_summary::Builder::default()
-    }
-}
 
 /// Contains information on a single schedule action.
 #[non_exhaustive]
@@ -46080,6 +46279,13 @@ impl ScheduleAction {
         self.schedule_action_start_settings.as_ref()
     }
 }
+impl ScheduleAction {
+    /// Creates a new builder-style object to manufacture [`ScheduleAction`](crate::model::ScheduleAction).
+    pub fn builder() -> crate::model::schedule_action::Builder {
+        crate::model::schedule_action::Builder::default()
+    }
+}
+
 /// See [`ScheduleAction`](crate::model::ScheduleAction).
 pub mod schedule_action {
     
@@ -46134,12 +46340,6 @@ pub mod schedule_action {
     
     
 }
-impl ScheduleAction {
-    /// Creates a new builder-style object to manufacture [`ScheduleAction`](crate::model::ScheduleAction).
-    pub fn builder() -> crate::model::schedule_action::Builder {
-        crate::model::schedule_action::Builder::default()
-    }
-}
 
 /// Settings to specify when an action should occur. Only one of the options must be selected.
 #[non_exhaustive]
@@ -46169,6 +46369,13 @@ impl ScheduleActionStartSettings {
         self.immediate_mode_schedule_action_start_settings.as_ref()
     }
 }
+impl ScheduleActionStartSettings {
+    /// Creates a new builder-style object to manufacture [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
+    pub fn builder() -> crate::model::schedule_action_start_settings::Builder {
+        crate::model::schedule_action_start_settings::Builder::default()
+    }
+}
+
 /// See [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
 pub mod schedule_action_start_settings {
     
@@ -46223,18 +46430,19 @@ pub mod schedule_action_start_settings {
     
     
 }
-impl ScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
-    pub fn builder() -> crate::model::schedule_action_start_settings::Builder {
-        crate::model::schedule_action_start_settings::Builder::default()
-    }
-}
 
 /// Settings to configure an action so that it occurs as soon as possible.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImmediateModeScheduleActionStartSettings  {
 }
+impl ImmediateModeScheduleActionStartSettings {
+    /// Creates a new builder-style object to manufacture [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
+    pub fn builder() -> crate::model::immediate_mode_schedule_action_start_settings::Builder {
+        crate::model::immediate_mode_schedule_action_start_settings::Builder::default()
+    }
+}
+
 /// See [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
 pub mod immediate_mode_schedule_action_start_settings {
     
@@ -46252,12 +46460,6 @@ pub mod immediate_mode_schedule_action_start_settings {
     }
     
     
-}
-impl ImmediateModeScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
-    pub fn builder() -> crate::model::immediate_mode_schedule_action_start_settings::Builder {
-        crate::model::immediate_mode_schedule_action_start_settings::Builder::default()
-    }
 }
 
 /// Settings to specify if an action follows another.
@@ -46281,6 +46483,13 @@ impl FollowModeScheduleActionStartSettings {
         self.reference_action_name.as_deref()
     }
 }
+impl FollowModeScheduleActionStartSettings {
+    /// Creates a new builder-style object to manufacture [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
+    pub fn builder() -> crate::model::follow_mode_schedule_action_start_settings::Builder {
+        crate::model::follow_mode_schedule_action_start_settings::Builder::default()
+    }
+}
+
 /// See [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
 pub mod follow_mode_schedule_action_start_settings {
     
@@ -46322,12 +46531,6 @@ pub mod follow_mode_schedule_action_start_settings {
     }
     
     
-}
-impl FollowModeScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
-    pub fn builder() -> crate::model::follow_mode_schedule_action_start_settings::Builder {
-        crate::model::follow_mode_schedule_action_start_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FollowPoint`, it is important to ensure
@@ -46426,6 +46629,13 @@ impl FixedModeScheduleActionStartSettings {
         self.time.as_deref()
     }
 }
+impl FixedModeScheduleActionStartSettings {
+    /// Creates a new builder-style object to manufacture [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
+    pub fn builder() -> crate::model::fixed_mode_schedule_action_start_settings::Builder {
+        crate::model::fixed_mode_schedule_action_start_settings::Builder::default()
+    }
+}
+
 /// See [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
 pub mod fixed_mode_schedule_action_start_settings {
     
@@ -46455,12 +46665,6 @@ pub mod fixed_mode_schedule_action_start_settings {
     }
     
     
-}
-impl FixedModeScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
-    pub fn builder() -> crate::model::fixed_mode_schedule_action_start_settings::Builder {
-        crate::model::fixed_mode_schedule_action_start_settings::Builder::default()
-    }
 }
 
 /// Holds the settings for a single schedule action.
@@ -46561,6 +46765,13 @@ impl ScheduleActionSettings {
         self.static_image_deactivate_settings.as_ref()
     }
 }
+impl ScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
+    pub fn builder() -> crate::model::schedule_action_settings::Builder {
+        crate::model::schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
 pub mod schedule_action_settings {
     
@@ -46735,12 +46946,6 @@ pub mod schedule_action_settings {
     
     
 }
-impl ScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
-    pub fn builder() -> crate::model::schedule_action_settings::Builder {
-        crate::model::schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for the action to deactivate the image in a specific layer.
 #[non_exhaustive]
@@ -46763,6 +46968,13 @@ impl StaticImageDeactivateScheduleActionSettings {
         self.layer
     }
 }
+impl StaticImageDeactivateScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
+    pub fn builder() -> crate::model::static_image_deactivate_schedule_action_settings::Builder {
+        crate::model::static_image_deactivate_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
 pub mod static_image_deactivate_schedule_action_settings {
     
@@ -46806,12 +47018,6 @@ pub mod static_image_deactivate_schedule_action_settings {
     }
     
     
-}
-impl StaticImageDeactivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
-    pub fn builder() -> crate::model::static_image_deactivate_schedule_action_settings::Builder {
-        crate::model::static_image_deactivate_schedule_action_settings::Builder::default()
-    }
 }
 
 /// Settings for the action to activate a static image.
@@ -46891,6 +47097,13 @@ impl StaticImageActivateScheduleActionSettings {
         self.width
     }
 }
+impl StaticImageActivateScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
+    pub fn builder() -> crate::model::static_image_activate_schedule_action_settings::Builder {
+        crate::model::static_image_activate_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
 pub mod static_image_activate_schedule_action_settings {
     
@@ -47038,12 +47251,6 @@ pub mod static_image_activate_schedule_action_settings {
     
     
 }
-impl StaticImageActivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
-    pub fn builder() -> crate::model::static_image_activate_schedule_action_settings::Builder {
-        crate::model::static_image_activate_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for a SCTE-35 time_signal.
 #[non_exhaustive]
@@ -47059,6 +47266,13 @@ impl Scte35TimeSignalScheduleActionSettings {
         self.scte35_descriptors.as_deref()
     }
 }
+impl Scte35TimeSignalScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
+    pub fn builder() -> crate::model::scte35_time_signal_schedule_action_settings::Builder {
+        crate::model::scte35_time_signal_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
 pub mod scte35_time_signal_schedule_action_settings {
     
@@ -47095,12 +47309,6 @@ pub mod scte35_time_signal_schedule_action_settings {
     
     
 }
-impl Scte35TimeSignalScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
-    pub fn builder() -> crate::model::scte35_time_signal_schedule_action_settings::Builder {
-        crate::model::scte35_time_signal_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Holds one set of SCTE-35 Descriptor Settings.
 #[non_exhaustive]
@@ -47116,6 +47324,13 @@ impl Scte35Descriptor {
         self.scte35_descriptor_settings.as_ref()
     }
 }
+impl Scte35Descriptor {
+    /// Creates a new builder-style object to manufacture [`Scte35Descriptor`](crate::model::Scte35Descriptor).
+    pub fn builder() -> crate::model::scte35_descriptor::Builder {
+        crate::model::scte35_descriptor::Builder::default()
+    }
+}
+
 /// See [`Scte35Descriptor`](crate::model::Scte35Descriptor).
 pub mod scte35_descriptor {
     
@@ -47146,12 +47361,6 @@ pub mod scte35_descriptor {
     
     
 }
-impl Scte35Descriptor {
-    /// Creates a new builder-style object to manufacture [`Scte35Descriptor`](crate::model::Scte35Descriptor).
-    pub fn builder() -> crate::model::scte35_descriptor::Builder {
-        crate::model::scte35_descriptor::Builder::default()
-    }
-}
 
 /// SCTE-35 Descriptor settings.
 #[non_exhaustive]
@@ -47167,6 +47376,13 @@ impl Scte35DescriptorSettings {
         self.segmentation_descriptor_scte35_descriptor_settings.as_ref()
     }
 }
+impl Scte35DescriptorSettings {
+    /// Creates a new builder-style object to manufacture [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
+    pub fn builder() -> crate::model::scte35_descriptor_settings::Builder {
+        crate::model::scte35_descriptor_settings::Builder::default()
+    }
+}
+
 /// See [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
 pub mod scte35_descriptor_settings {
     
@@ -47196,12 +47412,6 @@ pub mod scte35_descriptor_settings {
     }
     
     
-}
-impl Scte35DescriptorSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
-    pub fn builder() -> crate::model::scte35_descriptor_settings::Builder {
-        crate::model::scte35_descriptor_settings::Builder::default()
-    }
 }
 
 /// Corresponds to SCTE-35 segmentation_descriptor.
@@ -47288,6 +47498,13 @@ impl Scte35SegmentationDescriptor {
         self.sub_segments_expected
     }
 }
+impl Scte35SegmentationDescriptor {
+    /// Creates a new builder-style object to manufacture [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
+    pub fn builder() -> crate::model::scte35_segmentation_descriptor::Builder {
+        crate::model::scte35_segmentation_descriptor::Builder::default()
+    }
+}
+
 /// See [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
 pub mod scte35_segmentation_descriptor {
     
@@ -47446,12 +47663,6 @@ pub mod scte35_segmentation_descriptor {
     
     
 }
-impl Scte35SegmentationDescriptor {
-    /// Creates a new builder-style object to manufacture [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
-    pub fn builder() -> crate::model::scte35_segmentation_descriptor::Builder {
-        crate::model::scte35_segmentation_descriptor::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Scte35SegmentationCancelIndicator`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -47570,6 +47781,13 @@ impl Scte35DeliveryRestrictions {
         self.web_delivery_allowed_flag.as_ref()
     }
 }
+impl Scte35DeliveryRestrictions {
+    /// Creates a new builder-style object to manufacture [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
+    pub fn builder() -> crate::model::scte35_delivery_restrictions::Builder {
+        crate::model::scte35_delivery_restrictions::Builder::default()
+    }
+}
+
 /// See [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
 pub mod scte35_delivery_restrictions {
     
@@ -47635,12 +47853,6 @@ pub mod scte35_delivery_restrictions {
     }
     
     
-}
-impl Scte35DeliveryRestrictions {
-    /// Creates a new builder-style object to manufacture [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
-    pub fn builder() -> crate::model::scte35_delivery_restrictions::Builder {
-        crate::model::scte35_delivery_restrictions::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Scte35WebDeliveryAllowedFlag`, it is important to ensure
@@ -48002,6 +48214,13 @@ impl Scte35SpliceInsertScheduleActionSettings {
         self.splice_event_id
     }
 }
+impl Scte35SpliceInsertScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
+    pub fn builder() -> crate::model::scte35_splice_insert_schedule_action_settings::Builder {
+        crate::model::scte35_splice_insert_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
 pub mod scte35_splice_insert_schedule_action_settings {
     
@@ -48046,12 +48265,6 @@ pub mod scte35_splice_insert_schedule_action_settings {
     
     
 }
-impl Scte35SpliceInsertScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
-    pub fn builder() -> crate::model::scte35_splice_insert_schedule_action_settings::Builder {
-        crate::model::scte35_splice_insert_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for a SCTE-35 return_to_network message.
 #[non_exhaustive]
@@ -48067,6 +48280,13 @@ impl Scte35ReturnToNetworkScheduleActionSettings {
         self.splice_event_id
     }
 }
+impl Scte35ReturnToNetworkScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
+    pub fn builder() -> crate::model::scte35_return_to_network_schedule_action_settings::Builder {
+        crate::model::scte35_return_to_network_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
 pub mod scte35_return_to_network_schedule_action_settings {
     
@@ -48098,12 +48318,6 @@ pub mod scte35_return_to_network_schedule_action_settings {
     
     
 }
-impl Scte35ReturnToNetworkScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
-    pub fn builder() -> crate::model::scte35_return_to_network_schedule_action_settings::Builder {
-        crate::model::scte35_return_to_network_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Scte35Input Schedule Action Settings
 #[non_exhaustive]
@@ -48126,6 +48340,13 @@ impl Scte35InputScheduleActionSettings {
         self.mode.as_ref()
     }
 }
+impl Scte35InputScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
+    pub fn builder() -> crate::model::scte35_input_schedule_action_settings::Builder {
+        crate::model::scte35_input_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
 pub mod scte35_input_schedule_action_settings {
     
@@ -48167,12 +48388,6 @@ pub mod scte35_input_schedule_action_settings {
     }
     
     
-}
-impl Scte35InputScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35InputScheduleActionSettings`](crate::model::Scte35InputScheduleActionSettings).
-    pub fn builder() -> crate::model::scte35_input_schedule_action_settings::Builder {
-        crate::model::scte35_input_schedule_action_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Scte35InputMode`, it is important to ensure
@@ -48271,6 +48486,13 @@ impl PauseStateScheduleActionSettings {
         self.pipelines.as_deref()
     }
 }
+impl PauseStateScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
+    pub fn builder() -> crate::model::pause_state_schedule_action_settings::Builder {
+        crate::model::pause_state_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
 pub mod pause_state_schedule_action_settings {
     
@@ -48307,12 +48529,6 @@ pub mod pause_state_schedule_action_settings {
     
     
 }
-impl PauseStateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
-    pub fn builder() -> crate::model::pause_state_schedule_action_settings::Builder {
-        crate::model::pause_state_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for pausing a pipeline.
 #[non_exhaustive]
@@ -48328,6 +48544,13 @@ impl PipelinePauseStateSettings {
         self.pipeline_id.as_ref()
     }
 }
+impl PipelinePauseStateSettings {
+    /// Creates a new builder-style object to manufacture [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
+    pub fn builder() -> crate::model::pipeline_pause_state_settings::Builder {
+        crate::model::pipeline_pause_state_settings::Builder::default()
+    }
+}
+
 /// See [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
 pub mod pipeline_pause_state_settings {
     
@@ -48357,12 +48580,6 @@ pub mod pipeline_pause_state_settings {
     }
     
     
-}
-impl PipelinePauseStateSettings {
-    /// Creates a new builder-style object to manufacture [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
-    pub fn builder() -> crate::model::pipeline_pause_state_settings::Builder {
-        crate::model::pipeline_pause_state_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PipelineId`, it is important to ensure
@@ -48452,6 +48669,13 @@ impl AsRef<str> for PipelineId {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MotionGraphicsDeactivateScheduleActionSettings  {
 }
+impl MotionGraphicsDeactivateScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
+    pub fn builder() -> crate::model::motion_graphics_deactivate_schedule_action_settings::Builder {
+        crate::model::motion_graphics_deactivate_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
 pub mod motion_graphics_deactivate_schedule_action_settings {
     
@@ -48469,12 +48693,6 @@ pub mod motion_graphics_deactivate_schedule_action_settings {
     }
     
     
-}
-impl MotionGraphicsDeactivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
-    pub fn builder() -> crate::model::motion_graphics_deactivate_schedule_action_settings::Builder {
-        crate::model::motion_graphics_deactivate_schedule_action_settings::Builder::default()
-    }
 }
 
 /// Settings to specify the rendering of motion graphics into the video stream.
@@ -48512,6 +48730,13 @@ impl MotionGraphicsActivateScheduleActionSettings {
         self.username.as_deref()
     }
 }
+impl MotionGraphicsActivateScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
+    pub fn builder() -> crate::model::motion_graphics_activate_schedule_action_settings::Builder {
+        crate::model::motion_graphics_activate_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
 pub mod motion_graphics_activate_schedule_action_settings {
     
@@ -48579,12 +48804,6 @@ pub mod motion_graphics_activate_schedule_action_settings {
     
     
 }
-impl MotionGraphicsActivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
-    pub fn builder() -> crate::model::motion_graphics_activate_schedule_action_settings::Builder {
-        crate::model::motion_graphics_activate_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for the "switch input" action: to switch from ingesting one input to ingesting another input.
 #[non_exhaustive]
@@ -48614,6 +48833,13 @@ impl InputSwitchScheduleActionSettings {
         self.url_path.as_deref()
     }
 }
+impl InputSwitchScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
+    pub fn builder() -> crate::model::input_switch_schedule_action_settings::Builder {
+        crate::model::input_switch_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
 pub mod input_switch_schedule_action_settings {
     
@@ -48674,12 +48900,6 @@ pub mod input_switch_schedule_action_settings {
     
     
 }
-impl InputSwitchScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
-    pub fn builder() -> crate::model::input_switch_schedule_action_settings::Builder {
-        crate::model::input_switch_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
 #[non_exhaustive]
@@ -48709,6 +48929,13 @@ impl InputClippingSettings {
         self.stop_timecode.as_ref()
     }
 }
+impl InputClippingSettings {
+    /// Creates a new builder-style object to manufacture [`InputClippingSettings`](crate::model::InputClippingSettings).
+    pub fn builder() -> crate::model::input_clipping_settings::Builder {
+        crate::model::input_clipping_settings::Builder::default()
+    }
+}
+
 /// See [`InputClippingSettings`](crate::model::InputClippingSettings).
 pub mod input_clipping_settings {
     
@@ -48763,12 +48990,6 @@ pub mod input_clipping_settings {
     
     
 }
-impl InputClippingSettings {
-    /// Creates a new builder-style object to manufacture [`InputClippingSettings`](crate::model::InputClippingSettings).
-    pub fn builder() -> crate::model::input_clipping_settings::Builder {
-        crate::model::input_clipping_settings::Builder::default()
-    }
-}
 
 /// Settings to identify the end of the clip.
 #[non_exhaustive]
@@ -48791,6 +49012,13 @@ impl StopTimecode {
         self.timecode.as_deref()
     }
 }
+impl StopTimecode {
+    /// Creates a new builder-style object to manufacture [`StopTimecode`](crate::model::StopTimecode).
+    pub fn builder() -> crate::model::stop_timecode::Builder {
+        crate::model::stop_timecode::Builder::default()
+    }
+}
+
 /// See [`StopTimecode`](crate::model::StopTimecode).
 pub mod stop_timecode {
     
@@ -48832,12 +49060,6 @@ pub mod stop_timecode {
     }
     
     
-}
-impl StopTimecode {
-    /// Creates a new builder-style object to manufacture [`StopTimecode`](crate::model::StopTimecode).
-    pub fn builder() -> crate::model::stop_timecode::Builder {
-        crate::model::stop_timecode::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LastFrameClippingBehavior`, it is important to ensure
@@ -48936,6 +49158,13 @@ impl StartTimecode {
         self.timecode.as_deref()
     }
 }
+impl StartTimecode {
+    /// Creates a new builder-style object to manufacture [`StartTimecode`](crate::model::StartTimecode).
+    pub fn builder() -> crate::model::start_timecode::Builder {
+        crate::model::start_timecode::Builder::default()
+    }
+}
+
 /// See [`StartTimecode`](crate::model::StartTimecode).
 pub mod start_timecode {
     
@@ -48965,12 +49194,6 @@ pub mod start_timecode {
     }
     
     
-}
-impl StartTimecode {
-    /// Creates a new builder-style object to manufacture [`StartTimecode`](crate::model::StartTimecode).
-    pub fn builder() -> crate::model::start_timecode::Builder {
-        crate::model::start_timecode::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputTimecodeSource`, it is important to ensure
@@ -49083,6 +49306,13 @@ impl InputPrepareScheduleActionSettings {
         self.url_path.as_deref()
     }
 }
+impl InputPrepareScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
+    pub fn builder() -> crate::model::input_prepare_schedule_action_settings::Builder {
+        crate::model::input_prepare_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
 pub mod input_prepare_schedule_action_settings {
     
@@ -49143,12 +49373,6 @@ pub mod input_prepare_schedule_action_settings {
     
     
 }
-impl InputPrepareScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
-    pub fn builder() -> crate::model::input_prepare_schedule_action_settings::Builder {
-        crate::model::input_prepare_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for the action to emit HLS metadata
 #[non_exhaustive]
@@ -49164,6 +49388,13 @@ impl HlsTimedMetadataScheduleActionSettings {
         self.id3.as_deref()
     }
 }
+impl HlsTimedMetadataScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
+    pub fn builder() -> crate::model::hls_timed_metadata_schedule_action_settings::Builder {
+        crate::model::hls_timed_metadata_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
 pub mod hls_timed_metadata_schedule_action_settings {
     
@@ -49194,12 +49425,6 @@ pub mod hls_timed_metadata_schedule_action_settings {
     
     
 }
-impl HlsTimedMetadataScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
-    pub fn builder() -> crate::model::hls_timed_metadata_schedule_action_settings::Builder {
-        crate::model::hls_timed_metadata_schedule_action_settings::Builder::default()
-    }
-}
 
 /// Settings for the action to insert a user-defined ID3 tag in each HLS segment
 #[non_exhaustive]
@@ -49215,6 +49440,13 @@ impl HlsId3SegmentTaggingScheduleActionSettings {
         self.tag.as_deref()
     }
 }
+impl HlsId3SegmentTaggingScheduleActionSettings {
+    /// Creates a new builder-style object to manufacture [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
+    pub fn builder() -> crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder {
+        crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder::default()
+    }
+}
+
 /// See [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
 pub mod hls_id3_segment_tagging_schedule_action_settings {
     
@@ -49244,12 +49476,6 @@ pub mod hls_id3_segment_tagging_schedule_action_settings {
     }
     
     
-}
-impl HlsId3SegmentTaggingScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
-    pub fn builder() -> crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder {
-        crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContentType`, it is important to ensure
@@ -49427,6 +49653,13 @@ impl InputVpcRequest {
         self.subnet_ids.as_deref()
     }
 }
+impl InputVpcRequest {
+    /// Creates a new builder-style object to manufacture [`InputVpcRequest`](crate::model::InputVpcRequest).
+    pub fn builder() -> crate::model::input_vpc_request::Builder {
+        crate::model::input_vpc_request::Builder::default()
+    }
+}
+
 /// See [`InputVpcRequest`](crate::model::InputVpcRequest).
 pub mod input_vpc_request {
     
@@ -49481,12 +49714,6 @@ pub mod input_vpc_request {
     
     
 }
-impl InputVpcRequest {
-    /// Creates a new builder-style object to manufacture [`InputVpcRequest`](crate::model::InputVpcRequest).
-    pub fn builder() -> crate::model::input_vpc_request::Builder {
-        crate::model::input_vpc_request::Builder::default()
-    }
-}
 
 /// The properties for a private VPC Output When this property is specified, the output egress addresses will be created in a user specified VPC
 #[non_exhaustive]
@@ -49516,6 +49743,13 @@ impl VpcOutputSettings {
         self.subnet_ids.as_deref()
     }
 }
+impl VpcOutputSettings {
+    /// Creates a new builder-style object to manufacture [`VpcOutputSettings`](crate::model::VpcOutputSettings).
+    pub fn builder() -> crate::model::vpc_output_settings::Builder {
+        crate::model::vpc_output_settings::Builder::default()
+    }
+}
+
 /// See [`VpcOutputSettings`](crate::model::VpcOutputSettings).
 pub mod vpc_output_settings {
     
@@ -49588,12 +49822,6 @@ pub mod vpc_output_settings {
     
     
 }
-impl VpcOutputSettings {
-    /// Creates a new builder-style object to manufacture [`VpcOutputSettings`](crate::model::VpcOutputSettings).
-    pub fn builder() -> crate::model::vpc_output_settings::Builder {
-        crate::model::vpc_output_settings::Builder::default()
-    }
-}
 
 /// Placeholder documentation for MaintenanceCreateSettings
 #[non_exhaustive]
@@ -49616,6 +49844,13 @@ impl MaintenanceCreateSettings {
         self.maintenance_start_time.as_deref()
     }
 }
+impl MaintenanceCreateSettings {
+    /// Creates a new builder-style object to manufacture [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
+    pub fn builder() -> crate::model::maintenance_create_settings::Builder {
+        crate::model::maintenance_create_settings::Builder::default()
+    }
+}
+
 /// See [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
 pub mod maintenance_create_settings {
     
@@ -49658,12 +49893,6 @@ pub mod maintenance_create_settings {
     
     
 }
-impl MaintenanceCreateSettings {
-    /// Creates a new builder-style object to manufacture [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
-    pub fn builder() -> crate::model::maintenance_create_settings::Builder {
-        crate::model::maintenance_create_settings::Builder::default()
-    }
-}
 
 /// List of actions that have been deleted from the schedule.
 #[non_exhaustive]
@@ -49679,6 +49908,13 @@ impl BatchScheduleActionDeleteResult {
         self.schedule_actions.as_deref()
     }
 }
+impl BatchScheduleActionDeleteResult {
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
+    pub fn builder() -> crate::model::batch_schedule_action_delete_result::Builder {
+        crate::model::batch_schedule_action_delete_result::Builder::default()
+    }
+}
+
 /// See [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
 pub mod batch_schedule_action_delete_result {
     
@@ -49715,12 +49951,6 @@ pub mod batch_schedule_action_delete_result {
     
     
 }
-impl BatchScheduleActionDeleteResult {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
-    pub fn builder() -> crate::model::batch_schedule_action_delete_result::Builder {
-        crate::model::batch_schedule_action_delete_result::Builder::default()
-    }
-}
 
 /// List of actions that have been created in the schedule.
 #[non_exhaustive]
@@ -49736,6 +49966,13 @@ impl BatchScheduleActionCreateResult {
         self.schedule_actions.as_deref()
     }
 }
+impl BatchScheduleActionCreateResult {
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
+    pub fn builder() -> crate::model::batch_schedule_action_create_result::Builder {
+        crate::model::batch_schedule_action_create_result::Builder::default()
+    }
+}
+
 /// See [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
 pub mod batch_schedule_action_create_result {
     
@@ -49772,12 +50009,6 @@ pub mod batch_schedule_action_create_result {
     
     
 }
-impl BatchScheduleActionCreateResult {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
-    pub fn builder() -> crate::model::batch_schedule_action_create_result::Builder {
-        crate::model::batch_schedule_action_create_result::Builder::default()
-    }
-}
 
 /// A list of schedule actions to delete.
 #[non_exhaustive]
@@ -49793,6 +50024,13 @@ impl BatchScheduleActionDeleteRequest {
         self.action_names.as_deref()
     }
 }
+impl BatchScheduleActionDeleteRequest {
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
+    pub fn builder() -> crate::model::batch_schedule_action_delete_request::Builder {
+        crate::model::batch_schedule_action_delete_request::Builder::default()
+    }
+}
+
 /// See [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
 pub mod batch_schedule_action_delete_request {
     
@@ -49829,12 +50067,6 @@ pub mod batch_schedule_action_delete_request {
     
     
 }
-impl BatchScheduleActionDeleteRequest {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
-    pub fn builder() -> crate::model::batch_schedule_action_delete_request::Builder {
-        crate::model::batch_schedule_action_delete_request::Builder::default()
-    }
-}
 
 /// A list of schedule actions to create (in a request) or that have been created (in a response).
 #[non_exhaustive]
@@ -49850,6 +50082,13 @@ impl BatchScheduleActionCreateRequest {
         self.schedule_actions.as_deref()
     }
 }
+impl BatchScheduleActionCreateRequest {
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
+    pub fn builder() -> crate::model::batch_schedule_action_create_request::Builder {
+        crate::model::batch_schedule_action_create_request::Builder::default()
+    }
+}
+
 /// See [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
 pub mod batch_schedule_action_create_request {
     
@@ -49886,12 +50125,6 @@ pub mod batch_schedule_action_create_request {
     
     
 }
-impl BatchScheduleActionCreateRequest {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
-    pub fn builder() -> crate::model::batch_schedule_action_create_request::Builder {
-        crate::model::batch_schedule_action_create_request::Builder::default()
-    }
-}
 
 /// Details from a successful operation
 #[non_exhaustive]
@@ -49921,6 +50154,13 @@ impl BatchSuccessfulResultModel {
         self.state.as_deref()
     }
 }
+impl BatchSuccessfulResultModel {
+    /// Creates a new builder-style object to manufacture [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
+    pub fn builder() -> crate::model::batch_successful_result_model::Builder {
+        crate::model::batch_successful_result_model::Builder::default()
+    }
+}
+
 /// See [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
 pub mod batch_successful_result_model {
     
@@ -49975,12 +50215,6 @@ pub mod batch_successful_result_model {
     
     
 }
-impl BatchSuccessfulResultModel {
-    /// Creates a new builder-style object to manufacture [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
-    pub fn builder() -> crate::model::batch_successful_result_model::Builder {
-        crate::model::batch_successful_result_model::Builder::default()
-    }
-}
 
 /// Details from a failed operation
 #[non_exhaustive]
@@ -50017,6 +50251,13 @@ impl BatchFailedResultModel {
         self.message.as_deref()
     }
 }
+impl BatchFailedResultModel {
+    /// Creates a new builder-style object to manufacture [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
+    pub fn builder() -> crate::model::batch_failed_result_model::Builder {
+        crate::model::batch_failed_result_model::Builder::default()
+    }
+}
+
 /// See [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
 pub mod batch_failed_result_model {
     
@@ -50082,11 +50323,5 @@ pub mod batch_failed_result_model {
     }
     
     
-}
-impl BatchFailedResultModel {
-    /// Creates a new builder-style object to manufacture [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
-    pub fn builder() -> crate::model::batch_failed_result_model::Builder {
-        crate::model::batch_failed_result_model::Builder::default()
-    }
 }
 

@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -516,6 +517,13 @@ impl  std::fmt::Debug for PricingRuleListElement  {
         formatter.finish()
     }
 }
+impl PricingRuleListElement {
+    /// Creates a new builder-style object to manufacture [`PricingRuleListElement`](crate::model::PricingRuleListElement).
+    pub fn builder() -> crate::model::pricing_rule_list_element::Builder {
+        crate::model::pricing_rule_list_element::Builder::default()
+    }
+}
+
 /// See [`PricingRuleListElement`](crate::model::PricingRuleListElement).
 pub mod pricing_rule_list_element {
     
@@ -699,12 +707,6 @@ pub mod pricing_rule_list_element {
     
     
 }
-impl PricingRuleListElement {
-    /// Creates a new builder-style object to manufacture [`PricingRuleListElement`](crate::model::PricingRuleListElement).
-    pub fn builder() -> crate::model::pricing_rule_list_element::Builder {
-        crate::model::pricing_rule_list_element::Builder::default()
-    }
-}
 
 /// <p> The set of tiering configurations for the pricing rule. </p>
 #[non_exhaustive]
@@ -720,6 +722,13 @@ impl Tiering {
         self.free_tier.as_ref()
     }
 }
+impl Tiering {
+    /// Creates a new builder-style object to manufacture [`Tiering`](crate::model::Tiering).
+    pub fn builder() -> crate::model::tiering::Builder {
+        crate::model::tiering::Builder::default()
+    }
+}
+
 /// See [`Tiering`](crate::model::Tiering).
 pub mod tiering {
     
@@ -750,12 +759,6 @@ pub mod tiering {
     
     
 }
-impl Tiering {
-    /// Creates a new builder-style object to manufacture [`Tiering`](crate::model::Tiering).
-    pub fn builder() -> crate::model::tiering::Builder {
-        crate::model::tiering::Builder::default()
-    }
-}
 
 /// <p> The possible Amazon Web Services Free Tier configurations. </p>
 #[non_exhaustive]
@@ -771,6 +774,13 @@ impl FreeTierConfig {
         self.activated
     }
 }
+impl FreeTierConfig {
+    /// Creates a new builder-style object to manufacture [`FreeTierConfig`](crate::model::FreeTierConfig).
+    pub fn builder() -> crate::model::free_tier_config::Builder {
+        crate::model::free_tier_config::Builder::default()
+    }
+}
+
 /// See [`FreeTierConfig`](crate::model::FreeTierConfig).
 pub mod free_tier_config {
     
@@ -800,12 +810,6 @@ pub mod free_tier_config {
     }
     
     
-}
-impl FreeTierConfig {
-    /// Creates a new builder-style object to manufacture [`FreeTierConfig`](crate::model::FreeTierConfig).
-    pub fn builder() -> crate::model::free_tier_config::Builder {
-        crate::model::free_tier_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PricingRuleType`, it is important to ensure
@@ -996,6 +1000,13 @@ impl ListPricingRulesFilter {
         self.arns.as_deref()
     }
 }
+impl ListPricingRulesFilter {
+    /// Creates a new builder-style object to manufacture [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
+    pub fn builder() -> crate::model::list_pricing_rules_filter::Builder {
+        crate::model::list_pricing_rules_filter::Builder::default()
+    }
+}
+
 /// See [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
 pub mod list_pricing_rules_filter {
     
@@ -1031,12 +1042,6 @@ pub mod list_pricing_rules_filter {
     }
     
     
-}
-impl ListPricingRulesFilter {
-    /// Creates a new builder-style object to manufacture [`ListPricingRulesFilter`](crate::model::ListPricingRulesFilter).
-    pub fn builder() -> crate::model::list_pricing_rules_filter::Builder {
-        crate::model::list_pricing_rules_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConflictExceptionReason`, it is important to ensure
@@ -1150,6 +1155,13 @@ impl CreateTieringInput {
         self.free_tier.as_ref()
     }
 }
+impl CreateTieringInput {
+    /// Creates a new builder-style object to manufacture [`CreateTieringInput`](crate::model::CreateTieringInput).
+    pub fn builder() -> crate::model::create_tiering_input::Builder {
+        crate::model::create_tiering_input::Builder::default()
+    }
+}
+
 /// See [`CreateTieringInput`](crate::model::CreateTieringInput).
 pub mod create_tiering_input {
     
@@ -1180,12 +1192,6 @@ pub mod create_tiering_input {
     
     
 }
-impl CreateTieringInput {
-    /// Creates a new builder-style object to manufacture [`CreateTieringInput`](crate::model::CreateTieringInput).
-    pub fn builder() -> crate::model::create_tiering_input::Builder {
-        crate::model::create_tiering_input::Builder::default()
-    }
-}
 
 /// <p> The possible Amazon Web Services Free Tier configurations. </p>
 #[non_exhaustive]
@@ -1201,6 +1207,13 @@ impl CreateFreeTierConfig {
         self.activated
     }
 }
+impl CreateFreeTierConfig {
+    /// Creates a new builder-style object to manufacture [`CreateFreeTierConfig`](crate::model::CreateFreeTierConfig).
+    pub fn builder() -> crate::model::create_free_tier_config::Builder {
+        crate::model::create_free_tier_config::Builder::default()
+    }
+}
+
 /// See [`CreateFreeTierConfig`](crate::model::CreateFreeTierConfig).
 pub mod create_free_tier_config {
     
@@ -1231,12 +1244,6 @@ pub mod create_free_tier_config {
     
     
 }
-impl CreateFreeTierConfig {
-    /// Creates a new builder-style object to manufacture [`CreateFreeTierConfig`](crate::model::CreateFreeTierConfig).
-    pub fn builder() -> crate::model::create_free_tier_config::Builder {
-        crate::model::create_free_tier_config::Builder::default()
-    }
-}
 
 /// <p> The set of tiering configurations for the pricing rule. </p>
 #[non_exhaustive]
@@ -1252,6 +1259,13 @@ impl UpdateTieringInput {
         self.free_tier.as_ref()
     }
 }
+impl UpdateTieringInput {
+    /// Creates a new builder-style object to manufacture [`UpdateTieringInput`](crate::model::UpdateTieringInput).
+    pub fn builder() -> crate::model::update_tiering_input::Builder {
+        crate::model::update_tiering_input::Builder::default()
+    }
+}
+
 /// See [`UpdateTieringInput`](crate::model::UpdateTieringInput).
 pub mod update_tiering_input {
     
@@ -1282,12 +1296,6 @@ pub mod update_tiering_input {
     
     
 }
-impl UpdateTieringInput {
-    /// Creates a new builder-style object to manufacture [`UpdateTieringInput`](crate::model::UpdateTieringInput).
-    pub fn builder() -> crate::model::update_tiering_input::Builder {
-        crate::model::update_tiering_input::Builder::default()
-    }
-}
 
 /// <p> The possible Amazon Web Services Free Tier configurations. </p>
 #[non_exhaustive]
@@ -1303,6 +1311,13 @@ impl UpdateFreeTierConfig {
         self.activated
     }
 }
+impl UpdateFreeTierConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateFreeTierConfig`](crate::model::UpdateFreeTierConfig).
+    pub fn builder() -> crate::model::update_free_tier_config::Builder {
+        crate::model::update_free_tier_config::Builder::default()
+    }
+}
+
 /// See [`UpdateFreeTierConfig`](crate::model::UpdateFreeTierConfig).
 pub mod update_free_tier_config {
     
@@ -1332,12 +1347,6 @@ pub mod update_free_tier_config {
     }
     
     
-}
-impl UpdateFreeTierConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateFreeTierConfig`](crate::model::UpdateFreeTierConfig).
-    pub fn builder() -> crate::model::update_free_tier_config::Builder {
-        crate::model::update_free_tier_config::Builder::default()
-    }
 }
 
 /// <p>A representation of a pricing plan. </p>
@@ -1401,6 +1410,13 @@ impl  std::fmt::Debug for PricingPlanListElement  {
         formatter.finish()
     }
 }
+impl PricingPlanListElement {
+    /// Creates a new builder-style object to manufacture [`PricingPlanListElement`](crate::model::PricingPlanListElement).
+    pub fn builder() -> crate::model::pricing_plan_list_element::Builder {
+        crate::model::pricing_plan_list_element::Builder::default()
+    }
+}
+
 /// See [`PricingPlanListElement`](crate::model::PricingPlanListElement).
 pub mod pricing_plan_list_element {
     
@@ -1506,12 +1522,6 @@ pub mod pricing_plan_list_element {
     
     
 }
-impl PricingPlanListElement {
-    /// Creates a new builder-style object to manufacture [`PricingPlanListElement`](crate::model::PricingPlanListElement).
-    pub fn builder() -> crate::model::pricing_plan_list_element::Builder {
-        crate::model::pricing_plan_list_element::Builder::default()
-    }
-}
 
 /// <p>The filter that specifies the Amazon Resource Names (ARNs) of pricing plans, to retrieve pricing plan information. </p>
 #[non_exhaustive]
@@ -1527,6 +1537,13 @@ impl ListPricingPlansFilter {
         self.arns.as_deref()
     }
 }
+impl ListPricingPlansFilter {
+    /// Creates a new builder-style object to manufacture [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
+    pub fn builder() -> crate::model::list_pricing_plans_filter::Builder {
+        crate::model::list_pricing_plans_filter::Builder::default()
+    }
+}
+
 /// See [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
 pub mod list_pricing_plans_filter {
     
@@ -1563,12 +1580,6 @@ pub mod list_pricing_plans_filter {
     
     
 }
-impl ListPricingPlansFilter {
-    /// Creates a new builder-style object to manufacture [`ListPricingPlansFilter`](crate::model::ListPricingPlansFilter).
-    pub fn builder() -> crate::model::list_pricing_plans_filter::Builder {
-        crate::model::list_pricing_plans_filter::Builder::default()
-    }
-}
 
 /// <p> A representation of a resource association for a custom line item. </p>
 #[non_exhaustive]
@@ -1598,6 +1609,13 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
         self.end_billing_period.as_deref()
     }
 }
+impl ListResourcesAssociatedToCustomLineItemResponseElement {
+    /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
+    pub fn builder() -> crate::model::list_resources_associated_to_custom_line_item_response_element::Builder {
+        crate::model::list_resources_associated_to_custom_line_item_response_element::Builder::default()
+    }
+}
+
 /// See [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
 pub mod list_resources_associated_to_custom_line_item_response_element {
     
@@ -1651,12 +1669,6 @@ pub mod list_resources_associated_to_custom_line_item_response_element {
     }
     
     
-}
-impl ListResourcesAssociatedToCustomLineItemResponseElement {
-    /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::model::ListResourcesAssociatedToCustomLineItemResponseElement).
-    pub fn builder() -> crate::model::list_resources_associated_to_custom_line_item_response_element::Builder {
-        crate::model::list_resources_associated_to_custom_line_item_response_element::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomLineItemRelationship`, it is important to ensure
@@ -1755,6 +1767,13 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
         self.relationship.as_ref()
     }
 }
+impl ListResourcesAssociatedToCustomLineItemFilter {
+    /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
+    pub fn builder() -> crate::model::list_resources_associated_to_custom_line_item_filter::Builder {
+        crate::model::list_resources_associated_to_custom_line_item_filter::Builder::default()
+    }
+}
+
 /// See [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
 pub mod list_resources_associated_to_custom_line_item_filter {
     
@@ -1784,12 +1803,6 @@ pub mod list_resources_associated_to_custom_line_item_filter {
     }
     
     
-}
-impl ListResourcesAssociatedToCustomLineItemFilter {
-    /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemFilter`](crate::model::ListResourcesAssociatedToCustomLineItemFilter).
-    pub fn builder() -> crate::model::list_resources_associated_to_custom_line_item_filter::Builder {
-        crate::model::list_resources_associated_to_custom_line_item_filter::Builder::default()
-    }
 }
 
 /// <p>A representation of a custom line item version.</p>
@@ -1893,6 +1906,13 @@ impl  std::fmt::Debug for CustomLineItemVersionListElement  {
         formatter.finish()
     }
 }
+impl CustomLineItemVersionListElement {
+    /// Creates a new builder-style object to manufacture [`CustomLineItemVersionListElement`](crate::model::CustomLineItemVersionListElement).
+    pub fn builder() -> crate::model::custom_line_item_version_list_element::Builder {
+        crate::model::custom_line_item_version_list_element::Builder::default()
+    }
+}
+
 /// See [`CustomLineItemVersionListElement`](crate::model::CustomLineItemVersionListElement).
 pub mod custom_line_item_version_list_element {
     
@@ -2063,12 +2083,6 @@ pub mod custom_line_item_version_list_element {
     
     
 }
-impl CustomLineItemVersionListElement {
-    /// Creates a new builder-style object to manufacture [`CustomLineItemVersionListElement`](crate::model::CustomLineItemVersionListElement).
-    pub fn builder() -> crate::model::custom_line_item_version_list_element::Builder {
-        crate::model::custom_line_item_version_list_element::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CurrencyCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2180,6 +2194,13 @@ impl ListCustomLineItemChargeDetails {
         self.r#type.as_ref()
     }
 }
+impl ListCustomLineItemChargeDetails {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
+    pub fn builder() -> crate::model::list_custom_line_item_charge_details::Builder {
+        crate::model::list_custom_line_item_charge_details::Builder::default()
+    }
+}
+
 /// See [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
 pub mod list_custom_line_item_charge_details {
     
@@ -2233,12 +2254,6 @@ pub mod list_custom_line_item_charge_details {
     }
     
     
-}
-impl ListCustomLineItemChargeDetails {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemChargeDetails`](crate::model::ListCustomLineItemChargeDetails).
-    pub fn builder() -> crate::model::list_custom_line_item_charge_details::Builder {
-        crate::model::list_custom_line_item_charge_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomLineItemType`, it is important to ensure
@@ -2337,6 +2352,13 @@ impl ListCustomLineItemPercentageChargeDetails {
         self.percentage_value
     }
 }
+impl ListCustomLineItemPercentageChargeDetails {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
+    pub fn builder() -> crate::model::list_custom_line_item_percentage_charge_details::Builder {
+        crate::model::list_custom_line_item_percentage_charge_details::Builder::default()
+    }
+}
+
 /// See [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
 pub mod list_custom_line_item_percentage_charge_details {
     
@@ -2367,12 +2389,6 @@ pub mod list_custom_line_item_percentage_charge_details {
     
     
 }
-impl ListCustomLineItemPercentageChargeDetails {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemPercentageChargeDetails`](crate::model::ListCustomLineItemPercentageChargeDetails).
-    pub fn builder() -> crate::model::list_custom_line_item_percentage_charge_details::Builder {
-        crate::model::list_custom_line_item_percentage_charge_details::Builder::default()
-    }
-}
 
 /// <p> A representation of the charge details that are associated with a flat custom line item. </p>
 #[non_exhaustive]
@@ -2388,6 +2404,13 @@ impl ListCustomLineItemFlatChargeDetails {
         self.charge_value
     }
 }
+impl ListCustomLineItemFlatChargeDetails {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
+    pub fn builder() -> crate::model::list_custom_line_item_flat_charge_details::Builder {
+        crate::model::list_custom_line_item_flat_charge_details::Builder::default()
+    }
+}
+
 /// See [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
 pub mod list_custom_line_item_flat_charge_details {
     
@@ -2418,12 +2441,6 @@ pub mod list_custom_line_item_flat_charge_details {
     
     
 }
-impl ListCustomLineItemFlatChargeDetails {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemFlatChargeDetails`](crate::model::ListCustomLineItemFlatChargeDetails).
-    pub fn builder() -> crate::model::list_custom_line_item_flat_charge_details::Builder {
-        crate::model::list_custom_line_item_flat_charge_details::Builder::default()
-    }
-}
 
 /// <p>A filter that specifies the billing period range where the custom line item versions reside.</p>
 #[non_exhaustive]
@@ -2439,6 +2456,13 @@ impl ListCustomLineItemVersionsFilter {
         self.billing_period_range.as_ref()
     }
 }
+impl ListCustomLineItemVersionsFilter {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsFilter`](crate::model::ListCustomLineItemVersionsFilter).
+    pub fn builder() -> crate::model::list_custom_line_item_versions_filter::Builder {
+        crate::model::list_custom_line_item_versions_filter::Builder::default()
+    }
+}
+
 /// See [`ListCustomLineItemVersionsFilter`](crate::model::ListCustomLineItemVersionsFilter).
 pub mod list_custom_line_item_versions_filter {
     
@@ -2469,12 +2493,6 @@ pub mod list_custom_line_item_versions_filter {
     
     
 }
-impl ListCustomLineItemVersionsFilter {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsFilter`](crate::model::ListCustomLineItemVersionsFilter).
-    pub fn builder() -> crate::model::list_custom_line_item_versions_filter::Builder {
-        crate::model::list_custom_line_item_versions_filter::Builder::default()
-    }
-}
 
 /// <p>A billing period filter that specifies the custom line item versions to retrieve.</p>
 #[non_exhaustive]
@@ -2497,6 +2515,13 @@ impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
         self.end_billing_period.as_deref()
     }
 }
+impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::model::ListCustomLineItemVersionsBillingPeriodRangeFilter).
+    pub fn builder() -> crate::model::list_custom_line_item_versions_billing_period_range_filter::Builder {
+        crate::model::list_custom_line_item_versions_billing_period_range_filter::Builder::default()
+    }
+}
+
 /// See [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::model::ListCustomLineItemVersionsBillingPeriodRangeFilter).
 pub mod list_custom_line_item_versions_billing_period_range_filter {
     
@@ -2539,12 +2564,6 @@ pub mod list_custom_line_item_versions_billing_period_range_filter {
     
     
 }
-impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::model::ListCustomLineItemVersionsBillingPeriodRangeFilter).
-    pub fn builder() -> crate::model::list_custom_line_item_versions_billing_period_range_filter::Builder {
-        crate::model::list_custom_line_item_versions_billing_period_range_filter::Builder::default()
-    }
-}
 
 /// <p> A resource disassociation result for a percentage custom line item. </p>
 #[non_exhaustive]
@@ -2567,6 +2586,13 @@ impl DisassociateResourceResponseElement {
         self.error.as_ref()
     }
 }
+impl DisassociateResourceResponseElement {
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
+    pub fn builder() -> crate::model::disassociate_resource_response_element::Builder {
+        crate::model::disassociate_resource_response_element::Builder::default()
+    }
+}
+
 /// See [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
 pub mod disassociate_resource_response_element {
     
@@ -2609,12 +2635,6 @@ pub mod disassociate_resource_response_element {
     
     
 }
-impl DisassociateResourceResponseElement {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceResponseElement`](crate::model::DisassociateResourceResponseElement).
-    pub fn builder() -> crate::model::disassociate_resource_response_element::Builder {
-        crate::model::disassociate_resource_response_element::Builder::default()
-    }
-}
 
 /// <p> A representation of a resource association error. </p>
 #[non_exhaustive]
@@ -2637,6 +2657,13 @@ impl AssociateResourceError {
         self.reason.as_ref()
     }
 }
+impl AssociateResourceError {
+    /// Creates a new builder-style object to manufacture [`AssociateResourceError`](crate::model::AssociateResourceError).
+    pub fn builder() -> crate::model::associate_resource_error::Builder {
+        crate::model::associate_resource_error::Builder::default()
+    }
+}
+
 /// See [`AssociateResourceError`](crate::model::AssociateResourceError).
 pub mod associate_resource_error {
     
@@ -2678,12 +2705,6 @@ pub mod associate_resource_error {
     }
     
     
-}
-impl AssociateResourceError {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceError`](crate::model::AssociateResourceError).
-    pub fn builder() -> crate::model::associate_resource_error::Builder {
-        crate::model::associate_resource_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssociateResourceErrorReason`, it is important to ensure
@@ -2804,6 +2825,13 @@ impl CustomLineItemBillingPeriodRange {
         self.exclusive_end_billing_period.as_deref()
     }
 }
+impl CustomLineItemBillingPeriodRange {
+    /// Creates a new builder-style object to manufacture [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
+    pub fn builder() -> crate::model::custom_line_item_billing_period_range::Builder {
+        crate::model::custom_line_item_billing_period_range::Builder::default()
+    }
+}
+
 /// See [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
 pub mod custom_line_item_billing_period_range {
     
@@ -2846,12 +2874,6 @@ pub mod custom_line_item_billing_period_range {
     
     
 }
-impl CustomLineItemBillingPeriodRange {
-    /// Creates a new builder-style object to manufacture [`CustomLineItemBillingPeriodRange`](crate::model::CustomLineItemBillingPeriodRange).
-    pub fn builder() -> crate::model::custom_line_item_billing_period_range::Builder {
-        crate::model::custom_line_item_billing_period_range::Builder::default()
-    }
-}
 
 /// <p> A resource association result for a percentage custom line item. </p>
 #[non_exhaustive]
@@ -2874,6 +2896,13 @@ impl AssociateResourceResponseElement {
         self.error.as_ref()
     }
 }
+impl AssociateResourceResponseElement {
+    /// Creates a new builder-style object to manufacture [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
+    pub fn builder() -> crate::model::associate_resource_response_element::Builder {
+        crate::model::associate_resource_response_element::Builder::default()
+    }
+}
+
 /// See [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
 pub mod associate_resource_response_element {
     
@@ -2915,12 +2944,6 @@ pub mod associate_resource_response_element {
     }
     
     
-}
-impl AssociateResourceResponseElement {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceResponseElement`](crate::model::AssociateResourceResponseElement).
-    pub fn builder() -> crate::model::associate_resource_response_element::Builder {
-        crate::model::associate_resource_response_element::Builder::default()
-    }
 }
 
 /// <p> A representation of a custom line item. </p>
@@ -3016,6 +3039,13 @@ impl  std::fmt::Debug for CustomLineItemListElement  {
         formatter.finish()
     }
 }
+impl CustomLineItemListElement {
+    /// Creates a new builder-style object to manufacture [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
+    pub fn builder() -> crate::model::custom_line_item_list_element::Builder {
+        crate::model::custom_line_item_list_element::Builder::default()
+    }
+}
+
 /// See [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
 pub mod custom_line_item_list_element {
     
@@ -3173,12 +3203,6 @@ pub mod custom_line_item_list_element {
     
     
 }
-impl CustomLineItemListElement {
-    /// Creates a new builder-style object to manufacture [`CustomLineItemListElement`](crate::model::CustomLineItemListElement).
-    pub fn builder() -> crate::model::custom_line_item_list_element::Builder {
-        crate::model::custom_line_item_list_element::Builder::default()
-    }
-}
 
 /// <p> A filter that specifies the custom line items and billing groups to retrieve FFLI information. </p>
 #[non_exhaustive]
@@ -3208,6 +3232,13 @@ impl ListCustomLineItemsFilter {
         self.arns.as_deref()
     }
 }
+impl ListCustomLineItemsFilter {
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
+    pub fn builder() -> crate::model::list_custom_line_items_filter::Builder {
+        crate::model::list_custom_line_items_filter::Builder::default()
+    }
+}
+
 /// See [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
 pub mod list_custom_line_items_filter {
     
@@ -3280,12 +3311,6 @@ pub mod list_custom_line_items_filter {
     
     
 }
-impl ListCustomLineItemsFilter {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemsFilter`](crate::model::ListCustomLineItemsFilter).
-    pub fn builder() -> crate::model::list_custom_line_items_filter::Builder {
-        crate::model::list_custom_line_items_filter::Builder::default()
-    }
-}
 
 /// <p> The charge details of a custom line item. It should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
@@ -3315,6 +3340,13 @@ impl CustomLineItemChargeDetails {
         self.r#type.as_ref()
     }
 }
+impl CustomLineItemChargeDetails {
+    /// Creates a new builder-style object to manufacture [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
+    pub fn builder() -> crate::model::custom_line_item_charge_details::Builder {
+        crate::model::custom_line_item_charge_details::Builder::default()
+    }
+}
+
 /// See [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
 pub mod custom_line_item_charge_details {
     
@@ -3369,12 +3401,6 @@ pub mod custom_line_item_charge_details {
     
     
 }
-impl CustomLineItemChargeDetails {
-    /// Creates a new builder-style object to manufacture [`CustomLineItemChargeDetails`](crate::model::CustomLineItemChargeDetails).
-    pub fn builder() -> crate::model::custom_line_item_charge_details::Builder {
-        crate::model::custom_line_item_charge_details::Builder::default()
-    }
-}
 
 /// <p> A representation of the charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
@@ -3397,6 +3423,13 @@ impl CustomLineItemPercentageChargeDetails {
         self.associated_values.as_deref()
     }
 }
+impl CustomLineItemPercentageChargeDetails {
+    /// Creates a new builder-style object to manufacture [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
+    pub fn builder() -> crate::model::custom_line_item_percentage_charge_details::Builder {
+        crate::model::custom_line_item_percentage_charge_details::Builder::default()
+    }
+}
+
 /// See [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
 pub mod custom_line_item_percentage_charge_details {
     
@@ -3445,12 +3478,6 @@ pub mod custom_line_item_percentage_charge_details {
     
     
 }
-impl CustomLineItemPercentageChargeDetails {
-    /// Creates a new builder-style object to manufacture [`CustomLineItemPercentageChargeDetails`](crate::model::CustomLineItemPercentageChargeDetails).
-    pub fn builder() -> crate::model::custom_line_item_percentage_charge_details::Builder {
-        crate::model::custom_line_item_percentage_charge_details::Builder::default()
-    }
-}
 
 /// <p> A representation of the charge details that are associated with a flat custom line item. </p>
 #[non_exhaustive]
@@ -3466,6 +3493,13 @@ impl CustomLineItemFlatChargeDetails {
         self.charge_value
     }
 }
+impl CustomLineItemFlatChargeDetails {
+    /// Creates a new builder-style object to manufacture [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
+    pub fn builder() -> crate::model::custom_line_item_flat_charge_details::Builder {
+        crate::model::custom_line_item_flat_charge_details::Builder::default()
+    }
+}
+
 /// See [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
 pub mod custom_line_item_flat_charge_details {
     
@@ -3496,12 +3530,6 @@ pub mod custom_line_item_flat_charge_details {
     
     
 }
-impl CustomLineItemFlatChargeDetails {
-    /// Creates a new builder-style object to manufacture [`CustomLineItemFlatChargeDetails`](crate::model::CustomLineItemFlatChargeDetails).
-    pub fn builder() -> crate::model::custom_line_item_flat_charge_details::Builder {
-        crate::model::custom_line_item_flat_charge_details::Builder::default()
-    }
-}
 
 /// <p> A representation of the new charge details of a custom line item. This should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
@@ -3524,6 +3552,13 @@ impl UpdateCustomLineItemChargeDetails {
         self.percentage.as_ref()
     }
 }
+impl UpdateCustomLineItemChargeDetails {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
+    pub fn builder() -> crate::model::update_custom_line_item_charge_details::Builder {
+        crate::model::update_custom_line_item_charge_details::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
 pub mod update_custom_line_item_charge_details {
     
@@ -3566,12 +3601,6 @@ pub mod update_custom_line_item_charge_details {
     
     
 }
-impl UpdateCustomLineItemChargeDetails {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemChargeDetails`](crate::model::UpdateCustomLineItemChargeDetails).
-    pub fn builder() -> crate::model::update_custom_line_item_charge_details::Builder {
-        crate::model::update_custom_line_item_charge_details::Builder::default()
-    }
-}
 
 /// <p> A representation of the new charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
@@ -3587,6 +3616,13 @@ impl UpdateCustomLineItemPercentageChargeDetails {
         self.percentage_value
     }
 }
+impl UpdateCustomLineItemPercentageChargeDetails {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
+    pub fn builder() -> crate::model::update_custom_line_item_percentage_charge_details::Builder {
+        crate::model::update_custom_line_item_percentage_charge_details::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
 pub mod update_custom_line_item_percentage_charge_details {
     
@@ -3617,12 +3653,6 @@ pub mod update_custom_line_item_percentage_charge_details {
     
     
 }
-impl UpdateCustomLineItemPercentageChargeDetails {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemPercentageChargeDetails`](crate::model::UpdateCustomLineItemPercentageChargeDetails).
-    pub fn builder() -> crate::model::update_custom_line_item_percentage_charge_details::Builder {
-        crate::model::update_custom_line_item_percentage_charge_details::Builder::default()
-    }
-}
 
 /// <p> A representation of the new charge details that are associated with a flat custom line item. </p>
 #[non_exhaustive]
@@ -3638,6 +3668,13 @@ impl UpdateCustomLineItemFlatChargeDetails {
         self.charge_value
     }
 }
+impl UpdateCustomLineItemFlatChargeDetails {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
+    pub fn builder() -> crate::model::update_custom_line_item_flat_charge_details::Builder {
+        crate::model::update_custom_line_item_flat_charge_details::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
 pub mod update_custom_line_item_flat_charge_details {
     
@@ -3667,12 +3704,6 @@ pub mod update_custom_line_item_flat_charge_details {
     }
     
     
-}
-impl UpdateCustomLineItemFlatChargeDetails {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemFlatChargeDetails`](crate::model::UpdateCustomLineItemFlatChargeDetails).
-    pub fn builder() -> crate::model::update_custom_line_item_flat_charge_details::Builder {
-        crate::model::update_custom_line_item_flat_charge_details::Builder::default()
-    }
 }
 
 /// <p>A representation of a billing group. </p>
@@ -3768,6 +3799,13 @@ impl  std::fmt::Debug for BillingGroupListElement  {
         formatter.finish()
     }
 }
+impl BillingGroupListElement {
+    /// Creates a new builder-style object to manufacture [`BillingGroupListElement`](crate::model::BillingGroupListElement).
+    pub fn builder() -> crate::model::billing_group_list_element::Builder {
+        crate::model::billing_group_list_element::Builder::default()
+    }
+}
+
 /// See [`BillingGroupListElement`](crate::model::BillingGroupListElement).
 pub mod billing_group_list_element {
     
@@ -3925,12 +3963,6 @@ pub mod billing_group_list_element {
     
     
 }
-impl BillingGroupListElement {
-    /// Creates a new builder-style object to manufacture [`BillingGroupListElement`](crate::model::BillingGroupListElement).
-    pub fn builder() -> crate::model::billing_group_list_element::Builder {
-        crate::model::billing_group_list_element::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BillingGroupStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4028,6 +4060,13 @@ impl ComputationPreference {
         self.pricing_plan_arn.as_deref()
     }
 }
+impl ComputationPreference {
+    /// Creates a new builder-style object to manufacture [`ComputationPreference`](crate::model::ComputationPreference).
+    pub fn builder() -> crate::model::computation_preference::Builder {
+        crate::model::computation_preference::Builder::default()
+    }
+}
+
 /// See [`ComputationPreference`](crate::model::ComputationPreference).
 pub mod computation_preference {
     
@@ -4058,12 +4097,6 @@ pub mod computation_preference {
     
     
 }
-impl ComputationPreference {
-    /// Creates a new builder-style object to manufacture [`ComputationPreference`](crate::model::ComputationPreference).
-    pub fn builder() -> crate::model::computation_preference::Builder {
-        crate::model::computation_preference::Builder::default()
-    }
-}
 
 /// <p>The filter that specifies the billing groups and pricing plans to retrieve billing group information. </p>
 #[non_exhaustive]
@@ -4086,6 +4119,13 @@ impl ListBillingGroupsFilter {
         self.pricing_plan.as_deref()
     }
 }
+impl ListBillingGroupsFilter {
+    /// Creates a new builder-style object to manufacture [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
+    pub fn builder() -> crate::model::list_billing_groups_filter::Builder {
+        crate::model::list_billing_groups_filter::Builder::default()
+    }
+}
+
 /// See [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
 pub mod list_billing_groups_filter {
     
@@ -4134,12 +4174,6 @@ pub mod list_billing_groups_filter {
     
     
 }
-impl ListBillingGroupsFilter {
-    /// Creates a new builder-style object to manufacture [`ListBillingGroupsFilter`](crate::model::ListBillingGroupsFilter).
-    pub fn builder() -> crate::model::list_billing_groups_filter::Builder {
-        crate::model::list_billing_groups_filter::Builder::default()
-    }
-}
 
 /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
 #[non_exhaustive]
@@ -4155,6 +4189,13 @@ impl AccountGrouping {
         self.linked_account_ids.as_deref()
     }
 }
+impl AccountGrouping {
+    /// Creates a new builder-style object to manufacture [`AccountGrouping`](crate::model::AccountGrouping).
+    pub fn builder() -> crate::model::account_grouping::Builder {
+        crate::model::account_grouping::Builder::default()
+    }
+}
+
 /// See [`AccountGrouping`](crate::model::AccountGrouping).
 pub mod account_grouping {
     
@@ -4190,12 +4231,6 @@ pub mod account_grouping {
     }
     
     
-}
-impl AccountGrouping {
-    /// Creates a new builder-style object to manufacture [`AccountGrouping`](crate::model::AccountGrouping).
-    pub fn builder() -> crate::model::account_grouping::Builder {
-        crate::model::account_grouping::Builder::default()
-    }
 }
 
 /// <p>A summary report of actual Amazon Web Services charges and calculated Amazon Web Services charges, based on the associated pricing plan of a billing group. </p>
@@ -4247,6 +4282,13 @@ impl BillingGroupCostReportElement {
         self.currency.as_deref()
     }
 }
+impl BillingGroupCostReportElement {
+    /// Creates a new builder-style object to manufacture [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
+    pub fn builder() -> crate::model::billing_group_cost_report_element::Builder {
+        crate::model::billing_group_cost_report_element::Builder::default()
+    }
+}
+
 /// See [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
 pub mod billing_group_cost_report_element {
     
@@ -4337,12 +4379,6 @@ pub mod billing_group_cost_report_element {
     
     
 }
-impl BillingGroupCostReportElement {
-    /// Creates a new builder-style object to manufacture [`BillingGroupCostReportElement`](crate::model::BillingGroupCostReportElement).
-    pub fn builder() -> crate::model::billing_group_cost_report_element::Builder {
-        crate::model::billing_group_cost_report_element::Builder::default()
-    }
-}
 
 /// <p>The filter used to retrieve specific <code>BillingGroupCostReportElements</code>. </p>
 #[non_exhaustive]
@@ -4358,6 +4394,13 @@ impl ListBillingGroupCostReportsFilter {
         self.billing_group_arns.as_deref()
     }
 }
+impl ListBillingGroupCostReportsFilter {
+    /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
+    pub fn builder() -> crate::model::list_billing_group_cost_reports_filter::Builder {
+        crate::model::list_billing_group_cost_reports_filter::Builder::default()
+    }
+}
+
 /// See [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
 pub mod list_billing_group_cost_reports_filter {
     
@@ -4393,12 +4436,6 @@ pub mod list_billing_group_cost_reports_filter {
     }
     
     
-}
-impl ListBillingGroupCostReportsFilter {
-    /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsFilter`](crate::model::ListBillingGroupCostReportsFilter).
-    pub fn builder() -> crate::model::list_billing_group_cost_reports_filter::Builder {
-        crate::model::list_billing_group_cost_reports_filter::Builder::default()
-    }
 }
 
 /// <p> A representation of a linked account. </p>
@@ -4446,6 +4483,13 @@ impl  std::fmt::Debug for AccountAssociationsListElement  {
         formatter.finish()
     }
 }
+impl AccountAssociationsListElement {
+    /// Creates a new builder-style object to manufacture [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
+    pub fn builder() -> crate::model::account_associations_list_element::Builder {
+        crate::model::account_associations_list_element::Builder::default()
+    }
+}
+
 /// See [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
 pub mod account_associations_list_element {
     
@@ -4522,12 +4566,6 @@ pub mod account_associations_list_element {
     
     
 }
-impl AccountAssociationsListElement {
-    /// Creates a new builder-style object to manufacture [`AccountAssociationsListElement`](crate::model::AccountAssociationsListElement).
-    pub fn builder() -> crate::model::account_associations_list_element::Builder {
-        crate::model::account_associations_list_element::Builder::default()
-    }
-}
 
 /// <p>The filter on the account ID of the linked account, or any of the following:</p> 
 /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p> 
@@ -4557,6 +4595,13 @@ impl ListAccountAssociationsFilter {
         self.account_id.as_deref()
     }
 }
+impl ListAccountAssociationsFilter {
+    /// Creates a new builder-style object to manufacture [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).
+    pub fn builder() -> crate::model::list_account_associations_filter::Builder {
+        crate::model::list_account_associations_filter::Builder::default()
+    }
+}
+
 /// See [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).
 pub mod list_account_associations_filter {
     
@@ -4602,11 +4647,5 @@ pub mod list_account_associations_filter {
     }
     
     
-}
-impl ListAccountAssociationsFilter {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssociationsFilter`](crate::model::ListAccountAssociationsFilter).
-    pub fn builder() -> crate::model::list_account_associations_filter::Builder {
-        crate::model::list_account_associations_filter::Builder::default()
-    }
 }
 

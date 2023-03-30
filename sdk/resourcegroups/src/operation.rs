@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_group`](crate::client::Client::create_group).
             ///
-            /// See [`crate::client::fluent_builders::CreateGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGroup {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_group`](crate::client::Client::delete_group).
             ///
-            /// See [`crate::client::fluent_builders::DeleteGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGroup {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_account_settings`](crate::client::Client::get_account_settings).
             ///
-            /// See [`crate::client::fluent_builders::GetAccountSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAccountSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountSettings {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_group`](crate::client::Client::get_group).
             ///
-            /// See [`crate::client::fluent_builders::GetGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroup {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_group_configuration`](crate::client::Client::get_group_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetGroupConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGroupConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroupConfiguration {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupConfiguration {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_group_query`](crate::client::Client::get_group_query).
             ///
-            /// See [`crate::client::fluent_builders::GetGroupQuery`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetGroupQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroupQuery {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupQuery {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_tags`](crate::client::Client::get_tags).
             ///
-            /// See [`crate::client::fluent_builders::GetTags`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTags {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTags {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`group_resources`](crate::client::Client::group_resources).
             ///
-            /// See [`crate::client::fluent_builders::GroupResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GroupResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GroupResources {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GroupResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_group_resources`](crate::client::Client::list_group_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListGroupResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGroupResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGroupResources {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_groups`](crate::client::Client::list_groups).
             ///
-            /// See [`crate::client::fluent_builders::ListGroups`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGroups {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_group_configuration`](crate::client::Client::put_group_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutGroupConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutGroupConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutGroupConfiguration {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGroupConfiguration {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`search_resources`](crate::client::Client::search_resources).
             ///
-            /// See [`crate::client::fluent_builders::SearchResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SearchResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchResources {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag`](crate::client::Client::tag).
             ///
-            /// See [`crate::client::fluent_builders::Tag`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `Tag`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Tag {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Tag {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`ungroup_resources`](crate::client::Client::ungroup_resources).
             ///
-            /// See [`crate::client::fluent_builders::UngroupResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UngroupResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UngroupResources {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UngroupResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag`](crate::client::Client::untag).
             ///
-            /// See [`crate::client::fluent_builders::Untag`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `Untag`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Untag {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Untag {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_account_settings`](crate::client::Client::update_account_settings).
             ///
-            /// See [`crate::client::fluent_builders::UpdateAccountSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateAccountSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccountSettings {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_group`](crate::client::Client::update_group).
             ///
-            /// See [`crate::client::fluent_builders::UpdateGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGroup {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_group_query`](crate::client::Client::update_group_query).
             ///
-            /// See [`crate::client::fluent_builders::UpdateGroupQuery`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateGroupQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGroupQuery {
     _private: ()

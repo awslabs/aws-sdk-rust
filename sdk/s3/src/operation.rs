@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`abort_multipart_upload`](crate::client::Client::abort_multipart_upload).
             ///
-            /// See [`crate::client::fluent_builders::AbortMultipartUpload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AbortMultipartUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AbortMultipartUpload {
     _private: ()
@@ -37,7 +37,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`complete_multipart_upload`](crate::client::Client::complete_multipart_upload).
             ///
-            /// See [`crate::client::fluent_builders::CompleteMultipartUpload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CompleteMultipartUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CompleteMultipartUpload {
     _private: ()
@@ -70,7 +70,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`copy_object`](crate::client::Client::copy_object).
             ///
-            /// See [`crate::client::fluent_builders::CopyObject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CopyObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CopyObject {
     _private: ()
@@ -103,7 +103,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_bucket`](crate::client::Client::create_bucket).
             ///
-            /// See [`crate::client::fluent_builders::CreateBucket`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBucket {
     _private: ()
@@ -136,7 +136,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_multipart_upload`](crate::client::Client::create_multipart_upload).
             ///
-            /// See [`crate::client::fluent_builders::CreateMultipartUpload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateMultipartUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMultipartUpload {
     _private: ()
@@ -208,7 +208,7 @@ mod create_multipart_upload_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket`](crate::client::Client::delete_bucket).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucket`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucket {
     _private: ()
@@ -241,7 +241,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_analytics_configuration`](crate::client::Client::delete_bucket_analytics_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketAnalyticsConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketAnalyticsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketAnalyticsConfiguration {
     _private: ()
@@ -274,7 +274,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_cors`](crate::client::Client::delete_bucket_cors).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketCors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketCors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketCors {
     _private: ()
@@ -307,7 +307,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_encryption`](crate::client::Client::delete_bucket_encryption).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketEncryption`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketEncryption {
     _private: ()
@@ -340,7 +340,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_intelligent_tiering_configuration`](crate::client::Client::delete_bucket_intelligent_tiering_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketIntelligentTieringConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketIntelligentTieringConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketIntelligentTieringConfiguration {
     _private: ()
@@ -373,7 +373,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_inventory_configuration`](crate::client::Client::delete_bucket_inventory_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketInventoryConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketInventoryConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketInventoryConfiguration {
     _private: ()
@@ -406,7 +406,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_lifecycle`](crate::client::Client::delete_bucket_lifecycle).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketLifecycle`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketLifecycle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketLifecycle {
     _private: ()
@@ -439,7 +439,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_metrics_configuration`](crate::client::Client::delete_bucket_metrics_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketMetricsConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketMetricsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfiguration {
     _private: ()
@@ -472,7 +472,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_ownership_controls`](crate::client::Client::delete_bucket_ownership_controls).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketOwnershipControls`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketOwnershipControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketOwnershipControls {
     _private: ()
@@ -505,7 +505,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_policy`](crate::client::Client::delete_bucket_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketPolicy {
     _private: ()
@@ -538,7 +538,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_replication`](crate::client::Client::delete_bucket_replication).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketReplication`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketReplication {
     _private: ()
@@ -571,7 +571,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_tagging`](crate::client::Client::delete_bucket_tagging).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketTagging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketTagging {
     _private: ()
@@ -604,7 +604,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_bucket_website`](crate::client::Client::delete_bucket_website).
             ///
-            /// See [`crate::client::fluent_builders::DeleteBucketWebsite`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteBucketWebsite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBucketWebsite {
     _private: ()
@@ -637,7 +637,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_object`](crate::client::Client::delete_object).
             ///
-            /// See [`crate::client::fluent_builders::DeleteObject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObject {
     _private: ()
@@ -670,7 +670,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_objects`](crate::client::Client::delete_objects).
             ///
-            /// See [`crate::client::fluent_builders::DeleteObjects`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObjects {
     _private: ()
@@ -703,7 +703,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_object_tagging`](crate::client::Client::delete_object_tagging).
             ///
-            /// See [`crate::client::fluent_builders::DeleteObjectTagging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteObjectTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObjectTagging {
     _private: ()
@@ -736,7 +736,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_public_access_block`](crate::client::Client::delete_public_access_block).
             ///
-            /// See [`crate::client::fluent_builders::DeletePublicAccessBlock`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeletePublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePublicAccessBlock {
     _private: ()
@@ -769,7 +769,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_accelerate_configuration`](crate::client::Client::get_bucket_accelerate_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketAccelerateConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketAccelerateConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketAccelerateConfiguration {
     _private: ()
@@ -802,7 +802,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_acl`](crate::client::Client::get_bucket_acl).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketAcl`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketAcl {
     _private: ()
@@ -835,7 +835,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_analytics_configuration`](crate::client::Client::get_bucket_analytics_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketAnalyticsConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketAnalyticsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketAnalyticsConfiguration {
     _private: ()
@@ -868,7 +868,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_cors`](crate::client::Client::get_bucket_cors).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketCors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketCors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketCors {
     _private: ()
@@ -901,7 +901,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_encryption`](crate::client::Client::get_bucket_encryption).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketEncryption`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketEncryption {
     _private: ()
@@ -934,7 +934,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_intelligent_tiering_configuration`](crate::client::Client::get_bucket_intelligent_tiering_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketIntelligentTieringConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketIntelligentTieringConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketIntelligentTieringConfiguration {
     _private: ()
@@ -967,7 +967,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_inventory_configuration`](crate::client::Client::get_bucket_inventory_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketInventoryConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketInventoryConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketInventoryConfiguration {
     _private: ()
@@ -1000,7 +1000,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_lifecycle_configuration`](crate::client::Client::get_bucket_lifecycle_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketLifecycleConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketLifecycleConfiguration {
     _private: ()
@@ -1033,7 +1033,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_location`](crate::client::Client::get_bucket_location).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketLocation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketLocation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketLocation {
     _private: ()
@@ -1100,7 +1100,7 @@ mod get_bucket_location_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_logging`](crate::client::Client::get_bucket_logging).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketLogging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketLogging {
     _private: ()
@@ -1133,7 +1133,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_metrics_configuration`](crate::client::Client::get_bucket_metrics_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketMetricsConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketMetricsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketMetricsConfiguration {
     _private: ()
@@ -1166,7 +1166,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_notification_configuration`](crate::client::Client::get_bucket_notification_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketNotificationConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketNotificationConfiguration {
     _private: ()
@@ -1199,7 +1199,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_ownership_controls`](crate::client::Client::get_bucket_ownership_controls).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketOwnershipControls`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketOwnershipControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketOwnershipControls {
     _private: ()
@@ -1232,7 +1232,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_policy`](crate::client::Client::get_bucket_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketPolicy {
     _private: ()
@@ -1265,7 +1265,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_policy_status`](crate::client::Client::get_bucket_policy_status).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketPolicyStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketPolicyStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketPolicyStatus {
     _private: ()
@@ -1298,7 +1298,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_replication`](crate::client::Client::get_bucket_replication).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketReplication`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketReplication {
     _private: ()
@@ -1331,7 +1331,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_request_payment`](crate::client::Client::get_bucket_request_payment).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketRequestPayment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketRequestPayment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketRequestPayment {
     _private: ()
@@ -1364,7 +1364,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_tagging`](crate::client::Client::get_bucket_tagging).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketTagging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketTagging {
     _private: ()
@@ -1397,7 +1397,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_versioning`](crate::client::Client::get_bucket_versioning).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketVersioning`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketVersioning`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketVersioning {
     _private: ()
@@ -1430,7 +1430,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_bucket_website`](crate::client::Client::get_bucket_website).
             ///
-            /// See [`crate::client::fluent_builders::GetBucketWebsite`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBucketWebsite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBucketWebsite {
     _private: ()
@@ -1463,7 +1463,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object`](crate::client::Client::get_object).
             ///
-            /// See [`crate::client::fluent_builders::GetObject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObject {
     _private: ()
@@ -1498,7 +1498,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_acl`](crate::client::Client::get_object_acl).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectAcl`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectAcl {
     _private: ()
@@ -1531,7 +1531,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_attributes`](crate::client::Client::get_object_attributes).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectAttributes {
     _private: ()
@@ -1564,7 +1564,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_legal_hold`](crate::client::Client::get_object_legal_hold).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectLegalHold`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectLegalHold {
     _private: ()
@@ -1597,7 +1597,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_lock_configuration`](crate::client::Client::get_object_lock_configuration).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectLockConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectLockConfiguration {
     _private: ()
@@ -1630,7 +1630,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_retention`](crate::client::Client::get_object_retention).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectRetention`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectRetention`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectRetention {
     _private: ()
@@ -1663,7 +1663,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_tagging`](crate::client::Client::get_object_tagging).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectTagging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectTagging {
     _private: ()
@@ -1696,7 +1696,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_object_torrent`](crate::client::Client::get_object_torrent).
             ///
-            /// See [`crate::client::fluent_builders::GetObjectTorrent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetObjectTorrent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObjectTorrent {
     _private: ()
@@ -1731,7 +1731,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObjectTorrent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_public_access_block`](crate::client::Client::get_public_access_block).
             ///
-            /// See [`crate::client::fluent_builders::GetPublicAccessBlock`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPublicAccessBlock {
     _private: ()
@@ -1764,7 +1764,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`head_bucket`](crate::client::Client::head_bucket).
             ///
-            /// See [`crate::client::fluent_builders::HeadBucket`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `HeadBucket`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct HeadBucket {
     _private: ()
@@ -1836,7 +1836,7 @@ mod head_bucket_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`head_object`](crate::client::Client::head_object).
             ///
-            /// See [`crate::client::fluent_builders::HeadObject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `HeadObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct HeadObject {
     _private: ()
@@ -1933,7 +1933,7 @@ mod head_object_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_bucket_analytics_configurations`](crate::client::Client::list_bucket_analytics_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListBucketAnalyticsConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListBucketAnalyticsConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketAnalyticsConfigurations {
     _private: ()
@@ -1966,7 +1966,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_bucket_intelligent_tiering_configurations`](crate::client::Client::list_bucket_intelligent_tiering_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListBucketIntelligentTieringConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListBucketIntelligentTieringConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurations {
     _private: ()
@@ -1999,7 +1999,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_bucket_inventory_configurations`](crate::client::Client::list_bucket_inventory_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListBucketInventoryConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListBucketInventoryConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketInventoryConfigurations {
     _private: ()
@@ -2032,7 +2032,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_bucket_metrics_configurations`](crate::client::Client::list_bucket_metrics_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListBucketMetricsConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListBucketMetricsConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurations {
     _private: ()
@@ -2065,7 +2065,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_buckets`](crate::client::Client::list_buckets).
             ///
-            /// See [`crate::client::fluent_builders::ListBuckets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListBuckets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBuckets {
     _private: ()
@@ -2098,7 +2098,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_multipart_uploads`](crate::client::Client::list_multipart_uploads).
             ///
-            /// See [`crate::client::fluent_builders::ListMultipartUploads`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMultipartUploads`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMultipartUploads {
     _private: ()
@@ -2131,7 +2131,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_objects`](crate::client::Client::list_objects).
             ///
-            /// See [`crate::client::fluent_builders::ListObjects`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjects {
     _private: ()
@@ -2311,7 +2311,7 @@ mod list_objects_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_objects_v2`](crate::client::Client::list_objects_v2).
             ///
-            /// See [`crate::client::fluent_builders::ListObjectsV2`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListObjectsV2`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjectsV2 {
     _private: ()
@@ -2344,7 +2344,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_object_versions`](crate::client::Client::list_object_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListObjectVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListObjectVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObjectVersions {
     _private: ()
@@ -2377,7 +2377,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_parts`](crate::client::Client::list_parts).
             ///
-            /// See [`crate::client::fluent_builders::ListParts`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListParts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListParts {
     _private: ()
@@ -2410,7 +2410,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_accelerate_configuration`](crate::client::Client::put_bucket_accelerate_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketAccelerateConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketAccelerateConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketAccelerateConfiguration {
     _private: ()
@@ -2443,7 +2443,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_acl`](crate::client::Client::put_bucket_acl).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketAcl`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketAcl {
     _private: ()
@@ -2476,7 +2476,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_analytics_configuration`](crate::client::Client::put_bucket_analytics_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketAnalyticsConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketAnalyticsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketAnalyticsConfiguration {
     _private: ()
@@ -2509,7 +2509,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_cors`](crate::client::Client::put_bucket_cors).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketCors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketCors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketCors {
     _private: ()
@@ -2542,7 +2542,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_encryption`](crate::client::Client::put_bucket_encryption).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketEncryption`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketEncryption {
     _private: ()
@@ -2575,7 +2575,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_intelligent_tiering_configuration`](crate::client::Client::put_bucket_intelligent_tiering_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketIntelligentTieringConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketIntelligentTieringConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfiguration {
     _private: ()
@@ -2608,7 +2608,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_inventory_configuration`](crate::client::Client::put_bucket_inventory_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketInventoryConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketInventoryConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketInventoryConfiguration {
     _private: ()
@@ -2641,7 +2641,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_lifecycle_configuration`](crate::client::Client::put_bucket_lifecycle_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketLifecycleConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketLifecycleConfiguration {
     _private: ()
@@ -2746,7 +2746,7 @@ mod put_bucket_lifecycle_configuration_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_logging`](crate::client::Client::put_bucket_logging).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketLogging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketLogging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketLogging {
     _private: ()
@@ -2779,7 +2779,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_metrics_configuration`](crate::client::Client::put_bucket_metrics_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketMetricsConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketMetricsConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketMetricsConfiguration {
     _private: ()
@@ -2812,7 +2812,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_notification_configuration`](crate::client::Client::put_bucket_notification_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketNotificationConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketNotificationConfiguration {
     _private: ()
@@ -2845,7 +2845,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_ownership_controls`](crate::client::Client::put_bucket_ownership_controls).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketOwnershipControls`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketOwnershipControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketOwnershipControls {
     _private: ()
@@ -2878,7 +2878,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_policy`](crate::client::Client::put_bucket_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketPolicy {
     _private: ()
@@ -2911,7 +2911,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_replication`](crate::client::Client::put_bucket_replication).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketReplication`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketReplication {
     _private: ()
@@ -2944,7 +2944,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_request_payment`](crate::client::Client::put_bucket_request_payment).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketRequestPayment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketRequestPayment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketRequestPayment {
     _private: ()
@@ -2977,7 +2977,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_tagging`](crate::client::Client::put_bucket_tagging).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketTagging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketTagging {
     _private: ()
@@ -3010,7 +3010,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_versioning`](crate::client::Client::put_bucket_versioning).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketVersioning`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketVersioning`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketVersioning {
     _private: ()
@@ -3043,7 +3043,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_bucket_website`](crate::client::Client::put_bucket_website).
             ///
-            /// See [`crate::client::fluent_builders::PutBucketWebsite`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutBucketWebsite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBucketWebsite {
     _private: ()
@@ -3076,7 +3076,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_object`](crate::client::Client::put_object).
             ///
-            /// See [`crate::client::fluent_builders::PutObject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObject {
     _private: ()
@@ -3192,7 +3192,7 @@ mod put_object_request_test {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_object_acl`](crate::client::Client::put_object_acl).
             ///
-            /// See [`crate::client::fluent_builders::PutObjectAcl`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutObjectAcl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectAcl {
     _private: ()
@@ -3225,7 +3225,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_object_legal_hold`](crate::client::Client::put_object_legal_hold).
             ///
-            /// See [`crate::client::fluent_builders::PutObjectLegalHold`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutObjectLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectLegalHold {
     _private: ()
@@ -3258,7 +3258,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_object_lock_configuration`](crate::client::Client::put_object_lock_configuration).
             ///
-            /// See [`crate::client::fluent_builders::PutObjectLockConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutObjectLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectLockConfiguration {
     _private: ()
@@ -3291,7 +3291,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_object_retention`](crate::client::Client::put_object_retention).
             ///
-            /// See [`crate::client::fluent_builders::PutObjectRetention`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutObjectRetention`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectRetention {
     _private: ()
@@ -3324,7 +3324,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_object_tagging`](crate::client::Client::put_object_tagging).
             ///
-            /// See [`crate::client::fluent_builders::PutObjectTagging`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutObjectTagging`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObjectTagging {
     _private: ()
@@ -3357,7 +3357,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_public_access_block`](crate::client::Client::put_public_access_block).
             ///
-            /// See [`crate::client::fluent_builders::PutPublicAccessBlock`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutPublicAccessBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPublicAccessBlock {
     _private: ()
@@ -3390,7 +3390,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`restore_object`](crate::client::Client::restore_object).
             ///
-            /// See [`crate::client::fluent_builders::RestoreObject`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RestoreObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreObject {
     _private: ()
@@ -3423,7 +3423,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`select_object_content`](crate::client::Client::select_object_content).
             ///
-            /// See [`crate::client::fluent_builders::SelectObjectContent`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SelectObjectContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SelectObjectContent {
     _private: ()
@@ -3458,7 +3458,7 @@ impl aws_smithy_http::response::ParseHttpResponse for SelectObjectContent {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`upload_part`](crate::client::Client::upload_part).
             ///
-            /// See [`crate::client::fluent_builders::UploadPart`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UploadPart`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadPart {
     _private: ()
@@ -3491,7 +3491,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`upload_part_copy`](crate::client::Client::upload_part_copy).
             ///
-            /// See [`crate::client::fluent_builders::UploadPartCopy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UploadPartCopy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UploadPartCopy {
     _private: ()
@@ -3524,7 +3524,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`write_get_object_response`](crate::client::Client::write_get_object_response).
             ///
-            /// See [`crate::client::fluent_builders::WriteGetObjectResponse`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `WriteGetObjectResponse`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct WriteGetObjectResponse {
     _private: ()

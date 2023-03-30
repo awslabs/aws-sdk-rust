@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_aws_log_source`](crate::client::Client::create_aws_log_source).
             ///
-            /// See [`crate::client::fluent_builders::CreateAwsLogSource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAwsLogSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAwsLogSource {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAwsLogSource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_custom_log_source`](crate::client::Client::create_custom_log_source).
             ///
-            /// See [`crate::client::fluent_builders::CreateCustomLogSource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateCustomLogSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCustomLogSource {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLogSource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_datalake`](crate::client::Client::create_datalake).
             ///
-            /// See [`crate::client::fluent_builders::CreateDatalake`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDatalake`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatalake {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatalake {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_datalake_auto_enable`](crate::client::Client::create_datalake_auto_enable).
             ///
-            /// See [`crate::client::fluent_builders::CreateDatalakeAutoEnable`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDatalakeAutoEnable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatalakeAutoEnable {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatalakeAutoEnable
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_datalake_delegated_admin`](crate::client::Client::create_datalake_delegated_admin).
             ///
-            /// See [`crate::client::fluent_builders::CreateDatalakeDelegatedAdmin`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDatalakeDelegatedAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatalakeDelegatedAdmin {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatalakeDelegatedA
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_datalake_exceptions_subscription`](crate::client::Client::create_datalake_exceptions_subscription).
             ///
-            /// See [`crate::client::fluent_builders::CreateDatalakeExceptionsSubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDatalakeExceptionsSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatalakeExceptionsSubscription {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatalakeExceptions
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_subscriber`](crate::client::Client::create_subscriber).
             ///
-            /// See [`crate::client::fluent_builders::CreateSubscriber`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSubscriber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSubscriber {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriber {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_subscription_notification_configuration`](crate::client::Client::create_subscription_notification_configuration).
             ///
-            /// See [`crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSubscriptionNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSubscriptionNotificationConfiguration {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriptionNotifi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_aws_log_source`](crate::client::Client::delete_aws_log_source).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAwsLogSource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAwsLogSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAwsLogSource {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAwsLogSource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_custom_log_source`](crate::client::Client::delete_custom_log_source).
             ///
-            /// See [`crate::client::fluent_builders::DeleteCustomLogSource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteCustomLogSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCustomLogSource {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLogSource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_datalake`](crate::client::Client::delete_datalake).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDatalake`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDatalake`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatalake {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalake {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_datalake_auto_enable`](crate::client::Client::delete_datalake_auto_enable).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDatalakeAutoEnable`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDatalakeAutoEnable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatalakeAutoEnable {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeAutoEnable
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_datalake_delegated_admin`](crate::client::Client::delete_datalake_delegated_admin).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDatalakeDelegatedAdmin`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatalakeDelegatedAdmin {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeDelegatedA
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_datalake_exceptions_subscription`](crate::client::Client::delete_datalake_exceptions_subscription).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDatalakeExceptionsSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatalakeExceptionsSubscription {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeExceptions
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_subscriber`](crate::client::Client::delete_subscriber).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSubscriber`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSubscriber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSubscriber {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriber {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_subscription_notification_configuration`](crate::client::Client::delete_subscription_notification_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSubscriptionNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSubscriptionNotificationConfiguration {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriptionNotifi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_datalake`](crate::client::Client::get_datalake).
             ///
-            /// See [`crate::client::fluent_builders::GetDatalake`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDatalake`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalake {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatalake {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_datalake_auto_enable`](crate::client::Client::get_datalake_auto_enable).
             ///
-            /// See [`crate::client::fluent_builders::GetDatalakeAutoEnable`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDatalakeAutoEnable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalakeAutoEnable {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeAutoEnable {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_datalake_exceptions_expiry`](crate::client::Client::get_datalake_exceptions_expiry).
             ///
-            /// See [`crate::client::fluent_builders::GetDatalakeExceptionsExpiry`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDatalakeExceptionsExpiry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalakeExceptionsExpiry {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeExceptionsExp
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_datalake_exceptions_subscription`](crate::client::Client::get_datalake_exceptions_subscription).
             ///
-            /// See [`crate::client::fluent_builders::GetDatalakeExceptionsSubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDatalakeExceptionsSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalakeExceptionsSubscription {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeExceptionsSub
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_datalake_status`](crate::client::Client::get_datalake_status).
             ///
-            /// See [`crate::client::fluent_builders::GetDatalakeStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDatalakeStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDatalakeStatus {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeStatus {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_subscriber`](crate::client::Client::get_subscriber).
             ///
-            /// See [`crate::client::fluent_builders::GetSubscriber`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSubscriber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSubscriber {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubscriber {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_datalake_exceptions`](crate::client::Client::list_datalake_exceptions).
             ///
-            /// See [`crate::client::fluent_builders::ListDatalakeExceptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDatalakeExceptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatalakeExceptions {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatalakeExceptions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_log_sources`](crate::client::Client::list_log_sources).
             ///
-            /// See [`crate::client::fluent_builders::ListLogSources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLogSources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLogSources {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLogSources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_subscribers`](crate::client::Client::list_subscribers).
             ///
-            /// See [`crate::client::fluent_builders::ListSubscribers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSubscribers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSubscribers {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscribers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_datalake`](crate::client::Client::update_datalake).
             ///
-            /// See [`crate::client::fluent_builders::UpdateDatalake`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateDatalake`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDatalake {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDatalake {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_datalake_exceptions_expiry`](crate::client::Client::update_datalake_exceptions_expiry).
             ///
-            /// See [`crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateDatalakeExceptionsExpiry`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDatalakeExceptionsExpiry {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDatalakeExceptions
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_datalake_exceptions_subscription`](crate::client::Client::update_datalake_exceptions_subscription).
             ///
-            /// See [`crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateDatalakeExceptionsSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDatalakeExceptionsSubscription {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDatalakeExceptions
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_subscriber`](crate::client::Client::update_subscriber).
             ///
-            /// See [`crate::client::fluent_builders::UpdateSubscriber`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateSubscriber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSubscriber {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSubscriber {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_subscription_notification_configuration`](crate::client::Client::update_subscription_notification_configuration).
             ///
-            /// See [`crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateSubscriptionNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSubscriptionNotificationConfiguration {
     _private: ()

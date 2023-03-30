@@ -197,6 +197,13 @@ impl SlackWorkspaceConfiguration {
         self.allow_organization_member_account
     }
 }
+impl SlackWorkspaceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
+    pub fn builder() -> crate::model::slack_workspace_configuration::Builder {
+        crate::model::slack_workspace_configuration::Builder::default()
+    }
+}
+
 /// See [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
 pub mod slack_workspace_configuration {
     
@@ -250,12 +257,6 @@ pub mod slack_workspace_configuration {
     }
     
     
-}
-impl SlackWorkspaceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
-    pub fn builder() -> crate::model::slack_workspace_configuration::Builder {
-        crate::model::slack_workspace_configuration::Builder::default()
-    }
 }
 
 /// <p>The configuration for a Slack channel that you added for your Amazon Web Services account.</p>
@@ -321,6 +322,13 @@ impl SlackChannelConfiguration {
         self.channel_role_arn.as_deref()
     }
 }
+impl SlackChannelConfiguration {
+    /// Creates a new builder-style object to manufacture [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
+    pub fn builder() -> crate::model::slack_channel_configuration::Builder {
+        crate::model::slack_channel_configuration::Builder::default()
+    }
+}
+
 /// See [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
 pub mod slack_channel_configuration {
     
@@ -434,11 +442,5 @@ pub mod slack_channel_configuration {
     }
     
     
-}
-impl SlackChannelConfiguration {
-    /// Creates a new builder-style object to manufacture [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
-    pub fn builder() -> crate::model::slack_channel_configuration::Builder {
-        crate::model::slack_channel_configuration::Builder::default()
-    }
 }
 

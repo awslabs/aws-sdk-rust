@@ -945,6 +945,13 @@ impl AgentAlreadyRunningAssessment {
         self.assessment_run_arn.as_deref()
     }
 }
+impl AgentAlreadyRunningAssessment {
+    /// Creates a new builder-style object to manufacture [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
+    pub fn builder() -> crate::model::agent_already_running_assessment::Builder {
+        crate::model::agent_already_running_assessment::Builder::default()
+    }
+}
+
 /// See [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
 pub mod agent_already_running_assessment {
     
@@ -987,12 +994,6 @@ pub mod agent_already_running_assessment {
     
     
 }
-impl AgentAlreadyRunningAssessment {
-    /// Creates a new builder-style object to manufacture [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
-    pub fn builder() -> crate::model::agent_already_running_assessment::Builder {
-        crate::model::agent_already_running_assessment::Builder::default()
-    }
-}
 
 /// <p>A key and value pair. This data type is used as a request parameter in the <code>SetTagsForResource</code> action and a response element in the <code>ListTagsForResource</code> action.</p>
 #[non_exhaustive]
@@ -1015,6 +1016,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -1057,12 +1065,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Includes details about the failed items.</p>
 #[non_exhaustive]
@@ -1085,6 +1087,13 @@ impl FailedItemDetails {
         self.retryable
     }
 }
+impl FailedItemDetails {
+    /// Creates a new builder-style object to manufacture [`FailedItemDetails`](crate::model::FailedItemDetails).
+    pub fn builder() -> crate::model::failed_item_details::Builder {
+        crate::model::failed_item_details::Builder::default()
+    }
+}
+
 /// See [`FailedItemDetails`](crate::model::FailedItemDetails).
 pub mod failed_item_details {
     
@@ -1126,12 +1135,6 @@ pub mod failed_item_details {
     }
     
     
-}
-impl FailedItemDetails {
-    /// Creates a new builder-style object to manufacture [`FailedItemDetails`](crate::model::FailedItemDetails).
-    pub fn builder() -> crate::model::failed_item_details::Builder {
-        crate::model::failed_item_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FailedItemErrorCode`, it is important to ensure
@@ -1299,6 +1302,13 @@ impl AgentPreview {
         self.ipv4_address.as_deref()
     }
 }
+impl AgentPreview {
+    /// Creates a new builder-style object to manufacture [`AgentPreview`](crate::model::AgentPreview).
+    pub fn builder() -> crate::model::agent_preview::Builder {
+        crate::model::agent_preview::Builder::default()
+    }
+}
+
 /// See [`AgentPreview`](crate::model::AgentPreview).
 pub mod agent_preview {
     
@@ -1412,12 +1422,6 @@ pub mod agent_preview {
     }
     
     
-}
-impl AgentPreview {
-    /// Creates a new builder-style object to manufacture [`AgentPreview`](crate::model::AgentPreview).
-    pub fn builder() -> crate::model::agent_preview::Builder {
-        crate::model::agent_preview::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AgentHealth`, it is important to ensure
@@ -1570,6 +1574,13 @@ impl FindingFilter {
         self.creation_time_range.as_ref()
     }
 }
+impl FindingFilter {
+    /// Creates a new builder-style object to manufacture [`FindingFilter`](crate::model::FindingFilter).
+    pub fn builder() -> crate::model::finding_filter::Builder {
+        crate::model::finding_filter::Builder::default()
+    }
+}
+
 /// See [`FindingFilter`](crate::model::FindingFilter).
 pub mod finding_filter {
     
@@ -1726,12 +1737,6 @@ pub mod finding_filter {
     
     
 }
-impl FindingFilter {
-    /// Creates a new builder-style object to manufacture [`FindingFilter`](crate::model::FindingFilter).
-    pub fn builder() -> crate::model::finding_filter::Builder {
-        crate::model::finding_filter::Builder::default()
-    }
-}
 
 /// <p>This data type is used in the <code>AssessmentRunFilter</code> data type.</p>
 #[non_exhaustive]
@@ -1754,6 +1759,13 @@ impl TimestampRange {
         self.end_date.as_ref()
     }
 }
+impl TimestampRange {
+    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
+    pub fn builder() -> crate::model::timestamp_range::Builder {
+        crate::model::timestamp_range::Builder::default()
+    }
+}
+
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
     
@@ -1796,12 +1808,6 @@ pub mod timestamp_range {
     
     
 }
-impl TimestampRange {
-    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
-    pub fn builder() -> crate::model::timestamp_range::Builder {
-        crate::model::timestamp_range::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a request parameter in the <code>AddAttributesToFindings</code> and <code>CreateAssessmentTemplate</code> actions.</p>
 #[non_exhaustive]
@@ -1824,6 +1830,13 @@ impl Attribute {
         self.value.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
     
@@ -1865,12 +1878,6 @@ pub mod attribute {
     }
     
     
-}
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Severity`, it is important to ensure
@@ -1998,6 +2005,13 @@ impl Subscription {
         self.event_subscriptions.as_deref()
     }
 }
+impl Subscription {
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
+    pub fn builder() -> crate::model::subscription::Builder {
+        crate::model::subscription::Builder::default()
+    }
+}
+
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
     
@@ -2058,12 +2072,6 @@ pub mod subscription {
     
     
 }
-impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
-    pub fn builder() -> crate::model::subscription::Builder {
-        crate::model::subscription::Builder::default()
-    }
-}
 
 /// <p>This data type is used in the <code>Subscription</code> data type.</p>
 #[non_exhaustive]
@@ -2086,6 +2094,13 @@ impl EventSubscription {
         self.subscribed_at.as_ref()
     }
 }
+impl EventSubscription {
+    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
+    pub fn builder() -> crate::model::event_subscription::Builder {
+        crate::model::event_subscription::Builder::default()
+    }
+}
+
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
     
@@ -2128,12 +2143,6 @@ pub mod event_subscription {
     
     
 }
-impl EventSubscription {
-    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
-    pub fn builder() -> crate::model::event_subscription::Builder {
-        crate::model::event_subscription::Builder::default()
-    }
-}
 
 /// <p>Used as the request parameter in the <code>ListAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
@@ -2163,6 +2172,13 @@ impl AssessmentTemplateFilter {
         self.rules_package_arns.as_deref()
     }
 }
+impl AssessmentTemplateFilter {
+    /// Creates a new builder-style object to manufacture [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
+    pub fn builder() -> crate::model::assessment_template_filter::Builder {
+        crate::model::assessment_template_filter::Builder::default()
+    }
+}
+
 /// See [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
 pub mod assessment_template_filter {
     
@@ -2223,12 +2239,6 @@ pub mod assessment_template_filter {
     
     
 }
-impl AssessmentTemplateFilter {
-    /// Creates a new builder-style object to manufacture [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
-    pub fn builder() -> crate::model::assessment_template_filter::Builder {
-        crate::model::assessment_template_filter::Builder::default()
-    }
-}
 
 /// <p>This data type is used in the <code>AssessmentTemplateFilter</code> data type.</p>
 #[non_exhaustive]
@@ -2251,6 +2261,13 @@ impl DurationRange {
         self.max_seconds
     }
 }
+impl DurationRange {
+    /// Creates a new builder-style object to manufacture [`DurationRange`](crate::model::DurationRange).
+    pub fn builder() -> crate::model::duration_range::Builder {
+        crate::model::duration_range::Builder::default()
+    }
+}
+
 /// See [`DurationRange`](crate::model::DurationRange).
 pub mod duration_range {
     
@@ -2295,12 +2312,6 @@ pub mod duration_range {
     
     
 }
-impl DurationRange {
-    /// Creates a new builder-style object to manufacture [`DurationRange`](crate::model::DurationRange).
-    pub fn builder() -> crate::model::duration_range::Builder {
-        crate::model::duration_range::Builder::default()
-    }
-}
 
 /// <p>Used as the request parameter in the <code>ListAssessmentTargets</code> action.</p>
 #[non_exhaustive]
@@ -2316,6 +2327,13 @@ impl AssessmentTargetFilter {
         self.assessment_target_name_pattern.as_deref()
     }
 }
+impl AssessmentTargetFilter {
+    /// Creates a new builder-style object to manufacture [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
+    pub fn builder() -> crate::model::assessment_target_filter::Builder {
+        crate::model::assessment_target_filter::Builder::default()
+    }
+}
+
 /// See [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
 pub mod assessment_target_filter {
     
@@ -2345,12 +2363,6 @@ pub mod assessment_target_filter {
     }
     
     
-}
-impl AssessmentTargetFilter {
-    /// Creates a new builder-style object to manufacture [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
-    pub fn builder() -> crate::model::assessment_target_filter::Builder {
-        crate::model::assessment_target_filter::Builder::default()
-    }
 }
 
 /// <p>Used as the request parameter in the <code>ListAssessmentRuns</code> action.</p>
@@ -2409,6 +2421,13 @@ impl AssessmentRunFilter {
         self.state_change_time_range.as_ref()
     }
 }
+impl AssessmentRunFilter {
+    /// Creates a new builder-style object to manufacture [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
+    pub fn builder() -> crate::model::assessment_run_filter::Builder {
+        crate::model::assessment_run_filter::Builder::default()
+    }
+}
+
 /// See [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
 pub mod assessment_run_filter {
     
@@ -2522,12 +2541,6 @@ pub mod assessment_run_filter {
     }
     
     
-}
-impl AssessmentRunFilter {
-    /// Creates a new builder-style object to manufacture [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
-    pub fn builder() -> crate::model::assessment_run_filter::Builder {
-        crate::model::assessment_run_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssessmentRunState`, it is important to ensure
@@ -2723,6 +2736,13 @@ impl AssessmentRunAgent {
         self.telemetry_metadata.as_deref()
     }
 }
+impl AssessmentRunAgent {
+    /// Creates a new builder-style object to manufacture [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
+    pub fn builder() -> crate::model::assessment_run_agent::Builder {
+        crate::model::assessment_run_agent::Builder::default()
+    }
+}
+
 /// See [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
 pub mod assessment_run_agent {
     
@@ -2831,12 +2851,6 @@ pub mod assessment_run_agent {
     
     
 }
-impl AssessmentRunAgent {
-    /// Creates a new builder-style object to manufacture [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
-    pub fn builder() -> crate::model::assessment_run_agent::Builder {
-        crate::model::assessment_run_agent::Builder::default()
-    }
-}
 
 /// <p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <code>GetTelemetryMetadata</code> action.</p>
 #[non_exhaustive]
@@ -2866,6 +2880,13 @@ impl TelemetryMetadata {
         self.data_size
     }
 }
+impl TelemetryMetadata {
+    /// Creates a new builder-style object to manufacture [`TelemetryMetadata`](crate::model::TelemetryMetadata).
+    pub fn builder() -> crate::model::telemetry_metadata::Builder {
+        crate::model::telemetry_metadata::Builder::default()
+    }
+}
+
 /// See [`TelemetryMetadata`](crate::model::TelemetryMetadata).
 pub mod telemetry_metadata {
     
@@ -2919,12 +2940,6 @@ pub mod telemetry_metadata {
     }
     
     
-}
-impl TelemetryMetadata {
-    /// Creates a new builder-style object to manufacture [`TelemetryMetadata`](crate::model::TelemetryMetadata).
-    pub fn builder() -> crate::model::telemetry_metadata::Builder {
-        crate::model::telemetry_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AgentHealthCode`, it is important to ensure
@@ -3050,6 +3065,13 @@ impl AgentFilter {
         self.agent_health_codes.as_deref()
     }
 }
+impl AgentFilter {
+    /// Creates a new builder-style object to manufacture [`AgentFilter`](crate::model::AgentFilter).
+    pub fn builder() -> crate::model::agent_filter::Builder {
+        crate::model::agent_filter::Builder::default()
+    }
+}
+
 /// See [`AgentFilter`](crate::model::AgentFilter).
 pub mod agent_filter {
     
@@ -3104,12 +3126,6 @@ pub mod agent_filter {
     
     
 }
-impl AgentFilter {
-    /// Creates a new builder-style object to manufacture [`AgentFilter`](crate::model::AgentFilter).
-    pub fn builder() -> crate::model::agent_filter::Builder {
-        crate::model::agent_filter::Builder::default()
-    }
-}
 
 /// <p>Contains information about what is excluded from an assessment run given the current state of the assessment template.</p>
 #[non_exhaustive]
@@ -3153,6 +3169,13 @@ impl ExclusionPreview {
         self.attributes.as_deref()
     }
 }
+impl ExclusionPreview {
+    /// Creates a new builder-style object to manufacture [`ExclusionPreview`](crate::model::ExclusionPreview).
+    pub fn builder() -> crate::model::exclusion_preview::Builder {
+        crate::model::exclusion_preview::Builder::default()
+    }
+}
+
 /// See [`ExclusionPreview`](crate::model::ExclusionPreview).
 pub mod exclusion_preview {
     
@@ -3243,12 +3266,6 @@ pub mod exclusion_preview {
     
     
 }
-impl ExclusionPreview {
-    /// Creates a new builder-style object to manufacture [`ExclusionPreview`](crate::model::ExclusionPreview).
-    pub fn builder() -> crate::model::exclusion_preview::Builder {
-        crate::model::exclusion_preview::Builder::default()
-    }
-}
 
 /// <p>This data type contains key-value pairs that identify various Amazon resources.</p>
 #[non_exhaustive]
@@ -3271,6 +3288,13 @@ impl Scope {
         self.value.as_deref()
     }
 }
+impl Scope {
+    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
+    pub fn builder() -> crate::model::scope::Builder {
+        crate::model::scope::Builder::default()
+    }
+}
+
 /// See [`Scope`](crate::model::Scope).
 pub mod scope {
     
@@ -3312,12 +3336,6 @@ pub mod scope {
     }
     
     
-}
-impl Scope {
-    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
-    pub fn builder() -> crate::model::scope::Builder {
-        crate::model::scope::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScopeType`, it is important to ensure
@@ -3854,6 +3872,13 @@ impl RulesPackage {
         self.description.as_deref()
     }
 }
+impl RulesPackage {
+    /// Creates a new builder-style object to manufacture [`RulesPackage`](crate::model::RulesPackage).
+    pub fn builder() -> crate::model::rules_package::Builder {
+        crate::model::rules_package::Builder::default()
+    }
+}
+
 /// See [`RulesPackage`](crate::model::RulesPackage).
 pub mod rules_package {
     
@@ -3932,12 +3957,6 @@ pub mod rules_package {
     
     
 }
-impl RulesPackage {
-    /// Creates a new builder-style object to manufacture [`RulesPackage`](crate::model::RulesPackage).
-    pub fn builder() -> crate::model::rules_package::Builder {
-        crate::model::rules_package::Builder::default()
-    }
-}
 
 /// <p>Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <code>DescribeResourceGroups</code> action.</p>
 #[non_exhaustive]
@@ -3967,6 +3986,13 @@ impl ResourceGroup {
         self.created_at.as_ref()
     }
 }
+impl ResourceGroup {
+    /// Creates a new builder-style object to manufacture [`ResourceGroup`](crate::model::ResourceGroup).
+    pub fn builder() -> crate::model::resource_group::Builder {
+        crate::model::resource_group::Builder::default()
+    }
+}
+
 /// See [`ResourceGroup`](crate::model::ResourceGroup).
 pub mod resource_group {
     
@@ -4027,12 +4053,6 @@ pub mod resource_group {
     
     
 }
-impl ResourceGroup {
-    /// Creates a new builder-style object to manufacture [`ResourceGroup`](crate::model::ResourceGroup).
-    pub fn builder() -> crate::model::resource_group::Builder {
-        crate::model::resource_group::Builder::default()
-    }
-}
 
 /// <p>This data type is used as one of the elements of the <code>ResourceGroup</code> data type.</p>
 #[non_exhaustive]
@@ -4055,6 +4075,13 @@ impl ResourceGroupTag {
         self.value.as_deref()
     }
 }
+impl ResourceGroupTag {
+    /// Creates a new builder-style object to manufacture [`ResourceGroupTag`](crate::model::ResourceGroupTag).
+    pub fn builder() -> crate::model::resource_group_tag::Builder {
+        crate::model::resource_group_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceGroupTag`](crate::model::ResourceGroupTag).
 pub mod resource_group_tag {
     
@@ -4096,12 +4123,6 @@ pub mod resource_group_tag {
     }
     
     
-}
-impl ResourceGroupTag {
-    /// Creates a new builder-style object to manufacture [`ResourceGroupTag`](crate::model::ResourceGroupTag).
-    pub fn builder() -> crate::model::resource_group_tag::Builder {
-        crate::model::resource_group_tag::Builder::default()
-    }
 }
 
 /// <p>Contains information about an Amazon Inspector finding. This data type is used as the response element in the <code>DescribeFindings</code> action.</p>
@@ -4237,6 +4258,13 @@ impl Finding {
         self.updated_at.as_ref()
     }
 }
+impl Finding {
+    /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
+    pub fn builder() -> crate::model::finding::Builder {
+        crate::model::finding::Builder::default()
+    }
+}
+
 /// See [`Finding`](crate::model::Finding).
 pub mod finding {
     
@@ -4486,12 +4514,6 @@ pub mod finding {
     
     
 }
-impl Finding {
-    /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
-    pub fn builder() -> crate::model::finding::Builder {
-        crate::model::finding::Builder::default()
-    }
-}
 
 /// <p>A collection of attributes of the host from which the finding is generated.</p>
 #[non_exhaustive]
@@ -4556,6 +4578,13 @@ impl AssetAttributes {
         self.network_interfaces.as_deref()
     }
 }
+impl AssetAttributes {
+    /// Creates a new builder-style object to manufacture [`AssetAttributes`](crate::model::AssetAttributes).
+    pub fn builder() -> crate::model::asset_attributes::Builder {
+        crate::model::asset_attributes::Builder::default()
+    }
+}
+
 /// See [`AssetAttributes`](crate::model::AssetAttributes).
 pub mod asset_attributes {
     
@@ -4689,12 +4718,6 @@ pub mod asset_attributes {
     
     
 }
-impl AssetAttributes {
-    /// Creates a new builder-style object to manufacture [`AssetAttributes`](crate::model::AssetAttributes).
-    pub fn builder() -> crate::model::asset_attributes::Builder {
-        crate::model::asset_attributes::Builder::default()
-    }
-}
 
 /// <p>Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <code>AssetAttributes</code> data type.</p>
 #[non_exhaustive]
@@ -4773,6 +4796,13 @@ impl NetworkInterface {
         self.security_groups.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
     
@@ -4929,12 +4959,6 @@ pub mod network_interface {
     
     
 }
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
-}
 
 /// <p>Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <code>NetworkInterface</code> data type.</p>
 #[non_exhaustive]
@@ -4957,6 +4981,13 @@ impl SecurityGroup {
         self.group_id.as_deref()
     }
 }
+impl SecurityGroup {
+    /// Creates a new builder-style object to manufacture [`SecurityGroup`](crate::model::SecurityGroup).
+    pub fn builder() -> crate::model::security_group::Builder {
+        crate::model::security_group::Builder::default()
+    }
+}
+
 /// See [`SecurityGroup`](crate::model::SecurityGroup).
 pub mod security_group {
     
@@ -4999,12 +5030,6 @@ pub mod security_group {
     
     
 }
-impl SecurityGroup {
-    /// Creates a new builder-style object to manufacture [`SecurityGroup`](crate::model::SecurityGroup).
-    pub fn builder() -> crate::model::security_group::Builder {
-        crate::model::security_group::Builder::default()
-    }
-}
 
 /// <p>Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <code>DescribeFindings</code> action.</p>
 #[non_exhaustive]
@@ -5027,6 +5052,13 @@ impl PrivateIp {
         self.private_ip_address.as_deref()
     }
 }
+impl PrivateIp {
+    /// Creates a new builder-style object to manufacture [`PrivateIp`](crate::model::PrivateIp).
+    pub fn builder() -> crate::model::private_ip::Builder {
+        crate::model::private_ip::Builder::default()
+    }
+}
+
 /// See [`PrivateIp`](crate::model::PrivateIp).
 pub mod private_ip {
     
@@ -5068,12 +5100,6 @@ pub mod private_ip {
     }
     
     
-}
-impl PrivateIp {
-    /// Creates a new builder-style object to manufacture [`PrivateIp`](crate::model::PrivateIp).
-    pub fn builder() -> crate::model::private_ip::Builder {
-        crate::model::private_ip::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssetType`, it is important to ensure
@@ -5181,6 +5207,13 @@ impl InspectorServiceAttributes {
         self.rules_package_arn.as_deref()
     }
 }
+impl InspectorServiceAttributes {
+    /// Creates a new builder-style object to manufacture [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
+    pub fn builder() -> crate::model::inspector_service_attributes::Builder {
+        crate::model::inspector_service_attributes::Builder::default()
+    }
+}
+
 /// See [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
 pub mod inspector_service_attributes {
     
@@ -5236,12 +5269,6 @@ pub mod inspector_service_attributes {
     
     
 }
-impl InspectorServiceAttributes {
-    /// Creates a new builder-style object to manufacture [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
-    pub fn builder() -> crate::model::inspector_service_attributes::Builder {
-        crate::model::inspector_service_attributes::Builder::default()
-    }
-}
 
 /// <p>Contains information about what was excluded from an assessment run.</p>
 #[non_exhaustive]
@@ -5292,6 +5319,13 @@ impl Exclusion {
         self.attributes.as_deref()
     }
 }
+impl Exclusion {
+    /// Creates a new builder-style object to manufacture [`Exclusion`](crate::model::Exclusion).
+    pub fn builder() -> crate::model::exclusion::Builder {
+        crate::model::exclusion::Builder::default()
+    }
+}
+
 /// See [`Exclusion`](crate::model::Exclusion).
 pub mod exclusion {
     
@@ -5394,12 +5428,6 @@ pub mod exclusion {
     
     
 }
-impl Exclusion {
-    /// Creates a new builder-style object to manufacture [`Exclusion`](crate::model::Exclusion).
-    pub fn builder() -> crate::model::exclusion::Builder {
-        crate::model::exclusion::Builder::default()
-    }
-}
 
 /// <p>Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <code>DescribeAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
@@ -5471,6 +5499,13 @@ impl AssessmentTemplate {
         self.created_at.as_ref()
     }
 }
+impl AssessmentTemplate {
+    /// Creates a new builder-style object to manufacture [`AssessmentTemplate`](crate::model::AssessmentTemplate).
+    pub fn builder() -> crate::model::assessment_template::Builder {
+        crate::model::assessment_template::Builder::default()
+    }
+}
+
 /// See [`AssessmentTemplate`](crate::model::AssessmentTemplate).
 pub mod assessment_template {
     
@@ -5610,12 +5645,6 @@ pub mod assessment_template {
     
     
 }
-impl AssessmentTemplate {
-    /// Creates a new builder-style object to manufacture [`AssessmentTemplate`](crate::model::AssessmentTemplate).
-    pub fn builder() -> crate::model::assessment_template::Builder {
-        crate::model::assessment_template::Builder::default()
-    }
-}
 
 /// <p>Contains information about an Amazon Inspector application. This data type is used as the response element in the <code>DescribeAssessmentTargets</code> action.</p>
 #[non_exhaustive]
@@ -5659,6 +5688,13 @@ impl AssessmentTarget {
         self.updated_at.as_ref()
     }
 }
+impl AssessmentTarget {
+    /// Creates a new builder-style object to manufacture [`AssessmentTarget`](crate::model::AssessmentTarget).
+    pub fn builder() -> crate::model::assessment_target::Builder {
+        crate::model::assessment_target::Builder::default()
+    }
+}
+
 /// See [`AssessmentTarget`](crate::model::AssessmentTarget).
 pub mod assessment_target {
     
@@ -5736,12 +5772,6 @@ pub mod assessment_target {
     }
     
     
-}
-impl AssessmentTarget {
-    /// Creates a new builder-style object to manufacture [`AssessmentTarget`](crate::model::AssessmentTarget).
-    pub fn builder() -> crate::model::assessment_target::Builder {
-        crate::model::assessment_target::Builder::default()
-    }
 }
 
 /// <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p> 
@@ -5857,6 +5887,13 @@ impl AssessmentRun {
         self.finding_counts.as_ref()
     }
 }
+impl AssessmentRun {
+    /// Creates a new builder-style object to manufacture [`AssessmentRun`](crate::model::AssessmentRun).
+    pub fn builder() -> crate::model::assessment_run::Builder {
+        crate::model::assessment_run::Builder::default()
+    }
+}
+
 /// See [`AssessmentRun`](crate::model::AssessmentRun).
 pub mod assessment_run {
     
@@ -6086,12 +6123,6 @@ pub mod assessment_run {
     
     
 }
-impl AssessmentRun {
-    /// Creates a new builder-style object to manufacture [`AssessmentRun`](crate::model::AssessmentRun).
-    pub fn builder() -> crate::model::assessment_run::Builder {
-        crate::model::assessment_run::Builder::default()
-    }
-}
 
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
@@ -6142,6 +6173,13 @@ impl AssessmentRunNotification {
         self.sns_publish_status_code.as_ref()
     }
 }
+impl AssessmentRunNotification {
+    /// Creates a new builder-style object to manufacture [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
+    pub fn builder() -> crate::model::assessment_run_notification::Builder {
+        crate::model::assessment_run_notification::Builder::default()
+    }
+}
+
 /// See [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
 pub mod assessment_run_notification {
     
@@ -6231,12 +6269,6 @@ pub mod assessment_run_notification {
     }
     
     
-}
-impl AssessmentRunNotification {
-    /// Creates a new builder-style object to manufacture [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
-    pub fn builder() -> crate::model::assessment_run_notification::Builder {
-        crate::model::assessment_run_notification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssessmentRunNotificationSnsStatusCode`, it is important to ensure
@@ -6352,6 +6384,13 @@ impl AssessmentRunStateChange {
         self.state.as_ref()
     }
 }
+impl AssessmentRunStateChange {
+    /// Creates a new builder-style object to manufacture [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
+    pub fn builder() -> crate::model::assessment_run_state_change::Builder {
+        crate::model::assessment_run_state_change::Builder::default()
+    }
+}
+
 /// See [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
 pub mod assessment_run_state_change {
     
@@ -6393,11 +6432,5 @@ pub mod assessment_run_state_change {
     }
     
     
-}
-impl AssessmentRunStateChange {
-    /// Creates a new builder-style object to manufacture [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
-    pub fn builder() -> crate::model::assessment_run_state_change::Builder {
-        crate::model::assessment_run_state_change::Builder::default()
-    }
 }
 

@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`count_closed_workflow_executions`](crate::client::Client::count_closed_workflow_executions).
             ///
-            /// See [`crate::client::fluent_builders::CountClosedWorkflowExecutions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CountClosedWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutions {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountClosedWorkflowExecu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`count_open_workflow_executions`](crate::client::Client::count_open_workflow_executions).
             ///
-            /// See [`crate::client::fluent_builders::CountOpenWorkflowExecutions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CountOpenWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutions {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountOpenWorkflowExecuti
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`count_pending_activity_tasks`](crate::client::Client::count_pending_activity_tasks).
             ///
-            /// See [`crate::client::fluent_builders::CountPendingActivityTasks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CountPendingActivityTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountPendingActivityTasks {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingActivityTask
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`count_pending_decision_tasks`](crate::client::Client::count_pending_decision_tasks).
             ///
-            /// See [`crate::client::fluent_builders::CountPendingDecisionTasks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CountPendingDecisionTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CountPendingDecisionTasks {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingDecisionTask
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`deprecate_activity_type`](crate::client::Client::deprecate_activity_type).
             ///
-            /// See [`crate::client::fluent_builders::DeprecateActivityType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeprecateActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateActivityType {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateActivityType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`deprecate_domain`](crate::client::Client::deprecate_domain).
             ///
-            /// See [`crate::client::fluent_builders::DeprecateDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeprecateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateDomain {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`deprecate_workflow_type`](crate::client::Client::deprecate_workflow_type).
             ///
-            /// See [`crate::client::fluent_builders::DeprecateWorkflowType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeprecateWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeprecateWorkflowType {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateWorkflowType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_activity_type`](crate::client::Client::describe_activity_type).
             ///
-            /// See [`crate::client::fluent_builders::DescribeActivityType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeActivityType {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActivityType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_domain`](crate::client::Client::describe_domain).
             ///
-            /// See [`crate::client::fluent_builders::DescribeDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomain {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_workflow_execution`](crate::client::Client::describe_workflow_execution).
             ///
-            /// See [`crate::client::fluent_builders::DescribeWorkflowExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorkflowExecution {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowExecutio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_workflow_type`](crate::client::Client::describe_workflow_type).
             ///
-            /// See [`crate::client::fluent_builders::DescribeWorkflowType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeWorkflowType {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_workflow_execution_history`](crate::client::Client::get_workflow_execution_history).
             ///
-            /// See [`crate::client::fluent_builders::GetWorkflowExecutionHistory`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetWorkflowExecutionHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistory {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowExecutionHist
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_activity_types`](crate::client::Client::list_activity_types).
             ///
-            /// See [`crate::client::fluent_builders::ListActivityTypes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListActivityTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActivityTypes {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActivityTypes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_closed_workflow_executions`](crate::client::Client::list_closed_workflow_executions).
             ///
-            /// See [`crate::client::fluent_builders::ListClosedWorkflowExecutions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListClosedWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutions {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClosedWorkflowExecut
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_domains`](crate::client::Client::list_domains).
             ///
-            /// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_open_workflow_executions`](crate::client::Client::list_open_workflow_executions).
             ///
-            /// See [`crate::client::fluent_builders::ListOpenWorkflowExecutions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListOpenWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutions {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOpenWorkflowExecutio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_workflow_types`](crate::client::Client::list_workflow_types).
             ///
-            /// See [`crate::client::fluent_builders::ListWorkflowTypes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListWorkflowTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowTypes {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowTypes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`poll_for_activity_task`](crate::client::Client::poll_for_activity_task).
             ///
-            /// See [`crate::client::fluent_builders::PollForActivityTask`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PollForActivityTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForActivityTask {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForActivityTask {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`poll_for_decision_task`](crate::client::Client::poll_for_decision_task).
             ///
-            /// See [`crate::client::fluent_builders::PollForDecisionTask`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PollForDecisionTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForDecisionTask {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForDecisionTask {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`record_activity_task_heartbeat`](crate::client::Client::record_activity_task_heartbeat).
             ///
-            /// See [`crate::client::fluent_builders::RecordActivityTaskHeartbeat`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RecordActivityTaskHeartbeat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeat {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecordActivityTaskHeartb
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`register_activity_type`](crate::client::Client::register_activity_type).
             ///
-            /// See [`crate::client::fluent_builders::RegisterActivityType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RegisterActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterActivityType {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterActivityType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`register_domain`](crate::client::Client::register_domain).
             ///
-            /// See [`crate::client::fluent_builders::RegisterDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RegisterDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterDomain {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`register_workflow_type`](crate::client::Client::register_workflow_type).
             ///
-            /// See [`crate::client::fluent_builders::RegisterWorkflowType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RegisterWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterWorkflowType {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`request_cancel_workflow_execution`](crate::client::Client::request_cancel_workflow_execution).
             ///
-            /// See [`crate::client::fluent_builders::RequestCancelWorkflowExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RequestCancelWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecution {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestCancelWorkflowExe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`respond_activity_task_canceled`](crate::client::Client::respond_activity_task_canceled).
             ///
-            /// See [`crate::client::fluent_builders::RespondActivityTaskCanceled`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RespondActivityTaskCanceled`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondActivityTaskCanceled {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCance
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`respond_activity_task_completed`](crate::client::Client::respond_activity_task_completed).
             ///
-            /// See [`crate::client::fluent_builders::RespondActivityTaskCompleted`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RespondActivityTaskCompleted`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondActivityTaskCompleted {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCompl
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`respond_activity_task_failed`](crate::client::Client::respond_activity_task_failed).
             ///
-            /// See [`crate::client::fluent_builders::RespondActivityTaskFailed`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RespondActivityTaskFailed`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondActivityTaskFailed {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskFaile
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`respond_decision_task_completed`](crate::client::Client::respond_decision_task_completed).
             ///
-            /// See [`crate::client::fluent_builders::RespondDecisionTaskCompleted`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RespondDecisionTaskCompleted`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondDecisionTaskCompleted {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompl
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`signal_workflow_execution`](crate::client::Client::signal_workflow_execution).
             ///
-            /// See [`crate::client::fluent_builders::SignalWorkflowExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SignalWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SignalWorkflowExecution {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignalWorkflowExecution 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_workflow_execution`](crate::client::Client::start_workflow_execution).
             ///
-            /// See [`crate::client::fluent_builders::StartWorkflowExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartWorkflowExecution {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartWorkflowExecution {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`terminate_workflow_execution`](crate::client::Client::terminate_workflow_execution).
             ///
-            /// See [`crate::client::fluent_builders::TerminateWorkflowExecution`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TerminateWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TerminateWorkflowExecution {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkflowExecuti
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`undeprecate_activity_type`](crate::client::Client::undeprecate_activity_type).
             ///
-            /// See [`crate::client::fluent_builders::UndeprecateActivityType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UndeprecateActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeprecateActivityType {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateActivityType 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`undeprecate_domain`](crate::client::Client::undeprecate_domain).
             ///
-            /// See [`crate::client::fluent_builders::UndeprecateDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UndeprecateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeprecateDomain {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`undeprecate_workflow_type`](crate::client::Client::undeprecate_workflow_type).
             ///
-            /// See [`crate::client::fluent_builders::UndeprecateWorkflowType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UndeprecateWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UndeprecateWorkflowType {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateWorkflowType 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()

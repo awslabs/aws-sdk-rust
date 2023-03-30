@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_accessor`](crate::client::Client::create_accessor).
             ///
-            /// See [`crate::client::fluent_builders::CreateAccessor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAccessor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccessor {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_member`](crate::client::Client::create_member).
             ///
-            /// See [`crate::client::fluent_builders::CreateMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMember {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_network`](crate::client::Client::create_network).
             ///
-            /// See [`crate::client::fluent_builders::CreateNetwork`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNetwork {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetwork {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_node`](crate::client::Client::create_node).
             ///
-            /// See [`crate::client::fluent_builders::CreateNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNode {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_proposal`](crate::client::Client::create_proposal).
             ///
-            /// See [`crate::client::fluent_builders::CreateProposal`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateProposal`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProposal {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProposal {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_accessor`](crate::client::Client::delete_accessor).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAccessor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAccessor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccessor {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_member`](crate::client::Client::delete_member).
             ///
-            /// See [`crate::client::fluent_builders::DeleteMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMember {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_node`](crate::client::Client::delete_node).
             ///
-            /// See [`crate::client::fluent_builders::DeleteNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNode {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_accessor`](crate::client::Client::get_accessor).
             ///
-            /// See [`crate::client::fluent_builders::GetAccessor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAccessor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccessor {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_member`](crate::client::Client::get_member).
             ///
-            /// See [`crate::client::fluent_builders::GetMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMember {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_network`](crate::client::Client::get_network).
             ///
-            /// See [`crate::client::fluent_builders::GetNetwork`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNetwork {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetwork {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_node`](crate::client::Client::get_node).
             ///
-            /// See [`crate::client::fluent_builders::GetNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNode {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_proposal`](crate::client::Client::get_proposal).
             ///
-            /// See [`crate::client::fluent_builders::GetProposal`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetProposal`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProposal {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProposal {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_accessors`](crate::client::Client::list_accessors).
             ///
-            /// See [`crate::client::fluent_builders::ListAccessors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAccessors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccessors {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessors {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_invitations`](crate::client::Client::list_invitations).
             ///
-            /// See [`crate::client::fluent_builders::ListInvitations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListInvitations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInvitations {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInvitations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_members`](crate::client::Client::list_members).
             ///
-            /// See [`crate::client::fluent_builders::ListMembers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMembers {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMembers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_networks`](crate::client::Client::list_networks).
             ///
-            /// See [`crate::client::fluent_builders::ListNetworks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListNetworks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNetworks {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworks {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_nodes`](crate::client::Client::list_nodes).
             ///
-            /// See [`crate::client::fluent_builders::ListNodes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListNodes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNodes {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNodes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_proposals`](crate::client::Client::list_proposals).
             ///
-            /// See [`crate::client::fluent_builders::ListProposals`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProposals`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProposals {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProposals {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_proposal_votes`](crate::client::Client::list_proposal_votes).
             ///
-            /// See [`crate::client::fluent_builders::ListProposalVotes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListProposalVotes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProposalVotes {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProposalVotes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`reject_invitation`](crate::client::Client::reject_invitation).
             ///
-            /// See [`crate::client::fluent_builders::RejectInvitation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RejectInvitation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectInvitation {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInvitation {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_member`](crate::client::Client::update_member).
             ///
-            /// See [`crate::client::fluent_builders::UpdateMember`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMember {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMember {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_node`](crate::client::Client::update_node).
             ///
-            /// See [`crate::client::fluent_builders::UpdateNode`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateNode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNode {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNode {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`vote_on_proposal`](crate::client::Client::vote_on_proposal).
             ///
-            /// See [`crate::client::fluent_builders::VoteOnProposal`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `VoteOnProposal`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VoteOnProposal {
     _private: ()

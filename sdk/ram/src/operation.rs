@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`accept_resource_share_invitation`](crate::client::Client::accept_resource_share_invitation).
             ///
-            /// See [`crate::client::fluent_builders::AcceptResourceShareInvitation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AcceptResourceShareInvitation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptResourceShareInvitation {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptResourceShareInvit
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_resource_share`](crate::client::Client::associate_resource_share).
             ///
-            /// See [`crate::client::fluent_builders::AssociateResourceShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateResourceShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateResourceShare {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResourceShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_resource_share_permission`](crate::client::Client::associate_resource_share_permission).
             ///
-            /// See [`crate::client::fluent_builders::AssociateResourceSharePermission`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateResourceSharePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateResourceSharePermission {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResourceSharePe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_resource_share`](crate::client::Client::create_resource_share).
             ///
-            /// See [`crate::client::fluent_builders::CreateResourceShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateResourceShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResourceShare {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResourceShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resource_share`](crate::client::Client::delete_resource_share).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResourceShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResourceShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourceShare {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_resource_share`](crate::client::Client::disassociate_resource_share).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateResourceShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateResourceShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResourceShare {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResourceShar
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_resource_share_permission`](crate::client::Client::disassociate_resource_share_permission).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateResourceSharePermission`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateResourceSharePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResourceSharePermission {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResourceShar
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`enable_sharing_with_aws_organization`](crate::client::Client::enable_sharing_with_aws_organization).
             ///
-            /// See [`crate::client::fluent_builders::EnableSharingWithAwsOrganization`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `EnableSharingWithAwsOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganization {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableSharingWithAwsOrga
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_permission`](crate::client::Client::get_permission).
             ///
-            /// See [`crate::client::fluent_builders::GetPermission`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPermission {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermission {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource_policies`](crate::client::Client::get_resource_policies).
             ///
-            /// See [`crate::client::fluent_builders::GetResourcePolicies`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResourcePolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourcePolicies {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicies {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource_share_associations`](crate::client::Client::get_resource_share_associations).
             ///
-            /// See [`crate::client::fluent_builders::GetResourceShareAssociations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResourceShareAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceShareAssociations {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceShareAssociat
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource_share_invitations`](crate::client::Client::get_resource_share_invitations).
             ///
-            /// See [`crate::client::fluent_builders::GetResourceShareInvitations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResourceShareInvitations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceShareInvitations {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceShareInvitati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource_shares`](crate::client::Client::get_resource_shares).
             ///
-            /// See [`crate::client::fluent_builders::GetResourceShares`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResourceShares`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceShares {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceShares {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_pending_invitation_resources`](crate::client::Client::list_pending_invitation_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListPendingInvitationResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPendingInvitationResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPendingInvitationResources {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPendingInvitationRes
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_permissions`](crate::client::Client::list_permissions).
             ///
-            /// See [`crate::client::fluent_builders::ListPermissions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPermissions {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_permission_versions`](crate::client::Client::list_permission_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListPermissionVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPermissionVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPermissionVersions {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_principals`](crate::client::Client::list_principals).
             ///
-            /// See [`crate::client::fluent_builders::ListPrincipals`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListPrincipals`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPrincipals {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrincipals {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resources`](crate::client::Client::list_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResources {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resource_share_permissions`](crate::client::Client::list_resource_share_permissions).
             ///
-            /// See [`crate::client::fluent_builders::ListResourceSharePermissions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResourceSharePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceSharePermissions {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceSharePermiss
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resource_types`](crate::client::Client::list_resource_types).
             ///
-            /// See [`crate::client::fluent_builders::ListResourceTypes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceTypes {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceTypes {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`promote_resource_share_created_from_policy`](crate::client::Client::promote_resource_share_created_from_policy).
             ///
-            /// See [`crate::client::fluent_builders::PromoteResourceShareCreatedFromPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PromoteResourceShareCreatedFromPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PromoteResourceShareCreatedFromPolicy {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PromoteResourceShareCrea
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`reject_resource_share_invitation`](crate::client::Client::reject_resource_share_invitation).
             ///
-            /// See [`crate::client::fluent_builders::RejectResourceShareInvitation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RejectResourceShareInvitation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectResourceShareInvitation {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectResourceShareInvit
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resource_share`](crate::client::Client::update_resource_share).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResourceShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResourceShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResourceShare {
     _private: ()

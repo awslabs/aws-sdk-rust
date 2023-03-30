@@ -258,6 +258,13 @@ impl  std::fmt::Debug for Tag  {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -308,12 +315,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The attributes of an <code>Endpoint</code>.</p>
 #[non_exhaustive]
@@ -344,6 +345,13 @@ impl  std::fmt::Debug for EndpointAttributes  {
         formatter.finish()
     }
 }
+impl EndpointAttributes {
+    /// Creates a new builder-style object to manufacture [`EndpointAttributes`](crate::model::EndpointAttributes).
+    pub fn builder() -> crate::model::endpoint_attributes::Builder {
+        crate::model::endpoint_attributes::Builder::default()
+    }
+}
+
 /// See [`EndpointAttributes`](crate::model::EndpointAttributes).
 pub mod endpoint_attributes {
     
@@ -393,12 +401,6 @@ pub mod endpoint_attributes {
     }
     
     
-}
-impl EndpointAttributes {
-    /// Creates a new builder-style object to manufacture [`EndpointAttributes`](crate::model::EndpointAttributes).
-    pub fn builder() -> crate::model::endpoint_attributes::Builder {
-        crate::model::endpoint_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AppInstanceUserEndpointType`, it is important to ensure
@@ -502,6 +504,13 @@ impl AppInstanceRetentionSettings {
         self.channel_retention_settings.as_ref()
     }
 }
+impl AppInstanceRetentionSettings {
+    /// Creates a new builder-style object to manufacture [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
+    pub fn builder() -> crate::model::app_instance_retention_settings::Builder {
+        crate::model::app_instance_retention_settings::Builder::default()
+    }
+}
+
 /// See [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
 pub mod app_instance_retention_settings {
     
@@ -532,12 +541,6 @@ pub mod app_instance_retention_settings {
     
     
 }
-impl AppInstanceRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
-    pub fn builder() -> crate::model::app_instance_retention_settings::Builder {
-        crate::model::app_instance_retention_settings::Builder::default()
-    }
-}
 
 /// <p>The details of the retention settings for a channel.</p>
 #[non_exhaustive]
@@ -553,6 +556,13 @@ impl ChannelRetentionSettings {
         self.retention_days
     }
 }
+impl ChannelRetentionSettings {
+    /// Creates a new builder-style object to manufacture [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
+    pub fn builder() -> crate::model::channel_retention_settings::Builder {
+        crate::model::channel_retention_settings::Builder::default()
+    }
+}
+
 /// See [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
 pub mod channel_retention_settings {
     
@@ -582,12 +592,6 @@ pub mod channel_retention_settings {
     }
     
     
-}
-impl ChannelRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
-    pub fn builder() -> crate::model::channel_retention_settings::Builder {
-        crate::model::channel_retention_settings::Builder::default()
-    }
 }
 
 /// <p>Summary of the details of an <code>AppInstanceUser</code>.</p>
@@ -627,6 +631,13 @@ impl  std::fmt::Debug for AppInstanceUserSummary  {
         formatter.finish()
     }
 }
+impl AppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
+    pub fn builder() -> crate::model::app_instance_user_summary::Builder {
+        crate::model::app_instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
 pub mod app_instance_user_summary {
     
@@ -690,12 +701,6 @@ pub mod app_instance_user_summary {
     
     
 }
-impl AppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
-    pub fn builder() -> crate::model::app_instance_user_summary::Builder {
-        crate::model::app_instance_user_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of an <code>AppInstanceUserEndpoint</code>.</p>
 #[non_exhaustive]
@@ -758,6 +763,13 @@ impl  std::fmt::Debug for AppInstanceUserEndpointSummary  {
         formatter.finish()
     }
 }
+impl AppInstanceUserEndpointSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
+    pub fn builder() -> crate::model::app_instance_user_endpoint_summary::Builder {
+        crate::model::app_instance_user_endpoint_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
 pub mod app_instance_user_endpoint_summary {
     
@@ -860,12 +872,6 @@ pub mod app_instance_user_endpoint_summary {
     
     
 }
-impl AppInstanceUserEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
-    pub fn builder() -> crate::model::app_instance_user_endpoint_summary::Builder {
-        crate::model::app_instance_user_endpoint_summary::Builder::default()
-    }
-}
 
 /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p> 
 /// <ul> 
@@ -894,6 +900,13 @@ impl EndpointState {
         self.status_reason.as_ref()
     }
 }
+impl EndpointState {
+    /// Creates a new builder-style object to manufacture [`EndpointState`](crate::model::EndpointState).
+    pub fn builder() -> crate::model::endpoint_state::Builder {
+        crate::model::endpoint_state::Builder::default()
+    }
+}
+
 /// See [`EndpointState`](crate::model::EndpointState).
 pub mod endpoint_state {
     
@@ -935,12 +948,6 @@ pub mod endpoint_state {
     }
     
     
-}
-impl EndpointState {
-    /// Creates a new builder-style object to manufacture [`EndpointState`](crate::model::EndpointState).
-    pub fn builder() -> crate::model::endpoint_state::Builder {
-        crate::model::endpoint_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndpointStatusReason`, it is important to ensure
@@ -1144,6 +1151,13 @@ impl  std::fmt::Debug for AppInstanceSummary  {
         formatter.finish()
     }
 }
+impl AppInstanceSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceSummary`](crate::model::AppInstanceSummary).
+    pub fn builder() -> crate::model::app_instance_summary::Builder {
+        crate::model::app_instance_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceSummary`](crate::model::AppInstanceSummary).
 pub mod app_instance_summary {
     
@@ -1207,12 +1221,6 @@ pub mod app_instance_summary {
     
     
 }
-impl AppInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceSummary`](crate::model::AppInstanceSummary).
-    pub fn builder() -> crate::model::app_instance_summary::Builder {
-        crate::model::app_instance_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
@@ -1228,6 +1236,13 @@ impl AppInstanceAdminSummary {
         self.admin.as_ref()
     }
 }
+impl AppInstanceAdminSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
+    pub fn builder() -> crate::model::app_instance_admin_summary::Builder {
+        crate::model::app_instance_admin_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
 pub mod app_instance_admin_summary {
     
@@ -1257,12 +1272,6 @@ pub mod app_instance_admin_summary {
     }
     
     
-}
-impl AppInstanceAdminSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
-    pub fn builder() -> crate::model::app_instance_admin_summary::Builder {
-        crate::model::app_instance_admin_summary::Builder::default()
-    }
 }
 
 /// <p>The details of a user.</p>
@@ -1294,6 +1303,13 @@ impl  std::fmt::Debug for Identity  {
         formatter.finish()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
     
@@ -1343,12 +1359,6 @@ pub mod identity {
     }
     
     
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
 }
 
 /// <p>An endpoint under an Amazon Chime <code>AppInstanceUser</code> that receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
@@ -1456,6 +1466,13 @@ impl  std::fmt::Debug for AppInstanceUserEndpoint  {
         formatter.finish()
     }
 }
+impl AppInstanceUserEndpoint {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
+    pub fn builder() -> crate::model::app_instance_user_endpoint::Builder {
+        crate::model::app_instance_user_endpoint::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
 pub mod app_instance_user_endpoint {
     
@@ -1622,12 +1639,6 @@ pub mod app_instance_user_endpoint {
     
     
 }
-impl AppInstanceUserEndpoint {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
-    pub fn builder() -> crate::model::app_instance_user_endpoint::Builder {
-        crate::model::app_instance_user_endpoint::Builder::default()
-    }
-}
 
 /// <p>The details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
@@ -1682,6 +1693,13 @@ impl  std::fmt::Debug for AppInstanceUser  {
         formatter.finish()
     }
 }
+impl AppInstanceUser {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUser`](crate::model::AppInstanceUser).
+    pub fn builder() -> crate::model::app_instance_user::Builder {
+        crate::model::app_instance_user::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUser`](crate::model::AppInstanceUser).
 pub mod app_instance_user {
     
@@ -1771,12 +1789,6 @@ pub mod app_instance_user {
     
     
 }
-impl AppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUser`](crate::model::AppInstanceUser).
-    pub fn builder() -> crate::model::app_instance_user::Builder {
-        crate::model::app_instance_user::Builder::default()
-    }
-}
 
 /// <p>The details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
@@ -1806,6 +1818,13 @@ impl AppInstanceAdmin {
         self.created_timestamp.as_ref()
     }
 }
+impl AppInstanceAdmin {
+    /// Creates a new builder-style object to manufacture [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
+    pub fn builder() -> crate::model::app_instance_admin::Builder {
+        crate::model::app_instance_admin::Builder::default()
+    }
+}
+
 /// See [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
 pub mod app_instance_admin {
     
@@ -1859,12 +1878,6 @@ pub mod app_instance_admin {
     }
     
     
-}
-impl AppInstanceAdmin {
-    /// Creates a new builder-style object to manufacture [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
-    pub fn builder() -> crate::model::app_instance_admin::Builder {
-        crate::model::app_instance_admin::Builder::default()
-    }
 }
 
 /// <p>The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging application.</p>
@@ -1920,6 +1933,13 @@ impl  std::fmt::Debug for AppInstance  {
         formatter.finish()
     }
 }
+impl AppInstance {
+    /// Creates a new builder-style object to manufacture [`AppInstance`](crate::model::AppInstance).
+    pub fn builder() -> crate::model::app_instance::Builder {
+        crate::model::app_instance::Builder::default()
+    }
+}
+
 /// See [`AppInstance`](crate::model::AppInstance).
 pub mod app_instance {
     
@@ -2008,11 +2028,5 @@ pub mod app_instance {
     }
     
     
-}
-impl AppInstance {
-    /// Creates a new builder-style object to manufacture [`AppInstance`](crate::model::AppInstance).
-    pub fn builder() -> crate::model::app_instance::Builder {
-        crate::model::app_instance::Builder::default()
-    }
 }
 

@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -63,12 +70,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> 
 /// <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p>
@@ -92,6 +93,13 @@ impl MetricPolicy {
         self.metric_policy_rules.as_deref()
     }
 }
+impl MetricPolicy {
+    /// Creates a new builder-style object to manufacture [`MetricPolicy`](crate::model::MetricPolicy).
+    pub fn builder() -> crate::model::metric_policy::Builder {
+        crate::model::metric_policy::Builder::default()
+    }
+}
+
 /// See [`MetricPolicy`](crate::model::MetricPolicy).
 pub mod metric_policy {
     
@@ -140,12 +148,6 @@ pub mod metric_policy {
     
     
 }
-impl MetricPolicy {
-    /// Creates a new builder-style object to manufacture [`MetricPolicy`](crate::model::MetricPolicy).
-    pub fn builder() -> crate::model::metric_policy::Builder {
-        crate::model::metric_policy::Builder::default()
-    }
-}
 
 /// <p>A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
 #[non_exhaustive]
@@ -168,6 +170,13 @@ impl MetricPolicyRule {
         self.object_group_name.as_deref()
     }
 }
+impl MetricPolicyRule {
+    /// Creates a new builder-style object to manufacture [`MetricPolicyRule`](crate::model::MetricPolicyRule).
+    pub fn builder() -> crate::model::metric_policy_rule::Builder {
+        crate::model::metric_policy_rule::Builder::default()
+    }
+}
+
 /// See [`MetricPolicyRule`](crate::model::MetricPolicyRule).
 pub mod metric_policy_rule {
     
@@ -209,12 +218,6 @@ pub mod metric_policy_rule {
     }
     
     
-}
-impl MetricPolicyRule {
-    /// Creates a new builder-style object to manufacture [`MetricPolicyRule`](crate::model::MetricPolicyRule).
-    pub fn builder() -> crate::model::metric_policy_rule::Builder {
-        crate::model::metric_policy_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContainerLevelMetrics`, it is important to ensure
@@ -351,6 +354,13 @@ impl CorsRule {
         self.expose_headers.as_deref()
     }
 }
+impl CorsRule {
+    /// Creates a new builder-style object to manufacture [`CorsRule`](crate::model::CorsRule).
+    pub fn builder() -> crate::model::cors_rule::Builder {
+        crate::model::cors_rule::Builder::default()
+    }
+}
+
 /// See [`CorsRule`](crate::model::CorsRule).
 pub mod cors_rule {
     
@@ -463,12 +473,6 @@ pub mod cors_rule {
     }
     
     
-}
-impl CorsRule {
-    /// Creates a new builder-style object to manufacture [`CorsRule`](crate::model::CorsRule).
-    pub fn builder() -> crate::model::cors_rule::Builder {
-        crate::model::cors_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MethodName`, it is important to ensure
@@ -630,6 +634,13 @@ impl Container {
         self.access_logging_enabled
     }
 }
+impl Container {
+    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
+    pub fn builder() -> crate::model::container::Builder {
+        crate::model::container::Builder::default()
+    }
+}
+
 /// See [`Container`](crate::model::Container).
 pub mod container {
     
@@ -737,12 +748,6 @@ pub mod container {
     }
     
     
-}
-impl Container {
-    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
-    pub fn builder() -> crate::model::container::Builder {
-        crate::model::container::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContainerStatus`, it is important to ensure

@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`add_draft_app_version_resource_mappings`](crate::client::Client::add_draft_app_version_resource_mappings).
             ///
-            /// See [`crate::client::fluent_builders::AddDraftAppVersionResourceMappings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AddDraftAppVersionResourceMappings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappings {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddDraftAppVersionResour
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_app`](crate::client::Client::create_app).
             ///
-            /// See [`crate::client::fluent_builders::CreateApp`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApp {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApp {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_recommendation_template`](crate::client::Client::create_recommendation_template).
             ///
-            /// See [`crate::client::fluent_builders::CreateRecommendationTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateRecommendationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRecommendationTemplate {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecommendationTemp
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_resiliency_policy`](crate::client::Client::create_resiliency_policy).
             ///
-            /// See [`crate::client::fluent_builders::CreateResiliencyPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateResiliencyPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResiliencyPolicy {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResiliencyPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_app`](crate::client::Client::delete_app).
             ///
-            /// See [`crate::client::fluent_builders::DeleteApp`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteApp {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApp {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_app_assessment`](crate::client::Client::delete_app_assessment).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAppAssessment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAppAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppAssessment {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppAssessment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_recommendation_template`](crate::client::Client::delete_recommendation_template).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRecommendationTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRecommendationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRecommendationTemplate {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationTemp
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resiliency_policy`](crate::client::Client::delete_resiliency_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResiliencyPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResiliencyPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResiliencyPolicy {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResiliencyPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_app`](crate::client::Client::describe_app).
             ///
-            /// See [`crate::client::fluent_builders::DescribeApp`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeApp {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApp {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_app_assessment`](crate::client::Client::describe_app_assessment).
             ///
-            /// See [`crate::client::fluent_builders::DescribeAppAssessment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeAppAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppAssessment {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppAssessment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_app_version_resources_resolution_status`](crate::client::Client::describe_app_version_resources_resolution_status).
             ///
-            /// See [`crate::client::fluent_builders::DescribeAppVersionResourcesResolutionStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeAppVersionResourcesResolutionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppVersionResourcesResolutionStatus {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppVersionResour
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_app_version_template`](crate::client::Client::describe_app_version_template).
             ///
-            /// See [`crate::client::fluent_builders::DescribeAppVersionTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeAppVersionTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAppVersionTemplate {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppVersionTempla
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_draft_app_version_resources_import_status`](crate::client::Client::describe_draft_app_version_resources_import_status).
             ///
-            /// See [`crate::client::fluent_builders::DescribeDraftAppVersionResourcesImportStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeDraftAppVersionResourcesImportStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDraftAppVersionResourcesImportStatus {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDraftAppVersionR
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_resiliency_policy`](crate::client::Client::describe_resiliency_policy).
             ///
-            /// See [`crate::client::fluent_builders::DescribeResiliencyPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeResiliencyPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeResiliencyPolicy {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResiliencyPolicy
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`import_resources_to_draft_app_version`](crate::client::Client::import_resources_to_draft_app_version).
             ///
-            /// See [`crate::client::fluent_builders::ImportResourcesToDraftAppVersion`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ImportResourcesToDraftAppVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersion {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportResourcesToDraftAp
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_alarm_recommendations`](crate::client::Client::list_alarm_recommendations).
             ///
-            /// See [`crate::client::fluent_builders::ListAlarmRecommendations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAlarmRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAlarmRecommendations {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmRecommendations
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_assessments`](crate::client::Client::list_app_assessments).
             ///
-            /// See [`crate::client::fluent_builders::ListAppAssessments`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppAssessments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppAssessments {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppAssessments {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_component_compliances`](crate::client::Client::list_app_component_compliances).
             ///
-            /// See [`crate::client::fluent_builders::ListAppComponentCompliances`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppComponentCompliances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppComponentCompliances {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppComponentComplian
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_component_recommendations`](crate::client::Client::list_app_component_recommendations).
             ///
-            /// See [`crate::client::fluent_builders::ListAppComponentRecommendations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppComponentRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppComponentRecommendations {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppComponentRecommen
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_apps`](crate::client::Client::list_apps).
             ///
-            /// See [`crate::client::fluent_builders::ListApps`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListApps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApps {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApps {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_version_resource_mappings`](crate::client::Client::list_app_version_resource_mappings).
             ///
-            /// See [`crate::client::fluent_builders::ListAppVersionResourceMappings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppVersionResourceMappings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppVersionResourceMappings {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResourceMa
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_version_resources`](crate::client::Client::list_app_version_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListAppVersionResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppVersionResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppVersionResources {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResources 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_versions`](crate::client::Client::list_app_versions).
             ///
-            /// See [`crate::client::fluent_builders::ListAppVersions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppVersions {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_recommendation_templates`](crate::client::Client::list_recommendation_templates).
             ///
-            /// See [`crate::client::fluent_builders::ListRecommendationTemplates`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRecommendationTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecommendationTemplates {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommendationTempla
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resiliency_policies`](crate::client::Client::list_resiliency_policies).
             ///
-            /// See [`crate::client::fluent_builders::ListResiliencyPolicies`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResiliencyPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResiliencyPolicies {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResiliencyPolicies {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_sop_recommendations`](crate::client::Client::list_sop_recommendations).
             ///
-            /// See [`crate::client::fluent_builders::ListSopRecommendations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSopRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSopRecommendations {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSopRecommendations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_suggested_resiliency_policies`](crate::client::Client::list_suggested_resiliency_policies).
             ///
-            /// See [`crate::client::fluent_builders::ListSuggestedResiliencyPolicies`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSuggestedResiliencyPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSuggestedResiliencyPolicies {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSuggestedResiliencyP
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_test_recommendations`](crate::client::Client::list_test_recommendations).
             ///
-            /// See [`crate::client::fluent_builders::ListTestRecommendations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTestRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTestRecommendations {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTestRecommendations 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_unsupported_app_version_resources`](crate::client::Client::list_unsupported_app_version_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListUnsupportedAppVersionResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListUnsupportedAppVersionResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResources {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUnsupportedAppVersio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`publish_app_version`](crate::client::Client::publish_app_version).
             ///
-            /// See [`crate::client::fluent_builders::PublishAppVersion`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PublishAppVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PublishAppVersion {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishAppVersion {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_draft_app_version_template`](crate::client::Client::put_draft_app_version_template).
             ///
-            /// See [`crate::client::fluent_builders::PutDraftAppVersionTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutDraftAppVersionTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDraftAppVersionTemplate {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDraftAppVersionTempla
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`remove_draft_app_version_resource_mappings`](crate::client::Client::remove_draft_app_version_resource_mappings).
             ///
-            /// See [`crate::client::fluent_builders::RemoveDraftAppVersionResourceMappings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RemoveDraftAppVersionResourceMappings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappings {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveDraftAppVersionRes
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`resolve_app_version_resources`](crate::client::Client::resolve_app_version_resources).
             ///
-            /// See [`crate::client::fluent_builders::ResolveAppVersionResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ResolveAppVersionResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResolveAppVersionResources {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveAppVersionResourc
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_app_assessment`](crate::client::Client::start_app_assessment).
             ///
-            /// See [`crate::client::fluent_builders::StartAppAssessment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartAppAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartAppAssessment {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAppAssessment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_app`](crate::client::Client::update_app).
             ///
-            /// See [`crate::client::fluent_builders::UpdateApp`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApp {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApp {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resiliency_policy`](crate::client::Client::update_resiliency_policy).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResiliencyPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResiliencyPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResiliencyPolicy {
     _private: ()

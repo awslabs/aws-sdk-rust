@@ -42,6 +42,13 @@ impl Fragment {
         self.fragment_length_in_milliseconds
     }
 }
+impl Fragment {
+    /// Creates a new builder-style object to manufacture [`Fragment`](crate::model::Fragment).
+    pub fn builder() -> crate::model::fragment::Builder {
+        crate::model::fragment::Builder::default()
+    }
+}
+
 /// See [`Fragment`](crate::model::Fragment).
 pub mod fragment {
     
@@ -122,12 +129,6 @@ pub mod fragment {
     
     
 }
-impl Fragment {
-    /// Creates a new builder-style object to manufacture [`Fragment`](crate::model::Fragment).
-    pub fn builder() -> crate::model::fragment::Builder {
-        crate::model::fragment::Builder::default()
-    }
-}
 
 /// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> 
 /// <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> 
@@ -158,6 +159,13 @@ impl FragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
+impl FragmentSelector {
+    /// Creates a new builder-style object to manufacture [`FragmentSelector`](crate::model::FragmentSelector).
+    pub fn builder() -> crate::model::fragment_selector::Builder {
+        crate::model::fragment_selector::Builder::default()
+    }
+}
+
 /// See [`FragmentSelector`](crate::model::FragmentSelector).
 pub mod fragment_selector {
     
@@ -200,12 +208,6 @@ pub mod fragment_selector {
     
     
 }
-impl FragmentSelector {
-    /// Creates a new builder-style object to manufacture [`FragmentSelector`](crate::model::FragmentSelector).
-    pub fn builder() -> crate::model::fragment_selector::Builder {
-        crate::model::fragment_selector::Builder::default()
-    }
-}
 
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
@@ -228,6 +230,13 @@ impl TimestampRange {
         self.end_timestamp.as_ref()
     }
 }
+impl TimestampRange {
+    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
+    pub fn builder() -> crate::model::timestamp_range::Builder {
+        crate::model::timestamp_range::Builder::default()
+    }
+}
+
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
     
@@ -269,12 +278,6 @@ pub mod timestamp_range {
     }
     
     
-}
-impl TimestampRange {
-    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
-    pub fn builder() -> crate::model::timestamp_range::Builder {
-        crate::model::timestamp_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FragmentSelectorType`, it is important to ensure
@@ -399,6 +402,13 @@ impl Image {
         self.image_content.as_deref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
     
@@ -464,12 +474,6 @@ pub mod image {
     }
     
     
-}
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImageError`, it is important to ensure
@@ -1077,6 +1081,13 @@ impl HlsFragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
+impl HlsFragmentSelector {
+    /// Creates a new builder-style object to manufacture [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
+    pub fn builder() -> crate::model::hls_fragment_selector::Builder {
+        crate::model::hls_fragment_selector::Builder::default()
+    }
+}
+
 /// See [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
 pub mod hls_fragment_selector {
     
@@ -1129,12 +1140,6 @@ pub mod hls_fragment_selector {
     
     
 }
-impl HlsFragmentSelector {
-    /// Creates a new builder-style object to manufacture [`HlsFragmentSelector`](crate::model::HlsFragmentSelector).
-    pub fn builder() -> crate::model::hls_fragment_selector::Builder {
-        crate::model::hls_fragment_selector::Builder::default()
-    }
-}
 
 /// <p>The start and end of the timestamp range for the requested media.</p> 
 /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
@@ -1170,6 +1175,13 @@ impl HlsTimestampRange {
         self.end_timestamp.as_ref()
     }
 }
+impl HlsTimestampRange {
+    /// Creates a new builder-style object to manufacture [`HlsTimestampRange`](crate::model::HlsTimestampRange).
+    pub fn builder() -> crate::model::hls_timestamp_range::Builder {
+        crate::model::hls_timestamp_range::Builder::default()
+    }
+}
+
 /// See [`HlsTimestampRange`](crate::model::HlsTimestampRange).
 pub mod hls_timestamp_range {
     
@@ -1223,12 +1235,6 @@ pub mod hls_timestamp_range {
     }
     
     
-}
-impl HlsTimestampRange {
-    /// Creates a new builder-style object to manufacture [`HlsTimestampRange`](crate::model::HlsTimestampRange).
-    pub fn builder() -> crate::model::hls_timestamp_range::Builder {
-        crate::model::hls_timestamp_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HlsFragmentSelectorType`, it is important to ensure
@@ -1431,6 +1437,13 @@ impl DashFragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
+impl DashFragmentSelector {
+    /// Creates a new builder-style object to manufacture [`DashFragmentSelector`](crate::model::DashFragmentSelector).
+    pub fn builder() -> crate::model::dash_fragment_selector::Builder {
+        crate::model::dash_fragment_selector::Builder::default()
+    }
+}
+
 /// See [`DashFragmentSelector`](crate::model::DashFragmentSelector).
 pub mod dash_fragment_selector {
     
@@ -1483,12 +1496,6 @@ pub mod dash_fragment_selector {
     
     
 }
-impl DashFragmentSelector {
-    /// Creates a new builder-style object to manufacture [`DashFragmentSelector`](crate::model::DashFragmentSelector).
-    pub fn builder() -> crate::model::dash_fragment_selector::Builder {
-        crate::model::dash_fragment_selector::Builder::default()
-    }
-}
 
 /// <p>The start and end of the timestamp range for the requested media.</p> 
 /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> 
@@ -1525,6 +1532,13 @@ impl DashTimestampRange {
         self.end_timestamp.as_ref()
     }
 }
+impl DashTimestampRange {
+    /// Creates a new builder-style object to manufacture [`DashTimestampRange`](crate::model::DashTimestampRange).
+    pub fn builder() -> crate::model::dash_timestamp_range::Builder {
+        crate::model::dash_timestamp_range::Builder::default()
+    }
+}
+
 /// See [`DashTimestampRange`](crate::model::DashTimestampRange).
 pub mod dash_timestamp_range {
     
@@ -1578,12 +1592,6 @@ pub mod dash_timestamp_range {
     }
     
     
-}
-impl DashTimestampRange {
-    /// Creates a new builder-style object to manufacture [`DashTimestampRange`](crate::model::DashTimestampRange).
-    pub fn builder() -> crate::model::dash_timestamp_range::Builder {
-        crate::model::dash_timestamp_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DashFragmentSelectorType`, it is important to ensure
@@ -1941,6 +1949,13 @@ impl ClipFragmentSelector {
         self.timestamp_range.as_ref()
     }
 }
+impl ClipFragmentSelector {
+    /// Creates a new builder-style object to manufacture [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
+    pub fn builder() -> crate::model::clip_fragment_selector::Builder {
+        crate::model::clip_fragment_selector::Builder::default()
+    }
+}
+
 /// See [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
 pub mod clip_fragment_selector {
     
@@ -1983,12 +1998,6 @@ pub mod clip_fragment_selector {
     
     
 }
-impl ClipFragmentSelector {
-    /// Creates a new builder-style object to manufacture [`ClipFragmentSelector`](crate::model::ClipFragmentSelector).
-    pub fn builder() -> crate::model::clip_fragment_selector::Builder {
-        crate::model::clip_fragment_selector::Builder::default()
-    }
-}
 
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
@@ -2017,6 +2026,13 @@ impl ClipTimestampRange {
         self.end_timestamp.as_ref()
     }
 }
+impl ClipTimestampRange {
+    /// Creates a new builder-style object to manufacture [`ClipTimestampRange`](crate::model::ClipTimestampRange).
+    pub fn builder() -> crate::model::clip_timestamp_range::Builder {
+        crate::model::clip_timestamp_range::Builder::default()
+    }
+}
+
 /// See [`ClipTimestampRange`](crate::model::ClipTimestampRange).
 pub mod clip_timestamp_range {
     
@@ -2064,12 +2080,6 @@ pub mod clip_timestamp_range {
     }
     
     
-}
-impl ClipTimestampRange {
-    /// Creates a new builder-style object to manufacture [`ClipTimestampRange`](crate::model::ClipTimestampRange).
-    pub fn builder() -> crate::model::clip_timestamp_range::Builder {
-        crate::model::clip_timestamp_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClipFragmentSelectorType`, it is important to ensure

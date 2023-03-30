@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`join_storage_session`](crate::client::Client::join_storage_session).
             ///
-            /// See [`crate::client::fluent_builders::JoinStorageSession`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `JoinStorageSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct JoinStorageSession {
     _private: ()

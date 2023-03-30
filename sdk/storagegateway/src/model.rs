@@ -21,6 +21,13 @@ impl StorageGatewayError {
         self.error_details.as_ref()
     }
 }
+impl StorageGatewayError {
+    /// Creates a new builder-style object to manufacture [`StorageGatewayError`](crate::model::StorageGatewayError).
+    pub fn builder() -> crate::model::storage_gateway_error::Builder {
+        crate::model::storage_gateway_error::Builder::default()
+    }
+}
+
 /// See [`StorageGatewayError`](crate::model::StorageGatewayError).
 pub mod storage_gateway_error {
     
@@ -68,12 +75,6 @@ pub mod storage_gateway_error {
     }
     
     
-}
-impl StorageGatewayError {
-    /// Creates a new builder-style object to manufacture [`StorageGatewayError`](crate::model::StorageGatewayError).
-    pub fn builder() -> crate::model::storage_gateway_error::Builder {
-        crate::model::storage_gateway_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorCode`, it is important to ensure
@@ -479,6 +480,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -520,12 +528,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SmbSecurityStrategy`, it is important to ensure
@@ -631,6 +633,13 @@ impl SmbLocalGroups {
         self.gateway_admins.as_deref()
     }
 }
+impl SmbLocalGroups {
+    /// Creates a new builder-style object to manufacture [`SmbLocalGroups`](crate::model::SmbLocalGroups).
+    pub fn builder() -> crate::model::smb_local_groups::Builder {
+        crate::model::smb_local_groups::Builder::default()
+    }
+}
+
 /// See [`SmbLocalGroups`](crate::model::SmbLocalGroups).
 pub mod smb_local_groups {
     
@@ -669,12 +678,6 @@ pub mod smb_local_groups {
     
     
 }
-impl SmbLocalGroups {
-    /// Creates a new builder-style object to manufacture [`SmbLocalGroups`](crate::model::SmbLocalGroups).
-    pub fn builder() -> crate::model::smb_local_groups::Builder {
-        crate::model::smb_local_groups::Builder::default()
-    }
-}
 
 /// <p>The refresh cache information for the file share or FSx file systems.</p>
 #[non_exhaustive]
@@ -692,6 +695,13 @@ impl CacheAttributes {
         self.cache_stale_timeout_in_seconds
     }
 }
+impl CacheAttributes {
+    /// Creates a new builder-style object to manufacture [`CacheAttributes`](crate::model::CacheAttributes).
+    pub fn builder() -> crate::model::cache_attributes::Builder {
+        crate::model::cache_attributes::Builder::default()
+    }
+}
+
 /// See [`CacheAttributes`](crate::model::CacheAttributes).
 pub mod cache_attributes {
     
@@ -723,12 +733,6 @@ pub mod cache_attributes {
     }
     
     
-}
-impl CacheAttributes {
-    /// Creates a new builder-style object to manufacture [`CacheAttributes`](crate::model::CacheAttributes).
-    pub fn builder() -> crate::model::cache_attributes::Builder {
-        crate::model::cache_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CaseSensitivity`, it is important to ensure
@@ -957,6 +961,13 @@ impl NfsFileShareDefaults {
         self.owner_id
     }
 }
+impl NfsFileShareDefaults {
+    /// Creates a new builder-style object to manufacture [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
+    pub fn builder() -> crate::model::nfs_file_share_defaults::Builder {
+        crate::model::nfs_file_share_defaults::Builder::default()
+    }
+}
+
 /// See [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
 pub mod nfs_file_share_defaults {
     
@@ -1022,12 +1033,6 @@ pub mod nfs_file_share_defaults {
     }
     
     
-}
-impl NfsFileShareDefaults {
-    /// Creates a new builder-style object to manufacture [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
-    pub fn builder() -> crate::model::nfs_file_share_defaults::Builder {
-        crate::model::nfs_file_share_defaults::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GatewayCapacity`, it is important to ensure
@@ -1177,6 +1182,13 @@ impl BandwidthRateLimitInterval {
         self.average_download_rate_limit_in_bits_per_sec
     }
 }
+impl BandwidthRateLimitInterval {
+    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+    pub fn builder() -> crate::model::bandwidth_rate_limit_interval::Builder {
+        crate::model::bandwidth_rate_limit_interval::Builder::default()
+    }
+}
+
 /// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
 pub mod bandwidth_rate_limit_interval {
     
@@ -1289,12 +1301,6 @@ pub mod bandwidth_rate_limit_interval {
     
     
 }
-impl BandwidthRateLimitInterval {
-    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
-    pub fn builder() -> crate::model::bandwidth_rate_limit_interval::Builder {
-        crate::model::bandwidth_rate_limit_interval::Builder::default()
-    }
-}
 
 /// <p>An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
 #[non_exhaustive]
@@ -1342,6 +1348,13 @@ impl AutomaticTapeCreationRule {
         self.worm
     }
 }
+impl AutomaticTapeCreationRule {
+    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
+    pub fn builder() -> crate::model::automatic_tape_creation_rule::Builder {
+        crate::model::automatic_tape_creation_rule::Builder::default()
+    }
+}
+
 /// See [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
 pub mod automatic_tape_creation_rule {
     
@@ -1425,12 +1438,6 @@ pub mod automatic_tape_creation_rule {
     
     
 }
-impl AutomaticTapeCreationRule {
-    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
-    pub fn builder() -> crate::model::automatic_tape_creation_rule::Builder {
-        crate::model::automatic_tape_creation_rule::Builder::default()
-    }
-}
 
 /// <p>Describes a storage volume object.</p>
 #[non_exhaustive]
@@ -1498,6 +1505,13 @@ impl VolumeInfo {
         self.volume_attachment_status.as_deref()
     }
 }
+impl VolumeInfo {
+    /// Creates a new builder-style object to manufacture [`VolumeInfo`](crate::model::VolumeInfo).
+    pub fn builder() -> crate::model::volume_info::Builder {
+        crate::model::volume_info::Builder::default()
+    }
+}
+
 /// See [`VolumeInfo`](crate::model::VolumeInfo).
 pub mod volume_info {
     
@@ -1611,12 +1625,6 @@ pub mod volume_info {
     
     
 }
-impl VolumeInfo {
-    /// Creates a new builder-style object to manufacture [`VolumeInfo`](crate::model::VolumeInfo).
-    pub fn builder() -> crate::model::volume_info::Builder {
-        crate::model::volume_info::Builder::default()
-    }
-}
 
 /// <p>Describes a storage volume recovery point object.</p>
 #[non_exhaustive]
@@ -1657,6 +1665,13 @@ impl VolumeRecoveryPointInfo {
         self.volume_recovery_point_time.as_deref()
     }
 }
+impl VolumeRecoveryPointInfo {
+    /// Creates a new builder-style object to manufacture [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
+    pub fn builder() -> crate::model::volume_recovery_point_info::Builder {
+        crate::model::volume_recovery_point_info::Builder::default()
+    }
+}
+
 /// See [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
 pub mod volume_recovery_point_info {
     
@@ -1729,12 +1744,6 @@ pub mod volume_recovery_point_info {
     
     
 }
-impl VolumeRecoveryPointInfo {
-    /// Creates a new builder-style object to manufacture [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
-    pub fn builder() -> crate::model::volume_recovery_point_info::Builder {
-        crate::model::volume_recovery_point_info::Builder::default()
-    }
-}
 
 /// <p>Describes a virtual tape.</p>
 #[non_exhaustive]
@@ -1799,6 +1808,13 @@ impl TapeInfo {
         self.pool_entry_date.as_ref()
     }
 }
+impl TapeInfo {
+    /// Creates a new builder-style object to manufacture [`TapeInfo`](crate::model::TapeInfo).
+    pub fn builder() -> crate::model::tape_info::Builder {
+        crate::model::tape_info::Builder::default()
+    }
+}
+
 /// See [`TapeInfo`](crate::model::TapeInfo).
 pub mod tape_info {
     
@@ -1913,12 +1929,6 @@ pub mod tape_info {
     
     
 }
-impl TapeInfo {
-    /// Creates a new builder-style object to manufacture [`TapeInfo`](crate::model::TapeInfo).
-    pub fn builder() -> crate::model::tape_info::Builder {
-        crate::model::tape_info::Builder::default()
-    }
-}
 
 /// <p>Describes a custom tape pool.</p>
 #[non_exhaustive]
@@ -1969,6 +1979,13 @@ impl PoolInfo {
         self.pool_status.as_ref()
     }
 }
+impl PoolInfo {
+    /// Creates a new builder-style object to manufacture [`PoolInfo`](crate::model::PoolInfo).
+    pub fn builder() -> crate::model::pool_info::Builder {
+        crate::model::pool_info::Builder::default()
+    }
+}
+
 /// See [`PoolInfo`](crate::model::PoolInfo).
 pub mod pool_info {
     
@@ -2058,12 +2075,6 @@ pub mod pool_info {
     }
     
     
-}
-impl PoolInfo {
-    /// Creates a new builder-style object to manufacture [`PoolInfo`](crate::model::PoolInfo).
-    pub fn builder() -> crate::model::pool_info::Builder {
-        crate::model::pool_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PoolStatus`, it is important to ensure
@@ -2382,6 +2393,13 @@ impl Disk {
         self.disk_attribute_list.as_deref()
     }
 }
+impl Disk {
+    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
+    pub fn builder() -> crate::model::disk::Builder {
+        crate::model::disk::Builder::default()
+    }
+}
+
 /// See [`Disk`](crate::model::Disk).
 pub mod disk {
     
@@ -2505,12 +2523,6 @@ pub mod disk {
     
     
 }
-impl Disk {
-    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
-    pub fn builder() -> crate::model::disk::Builder {
-        crate::model::disk::Builder::default()
-    }
-}
 
 /// <p>Describes a gateway object.</p>
 #[non_exhaustive]
@@ -2584,6 +2596,13 @@ impl GatewayInfo {
         self.host_environment_id.as_deref()
     }
 }
+impl GatewayInfo {
+    /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::model::GatewayInfo).
+    pub fn builder() -> crate::model::gateway_info::Builder {
+        crate::model::gateway_info::Builder::default()
+    }
+}
+
 /// See [`GatewayInfo`](crate::model::GatewayInfo).
 pub mod gateway_info {
     
@@ -2711,12 +2730,6 @@ pub mod gateway_info {
     }
     
     
-}
-impl GatewayInfo {
-    /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::model::GatewayInfo).
-    pub fn builder() -> crate::model::gateway_info::Builder {
-        crate::model::gateway_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HostEnvironment`, it is important to ensure
@@ -2856,6 +2869,13 @@ impl FileSystemAssociationSummary {
         self.gateway_arn.as_deref()
     }
 }
+impl FileSystemAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
+    pub fn builder() -> crate::model::file_system_association_summary::Builder {
+        crate::model::file_system_association_summary::Builder::default()
+    }
+}
+
 /// See [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
 pub mod file_system_association_summary {
     
@@ -2922,12 +2942,6 @@ pub mod file_system_association_summary {
     
     
 }
-impl FileSystemAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
-    pub fn builder() -> crate::model::file_system_association_summary::Builder {
-        crate::model::file_system_association_summary::Builder::default()
-    }
-}
 
 /// <p>Describes a file share. Only supported S3 File Gateway.</p>
 #[non_exhaustive]
@@ -2973,6 +2987,13 @@ impl FileShareInfo {
         self.gateway_arn.as_deref()
     }
 }
+impl FileShareInfo {
+    /// Creates a new builder-style object to manufacture [`FileShareInfo`](crate::model::FileShareInfo).
+    pub fn builder() -> crate::model::file_share_info::Builder {
+        crate::model::file_share_info::Builder::default()
+    }
+}
+
 /// See [`FileShareInfo`](crate::model::FileShareInfo).
 pub mod file_share_info {
     
@@ -3052,12 +3073,6 @@ pub mod file_share_info {
     }
     
     
-}
-impl FileShareInfo {
-    /// Creates a new builder-style object to manufacture [`FileShareInfo`](crate::model::FileShareInfo).
-    pub fn builder() -> crate::model::file_share_info::Builder {
-        crate::model::file_share_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FileShareType`, it is important to ensure
@@ -3163,6 +3178,13 @@ impl AutomaticTapeCreationPolicyInfo {
         self.gateway_arn.as_deref()
     }
 }
+impl AutomaticTapeCreationPolicyInfo {
+    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
+    pub fn builder() -> crate::model::automatic_tape_creation_policy_info::Builder {
+        crate::model::automatic_tape_creation_policy_info::Builder::default()
+    }
+}
+
 /// See [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
 pub mod automatic_tape_creation_policy_info {
     
@@ -3210,12 +3232,6 @@ pub mod automatic_tape_creation_policy_info {
     }
     
     
-}
-impl AutomaticTapeCreationPolicyInfo {
-    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
-    pub fn builder() -> crate::model::automatic_tape_creation_policy_info::Builder {
-        crate::model::automatic_tape_creation_policy_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActiveDirectoryStatus`, it is important to ensure
@@ -3367,6 +3383,13 @@ impl VtlDevice {
         self.devicei_scsi_attributes.as_ref()
     }
 }
+impl VtlDevice {
+    /// Creates a new builder-style object to manufacture [`VtlDevice`](crate::model::VtlDevice).
+    pub fn builder() -> crate::model::vtl_device::Builder {
+        crate::model::vtl_device::Builder::default()
+    }
+}
+
 /// See [`VtlDevice`](crate::model::VtlDevice).
 pub mod vtl_device {
     
@@ -3445,12 +3468,6 @@ pub mod vtl_device {
     
     
 }
-impl VtlDevice {
-    /// Creates a new builder-style object to manufacture [`VtlDevice`](crate::model::VtlDevice).
-    pub fn builder() -> crate::model::vtl_device::Builder {
-        crate::model::vtl_device::Builder::default()
-    }
-}
 
 /// <p>Lists iSCSI information about a VTL device.</p>
 #[non_exhaustive]
@@ -3487,6 +3504,13 @@ impl DeviceiScsiAttributes {
         self.chap_enabled
     }
 }
+impl DeviceiScsiAttributes {
+    /// Creates a new builder-style object to manufacture [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
+    pub fn builder() -> crate::model::devicei_scsi_attributes::Builder {
+        crate::model::devicei_scsi_attributes::Builder::default()
+    }
+}
+
 /// See [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
 pub mod devicei_scsi_attributes {
     
@@ -3554,12 +3578,6 @@ pub mod devicei_scsi_attributes {
     }
     
     
-}
-impl DeviceiScsiAttributes {
-    /// Creates a new builder-style object to manufacture [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
-    pub fn builder() -> crate::model::devicei_scsi_attributes::Builder {
-        crate::model::devicei_scsi_attributes::Builder::default()
-    }
 }
 
 /// <p>Describes a virtual tape object.</p>
@@ -3666,6 +3684,13 @@ impl Tape {
         self.pool_entry_date.as_ref()
     }
 }
+impl Tape {
+    /// Creates a new builder-style object to manufacture [`Tape`](crate::model::Tape).
+    pub fn builder() -> crate::model::tape::Builder {
+        crate::model::tape::Builder::default()
+    }
+}
+
 /// See [`Tape`](crate::model::Tape).
 pub mod tape {
     
@@ -3847,12 +3872,6 @@ pub mod tape {
     
     
 }
-impl Tape {
-    /// Creates a new builder-style object to manufacture [`Tape`](crate::model::Tape).
-    pub fn builder() -> crate::model::tape::Builder {
-        crate::model::tape::Builder::default()
-    }
-}
 
 /// <p>Describes a recovery point.</p>
 #[non_exhaustive]
@@ -3891,6 +3910,13 @@ impl TapeRecoveryPointInfo {
         self.tape_status.as_deref()
     }
 }
+impl TapeRecoveryPointInfo {
+    /// Creates a new builder-style object to manufacture [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
+    pub fn builder() -> crate::model::tape_recovery_point_info::Builder {
+        crate::model::tape_recovery_point_info::Builder::default()
+    }
+}
+
 /// See [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
 pub mod tape_recovery_point_info {
     
@@ -3958,12 +3984,6 @@ pub mod tape_recovery_point_info {
     }
     
     
-}
-impl TapeRecoveryPointInfo {
-    /// Creates a new builder-style object to manufacture [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
-    pub fn builder() -> crate::model::tape_recovery_point_info::Builder {
-        crate::model::tape_recovery_point_info::Builder::default()
-    }
 }
 
 /// <p>Represents a virtual tape that is archived in the virtual tape shelf (VTS).</p>
@@ -4074,6 +4094,13 @@ impl TapeArchive {
         self.pool_entry_date.as_ref()
     }
 }
+impl TapeArchive {
+    /// Creates a new builder-style object to manufacture [`TapeArchive`](crate::model::TapeArchive).
+    pub fn builder() -> crate::model::tape_archive::Builder {
+        crate::model::tape_archive::Builder::default()
+    }
+}
+
 /// See [`TapeArchive`](crate::model::TapeArchive).
 pub mod tape_archive {
     
@@ -4259,12 +4286,6 @@ pub mod tape_archive {
     
     
 }
-impl TapeArchive {
-    /// Creates a new builder-style object to manufacture [`TapeArchive`](crate::model::TapeArchive).
-    pub fn builder() -> crate::model::tape_archive::Builder {
-        crate::model::tape_archive::Builder::default()
-    }
-}
 
 /// <p>Describes an iSCSI stored volume.</p>
 #[non_exhaustive]
@@ -4386,6 +4407,13 @@ impl StorediScsiVolume {
         self.target_name.as_deref()
     }
 }
+impl StorediScsiVolume {
+    /// Creates a new builder-style object to manufacture [`StorediScsiVolume`](crate::model::StorediScsiVolume).
+    pub fn builder() -> crate::model::storedi_scsi_volume::Builder {
+        crate::model::storedi_scsi_volume::Builder::default()
+    }
+}
+
 /// See [`StorediScsiVolume`](crate::model::StorediScsiVolume).
 pub mod storedi_scsi_volume {
     
@@ -4594,12 +4622,6 @@ pub mod storedi_scsi_volume {
     
     
 }
-impl StorediScsiVolume {
-    /// Creates a new builder-style object to manufacture [`StorediScsiVolume`](crate::model::StorediScsiVolume).
-    pub fn builder() -> crate::model::storedi_scsi_volume::Builder {
-        crate::model::storedi_scsi_volume::Builder::default()
-    }
-}
 
 /// <p>Lists iSCSI information about a volume.</p>
 #[non_exhaustive]
@@ -4643,6 +4665,13 @@ impl VolumeiScsiAttributes {
         self.chap_enabled
     }
 }
+impl VolumeiScsiAttributes {
+    /// Creates a new builder-style object to manufacture [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
+    pub fn builder() -> crate::model::volumei_scsi_attributes::Builder {
+        crate::model::volumei_scsi_attributes::Builder::default()
+    }
+}
+
 /// See [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
 pub mod volumei_scsi_attributes {
     
@@ -4722,12 +4751,6 @@ pub mod volumei_scsi_attributes {
     }
     
     
-}
-impl VolumeiScsiAttributes {
-    /// Creates a new builder-style object to manufacture [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
-    pub fn builder() -> crate::model::volumei_scsi_attributes::Builder {
-        crate::model::volumei_scsi_attributes::Builder::default()
-    }
 }
 
 /// <p>The Windows file permissions and ownership information assigned, by default, to native S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported for S3 File Gateways.</p>
@@ -5008,6 +5031,13 @@ impl SmbFileShareInfo {
         self.oplocks_enabled
     }
 }
+impl SmbFileShareInfo {
+    /// Creates a new builder-style object to manufacture [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
+    pub fn builder() -> crate::model::smb_file_share_info::Builder {
+        crate::model::smb_file_share_info::Builder::default()
+    }
+}
+
 /// See [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
 pub mod smb_file_share_info {
     
@@ -5467,12 +5497,6 @@ pub mod smb_file_share_info {
     
     
 }
-impl SmbFileShareInfo {
-    /// Creates a new builder-style object to manufacture [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
-    pub fn builder() -> crate::model::smb_file_share_info::Builder {
-        crate::model::smb_file_share_info::Builder::default()
-    }
-}
 
 /// <p>The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.</p>
 #[non_exhaustive]
@@ -5717,6 +5741,13 @@ impl NfsFileShareInfo {
         self.audit_destination_arn.as_deref()
     }
 }
+impl NfsFileShareInfo {
+    /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
+    pub fn builder() -> crate::model::nfs_file_share_info::Builder {
+        crate::model::nfs_file_share_info::Builder::default()
+    }
+}
+
 /// See [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
 pub mod nfs_file_share_info {
     
@@ -6104,12 +6135,6 @@ pub mod nfs_file_share_info {
     
     
 }
-impl NfsFileShareInfo {
-    /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
-    pub fn builder() -> crate::model::nfs_file_share_info::Builder {
-        crate::model::nfs_file_share_info::Builder::default()
-    }
-}
 
 /// <p>Describes a gateway's network interface.</p>
 #[non_exhaustive]
@@ -6143,6 +6168,13 @@ impl NetworkInterface {
         self.ipv6_address.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
     
@@ -6200,12 +6232,6 @@ pub mod network_interface {
     }
     
     
-}
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
 }
 
 /// <p>Describes the object returned by <code>DescribeFileSystemAssociations</code> that describes a created file system association.</p>
@@ -6282,6 +6308,13 @@ impl FileSystemAssociationInfo {
         self.file_system_association_status_details.as_deref()
     }
 }
+impl FileSystemAssociationInfo {
+    /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
+    pub fn builder() -> crate::model::file_system_association_info::Builder {
+        crate::model::file_system_association_info::Builder::default()
+    }
+}
+
 /// See [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
 pub mod file_system_association_info {
     
@@ -6424,12 +6457,6 @@ pub mod file_system_association_info {
     
     
 }
-impl FileSystemAssociationInfo {
-    /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
-    pub fn builder() -> crate::model::file_system_association_info::Builder {
-        crate::model::file_system_association_info::Builder::default()
-    }
-}
 
 /// <p>Detailed information on file system association status.</p>
 #[non_exhaustive]
@@ -6445,6 +6472,13 @@ impl FileSystemAssociationStatusDetail {
         self.error_code.as_deref()
     }
 }
+impl FileSystemAssociationStatusDetail {
+    /// Creates a new builder-style object to manufacture [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
+    pub fn builder() -> crate::model::file_system_association_status_detail::Builder {
+        crate::model::file_system_association_status_detail::Builder::default()
+    }
+}
+
 /// See [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
 pub mod file_system_association_status_detail {
     
@@ -6475,12 +6509,6 @@ pub mod file_system_association_status_detail {
     
     
 }
-impl FileSystemAssociationStatusDetail {
-    /// Creates a new builder-style object to manufacture [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
-    pub fn builder() -> crate::model::file_system_association_status_detail::Builder {
-        crate::model::file_system_association_status_detail::Builder::default()
-    }
-}
 
 /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p>
 #[non_exhaustive]
@@ -6500,6 +6528,13 @@ impl EndpointNetworkConfiguration {
         self.ip_addresses.as_deref()
     }
 }
+impl EndpointNetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
+    pub fn builder() -> crate::model::endpoint_network_configuration::Builder {
+        crate::model::endpoint_network_configuration::Builder::default()
+    }
+}
+
 /// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
 pub mod endpoint_network_configuration {
     
@@ -6539,12 +6574,6 @@ pub mod endpoint_network_configuration {
     }
     
     
-}
-impl EndpointNetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
-    pub fn builder() -> crate::model::endpoint_network_configuration::Builder {
-        crate::model::endpoint_network_configuration::Builder::default()
-    }
 }
 
 /// <p>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.</p>
@@ -6594,6 +6623,13 @@ impl  std::fmt::Debug for ChapInfo  {
         formatter.finish()
     }
 }
+impl ChapInfo {
+    /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo).
+    pub fn builder() -> crate::model::chap_info::Builder {
+        crate::model::chap_info::Builder::default()
+    }
+}
+
 /// See [`ChapInfo`](crate::model::ChapInfo).
 pub mod chap_info {
     
@@ -6671,12 +6707,6 @@ pub mod chap_info {
     }
     
     
-}
-impl ChapInfo {
-    /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo).
-    pub fn builder() -> crate::model::chap_info::Builder {
-        crate::model::chap_info::Builder::default()
-    }
 }
 
 /// <p>Describes an iSCSI cached volume.</p>
@@ -6785,6 +6815,13 @@ impl CachediScsiVolume {
         self.target_name.as_deref()
     }
 }
+impl CachediScsiVolume {
+    /// Creates a new builder-style object to manufacture [`CachediScsiVolume`](crate::model::CachediScsiVolume).
+    pub fn builder() -> crate::model::cachedi_scsi_volume::Builder {
+        crate::model::cachedi_scsi_volume::Builder::default()
+    }
+}
+
 /// See [`CachediScsiVolume`](crate::model::CachediScsiVolume).
 pub mod cachedi_scsi_volume {
     
@@ -6967,12 +7004,6 @@ pub mod cachedi_scsi_volume {
     }
     
     
-}
-impl CachediScsiVolume {
-    /// Creates a new builder-style object to manufacture [`CachediScsiVolume`](crate::model::CachediScsiVolume).
-    pub fn builder() -> crate::model::cachedi_scsi_volume::Builder {
-        crate::model::cachedi_scsi_volume::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AvailabilityMonitorTestStatus`, it is important to ensure

@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_create_rum_metric_definitions`](crate::client::Client::batch_create_rum_metric_definitions).
             ///
-            /// See [`crate::client::fluent_builders::BatchCreateRumMetricDefinitions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchCreateRumMetricDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateRumMetricDefinitions {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRumMetricDefi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_delete_rum_metric_definitions`](crate::client::Client::batch_delete_rum_metric_definitions).
             ///
-            /// See [`crate::client::fluent_builders::BatchDeleteRumMetricDefinitions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchDeleteRumMetricDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitions {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteRumMetricDefi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`batch_get_rum_metric_definitions`](crate::client::Client::batch_get_rum_metric_definitions).
             ///
-            /// See [`crate::client::fluent_builders::BatchGetRumMetricDefinitions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `BatchGetRumMetricDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitions {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRumMetricDefinit
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_app_monitor`](crate::client::Client::create_app_monitor).
             ///
-            /// See [`crate::client::fluent_builders::CreateAppMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppMonitor {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_app_monitor`](crate::client::Client::delete_app_monitor).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAppMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAppMonitor {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_rum_metrics_destination`](crate::client::Client::delete_rum_metrics_destination).
             ///
-            /// See [`crate::client::fluent_builders::DeleteRumMetricsDestination`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteRumMetricsDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRumMetricsDestination {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRumMetricsDestinat
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_app_monitor`](crate::client::Client::get_app_monitor).
             ///
-            /// See [`crate::client::fluent_builders::GetAppMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAppMonitor {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_app_monitor_data`](crate::client::Client::get_app_monitor_data).
             ///
-            /// See [`crate::client::fluent_builders::GetAppMonitorData`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAppMonitorData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAppMonitorData {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitorData {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_app_monitors`](crate::client::Client::list_app_monitors).
             ///
-            /// See [`crate::client::fluent_builders::ListAppMonitors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAppMonitors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAppMonitors {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppMonitors {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_rum_metrics_destinations`](crate::client::Client::list_rum_metrics_destinations).
             ///
-            /// See [`crate::client::fluent_builders::ListRumMetricsDestinations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRumMetricsDestinations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRumMetricsDestinations {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRumMetricsDestinatio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_rum_events`](crate::client::Client::put_rum_events).
             ///
-            /// See [`crate::client::fluent_builders::PutRumEvents`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutRumEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRumEvents {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRumEvents {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_rum_metrics_destination`](crate::client::Client::put_rum_metrics_destination).
             ///
-            /// See [`crate::client::fluent_builders::PutRumMetricsDestination`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutRumMetricsDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRumMetricsDestination {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRumMetricsDestination
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_app_monitor`](crate::client::Client::update_app_monitor).
             ///
-            /// See [`crate::client::fluent_builders::UpdateAppMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAppMonitor {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_rum_metric_definition`](crate::client::Client::update_rum_metric_definition).
             ///
-            /// See [`crate::client::fluent_builders::UpdateRumMetricDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateRumMetricDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRumMetricDefinition {
     _private: ()

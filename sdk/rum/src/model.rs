@@ -122,6 +122,13 @@ impl MetricDefinitionRequest {
         self.event_pattern.as_deref()
     }
 }
+impl MetricDefinitionRequest {
+    /// Creates a new builder-style object to manufacture [`MetricDefinitionRequest`](crate::model::MetricDefinitionRequest).
+    pub fn builder() -> crate::model::metric_definition_request::Builder {
+        crate::model::metric_definition_request::Builder::default()
+    }
+}
+
 /// See [`MetricDefinitionRequest`](crate::model::MetricDefinitionRequest).
 pub mod metric_definition_request {
     
@@ -272,12 +279,6 @@ pub mod metric_definition_request {
     
     
 }
-impl MetricDefinitionRequest {
-    /// Creates a new builder-style object to manufacture [`MetricDefinitionRequest`](crate::model::MetricDefinitionRequest).
-    pub fn builder() -> crate::model::metric_definition_request::Builder {
-        crate::model::metric_definition_request::Builder::default()
-    }
-}
 
 /// When writing a match expression against `MetricDestination`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -389,6 +390,13 @@ impl MetricDestinationSummary {
         self.iam_role_arn.as_deref()
     }
 }
+impl MetricDestinationSummary {
+    /// Creates a new builder-style object to manufacture [`MetricDestinationSummary`](crate::model::MetricDestinationSummary).
+    pub fn builder() -> crate::model::metric_destination_summary::Builder {
+        crate::model::metric_destination_summary::Builder::default()
+    }
+}
+
 /// See [`MetricDestinationSummary`](crate::model::MetricDestinationSummary).
 pub mod metric_destination_summary {
     
@@ -443,12 +451,6 @@ pub mod metric_destination_summary {
     
     
 }
-impl MetricDestinationSummary {
-    /// Creates a new builder-style object to manufacture [`MetricDestinationSummary`](crate::model::MetricDestinationSummary).
-    pub fn builder() -> crate::model::metric_destination_summary::Builder {
-        crate::model::metric_destination_summary::Builder::default()
-    }
-}
 
 /// <p>A structure that defines a key and values that you can use to filter the results. The only performance events that are returned are those that have values matching the ones that you specify in one of your <code>QueryFilter</code> structures.</p> 
 /// <p>For example, you could specify <code>Browser</code> as the <code>Name</code> and specify <code>Chrome,Firefox</code> as the <code>Values</code> to return events generated only from those browsers.</p> 
@@ -475,6 +477,13 @@ impl QueryFilter {
         self.values.as_deref()
     }
 }
+impl QueryFilter {
+    /// Creates a new builder-style object to manufacture [`QueryFilter`](crate::model::QueryFilter).
+    pub fn builder() -> crate::model::query_filter::Builder {
+        crate::model::query_filter::Builder::default()
+    }
+}
+
 /// See [`QueryFilter`](crate::model::QueryFilter).
 pub mod query_filter {
     
@@ -525,12 +534,6 @@ pub mod query_filter {
     
     
 }
-impl QueryFilter {
-    /// Creates a new builder-style object to manufacture [`QueryFilter`](crate::model::QueryFilter).
-    pub fn builder() -> crate::model::query_filter::Builder {
-        crate::model::query_filter::Builder::default()
-    }
-}
 
 /// <p>A structure that defines the time range that you want to retrieve results from.</p>
 #[non_exhaustive]
@@ -553,6 +556,13 @@ impl TimeRange {
         self.before
     }
 }
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
     
@@ -597,12 +607,6 @@ pub mod time_range {
     
     
 }
-impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
-    pub fn builder() -> crate::model::time_range::Builder {
-        crate::model::time_range::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about custom events for this app monitor.</p>
 #[non_exhaustive]
@@ -618,6 +622,13 @@ impl CustomEvents {
         self.status.as_ref()
     }
 }
+impl CustomEvents {
+    /// Creates a new builder-style object to manufacture [`CustomEvents`](crate::model::CustomEvents).
+    pub fn builder() -> crate::model::custom_events::Builder {
+        crate::model::custom_events::Builder::default()
+    }
+}
+
 /// See [`CustomEvents`](crate::model::CustomEvents).
 pub mod custom_events {
     
@@ -647,12 +658,6 @@ pub mod custom_events {
     }
     
     
-}
-impl CustomEvents {
-    /// Creates a new builder-style object to manufacture [`CustomEvents`](crate::model::CustomEvents).
-    pub fn builder() -> crate::model::custom_events::Builder {
-        crate::model::custom_events::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomEventsStatus`, it is important to ensure
@@ -825,6 +830,13 @@ impl AppMonitorConfiguration {
         self.enable_x_ray
     }
 }
+impl AppMonitorConfiguration {
+    /// Creates a new builder-style object to manufacture [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
+    pub fn builder() -> crate::model::app_monitor_configuration::Builder {
+        crate::model::app_monitor_configuration::Builder::default()
+    }
+}
+
 /// See [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
 pub mod app_monitor_configuration {
     
@@ -994,12 +1006,6 @@ pub mod app_monitor_configuration {
     
     
 }
-impl AppMonitorConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
-    pub fn builder() -> crate::model::app_monitor_configuration::Builder {
-        crate::model::app_monitor_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Telemetry`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1139,6 +1145,13 @@ impl MetricDefinition {
         self.event_pattern.as_deref()
     }
 }
+impl MetricDefinition {
+    /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::model::MetricDefinition).
+    pub fn builder() -> crate::model::metric_definition::Builder {
+        crate::model::metric_definition::Builder::default()
+    }
+}
+
 /// See [`MetricDefinition`](crate::model::MetricDefinition).
 pub mod metric_definition {
     
@@ -1237,12 +1250,6 @@ pub mod metric_definition {
     
     
 }
-impl MetricDefinition {
-    /// Creates a new builder-style object to manufacture [`MetricDefinition`](crate::model::MetricDefinition).
-    pub fn builder() -> crate::model::metric_definition::Builder {
-        crate::model::metric_definition::Builder::default()
-    }
-}
 
 /// <p>A structure that defines one error caused by a <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchDeleteRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a> operation.</p>
 #[non_exhaustive]
@@ -1272,6 +1279,13 @@ impl BatchDeleteRumMetricDefinitionsError {
         self.error_message.as_deref()
     }
 }
+impl BatchDeleteRumMetricDefinitionsError {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsError`](crate::model::BatchDeleteRumMetricDefinitionsError).
+    pub fn builder() -> crate::model::batch_delete_rum_metric_definitions_error::Builder {
+        crate::model::batch_delete_rum_metric_definitions_error::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteRumMetricDefinitionsError`](crate::model::BatchDeleteRumMetricDefinitionsError).
 pub mod batch_delete_rum_metric_definitions_error {
     
@@ -1326,12 +1340,6 @@ pub mod batch_delete_rum_metric_definitions_error {
     
     
 }
-impl BatchDeleteRumMetricDefinitionsError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsError`](crate::model::BatchDeleteRumMetricDefinitionsError).
-    pub fn builder() -> crate::model::batch_delete_rum_metric_definitions_error::Builder {
-        crate::model::batch_delete_rum_metric_definitions_error::Builder::default()
-    }
-}
 
 /// <p>A structure that defines one error caused by a <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a> operation.</p>
 #[non_exhaustive]
@@ -1361,6 +1369,13 @@ impl BatchCreateRumMetricDefinitionsError {
         self.error_message.as_deref()
     }
 }
+impl BatchCreateRumMetricDefinitionsError {
+    /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsError`](crate::model::BatchCreateRumMetricDefinitionsError).
+    pub fn builder() -> crate::model::batch_create_rum_metric_definitions_error::Builder {
+        crate::model::batch_create_rum_metric_definitions_error::Builder::default()
+    }
+}
+
 /// See [`BatchCreateRumMetricDefinitionsError`](crate::model::BatchCreateRumMetricDefinitionsError).
 pub mod batch_create_rum_metric_definitions_error {
     
@@ -1415,12 +1430,6 @@ pub mod batch_create_rum_metric_definitions_error {
     
     
 }
-impl BatchCreateRumMetricDefinitionsError {
-    /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsError`](crate::model::BatchCreateRumMetricDefinitionsError).
-    pub fn builder() -> crate::model::batch_create_rum_metric_definitions_error::Builder {
-        crate::model::batch_create_rum_metric_definitions_error::Builder::default()
-    }
-}
 
 /// <p>A structure that includes some data about app monitors and their settings.</p>
 #[non_exhaustive]
@@ -1464,6 +1473,13 @@ impl AppMonitorSummary {
         self.state.as_ref()
     }
 }
+impl AppMonitorSummary {
+    /// Creates a new builder-style object to manufacture [`AppMonitorSummary`](crate::model::AppMonitorSummary).
+    pub fn builder() -> crate::model::app_monitor_summary::Builder {
+        crate::model::app_monitor_summary::Builder::default()
+    }
+}
+
 /// See [`AppMonitorSummary`](crate::model::AppMonitorSummary).
 pub mod app_monitor_summary {
     
@@ -1541,12 +1557,6 @@ pub mod app_monitor_summary {
     }
     
     
-}
-impl AppMonitorSummary {
-    /// Creates a new builder-style object to manufacture [`AppMonitorSummary`](crate::model::AppMonitorSummary).
-    pub fn builder() -> crate::model::app_monitor_summary::Builder {
-        crate::model::app_monitor_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StateEnum`, it is important to ensure
@@ -1715,6 +1725,13 @@ impl AppMonitor {
         self.custom_events.as_ref()
     }
 }
+impl AppMonitor {
+    /// Creates a new builder-style object to manufacture [`AppMonitor`](crate::model::AppMonitor).
+    pub fn builder() -> crate::model::app_monitor::Builder {
+        crate::model::app_monitor::Builder::default()
+    }
+}
+
 /// See [`AppMonitor`](crate::model::AppMonitor).
 pub mod app_monitor {
     
@@ -1861,12 +1878,6 @@ pub mod app_monitor {
     
     
 }
-impl AppMonitor {
-    /// Creates a new builder-style object to manufacture [`AppMonitor`](crate::model::AppMonitor).
-    pub fn builder() -> crate::model::app_monitor::Builder {
-        crate::model::app_monitor::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -1882,6 +1893,13 @@ impl DataStorage {
         self.cw_log.as_ref()
     }
 }
+impl DataStorage {
+    /// Creates a new builder-style object to manufacture [`DataStorage`](crate::model::DataStorage).
+    pub fn builder() -> crate::model::data_storage::Builder {
+        crate::model::data_storage::Builder::default()
+    }
+}
+
 /// See [`DataStorage`](crate::model::DataStorage).
 pub mod data_storage {
     
@@ -1912,12 +1930,6 @@ pub mod data_storage {
     
     
 }
-impl DataStorage {
-    /// Creates a new builder-style object to manufacture [`DataStorage`](crate::model::DataStorage).
-    pub fn builder() -> crate::model::data_storage::Builder {
-        crate::model::data_storage::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
 #[non_exhaustive]
@@ -1940,6 +1952,13 @@ impl CwLog {
         self.cw_log_group.as_deref()
     }
 }
+impl CwLog {
+    /// Creates a new builder-style object to manufacture [`CwLog`](crate::model::CwLog).
+    pub fn builder() -> crate::model::cw_log::Builder {
+        crate::model::cw_log::Builder::default()
+    }
+}
+
 /// See [`CwLog`](crate::model::CwLog).
 pub mod cw_log {
     
@@ -1981,12 +2000,6 @@ pub mod cw_log {
     }
     
     
-}
-impl CwLog {
-    /// Creates a new builder-style object to manufacture [`CwLog`](crate::model::CwLog).
-    pub fn builder() -> crate::model::cw_log::Builder {
-        crate::model::cw_log::Builder::default()
-    }
 }
 
 /// <p>A structure that contains the information for one performance event that RUM collects from a user session with your application.</p>
@@ -2031,6 +2044,13 @@ impl RumEvent {
         self.details.as_deref()
     }
 }
+impl RumEvent {
+    /// Creates a new builder-style object to manufacture [`RumEvent`](crate::model::RumEvent).
+    pub fn builder() -> crate::model::rum_event::Builder {
+        crate::model::rum_event::Builder::default()
+    }
+}
+
 /// See [`RumEvent`](crate::model::RumEvent).
 pub mod rum_event {
     
@@ -2109,12 +2129,6 @@ pub mod rum_event {
     
     
 }
-impl RumEvent {
-    /// Creates a new builder-style object to manufacture [`RumEvent`](crate::model::RumEvent).
-    pub fn builder() -> crate::model::rum_event::Builder {
-        crate::model::rum_event::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
 #[non_exhaustive]
@@ -2137,6 +2151,13 @@ impl UserDetails {
         self.session_id.as_deref()
     }
 }
+impl UserDetails {
+    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails).
+    pub fn builder() -> crate::model::user_details::Builder {
+        crate::model::user_details::Builder::default()
+    }
+}
+
 /// See [`UserDetails`](crate::model::UserDetails).
 pub mod user_details {
     
@@ -2179,12 +2200,6 @@ pub mod user_details {
     
     
 }
-impl UserDetails {
-    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails).
-    pub fn builder() -> crate::model::user_details::Builder {
-        crate::model::user_details::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about the RUM app monitor.</p>
 #[non_exhaustive]
@@ -2214,6 +2229,13 @@ impl AppMonitorDetails {
         self.version.as_deref()
     }
 }
+impl AppMonitorDetails {
+    /// Creates a new builder-style object to manufacture [`AppMonitorDetails`](crate::model::AppMonitorDetails).
+    pub fn builder() -> crate::model::app_monitor_details::Builder {
+        crate::model::app_monitor_details::Builder::default()
+    }
+}
+
 /// See [`AppMonitorDetails`](crate::model::AppMonitorDetails).
 pub mod app_monitor_details {
     
@@ -2267,11 +2289,5 @@ pub mod app_monitor_details {
     }
     
     
-}
-impl AppMonitorDetails {
-    /// Creates a new builder-style object to manufacture [`AppMonitorDetails`](crate::model::AppMonitorDetails).
-    pub fn builder() -> crate::model::app_monitor_details::Builder {
-        crate::model::app_monitor_details::Builder::default()
-    }
 }
 

@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_lenses`](crate::client::Client::associate_lenses).
             ///
-            /// See [`crate::client::fluent_builders::AssociateLenses`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateLenses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateLenses {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLenses {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_lens_share`](crate::client::Client::create_lens_share).
             ///
-            /// See [`crate::client::fluent_builders::CreateLensShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLensShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLensShare {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLensShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_lens_version`](crate::client::Client::create_lens_version).
             ///
-            /// See [`crate::client::fluent_builders::CreateLensVersion`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLensVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLensVersion {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLensVersion {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_milestone`](crate::client::Client::create_milestone).
             ///
-            /// See [`crate::client::fluent_builders::CreateMilestone`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateMilestone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMilestone {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMilestone {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_workload`](crate::client::Client::create_workload).
             ///
-            /// See [`crate::client::fluent_builders::CreateWorkload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateWorkload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkload {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_workload_share`](crate::client::Client::create_workload_share).
             ///
-            /// See [`crate::client::fluent_builders::CreateWorkloadShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateWorkloadShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkloadShare {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkloadShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_lens`](crate::client::Client::delete_lens).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLens`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLens {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLens {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_lens_share`](crate::client::Client::delete_lens_share).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLensShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLensShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLensShare {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLensShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_workload`](crate::client::Client::delete_workload).
             ///
-            /// See [`crate::client::fluent_builders::DeleteWorkload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteWorkload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkload {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_workload_share`](crate::client::Client::delete_workload_share).
             ///
-            /// See [`crate::client::fluent_builders::DeleteWorkloadShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteWorkloadShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkloadShare {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkloadShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_lenses`](crate::client::Client::disassociate_lenses).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateLenses`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateLenses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateLenses {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLenses {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`export_lens`](crate::client::Client::export_lens).
             ///
-            /// See [`crate::client::fluent_builders::ExportLens`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ExportLens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportLens {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportLens {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_answer`](crate::client::Client::get_answer).
             ///
-            /// See [`crate::client::fluent_builders::GetAnswer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAnswer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAnswer {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnswer {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_lens`](crate::client::Client::get_lens).
             ///
-            /// See [`crate::client::fluent_builders::GetLens`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLens {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLens {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_lens_review`](crate::client::Client::get_lens_review).
             ///
-            /// See [`crate::client::fluent_builders::GetLensReview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLensReview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLensReview {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLensReview {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_lens_review_report`](crate::client::Client::get_lens_review_report).
             ///
-            /// See [`crate::client::fluent_builders::GetLensReviewReport`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLensReviewReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLensReviewReport {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLensReviewReport {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_lens_version_difference`](crate::client::Client::get_lens_version_difference).
             ///
-            /// See [`crate::client::fluent_builders::GetLensVersionDifference`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLensVersionDifference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLensVersionDifference {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLensVersionDifference
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_milestone`](crate::client::Client::get_milestone).
             ///
-            /// See [`crate::client::fluent_builders::GetMilestone`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetMilestone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMilestone {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMilestone {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_workload`](crate::client::Client::get_workload).
             ///
-            /// See [`crate::client::fluent_builders::GetWorkload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetWorkload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkload {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`import_lens`](crate::client::Client::import_lens).
             ///
-            /// See [`crate::client::fluent_builders::ImportLens`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ImportLens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportLens {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportLens {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_answers`](crate::client::Client::list_answers).
             ///
-            /// See [`crate::client::fluent_builders::ListAnswers`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAnswers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAnswers {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnswers {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_check_details`](crate::client::Client::list_check_details).
             ///
-            /// See [`crate::client::fluent_builders::ListCheckDetails`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCheckDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCheckDetails {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCheckDetails {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_check_summaries`](crate::client::Client::list_check_summaries).
             ///
-            /// See [`crate::client::fluent_builders::ListCheckSummaries`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCheckSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCheckSummaries {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCheckSummaries {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_lenses`](crate::client::Client::list_lenses).
             ///
-            /// See [`crate::client::fluent_builders::ListLenses`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLenses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLenses {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLenses {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_lens_review_improvements`](crate::client::Client::list_lens_review_improvements).
             ///
-            /// See [`crate::client::fluent_builders::ListLensReviewImprovements`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLensReviewImprovements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLensReviewImprovements {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensReviewImprovemen
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_lens_reviews`](crate::client::Client::list_lens_reviews).
             ///
-            /// See [`crate::client::fluent_builders::ListLensReviews`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLensReviews`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLensReviews {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensReviews {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_lens_shares`](crate::client::Client::list_lens_shares).
             ///
-            /// See [`crate::client::fluent_builders::ListLensShares`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLensShares`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLensShares {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensShares {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_milestones`](crate::client::Client::list_milestones).
             ///
-            /// See [`crate::client::fluent_builders::ListMilestones`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListMilestones`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMilestones {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMilestones {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_notifications`](crate::client::Client::list_notifications).
             ///
-            /// See [`crate::client::fluent_builders::ListNotifications`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNotifications {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotifications {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_share_invitations`](crate::client::Client::list_share_invitations).
             ///
-            /// See [`crate::client::fluent_builders::ListShareInvitations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListShareInvitations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListShareInvitations {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListShareInvitations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_workloads`](crate::client::Client::list_workloads).
             ///
-            /// See [`crate::client::fluent_builders::ListWorkloads`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListWorkloads`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkloads {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkloads {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_workload_shares`](crate::client::Client::list_workload_shares).
             ///
-            /// See [`crate::client::fluent_builders::ListWorkloadShares`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListWorkloadShares`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkloadShares {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkloadShares {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_answer`](crate::client::Client::update_answer).
             ///
-            /// See [`crate::client::fluent_builders::UpdateAnswer`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateAnswer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAnswer {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnswer {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_global_settings`](crate::client::Client::update_global_settings).
             ///
-            /// See [`crate::client::fluent_builders::UpdateGlobalSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateGlobalSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGlobalSettings {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_lens_review`](crate::client::Client::update_lens_review).
             ///
-            /// See [`crate::client::fluent_builders::UpdateLensReview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateLensReview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLensReview {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLensReview {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_share_invitation`](crate::client::Client::update_share_invitation).
             ///
-            /// See [`crate::client::fluent_builders::UpdateShareInvitation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateShareInvitation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateShareInvitation {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateShareInvitation {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_workload`](crate::client::Client::update_workload).
             ///
-            /// See [`crate::client::fluent_builders::UpdateWorkload`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateWorkload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkload {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkload {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_workload_share`](crate::client::Client::update_workload_share).
             ///
-            /// See [`crate::client::fluent_builders::UpdateWorkloadShare`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateWorkloadShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkloadShare {
     _private: ()
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkloadShare {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`upgrade_lens_review`](crate::client::Client::upgrade_lens_review).
             ///
-            /// See [`crate::client::fluent_builders::UpgradeLensReview`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpgradeLensReview`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpgradeLensReview {
     _private: ()

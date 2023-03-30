@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateUserOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
+    pub fn builder() -> crate::output::update_user_output::Builder {
+        crate::output::update_user_output::Builder::default()
+    }
+}
+
 /// See [`UpdateUserOutput`](crate::output::UpdateUserOutput).
 pub mod update_user_output {
     
@@ -60,12 +67,6 @@ pub mod update_user_output {
     
     
 }
-impl UpdateUserOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::output::UpdateUserOutput).
-    pub fn builder() -> crate::output::update_user_output::Builder {
-        crate::output::update_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -87,6 +88,13 @@ impl aws_http::request_id::RequestId for UpdatePermissionGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdatePermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
+    pub fn builder() -> crate::output::update_permission_group_output::Builder {
+        crate::output::update_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
 pub mod update_permission_group_output {
     
@@ -128,12 +136,6 @@ pub mod update_permission_group_output {
     
     
 }
-impl UpdatePermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupOutput`](crate::output::UpdatePermissionGroupOutput).
-    pub fn builder() -> crate::output::update_permission_group_output::Builder {
-        crate::output::update_permission_group_output::Builder::default()
-    }
-}
 
 /// The response from an UpdateDataset operation
 #[non_exhaustive]
@@ -155,6 +157,13 @@ impl aws_http::request_id::RequestId for UpdateDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
+    pub fn builder() -> crate::output::update_dataset_output::Builder {
+        crate::output::update_dataset_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
 pub mod update_dataset_output {
     
@@ -196,12 +205,6 @@ pub mod update_dataset_output {
     
     
 }
-impl UpdateDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput).
-    pub fn builder() -> crate::output::update_dataset_output::Builder {
-        crate::output::update_dataset_output::Builder::default()
-    }
-}
 
 /// The response from a update changeset operation.
 #[non_exhaustive]
@@ -230,6 +233,13 @@ impl aws_http::request_id::RequestId for UpdateChangesetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateChangesetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
+    pub fn builder() -> crate::output::update_changeset_output::Builder {
+        crate::output::update_changeset_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
 pub mod update_changeset_output {
     
@@ -283,12 +293,6 @@ pub mod update_changeset_output {
     
     
 }
-impl UpdateChangesetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput).
-    pub fn builder() -> crate::output::update_changeset_output::Builder {
-        crate::output::update_changeset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -326,6 +330,13 @@ impl aws_http::request_id::RequestId for ResetUserPasswordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ResetUserPasswordOutput {
+    /// Creates a new builder-style object to manufacture [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
+    pub fn builder() -> crate::output::reset_user_password_output::Builder {
+        crate::output::reset_user_password_output::Builder::default()
+    }
+}
+
 /// See [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
 pub mod reset_user_password_output {
     
@@ -388,12 +399,6 @@ pub mod reset_user_password_output {
     
     
 }
-impl ResetUserPasswordOutput {
-    /// Creates a new builder-style object to manufacture [`ResetUserPasswordOutput`](crate::output::ResetUserPasswordOutput).
-    pub fn builder() -> crate::output::reset_user_password_output::Builder {
-        crate::output::reset_user_password_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -422,6 +427,13 @@ impl aws_http::request_id::RequestId for ListUsersByPermissionGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListUsersByPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
+    pub fn builder() -> crate::output::list_users_by_permission_group_output::Builder {
+        crate::output::list_users_by_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
 pub mod list_users_by_permission_group_output {
     
@@ -481,12 +493,6 @@ pub mod list_users_by_permission_group_output {
     
     
 }
-impl ListUsersByPermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupOutput`](crate::output::ListUsersByPermissionGroupOutput).
-    pub fn builder() -> crate::output::list_users_by_permission_group_output::Builder {
-        crate::output::list_users_by_permission_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -515,6 +521,13 @@ impl aws_http::request_id::RequestId for ListUsersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListUsersOutput {
+    /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput).
+    pub fn builder() -> crate::output::list_users_output::Builder {
+        crate::output::list_users_output::Builder::default()
+    }
+}
+
 /// See [`ListUsersOutput`](crate::output::ListUsersOutput).
 pub mod list_users_output {
     
@@ -574,12 +587,6 @@ pub mod list_users_output {
     
     
 }
-impl ListUsersOutput {
-    /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::output::ListUsersOutput).
-    pub fn builder() -> crate::output::list_users_output::Builder {
-        crate::output::list_users_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -608,6 +615,13 @@ impl aws_http::request_id::RequestId for ListPermissionGroupsByUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPermissionGroupsByUserOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
+    pub fn builder() -> crate::output::list_permission_groups_by_user_output::Builder {
+        crate::output::list_permission_groups_by_user_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
 pub mod list_permission_groups_by_user_output {
     
@@ -667,12 +681,6 @@ pub mod list_permission_groups_by_user_output {
     
     
 }
-impl ListPermissionGroupsByUserOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserOutput`](crate::output::ListPermissionGroupsByUserOutput).
-    pub fn builder() -> crate::output::list_permission_groups_by_user_output::Builder {
-        crate::output::list_permission_groups_by_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -701,6 +709,13 @@ impl aws_http::request_id::RequestId for ListPermissionGroupsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListPermissionGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
+    pub fn builder() -> crate::output::list_permission_groups_output::Builder {
+        crate::output::list_permission_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
 pub mod list_permission_groups_output {
     
@@ -760,12 +775,6 @@ pub mod list_permission_groups_output {
     
     
 }
-impl ListPermissionGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsOutput`](crate::output::ListPermissionGroupsOutput).
-    pub fn builder() -> crate::output::list_permission_groups_output::Builder {
-        crate::output::list_permission_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -794,6 +803,13 @@ impl aws_http::request_id::RequestId for ListDataViewsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDataViewsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
+    pub fn builder() -> crate::output::list_data_views_output::Builder {
+        crate::output::list_data_views_output::Builder::default()
+    }
+}
+
 /// See [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
 pub mod list_data_views_output {
     
@@ -853,12 +869,6 @@ pub mod list_data_views_output {
     
     
 }
-impl ListDataViewsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDataViewsOutput`](crate::output::ListDataViewsOutput).
-    pub fn builder() -> crate::output::list_data_views_output::Builder {
-        crate::output::list_data_views_output::Builder::default()
-    }
-}
 
 /// Response for the ListDatasets operation
 #[non_exhaustive]
@@ -887,6 +897,13 @@ impl aws_http::request_id::RequestId for ListDatasetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDatasetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
+    pub fn builder() -> crate::output::list_datasets_output::Builder {
+        crate::output::list_datasets_output::Builder::default()
+    }
+}
+
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
     
@@ -946,12 +963,6 @@ pub mod list_datasets_output {
     
     
 }
-impl ListDatasetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
-    pub fn builder() -> crate::output::list_datasets_output::Builder {
-        crate::output::list_datasets_output::Builder::default()
-    }
-}
 
 /// Response to ListChangesetsResponse. This returns a list of dataset changesets that match the query criteria.
 #[non_exhaustive]
@@ -980,6 +991,13 @@ impl aws_http::request_id::RequestId for ListChangesetsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListChangesetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
+    pub fn builder() -> crate::output::list_changesets_output::Builder {
+        crate::output::list_changesets_output::Builder::default()
+    }
+}
+
 /// See [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
 pub mod list_changesets_output {
     
@@ -1039,12 +1057,6 @@ pub mod list_changesets_output {
     
     
 }
-impl ListChangesetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChangesetsOutput`](crate::output::ListChangesetsOutput).
-    pub fn builder() -> crate::output::list_changesets_output::Builder {
-        crate::output::list_changesets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1080,6 +1092,13 @@ impl aws_http::request_id::RequestId for GetWorkingLocationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetWorkingLocationOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
+    pub fn builder() -> crate::output::get_working_location_output::Builder {
+        crate::output::get_working_location_output::Builder::default()
+    }
+}
+
 /// See [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
 pub mod get_working_location_output {
     
@@ -1144,12 +1163,6 @@ pub mod get_working_location_output {
     }
     
     
-}
-impl GetWorkingLocationOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput).
-    pub fn builder() -> crate::output::get_working_location_output::Builder {
-        crate::output::get_working_location_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1306,6 +1319,13 @@ impl aws_http::request_id::RequestId for GetUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetUserOutput {
+    /// Creates a new builder-style object to manufacture [`GetUserOutput`](crate::output::GetUserOutput).
+    pub fn builder() -> crate::output::get_user_output::Builder {
+        crate::output::get_user_output::Builder::default()
+    }
+}
+
 /// See [`GetUserOutput`](crate::output::GetUserOutput).
 pub mod get_user_output {
     
@@ -1546,12 +1566,6 @@ pub mod get_user_output {
     
     
 }
-impl GetUserOutput {
-    /// Creates a new builder-style object to manufacture [`GetUserOutput`](crate::output::GetUserOutput).
-    pub fn builder() -> crate::output::get_user_output::Builder {
-        crate::output::get_user_output::Builder::default()
-    }
-}
 
 /// Response for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
@@ -1580,6 +1594,13 @@ impl aws_http::request_id::RequestId for GetProgrammaticAccessCredentialsOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetProgrammaticAccessCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
+    pub fn builder() -> crate::output::get_programmatic_access_credentials_output::Builder {
+        crate::output::get_programmatic_access_credentials_output::Builder::default()
+    }
+}
+
 /// See [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
 pub mod get_programmatic_access_credentials_output {
     
@@ -1634,12 +1655,6 @@ pub mod get_programmatic_access_credentials_output {
     
     
 }
-impl GetProgrammaticAccessCredentialsOutput {
-    /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput).
-    pub fn builder() -> crate::output::get_programmatic_access_credentials_output::Builder {
-        crate::output::get_programmatic_access_credentials_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1661,6 +1676,13 @@ impl aws_http::request_id::RequestId for GetPermissionGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
+    pub fn builder() -> crate::output::get_permission_group_output::Builder {
+        crate::output::get_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
 pub mod get_permission_group_output {
     
@@ -1702,12 +1724,6 @@ pub mod get_permission_group_output {
     
     
 }
-impl GetPermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetPermissionGroupOutput`](crate::output::GetPermissionGroupOutput).
-    pub fn builder() -> crate::output::get_permission_group_output::Builder {
-        crate::output::get_permission_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1736,6 +1752,13 @@ impl aws_http::request_id::RequestId for GetExternalDataViewAccessDetailsOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetExternalDataViewAccessDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
+    pub fn builder() -> crate::output::get_external_data_view_access_details_output::Builder {
+        crate::output::get_external_data_view_access_details_output::Builder::default()
+    }
+}
+
 /// See [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
 pub mod get_external_data_view_access_details_output {
     
@@ -1788,12 +1811,6 @@ pub mod get_external_data_view_access_details_output {
     }
     
     
-}
-impl GetExternalDataViewAccessDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsOutput`](crate::output::GetExternalDataViewAccessDetailsOutput).
-    pub fn builder() -> crate::output::get_external_data_view_access_details_output::Builder {
-        crate::output::get_external_data_view_access_details_output::Builder::default()
-    }
 }
 
 /// Response from retrieving a dataview, which includes details on the target database and table name
@@ -1913,6 +1930,13 @@ impl aws_http::request_id::RequestId for GetDataViewOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDataViewOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataViewOutput`](crate::output::GetDataViewOutput).
+    pub fn builder() -> crate::output::get_data_view_output::Builder {
+        crate::output::get_data_view_output::Builder::default()
+    }
+}
+
 /// See [`GetDataViewOutput`](crate::output::GetDataViewOutput).
 pub mod get_data_view_output {
     
@@ -2121,12 +2145,6 @@ pub mod get_data_view_output {
     
     
 }
-impl GetDataViewOutput {
-    /// Creates a new builder-style object to manufacture [`GetDataViewOutput`](crate::output::GetDataViewOutput).
-    pub fn builder() -> crate::output::get_data_view_output::Builder {
-        crate::output::get_data_view_output::Builder::default()
-    }
-}
 
 /// Response for the GetDataset operation
 #[non_exhaustive]
@@ -2231,6 +2249,13 @@ impl aws_http::request_id::RequestId for GetDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatasetOutput`](crate::output::GetDatasetOutput).
+    pub fn builder() -> crate::output::get_dataset_output::Builder {
+        crate::output::get_dataset_output::Builder::default()
+    }
+}
+
 /// See [`GetDatasetOutput`](crate::output::GetDatasetOutput).
 pub mod get_dataset_output {
     
@@ -2402,12 +2427,6 @@ pub mod get_dataset_output {
     
     
 }
-impl GetDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatasetOutput`](crate::output::GetDatasetOutput).
-    pub fn builder() -> crate::output::get_dataset_output::Builder {
-        crate::output::get_dataset_output::Builder::default()
-    }
-}
 
 /// The response from a describe changeset operation
 #[non_exhaustive]
@@ -2523,6 +2542,13 @@ impl aws_http::request_id::RequestId for GetChangesetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetChangesetOutput {
+    /// Creates a new builder-style object to manufacture [`GetChangesetOutput`](crate::output::GetChangesetOutput).
+    pub fn builder() -> crate::output::get_changeset_output::Builder {
+        crate::output::get_changeset_output::Builder::default()
+    }
+}
+
 /// See [`GetChangesetOutput`](crate::output::GetChangesetOutput).
 pub mod get_changeset_output {
     
@@ -2731,12 +2757,6 @@ pub mod get_changeset_output {
     
     
 }
-impl GetChangesetOutput {
-    /// Creates a new builder-style object to manufacture [`GetChangesetOutput`](crate::output::GetChangesetOutput).
-    pub fn builder() -> crate::output::get_changeset_output::Builder {
-        crate::output::get_changeset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2758,6 +2778,13 @@ impl aws_http::request_id::RequestId for EnableUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl EnableUserOutput {
+    /// Creates a new builder-style object to manufacture [`EnableUserOutput`](crate::output::EnableUserOutput).
+    pub fn builder() -> crate::output::enable_user_output::Builder {
+        crate::output::enable_user_output::Builder::default()
+    }
+}
+
 /// See [`EnableUserOutput`](crate::output::EnableUserOutput).
 pub mod enable_user_output {
     
@@ -2799,12 +2826,6 @@ pub mod enable_user_output {
     
     
 }
-impl EnableUserOutput {
-    /// Creates a new builder-style object to manufacture [`EnableUserOutput`](crate::output::EnableUserOutput).
-    pub fn builder() -> crate::output::enable_user_output::Builder {
-        crate::output::enable_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2826,6 +2847,13 @@ impl aws_http::request_id::RequestId for DisassociateUserFromPermissionGroupOutp
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateUserFromPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
+    pub fn builder() -> crate::output::disassociate_user_from_permission_group_output::Builder {
+        crate::output::disassociate_user_from_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
 pub mod disassociate_user_from_permission_group_output {
     
@@ -2868,12 +2896,6 @@ pub mod disassociate_user_from_permission_group_output {
     
     
 }
-impl DisassociateUserFromPermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupOutput`](crate::output::DisassociateUserFromPermissionGroupOutput).
-    pub fn builder() -> crate::output::disassociate_user_from_permission_group_output::Builder {
-        crate::output::disassociate_user_from_permission_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2895,6 +2917,13 @@ impl aws_http::request_id::RequestId for DisableUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisableUserOutput {
+    /// Creates a new builder-style object to manufacture [`DisableUserOutput`](crate::output::DisableUserOutput).
+    pub fn builder() -> crate::output::disable_user_output::Builder {
+        crate::output::disable_user_output::Builder::default()
+    }
+}
+
 /// See [`DisableUserOutput`](crate::output::DisableUserOutput).
 pub mod disable_user_output {
     
@@ -2936,12 +2965,6 @@ pub mod disable_user_output {
     
     
 }
-impl DisableUserOutput {
-    /// Creates a new builder-style object to manufacture [`DisableUserOutput`](crate::output::DisableUserOutput).
-    pub fn builder() -> crate::output::disable_user_output::Builder {
-        crate::output::disable_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2963,6 +2986,13 @@ impl aws_http::request_id::RequestId for DeletePermissionGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeletePermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
+    pub fn builder() -> crate::output::delete_permission_group_output::Builder {
+        crate::output::delete_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
 pub mod delete_permission_group_output {
     
@@ -3004,12 +3034,6 @@ pub mod delete_permission_group_output {
     
     
 }
-impl DeletePermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionGroupOutput`](crate::output::DeletePermissionGroupOutput).
-    pub fn builder() -> crate::output::delete_permission_group_output::Builder {
-        crate::output::delete_permission_group_output::Builder::default()
-    }
-}
 
 /// The response from an DeleteDataset operation
 #[non_exhaustive]
@@ -3031,6 +3055,13 @@ impl aws_http::request_id::RequestId for DeleteDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
+    pub fn builder() -> crate::output::delete_dataset_output::Builder {
+        crate::output::delete_dataset_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
 pub mod delete_dataset_output {
     
@@ -3072,12 +3103,6 @@ pub mod delete_dataset_output {
     
     
 }
-impl DeleteDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
-    pub fn builder() -> crate::output::delete_dataset_output::Builder {
-        crate::output::delete_dataset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3099,6 +3124,13 @@ impl aws_http::request_id::RequestId for CreateUserOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateUserOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
+    pub fn builder() -> crate::output::create_user_output::Builder {
+        crate::output::create_user_output::Builder::default()
+    }
+}
+
 /// See [`CreateUserOutput`](crate::output::CreateUserOutput).
 pub mod create_user_output {
     
@@ -3140,12 +3172,6 @@ pub mod create_user_output {
     
     
 }
-impl CreateUserOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserOutput`](crate::output::CreateUserOutput).
-    pub fn builder() -> crate::output::create_user_output::Builder {
-        crate::output::create_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3167,6 +3193,13 @@ impl aws_http::request_id::RequestId for CreatePermissionGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreatePermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
+    pub fn builder() -> crate::output::create_permission_group_output::Builder {
+        crate::output::create_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
 pub mod create_permission_group_output {
     
@@ -3208,12 +3241,6 @@ pub mod create_permission_group_output {
     
     
 }
-impl CreatePermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePermissionGroupOutput`](crate::output::CreatePermissionGroupOutput).
-    pub fn builder() -> crate::output::create_permission_group_output::Builder {
-        crate::output::create_permission_group_output::Builder::default()
-    }
-}
 
 /// Response for creating a data view.
 #[non_exhaustive]
@@ -3242,6 +3269,13 @@ impl aws_http::request_id::RequestId for CreateDataViewOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDataViewOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
+    pub fn builder() -> crate::output::create_data_view_output::Builder {
+        crate::output::create_data_view_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
 pub mod create_data_view_output {
     
@@ -3295,12 +3329,6 @@ pub mod create_data_view_output {
     
     
 }
-impl CreateDataViewOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDataViewOutput`](crate::output::CreateDataViewOutput).
-    pub fn builder() -> crate::output::create_data_view_output::Builder {
-        crate::output::create_data_view_output::Builder::default()
-    }
-}
 
 /// The response from a CreateDataset operation
 #[non_exhaustive]
@@ -3322,6 +3350,13 @@ impl aws_http::request_id::RequestId for CreateDatasetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDatasetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
+    pub fn builder() -> crate::output::create_dataset_output::Builder {
+        crate::output::create_dataset_output::Builder::default()
+    }
+}
+
 /// See [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
 pub mod create_dataset_output {
     
@@ -3363,12 +3398,6 @@ pub mod create_dataset_output {
     
     
 }
-impl CreateDatasetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::output::CreateDatasetOutput).
-    pub fn builder() -> crate::output::create_dataset_output::Builder {
-        crate::output::create_dataset_output::Builder::default()
-    }
-}
 
 /// The response from a CreateChangeset operation.
 #[non_exhaustive]
@@ -3397,6 +3426,13 @@ impl aws_http::request_id::RequestId for CreateChangesetOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateChangesetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
+    pub fn builder() -> crate::output::create_changeset_output::Builder {
+        crate::output::create_changeset_output::Builder::default()
+    }
+}
+
 /// See [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
 pub mod create_changeset_output {
     
@@ -3450,12 +3486,6 @@ pub mod create_changeset_output {
     
     
 }
-impl CreateChangesetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChangesetOutput`](crate::output::CreateChangesetOutput).
-    pub fn builder() -> crate::output::create_changeset_output::Builder {
-        crate::output::create_changeset_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3477,6 +3507,13 @@ impl aws_http::request_id::RequestId for AssociateUserToPermissionGroupOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateUserToPermissionGroupOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
+    pub fn builder() -> crate::output::associate_user_to_permission_group_output::Builder {
+        crate::output::associate_user_to_permission_group_output::Builder::default()
+    }
+}
+
 /// See [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
 pub mod associate_user_to_permission_group_output {
     
@@ -3518,11 +3555,5 @@ pub mod associate_user_to_permission_group_output {
     }
     
     
-}
-impl AssociateUserToPermissionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupOutput`](crate::output::AssociateUserToPermissionGroupOutput).
-    pub fn builder() -> crate::output::associate_user_to_permission_group_output::Builder {
-        crate::output::associate_user_to_permission_group_output::Builder::default()
-    }
 }
 

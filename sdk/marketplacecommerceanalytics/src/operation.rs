@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`generate_data_set`](crate::client::Client::generate_data_set).
             ///
-            /// See [`crate::client::fluent_builders::GenerateDataSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GenerateDataSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateDataSet {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_support_data_export`](crate::client::Client::start_support_data_export).
             ///
-            /// See [`crate::client::fluent_builders::StartSupportDataExport`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartSupportDataExport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSupportDataExport {
     _private: ()

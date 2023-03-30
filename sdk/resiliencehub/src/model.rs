@@ -85,6 +85,13 @@ impl  std::fmt::Debug for ResiliencyPolicy  {
         formatter.finish()
     }
 }
+impl ResiliencyPolicy {
+    /// Creates a new builder-style object to manufacture [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
+    pub fn builder() -> crate::model::resiliency_policy::Builder {
+        crate::model::resiliency_policy::Builder::default()
+    }
+}
+
 /// See [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
 pub mod resiliency_policy {
     
@@ -238,12 +245,6 @@ pub mod resiliency_policy {
     
     
 }
-impl ResiliencyPolicy {
-    /// Creates a new builder-style object to manufacture [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
-    pub fn builder() -> crate::model::resiliency_policy::Builder {
-        crate::model::resiliency_policy::Builder::default()
-    }
-}
 
 /// <p>Defines a failure policy.</p>
 #[non_exhaustive]
@@ -266,6 +267,13 @@ impl FailurePolicy {
         self.rpo_in_secs
     }
 }
+impl FailurePolicy {
+    /// Creates a new builder-style object to manufacture [`FailurePolicy`](crate::model::FailurePolicy).
+    pub fn builder() -> crate::model::failure_policy::Builder {
+        crate::model::failure_policy::Builder::default()
+    }
+}
+
 /// See [`FailurePolicy`](crate::model::FailurePolicy).
 pub mod failure_policy {
     
@@ -309,12 +317,6 @@ pub mod failure_policy {
     }
     
     
-}
-impl FailurePolicy {
-    /// Creates a new builder-style object to manufacture [`FailurePolicy`](crate::model::FailurePolicy).
-    pub fn builder() -> crate::model::failure_policy::Builder {
-        crate::model::failure_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DisruptionType`, it is important to ensure
@@ -794,6 +796,13 @@ impl  std::fmt::Debug for App  {
         formatter.finish()
     }
 }
+impl App {
+    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
+    pub fn builder() -> crate::model::app::Builder {
+        crate::model::app::Builder::default()
+    }
+}
+
 /// See [`App`](crate::model::App).
 pub mod app {
     
@@ -980,12 +989,6 @@ pub mod app {
     }
     
     
-}
-impl App {
-    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
-    pub fn builder() -> crate::model::app::Builder {
-        crate::model::app::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AppAssessmentScheduleType`, it is important to ensure
@@ -1385,6 +1388,13 @@ impl  std::fmt::Debug for AppAssessment  {
         formatter.finish()
     }
 }
+impl AppAssessment {
+    /// Creates a new builder-style object to manufacture [`AppAssessment`](crate::model::AppAssessment).
+    pub fn builder() -> crate::model::app_assessment::Builder {
+        crate::model::app_assessment::Builder::default()
+    }
+}
+
 /// See [`AppAssessment`](crate::model::AppAssessment).
 pub mod app_assessment {
     
@@ -1629,12 +1639,6 @@ pub mod app_assessment {
     
     
 }
-impl AppAssessment {
-    /// Creates a new builder-style object to manufacture [`AppAssessment`](crate::model::AppAssessment).
-    pub fn builder() -> crate::model::app_assessment::Builder {
-        crate::model::app_assessment::Builder::default()
-    }
-}
 
 /// <p> A list of errors retrieving an application's resources. </p>
 #[non_exhaustive]
@@ -1657,6 +1661,13 @@ impl ResourceErrorsDetails {
         self.has_more_errors
     }
 }
+impl ResourceErrorsDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
+    pub fn builder() -> crate::model::resource_errors_details::Builder {
+        crate::model::resource_errors_details::Builder::default()
+    }
+}
+
 /// See [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
 pub mod resource_errors_details {
     
@@ -1705,12 +1716,6 @@ pub mod resource_errors_details {
     
     
 }
-impl ResourceErrorsDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
-    pub fn builder() -> crate::model::resource_errors_details::Builder {
-        crate::model::resource_errors_details::Builder::default()
-    }
-}
 
 /// <p> Defines application resource errors. </p>
 #[non_exhaustive]
@@ -1740,6 +1745,13 @@ impl ResourceError {
         self.reason.as_deref()
     }
 }
+impl ResourceError {
+    /// Creates a new builder-style object to manufacture [`ResourceError`](crate::model::ResourceError).
+    pub fn builder() -> crate::model::resource_error::Builder {
+        crate::model::resource_error::Builder::default()
+    }
+}
+
 /// See [`ResourceError`](crate::model::ResourceError).
 pub mod resource_error {
     
@@ -1793,12 +1805,6 @@ pub mod resource_error {
     }
     
     
-}
-impl ResourceError {
-    /// Creates a new builder-style object to manufacture [`ResourceError`](crate::model::ResourceError).
-    pub fn builder() -> crate::model::resource_error::Builder {
-        crate::model::resource_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AssessmentStatus`, it is important to ensure
@@ -2052,6 +2058,13 @@ impl DisruptionCompliance {
         self.message.as_deref()
     }
 }
+impl DisruptionCompliance {
+    /// Creates a new builder-style object to manufacture [`DisruptionCompliance`](crate::model::DisruptionCompliance).
+    pub fn builder() -> crate::model::disruption_compliance::Builder {
+        crate::model::disruption_compliance::Builder::default()
+    }
+}
+
 /// See [`DisruptionCompliance`](crate::model::DisruptionCompliance).
 pub mod disruption_compliance {
     
@@ -2194,12 +2207,6 @@ pub mod disruption_compliance {
     
     
 }
-impl DisruptionCompliance {
-    /// Creates a new builder-style object to manufacture [`DisruptionCompliance`](crate::model::DisruptionCompliance).
-    pub fn builder() -> crate::model::disruption_compliance::Builder {
-        crate::model::disruption_compliance::Builder::default()
-    }
-}
 
 /// <p>The overall resiliency score, returned as an object that includes the disruption score and outage score.</p>
 #[non_exhaustive]
@@ -2222,6 +2229,13 @@ impl ResiliencyScore {
         self.disruption_score.as_ref()
     }
 }
+impl ResiliencyScore {
+    /// Creates a new builder-style object to manufacture [`ResiliencyScore`](crate::model::ResiliencyScore).
+    pub fn builder() -> crate::model::resiliency_score::Builder {
+        crate::model::resiliency_score::Builder::default()
+    }
+}
+
 /// See [`ResiliencyScore`](crate::model::ResiliencyScore).
 pub mod resiliency_score {
     
@@ -2271,12 +2285,6 @@ pub mod resiliency_score {
     
     
 }
-impl ResiliencyScore {
-    /// Creates a new builder-style object to manufacture [`ResiliencyScore`](crate::model::ResiliencyScore).
-    pub fn builder() -> crate::model::resiliency_score::Builder {
-        crate::model::resiliency_score::Builder::default()
-    }
-}
 
 /// <p>Defines a cost object.</p>
 #[non_exhaustive]
@@ -2306,6 +2314,13 @@ impl Cost {
         self.frequency.as_ref()
     }
 }
+impl Cost {
+    /// Creates a new builder-style object to manufacture [`Cost`](crate::model::Cost).
+    pub fn builder() -> crate::model::cost::Builder {
+        crate::model::cost::Builder::default()
+    }
+}
+
 /// See [`Cost`](crate::model::Cost).
 pub mod cost {
     
@@ -2360,12 +2375,6 @@ pub mod cost {
     }
     
     
-}
-impl Cost {
-    /// Creates a new builder-style object to manufacture [`Cost`](crate::model::Cost).
-    pub fn builder() -> crate::model::cost::Builder {
-        crate::model::cost::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CostFrequency`, it is important to ensure
@@ -2662,6 +2671,13 @@ impl UnsupportedResource {
         self.resource_type.as_deref()
     }
 }
+impl UnsupportedResource {
+    /// Creates a new builder-style object to manufacture [`UnsupportedResource`](crate::model::UnsupportedResource).
+    pub fn builder() -> crate::model::unsupported_resource::Builder {
+        crate::model::unsupported_resource::Builder::default()
+    }
+}
+
 /// See [`UnsupportedResource`](crate::model::UnsupportedResource).
 pub mod unsupported_resource {
     
@@ -2715,12 +2731,6 @@ pub mod unsupported_resource {
     }
     
     
-}
-impl UnsupportedResource {
-    /// Creates a new builder-style object to manufacture [`UnsupportedResource`](crate::model::UnsupportedResource).
-    pub fn builder() -> crate::model::unsupported_resource::Builder {
-        crate::model::unsupported_resource::Builder::default()
-    }
 }
 
 /// <p>Defines a physical resource identifier.</p>
@@ -2786,6 +2796,13 @@ impl PhysicalResourceId {
         self.aws_account_id.as_deref()
     }
 }
+impl PhysicalResourceId {
+    /// Creates a new builder-style object to manufacture [`PhysicalResourceId`](crate::model::PhysicalResourceId).
+    pub fn builder() -> crate::model::physical_resource_id::Builder {
+        crate::model::physical_resource_id::Builder::default()
+    }
+}
+
 /// See [`PhysicalResourceId`](crate::model::PhysicalResourceId).
 pub mod physical_resource_id {
     
@@ -2879,12 +2896,6 @@ pub mod physical_resource_id {
     }
     
     
-}
-impl PhysicalResourceId {
-    /// Creates a new builder-style object to manufacture [`PhysicalResourceId`](crate::model::PhysicalResourceId).
-    pub fn builder() -> crate::model::physical_resource_id::Builder {
-        crate::model::physical_resource_id::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PhysicalIdentifierType`, it is important to ensure
@@ -3004,6 +3015,13 @@ impl LogicalResourceId {
         self.terraform_source_name.as_deref()
     }
 }
+impl LogicalResourceId {
+    /// Creates a new builder-style object to manufacture [`LogicalResourceId`](crate::model::LogicalResourceId).
+    pub fn builder() -> crate::model::logical_resource_id::Builder {
+        crate::model::logical_resource_id::Builder::default()
+    }
+}
+
 /// See [`LogicalResourceId`](crate::model::LogicalResourceId).
 pub mod logical_resource_id {
     
@@ -3069,12 +3087,6 @@ pub mod logical_resource_id {
     }
     
     
-}
-impl LogicalResourceId {
-    /// Creates a new builder-style object to manufacture [`LogicalResourceId`](crate::model::LogicalResourceId).
-    pub fn builder() -> crate::model::logical_resource_id::Builder {
-        crate::model::logical_resource_id::Builder::default()
-    }
 }
 
 /// <p>Defines a test recommendation.</p>
@@ -3161,6 +3173,13 @@ impl TestRecommendation {
         self.depends_on_alarms.as_deref()
     }
 }
+impl TestRecommendation {
+    /// Creates a new builder-style object to manufacture [`TestRecommendation`](crate::model::TestRecommendation).
+    pub fn builder() -> crate::model::test_recommendation::Builder {
+        crate::model::test_recommendation::Builder::default()
+    }
+}
+
 /// See [`TestRecommendation`](crate::model::TestRecommendation).
 pub mod test_recommendation {
     
@@ -3323,12 +3342,6 @@ pub mod test_recommendation {
     
     
 }
-impl TestRecommendation {
-    /// Creates a new builder-style object to manufacture [`TestRecommendation`](crate::model::TestRecommendation).
-    pub fn builder() -> crate::model::test_recommendation::Builder {
-        crate::model::test_recommendation::Builder::default()
-    }
-}
 
 /// <p>Defines a recommendation.</p>
 #[non_exhaustive]
@@ -3365,6 +3378,13 @@ impl RecommendationItem {
         self.already_implemented
     }
 }
+impl RecommendationItem {
+    /// Creates a new builder-style object to manufacture [`RecommendationItem`](crate::model::RecommendationItem).
+    pub fn builder() -> crate::model::recommendation_item::Builder {
+        crate::model::recommendation_item::Builder::default()
+    }
+}
+
 /// See [`RecommendationItem`](crate::model::RecommendationItem).
 pub mod recommendation_item {
     
@@ -3430,12 +3450,6 @@ pub mod recommendation_item {
     }
     
     
-}
-impl RecommendationItem {
-    /// Creates a new builder-style object to manufacture [`RecommendationItem`](crate::model::RecommendationItem).
-    pub fn builder() -> crate::model::recommendation_item::Builder {
-        crate::model::recommendation_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TestType`, it is important to ensure
@@ -3680,6 +3694,13 @@ impl SopRecommendation {
         self.prerequisite.as_deref()
     }
 }
+impl SopRecommendation {
+    /// Creates a new builder-style object to manufacture [`SopRecommendation`](crate::model::SopRecommendation).
+    pub fn builder() -> crate::model::sop_recommendation::Builder {
+        crate::model::sop_recommendation::Builder::default()
+    }
+}
+
 /// See [`SopRecommendation`](crate::model::SopRecommendation).
 pub mod sop_recommendation {
     
@@ -3799,12 +3820,6 @@ pub mod sop_recommendation {
     }
     
     
-}
-impl SopRecommendation {
-    /// Creates a new builder-style object to manufacture [`SopRecommendation`](crate::model::SopRecommendation).
-    pub fn builder() -> crate::model::sop_recommendation::Builder {
-        crate::model::sop_recommendation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SopServiceType`, it is important to ensure
@@ -4077,6 +4092,13 @@ impl  std::fmt::Debug for RecommendationTemplate  {
         formatter.finish()
     }
 }
+impl RecommendationTemplate {
+    /// Creates a new builder-style object to manufacture [`RecommendationTemplate`](crate::model::RecommendationTemplate).
+    pub fn builder() -> crate::model::recommendation_template::Builder {
+        crate::model::recommendation_template::Builder::default()
+    }
+}
+
 /// See [`RecommendationTemplate`](crate::model::RecommendationTemplate).
 pub mod recommendation_template {
     
@@ -4369,12 +4391,6 @@ pub mod recommendation_template {
     
     
 }
-impl RecommendationTemplate {
-    /// Creates a new builder-style object to manufacture [`RecommendationTemplate`](crate::model::RecommendationTemplate).
-    pub fn builder() -> crate::model::recommendation_template::Builder {
-        crate::model::recommendation_template::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RecommendationTemplateStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4658,6 +4674,13 @@ impl S3Location {
         self.prefix.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -4700,12 +4723,6 @@ pub mod s3_location {
     
     
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>The version of the application.</p>
 #[non_exhaustive]
@@ -4721,6 +4738,13 @@ impl AppVersionSummary {
         self.app_version.as_deref()
     }
 }
+impl AppVersionSummary {
+    /// Creates a new builder-style object to manufacture [`AppVersionSummary`](crate::model::AppVersionSummary).
+    pub fn builder() -> crate::model::app_version_summary::Builder {
+        crate::model::app_version_summary::Builder::default()
+    }
+}
+
 /// See [`AppVersionSummary`](crate::model::AppVersionSummary).
 pub mod app_version_summary {
     
@@ -4750,12 +4774,6 @@ pub mod app_version_summary {
     }
     
     
-}
-impl AppVersionSummary {
-    /// Creates a new builder-style object to manufacture [`AppVersionSummary`](crate::model::AppVersionSummary).
-    pub fn builder() -> crate::model::app_version_summary::Builder {
-        crate::model::app_version_summary::Builder::default()
-    }
 }
 
 /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier. </p>
@@ -4800,6 +4818,13 @@ impl PhysicalResource {
         self.app_components.as_deref()
     }
 }
+impl PhysicalResource {
+    /// Creates a new builder-style object to manufacture [`PhysicalResource`](crate::model::PhysicalResource).
+    pub fn builder() -> crate::model::physical_resource::Builder {
+        crate::model::physical_resource::Builder::default()
+    }
+}
+
 /// See [`PhysicalResource`](crate::model::PhysicalResource).
 pub mod physical_resource {
     
@@ -4884,12 +4909,6 @@ pub mod physical_resource {
     
     
 }
-impl PhysicalResource {
-    /// Creates a new builder-style object to manufacture [`PhysicalResource`](crate::model::PhysicalResource).
-    pub fn builder() -> crate::model::physical_resource::Builder {
-        crate::model::physical_resource::Builder::default()
-    }
-}
 
 /// <p>Defines an application component.</p>
 #[non_exhaustive]
@@ -4912,6 +4931,13 @@ impl AppComponent {
         self.r#type.as_deref()
     }
 }
+impl AppComponent {
+    /// Creates a new builder-style object to manufacture [`AppComponent`](crate::model::AppComponent).
+    pub fn builder() -> crate::model::app_component::Builder {
+        crate::model::app_component::Builder::default()
+    }
+}
+
 /// See [`AppComponent`](crate::model::AppComponent).
 pub mod app_component {
     
@@ -4953,12 +4979,6 @@ pub mod app_component {
     }
     
     
-}
-impl AppComponent {
-    /// Creates a new builder-style object to manufacture [`AppComponent`](crate::model::AppComponent).
-    pub fn builder() -> crate::model::app_component::Builder {
-        crate::model::app_component::Builder::default()
-    }
 }
 
 /// <p>Defines a resource mapping.</p>
@@ -5069,6 +5089,13 @@ impl ResourceMapping {
         self.terraform_source_name.as_deref()
     }
 }
+impl ResourceMapping {
+    /// Creates a new builder-style object to manufacture [`ResourceMapping`](crate::model::ResourceMapping).
+    pub fn builder() -> crate::model::resource_mapping::Builder {
+        crate::model::resource_mapping::Builder::default()
+    }
+}
+
 /// See [`ResourceMapping`](crate::model::ResourceMapping).
 pub mod resource_mapping {
     
@@ -5222,12 +5249,6 @@ pub mod resource_mapping {
     }
     
     
-}
-impl ResourceMapping {
-    /// Creates a new builder-style object to manufacture [`ResourceMapping`](crate::model::ResourceMapping).
-    pub fn builder() -> crate::model::resource_mapping::Builder {
-        crate::model::resource_mapping::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceMappingType`, it is important to ensure
@@ -5390,6 +5411,13 @@ impl AppSummary {
         self.status.as_ref()
     }
 }
+impl AppSummary {
+    /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
+    pub fn builder() -> crate::model::app_summary::Builder {
+        crate::model::app_summary::Builder::default()
+    }
+}
+
 /// See [`AppSummary`](crate::model::AppSummary).
 pub mod app_summary {
     
@@ -5505,12 +5533,6 @@ pub mod app_summary {
     
     
 }
-impl AppSummary {
-    /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
-    pub fn builder() -> crate::model::app_summary::Builder {
-        crate::model::app_summary::Builder::default()
-    }
-}
 
 /// <p>Defines recommendations for a Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
 #[non_exhaustive]
@@ -5540,6 +5562,13 @@ impl ComponentRecommendation {
         self.config_recommendations.as_deref()
     }
 }
+impl ComponentRecommendation {
+    /// Creates a new builder-style object to manufacture [`ComponentRecommendation`](crate::model::ComponentRecommendation).
+    pub fn builder() -> crate::model::component_recommendation::Builder {
+        crate::model::component_recommendation::Builder::default()
+    }
+}
+
 /// See [`ComponentRecommendation`](crate::model::ComponentRecommendation).
 pub mod component_recommendation {
     
@@ -5599,12 +5628,6 @@ pub mod component_recommendation {
     }
     
     
-}
-impl ComponentRecommendation {
-    /// Creates a new builder-style object to manufacture [`ComponentRecommendation`](crate::model::ComponentRecommendation).
-    pub fn builder() -> crate::model::component_recommendation::Builder {
-        crate::model::component_recommendation::Builder::default()
-    }
 }
 
 /// <p>Defines a configuration recommendation.</p>
@@ -5684,6 +5707,13 @@ impl ConfigRecommendation {
         self.reference_id.as_deref()
     }
 }
+impl ConfigRecommendation {
+    /// Creates a new builder-style object to manufacture [`ConfigRecommendation`](crate::model::ConfigRecommendation).
+    pub fn builder() -> crate::model::config_recommendation::Builder {
+        crate::model::config_recommendation::Builder::default()
+    }
+}
+
 /// See [`ConfigRecommendation`](crate::model::ConfigRecommendation).
 pub mod config_recommendation {
     
@@ -5839,12 +5869,6 @@ pub mod config_recommendation {
     }
     
     
-}
-impl ConfigRecommendation {
-    /// Creates a new builder-style object to manufacture [`ConfigRecommendation`](crate::model::ConfigRecommendation).
-    pub fn builder() -> crate::model::config_recommendation::Builder {
-        crate::model::config_recommendation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HaArchitecture`, it is important to ensure
@@ -6088,6 +6112,13 @@ impl RecommendationDisruptionCompliance {
         self.expected_rpo_description.as_deref()
     }
 }
+impl RecommendationDisruptionCompliance {
+    /// Creates a new builder-style object to manufacture [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
+    pub fn builder() -> crate::model::recommendation_disruption_compliance::Builder {
+        crate::model::recommendation_disruption_compliance::Builder::default()
+    }
+}
+
 /// See [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
 pub mod recommendation_disruption_compliance {
     
@@ -6167,12 +6198,6 @@ pub mod recommendation_disruption_compliance {
     }
     
     
-}
-impl RecommendationDisruptionCompliance {
-    /// Creates a new builder-style object to manufacture [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
-    pub fn builder() -> crate::model::recommendation_disruption_compliance::Builder {
-        crate::model::recommendation_disruption_compliance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecommendationComplianceStatus`, it is important to ensure
@@ -6311,6 +6336,13 @@ impl AppComponentCompliance {
         self.resiliency_score.as_ref()
     }
 }
+impl AppComponentCompliance {
+    /// Creates a new builder-style object to manufacture [`AppComponentCompliance`](crate::model::AppComponentCompliance).
+    pub fn builder() -> crate::model::app_component_compliance::Builder {
+        crate::model::app_component_compliance::Builder::default()
+    }
+}
+
 /// See [`AppComponentCompliance`](crate::model::AppComponentCompliance).
 pub mod app_component_compliance {
     
@@ -6407,12 +6439,6 @@ pub mod app_component_compliance {
     
     
 }
-impl AppComponentCompliance {
-    /// Creates a new builder-style object to manufacture [`AppComponentCompliance`](crate::model::AppComponentCompliance).
-    pub fn builder() -> crate::model::app_component_compliance::Builder {
-        crate::model::app_component_compliance::Builder::default()
-    }
-}
 
 /// <p>Defines an application assessment summary.</p>
 #[non_exhaustive]
@@ -6505,6 +6531,13 @@ impl AppAssessmentSummary {
         self.resiliency_score
     }
 }
+impl AppAssessmentSummary {
+    /// Creates a new builder-style object to manufacture [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
+    pub fn builder() -> crate::model::app_assessment_summary::Builder {
+        crate::model::app_assessment_summary::Builder::default()
+    }
+}
+
 /// See [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
 pub mod app_assessment_summary {
     
@@ -6668,12 +6701,6 @@ pub mod app_assessment_summary {
     
     
 }
-impl AppAssessmentSummary {
-    /// Creates a new builder-style object to manufacture [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
-    pub fn builder() -> crate::model::app_assessment_summary::Builder {
-        crate::model::app_assessment_summary::Builder::default()
-    }
-}
 
 /// <p>Defines a recommendation for a CloudWatch alarm.</p>
 #[non_exhaustive]
@@ -6738,6 +6765,13 @@ impl AlarmRecommendation {
         self.prerequisite.as_deref()
     }
 }
+impl AlarmRecommendation {
+    /// Creates a new builder-style object to manufacture [`AlarmRecommendation`](crate::model::AlarmRecommendation).
+    pub fn builder() -> crate::model::alarm_recommendation::Builder {
+        crate::model::alarm_recommendation::Builder::default()
+    }
+}
+
 /// See [`AlarmRecommendation`](crate::model::AlarmRecommendation).
 pub mod alarm_recommendation {
     
@@ -6858,12 +6892,6 @@ pub mod alarm_recommendation {
     
     
 }
-impl AlarmRecommendation {
-    /// Creates a new builder-style object to manufacture [`AlarmRecommendation`](crate::model::AlarmRecommendation).
-    pub fn builder() -> crate::model::alarm_recommendation::Builder {
-        crate::model::alarm_recommendation::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AlarmType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6976,6 +7004,13 @@ impl TerraformSource {
         self.s3_state_file_url.as_deref()
     }
 }
+impl TerraformSource {
+    /// Creates a new builder-style object to manufacture [`TerraformSource`](crate::model::TerraformSource).
+    pub fn builder() -> crate::model::terraform_source::Builder {
+        crate::model::terraform_source::Builder::default()
+    }
+}
+
 /// See [`TerraformSource`](crate::model::TerraformSource).
 pub mod terraform_source {
     
@@ -7005,12 +7040,6 @@ pub mod terraform_source {
     }
     
     
-}
-impl TerraformSource {
-    /// Creates a new builder-style object to manufacture [`TerraformSource`](crate::model::TerraformSource).
-    pub fn builder() -> crate::model::terraform_source::Builder {
-        crate::model::terraform_source::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceImportStatusType`, it is important to ensure

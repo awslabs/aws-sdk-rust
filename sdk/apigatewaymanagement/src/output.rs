@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for PostToConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PostToConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
+    pub fn builder() -> crate::output::post_to_connection_output::Builder {
+        crate::output::post_to_connection_output::Builder::default()
+    }
+}
+
 /// See [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
 pub mod post_to_connection_output {
     
@@ -38,12 +45,6 @@ pub mod post_to_connection_output {
     }
     
     
-}
-impl PostToConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
-    pub fn builder() -> crate::output::post_to_connection_output::Builder {
-        crate::output::post_to_connection_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -80,6 +81,13 @@ impl aws_http::request_id::RequestId for GetConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput).
+    pub fn builder() -> crate::output::get_connection_output::Builder {
+        crate::output::get_connection_output::Builder::default()
+    }
+}
+
 /// See [`GetConnectionOutput`](crate::output::GetConnectionOutput).
 pub mod get_connection_output {
     
@@ -145,12 +153,6 @@ pub mod get_connection_output {
     
     
 }
-impl GetConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput).
-    pub fn builder() -> crate::output::get_connection_output::Builder {
-        crate::output::get_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -163,6 +165,13 @@ impl aws_http::request_id::RequestId for DeleteConnectionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
+    pub fn builder() -> crate::output::delete_connection_output::Builder {
+        crate::output::delete_connection_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
     
@@ -191,11 +200,5 @@ pub mod delete_connection_output {
     }
     
     
-}
-impl DeleteConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
-    pub fn builder() -> crate::output::delete_connection_output::Builder {
-        crate::output::delete_connection_output::Builder::default()
-    }
 }
 

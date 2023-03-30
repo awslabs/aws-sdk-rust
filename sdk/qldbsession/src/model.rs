@@ -28,6 +28,13 @@ impl FetchPageResult {
         self.consumed_i_os.as_ref()
     }
 }
+impl FetchPageResult {
+    /// Creates a new builder-style object to manufacture [`FetchPageResult`](crate::model::FetchPageResult).
+    pub fn builder() -> crate::model::fetch_page_result::Builder {
+        crate::model::fetch_page_result::Builder::default()
+    }
+}
+
 /// See [`FetchPageResult`](crate::model::FetchPageResult).
 pub mod fetch_page_result {
     
@@ -82,12 +89,6 @@ pub mod fetch_page_result {
     
     
 }
-impl FetchPageResult {
-    /// Creates a new builder-style object to manufacture [`FetchPageResult`](crate::model::FetchPageResult).
-    pub fn builder() -> crate::model::fetch_page_result::Builder {
-        crate::model::fetch_page_result::Builder::default()
-    }
-}
 
 /// <p>Contains I/O usage metrics for a command that was invoked.</p>
 #[non_exhaustive]
@@ -110,6 +111,13 @@ impl IoUsage {
         self.write_i_os
     }
 }
+impl IoUsage {
+    /// Creates a new builder-style object to manufacture [`IoUsage`](crate::model::IoUsage).
+    pub fn builder() -> crate::model::io_usage::Builder {
+        crate::model::io_usage::Builder::default()
+    }
+}
+
 /// See [`IoUsage`](crate::model::IoUsage).
 pub mod io_usage {
     
@@ -154,12 +162,6 @@ pub mod io_usage {
     
     
 }
-impl IoUsage {
-    /// Creates a new builder-style object to manufacture [`IoUsage`](crate::model::IoUsage).
-    pub fn builder() -> crate::model::io_usage::Builder {
-        crate::model::io_usage::Builder::default()
-    }
-}
 
 /// <p>Contains server-side performance information for a command. Amazon QLDB captures timing information between the times when it receives the request and when it sends the corresponding response.</p>
 #[non_exhaustive]
@@ -175,6 +177,13 @@ impl TimingInformation {
         self.processing_time_milliseconds
     }
 }
+impl TimingInformation {
+    /// Creates a new builder-style object to manufacture [`TimingInformation`](crate::model::TimingInformation).
+    pub fn builder() -> crate::model::timing_information::Builder {
+        crate::model::timing_information::Builder::default()
+    }
+}
+
 /// See [`TimingInformation`](crate::model::TimingInformation).
 pub mod timing_information {
     
@@ -206,12 +215,6 @@ pub mod timing_information {
     
     
 }
-impl TimingInformation {
-    /// Creates a new builder-style object to manufacture [`TimingInformation`](crate::model::TimingInformation).
-    pub fn builder() -> crate::model::timing_information::Builder {
-        crate::model::timing_information::Builder::default()
-    }
-}
 
 /// <p>Contains details of the fetched page.</p>
 #[non_exhaustive]
@@ -234,6 +237,13 @@ impl Page {
         self.next_page_token.as_deref()
     }
 }
+impl Page {
+    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
+    pub fn builder() -> crate::model::page::Builder {
+        crate::model::page::Builder::default()
+    }
+}
+
 /// See [`Page`](crate::model::Page).
 pub mod page {
     
@@ -282,12 +292,6 @@ pub mod page {
     
     
 }
-impl Page {
-    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
-    pub fn builder() -> crate::model::page::Builder {
-        crate::model::page::Builder::default()
-    }
-}
 
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
@@ -310,6 +314,13 @@ impl ValueHolder {
         self.ion_text.as_deref()
     }
 }
+impl ValueHolder {
+    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
+    pub fn builder() -> crate::model::value_holder::Builder {
+        crate::model::value_holder::Builder::default()
+    }
+}
+
 /// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
     
@@ -352,12 +363,6 @@ pub mod value_holder {
     
     
 }
-impl ValueHolder {
-    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
-    pub fn builder() -> crate::model::value_holder::Builder {
-        crate::model::value_holder::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the executed statement.</p>
 #[non_exhaustive]
@@ -387,6 +392,13 @@ impl ExecuteStatementResult {
         self.consumed_i_os.as_ref()
     }
 }
+impl ExecuteStatementResult {
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
+    pub fn builder() -> crate::model::execute_statement_result::Builder {
+        crate::model::execute_statement_result::Builder::default()
+    }
+}
+
 /// See [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
 pub mod execute_statement_result {
     
@@ -441,12 +453,6 @@ pub mod execute_statement_result {
     
     
 }
-impl ExecuteStatementResult {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
-    pub fn builder() -> crate::model::execute_statement_result::Builder {
-        crate::model::execute_statement_result::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the aborted transaction.</p>
 #[non_exhaustive]
@@ -462,6 +468,13 @@ impl AbortTransactionResult {
         self.timing_information.as_ref()
     }
 }
+impl AbortTransactionResult {
+    /// Creates a new builder-style object to manufacture [`AbortTransactionResult`](crate::model::AbortTransactionResult).
+    pub fn builder() -> crate::model::abort_transaction_result::Builder {
+        crate::model::abort_transaction_result::Builder::default()
+    }
+}
+
 /// See [`AbortTransactionResult`](crate::model::AbortTransactionResult).
 pub mod abort_transaction_result {
     
@@ -491,12 +504,6 @@ pub mod abort_transaction_result {
     }
     
     
-}
-impl AbortTransactionResult {
-    /// Creates a new builder-style object to manufacture [`AbortTransactionResult`](crate::model::AbortTransactionResult).
-    pub fn builder() -> crate::model::abort_transaction_result::Builder {
-        crate::model::abort_transaction_result::Builder::default()
-    }
 }
 
 /// <p>Contains the details of the committed transaction.</p>
@@ -534,6 +541,13 @@ impl CommitTransactionResult {
         self.consumed_i_os.as_ref()
     }
 }
+impl CommitTransactionResult {
+    /// Creates a new builder-style object to manufacture [`CommitTransactionResult`](crate::model::CommitTransactionResult).
+    pub fn builder() -> crate::model::commit_transaction_result::Builder {
+        crate::model::commit_transaction_result::Builder::default()
+    }
+}
+
 /// See [`CommitTransactionResult`](crate::model::CommitTransactionResult).
 pub mod commit_transaction_result {
     
@@ -600,12 +614,6 @@ pub mod commit_transaction_result {
     
     
 }
-impl CommitTransactionResult {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionResult`](crate::model::CommitTransactionResult).
-    pub fn builder() -> crate::model::commit_transaction_result::Builder {
-        crate::model::commit_transaction_result::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the ended session.</p>
 #[non_exhaustive]
@@ -621,6 +629,13 @@ impl EndSessionResult {
         self.timing_information.as_ref()
     }
 }
+impl EndSessionResult {
+    /// Creates a new builder-style object to manufacture [`EndSessionResult`](crate::model::EndSessionResult).
+    pub fn builder() -> crate::model::end_session_result::Builder {
+        crate::model::end_session_result::Builder::default()
+    }
+}
+
 /// See [`EndSessionResult`](crate::model::EndSessionResult).
 pub mod end_session_result {
     
@@ -651,12 +666,6 @@ pub mod end_session_result {
     
     
 }
-impl EndSessionResult {
-    /// Creates a new builder-style object to manufacture [`EndSessionResult`](crate::model::EndSessionResult).
-    pub fn builder() -> crate::model::end_session_result::Builder {
-        crate::model::end_session_result::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the started transaction.</p>
 #[non_exhaustive]
@@ -679,6 +688,13 @@ impl StartTransactionResult {
         self.timing_information.as_ref()
     }
 }
+impl StartTransactionResult {
+    /// Creates a new builder-style object to manufacture [`StartTransactionResult`](crate::model::StartTransactionResult).
+    pub fn builder() -> crate::model::start_transaction_result::Builder {
+        crate::model::start_transaction_result::Builder::default()
+    }
+}
+
 /// See [`StartTransactionResult`](crate::model::StartTransactionResult).
 pub mod start_transaction_result {
     
@@ -721,12 +737,6 @@ pub mod start_transaction_result {
     
     
 }
-impl StartTransactionResult {
-    /// Creates a new builder-style object to manufacture [`StartTransactionResult`](crate::model::StartTransactionResult).
-    pub fn builder() -> crate::model::start_transaction_result::Builder {
-        crate::model::start_transaction_result::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the started session.</p>
 #[non_exhaustive]
@@ -749,6 +759,13 @@ impl StartSessionResult {
         self.timing_information.as_ref()
     }
 }
+impl StartSessionResult {
+    /// Creates a new builder-style object to manufacture [`StartSessionResult`](crate::model::StartSessionResult).
+    pub fn builder() -> crate::model::start_session_result::Builder {
+        crate::model::start_session_result::Builder::default()
+    }
+}
+
 /// See [`StartSessionResult`](crate::model::StartSessionResult).
 pub mod start_session_result {
     
@@ -791,12 +808,6 @@ pub mod start_session_result {
     
     
 }
-impl StartSessionResult {
-    /// Creates a new builder-style object to manufacture [`StartSessionResult`](crate::model::StartSessionResult).
-    pub fn builder() -> crate::model::start_session_result::Builder {
-        crate::model::start_session_result::Builder::default()
-    }
-}
 
 /// <p>Specifies the details of the page to be fetched.</p>
 #[non_exhaustive]
@@ -819,6 +830,13 @@ impl FetchPageRequest {
         self.next_page_token.as_deref()
     }
 }
+impl FetchPageRequest {
+    /// Creates a new builder-style object to manufacture [`FetchPageRequest`](crate::model::FetchPageRequest).
+    pub fn builder() -> crate::model::fetch_page_request::Builder {
+        crate::model::fetch_page_request::Builder::default()
+    }
+}
+
 /// See [`FetchPageRequest`](crate::model::FetchPageRequest).
 pub mod fetch_page_request {
     
@@ -861,12 +879,6 @@ pub mod fetch_page_request {
     
     
 }
-impl FetchPageRequest {
-    /// Creates a new builder-style object to manufacture [`FetchPageRequest`](crate::model::FetchPageRequest).
-    pub fn builder() -> crate::model::fetch_page_request::Builder {
-        crate::model::fetch_page_request::Builder::default()
-    }
-}
 
 /// <p>Specifies a request to execute a statement.</p>
 #[non_exhaustive]
@@ -896,6 +908,13 @@ impl ExecuteStatementRequest {
         self.parameters.as_deref()
     }
 }
+impl ExecuteStatementRequest {
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
+    pub fn builder() -> crate::model::execute_statement_request::Builder {
+        crate::model::execute_statement_request::Builder::default()
+    }
+}
+
 /// See [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
 pub mod execute_statement_request {
     
@@ -956,18 +975,19 @@ pub mod execute_statement_request {
     
     
 }
-impl ExecuteStatementRequest {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
-    pub fn builder() -> crate::model::execute_statement_request::Builder {
-        crate::model::execute_statement_request::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the transaction to abort.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AbortTransactionRequest  {
 }
+impl AbortTransactionRequest {
+    /// Creates a new builder-style object to manufacture [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
+    pub fn builder() -> crate::model::abort_transaction_request::Builder {
+        crate::model::abort_transaction_request::Builder::default()
+    }
+}
+
 /// See [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
 pub mod abort_transaction_request {
     
@@ -985,12 +1005,6 @@ pub mod abort_transaction_request {
     }
     
     
-}
-impl AbortTransactionRequest {
-    /// Creates a new builder-style object to manufacture [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
-    pub fn builder() -> crate::model::abort_transaction_request::Builder {
-        crate::model::abort_transaction_request::Builder::default()
-    }
 }
 
 /// <p>Contains the details of the transaction to commit.</p>
@@ -1016,6 +1030,13 @@ impl CommitTransactionRequest {
         self.commit_digest.as_ref()
     }
 }
+impl CommitTransactionRequest {
+    /// Creates a new builder-style object to manufacture [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
+    pub fn builder() -> crate::model::commit_transaction_request::Builder {
+        crate::model::commit_transaction_request::Builder::default()
+    }
+}
+
 /// See [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
 pub mod commit_transaction_request {
     
@@ -1060,18 +1081,19 @@ pub mod commit_transaction_request {
     
     
 }
-impl CommitTransactionRequest {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
-    pub fn builder() -> crate::model::commit_transaction_request::Builder {
-        crate::model::commit_transaction_request::Builder::default()
-    }
-}
 
 /// <p>Specifies a request to end the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EndSessionRequest  {
 }
+impl EndSessionRequest {
+    /// Creates a new builder-style object to manufacture [`EndSessionRequest`](crate::model::EndSessionRequest).
+    pub fn builder() -> crate::model::end_session_request::Builder {
+        crate::model::end_session_request::Builder::default()
+    }
+}
+
 /// See [`EndSessionRequest`](crate::model::EndSessionRequest).
 pub mod end_session_request {
     
@@ -1090,18 +1112,19 @@ pub mod end_session_request {
     
     
 }
-impl EndSessionRequest {
-    /// Creates a new builder-style object to manufacture [`EndSessionRequest`](crate::model::EndSessionRequest).
-    pub fn builder() -> crate::model::end_session_request::Builder {
-        crate::model::end_session_request::Builder::default()
-    }
-}
 
 /// <p>Specifies a request to start a transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTransactionRequest  {
 }
+impl StartTransactionRequest {
+    /// Creates a new builder-style object to manufacture [`StartTransactionRequest`](crate::model::StartTransactionRequest).
+    pub fn builder() -> crate::model::start_transaction_request::Builder {
+        crate::model::start_transaction_request::Builder::default()
+    }
+}
+
 /// See [`StartTransactionRequest`](crate::model::StartTransactionRequest).
 pub mod start_transaction_request {
     
@@ -1120,12 +1143,6 @@ pub mod start_transaction_request {
     
     
 }
-impl StartTransactionRequest {
-    /// Creates a new builder-style object to manufacture [`StartTransactionRequest`](crate::model::StartTransactionRequest).
-    pub fn builder() -> crate::model::start_transaction_request::Builder {
-        crate::model::start_transaction_request::Builder::default()
-    }
-}
 
 /// <p>Specifies a request to start a new session.</p>
 #[non_exhaustive]
@@ -1141,6 +1158,13 @@ impl StartSessionRequest {
         self.ledger_name.as_deref()
     }
 }
+impl StartSessionRequest {
+    /// Creates a new builder-style object to manufacture [`StartSessionRequest`](crate::model::StartSessionRequest).
+    pub fn builder() -> crate::model::start_session_request::Builder {
+        crate::model::start_session_request::Builder::default()
+    }
+}
+
 /// See [`StartSessionRequest`](crate::model::StartSessionRequest).
 pub mod start_session_request {
     
@@ -1170,11 +1194,5 @@ pub mod start_session_request {
     }
     
     
-}
-impl StartSessionRequest {
-    /// Creates a new builder-style object to manufacture [`StartSessionRequest`](crate::model::StartSessionRequest).
-    pub fn builder() -> crate::model::start_session_request::Builder {
-        crate::model::start_session_request::Builder::default()
-    }
 }
 

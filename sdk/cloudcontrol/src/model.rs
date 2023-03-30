@@ -117,6 +117,13 @@ impl  std::fmt::Debug for ProgressEvent  {
         formatter.finish()
     }
 }
+impl ProgressEvent {
+    /// Creates a new builder-style object to manufacture [`ProgressEvent`](crate::model::ProgressEvent).
+    pub fn builder() -> crate::model::progress_event::Builder {
+        crate::model::progress_event::Builder::default()
+    }
+}
+
 /// See [`ProgressEvent`](crate::model::ProgressEvent).
 pub mod progress_event {
     
@@ -294,12 +301,6 @@ pub mod progress_event {
     }
     
     
-}
-impl ProgressEvent {
-    /// Creates a new builder-style object to manufacture [`ProgressEvent`](crate::model::ProgressEvent).
-    pub fn builder() -> crate::model::progress_event::Builder {
-        crate::model::progress_event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HandlerErrorCode`, it is important to ensure
@@ -669,6 +670,13 @@ impl  std::fmt::Debug for ResourceDescription  {
         formatter.finish()
     }
 }
+impl ResourceDescription {
+    /// Creates a new builder-style object to manufacture [`ResourceDescription`](crate::model::ResourceDescription).
+    pub fn builder() -> crate::model::resource_description::Builder {
+        crate::model::resource_description::Builder::default()
+    }
+}
+
 /// See [`ResourceDescription`](crate::model::ResourceDescription).
 pub mod resource_description {
     
@@ -721,12 +729,6 @@ pub mod resource_description {
     
     
 }
-impl ResourceDescription {
-    /// Creates a new builder-style object to manufacture [`ResourceDescription`](crate::model::ResourceDescription).
-    pub fn builder() -> crate::model::resource_description::Builder {
-        crate::model::resource_description::Builder::default()
-    }
-}
 
 /// <p>The filter criteria to use in determining the requests returned.</p>
 #[non_exhaustive]
@@ -765,6 +767,13 @@ impl ResourceRequestStatusFilter {
         self.operation_statuses.as_deref()
     }
 }
+impl ResourceRequestStatusFilter {
+    /// Creates a new builder-style object to manufacture [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
+    pub fn builder() -> crate::model::resource_request_status_filter::Builder {
+        crate::model::resource_request_status_filter::Builder::default()
+    }
+}
+
 /// See [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
 pub mod resource_request_status_filter {
     
@@ -834,11 +843,5 @@ pub mod resource_request_status_filter {
     }
     
     
-}
-impl ResourceRequestStatusFilter {
-    /// Creates a new builder-style object to manufacture [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
-    pub fn builder() -> crate::model::resource_request_status_filter::Builder {
-        crate::model::resource_request_status_filter::Builder::default()
-    }
 }
 

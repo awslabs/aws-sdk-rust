@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`cancel_resource_request`](crate::client::Client::cancel_resource_request).
             ///
-            /// See [`crate::client::fluent_builders::CancelResourceRequest`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CancelResourceRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelResourceRequest {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelResourceRequest {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_resource`](crate::client::Client::create_resource).
             ///
-            /// See [`crate::client::fluent_builders::CreateResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResource {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resource`](crate::client::Client::delete_resource).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResource {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource`](crate::client::Client::get_resource).
             ///
-            /// See [`crate::client::fluent_builders::GetResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResource {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource_request_status`](crate::client::Client::get_resource_request_status).
             ///
-            /// See [`crate::client::fluent_builders::GetResourceRequestStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResourceRequestStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourceRequestStatus {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceRequestStatus
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resource_requests`](crate::client::Client::list_resource_requests).
             ///
-            /// See [`crate::client::fluent_builders::ListResourceRequests`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResourceRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceRequests {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRequests {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resources`](crate::client::Client::list_resources).
             ///
-            /// See [`crate::client::fluent_builders::ListResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResources {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResources {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resource`](crate::client::Client::update_resource).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResource {
     _private: ()

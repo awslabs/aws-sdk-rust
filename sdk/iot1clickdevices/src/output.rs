@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateDeviceStateOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDeviceStateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
+    pub fn builder() -> crate::output::update_device_state_output::Builder {
+        crate::output::update_device_state_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
 pub mod update_device_state_output {
     
@@ -39,12 +46,6 @@ pub mod update_device_state_output {
     
     
 }
-impl UpdateDeviceStateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
-    pub fn builder() -> crate::output::update_device_state_output::Builder {
-        crate::output::update_device_state_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -113,6 +115,13 @@ impl aws_http::request_id::RequestId for UnclaimDeviceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UnclaimDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
+    pub fn builder() -> crate::output::unclaim_device_output::Builder {
+        crate::output::unclaim_device_output::Builder::default()
+    }
+}
+
 /// See [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
 pub mod unclaim_device_output {
     
@@ -154,12 +163,6 @@ pub mod unclaim_device_output {
     
     
 }
-impl UnclaimDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
-    pub fn builder() -> crate::output::unclaim_device_output::Builder {
-        crate::output::unclaim_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -172,6 +175,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -201,12 +211,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -230,6 +234,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -279,12 +290,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -313,6 +318,13 @@ impl aws_http::request_id::RequestId for ListDevicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput).
+    pub fn builder() -> crate::output::list_devices_output::Builder {
+        crate::output::list_devices_output::Builder::default()
+    }
+}
+
 /// See [`ListDevicesOutput`](crate::output::ListDevicesOutput).
 pub mod list_devices_output {
     
@@ -372,12 +384,6 @@ pub mod list_devices_output {
     
     
 }
-impl ListDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput).
-    pub fn builder() -> crate::output::list_devices_output::Builder {
-        crate::output::list_devices_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -406,6 +412,13 @@ impl aws_http::request_id::RequestId for ListDeviceEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDeviceEventsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
+    pub fn builder() -> crate::output::list_device_events_output::Builder {
+        crate::output::list_device_events_output::Builder::default()
+    }
+}
+
 /// See [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
 pub mod list_device_events_output {
     
@@ -465,12 +478,6 @@ pub mod list_device_events_output {
     
     
 }
-impl ListDeviceEventsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
-    pub fn builder() -> crate::output::list_device_events_output::Builder {
-        crate::output::list_device_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -492,6 +499,13 @@ impl aws_http::request_id::RequestId for InvokeDeviceMethodOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl InvokeDeviceMethodOutput {
+    /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
+    pub fn builder() -> crate::output::invoke_device_method_output::Builder {
+        crate::output::invoke_device_method_output::Builder::default()
+    }
+}
+
 /// See [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
 pub mod invoke_device_method_output {
     
@@ -533,12 +547,6 @@ pub mod invoke_device_method_output {
     
     
 }
-impl InvokeDeviceMethodOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
-    pub fn builder() -> crate::output::invoke_device_method_output::Builder {
-        crate::output::invoke_device_method_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -560,6 +568,13 @@ impl aws_http::request_id::RequestId for InitiateDeviceClaimOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl InitiateDeviceClaimOutput {
+    /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
+    pub fn builder() -> crate::output::initiate_device_claim_output::Builder {
+        crate::output::initiate_device_claim_output::Builder::default()
+    }
+}
+
 /// See [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
 pub mod initiate_device_claim_output {
     
@@ -601,12 +616,6 @@ pub mod initiate_device_claim_output {
     
     
 }
-impl InitiateDeviceClaimOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
-    pub fn builder() -> crate::output::initiate_device_claim_output::Builder {
-        crate::output::initiate_device_claim_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -628,6 +637,13 @@ impl aws_http::request_id::RequestId for GetDeviceMethodsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDeviceMethodsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
+    pub fn builder() -> crate::output::get_device_methods_output::Builder {
+        crate::output::get_device_methods_output::Builder::default()
+    }
+}
+
 /// See [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
 pub mod get_device_methods_output {
     
@@ -675,12 +691,6 @@ pub mod get_device_methods_output {
     
     
 }
-impl GetDeviceMethodsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
-    pub fn builder() -> crate::output::get_device_methods_output::Builder {
-        crate::output::get_device_methods_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -702,6 +712,13 @@ impl aws_http::request_id::RequestId for FinalizeDeviceClaimOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl FinalizeDeviceClaimOutput {
+    /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
+    pub fn builder() -> crate::output::finalize_device_claim_output::Builder {
+        crate::output::finalize_device_claim_output::Builder::default()
+    }
+}
+
 /// See [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
 pub mod finalize_device_claim_output {
     
@@ -743,12 +760,6 @@ pub mod finalize_device_claim_output {
     
     
 }
-impl FinalizeDeviceClaimOutput {
-    /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
-    pub fn builder() -> crate::output::finalize_device_claim_output::Builder {
-        crate::output::finalize_device_claim_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -770,6 +781,13 @@ impl aws_http::request_id::RequestId for DescribeDeviceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
+    pub fn builder() -> crate::output::describe_device_output::Builder {
+        crate::output::describe_device_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
 pub mod describe_device_output {
     
@@ -811,12 +829,6 @@ pub mod describe_device_output {
     
     
 }
-impl DescribeDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
-    pub fn builder() -> crate::output::describe_device_output::Builder {
-        crate::output::describe_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -845,6 +857,13 @@ impl aws_http::request_id::RequestId for ClaimDevicesByClaimCodeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ClaimDevicesByClaimCodeOutput {
+    /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
+    pub fn builder() -> crate::output::claim_devices_by_claim_code_output::Builder {
+        crate::output::claim_devices_by_claim_code_output::Builder::default()
+    }
+}
+
 /// See [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
 pub mod claim_devices_by_claim_code_output {
     
@@ -898,11 +917,5 @@ pub mod claim_devices_by_claim_code_output {
     }
     
     
-}
-impl ClaimDevicesByClaimCodeOutput {
-    /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
-    pub fn builder() -> crate::output::claim_devices_by_claim_code_output::Builder {
-        crate::output::claim_devices_by_claim_code_output::Builder::default()
-    }
 }
 

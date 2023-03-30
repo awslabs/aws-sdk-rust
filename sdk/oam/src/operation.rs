@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_link`](crate::client::Client::create_link).
             ///
-            /// See [`crate::client::fluent_builders::CreateLink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLink {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLink {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_sink`](crate::client::Client::create_sink).
             ///
-            /// See [`crate::client::fluent_builders::CreateSink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSink {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSink {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_link`](crate::client::Client::delete_link).
             ///
-            /// See [`crate::client::fluent_builders::DeleteLink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLink {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLink {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_sink`](crate::client::Client::delete_sink).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSink {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSink {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_link`](crate::client::Client::get_link).
             ///
-            /// See [`crate::client::fluent_builders::GetLink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLink {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLink {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_sink`](crate::client::Client::get_sink).
             ///
-            /// See [`crate::client::fluent_builders::GetSink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSink {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSink {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_sink_policy`](crate::client::Client::get_sink_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetSinkPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSinkPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSinkPolicy {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSinkPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_attached_links`](crate::client::Client::list_attached_links).
             ///
-            /// See [`crate::client::fluent_builders::ListAttachedLinks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAttachedLinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAttachedLinks {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttachedLinks {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_links`](crate::client::Client::list_links).
             ///
-            /// See [`crate::client::fluent_builders::ListLinks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLinks {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinks {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_sinks`](crate::client::Client::list_sinks).
             ///
-            /// See [`crate::client::fluent_builders::ListSinks`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSinks {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSinks {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_sink_policy`](crate::client::Client::put_sink_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutSinkPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutSinkPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSinkPolicy {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSinkPolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_link`](crate::client::Client::update_link).
             ///
-            /// See [`crate::client::fluent_builders::UpdateLink`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLink {
     _private: ()

@@ -49,6 +49,13 @@ impl EventIntegration {
         self.tags.as_ref()
     }
 }
+impl EventIntegration {
+    /// Creates a new builder-style object to manufacture [`EventIntegration`](crate::model::EventIntegration).
+    pub fn builder() -> crate::model::event_integration::Builder {
+        crate::model::event_integration::Builder::default()
+    }
+}
+
 /// See [`EventIntegration`](crate::model::EventIntegration).
 pub mod event_integration {
     
@@ -145,12 +152,6 @@ pub mod event_integration {
     
     
 }
-impl EventIntegration {
-    /// Creates a new builder-style object to manufacture [`EventIntegration`](crate::model::EventIntegration).
-    pub fn builder() -> crate::model::event_integration::Builder {
-        crate::model::event_integration::Builder::default()
-    }
-}
 
 /// <p>The event filter.</p>
 #[non_exhaustive]
@@ -166,6 +167,13 @@ impl EventFilter {
         self.source.as_deref()
     }
 }
+impl EventFilter {
+    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
+    pub fn builder() -> crate::model::event_filter::Builder {
+        crate::model::event_filter::Builder::default()
+    }
+}
+
 /// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
     
@@ -195,12 +203,6 @@ pub mod event_filter {
     }
     
     
-}
-impl EventFilter {
-    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
-    pub fn builder() -> crate::model::event_filter::Builder {
-        crate::model::event_filter::Builder::default()
-    }
 }
 
 /// <p>The event integration association.</p>
@@ -252,6 +254,13 @@ impl EventIntegrationAssociation {
         self.client_association_metadata.as_ref()
     }
 }
+impl EventIntegrationAssociation {
+    /// Creates a new builder-style object to manufacture [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
+    pub fn builder() -> crate::model::event_integration_association::Builder {
+        crate::model::event_integration_association::Builder::default()
+    }
+}
+
 /// See [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
 pub mod event_integration_association {
     
@@ -348,12 +357,6 @@ pub mod event_integration_association {
     
     
 }
-impl EventIntegrationAssociation {
-    /// Creates a new builder-style object to manufacture [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
-    pub fn builder() -> crate::model::event_integration_association::Builder {
-        crate::model::event_integration_association::Builder::default()
-    }
-}
 
 /// <p>Summary information about the DataIntegration.</p>
 #[non_exhaustive]
@@ -383,6 +386,13 @@ impl DataIntegrationSummary {
         self.source_uri.as_deref()
     }
 }
+impl DataIntegrationSummary {
+    /// Creates a new builder-style object to manufacture [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
+    pub fn builder() -> crate::model::data_integration_summary::Builder {
+        crate::model::data_integration_summary::Builder::default()
+    }
+}
+
 /// See [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
 pub mod data_integration_summary {
     
@@ -437,12 +447,6 @@ pub mod data_integration_summary {
     
     
 }
-impl DataIntegrationSummary {
-    /// Creates a new builder-style object to manufacture [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
-    pub fn builder() -> crate::model::data_integration_summary::Builder {
-        crate::model::data_integration_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about the DataIntegration association.</p>
 #[non_exhaustive]
@@ -472,6 +476,13 @@ impl DataIntegrationAssociationSummary {
         self.client_id.as_deref()
     }
 }
+impl DataIntegrationAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
+    pub fn builder() -> crate::model::data_integration_association_summary::Builder {
+        crate::model::data_integration_association_summary::Builder::default()
+    }
+}
+
 /// See [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
 pub mod data_integration_association_summary {
     
@@ -526,12 +537,6 @@ pub mod data_integration_association_summary {
     
     
 }
-impl DataIntegrationAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
-    pub fn builder() -> crate::model::data_integration_association_summary::Builder {
-        crate::model::data_integration_association_summary::Builder::default()
-    }
-}
 
 /// <p>The name of the data and how often it should be pulled from the source.</p>
 #[non_exhaustive]
@@ -561,6 +566,13 @@ impl ScheduleConfiguration {
         self.schedule_expression.as_deref()
     }
 }
+impl ScheduleConfiguration {
+    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
+    pub fn builder() -> crate::model::schedule_configuration::Builder {
+        crate::model::schedule_configuration::Builder::default()
+    }
+}
+
 /// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
 pub mod schedule_configuration {
     
@@ -614,11 +626,5 @@ pub mod schedule_configuration {
     }
     
     
-}
-impl ScheduleConfiguration {
-    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
-    pub fn builder() -> crate::model::schedule_configuration::Builder {
-        crate::model::schedule_configuration::Builder::default()
-    }
 }
 

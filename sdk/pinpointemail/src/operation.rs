@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_configuration_set`](crate::client::Client::create_configuration_set).
             ///
-            /// See [`crate::client::fluent_builders::CreateConfigurationSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSet {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_configuration_set_event_destination`](crate::client::Client::create_configuration_set_event_destination).
             ///
-            /// See [`crate::client::fluent_builders::CreateConfigurationSetEventDestination`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestination {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEv
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_dedicated_ip_pool`](crate::client::Client::create_dedicated_ip_pool).
             ///
-            /// See [`crate::client::fluent_builders::CreateDedicatedIpPool`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDedicatedIpPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDedicatedIpPool {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDedicatedIpPool {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_deliverability_test_report`](crate::client::Client::create_deliverability_test_report).
             ///
-            /// See [`crate::client::fluent_builders::CreateDeliverabilityTestReport`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateDeliverabilityTestReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReport {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeliverabilityTest
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_email_identity`](crate::client::Client::create_email_identity).
             ///
-            /// See [`crate::client::fluent_builders::CreateEmailIdentity`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateEmailIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEmailIdentity {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEmailIdentity {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
             ///
-            /// See [`crate::client::fluent_builders::DeleteConfigurationSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSet {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_configuration_set_event_destination`](crate::client::Client::delete_configuration_set_event_destination).
             ///
-            /// See [`crate::client::fluent_builders::DeleteConfigurationSetEventDestination`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestination {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEv
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_dedicated_ip_pool`](crate::client::Client::delete_dedicated_ip_pool).
             ///
-            /// See [`crate::client::fluent_builders::DeleteDedicatedIpPool`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteDedicatedIpPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDedicatedIpPool {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDedicatedIpPool {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_email_identity`](crate::client::Client::delete_email_identity).
             ///
-            /// See [`crate::client::fluent_builders::DeleteEmailIdentity`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteEmailIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEmailIdentity {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEmailIdentity {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_account`](crate::client::Client::get_account).
             ///
-            /// See [`crate::client::fluent_builders::GetAccount`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccount {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccount {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_blacklist_reports`](crate::client::Client::get_blacklist_reports).
             ///
-            /// See [`crate::client::fluent_builders::GetBlacklistReports`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetBlacklistReports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBlacklistReports {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBlacklistReports {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_configuration_set`](crate::client::Client::get_configuration_set).
             ///
-            /// See [`crate::client::fluent_builders::GetConfigurationSet`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConfigurationSet {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSet {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_configuration_set_event_destinations`](crate::client::Client::get_configuration_set_event_destinations).
             ///
-            /// See [`crate::client::fluent_builders::GetConfigurationSetEventDestinations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetConfigurationSetEventDestinations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinations {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_dedicated_ip`](crate::client::Client::get_dedicated_ip).
             ///
-            /// See [`crate::client::fluent_builders::GetDedicatedIp`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDedicatedIp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDedicatedIp {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDedicatedIp {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_dedicated_ips`](crate::client::Client::get_dedicated_ips).
             ///
-            /// See [`crate::client::fluent_builders::GetDedicatedIps`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDedicatedIps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDedicatedIps {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDedicatedIps {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_deliverability_dashboard_options`](crate::client::Client::get_deliverability_dashboard_options).
             ///
-            /// See [`crate::client::fluent_builders::GetDeliverabilityDashboardOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDeliverabilityDashboardOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptions {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeliverabilityDashboa
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_deliverability_test_report`](crate::client::Client::get_deliverability_test_report).
             ///
-            /// See [`crate::client::fluent_builders::GetDeliverabilityTestReport`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDeliverabilityTestReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDeliverabilityTestReport {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeliverabilityTestRep
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_domain_deliverability_campaign`](crate::client::Client::get_domain_deliverability_campaign).
             ///
-            /// See [`crate::client::fluent_builders::GetDomainDeliverabilityCampaign`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDomainDeliverabilityCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaign {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainDeliverabilityC
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_domain_statistics_report`](crate::client::Client::get_domain_statistics_report).
             ///
-            /// See [`crate::client::fluent_builders::GetDomainStatisticsReport`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDomainStatisticsReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomainStatisticsReport {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainStatisticsRepor
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_email_identity`](crate::client::Client::get_email_identity).
             ///
-            /// See [`crate::client::fluent_builders::GetEmailIdentity`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetEmailIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEmailIdentity {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEmailIdentity {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_configuration_sets`](crate::client::Client::list_configuration_sets).
             ///
-            /// See [`crate::client::fluent_builders::ListConfigurationSets`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListConfigurationSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurationSets {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_dedicated_ip_pools`](crate::client::Client::list_dedicated_ip_pools).
             ///
-            /// See [`crate::client::fluent_builders::ListDedicatedIpPools`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDedicatedIpPools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDedicatedIpPools {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDedicatedIpPools {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_deliverability_test_reports`](crate::client::Client::list_deliverability_test_reports).
             ///
-            /// See [`crate::client::fluent_builders::ListDeliverabilityTestReports`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDeliverabilityTestReports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDeliverabilityTestReports {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeliverabilityTestRe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_domain_deliverability_campaigns`](crate::client::Client::list_domain_deliverability_campaigns).
             ///
-            /// See [`crate::client::fluent_builders::ListDomainDeliverabilityCampaigns`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListDomainDeliverabilityCampaigns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaigns {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainDeliverability
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_email_identities`](crate::client::Client::list_email_identities).
             ///
-            /// See [`crate::client::fluent_builders::ListEmailIdentities`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListEmailIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEmailIdentities {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEmailIdentities {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_account_dedicated_ip_warmup_attributes`](crate::client::Client::put_account_dedicated_ip_warmup_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutAccountDedicatedIpWarmupAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAccountDedicatedIpWarmupAttributes {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountDedicatedIpWar
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_account_sending_attributes`](crate::client::Client::put_account_sending_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutAccountSendingAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutAccountSendingAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutAccountSendingAttributes {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountSendingAttribu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_configuration_set_delivery_options`](crate::client::Client::put_configuration_set_delivery_options).
             ///
-            /// See [`crate::client::fluent_builders::PutConfigurationSetDeliveryOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutConfigurationSetDeliveryOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptions {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetDeliv
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_configuration_set_reputation_options`](crate::client::Client::put_configuration_set_reputation_options).
             ///
-            /// See [`crate::client::fluent_builders::PutConfigurationSetReputationOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutConfigurationSetReputationOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptions {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetReput
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_configuration_set_sending_options`](crate::client::Client::put_configuration_set_sending_options).
             ///
-            /// See [`crate::client::fluent_builders::PutConfigurationSetSendingOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutConfigurationSetSendingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptions {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetSendi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_configuration_set_tracking_options`](crate::client::Client::put_configuration_set_tracking_options).
             ///
-            /// See [`crate::client::fluent_builders::PutConfigurationSetTrackingOptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutConfigurationSetTrackingOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptions {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetTrack
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_dedicated_ip_in_pool`](crate::client::Client::put_dedicated_ip_in_pool).
             ///
-            /// See [`crate::client::fluent_builders::PutDedicatedIpInPool`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutDedicatedIpInPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDedicatedIpInPool {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDedicatedIpInPool {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_dedicated_ip_warmup_attributes`](crate::client::Client::put_dedicated_ip_warmup_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutDedicatedIpWarmupAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutDedicatedIpWarmupAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributes {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDedicatedIpWarmupAttr
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_deliverability_dashboard_option`](crate::client::Client::put_deliverability_dashboard_option).
             ///
-            /// See [`crate::client::fluent_builders::PutDeliverabilityDashboardOption`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutDeliverabilityDashboardOption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOption {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDeliverabilityDashboa
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_email_identity_dkim_attributes`](crate::client::Client::put_email_identity_dkim_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutEmailIdentityDkimAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutEmailIdentityDkimAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributes {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimAttr
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_email_identity_feedback_attributes`](crate::client::Client::put_email_identity_feedback_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutEmailIdentityFeedbackAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEmailIdentityFeedbackAttributes {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEmailIdentityFeedback
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_email_identity_mail_from_attributes`](crate::client::Client::put_email_identity_mail_from_attributes).
             ///
-            /// See [`crate::client::fluent_builders::PutEmailIdentityMailFromAttributes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutEmailIdentityMailFromAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEmailIdentityMailFromAttributes {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEmailIdentityMailFrom
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`send_email`](crate::client::Client::send_email).
             ///
-            /// See [`crate::client::fluent_builders::SendEmail`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `SendEmail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendEmail {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendEmail {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_configuration_set_event_destination`](crate::client::Client::update_configuration_set_event_destination).
             ///
-            /// See [`crate::client::fluent_builders::UpdateConfigurationSetEventDestination`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestination {
     _private: ()

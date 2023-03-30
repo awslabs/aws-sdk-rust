@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateServiceAccessPoliciesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateServiceAccessPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
+    pub fn builder() -> crate::output::update_service_access_policies_output::Builder {
+        crate::output::update_service_access_policies_output::Builder::default()
+    }
+}
+
 /// See [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
 pub mod update_service_access_policies_output {
     
@@ -61,12 +68,6 @@ pub mod update_service_access_policies_output {
     
     
 }
-impl UpdateServiceAccessPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
-    pub fn builder() -> crate::output::update_service_access_policies_output::Builder {
-        crate::output::update_service_access_policies_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.</p>
 #[non_exhaustive]
@@ -88,6 +89,13 @@ impl aws_http::request_id::RequestId for UpdateScalingParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateScalingParametersOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
+    pub fn builder() -> crate::output::update_scaling_parameters_output::Builder {
+        crate::output::update_scaling_parameters_output::Builder::default()
+    }
+}
+
 /// See [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
 pub mod update_scaling_parameters_output {
     
@@ -129,12 +137,6 @@ pub mod update_scaling_parameters_output {
     
     
 }
-impl UpdateScalingParametersOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
-    pub fn builder() -> crate::output::update_scaling_parameters_output::Builder {
-        crate::output::update_scaling_parameters_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration and status of the domain's endpoint options. </p>
 #[non_exhaustive]
@@ -156,6 +158,13 @@ impl aws_http::request_id::RequestId for UpdateDomainEndpointOptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDomainEndpointOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
+    pub fn builder() -> crate::output::update_domain_endpoint_options_output::Builder {
+        crate::output::update_domain_endpoint_options_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
 pub mod update_domain_endpoint_options_output {
     
@@ -197,12 +206,6 @@ pub mod update_domain_endpoint_options_output {
     
     
 }
-impl UpdateDomainEndpointOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
-    pub fn builder() -> crate::output::update_domain_endpoint_options_output::Builder {
-        crate::output::update_domain_endpoint_options_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>UpdateAvailabilityOptions</code> request. Contains the status of the domain's availability options. </p>
 #[non_exhaustive]
@@ -224,6 +227,13 @@ impl aws_http::request_id::RequestId for UpdateAvailabilityOptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAvailabilityOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
+    pub fn builder() -> crate::output::update_availability_options_output::Builder {
+        crate::output::update_availability_options_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
 pub mod update_availability_options_output {
     
@@ -265,12 +275,6 @@ pub mod update_availability_options_output {
     
     
 }
-impl UpdateAvailabilityOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
-    pub fn builder() -> crate::output::update_availability_options_output::Builder {
-        crate::output::update_availability_options_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.</p>
 #[non_exhaustive]
@@ -292,6 +296,13 @@ impl aws_http::request_id::RequestId for ListDomainNamesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDomainNamesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
+    pub fn builder() -> crate::output::list_domain_names_output::Builder {
+        crate::output::list_domain_names_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
     
@@ -339,12 +350,6 @@ pub mod list_domain_names_output {
     
     
 }
-impl ListDomainNamesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
-    pub fn builder() -> crate::output::list_domain_names_output::Builder {
-        crate::output::list_domain_names_output::Builder::default()
-    }
-}
 
 /// <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
 #[non_exhaustive]
@@ -366,6 +371,13 @@ impl aws_http::request_id::RequestId for IndexDocumentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl IndexDocumentsOutput {
+    /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
+    pub fn builder() -> crate::output::index_documents_output::Builder {
+        crate::output::index_documents_output::Builder::default()
+    }
+}
+
 /// See [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
 pub mod index_documents_output {
     
@@ -413,12 +425,6 @@ pub mod index_documents_output {
     
     
 }
-impl IndexDocumentsOutput {
-    /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
-    pub fn builder() -> crate::output::index_documents_output::Builder {
-        crate::output::index_documents_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeSuggesters</code> request.</p>
 #[non_exhaustive]
@@ -440,6 +446,13 @@ impl aws_http::request_id::RequestId for DescribeSuggestersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSuggestersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
+    pub fn builder() -> crate::output::describe_suggesters_output::Builder {
+        crate::output::describe_suggesters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
 pub mod describe_suggesters_output {
     
@@ -487,12 +500,6 @@ pub mod describe_suggesters_output {
     
     
 }
-impl DescribeSuggestersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
-    pub fn builder() -> crate::output::describe_suggesters_output::Builder {
-        crate::output::describe_suggesters_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeServiceAccessPolicies</code> request.</p>
 #[non_exhaustive]
@@ -514,6 +521,13 @@ impl aws_http::request_id::RequestId for DescribeServiceAccessPoliciesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeServiceAccessPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
+    pub fn builder() -> crate::output::describe_service_access_policies_output::Builder {
+        crate::output::describe_service_access_policies_output::Builder::default()
+    }
+}
+
 /// See [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
 pub mod describe_service_access_policies_output {
     
@@ -555,12 +569,6 @@ pub mod describe_service_access_policies_output {
     
     
 }
-impl DescribeServiceAccessPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
-    pub fn builder() -> crate::output::describe_service_access_policies_output::Builder {
-        crate::output::describe_service_access_policies_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeScalingParameters</code> request. Contains the scaling parameters configured for the domain specified in the request.</p>
 #[non_exhaustive]
@@ -582,6 +590,13 @@ impl aws_http::request_id::RequestId for DescribeScalingParametersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeScalingParametersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
+    pub fn builder() -> crate::output::describe_scaling_parameters_output::Builder {
+        crate::output::describe_scaling_parameters_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
 pub mod describe_scaling_parameters_output {
     
@@ -623,12 +638,6 @@ pub mod describe_scaling_parameters_output {
     
     
 }
-impl DescribeScalingParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
-    pub fn builder() -> crate::output::describe_scaling_parameters_output::Builder {
-        crate::output::describe_scaling_parameters_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
 #[non_exhaustive]
@@ -650,6 +659,13 @@ impl aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeIndexFieldsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
+    pub fn builder() -> crate::output::describe_index_fields_output::Builder {
+        crate::output::describe_index_fields_output::Builder::default()
+    }
+}
+
 /// See [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
 pub mod describe_index_fields_output {
     
@@ -697,12 +713,6 @@ pub mod describe_index_fields_output {
     
     
 }
-impl DescribeIndexFieldsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
-    pub fn builder() -> crate::output::describe_index_fields_output::Builder {
-        crate::output::describe_index_fields_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>
 #[non_exhaustive]
@@ -724,6 +734,13 @@ impl aws_http::request_id::RequestId for DescribeExpressionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeExpressionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
+    pub fn builder() -> crate::output::describe_expressions_output::Builder {
+        crate::output::describe_expressions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
 pub mod describe_expressions_output {
     
@@ -771,12 +788,6 @@ pub mod describe_expressions_output {
     
     
 }
-impl DescribeExpressionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
-    pub fn builder() -> crate::output::describe_expressions_output::Builder {
-        crate::output::describe_expressions_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeDomains</code> request. Contains the status of the domains specified in the request or all domains owned by the account.</p>
 #[non_exhaustive]
@@ -798,6 +809,13 @@ impl aws_http::request_id::RequestId for DescribeDomainsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
+    pub fn builder() -> crate::output::describe_domains_output::Builder {
+        crate::output::describe_domains_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
 pub mod describe_domains_output {
     
@@ -845,12 +863,6 @@ pub mod describe_domains_output {
     
     
 }
-impl DescribeDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
-    pub fn builder() -> crate::output::describe_domains_output::Builder {
-        crate::output::describe_domains_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeDomainEndpointOptions</code> request. Contains the status and configuration of a search domain's endpoint options. </p>
 #[non_exhaustive]
@@ -872,6 +884,13 @@ impl aws_http::request_id::RequestId for DescribeDomainEndpointOptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeDomainEndpointOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
+    pub fn builder() -> crate::output::describe_domain_endpoint_options_output::Builder {
+        crate::output::describe_domain_endpoint_options_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
 pub mod describe_domain_endpoint_options_output {
     
@@ -913,12 +932,6 @@ pub mod describe_domain_endpoint_options_output {
     
     
 }
-impl DescribeDomainEndpointOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
-    pub fn builder() -> crate::output::describe_domain_endpoint_options_output::Builder {
-        crate::output::describe_domain_endpoint_options_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. </p>
 #[non_exhaustive]
@@ -940,6 +953,13 @@ impl aws_http::request_id::RequestId for DescribeAvailabilityOptionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAvailabilityOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
+    pub fn builder() -> crate::output::describe_availability_options_output::Builder {
+        crate::output::describe_availability_options_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
 pub mod describe_availability_options_output {
     
@@ -981,12 +1001,6 @@ pub mod describe_availability_options_output {
     
     
 }
-impl DescribeAvailabilityOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
-    pub fn builder() -> crate::output::describe_availability_options_output::Builder {
-        crate::output::describe_availability_options_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
 #[non_exhaustive]
@@ -1008,6 +1022,13 @@ impl aws_http::request_id::RequestId for DescribeAnalysisSchemesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeAnalysisSchemesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
+    pub fn builder() -> crate::output::describe_analysis_schemes_output::Builder {
+        crate::output::describe_analysis_schemes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
 pub mod describe_analysis_schemes_output {
     
@@ -1055,12 +1076,6 @@ pub mod describe_analysis_schemes_output {
     
     
 }
-impl DescribeAnalysisSchemesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
-    pub fn builder() -> crate::output::describe_analysis_schemes_output::Builder {
-        crate::output::describe_analysis_schemes_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>
 #[non_exhaustive]
@@ -1082,6 +1097,13 @@ impl aws_http::request_id::RequestId for DeleteSuggesterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteSuggesterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
+    pub fn builder() -> crate::output::delete_suggester_output::Builder {
+        crate::output::delete_suggester_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
 pub mod delete_suggester_output {
     
@@ -1123,12 +1145,6 @@ pub mod delete_suggester_output {
     
     
 }
-impl DeleteSuggesterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
-    pub fn builder() -> crate::output::delete_suggester_output::Builder {
-        crate::output::delete_suggester_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
@@ -1150,6 +1166,13 @@ impl aws_http::request_id::RequestId for DeleteIndexFieldOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteIndexFieldOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
+    pub fn builder() -> crate::output::delete_index_field_output::Builder {
+        crate::output::delete_index_field_output::Builder::default()
+    }
+}
+
 /// See [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
 pub mod delete_index_field_output {
     
@@ -1191,12 +1214,6 @@ pub mod delete_index_field_output {
     
     
 }
-impl DeleteIndexFieldOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
-    pub fn builder() -> crate::output::delete_index_field_output::Builder {
-        crate::output::delete_index_field_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
@@ -1218,6 +1235,13 @@ impl aws_http::request_id::RequestId for DeleteExpressionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteExpressionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
+    pub fn builder() -> crate::output::delete_expression_output::Builder {
+        crate::output::delete_expression_output::Builder::default()
+    }
+}
+
 /// See [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
 pub mod delete_expression_output {
     
@@ -1259,12 +1283,6 @@ pub mod delete_expression_output {
     
     
 }
-impl DeleteExpressionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
-    pub fn builder() -> crate::output::delete_expression_output::Builder {
-        crate::output::delete_expression_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DeleteDomain</code> request. Contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.</p>
 #[non_exhaustive]
@@ -1286,6 +1304,13 @@ impl aws_http::request_id::RequestId for DeleteDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    pub fn builder() -> crate::output::delete_domain_output::Builder {
+        crate::output::delete_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
     
@@ -1327,12 +1352,6 @@ pub mod delete_domain_output {
     
     
 }
-impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    pub fn builder() -> crate::output::delete_domain_output::Builder {
-        crate::output::delete_domain_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.</p>
 #[non_exhaustive]
@@ -1354,6 +1373,13 @@ impl aws_http::request_id::RequestId for DeleteAnalysisSchemeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAnalysisSchemeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
+    pub fn builder() -> crate::output::delete_analysis_scheme_output::Builder {
+        crate::output::delete_analysis_scheme_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
 pub mod delete_analysis_scheme_output {
     
@@ -1395,12 +1421,6 @@ pub mod delete_analysis_scheme_output {
     
     
 }
-impl DeleteAnalysisSchemeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
-    pub fn builder() -> crate::output::delete_analysis_scheme_output::Builder {
-        crate::output::delete_analysis_scheme_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>
 #[non_exhaustive]
@@ -1422,6 +1442,13 @@ impl aws_http::request_id::RequestId for DefineSuggesterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DefineSuggesterOutput {
+    /// Creates a new builder-style object to manufacture [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
+    pub fn builder() -> crate::output::define_suggester_output::Builder {
+        crate::output::define_suggester_output::Builder::default()
+    }
+}
+
 /// See [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
 pub mod define_suggester_output {
     
@@ -1463,12 +1490,6 @@ pub mod define_suggester_output {
     
     
 }
-impl DefineSuggesterOutput {
-    /// Creates a new builder-style object to manufacture [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
-    pub fn builder() -> crate::output::define_suggester_output::Builder {
-        crate::output::define_suggester_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DefineIndexField</code></code> request. Contains the status of the newly-configured index field.</p>
 #[non_exhaustive]
@@ -1490,6 +1511,13 @@ impl aws_http::request_id::RequestId for DefineIndexFieldOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DefineIndexFieldOutput {
+    /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
+    pub fn builder() -> crate::output::define_index_field_output::Builder {
+        crate::output::define_index_field_output::Builder::default()
+    }
+}
+
 /// See [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
 pub mod define_index_field_output {
     
@@ -1531,12 +1559,6 @@ pub mod define_index_field_output {
     
     
 }
-impl DefineIndexFieldOutput {
-    /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
-    pub fn builder() -> crate::output::define_index_field_output::Builder {
-        crate::output::define_index_field_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.</p>
 #[non_exhaustive]
@@ -1558,6 +1580,13 @@ impl aws_http::request_id::RequestId for DefineExpressionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DefineExpressionOutput {
+    /// Creates a new builder-style object to manufacture [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
+    pub fn builder() -> crate::output::define_expression_output::Builder {
+        crate::output::define_expression_output::Builder::default()
+    }
+}
+
 /// See [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
 pub mod define_expression_output {
     
@@ -1599,12 +1628,6 @@ pub mod define_expression_output {
     
     
 }
-impl DefineExpressionOutput {
-    /// Creates a new builder-style object to manufacture [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
-    pub fn builder() -> crate::output::define_expression_output::Builder {
-        crate::output::define_expression_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
@@ -1626,6 +1649,13 @@ impl aws_http::request_id::RequestId for DefineAnalysisSchemeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DefineAnalysisSchemeOutput {
+    /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
+    pub fn builder() -> crate::output::define_analysis_scheme_output::Builder {
+        crate::output::define_analysis_scheme_output::Builder::default()
+    }
+}
+
 /// See [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
 pub mod define_analysis_scheme_output {
     
@@ -1667,12 +1697,6 @@ pub mod define_analysis_scheme_output {
     
     
 }
-impl DefineAnalysisSchemeOutput {
-    /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
-    pub fn builder() -> crate::output::define_analysis_scheme_output::Builder {
-        crate::output::define_analysis_scheme_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>
 #[non_exhaustive]
@@ -1694,6 +1718,13 @@ impl aws_http::request_id::RequestId for CreateDomainOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDomainOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
+    pub fn builder() -> crate::output::create_domain_output::Builder {
+        crate::output::create_domain_output::Builder::default()
+    }
+}
+
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
     
@@ -1735,12 +1766,6 @@ pub mod create_domain_output {
     
     
 }
-impl CreateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
-    pub fn builder() -> crate::output::create_domain_output::Builder {
-        crate::output::create_domain_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.</p>
 #[non_exhaustive]
@@ -1762,6 +1787,13 @@ impl aws_http::request_id::RequestId for BuildSuggestersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BuildSuggestersOutput {
+    /// Creates a new builder-style object to manufacture [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
+    pub fn builder() -> crate::output::build_suggesters_output::Builder {
+        crate::output::build_suggesters_output::Builder::default()
+    }
+}
+
 /// See [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
 pub mod build_suggesters_output {
     
@@ -1808,11 +1840,5 @@ pub mod build_suggesters_output {
     }
     
     
-}
-impl BuildSuggestersOutput {
-    /// Creates a new builder-style object to manufacture [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
-    pub fn builder() -> crate::output::build_suggesters_output::Builder {
-        crate::output::build_suggesters_output::Builder::default()
-    }
 }
 

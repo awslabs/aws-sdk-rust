@@ -30,6 +30,13 @@ impl EventType {
         self.category.as_ref()
     }
 }
+impl EventType {
+    /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType).
+    pub fn builder() -> crate::model::event_type::Builder {
+        crate::model::event_type::Builder::default()
+    }
+}
+
 /// See [`EventType`](crate::model::EventType).
 pub mod event_type {
     
@@ -83,12 +90,6 @@ pub mod event_type {
     }
     
     
-}
-impl EventType {
-    /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType).
-    pub fn builder() -> crate::model::event_type::Builder {
-        crate::model::event_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventTypeCategory`, it is important to ensure
@@ -211,6 +212,13 @@ impl EventTypeFilter {
         self.event_type_categories.as_deref()
     }
 }
+impl EventTypeFilter {
+    /// Creates a new builder-style object to manufacture [`EventTypeFilter`](crate::model::EventTypeFilter).
+    pub fn builder() -> crate::model::event_type_filter::Builder {
+        crate::model::event_type_filter::Builder::default()
+    }
+}
+
 /// See [`EventTypeFilter`](crate::model::EventTypeFilter).
 pub mod event_type_filter {
     
@@ -282,12 +290,6 @@ pub mod event_type_filter {
     }
     
     
-}
-impl EventTypeFilter {
-    /// Creates a new builder-style object to manufacture [`EventTypeFilter`](crate::model::EventTypeFilter).
-    pub fn builder() -> crate::model::event_type_filter::Builder {
-        crate::model::event_type_filter::Builder::default()
-    }
 }
 
 /// <p>Summary information about an event, returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a> operation.</p>
@@ -381,6 +383,13 @@ impl OrganizationEvent {
         self.status_code.as_ref()
     }
 }
+impl OrganizationEvent {
+    /// Creates a new builder-style object to manufacture [`OrganizationEvent`](crate::model::OrganizationEvent).
+    pub fn builder() -> crate::model::organization_event::Builder {
+        crate::model::organization_event::Builder::default()
+    }
+}
+
 /// See [`OrganizationEvent`](crate::model::OrganizationEvent).
 pub mod organization_event {
     
@@ -532,12 +541,6 @@ pub mod organization_event {
     }
     
     
-}
-impl OrganizationEvent {
-    /// Creates a new builder-style object to manufacture [`OrganizationEvent`](crate::model::OrganizationEvent).
-    pub fn builder() -> crate::model::organization_event::Builder {
-        crate::model::organization_event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventStatusCode`, it is important to ensure
@@ -798,6 +801,13 @@ impl OrganizationEventFilter {
         self.event_status_codes.as_deref()
     }
 }
+impl OrganizationEventFilter {
+    /// Creates a new builder-style object to manufacture [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
+    pub fn builder() -> crate::model::organization_event_filter::Builder {
+        crate::model::organization_event_filter::Builder::default()
+    }
+}
+
 /// See [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
 pub mod organization_event_filter {
     
@@ -996,12 +1006,6 @@ pub mod organization_event_filter {
     
     
 }
-impl OrganizationEventFilter {
-    /// Creates a new builder-style object to manufacture [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
-    pub fn builder() -> crate::model::organization_event_filter::Builder {
-        crate::model::organization_event_filter::Builder::default()
-    }
-}
 
 /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
 #[non_exhaustive]
@@ -1024,6 +1028,13 @@ impl DateTimeRange {
         self.to.as_ref()
     }
 }
+impl DateTimeRange {
+    /// Creates a new builder-style object to manufacture [`DateTimeRange`](crate::model::DateTimeRange).
+    pub fn builder() -> crate::model::date_time_range::Builder {
+        crate::model::date_time_range::Builder::default()
+    }
+}
+
 /// See [`DateTimeRange`](crate::model::DateTimeRange).
 pub mod date_time_range {
     
@@ -1065,12 +1076,6 @@ pub mod date_time_range {
     }
     
     
-}
-impl DateTimeRange {
-    /// Creates a new builder-style object to manufacture [`DateTimeRange`](crate::model::DateTimeRange).
-    pub fn builder() -> crate::model::date_time_range::Builder {
-        crate::model::date_time_range::Builder::default()
-    }
 }
 
 /// <p>Summary information about an Health event.</p> 
@@ -1177,6 +1182,13 @@ impl Event {
         self.event_scope_code.as_ref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -1341,12 +1353,6 @@ pub mod event {
     
     
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p>The values to use to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operations.</p>
 #[non_exhaustive]
@@ -1450,6 +1456,13 @@ impl EventFilter {
         self.event_status_codes.as_deref()
     }
 }
+impl EventFilter {
+    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
+    pub fn builder() -> crate::model::event_filter::Builder {
+        crate::model::event_filter::Builder::default()
+    }
+}
+
 /// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
     
@@ -1706,12 +1719,6 @@ pub mod event_filter {
     
     
 }
-impl EventFilter {
-    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
-    pub fn builder() -> crate::model::event_filter::Builder {
-        crate::model::event_filter::Builder::default()
-    }
-}
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified event.</p>
 #[non_exhaustive]
@@ -1764,6 +1771,13 @@ impl OrganizationEventDetailsErrorItem {
         self.error_message.as_deref()
     }
 }
+impl OrganizationEventDetailsErrorItem {
+    /// Creates a new builder-style object to manufacture [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
+    pub fn builder() -> crate::model::organization_event_details_error_item::Builder {
+        crate::model::organization_event_details_error_item::Builder::default()
+    }
+}
+
 /// See [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
 pub mod organization_event_details_error_item {
     
@@ -1846,12 +1860,6 @@ pub mod organization_event_details_error_item {
     
     
 }
-impl OrganizationEventDetailsErrorItem {
-    /// Creates a new builder-style object to manufacture [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
-    pub fn builder() -> crate::model::organization_event_details_error_item::Builder {
-        crate::model::organization_event_details_error_item::Builder::default()
-    }
-}
 
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation.</p>
 #[non_exhaustive]
@@ -1900,6 +1908,13 @@ impl OrganizationEventDetails {
         self.event_metadata.as_ref()
     }
 }
+impl OrganizationEventDetails {
+    /// Creates a new builder-style object to manufacture [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
+    pub fn builder() -> crate::model::organization_event_details::Builder {
+        crate::model::organization_event_details::Builder::default()
+    }
+}
+
 /// See [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
 pub mod organization_event_details {
     
@@ -1984,12 +1999,6 @@ pub mod organization_event_details {
     
     
 }
-impl OrganizationEventDetails {
-    /// Creates a new builder-style object to manufacture [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
-    pub fn builder() -> crate::model::organization_event_details::Builder {
-        crate::model::organization_event_details::Builder::default()
-    }
-}
 
 /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
@@ -2005,6 +2014,13 @@ impl EventDescription {
         self.latest_description.as_deref()
     }
 }
+impl EventDescription {
+    /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription).
+    pub fn builder() -> crate::model::event_description::Builder {
+        crate::model::event_description::Builder::default()
+    }
+}
+
 /// See [`EventDescription`](crate::model::EventDescription).
 pub mod event_description {
     
@@ -2035,12 +2051,6 @@ pub mod event_description {
     
     
 }
-impl EventDescription {
-    /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription).
-    pub fn builder() -> crate::model::event_description::Builder {
-        crate::model::event_description::Builder::default()
-    }
-}
 
 /// <p>The values used to filter results from the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operations.</p>
 #[non_exhaustive]
@@ -2067,6 +2077,13 @@ impl EventAccountFilter {
         self.aws_account_id.as_deref()
     }
 }
+impl EventAccountFilter {
+    /// Creates a new builder-style object to manufacture [`EventAccountFilter`](crate::model::EventAccountFilter).
+    pub fn builder() -> crate::model::event_account_filter::Builder {
+        crate::model::event_account_filter::Builder::default()
+    }
+}
+
 /// See [`EventAccountFilter`](crate::model::EventAccountFilter).
 pub mod event_account_filter {
     
@@ -2113,12 +2130,6 @@ pub mod event_account_filter {
     
     
 }
-impl EventAccountFilter {
-    /// Creates a new builder-style object to manufacture [`EventAccountFilter`](crate::model::EventAccountFilter).
-    pub fn builder() -> crate::model::event_account_filter::Builder {
-        crate::model::event_account_filter::Builder::default()
-    }
-}
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation can't find a specified event.</p>
 #[non_exhaustive]
@@ -2152,6 +2163,13 @@ impl EventDetailsErrorItem {
         self.error_message.as_deref()
     }
 }
+impl EventDetailsErrorItem {
+    /// Creates a new builder-style object to manufacture [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
+    pub fn builder() -> crate::model::event_details_error_item::Builder {
+        crate::model::event_details_error_item::Builder::default()
+    }
+}
+
 /// See [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
 pub mod event_details_error_item {
     
@@ -2210,12 +2228,6 @@ pub mod event_details_error_item {
     
     
 }
-impl EventDetailsErrorItem {
-    /// Creates a new builder-style object to manufacture [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
-    pub fn builder() -> crate::model::event_details_error_item::Builder {
-        crate::model::event_details_error_item::Builder::default()
-    }
-}
 
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
@@ -2245,6 +2257,13 @@ impl EventDetails {
         self.event_metadata.as_ref()
     }
 }
+impl EventDetails {
+    /// Creates a new builder-style object to manufacture [`EventDetails`](crate::model::EventDetails).
+    pub fn builder() -> crate::model::event_details::Builder {
+        crate::model::event_details::Builder::default()
+    }
+}
+
 /// See [`EventDetails`](crate::model::EventDetails).
 pub mod event_details {
     
@@ -2305,12 +2324,6 @@ pub mod event_details {
     
     
 }
-impl EventDetails {
-    /// Creates a new builder-style object to manufacture [`EventDetails`](crate::model::EventDetails).
-    pub fn builder() -> crate::model::event_details::Builder {
-        crate::model::event_details::Builder::default()
-    }
-}
 
 /// <p>The number of events of each issue type. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operation.</p>
 #[non_exhaustive]
@@ -2333,6 +2346,13 @@ impl EventAggregate {
         self.count
     }
 }
+impl EventAggregate {
+    /// Creates a new builder-style object to manufacture [`EventAggregate`](crate::model::EventAggregate).
+    pub fn builder() -> crate::model::event_aggregate::Builder {
+        crate::model::event_aggregate::Builder::default()
+    }
+}
+
 /// See [`EventAggregate`](crate::model::EventAggregate).
 pub mod event_aggregate {
     
@@ -2375,12 +2395,6 @@ pub mod event_aggregate {
     }
     
     
-}
-impl EventAggregate {
-    /// Creates a new builder-style object to manufacture [`EventAggregate`](crate::model::EventAggregate).
-    pub fn builder() -> crate::model::event_aggregate::Builder {
-        crate::model::event_aggregate::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventAggregateField`, it is important to ensure
@@ -2485,6 +2499,13 @@ impl EntityAggregate {
         self.count
     }
 }
+impl EntityAggregate {
+    /// Creates a new builder-style object to manufacture [`EntityAggregate`](crate::model::EntityAggregate).
+    pub fn builder() -> crate::model::entity_aggregate::Builder {
+        crate::model::entity_aggregate::Builder::default()
+    }
+}
+
 /// See [`EntityAggregate`](crate::model::EntityAggregate).
 pub mod entity_aggregate {
     
@@ -2532,12 +2553,6 @@ pub mod entity_aggregate {
     
     
 }
-impl EntityAggregate {
-    /// Creates a new builder-style object to manufacture [`EntityAggregate`](crate::model::EntityAggregate).
-    pub fn builder() -> crate::model::entity_aggregate::Builder {
-        crate::model::entity_aggregate::Builder::default()
-    }
-}
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation can't find or process a specific entity.</p>
 #[non_exhaustive]
@@ -2578,6 +2593,13 @@ impl OrganizationAffectedEntitiesErrorItem {
         self.error_message.as_deref()
     }
 }
+impl OrganizationAffectedEntitiesErrorItem {
+    /// Creates a new builder-style object to manufacture [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
+    pub fn builder() -> crate::model::organization_affected_entities_error_item::Builder {
+        crate::model::organization_affected_entities_error_item::Builder::default()
+    }
+}
+
 /// See [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
 pub mod organization_affected_entities_error_item {
     
@@ -2647,12 +2669,6 @@ pub mod organization_affected_entities_error_item {
     }
     
     
-}
-impl OrganizationAffectedEntitiesErrorItem {
-    /// Creates a new builder-style object to manufacture [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
-    pub fn builder() -> crate::model::organization_affected_entities_error_item::Builder {
-        crate::model::organization_affected_entities_error_item::Builder::default()
-    }
 }
 
 /// <p>Information about an entity that is affected by a Health event.</p>
@@ -2726,6 +2742,13 @@ impl AffectedEntity {
         self.tags.as_ref()
     }
 }
+impl AffectedEntity {
+    /// Creates a new builder-style object to manufacture [`AffectedEntity`](crate::model::AffectedEntity).
+    pub fn builder() -> crate::model::affected_entity::Builder {
+        crate::model::affected_entity::Builder::default()
+    }
+}
+
 /// See [`AffectedEntity`](crate::model::AffectedEntity).
 pub mod affected_entity {
     
@@ -2853,12 +2876,6 @@ pub mod affected_entity {
     }
     
     
-}
-impl AffectedEntity {
-    /// Creates a new builder-style object to manufacture [`AffectedEntity`](crate::model::AffectedEntity).
-    pub fn builder() -> crate::model::affected_entity::Builder {
-        crate::model::affected_entity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EntityStatusCode`, it is important to ensure
@@ -3001,6 +3018,13 @@ impl EntityFilter {
         self.status_codes.as_deref()
     }
 }
+impl EntityFilter {
+    /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter).
+    pub fn builder() -> crate::model::entity_filter::Builder {
+        crate::model::entity_filter::Builder::default()
+    }
+}
+
 /// See [`EntityFilter`](crate::model::EntityFilter).
 pub mod entity_filter {
     
@@ -3130,11 +3154,5 @@ pub mod entity_filter {
     }
     
     
-}
-impl EntityFilter {
-    /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter).
-    pub fn builder() -> crate::model::entity_filter::Builder {
-        crate::model::entity_filter::Builder::default()
-    }
 }
 

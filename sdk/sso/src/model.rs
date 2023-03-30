@@ -28,6 +28,13 @@ impl AccountInfo {
         self.email_address.as_deref()
     }
 }
+impl AccountInfo {
+    /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::model::AccountInfo).
+    pub fn builder() -> crate::model::account_info::Builder {
+        crate::model::account_info::Builder::default()
+    }
+}
+
 /// See [`AccountInfo`](crate::model::AccountInfo).
 pub mod account_info {
     
@@ -82,12 +89,6 @@ pub mod account_info {
     
     
 }
-impl AccountInfo {
-    /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::model::AccountInfo).
-    pub fn builder() -> crate::model::account_info::Builder {
-        crate::model::account_info::Builder::default()
-    }
-}
 
 /// <p>Provides information about the role that is assigned to the user.</p>
 #[non_exhaustive]
@@ -110,6 +111,13 @@ impl RoleInfo {
         self.account_id.as_deref()
     }
 }
+impl RoleInfo {
+    /// Creates a new builder-style object to manufacture [`RoleInfo`](crate::model::RoleInfo).
+    pub fn builder() -> crate::model::role_info::Builder {
+        crate::model::role_info::Builder::default()
+    }
+}
+
 /// See [`RoleInfo`](crate::model::RoleInfo).
 pub mod role_info {
     
@@ -151,12 +159,6 @@ pub mod role_info {
     }
     
     
-}
-impl RoleInfo {
-    /// Creates a new builder-style object to manufacture [`RoleInfo`](crate::model::RoleInfo).
-    pub fn builder() -> crate::model::role_info::Builder {
-        crate::model::role_info::Builder::default()
-    }
 }
 
 /// <p>Provides information about the role credentials that are assigned to the user.</p>
@@ -204,6 +206,13 @@ impl  std::fmt::Debug for RoleCredentials  {
         formatter.finish()
     }
 }
+impl RoleCredentials {
+    /// Creates a new builder-style object to manufacture [`RoleCredentials`](crate::model::RoleCredentials).
+    pub fn builder() -> crate::model::role_credentials::Builder {
+        crate::model::role_credentials::Builder::default()
+    }
+}
+
 /// See [`RoleCredentials`](crate::model::RoleCredentials).
 pub mod role_credentials {
     
@@ -280,11 +289,5 @@ pub mod role_credentials {
     }
     
     
-}
-impl RoleCredentials {
-    /// Creates a new builder-style object to manufacture [`RoleCredentials`](crate::model::RoleCredentials).
-    pub fn builder() -> crate::model::role_credentials::Builder {
-        crate::model::role_credentials::Builder::default()
-    }
 }
 

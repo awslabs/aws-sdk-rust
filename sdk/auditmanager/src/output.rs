@@ -47,6 +47,13 @@ impl aws_http::request_id::RequestId for ValidateAssessmentReportIntegrityOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl ValidateAssessmentReportIntegrityOutput {
+    /// Creates a new builder-style object to manufacture [`ValidateAssessmentReportIntegrityOutput`](crate::output::ValidateAssessmentReportIntegrityOutput).
+    pub fn builder() -> crate::output::validate_assessment_report_integrity_output::Builder {
+        crate::output::validate_assessment_report_integrity_output::Builder::default()
+    }
+}
+
 /// See [`ValidateAssessmentReportIntegrityOutput`](crate::output::ValidateAssessmentReportIntegrityOutput).
 pub mod validate_assessment_report_integrity_output {
     
@@ -142,12 +149,6 @@ pub mod validate_assessment_report_integrity_output {
     
     
 }
-impl ValidateAssessmentReportIntegrityOutput {
-    /// Creates a new builder-style object to manufacture [`ValidateAssessmentReportIntegrityOutput`](crate::output::ValidateAssessmentReportIntegrityOutput).
-    pub fn builder() -> crate::output::validate_assessment_report_integrity_output::Builder {
-        crate::output::validate_assessment_report_integrity_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -169,6 +170,13 @@ impl aws_http::request_id::RequestId for UpdateSettingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput).
+    pub fn builder() -> crate::output::update_settings_output::Builder {
+        crate::output::update_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput).
 pub mod update_settings_output {
     
@@ -210,12 +218,6 @@ pub mod update_settings_output {
     
     
 }
-impl UpdateSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput).
-    pub fn builder() -> crate::output::update_settings_output::Builder {
-        crate::output::update_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -237,6 +239,13 @@ impl aws_http::request_id::RequestId for UpdateControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateControlOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateControlOutput`](crate::output::UpdateControlOutput).
+    pub fn builder() -> crate::output::update_control_output::Builder {
+        crate::output::update_control_output::Builder::default()
+    }
+}
+
 /// See [`UpdateControlOutput`](crate::output::UpdateControlOutput).
 pub mod update_control_output {
     
@@ -278,12 +287,6 @@ pub mod update_control_output {
     
     
 }
-impl UpdateControlOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateControlOutput`](crate::output::UpdateControlOutput).
-    pub fn builder() -> crate::output::update_control_output::Builder {
-        crate::output::update_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -305,6 +308,13 @@ impl aws_http::request_id::RequestId for UpdateAssessmentStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAssessmentStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentStatusOutput`](crate::output::UpdateAssessmentStatusOutput).
+    pub fn builder() -> crate::output::update_assessment_status_output::Builder {
+        crate::output::update_assessment_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentStatusOutput`](crate::output::UpdateAssessmentStatusOutput).
 pub mod update_assessment_status_output {
     
@@ -346,12 +356,6 @@ pub mod update_assessment_status_output {
     
     
 }
-impl UpdateAssessmentStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentStatusOutput`](crate::output::UpdateAssessmentStatusOutput).
-    pub fn builder() -> crate::output::update_assessment_status_output::Builder {
-        crate::output::update_assessment_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -373,6 +377,13 @@ impl aws_http::request_id::RequestId for UpdateAssessmentFrameworkShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAssessmentFrameworkShareOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkShareOutput`](crate::output::UpdateAssessmentFrameworkShareOutput).
+    pub fn builder() -> crate::output::update_assessment_framework_share_output::Builder {
+        crate::output::update_assessment_framework_share_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentFrameworkShareOutput`](crate::output::UpdateAssessmentFrameworkShareOutput).
 pub mod update_assessment_framework_share_output {
     
@@ -414,12 +425,6 @@ pub mod update_assessment_framework_share_output {
     
     
 }
-impl UpdateAssessmentFrameworkShareOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkShareOutput`](crate::output::UpdateAssessmentFrameworkShareOutput).
-    pub fn builder() -> crate::output::update_assessment_framework_share_output::Builder {
-        crate::output::update_assessment_framework_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -441,6 +446,13 @@ impl aws_http::request_id::RequestId for UpdateAssessmentFrameworkOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAssessmentFrameworkOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkOutput`](crate::output::UpdateAssessmentFrameworkOutput).
+    pub fn builder() -> crate::output::update_assessment_framework_output::Builder {
+        crate::output::update_assessment_framework_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentFrameworkOutput`](crate::output::UpdateAssessmentFrameworkOutput).
 pub mod update_assessment_framework_output {
     
@@ -482,12 +494,6 @@ pub mod update_assessment_framework_output {
     
     
 }
-impl UpdateAssessmentFrameworkOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkOutput`](crate::output::UpdateAssessmentFrameworkOutput).
-    pub fn builder() -> crate::output::update_assessment_framework_output::Builder {
-        crate::output::update_assessment_framework_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -509,6 +515,13 @@ impl aws_http::request_id::RequestId for UpdateAssessmentControlSetStatusOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAssessmentControlSetStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlSetStatusOutput`](crate::output::UpdateAssessmentControlSetStatusOutput).
+    pub fn builder() -> crate::output::update_assessment_control_set_status_output::Builder {
+        crate::output::update_assessment_control_set_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentControlSetStatusOutput`](crate::output::UpdateAssessmentControlSetStatusOutput).
 pub mod update_assessment_control_set_status_output {
     
@@ -550,12 +563,6 @@ pub mod update_assessment_control_set_status_output {
     
     
 }
-impl UpdateAssessmentControlSetStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlSetStatusOutput`](crate::output::UpdateAssessmentControlSetStatusOutput).
-    pub fn builder() -> crate::output::update_assessment_control_set_status_output::Builder {
-        crate::output::update_assessment_control_set_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -577,6 +584,13 @@ impl aws_http::request_id::RequestId for UpdateAssessmentControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAssessmentControlOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlOutput`](crate::output::UpdateAssessmentControlOutput).
+    pub fn builder() -> crate::output::update_assessment_control_output::Builder {
+        crate::output::update_assessment_control_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentControlOutput`](crate::output::UpdateAssessmentControlOutput).
 pub mod update_assessment_control_output {
     
@@ -618,12 +632,6 @@ pub mod update_assessment_control_output {
     
     
 }
-impl UpdateAssessmentControlOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlOutput`](crate::output::UpdateAssessmentControlOutput).
-    pub fn builder() -> crate::output::update_assessment_control_output::Builder {
-        crate::output::update_assessment_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -645,6 +653,13 @@ impl aws_http::request_id::RequestId for UpdateAssessmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentOutput`](crate::output::UpdateAssessmentOutput).
+    pub fn builder() -> crate::output::update_assessment_output::Builder {
+        crate::output::update_assessment_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentOutput`](crate::output::UpdateAssessmentOutput).
 pub mod update_assessment_output {
     
@@ -686,12 +701,6 @@ pub mod update_assessment_output {
     
     
 }
-impl UpdateAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentOutput`](crate::output::UpdateAssessmentOutput).
-    pub fn builder() -> crate::output::update_assessment_output::Builder {
-        crate::output::update_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -704,6 +713,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -733,12 +749,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -751,6 +761,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -780,12 +797,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -807,6 +818,13 @@ impl aws_http::request_id::RequestId for StartAssessmentFrameworkShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartAssessmentFrameworkShareOutput {
+    /// Creates a new builder-style object to manufacture [`StartAssessmentFrameworkShareOutput`](crate::output::StartAssessmentFrameworkShareOutput).
+    pub fn builder() -> crate::output::start_assessment_framework_share_output::Builder {
+        crate::output::start_assessment_framework_share_output::Builder::default()
+    }
+}
+
 /// See [`StartAssessmentFrameworkShareOutput`](crate::output::StartAssessmentFrameworkShareOutput).
 pub mod start_assessment_framework_share_output {
     
@@ -848,12 +866,6 @@ pub mod start_assessment_framework_share_output {
     
     
 }
-impl StartAssessmentFrameworkShareOutput {
-    /// Creates a new builder-style object to manufacture [`StartAssessmentFrameworkShareOutput`](crate::output::StartAssessmentFrameworkShareOutput).
-    pub fn builder() -> crate::output::start_assessment_framework_share_output::Builder {
-        crate::output::start_assessment_framework_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -882,6 +894,13 @@ impl aws_http::request_id::RequestId for RegisterOrganizationAdminAccountOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterOrganizationAdminAccountOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterOrganizationAdminAccountOutput`](crate::output::RegisterOrganizationAdminAccountOutput).
+    pub fn builder() -> crate::output::register_organization_admin_account_output::Builder {
+        crate::output::register_organization_admin_account_output::Builder::default()
+    }
+}
+
 /// See [`RegisterOrganizationAdminAccountOutput`](crate::output::RegisterOrganizationAdminAccountOutput).
 pub mod register_organization_admin_account_output {
     
@@ -935,12 +954,6 @@ pub mod register_organization_admin_account_output {
     
     
 }
-impl RegisterOrganizationAdminAccountOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterOrganizationAdminAccountOutput`](crate::output::RegisterOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::output::register_organization_admin_account_output::Builder {
-        crate::output::register_organization_admin_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -962,6 +975,13 @@ impl aws_http::request_id::RequestId for RegisterAccountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RegisterAccountOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterAccountOutput`](crate::output::RegisterAccountOutput).
+    pub fn builder() -> crate::output::register_account_output::Builder {
+        crate::output::register_account_output::Builder::default()
+    }
+}
+
 /// See [`RegisterAccountOutput`](crate::output::RegisterAccountOutput).
 pub mod register_account_output {
     
@@ -1003,12 +1023,6 @@ pub mod register_account_output {
     
     
 }
-impl RegisterAccountOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterAccountOutput`](crate::output::RegisterAccountOutput).
-    pub fn builder() -> crate::output::register_account_output::Builder {
-        crate::output::register_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1030,6 +1044,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1077,12 +1098,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1111,6 +1126,13 @@ impl aws_http::request_id::RequestId for ListNotificationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListNotificationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
+    pub fn builder() -> crate::output::list_notifications_output::Builder {
+        crate::output::list_notifications_output::Builder::default()
+    }
+}
+
 /// See [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
 pub mod list_notifications_output {
     
@@ -1170,12 +1192,6 @@ pub mod list_notifications_output {
     
     
 }
-impl ListNotificationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
-    pub fn builder() -> crate::output::list_notifications_output::Builder {
-        crate::output::list_notifications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1204,6 +1220,13 @@ impl aws_http::request_id::RequestId for ListKeywordsForDataSourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListKeywordsForDataSourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListKeywordsForDataSourceOutput`](crate::output::ListKeywordsForDataSourceOutput).
+    pub fn builder() -> crate::output::list_keywords_for_data_source_output::Builder {
+        crate::output::list_keywords_for_data_source_output::Builder::default()
+    }
+}
+
 /// See [`ListKeywordsForDataSourceOutput`](crate::output::ListKeywordsForDataSourceOutput).
 pub mod list_keywords_for_data_source_output {
     
@@ -1263,12 +1286,6 @@ pub mod list_keywords_for_data_source_output {
     
     
 }
-impl ListKeywordsForDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListKeywordsForDataSourceOutput`](crate::output::ListKeywordsForDataSourceOutput).
-    pub fn builder() -> crate::output::list_keywords_for_data_source_output::Builder {
-        crate::output::list_keywords_for_data_source_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1297,6 +1314,13 @@ impl aws_http::request_id::RequestId for ListControlsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListControlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListControlsOutput`](crate::output::ListControlsOutput).
+    pub fn builder() -> crate::output::list_controls_output::Builder {
+        crate::output::list_controls_output::Builder::default()
+    }
+}
+
 /// See [`ListControlsOutput`](crate::output::ListControlsOutput).
 pub mod list_controls_output {
     
@@ -1356,12 +1380,6 @@ pub mod list_controls_output {
     
     
 }
-impl ListControlsOutput {
-    /// Creates a new builder-style object to manufacture [`ListControlsOutput`](crate::output::ListControlsOutput).
-    pub fn builder() -> crate::output::list_controls_output::Builder {
-        crate::output::list_controls_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1390,6 +1408,13 @@ impl aws_http::request_id::RequestId for ListControlInsightsByControlDomainOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListControlInsightsByControlDomainOutput {
+    /// Creates a new builder-style object to manufacture [`ListControlInsightsByControlDomainOutput`](crate::output::ListControlInsightsByControlDomainOutput).
+    pub fn builder() -> crate::output::list_control_insights_by_control_domain_output::Builder {
+        crate::output::list_control_insights_by_control_domain_output::Builder::default()
+    }
+}
+
 /// See [`ListControlInsightsByControlDomainOutput`](crate::output::ListControlInsightsByControlDomainOutput).
 pub mod list_control_insights_by_control_domain_output {
     
@@ -1449,12 +1474,6 @@ pub mod list_control_insights_by_control_domain_output {
     
     
 }
-impl ListControlInsightsByControlDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListControlInsightsByControlDomainOutput`](crate::output::ListControlInsightsByControlDomainOutput).
-    pub fn builder() -> crate::output::list_control_insights_by_control_domain_output::Builder {
-        crate::output::list_control_insights_by_control_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1483,6 +1502,13 @@ impl aws_http::request_id::RequestId for ListControlDomainInsightsByAssessmentOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListControlDomainInsightsByAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsByAssessmentOutput`](crate::output::ListControlDomainInsightsByAssessmentOutput).
+    pub fn builder() -> crate::output::list_control_domain_insights_by_assessment_output::Builder {
+        crate::output::list_control_domain_insights_by_assessment_output::Builder::default()
+    }
+}
+
 /// See [`ListControlDomainInsightsByAssessmentOutput`](crate::output::ListControlDomainInsightsByAssessmentOutput).
 pub mod list_control_domain_insights_by_assessment_output {
     
@@ -1542,12 +1568,6 @@ pub mod list_control_domain_insights_by_assessment_output {
     
     
 }
-impl ListControlDomainInsightsByAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsByAssessmentOutput`](crate::output::ListControlDomainInsightsByAssessmentOutput).
-    pub fn builder() -> crate::output::list_control_domain_insights_by_assessment_output::Builder {
-        crate::output::list_control_domain_insights_by_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1576,6 +1596,13 @@ impl aws_http::request_id::RequestId for ListControlDomainInsightsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListControlDomainInsightsOutput {
+    /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsOutput`](crate::output::ListControlDomainInsightsOutput).
+    pub fn builder() -> crate::output::list_control_domain_insights_output::Builder {
+        crate::output::list_control_domain_insights_output::Builder::default()
+    }
+}
+
 /// See [`ListControlDomainInsightsOutput`](crate::output::ListControlDomainInsightsOutput).
 pub mod list_control_domain_insights_output {
     
@@ -1635,12 +1662,6 @@ pub mod list_control_domain_insights_output {
     
     
 }
-impl ListControlDomainInsightsOutput {
-    /// Creates a new builder-style object to manufacture [`ListControlDomainInsightsOutput`](crate::output::ListControlDomainInsightsOutput).
-    pub fn builder() -> crate::output::list_control_domain_insights_output::Builder {
-        crate::output::list_control_domain_insights_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1669,6 +1690,13 @@ impl aws_http::request_id::RequestId for ListAssessmentsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssessmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentsOutput`](crate::output::ListAssessmentsOutput).
+    pub fn builder() -> crate::output::list_assessments_output::Builder {
+        crate::output::list_assessments_output::Builder::default()
+    }
+}
+
 /// See [`ListAssessmentsOutput`](crate::output::ListAssessmentsOutput).
 pub mod list_assessments_output {
     
@@ -1728,12 +1756,6 @@ pub mod list_assessments_output {
     
     
 }
-impl ListAssessmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssessmentsOutput`](crate::output::ListAssessmentsOutput).
-    pub fn builder() -> crate::output::list_assessments_output::Builder {
-        crate::output::list_assessments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1762,6 +1784,13 @@ impl aws_http::request_id::RequestId for ListAssessmentReportsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssessmentReportsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentReportsOutput`](crate::output::ListAssessmentReportsOutput).
+    pub fn builder() -> crate::output::list_assessment_reports_output::Builder {
+        crate::output::list_assessment_reports_output::Builder::default()
+    }
+}
+
 /// See [`ListAssessmentReportsOutput`](crate::output::ListAssessmentReportsOutput).
 pub mod list_assessment_reports_output {
     
@@ -1821,12 +1850,6 @@ pub mod list_assessment_reports_output {
     
     
 }
-impl ListAssessmentReportsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssessmentReportsOutput`](crate::output::ListAssessmentReportsOutput).
-    pub fn builder() -> crate::output::list_assessment_reports_output::Builder {
-        crate::output::list_assessment_reports_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1855,6 +1878,13 @@ impl aws_http::request_id::RequestId for ListAssessmentFrameworkShareRequestsOut
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssessmentFrameworkShareRequestsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsOutput`](crate::output::ListAssessmentFrameworkShareRequestsOutput).
+    pub fn builder() -> crate::output::list_assessment_framework_share_requests_output::Builder {
+        crate::output::list_assessment_framework_share_requests_output::Builder::default()
+    }
+}
+
 /// See [`ListAssessmentFrameworkShareRequestsOutput`](crate::output::ListAssessmentFrameworkShareRequestsOutput).
 pub mod list_assessment_framework_share_requests_output {
     
@@ -1914,12 +1944,6 @@ pub mod list_assessment_framework_share_requests_output {
     
     
 }
-impl ListAssessmentFrameworkShareRequestsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsOutput`](crate::output::ListAssessmentFrameworkShareRequestsOutput).
-    pub fn builder() -> crate::output::list_assessment_framework_share_requests_output::Builder {
-        crate::output::list_assessment_framework_share_requests_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1948,6 +1972,13 @@ impl aws_http::request_id::RequestId for ListAssessmentFrameworksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssessmentFrameworksOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworksOutput`](crate::output::ListAssessmentFrameworksOutput).
+    pub fn builder() -> crate::output::list_assessment_frameworks_output::Builder {
+        crate::output::list_assessment_frameworks_output::Builder::default()
+    }
+}
+
 /// See [`ListAssessmentFrameworksOutput`](crate::output::ListAssessmentFrameworksOutput).
 pub mod list_assessment_frameworks_output {
     
@@ -2007,12 +2038,6 @@ pub mod list_assessment_frameworks_output {
     
     
 }
-impl ListAssessmentFrameworksOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworksOutput`](crate::output::ListAssessmentFrameworksOutput).
-    pub fn builder() -> crate::output::list_assessment_frameworks_output::Builder {
-        crate::output::list_assessment_frameworks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2041,6 +2066,13 @@ impl aws_http::request_id::RequestId for ListAssessmentControlInsightsByControlD
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAssessmentControlInsightsByControlDomainOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssessmentControlInsightsByControlDomainOutput`](crate::output::ListAssessmentControlInsightsByControlDomainOutput).
+    pub fn builder() -> crate::output::list_assessment_control_insights_by_control_domain_output::Builder {
+        crate::output::list_assessment_control_insights_by_control_domain_output::Builder::default()
+    }
+}
+
 /// See [`ListAssessmentControlInsightsByControlDomainOutput`](crate::output::ListAssessmentControlInsightsByControlDomainOutput).
 pub mod list_assessment_control_insights_by_control_domain_output {
     
@@ -2100,12 +2132,6 @@ pub mod list_assessment_control_insights_by_control_domain_output {
     
     
 }
-impl ListAssessmentControlInsightsByControlDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssessmentControlInsightsByControlDomainOutput`](crate::output::ListAssessmentControlInsightsByControlDomainOutput).
-    pub fn builder() -> crate::output::list_assessment_control_insights_by_control_domain_output::Builder {
-        crate::output::list_assessment_control_insights_by_control_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2127,6 +2153,13 @@ impl aws_http::request_id::RequestId for GetSettingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetSettingsOutput`](crate::output::GetSettingsOutput).
+    pub fn builder() -> crate::output::get_settings_output::Builder {
+        crate::output::get_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetSettingsOutput`](crate::output::GetSettingsOutput).
 pub mod get_settings_output {
     
@@ -2168,12 +2201,6 @@ pub mod get_settings_output {
     
     
 }
-impl GetSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetSettingsOutput`](crate::output::GetSettingsOutput).
-    pub fn builder() -> crate::output::get_settings_output::Builder {
-        crate::output::get_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2195,6 +2222,13 @@ impl aws_http::request_id::RequestId for GetServicesInScopeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetServicesInScopeOutput {
+    /// Creates a new builder-style object to manufacture [`GetServicesInScopeOutput`](crate::output::GetServicesInScopeOutput).
+    pub fn builder() -> crate::output::get_services_in_scope_output::Builder {
+        crate::output::get_services_in_scope_output::Builder::default()
+    }
+}
+
 /// See [`GetServicesInScopeOutput`](crate::output::GetServicesInScopeOutput).
 pub mod get_services_in_scope_output {
     
@@ -2242,12 +2276,6 @@ pub mod get_services_in_scope_output {
     
     
 }
-impl GetServicesInScopeOutput {
-    /// Creates a new builder-style object to manufacture [`GetServicesInScopeOutput`](crate::output::GetServicesInScopeOutput).
-    pub fn builder() -> crate::output::get_services_in_scope_output::Builder {
-        crate::output::get_services_in_scope_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2276,6 +2304,13 @@ impl aws_http::request_id::RequestId for GetOrganizationAdminAccountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetOrganizationAdminAccountOutput {
+    /// Creates a new builder-style object to manufacture [`GetOrganizationAdminAccountOutput`](crate::output::GetOrganizationAdminAccountOutput).
+    pub fn builder() -> crate::output::get_organization_admin_account_output::Builder {
+        crate::output::get_organization_admin_account_output::Builder::default()
+    }
+}
+
 /// See [`GetOrganizationAdminAccountOutput`](crate::output::GetOrganizationAdminAccountOutput).
 pub mod get_organization_admin_account_output {
     
@@ -2329,12 +2364,6 @@ pub mod get_organization_admin_account_output {
     
     
 }
-impl GetOrganizationAdminAccountOutput {
-    /// Creates a new builder-style object to manufacture [`GetOrganizationAdminAccountOutput`](crate::output::GetOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::output::get_organization_admin_account_output::Builder {
-        crate::output::get_organization_admin_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2356,6 +2385,13 @@ impl aws_http::request_id::RequestId for GetInsightsByAssessmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInsightsByAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetInsightsByAssessmentOutput`](crate::output::GetInsightsByAssessmentOutput).
+    pub fn builder() -> crate::output::get_insights_by_assessment_output::Builder {
+        crate::output::get_insights_by_assessment_output::Builder::default()
+    }
+}
+
 /// See [`GetInsightsByAssessmentOutput`](crate::output::GetInsightsByAssessmentOutput).
 pub mod get_insights_by_assessment_output {
     
@@ -2397,12 +2433,6 @@ pub mod get_insights_by_assessment_output {
     
     
 }
-impl GetInsightsByAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`GetInsightsByAssessmentOutput`](crate::output::GetInsightsByAssessmentOutput).
-    pub fn builder() -> crate::output::get_insights_by_assessment_output::Builder {
-        crate::output::get_insights_by_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2424,6 +2454,13 @@ impl aws_http::request_id::RequestId for GetInsightsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetInsightsOutput {
+    /// Creates a new builder-style object to manufacture [`GetInsightsOutput`](crate::output::GetInsightsOutput).
+    pub fn builder() -> crate::output::get_insights_output::Builder {
+        crate::output::get_insights_output::Builder::default()
+    }
+}
+
 /// See [`GetInsightsOutput`](crate::output::GetInsightsOutput).
 pub mod get_insights_output {
     
@@ -2465,12 +2502,6 @@ pub mod get_insights_output {
     
     
 }
-impl GetInsightsOutput {
-    /// Creates a new builder-style object to manufacture [`GetInsightsOutput`](crate::output::GetInsightsOutput).
-    pub fn builder() -> crate::output::get_insights_output::Builder {
-        crate::output::get_insights_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2499,6 +2530,13 @@ impl aws_http::request_id::RequestId for GetEvidenceFoldersByAssessmentControlOu
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetEvidenceFoldersByAssessmentControlOutput {
+    /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentControlOutput`](crate::output::GetEvidenceFoldersByAssessmentControlOutput).
+    pub fn builder() -> crate::output::get_evidence_folders_by_assessment_control_output::Builder {
+        crate::output::get_evidence_folders_by_assessment_control_output::Builder::default()
+    }
+}
+
 /// See [`GetEvidenceFoldersByAssessmentControlOutput`](crate::output::GetEvidenceFoldersByAssessmentControlOutput).
 pub mod get_evidence_folders_by_assessment_control_output {
     
@@ -2558,12 +2596,6 @@ pub mod get_evidence_folders_by_assessment_control_output {
     
     
 }
-impl GetEvidenceFoldersByAssessmentControlOutput {
-    /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentControlOutput`](crate::output::GetEvidenceFoldersByAssessmentControlOutput).
-    pub fn builder() -> crate::output::get_evidence_folders_by_assessment_control_output::Builder {
-        crate::output::get_evidence_folders_by_assessment_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2592,6 +2624,13 @@ impl aws_http::request_id::RequestId for GetEvidenceFoldersByAssessmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetEvidenceFoldersByAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentOutput`](crate::output::GetEvidenceFoldersByAssessmentOutput).
+    pub fn builder() -> crate::output::get_evidence_folders_by_assessment_output::Builder {
+        crate::output::get_evidence_folders_by_assessment_output::Builder::default()
+    }
+}
+
 /// See [`GetEvidenceFoldersByAssessmentOutput`](crate::output::GetEvidenceFoldersByAssessmentOutput).
 pub mod get_evidence_folders_by_assessment_output {
     
@@ -2651,12 +2690,6 @@ pub mod get_evidence_folders_by_assessment_output {
     
     
 }
-impl GetEvidenceFoldersByAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentOutput`](crate::output::GetEvidenceFoldersByAssessmentOutput).
-    pub fn builder() -> crate::output::get_evidence_folders_by_assessment_output::Builder {
-        crate::output::get_evidence_folders_by_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2678,6 +2711,13 @@ impl aws_http::request_id::RequestId for GetEvidenceFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetEvidenceFolderOutput {
+    /// Creates a new builder-style object to manufacture [`GetEvidenceFolderOutput`](crate::output::GetEvidenceFolderOutput).
+    pub fn builder() -> crate::output::get_evidence_folder_output::Builder {
+        crate::output::get_evidence_folder_output::Builder::default()
+    }
+}
+
 /// See [`GetEvidenceFolderOutput`](crate::output::GetEvidenceFolderOutput).
 pub mod get_evidence_folder_output {
     
@@ -2719,12 +2759,6 @@ pub mod get_evidence_folder_output {
     
     
 }
-impl GetEvidenceFolderOutput {
-    /// Creates a new builder-style object to manufacture [`GetEvidenceFolderOutput`](crate::output::GetEvidenceFolderOutput).
-    pub fn builder() -> crate::output::get_evidence_folder_output::Builder {
-        crate::output::get_evidence_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2753,6 +2787,13 @@ impl aws_http::request_id::RequestId for GetEvidenceByEvidenceFolderOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetEvidenceByEvidenceFolderOutput {
+    /// Creates a new builder-style object to manufacture [`GetEvidenceByEvidenceFolderOutput`](crate::output::GetEvidenceByEvidenceFolderOutput).
+    pub fn builder() -> crate::output::get_evidence_by_evidence_folder_output::Builder {
+        crate::output::get_evidence_by_evidence_folder_output::Builder::default()
+    }
+}
+
 /// See [`GetEvidenceByEvidenceFolderOutput`](crate::output::GetEvidenceByEvidenceFolderOutput).
 pub mod get_evidence_by_evidence_folder_output {
     
@@ -2812,12 +2853,6 @@ pub mod get_evidence_by_evidence_folder_output {
     
     
 }
-impl GetEvidenceByEvidenceFolderOutput {
-    /// Creates a new builder-style object to manufacture [`GetEvidenceByEvidenceFolderOutput`](crate::output::GetEvidenceByEvidenceFolderOutput).
-    pub fn builder() -> crate::output::get_evidence_by_evidence_folder_output::Builder {
-        crate::output::get_evidence_by_evidence_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2839,6 +2874,13 @@ impl aws_http::request_id::RequestId for GetEvidenceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetEvidenceOutput {
+    /// Creates a new builder-style object to manufacture [`GetEvidenceOutput`](crate::output::GetEvidenceOutput).
+    pub fn builder() -> crate::output::get_evidence_output::Builder {
+        crate::output::get_evidence_output::Builder::default()
+    }
+}
+
 /// See [`GetEvidenceOutput`](crate::output::GetEvidenceOutput).
 pub mod get_evidence_output {
     
@@ -2880,12 +2922,6 @@ pub mod get_evidence_output {
     
     
 }
-impl GetEvidenceOutput {
-    /// Creates a new builder-style object to manufacture [`GetEvidenceOutput`](crate::output::GetEvidenceOutput).
-    pub fn builder() -> crate::output::get_evidence_output::Builder {
-        crate::output::get_evidence_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2914,6 +2950,13 @@ impl aws_http::request_id::RequestId for GetDelegationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDelegationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDelegationsOutput`](crate::output::GetDelegationsOutput).
+    pub fn builder() -> crate::output::get_delegations_output::Builder {
+        crate::output::get_delegations_output::Builder::default()
+    }
+}
+
 /// See [`GetDelegationsOutput`](crate::output::GetDelegationsOutput).
 pub mod get_delegations_output {
     
@@ -2973,12 +3016,6 @@ pub mod get_delegations_output {
     
     
 }
-impl GetDelegationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDelegationsOutput`](crate::output::GetDelegationsOutput).
-    pub fn builder() -> crate::output::get_delegations_output::Builder {
-        crate::output::get_delegations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3000,6 +3037,13 @@ impl aws_http::request_id::RequestId for GetControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetControlOutput {
+    /// Creates a new builder-style object to manufacture [`GetControlOutput`](crate::output::GetControlOutput).
+    pub fn builder() -> crate::output::get_control_output::Builder {
+        crate::output::get_control_output::Builder::default()
+    }
+}
+
 /// See [`GetControlOutput`](crate::output::GetControlOutput).
 pub mod get_control_output {
     
@@ -3041,12 +3085,6 @@ pub mod get_control_output {
     
     
 }
-impl GetControlOutput {
-    /// Creates a new builder-style object to manufacture [`GetControlOutput`](crate::output::GetControlOutput).
-    pub fn builder() -> crate::output::get_control_output::Builder {
-        crate::output::get_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3075,6 +3113,13 @@ impl aws_http::request_id::RequestId for GetChangeLogsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetChangeLogsOutput {
+    /// Creates a new builder-style object to manufacture [`GetChangeLogsOutput`](crate::output::GetChangeLogsOutput).
+    pub fn builder() -> crate::output::get_change_logs_output::Builder {
+        crate::output::get_change_logs_output::Builder::default()
+    }
+}
+
 /// See [`GetChangeLogsOutput`](crate::output::GetChangeLogsOutput).
 pub mod get_change_logs_output {
     
@@ -3134,12 +3179,6 @@ pub mod get_change_logs_output {
     
     
 }
-impl GetChangeLogsOutput {
-    /// Creates a new builder-style object to manufacture [`GetChangeLogsOutput`](crate::output::GetChangeLogsOutput).
-    pub fn builder() -> crate::output::get_change_logs_output::Builder {
-        crate::output::get_change_logs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3161,6 +3200,13 @@ impl aws_http::request_id::RequestId for GetAssessmentReportUrlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAssessmentReportUrlOutput {
+    /// Creates a new builder-style object to manufacture [`GetAssessmentReportUrlOutput`](crate::output::GetAssessmentReportUrlOutput).
+    pub fn builder() -> crate::output::get_assessment_report_url_output::Builder {
+        crate::output::get_assessment_report_url_output::Builder::default()
+    }
+}
+
 /// See [`GetAssessmentReportUrlOutput`](crate::output::GetAssessmentReportUrlOutput).
 pub mod get_assessment_report_url_output {
     
@@ -3202,12 +3248,6 @@ pub mod get_assessment_report_url_output {
     
     
 }
-impl GetAssessmentReportUrlOutput {
-    /// Creates a new builder-style object to manufacture [`GetAssessmentReportUrlOutput`](crate::output::GetAssessmentReportUrlOutput).
-    pub fn builder() -> crate::output::get_assessment_report_url_output::Builder {
-        crate::output::get_assessment_report_url_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3229,6 +3269,13 @@ impl aws_http::request_id::RequestId for GetAssessmentFrameworkOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAssessmentFrameworkOutput {
+    /// Creates a new builder-style object to manufacture [`GetAssessmentFrameworkOutput`](crate::output::GetAssessmentFrameworkOutput).
+    pub fn builder() -> crate::output::get_assessment_framework_output::Builder {
+        crate::output::get_assessment_framework_output::Builder::default()
+    }
+}
+
 /// See [`GetAssessmentFrameworkOutput`](crate::output::GetAssessmentFrameworkOutput).
 pub mod get_assessment_framework_output {
     
@@ -3270,12 +3317,6 @@ pub mod get_assessment_framework_output {
     
     
 }
-impl GetAssessmentFrameworkOutput {
-    /// Creates a new builder-style object to manufacture [`GetAssessmentFrameworkOutput`](crate::output::GetAssessmentFrameworkOutput).
-    pub fn builder() -> crate::output::get_assessment_framework_output::Builder {
-        crate::output::get_assessment_framework_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3304,6 +3345,13 @@ impl aws_http::request_id::RequestId for GetAssessmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
+    pub fn builder() -> crate::output::get_assessment_output::Builder {
+        crate::output::get_assessment_output::Builder::default()
+    }
+}
+
 /// See [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
 pub mod get_assessment_output {
     
@@ -3357,12 +3405,6 @@ pub mod get_assessment_output {
     
     
 }
-impl GetAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`GetAssessmentOutput`](crate::output::GetAssessmentOutput).
-    pub fn builder() -> crate::output::get_assessment_output::Builder {
-        crate::output::get_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3384,6 +3426,13 @@ impl aws_http::request_id::RequestId for GetAccountStatusOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAccountStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountStatusOutput`](crate::output::GetAccountStatusOutput).
+    pub fn builder() -> crate::output::get_account_status_output::Builder {
+        crate::output::get_account_status_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountStatusOutput`](crate::output::GetAccountStatusOutput).
 pub mod get_account_status_output {
     
@@ -3425,12 +3474,6 @@ pub mod get_account_status_output {
     
     
 }
-impl GetAccountStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountStatusOutput`](crate::output::GetAccountStatusOutput).
-    pub fn builder() -> crate::output::get_account_status_output::Builder {
-        crate::output::get_account_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3443,6 +3486,13 @@ impl aws_http::request_id::RequestId for DisassociateAssessmentReportEvidenceFol
                                     self._request_id.as_deref()
                                 }
                             }
+impl DisassociateAssessmentReportEvidenceFolderOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::output::DisassociateAssessmentReportEvidenceFolderOutput).
+    pub fn builder() -> crate::output::disassociate_assessment_report_evidence_folder_output::Builder {
+        crate::output::disassociate_assessment_report_evidence_folder_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::output::DisassociateAssessmentReportEvidenceFolderOutput).
 pub mod disassociate_assessment_report_evidence_folder_output {
     
@@ -3472,12 +3522,6 @@ pub mod disassociate_assessment_report_evidence_folder_output {
     
     
 }
-impl DisassociateAssessmentReportEvidenceFolderOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::output::DisassociateAssessmentReportEvidenceFolderOutput).
-    pub fn builder() -> crate::output::disassociate_assessment_report_evidence_folder_output::Builder {
-        crate::output::disassociate_assessment_report_evidence_folder_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3490,6 +3534,13 @@ impl aws_http::request_id::RequestId for DeregisterOrganizationAdminAccountOutpu
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeregisterOrganizationAdminAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterOrganizationAdminAccountOutput`](crate::output::DeregisterOrganizationAdminAccountOutput).
+    pub fn builder() -> crate::output::deregister_organization_admin_account_output::Builder {
+        crate::output::deregister_organization_admin_account_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterOrganizationAdminAccountOutput`](crate::output::DeregisterOrganizationAdminAccountOutput).
 pub mod deregister_organization_admin_account_output {
     
@@ -3519,12 +3570,6 @@ pub mod deregister_organization_admin_account_output {
     
     
 }
-impl DeregisterOrganizationAdminAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterOrganizationAdminAccountOutput`](crate::output::DeregisterOrganizationAdminAccountOutput).
-    pub fn builder() -> crate::output::deregister_organization_admin_account_output::Builder {
-        crate::output::deregister_organization_admin_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3546,6 +3591,13 @@ impl aws_http::request_id::RequestId for DeregisterAccountOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeregisterAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterAccountOutput`](crate::output::DeregisterAccountOutput).
+    pub fn builder() -> crate::output::deregister_account_output::Builder {
+        crate::output::deregister_account_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterAccountOutput`](crate::output::DeregisterAccountOutput).
 pub mod deregister_account_output {
     
@@ -3587,12 +3639,6 @@ pub mod deregister_account_output {
     
     
 }
-impl DeregisterAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterAccountOutput`](crate::output::DeregisterAccountOutput).
-    pub fn builder() -> crate::output::deregister_account_output::Builder {
-        crate::output::deregister_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3605,6 +3651,13 @@ impl aws_http::request_id::RequestId for DeleteControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteControlOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteControlOutput`](crate::output::DeleteControlOutput).
+    pub fn builder() -> crate::output::delete_control_output::Builder {
+        crate::output::delete_control_output::Builder::default()
+    }
+}
+
 /// See [`DeleteControlOutput`](crate::output::DeleteControlOutput).
 pub mod delete_control_output {
     
@@ -3634,12 +3687,6 @@ pub mod delete_control_output {
     
     
 }
-impl DeleteControlOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteControlOutput`](crate::output::DeleteControlOutput).
-    pub fn builder() -> crate::output::delete_control_output::Builder {
-        crate::output::delete_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3652,6 +3699,13 @@ impl aws_http::request_id::RequestId for DeleteAssessmentReportOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAssessmentReportOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAssessmentReportOutput`](crate::output::DeleteAssessmentReportOutput).
+    pub fn builder() -> crate::output::delete_assessment_report_output::Builder {
+        crate::output::delete_assessment_report_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAssessmentReportOutput`](crate::output::DeleteAssessmentReportOutput).
 pub mod delete_assessment_report_output {
     
@@ -3681,12 +3735,6 @@ pub mod delete_assessment_report_output {
     
     
 }
-impl DeleteAssessmentReportOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAssessmentReportOutput`](crate::output::DeleteAssessmentReportOutput).
-    pub fn builder() -> crate::output::delete_assessment_report_output::Builder {
-        crate::output::delete_assessment_report_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3699,6 +3747,13 @@ impl aws_http::request_id::RequestId for DeleteAssessmentFrameworkShareOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAssessmentFrameworkShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkShareOutput`](crate::output::DeleteAssessmentFrameworkShareOutput).
+    pub fn builder() -> crate::output::delete_assessment_framework_share_output::Builder {
+        crate::output::delete_assessment_framework_share_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAssessmentFrameworkShareOutput`](crate::output::DeleteAssessmentFrameworkShareOutput).
 pub mod delete_assessment_framework_share_output {
     
@@ -3728,12 +3783,6 @@ pub mod delete_assessment_framework_share_output {
     
     
 }
-impl DeleteAssessmentFrameworkShareOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkShareOutput`](crate::output::DeleteAssessmentFrameworkShareOutput).
-    pub fn builder() -> crate::output::delete_assessment_framework_share_output::Builder {
-        crate::output::delete_assessment_framework_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3746,6 +3795,13 @@ impl aws_http::request_id::RequestId for DeleteAssessmentFrameworkOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAssessmentFrameworkOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkOutput`](crate::output::DeleteAssessmentFrameworkOutput).
+    pub fn builder() -> crate::output::delete_assessment_framework_output::Builder {
+        crate::output::delete_assessment_framework_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAssessmentFrameworkOutput`](crate::output::DeleteAssessmentFrameworkOutput).
 pub mod delete_assessment_framework_output {
     
@@ -3775,12 +3831,6 @@ pub mod delete_assessment_framework_output {
     
     
 }
-impl DeleteAssessmentFrameworkOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkOutput`](crate::output::DeleteAssessmentFrameworkOutput).
-    pub fn builder() -> crate::output::delete_assessment_framework_output::Builder {
-        crate::output::delete_assessment_framework_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3793,6 +3843,13 @@ impl aws_http::request_id::RequestId for DeleteAssessmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAssessmentOutput`](crate::output::DeleteAssessmentOutput).
+    pub fn builder() -> crate::output::delete_assessment_output::Builder {
+        crate::output::delete_assessment_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAssessmentOutput`](crate::output::DeleteAssessmentOutput).
 pub mod delete_assessment_output {
     
@@ -3822,12 +3879,6 @@ pub mod delete_assessment_output {
     
     
 }
-impl DeleteAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAssessmentOutput`](crate::output::DeleteAssessmentOutput).
-    pub fn builder() -> crate::output::delete_assessment_output::Builder {
-        crate::output::delete_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3849,6 +3900,13 @@ impl aws_http::request_id::RequestId for CreateControlOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateControlOutput {
+    /// Creates a new builder-style object to manufacture [`CreateControlOutput`](crate::output::CreateControlOutput).
+    pub fn builder() -> crate::output::create_control_output::Builder {
+        crate::output::create_control_output::Builder::default()
+    }
+}
+
 /// See [`CreateControlOutput`](crate::output::CreateControlOutput).
 pub mod create_control_output {
     
@@ -3890,12 +3948,6 @@ pub mod create_control_output {
     
     
 }
-impl CreateControlOutput {
-    /// Creates a new builder-style object to manufacture [`CreateControlOutput`](crate::output::CreateControlOutput).
-    pub fn builder() -> crate::output::create_control_output::Builder {
-        crate::output::create_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3917,6 +3969,13 @@ impl aws_http::request_id::RequestId for CreateAssessmentReportOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAssessmentReportOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAssessmentReportOutput`](crate::output::CreateAssessmentReportOutput).
+    pub fn builder() -> crate::output::create_assessment_report_output::Builder {
+        crate::output::create_assessment_report_output::Builder::default()
+    }
+}
+
 /// See [`CreateAssessmentReportOutput`](crate::output::CreateAssessmentReportOutput).
 pub mod create_assessment_report_output {
     
@@ -3958,12 +4017,6 @@ pub mod create_assessment_report_output {
     
     
 }
-impl CreateAssessmentReportOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAssessmentReportOutput`](crate::output::CreateAssessmentReportOutput).
-    pub fn builder() -> crate::output::create_assessment_report_output::Builder {
-        crate::output::create_assessment_report_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3985,6 +4038,13 @@ impl aws_http::request_id::RequestId for CreateAssessmentFrameworkOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAssessmentFrameworkOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkOutput`](crate::output::CreateAssessmentFrameworkOutput).
+    pub fn builder() -> crate::output::create_assessment_framework_output::Builder {
+        crate::output::create_assessment_framework_output::Builder::default()
+    }
+}
+
 /// See [`CreateAssessmentFrameworkOutput`](crate::output::CreateAssessmentFrameworkOutput).
 pub mod create_assessment_framework_output {
     
@@ -4026,12 +4086,6 @@ pub mod create_assessment_framework_output {
     
     
 }
-impl CreateAssessmentFrameworkOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkOutput`](crate::output::CreateAssessmentFrameworkOutput).
-    pub fn builder() -> crate::output::create_assessment_framework_output::Builder {
-        crate::output::create_assessment_framework_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4053,6 +4107,13 @@ impl aws_http::request_id::RequestId for CreateAssessmentOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAssessmentOutput`](crate::output::CreateAssessmentOutput).
+    pub fn builder() -> crate::output::create_assessment_output::Builder {
+        crate::output::create_assessment_output::Builder::default()
+    }
+}
+
 /// See [`CreateAssessmentOutput`](crate::output::CreateAssessmentOutput).
 pub mod create_assessment_output {
     
@@ -4094,12 +4155,6 @@ pub mod create_assessment_output {
     
     
 }
-impl CreateAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAssessmentOutput`](crate::output::CreateAssessmentOutput).
-    pub fn builder() -> crate::output::create_assessment_output::Builder {
-        crate::output::create_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4121,6 +4176,13 @@ impl aws_http::request_id::RequestId for BatchImportEvidenceToAssessmentControlO
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchImportEvidenceToAssessmentControlOutput {
+    /// Creates a new builder-style object to manufacture [`BatchImportEvidenceToAssessmentControlOutput`](crate::output::BatchImportEvidenceToAssessmentControlOutput).
+    pub fn builder() -> crate::output::batch_import_evidence_to_assessment_control_output::Builder {
+        crate::output::batch_import_evidence_to_assessment_control_output::Builder::default()
+    }
+}
+
 /// See [`BatchImportEvidenceToAssessmentControlOutput`](crate::output::BatchImportEvidenceToAssessmentControlOutput).
 pub mod batch_import_evidence_to_assessment_control_output {
     
@@ -4168,12 +4230,6 @@ pub mod batch_import_evidence_to_assessment_control_output {
     
     
 }
-impl BatchImportEvidenceToAssessmentControlOutput {
-    /// Creates a new builder-style object to manufacture [`BatchImportEvidenceToAssessmentControlOutput`](crate::output::BatchImportEvidenceToAssessmentControlOutput).
-    pub fn builder() -> crate::output::batch_import_evidence_to_assessment_control_output::Builder {
-        crate::output::batch_import_evidence_to_assessment_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4202,6 +4258,13 @@ impl aws_http::request_id::RequestId for BatchDisassociateAssessmentReportEviden
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDisassociateAssessmentReportEvidenceOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateAssessmentReportEvidenceOutput`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput).
+    pub fn builder() -> crate::output::batch_disassociate_assessment_report_evidence_output::Builder {
+        crate::output::batch_disassociate_assessment_report_evidence_output::Builder::default()
+    }
+}
+
 /// See [`BatchDisassociateAssessmentReportEvidenceOutput`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput).
 pub mod batch_disassociate_assessment_report_evidence_output {
     
@@ -4267,12 +4330,6 @@ pub mod batch_disassociate_assessment_report_evidence_output {
     
     
 }
-impl BatchDisassociateAssessmentReportEvidenceOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateAssessmentReportEvidenceOutput`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput).
-    pub fn builder() -> crate::output::batch_disassociate_assessment_report_evidence_output::Builder {
-        crate::output::batch_disassociate_assessment_report_evidence_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4294,6 +4351,13 @@ impl aws_http::request_id::RequestId for BatchDeleteDelegationByAssessmentOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDeleteDelegationByAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDelegationByAssessmentOutput`](crate::output::BatchDeleteDelegationByAssessmentOutput).
+    pub fn builder() -> crate::output::batch_delete_delegation_by_assessment_output::Builder {
+        crate::output::batch_delete_delegation_by_assessment_output::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteDelegationByAssessmentOutput`](crate::output::BatchDeleteDelegationByAssessmentOutput).
 pub mod batch_delete_delegation_by_assessment_output {
     
@@ -4341,12 +4405,6 @@ pub mod batch_delete_delegation_by_assessment_output {
     
     
 }
-impl BatchDeleteDelegationByAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDelegationByAssessmentOutput`](crate::output::BatchDeleteDelegationByAssessmentOutput).
-    pub fn builder() -> crate::output::batch_delete_delegation_by_assessment_output::Builder {
-        crate::output::batch_delete_delegation_by_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4375,6 +4433,13 @@ impl aws_http::request_id::RequestId for BatchCreateDelegationByAssessmentOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchCreateDelegationByAssessmentOutput {
+    /// Creates a new builder-style object to manufacture [`BatchCreateDelegationByAssessmentOutput`](crate::output::BatchCreateDelegationByAssessmentOutput).
+    pub fn builder() -> crate::output::batch_create_delegation_by_assessment_output::Builder {
+        crate::output::batch_create_delegation_by_assessment_output::Builder::default()
+    }
+}
+
 /// See [`BatchCreateDelegationByAssessmentOutput`](crate::output::BatchCreateDelegationByAssessmentOutput).
 pub mod batch_create_delegation_by_assessment_output {
     
@@ -4440,12 +4505,6 @@ pub mod batch_create_delegation_by_assessment_output {
     
     
 }
-impl BatchCreateDelegationByAssessmentOutput {
-    /// Creates a new builder-style object to manufacture [`BatchCreateDelegationByAssessmentOutput`](crate::output::BatchCreateDelegationByAssessmentOutput).
-    pub fn builder() -> crate::output::batch_create_delegation_by_assessment_output::Builder {
-        crate::output::batch_create_delegation_by_assessment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4474,6 +4533,13 @@ impl aws_http::request_id::RequestId for BatchAssociateAssessmentReportEvidenceO
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchAssociateAssessmentReportEvidenceOutput {
+    /// Creates a new builder-style object to manufacture [`BatchAssociateAssessmentReportEvidenceOutput`](crate::output::BatchAssociateAssessmentReportEvidenceOutput).
+    pub fn builder() -> crate::output::batch_associate_assessment_report_evidence_output::Builder {
+        crate::output::batch_associate_assessment_report_evidence_output::Builder::default()
+    }
+}
+
 /// See [`BatchAssociateAssessmentReportEvidenceOutput`](crate::output::BatchAssociateAssessmentReportEvidenceOutput).
 pub mod batch_associate_assessment_report_evidence_output {
     
@@ -4539,12 +4605,6 @@ pub mod batch_associate_assessment_report_evidence_output {
     
     
 }
-impl BatchAssociateAssessmentReportEvidenceOutput {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateAssessmentReportEvidenceOutput`](crate::output::BatchAssociateAssessmentReportEvidenceOutput).
-    pub fn builder() -> crate::output::batch_associate_assessment_report_evidence_output::Builder {
-        crate::output::batch_associate_assessment_report_evidence_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4557,6 +4617,13 @@ impl aws_http::request_id::RequestId for AssociateAssessmentReportEvidenceFolder
                                     self._request_id.as_deref()
                                 }
                             }
+impl AssociateAssessmentReportEvidenceFolderOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateAssessmentReportEvidenceFolderOutput`](crate::output::AssociateAssessmentReportEvidenceFolderOutput).
+    pub fn builder() -> crate::output::associate_assessment_report_evidence_folder_output::Builder {
+        crate::output::associate_assessment_report_evidence_folder_output::Builder::default()
+    }
+}
+
 /// See [`AssociateAssessmentReportEvidenceFolderOutput`](crate::output::AssociateAssessmentReportEvidenceFolderOutput).
 pub mod associate_assessment_report_evidence_folder_output {
     
@@ -4585,11 +4652,5 @@ pub mod associate_assessment_report_evidence_folder_output {
     }
     
     
-}
-impl AssociateAssessmentReportEvidenceFolderOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateAssessmentReportEvidenceFolderOutput`](crate::output::AssociateAssessmentReportEvidenceFolderOutput).
-    pub fn builder() -> crate::output::associate_assessment_report_evidence_folder_output::Builder {
-        crate::output::associate_assessment_report_evidence_folder_output::Builder::default()
-    }
 }
 

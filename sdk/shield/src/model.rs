@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
     
@@ -62,12 +69,6 @@ pub mod validation_exception_field {
     }
     
     
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationExceptionReason`, it is important to ensure
@@ -538,6 +539,13 @@ impl EmergencyContact {
         self.contact_notes.as_deref()
     }
 }
+impl EmergencyContact {
+    /// Creates a new builder-style object to manufacture [`EmergencyContact`](crate::model::EmergencyContact).
+    pub fn builder() -> crate::model::emergency_contact::Builder {
+        crate::model::emergency_contact::Builder::default()
+    }
+}
+
 /// See [`EmergencyContact`](crate::model::EmergencyContact).
 pub mod emergency_contact {
     
@@ -592,12 +600,6 @@ pub mod emergency_contact {
     
     
 }
-impl EmergencyContact {
-    /// Creates a new builder-style object to manufacture [`EmergencyContact`](crate::model::EmergencyContact).
-    pub fn builder() -> crate::model::emergency_contact::Builder {
-        crate::model::emergency_contact::Builder::default()
-    }
-}
 
 /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
 #[non_exhaustive]
@@ -624,6 +626,13 @@ impl ResponseAction {
         self.count.as_ref()
     }
 }
+impl ResponseAction {
+    /// Creates a new builder-style object to manufacture [`ResponseAction`](crate::model::ResponseAction).
+    pub fn builder() -> crate::model::response_action::Builder {
+        crate::model::response_action::Builder::default()
+    }
+}
+
 /// See [`ResponseAction`](crate::model::ResponseAction).
 pub mod response_action {
     
@@ -670,12 +679,6 @@ pub mod response_action {
     
     
 }
-impl ResponseAction {
-    /// Creates a new builder-style object to manufacture [`ResponseAction`](crate::model::ResponseAction).
-    pub fn builder() -> crate::model::response_action::Builder {
-        crate::model::response_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p> 
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p> 
@@ -684,6 +687,13 @@ impl ResponseAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountAction  {
 }
+impl CountAction {
+    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction).
+    pub fn builder() -> crate::model::count_action::Builder {
+        crate::model::count_action::Builder::default()
+    }
+}
+
 /// See [`CountAction`](crate::model::CountAction).
 pub mod count_action {
     
@@ -702,12 +712,6 @@ pub mod count_action {
     
     
 }
-impl CountAction {
-    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction).
-    pub fn builder() -> crate::model::count_action::Builder {
-        crate::model::count_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p> 
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p> 
@@ -716,6 +720,13 @@ impl CountAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlockAction  {
 }
+impl BlockAction {
+    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction).
+    pub fn builder() -> crate::model::block_action::Builder {
+        crate::model::block_action::Builder::default()
+    }
+}
+
 /// See [`BlockAction`](crate::model::BlockAction).
 pub mod block_action {
     
@@ -733,12 +744,6 @@ pub mod block_action {
     }
     
     
-}
-impl BlockAction {
-    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction).
-    pub fn builder() -> crate::model::block_action::Builder {
-        crate::model::block_action::Builder::default()
-    }
 }
 
 /// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
@@ -762,6 +767,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -803,12 +815,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>An object that represents a resource that is under DDoS protection.</p>
@@ -860,6 +866,13 @@ impl Protection {
         self.application_layer_automatic_response_configuration.as_ref()
     }
 }
+impl Protection {
+    /// Creates a new builder-style object to manufacture [`Protection`](crate::model::Protection).
+    pub fn builder() -> crate::model::protection::Builder {
+        crate::model::protection::Builder::default()
+    }
+}
+
 /// See [`Protection`](crate::model::Protection).
 pub mod protection {
     
@@ -956,12 +969,6 @@ pub mod protection {
     
     
 }
-impl Protection {
-    /// Creates a new builder-style object to manufacture [`Protection`](crate::model::Protection).
-    pub fn builder() -> crate::model::protection::Builder {
-        crate::model::protection::Builder::default()
-    }
-}
 
 /// <p>The automatic application layer DDoS mitigation settings for a <code>Protection</code>. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
 #[non_exhaustive]
@@ -984,6 +991,13 @@ impl ApplicationLayerAutomaticResponseConfiguration {
         self.action.as_ref()
     }
 }
+impl ApplicationLayerAutomaticResponseConfiguration {
+    /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
+    pub fn builder() -> crate::model::application_layer_automatic_response_configuration::Builder {
+        crate::model::application_layer_automatic_response_configuration::Builder::default()
+    }
+}
+
 /// See [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
 pub mod application_layer_automatic_response_configuration {
     
@@ -1025,12 +1039,6 @@ pub mod application_layer_automatic_response_configuration {
     }
     
     
-}
-impl ApplicationLayerAutomaticResponseConfiguration {
-    /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
-    pub fn builder() -> crate::model::application_layer_automatic_response_configuration::Builder {
-        crate::model::application_layer_automatic_response_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ApplicationLayerAutomaticResponseStatus`, it is important to ensure
@@ -1143,6 +1151,13 @@ impl InclusionProtectionFilters {
         self.resource_types.as_deref()
     }
 }
+impl InclusionProtectionFilters {
+    /// Creates a new builder-style object to manufacture [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
+    pub fn builder() -> crate::model::inclusion_protection_filters::Builder {
+        crate::model::inclusion_protection_filters::Builder::default()
+    }
+}
+
 /// See [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
 pub mod inclusion_protection_filters {
     
@@ -1215,12 +1230,6 @@ pub mod inclusion_protection_filters {
     
     
 }
-impl InclusionProtectionFilters {
-    /// Creates a new builder-style object to manufacture [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
-    pub fn builder() -> crate::model::inclusion_protection_filters::Builder {
-        crate::model::inclusion_protection_filters::Builder::default()
-    }
-}
 
 /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[non_exhaustive]
@@ -1281,6 +1290,13 @@ impl ProtectionGroup {
         self.protection_group_arn.as_deref()
     }
 }
+impl ProtectionGroup {
+    /// Creates a new builder-style object to manufacture [`ProtectionGroup`](crate::model::ProtectionGroup).
+    pub fn builder() -> crate::model::protection_group::Builder {
+        crate::model::protection_group::Builder::default()
+    }
+}
+
 /// See [`ProtectionGroup`](crate::model::ProtectionGroup).
 pub mod protection_group {
     
@@ -1387,12 +1403,6 @@ pub mod protection_group {
     
     
 }
-impl ProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroup`](crate::model::ProtectionGroup).
-    pub fn builder() -> crate::model::protection_group::Builder {
-        crate::model::protection_group::Builder::default()
-    }
-}
 
 /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
 #[non_exhaustive]
@@ -1429,6 +1439,13 @@ impl InclusionProtectionGroupFilters {
         self.aggregations.as_deref()
     }
 }
+impl InclusionProtectionGroupFilters {
+    /// Creates a new builder-style object to manufacture [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
+    pub fn builder() -> crate::model::inclusion_protection_group_filters::Builder {
+        crate::model::inclusion_protection_group_filters::Builder::default()
+    }
+}
+
 /// See [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
 pub mod inclusion_protection_group_filters {
     
@@ -1519,12 +1536,6 @@ pub mod inclusion_protection_group_filters {
     
     
 }
-impl InclusionProtectionGroupFilters {
-    /// Creates a new builder-style object to manufacture [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
-    pub fn builder() -> crate::model::inclusion_protection_group_filters::Builder {
-        crate::model::inclusion_protection_group_filters::Builder::default()
-    }
-}
 
 /// <p>Summarizes all DDoS attacks for a specified time period.</p>
 #[non_exhaustive]
@@ -1568,6 +1579,13 @@ impl AttackSummary {
         self.attack_vectors.as_deref()
     }
 }
+impl AttackSummary {
+    /// Creates a new builder-style object to manufacture [`AttackSummary`](crate::model::AttackSummary).
+    pub fn builder() -> crate::model::attack_summary::Builder {
+        crate::model::attack_summary::Builder::default()
+    }
+}
+
 /// See [`AttackSummary`](crate::model::AttackSummary).
 pub mod attack_summary {
     
@@ -1652,12 +1670,6 @@ pub mod attack_summary {
     
     
 }
-impl AttackSummary {
-    /// Creates a new builder-style object to manufacture [`AttackSummary`](crate::model::AttackSummary).
-    pub fn builder() -> crate::model::attack_summary::Builder {
-        crate::model::attack_summary::Builder::default()
-    }
-}
 
 /// <p>Describes the attack.</p>
 #[non_exhaustive]
@@ -1713,6 +1725,13 @@ impl AttackVectorDescription {
         self.vector_type.as_deref()
     }
 }
+impl AttackVectorDescription {
+    /// Creates a new builder-style object to manufacture [`AttackVectorDescription`](crate::model::AttackVectorDescription).
+    pub fn builder() -> crate::model::attack_vector_description::Builder {
+        crate::model::attack_vector_description::Builder::default()
+    }
+}
+
 /// See [`AttackVectorDescription`](crate::model::AttackVectorDescription).
 pub mod attack_vector_description {
     
@@ -1783,12 +1802,6 @@ pub mod attack_vector_description {
     
     
 }
-impl AttackVectorDescription {
-    /// Creates a new builder-style object to manufacture [`AttackVectorDescription`](crate::model::AttackVectorDescription).
-    pub fn builder() -> crate::model::attack_vector_description::Builder {
-        crate::model::attack_vector_description::Builder::default()
-    }
-}
 
 /// <p>The time range. </p>
 #[non_exhaustive]
@@ -1811,6 +1824,13 @@ impl TimeRange {
         self.to_exclusive.as_ref()
     }
 }
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
     
@@ -1852,12 +1872,6 @@ pub mod time_range {
     }
     
     
-}
-impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
-    pub fn builder() -> crate::model::time_range::Builder {
-        crate::model::time_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SubscriptionState`, it is important to ensure
@@ -2011,6 +2025,13 @@ impl Subscription {
         self.subscription_arn.as_deref()
     }
 }
+impl Subscription {
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
+    pub fn builder() -> crate::model::subscription::Builder {
+        crate::model::subscription::Builder::default()
+    }
+}
+
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
     
@@ -2138,12 +2159,6 @@ pub mod subscription {
     
     
 }
-impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
-    pub fn builder() -> crate::model::subscription::Builder {
-        crate::model::subscription::Builder::default()
-    }
-}
 
 /// <p>Limits settings for your subscription. </p>
 #[non_exhaustive]
@@ -2166,6 +2181,13 @@ impl SubscriptionLimits {
         self.protection_group_limits.as_ref()
     }
 }
+impl SubscriptionLimits {
+    /// Creates a new builder-style object to manufacture [`SubscriptionLimits`](crate::model::SubscriptionLimits).
+    pub fn builder() -> crate::model::subscription_limits::Builder {
+        crate::model::subscription_limits::Builder::default()
+    }
+}
+
 /// See [`SubscriptionLimits`](crate::model::SubscriptionLimits).
 pub mod subscription_limits {
     
@@ -2208,12 +2230,6 @@ pub mod subscription_limits {
     
     
 }
-impl SubscriptionLimits {
-    /// Creates a new builder-style object to manufacture [`SubscriptionLimits`](crate::model::SubscriptionLimits).
-    pub fn builder() -> crate::model::subscription_limits::Builder {
-        crate::model::subscription_limits::Builder::default()
-    }
-}
 
 /// <p>Limits settings on protection groups for your subscription. </p>
 #[non_exhaustive]
@@ -2236,6 +2252,13 @@ impl ProtectionGroupLimits {
         self.pattern_type_limits.as_ref()
     }
 }
+impl ProtectionGroupLimits {
+    /// Creates a new builder-style object to manufacture [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
+    pub fn builder() -> crate::model::protection_group_limits::Builder {
+        crate::model::protection_group_limits::Builder::default()
+    }
+}
+
 /// See [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
 pub mod protection_group_limits {
     
@@ -2279,12 +2302,6 @@ pub mod protection_group_limits {
     
     
 }
-impl ProtectionGroupLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
-    pub fn builder() -> crate::model::protection_group_limits::Builder {
-        crate::model::protection_group_limits::Builder::default()
-    }
-}
 
 /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
 #[non_exhaustive]
@@ -2300,6 +2317,13 @@ impl ProtectionGroupPatternTypeLimits {
         self.arbitrary_pattern_limits.as_ref()
     }
 }
+impl ProtectionGroupPatternTypeLimits {
+    /// Creates a new builder-style object to manufacture [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
+    pub fn builder() -> crate::model::protection_group_pattern_type_limits::Builder {
+        crate::model::protection_group_pattern_type_limits::Builder::default()
+    }
+}
+
 /// See [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
 pub mod protection_group_pattern_type_limits {
     
@@ -2330,12 +2354,6 @@ pub mod protection_group_pattern_type_limits {
     
     
 }
-impl ProtectionGroupPatternTypeLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
-    pub fn builder() -> crate::model::protection_group_pattern_type_limits::Builder {
-        crate::model::protection_group_pattern_type_limits::Builder::default()
-    }
-}
 
 /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
 #[non_exhaustive]
@@ -2351,6 +2369,13 @@ impl ProtectionGroupArbitraryPatternLimits {
         self.max_members
     }
 }
+impl ProtectionGroupArbitraryPatternLimits {
+    /// Creates a new builder-style object to manufacture [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
+    pub fn builder() -> crate::model::protection_group_arbitrary_pattern_limits::Builder {
+        crate::model::protection_group_arbitrary_pattern_limits::Builder::default()
+    }
+}
+
 /// See [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
 pub mod protection_group_arbitrary_pattern_limits {
     
@@ -2382,12 +2407,6 @@ pub mod protection_group_arbitrary_pattern_limits {
     
     
 }
-impl ProtectionGroupArbitraryPatternLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
-    pub fn builder() -> crate::model::protection_group_arbitrary_pattern_limits::Builder {
-        crate::model::protection_group_arbitrary_pattern_limits::Builder::default()
-    }
-}
 
 /// <p>Limits settings on protections for your subscription. </p>
 #[non_exhaustive]
@@ -2403,6 +2422,13 @@ impl ProtectionLimits {
         self.protected_resource_type_limits.as_deref()
     }
 }
+impl ProtectionLimits {
+    /// Creates a new builder-style object to manufacture [`ProtectionLimits`](crate::model::ProtectionLimits).
+    pub fn builder() -> crate::model::protection_limits::Builder {
+        crate::model::protection_limits::Builder::default()
+    }
+}
+
 /// See [`ProtectionLimits`](crate::model::ProtectionLimits).
 pub mod protection_limits {
     
@@ -2439,12 +2465,6 @@ pub mod protection_limits {
     
     
 }
-impl ProtectionLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionLimits`](crate::model::ProtectionLimits).
-    pub fn builder() -> crate::model::protection_limits::Builder {
-        crate::model::protection_limits::Builder::default()
-    }
-}
 
 /// <p>Specifies how many protections of a given type you can create.</p>
 #[non_exhaustive]
@@ -2467,6 +2487,13 @@ impl Limit {
         self.max
     }
 }
+impl Limit {
+    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
+    pub fn builder() -> crate::model::limit::Builder {
+        crate::model::limit::Builder::default()
+    }
+}
+
 /// See [`Limit`](crate::model::Limit).
 pub mod limit {
     
@@ -2509,12 +2536,6 @@ pub mod limit {
     }
     
     
-}
-impl Limit {
-    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
-    pub fn builder() -> crate::model::limit::Builder {
-        crate::model::limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProactiveEngagementStatus`, it is important to ensure
@@ -2625,6 +2646,13 @@ impl AttackStatisticsDataItem {
         self.attack_count
     }
 }
+impl AttackStatisticsDataItem {
+    /// Creates a new builder-style object to manufacture [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
+    pub fn builder() -> crate::model::attack_statistics_data_item::Builder {
+        crate::model::attack_statistics_data_item::Builder::default()
+    }
+}
+
 /// See [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
 pub mod attack_statistics_data_item {
     
@@ -2668,12 +2696,6 @@ pub mod attack_statistics_data_item {
     
     
 }
-impl AttackStatisticsDataItem {
-    /// Creates a new builder-style object to manufacture [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
-    pub fn builder() -> crate::model::attack_statistics_data_item::Builder {
-        crate::model::attack_statistics_data_item::Builder::default()
-    }
-}
 
 /// <p>Information about the volume of attacks during the time period, included in an <code>AttackStatisticsDataItem</code>. If the accompanying <code>AttackCount</code> in the statistics object is zero, this setting might be empty.</p>
 #[non_exhaustive]
@@ -2703,6 +2725,13 @@ impl AttackVolume {
         self.requests_per_second.as_ref()
     }
 }
+impl AttackVolume {
+    /// Creates a new builder-style object to manufacture [`AttackVolume`](crate::model::AttackVolume).
+    pub fn builder() -> crate::model::attack_volume::Builder {
+        crate::model::attack_volume::Builder::default()
+    }
+}
+
 /// See [`AttackVolume`](crate::model::AttackVolume).
 pub mod attack_volume {
     
@@ -2757,12 +2786,6 @@ pub mod attack_volume {
     
     
 }
-impl AttackVolume {
-    /// Creates a new builder-style object to manufacture [`AttackVolume`](crate::model::AttackVolume).
-    pub fn builder() -> crate::model::attack_volume::Builder {
-        crate::model::attack_volume::Builder::default()
-    }
-}
 
 /// <p>Statistics objects for the various data types in <code>AttackVolume</code>. </p>
 #[non_exhaustive]
@@ -2778,6 +2801,13 @@ impl AttackVolumeStatistics {
         self.max
     }
 }
+impl AttackVolumeStatistics {
+    /// Creates a new builder-style object to manufacture [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
+    pub fn builder() -> crate::model::attack_volume_statistics::Builder {
+        crate::model::attack_volume_statistics::Builder::default()
+    }
+}
+
 /// See [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
 pub mod attack_volume_statistics {
     
@@ -2808,12 +2838,6 @@ pub mod attack_volume_statistics {
     }
     
     
-}
-impl AttackVolumeStatistics {
-    /// Creates a new builder-style object to manufacture [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
-    pub fn builder() -> crate::model::attack_volume_statistics::Builder {
-        crate::model::attack_volume_statistics::Builder::default()
-    }
 }
 
 /// <p>The details of a DDoS attack.</p>
@@ -2881,6 +2905,13 @@ impl AttackDetail {
         self.mitigations.as_deref()
     }
 }
+impl AttackDetail {
+    /// Creates a new builder-style object to manufacture [`AttackDetail`](crate::model::AttackDetail).
+    pub fn builder() -> crate::model::attack_detail::Builder {
+        crate::model::attack_detail::Builder::default()
+    }
+}
+
 /// See [`AttackDetail`](crate::model::AttackDetail).
 pub mod attack_detail {
     
@@ -3021,12 +3052,6 @@ pub mod attack_detail {
     
     
 }
-impl AttackDetail {
-    /// Creates a new builder-style object to manufacture [`AttackDetail`](crate::model::AttackDetail).
-    pub fn builder() -> crate::model::attack_detail::Builder {
-        crate::model::attack_detail::Builder::default()
-    }
-}
 
 /// <p>The mitigation applied to a DDoS attack.</p>
 #[non_exhaustive]
@@ -3042,6 +3067,13 @@ impl Mitigation {
         self.mitigation_name.as_deref()
     }
 }
+impl Mitigation {
+    /// Creates a new builder-style object to manufacture [`Mitigation`](crate::model::Mitigation).
+    pub fn builder() -> crate::model::mitigation::Builder {
+        crate::model::mitigation::Builder::default()
+    }
+}
+
 /// See [`Mitigation`](crate::model::Mitigation).
 pub mod mitigation {
     
@@ -3071,12 +3103,6 @@ pub mod mitigation {
     }
     
     
-}
-impl Mitigation {
-    /// Creates a new builder-style object to manufacture [`Mitigation`](crate::model::Mitigation).
-    pub fn builder() -> crate::model::mitigation::Builder {
-        crate::model::mitigation::Builder::default()
-    }
 }
 
 /// <p>Details of a Shield event. This is provided as part of an <code>AttackDetail</code>.</p>
@@ -3123,6 +3149,13 @@ impl AttackProperty {
         self.total
     }
 }
+impl AttackProperty {
+    /// Creates a new builder-style object to manufacture [`AttackProperty`](crate::model::AttackProperty).
+    pub fn builder() -> crate::model::attack_property::Builder {
+        crate::model::attack_property::Builder::default()
+    }
+}
+
 /// See [`AttackProperty`](crate::model::AttackProperty).
 pub mod attack_property {
     
@@ -3209,12 +3242,6 @@ pub mod attack_property {
     }
     
     
-}
-impl AttackProperty {
-    /// Creates a new builder-style object to manufacture [`AttackProperty`](crate::model::AttackProperty).
-    pub fn builder() -> crate::model::attack_property::Builder {
-        crate::model::attack_property::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Unit`, it is important to ensure
@@ -3330,6 +3357,13 @@ impl Contributor {
         self.value
     }
 }
+impl Contributor {
+    /// Creates a new builder-style object to manufacture [`Contributor`](crate::model::Contributor).
+    pub fn builder() -> crate::model::contributor::Builder {
+        crate::model::contributor::Builder::default()
+    }
+}
+
 /// See [`Contributor`](crate::model::Contributor).
 pub mod contributor {
     
@@ -3372,12 +3406,6 @@ pub mod contributor {
     }
     
     
-}
-impl Contributor {
-    /// Creates a new builder-style object to manufacture [`Contributor`](crate::model::Contributor).
-    pub fn builder() -> crate::model::contributor::Builder {
-        crate::model::contributor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AttackPropertyIdentifier`, it is important to ensure
@@ -3623,6 +3651,13 @@ impl SummarizedCounter {
         self.unit.as_deref()
     }
 }
+impl SummarizedCounter {
+    /// Creates a new builder-style object to manufacture [`SummarizedCounter`](crate::model::SummarizedCounter).
+    pub fn builder() -> crate::model::summarized_counter::Builder {
+        crate::model::summarized_counter::Builder::default()
+    }
+}
+
 /// See [`SummarizedCounter`](crate::model::SummarizedCounter).
 pub mod summarized_counter {
     
@@ -3717,12 +3752,6 @@ pub mod summarized_counter {
     
     
 }
-impl SummarizedCounter {
-    /// Creates a new builder-style object to manufacture [`SummarizedCounter`](crate::model::SummarizedCounter).
-    pub fn builder() -> crate::model::summarized_counter::Builder {
-        crate::model::summarized_counter::Builder::default()
-    }
-}
 
 /// <p>The attack information for the specified SubResource.</p>
 #[non_exhaustive]
@@ -3759,6 +3788,13 @@ impl SubResourceSummary {
         self.counters.as_deref()
     }
 }
+impl SubResourceSummary {
+    /// Creates a new builder-style object to manufacture [`SubResourceSummary`](crate::model::SubResourceSummary).
+    pub fn builder() -> crate::model::sub_resource_summary::Builder {
+        crate::model::sub_resource_summary::Builder::default()
+    }
+}
+
 /// See [`SubResourceSummary`](crate::model::SubResourceSummary).
 pub mod sub_resource_summary {
     
@@ -3837,12 +3873,6 @@ pub mod sub_resource_summary {
     
     
 }
-impl SubResourceSummary {
-    /// Creates a new builder-style object to manufacture [`SubResourceSummary`](crate::model::SubResourceSummary).
-    pub fn builder() -> crate::model::sub_resource_summary::Builder {
-        crate::model::sub_resource_summary::Builder::default()
-    }
-}
 
 /// <p>A summary of information about the attack.</p>
 #[non_exhaustive]
@@ -3865,6 +3895,13 @@ impl SummarizedAttackVector {
         self.vector_counters.as_deref()
     }
 }
+impl SummarizedAttackVector {
+    /// Creates a new builder-style object to manufacture [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
+    pub fn builder() -> crate::model::summarized_attack_vector::Builder {
+        crate::model::summarized_attack_vector::Builder::default()
+    }
+}
+
 /// See [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
 pub mod summarized_attack_vector {
     
@@ -3912,12 +3949,6 @@ pub mod summarized_attack_vector {
     }
     
     
-}
-impl SummarizedAttackVector {
-    /// Creates a new builder-style object to manufacture [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
-    pub fn builder() -> crate::model::summarized_attack_vector::Builder {
-        crate::model::summarized_attack_vector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SubResourceType`, it is important to ensure

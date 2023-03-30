@@ -33,6 +33,13 @@ impl BatchPutMetricsError {
         self.metric_index
     }
 }
+impl BatchPutMetricsError {
+    /// Creates a new builder-style object to manufacture [`BatchPutMetricsError`](crate::model::BatchPutMetricsError).
+    pub fn builder() -> crate::model::batch_put_metrics_error::Builder {
+        crate::model::batch_put_metrics_error::Builder::default()
+    }
+}
+
 /// See [`BatchPutMetricsError`](crate::model::BatchPutMetricsError).
 pub mod batch_put_metrics_error {
     
@@ -87,12 +94,6 @@ pub mod batch_put_metrics_error {
     }
     
     
-}
-impl BatchPutMetricsError {
-    /// Creates a new builder-style object to manufacture [`BatchPutMetricsError`](crate::model::BatchPutMetricsError).
-    pub fn builder() -> crate::model::batch_put_metrics_error::Builder {
-        crate::model::batch_put_metrics_error::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PutMetricsErrorCode`, it is important to ensure
@@ -222,6 +223,13 @@ impl RawMetricData {
         self.value
     }
 }
+impl RawMetricData {
+    /// Creates a new builder-style object to manufacture [`RawMetricData`](crate::model::RawMetricData).
+    pub fn builder() -> crate::model::raw_metric_data::Builder {
+        crate::model::raw_metric_data::Builder::default()
+    }
+}
+
 /// See [`RawMetricData`](crate::model::RawMetricData).
 pub mod raw_metric_data {
     
@@ -288,11 +296,5 @@ pub mod raw_metric_data {
     }
     
     
-}
-impl RawMetricData {
-    /// Creates a new builder-style object to manufacture [`RawMetricData`](crate::model::RawMetricData).
-    pub fn builder() -> crate::model::raw_metric_data::Builder {
-        crate::model::raw_metric_data::Builder::default()
-    }
 }
 

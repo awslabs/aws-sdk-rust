@@ -21,6 +21,13 @@ impl RecommenderConfig {
         self.min_recommendation_requests_per_second
     }
 }
+impl RecommenderConfig {
+    /// Creates a new builder-style object to manufacture [`RecommenderConfig`](crate::model::RecommenderConfig).
+    pub fn builder() -> crate::model::recommender_config::Builder {
+        crate::model::recommender_config::Builder::default()
+    }
+}
+
 /// See [`RecommenderConfig`](crate::model::RecommenderConfig).
 pub mod recommender_config {
     
@@ -69,12 +76,6 @@ pub mod recommender_config {
     
     
 }
-impl RecommenderConfig {
-    /// Creates a new builder-style object to manufacture [`RecommenderConfig`](crate::model::RecommenderConfig).
-    pub fn builder() -> crate::model::recommender_config::Builder {
-        crate::model::recommender_config::Builder::default()
-    }
-}
 
 /// <p>The output configuration details for a metric attribution.</p>
 #[non_exhaustive]
@@ -97,6 +98,13 @@ impl MetricAttributionOutput {
         self.role_arn.as_deref()
     }
 }
+impl MetricAttributionOutput {
+    /// Creates a new builder-style object to manufacture [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
+    pub fn builder() -> crate::model::metric_attribution_output::Builder {
+        crate::model::metric_attribution_output::Builder::default()
+    }
+}
+
 /// See [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
 pub mod metric_attribution_output {
     
@@ -139,12 +147,6 @@ pub mod metric_attribution_output {
     
     
 }
-impl MetricAttributionOutput {
-    /// Creates a new builder-style object to manufacture [`MetricAttributionOutput`](crate::model::MetricAttributionOutput).
-    pub fn builder() -> crate::model::metric_attribution_output::Builder {
-        crate::model::metric_attribution_output::Builder::default()
-    }
-}
 
 /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
 #[non_exhaustive]
@@ -167,6 +169,13 @@ impl S3DataConfig {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3DataConfig {
+    /// Creates a new builder-style object to manufacture [`S3DataConfig`](crate::model::S3DataConfig).
+    pub fn builder() -> crate::model::s3_data_config::Builder {
+        crate::model::s3_data_config::Builder::default()
+    }
+}
+
 /// See [`S3DataConfig`](crate::model::S3DataConfig).
 pub mod s3_data_config {
     
@@ -209,12 +218,6 @@ pub mod s3_data_config {
     
     
 }
-impl S3DataConfig {
-    /// Creates a new builder-style object to manufacture [`S3DataConfig`](crate::model::S3DataConfig).
-    pub fn builder() -> crate::model::s3_data_config::Builder {
-        crate::model::s3_data_config::Builder::default()
-    }
-}
 
 /// <p>Contains information on a metric that a metric attribution reports on. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
@@ -244,6 +247,13 @@ impl MetricAttribute {
         self.expression.as_deref()
     }
 }
+impl MetricAttribute {
+    /// Creates a new builder-style object to manufacture [`MetricAttribute`](crate::model::MetricAttribute).
+    pub fn builder() -> crate::model::metric_attribute::Builder {
+        crate::model::metric_attribute::Builder::default()
+    }
+}
+
 /// See [`MetricAttribute`](crate::model::MetricAttribute).
 pub mod metric_attribute {
     
@@ -298,12 +308,6 @@ pub mod metric_attribute {
     
     
 }
-impl MetricAttribute {
-    /// Creates a new builder-style object to manufacture [`MetricAttribute`](crate::model::MetricAttribute).
-    pub fn builder() -> crate::model::metric_attribute::Builder {
-        crate::model::metric_attribute::Builder::default()
-    }
-}
 
 /// <p>The configuration details of a campaign.</p>
 #[non_exhaustive]
@@ -319,6 +323,13 @@ impl CampaignConfig {
         self.item_exploration_config.as_ref()
     }
 }
+impl CampaignConfig {
+    /// Creates a new builder-style object to manufacture [`CampaignConfig`](crate::model::CampaignConfig).
+    pub fn builder() -> crate::model::campaign_config::Builder {
+        crate::model::campaign_config::Builder::default()
+    }
+}
+
 /// See [`CampaignConfig`](crate::model::CampaignConfig).
 pub mod campaign_config {
     
@@ -355,12 +366,6 @@ pub mod campaign_config {
     
     
 }
-impl CampaignConfig {
-    /// Creates a new builder-style object to manufacture [`CampaignConfig`](crate::model::CampaignConfig).
-    pub fn builder() -> crate::model::campaign_config::Builder {
-        crate::model::campaign_config::Builder::default()
-    }
-}
 
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>. </p>
 #[non_exhaustive]
@@ -383,6 +388,13 @@ impl Tag {
         self.tag_value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -424,12 +436,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Provides a summary of the properties of a solution version. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> API.</p>
@@ -482,6 +488,13 @@ impl SolutionVersionSummary {
         self.failure_reason.as_deref()
     }
 }
+impl SolutionVersionSummary {
+    /// Creates a new builder-style object to manufacture [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
+    pub fn builder() -> crate::model::solution_version_summary::Builder {
+        crate::model::solution_version_summary::Builder::default()
+    }
+}
+
 /// See [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
 pub mod solution_version_summary {
     
@@ -568,12 +581,6 @@ pub mod solution_version_summary {
     
     
 }
-impl SolutionVersionSummary {
-    /// Creates a new builder-style object to manufacture [`SolutionVersionSummary`](crate::model::SolutionVersionSummary).
-    pub fn builder() -> crate::model::solution_version_summary::Builder {
-        crate::model::solution_version_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a solution. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a> API.</p>
 #[non_exhaustive]
@@ -634,6 +641,13 @@ impl SolutionSummary {
         self.recipe_arn.as_deref()
     }
 }
+impl SolutionSummary {
+    /// Creates a new builder-style object to manufacture [`SolutionSummary`](crate::model::SolutionSummary).
+    pub fn builder() -> crate::model::solution_summary::Builder {
+        crate::model::solution_summary::Builder::default()
+    }
+}
+
 /// See [`SolutionSummary`](crate::model::SolutionSummary).
 pub mod solution_summary {
     
@@ -734,12 +748,6 @@ pub mod solution_summary {
     
     
 }
-impl SolutionSummary {
-    /// Creates a new builder-style object to manufacture [`SolutionSummary`](crate::model::SolutionSummary).
-    pub fn builder() -> crate::model::solution_summary::Builder {
-        crate::model::solution_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> API.</p>
 #[non_exhaustive]
@@ -783,6 +791,13 @@ impl DatasetSchemaSummary {
         self.domain.as_ref()
     }
 }
+impl DatasetSchemaSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
+    pub fn builder() -> crate::model::dataset_schema_summary::Builder {
+        crate::model::dataset_schema_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
 pub mod dataset_schema_summary {
     
@@ -860,12 +875,6 @@ pub mod dataset_schema_summary {
     }
     
     
-}
-impl DatasetSchemaSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetSchemaSummary`](crate::model::DatasetSchemaSummary).
-    pub fn builder() -> crate::model::dataset_schema_summary::Builder {
-        crate::model::dataset_schema_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Domain`, it is important to ensure
@@ -1023,6 +1032,13 @@ impl RecommenderSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl RecommenderSummary {
+    /// Creates a new builder-style object to manufacture [`RecommenderSummary`](crate::model::RecommenderSummary).
+    pub fn builder() -> crate::model::recommender_summary::Builder {
+        crate::model::recommender_summary::Builder::default()
+    }
+}
+
 /// See [`RecommenderSummary`](crate::model::RecommenderSummary).
 pub mod recommender_summary {
     
@@ -1147,12 +1163,6 @@ pub mod recommender_summary {
     
     
 }
-impl RecommenderSummary {
-    /// Creates a new builder-style object to manufacture [`RecommenderSummary`](crate::model::RecommenderSummary).
-    pub fn builder() -> crate::model::recommender_summary::Builder {
-        crate::model::recommender_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a recipe. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html">DescribeRecipe</a> API.</p>
 #[non_exhaustive]
@@ -1203,6 +1213,13 @@ impl RecipeSummary {
         self.domain.as_ref()
     }
 }
+impl RecipeSummary {
+    /// Creates a new builder-style object to manufacture [`RecipeSummary`](crate::model::RecipeSummary).
+    pub fn builder() -> crate::model::recipe_summary::Builder {
+        crate::model::recipe_summary::Builder::default()
+    }
+}
+
 /// See [`RecipeSummary`](crate::model::RecipeSummary).
 pub mod recipe_summary {
     
@@ -1292,12 +1309,6 @@ pub mod recipe_summary {
     }
     
     
-}
-impl RecipeSummary {
-    /// Creates a new builder-style object to manufacture [`RecipeSummary`](crate::model::RecipeSummary).
-    pub fn builder() -> crate::model::recipe_summary::Builder {
-        crate::model::recipe_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecipeProvider`, it is important to ensure
@@ -1426,6 +1437,13 @@ impl MetricAttributionSummary {
         self.failure_reason.as_deref()
     }
 }
+impl MetricAttributionSummary {
+    /// Creates a new builder-style object to manufacture [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
+    pub fn builder() -> crate::model::metric_attribution_summary::Builder {
+        crate::model::metric_attribution_summary::Builder::default()
+    }
+}
+
 /// See [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
 pub mod metric_attribution_summary {
     
@@ -1516,12 +1534,6 @@ pub mod metric_attribution_summary {
     
     
 }
-impl MetricAttributionSummary {
-    /// Creates a new builder-style object to manufacture [`MetricAttributionSummary`](crate::model::MetricAttributionSummary).
-    pub fn builder() -> crate::model::metric_attribution_summary::Builder {
-        crate::model::metric_attribution_summary::Builder::default()
-    }
-}
 
 /// <p>A short summary of a filter's attributes.</p>
 #[non_exhaustive]
@@ -1579,6 +1591,13 @@ impl FilterSummary {
         self.status.as_deref()
     }
 }
+impl FilterSummary {
+    /// Creates a new builder-style object to manufacture [`FilterSummary`](crate::model::FilterSummary).
+    pub fn builder() -> crate::model::filter_summary::Builder {
+        crate::model::filter_summary::Builder::default()
+    }
+}
+
 /// See [`FilterSummary`](crate::model::FilterSummary).
 pub mod filter_summary {
     
@@ -1681,12 +1700,6 @@ pub mod filter_summary {
     
     
 }
-impl FilterSummary {
-    /// Creates a new builder-style object to manufacture [`FilterSummary`](crate::model::FilterSummary).
-    pub fn builder() -> crate::model::filter_summary::Builder {
-        crate::model::filter_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of an event tracker. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html">DescribeEventTracker</a> API.</p>
 #[non_exhaustive]
@@ -1740,6 +1753,13 @@ impl EventTrackerSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl EventTrackerSummary {
+    /// Creates a new builder-style object to manufacture [`EventTrackerSummary`](crate::model::EventTrackerSummary).
+    pub fn builder() -> crate::model::event_tracker_summary::Builder {
+        crate::model::event_tracker_summary::Builder::default()
+    }
+}
+
 /// See [`EventTrackerSummary`](crate::model::EventTrackerSummary).
 pub mod event_tracker_summary {
     
@@ -1828,12 +1848,6 @@ pub mod event_tracker_summary {
     
     
 }
-impl EventTrackerSummary {
-    /// Creates a new builder-style object to manufacture [`EventTrackerSummary`](crate::model::EventTrackerSummary).
-    pub fn builder() -> crate::model::event_tracker_summary::Builder {
-        crate::model::event_tracker_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a dataset. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html">DescribeDataset</a> API.</p>
 #[non_exhaustive]
@@ -1906,6 +1920,13 @@ impl DatasetSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl DatasetSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
+    pub fn builder() -> crate::model::dataset_summary::Builder {
+        crate::model::dataset_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
     
@@ -2018,12 +2039,6 @@ pub mod dataset_summary {
     
     
 }
-impl DatasetSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
-    pub fn builder() -> crate::model::dataset_summary::Builder {
-        crate::model::dataset_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> API.</p>
 #[non_exhaustive]
@@ -2089,6 +2104,13 @@ impl DatasetImportJobSummary {
         self.import_mode.as_ref()
     }
 }
+impl DatasetImportJobSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
+    pub fn builder() -> crate::model::dataset_import_job_summary::Builder {
+        crate::model::dataset_import_job_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
 pub mod dataset_import_job_summary {
     
@@ -2198,12 +2220,6 @@ pub mod dataset_import_job_summary {
     }
     
     
-}
-impl DatasetImportJobSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
-    pub fn builder() -> crate::model::dataset_import_job_summary::Builder {
-        crate::model::dataset_import_job_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImportMode`, it is important to ensure
@@ -2354,6 +2370,13 @@ impl DatasetGroupSummary {
         self.domain.as_ref()
     }
 }
+impl DatasetGroupSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
+    pub fn builder() -> crate::model::dataset_group_summary::Builder {
+        crate::model::dataset_group_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
 pub mod dataset_group_summary {
     
@@ -2466,12 +2489,6 @@ pub mod dataset_group_summary {
     
     
 }
-impl DatasetGroupSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
-    pub fn builder() -> crate::model::dataset_group_summary::Builder {
-        crate::model::dataset_group_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a dataset export job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a> API.</p>
 #[non_exhaustive]
@@ -2530,6 +2547,13 @@ impl DatasetExportJobSummary {
         self.failure_reason.as_deref()
     }
 }
+impl DatasetExportJobSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
+    pub fn builder() -> crate::model::dataset_export_job_summary::Builder {
+        crate::model::dataset_export_job_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
 pub mod dataset_export_job_summary {
     
@@ -2628,12 +2652,6 @@ pub mod dataset_export_job_summary {
     
     
 }
-impl DatasetExportJobSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetExportJobSummary`](crate::model::DatasetExportJobSummary).
-    pub fn builder() -> crate::model::dataset_export_job_summary::Builder {
-        crate::model::dataset_export_job_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a campaign. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
@@ -2694,6 +2712,13 @@ impl CampaignSummary {
         self.failure_reason.as_deref()
     }
 }
+impl CampaignSummary {
+    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
+    pub fn builder() -> crate::model::campaign_summary::Builder {
+        crate::model::campaign_summary::Builder::default()
+    }
+}
+
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
     
@@ -2794,12 +2819,6 @@ pub mod campaign_summary {
     
     
 }
-impl CampaignSummary {
-    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
-    pub fn builder() -> crate::model::campaign_summary::Builder {
-        crate::model::campaign_summary::Builder::default()
-    }
-}
 
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html">BatchSegmentJob</a> datatype. <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html">ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.</p>
 #[non_exhaustive]
@@ -2869,6 +2888,13 @@ impl BatchSegmentJobSummary {
         self.solution_version_arn.as_deref()
     }
 }
+impl BatchSegmentJobSummary {
+    /// Creates a new builder-style object to manufacture [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
+    pub fn builder() -> crate::model::batch_segment_job_summary::Builder {
+        crate::model::batch_segment_job_summary::Builder::default()
+    }
+}
+
 /// See [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
 pub mod batch_segment_job_summary {
     
@@ -2983,12 +3009,6 @@ pub mod batch_segment_job_summary {
     
     
 }
-impl BatchSegmentJobSummary {
-    /// Creates a new builder-style object to manufacture [`BatchSegmentJobSummary`](crate::model::BatchSegmentJobSummary).
-    pub fn builder() -> crate::model::batch_segment_job_summary::Builder {
-        crate::model::batch_segment_job_summary::Builder::default()
-    }
-}
 
 /// <p>A truncated version of the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html">BatchInferenceJob</a>. The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html">ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.</p>
 #[non_exhaustive]
@@ -3058,6 +3078,13 @@ impl BatchInferenceJobSummary {
         self.solution_version_arn.as_deref()
     }
 }
+impl BatchInferenceJobSummary {
+    /// Creates a new builder-style object to manufacture [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
+    pub fn builder() -> crate::model::batch_inference_job_summary::Builder {
+        crate::model::batch_inference_job_summary::Builder::default()
+    }
+}
+
 /// See [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
 pub mod batch_inference_job_summary {
     
@@ -3171,12 +3198,6 @@ pub mod batch_inference_job_summary {
     }
     
     
-}
-impl BatchInferenceJobSummary {
-    /// Creates a new builder-style object to manufacture [`BatchInferenceJobSummary`](crate::model::BatchInferenceJobSummary).
-    pub fn builder() -> crate::model::batch_inference_job_summary::Builder {
-        crate::model::batch_inference_job_summary::Builder::default()
-    }
 }
 
 /// <p>An object that provides information about a specific version of a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a> in a Custom dataset group.</p>
@@ -3320,6 +3341,13 @@ impl SolutionVersion {
         self.last_updated_date_time.as_ref()
     }
 }
+impl SolutionVersion {
+    /// Creates a new builder-style object to manufacture [`SolutionVersion`](crate::model::SolutionVersion).
+    pub fn builder() -> crate::model::solution_version::Builder {
+        crate::model::solution_version::Builder::default()
+    }
+}
+
 /// See [`SolutionVersion`](crate::model::SolutionVersion).
 pub mod solution_version {
     
@@ -3554,12 +3582,6 @@ pub mod solution_version {
     
     
 }
-impl SolutionVersion {
-    /// Creates a new builder-style object to manufacture [`SolutionVersion`](crate::model::SolutionVersion).
-    pub fn builder() -> crate::model::solution_version::Builder {
-        crate::model::solution_version::Builder::default()
-    }
-}
 
 /// <p>If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.</p>
 #[non_exhaustive]
@@ -3575,6 +3597,13 @@ impl TunedHpoParams {
         self.algorithm_hyper_parameters.as_ref()
     }
 }
+impl TunedHpoParams {
+    /// Creates a new builder-style object to manufacture [`TunedHpoParams`](crate::model::TunedHpoParams).
+    pub fn builder() -> crate::model::tuned_hpo_params::Builder {
+        crate::model::tuned_hpo_params::Builder::default()
+    }
+}
+
 /// See [`TunedHpoParams`](crate::model::TunedHpoParams).
 pub mod tuned_hpo_params {
     
@@ -3610,12 +3639,6 @@ pub mod tuned_hpo_params {
     }
     
     
-}
-impl TunedHpoParams {
-    /// Creates a new builder-style object to manufacture [`TunedHpoParams`](crate::model::TunedHpoParams).
-    pub fn builder() -> crate::model::tuned_hpo_params::Builder {
-        crate::model::tuned_hpo_params::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TrainingMode`, it is important to ensure
@@ -3749,6 +3772,13 @@ impl SolutionConfig {
         self.optimization_objective.as_ref()
     }
 }
+impl SolutionConfig {
+    /// Creates a new builder-style object to manufacture [`SolutionConfig`](crate::model::SolutionConfig).
+    pub fn builder() -> crate::model::solution_config::Builder {
+        crate::model::solution_config::Builder::default()
+    }
+}
+
 /// See [`SolutionConfig`](crate::model::SolutionConfig).
 pub mod solution_config {
     
@@ -3851,12 +3881,6 @@ pub mod solution_config {
     
     
 }
-impl SolutionConfig {
-    /// Creates a new builder-style object to manufacture [`SolutionConfig`](crate::model::SolutionConfig).
-    pub fn builder() -> crate::model::solution_config::Builder {
-        crate::model::solution_config::Builder::default()
-    }
-}
 
 /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
 #[non_exhaustive]
@@ -3879,6 +3903,13 @@ impl OptimizationObjective {
         self.objective_sensitivity.as_ref()
     }
 }
+impl OptimizationObjective {
+    /// Creates a new builder-style object to manufacture [`OptimizationObjective`](crate::model::OptimizationObjective).
+    pub fn builder() -> crate::model::optimization_objective::Builder {
+        crate::model::optimization_objective::Builder::default()
+    }
+}
+
 /// See [`OptimizationObjective`](crate::model::OptimizationObjective).
 pub mod optimization_objective {
     
@@ -3920,12 +3951,6 @@ pub mod optimization_objective {
     }
     
     
-}
-impl OptimizationObjective {
-    /// Creates a new builder-style object to manufacture [`OptimizationObjective`](crate::model::OptimizationObjective).
-    pub fn builder() -> crate::model::optimization_objective::Builder {
-        crate::model::optimization_objective::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ObjectiveSensitivity`, it is important to ensure
@@ -4041,6 +4066,13 @@ impl AutoMlConfig {
         self.recipe_list.as_deref()
     }
 }
+impl AutoMlConfig {
+    /// Creates a new builder-style object to manufacture [`AutoMlConfig`](crate::model::AutoMlConfig).
+    pub fn builder() -> crate::model::auto_ml_config::Builder {
+        crate::model::auto_ml_config::Builder::default()
+    }
+}
+
 /// See [`AutoMlConfig`](crate::model::AutoMlConfig).
 pub mod auto_ml_config {
     
@@ -4089,12 +4121,6 @@ pub mod auto_ml_config {
     
     
 }
-impl AutoMlConfig {
-    /// Creates a new builder-style object to manufacture [`AutoMlConfig`](crate::model::AutoMlConfig).
-    pub fn builder() -> crate::model::auto_ml_config::Builder {
-        crate::model::auto_ml_config::Builder::default()
-    }
-}
 
 /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
@@ -4128,6 +4154,13 @@ impl HpoConfig {
         self.algorithm_hyper_parameter_ranges.as_ref()
     }
 }
+impl HpoConfig {
+    /// Creates a new builder-style object to manufacture [`HpoConfig`](crate::model::HpoConfig).
+    pub fn builder() -> crate::model::hpo_config::Builder {
+        crate::model::hpo_config::Builder::default()
+    }
+}
+
 /// See [`HpoConfig`](crate::model::HpoConfig).
 pub mod hpo_config {
     
@@ -4186,12 +4219,6 @@ pub mod hpo_config {
     
     
 }
-impl HpoConfig {
-    /// Creates a new builder-style object to manufacture [`HpoConfig`](crate::model::HpoConfig).
-    pub fn builder() -> crate::model::hpo_config::Builder {
-        crate::model::hpo_config::Builder::default()
-    }
-}
 
 /// <p>Specifies the hyperparameters and their ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
@@ -4221,6 +4248,13 @@ impl HyperParameterRanges {
         self.categorical_hyper_parameter_ranges.as_deref()
     }
 }
+impl HyperParameterRanges {
+    /// Creates a new builder-style object to manufacture [`HyperParameterRanges`](crate::model::HyperParameterRanges).
+    pub fn builder() -> crate::model::hyper_parameter_ranges::Builder {
+        crate::model::hyper_parameter_ranges::Builder::default()
+    }
+}
+
 /// See [`HyperParameterRanges`](crate::model::HyperParameterRanges).
 pub mod hyper_parameter_ranges {
     
@@ -4293,12 +4327,6 @@ pub mod hyper_parameter_ranges {
     
     
 }
-impl HyperParameterRanges {
-    /// Creates a new builder-style object to manufacture [`HyperParameterRanges`](crate::model::HyperParameterRanges).
-    pub fn builder() -> crate::model::hyper_parameter_ranges::Builder {
-        crate::model::hyper_parameter_ranges::Builder::default()
-    }
-}
 
 /// <p>Provides the name and range of a categorical hyperparameter.</p>
 #[non_exhaustive]
@@ -4321,6 +4349,13 @@ impl CategoricalHyperParameterRange {
         self.values.as_deref()
     }
 }
+impl CategoricalHyperParameterRange {
+    /// Creates a new builder-style object to manufacture [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
+    pub fn builder() -> crate::model::categorical_hyper_parameter_range::Builder {
+        crate::model::categorical_hyper_parameter_range::Builder::default()
+    }
+}
+
 /// See [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
 pub mod categorical_hyper_parameter_range {
     
@@ -4369,12 +4404,6 @@ pub mod categorical_hyper_parameter_range {
     
     
 }
-impl CategoricalHyperParameterRange {
-    /// Creates a new builder-style object to manufacture [`CategoricalHyperParameterRange`](crate::model::CategoricalHyperParameterRange).
-    pub fn builder() -> crate::model::categorical_hyper_parameter_range::Builder {
-        crate::model::categorical_hyper_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Provides the name and range of a continuous hyperparameter.</p>
 #[non_exhaustive]
@@ -4404,6 +4433,13 @@ impl ContinuousHyperParameterRange {
         self.max_value
     }
 }
+impl ContinuousHyperParameterRange {
+    /// Creates a new builder-style object to manufacture [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
+    pub fn builder() -> crate::model::continuous_hyper_parameter_range::Builder {
+        crate::model::continuous_hyper_parameter_range::Builder::default()
+    }
+}
+
 /// See [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
 pub mod continuous_hyper_parameter_range {
     
@@ -4460,12 +4496,6 @@ pub mod continuous_hyper_parameter_range {
     
     
 }
-impl ContinuousHyperParameterRange {
-    /// Creates a new builder-style object to manufacture [`ContinuousHyperParameterRange`](crate::model::ContinuousHyperParameterRange).
-    pub fn builder() -> crate::model::continuous_hyper_parameter_range::Builder {
-        crate::model::continuous_hyper_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
@@ -4495,6 +4525,13 @@ impl IntegerHyperParameterRange {
         self.max_value
     }
 }
+impl IntegerHyperParameterRange {
+    /// Creates a new builder-style object to manufacture [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
+    pub fn builder() -> crate::model::integer_hyper_parameter_range::Builder {
+        crate::model::integer_hyper_parameter_range::Builder::default()
+    }
+}
+
 /// See [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
 pub mod integer_hyper_parameter_range {
     
@@ -4551,12 +4588,6 @@ pub mod integer_hyper_parameter_range {
     
     
 }
-impl IntegerHyperParameterRange {
-    /// Creates a new builder-style object to manufacture [`IntegerHyperParameterRange`](crate::model::IntegerHyperParameterRange).
-    pub fn builder() -> crate::model::integer_hyper_parameter_range::Builder {
-        crate::model::integer_hyper_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Describes the resource configuration for hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
@@ -4579,6 +4610,13 @@ impl HpoResourceConfig {
         self.max_parallel_training_jobs.as_deref()
     }
 }
+impl HpoResourceConfig {
+    /// Creates a new builder-style object to manufacture [`HpoResourceConfig`](crate::model::HpoResourceConfig).
+    pub fn builder() -> crate::model::hpo_resource_config::Builder {
+        crate::model::hpo_resource_config::Builder::default()
+    }
+}
+
 /// See [`HpoResourceConfig`](crate::model::HpoResourceConfig).
 pub mod hpo_resource_config {
     
@@ -4621,12 +4659,6 @@ pub mod hpo_resource_config {
     
     
 }
-impl HpoResourceConfig {
-    /// Creates a new builder-style object to manufacture [`HpoResourceConfig`](crate::model::HpoResourceConfig).
-    pub fn builder() -> crate::model::hpo_resource_config::Builder {
-        crate::model::hpo_resource_config::Builder::default()
-    }
-}
 
 /// <p>The metric to optimize during hyperparameter optimization (HPO).</p> <note> 
 /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p> 
@@ -4658,6 +4690,13 @@ impl HpoObjective {
         self.metric_regex.as_deref()
     }
 }
+impl HpoObjective {
+    /// Creates a new builder-style object to manufacture [`HpoObjective`](crate::model::HpoObjective).
+    pub fn builder() -> crate::model::hpo_objective::Builder {
+        crate::model::hpo_objective::Builder::default()
+    }
+}
+
 /// See [`HpoObjective`](crate::model::HpoObjective).
 pub mod hpo_objective {
     
@@ -4711,12 +4750,6 @@ pub mod hpo_objective {
     }
     
     
-}
-impl HpoObjective {
-    /// Creates a new builder-style object to manufacture [`HpoObjective`](crate::model::HpoObjective).
-    pub fn builder() -> crate::model::hpo_objective::Builder {
-        crate::model::hpo_objective::Builder::default()
-    }
 }
 
 /// <p>An object that provides information about a solution. A solution is a trained model that can be deployed as a campaign.</p>
@@ -4827,6 +4860,13 @@ impl Solution {
         self.latest_solution_version.as_ref()
     }
 }
+impl Solution {
+    /// Creates a new builder-style object to manufacture [`Solution`](crate::model::Solution).
+    pub fn builder() -> crate::model::solution::Builder {
+        crate::model::solution::Builder::default()
+    }
+}
+
 /// See [`Solution`](crate::model::Solution).
 pub mod solution {
     
@@ -5013,12 +5053,6 @@ pub mod solution {
     
     
 }
-impl Solution {
-    /// Creates a new builder-style object to manufacture [`Solution`](crate::model::Solution).
-    pub fn builder() -> crate::model::solution::Builder {
-        crate::model::solution::Builder::default()
-    }
-}
 
 /// <p>When the solution performs AutoML (<code>performAutoML</code> is true in <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>), specifies the recipe that best optimized the specified metric.</p>
 #[non_exhaustive]
@@ -5034,6 +5068,13 @@ impl AutoMlResult {
         self.best_recipe_arn.as_deref()
     }
 }
+impl AutoMlResult {
+    /// Creates a new builder-style object to manufacture [`AutoMlResult`](crate::model::AutoMlResult).
+    pub fn builder() -> crate::model::auto_ml_result::Builder {
+        crate::model::auto_ml_result::Builder::default()
+    }
+}
+
 /// See [`AutoMlResult`](crate::model::AutoMlResult).
 pub mod auto_ml_result {
     
@@ -5063,12 +5104,6 @@ pub mod auto_ml_result {
     }
     
     
-}
-impl AutoMlResult {
-    /// Creates a new builder-style object to manufacture [`AutoMlResult`](crate::model::AutoMlResult).
-    pub fn builder() -> crate::model::auto_ml_result::Builder {
-        crate::model::auto_ml_result::Builder::default()
-    }
 }
 
 /// <p>Describes the schema for a dataset. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
@@ -5120,6 +5155,13 @@ impl DatasetSchema {
         self.domain.as_ref()
     }
 }
+impl DatasetSchema {
+    /// Creates a new builder-style object to manufacture [`DatasetSchema`](crate::model::DatasetSchema).
+    pub fn builder() -> crate::model::dataset_schema::Builder {
+        crate::model::dataset_schema::Builder::default()
+    }
+}
+
 /// See [`DatasetSchema`](crate::model::DatasetSchema).
 pub mod dataset_schema {
     
@@ -5209,12 +5251,6 @@ pub mod dataset_schema {
     }
     
     
-}
-impl DatasetSchema {
-    /// Creates a new builder-style object to manufacture [`DatasetSchema`](crate::model::DatasetSchema).
-    pub fn builder() -> crate::model::dataset_schema::Builder {
-        crate::model::dataset_schema::Builder::default()
-    }
 }
 
 /// <p>Describes a recommendation generator for a Domain dataset group. You create a recommender in a Domain dataset group for a specific domain use case (domain recipe), and specify the recommender in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
@@ -5313,6 +5349,13 @@ impl Recommender {
         self.model_metrics.as_ref()
     }
 }
+impl Recommender {
+    /// Creates a new builder-style object to manufacture [`Recommender`](crate::model::Recommender).
+    pub fn builder() -> crate::model::recommender::Builder {
+        crate::model::recommender::Builder::default()
+    }
+}
+
 /// See [`Recommender`](crate::model::Recommender).
 pub mod recommender {
     
@@ -5481,12 +5524,6 @@ pub mod recommender {
     
     
 }
-impl Recommender {
-    /// Creates a new builder-style object to manufacture [`Recommender`](crate::model::Recommender).
-    pub fn builder() -> crate::model::recommender::Builder {
-        crate::model::recommender::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a recommender update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> API.</p>
 #[non_exhaustive]
@@ -5542,6 +5579,13 @@ impl RecommenderUpdateSummary {
         self.failure_reason.as_deref()
     }
 }
+impl RecommenderUpdateSummary {
+    /// Creates a new builder-style object to manufacture [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
+    pub fn builder() -> crate::model::recommender_update_summary::Builder {
+        crate::model::recommender_update_summary::Builder::default()
+    }
+}
+
 /// See [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
 pub mod recommender_update_summary {
     
@@ -5632,12 +5676,6 @@ pub mod recommender_update_summary {
     
     
 }
-impl RecommenderUpdateSummary {
-    /// Creates a new builder-style object to manufacture [`RecommenderUpdateSummary`](crate::model::RecommenderUpdateSummary).
-    pub fn builder() -> crate::model::recommender_update_summary::Builder {
-        crate::model::recommender_update_summary::Builder::default()
-    }
-}
 
 /// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
 #[non_exhaustive]
@@ -5719,6 +5757,13 @@ impl Recipe {
         self.last_updated_date_time.as_ref()
     }
 }
+impl Recipe {
+    /// Creates a new builder-style object to manufacture [`Recipe`](crate::model::Recipe).
+    pub fn builder() -> crate::model::recipe::Builder {
+        crate::model::recipe::Builder::default()
+    }
+}
+
 /// See [`Recipe`](crate::model::Recipe).
 pub mod recipe {
     
@@ -5855,12 +5900,6 @@ pub mod recipe {
     
     
 }
-impl Recipe {
-    /// Creates a new builder-style object to manufacture [`Recipe`](crate::model::Recipe).
-    pub fn builder() -> crate::model::recipe::Builder {
-        crate::model::recipe::Builder::default()
-    }
-}
 
 /// <p>Contains information on a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you import the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
@@ -5925,6 +5964,13 @@ impl MetricAttribution {
         self.failure_reason.as_deref()
     }
 }
+impl MetricAttribution {
+    /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
+    pub fn builder() -> crate::model::metric_attribution::Builder {
+        crate::model::metric_attribution::Builder::default()
+    }
+}
+
 /// See [`MetricAttribution`](crate::model::MetricAttribution).
 pub mod metric_attribution {
     
@@ -6039,12 +6085,6 @@ pub mod metric_attribution {
     
     
 }
-impl MetricAttribution {
-    /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
-    pub fn builder() -> crate::model::metric_attribution::Builder {
-        crate::model::metric_attribution::Builder::default()
-    }
-}
 
 /// <p>Contains information on a recommendation filter, including its ARN, status, and filter expression.</p>
 #[non_exhaustive]
@@ -6123,6 +6163,13 @@ impl  std::fmt::Debug for Filter  {
         formatter.finish()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -6251,12 +6298,6 @@ pub mod filter {
     
     
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>Provides feature transformation information. Feature transformation is the process of modifying raw input data into a form more suitable for model training.</p>
 #[non_exhaustive]
@@ -6315,6 +6356,13 @@ impl FeatureTransformation {
         self.status.as_deref()
     }
 }
+impl FeatureTransformation {
+    /// Creates a new builder-style object to manufacture [`FeatureTransformation`](crate::model::FeatureTransformation).
+    pub fn builder() -> crate::model::feature_transformation::Builder {
+        crate::model::feature_transformation::Builder::default()
+    }
+}
+
 /// See [`FeatureTransformation`](crate::model::FeatureTransformation).
 pub mod feature_transformation {
     
@@ -6419,12 +6467,6 @@ pub mod feature_transformation {
     
     
 }
-impl FeatureTransformation {
-    /// Creates a new builder-style object to manufacture [`FeatureTransformation`](crate::model::FeatureTransformation).
-    pub fn builder() -> crate::model::feature_transformation::Builder {
-        crate::model::feature_transformation::Builder::default()
-    }
-}
 
 /// <p>Provides information about an event tracker.</p>
 #[non_exhaustive]
@@ -6499,6 +6541,13 @@ impl EventTracker {
         self.last_updated_date_time.as_ref()
     }
 }
+impl EventTracker {
+    /// Creates a new builder-style object to manufacture [`EventTracker`](crate::model::EventTracker).
+    pub fn builder() -> crate::model::event_tracker::Builder {
+        crate::model::event_tracker::Builder::default()
+    }
+}
+
 /// See [`EventTracker`](crate::model::EventTracker).
 pub mod event_tracker {
     
@@ -6623,12 +6672,6 @@ pub mod event_tracker {
     
     
 }
-impl EventTracker {
-    /// Creates a new builder-style object to manufacture [`EventTracker`](crate::model::EventTracker).
-    pub fn builder() -> crate::model::event_tracker::Builder {
-        crate::model::event_tracker::Builder::default()
-    }
-}
 
 /// <p>Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.</p> 
 /// <p>A dataset import job can be in one of the following states:</p> 
@@ -6726,6 +6769,13 @@ impl DatasetImportJob {
         self.publish_attribution_metrics_to_s3
     }
 }
+impl DatasetImportJob {
+    /// Creates a new builder-style object to manufacture [`DatasetImportJob`](crate::model::DatasetImportJob).
+    pub fn builder() -> crate::model::dataset_import_job::Builder {
+        crate::model::dataset_import_job::Builder::default()
+    }
+}
+
 /// See [`DatasetImportJob`](crate::model::DatasetImportJob).
 pub mod dataset_import_job {
     
@@ -6884,12 +6934,6 @@ pub mod dataset_import_job {
     
     
 }
-impl DatasetImportJob {
-    /// Creates a new builder-style object to manufacture [`DatasetImportJob`](crate::model::DatasetImportJob).
-    pub fn builder() -> crate::model::dataset_import_job::Builder {
-        crate::model::dataset_import_job::Builder::default()
-    }
-}
 
 /// <p>Describes the data source that contains the data to upload to a dataset.</p>
 #[non_exhaustive]
@@ -6907,6 +6951,13 @@ impl DataSource {
         self.data_location.as_deref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
     
@@ -6938,12 +6989,6 @@ pub mod data_source {
     }
     
     
-}
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
-    }
 }
 
 /// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p> 
@@ -7027,6 +7072,13 @@ impl DatasetGroup {
         self.domain.as_ref()
     }
 }
+impl DatasetGroup {
+    /// Creates a new builder-style object to manufacture [`DatasetGroup`](crate::model::DatasetGroup).
+    pub fn builder() -> crate::model::dataset_group::Builder {
+        crate::model::dataset_group::Builder::default()
+    }
+}
+
 /// See [`DatasetGroup`](crate::model::DatasetGroup).
 pub mod dataset_group {
     
@@ -7163,12 +7215,6 @@ pub mod dataset_group {
     
     
 }
-impl DatasetGroup {
-    /// Creates a new builder-style object to manufacture [`DatasetGroup`](crate::model::DatasetGroup).
-    pub fn builder() -> crate::model::dataset_group::Builder {
-        crate::model::dataset_group::Builder::default()
-    }
-}
 
 /// <p>Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.</p> 
 /// <p>A dataset export job can be in one of the following states:</p> 
@@ -7261,6 +7307,13 @@ impl DatasetExportJob {
         self.failure_reason.as_deref()
     }
 }
+impl DatasetExportJob {
+    /// Creates a new builder-style object to manufacture [`DatasetExportJob`](crate::model::DatasetExportJob).
+    pub fn builder() -> crate::model::dataset_export_job::Builder {
+        crate::model::dataset_export_job::Builder::default()
+    }
+}
+
 /// See [`DatasetExportJob`](crate::model::DatasetExportJob).
 pub mod dataset_export_job {
     
@@ -7409,12 +7462,6 @@ pub mod dataset_export_job {
     
     
 }
-impl DatasetExportJob {
-    /// Creates a new builder-style object to manufacture [`DatasetExportJob`](crate::model::DatasetExportJob).
-    pub fn builder() -> crate::model::dataset_export_job::Builder {
-        crate::model::dataset_export_job::Builder::default()
-    }
-}
 
 /// <p>The output configuration parameters of a dataset export job.</p>
 #[non_exhaustive]
@@ -7430,6 +7477,13 @@ impl DatasetExportJobOutput {
         self.s3_data_destination.as_ref()
     }
 }
+impl DatasetExportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
+    pub fn builder() -> crate::model::dataset_export_job_output::Builder {
+        crate::model::dataset_export_job_output::Builder::default()
+    }
+}
+
 /// See [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
 pub mod dataset_export_job_output {
     
@@ -7459,12 +7513,6 @@ pub mod dataset_export_job_output {
     }
     
     
-}
-impl DatasetExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DatasetExportJobOutput`](crate::model::DatasetExportJobOutput).
-    pub fn builder() -> crate::model::dataset_export_job_output::Builder {
-        crate::model::dataset_export_job_output::Builder::default()
-    }
 }
 
 /// When writing a match expression against `IngestionMode`, it is important to ensure
@@ -7637,6 +7685,13 @@ impl Dataset {
         self.last_updated_date_time.as_ref()
     }
 }
+impl Dataset {
+    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
+    pub fn builder() -> crate::model::dataset::Builder {
+        crate::model::dataset::Builder::default()
+    }
+}
+
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
     
@@ -7771,12 +7826,6 @@ pub mod dataset {
     
     
 }
-impl Dataset {
-    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
-    pub fn builder() -> crate::model::dataset::Builder {
-        crate::model::dataset::Builder::default()
-    }
-}
 
 /// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[non_exhaustive]
@@ -7865,6 +7914,13 @@ impl Campaign {
         self.latest_campaign_update.as_ref()
     }
 }
+impl Campaign {
+    /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign).
+    pub fn builder() -> crate::model::campaign::Builder {
+        crate::model::campaign::Builder::default()
+    }
+}
+
 /// See [`Campaign`](crate::model::Campaign).
 pub mod campaign {
     
@@ -8013,12 +8069,6 @@ pub mod campaign {
     
     
 }
-impl Campaign {
-    /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign).
-    pub fn builder() -> crate::model::campaign::Builder {
-        crate::model::campaign::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
 #[non_exhaustive]
@@ -8086,6 +8136,13 @@ impl CampaignUpdateSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl CampaignUpdateSummary {
+    /// Creates a new builder-style object to manufacture [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
+    pub fn builder() -> crate::model::campaign_update_summary::Builder {
+        crate::model::campaign_update_summary::Builder::default()
+    }
+}
+
 /// See [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
 pub mod campaign_update_summary {
     
@@ -8198,12 +8255,6 @@ pub mod campaign_update_summary {
     
     
 }
-impl CampaignUpdateSummary {
-    /// Creates a new builder-style object to manufacture [`CampaignUpdateSummary`](crate::model::CampaignUpdateSummary).
-    pub fn builder() -> crate::model::campaign_update_summary::Builder {
-        crate::model::campaign_update_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information on a batch segment job.</p>
 #[non_exhaustive]
@@ -8308,6 +8359,13 @@ impl BatchSegmentJob {
         self.last_updated_date_time.as_ref()
     }
 }
+impl BatchSegmentJob {
+    /// Creates a new builder-style object to manufacture [`BatchSegmentJob`](crate::model::BatchSegmentJob).
+    pub fn builder() -> crate::model::batch_segment_job::Builder {
+        crate::model::batch_segment_job::Builder::default()
+    }
+}
+
 /// See [`BatchSegmentJob`](crate::model::BatchSegmentJob).
 pub mod batch_segment_job {
     
@@ -8482,12 +8540,6 @@ pub mod batch_segment_job {
     
     
 }
-impl BatchSegmentJob {
-    /// Creates a new builder-style object to manufacture [`BatchSegmentJob`](crate::model::BatchSegmentJob).
-    pub fn builder() -> crate::model::batch_segment_job::Builder {
-        crate::model::batch_segment_job::Builder::default()
-    }
-}
 
 /// <p>The output configuration parameters of a batch segment job.</p>
 #[non_exhaustive]
@@ -8503,6 +8555,13 @@ impl BatchSegmentJobOutput {
         self.s3_data_destination.as_ref()
     }
 }
+impl BatchSegmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
+    pub fn builder() -> crate::model::batch_segment_job_output::Builder {
+        crate::model::batch_segment_job_output::Builder::default()
+    }
+}
+
 /// See [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
 pub mod batch_segment_job_output {
     
@@ -8533,12 +8592,6 @@ pub mod batch_segment_job_output {
     
     
 }
-impl BatchSegmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`BatchSegmentJobOutput`](crate::model::BatchSegmentJobOutput).
-    pub fn builder() -> crate::model::batch_segment_job_output::Builder {
-        crate::model::batch_segment_job_output::Builder::default()
-    }
-}
 
 /// <p>The input configuration of a batch segment job.</p>
 #[non_exhaustive]
@@ -8554,6 +8607,13 @@ impl BatchSegmentJobInput {
         self.s3_data_source.as_ref()
     }
 }
+impl BatchSegmentJobInput {
+    /// Creates a new builder-style object to manufacture [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
+    pub fn builder() -> crate::model::batch_segment_job_input::Builder {
+        crate::model::batch_segment_job_input::Builder::default()
+    }
+}
+
 /// See [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
 pub mod batch_segment_job_input {
     
@@ -8583,12 +8643,6 @@ pub mod batch_segment_job_input {
     }
     
     
-}
-impl BatchSegmentJobInput {
-    /// Creates a new builder-style object to manufacture [`BatchSegmentJobInput`](crate::model::BatchSegmentJobInput).
-    pub fn builder() -> crate::model::batch_segment_job_input::Builder {
-        crate::model::batch_segment_job_input::Builder::default()
-    }
 }
 
 /// <p>Contains information on a batch inference job.</p>
@@ -8701,6 +8755,13 @@ impl BatchInferenceJob {
         self.last_updated_date_time.as_ref()
     }
 }
+impl BatchInferenceJob {
+    /// Creates a new builder-style object to manufacture [`BatchInferenceJob`](crate::model::BatchInferenceJob).
+    pub fn builder() -> crate::model::batch_inference_job::Builder {
+        crate::model::batch_inference_job::Builder::default()
+    }
+}
+
 /// See [`BatchInferenceJob`](crate::model::BatchInferenceJob).
 pub mod batch_inference_job {
     
@@ -8887,12 +8948,6 @@ pub mod batch_inference_job {
     
     
 }
-impl BatchInferenceJob {
-    /// Creates a new builder-style object to manufacture [`BatchInferenceJob`](crate::model::BatchInferenceJob).
-    pub fn builder() -> crate::model::batch_inference_job::Builder {
-        crate::model::batch_inference_job::Builder::default()
-    }
-}
 
 /// <p>The configuration details of a batch inference job.</p>
 #[non_exhaustive]
@@ -8908,6 +8963,13 @@ impl BatchInferenceJobConfig {
         self.item_exploration_config.as_ref()
     }
 }
+impl BatchInferenceJobConfig {
+    /// Creates a new builder-style object to manufacture [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
+    pub fn builder() -> crate::model::batch_inference_job_config::Builder {
+        crate::model::batch_inference_job_config::Builder::default()
+    }
+}
+
 /// See [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
 pub mod batch_inference_job_config {
     
@@ -8944,12 +9006,6 @@ pub mod batch_inference_job_config {
     
     
 }
-impl BatchInferenceJobConfig {
-    /// Creates a new builder-style object to manufacture [`BatchInferenceJobConfig`](crate::model::BatchInferenceJobConfig).
-    pub fn builder() -> crate::model::batch_inference_job_config::Builder {
-        crate::model::batch_inference_job_config::Builder::default()
-    }
-}
 
 /// <p>The output configuration parameters of a batch inference job.</p>
 #[non_exhaustive]
@@ -8965,6 +9021,13 @@ impl BatchInferenceJobOutput {
         self.s3_data_destination.as_ref()
     }
 }
+impl BatchInferenceJobOutput {
+    /// Creates a new builder-style object to manufacture [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
+    pub fn builder() -> crate::model::batch_inference_job_output::Builder {
+        crate::model::batch_inference_job_output::Builder::default()
+    }
+}
+
 /// See [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
 pub mod batch_inference_job_output {
     
@@ -8995,12 +9058,6 @@ pub mod batch_inference_job_output {
     
     
 }
-impl BatchInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`BatchInferenceJobOutput`](crate::model::BatchInferenceJobOutput).
-    pub fn builder() -> crate::model::batch_inference_job_output::Builder {
-        crate::model::batch_inference_job_output::Builder::default()
-    }
-}
 
 /// <p>The input configuration of a batch inference job.</p>
 #[non_exhaustive]
@@ -9016,6 +9073,13 @@ impl BatchInferenceJobInput {
         self.s3_data_source.as_ref()
     }
 }
+impl BatchInferenceJobInput {
+    /// Creates a new builder-style object to manufacture [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
+    pub fn builder() -> crate::model::batch_inference_job_input::Builder {
+        crate::model::batch_inference_job_input::Builder::default()
+    }
+}
+
 /// See [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
 pub mod batch_inference_job_input {
     
@@ -9045,12 +9109,6 @@ pub mod batch_inference_job_input {
     }
     
     
-}
-impl BatchInferenceJobInput {
-    /// Creates a new builder-style object to manufacture [`BatchInferenceJobInput`](crate::model::BatchInferenceJobInput).
-    pub fn builder() -> crate::model::batch_inference_job_input::Builder {
-        crate::model::batch_inference_job_input::Builder::default()
-    }
 }
 
 /// <p>Describes a custom algorithm.</p>
@@ -9130,6 +9188,13 @@ impl Algorithm {
         self.last_updated_date_time.as_ref()
     }
 }
+impl Algorithm {
+    /// Creates a new builder-style object to manufacture [`Algorithm`](crate::model::Algorithm).
+    pub fn builder() -> crate::model::algorithm::Builder {
+        crate::model::algorithm::Builder::default()
+    }
+}
+
 /// See [`Algorithm`](crate::model::Algorithm).
 pub mod algorithm {
     
@@ -9280,12 +9345,6 @@ pub mod algorithm {
     
     
 }
-impl Algorithm {
-    /// Creates a new builder-style object to manufacture [`Algorithm`](crate::model::Algorithm).
-    pub fn builder() -> crate::model::algorithm::Builder {
-        crate::model::algorithm::Builder::default()
-    }
-}
 
 /// <p>Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
@@ -9315,6 +9374,13 @@ impl DefaultHyperParameterRanges {
         self.categorical_hyper_parameter_ranges.as_deref()
     }
 }
+impl DefaultHyperParameterRanges {
+    /// Creates a new builder-style object to manufacture [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
+    pub fn builder() -> crate::model::default_hyper_parameter_ranges::Builder {
+        crate::model::default_hyper_parameter_ranges::Builder::default()
+    }
+}
+
 /// See [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
 pub mod default_hyper_parameter_ranges {
     
@@ -9387,12 +9453,6 @@ pub mod default_hyper_parameter_ranges {
     
     
 }
-impl DefaultHyperParameterRanges {
-    /// Creates a new builder-style object to manufacture [`DefaultHyperParameterRanges`](crate::model::DefaultHyperParameterRanges).
-    pub fn builder() -> crate::model::default_hyper_parameter_ranges::Builder {
-        crate::model::default_hyper_parameter_ranges::Builder::default()
-    }
-}
 
 /// <p>Provides the name and default range of a categorical hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
@@ -9422,6 +9482,13 @@ impl DefaultCategoricalHyperParameterRange {
         self.is_tunable
     }
 }
+impl DefaultCategoricalHyperParameterRange {
+    /// Creates a new builder-style object to manufacture [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
+    pub fn builder() -> crate::model::default_categorical_hyper_parameter_range::Builder {
+        crate::model::default_categorical_hyper_parameter_range::Builder::default()
+    }
+}
+
 /// See [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
 pub mod default_categorical_hyper_parameter_range {
     
@@ -9483,12 +9550,6 @@ pub mod default_categorical_hyper_parameter_range {
     
     
 }
-impl DefaultCategoricalHyperParameterRange {
-    /// Creates a new builder-style object to manufacture [`DefaultCategoricalHyperParameterRange`](crate::model::DefaultCategoricalHyperParameterRange).
-    pub fn builder() -> crate::model::default_categorical_hyper_parameter_range::Builder {
-        crate::model::default_categorical_hyper_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
@@ -9525,6 +9586,13 @@ impl DefaultContinuousHyperParameterRange {
         self.is_tunable
     }
 }
+impl DefaultContinuousHyperParameterRange {
+    /// Creates a new builder-style object to manufacture [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
+    pub fn builder() -> crate::model::default_continuous_hyper_parameter_range::Builder {
+        crate::model::default_continuous_hyper_parameter_range::Builder::default()
+    }
+}
+
 /// See [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
 pub mod default_continuous_hyper_parameter_range {
     
@@ -9594,12 +9662,6 @@ pub mod default_continuous_hyper_parameter_range {
     
     
 }
-impl DefaultContinuousHyperParameterRange {
-    /// Creates a new builder-style object to manufacture [`DefaultContinuousHyperParameterRange`](crate::model::DefaultContinuousHyperParameterRange).
-    pub fn builder() -> crate::model::default_continuous_hyper_parameter_range::Builder {
-        crate::model::default_continuous_hyper_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Provides the name and default range of a integer-valued hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
@@ -9636,6 +9698,13 @@ impl DefaultIntegerHyperParameterRange {
         self.is_tunable
     }
 }
+impl DefaultIntegerHyperParameterRange {
+    /// Creates a new builder-style object to manufacture [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
+    pub fn builder() -> crate::model::default_integer_hyper_parameter_range::Builder {
+        crate::model::default_integer_hyper_parameter_range::Builder::default()
+    }
+}
+
 /// See [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
 pub mod default_integer_hyper_parameter_range {
     
@@ -9705,12 +9774,6 @@ pub mod default_integer_hyper_parameter_range {
     
     
 }
-impl DefaultIntegerHyperParameterRange {
-    /// Creates a new builder-style object to manufacture [`DefaultIntegerHyperParameterRange`](crate::model::DefaultIntegerHyperParameterRange).
-    pub fn builder() -> crate::model::default_integer_hyper_parameter_range::Builder {
-        crate::model::default_integer_hyper_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Describes an algorithm image.</p>
 #[non_exhaustive]
@@ -9733,6 +9796,13 @@ impl AlgorithmImage {
         self.docker_uri.as_deref()
     }
 }
+impl AlgorithmImage {
+    /// Creates a new builder-style object to manufacture [`AlgorithmImage`](crate::model::AlgorithmImage).
+    pub fn builder() -> crate::model::algorithm_image::Builder {
+        crate::model::algorithm_image::Builder::default()
+    }
+}
+
 /// See [`AlgorithmImage`](crate::model::AlgorithmImage).
 pub mod algorithm_image {
     
@@ -9774,11 +9844,5 @@ pub mod algorithm_image {
     }
     
     
-}
-impl AlgorithmImage {
-    /// Creates a new builder-style object to manufacture [`AlgorithmImage`](crate::model::AlgorithmImage).
-    pub fn builder() -> crate::model::algorithm_image::Builder {
-        crate::model::algorithm_image::Builder::default()
-    }
 }
 

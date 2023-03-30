@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for LogoutOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl LogoutOutput {
+    /// Creates a new builder-style object to manufacture [`LogoutOutput`](crate::output::LogoutOutput).
+    pub fn builder() -> crate::output::logout_output::Builder {
+        crate::output::logout_output::Builder::default()
+    }
+}
+
 /// See [`LogoutOutput`](crate::output::LogoutOutput).
 pub mod logout_output {
     
@@ -39,12 +46,6 @@ pub mod logout_output {
     
     
 }
-impl LogoutOutput {
-    /// Creates a new builder-style object to manufacture [`LogoutOutput`](crate::output::LogoutOutput).
-    pub fn builder() -> crate::output::logout_output::Builder {
-        crate::output::logout_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -73,6 +74,13 @@ impl aws_http::request_id::RequestId for ListAccountsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAccountsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccountsOutput`](crate::output::ListAccountsOutput).
+    pub fn builder() -> crate::output::list_accounts_output::Builder {
+        crate::output::list_accounts_output::Builder::default()
+    }
+}
+
 /// See [`ListAccountsOutput`](crate::output::ListAccountsOutput).
 pub mod list_accounts_output {
     
@@ -132,12 +140,6 @@ pub mod list_accounts_output {
     
     
 }
-impl ListAccountsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountsOutput`](crate::output::ListAccountsOutput).
-    pub fn builder() -> crate::output::list_accounts_output::Builder {
-        crate::output::list_accounts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -166,6 +168,13 @@ impl aws_http::request_id::RequestId for ListAccountRolesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAccountRolesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
+    pub fn builder() -> crate::output::list_account_roles_output::Builder {
+        crate::output::list_account_roles_output::Builder::default()
+    }
+}
+
 /// See [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
 pub mod list_account_roles_output {
     
@@ -225,12 +234,6 @@ pub mod list_account_roles_output {
     
     
 }
-impl ListAccountRolesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput).
-    pub fn builder() -> crate::output::list_account_roles_output::Builder {
-        crate::output::list_account_roles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -252,6 +255,13 @@ impl aws_http::request_id::RequestId for GetRoleCredentialsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRoleCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
+    pub fn builder() -> crate::output::get_role_credentials_output::Builder {
+        crate::output::get_role_credentials_output::Builder::default()
+    }
+}
+
 /// See [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
 pub mod get_role_credentials_output {
     
@@ -292,11 +302,5 @@ pub mod get_role_credentials_output {
     }
     
     
-}
-impl GetRoleCredentialsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput).
-    pub fn builder() -> crate::output::get_role_credentials_output::Builder {
-        crate::output::get_role_credentials_output::Builder::default()
-    }
 }
 

@@ -101,6 +101,13 @@ impl TracingConfiguration {
         self.enabled
     }
 }
+impl TracingConfiguration {
+    /// Creates a new builder-style object to manufacture [`TracingConfiguration`](crate::model::TracingConfiguration).
+    pub fn builder() -> crate::model::tracing_configuration::Builder {
+        crate::model::tracing_configuration::Builder::default()
+    }
+}
+
 /// See [`TracingConfiguration`](crate::model::TracingConfiguration).
 pub mod tracing_configuration {
     
@@ -132,12 +139,6 @@ pub mod tracing_configuration {
     
     
 }
-impl TracingConfiguration {
-    /// Creates a new builder-style object to manufacture [`TracingConfiguration`](crate::model::TracingConfiguration).
-    pub fn builder() -> crate::model::tracing_configuration::Builder {
-        crate::model::tracing_configuration::Builder::default()
-    }
-}
 
 /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
 #[non_exhaustive]
@@ -167,6 +168,13 @@ impl LoggingConfiguration {
         self.destinations.as_deref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
     
@@ -228,12 +236,6 @@ pub mod logging_configuration {
     
     
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -249,6 +251,13 @@ impl LogDestination {
         self.cloud_watch_logs_log_group.as_ref()
     }
 }
+impl LogDestination {
+    /// Creates a new builder-style object to manufacture [`LogDestination`](crate::model::LogDestination).
+    pub fn builder() -> crate::model::log_destination::Builder {
+        crate::model::log_destination::Builder::default()
+    }
+}
+
 /// See [`LogDestination`](crate::model::LogDestination).
 pub mod log_destination {
     
@@ -279,12 +288,6 @@ pub mod log_destination {
     
     
 }
-impl LogDestination {
-    /// Creates a new builder-style object to manufacture [`LogDestination`](crate::model::LogDestination).
-    pub fn builder() -> crate::model::log_destination::Builder {
-        crate::model::log_destination::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -300,6 +303,13 @@ impl CloudWatchLogsLogGroup {
         self.log_group_arn.as_deref()
     }
 }
+impl CloudWatchLogsLogGroup {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
+    pub fn builder() -> crate::model::cloud_watch_logs_log_group::Builder {
+        crate::model::cloud_watch_logs_log_group::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
 pub mod cloud_watch_logs_log_group {
     
@@ -329,12 +339,6 @@ pub mod cloud_watch_logs_log_group {
     }
     
     
-}
-impl CloudWatchLogsLogGroup {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
-    pub fn builder() -> crate::model::cloud_watch_logs_log_group::Builder {
-        crate::model::cloud_watch_logs_log_group::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LogLevel`, it is important to ensure
@@ -452,6 +456,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -494,12 +505,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>An object that describes workflow billing details.</p>
 #[non_exhaustive]
@@ -522,6 +527,13 @@ impl BillingDetails {
         self.billed_duration_in_milliseconds
     }
 }
+impl BillingDetails {
+    /// Creates a new builder-style object to manufacture [`BillingDetails`](crate::model::BillingDetails).
+    pub fn builder() -> crate::model::billing_details::Builder {
+        crate::model::billing_details::Builder::default()
+    }
+}
+
 /// See [`BillingDetails`](crate::model::BillingDetails).
 pub mod billing_details {
     
@@ -566,12 +578,6 @@ pub mod billing_details {
     
     
 }
-impl BillingDetails {
-    /// Creates a new builder-style object to manufacture [`BillingDetails`](crate::model::BillingDetails).
-    pub fn builder() -> crate::model::billing_details::Builder {
-        crate::model::billing_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about execution input or output.</p>
 #[non_exhaustive]
@@ -587,6 +593,13 @@ impl CloudWatchEventsExecutionDataDetails {
         self.included
     }
 }
+impl CloudWatchEventsExecutionDataDetails {
+    /// Creates a new builder-style object to manufacture [`CloudWatchEventsExecutionDataDetails`](crate::model::CloudWatchEventsExecutionDataDetails).
+    pub fn builder() -> crate::model::cloud_watch_events_execution_data_details::Builder {
+        crate::model::cloud_watch_events_execution_data_details::Builder::default()
+    }
+}
+
 /// See [`CloudWatchEventsExecutionDataDetails`](crate::model::CloudWatchEventsExecutionDataDetails).
 pub mod cloud_watch_events_execution_data_details {
     
@@ -617,12 +630,6 @@ pub mod cloud_watch_events_execution_data_details {
     }
     
     
-}
-impl CloudWatchEventsExecutionDataDetails {
-    /// Creates a new builder-style object to manufacture [`CloudWatchEventsExecutionDataDetails`](crate::model::CloudWatchEventsExecutionDataDetails).
-    pub fn builder() -> crate::model::cloud_watch_events_execution_data_details::Builder {
-        crate::model::cloud_watch_events_execution_data_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SyncExecutionStatus`, it is important to ensure
@@ -765,6 +772,13 @@ impl StateMachineListItem {
         self.creation_date.as_ref()
     }
 }
+impl StateMachineListItem {
+    /// Creates a new builder-style object to manufacture [`StateMachineListItem`](crate::model::StateMachineListItem).
+    pub fn builder() -> crate::model::state_machine_list_item::Builder {
+        crate::model::state_machine_list_item::Builder::default()
+    }
+}
+
 /// See [`StateMachineListItem`](crate::model::StateMachineListItem).
 pub mod state_machine_list_item {
     
@@ -848,12 +862,6 @@ pub mod state_machine_list_item {
     }
     
     
-}
-impl StateMachineListItem {
-    /// Creates a new builder-style object to manufacture [`StateMachineListItem`](crate::model::StateMachineListItem).
-    pub fn builder() -> crate::model::state_machine_list_item::Builder {
-        crate::model::state_machine_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StateMachineType`, it is important to ensure
@@ -980,6 +988,13 @@ impl MapRunListItem {
         self.stop_date.as_ref()
     }
 }
+impl MapRunListItem {
+    /// Creates a new builder-style object to manufacture [`MapRunListItem`](crate::model::MapRunListItem).
+    pub fn builder() -> crate::model::map_run_list_item::Builder {
+        crate::model::map_run_list_item::Builder::default()
+    }
+}
+
 /// See [`MapRunListItem`](crate::model::MapRunListItem).
 pub mod map_run_list_item {
     
@@ -1057,12 +1072,6 @@ pub mod map_run_list_item {
     }
     
     
-}
-impl MapRunListItem {
-    /// Creates a new builder-style object to manufacture [`MapRunListItem`](crate::model::MapRunListItem).
-    pub fn builder() -> crate::model::map_run_list_item::Builder {
-        crate::model::map_run_list_item::Builder::default()
-    }
 }
 
 /// <p>Contains details about an execution.</p>
@@ -1146,6 +1155,13 @@ impl ExecutionListItem {
         self.item_count
     }
 }
+impl ExecutionListItem {
+    /// Creates a new builder-style object to manufacture [`ExecutionListItem`](crate::model::ExecutionListItem).
+    pub fn builder() -> crate::model::execution_list_item::Builder {
+        crate::model::execution_list_item::Builder::default()
+    }
+}
+
 /// See [`ExecutionListItem`](crate::model::ExecutionListItem).
 pub mod execution_list_item {
     
@@ -1277,12 +1293,6 @@ pub mod execution_list_item {
     }
     
     
-}
-impl ExecutionListItem {
-    /// Creates a new builder-style object to manufacture [`ExecutionListItem`](crate::model::ExecutionListItem).
-    pub fn builder() -> crate::model::execution_list_item::Builder {
-        crate::model::execution_list_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExecutionStatus`, it is important to ensure
@@ -1428,6 +1438,13 @@ impl ActivityListItem {
         self.creation_date.as_ref()
     }
 }
+impl ActivityListItem {
+    /// Creates a new builder-style object to manufacture [`ActivityListItem`](crate::model::ActivityListItem).
+    pub fn builder() -> crate::model::activity_list_item::Builder {
+        crate::model::activity_list_item::Builder::default()
+    }
+}
+
 /// See [`ActivityListItem`](crate::model::ActivityListItem).
 pub mod activity_list_item {
     
@@ -1499,12 +1516,6 @@ pub mod activity_list_item {
     }
     
     
-}
-impl ActivityListItem {
-    /// Creates a new builder-style object to manufacture [`ActivityListItem`](crate::model::ActivityListItem).
-    pub fn builder() -> crate::model::activity_list_item::Builder {
-        crate::model::activity_list_item::Builder::default()
-    }
 }
 
 /// <p>Contains details about the events of an execution.</p>
@@ -1780,6 +1791,13 @@ impl HistoryEvent {
         self.map_run_failed_event_details.as_ref()
     }
 }
+impl HistoryEvent {
+    /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::model::HistoryEvent).
+    pub fn builder() -> crate::model::history_event::Builder {
+        crate::model::history_event::Builder::default()
+    }
+}
+
 /// See [`HistoryEvent`](crate::model::HistoryEvent).
 pub mod history_event {
     
@@ -2256,12 +2274,6 @@ pub mod history_event {
     
     
 }
-impl HistoryEvent {
-    /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::model::HistoryEvent).
-    pub fn builder() -> crate::model::history_event::Builder {
-        crate::model::history_event::Builder::default()
-    }
-}
 
 /// <p>Contains details about a Map Run failure event that occurred during a state machine execution.</p>
 #[non_exhaustive]
@@ -2292,6 +2304,13 @@ impl  std::fmt::Debug for MapRunFailedEventDetails  {
         formatter.finish()
     }
 }
+impl MapRunFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`MapRunFailedEventDetails`](crate::model::MapRunFailedEventDetails).
+    pub fn builder() -> crate::model::map_run_failed_event_details::Builder {
+        crate::model::map_run_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`MapRunFailedEventDetails`](crate::model::MapRunFailedEventDetails).
 pub mod map_run_failed_event_details {
     
@@ -2342,12 +2361,6 @@ pub mod map_run_failed_event_details {
     
     
 }
-impl MapRunFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`MapRunFailedEventDetails`](crate::model::MapRunFailedEventDetails).
-    pub fn builder() -> crate::model::map_run_failed_event_details::Builder {
-        crate::model::map_run_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a Map Run that was started during a state machine execution.</p>
 #[non_exhaustive]
@@ -2363,6 +2376,13 @@ impl MapRunStartedEventDetails {
         self.map_run_arn.as_deref()
     }
 }
+impl MapRunStartedEventDetails {
+    /// Creates a new builder-style object to manufacture [`MapRunStartedEventDetails`](crate::model::MapRunStartedEventDetails).
+    pub fn builder() -> crate::model::map_run_started_event_details::Builder {
+        crate::model::map_run_started_event_details::Builder::default()
+    }
+}
+
 /// See [`MapRunStartedEventDetails`](crate::model::MapRunStartedEventDetails).
 pub mod map_run_started_event_details {
     
@@ -2392,12 +2412,6 @@ pub mod map_run_started_event_details {
     }
     
     
-}
-impl MapRunStartedEventDetails {
-    /// Creates a new builder-style object to manufacture [`MapRunStartedEventDetails`](crate::model::MapRunStartedEventDetails).
-    pub fn builder() -> crate::model::map_run_started_event_details::Builder {
-        crate::model::map_run_started_event_details::Builder::default()
-    }
 }
 
 /// <p>Contains details about an exit from a state during an execution.</p>
@@ -2455,6 +2469,13 @@ impl  std::fmt::Debug for StateExitedEventDetails  {
         formatter.finish()
     }
 }
+impl StateExitedEventDetails {
+    /// Creates a new builder-style object to manufacture [`StateExitedEventDetails`](crate::model::StateExitedEventDetails).
+    pub fn builder() -> crate::model::state_exited_event_details::Builder {
+        crate::model::state_exited_event_details::Builder::default()
+    }
+}
+
 /// See [`StateExitedEventDetails`](crate::model::StateExitedEventDetails).
 pub mod state_exited_event_details {
     
@@ -2536,12 +2557,6 @@ pub mod state_exited_event_details {
     
     
 }
-impl StateExitedEventDetails {
-    /// Creates a new builder-style object to manufacture [`StateExitedEventDetails`](crate::model::StateExitedEventDetails).
-    pub fn builder() -> crate::model::state_exited_event_details::Builder {
-        crate::model::state_exited_event_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about input or output in an execution history event.</p>
 #[non_exhaustive]
@@ -2557,6 +2572,13 @@ impl HistoryEventExecutionDataDetails {
         self.truncated
     }
 }
+impl HistoryEventExecutionDataDetails {
+    /// Creates a new builder-style object to manufacture [`HistoryEventExecutionDataDetails`](crate::model::HistoryEventExecutionDataDetails).
+    pub fn builder() -> crate::model::history_event_execution_data_details::Builder {
+        crate::model::history_event_execution_data_details::Builder::default()
+    }
+}
+
 /// See [`HistoryEventExecutionDataDetails`](crate::model::HistoryEventExecutionDataDetails).
 pub mod history_event_execution_data_details {
     
@@ -2587,12 +2609,6 @@ pub mod history_event_execution_data_details {
     }
     
     
-}
-impl HistoryEventExecutionDataDetails {
-    /// Creates a new builder-style object to manufacture [`HistoryEventExecutionDataDetails`](crate::model::HistoryEventExecutionDataDetails).
-    pub fn builder() -> crate::model::history_event_execution_data_details::Builder {
-        crate::model::history_event_execution_data_details::Builder::default()
-    }
 }
 
 /// <p>Contains details about a state entered during an execution.</p>
@@ -2632,6 +2648,13 @@ impl  std::fmt::Debug for StateEnteredEventDetails  {
         formatter.finish()
     }
 }
+impl StateEnteredEventDetails {
+    /// Creates a new builder-style object to manufacture [`StateEnteredEventDetails`](crate::model::StateEnteredEventDetails).
+    pub fn builder() -> crate::model::state_entered_event_details::Builder {
+        crate::model::state_entered_event_details::Builder::default()
+    }
+}
+
 /// See [`StateEnteredEventDetails`](crate::model::StateEnteredEventDetails).
 pub mod state_entered_event_details {
     
@@ -2695,12 +2718,6 @@ pub mod state_entered_event_details {
     
     
 }
-impl StateEnteredEventDetails {
-    /// Creates a new builder-style object to manufacture [`StateEnteredEventDetails`](crate::model::StateEnteredEventDetails).
-    pub fn builder() -> crate::model::state_entered_event_details::Builder {
-        crate::model::state_entered_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a Lambda function timeout that occurred during an execution.</p>
 #[non_exhaustive]
@@ -2731,6 +2748,13 @@ impl  std::fmt::Debug for LambdaFunctionTimedOutEventDetails  {
         formatter.finish()
     }
 }
+impl LambdaFunctionTimedOutEventDetails {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionTimedOutEventDetails`](crate::model::LambdaFunctionTimedOutEventDetails).
+    pub fn builder() -> crate::model::lambda_function_timed_out_event_details::Builder {
+        crate::model::lambda_function_timed_out_event_details::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionTimedOutEventDetails`](crate::model::LambdaFunctionTimedOutEventDetails).
 pub mod lambda_function_timed_out_event_details {
     
@@ -2781,12 +2805,6 @@ pub mod lambda_function_timed_out_event_details {
     
     
 }
-impl LambdaFunctionTimedOutEventDetails {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionTimedOutEventDetails`](crate::model::LambdaFunctionTimedOutEventDetails).
-    pub fn builder() -> crate::model::lambda_function_timed_out_event_details::Builder {
-        crate::model::lambda_function_timed_out_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a Lambda function that successfully terminated during an execution.</p>
 #[non_exhaustive]
@@ -2817,6 +2835,13 @@ impl  std::fmt::Debug for LambdaFunctionSucceededEventDetails  {
         formatter.finish()
     }
 }
+impl LambdaFunctionSucceededEventDetails {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionSucceededEventDetails`](crate::model::LambdaFunctionSucceededEventDetails).
+    pub fn builder() -> crate::model::lambda_function_succeeded_event_details::Builder {
+        crate::model::lambda_function_succeeded_event_details::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionSucceededEventDetails`](crate::model::LambdaFunctionSucceededEventDetails).
 pub mod lambda_function_succeeded_event_details {
     
@@ -2867,12 +2892,6 @@ pub mod lambda_function_succeeded_event_details {
     
     
 }
-impl LambdaFunctionSucceededEventDetails {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionSucceededEventDetails`](crate::model::LambdaFunctionSucceededEventDetails).
-    pub fn builder() -> crate::model::lambda_function_succeeded_event_details::Builder {
-        crate::model::lambda_function_succeeded_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a lambda function that failed to start during an execution.</p>
 #[non_exhaustive]
@@ -2903,6 +2922,13 @@ impl  std::fmt::Debug for LambdaFunctionStartFailedEventDetails  {
         formatter.finish()
     }
 }
+impl LambdaFunctionStartFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionStartFailedEventDetails`](crate::model::LambdaFunctionStartFailedEventDetails).
+    pub fn builder() -> crate::model::lambda_function_start_failed_event_details::Builder {
+        crate::model::lambda_function_start_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionStartFailedEventDetails`](crate::model::LambdaFunctionStartFailedEventDetails).
 pub mod lambda_function_start_failed_event_details {
     
@@ -2952,12 +2978,6 @@ pub mod lambda_function_start_failed_event_details {
     }
     
     
-}
-impl LambdaFunctionStartFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionStartFailedEventDetails`](crate::model::LambdaFunctionStartFailedEventDetails).
-    pub fn builder() -> crate::model::lambda_function_start_failed_event_details::Builder {
-        crate::model::lambda_function_start_failed_event_details::Builder::default()
-    }
 }
 
 /// <p>Contains details about a Lambda function scheduled during an execution.</p>
@@ -3013,6 +3033,13 @@ impl  std::fmt::Debug for LambdaFunctionScheduledEventDetails  {
         formatter.finish()
     }
 }
+impl LambdaFunctionScheduledEventDetails {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventDetails`](crate::model::LambdaFunctionScheduledEventDetails).
+    pub fn builder() -> crate::model::lambda_function_scheduled_event_details::Builder {
+        crate::model::lambda_function_scheduled_event_details::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionScheduledEventDetails`](crate::model::LambdaFunctionScheduledEventDetails).
 pub mod lambda_function_scheduled_event_details {
     
@@ -3102,12 +3129,6 @@ pub mod lambda_function_scheduled_event_details {
     
     
 }
-impl LambdaFunctionScheduledEventDetails {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventDetails`](crate::model::LambdaFunctionScheduledEventDetails).
-    pub fn builder() -> crate::model::lambda_function_scheduled_event_details::Builder {
-        crate::model::lambda_function_scheduled_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the credentials that Step Functions uses for a task.</p>
 #[non_exhaustive]
@@ -3123,6 +3144,13 @@ impl TaskCredentials {
         self.role_arn.as_deref()
     }
 }
+impl TaskCredentials {
+    /// Creates a new builder-style object to manufacture [`TaskCredentials`](crate::model::TaskCredentials).
+    pub fn builder() -> crate::model::task_credentials::Builder {
+        crate::model::task_credentials::Builder::default()
+    }
+}
+
 /// See [`TaskCredentials`](crate::model::TaskCredentials).
 pub mod task_credentials {
     
@@ -3152,12 +3180,6 @@ pub mod task_credentials {
     }
     
     
-}
-impl TaskCredentials {
-    /// Creates a new builder-style object to manufacture [`TaskCredentials`](crate::model::TaskCredentials).
-    pub fn builder() -> crate::model::task_credentials::Builder {
-        crate::model::task_credentials::Builder::default()
-    }
 }
 
 /// <p>Contains details about a failed Lambda function schedule event that occurred during an execution.</p>
@@ -3189,6 +3211,13 @@ impl  std::fmt::Debug for LambdaFunctionScheduleFailedEventDetails  {
         formatter.finish()
     }
 }
+impl LambdaFunctionScheduleFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduleFailedEventDetails`](crate::model::LambdaFunctionScheduleFailedEventDetails).
+    pub fn builder() -> crate::model::lambda_function_schedule_failed_event_details::Builder {
+        crate::model::lambda_function_schedule_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionScheduleFailedEventDetails`](crate::model::LambdaFunctionScheduleFailedEventDetails).
 pub mod lambda_function_schedule_failed_event_details {
     
@@ -3239,12 +3268,6 @@ pub mod lambda_function_schedule_failed_event_details {
     
     
 }
-impl LambdaFunctionScheduleFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduleFailedEventDetails`](crate::model::LambdaFunctionScheduleFailedEventDetails).
-    pub fn builder() -> crate::model::lambda_function_schedule_failed_event_details::Builder {
-        crate::model::lambda_function_schedule_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a Lambda function that failed during an execution.</p>
 #[non_exhaustive]
@@ -3275,6 +3298,13 @@ impl  std::fmt::Debug for LambdaFunctionFailedEventDetails  {
         formatter.finish()
     }
 }
+impl LambdaFunctionFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventDetails`](crate::model::LambdaFunctionFailedEventDetails).
+    pub fn builder() -> crate::model::lambda_function_failed_event_details::Builder {
+        crate::model::lambda_function_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionFailedEventDetails`](crate::model::LambdaFunctionFailedEventDetails).
 pub mod lambda_function_failed_event_details {
     
@@ -3325,12 +3355,6 @@ pub mod lambda_function_failed_event_details {
     
     
 }
-impl LambdaFunctionFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventDetails`](crate::model::LambdaFunctionFailedEventDetails).
-    pub fn builder() -> crate::model::lambda_function_failed_event_details::Builder {
-        crate::model::lambda_function_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an iteration of a Map state.</p>
 #[non_exhaustive]
@@ -3353,6 +3377,13 @@ impl MapIterationEventDetails {
         self.index
     }
 }
+impl MapIterationEventDetails {
+    /// Creates a new builder-style object to manufacture [`MapIterationEventDetails`](crate::model::MapIterationEventDetails).
+    pub fn builder() -> crate::model::map_iteration_event_details::Builder {
+        crate::model::map_iteration_event_details::Builder::default()
+    }
+}
+
 /// See [`MapIterationEventDetails`](crate::model::MapIterationEventDetails).
 pub mod map_iteration_event_details {
     
@@ -3396,12 +3427,6 @@ pub mod map_iteration_event_details {
     
     
 }
-impl MapIterationEventDetails {
-    /// Creates a new builder-style object to manufacture [`MapIterationEventDetails`](crate::model::MapIterationEventDetails).
-    pub fn builder() -> crate::model::map_iteration_event_details::Builder {
-        crate::model::map_iteration_event_details::Builder::default()
-    }
-}
 
 /// <p>Details about a Map state that was started.</p>
 #[non_exhaustive]
@@ -3417,6 +3442,13 @@ impl MapStateStartedEventDetails {
         self.length
     }
 }
+impl MapStateStartedEventDetails {
+    /// Creates a new builder-style object to manufacture [`MapStateStartedEventDetails`](crate::model::MapStateStartedEventDetails).
+    pub fn builder() -> crate::model::map_state_started_event_details::Builder {
+        crate::model::map_state_started_event_details::Builder::default()
+    }
+}
+
 /// See [`MapStateStartedEventDetails`](crate::model::MapStateStartedEventDetails).
 pub mod map_state_started_event_details {
     
@@ -3448,12 +3480,6 @@ pub mod map_state_started_event_details {
     
     
 }
-impl MapStateStartedEventDetails {
-    /// Creates a new builder-style object to manufacture [`MapStateStartedEventDetails`](crate::model::MapStateStartedEventDetails).
-    pub fn builder() -> crate::model::map_state_started_event_details::Builder {
-        crate::model::map_state_started_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the execution timeout that occurred during the execution.</p>
 #[non_exhaustive]
@@ -3484,6 +3510,13 @@ impl  std::fmt::Debug for ExecutionTimedOutEventDetails  {
         formatter.finish()
     }
 }
+impl ExecutionTimedOutEventDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionTimedOutEventDetails`](crate::model::ExecutionTimedOutEventDetails).
+    pub fn builder() -> crate::model::execution_timed_out_event_details::Builder {
+        crate::model::execution_timed_out_event_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionTimedOutEventDetails`](crate::model::ExecutionTimedOutEventDetails).
 pub mod execution_timed_out_event_details {
     
@@ -3534,12 +3567,6 @@ pub mod execution_timed_out_event_details {
     
     
 }
-impl ExecutionTimedOutEventDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionTimedOutEventDetails`](crate::model::ExecutionTimedOutEventDetails).
-    pub fn builder() -> crate::model::execution_timed_out_event_details::Builder {
-        crate::model::execution_timed_out_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an abort of an execution.</p>
 #[non_exhaustive]
@@ -3570,6 +3597,13 @@ impl  std::fmt::Debug for ExecutionAbortedEventDetails  {
         formatter.finish()
     }
 }
+impl ExecutionAbortedEventDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionAbortedEventDetails`](crate::model::ExecutionAbortedEventDetails).
+    pub fn builder() -> crate::model::execution_aborted_event_details::Builder {
+        crate::model::execution_aborted_event_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionAbortedEventDetails`](crate::model::ExecutionAbortedEventDetails).
 pub mod execution_aborted_event_details {
     
@@ -3620,12 +3654,6 @@ pub mod execution_aborted_event_details {
     
     
 }
-impl ExecutionAbortedEventDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionAbortedEventDetails`](crate::model::ExecutionAbortedEventDetails).
-    pub fn builder() -> crate::model::execution_aborted_event_details::Builder {
-        crate::model::execution_aborted_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the successful termination of the execution.</p>
 #[non_exhaustive]
@@ -3656,6 +3684,13 @@ impl  std::fmt::Debug for ExecutionSucceededEventDetails  {
         formatter.finish()
     }
 }
+impl ExecutionSucceededEventDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionSucceededEventDetails`](crate::model::ExecutionSucceededEventDetails).
+    pub fn builder() -> crate::model::execution_succeeded_event_details::Builder {
+        crate::model::execution_succeeded_event_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionSucceededEventDetails`](crate::model::ExecutionSucceededEventDetails).
 pub mod execution_succeeded_event_details {
     
@@ -3706,12 +3741,6 @@ pub mod execution_succeeded_event_details {
     
     
 }
-impl ExecutionSucceededEventDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionSucceededEventDetails`](crate::model::ExecutionSucceededEventDetails).
-    pub fn builder() -> crate::model::execution_succeeded_event_details::Builder {
-        crate::model::execution_succeeded_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the start of the execution.</p>
 #[non_exhaustive]
@@ -3750,6 +3779,13 @@ impl  std::fmt::Debug for ExecutionStartedEventDetails  {
         formatter.finish()
     }
 }
+impl ExecutionStartedEventDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionStartedEventDetails`](crate::model::ExecutionStartedEventDetails).
+    pub fn builder() -> crate::model::execution_started_event_details::Builder {
+        crate::model::execution_started_event_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionStartedEventDetails`](crate::model::ExecutionStartedEventDetails).
 pub mod execution_started_event_details {
     
@@ -3813,12 +3849,6 @@ pub mod execution_started_event_details {
     
     
 }
-impl ExecutionStartedEventDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionStartedEventDetails`](crate::model::ExecutionStartedEventDetails).
-    pub fn builder() -> crate::model::execution_started_event_details::Builder {
-        crate::model::execution_started_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an execution failure event.</p>
 #[non_exhaustive]
@@ -3849,6 +3879,13 @@ impl  std::fmt::Debug for ExecutionFailedEventDetails  {
         formatter.finish()
     }
 }
+impl ExecutionFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionFailedEventDetails`](crate::model::ExecutionFailedEventDetails).
+    pub fn builder() -> crate::model::execution_failed_event_details::Builder {
+        crate::model::execution_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionFailedEventDetails`](crate::model::ExecutionFailedEventDetails).
 pub mod execution_failed_event_details {
     
@@ -3899,12 +3936,6 @@ pub mod execution_failed_event_details {
     
     
 }
-impl ExecutionFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionFailedEventDetails`](crate::model::ExecutionFailedEventDetails).
-    pub fn builder() -> crate::model::execution_failed_event_details::Builder {
-        crate::model::execution_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a resource timeout that occurred during an execution.</p>
 #[non_exhaustive]
@@ -3951,6 +3982,13 @@ impl  std::fmt::Debug for TaskTimedOutEventDetails  {
         formatter.finish()
     }
 }
+impl TaskTimedOutEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskTimedOutEventDetails`](crate::model::TaskTimedOutEventDetails).
+    pub fn builder() -> crate::model::task_timed_out_event_details::Builder {
+        crate::model::task_timed_out_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskTimedOutEventDetails`](crate::model::TaskTimedOutEventDetails).
 pub mod task_timed_out_event_details {
     
@@ -4027,12 +4065,6 @@ pub mod task_timed_out_event_details {
     
     
 }
-impl TaskTimedOutEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskTimedOutEventDetails`](crate::model::TaskTimedOutEventDetails).
-    pub fn builder() -> crate::model::task_timed_out_event_details::Builder {
-        crate::model::task_timed_out_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the successful completion of a task state.</p>
 #[non_exhaustive]
@@ -4079,6 +4111,13 @@ impl  std::fmt::Debug for TaskSucceededEventDetails  {
         formatter.finish()
     }
 }
+impl TaskSucceededEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskSucceededEventDetails`](crate::model::TaskSucceededEventDetails).
+    pub fn builder() -> crate::model::task_succeeded_event_details::Builder {
+        crate::model::task_succeeded_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskSucceededEventDetails`](crate::model::TaskSucceededEventDetails).
 pub mod task_succeeded_event_details {
     
@@ -4155,12 +4194,6 @@ pub mod task_succeeded_event_details {
     
     
 }
-impl TaskSucceededEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskSucceededEventDetails`](crate::model::TaskSucceededEventDetails).
-    pub fn builder() -> crate::model::task_succeeded_event_details::Builder {
-        crate::model::task_succeeded_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a task submitted to a resource .</p>
 #[non_exhaustive]
@@ -4207,6 +4240,13 @@ impl  std::fmt::Debug for TaskSubmittedEventDetails  {
         formatter.finish()
     }
 }
+impl TaskSubmittedEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskSubmittedEventDetails`](crate::model::TaskSubmittedEventDetails).
+    pub fn builder() -> crate::model::task_submitted_event_details::Builder {
+        crate::model::task_submitted_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskSubmittedEventDetails`](crate::model::TaskSubmittedEventDetails).
 pub mod task_submitted_event_details {
     
@@ -4283,12 +4323,6 @@ pub mod task_submitted_event_details {
     
     
 }
-impl TaskSubmittedEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskSubmittedEventDetails`](crate::model::TaskSubmittedEventDetails).
-    pub fn builder() -> crate::model::task_submitted_event_details::Builder {
-        crate::model::task_submitted_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a task that failed to submit during an execution.</p>
 #[non_exhaustive]
@@ -4335,6 +4369,13 @@ impl  std::fmt::Debug for TaskSubmitFailedEventDetails  {
         formatter.finish()
     }
 }
+impl TaskSubmitFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskSubmitFailedEventDetails`](crate::model::TaskSubmitFailedEventDetails).
+    pub fn builder() -> crate::model::task_submit_failed_event_details::Builder {
+        crate::model::task_submit_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskSubmitFailedEventDetails`](crate::model::TaskSubmitFailedEventDetails).
 pub mod task_submit_failed_event_details {
     
@@ -4411,12 +4452,6 @@ pub mod task_submit_failed_event_details {
     
     
 }
-impl TaskSubmitFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskSubmitFailedEventDetails`](crate::model::TaskSubmitFailedEventDetails).
-    pub fn builder() -> crate::model::task_submit_failed_event_details::Builder {
-        crate::model::task_submit_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the start of a task during an execution.</p>
 #[non_exhaustive]
@@ -4439,6 +4474,13 @@ impl TaskStartedEventDetails {
         self.resource.as_deref()
     }
 }
+impl TaskStartedEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskStartedEventDetails`](crate::model::TaskStartedEventDetails).
+    pub fn builder() -> crate::model::task_started_event_details::Builder {
+        crate::model::task_started_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskStartedEventDetails`](crate::model::TaskStartedEventDetails).
 pub mod task_started_event_details {
     
@@ -4480,12 +4522,6 @@ pub mod task_started_event_details {
     }
     
     
-}
-impl TaskStartedEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskStartedEventDetails`](crate::model::TaskStartedEventDetails).
-    pub fn builder() -> crate::model::task_started_event_details::Builder {
-        crate::model::task_started_event_details::Builder::default()
-    }
 }
 
 /// <p>Contains details about a task that failed to start during an execution.</p>
@@ -4533,6 +4569,13 @@ impl  std::fmt::Debug for TaskStartFailedEventDetails  {
         formatter.finish()
     }
 }
+impl TaskStartFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskStartFailedEventDetails`](crate::model::TaskStartFailedEventDetails).
+    pub fn builder() -> crate::model::task_start_failed_event_details::Builder {
+        crate::model::task_start_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskStartFailedEventDetails`](crate::model::TaskStartFailedEventDetails).
 pub mod task_start_failed_event_details {
     
@@ -4609,12 +4652,6 @@ pub mod task_start_failed_event_details {
     
     
 }
-impl TaskStartFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskStartFailedEventDetails`](crate::model::TaskStartFailedEventDetails).
-    pub fn builder() -> crate::model::task_start_failed_event_details::Builder {
-        crate::model::task_start_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a task scheduled during an execution.</p>
 #[non_exhaustive]
@@ -4685,6 +4722,13 @@ impl  std::fmt::Debug for TaskScheduledEventDetails  {
         formatter.finish()
     }
 }
+impl TaskScheduledEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskScheduledEventDetails`](crate::model::TaskScheduledEventDetails).
+    pub fn builder() -> crate::model::task_scheduled_event_details::Builder {
+        crate::model::task_scheduled_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskScheduledEventDetails`](crate::model::TaskScheduledEventDetails).
 pub mod task_scheduled_event_details {
     
@@ -4800,12 +4844,6 @@ pub mod task_scheduled_event_details {
     
     
 }
-impl TaskScheduledEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskScheduledEventDetails`](crate::model::TaskScheduledEventDetails).
-    pub fn builder() -> crate::model::task_scheduled_event_details::Builder {
-        crate::model::task_scheduled_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about a task failure event.</p>
 #[non_exhaustive]
@@ -4852,6 +4890,13 @@ impl  std::fmt::Debug for TaskFailedEventDetails  {
         formatter.finish()
     }
 }
+impl TaskFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`TaskFailedEventDetails`](crate::model::TaskFailedEventDetails).
+    pub fn builder() -> crate::model::task_failed_event_details::Builder {
+        crate::model::task_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`TaskFailedEventDetails`](crate::model::TaskFailedEventDetails).
 pub mod task_failed_event_details {
     
@@ -4928,12 +4973,6 @@ pub mod task_failed_event_details {
     
     
 }
-impl TaskFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`TaskFailedEventDetails`](crate::model::TaskFailedEventDetails).
-    pub fn builder() -> crate::model::task_failed_event_details::Builder {
-        crate::model::task_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an activity timeout that occurred during an execution.</p>
 #[non_exhaustive]
@@ -4964,6 +5003,13 @@ impl  std::fmt::Debug for ActivityTimedOutEventDetails  {
         formatter.finish()
     }
 }
+impl ActivityTimedOutEventDetails {
+    /// Creates a new builder-style object to manufacture [`ActivityTimedOutEventDetails`](crate::model::ActivityTimedOutEventDetails).
+    pub fn builder() -> crate::model::activity_timed_out_event_details::Builder {
+        crate::model::activity_timed_out_event_details::Builder::default()
+    }
+}
+
 /// See [`ActivityTimedOutEventDetails`](crate::model::ActivityTimedOutEventDetails).
 pub mod activity_timed_out_event_details {
     
@@ -5014,12 +5060,6 @@ pub mod activity_timed_out_event_details {
     
     
 }
-impl ActivityTimedOutEventDetails {
-    /// Creates a new builder-style object to manufacture [`ActivityTimedOutEventDetails`](crate::model::ActivityTimedOutEventDetails).
-    pub fn builder() -> crate::model::activity_timed_out_event_details::Builder {
-        crate::model::activity_timed_out_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an activity that successfully terminated during an execution.</p>
 #[non_exhaustive]
@@ -5050,6 +5090,13 @@ impl  std::fmt::Debug for ActivitySucceededEventDetails  {
         formatter.finish()
     }
 }
+impl ActivitySucceededEventDetails {
+    /// Creates a new builder-style object to manufacture [`ActivitySucceededEventDetails`](crate::model::ActivitySucceededEventDetails).
+    pub fn builder() -> crate::model::activity_succeeded_event_details::Builder {
+        crate::model::activity_succeeded_event_details::Builder::default()
+    }
+}
+
 /// See [`ActivitySucceededEventDetails`](crate::model::ActivitySucceededEventDetails).
 pub mod activity_succeeded_event_details {
     
@@ -5100,12 +5147,6 @@ pub mod activity_succeeded_event_details {
     
     
 }
-impl ActivitySucceededEventDetails {
-    /// Creates a new builder-style object to manufacture [`ActivitySucceededEventDetails`](crate::model::ActivitySucceededEventDetails).
-    pub fn builder() -> crate::model::activity_succeeded_event_details::Builder {
-        crate::model::activity_succeeded_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the start of an activity during an execution.</p>
 #[non_exhaustive]
@@ -5121,6 +5162,13 @@ impl ActivityStartedEventDetails {
         self.worker_name.as_deref()
     }
 }
+impl ActivityStartedEventDetails {
+    /// Creates a new builder-style object to manufacture [`ActivityStartedEventDetails`](crate::model::ActivityStartedEventDetails).
+    pub fn builder() -> crate::model::activity_started_event_details::Builder {
+        crate::model::activity_started_event_details::Builder::default()
+    }
+}
+
 /// See [`ActivityStartedEventDetails`](crate::model::ActivityStartedEventDetails).
 pub mod activity_started_event_details {
     
@@ -5150,12 +5198,6 @@ pub mod activity_started_event_details {
     }
     
     
-}
-impl ActivityStartedEventDetails {
-    /// Creates a new builder-style object to manufacture [`ActivityStartedEventDetails`](crate::model::ActivityStartedEventDetails).
-    pub fn builder() -> crate::model::activity_started_event_details::Builder {
-        crate::model::activity_started_event_details::Builder::default()
-    }
 }
 
 /// <p>Contains details about an activity scheduled during an execution.</p>
@@ -5211,6 +5253,13 @@ impl  std::fmt::Debug for ActivityScheduledEventDetails  {
         formatter.finish()
     }
 }
+impl ActivityScheduledEventDetails {
+    /// Creates a new builder-style object to manufacture [`ActivityScheduledEventDetails`](crate::model::ActivityScheduledEventDetails).
+    pub fn builder() -> crate::model::activity_scheduled_event_details::Builder {
+        crate::model::activity_scheduled_event_details::Builder::default()
+    }
+}
+
 /// See [`ActivityScheduledEventDetails`](crate::model::ActivityScheduledEventDetails).
 pub mod activity_scheduled_event_details {
     
@@ -5300,12 +5349,6 @@ pub mod activity_scheduled_event_details {
     
     
 }
-impl ActivityScheduledEventDetails {
-    /// Creates a new builder-style object to manufacture [`ActivityScheduledEventDetails`](crate::model::ActivityScheduledEventDetails).
-    pub fn builder() -> crate::model::activity_scheduled_event_details::Builder {
-        crate::model::activity_scheduled_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an activity schedule failure that occurred during an execution.</p>
 #[non_exhaustive]
@@ -5336,6 +5379,13 @@ impl  std::fmt::Debug for ActivityScheduleFailedEventDetails  {
         formatter.finish()
     }
 }
+impl ActivityScheduleFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`ActivityScheduleFailedEventDetails`](crate::model::ActivityScheduleFailedEventDetails).
+    pub fn builder() -> crate::model::activity_schedule_failed_event_details::Builder {
+        crate::model::activity_schedule_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`ActivityScheduleFailedEventDetails`](crate::model::ActivityScheduleFailedEventDetails).
 pub mod activity_schedule_failed_event_details {
     
@@ -5386,12 +5436,6 @@ pub mod activity_schedule_failed_event_details {
     
     
 }
-impl ActivityScheduleFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`ActivityScheduleFailedEventDetails`](crate::model::ActivityScheduleFailedEventDetails).
-    pub fn builder() -> crate::model::activity_schedule_failed_event_details::Builder {
-        crate::model::activity_schedule_failed_event_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about an activity that failed during an execution.</p>
 #[non_exhaustive]
@@ -5422,6 +5466,13 @@ impl  std::fmt::Debug for ActivityFailedEventDetails  {
         formatter.finish()
     }
 }
+impl ActivityFailedEventDetails {
+    /// Creates a new builder-style object to manufacture [`ActivityFailedEventDetails`](crate::model::ActivityFailedEventDetails).
+    pub fn builder() -> crate::model::activity_failed_event_details::Builder {
+        crate::model::activity_failed_event_details::Builder::default()
+    }
+}
+
 /// See [`ActivityFailedEventDetails`](crate::model::ActivityFailedEventDetails).
 pub mod activity_failed_event_details {
     
@@ -5471,12 +5522,6 @@ pub mod activity_failed_event_details {
     }
     
     
-}
-impl ActivityFailedEventDetails {
-    /// Creates a new builder-style object to manufacture [`ActivityFailedEventDetails`](crate::model::ActivityFailedEventDetails).
-    pub fn builder() -> crate::model::activity_failed_event_details::Builder {
-        crate::model::activity_failed_event_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HistoryEventType`, it is important to ensure
@@ -5991,6 +6036,13 @@ impl MapRunExecutionCounts {
         self.results_written
     }
 }
+impl MapRunExecutionCounts {
+    /// Creates a new builder-style object to manufacture [`MapRunExecutionCounts`](crate::model::MapRunExecutionCounts).
+    pub fn builder() -> crate::model::map_run_execution_counts::Builder {
+        crate::model::map_run_execution_counts::Builder::default()
+    }
+}
+
 /// See [`MapRunExecutionCounts`](crate::model::MapRunExecutionCounts).
 pub mod map_run_execution_counts {
     
@@ -6113,12 +6165,6 @@ pub mod map_run_execution_counts {
     
     
 }
-impl MapRunExecutionCounts {
-    /// Creates a new builder-style object to manufacture [`MapRunExecutionCounts`](crate::model::MapRunExecutionCounts).
-    pub fn builder() -> crate::model::map_run_execution_counts::Builder {
-        crate::model::map_run_execution_counts::Builder::default()
-    }
-}
 
 /// <p>Contains details about items that were processed in all of the child workflow executions that were started by a Map Run.</p>
 #[non_exhaustive]
@@ -6183,6 +6229,13 @@ impl MapRunItemCounts {
         self.results_written
     }
 }
+impl MapRunItemCounts {
+    /// Creates a new builder-style object to manufacture [`MapRunItemCounts`](crate::model::MapRunItemCounts).
+    pub fn builder() -> crate::model::map_run_item_counts::Builder {
+        crate::model::map_run_item_counts::Builder::default()
+    }
+}
+
 /// See [`MapRunItemCounts`](crate::model::MapRunItemCounts).
 pub mod map_run_item_counts {
     
@@ -6304,12 +6357,6 @@ pub mod map_run_item_counts {
     }
     
     
-}
-impl MapRunItemCounts {
-    /// Creates a new builder-style object to manufacture [`MapRunItemCounts`](crate::model::MapRunItemCounts).
-    pub fn builder() -> crate::model::map_run_item_counts::Builder {
-        crate::model::map_run_item_counts::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MapRunStatus`, it is important to ensure

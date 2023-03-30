@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateEventIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateEventIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
+    pub fn builder() -> crate::output::update_event_integration_output::Builder {
+        crate::output::update_event_integration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
 pub mod update_event_integration_output {
     
@@ -39,12 +46,6 @@ pub mod update_event_integration_output {
     
     
 }
-impl UpdateEventIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
-    pub fn builder() -> crate::output::update_event_integration_output::Builder {
-        crate::output::update_event_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for UpdateDataIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateDataIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
+    pub fn builder() -> crate::output::update_data_integration_output::Builder {
+        crate::output::update_data_integration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
 pub mod update_data_integration_output {
     
@@ -86,12 +94,6 @@ pub mod update_data_integration_output {
     
     
 }
-impl UpdateDataIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
-    pub fn builder() -> crate::output::update_data_integration_output::Builder {
-        crate::output::update_data_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -133,12 +142,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -151,6 +154,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -180,12 +190,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -207,6 +211,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -254,12 +265,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -288,6 +293,13 @@ impl aws_http::request_id::RequestId for ListEventIntegrationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListEventIntegrationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
+    pub fn builder() -> crate::output::list_event_integrations_output::Builder {
+        crate::output::list_event_integrations_output::Builder::default()
+    }
+}
+
 /// See [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
 pub mod list_event_integrations_output {
     
@@ -347,12 +359,6 @@ pub mod list_event_integrations_output {
     
     
 }
-impl ListEventIntegrationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
-    pub fn builder() -> crate::output::list_event_integrations_output::Builder {
-        crate::output::list_event_integrations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -381,6 +387,13 @@ impl aws_http::request_id::RequestId for ListEventIntegrationAssociationsOutput 
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListEventIntegrationAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
+    pub fn builder() -> crate::output::list_event_integration_associations_output::Builder {
+        crate::output::list_event_integration_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
 pub mod list_event_integration_associations_output {
     
@@ -440,12 +453,6 @@ pub mod list_event_integration_associations_output {
     
     
 }
-impl ListEventIntegrationAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
-    pub fn builder() -> crate::output::list_event_integration_associations_output::Builder {
-        crate::output::list_event_integration_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -474,6 +481,13 @@ impl aws_http::request_id::RequestId for ListDataIntegrationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDataIntegrationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
+    pub fn builder() -> crate::output::list_data_integrations_output::Builder {
+        crate::output::list_data_integrations_output::Builder::default()
+    }
+}
+
 /// See [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
 pub mod list_data_integrations_output {
     
@@ -533,12 +547,6 @@ pub mod list_data_integrations_output {
     
     
 }
-impl ListDataIntegrationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
-    pub fn builder() -> crate::output::list_data_integrations_output::Builder {
-        crate::output::list_data_integrations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -567,6 +575,13 @@ impl aws_http::request_id::RequestId for ListDataIntegrationAssociationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListDataIntegrationAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
+    pub fn builder() -> crate::output::list_data_integration_associations_output::Builder {
+        crate::output::list_data_integration_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
 pub mod list_data_integration_associations_output {
     
@@ -626,12 +641,6 @@ pub mod list_data_integration_associations_output {
     
     
 }
-impl ListDataIntegrationAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
-    pub fn builder() -> crate::output::list_data_integration_associations_output::Builder {
-        crate::output::list_data_integration_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -688,6 +697,13 @@ impl aws_http::request_id::RequestId for GetEventIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetEventIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
+    pub fn builder() -> crate::output::get_event_integration_output::Builder {
+        crate::output::get_event_integration_output::Builder::default()
+    }
+}
+
 /// See [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
 pub mod get_event_integration_output {
     
@@ -795,12 +811,6 @@ pub mod get_event_integration_output {
     
     
 }
-impl GetEventIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
-    pub fn builder() -> crate::output::get_event_integration_output::Builder {
-        crate::output::get_event_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -871,6 +881,13 @@ impl aws_http::request_id::RequestId for GetDataIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetDataIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
+    pub fn builder() -> crate::output::get_data_integration_output::Builder {
+        crate::output::get_data_integration_output::Builder::default()
+    }
+}
+
 /// See [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
 pub mod get_data_integration_output {
     
@@ -1002,12 +1019,6 @@ pub mod get_data_integration_output {
     
     
 }
-impl GetDataIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
-    pub fn builder() -> crate::output::get_data_integration_output::Builder {
-        crate::output::get_data_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1020,6 +1031,13 @@ impl aws_http::request_id::RequestId for DeleteEventIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteEventIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
+    pub fn builder() -> crate::output::delete_event_integration_output::Builder {
+        crate::output::delete_event_integration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
 pub mod delete_event_integration_output {
     
@@ -1049,12 +1067,6 @@ pub mod delete_event_integration_output {
     
     
 }
-impl DeleteEventIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
-    pub fn builder() -> crate::output::delete_event_integration_output::Builder {
-        crate::output::delete_event_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1067,6 +1079,13 @@ impl aws_http::request_id::RequestId for DeleteDataIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteDataIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
+    pub fn builder() -> crate::output::delete_data_integration_output::Builder {
+        crate::output::delete_data_integration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
 pub mod delete_data_integration_output {
     
@@ -1096,12 +1115,6 @@ pub mod delete_data_integration_output {
     
     
 }
-impl DeleteDataIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
-    pub fn builder() -> crate::output::delete_data_integration_output::Builder {
-        crate::output::delete_data_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1123,6 +1136,13 @@ impl aws_http::request_id::RequestId for CreateEventIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateEventIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
+    pub fn builder() -> crate::output::create_event_integration_output::Builder {
+        crate::output::create_event_integration_output::Builder::default()
+    }
+}
+
 /// See [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
 pub mod create_event_integration_output {
     
@@ -1163,12 +1183,6 @@ pub mod create_event_integration_output {
     }
     
     
-}
-impl CreateEventIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
-    pub fn builder() -> crate::output::create_event_integration_output::Builder {
-        crate::output::create_event_integration_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1247,6 +1261,13 @@ impl aws_http::request_id::RequestId for CreateDataIntegrationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateDataIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
+    pub fn builder() -> crate::output::create_data_integration_output::Builder {
+        crate::output::create_data_integration_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
 pub mod create_data_integration_output {
     
@@ -1389,11 +1410,5 @@ pub mod create_data_integration_output {
     }
     
     
-}
-impl CreateDataIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
-    pub fn builder() -> crate::output::create_data_integration_output::Builder {
-        crate::output::create_data_integration_output::Builder::default()
-    }
 }
 

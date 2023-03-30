@@ -145,55 +145,6 @@ pub struct UnknownResourceFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnknownResourceFault {
-    /// Creates a new builder-style object to manufacture [`UnknownResourceFault`](crate::error::UnknownResourceFault).
-    pub fn builder() -> crate::error::unknown_resource_fault::Builder {
-        crate::error::unknown_resource_fault::Builder::default()
-    }
-}
-/// See [`UnknownResourceFault`](crate::error::UnknownResourceFault).
-pub mod unknown_resource_fault {
-    
-    /// A builder for [`UnknownResourceFault`](crate::error::UnknownResourceFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnknownResourceFault`](crate::error::UnknownResourceFault).
-        pub fn build(self) -> crate::error::UnknownResourceFault {
-            crate::error::UnknownResourceFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnknownResourceFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -218,26 +169,17 @@ impl aws_http::request_id::RequestId for crate::error::UnknownResourceFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnknownResourceFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Returned when the caller doesn't have sufficient permissions to invoke the action.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationNotPermittedFault  {
-    /// <p>A description that may help with diagnosing the cause of the fault.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl OperationNotPermittedFault {
-    /// Creates a new builder-style object to manufacture [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
-    pub fn builder() -> crate::error::operation_not_permitted_fault::Builder {
-        crate::error::operation_not_permitted_fault::Builder::default()
+impl UnknownResourceFault {
+    /// Creates a new builder-style object to manufacture [`UnknownResourceFault`](crate::error::UnknownResourceFault).
+    pub fn builder() -> crate::error::unknown_resource_fault::Builder {
+        crate::error::unknown_resource_fault::Builder::default()
     }
 }
-/// See [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
-pub mod operation_not_permitted_fault {
+
+/// See [`UnknownResourceFault`](crate::error::UnknownResourceFault).
+pub mod unknown_resource_fault {
     
-    /// A builder for [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
+    /// A builder for [`UnknownResourceFault`](crate::error::UnknownResourceFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -255,19 +197,19 @@ pub mod operation_not_permitted_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
-        pub fn build(self) -> crate::error::OperationNotPermittedFault {
-            crate::error::OperationNotPermittedFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnknownResourceFault`](crate::error::UnknownResourceFault).
+        pub fn build(self) -> crate::error::UnknownResourceFault {
+            crate::error::UnknownResourceFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -276,6 +218,16 @@ pub mod operation_not_permitted_fault {
     }
     
     
+}
+
+/// <p>Returned when the caller doesn't have sufficient permissions to invoke the action.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct OperationNotPermittedFault  {
+    /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl OperationNotPermittedFault {
     /// Returns the error message.
@@ -302,26 +254,17 @@ impl aws_http::request_id::RequestId for crate::error::OperationNotPermittedFaul
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OperationNotPermittedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededFault  {
-    /// <p>A description that may help with diagnosing the cause of the fault.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl LimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault).
-    pub fn builder() -> crate::error::limit_exceeded_fault::Builder {
-        crate::error::limit_exceeded_fault::Builder::default()
+impl OperationNotPermittedFault {
+    /// Creates a new builder-style object to manufacture [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
+    pub fn builder() -> crate::error::operation_not_permitted_fault::Builder {
+        crate::error::operation_not_permitted_fault::Builder::default()
     }
 }
-/// See [`LimitExceededFault`](crate::error::LimitExceededFault).
-pub mod limit_exceeded_fault {
+
+/// See [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
+pub mod operation_not_permitted_fault {
     
-    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
+    /// A builder for [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -339,19 +282,19 @@ pub mod limit_exceeded_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault).
-        pub fn build(self) -> crate::error::LimitExceededFault {
-            crate::error::LimitExceededFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
+        pub fn build(self) -> crate::error::OperationNotPermittedFault {
+            crate::error::OperationNotPermittedFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -360,6 +303,16 @@ pub mod limit_exceeded_fault {
     }
     
     
+}
+
+/// <p>Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or increase the limit by contacting AWS.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct LimitExceededFault  {
+    /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl LimitExceededFault {
     /// Returns the error message.
@@ -385,6 +338,56 @@ impl aws_http::request_id::RequestId for crate::error::LimitExceededFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl LimitExceededFault {
+    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault).
+    pub fn builder() -> crate::error::limit_exceeded_fault::Builder {
+        crate::error::limit_exceeded_fault::Builder::default()
+    }
+}
+
+/// See [`LimitExceededFault`](crate::error::LimitExceededFault).
+pub mod limit_exceeded_fault {
+    
+    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault).
+        pub fn build(self) -> crate::error::LimitExceededFault {
+            crate::error::LimitExceededFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -533,55 +536,6 @@ pub struct TypeAlreadyExistsFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TypeAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
-    pub fn builder() -> crate::error::type_already_exists_fault::Builder {
-        crate::error::type_already_exists_fault::Builder::default()
-    }
-}
-/// See [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
-pub mod type_already_exists_fault {
-    
-    /// A builder for [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
-        pub fn build(self) -> crate::error::TypeAlreadyExistsFault {
-            crate::error::TypeAlreadyExistsFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TypeAlreadyExistsFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -605,6 +559,56 @@ impl aws_http::request_id::RequestId for crate::error::TypeAlreadyExistsFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TypeAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl TypeAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
+    pub fn builder() -> crate::error::type_already_exists_fault::Builder {
+        crate::error::type_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
+pub mod type_already_exists_fault {
+    
+    /// A builder for [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
+        pub fn build(self) -> crate::error::TypeAlreadyExistsFault {
+            crate::error::TypeAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -753,55 +757,6 @@ pub struct DomainAlreadyExistsFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DomainAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
-    pub fn builder() -> crate::error::domain_already_exists_fault::Builder {
-        crate::error::domain_already_exists_fault::Builder::default()
-    }
-}
-/// See [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
-pub mod domain_already_exists_fault {
-    
-    /// A builder for [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
-        pub fn build(self) -> crate::error::DomainAlreadyExistsFault {
-            crate::error::DomainAlreadyExistsFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl DomainAlreadyExistsFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -825,6 +780,56 @@ impl aws_http::request_id::RequestId for crate::error::DomainAlreadyExistsFault 
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DomainAlreadyExistsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DomainAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
+    pub fn builder() -> crate::error::domain_already_exists_fault::Builder {
+        crate::error::domain_already_exists_fault::Builder::default()
+    }
+}
+
+/// See [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
+pub mod domain_already_exists_fault {
+    
+    /// A builder for [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
+        pub fn build(self) -> crate::error::DomainAlreadyExistsFault {
+            crate::error::DomainAlreadyExistsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1245,55 +1250,6 @@ pub struct TooManyTagsFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyTagsFault {
-    /// Creates a new builder-style object to manufacture [`TooManyTagsFault`](crate::error::TooManyTagsFault).
-    pub fn builder() -> crate::error::too_many_tags_fault::Builder {
-        crate::error::too_many_tags_fault::Builder::default()
-    }
-}
-/// See [`TooManyTagsFault`](crate::error::TooManyTagsFault).
-pub mod too_many_tags_fault {
-    
-    /// A builder for [`TooManyTagsFault`](crate::error::TooManyTagsFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TooManyTagsFault`](crate::error::TooManyTagsFault).
-        pub fn build(self) -> crate::error::TooManyTagsFault {
-            crate::error::TooManyTagsFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TooManyTagsFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1317,6 +1273,56 @@ impl aws_http::request_id::RequestId for crate::error::TooManyTagsFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyTagsFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl TooManyTagsFault {
+    /// Creates a new builder-style object to manufacture [`TooManyTagsFault`](crate::error::TooManyTagsFault).
+    pub fn builder() -> crate::error::too_many_tags_fault::Builder {
+        crate::error::too_many_tags_fault::Builder::default()
+    }
+}
+
+/// See [`TooManyTagsFault`](crate::error::TooManyTagsFault).
+pub mod too_many_tags_fault {
+    
+    /// A builder for [`TooManyTagsFault`](crate::error::TooManyTagsFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TooManyTagsFault`](crate::error::TooManyTagsFault).
+        pub fn build(self) -> crate::error::TooManyTagsFault {
+            crate::error::TooManyTagsFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1516,55 +1522,6 @@ pub struct WorkflowExecutionAlreadyStartedFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl WorkflowExecutionAlreadyStartedFault {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
-    pub fn builder() -> crate::error::workflow_execution_already_started_fault::Builder {
-        crate::error::workflow_execution_already_started_fault::Builder::default()
-    }
-}
-/// See [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
-pub mod workflow_execution_already_started_fault {
-    
-    /// A builder for [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
-        pub fn build(self) -> crate::error::WorkflowExecutionAlreadyStartedFault {
-            crate::error::WorkflowExecutionAlreadyStartedFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl WorkflowExecutionAlreadyStartedFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1589,26 +1546,17 @@ impl aws_http::request_id::RequestId for crate::error::WorkflowExecutionAlreadyS
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WorkflowExecutionAlreadyStartedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Returned when the specified activity or workflow type was already deprecated.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypeDeprecatedFault  {
-    /// <p>A description that may help with diagnosing the cause of the fault.</p>
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl TypeDeprecatedFault {
-    /// Creates a new builder-style object to manufacture [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
-    pub fn builder() -> crate::error::type_deprecated_fault::Builder {
-        crate::error::type_deprecated_fault::Builder::default()
+impl WorkflowExecutionAlreadyStartedFault {
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
+    pub fn builder() -> crate::error::workflow_execution_already_started_fault::Builder {
+        crate::error::workflow_execution_already_started_fault::Builder::default()
     }
 }
-/// See [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
-pub mod type_deprecated_fault {
+
+/// See [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
+pub mod workflow_execution_already_started_fault {
     
-    /// A builder for [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
+    /// A builder for [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1626,19 +1574,19 @@ pub mod type_deprecated_fault {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
-        pub fn build(self) -> crate::error::TypeDeprecatedFault {
-            crate::error::TypeDeprecatedFault {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
+        pub fn build(self) -> crate::error::WorkflowExecutionAlreadyStartedFault {
+            crate::error::WorkflowExecutionAlreadyStartedFault {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1647,6 +1595,16 @@ pub mod type_deprecated_fault {
     }
     
     
+}
+
+/// <p>Returned when the specified activity or workflow type was already deprecated.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct TypeDeprecatedFault  {
+    /// <p>A description that may help with diagnosing the cause of the fault.</p>
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TypeDeprecatedFault {
     /// Returns the error message.
@@ -1673,6 +1631,56 @@ impl aws_http::request_id::RequestId for crate::error::TypeDeprecatedFault {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TypeDeprecatedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl TypeDeprecatedFault {
+    /// Creates a new builder-style object to manufacture [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
+    pub fn builder() -> crate::error::type_deprecated_fault::Builder {
+        crate::error::type_deprecated_fault::Builder::default()
+    }
+}
+
+/// See [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
+pub mod type_deprecated_fault {
+    
+    /// A builder for [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
+        pub fn build(self) -> crate::error::TypeDeprecatedFault {
+            crate::error::TypeDeprecatedFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>The <code>StartWorkflowExecution</code> API action was called without the required parameters set.</p> 
 /// <p>Some workflow execution parameters, such as the decision <code>taskList</code>, must be set to start the execution. However, these parameters might have been set as defaults when the workflow type was registered. In this case, you can omit these parameters from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined in the workflow type.</p> <note> 
@@ -1685,55 +1693,6 @@ pub struct DefaultUndefinedFault  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl DefaultUndefinedFault {
-    /// Creates a new builder-style object to manufacture [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
-    pub fn builder() -> crate::error::default_undefined_fault::Builder {
-        crate::error::default_undefined_fault::Builder::default()
-    }
-}
-/// See [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
-pub mod default_undefined_fault {
-    
-    /// A builder for [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
-        pub fn build(self) -> crate::error::DefaultUndefinedFault {
-            crate::error::DefaultUndefinedFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl DefaultUndefinedFault {
     /// Returns the error message.
@@ -1759,6 +1718,56 @@ impl aws_http::request_id::RequestId for crate::error::DefaultUndefinedFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DefaultUndefinedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DefaultUndefinedFault {
+    /// Creates a new builder-style object to manufacture [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
+    pub fn builder() -> crate::error::default_undefined_fault::Builder {
+        crate::error::default_undefined_fault::Builder::default()
+    }
+}
+
+/// See [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
+pub mod default_undefined_fault {
+    
+    /// A builder for [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
+        pub fn build(self) -> crate::error::DefaultUndefinedFault {
+            crate::error::DefaultUndefinedFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -4931,55 +4940,6 @@ pub struct DomainDeprecatedFault  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DomainDeprecatedFault {
-    /// Creates a new builder-style object to manufacture [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
-    pub fn builder() -> crate::error::domain_deprecated_fault::Builder {
-        crate::error::domain_deprecated_fault::Builder::default()
-    }
-}
-/// See [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
-pub mod domain_deprecated_fault {
-    
-    /// A builder for [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>A description that may help with diagnosing the cause of the fault.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
-        pub fn build(self) -> crate::error::DomainDeprecatedFault {
-            crate::error::DomainDeprecatedFault {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl DomainDeprecatedFault {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -5003,6 +4963,56 @@ impl aws_http::request_id::RequestId for crate::error::DomainDeprecatedFault {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DomainDeprecatedFault {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DomainDeprecatedFault {
+    /// Creates a new builder-style object to manufacture [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
+    pub fn builder() -> crate::error::domain_deprecated_fault::Builder {
+        crate::error::domain_deprecated_fault::Builder::default()
+    }
+}
+
+/// See [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
+pub mod domain_deprecated_fault {
+    
+    /// A builder for [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A description that may help with diagnosing the cause of the fault.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
+        pub fn build(self) -> crate::error::DomainDeprecatedFault {
+            crate::error::DomainDeprecatedFault {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

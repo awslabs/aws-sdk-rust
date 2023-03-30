@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>A set of resources to include in a policy.</p>
@@ -123,6 +124,13 @@ impl ResourceSet {
         self.last_update_time.as_ref()
     }
 }
+impl ResourceSet {
+    /// Creates a new builder-style object to manufacture [`ResourceSet`](crate::model::ResourceSet).
+    pub fn builder() -> crate::model::resource_set::Builder {
+        crate::model::resource_set::Builder::default()
+    }
+}
+
 /// See [`ResourceSet`](crate::model::ResourceSet).
 pub mod resource_set {
     
@@ -223,12 +231,6 @@ pub mod resource_set {
     
     
 }
-impl ResourceSet {
-    /// Creates a new builder-style object to manufacture [`ResourceSet`](crate::model::ResourceSet).
-    pub fn builder() -> crate::model::resource_set::Builder {
-        crate::model::resource_set::Builder::default()
-    }
-}
 
 /// <p>An Firewall Manager protocols list.</p>
 #[non_exhaustive]
@@ -286,6 +288,13 @@ impl ProtocolsListData {
         self.previous_protocols_list.as_ref()
     }
 }
+impl ProtocolsListData {
+    /// Creates a new builder-style object to manufacture [`ProtocolsListData`](crate::model::ProtocolsListData).
+    pub fn builder() -> crate::model::protocols_list_data::Builder {
+        crate::model::protocols_list_data::Builder::default()
+    }
+}
+
 /// See [`ProtocolsListData`](crate::model::ProtocolsListData).
 pub mod protocols_list_data {
     
@@ -399,12 +408,6 @@ pub mod protocols_list_data {
     }
     
     
-}
-impl ProtocolsListData {
-    /// Creates a new builder-style object to manufacture [`ProtocolsListData`](crate::model::ProtocolsListData).
-    pub fn builder() -> crate::model::protocols_list_data::Builder {
-        crate::model::protocols_list_data::Builder::default()
-    }
 }
 
 /// <p>An Firewall Manager policy.</p>
@@ -546,6 +549,13 @@ impl Policy {
         self.policy_description.as_deref()
     }
 }
+impl Policy {
+    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
+    pub fn builder() -> crate::model::policy::Builder {
+        crate::model::policy::Builder::default()
+    }
+}
+
 /// See [`Policy`](crate::model::Policy).
 pub mod policy {
     
@@ -799,12 +809,6 @@ pub mod policy {
     
     
 }
-impl Policy {
-    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
-    pub fn builder() -> crate::model::policy::Builder {
-        crate::model::policy::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CustomerPolicyScopeIdType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -909,6 +913,13 @@ impl ResourceTag {
         self.value.as_deref()
     }
 }
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
     
@@ -950,12 +961,6 @@ pub mod resource_tag {
     }
     
     
-}
-impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
-    pub fn builder() -> crate::model::resource_tag::Builder {
-        crate::model::resource_tag::Builder::default()
-    }
 }
 
 /// <p>Details about the security service that is being used to protect the resources.</p>
@@ -1026,6 +1031,13 @@ impl SecurityServicePolicyData {
         self.policy_option.as_ref()
     }
 }
+impl SecurityServicePolicyData {
+    /// Creates a new builder-style object to manufacture [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
+    pub fn builder() -> crate::model::security_service_policy_data::Builder {
+        crate::model::security_service_policy_data::Builder::default()
+    }
+}
+
 /// See [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
 pub mod security_service_policy_data {
     
@@ -1120,12 +1132,6 @@ pub mod security_service_policy_data {
     
     
 }
-impl SecurityServicePolicyData {
-    /// Creates a new builder-style object to manufacture [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
-    pub fn builder() -> crate::model::security_service_policy_data::Builder {
-        crate::model::security_service_policy_data::Builder::default()
-    }
-}
 
 /// <p>Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party firewall policy settings.</p>
 #[non_exhaustive]
@@ -1148,6 +1154,13 @@ impl PolicyOption {
         self.third_party_firewall_policy.as_ref()
     }
 }
+impl PolicyOption {
+    /// Creates a new builder-style object to manufacture [`PolicyOption`](crate::model::PolicyOption).
+    pub fn builder() -> crate::model::policy_option::Builder {
+        crate::model::policy_option::Builder::default()
+    }
+}
+
 /// See [`PolicyOption`](crate::model::PolicyOption).
 pub mod policy_option {
     
@@ -1190,12 +1203,6 @@ pub mod policy_option {
     
     
 }
-impl PolicyOption {
-    /// Creates a new builder-style object to manufacture [`PolicyOption`](crate::model::PolicyOption).
-    pub fn builder() -> crate::model::policy_option::Builder {
-        crate::model::policy_option::Builder::default()
-    }
-}
 
 /// <p>Configures the deployment model for the third-party firewall.</p>
 #[non_exhaustive]
@@ -1211,6 +1218,13 @@ impl ThirdPartyFirewallPolicy {
         self.firewall_deployment_model.as_ref()
     }
 }
+impl ThirdPartyFirewallPolicy {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
+    pub fn builder() -> crate::model::third_party_firewall_policy::Builder {
+        crate::model::third_party_firewall_policy::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
 pub mod third_party_firewall_policy {
     
@@ -1240,12 +1254,6 @@ pub mod third_party_firewall_policy {
     }
     
     
-}
-impl ThirdPartyFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
-    pub fn builder() -> crate::model::third_party_firewall_policy::Builder {
-        crate::model::third_party_firewall_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FirewallDeploymentModel`, it is important to ensure
@@ -1344,6 +1352,13 @@ impl NetworkFirewallPolicy {
         self.firewall_deployment_model.as_ref()
     }
 }
+impl NetworkFirewallPolicy {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
+    pub fn builder() -> crate::model::network_firewall_policy::Builder {
+        crate::model::network_firewall_policy::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
 pub mod network_firewall_policy {
     
@@ -1373,12 +1388,6 @@ pub mod network_firewall_policy {
     }
     
     
-}
-impl NetworkFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
-    pub fn builder() -> crate::model::network_firewall_policy::Builder {
-        crate::model::network_firewall_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SecurityServiceType`, it is important to ensure
@@ -1559,6 +1568,13 @@ impl AppsListData {
         self.previous_apps_list.as_ref()
     }
 }
+impl AppsListData {
+    /// Creates a new builder-style object to manufacture [`AppsListData`](crate::model::AppsListData).
+    pub fn builder() -> crate::model::apps_list_data::Builder {
+        crate::model::apps_list_data::Builder::default()
+    }
+}
+
 /// See [`AppsListData`](crate::model::AppsListData).
 pub mod apps_list_data {
     
@@ -1673,12 +1689,6 @@ pub mod apps_list_data {
     
     
 }
-impl AppsListData {
-    /// Creates a new builder-style object to manufacture [`AppsListData`](crate::model::AppsListData).
-    pub fn builder() -> crate::model::apps_list_data::Builder {
-        crate::model::apps_list_data::Builder::default()
-    }
-}
 
 /// <p>An individual Firewall Manager application.</p>
 #[non_exhaustive]
@@ -1708,6 +1718,13 @@ impl App {
         self.port
     }
 }
+impl App {
+    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
+    pub fn builder() -> crate::model::app::Builder {
+        crate::model::app::Builder::default()
+    }
+}
+
 /// See [`App`](crate::model::App).
 pub mod app {
     
@@ -1762,12 +1779,6 @@ pub mod app {
     
     
 }
-impl App {
-    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
-    pub fn builder() -> crate::model::app::Builder {
-        crate::model::app::Builder::default()
-    }
-}
 
 /// <p>Configures the third-party firewall's firewall policy.</p>
 #[non_exhaustive]
@@ -1790,6 +1801,13 @@ impl ThirdPartyFirewallFirewallPolicy {
         self.firewall_policy_name.as_deref()
     }
 }
+impl ThirdPartyFirewallFirewallPolicy {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
+    pub fn builder() -> crate::model::third_party_firewall_firewall_policy::Builder {
+        crate::model::third_party_firewall_firewall_policy::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
 pub mod third_party_firewall_firewall_policy {
     
@@ -1831,12 +1849,6 @@ pub mod third_party_firewall_firewall_policy {
     }
     
     
-}
-impl ThirdPartyFirewallFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
-    pub fn builder() -> crate::model::third_party_firewall_firewall_policy::Builder {
-        crate::model::third_party_firewall_firewall_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ThirdPartyFirewall`, it is important to ensure
@@ -1956,6 +1968,13 @@ impl ResourceSetSummary {
         self.last_update_time.as_ref()
     }
 }
+impl ResourceSetSummary {
+    /// Creates a new builder-style object to manufacture [`ResourceSetSummary`](crate::model::ResourceSetSummary).
+    pub fn builder() -> crate::model::resource_set_summary::Builder {
+        crate::model::resource_set_summary::Builder::default()
+    }
+}
+
 /// See [`ResourceSetSummary`](crate::model::ResourceSetSummary).
 pub mod resource_set_summary {
     
@@ -2022,12 +2041,6 @@ pub mod resource_set_summary {
     
     
 }
-impl ResourceSetSummary {
-    /// Creates a new builder-style object to manufacture [`ResourceSetSummary`](crate::model::ResourceSetSummary).
-    pub fn builder() -> crate::model::resource_set_summary::Builder {
-        crate::model::resource_set_summary::Builder::default()
-    }
-}
 
 /// <p>Details of a resource that is associated to an Firewall Manager resource set.</p>
 #[non_exhaustive]
@@ -2050,6 +2063,13 @@ impl Resource {
         self.account_id.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -2092,12 +2112,6 @@ pub mod resource {
     
     
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>Details of the Firewall Manager protocols list.</p>
 #[non_exhaustive]
@@ -2134,6 +2148,13 @@ impl ProtocolsListDataSummary {
         self.protocols_list.as_deref()
     }
 }
+impl ProtocolsListDataSummary {
+    /// Creates a new builder-style object to manufacture [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
+    pub fn builder() -> crate::model::protocols_list_data_summary::Builder {
+        crate::model::protocols_list_data_summary::Builder::default()
+    }
+}
+
 /// See [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
 pub mod protocols_list_data_summary {
     
@@ -2206,12 +2227,6 @@ pub mod protocols_list_data_summary {
     
     
 }
-impl ProtocolsListDataSummary {
-    /// Creates a new builder-style object to manufacture [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
-    pub fn builder() -> crate::model::protocols_list_data_summary::Builder {
-        crate::model::protocols_list_data_summary::Builder::default()
-    }
-}
 
 /// <p>Details of the Firewall Manager policy. </p>
 #[non_exhaustive]
@@ -2273,6 +2288,13 @@ impl PolicySummary {
         self.delete_unused_fm_managed_resources
     }
 }
+impl PolicySummary {
+    /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary).
+    pub fn builder() -> crate::model::policy_summary::Builder {
+        crate::model::policy_summary::Builder::default()
+    }
+}
+
 /// See [`PolicySummary`](crate::model::PolicySummary).
 pub mod policy_summary {
     
@@ -2381,12 +2403,6 @@ pub mod policy_summary {
     
     
 }
-impl PolicySummary {
-    /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary).
-    pub fn builder() -> crate::model::policy_summary::Builder {
-        crate::model::policy_summary::Builder::default()
-    }
-}
 
 /// <p>A resource in the organization that's available to be associated with a Firewall Manager resource set.</p>
 #[non_exhaustive]
@@ -2423,6 +2439,13 @@ impl DiscoveredResource {
         self.name.as_deref()
     }
 }
+impl DiscoveredResource {
+    /// Creates a new builder-style object to manufacture [`DiscoveredResource`](crate::model::DiscoveredResource).
+    pub fn builder() -> crate::model::discovered_resource::Builder {
+        crate::model::discovered_resource::Builder::default()
+    }
+}
+
 /// See [`DiscoveredResource`](crate::model::DiscoveredResource).
 pub mod discovered_resource {
     
@@ -2489,12 +2512,6 @@ pub mod discovered_resource {
     
     
 }
-impl DiscoveredResource {
-    /// Creates a new builder-style object to manufacture [`DiscoveredResource`](crate::model::DiscoveredResource).
-    pub fn builder() -> crate::model::discovered_resource::Builder {
-        crate::model::discovered_resource::Builder::default()
-    }
-}
 
 /// <p>Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.</p>
 #[non_exhaustive]
@@ -2552,6 +2569,13 @@ impl PolicyComplianceStatus {
         self.issue_info_map.as_ref()
     }
 }
+impl PolicyComplianceStatus {
+    /// Creates a new builder-style object to manufacture [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
+    pub fn builder() -> crate::model::policy_compliance_status::Builder {
+        crate::model::policy_compliance_status::Builder::default()
+    }
+}
+
 /// See [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
 pub mod policy_compliance_status {
     
@@ -2665,12 +2689,6 @@ pub mod policy_compliance_status {
     }
     
     
-}
-impl PolicyComplianceStatus {
-    /// Creates a new builder-style object to manufacture [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
-    pub fn builder() -> crate::model::policy_compliance_status::Builder {
-        crate::model::policy_compliance_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DependentServiceName`, it is important to ensure
@@ -2793,6 +2811,13 @@ impl EvaluationResult {
         self.evaluation_limit_exceeded
     }
 }
+impl EvaluationResult {
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
+    pub fn builder() -> crate::model::evaluation_result::Builder {
+        crate::model::evaluation_result::Builder::default()
+    }
+}
+
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
     
@@ -2848,12 +2873,6 @@ pub mod evaluation_result {
     }
     
     
-}
-impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
-    pub fn builder() -> crate::model::evaluation_result::Builder {
-        crate::model::evaluation_result::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PolicyComplianceStatusType`, it is important to ensure
@@ -2973,6 +2992,13 @@ impl AppsListDataSummary {
         self.apps_list.as_deref()
     }
 }
+impl AppsListDataSummary {
+    /// Creates a new builder-style object to manufacture [`AppsListDataSummary`](crate::model::AppsListDataSummary).
+    pub fn builder() -> crate::model::apps_list_data_summary::Builder {
+        crate::model::apps_list_data_summary::Builder::default()
+    }
+}
+
 /// See [`AppsListDataSummary`](crate::model::AppsListDataSummary).
 pub mod apps_list_data_summary {
     
@@ -3045,12 +3071,6 @@ pub mod apps_list_data_summary {
     
     
 }
-impl AppsListDataSummary {
-    /// Creates a new builder-style object to manufacture [`AppsListDataSummary`](crate::model::AppsListDataSummary).
-    pub fn builder() -> crate::model::apps_list_data_summary::Builder {
-        crate::model::apps_list_data_summary::Builder::default()
-    }
-}
 
 /// <p>Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -3108,6 +3128,13 @@ impl ViolationDetail {
         self.resource_description.as_deref()
     }
 }
+impl ViolationDetail {
+    /// Creates a new builder-style object to manufacture [`ViolationDetail`](crate::model::ViolationDetail).
+    pub fn builder() -> crate::model::violation_detail::Builder {
+        crate::model::violation_detail::Builder::default()
+    }
+}
+
 /// See [`ViolationDetail`](crate::model::ViolationDetail).
 pub mod violation_detail {
     
@@ -3221,12 +3248,6 @@ pub mod violation_detail {
     }
     
     
-}
-impl ViolationDetail {
-    /// Creates a new builder-style object to manufacture [`ViolationDetail`](crate::model::ViolationDetail).
-    pub fn builder() -> crate::model::violation_detail::Builder {
-        crate::model::violation_detail::Builder::default()
-    }
 }
 
 /// <p>Violation detail based on resource type.</p>
@@ -3397,6 +3418,13 @@ impl ResourceViolation {
         self.firewall_subnet_missing_vpc_endpoint_violation.as_ref()
     }
 }
+impl ResourceViolation {
+    /// Creates a new builder-style object to manufacture [`ResourceViolation`](crate::model::ResourceViolation).
+    pub fn builder() -> crate::model::resource_violation::Builder {
+        crate::model::resource_violation::Builder::default()
+    }
+}
+
 /// See [`ResourceViolation`](crate::model::ResourceViolation).
 pub mod resource_violation {
     
@@ -3691,12 +3719,6 @@ pub mod resource_violation {
     
     
 }
-impl ResourceViolation {
-    /// Creates a new builder-style object to manufacture [`ResourceViolation`](crate::model::ResourceViolation).
-    pub fn builder() -> crate::model::resource_violation::Builder {
-        crate::model::resource_violation::Builder::default()
-    }
-}
 
 /// <p>The violation details for a firewall subnet's VPC endpoint that's deleted or missing.</p>
 #[non_exhaustive]
@@ -3733,6 +3755,13 @@ impl FirewallSubnetMissingVpcEndpointViolation {
         self.subnet_availability_zone_id.as_deref()
     }
 }
+impl FirewallSubnetMissingVpcEndpointViolation {
+    /// Creates a new builder-style object to manufacture [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
+    pub fn builder() -> crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder {
+        crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder::default()
+    }
+}
+
 /// See [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
 pub mod firewall_subnet_missing_vpc_endpoint_violation {
     
@@ -3799,12 +3828,6 @@ pub mod firewall_subnet_missing_vpc_endpoint_violation {
     
     
 }
-impl FirewallSubnetMissingVpcEndpointViolation {
-    /// Creates a new builder-style object to manufacture [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
-    pub fn builder() -> crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder {
-        crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder::default()
-    }
-}
 
 /// <p>The violation details for a third-party firewall that's not associated with an Firewall Manager managed route table.</p>
 #[non_exhaustive]
@@ -3848,6 +3871,13 @@ impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
         self.expected_route_table.as_deref()
     }
 }
+impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
+    pub fn builder() -> crate::model::third_party_firewall_missing_expected_route_table_violation::Builder {
+        crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
 pub mod third_party_firewall_missing_expected_route_table_violation {
     
@@ -3926,12 +3956,6 @@ pub mod third_party_firewall_missing_expected_route_table_violation {
     
     
 }
-impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
-    pub fn builder() -> crate::model::third_party_firewall_missing_expected_route_table_violation::Builder {
-        crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default()
-    }
-}
 
 /// <p>The violation details for a third-party firewall for an Availability Zone that's missing the Firewall Manager managed subnet.</p>
 #[non_exhaustive]
@@ -3968,6 +3992,13 @@ impl ThirdPartyFirewallMissingSubnetViolation {
         self.target_violation_reason.as_deref()
     }
 }
+impl ThirdPartyFirewallMissingSubnetViolation {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
+    pub fn builder() -> crate::model::third_party_firewall_missing_subnet_violation::Builder {
+        crate::model::third_party_firewall_missing_subnet_violation::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
 pub mod third_party_firewall_missing_subnet_violation {
     
@@ -4034,12 +4065,6 @@ pub mod third_party_firewall_missing_subnet_violation {
     
     
 }
-impl ThirdPartyFirewallMissingSubnetViolation {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
-    pub fn builder() -> crate::model::third_party_firewall_missing_subnet_violation::Builder {
-        crate::model::third_party_firewall_missing_subnet_violation::Builder::default()
-    }
-}
 
 /// <p>The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.</p>
 #[non_exhaustive]
@@ -4076,6 +4101,13 @@ impl ThirdPartyFirewallMissingFirewallViolation {
         self.target_violation_reason.as_deref()
     }
 }
+impl ThirdPartyFirewallMissingFirewallViolation {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
+    pub fn builder() -> crate::model::third_party_firewall_missing_firewall_violation::Builder {
+        crate::model::third_party_firewall_missing_firewall_violation::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
 pub mod third_party_firewall_missing_firewall_violation {
     
@@ -4141,12 +4173,6 @@ pub mod third_party_firewall_missing_firewall_violation {
     }
     
     
-}
-impl ThirdPartyFirewallMissingFirewallViolation {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
-    pub fn builder() -> crate::model::third_party_firewall_missing_firewall_violation::Builder {
-        crate::model::third_party_firewall_missing_firewall_violation::Builder::default()
-    }
 }
 
 /// <p>Contains details about the route endpoint that violates the policy scope.</p>
@@ -4240,6 +4266,13 @@ impl RouteHasOutOfScopeEndpointViolation {
         self.internet_gateway_routes.as_deref()
     }
 }
+impl RouteHasOutOfScopeEndpointViolation {
+    /// Creates a new builder-style object to manufacture [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
+    pub fn builder() -> crate::model::route_has_out_of_scope_endpoint_violation::Builder {
+        crate::model::route_has_out_of_scope_endpoint_violation::Builder::default()
+    }
+}
+
 /// See [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
 pub mod route_has_out_of_scope_endpoint_violation {
     
@@ -4420,12 +4453,6 @@ pub mod route_has_out_of_scope_endpoint_violation {
     
     
 }
-impl RouteHasOutOfScopeEndpointViolation {
-    /// Creates a new builder-style object to manufacture [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
-    pub fn builder() -> crate::model::route_has_out_of_scope_endpoint_violation::Builder {
-        crate::model::route_has_out_of_scope_endpoint_violation::Builder::default()
-    }
-}
 
 /// <p>Describes a route in a route table.</p>
 #[non_exhaustive]
@@ -4462,6 +4489,13 @@ impl Route {
         self.target.as_deref()
     }
 }
+impl Route {
+    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route).
+    pub fn builder() -> crate::model::route::Builder {
+        crate::model::route::Builder::default()
+    }
+}
+
 /// See [`Route`](crate::model::Route).
 pub mod route {
     
@@ -4527,12 +4561,6 @@ pub mod route {
     }
     
     
-}
-impl Route {
-    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route).
-    pub fn builder() -> crate::model::route::Builder {
-        crate::model::route::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TargetType`, it is important to ensure
@@ -4786,6 +4814,13 @@ impl FirewallSubnetIsOutOfScopeViolation {
         self.vpc_endpoint_id.as_deref()
     }
 }
+impl FirewallSubnetIsOutOfScopeViolation {
+    /// Creates a new builder-style object to manufacture [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
+    pub fn builder() -> crate::model::firewall_subnet_is_out_of_scope_violation::Builder {
+        crate::model::firewall_subnet_is_out_of_scope_violation::Builder::default()
+    }
+}
+
 /// See [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
 pub mod firewall_subnet_is_out_of_scope_violation {
     
@@ -4864,12 +4899,6 @@ pub mod firewall_subnet_is_out_of_scope_violation {
     
     
 }
-impl FirewallSubnetIsOutOfScopeViolation {
-    /// Creates a new builder-style object to manufacture [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
-    pub fn builder() -> crate::model::firewall_subnet_is_out_of_scope_violation::Builder {
-        crate::model::firewall_subnet_is_out_of_scope_violation::Builder::default()
-    }
-}
 
 /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
 #[non_exhaustive]
@@ -4892,6 +4921,13 @@ impl PossibleRemediationActions {
         self.actions.as_deref()
     }
 }
+impl PossibleRemediationActions {
+    /// Creates a new builder-style object to manufacture [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
+    pub fn builder() -> crate::model::possible_remediation_actions::Builder {
+        crate::model::possible_remediation_actions::Builder::default()
+    }
+}
+
 /// See [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
 pub mod possible_remediation_actions {
     
@@ -4940,12 +4976,6 @@ pub mod possible_remediation_actions {
     
     
 }
-impl PossibleRemediationActions {
-    /// Creates a new builder-style object to manufacture [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
-    pub fn builder() -> crate::model::possible_remediation_actions::Builder {
-        crate::model::possible_remediation_actions::Builder::default()
-    }
-}
 
 /// <p>A list of remediation actions.</p>
 #[non_exhaustive]
@@ -4975,6 +5005,13 @@ impl PossibleRemediationAction {
         self.is_default_action
     }
 }
+impl PossibleRemediationAction {
+    /// Creates a new builder-style object to manufacture [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
+    pub fn builder() -> crate::model::possible_remediation_action::Builder {
+        crate::model::possible_remediation_action::Builder::default()
+    }
+}
+
 /// See [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
 pub mod possible_remediation_action {
     
@@ -5036,12 +5073,6 @@ pub mod possible_remediation_action {
     
     
 }
-impl PossibleRemediationAction {
-    /// Creates a new builder-style object to manufacture [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
-    pub fn builder() -> crate::model::possible_remediation_action::Builder {
-        crate::model::possible_remediation_action::Builder::default()
-    }
-}
 
 /// <p>An ordered list of actions you can take to remediate a violation.</p>
 #[non_exhaustive]
@@ -5064,6 +5095,13 @@ impl RemediationActionWithOrder {
         self.order
     }
 }
+impl RemediationActionWithOrder {
+    /// Creates a new builder-style object to manufacture [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
+    pub fn builder() -> crate::model::remediation_action_with_order::Builder {
+        crate::model::remediation_action_with_order::Builder::default()
+    }
+}
+
 /// See [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
 pub mod remediation_action_with_order {
     
@@ -5106,12 +5144,6 @@ pub mod remediation_action_with_order {
     }
     
     
-}
-impl RemediationActionWithOrder {
-    /// Creates a new builder-style object to manufacture [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
-    pub fn builder() -> crate::model::remediation_action_with_order::Builder {
-        crate::model::remediation_action_with_order::Builder::default()
-    }
 }
 
 /// <p>Information about an individual action you can take to remediate a violation.</p>
@@ -5184,6 +5216,13 @@ impl RemediationAction {
         self.fms_policy_update_firewall_creation_config_action.as_ref()
     }
 }
+impl RemediationAction {
+    /// Creates a new builder-style object to manufacture [`RemediationAction`](crate::model::RemediationAction).
+    pub fn builder() -> crate::model::remediation_action::Builder {
+        crate::model::remediation_action::Builder::default()
+    }
+}
+
 /// See [`RemediationAction`](crate::model::RemediationAction).
 pub mod remediation_action {
     
@@ -5310,12 +5349,6 @@ pub mod remediation_action {
     
     
 }
-impl RemediationAction {
-    /// Creates a new builder-style object to manufacture [`RemediationAction`](crate::model::RemediationAction).
-    pub fn builder() -> crate::model::remediation_action::Builder {
-        crate::model::remediation_action::Builder::default()
-    }
-}
 
 /// <p>Contains information about the actions that you can take to remediate scope violations caused by your policy's <code>FirewallCreationConfig</code>. <code>FirewallCreationConfig</code> is an optional configuration that you can use to choose which Availability Zones Firewall Manager creates Network Firewall endpoints in.</p>
 #[non_exhaustive]
@@ -5338,6 +5371,13 @@ impl FmsPolicyUpdateFirewallCreationConfigAction {
         self.firewall_creation_config.as_deref()
     }
 }
+impl FmsPolicyUpdateFirewallCreationConfigAction {
+    /// Creates a new builder-style object to manufacture [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
+    pub fn builder() -> crate::model::fms_policy_update_firewall_creation_config_action::Builder {
+        crate::model::fms_policy_update_firewall_creation_config_action::Builder::default()
+    }
+}
+
 /// See [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
 pub mod fms_policy_update_firewall_creation_config_action {
     
@@ -5380,12 +5420,6 @@ pub mod fms_policy_update_firewall_creation_config_action {
     
     
 }
-impl FmsPolicyUpdateFirewallCreationConfigAction {
-    /// Creates a new builder-style object to manufacture [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
-    pub fn builder() -> crate::model::fms_policy_update_firewall_creation_config_action::Builder {
-        crate::model::fms_policy_update_firewall_creation_config_action::Builder::default()
-    }
-}
 
 /// <p>Information about the CreateRouteTable action in Amazon EC2.</p>
 #[non_exhaustive]
@@ -5408,6 +5442,13 @@ impl Ec2CreateRouteTableAction {
         self.vpc_id.as_ref()
     }
 }
+impl Ec2CreateRouteTableAction {
+    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
+    pub fn builder() -> crate::model::ec2_create_route_table_action::Builder {
+        crate::model::ec2_create_route_table_action::Builder::default()
+    }
+}
+
 /// See [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
 pub mod ec2_create_route_table_action {
     
@@ -5450,12 +5491,6 @@ pub mod ec2_create_route_table_action {
     
     
 }
-impl Ec2CreateRouteTableAction {
-    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
-    pub fn builder() -> crate::model::ec2_create_route_table_action::Builder {
-        crate::model::ec2_create_route_table_action::Builder::default()
-    }
-}
 
 /// <p>Describes a remediation action target.</p>
 #[non_exhaustive]
@@ -5478,6 +5513,13 @@ impl ActionTarget {
         self.description.as_deref()
     }
 }
+impl ActionTarget {
+    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
+    pub fn builder() -> crate::model::action_target::Builder {
+        crate::model::action_target::Builder::default()
+    }
+}
+
 /// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
     
@@ -5520,12 +5562,6 @@ pub mod action_target {
     
     
 }
-impl ActionTarget {
-    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
-    pub fn builder() -> crate::model::action_target::Builder {
-        crate::model::action_target::Builder::default()
-    }
-}
 
 /// <p>The action of associating an EC2 resource, such as a subnet or internet gateway, with a route table.</p>
 #[non_exhaustive]
@@ -5562,6 +5598,13 @@ impl Ec2AssociateRouteTableAction {
         self.gateway_id.as_ref()
     }
 }
+impl Ec2AssociateRouteTableAction {
+    /// Creates a new builder-style object to manufacture [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
+    pub fn builder() -> crate::model::ec2_associate_route_table_action::Builder {
+        crate::model::ec2_associate_route_table_action::Builder::default()
+    }
+}
+
 /// See [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
 pub mod ec2_associate_route_table_action {
     
@@ -5628,12 +5671,6 @@ pub mod ec2_associate_route_table_action {
     
     
 }
-impl Ec2AssociateRouteTableAction {
-    /// Creates a new builder-style object to manufacture [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
-    pub fn builder() -> crate::model::ec2_associate_route_table_action::Builder {
-        crate::model::ec2_associate_route_table_action::Builder::default()
-    }
-}
 
 /// <p>Information about the ReplaceRouteTableAssociation action in Amazon EC2.</p>
 #[non_exhaustive]
@@ -5663,6 +5700,13 @@ impl Ec2ReplaceRouteTableAssociationAction {
         self.route_table_id.as_ref()
     }
 }
+impl Ec2ReplaceRouteTableAssociationAction {
+    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
+    pub fn builder() -> crate::model::ec2_replace_route_table_association_action::Builder {
+        crate::model::ec2_replace_route_table_association_action::Builder::default()
+    }
+}
+
 /// See [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
 pub mod ec2_replace_route_table_association_action {
     
@@ -5717,12 +5761,6 @@ pub mod ec2_replace_route_table_association_action {
     
     
 }
-impl Ec2ReplaceRouteTableAssociationAction {
-    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
-    pub fn builder() -> crate::model::ec2_replace_route_table_association_action::Builder {
-        crate::model::ec2_replace_route_table_association_action::Builder::default()
-    }
-}
 
 /// <p>An action that copies the EC2 route table for use in remediation.</p>
 #[non_exhaustive]
@@ -5752,6 +5790,13 @@ impl Ec2CopyRouteTableAction {
         self.route_table_id.as_ref()
     }
 }
+impl Ec2CopyRouteTableAction {
+    /// Creates a new builder-style object to manufacture [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
+    pub fn builder() -> crate::model::ec2_copy_route_table_action::Builder {
+        crate::model::ec2_copy_route_table_action::Builder::default()
+    }
+}
+
 /// See [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
 pub mod ec2_copy_route_table_action {
     
@@ -5806,12 +5851,6 @@ pub mod ec2_copy_route_table_action {
     
     
 }
-impl Ec2CopyRouteTableAction {
-    /// Creates a new builder-style object to manufacture [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
-    pub fn builder() -> crate::model::ec2_copy_route_table_action::Builder {
-        crate::model::ec2_copy_route_table_action::Builder::default()
-    }
-}
 
 /// <p>Information about the DeleteRoute action in Amazon EC2.</p>
 #[non_exhaustive]
@@ -5855,6 +5894,13 @@ impl Ec2DeleteRouteAction {
         self.route_table_id.as_ref()
     }
 }
+impl Ec2DeleteRouteAction {
+    /// Creates a new builder-style object to manufacture [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
+    pub fn builder() -> crate::model::ec2_delete_route_action::Builder {
+        crate::model::ec2_delete_route_action::Builder::default()
+    }
+}
+
 /// See [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
 pub mod ec2_delete_route_action {
     
@@ -5933,12 +5979,6 @@ pub mod ec2_delete_route_action {
     
     
 }
-impl Ec2DeleteRouteAction {
-    /// Creates a new builder-style object to manufacture [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
-    pub fn builder() -> crate::model::ec2_delete_route_action::Builder {
-        crate::model::ec2_delete_route_action::Builder::default()
-    }
-}
 
 /// <p>Information about the ReplaceRoute action in Amazon EC2.</p>
 #[non_exhaustive]
@@ -5989,6 +6029,13 @@ impl Ec2ReplaceRouteAction {
         self.route_table_id.as_ref()
     }
 }
+impl Ec2ReplaceRouteAction {
+    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
+    pub fn builder() -> crate::model::ec2_replace_route_action::Builder {
+        crate::model::ec2_replace_route_action::Builder::default()
+    }
+}
+
 /// See [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
 pub mod ec2_replace_route_action {
     
@@ -6079,12 +6126,6 @@ pub mod ec2_replace_route_action {
     
     
 }
-impl Ec2ReplaceRouteAction {
-    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
-    pub fn builder() -> crate::model::ec2_replace_route_action::Builder {
-        crate::model::ec2_replace_route_action::Builder::default()
-    }
-}
 
 /// <p>Information about the CreateRoute action in Amazon EC2.</p>
 #[non_exhaustive]
@@ -6142,6 +6183,13 @@ impl Ec2CreateRouteAction {
         self.route_table_id.as_ref()
     }
 }
+impl Ec2CreateRouteAction {
+    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
+    pub fn builder() -> crate::model::ec2_create_route_action::Builder {
+        crate::model::ec2_create_route_action::Builder::default()
+    }
+}
+
 /// See [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
 pub mod ec2_create_route_action {
     
@@ -6244,12 +6292,6 @@ pub mod ec2_create_route_action {
     
     
 }
-impl Ec2CreateRouteAction {
-    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
-    pub fn builder() -> crate::model::ec2_create_route_action::Builder {
-        crate::model::ec2_create_route_action::Builder::default()
-    }
-}
 
 /// <p>The VPC that Firewall Manager was applying a DNS Fireall policy to reached the limit for associated DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed due to the limit. </p>
 #[non_exhaustive]
@@ -6279,6 +6321,13 @@ impl DnsRuleGroupLimitExceededViolation {
         self.number_of_rule_groups_already_associated
     }
 }
+impl DnsRuleGroupLimitExceededViolation {
+    /// Creates a new builder-style object to manufacture [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
+    pub fn builder() -> crate::model::dns_rule_group_limit_exceeded_violation::Builder {
+        crate::model::dns_rule_group_limit_exceeded_violation::Builder::default()
+    }
+}
+
 /// See [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
 pub mod dns_rule_group_limit_exceeded_violation {
     
@@ -6334,12 +6383,6 @@ pub mod dns_rule_group_limit_exceeded_violation {
     
     
 }
-impl DnsRuleGroupLimitExceededViolation {
-    /// Creates a new builder-style object to manufacture [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
-    pub fn builder() -> crate::model::dns_rule_group_limit_exceeded_violation::Builder {
-        crate::model::dns_rule_group_limit_exceeded_violation::Builder::default()
-    }
-}
 
 /// <p>A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
 #[non_exhaustive]
@@ -6362,6 +6405,13 @@ impl DnsDuplicateRuleGroupViolation {
         self.violation_target_description.as_deref()
     }
 }
+impl DnsDuplicateRuleGroupViolation {
+    /// Creates a new builder-style object to manufacture [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
+    pub fn builder() -> crate::model::dns_duplicate_rule_group_violation::Builder {
+        crate::model::dns_duplicate_rule_group_violation::Builder::default()
+    }
+}
+
 /// See [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
 pub mod dns_duplicate_rule_group_violation {
     
@@ -6403,12 +6453,6 @@ pub mod dns_duplicate_rule_group_violation {
     }
     
     
-}
-impl DnsDuplicateRuleGroupViolation {
-    /// Creates a new builder-style object to manufacture [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
-    pub fn builder() -> crate::model::dns_duplicate_rule_group_violation::Builder {
-        crate::model::dns_duplicate_rule_group_violation::Builder::default()
-    }
 }
 
 /// <p>A rule group that Firewall Manager tried to associate with a VPC has the same priority as a rule group that's already associated. </p>
@@ -6453,6 +6497,13 @@ impl DnsRuleGroupPriorityConflictViolation {
         self.unavailable_priorities.as_deref()
     }
 }
+impl DnsRuleGroupPriorityConflictViolation {
+    /// Creates a new builder-style object to manufacture [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
+    pub fn builder() -> crate::model::dns_rule_group_priority_conflict_violation::Builder {
+        crate::model::dns_rule_group_priority_conflict_violation::Builder::default()
+    }
+}
+
 /// See [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
 pub mod dns_rule_group_priority_conflict_violation {
     
@@ -6538,12 +6589,6 @@ pub mod dns_rule_group_priority_conflict_violation {
     
     
 }
-impl DnsRuleGroupPriorityConflictViolation {
-    /// Creates a new builder-style object to manufacture [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
-    pub fn builder() -> crate::model::dns_rule_group_priority_conflict_violation::Builder {
-        crate::model::dns_rule_group_priority_conflict_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for an expected route missing in Network Firewall.</p>
 #[non_exhaustive]
@@ -6573,6 +6618,13 @@ impl NetworkFirewallMissingExpectedRoutesViolation {
         self.vpc_id.as_deref()
     }
 }
+impl NetworkFirewallMissingExpectedRoutesViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
+    pub fn builder() -> crate::model::network_firewall_missing_expected_routes_violation::Builder {
+        crate::model::network_firewall_missing_expected_routes_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
 pub mod network_firewall_missing_expected_routes_violation {
     
@@ -6633,12 +6685,6 @@ pub mod network_firewall_missing_expected_routes_violation {
     
     
 }
-impl NetworkFirewallMissingExpectedRoutesViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
-    pub fn builder() -> crate::model::network_firewall_missing_expected_routes_violation::Builder {
-        crate::model::network_firewall_missing_expected_routes_violation::Builder::default()
-    }
-}
 
 /// <p>Information about the expected route in the route table.</p>
 #[non_exhaustive]
@@ -6689,6 +6735,13 @@ impl ExpectedRoute {
         self.route_table_id.as_deref()
     }
 }
+impl ExpectedRoute {
+    /// Creates a new builder-style object to manufacture [`ExpectedRoute`](crate::model::ExpectedRoute).
+    pub fn builder() -> crate::model::expected_route::Builder {
+        crate::model::expected_route::Builder::default()
+    }
+}
+
 /// See [`ExpectedRoute`](crate::model::ExpectedRoute).
 pub mod expected_route {
     
@@ -6791,12 +6844,6 @@ pub mod expected_route {
     
     
 }
-impl ExpectedRoute {
-    /// Creates a new builder-style object to manufacture [`ExpectedRoute`](crate::model::ExpectedRoute).
-    pub fn builder() -> crate::model::expected_route::Builder {
-        crate::model::expected_route::Builder::default()
-    }
-}
 
 /// <p>Violation detail for an unexpected gateway route that’s present in a route table.</p>
 #[non_exhaustive]
@@ -6833,6 +6880,13 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolation {
         self.vpc_id.as_deref()
     }
 }
+impl NetworkFirewallUnexpectedGatewayRoutesViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
+    pub fn builder() -> crate::model::network_firewall_unexpected_gateway_routes_violation::Builder {
+        crate::model::network_firewall_unexpected_gateway_routes_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
 pub mod network_firewall_unexpected_gateway_routes_violation {
     
@@ -6905,12 +6959,6 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
     
     
 }
-impl NetworkFirewallUnexpectedGatewayRoutesViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
-    pub fn builder() -> crate::model::network_firewall_unexpected_gateway_routes_violation::Builder {
-        crate::model::network_firewall_unexpected_gateway_routes_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for an unexpected route that's present in a route table.</p>
 #[non_exhaustive]
@@ -6954,6 +7002,13 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
         self.vpc_id.as_deref()
     }
 }
+impl NetworkFirewallUnexpectedFirewallRoutesViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
+    pub fn builder() -> crate::model::network_firewall_unexpected_firewall_routes_violation::Builder {
+        crate::model::network_firewall_unexpected_firewall_routes_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
 pub mod network_firewall_unexpected_firewall_routes_violation {
     
@@ -7038,12 +7093,6 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
     
     
 }
-impl NetworkFirewallUnexpectedFirewallRoutesViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
-    pub fn builder() -> crate::model::network_firewall_unexpected_firewall_routes_violation::Builder {
-        crate::model::network_firewall_unexpected_firewall_routes_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
 #[non_exhaustive]
@@ -7080,6 +7129,13 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
         self.violating_routes.as_deref()
     }
 }
+impl NetworkFirewallBlackHoleRouteDetectedViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
+    pub fn builder() -> crate::model::network_firewall_black_hole_route_detected_violation::Builder {
+        crate::model::network_firewall_black_hole_route_detected_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
 pub mod network_firewall_black_hole_route_detected_violation {
     
@@ -7151,12 +7207,6 @@ pub mod network_firewall_black_hole_route_detected_violation {
     }
     
     
-}
-impl NetworkFirewallBlackHoleRouteDetectedViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
-    pub fn builder() -> crate::model::network_firewall_black_hole_route_detected_violation::Builder {
-        crate::model::network_firewall_black_hole_route_detected_violation::Builder::default()
-    }
 }
 
 /// <p>Violation detail for the improperly configured subnet route. It's possible there is a missing route table route, or a configuration that causes traffic to cross an Availability Zone boundary.</p>
@@ -7278,6 +7328,13 @@ impl NetworkFirewallInvalidRouteConfigurationViolation {
         self.vpc_id.as_deref()
     }
 }
+impl NetworkFirewallInvalidRouteConfigurationViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
+    pub fn builder() -> crate::model::network_firewall_invalid_route_configuration_violation::Builder {
+        crate::model::network_firewall_invalid_route_configuration_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
 pub mod network_firewall_invalid_route_configuration_violation {
     
@@ -7519,12 +7576,6 @@ pub mod network_firewall_invalid_route_configuration_violation {
     
     
 }
-impl NetworkFirewallInvalidRouteConfigurationViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
-    pub fn builder() -> crate::model::network_firewall_invalid_route_configuration_violation::Builder {
-        crate::model::network_firewall_invalid_route_configuration_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for the subnet for which internet traffic that hasn't been inspected.</p>
 #[non_exhaustive]
@@ -7638,6 +7689,13 @@ impl NetworkFirewallInternetTrafficNotInspectedViolation {
         self.vpc_id.as_deref()
     }
 }
+impl NetworkFirewallInternetTrafficNotInspectedViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
+    pub fn builder() -> crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder {
+        crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
 pub mod network_firewall_internet_traffic_not_inspected_violation {
     
@@ -7867,12 +7925,6 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
     
     
 }
-impl NetworkFirewallInternetTrafficNotInspectedViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
-    pub fn builder() -> crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder {
-        crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for Network Firewall for a firewall policy that has a different <code>NetworkFirewallPolicyDescription</code> than is required by the Firewall Manager policy. </p>
 #[non_exhaustive]
@@ -7902,6 +7954,13 @@ impl NetworkFirewallPolicyModifiedViolation {
         self.expected_policy_description.as_ref()
     }
 }
+impl NetworkFirewallPolicyModifiedViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
+    pub fn builder() -> crate::model::network_firewall_policy_modified_violation::Builder {
+        crate::model::network_firewall_policy_modified_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
 pub mod network_firewall_policy_modified_violation {
     
@@ -7955,12 +8014,6 @@ pub mod network_firewall_policy_modified_violation {
     }
     
     
-}
-impl NetworkFirewallPolicyModifiedViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
-    pub fn builder() -> crate::model::network_firewall_policy_modified_violation::Builder {
-        crate::model::network_firewall_policy_modified_violation::Builder::default()
-    }
 }
 
 /// <p>The definition of the Network Firewall firewall policy.</p>
@@ -8033,6 +8086,13 @@ impl NetworkFirewallPolicyDescription {
         self.stateful_engine_options.as_ref()
     }
 }
+impl NetworkFirewallPolicyDescription {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
+    pub fn builder() -> crate::model::network_firewall_policy_description::Builder {
+        crate::model::network_firewall_policy_description::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
 pub mod network_firewall_policy_description {
     
@@ -8185,12 +8245,6 @@ pub mod network_firewall_policy_description {
     
     
 }
-impl NetworkFirewallPolicyDescription {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
-    pub fn builder() -> crate::model::network_firewall_policy_description::Builder {
-        crate::model::network_firewall_policy_description::Builder::default()
-    }
-}
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy.</p>
 #[non_exhaustive]
@@ -8206,6 +8260,13 @@ impl StatefulEngineOptions {
         self.rule_order.as_ref()
     }
 }
+impl StatefulEngineOptions {
+    /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
+    pub fn builder() -> crate::model::stateful_engine_options::Builder {
+        crate::model::stateful_engine_options::Builder::default()
+    }
+}
+
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
 pub mod stateful_engine_options {
     
@@ -8235,12 +8296,6 @@ pub mod stateful_engine_options {
     }
     
     
-}
-impl StatefulEngineOptions {
-    /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
-    pub fn builder() -> crate::model::stateful_engine_options::Builder {
-        crate::model::stateful_engine_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RuleOrder`, it is important to ensure
@@ -8364,6 +8419,13 @@ impl StatefulRuleGroup {
         self.r#override.as_ref()
     }
 }
+impl StatefulRuleGroup {
+    /// Creates a new builder-style object to manufacture [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
+    pub fn builder() -> crate::model::stateful_rule_group::Builder {
+        crate::model::stateful_rule_group::Builder::default()
+    }
+}
+
 /// See [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
 pub mod stateful_rule_group {
     
@@ -8434,12 +8496,6 @@ pub mod stateful_rule_group {
     
     
 }
-impl StatefulRuleGroup {
-    /// Creates a new builder-style object to manufacture [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
-    pub fn builder() -> crate::model::stateful_rule_group::Builder {
-        crate::model::stateful_rule_group::Builder::default()
-    }
-}
 
 /// <p>The setting that allows the policy owner to change the behavior of the rule group within a policy.</p>
 #[non_exhaustive]
@@ -8455,6 +8511,13 @@ impl NetworkFirewallStatefulRuleGroupOverride {
         self.action.as_ref()
     }
 }
+impl NetworkFirewallStatefulRuleGroupOverride {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallStatefulRuleGroupOverride`](crate::model::NetworkFirewallStatefulRuleGroupOverride).
+    pub fn builder() -> crate::model::network_firewall_stateful_rule_group_override::Builder {
+        crate::model::network_firewall_stateful_rule_group_override::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallStatefulRuleGroupOverride`](crate::model::NetworkFirewallStatefulRuleGroupOverride).
 pub mod network_firewall_stateful_rule_group_override {
     
@@ -8484,12 +8547,6 @@ pub mod network_firewall_stateful_rule_group_override {
     }
     
     
-}
-impl NetworkFirewallStatefulRuleGroupOverride {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallStatefulRuleGroupOverride`](crate::model::NetworkFirewallStatefulRuleGroupOverride).
-    pub fn builder() -> crate::model::network_firewall_stateful_rule_group_override::Builder {
-        crate::model::network_firewall_stateful_rule_group_override::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NetworkFirewallOverrideAction`, it is important to ensure
@@ -8597,6 +8654,13 @@ impl StatelessRuleGroup {
         self.priority
     }
 }
+impl StatelessRuleGroup {
+    /// Creates a new builder-style object to manufacture [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
+    pub fn builder() -> crate::model::stateless_rule_group::Builder {
+        crate::model::stateless_rule_group::Builder::default()
+    }
+}
+
 /// See [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
 pub mod stateless_rule_group {
     
@@ -8652,12 +8716,6 @@ pub mod stateless_rule_group {
     
     
 }
-impl StatelessRuleGroup {
-    /// Creates a new builder-style object to manufacture [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
-    pub fn builder() -> crate::model::stateless_rule_group::Builder {
-        crate::model::stateless_rule_group::Builder::default()
-    }
-}
 
 /// <p>Violation detail for Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.</p>
 #[non_exhaustive]
@@ -8701,6 +8759,13 @@ impl NetworkFirewallMissingExpectedRtViolation {
         self.expected_route_table.as_deref()
     }
 }
+impl NetworkFirewallMissingExpectedRtViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
+    pub fn builder() -> crate::model::network_firewall_missing_expected_rt_violation::Builder {
+        crate::model::network_firewall_missing_expected_rt_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
 pub mod network_firewall_missing_expected_rt_violation {
     
@@ -8779,12 +8844,6 @@ pub mod network_firewall_missing_expected_rt_violation {
     
     
 }
-impl NetworkFirewallMissingExpectedRtViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
-    pub fn builder() -> crate::model::network_firewall_missing_expected_rt_violation::Builder {
-        crate::model::network_firewall_missing_expected_rt_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.</p>
 #[non_exhaustive]
@@ -8821,6 +8880,13 @@ impl NetworkFirewallMissingSubnetViolation {
         self.target_violation_reason.as_deref()
     }
 }
+impl NetworkFirewallMissingSubnetViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
+    pub fn builder() -> crate::model::network_firewall_missing_subnet_violation::Builder {
+        crate::model::network_firewall_missing_subnet_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
 pub mod network_firewall_missing_subnet_violation {
     
@@ -8887,12 +8953,6 @@ pub mod network_firewall_missing_subnet_violation {
     
     
 }
-impl NetworkFirewallMissingSubnetViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
-    pub fn builder() -> crate::model::network_firewall_missing_subnet_violation::Builder {
-        crate::model::network_firewall_missing_subnet_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC. </p>
 #[non_exhaustive]
@@ -8929,6 +8989,13 @@ impl NetworkFirewallMissingFirewallViolation {
         self.target_violation_reason.as_deref()
     }
 }
+impl NetworkFirewallMissingFirewallViolation {
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
+    pub fn builder() -> crate::model::network_firewall_missing_firewall_violation::Builder {
+        crate::model::network_firewall_missing_firewall_violation::Builder::default()
+    }
+}
+
 /// See [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
 pub mod network_firewall_missing_firewall_violation {
     
@@ -8995,12 +9062,6 @@ pub mod network_firewall_missing_firewall_violation {
     
     
 }
-impl NetworkFirewallMissingFirewallViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
-    pub fn builder() -> crate::model::network_firewall_missing_firewall_violation::Builder {
-        crate::model::network_firewall_missing_firewall_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for an EC2 instance resource.</p>
 #[non_exhaustive]
@@ -9023,6 +9084,13 @@ impl AwsEc2InstanceViolation {
         self.aws_ec2_network_interface_violations.as_deref()
     }
 }
+impl AwsEc2InstanceViolation {
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
+    pub fn builder() -> crate::model::aws_ec2_instance_violation::Builder {
+        crate::model::aws_ec2_instance_violation::Builder::default()
+    }
+}
+
 /// See [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
 pub mod aws_ec2_instance_violation {
     
@@ -9071,12 +9139,6 @@ pub mod aws_ec2_instance_violation {
     
     
 }
-impl AwsEc2InstanceViolation {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
-    pub fn builder() -> crate::model::aws_ec2_instance_violation::Builder {
-        crate::model::aws_ec2_instance_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for network interfaces associated with an EC2 instance.</p>
 #[non_exhaustive]
@@ -9099,6 +9161,13 @@ impl AwsEc2NetworkInterfaceViolation {
         self.violating_security_groups.as_deref()
     }
 }
+impl AwsEc2NetworkInterfaceViolation {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
+    pub fn builder() -> crate::model::aws_ec2_network_interface_violation::Builder {
+        crate::model::aws_ec2_network_interface_violation::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
 pub mod aws_ec2_network_interface_violation {
     
@@ -9147,12 +9216,6 @@ pub mod aws_ec2_network_interface_violation {
     
     
 }
-impl AwsEc2NetworkInterfaceViolation {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
-    pub fn builder() -> crate::model::aws_ec2_network_interface_violation::Builder {
-        crate::model::aws_ec2_network_interface_violation::Builder::default()
-    }
-}
 
 /// <p>Violation detail for the rule violation in a security group when compared to the primary security group of the Firewall Manager policy.</p>
 #[non_exhaustive]
@@ -9189,6 +9252,13 @@ impl AwsVpcSecurityGroupViolation {
         self.possible_security_group_remediation_actions.as_deref()
     }
 }
+impl AwsVpcSecurityGroupViolation {
+    /// Creates a new builder-style object to manufacture [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
+    pub fn builder() -> crate::model::aws_vpc_security_group_violation::Builder {
+        crate::model::aws_vpc_security_group_violation::Builder::default()
+    }
+}
+
 /// See [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
 pub mod aws_vpc_security_group_violation {
     
@@ -9267,12 +9337,6 @@ pub mod aws_vpc_security_group_violation {
     
     
 }
-impl AwsVpcSecurityGroupViolation {
-    /// Creates a new builder-style object to manufacture [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
-    pub fn builder() -> crate::model::aws_vpc_security_group_violation::Builder {
-        crate::model::aws_vpc_security_group_violation::Builder::default()
-    }
-}
 
 /// <p>Remediation option for the rule specified in the <code>ViolationTarget</code>.</p>
 #[non_exhaustive]
@@ -9309,6 +9373,13 @@ impl SecurityGroupRemediationAction {
         self.is_default_action
     }
 }
+impl SecurityGroupRemediationAction {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
+    pub fn builder() -> crate::model::security_group_remediation_action::Builder {
+        crate::model::security_group_remediation_action::Builder::default()
+    }
+}
+
 /// See [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
 pub mod security_group_remediation_action {
     
@@ -9376,12 +9447,6 @@ pub mod security_group_remediation_action {
     
     
 }
-impl SecurityGroupRemediationAction {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
-    pub fn builder() -> crate::model::security_group_remediation_action::Builder {
-        crate::model::security_group_remediation_action::Builder::default()
-    }
-}
 
 /// <p>Describes a set of permissions for a security group rule.</p>
 #[non_exhaustive]
@@ -9432,6 +9497,13 @@ impl SecurityGroupRuleDescription {
         self.to_port
     }
 }
+impl SecurityGroupRuleDescription {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
+    pub fn builder() -> crate::model::security_group_rule_description::Builder {
+        crate::model::security_group_rule_description::Builder::default()
+    }
+}
+
 /// See [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
 pub mod security_group_rule_description {
     
@@ -9521,12 +9593,6 @@ pub mod security_group_rule_description {
     }
     
     
-}
-impl SecurityGroupRuleDescription {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
-    pub fn builder() -> crate::model::security_group_rule_description::Builder {
-        crate::model::security_group_rule_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RemediationActionType`, it is important to ensure
@@ -9632,6 +9698,13 @@ impl PartialMatch {
         self.target_violation_reasons.as_deref()
     }
 }
+impl PartialMatch {
+    /// Creates a new builder-style object to manufacture [`PartialMatch`](crate::model::PartialMatch).
+    pub fn builder() -> crate::model::partial_match::Builder {
+        crate::model::partial_match::Builder::default()
+    }
+}
+
 /// See [`PartialMatch`](crate::model::PartialMatch).
 pub mod partial_match {
     
@@ -9679,12 +9752,6 @@ pub mod partial_match {
     }
     
     
-}
-impl PartialMatch {
-    /// Creates a new builder-style object to manufacture [`PartialMatch`](crate::model::PartialMatch).
-    pub fn builder() -> crate::model::partial_match::Builder {
-        crate::model::partial_match::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MarketplaceSubscriptionOnboardingStatus`, it is important to ensure
@@ -9927,6 +9994,13 @@ impl PolicyComplianceDetail {
         self.issue_info_map.as_ref()
     }
 }
+impl PolicyComplianceDetail {
+    /// Creates a new builder-style object to manufacture [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
+    pub fn builder() -> crate::model::policy_compliance_detail::Builder {
+        crate::model::policy_compliance_detail::Builder::default()
+    }
+}
+
 /// See [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
 pub mod policy_compliance_detail {
     
@@ -10042,12 +10116,6 @@ pub mod policy_compliance_detail {
     
     
 }
-impl PolicyComplianceDetail {
-    /// Creates a new builder-style object to manufacture [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
-    pub fn builder() -> crate::model::policy_compliance_detail::Builder {
-        crate::model::policy_compliance_detail::Builder::default()
-    }
-}
 
 /// <p>Details of the resource that is not protected by the policy.</p>
 #[non_exhaustive]
@@ -10084,6 +10152,13 @@ impl ComplianceViolator {
         self.metadata.as_ref()
     }
 }
+impl ComplianceViolator {
+    /// Creates a new builder-style object to manufacture [`ComplianceViolator`](crate::model::ComplianceViolator).
+    pub fn builder() -> crate::model::compliance_violator::Builder {
+        crate::model::compliance_violator::Builder::default()
+    }
+}
+
 /// See [`ComplianceViolator`](crate::model::ComplianceViolator).
 pub mod compliance_violator {
     
@@ -10155,12 +10230,6 @@ pub mod compliance_violator {
     }
     
     
-}
-impl ComplianceViolator {
-    /// Creates a new builder-style object to manufacture [`ComplianceViolator`](crate::model::ComplianceViolator).
-    pub fn builder() -> crate::model::compliance_violator::Builder {
-        crate::model::compliance_violator::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ViolationReason`, it is important to ensure
@@ -10493,6 +10562,13 @@ impl FailedItem {
         self.reason.as_ref()
     }
 }
+impl FailedItem {
+    /// Creates a new builder-style object to manufacture [`FailedItem`](crate::model::FailedItem).
+    pub fn builder() -> crate::model::failed_item::Builder {
+        crate::model::failed_item::Builder::default()
+    }
+}
+
 /// See [`FailedItem`](crate::model::FailedItem).
 pub mod failed_item {
     
@@ -10534,12 +10610,6 @@ pub mod failed_item {
     }
     
     
-}
-impl FailedItem {
-    /// Creates a new builder-style object to manufacture [`FailedItem`](crate::model::FailedItem).
-    pub fn builder() -> crate::model::failed_item::Builder {
-        crate::model::failed_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FailedItemReason`, it is important to ensure

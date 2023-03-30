@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_custom_domain`](crate::client::Client::associate_custom_domain).
             ///
-            /// See [`crate::client::fluent_builders::AssociateCustomDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateCustomDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateCustomDomain {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateCustomDomain {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_auto_scaling_configuration`](crate::client::Client::create_auto_scaling_configuration).
             ///
-            /// See [`crate::client::fluent_builders::CreateAutoScalingConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAutoScalingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAutoScalingConfiguration {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAutoScalingConfigu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_connection`](crate::client::Client::create_connection).
             ///
-            /// See [`crate::client::fluent_builders::CreateConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConnection {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnection {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_observability_configuration`](crate::client::Client::create_observability_configuration).
             ///
-            /// See [`crate::client::fluent_builders::CreateObservabilityConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateObservabilityConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateObservabilityConfiguration {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateObservabilityConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_service`](crate::client::Client::create_service).
             ///
-            /// See [`crate::client::fluent_builders::CreateService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateService {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_vpc_connector`](crate::client::Client::create_vpc_connector).
             ///
-            /// See [`crate::client::fluent_builders::CreateVpcConnector`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateVpcConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVpcConnector {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcConnector {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_vpc_ingress_connection`](crate::client::Client::create_vpc_ingress_connection).
             ///
-            /// See [`crate::client::fluent_builders::CreateVpcIngressConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateVpcIngressConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVpcIngressConnection {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcIngressConnecti
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_auto_scaling_configuration`](crate::client::Client::delete_auto_scaling_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAutoScalingConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAutoScalingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAutoScalingConfiguration {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAutoScalingConfigu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_connection`](crate::client::Client::delete_connection).
             ///
-            /// See [`crate::client::fluent_builders::DeleteConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConnection {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_observability_configuration`](crate::client::Client::delete_observability_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DeleteObservabilityConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteObservabilityConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObservabilityConfiguration {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObservabilityConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_service`](crate::client::Client::delete_service).
             ///
-            /// See [`crate::client::fluent_builders::DeleteService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteService {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_vpc_connector`](crate::client::Client::delete_vpc_connector).
             ///
-            /// See [`crate::client::fluent_builders::DeleteVpcConnector`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteVpcConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVpcConnector {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcConnector {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_vpc_ingress_connection`](crate::client::Client::delete_vpc_ingress_connection).
             ///
-            /// See [`crate::client::fluent_builders::DeleteVpcIngressConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteVpcIngressConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVpcIngressConnection {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcIngressConnecti
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_auto_scaling_configuration`](crate::client::Client::describe_auto_scaling_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DescribeAutoScalingConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeAutoScalingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAutoScalingConfiguration {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoScalingConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_custom_domains`](crate::client::Client::describe_custom_domains).
             ///
-            /// See [`crate::client::fluent_builders::DescribeCustomDomains`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeCustomDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCustomDomains {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomDomains {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_observability_configuration`](crate::client::Client::describe_observability_configuration).
             ///
-            /// See [`crate::client::fluent_builders::DescribeObservabilityConfiguration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeObservabilityConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeObservabilityConfiguration {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObservabilityCon
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_service`](crate::client::Client::describe_service).
             ///
-            /// See [`crate::client::fluent_builders::DescribeService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeService {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_vpc_connector`](crate::client::Client::describe_vpc_connector).
             ///
-            /// See [`crate::client::fluent_builders::DescribeVpcConnector`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeVpcConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVpcConnector {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcConnector {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_vpc_ingress_connection`](crate::client::Client::describe_vpc_ingress_connection).
             ///
-            /// See [`crate::client::fluent_builders::DescribeVpcIngressConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeVpcIngressConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVpcIngressConnection {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcIngressConnec
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_custom_domain`](crate::client::Client::disassociate_custom_domain).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateCustomDomain`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateCustomDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateCustomDomain {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCustomDomain
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_auto_scaling_configurations`](crate::client::Client::list_auto_scaling_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListAutoScalingConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListAutoScalingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAutoScalingConfigurations {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAutoScalingConfigura
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_connections`](crate::client::Client::list_connections).
             ///
-            /// See [`crate::client::fluent_builders::ListConnections`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConnections {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnections {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_observability_configurations`](crate::client::Client::list_observability_configurations).
             ///
-            /// See [`crate::client::fluent_builders::ListObservabilityConfigurations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListObservabilityConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListObservabilityConfigurations {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObservabilityConfigu
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_operations`](crate::client::Client::list_operations).
             ///
-            /// See [`crate::client::fluent_builders::ListOperations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListOperations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOperations {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_services`](crate::client::Client::list_services).
             ///
-            /// See [`crate::client::fluent_builders::ListServices`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListServices {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_vpc_connectors`](crate::client::Client::list_vpc_connectors).
             ///
-            /// See [`crate::client::fluent_builders::ListVpcConnectors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListVpcConnectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVpcConnectors {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcConnectors {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_vpc_ingress_connections`](crate::client::Client::list_vpc_ingress_connections).
             ///
-            /// See [`crate::client::fluent_builders::ListVpcIngressConnections`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListVpcIngressConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVpcIngressConnections {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcIngressConnection
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`pause_service`](crate::client::Client::pause_service).
             ///
-            /// See [`crate::client::fluent_builders::PauseService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PauseService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PauseService {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`resume_service`](crate::client::Client::resume_service).
             ///
-            /// See [`crate::client::fluent_builders::ResumeService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ResumeService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResumeService {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_deployment`](crate::client::Client::start_deployment).
             ///
-            /// See [`crate::client::fluent_builders::StartDeployment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDeployment {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDeployment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_service`](crate::client::Client::update_service).
             ///
-            /// See [`crate::client::fluent_builders::UpdateService`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateService {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateService {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_vpc_ingress_connection`](crate::client::Client::update_vpc_ingress_connection).
             ///
-            /// See [`crate::client::fluent_builders::UpdateVpcIngressConnection`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateVpcIngressConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVpcIngressConnection {
     _private: ()

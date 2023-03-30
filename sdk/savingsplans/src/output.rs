@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -39,12 +46,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -113,6 +115,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -160,12 +169,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -194,6 +197,13 @@ impl aws_http::request_id::RequestId for DescribeSavingsPlansOfferingsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSavingsPlansOfferingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput).
+    pub fn builder() -> crate::output::describe_savings_plans_offerings_output::Builder {
+        crate::output::describe_savings_plans_offerings_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput).
 pub mod describe_savings_plans_offerings_output {
     
@@ -253,12 +263,6 @@ pub mod describe_savings_plans_offerings_output {
     
     
 }
-impl DescribeSavingsPlansOfferingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingsOutput`](crate::output::DescribeSavingsPlansOfferingsOutput).
-    pub fn builder() -> crate::output::describe_savings_plans_offerings_output::Builder {
-        crate::output::describe_savings_plans_offerings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -287,6 +291,13 @@ impl aws_http::request_id::RequestId for DescribeSavingsPlansOfferingRatesOutput
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSavingsPlansOfferingRatesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput).
+    pub fn builder() -> crate::output::describe_savings_plans_offering_rates_output::Builder {
+        crate::output::describe_savings_plans_offering_rates_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput).
 pub mod describe_savings_plans_offering_rates_output {
     
@@ -346,12 +357,6 @@ pub mod describe_savings_plans_offering_rates_output {
     
     
 }
-impl DescribeSavingsPlansOfferingRatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingRatesOutput`](crate::output::DescribeSavingsPlansOfferingRatesOutput).
-    pub fn builder() -> crate::output::describe_savings_plans_offering_rates_output::Builder {
-        crate::output::describe_savings_plans_offering_rates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -380,6 +385,13 @@ impl aws_http::request_id::RequestId for DescribeSavingsPlansOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSavingsPlansOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput).
+    pub fn builder() -> crate::output::describe_savings_plans_output::Builder {
+        crate::output::describe_savings_plans_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput).
 pub mod describe_savings_plans_output {
     
@@ -439,12 +451,6 @@ pub mod describe_savings_plans_output {
     
     
 }
-impl DescribeSavingsPlansOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOutput`](crate::output::DescribeSavingsPlansOutput).
-    pub fn builder() -> crate::output::describe_savings_plans_output::Builder {
-        crate::output::describe_savings_plans_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -480,6 +486,13 @@ impl aws_http::request_id::RequestId for DescribeSavingsPlanRatesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeSavingsPlanRatesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput).
+    pub fn builder() -> crate::output::describe_savings_plan_rates_output::Builder {
+        crate::output::describe_savings_plan_rates_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput).
 pub mod describe_savings_plan_rates_output {
     
@@ -551,12 +564,6 @@ pub mod describe_savings_plan_rates_output {
     
     
 }
-impl DescribeSavingsPlanRatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlanRatesOutput`](crate::output::DescribeSavingsPlanRatesOutput).
-    pub fn builder() -> crate::output::describe_savings_plan_rates_output::Builder {
-        crate::output::describe_savings_plan_rates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -569,6 +576,13 @@ impl aws_http::request_id::RequestId for DeleteQueuedSavingsPlanOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteQueuedSavingsPlanOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput).
+    pub fn builder() -> crate::output::delete_queued_savings_plan_output::Builder {
+        crate::output::delete_queued_savings_plan_output::Builder::default()
+    }
+}
+
 /// See [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput).
 pub mod delete_queued_savings_plan_output {
     
@@ -598,12 +612,6 @@ pub mod delete_queued_savings_plan_output {
     
     
 }
-impl DeleteQueuedSavingsPlanOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteQueuedSavingsPlanOutput`](crate::output::DeleteQueuedSavingsPlanOutput).
-    pub fn builder() -> crate::output::delete_queued_savings_plan_output::Builder {
-        crate::output::delete_queued_savings_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -625,6 +633,13 @@ impl aws_http::request_id::RequestId for CreateSavingsPlanOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateSavingsPlanOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput).
+    pub fn builder() -> crate::output::create_savings_plan_output::Builder {
+        crate::output::create_savings_plan_output::Builder::default()
+    }
+}
+
 /// See [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput).
 pub mod create_savings_plan_output {
     
@@ -665,11 +680,5 @@ pub mod create_savings_plan_output {
     }
     
     
-}
-impl CreateSavingsPlanOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSavingsPlanOutput`](crate::output::CreateSavingsPlanOutput).
-    pub fn builder() -> crate::output::create_savings_plan_output::Builder {
-        crate::output::create_savings_plan_output::Builder::default()
-    }
 }
 

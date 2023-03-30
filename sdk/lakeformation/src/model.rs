@@ -108,6 +108,13 @@ impl WriteOperation {
         self.delete_object.as_ref()
     }
 }
+impl WriteOperation {
+    /// Creates a new builder-style object to manufacture [`WriteOperation`](crate::model::WriteOperation).
+    pub fn builder() -> crate::model::write_operation::Builder {
+        crate::model::write_operation::Builder::default()
+    }
+}
+
 /// See [`WriteOperation`](crate::model::WriteOperation).
 pub mod write_operation {
     
@@ -150,12 +157,6 @@ pub mod write_operation {
     
     
 }
-impl WriteOperation {
-    /// Creates a new builder-style object to manufacture [`WriteOperation`](crate::model::WriteOperation).
-    pub fn builder() -> crate::model::write_operation::Builder {
-        crate::model::write_operation::Builder::default()
-    }
-}
 
 /// <p>An object to delete from the governed table.</p>
 #[non_exhaustive]
@@ -185,6 +186,13 @@ impl DeleteObjectInput {
         self.partition_values.as_deref()
     }
 }
+impl DeleteObjectInput {
+    /// Creates a new builder-style object to manufacture [`DeleteObjectInput`](crate::model::DeleteObjectInput).
+    pub fn builder() -> crate::model::delete_object_input::Builder {
+        crate::model::delete_object_input::Builder::default()
+    }
+}
+
 /// See [`DeleteObjectInput`](crate::model::DeleteObjectInput).
 pub mod delete_object_input {
     
@@ -245,12 +253,6 @@ pub mod delete_object_input {
     
     
 }
-impl DeleteObjectInput {
-    /// Creates a new builder-style object to manufacture [`DeleteObjectInput`](crate::model::DeleteObjectInput).
-    pub fn builder() -> crate::model::delete_object_input::Builder {
-        crate::model::delete_object_input::Builder::default()
-    }
-}
 
 /// <p>A new object to add to the governed table.</p>
 #[non_exhaustive]
@@ -289,6 +291,13 @@ impl AddObjectInput {
         self.partition_values.as_deref()
     }
 }
+impl AddObjectInput {
+    /// Creates a new builder-style object to manufacture [`AddObjectInput`](crate::model::AddObjectInput).
+    pub fn builder() -> crate::model::add_object_input::Builder {
+        crate::model::add_object_input::Builder::default()
+    }
+}
+
 /// See [`AddObjectInput`](crate::model::AddObjectInput).
 pub mod add_object_input {
     
@@ -363,12 +372,6 @@ pub mod add_object_input {
     }
     
     
-}
-impl AddObjectInput {
-    /// Creates a new builder-style object to manufacture [`AddObjectInput`](crate::model::AddObjectInput).
-    pub fn builder() -> crate::model::add_object_input::Builder {
-        crate::model::add_object_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TransactionType`, it is important to ensure
@@ -495,6 +498,13 @@ impl QueryPlanningContext {
         self.transaction_id.as_deref()
     }
 }
+impl QueryPlanningContext {
+    /// Creates a new builder-style object to manufacture [`QueryPlanningContext`](crate::model::QueryPlanningContext).
+    pub fn builder() -> crate::model::query_planning_context::Builder {
+        crate::model::query_planning_context::Builder::default()
+    }
+}
+
 /// See [`QueryPlanningContext`](crate::model::QueryPlanningContext).
 pub mod query_planning_context {
     
@@ -579,12 +589,6 @@ pub mod query_planning_context {
     
     
 }
-impl QueryPlanningContext {
-    /// Creates a new builder-style object to manufacture [`QueryPlanningContext`](crate::model::QueryPlanningContext).
-    pub fn builder() -> crate::model::query_planning_context::Builder {
-        crate::model::query_planning_context::Builder::default()
-    }
-}
 
 /// <p>A structure describing a table resource with LF-tags.</p>
 #[non_exhaustive]
@@ -621,6 +625,13 @@ impl TaggedTable {
         self.lf_tags_on_columns.as_deref()
     }
 }
+impl TaggedTable {
+    /// Creates a new builder-style object to manufacture [`TaggedTable`](crate::model::TaggedTable).
+    pub fn builder() -> crate::model::tagged_table::Builder {
+        crate::model::tagged_table::Builder::default()
+    }
+}
+
 /// See [`TaggedTable`](crate::model::TaggedTable).
 pub mod tagged_table {
     
@@ -705,12 +716,6 @@ pub mod tagged_table {
     
     
 }
-impl TaggedTable {
-    /// Creates a new builder-style object to manufacture [`TaggedTable`](crate::model::TaggedTable).
-    pub fn builder() -> crate::model::tagged_table::Builder {
-        crate::model::tagged_table::Builder::default()
-    }
-}
 
 /// <p>A structure containing the name of a column resource and the LF-tags attached to it.</p>
 #[non_exhaustive]
@@ -733,6 +738,13 @@ impl ColumnLfTag {
         self.lf_tags.as_deref()
     }
 }
+impl ColumnLfTag {
+    /// Creates a new builder-style object to manufacture [`ColumnLfTag`](crate::model::ColumnLfTag).
+    pub fn builder() -> crate::model::column_lf_tag::Builder {
+        crate::model::column_lf_tag::Builder::default()
+    }
+}
+
 /// See [`ColumnLfTag`](crate::model::ColumnLfTag).
 pub mod column_lf_tag {
     
@@ -781,12 +793,6 @@ pub mod column_lf_tag {
     
     
 }
-impl ColumnLfTag {
-    /// Creates a new builder-style object to manufacture [`ColumnLfTag`](crate::model::ColumnLfTag).
-    pub fn builder() -> crate::model::column_lf_tag::Builder {
-        crate::model::column_lf_tag::Builder::default()
-    }
-}
 
 /// <p>A structure containing an LF-tag key-value pair.</p>
 #[non_exhaustive]
@@ -816,6 +822,13 @@ impl LfTagPair {
         self.tag_values.as_deref()
     }
 }
+impl LfTagPair {
+    /// Creates a new builder-style object to manufacture [`LfTagPair`](crate::model::LfTagPair).
+    pub fn builder() -> crate::model::lf_tag_pair::Builder {
+        crate::model::lf_tag_pair::Builder::default()
+    }
+}
+
 /// See [`LfTagPair`](crate::model::LfTagPair).
 pub mod lf_tag_pair {
     
@@ -876,12 +889,6 @@ pub mod lf_tag_pair {
     
     
 }
-impl LfTagPair {
-    /// Creates a new builder-style object to manufacture [`LfTagPair`](crate::model::LfTagPair).
-    pub fn builder() -> crate::model::lf_tag_pair::Builder {
-        crate::model::lf_tag_pair::Builder::default()
-    }
-}
 
 /// <p>A structure for the table object. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. </p>
 #[non_exhaustive]
@@ -920,6 +927,13 @@ impl TableResource {
         self.table_wildcard.as_ref()
     }
 }
+impl TableResource {
+    /// Creates a new builder-style object to manufacture [`TableResource`](crate::model::TableResource).
+    pub fn builder() -> crate::model::table_resource::Builder {
+        crate::model::table_resource::Builder::default()
+    }
+}
+
 /// See [`TableResource`](crate::model::TableResource).
 pub mod table_resource {
     
@@ -988,18 +1002,19 @@ pub mod table_resource {
     
     
 }
-impl TableResource {
-    /// Creates a new builder-style object to manufacture [`TableResource`](crate::model::TableResource).
-    pub fn builder() -> crate::model::table_resource::Builder {
-        crate::model::table_resource::Builder::default()
-    }
-}
 
 /// <p>A wildcard object representing every table under a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TableWildcard  {
 }
+impl TableWildcard {
+    /// Creates a new builder-style object to manufacture [`TableWildcard`](crate::model::TableWildcard).
+    pub fn builder() -> crate::model::table_wildcard::Builder {
+        crate::model::table_wildcard::Builder::default()
+    }
+}
+
 /// See [`TableWildcard`](crate::model::TableWildcard).
 pub mod table_wildcard {
     
@@ -1017,12 +1032,6 @@ pub mod table_wildcard {
     }
     
     
-}
-impl TableWildcard {
-    /// Creates a new builder-style object to manufacture [`TableWildcard`](crate::model::TableWildcard).
-    pub fn builder() -> crate::model::table_wildcard::Builder {
-        crate::model::table_wildcard::Builder::default()
-    }
 }
 
 /// <p>A structure that allows an admin to grant user permissions on certain conditions. For example, granting a role access to all columns that do not have the LF-tag 'PII' in tables that have the LF-tag 'Prod'.</p>
@@ -1046,6 +1055,13 @@ impl LfTag {
         self.tag_values.as_deref()
     }
 }
+impl LfTag {
+    /// Creates a new builder-style object to manufacture [`LfTag`](crate::model::LfTag).
+    pub fn builder() -> crate::model::lf_tag::Builder {
+        crate::model::lf_tag::Builder::default()
+    }
+}
+
 /// See [`LfTag`](crate::model::LfTag).
 pub mod lf_tag {
     
@@ -1094,12 +1110,6 @@ pub mod lf_tag {
     
     
 }
-impl LfTag {
-    /// Creates a new builder-style object to manufacture [`LfTag`](crate::model::LfTag).
-    pub fn builder() -> crate::model::lf_tag::Builder {
-        crate::model::lf_tag::Builder::default()
-    }
-}
 
 /// <p>A structure describing a database resource with LF-tags.</p>
 #[non_exhaustive]
@@ -1122,6 +1132,13 @@ impl TaggedDatabase {
         self.lf_tags.as_deref()
     }
 }
+impl TaggedDatabase {
+    /// Creates a new builder-style object to manufacture [`TaggedDatabase`](crate::model::TaggedDatabase).
+    pub fn builder() -> crate::model::tagged_database::Builder {
+        crate::model::tagged_database::Builder::default()
+    }
+}
+
 /// See [`TaggedDatabase`](crate::model::TaggedDatabase).
 pub mod tagged_database {
     
@@ -1170,12 +1187,6 @@ pub mod tagged_database {
     
     
 }
-impl TaggedDatabase {
-    /// Creates a new builder-style object to manufacture [`TaggedDatabase`](crate::model::TaggedDatabase).
-    pub fn builder() -> crate::model::tagged_database::Builder {
-        crate::model::tagged_database::Builder::default()
-    }
-}
 
 /// <p>A structure for the database object.</p>
 #[non_exhaustive]
@@ -1198,6 +1209,13 @@ impl DatabaseResource {
         self.name.as_deref()
     }
 }
+impl DatabaseResource {
+    /// Creates a new builder-style object to manufacture [`DatabaseResource`](crate::model::DatabaseResource).
+    pub fn builder() -> crate::model::database_resource::Builder {
+        crate::model::database_resource::Builder::default()
+    }
+}
+
 /// See [`DatabaseResource`](crate::model::DatabaseResource).
 pub mod database_resource {
     
@@ -1239,12 +1257,6 @@ pub mod database_resource {
     }
     
     
-}
-impl DatabaseResource {
-    /// Creates a new builder-style object to manufacture [`DatabaseResource`](crate::model::DatabaseResource).
-    pub fn builder() -> crate::model::database_resource::Builder {
-        crate::model::database_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Permission`, it is important to ensure
@@ -1442,6 +1454,13 @@ impl Resource {
         self.lf_tag_policy.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -1556,12 +1575,6 @@ pub mod resource {
     
     
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>A structure containing a list of LF-tag conditions that apply to a resource's LF-tag policy.</p>
 #[non_exhaustive]
@@ -1591,6 +1604,13 @@ impl LfTagPolicyResource {
         self.expression.as_deref()
     }
 }
+impl LfTagPolicyResource {
+    /// Creates a new builder-style object to manufacture [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
+    pub fn builder() -> crate::model::lf_tag_policy_resource::Builder {
+        crate::model::lf_tag_policy_resource::Builder::default()
+    }
+}
+
 /// See [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
 pub mod lf_tag_policy_resource {
     
@@ -1650,12 +1670,6 @@ pub mod lf_tag_policy_resource {
     }
     
     
-}
-impl LfTagPolicyResource {
-    /// Creates a new builder-style object to manufacture [`LfTagPolicyResource`](crate::model::LfTagPolicyResource).
-    pub fn builder() -> crate::model::lf_tag_policy_resource::Builder {
-        crate::model::lf_tag_policy_resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
@@ -1768,6 +1782,13 @@ impl LfTagKeyResource {
         self.tag_values.as_deref()
     }
 }
+impl LfTagKeyResource {
+    /// Creates a new builder-style object to manufacture [`LfTagKeyResource`](crate::model::LfTagKeyResource).
+    pub fn builder() -> crate::model::lf_tag_key_resource::Builder {
+        crate::model::lf_tag_key_resource::Builder::default()
+    }
+}
+
 /// See [`LfTagKeyResource`](crate::model::LfTagKeyResource).
 pub mod lf_tag_key_resource {
     
@@ -1828,12 +1849,6 @@ pub mod lf_tag_key_resource {
     
     
 }
-impl LfTagKeyResource {
-    /// Creates a new builder-style object to manufacture [`LfTagKeyResource`](crate::model::LfTagKeyResource).
-    pub fn builder() -> crate::model::lf_tag_key_resource::Builder {
-        crate::model::lf_tag_key_resource::Builder::default()
-    }
-}
 
 /// <p>A structure for a data cells filter resource. </p>
 #[non_exhaustive]
@@ -1870,6 +1885,13 @@ impl DataCellsFilterResource {
         self.name.as_deref()
     }
 }
+impl DataCellsFilterResource {
+    /// Creates a new builder-style object to manufacture [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
+    pub fn builder() -> crate::model::data_cells_filter_resource::Builder {
+        crate::model::data_cells_filter_resource::Builder::default()
+    }
+}
+
 /// See [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
 pub mod data_cells_filter_resource {
     
@@ -1936,12 +1958,6 @@ pub mod data_cells_filter_resource {
     
     
 }
-impl DataCellsFilterResource {
-    /// Creates a new builder-style object to manufacture [`DataCellsFilterResource`](crate::model::DataCellsFilterResource).
-    pub fn builder() -> crate::model::data_cells_filter_resource::Builder {
-        crate::model::data_cells_filter_resource::Builder::default()
-    }
-}
 
 /// <p>A structure for a data location object where permissions are granted or revoked. </p>
 #[non_exhaustive]
@@ -1964,6 +1980,13 @@ impl DataLocationResource {
         self.resource_arn.as_deref()
     }
 }
+impl DataLocationResource {
+    /// Creates a new builder-style object to manufacture [`DataLocationResource`](crate::model::DataLocationResource).
+    pub fn builder() -> crate::model::data_location_resource::Builder {
+        crate::model::data_location_resource::Builder::default()
+    }
+}
+
 /// See [`DataLocationResource`](crate::model::DataLocationResource).
 pub mod data_location_resource {
     
@@ -2005,12 +2028,6 @@ pub mod data_location_resource {
     }
     
     
-}
-impl DataLocationResource {
-    /// Creates a new builder-style object to manufacture [`DataLocationResource`](crate::model::DataLocationResource).
-    pub fn builder() -> crate::model::data_location_resource::Builder {
-        crate::model::data_location_resource::Builder::default()
-    }
 }
 
 /// <p>A structure for a table with columns object. This object is only used when granting a SELECT permission.</p> 
@@ -2056,6 +2073,13 @@ impl TableWithColumnsResource {
         self.column_wildcard.as_ref()
     }
 }
+impl TableWithColumnsResource {
+    /// Creates a new builder-style object to manufacture [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
+    pub fn builder() -> crate::model::table_with_columns_resource::Builder {
+        crate::model::table_with_columns_resource::Builder::default()
+    }
+}
+
 /// See [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
 pub mod table_with_columns_resource {
     
@@ -2140,12 +2164,6 @@ pub mod table_with_columns_resource {
     
     
 }
-impl TableWithColumnsResource {
-    /// Creates a new builder-style object to manufacture [`TableWithColumnsResource`](crate::model::TableWithColumnsResource).
-    pub fn builder() -> crate::model::table_with_columns_resource::Builder {
-        crate::model::table_with_columns_resource::Builder::default()
-    }
-}
 
 /// <p>A wildcard object, consisting of an optional list of excluded column names or indexes.</p>
 #[non_exhaustive]
@@ -2161,6 +2179,13 @@ impl ColumnWildcard {
         self.excluded_column_names.as_deref()
     }
 }
+impl ColumnWildcard {
+    /// Creates a new builder-style object to manufacture [`ColumnWildcard`](crate::model::ColumnWildcard).
+    pub fn builder() -> crate::model::column_wildcard::Builder {
+        crate::model::column_wildcard::Builder::default()
+    }
+}
+
 /// See [`ColumnWildcard`](crate::model::ColumnWildcard).
 pub mod column_wildcard {
     
@@ -2197,18 +2222,19 @@ pub mod column_wildcard {
     
     
 }
-impl ColumnWildcard {
-    /// Creates a new builder-style object to manufacture [`ColumnWildcard`](crate::model::ColumnWildcard).
-    pub fn builder() -> crate::model::column_wildcard::Builder {
-        crate::model::column_wildcard::Builder::default()
-    }
-}
 
 /// <p>A structure for the catalog object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CatalogResource  {
 }
+impl CatalogResource {
+    /// Creates a new builder-style object to manufacture [`CatalogResource`](crate::model::CatalogResource).
+    pub fn builder() -> crate::model::catalog_resource::Builder {
+        crate::model::catalog_resource::Builder::default()
+    }
+}
+
 /// See [`CatalogResource`](crate::model::CatalogResource).
 pub mod catalog_resource {
     
@@ -2227,12 +2253,6 @@ pub mod catalog_resource {
     
     
 }
-impl CatalogResource {
-    /// Creates a new builder-style object to manufacture [`CatalogResource`](crate::model::CatalogResource).
-    pub fn builder() -> crate::model::catalog_resource::Builder {
-        crate::model::catalog_resource::Builder::default()
-    }
-}
 
 /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
 #[non_exhaustive]
@@ -2248,6 +2268,13 @@ impl DataLakePrincipal {
         self.data_lake_principal_identifier.as_deref()
     }
 }
+impl DataLakePrincipal {
+    /// Creates a new builder-style object to manufacture [`DataLakePrincipal`](crate::model::DataLakePrincipal).
+    pub fn builder() -> crate::model::data_lake_principal::Builder {
+        crate::model::data_lake_principal::Builder::default()
+    }
+}
+
 /// See [`DataLakePrincipal`](crate::model::DataLakePrincipal).
 pub mod data_lake_principal {
     
@@ -2278,12 +2305,6 @@ pub mod data_lake_principal {
     
     
 }
-impl DataLakePrincipal {
-    /// Creates a new builder-style object to manufacture [`DataLakePrincipal`](crate::model::DataLakePrincipal).
-    pub fn builder() -> crate::model::data_lake_principal::Builder {
-        crate::model::data_lake_principal::Builder::default()
-    }
-}
 
 /// <p>A structure containing an error related to a <code>TagResource</code> or <code>UnTagResource</code> operation.</p>
 #[non_exhaustive]
@@ -2306,6 +2327,13 @@ impl LfTagError {
         self.error.as_ref()
     }
 }
+impl LfTagError {
+    /// Creates a new builder-style object to manufacture [`LfTagError`](crate::model::LfTagError).
+    pub fn builder() -> crate::model::lf_tag_error::Builder {
+        crate::model::lf_tag_error::Builder::default()
+    }
+}
+
 /// See [`LfTagError`](crate::model::LfTagError).
 pub mod lf_tag_error {
     
@@ -2348,12 +2376,6 @@ pub mod lf_tag_error {
     
     
 }
-impl LfTagError {
-    /// Creates a new builder-style object to manufacture [`LfTagError`](crate::model::LfTagError).
-    pub fn builder() -> crate::model::lf_tag_error::Builder {
-        crate::model::lf_tag_error::Builder::default()
-    }
-}
 
 /// <p>Contains details about an error.</p>
 #[non_exhaustive]
@@ -2376,6 +2398,13 @@ impl ErrorDetail {
         self.error_message.as_deref()
     }
 }
+impl ErrorDetail {
+    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
+    pub fn builder() -> crate::model::error_detail::Builder {
+        crate::model::error_detail::Builder::default()
+    }
+}
+
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
     
@@ -2417,12 +2446,6 @@ pub mod error_detail {
     }
     
     
-}
-impl ErrorDetail {
-    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
-    pub fn builder() -> crate::model::error_detail::Builder {
-        crate::model::error_detail::Builder::default()
-    }
 }
 
 /// <p>A structure representing a list of Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.</p>
@@ -2508,6 +2531,13 @@ impl DataLakeSettings {
         self.authorized_session_tag_value_list.as_deref()
     }
 }
+impl DataLakeSettings {
+    /// Creates a new builder-style object to manufacture [`DataLakeSettings`](crate::model::DataLakeSettings).
+    pub fn builder() -> crate::model::data_lake_settings::Builder {
+        crate::model::data_lake_settings::Builder::default()
+    }
+}
+
 /// See [`DataLakeSettings`](crate::model::DataLakeSettings).
 pub mod data_lake_settings {
     
@@ -2684,12 +2714,6 @@ pub mod data_lake_settings {
     
     
 }
-impl DataLakeSettings {
-    /// Creates a new builder-style object to manufacture [`DataLakeSettings`](crate::model::DataLakeSettings).
-    pub fn builder() -> crate::model::data_lake_settings::Builder {
-        crate::model::data_lake_settings::Builder::default()
-    }
-}
 
 /// <p>Permissions granted to a principal.</p>
 #[non_exhaustive]
@@ -2712,6 +2736,13 @@ impl PrincipalPermissions {
         self.permissions.as_deref()
     }
 }
+impl PrincipalPermissions {
+    /// Creates a new builder-style object to manufacture [`PrincipalPermissions`](crate::model::PrincipalPermissions).
+    pub fn builder() -> crate::model::principal_permissions::Builder {
+        crate::model::principal_permissions::Builder::default()
+    }
+}
+
 /// See [`PrincipalPermissions`](crate::model::PrincipalPermissions).
 pub mod principal_permissions {
     
@@ -2760,12 +2791,6 @@ pub mod principal_permissions {
     
     
 }
-impl PrincipalPermissions {
-    /// Creates a new builder-style object to manufacture [`PrincipalPermissions`](crate::model::PrincipalPermissions).
-    pub fn builder() -> crate::model::principal_permissions::Builder {
-        crate::model::principal_permissions::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about a transaction.</p>
 #[non_exhaustive]
@@ -2802,6 +2827,13 @@ impl TransactionDescription {
         self.transaction_end_time.as_ref()
     }
 }
+impl TransactionDescription {
+    /// Creates a new builder-style object to manufacture [`TransactionDescription`](crate::model::TransactionDescription).
+    pub fn builder() -> crate::model::transaction_description::Builder {
+        crate::model::transaction_description::Builder::default()
+    }
+}
+
 /// See [`TransactionDescription`](crate::model::TransactionDescription).
 pub mod transaction_description {
     
@@ -2867,12 +2899,6 @@ pub mod transaction_description {
     }
     
     
-}
-impl TransactionDescription {
-    /// Creates a new builder-style object to manufacture [`TransactionDescription`](crate::model::TransactionDescription).
-    pub fn builder() -> crate::model::transaction_description::Builder {
-        crate::model::transaction_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TransactionStatus`, it is important to ensure
@@ -3110,6 +3136,13 @@ impl StorageOptimizer {
         self.last_run_details.as_deref()
     }
 }
+impl StorageOptimizer {
+    /// Creates a new builder-style object to manufacture [`StorageOptimizer`](crate::model::StorageOptimizer).
+    pub fn builder() -> crate::model::storage_optimizer::Builder {
+        crate::model::storage_optimizer::Builder::default()
+    }
+}
+
 /// See [`StorageOptimizer`](crate::model::StorageOptimizer).
 pub mod storage_optimizer {
     
@@ -3198,12 +3231,6 @@ pub mod storage_optimizer {
     
     
 }
-impl StorageOptimizer {
-    /// Creates a new builder-style object to manufacture [`StorageOptimizer`](crate::model::StorageOptimizer).
-    pub fn builder() -> crate::model::storage_optimizer::Builder {
-        crate::model::storage_optimizer::Builder::default()
-    }
-}
 
 /// <p>A structure containing information about an Lake Formation resource.</p>
 #[non_exhaustive]
@@ -3233,6 +3260,13 @@ impl ResourceInfo {
         self.last_modified.as_ref()
     }
 }
+impl ResourceInfo {
+    /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
+    pub fn builder() -> crate::model::resource_info::Builder {
+        crate::model::resource_info::Builder::default()
+    }
+}
+
 /// See [`ResourceInfo`](crate::model::ResourceInfo).
 pub mod resource_info {
     
@@ -3287,12 +3321,6 @@ pub mod resource_info {
     
     
 }
-impl ResourceInfo {
-    /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::model::ResourceInfo).
-    pub fn builder() -> crate::model::resource_info::Builder {
-        crate::model::resource_info::Builder::default()
-    }
-}
 
 /// <p>This structure describes the filtering of columns in a table based on a filter condition.</p>
 #[non_exhaustive]
@@ -3322,6 +3350,13 @@ impl FilterCondition {
         self.string_value_list.as_deref()
     }
 }
+impl FilterCondition {
+    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
+    pub fn builder() -> crate::model::filter_condition::Builder {
+        crate::model::filter_condition::Builder::default()
+    }
+}
+
 /// See [`FilterCondition`](crate::model::FilterCondition).
 pub mod filter_condition {
     
@@ -3381,12 +3416,6 @@ pub mod filter_condition {
     }
     
     
-}
-impl FilterCondition {
-    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
-    pub fn builder() -> crate::model::filter_condition::Builder {
-        crate::model::filter_condition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
@@ -3645,6 +3674,13 @@ impl PrincipalResourcePermissions {
         self.additional_details.as_ref()
     }
 }
+impl PrincipalResourcePermissions {
+    /// Creates a new builder-style object to manufacture [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
+    pub fn builder() -> crate::model::principal_resource_permissions::Builder {
+        crate::model::principal_resource_permissions::Builder::default()
+    }
+}
+
 /// See [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
 pub mod principal_resource_permissions {
     
@@ -3735,12 +3771,6 @@ pub mod principal_resource_permissions {
     
     
 }
-impl PrincipalResourcePermissions {
-    /// Creates a new builder-style object to manufacture [`PrincipalResourcePermissions`](crate::model::PrincipalResourcePermissions).
-    pub fn builder() -> crate::model::principal_resource_permissions::Builder {
-        crate::model::principal_resource_permissions::Builder::default()
-    }
-}
 
 /// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p> 
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
@@ -3757,6 +3787,13 @@ impl DetailsMap {
         self.resource_share.as_deref()
     }
 }
+impl DetailsMap {
+    /// Creates a new builder-style object to manufacture [`DetailsMap`](crate::model::DetailsMap).
+    pub fn builder() -> crate::model::details_map::Builder {
+        crate::model::details_map::Builder::default()
+    }
+}
+
 /// See [`DetailsMap`](crate::model::DetailsMap).
 pub mod details_map {
     
@@ -3792,12 +3829,6 @@ pub mod details_map {
     }
     
     
-}
-impl DetailsMap {
-    /// Creates a new builder-style object to manufacture [`DetailsMap`](crate::model::DetailsMap).
-    pub fn builder() -> crate::model::details_map::Builder {
-        crate::model::details_map::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DataLakeResourceType`, it is important to ensure
@@ -4052,6 +4083,13 @@ impl DataCellsFilter {
         self.column_wildcard.as_ref()
     }
 }
+impl DataCellsFilter {
+    /// Creates a new builder-style object to manufacture [`DataCellsFilter`](crate::model::DataCellsFilter).
+    pub fn builder() -> crate::model::data_cells_filter::Builder {
+        crate::model::data_cells_filter::Builder::default()
+    }
+}
+
 /// See [`DataCellsFilter`](crate::model::DataCellsFilter).
 pub mod data_cells_filter {
     
@@ -4162,12 +4200,6 @@ pub mod data_cells_filter {
     
     
 }
-impl DataCellsFilter {
-    /// Creates a new builder-style object to manufacture [`DataCellsFilter`](crate::model::DataCellsFilter).
-    pub fn builder() -> crate::model::data_cells_filter::Builder {
-        crate::model::data_cells_filter::Builder::default()
-    }
-}
 
 /// <p>A PartiQL predicate.</p>
 #[non_exhaustive]
@@ -4190,6 +4222,13 @@ impl RowFilter {
         self.all_rows_wildcard.as_ref()
     }
 }
+impl RowFilter {
+    /// Creates a new builder-style object to manufacture [`RowFilter`](crate::model::RowFilter).
+    pub fn builder() -> crate::model::row_filter::Builder {
+        crate::model::row_filter::Builder::default()
+    }
+}
+
 /// See [`RowFilter`](crate::model::RowFilter).
 pub mod row_filter {
     
@@ -4232,18 +4271,19 @@ pub mod row_filter {
     
     
 }
-impl RowFilter {
-    /// Creates a new builder-style object to manufacture [`RowFilter`](crate::model::RowFilter).
-    pub fn builder() -> crate::model::row_filter::Builder {
-        crate::model::row_filter::Builder::default()
-    }
-}
 
 /// <p>A structure that you pass to indicate you want all rows in a filter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllRowsWildcard  {
 }
+impl AllRowsWildcard {
+    /// Creates a new builder-style object to manufacture [`AllRowsWildcard`](crate::model::AllRowsWildcard).
+    pub fn builder() -> crate::model::all_rows_wildcard::Builder {
+        crate::model::all_rows_wildcard::Builder::default()
+    }
+}
+
 /// See [`AllRowsWildcard`](crate::model::AllRowsWildcard).
 pub mod all_rows_wildcard {
     
@@ -4261,12 +4301,6 @@ pub mod all_rows_wildcard {
     }
     
     
-}
-impl AllRowsWildcard {
-    /// Creates a new builder-style object to manufacture [`AllRowsWildcard`](crate::model::AllRowsWildcard).
-    pub fn builder() -> crate::model::all_rows_wildcard::Builder {
-        crate::model::all_rows_wildcard::Builder::default()
-    }
 }
 
 /// <p>Defines the valid range of work unit IDs for querying the execution service.</p>
@@ -4297,6 +4331,13 @@ impl WorkUnitRange {
         self.work_unit_token.as_deref()
     }
 }
+impl WorkUnitRange {
+    /// Creates a new builder-style object to manufacture [`WorkUnitRange`](crate::model::WorkUnitRange).
+    pub fn builder() -> crate::model::work_unit_range::Builder {
+        crate::model::work_unit_range::Builder::default()
+    }
+}
+
 /// See [`WorkUnitRange`](crate::model::WorkUnitRange).
 pub mod work_unit_range {
     
@@ -4352,12 +4393,6 @@ pub mod work_unit_range {
     }
     
     
-}
-impl WorkUnitRange {
-    /// Creates a new builder-style object to manufacture [`WorkUnitRange`](crate::model::WorkUnitRange).
-    pub fn builder() -> crate::model::work_unit_range::Builder {
-        crate::model::work_unit_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PermissionType`, it is important to ensure
@@ -4456,6 +4491,13 @@ impl AuditContext {
         self.additional_audit_context.as_deref()
     }
 }
+impl AuditContext {
+    /// Creates a new builder-style object to manufacture [`AuditContext`](crate::model::AuditContext).
+    pub fn builder() -> crate::model::audit_context::Builder {
+        crate::model::audit_context::Builder::default()
+    }
+}
+
 /// See [`AuditContext`](crate::model::AuditContext).
 pub mod audit_context {
     
@@ -4486,12 +4528,6 @@ pub mod audit_context {
     
     
 }
-impl AuditContext {
-    /// Creates a new builder-style object to manufacture [`AuditContext`](crate::model::AuditContext).
-    pub fn builder() -> crate::model::audit_context::Builder {
-        crate::model::audit_context::Builder::default()
-    }
-}
 
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
@@ -4507,6 +4543,13 @@ impl PartitionValueList {
         self.values.as_deref()
     }
 }
+impl PartitionValueList {
+    /// Creates a new builder-style object to manufacture [`PartitionValueList`](crate::model::PartitionValueList).
+    pub fn builder() -> crate::model::partition_value_list::Builder {
+        crate::model::partition_value_list::Builder::default()
+    }
+}
+
 /// See [`PartitionValueList`](crate::model::PartitionValueList).
 pub mod partition_value_list {
     
@@ -4543,12 +4586,6 @@ pub mod partition_value_list {
     
     
 }
-impl PartitionValueList {
-    /// Creates a new builder-style object to manufacture [`PartitionValueList`](crate::model::PartitionValueList).
-    pub fn builder() -> crate::model::partition_value_list::Builder {
-        crate::model::partition_value_list::Builder::default()
-    }
-}
 
 /// <p>A structure containing a list of partition values and table objects.</p>
 #[non_exhaustive]
@@ -4571,6 +4608,13 @@ impl PartitionObjects {
         self.objects.as_deref()
     }
 }
+impl PartitionObjects {
+    /// Creates a new builder-style object to manufacture [`PartitionObjects`](crate::model::PartitionObjects).
+    pub fn builder() -> crate::model::partition_objects::Builder {
+        crate::model::partition_objects::Builder::default()
+    }
+}
+
 /// See [`PartitionObjects`](crate::model::PartitionObjects).
 pub mod partition_objects {
     
@@ -4625,12 +4669,6 @@ pub mod partition_objects {
     
     
 }
-impl PartitionObjects {
-    /// Creates a new builder-style object to manufacture [`PartitionObjects`](crate::model::PartitionObjects).
-    pub fn builder() -> crate::model::partition_objects::Builder {
-        crate::model::partition_objects::Builder::default()
-    }
-}
 
 /// <p>Specifies the details of a governed table.</p>
 #[non_exhaustive]
@@ -4660,6 +4698,13 @@ impl TableObject {
         self.size
     }
 }
+impl TableObject {
+    /// Creates a new builder-style object to manufacture [`TableObject`](crate::model::TableObject).
+    pub fn builder() -> crate::model::table_object::Builder {
+        crate::model::table_object::Builder::default()
+    }
+}
+
 /// See [`TableObject`](crate::model::TableObject).
 pub mod table_object {
     
@@ -4715,12 +4760,6 @@ pub mod table_object {
     
     
 }
-impl TableObject {
-    /// Creates a new builder-style object to manufacture [`TableObject`](crate::model::TableObject).
-    pub fn builder() -> crate::model::table_object::Builder {
-        crate::model::table_object::Builder::default()
-    }
-}
 
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
@@ -4757,6 +4796,13 @@ impl PlanningStatistics {
         self.work_units_generated_count
     }
 }
+impl PlanningStatistics {
+    /// Creates a new builder-style object to manufacture [`PlanningStatistics`](crate::model::PlanningStatistics).
+    pub fn builder() -> crate::model::planning_statistics::Builder {
+        crate::model::planning_statistics::Builder::default()
+    }
+}
+
 /// See [`PlanningStatistics`](crate::model::PlanningStatistics).
 pub mod planning_statistics {
     
@@ -4827,12 +4873,6 @@ pub mod planning_statistics {
     
     
 }
-impl PlanningStatistics {
-    /// Creates a new builder-style object to manufacture [`PlanningStatistics`](crate::model::PlanningStatistics).
-    pub fn builder() -> crate::model::planning_statistics::Builder {
-        crate::model::planning_statistics::Builder::default()
-    }
-}
 
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
@@ -4862,6 +4902,13 @@ impl ExecutionStatistics {
         self.work_units_executed_count
     }
 }
+impl ExecutionStatistics {
+    /// Creates a new builder-style object to manufacture [`ExecutionStatistics`](crate::model::ExecutionStatistics).
+    pub fn builder() -> crate::model::execution_statistics::Builder {
+        crate::model::execution_statistics::Builder::default()
+    }
+}
+
 /// See [`ExecutionStatistics`](crate::model::ExecutionStatistics).
 pub mod execution_statistics {
     
@@ -4918,12 +4965,6 @@ pub mod execution_statistics {
     }
     
     
-}
-impl ExecutionStatistics {
-    /// Creates a new builder-style object to manufacture [`ExecutionStatistics`](crate::model::ExecutionStatistics).
-    pub fn builder() -> crate::model::execution_statistics::Builder {
-        crate::model::execution_statistics::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QueryStateString`, it is important to ensure
@@ -5044,6 +5085,13 @@ impl VirtualObject {
         self.e_tag.as_deref()
     }
 }
+impl VirtualObject {
+    /// Creates a new builder-style object to manufacture [`VirtualObject`](crate::model::VirtualObject).
+    pub fn builder() -> crate::model::virtual_object::Builder {
+        crate::model::virtual_object::Builder::default()
+    }
+}
+
 /// See [`VirtualObject`](crate::model::VirtualObject).
 pub mod virtual_object {
     
@@ -5086,12 +5134,6 @@ pub mod virtual_object {
     
     
 }
-impl VirtualObject {
-    /// Creates a new builder-style object to manufacture [`VirtualObject`](crate::model::VirtualObject).
-    pub fn builder() -> crate::model::virtual_object::Builder {
-        crate::model::virtual_object::Builder::default()
-    }
-}
 
 /// <p>A list of failures when performing a batch grant or batch revoke operation.</p>
 #[non_exhaustive]
@@ -5114,6 +5156,13 @@ impl BatchPermissionsFailureEntry {
         self.error.as_ref()
     }
 }
+impl BatchPermissionsFailureEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
+    pub fn builder() -> crate::model::batch_permissions_failure_entry::Builder {
+        crate::model::batch_permissions_failure_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
 pub mod batch_permissions_failure_entry {
     
@@ -5155,12 +5204,6 @@ pub mod batch_permissions_failure_entry {
     }
     
     
-}
-impl BatchPermissionsFailureEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPermissionsFailureEntry`](crate::model::BatchPermissionsFailureEntry).
-    pub fn builder() -> crate::model::batch_permissions_failure_entry::Builder {
-        crate::model::batch_permissions_failure_entry::Builder::default()
-    }
 }
 
 /// <p>A permission to a resource granted by batch operation to the principal.</p>
@@ -5205,6 +5248,13 @@ impl BatchPermissionsRequestEntry {
         self.permissions_with_grant_option.as_deref()
     }
 }
+impl BatchPermissionsRequestEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
+    pub fn builder() -> crate::model::batch_permissions_request_entry::Builder {
+        crate::model::batch_permissions_request_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
 pub mod batch_permissions_request_entry {
     
@@ -5294,11 +5344,5 @@ pub mod batch_permissions_request_entry {
     }
     
     
-}
-impl BatchPermissionsRequestEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPermissionsRequestEntry`](crate::model::BatchPermissionsRequestEntry).
-    pub fn builder() -> crate::model::batch_permissions_request_entry::Builder {
-        crate::model::batch_permissions_request_entry::Builder::default()
-    }
 }
 

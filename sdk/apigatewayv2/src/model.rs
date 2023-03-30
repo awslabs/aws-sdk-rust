@@ -216,6 +216,13 @@ impl RouteSettings {
         self.throttling_rate_limit
     }
 }
+impl RouteSettings {
+    /// Creates a new builder-style object to manufacture [`RouteSettings`](crate::model::RouteSettings).
+    pub fn builder() -> crate::model::route_settings::Builder {
+        crate::model::route_settings::Builder::default()
+    }
+}
+
 /// See [`RouteSettings`](crate::model::RouteSettings).
 pub mod route_settings {
     
@@ -297,12 +304,6 @@ pub mod route_settings {
     }
     
     
-}
-impl RouteSettings {
-    /// Creates a new builder-style object to manufacture [`RouteSettings`](crate::model::RouteSettings).
-    pub fn builder() -> crate::model::route_settings::Builder {
-        crate::model::route_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoggingLevel`, it is important to ensure
@@ -413,6 +414,13 @@ impl AccessLogSettings {
         self.format.as_deref()
     }
 }
+impl AccessLogSettings {
+    /// Creates a new builder-style object to manufacture [`AccessLogSettings`](crate::model::AccessLogSettings).
+    pub fn builder() -> crate::model::access_log_settings::Builder {
+        crate::model::access_log_settings::Builder::default()
+    }
+}
+
 /// See [`AccessLogSettings`](crate::model::AccessLogSettings).
 pub mod access_log_settings {
     
@@ -455,12 +463,6 @@ pub mod access_log_settings {
     
     
 }
-impl AccessLogSettings {
-    /// Creates a new builder-style object to manufacture [`AccessLogSettings`](crate::model::AccessLogSettings).
-    pub fn builder() -> crate::model::access_log_settings::Builder {
-        crate::model::access_log_settings::Builder::default()
-    }
-}
 
 /// <p>Validation constraints imposed on parameters of a request (path, query string, headers).</p>
 #[non_exhaustive]
@@ -476,6 +478,13 @@ impl ParameterConstraints {
         self.required
     }
 }
+impl ParameterConstraints {
+    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
+    pub fn builder() -> crate::model::parameter_constraints::Builder {
+        crate::model::parameter_constraints::Builder::default()
+    }
+}
+
 /// See [`ParameterConstraints`](crate::model::ParameterConstraints).
 pub mod parameter_constraints {
     
@@ -506,12 +515,6 @@ pub mod parameter_constraints {
     }
     
     
-}
-impl ParameterConstraints {
-    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
-    pub fn builder() -> crate::model::parameter_constraints::Builder {
-        crate::model::parameter_constraints::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthorizationType`, it is important to ensure
@@ -702,6 +705,13 @@ impl TlsConfig {
         self.server_name_to_verify.as_deref()
     }
 }
+impl TlsConfig {
+    /// Creates a new builder-style object to manufacture [`TlsConfig`](crate::model::TlsConfig).
+    pub fn builder() -> crate::model::tls_config::Builder {
+        crate::model::tls_config::Builder::default()
+    }
+}
+
 /// See [`TlsConfig`](crate::model::TlsConfig).
 pub mod tls_config {
     
@@ -731,12 +741,6 @@ pub mod tls_config {
     }
     
     
-}
-impl TlsConfig {
-    /// Creates a new builder-style object to manufacture [`TlsConfig`](crate::model::TlsConfig).
-    pub fn builder() -> crate::model::tls_config::Builder {
-        crate::model::tls_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PassthroughBehavior`, it is important to ensure
@@ -1019,6 +1023,13 @@ impl TlsConfigInput {
         self.server_name_to_verify.as_deref()
     }
 }
+impl TlsConfigInput {
+    /// Creates a new builder-style object to manufacture [`TlsConfigInput`](crate::model::TlsConfigInput).
+    pub fn builder() -> crate::model::tls_config_input::Builder {
+        crate::model::tls_config_input::Builder::default()
+    }
+}
+
 /// See [`TlsConfigInput`](crate::model::TlsConfigInput).
 pub mod tls_config_input {
     
@@ -1048,12 +1059,6 @@ pub mod tls_config_input {
     }
     
     
-}
-impl TlsConfigInput {
-    /// Creates a new builder-style object to manufacture [`TlsConfigInput`](crate::model::TlsConfigInput).
-    pub fn builder() -> crate::model::tls_config_input::Builder {
-        crate::model::tls_config_input::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -1092,6 +1097,13 @@ impl MutualTlsAuthentication {
         self.truststore_warnings.as_deref()
     }
 }
+impl MutualTlsAuthentication {
+    /// Creates a new builder-style object to manufacture [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
+    pub fn builder() -> crate::model::mutual_tls_authentication::Builder {
+        crate::model::mutual_tls_authentication::Builder::default()
+    }
+}
+
 /// See [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
 pub mod mutual_tls_authentication {
     
@@ -1159,12 +1171,6 @@ pub mod mutual_tls_authentication {
     }
     
     
-}
-impl MutualTlsAuthentication {
-    /// Creates a new builder-style object to manufacture [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
-    pub fn builder() -> crate::model::mutual_tls_authentication::Builder {
-        crate::model::mutual_tls_authentication::Builder::default()
-    }
 }
 
 /// <p>The domain name configuration.</p>
@@ -1244,6 +1250,13 @@ impl DomainNameConfiguration {
         self.ownership_verification_certificate_arn.as_deref()
     }
 }
+impl DomainNameConfiguration {
+    /// Creates a new builder-style object to manufacture [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
+    pub fn builder() -> crate::model::domain_name_configuration::Builder {
+        crate::model::domain_name_configuration::Builder::default()
+    }
+}
+
 /// See [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
 pub mod domain_name_configuration {
     
@@ -1381,12 +1394,6 @@ pub mod domain_name_configuration {
     }
     
     
-}
-impl DomainNameConfiguration {
-    /// Creates a new builder-style object to manufacture [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
-    pub fn builder() -> crate::model::domain_name_configuration::Builder {
-        crate::model::domain_name_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SecurityPolicy`, it is important to ensure
@@ -1674,6 +1681,13 @@ impl MutualTlsAuthenticationInput {
         self.truststore_version.as_deref()
     }
 }
+impl MutualTlsAuthenticationInput {
+    /// Creates a new builder-style object to manufacture [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
+    pub fn builder() -> crate::model::mutual_tls_authentication_input::Builder {
+        crate::model::mutual_tls_authentication_input::Builder::default()
+    }
+}
+
 /// See [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
 pub mod mutual_tls_authentication_input {
     
@@ -1723,12 +1737,6 @@ pub mod mutual_tls_authentication_input {
     }
     
     
-}
-impl MutualTlsAuthenticationInput {
-    /// Creates a new builder-style object to manufacture [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
-    pub fn builder() -> crate::model::mutual_tls_authentication_input::Builder {
-        crate::model::mutual_tls_authentication_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeploymentStatus`, it is important to ensure
@@ -1847,6 +1855,13 @@ impl JwtConfiguration {
         self.issuer.as_deref()
     }
 }
+impl JwtConfiguration {
+    /// Creates a new builder-style object to manufacture [`JwtConfiguration`](crate::model::JwtConfiguration).
+    pub fn builder() -> crate::model::jwt_configuration::Builder {
+        crate::model::jwt_configuration::Builder::default()
+    }
+}
+
 /// See [`JwtConfiguration`](crate::model::JwtConfiguration).
 pub mod jwt_configuration {
     
@@ -1902,12 +1917,6 @@ pub mod jwt_configuration {
     }
     
     
-}
-impl JwtConfiguration {
-    /// Creates a new builder-style object to manufacture [`JwtConfiguration`](crate::model::JwtConfiguration).
-    pub fn builder() -> crate::model::jwt_configuration::Builder {
-        crate::model::jwt_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthorizerType`, it is important to ensure
@@ -2123,6 +2132,13 @@ impl Cors {
         self.max_age
     }
 }
+impl Cors {
+    /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors).
+    pub fn builder() -> crate::model::cors::Builder {
+        crate::model::cors::Builder::default()
+    }
+}
+
 /// See [`Cors`](crate::model::Cors).
 pub mod cors {
     
@@ -2239,12 +2255,6 @@ pub mod cors {
     
     
 }
-impl Cors {
-    /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors).
-    pub fn builder() -> crate::model::cors::Builder {
-        crate::model::cors::Builder::default()
-    }
-}
 
 /// <p>Represents a VPC link.</p>
 #[non_exhaustive]
@@ -2316,6 +2326,13 @@ impl VpcLink {
         self.vpc_link_version.as_ref()
     }
 }
+impl VpcLink {
+    /// Creates a new builder-style object to manufacture [`VpcLink`](crate::model::VpcLink).
+    pub fn builder() -> crate::model::vpc_link::Builder {
+        crate::model::vpc_link::Builder::default()
+    }
+}
+
 /// See [`VpcLink`](crate::model::VpcLink).
 pub mod vpc_link {
     
@@ -2460,12 +2477,6 @@ pub mod vpc_link {
     
     
 }
-impl VpcLink {
-    /// Creates a new builder-style object to manufacture [`VpcLink`](crate::model::VpcLink).
-    pub fn builder() -> crate::model::vpc_link::Builder {
-        crate::model::vpc_link::Builder::default()
-    }
-}
 
 /// <p>Represents an API stage.</p>
 #[non_exhaustive]
@@ -2572,6 +2583,13 @@ impl Stage {
         self.tags.as_ref()
     }
 }
+impl Stage {
+    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
+    pub fn builder() -> crate::model::stage::Builder {
+        crate::model::stage::Builder::default()
+    }
+}
+
 /// See [`Stage`](crate::model::Stage).
 pub mod stage {
     
@@ -2778,12 +2796,6 @@ pub mod stage {
     
     
 }
-impl Stage {
-    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
-    pub fn builder() -> crate::model::stage::Builder {
-        crate::model::stage::Builder::default()
-    }
-}
 
 /// <p>Represents a route.</p>
 #[non_exhaustive]
@@ -2883,6 +2895,13 @@ impl Route {
         self.target.as_deref()
     }
 }
+impl Route {
+    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route).
+    pub fn builder() -> crate::model::route::Builder {
+        crate::model::route::Builder::default()
+    }
+}
+
 /// See [`Route`](crate::model::Route).
 pub mod route {
     
@@ -3077,12 +3096,6 @@ pub mod route {
     
     
 }
-impl Route {
-    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route).
-    pub fn builder() -> crate::model::route::Builder {
-        crate::model::route::Builder::default()
-    }
-}
 
 /// <p>Represents a route response.</p>
 #[non_exhaustive]
@@ -3126,6 +3139,13 @@ impl RouteResponse {
         self.route_response_key.as_deref()
     }
 }
+impl RouteResponse {
+    /// Creates a new builder-style object to manufacture [`RouteResponse`](crate::model::RouteResponse).
+    pub fn builder() -> crate::model::route_response::Builder {
+        crate::model::route_response::Builder::default()
+    }
+}
+
 /// See [`RouteResponse`](crate::model::RouteResponse).
 pub mod route_response {
     
@@ -3216,12 +3236,6 @@ pub mod route_response {
     
     
 }
-impl RouteResponse {
-    /// Creates a new builder-style object to manufacture [`RouteResponse`](crate::model::RouteResponse).
-    pub fn builder() -> crate::model::route_response::Builder {
-        crate::model::route_response::Builder::default()
-    }
-}
 
 /// <p>Represents a data model for an API. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Create Models and Mapping Templates for Request and Response Mappings</a>.</p>
 #[non_exhaustive]
@@ -3265,6 +3279,13 @@ impl Model {
         self.schema.as_deref()
     }
 }
+impl Model {
+    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
+    pub fn builder() -> crate::model::model::Builder {
+        crate::model::model::Builder::default()
+    }
+}
+
 /// See [`Model`](crate::model::Model).
 pub mod model {
     
@@ -3342,12 +3363,6 @@ pub mod model {
     }
     
     
-}
-impl Model {
-    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
-    pub fn builder() -> crate::model::model::Builder {
-        crate::model::model::Builder::default()
-    }
 }
 
 /// <p>Represents an integration.</p>
@@ -3543,6 +3558,13 @@ impl Integration {
         self.tls_config.as_ref()
     }
 }
+impl Integration {
+    /// Creates a new builder-style object to manufacture [`Integration`](crate::model::Integration).
+    pub fn builder() -> crate::model::integration::Builder {
+        crate::model::integration::Builder::default()
+    }
+}
+
 /// See [`Integration`](crate::model::Integration).
 pub mod integration {
     
@@ -3867,12 +3889,6 @@ pub mod integration {
     
     
 }
-impl Integration {
-    /// Creates a new builder-style object to manufacture [`Integration`](crate::model::Integration).
-    pub fn builder() -> crate::model::integration::Builder {
-        crate::model::integration::Builder::default()
-    }
-}
 
 /// <p>Represents an integration response.</p>
 #[non_exhaustive]
@@ -3929,6 +3945,13 @@ impl IntegrationResponse {
         self.template_selection_expression.as_deref()
     }
 }
+impl IntegrationResponse {
+    /// Creates a new builder-style object to manufacture [`IntegrationResponse`](crate::model::IntegrationResponse).
+    pub fn builder() -> crate::model::integration_response::Builder {
+        crate::model::integration_response::Builder::default()
+    }
+}
+
 /// See [`IntegrationResponse`](crate::model::IntegrationResponse).
 pub mod integration_response {
     
@@ -4037,12 +4060,6 @@ pub mod integration_response {
     
     
 }
-impl IntegrationResponse {
-    /// Creates a new builder-style object to manufacture [`IntegrationResponse`](crate::model::IntegrationResponse).
-    pub fn builder() -> crate::model::integration_response::Builder {
-        crate::model::integration_response::Builder::default()
-    }
-}
 
 /// <p>Represents a domain name.</p>
 #[non_exhaustive]
@@ -4086,6 +4103,13 @@ impl DomainName {
         self.tags.as_ref()
     }
 }
+impl DomainName {
+    /// Creates a new builder-style object to manufacture [`DomainName`](crate::model::DomainName).
+    pub fn builder() -> crate::model::domain_name::Builder {
+        crate::model::domain_name::Builder::default()
+    }
+}
+
 /// See [`DomainName`](crate::model::DomainName).
 pub mod domain_name {
     
@@ -4176,12 +4200,6 @@ pub mod domain_name {
     
     
 }
-impl DomainName {
-    /// Creates a new builder-style object to manufacture [`DomainName`](crate::model::DomainName).
-    pub fn builder() -> crate::model::domain_name::Builder {
-        crate::model::domain_name::Builder::default()
-    }
-}
 
 /// <p>An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.</p>
 #[non_exhaustive]
@@ -4232,6 +4250,13 @@ impl Deployment {
         self.description.as_deref()
     }
 }
+impl Deployment {
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
+    pub fn builder() -> crate::model::deployment::Builder {
+        crate::model::deployment::Builder::default()
+    }
+}
+
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
     
@@ -4322,12 +4347,6 @@ pub mod deployment {
     }
     
     
-}
-impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
-    pub fn builder() -> crate::model::deployment::Builder {
-        crate::model::deployment::Builder::default()
-    }
 }
 
 /// <p>Represents an authorizer.</p>
@@ -4434,6 +4453,13 @@ impl Authorizer {
         self.name.as_deref()
     }
 }
+impl Authorizer {
+    /// Creates a new builder-style object to manufacture [`Authorizer`](crate::model::Authorizer).
+    pub fn builder() -> crate::model::authorizer::Builder {
+        crate::model::authorizer::Builder::default()
+    }
+}
+
 /// See [`Authorizer`](crate::model::Authorizer).
 pub mod authorizer {
     
@@ -4612,12 +4638,6 @@ pub mod authorizer {
     
     
 }
-impl Authorizer {
-    /// Creates a new builder-style object to manufacture [`Authorizer`](crate::model::Authorizer).
-    pub fn builder() -> crate::model::authorizer::Builder {
-        crate::model::authorizer::Builder::default()
-    }
-}
 
 /// <p>Represents an API.</p>
 #[non_exhaustive]
@@ -4738,6 +4758,13 @@ impl Api {
         self.warnings.as_deref()
     }
 }
+impl Api {
+    /// Creates a new builder-style object to manufacture [`Api`](crate::model::Api).
+    pub fn builder() -> crate::model::api::Builder {
+        crate::model::api::Builder::default()
+    }
+}
+
 /// See [`Api`](crate::model::Api).
 pub mod api {
     
@@ -4969,12 +4996,6 @@ pub mod api {
     
     
 }
-impl Api {
-    /// Creates a new builder-style object to manufacture [`Api`](crate::model::Api).
-    pub fn builder() -> crate::model::api::Builder {
-        crate::model::api::Builder::default()
-    }
-}
 
 /// <p>Represents an API mapping.</p>
 #[non_exhaustive]
@@ -5011,6 +5032,13 @@ impl ApiMapping {
         self.stage.as_deref()
     }
 }
+impl ApiMapping {
+    /// Creates a new builder-style object to manufacture [`ApiMapping`](crate::model::ApiMapping).
+    pub fn builder() -> crate::model::api_mapping::Builder {
+        crate::model::api_mapping::Builder::default()
+    }
+}
+
 /// See [`ApiMapping`](crate::model::ApiMapping).
 pub mod api_mapping {
     
@@ -5076,11 +5104,5 @@ pub mod api_mapping {
     }
     
     
-}
-impl ApiMapping {
-    /// Creates a new builder-style object to manufacture [`ApiMapping`](crate::model::ApiMapping).
-    pub fn builder() -> crate::model::api_mapping::Builder {
-        crate::model::api_mapping::Builder::default()
-    }
 }
 

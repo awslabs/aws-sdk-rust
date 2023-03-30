@@ -22,6 +22,13 @@ impl MixedInstancesPolicy {
         self.instances_distribution.as_ref()
     }
 }
+impl MixedInstancesPolicy {
+    /// Creates a new builder-style object to manufacture [`MixedInstancesPolicy`](crate::model::MixedInstancesPolicy).
+    pub fn builder() -> crate::model::mixed_instances_policy::Builder {
+        crate::model::mixed_instances_policy::Builder::default()
+    }
+}
+
 /// See [`MixedInstancesPolicy`](crate::model::MixedInstancesPolicy).
 pub mod mixed_instances_policy {
     
@@ -63,12 +70,6 @@ pub mod mixed_instances_policy {
     }
     
     
-}
-impl MixedInstancesPolicy {
-    /// Creates a new builder-style object to manufacture [`MixedInstancesPolicy`](crate::model::MixedInstancesPolicy).
-    pub fn builder() -> crate::model::mixed_instances_policy::Builder {
-        crate::model::mixed_instances_policy::Builder::default()
-    }
 }
 
 /// <p>Use this structure to specify the distribution of On-Demand Instances and Spot Instances and the allocation strategies used to fulfill On-Demand and Spot capacities for a mixed instances policy.</p>
@@ -218,6 +219,13 @@ impl InstancesDistribution {
         self.spot_max_price.as_deref()
     }
 }
+impl InstancesDistribution {
+    /// Creates a new builder-style object to manufacture [`InstancesDistribution`](crate::model::InstancesDistribution).
+    pub fn builder() -> crate::model::instances_distribution::Builder {
+        crate::model::instances_distribution::Builder::default()
+    }
+}
+
 /// See [`InstancesDistribution`](crate::model::InstancesDistribution).
 pub mod instances_distribution {
     
@@ -406,12 +414,6 @@ pub mod instances_distribution {
     
     
 }
-impl InstancesDistribution {
-    /// Creates a new builder-style object to manufacture [`InstancesDistribution`](crate::model::InstancesDistribution).
-    pub fn builder() -> crate::model::instances_distribution::Builder {
-        crate::model::instances_distribution::Builder::default()
-    }
-}
 
 /// <p>Use this structure to specify the launch templates and instance types (overrides) for a mixed instances policy.</p>
 #[non_exhaustive]
@@ -434,6 +436,13 @@ impl LaunchTemplate {
         self.overrides.as_deref()
     }
 }
+impl LaunchTemplate {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplate`](crate::model::LaunchTemplate).
+    pub fn builder() -> crate::model::launch_template::Builder {
+        crate::model::launch_template::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplate`](crate::model::LaunchTemplate).
 pub mod launch_template {
     
@@ -481,12 +490,6 @@ pub mod launch_template {
     }
     
     
-}
-impl LaunchTemplate {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplate`](crate::model::LaunchTemplate).
-    pub fn builder() -> crate::model::launch_template::Builder {
-        crate::model::launch_template::Builder::default()
-    }
 }
 
 /// <p>Use this structure to let Amazon EC2 Auto Scaling do the following when the Auto Scaling group has a mixed instances policy:</p> 
@@ -546,6 +549,13 @@ impl LaunchTemplateOverrides {
         self.instance_requirements.as_ref()
     }
 }
+impl LaunchTemplateOverrides {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateOverrides`](crate::model::LaunchTemplateOverrides).
+    pub fn builder() -> crate::model::launch_template_overrides::Builder {
+        crate::model::launch_template_overrides::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateOverrides`](crate::model::LaunchTemplateOverrides).
 pub mod launch_template_overrides {
     
@@ -627,12 +637,6 @@ pub mod launch_template_overrides {
     }
     
     
-}
-impl LaunchTemplateOverrides {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateOverrides`](crate::model::LaunchTemplateOverrides).
-    pub fn builder() -> crate::model::launch_template_overrides::Builder {
-        crate::model::launch_template_overrides::Builder::default()
-    }
 }
 
 /// <p>The attributes for the instance types for a mixed instances policy. Amazon EC2 Auto Scaling uses your specified requirements to identify instance types. Then, it uses your On-Demand and Spot allocation strategies to launch instances from these instance types.</p> 
@@ -944,6 +948,13 @@ impl InstanceRequirements {
         self.allowed_instance_types.as_deref()
     }
 }
+impl InstanceRequirements {
+    /// Creates a new builder-style object to manufacture [`InstanceRequirements`](crate::model::InstanceRequirements).
+    pub fn builder() -> crate::model::instance_requirements::Builder {
+        crate::model::instance_requirements::Builder::default()
+    }
+}
+
 /// See [`InstanceRequirements`](crate::model::InstanceRequirements).
 pub mod instance_requirements {
     
@@ -1418,12 +1429,6 @@ pub mod instance_requirements {
     
     
 }
-impl InstanceRequirements {
-    /// Creates a new builder-style object to manufacture [`InstanceRequirements`](crate::model::InstanceRequirements).
-    pub fn builder() -> crate::model::instance_requirements::Builder {
-        crate::model::instance_requirements::Builder::default()
-    }
-}
 
 /// <p>Specifies the minimum and maximum for the <code>NetworkBandwidthGbps</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p> <note> 
 /// <p>Setting the minimum bandwidth does not guarantee that your instance will achieve the minimum bandwidth. Amazon EC2 will identify instance types that support the specified minimum bandwidth, but the actual bandwidth of your instance might go below the specified minimum at times. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html#available-instance-bandwidth">Available instance bandwidth</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
@@ -1448,6 +1453,13 @@ impl NetworkBandwidthGbpsRequest {
         self.max
     }
 }
+impl NetworkBandwidthGbpsRequest {
+    /// Creates a new builder-style object to manufacture [`NetworkBandwidthGbpsRequest`](crate::model::NetworkBandwidthGbpsRequest).
+    pub fn builder() -> crate::model::network_bandwidth_gbps_request::Builder {
+        crate::model::network_bandwidth_gbps_request::Builder::default()
+    }
+}
+
 /// See [`NetworkBandwidthGbpsRequest`](crate::model::NetworkBandwidthGbpsRequest).
 pub mod network_bandwidth_gbps_request {
     
@@ -1490,12 +1502,6 @@ pub mod network_bandwidth_gbps_request {
     
     
 }
-impl NetworkBandwidthGbpsRequest {
-    /// Creates a new builder-style object to manufacture [`NetworkBandwidthGbpsRequest`](crate::model::NetworkBandwidthGbpsRequest).
-    pub fn builder() -> crate::model::network_bandwidth_gbps_request::Builder {
-        crate::model::network_bandwidth_gbps_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the minimum and maximum for the <code>AcceleratorTotalMemoryMiB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
@@ -1518,6 +1524,13 @@ impl AcceleratorTotalMemoryMiBRequest {
         self.max
     }
 }
+impl AcceleratorTotalMemoryMiBRequest {
+    /// Creates a new builder-style object to manufacture [`AcceleratorTotalMemoryMiBRequest`](crate::model::AcceleratorTotalMemoryMiBRequest).
+    pub fn builder() -> crate::model::accelerator_total_memory_mi_b_request::Builder {
+        crate::model::accelerator_total_memory_mi_b_request::Builder::default()
+    }
+}
+
 /// See [`AcceleratorTotalMemoryMiBRequest`](crate::model::AcceleratorTotalMemoryMiBRequest).
 pub mod accelerator_total_memory_mi_b_request {
     
@@ -1559,12 +1572,6 @@ pub mod accelerator_total_memory_mi_b_request {
     }
     
     
-}
-impl AcceleratorTotalMemoryMiBRequest {
-    /// Creates a new builder-style object to manufacture [`AcceleratorTotalMemoryMiBRequest`](crate::model::AcceleratorTotalMemoryMiBRequest).
-    pub fn builder() -> crate::model::accelerator_total_memory_mi_b_request::Builder {
-        crate::model::accelerator_total_memory_mi_b_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AcceleratorName`, it is important to ensure
@@ -1787,6 +1794,13 @@ impl AcceleratorCountRequest {
         self.max
     }
 }
+impl AcceleratorCountRequest {
+    /// Creates a new builder-style object to manufacture [`AcceleratorCountRequest`](crate::model::AcceleratorCountRequest).
+    pub fn builder() -> crate::model::accelerator_count_request::Builder {
+        crate::model::accelerator_count_request::Builder::default()
+    }
+}
+
 /// See [`AcceleratorCountRequest`](crate::model::AcceleratorCountRequest).
 pub mod accelerator_count_request {
     
@@ -1828,12 +1842,6 @@ pub mod accelerator_count_request {
     }
     
     
-}
-impl AcceleratorCountRequest {
-    /// Creates a new builder-style object to manufacture [`AcceleratorCountRequest`](crate::model::AcceleratorCountRequest).
-    pub fn builder() -> crate::model::accelerator_count_request::Builder {
-        crate::model::accelerator_count_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AcceleratorType`, it is important to ensure
@@ -1944,6 +1952,13 @@ impl BaselineEbsBandwidthMbpsRequest {
         self.max
     }
 }
+impl BaselineEbsBandwidthMbpsRequest {
+    /// Creates a new builder-style object to manufacture [`BaselineEbsBandwidthMbpsRequest`](crate::model::BaselineEbsBandwidthMbpsRequest).
+    pub fn builder() -> crate::model::baseline_ebs_bandwidth_mbps_request::Builder {
+        crate::model::baseline_ebs_bandwidth_mbps_request::Builder::default()
+    }
+}
+
 /// See [`BaselineEbsBandwidthMbpsRequest`](crate::model::BaselineEbsBandwidthMbpsRequest).
 pub mod baseline_ebs_bandwidth_mbps_request {
     
@@ -1986,12 +2001,6 @@ pub mod baseline_ebs_bandwidth_mbps_request {
     
     
 }
-impl BaselineEbsBandwidthMbpsRequest {
-    /// Creates a new builder-style object to manufacture [`BaselineEbsBandwidthMbpsRequest`](crate::model::BaselineEbsBandwidthMbpsRequest).
-    pub fn builder() -> crate::model::baseline_ebs_bandwidth_mbps_request::Builder {
-        crate::model::baseline_ebs_bandwidth_mbps_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the minimum and maximum for the <code>TotalLocalStorageGB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
@@ -2014,6 +2023,13 @@ impl TotalLocalStorageGbRequest {
         self.max
     }
 }
+impl TotalLocalStorageGbRequest {
+    /// Creates a new builder-style object to manufacture [`TotalLocalStorageGbRequest`](crate::model::TotalLocalStorageGbRequest).
+    pub fn builder() -> crate::model::total_local_storage_gb_request::Builder {
+        crate::model::total_local_storage_gb_request::Builder::default()
+    }
+}
+
 /// See [`TotalLocalStorageGbRequest`](crate::model::TotalLocalStorageGbRequest).
 pub mod total_local_storage_gb_request {
     
@@ -2055,12 +2071,6 @@ pub mod total_local_storage_gb_request {
     }
     
     
-}
-impl TotalLocalStorageGbRequest {
-    /// Creates a new builder-style object to manufacture [`TotalLocalStorageGbRequest`](crate::model::TotalLocalStorageGbRequest).
-    pub fn builder() -> crate::model::total_local_storage_gb_request::Builder {
-        crate::model::total_local_storage_gb_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LocalStorageType`, it is important to ensure
@@ -2253,6 +2263,13 @@ impl NetworkInterfaceCountRequest {
         self.max
     }
 }
+impl NetworkInterfaceCountRequest {
+    /// Creates a new builder-style object to manufacture [`NetworkInterfaceCountRequest`](crate::model::NetworkInterfaceCountRequest).
+    pub fn builder() -> crate::model::network_interface_count_request::Builder {
+        crate::model::network_interface_count_request::Builder::default()
+    }
+}
+
 /// See [`NetworkInterfaceCountRequest`](crate::model::NetworkInterfaceCountRequest).
 pub mod network_interface_count_request {
     
@@ -2294,12 +2311,6 @@ pub mod network_interface_count_request {
     }
     
     
-}
-impl NetworkInterfaceCountRequest {
-    /// Creates a new builder-style object to manufacture [`NetworkInterfaceCountRequest`](crate::model::NetworkInterfaceCountRequest).
-    pub fn builder() -> crate::model::network_interface_count_request::Builder {
-        crate::model::network_interface_count_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BurstablePerformance`, it is important to ensure
@@ -2579,6 +2590,13 @@ impl MemoryGiBPerVCpuRequest {
         self.max
     }
 }
+impl MemoryGiBPerVCpuRequest {
+    /// Creates a new builder-style object to manufacture [`MemoryGiBPerVCpuRequest`](crate::model::MemoryGiBPerVCpuRequest).
+    pub fn builder() -> crate::model::memory_gi_b_per_v_cpu_request::Builder {
+        crate::model::memory_gi_b_per_v_cpu_request::Builder::default()
+    }
+}
+
 /// See [`MemoryGiBPerVCpuRequest`](crate::model::MemoryGiBPerVCpuRequest).
 pub mod memory_gi_b_per_v_cpu_request {
     
@@ -2620,12 +2638,6 @@ pub mod memory_gi_b_per_v_cpu_request {
     }
     
     
-}
-impl MemoryGiBPerVCpuRequest {
-    /// Creates a new builder-style object to manufacture [`MemoryGiBPerVCpuRequest`](crate::model::MemoryGiBPerVCpuRequest).
-    pub fn builder() -> crate::model::memory_gi_b_per_v_cpu_request::Builder {
-        crate::model::memory_gi_b_per_v_cpu_request::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CpuManufacturer`, it is important to ensure
@@ -2736,6 +2748,13 @@ impl MemoryMiBRequest {
         self.max
     }
 }
+impl MemoryMiBRequest {
+    /// Creates a new builder-style object to manufacture [`MemoryMiBRequest`](crate::model::MemoryMiBRequest).
+    pub fn builder() -> crate::model::memory_mi_b_request::Builder {
+        crate::model::memory_mi_b_request::Builder::default()
+    }
+}
+
 /// See [`MemoryMiBRequest`](crate::model::MemoryMiBRequest).
 pub mod memory_mi_b_request {
     
@@ -2778,12 +2797,6 @@ pub mod memory_mi_b_request {
     
     
 }
-impl MemoryMiBRequest {
-    /// Creates a new builder-style object to manufacture [`MemoryMiBRequest`](crate::model::MemoryMiBRequest).
-    pub fn builder() -> crate::model::memory_mi_b_request::Builder {
-        crate::model::memory_mi_b_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the minimum and maximum for the <code>VCpuCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
@@ -2806,6 +2819,13 @@ impl VCpuCountRequest {
         self.max
     }
 }
+impl VCpuCountRequest {
+    /// Creates a new builder-style object to manufacture [`VCpuCountRequest`](crate::model::VCpuCountRequest).
+    pub fn builder() -> crate::model::v_cpu_count_request::Builder {
+        crate::model::v_cpu_count_request::Builder::default()
+    }
+}
+
 /// See [`VCpuCountRequest`](crate::model::VCpuCountRequest).
 pub mod v_cpu_count_request {
     
@@ -2848,12 +2868,6 @@ pub mod v_cpu_count_request {
     
     
 }
-impl VCpuCountRequest {
-    /// Creates a new builder-style object to manufacture [`VCpuCountRequest`](crate::model::VCpuCountRequest).
-    pub fn builder() -> crate::model::v_cpu_count_request::Builder {
-        crate::model::v_cpu_count_request::Builder::default()
-    }
-}
 
 /// <p>Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html">Launch templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
@@ -2887,6 +2901,13 @@ impl LaunchTemplateSpecification {
         self.version.as_deref()
     }
 }
+impl LaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
+    pub fn builder() -> crate::model::launch_template_specification::Builder {
+        crate::model::launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
 pub mod launch_template_specification {
     
@@ -2944,12 +2965,6 @@ pub mod launch_template_specification {
     }
     
     
-}
-impl LaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
-    pub fn builder() -> crate::model::launch_template_specification::Builder {
-        crate::model::launch_template_specification::Builder::default()
-    }
 }
 
 /// <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
@@ -3043,6 +3058,13 @@ impl Activity {
         self.auto_scaling_group_arn.as_deref()
     }
 }
+impl Activity {
+    /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
+    pub fn builder() -> crate::model::activity::Builder {
+        crate::model::activity::Builder::default()
+    }
+}
+
 /// See [`Activity`](crate::model::Activity).
 pub mod activity {
     
@@ -3205,12 +3227,6 @@ pub mod activity {
     }
     
     
-}
-impl Activity {
-    /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
-    pub fn builder() -> crate::model::activity::Builder {
-        crate::model::activity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScalingActivityStatusCode`, it is important to ensure
@@ -3397,6 +3413,13 @@ impl RefreshPreferences {
         self.skip_matching
     }
 }
+impl RefreshPreferences {
+    /// Creates a new builder-style object to manufacture [`RefreshPreferences`](crate::model::RefreshPreferences).
+    pub fn builder() -> crate::model::refresh_preferences::Builder {
+        crate::model::refresh_preferences::Builder::default()
+    }
+}
+
 /// See [`RefreshPreferences`](crate::model::RefreshPreferences).
 pub mod refresh_preferences {
     
@@ -3491,12 +3514,6 @@ pub mod refresh_preferences {
     
     
 }
-impl RefreshPreferences {
-    /// Creates a new builder-style object to manufacture [`RefreshPreferences`](crate::model::RefreshPreferences).
-    pub fn builder() -> crate::model::refresh_preferences::Builder {
-        crate::model::refresh_preferences::Builder::default()
-    }
-}
 
 /// <p>Describes the desired configuration for an instance refresh. </p> 
 /// <p>If you specify a desired configuration, you must specify either a <code>LaunchTemplate</code> or a <code>MixedInstancesPolicy</code>. </p>
@@ -3522,6 +3539,13 @@ impl DesiredConfiguration {
         self.mixed_instances_policy.as_ref()
     }
 }
+impl DesiredConfiguration {
+    /// Creates a new builder-style object to manufacture [`DesiredConfiguration`](crate::model::DesiredConfiguration).
+    pub fn builder() -> crate::model::desired_configuration::Builder {
+        crate::model::desired_configuration::Builder::default()
+    }
+}
+
 /// See [`DesiredConfiguration`](crate::model::DesiredConfiguration).
 pub mod desired_configuration {
     
@@ -3565,12 +3589,6 @@ pub mod desired_configuration {
     }
     
     
-}
-impl DesiredConfiguration {
-    /// Creates a new builder-style object to manufacture [`DesiredConfiguration`](crate::model::DesiredConfiguration).
-    pub fn builder() -> crate::model::desired_configuration::Builder {
-        crate::model::desired_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RefreshStrategy`, it is important to ensure
@@ -3665,6 +3683,13 @@ impl InstanceReusePolicy {
         self.reuse_on_scale_in
     }
 }
+impl InstanceReusePolicy {
+    /// Creates a new builder-style object to manufacture [`InstanceReusePolicy`](crate::model::InstanceReusePolicy).
+    pub fn builder() -> crate::model::instance_reuse_policy::Builder {
+        crate::model::instance_reuse_policy::Builder::default()
+    }
+}
+
 /// See [`InstanceReusePolicy`](crate::model::InstanceReusePolicy).
 pub mod instance_reuse_policy {
     
@@ -3694,12 +3719,6 @@ pub mod instance_reuse_policy {
     }
     
     
-}
-impl InstanceReusePolicy {
-    /// Creates a new builder-style object to manufacture [`InstanceReusePolicy`](crate::model::InstanceReusePolicy).
-    pub fn builder() -> crate::model::instance_reuse_policy::Builder {
-        crate::model::instance_reuse_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WarmPoolState`, it is important to ensure
@@ -3810,6 +3829,13 @@ impl Alarm {
         self.alarm_arn.as_deref()
     }
 }
+impl Alarm {
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
+    pub fn builder() -> crate::model::alarm::Builder {
+        crate::model::alarm::Builder::default()
+    }
+}
+
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
     
@@ -3851,12 +3877,6 @@ pub mod alarm {
     }
     
     
-}
-impl Alarm {
-    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
-    pub fn builder() -> crate::model::alarm::Builder {
-        crate::model::alarm::Builder::default()
-    }
 }
 
 /// <p>Represents a predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
@@ -3919,6 +3939,13 @@ impl PredictiveScalingConfiguration {
         self.max_capacity_buffer
     }
 }
+impl PredictiveScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingConfiguration`](crate::model::PredictiveScalingConfiguration).
+    pub fn builder() -> crate::model::predictive_scaling_configuration::Builder {
+        crate::model::predictive_scaling_configuration::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingConfiguration`](crate::model::PredictiveScalingConfiguration).
 pub mod predictive_scaling_configuration {
     
@@ -4020,12 +4047,6 @@ pub mod predictive_scaling_configuration {
     }
     
     
-}
-impl PredictiveScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingConfiguration`](crate::model::PredictiveScalingConfiguration).
-    pub fn builder() -> crate::model::predictive_scaling_configuration::Builder {
-        crate::model::predictive_scaling_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PredictiveScalingMaxCapacityBreachBehavior`, it is important to ensure
@@ -4262,6 +4283,13 @@ impl PredictiveScalingMetricSpecification {
         self.customized_capacity_metric_specification.as_ref()
     }
 }
+impl PredictiveScalingMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingMetricSpecification`](crate::model::PredictiveScalingMetricSpecification).
+    pub fn builder() -> crate::model::predictive_scaling_metric_specification::Builder {
+        crate::model::predictive_scaling_metric_specification::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingMetricSpecification`](crate::model::PredictiveScalingMetricSpecification).
 pub mod predictive_scaling_metric_specification {
     
@@ -4368,12 +4396,6 @@ pub mod predictive_scaling_metric_specification {
     
     
 }
-impl PredictiveScalingMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingMetricSpecification`](crate::model::PredictiveScalingMetricSpecification).
-    pub fn builder() -> crate::model::predictive_scaling_metric_specification::Builder {
-        crate::model::predictive_scaling_metric_specification::Builder::default()
-    }
-}
 
 /// <p>Describes a customized capacity metric for a predictive scaling policy.</p>
 #[non_exhaustive]
@@ -4389,6 +4411,13 @@ impl PredictiveScalingCustomizedCapacityMetric {
         self.metric_data_queries.as_deref()
     }
 }
+impl PredictiveScalingCustomizedCapacityMetric {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingCustomizedCapacityMetric`](crate::model::PredictiveScalingCustomizedCapacityMetric).
+    pub fn builder() -> crate::model::predictive_scaling_customized_capacity_metric::Builder {
+        crate::model::predictive_scaling_customized_capacity_metric::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingCustomizedCapacityMetric`](crate::model::PredictiveScalingCustomizedCapacityMetric).
 pub mod predictive_scaling_customized_capacity_metric {
     
@@ -4424,12 +4453,6 @@ pub mod predictive_scaling_customized_capacity_metric {
     }
     
     
-}
-impl PredictiveScalingCustomizedCapacityMetric {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingCustomizedCapacityMetric`](crate::model::PredictiveScalingCustomizedCapacityMetric).
-    pub fn builder() -> crate::model::predictive_scaling_customized_capacity_metric::Builder {
-        crate::model::predictive_scaling_customized_capacity_metric::Builder::default()
-    }
 }
 
 /// <p>The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp.</p> 
@@ -4483,6 +4506,13 @@ impl MetricDataQuery {
         self.return_data
     }
 }
+impl MetricDataQuery {
+    /// Creates a new builder-style object to manufacture [`MetricDataQuery`](crate::model::MetricDataQuery).
+    pub fn builder() -> crate::model::metric_data_query::Builder {
+        crate::model::metric_data_query::Builder::default()
+    }
+}
+
 /// See [`MetricDataQuery`](crate::model::MetricDataQuery).
 pub mod metric_data_query {
     
@@ -4569,12 +4599,6 @@ pub mod metric_data_query {
     
     
 }
-impl MetricDataQuery {
-    /// Creates a new builder-style object to manufacture [`MetricDataQuery`](crate::model::MetricDataQuery).
-    pub fn builder() -> crate::model::metric_data_query::Builder {
-        crate::model::metric_data_query::Builder::default()
-    }
-}
 
 /// <p>This structure defines the CloudWatch metric to return, along with the statistic, period, and unit.</p> 
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -4607,6 +4631,13 @@ impl MetricStat {
         self.unit.as_deref()
     }
 }
+impl MetricStat {
+    /// Creates a new builder-style object to manufacture [`MetricStat`](crate::model::MetricStat).
+    pub fn builder() -> crate::model::metric_stat::Builder {
+        crate::model::metric_stat::Builder::default()
+    }
+}
+
 /// See [`MetricStat`](crate::model::MetricStat).
 pub mod metric_stat {
     
@@ -4663,12 +4694,6 @@ pub mod metric_stat {
     
     
 }
-impl MetricStat {
-    /// Creates a new builder-style object to manufacture [`MetricStat`](crate::model::MetricStat).
-    pub fn builder() -> crate::model::metric_stat::Builder {
-        crate::model::metric_stat::Builder::default()
-    }
-}
 
 /// <p>Represents a specific metric. </p>
 #[non_exhaustive]
@@ -4700,6 +4725,13 @@ impl Metric {
         self.dimensions.as_deref()
     }
 }
+impl Metric {
+    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
+    pub fn builder() -> crate::model::metric::Builder {
+        crate::model::metric::Builder::default()
+    }
+}
+
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
     
@@ -4762,12 +4794,6 @@ pub mod metric {
     
     
 }
-impl Metric {
-    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
-    pub fn builder() -> crate::model::metric::Builder {
-        crate::model::metric::Builder::default()
-    }
-}
 
 /// <p>Describes the dimension of a metric.</p>
 #[non_exhaustive]
@@ -4790,6 +4816,13 @@ impl MetricDimension {
         self.value.as_deref()
     }
 }
+impl MetricDimension {
+    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
+    pub fn builder() -> crate::model::metric_dimension::Builder {
+        crate::model::metric_dimension::Builder::default()
+    }
+}
+
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
     
@@ -4832,12 +4865,6 @@ pub mod metric_dimension {
     
     
 }
-impl MetricDimension {
-    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
-    pub fn builder() -> crate::model::metric_dimension::Builder {
-        crate::model::metric_dimension::Builder::default()
-    }
-}
 
 /// <p>Describes a custom load metric for a predictive scaling policy.</p>
 #[non_exhaustive]
@@ -4853,6 +4880,13 @@ impl PredictiveScalingCustomizedLoadMetric {
         self.metric_data_queries.as_deref()
     }
 }
+impl PredictiveScalingCustomizedLoadMetric {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingCustomizedLoadMetric`](crate::model::PredictiveScalingCustomizedLoadMetric).
+    pub fn builder() -> crate::model::predictive_scaling_customized_load_metric::Builder {
+        crate::model::predictive_scaling_customized_load_metric::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingCustomizedLoadMetric`](crate::model::PredictiveScalingCustomizedLoadMetric).
 pub mod predictive_scaling_customized_load_metric {
     
@@ -4889,12 +4923,6 @@ pub mod predictive_scaling_customized_load_metric {
     
     
 }
-impl PredictiveScalingCustomizedLoadMetric {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingCustomizedLoadMetric`](crate::model::PredictiveScalingCustomizedLoadMetric).
-    pub fn builder() -> crate::model::predictive_scaling_customized_load_metric::Builder {
-        crate::model::predictive_scaling_customized_load_metric::Builder::default()
-    }
-}
 
 /// <p>Describes a custom scaling metric for a predictive scaling policy.</p>
 #[non_exhaustive]
@@ -4910,6 +4938,13 @@ impl PredictiveScalingCustomizedScalingMetric {
         self.metric_data_queries.as_deref()
     }
 }
+impl PredictiveScalingCustomizedScalingMetric {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingCustomizedScalingMetric`](crate::model::PredictiveScalingCustomizedScalingMetric).
+    pub fn builder() -> crate::model::predictive_scaling_customized_scaling_metric::Builder {
+        crate::model::predictive_scaling_customized_scaling_metric::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingCustomizedScalingMetric`](crate::model::PredictiveScalingCustomizedScalingMetric).
 pub mod predictive_scaling_customized_scaling_metric {
     
@@ -4945,12 +4980,6 @@ pub mod predictive_scaling_customized_scaling_metric {
     }
     
     
-}
-impl PredictiveScalingCustomizedScalingMetric {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingCustomizedScalingMetric`](crate::model::PredictiveScalingCustomizedScalingMetric).
-    pub fn builder() -> crate::model::predictive_scaling_customized_scaling_metric::Builder {
-        crate::model::predictive_scaling_customized_scaling_metric::Builder::default()
-    }
 }
 
 /// <p>Describes a load metric for a predictive scaling policy.</p> 
@@ -5011,6 +5040,13 @@ impl PredictiveScalingPredefinedLoadMetric {
         self.resource_label.as_deref()
     }
 }
+impl PredictiveScalingPredefinedLoadMetric {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingPredefinedLoadMetric`](crate::model::PredictiveScalingPredefinedLoadMetric).
+    pub fn builder() -> crate::model::predictive_scaling_predefined_load_metric::Builder {
+        crate::model::predictive_scaling_predefined_load_metric::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingPredefinedLoadMetric`](crate::model::PredictiveScalingPredefinedLoadMetric).
 pub mod predictive_scaling_predefined_load_metric {
     
@@ -5088,12 +5124,6 @@ pub mod predictive_scaling_predefined_load_metric {
     }
     
     
-}
-impl PredictiveScalingPredefinedLoadMetric {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingPredefinedLoadMetric`](crate::model::PredictiveScalingPredefinedLoadMetric).
-    pub fn builder() -> crate::model::predictive_scaling_predefined_load_metric::Builder {
-        crate::model::predictive_scaling_predefined_load_metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PredefinedLoadMetricType`, it is important to ensure
@@ -5246,6 +5276,13 @@ impl PredictiveScalingPredefinedScalingMetric {
         self.resource_label.as_deref()
     }
 }
+impl PredictiveScalingPredefinedScalingMetric {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingPredefinedScalingMetric`](crate::model::PredictiveScalingPredefinedScalingMetric).
+    pub fn builder() -> crate::model::predictive_scaling_predefined_scaling_metric::Builder {
+        crate::model::predictive_scaling_predefined_scaling_metric::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingPredefinedScalingMetric`](crate::model::PredictiveScalingPredefinedScalingMetric).
 pub mod predictive_scaling_predefined_scaling_metric {
     
@@ -5323,12 +5360,6 @@ pub mod predictive_scaling_predefined_scaling_metric {
     }
     
     
-}
-impl PredictiveScalingPredefinedScalingMetric {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingPredefinedScalingMetric`](crate::model::PredictiveScalingPredefinedScalingMetric).
-    pub fn builder() -> crate::model::predictive_scaling_predefined_scaling_metric::Builder {
-        crate::model::predictive_scaling_predefined_scaling_metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PredefinedScalingMetricType`, it is important to ensure
@@ -5480,6 +5511,13 @@ impl PredictiveScalingPredefinedMetricPair {
         self.resource_label.as_deref()
     }
 }
+impl PredictiveScalingPredefinedMetricPair {
+    /// Creates a new builder-style object to manufacture [`PredictiveScalingPredefinedMetricPair`](crate::model::PredictiveScalingPredefinedMetricPair).
+    pub fn builder() -> crate::model::predictive_scaling_predefined_metric_pair::Builder {
+        crate::model::predictive_scaling_predefined_metric_pair::Builder::default()
+    }
+}
+
 /// See [`PredictiveScalingPredefinedMetricPair`](crate::model::PredictiveScalingPredefinedMetricPair).
 pub mod predictive_scaling_predefined_metric_pair {
     
@@ -5557,12 +5595,6 @@ pub mod predictive_scaling_predefined_metric_pair {
     }
     
     
-}
-impl PredictiveScalingPredefinedMetricPair {
-    /// Creates a new builder-style object to manufacture [`PredictiveScalingPredefinedMetricPair`](crate::model::PredictiveScalingPredefinedMetricPair).
-    pub fn builder() -> crate::model::predictive_scaling_predefined_metric_pair::Builder {
-        crate::model::predictive_scaling_predefined_metric_pair::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PredefinedMetricPairType`, it is important to ensure
@@ -5696,6 +5728,13 @@ impl TargetTrackingConfiguration {
         self.disable_scale_in
     }
 }
+impl TargetTrackingConfiguration {
+    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
+    pub fn builder() -> crate::model::target_tracking_configuration::Builder {
+        crate::model::target_tracking_configuration::Builder::default()
+    }
+}
+
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
 pub mod target_tracking_configuration {
     
@@ -5766,12 +5805,6 @@ pub mod target_tracking_configuration {
     
     
 }
-impl TargetTrackingConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
-    pub fn builder() -> crate::model::target_tracking_configuration::Builder {
-        crate::model::target_tracking_configuration::Builder::default()
-    }
-}
 
 /// <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p> 
 /// <p>To create your customized metric specification:</p> 
@@ -5832,6 +5865,13 @@ impl CustomizedMetricSpecification {
         self.metrics.as_deref()
     }
 }
+impl CustomizedMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
+    pub fn builder() -> crate::model::customized_metric_specification::Builder {
+        crate::model::customized_metric_specification::Builder::default()
+    }
+}
+
 /// See [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
 pub mod customized_metric_specification {
     
@@ -5936,12 +5976,6 @@ pub mod customized_metric_specification {
     
     
 }
-impl CustomizedMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
-    pub fn builder() -> crate::model::customized_metric_specification::Builder {
-        crate::model::customized_metric_specification::Builder::default()
-    }
-}
 
 /// <p>The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp.</p>
 #[non_exhaustive]
@@ -5993,6 +6027,13 @@ impl TargetTrackingMetricDataQuery {
         self.return_data
     }
 }
+impl TargetTrackingMetricDataQuery {
+    /// Creates a new builder-style object to manufacture [`TargetTrackingMetricDataQuery`](crate::model::TargetTrackingMetricDataQuery).
+    pub fn builder() -> crate::model::target_tracking_metric_data_query::Builder {
+        crate::model::target_tracking_metric_data_query::Builder::default()
+    }
+}
+
 /// See [`TargetTrackingMetricDataQuery`](crate::model::TargetTrackingMetricDataQuery).
 pub mod target_tracking_metric_data_query {
     
@@ -6079,12 +6120,6 @@ pub mod target_tracking_metric_data_query {
     
     
 }
-impl TargetTrackingMetricDataQuery {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingMetricDataQuery`](crate::model::TargetTrackingMetricDataQuery).
-    pub fn builder() -> crate::model::target_tracking_metric_data_query::Builder {
-        crate::model::target_tracking_metric_data_query::Builder::default()
-    }
-}
 
 /// <p>This structure defines the CloudWatch metric to return, along with the statistic, period, and unit.</p> 
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -6117,6 +6152,13 @@ impl TargetTrackingMetricStat {
         self.unit.as_deref()
     }
 }
+impl TargetTrackingMetricStat {
+    /// Creates a new builder-style object to manufacture [`TargetTrackingMetricStat`](crate::model::TargetTrackingMetricStat).
+    pub fn builder() -> crate::model::target_tracking_metric_stat::Builder {
+        crate::model::target_tracking_metric_stat::Builder::default()
+    }
+}
+
 /// See [`TargetTrackingMetricStat`](crate::model::TargetTrackingMetricStat).
 pub mod target_tracking_metric_stat {
     
@@ -6172,12 +6214,6 @@ pub mod target_tracking_metric_stat {
     }
     
     
-}
-impl TargetTrackingMetricStat {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingMetricStat`](crate::model::TargetTrackingMetricStat).
-    pub fn builder() -> crate::model::target_tracking_metric_stat::Builder {
-        crate::model::target_tracking_metric_stat::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetricStatistic`, it is important to ensure
@@ -6346,6 +6382,13 @@ impl PredefinedMetricSpecification {
         self.resource_label.as_deref()
     }
 }
+impl PredefinedMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
+    pub fn builder() -> crate::model::predefined_metric_specification::Builder {
+        crate::model::predefined_metric_specification::Builder::default()
+    }
+}
+
 /// See [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
 pub mod predefined_metric_specification {
     
@@ -6435,12 +6478,6 @@ pub mod predefined_metric_specification {
     }
     
     
-}
-impl PredefinedMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
-    pub fn builder() -> crate::model::predefined_metric_specification::Builder {
-        crate::model::predefined_metric_specification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetricType`, it is important to ensure
@@ -6580,6 +6617,13 @@ impl StepAdjustment {
         self.scaling_adjustment
     }
 }
+impl StepAdjustment {
+    /// Creates a new builder-style object to manufacture [`StepAdjustment`](crate::model::StepAdjustment).
+    pub fn builder() -> crate::model::step_adjustment::Builder {
+        crate::model::step_adjustment::Builder::default()
+    }
+}
+
 /// See [`StepAdjustment`](crate::model::StepAdjustment).
 pub mod step_adjustment {
     
@@ -6638,12 +6682,6 @@ pub mod step_adjustment {
     
     
 }
-impl StepAdjustment {
-    /// Creates a new builder-style object to manufacture [`StepAdjustment`](crate::model::StepAdjustment).
-    pub fn builder() -> crate::model::step_adjustment::Builder {
-        crate::model::step_adjustment::Builder::default()
-    }
-}
 
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for a predictive scaling policy. This structure includes the data points for that capacity forecast, along with the timestamps of those data points. </p>
 #[non_exhaustive]
@@ -6666,6 +6704,13 @@ impl CapacityForecast {
         self.values.as_deref()
     }
 }
+impl CapacityForecast {
+    /// Creates a new builder-style object to manufacture [`CapacityForecast`](crate::model::CapacityForecast).
+    pub fn builder() -> crate::model::capacity_forecast::Builder {
+        crate::model::capacity_forecast::Builder::default()
+    }
+}
+
 /// See [`CapacityForecast`](crate::model::CapacityForecast).
 pub mod capacity_forecast {
     
@@ -6720,12 +6765,6 @@ pub mod capacity_forecast {
     
     
 }
-impl CapacityForecast {
-    /// Creates a new builder-style object to manufacture [`CapacityForecast`](crate::model::CapacityForecast).
-    pub fn builder() -> crate::model::capacity_forecast::Builder {
-        crate::model::capacity_forecast::Builder::default()
-    }
-}
 
 /// <p>A <code>GetPredictiveScalingForecast</code> call returns the load forecast for a predictive scaling policy. This structure includes the data points for that load forecast, along with the timestamps of those data points and the metric specification. </p>
 #[non_exhaustive]
@@ -6755,6 +6794,13 @@ impl LoadForecast {
         self.metric_specification.as_ref()
     }
 }
+impl LoadForecast {
+    /// Creates a new builder-style object to manufacture [`LoadForecast`](crate::model::LoadForecast).
+    pub fn builder() -> crate::model::load_forecast::Builder {
+        crate::model::load_forecast::Builder::default()
+    }
+}
+
 /// See [`LoadForecast`](crate::model::LoadForecast).
 pub mod load_forecast {
     
@@ -6821,12 +6867,6 @@ pub mod load_forecast {
     
     
 }
-impl LoadForecast {
-    /// Creates a new builder-style object to manufacture [`LoadForecast`](crate::model::LoadForecast).
-    pub fn builder() -> crate::model::load_forecast::Builder {
-        crate::model::load_forecast::Builder::default()
-    }
-}
 
 /// <p>Describes the identifier of a traffic source.</p> 
 /// <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group.</p>
@@ -6843,6 +6883,13 @@ impl TrafficSourceIdentifier {
         self.identifier.as_deref()
     }
 }
+impl TrafficSourceIdentifier {
+    /// Creates a new builder-style object to manufacture [`TrafficSourceIdentifier`](crate::model::TrafficSourceIdentifier).
+    pub fn builder() -> crate::model::traffic_source_identifier::Builder {
+        crate::model::traffic_source_identifier::Builder::default()
+    }
+}
+
 /// See [`TrafficSourceIdentifier`](crate::model::TrafficSourceIdentifier).
 pub mod traffic_source_identifier {
     
@@ -6872,12 +6919,6 @@ pub mod traffic_source_identifier {
     }
     
     
-}
-impl TrafficSourceIdentifier {
-    /// Creates a new builder-style object to manufacture [`TrafficSourceIdentifier`](crate::model::TrafficSourceIdentifier).
-    pub fn builder() -> crate::model::traffic_source_identifier::Builder {
-        crate::model::traffic_source_identifier::Builder::default()
-    }
 }
 
 /// <p>Describes an EC2 instance.</p>
@@ -6952,6 +6993,13 @@ impl Instance {
         self.weighted_capacity.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -7079,12 +7127,6 @@ pub mod instance {
     }
     
     
-}
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LifecycleState`, it is important to ensure
@@ -7316,6 +7358,13 @@ impl WarmPoolConfiguration {
         self.instance_reuse_policy.as_ref()
     }
 }
+impl WarmPoolConfiguration {
+    /// Creates a new builder-style object to manufacture [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration).
+    pub fn builder() -> crate::model::warm_pool_configuration::Builder {
+        crate::model::warm_pool_configuration::Builder::default()
+    }
+}
+
 /// See [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration).
 pub mod warm_pool_configuration {
     
@@ -7393,12 +7442,6 @@ pub mod warm_pool_configuration {
     }
     
     
-}
-impl WarmPoolConfiguration {
-    /// Creates a new builder-style object to manufacture [`WarmPoolConfiguration`](crate::model::WarmPoolConfiguration).
-    pub fn builder() -> crate::model::warm_pool_configuration::Builder {
-        crate::model::warm_pool_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WarmPoolStatus`, it is important to ensure
@@ -7513,6 +7556,13 @@ impl TrafficSourceState {
         self.state.as_deref()
     }
 }
+impl TrafficSourceState {
+    /// Creates a new builder-style object to manufacture [`TrafficSourceState`](crate::model::TrafficSourceState).
+    pub fn builder() -> crate::model::traffic_source_state::Builder {
+        crate::model::traffic_source_state::Builder::default()
+    }
+}
+
 /// See [`TrafficSourceState`](crate::model::TrafficSourceState).
 pub mod traffic_source_state {
     
@@ -7569,12 +7619,6 @@ pub mod traffic_source_state {
     
     
 }
-impl TrafficSourceState {
-    /// Creates a new builder-style object to manufacture [`TrafficSourceState`](crate::model::TrafficSourceState).
-    pub fn builder() -> crate::model::traffic_source_state::Builder {
-        crate::model::traffic_source_state::Builder::default()
-    }
-}
 
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
@@ -7618,6 +7662,13 @@ impl TagDescription {
         self.propagate_at_launch
     }
 }
+impl TagDescription {
+    /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
+    pub fn builder() -> crate::model::tag_description::Builder {
+        crate::model::tag_description::Builder::default()
+    }
+}
+
 /// See [`TagDescription`](crate::model::TagDescription).
 pub mod tag_description {
     
@@ -7696,12 +7747,6 @@ pub mod tag_description {
     
     
 }
-impl TagDescription {
-    /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
-    pub fn builder() -> crate::model::tag_description::Builder {
-        crate::model::tag_description::Builder::default()
-    }
-}
 
 /// <p>Describes a filter that is used to return a more specific list of results from a describe operation.</p> 
 /// <p>If you specify multiple filters, the filters are automatically logically joined with an <code>AND</code>, and the request returns only the results that match all of the specified filters. </p> 
@@ -7762,6 +7807,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -7845,12 +7897,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// <p>Describes a scheduled scaling action.</p>
@@ -7939,6 +7985,13 @@ impl ScheduledUpdateGroupAction {
         self.time_zone.as_deref()
     }
 }
+impl ScheduledUpdateGroupAction {
+    /// Creates a new builder-style object to manufacture [`ScheduledUpdateGroupAction`](crate::model::ScheduledUpdateGroupAction).
+    pub fn builder() -> crate::model::scheduled_update_group_action::Builder {
+        crate::model::scheduled_update_group_action::Builder::default()
+    }
+}
+
 /// See [`ScheduledUpdateGroupAction`](crate::model::ScheduledUpdateGroupAction).
 pub mod scheduled_update_group_action {
     
@@ -8091,12 +8144,6 @@ pub mod scheduled_update_group_action {
     
     
 }
-impl ScheduledUpdateGroupAction {
-    /// Creates a new builder-style object to manufacture [`ScheduledUpdateGroupAction`](crate::model::ScheduledUpdateGroupAction).
-    pub fn builder() -> crate::model::scheduled_update_group_action::Builder {
-        crate::model::scheduled_update_group_action::Builder::default()
-    }
-}
 
 /// <p>Describes a process type.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -8135,6 +8182,13 @@ impl ProcessType {
         self.process_name.as_deref()
     }
 }
+impl ProcessType {
+    /// Creates a new builder-style object to manufacture [`ProcessType`](crate::model::ProcessType).
+    pub fn builder() -> crate::model::process_type::Builder {
+        crate::model::process_type::Builder::default()
+    }
+}
+
 /// See [`ProcessType`](crate::model::ProcessType).
 pub mod process_type {
     
@@ -8186,12 +8240,6 @@ pub mod process_type {
     }
     
     
-}
-impl ProcessType {
-    /// Creates a new builder-style object to manufacture [`ProcessType`](crate::model::ProcessType).
-    pub fn builder() -> crate::model::process_type::Builder {
-        crate::model::process_type::Builder::default()
-    }
 }
 
 /// <p>Describes a scaling policy.</p>
@@ -8327,6 +8375,13 @@ impl ScalingPolicy {
         self.predictive_scaling_configuration.as_ref()
     }
 }
+impl ScalingPolicy {
+    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
+    pub fn builder() -> crate::model::scaling_policy::Builder {
+        crate::model::scaling_policy::Builder::default()
+    }
+}
+
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
     
@@ -8563,12 +8618,6 @@ pub mod scaling_policy {
     
     
 }
-impl ScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
-    pub fn builder() -> crate::model::scaling_policy::Builder {
-        crate::model::scaling_policy::Builder::default()
-    }
-}
 
 /// <p>Describes a notification.</p>
 #[non_exhaustive]
@@ -8612,6 +8661,13 @@ impl NotificationConfiguration {
         self.notification_type.as_deref()
     }
 }
+impl NotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    pub fn builder() -> crate::model::notification_configuration::Builder {
+        crate::model::notification_configuration::Builder::default()
+    }
+}
+
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
     
@@ -8680,12 +8736,6 @@ pub mod notification_configuration {
     
     
 }
-impl NotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    pub fn builder() -> crate::model::notification_configuration::Builder {
-        crate::model::notification_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a granularity of a metric.</p>
 #[non_exhaustive]
@@ -8701,6 +8751,13 @@ impl MetricGranularityType {
         self.granularity.as_deref()
     }
 }
+impl MetricGranularityType {
+    /// Creates a new builder-style object to manufacture [`MetricGranularityType`](crate::model::MetricGranularityType).
+    pub fn builder() -> crate::model::metric_granularity_type::Builder {
+        crate::model::metric_granularity_type::Builder::default()
+    }
+}
+
 /// See [`MetricGranularityType`](crate::model::MetricGranularityType).
 pub mod metric_granularity_type {
     
@@ -8730,12 +8787,6 @@ pub mod metric_granularity_type {
     }
     
     
-}
-impl MetricGranularityType {
-    /// Creates a new builder-style object to manufacture [`MetricGranularityType`](crate::model::MetricGranularityType).
-    pub fn builder() -> crate::model::metric_granularity_type::Builder {
-        crate::model::metric_granularity_type::Builder::default()
-    }
 }
 
 /// <p>Describes a metric.</p>
@@ -8796,6 +8847,13 @@ impl MetricCollectionType {
         self.metric.as_deref()
     }
 }
+impl MetricCollectionType {
+    /// Creates a new builder-style object to manufacture [`MetricCollectionType`](crate::model::MetricCollectionType).
+    pub fn builder() -> crate::model::metric_collection_type::Builder {
+        crate::model::metric_collection_type::Builder::default()
+    }
+}
+
 /// See [`MetricCollectionType`](crate::model::MetricCollectionType).
 pub mod metric_collection_type {
     
@@ -8870,12 +8928,6 @@ pub mod metric_collection_type {
     
     
 }
-impl MetricCollectionType {
-    /// Creates a new builder-style object to manufacture [`MetricCollectionType`](crate::model::MetricCollectionType).
-    pub fn builder() -> crate::model::metric_collection_type::Builder {
-        crate::model::metric_collection_type::Builder::default()
-    }
-}
 
 /// <p>Describes the state of a target group.</p>
 #[non_exhaustive]
@@ -8912,6 +8964,13 @@ impl LoadBalancerTargetGroupState {
         self.state.as_deref()
     }
 }
+impl LoadBalancerTargetGroupState {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerTargetGroupState`](crate::model::LoadBalancerTargetGroupState).
+    pub fn builder() -> crate::model::load_balancer_target_group_state::Builder {
+        crate::model::load_balancer_target_group_state::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerTargetGroupState`](crate::model::LoadBalancerTargetGroupState).
 pub mod load_balancer_target_group_state {
     
@@ -8968,12 +9027,6 @@ pub mod load_balancer_target_group_state {
     
     
 }
-impl LoadBalancerTargetGroupState {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerTargetGroupState`](crate::model::LoadBalancerTargetGroupState).
-    pub fn builder() -> crate::model::load_balancer_target_group_state::Builder {
-        crate::model::load_balancer_target_group_state::Builder::default()
-    }
-}
 
 /// <p>Describes the state of a Classic Load Balancer.</p>
 #[non_exhaustive]
@@ -9010,6 +9063,13 @@ impl LoadBalancerState {
         self.state.as_deref()
     }
 }
+impl LoadBalancerState {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
+    pub fn builder() -> crate::model::load_balancer_state::Builder {
+        crate::model::load_balancer_state::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerState`](crate::model::LoadBalancerState).
 pub mod load_balancer_state {
     
@@ -9065,12 +9125,6 @@ pub mod load_balancer_state {
     }
     
     
-}
-impl LoadBalancerState {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
-    pub fn builder() -> crate::model::load_balancer_state::Builder {
-        crate::model::load_balancer_state::Builder::default()
-    }
 }
 
 /// <p>Describes a lifecycle hook. A lifecycle hook lets you create solutions that are aware of events in the Auto Scaling instance lifecycle, and then perform a custom action on instances when the corresponding lifecycle event occurs.</p>
@@ -9147,6 +9201,13 @@ impl LifecycleHook {
         self.default_result.as_deref()
     }
 }
+impl LifecycleHook {
+    /// Creates a new builder-style object to manufacture [`LifecycleHook`](crate::model::LifecycleHook).
+    pub fn builder() -> crate::model::lifecycle_hook::Builder {
+        crate::model::lifecycle_hook::Builder::default()
+    }
+}
+
 /// See [`LifecycleHook`](crate::model::LifecycleHook).
 pub mod lifecycle_hook {
     
@@ -9276,12 +9337,6 @@ pub mod lifecycle_hook {
     }
     
     
-}
-impl LifecycleHook {
-    /// Creates a new builder-style object to manufacture [`LifecycleHook`](crate::model::LifecycleHook).
-    pub fn builder() -> crate::model::lifecycle_hook::Builder {
-        crate::model::lifecycle_hook::Builder::default()
-    }
 }
 
 /// <p>Describes a launch configuration.</p>
@@ -9437,6 +9492,13 @@ impl LaunchConfiguration {
         self.metadata_options.as_ref()
     }
 }
+impl LaunchConfiguration {
+    /// Creates a new builder-style object to manufacture [`LaunchConfiguration`](crate::model::LaunchConfiguration).
+    pub fn builder() -> crate::model::launch_configuration::Builder {
+        crate::model::launch_configuration::Builder::default()
+    }
+}
+
 /// See [`LaunchConfiguration`](crate::model::LaunchConfiguration).
 pub mod launch_configuration {
     
@@ -9719,12 +9781,6 @@ pub mod launch_configuration {
     
     
 }
-impl LaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`LaunchConfiguration`](crate::model::LaunchConfiguration).
-    pub fn builder() -> crate::model::launch_configuration::Builder {
-        crate::model::launch_configuration::Builder::default()
-    }
-}
 
 /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
@@ -9764,6 +9820,13 @@ impl InstanceMetadataOptions {
         self.http_endpoint.as_ref()
     }
 }
+impl InstanceMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+    pub fn builder() -> crate::model::instance_metadata_options::Builder {
+        crate::model::instance_metadata_options::Builder::default()
+    }
+}
+
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
 pub mod instance_metadata_options {
     
@@ -9827,12 +9890,6 @@ pub mod instance_metadata_options {
     }
     
     
-}
-impl InstanceMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
-    pub fn builder() -> crate::model::instance_metadata_options::Builder {
-        crate::model::instance_metadata_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceMetadataEndpointState`, it is important to ensure
@@ -10013,6 +10070,13 @@ impl InstanceMonitoring {
         self.enabled
     }
 }
+impl InstanceMonitoring {
+    /// Creates a new builder-style object to manufacture [`InstanceMonitoring`](crate::model::InstanceMonitoring).
+    pub fn builder() -> crate::model::instance_monitoring::Builder {
+        crate::model::instance_monitoring::Builder::default()
+    }
+}
+
 /// See [`InstanceMonitoring`](crate::model::InstanceMonitoring).
 pub mod instance_monitoring {
     
@@ -10042,12 +10106,6 @@ pub mod instance_monitoring {
     }
     
     
-}
-impl InstanceMonitoring {
-    /// Creates a new builder-style object to manufacture [`InstanceMonitoring`](crate::model::InstanceMonitoring).
-    pub fn builder() -> crate::model::instance_monitoring::Builder {
-        crate::model::instance_monitoring::Builder::default()
-    }
 }
 
 /// <p>Describes a block device mapping.</p>
@@ -10091,6 +10149,13 @@ impl BlockDeviceMapping {
         self.no_device
     }
 }
+impl BlockDeviceMapping {
+    /// Creates a new builder-style object to manufacture [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
+    pub fn builder() -> crate::model::block_device_mapping::Builder {
+        crate::model::block_device_mapping::Builder::default()
+    }
+}
+
 /// See [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
 pub mod block_device_mapping {
     
@@ -10162,12 +10227,6 @@ pub mod block_device_mapping {
     }
     
     
-}
-impl BlockDeviceMapping {
-    /// Creates a new builder-style object to manufacture [`BlockDeviceMapping`](crate::model::BlockDeviceMapping).
-    pub fn builder() -> crate::model::block_device_mapping::Builder {
-        crate::model::block_device_mapping::Builder::default()
-    }
 }
 
 /// <p>Describes information used to set up an Amazon EBS volume specified in a block device mapping.</p>
@@ -10266,6 +10325,13 @@ impl Ebs {
         self.throughput
     }
 }
+impl Ebs {
+    /// Creates a new builder-style object to manufacture [`Ebs`](crate::model::Ebs).
+    pub fn builder() -> crate::model::ebs::Builder {
+        crate::model::ebs::Builder::default()
+    }
+}
+
 /// See [`Ebs`](crate::model::Ebs).
 pub mod ebs {
     
@@ -10408,12 +10474,6 @@ pub mod ebs {
     
     
 }
-impl Ebs {
-    /// Creates a new builder-style object to manufacture [`Ebs`](crate::model::Ebs).
-    pub fn builder() -> crate::model::ebs::Builder {
-        crate::model::ebs::Builder::default()
-    }
-}
 
 /// <p>Describes an instance refresh for an Auto Scaling group. </p>
 #[non_exhaustive]
@@ -10515,6 +10575,13 @@ impl InstanceRefresh {
         self.desired_configuration.as_ref()
     }
 }
+impl InstanceRefresh {
+    /// Creates a new builder-style object to manufacture [`InstanceRefresh`](crate::model::InstanceRefresh).
+    pub fn builder() -> crate::model::instance_refresh::Builder {
+        crate::model::instance_refresh::Builder::default()
+    }
+}
+
 /// See [`InstanceRefresh`](crate::model::InstanceRefresh).
 pub mod instance_refresh {
     
@@ -10681,12 +10748,6 @@ pub mod instance_refresh {
     
     
 }
-impl InstanceRefresh {
-    /// Creates a new builder-style object to manufacture [`InstanceRefresh`](crate::model::InstanceRefresh).
-    pub fn builder() -> crate::model::instance_refresh::Builder {
-        crate::model::instance_refresh::Builder::default()
-    }
-}
 
 /// <p>Reports the progress of an instance refresh on an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
 #[non_exhaustive]
@@ -10709,6 +10770,13 @@ impl InstanceRefreshProgressDetails {
         self.warm_pool_progress.as_ref()
     }
 }
+impl InstanceRefreshProgressDetails {
+    /// Creates a new builder-style object to manufacture [`InstanceRefreshProgressDetails`](crate::model::InstanceRefreshProgressDetails).
+    pub fn builder() -> crate::model::instance_refresh_progress_details::Builder {
+        crate::model::instance_refresh_progress_details::Builder::default()
+    }
+}
+
 /// See [`InstanceRefreshProgressDetails`](crate::model::InstanceRefreshProgressDetails).
 pub mod instance_refresh_progress_details {
     
@@ -10751,12 +10819,6 @@ pub mod instance_refresh_progress_details {
     
     
 }
-impl InstanceRefreshProgressDetails {
-    /// Creates a new builder-style object to manufacture [`InstanceRefreshProgressDetails`](crate::model::InstanceRefreshProgressDetails).
-    pub fn builder() -> crate::model::instance_refresh_progress_details::Builder {
-        crate::model::instance_refresh_progress_details::Builder::default()
-    }
-}
 
 /// <p>Reports the progress of an instance refresh on instances that are in the warm pool.</p>
 #[non_exhaustive]
@@ -10779,6 +10841,13 @@ impl InstanceRefreshWarmPoolProgress {
         self.instances_to_update
     }
 }
+impl InstanceRefreshWarmPoolProgress {
+    /// Creates a new builder-style object to manufacture [`InstanceRefreshWarmPoolProgress`](crate::model::InstanceRefreshWarmPoolProgress).
+    pub fn builder() -> crate::model::instance_refresh_warm_pool_progress::Builder {
+        crate::model::instance_refresh_warm_pool_progress::Builder::default()
+    }
+}
+
 /// See [`InstanceRefreshWarmPoolProgress`](crate::model::InstanceRefreshWarmPoolProgress).
 pub mod instance_refresh_warm_pool_progress {
     
@@ -10821,12 +10890,6 @@ pub mod instance_refresh_warm_pool_progress {
     
     
 }
-impl InstanceRefreshWarmPoolProgress {
-    /// Creates a new builder-style object to manufacture [`InstanceRefreshWarmPoolProgress`](crate::model::InstanceRefreshWarmPoolProgress).
-    pub fn builder() -> crate::model::instance_refresh_warm_pool_progress::Builder {
-        crate::model::instance_refresh_warm_pool_progress::Builder::default()
-    }
-}
 
 /// <p>Reports the progress of an instance refresh on instances that are in the Auto Scaling group.</p>
 #[non_exhaustive]
@@ -10849,6 +10912,13 @@ impl InstanceRefreshLivePoolProgress {
         self.instances_to_update
     }
 }
+impl InstanceRefreshLivePoolProgress {
+    /// Creates a new builder-style object to manufacture [`InstanceRefreshLivePoolProgress`](crate::model::InstanceRefreshLivePoolProgress).
+    pub fn builder() -> crate::model::instance_refresh_live_pool_progress::Builder {
+        crate::model::instance_refresh_live_pool_progress::Builder::default()
+    }
+}
+
 /// See [`InstanceRefreshLivePoolProgress`](crate::model::InstanceRefreshLivePoolProgress).
 pub mod instance_refresh_live_pool_progress {
     
@@ -10890,12 +10960,6 @@ pub mod instance_refresh_live_pool_progress {
     }
     
     
-}
-impl InstanceRefreshLivePoolProgress {
-    /// Creates a new builder-style object to manufacture [`InstanceRefreshLivePoolProgress`](crate::model::InstanceRefreshLivePoolProgress).
-    pub fn builder() -> crate::model::instance_refresh_live_pool_progress::Builder {
-        crate::model::instance_refresh_live_pool_progress::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstanceRefreshStatus`, it is important to ensure
@@ -11081,6 +11145,13 @@ impl AutoScalingInstanceDetails {
         self.weighted_capacity.as_deref()
     }
 }
+impl AutoScalingInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`AutoScalingInstanceDetails`](crate::model::AutoScalingInstanceDetails).
+    pub fn builder() -> crate::model::auto_scaling_instance_details::Builder {
+        crate::model::auto_scaling_instance_details::Builder::default()
+    }
+}
+
 /// See [`AutoScalingInstanceDetails`](crate::model::AutoScalingInstanceDetails).
 pub mod auto_scaling_instance_details {
     
@@ -11222,12 +11293,6 @@ pub mod auto_scaling_instance_details {
     }
     
     
-}
-impl AutoScalingInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`AutoScalingInstanceDetails`](crate::model::AutoScalingInstanceDetails).
-    pub fn builder() -> crate::model::auto_scaling_instance_details::Builder {
-        crate::model::auto_scaling_instance_details::Builder::default()
-    }
 }
 
 /// <p>Describes an Auto Scaling group.</p>
@@ -11479,6 +11544,13 @@ impl AutoScalingGroup {
         self.traffic_sources.as_deref()
     }
 }
+impl AutoScalingGroup {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
+    pub fn builder() -> crate::model::auto_scaling_group::Builder {
+        crate::model::auto_scaling_group::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
 pub mod auto_scaling_group {
     
@@ -11963,12 +12035,6 @@ pub mod auto_scaling_group {
     
     
 }
-impl AutoScalingGroup {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
-    pub fn builder() -> crate::model::auto_scaling_group::Builder {
-        crate::model::auto_scaling_group::Builder::default()
-    }
-}
 
 /// <p>Describes an enabled Auto Scaling group metric.</p>
 #[non_exhaustive]
@@ -12037,6 +12103,13 @@ impl EnabledMetric {
         self.granularity.as_deref()
     }
 }
+impl EnabledMetric {
+    /// Creates a new builder-style object to manufacture [`EnabledMetric`](crate::model::EnabledMetric).
+    pub fn builder() -> crate::model::enabled_metric::Builder {
+        crate::model::enabled_metric::Builder::default()
+    }
+}
+
 /// See [`EnabledMetric`](crate::model::EnabledMetric).
 pub mod enabled_metric {
     
@@ -12125,12 +12198,6 @@ pub mod enabled_metric {
     
     
 }
-impl EnabledMetric {
-    /// Creates a new builder-style object to manufacture [`EnabledMetric`](crate::model::EnabledMetric).
-    pub fn builder() -> crate::model::enabled_metric::Builder {
-        crate::model::enabled_metric::Builder::default()
-    }
-}
 
 /// <p>Describes an auto scaling process that has been suspended.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -12154,6 +12221,13 @@ impl SuspendedProcess {
         self.suspension_reason.as_deref()
     }
 }
+impl SuspendedProcess {
+    /// Creates a new builder-style object to manufacture [`SuspendedProcess`](crate::model::SuspendedProcess).
+    pub fn builder() -> crate::model::suspended_process::Builder {
+        crate::model::suspended_process::Builder::default()
+    }
+}
+
 /// See [`SuspendedProcess`](crate::model::SuspendedProcess).
 pub mod suspended_process {
     
@@ -12196,12 +12270,6 @@ pub mod suspended_process {
     
     
 }
-impl SuspendedProcess {
-    /// Creates a new builder-style object to manufacture [`SuspendedProcess`](crate::model::SuspendedProcess).
-    pub fn builder() -> crate::model::suspended_process::Builder {
-        crate::model::suspended_process::Builder::default()
-    }
-}
 
 /// <p>Describes a policy adjustment type.</p>
 #[non_exhaustive]
@@ -12217,6 +12285,13 @@ impl AdjustmentType {
         self.adjustment_type.as_deref()
     }
 }
+impl AdjustmentType {
+    /// Creates a new builder-style object to manufacture [`AdjustmentType`](crate::model::AdjustmentType).
+    pub fn builder() -> crate::model::adjustment_type::Builder {
+        crate::model::adjustment_type::Builder::default()
+    }
+}
+
 /// See [`AdjustmentType`](crate::model::AdjustmentType).
 pub mod adjustment_type {
     
@@ -12246,12 +12321,6 @@ pub mod adjustment_type {
     }
     
     
-}
-impl AdjustmentType {
-    /// Creates a new builder-style object to manufacture [`AdjustmentType`](crate::model::AdjustmentType).
-    pub fn builder() -> crate::model::adjustment_type::Builder {
-        crate::model::adjustment_type::Builder::default()
-    }
 }
 
 /// <p>Describes a tag for an Auto Scaling group.</p>
@@ -12296,6 +12365,13 @@ impl Tag {
         self.propagate_at_launch
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -12374,12 +12450,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Describes information used to specify a lifecycle hook for an Auto Scaling group.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -12450,6 +12520,13 @@ impl LifecycleHookSpecification {
         self.role_arn.as_deref()
     }
 }
+impl LifecycleHookSpecification {
+    /// Creates a new builder-style object to manufacture [`LifecycleHookSpecification`](crate::model::LifecycleHookSpecification).
+    pub fn builder() -> crate::model::lifecycle_hook_specification::Builder {
+        crate::model::lifecycle_hook_specification::Builder::default()
+    }
+}
+
 /// See [`LifecycleHookSpecification`](crate::model::LifecycleHookSpecification).
 pub mod lifecycle_hook_specification {
     
@@ -12564,12 +12641,6 @@ pub mod lifecycle_hook_specification {
     
     
 }
-impl LifecycleHookSpecification {
-    /// Creates a new builder-style object to manufacture [`LifecycleHookSpecification`](crate::model::LifecycleHookSpecification).
-    pub fn builder() -> crate::model::lifecycle_hook_specification::Builder {
-        crate::model::lifecycle_hook_specification::Builder::default()
-    }
-}
 
 /// <p>Describes a scheduled action that could not be created, updated, or deleted.</p>
 #[non_exhaustive]
@@ -12599,6 +12670,13 @@ impl FailedScheduledUpdateGroupActionRequest {
         self.error_message.as_deref()
     }
 }
+impl FailedScheduledUpdateGroupActionRequest {
+    /// Creates a new builder-style object to manufacture [`FailedScheduledUpdateGroupActionRequest`](crate::model::FailedScheduledUpdateGroupActionRequest).
+    pub fn builder() -> crate::model::failed_scheduled_update_group_action_request::Builder {
+        crate::model::failed_scheduled_update_group_action_request::Builder::default()
+    }
+}
+
 /// See [`FailedScheduledUpdateGroupActionRequest`](crate::model::FailedScheduledUpdateGroupActionRequest).
 pub mod failed_scheduled_update_group_action_request {
     
@@ -12652,12 +12730,6 @@ pub mod failed_scheduled_update_group_action_request {
     }
     
     
-}
-impl FailedScheduledUpdateGroupActionRequest {
-    /// Creates a new builder-style object to manufacture [`FailedScheduledUpdateGroupActionRequest`](crate::model::FailedScheduledUpdateGroupActionRequest).
-    pub fn builder() -> crate::model::failed_scheduled_update_group_action_request::Builder {
-        crate::model::failed_scheduled_update_group_action_request::Builder::default()
-    }
 }
 
 /// <p>Describes information used for one or more scheduled scaling action updates in a <code>BatchPutScheduledUpdateGroupAction</code> operation.</p>
@@ -12733,6 +12805,13 @@ impl ScheduledUpdateGroupActionRequest {
         self.time_zone.as_deref()
     }
 }
+impl ScheduledUpdateGroupActionRequest {
+    /// Creates a new builder-style object to manufacture [`ScheduledUpdateGroupActionRequest`](crate::model::ScheduledUpdateGroupActionRequest).
+    pub fn builder() -> crate::model::scheduled_update_group_action_request::Builder {
+        crate::model::scheduled_update_group_action_request::Builder::default()
+    }
+}
+
 /// See [`ScheduledUpdateGroupActionRequest`](crate::model::ScheduledUpdateGroupActionRequest).
 pub mod scheduled_update_group_action_request {
     
@@ -12856,11 +12935,5 @@ pub mod scheduled_update_group_action_request {
     }
     
     
-}
-impl ScheduledUpdateGroupActionRequest {
-    /// Creates a new builder-style object to manufacture [`ScheduledUpdateGroupActionRequest`](crate::model::ScheduledUpdateGroupActionRequest).
-    pub fn builder() -> crate::model::scheduled_update_group_action_request::Builder {
-        crate::model::scheduled_update_group_action_request::Builder::default()
-    }
 }
 

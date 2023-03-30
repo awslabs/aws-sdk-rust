@@ -37,6 +37,13 @@ impl  std::fmt::Debug for ApplicationCredential  {
         formatter.finish()
     }
 }
+impl ApplicationCredential {
+    /// Creates a new builder-style object to manufacture [`ApplicationCredential`](crate::model::ApplicationCredential).
+    pub fn builder() -> crate::model::application_credential::Builder {
+        crate::model::application_credential::Builder::default()
+    }
+}
+
 /// See [`ApplicationCredential`](crate::model::ApplicationCredential).
 pub mod application_credential {
     
@@ -99,12 +106,6 @@ pub mod application_credential {
     }
     
     
-}
-impl ApplicationCredential {
-    /// Creates a new builder-style object to manufacture [`ApplicationCredential`](crate::model::ApplicationCredential).
-    pub fn builder() -> crate::model::application_credential::Builder {
-        crate::model::application_credential::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CredentialType`, it is important to ensure
@@ -247,6 +248,13 @@ impl Application {
         self.status_message.as_deref()
     }
 }
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
 /// See [`Application`](crate::model::Application).
 pub mod application {
     
@@ -366,12 +374,6 @@ pub mod application {
     }
     
     
-}
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ApplicationStatus`, it is important to ensure
@@ -724,6 +726,13 @@ impl Operation {
         self.last_updated_time.as_ref()
     }
 }
+impl Operation {
+    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
+    pub fn builder() -> crate::model::operation::Builder {
+        crate::model::operation::Builder::default()
+    }
+}
+
 /// See [`Operation`](crate::model::Operation).
 pub mod operation {
     
@@ -880,12 +889,6 @@ pub mod operation {
     
     
 }
-impl Operation {
-    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
-    pub fn builder() -> crate::model::operation::Builder {
-        crate::model::operation::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OperationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1002,6 +1005,13 @@ impl Filter {
         self.operator.as_ref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
     
@@ -1055,12 +1065,6 @@ pub mod filter {
     }
     
     
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FilterOperator`, it is important to ensure
@@ -1199,6 +1203,13 @@ impl DatabaseSummary {
         self.tags.as_ref()
     }
 }
+impl DatabaseSummary {
+    /// Creates a new builder-style object to manufacture [`DatabaseSummary`](crate::model::DatabaseSummary).
+    pub fn builder() -> crate::model::database_summary::Builder {
+        crate::model::database_summary::Builder::default()
+    }
+}
+
 /// See [`DatabaseSummary`](crate::model::DatabaseSummary).
 pub mod database_summary {
     
@@ -1294,12 +1305,6 @@ pub mod database_summary {
     }
     
     
-}
-impl DatabaseSummary {
-    /// Creates a new builder-style object to manufacture [`DatabaseSummary`](crate::model::DatabaseSummary).
-    pub fn builder() -> crate::model::database_summary::Builder {
-        crate::model::database_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DatabaseType`, it is important to ensure
@@ -1419,6 +1424,13 @@ impl ComponentSummary {
         self.tags.as_ref()
     }
 }
+impl ComponentSummary {
+    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
+    pub fn builder() -> crate::model::component_summary::Builder {
+        crate::model::component_summary::Builder::default()
+    }
+}
+
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
     
@@ -1490,12 +1502,6 @@ pub mod component_summary {
     }
     
     
-}
-impl ComponentSummary {
-    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
-    pub fn builder() -> crate::model::component_summary::Builder {
-        crate::model::component_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComponentType`, it is important to ensure
@@ -1610,6 +1616,13 @@ impl ApplicationSummary {
         self.tags.as_ref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
     
@@ -1681,12 +1694,6 @@ pub mod application_summary {
     }
     
     
-}
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
-    }
 }
 
 /// <p>The SAP HANA database of the application registered with AWS Systems Manager for SAP.</p>
@@ -1773,6 +1780,13 @@ impl Database {
         self.last_updated.as_ref()
     }
 }
+impl Database {
+    /// Creates a new builder-style object to manufacture [`Database`](crate::model::Database).
+    pub fn builder() -> crate::model::database::Builder {
+        crate::model::database::Builder::default()
+    }
+}
+
 /// See [`Database`](crate::model::Database).
 pub mod database {
     
@@ -1928,12 +1942,6 @@ pub mod database {
     }
     
     
-}
-impl Database {
-    /// Creates a new builder-style object to manufacture [`Database`](crate::model::Database).
-    pub fn builder() -> crate::model::database::Builder {
-        crate::model::database::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DatabaseStatus`, it is important to ensure
@@ -2096,6 +2104,13 @@ impl Component {
         self.last_updated.as_ref()
     }
 }
+impl Component {
+    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
+    pub fn builder() -> crate::model::component::Builder {
+        crate::model::component::Builder::default()
+    }
+}
+
 /// See [`Component`](crate::model::Component).
 pub mod component {
     
@@ -2222,12 +2237,6 @@ pub mod component {
     
     
 }
-impl Component {
-    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
-    pub fn builder() -> crate::model::component::Builder {
-        crate::model::component::Builder::default()
-    }
-}
 
 /// <p>Describes the properties of the Dedicated Host. </p>
 #[non_exhaustive]
@@ -2264,6 +2273,13 @@ impl Host {
         self.instance_id.as_deref()
     }
 }
+impl Host {
+    /// Creates a new builder-style object to manufacture [`Host`](crate::model::Host).
+    pub fn builder() -> crate::model::host::Builder {
+        crate::model::host::Builder::default()
+    }
+}
+
 /// See [`Host`](crate::model::Host).
 pub mod host {
     
@@ -2329,12 +2345,6 @@ pub mod host {
     }
     
     
-}
-impl Host {
-    /// Creates a new builder-style object to manufacture [`Host`](crate::model::Host).
-    pub fn builder() -> crate::model::host::Builder {
-        crate::model::host::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HostRole`, it is important to ensure

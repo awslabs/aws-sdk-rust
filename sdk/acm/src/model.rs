@@ -14,6 +14,13 @@ impl CertificateOptions {
         self.certificate_transparency_logging_preference.as_ref()
     }
 }
+impl CertificateOptions {
+    /// Creates a new builder-style object to manufacture [`CertificateOptions`](crate::model::CertificateOptions).
+    pub fn builder() -> crate::model::certificate_options::Builder {
+        crate::model::certificate_options::Builder::default()
+    }
+}
+
 /// See [`CertificateOptions`](crate::model::CertificateOptions).
 pub mod certificate_options {
     
@@ -43,12 +50,6 @@ pub mod certificate_options {
     }
     
     
-}
-impl CertificateOptions {
-    /// Creates a new builder-style object to manufacture [`CertificateOptions`](crate::model::CertificateOptions).
-    pub fn builder() -> crate::model::certificate_options::Builder {
-        crate::model::certificate_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CertificateTransparencyLoggingPreference`, it is important to ensure
@@ -261,6 +262,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -303,12 +311,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.</p>
 #[non_exhaustive]
@@ -345,6 +347,13 @@ impl DomainValidationOption {
         self.validation_domain.as_deref()
     }
 }
+impl DomainValidationOption {
+    /// Creates a new builder-style object to manufacture [`DomainValidationOption`](crate::model::DomainValidationOption).
+    pub fn builder() -> crate::model::domain_validation_option::Builder {
+        crate::model::domain_validation_option::Builder::default()
+    }
+}
+
 /// See [`DomainValidationOption`](crate::model::DomainValidationOption).
 pub mod domain_validation_option {
     
@@ -400,12 +409,6 @@ pub mod domain_validation_option {
     }
     
     
-}
-impl DomainValidationOption {
-    /// Creates a new builder-style object to manufacture [`DomainValidationOption`](crate::model::DomainValidationOption).
-    pub fn builder() -> crate::model::domain_validation_option::Builder {
-        crate::model::domain_validation_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationMethod`, it is important to ensure
@@ -504,6 +507,13 @@ impl ExpiryEventsConfiguration {
         self.days_before_expiry
     }
 }
+impl ExpiryEventsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
+    pub fn builder() -> crate::model::expiry_events_configuration::Builder {
+        crate::model::expiry_events_configuration::Builder::default()
+    }
+}
+
 /// See [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
 pub mod expiry_events_configuration {
     
@@ -533,12 +543,6 @@ pub mod expiry_events_configuration {
     }
     
     
-}
-impl ExpiryEventsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
-    pub fn builder() -> crate::model::expiry_events_configuration::Builder {
-        crate::model::expiry_events_configuration::Builder::default()
-    }
 }
 
 /// <p>This structure is returned in the response object of <code>ListCertificates</code> action. </p>
@@ -682,6 +686,13 @@ impl CertificateSummary {
         self.revoked_at.as_ref()
     }
 }
+impl CertificateSummary {
+    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
+    pub fn builder() -> crate::model::certificate_summary::Builder {
+        crate::model::certificate_summary::Builder::default()
+    }
+}
+
 /// See [`CertificateSummary`](crate::model::CertificateSummary).
 pub mod certificate_summary {
     
@@ -941,12 +952,6 @@ pub mod certificate_summary {
     }
     
     
-}
-impl CertificateSummary {
-    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
-    pub fn builder() -> crate::model::certificate_summary::Builder {
-        crate::model::certificate_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RenewalEligibility`, it is important to ensure
@@ -1673,6 +1678,13 @@ impl Filters {
         self.key_types.as_deref()
     }
 }
+impl Filters {
+    /// Creates a new builder-style object to manufacture [`Filters`](crate::model::Filters).
+    pub fn builder() -> crate::model::filters::Builder {
+        crate::model::filters::Builder::default()
+    }
+}
+
 /// See [`Filters`](crate::model::Filters).
 pub mod filters {
     
@@ -1746,12 +1758,6 @@ pub mod filters {
     }
     
     
-}
-impl Filters {
-    /// Creates a new builder-style object to manufacture [`Filters`](crate::model::Filters).
-    pub fn builder() -> crate::model::filters::Builder {
-        crate::model::filters::Builder::default()
-    }
 }
 
 /// <p>Contains metadata about an ACM certificate. This structure is returned in the response to a <code>DescribeCertificate</code> request. </p>
@@ -1947,6 +1953,13 @@ impl CertificateDetail {
         self.options.as_ref()
     }
 }
+impl CertificateDetail {
+    /// Creates a new builder-style object to manufacture [`CertificateDetail`](crate::model::CertificateDetail).
+    pub fn builder() -> crate::model::certificate_detail::Builder {
+        crate::model::certificate_detail::Builder::default()
+    }
+}
+
 /// See [`CertificateDetail`](crate::model::CertificateDetail).
 pub mod certificate_detail {
     
@@ -2311,12 +2324,6 @@ pub mod certificate_detail {
     
     
 }
-impl CertificateDetail {
-    /// Creates a new builder-style object to manufacture [`CertificateDetail`](crate::model::CertificateDetail).
-    pub fn builder() -> crate::model::certificate_detail::Builder {
-        crate::model::certificate_detail::Builder::default()
-    }
-}
 
 /// <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. </p>
 #[non_exhaustive]
@@ -2361,6 +2368,13 @@ impl ExtendedKeyUsage {
         self.oid.as_deref()
     }
 }
+impl ExtendedKeyUsage {
+    /// Creates a new builder-style object to manufacture [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
+    pub fn builder() -> crate::model::extended_key_usage::Builder {
+        crate::model::extended_key_usage::Builder::default()
+    }
+}
+
 /// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
 pub mod extended_key_usage {
     
@@ -2425,12 +2439,6 @@ pub mod extended_key_usage {
     
     
 }
-impl ExtendedKeyUsage {
-    /// Creates a new builder-style object to manufacture [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
-    pub fn builder() -> crate::model::extended_key_usage::Builder {
-        crate::model::extended_key_usage::Builder::default()
-    }
-}
 
 /// <p>The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.</p>
 #[non_exhaustive]
@@ -2446,6 +2454,13 @@ impl KeyUsage {
         self.name.as_ref()
     }
 }
+impl KeyUsage {
+    /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::model::KeyUsage).
+    pub fn builder() -> crate::model::key_usage::Builder {
+        crate::model::key_usage::Builder::default()
+    }
+}
+
 /// See [`KeyUsage`](crate::model::KeyUsage).
 pub mod key_usage {
     
@@ -2475,12 +2490,6 @@ pub mod key_usage {
     }
     
     
-}
-impl KeyUsage {
-    /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::model::KeyUsage).
-    pub fn builder() -> crate::model::key_usage::Builder {
-        crate::model::key_usage::Builder::default()
-    }
 }
 
 /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -2518,6 +2527,13 @@ impl RenewalSummary {
         self.updated_at.as_ref()
     }
 }
+impl RenewalSummary {
+    /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::model::RenewalSummary).
+    pub fn builder() -> crate::model::renewal_summary::Builder {
+        crate::model::renewal_summary::Builder::default()
+    }
+}
+
 /// See [`RenewalSummary`](crate::model::RenewalSummary).
 pub mod renewal_summary {
     
@@ -2589,12 +2605,6 @@ pub mod renewal_summary {
     }
     
     
-}
-impl RenewalSummary {
-    /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::model::RenewalSummary).
-    pub fn builder() -> crate::model::renewal_summary::Builder {
-        crate::model::renewal_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FailureReason`, it is important to ensure
@@ -2815,6 +2825,13 @@ impl DomainValidation {
         self.validation_method.as_ref()
     }
 }
+impl DomainValidation {
+    /// Creates a new builder-style object to manufacture [`DomainValidation`](crate::model::DomainValidation).
+    pub fn builder() -> crate::model::domain_validation::Builder {
+        crate::model::domain_validation::Builder::default()
+    }
+}
+
 /// See [`DomainValidation`](crate::model::DomainValidation).
 pub mod domain_validation {
     
@@ -2923,12 +2940,6 @@ pub mod domain_validation {
     
     
 }
-impl DomainValidation {
-    /// Creates a new builder-style object to manufacture [`DomainValidation`](crate::model::DomainValidation).
-    pub fn builder() -> crate::model::domain_validation::Builder {
-        crate::model::domain_validation::Builder::default()
-    }
-}
 
 /// <p>Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the <code>DescribeCertificate</code> action. </p>
 #[non_exhaustive]
@@ -2958,6 +2969,13 @@ impl ResourceRecord {
         self.value.as_deref()
     }
 }
+impl ResourceRecord {
+    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
+    pub fn builder() -> crate::model::resource_record::Builder {
+        crate::model::resource_record::Builder::default()
+    }
+}
+
 /// See [`ResourceRecord`](crate::model::ResourceRecord).
 pub mod resource_record {
     
@@ -3011,12 +3029,6 @@ pub mod resource_record {
     }
     
     
-}
-impl ResourceRecord {
-    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
-    pub fn builder() -> crate::model::resource_record::Builder {
-        crate::model::resource_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecordType`, it is important to ensure

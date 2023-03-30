@@ -96,6 +96,13 @@ impl NodeLogPublishingConfiguration {
         self.fabric.as_ref()
     }
 }
+impl NodeLogPublishingConfiguration {
+    /// Creates a new builder-style object to manufacture [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
+    pub fn builder() -> crate::model::node_log_publishing_configuration::Builder {
+        crate::model::node_log_publishing_configuration::Builder::default()
+    }
+}
+
 /// See [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
 pub mod node_log_publishing_configuration {
     
@@ -126,12 +133,6 @@ pub mod node_log_publishing_configuration {
     
     
 }
-impl NodeLogPublishingConfiguration {
-    /// Creates a new builder-style object to manufacture [`NodeLogPublishingConfiguration`](crate::model::NodeLogPublishingConfiguration).
-    pub fn builder() -> crate::model::node_log_publishing_configuration::Builder {
-        crate::model::node_log_publishing_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.</p>
 #[non_exhaustive]
@@ -154,6 +155,13 @@ impl NodeFabricLogPublishingConfiguration {
         self.peer_logs.as_ref()
     }
 }
+impl NodeFabricLogPublishingConfiguration {
+    /// Creates a new builder-style object to manufacture [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
+    pub fn builder() -> crate::model::node_fabric_log_publishing_configuration::Builder {
+        crate::model::node_fabric_log_publishing_configuration::Builder::default()
+    }
+}
+
 /// See [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
 pub mod node_fabric_log_publishing_configuration {
     
@@ -196,12 +204,6 @@ pub mod node_fabric_log_publishing_configuration {
     
     
 }
-impl NodeFabricLogPublishingConfiguration {
-    /// Creates a new builder-style object to manufacture [`NodeFabricLogPublishingConfiguration`](crate::model::NodeFabricLogPublishingConfiguration).
-    pub fn builder() -> crate::model::node_fabric_log_publishing_configuration::Builder {
-        crate::model::node_fabric_log_publishing_configuration::Builder::default()
-    }
-}
 
 /// <p>A collection of log configurations.</p>
 #[non_exhaustive]
@@ -217,6 +219,13 @@ impl LogConfigurations {
         self.cloudwatch.as_ref()
     }
 }
+impl LogConfigurations {
+    /// Creates a new builder-style object to manufacture [`LogConfigurations`](crate::model::LogConfigurations).
+    pub fn builder() -> crate::model::log_configurations::Builder {
+        crate::model::log_configurations::Builder::default()
+    }
+}
+
 /// See [`LogConfigurations`](crate::model::LogConfigurations).
 pub mod log_configurations {
     
@@ -247,12 +256,6 @@ pub mod log_configurations {
     
     
 }
-impl LogConfigurations {
-    /// Creates a new builder-style object to manufacture [`LogConfigurations`](crate::model::LogConfigurations).
-    pub fn builder() -> crate::model::log_configurations::Builder {
-        crate::model::log_configurations::Builder::default()
-    }
-}
 
 /// <p>A configuration for logging events.</p>
 #[non_exhaustive]
@@ -268,6 +271,13 @@ impl LogConfiguration {
         self.enabled
     }
 }
+impl LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
+    pub fn builder() -> crate::model::log_configuration::Builder {
+        crate::model::log_configuration::Builder::default()
+    }
+}
+
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
 pub mod log_configuration {
     
@@ -298,12 +308,6 @@ pub mod log_configuration {
     
     
 }
-impl LogConfiguration {
-    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
-    pub fn builder() -> crate::model::log_configuration::Builder {
-        crate::model::log_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>
 #[non_exhaustive]
@@ -319,6 +323,13 @@ impl MemberLogPublishingConfiguration {
         self.fabric.as_ref()
     }
 }
+impl MemberLogPublishingConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
+    pub fn builder() -> crate::model::member_log_publishing_configuration::Builder {
+        crate::model::member_log_publishing_configuration::Builder::default()
+    }
+}
+
 /// See [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
 pub mod member_log_publishing_configuration {
     
@@ -349,12 +360,6 @@ pub mod member_log_publishing_configuration {
     
     
 }
-impl MemberLogPublishingConfiguration {
-    /// Creates a new builder-style object to manufacture [`MemberLogPublishingConfiguration`](crate::model::MemberLogPublishingConfiguration).
-    pub fn builder() -> crate::model::member_log_publishing_configuration::Builder {
-        crate::model::member_log_publishing_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
@@ -370,6 +375,13 @@ impl MemberFabricLogPublishingConfiguration {
         self.ca_logs.as_ref()
     }
 }
+impl MemberFabricLogPublishingConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
+    pub fn builder() -> crate::model::member_fabric_log_publishing_configuration::Builder {
+        crate::model::member_fabric_log_publishing_configuration::Builder::default()
+    }
+}
+
 /// See [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
 pub mod member_fabric_log_publishing_configuration {
     
@@ -399,12 +411,6 @@ pub mod member_fabric_log_publishing_configuration {
     }
     
     
-}
-impl MemberFabricLogPublishingConfiguration {
-    /// Creates a new builder-style object to manufacture [`MemberFabricLogPublishingConfiguration`](crate::model::MemberFabricLogPublishingConfiguration).
-    pub fn builder() -> crate::model::member_fabric_log_publishing_configuration::Builder {
-        crate::model::member_fabric_log_publishing_configuration::Builder::default()
-    }
 }
 
 /// <p> Properties of an individual vote that a member cast for a proposal. </p> 
@@ -436,6 +442,13 @@ impl VoteSummary {
         self.member_id.as_deref()
     }
 }
+impl VoteSummary {
+    /// Creates a new builder-style object to manufacture [`VoteSummary`](crate::model::VoteSummary).
+    pub fn builder() -> crate::model::vote_summary::Builder {
+        crate::model::vote_summary::Builder::default()
+    }
+}
+
 /// See [`VoteSummary`](crate::model::VoteSummary).
 pub mod vote_summary {
     
@@ -489,12 +502,6 @@ pub mod vote_summary {
     }
     
     
-}
-impl VoteSummary {
-    /// Creates a new builder-style object to manufacture [`VoteSummary`](crate::model::VoteSummary).
-    pub fn builder() -> crate::model::vote_summary::Builder {
-        crate::model::vote_summary::Builder::default()
-    }
 }
 
 /// <p>Properties of a proposal.</p> 
@@ -575,6 +582,13 @@ impl ProposalSummary {
         self.arn.as_deref()
     }
 }
+impl ProposalSummary {
+    /// Creates a new builder-style object to manufacture [`ProposalSummary`](crate::model::ProposalSummary).
+    pub fn builder() -> crate::model::proposal_summary::Builder {
+        crate::model::proposal_summary::Builder::default()
+    }
+}
+
 /// See [`ProposalSummary`](crate::model::ProposalSummary).
 pub mod proposal_summary {
     
@@ -702,12 +716,6 @@ pub mod proposal_summary {
     }
     
     
-}
-impl ProposalSummary {
-    /// Creates a new builder-style object to manufacture [`ProposalSummary`](crate::model::ProposalSummary).
-    pub fn builder() -> crate::model::proposal_summary::Builder {
-        crate::model::proposal_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProposalStatus`, it is important to ensure
@@ -856,6 +864,13 @@ impl NodeSummary {
         self.arn.as_deref()
     }
 }
+impl NodeSummary {
+    /// Creates a new builder-style object to manufacture [`NodeSummary`](crate::model::NodeSummary).
+    pub fn builder() -> crate::model::node_summary::Builder {
+        crate::model::node_summary::Builder::default()
+    }
+}
+
 /// See [`NodeSummary`](crate::model::NodeSummary).
 pub mod node_summary {
     
@@ -945,12 +960,6 @@ pub mod node_summary {
     }
     
     
-}
-impl NodeSummary {
-    /// Creates a new builder-style object to manufacture [`NodeSummary`](crate::model::NodeSummary).
-    pub fn builder() -> crate::model::node_summary::Builder {
-        crate::model::node_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NodeStatus`, it is important to ensure
@@ -1133,6 +1142,13 @@ impl NetworkSummary {
         self.arn.as_deref()
     }
 }
+impl NetworkSummary {
+    /// Creates a new builder-style object to manufacture [`NetworkSummary`](crate::model::NetworkSummary).
+    pub fn builder() -> crate::model::network_summary::Builder {
+        crate::model::network_summary::Builder::default()
+    }
+}
+
 /// See [`NetworkSummary`](crate::model::NetworkSummary).
 pub mod network_summary {
     
@@ -1246,12 +1262,6 @@ pub mod network_summary {
     }
     
     
-}
-impl NetworkSummary {
-    /// Creates a new builder-style object to manufacture [`NetworkSummary`](crate::model::NetworkSummary).
-    pub fn builder() -> crate::model::network_summary::Builder {
-        crate::model::network_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NetworkStatus`, it is important to ensure
@@ -1508,6 +1518,13 @@ impl MemberSummary {
         self.arn.as_deref()
     }
 }
+impl MemberSummary {
+    /// Creates a new builder-style object to manufacture [`MemberSummary`](crate::model::MemberSummary).
+    pub fn builder() -> crate::model::member_summary::Builder {
+        crate::model::member_summary::Builder::default()
+    }
+}
+
 /// See [`MemberSummary`](crate::model::MemberSummary).
 pub mod member_summary {
     
@@ -1627,12 +1644,6 @@ pub mod member_summary {
     }
     
     
-}
-impl MemberSummary {
-    /// Creates a new builder-style object to manufacture [`MemberSummary`](crate::model::MemberSummary).
-    pub fn builder() -> crate::model::member_summary::Builder {
-        crate::model::member_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MemberStatus`, it is important to ensure
@@ -1806,6 +1817,13 @@ impl Invitation {
         self.arn.as_deref()
     }
 }
+impl Invitation {
+    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
+    pub fn builder() -> crate::model::invitation::Builder {
+        crate::model::invitation::Builder::default()
+    }
+}
+
 /// See [`Invitation`](crate::model::Invitation).
 pub mod invitation {
     
@@ -1909,12 +1927,6 @@ pub mod invitation {
     }
     
     
-}
-impl Invitation {
-    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
-    pub fn builder() -> crate::model::invitation::Builder {
-        crate::model::invitation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InvitationStatus`, it is important to ensure
@@ -2063,6 +2075,13 @@ impl AccessorSummary {
         self.arn.as_deref()
     }
 }
+impl AccessorSummary {
+    /// Creates a new builder-style object to manufacture [`AccessorSummary`](crate::model::AccessorSummary).
+    pub fn builder() -> crate::model::accessor_summary::Builder {
+        crate::model::accessor_summary::Builder::default()
+    }
+}
+
 /// See [`AccessorSummary`](crate::model::AccessorSummary).
 pub mod accessor_summary {
     
@@ -2144,12 +2163,6 @@ pub mod accessor_summary {
     }
     
     
-}
-impl AccessorSummary {
-    /// Creates a new builder-style object to manufacture [`AccessorSummary`](crate::model::AccessorSummary).
-    pub fn builder() -> crate::model::accessor_summary::Builder {
-        crate::model::accessor_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccessorStatus`, it is important to ensure
@@ -2438,6 +2451,13 @@ impl Proposal {
         self.arn.as_deref()
     }
 }
+impl Proposal {
+    /// Creates a new builder-style object to manufacture [`Proposal`](crate::model::Proposal).
+    pub fn builder() -> crate::model::proposal::Builder {
+        crate::model::proposal::Builder::default()
+    }
+}
+
 /// See [`Proposal`](crate::model::Proposal).
 pub mod proposal {
     
@@ -2646,12 +2666,6 @@ pub mod proposal {
     
     
 }
-impl Proposal {
-    /// Creates a new builder-style object to manufacture [`Proposal`](crate::model::Proposal).
-    pub fn builder() -> crate::model::proposal::Builder {
-        crate::model::proposal::Builder::default()
-    }
-}
 
 /// <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
@@ -2675,6 +2689,13 @@ impl ProposalActions {
         self.removals.as_deref()
     }
 }
+impl ProposalActions {
+    /// Creates a new builder-style object to manufacture [`ProposalActions`](crate::model::ProposalActions).
+    pub fn builder() -> crate::model::proposal_actions::Builder {
+        crate::model::proposal_actions::Builder::default()
+    }
+}
+
 /// See [`ProposalActions`](crate::model::ProposalActions).
 pub mod proposal_actions {
     
@@ -2729,12 +2750,6 @@ pub mod proposal_actions {
     
     
 }
-impl ProposalActions {
-    /// Creates a new builder-style object to manufacture [`ProposalActions`](crate::model::ProposalActions).
-    pub fn builder() -> crate::model::proposal_actions::Builder {
-        crate::model::proposal_actions::Builder::default()
-    }
-}
 
 /// <p>An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
@@ -2751,6 +2766,13 @@ impl RemoveAction {
         self.member_id.as_deref()
     }
 }
+impl RemoveAction {
+    /// Creates a new builder-style object to manufacture [`RemoveAction`](crate::model::RemoveAction).
+    pub fn builder() -> crate::model::remove_action::Builder {
+        crate::model::remove_action::Builder::default()
+    }
+}
+
 /// See [`RemoveAction`](crate::model::RemoveAction).
 pub mod remove_action {
     
@@ -2781,12 +2803,6 @@ pub mod remove_action {
     
     
 }
-impl RemoveAction {
-    /// Creates a new builder-style object to manufacture [`RemoveAction`](crate::model::RemoveAction).
-    pub fn builder() -> crate::model::remove_action::Builder {
-        crate::model::remove_action::Builder::default()
-    }
-}
 
 /// <p>An action to invite a specific Amazon Web Services account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
@@ -2803,6 +2819,13 @@ impl InviteAction {
         self.principal.as_deref()
     }
 }
+impl InviteAction {
+    /// Creates a new builder-style object to manufacture [`InviteAction`](crate::model::InviteAction).
+    pub fn builder() -> crate::model::invite_action::Builder {
+        crate::model::invite_action::Builder::default()
+    }
+}
+
 /// See [`InviteAction`](crate::model::InviteAction).
 pub mod invite_action {
     
@@ -2832,12 +2855,6 @@ pub mod invite_action {
     }
     
     
-}
-impl InviteAction {
-    /// Creates a new builder-style object to manufacture [`InviteAction`](crate::model::InviteAction).
-    pub fn builder() -> crate::model::invite_action::Builder {
-        crate::model::invite_action::Builder::default()
-    }
 }
 
 /// <p>Configuration properties of a node.</p>
@@ -2970,6 +2987,13 @@ impl Node {
         self.kms_key_arn.as_deref()
     }
 }
+impl Node {
+    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
+    pub fn builder() -> crate::model::node::Builder {
+        crate::model::node::Builder::default()
+    }
+}
+
 /// See [`Node`](crate::model::Node).
 pub mod node {
     
@@ -3182,12 +3206,6 @@ pub mod node {
     
     
 }
-impl Node {
-    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
-    pub fn builder() -> crate::model::node::Builder {
-        crate::model::node::Builder::default()
-    }
-}
 
 /// When writing a match expression against `StateDbType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3292,6 +3310,13 @@ impl NodeFrameworkAttributes {
         self.ethereum.as_ref()
     }
 }
+impl NodeFrameworkAttributes {
+    /// Creates a new builder-style object to manufacture [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
+    pub fn builder() -> crate::model::node_framework_attributes::Builder {
+        crate::model::node_framework_attributes::Builder::default()
+    }
+}
+
 /// See [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
 pub mod node_framework_attributes {
     
@@ -3334,12 +3359,6 @@ pub mod node_framework_attributes {
     
     
 }
-impl NodeFrameworkAttributes {
-    /// Creates a new builder-style object to manufacture [`NodeFrameworkAttributes`](crate::model::NodeFrameworkAttributes).
-    pub fn builder() -> crate::model::node_framework_attributes::Builder {
-        crate::model::node_framework_attributes::Builder::default()
-    }
-}
 
 /// <p>Attributes of an Ethereum node.</p>
 #[non_exhaustive]
@@ -3362,6 +3381,13 @@ impl NodeEthereumAttributes {
         self.web_socket_endpoint.as_deref()
     }
 }
+impl NodeEthereumAttributes {
+    /// Creates a new builder-style object to manufacture [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
+    pub fn builder() -> crate::model::node_ethereum_attributes::Builder {
+        crate::model::node_ethereum_attributes::Builder::default()
+    }
+}
+
 /// See [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
 pub mod node_ethereum_attributes {
     
@@ -3404,12 +3430,6 @@ pub mod node_ethereum_attributes {
     
     
 }
-impl NodeEthereumAttributes {
-    /// Creates a new builder-style object to manufacture [`NodeEthereumAttributes`](crate::model::NodeEthereumAttributes).
-    pub fn builder() -> crate::model::node_ethereum_attributes::Builder {
-        crate::model::node_ethereum_attributes::Builder::default()
-    }
-}
 
 /// <p>Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
@@ -3432,6 +3452,13 @@ impl NodeFabricAttributes {
         self.peer_event_endpoint.as_deref()
     }
 }
+impl NodeFabricAttributes {
+    /// Creates a new builder-style object to manufacture [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
+    pub fn builder() -> crate::model::node_fabric_attributes::Builder {
+        crate::model::node_fabric_attributes::Builder::default()
+    }
+}
+
 /// See [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
 pub mod node_fabric_attributes {
     
@@ -3473,12 +3500,6 @@ pub mod node_fabric_attributes {
     }
     
     
-}
-impl NodeFabricAttributes {
-    /// Creates a new builder-style object to manufacture [`NodeFabricAttributes`](crate::model::NodeFabricAttributes).
-    pub fn builder() -> crate::model::node_fabric_attributes::Builder {
-        crate::model::node_fabric_attributes::Builder::default()
-    }
 }
 
 /// <p>Network configuration properties.</p>
@@ -3574,6 +3595,13 @@ impl Network {
         self.arn.as_deref()
     }
 }
+impl Network {
+    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
+    pub fn builder() -> crate::model::network::Builder {
+        crate::model::network::Builder::default()
+    }
+}
+
 /// See [`Network`](crate::model::Network).
 pub mod network {
     
@@ -3744,12 +3772,6 @@ pub mod network {
     
     
 }
-impl Network {
-    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
-    pub fn builder() -> crate::model::network::Builder {
-        crate::model::network::Builder::default()
-    }
-}
 
 /// <p> The voting rules for the network to decide if a proposal is accepted </p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
@@ -3766,6 +3788,13 @@ impl VotingPolicy {
         self.approval_threshold_policy.as_ref()
     }
 }
+impl VotingPolicy {
+    /// Creates a new builder-style object to manufacture [`VotingPolicy`](crate::model::VotingPolicy).
+    pub fn builder() -> crate::model::voting_policy::Builder {
+        crate::model::voting_policy::Builder::default()
+    }
+}
+
 /// See [`VotingPolicy`](crate::model::VotingPolicy).
 pub mod voting_policy {
     
@@ -3795,12 +3824,6 @@ pub mod voting_policy {
     }
     
     
-}
-impl VotingPolicy {
-    /// Creates a new builder-style object to manufacture [`VotingPolicy`](crate::model::VotingPolicy).
-    pub fn builder() -> crate::model::voting_policy::Builder {
-        crate::model::voting_policy::Builder::default()
-    }
 }
 
 /// <p>A policy type that defines the voting rules for the network. The rules decide if a proposal is approved. Approval may be based on criteria such as the percentage of <code>YES</code> votes and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p> 
@@ -3832,6 +3855,13 @@ impl ApprovalThresholdPolicy {
         self.threshold_comparator.as_ref()
     }
 }
+impl ApprovalThresholdPolicy {
+    /// Creates a new builder-style object to manufacture [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
+    pub fn builder() -> crate::model::approval_threshold_policy::Builder {
+        crate::model::approval_threshold_policy::Builder::default()
+    }
+}
+
 /// See [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
 pub mod approval_threshold_policy {
     
@@ -3885,12 +3915,6 @@ pub mod approval_threshold_policy {
     }
     
     
-}
-impl ApprovalThresholdPolicy {
-    /// Creates a new builder-style object to manufacture [`ApprovalThresholdPolicy`](crate::model::ApprovalThresholdPolicy).
-    pub fn builder() -> crate::model::approval_threshold_policy::Builder {
-        crate::model::approval_threshold_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ThresholdComparator`, it is important to ensure
@@ -3996,6 +4020,13 @@ impl NetworkFrameworkAttributes {
         self.ethereum.as_ref()
     }
 }
+impl NetworkFrameworkAttributes {
+    /// Creates a new builder-style object to manufacture [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
+    pub fn builder() -> crate::model::network_framework_attributes::Builder {
+        crate::model::network_framework_attributes::Builder::default()
+    }
+}
+
 /// See [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
 pub mod network_framework_attributes {
     
@@ -4038,12 +4069,6 @@ pub mod network_framework_attributes {
     
     
 }
-impl NetworkFrameworkAttributes {
-    /// Creates a new builder-style object to manufacture [`NetworkFrameworkAttributes`](crate::model::NetworkFrameworkAttributes).
-    pub fn builder() -> crate::model::network_framework_attributes::Builder {
-        crate::model::network_framework_attributes::Builder::default()
-    }
-}
 
 /// <p>Attributes of Ethereum for a network. </p>
 #[non_exhaustive]
@@ -4071,6 +4096,13 @@ impl NetworkEthereumAttributes {
         self.chain_id.as_deref()
     }
 }
+impl NetworkEthereumAttributes {
+    /// Creates a new builder-style object to manufacture [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
+    pub fn builder() -> crate::model::network_ethereum_attributes::Builder {
+        crate::model::network_ethereum_attributes::Builder::default()
+    }
+}
+
 /// See [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
 pub mod network_ethereum_attributes {
     
@@ -4113,12 +4145,6 @@ pub mod network_ethereum_attributes {
     
     
 }
-impl NetworkEthereumAttributes {
-    /// Creates a new builder-style object to manufacture [`NetworkEthereumAttributes`](crate::model::NetworkEthereumAttributes).
-    pub fn builder() -> crate::model::network_ethereum_attributes::Builder {
-        crate::model::network_ethereum_attributes::Builder::default()
-    }
-}
 
 /// <p>Attributes of Hyperledger Fabric for a network.</p>
 #[non_exhaustive]
@@ -4141,6 +4167,13 @@ impl NetworkFabricAttributes {
         self.edition.as_ref()
     }
 }
+impl NetworkFabricAttributes {
+    /// Creates a new builder-style object to manufacture [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
+    pub fn builder() -> crate::model::network_fabric_attributes::Builder {
+        crate::model::network_fabric_attributes::Builder::default()
+    }
+}
+
 /// See [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
 pub mod network_fabric_attributes {
     
@@ -4182,12 +4215,6 @@ pub mod network_fabric_attributes {
     }
     
     
-}
-impl NetworkFabricAttributes {
-    /// Creates a new builder-style object to manufacture [`NetworkFabricAttributes`](crate::model::NetworkFabricAttributes).
-    pub fn builder() -> crate::model::network_fabric_attributes::Builder {
-        crate::model::network_fabric_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Edition`, it is important to ensure
@@ -4377,6 +4404,13 @@ impl Member {
         self.kms_key_arn.as_deref()
     }
 }
+impl Member {
+    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
+    pub fn builder() -> crate::model::member::Builder {
+        crate::model::member::Builder::default()
+    }
+}
+
 /// See [`Member`](crate::model::Member).
 pub mod member {
     
@@ -4553,12 +4587,6 @@ pub mod member {
     
     
 }
-impl Member {
-    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
-    pub fn builder() -> crate::model::member::Builder {
-        crate::model::member::Builder::default()
-    }
-}
 
 /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
@@ -4574,6 +4602,13 @@ impl MemberFrameworkAttributes {
         self.fabric.as_ref()
     }
 }
+impl MemberFrameworkAttributes {
+    /// Creates a new builder-style object to manufacture [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
+    pub fn builder() -> crate::model::member_framework_attributes::Builder {
+        crate::model::member_framework_attributes::Builder::default()
+    }
+}
+
 /// See [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
 pub mod member_framework_attributes {
     
@@ -4604,12 +4639,6 @@ pub mod member_framework_attributes {
     
     
 }
-impl MemberFrameworkAttributes {
-    /// Creates a new builder-style object to manufacture [`MemberFrameworkAttributes`](crate::model::MemberFrameworkAttributes).
-    pub fn builder() -> crate::model::member_framework_attributes::Builder {
-        crate::model::member_framework_attributes::Builder::default()
-    }
-}
 
 /// <p>Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
@@ -4632,6 +4661,13 @@ impl MemberFabricAttributes {
         self.ca_endpoint.as_deref()
     }
 }
+impl MemberFabricAttributes {
+    /// Creates a new builder-style object to manufacture [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
+    pub fn builder() -> crate::model::member_fabric_attributes::Builder {
+        crate::model::member_fabric_attributes::Builder::default()
+    }
+}
+
 /// See [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
 pub mod member_fabric_attributes {
     
@@ -4673,12 +4709,6 @@ pub mod member_fabric_attributes {
     }
     
     
-}
-impl MemberFabricAttributes {
-    /// Creates a new builder-style object to manufacture [`MemberFabricAttributes`](crate::model::MemberFabricAttributes).
-    pub fn builder() -> crate::model::member_fabric_attributes::Builder {
-        crate::model::member_fabric_attributes::Builder::default()
-    }
 }
 
 /// <important> 
@@ -4737,6 +4767,13 @@ impl Accessor {
         self.arn.as_deref()
     }
 }
+impl Accessor {
+    /// Creates a new builder-style object to manufacture [`Accessor`](crate::model::Accessor).
+    pub fn builder() -> crate::model::accessor::Builder {
+        crate::model::accessor::Builder::default()
+    }
+}
+
 /// See [`Accessor`](crate::model::Accessor).
 pub mod accessor {
     
@@ -4831,12 +4868,6 @@ pub mod accessor {
     
     
 }
-impl Accessor {
-    /// Creates a new builder-style object to manufacture [`Accessor`](crate::model::Accessor).
-    pub fn builder() -> crate::model::accessor::Builder {
-        crate::model::accessor::Builder::default()
-    }
-}
 
 /// <p>Configuration properties of a node.</p>
 #[non_exhaustive]
@@ -4875,6 +4906,13 @@ impl NodeConfiguration {
         self.state_db.as_ref()
     }
 }
+impl NodeConfiguration {
+    /// Creates a new builder-style object to manufacture [`NodeConfiguration`](crate::model::NodeConfiguration).
+    pub fn builder() -> crate::model::node_configuration::Builder {
+        crate::model::node_configuration::Builder::default()
+    }
+}
+
 /// See [`NodeConfiguration`](crate::model::NodeConfiguration).
 pub mod node_configuration {
     
@@ -4943,12 +4981,6 @@ pub mod node_configuration {
     
     
 }
-impl NodeConfiguration {
-    /// Creates a new builder-style object to manufacture [`NodeConfiguration`](crate::model::NodeConfiguration).
-    pub fn builder() -> crate::model::node_configuration::Builder {
-        crate::model::node_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration properties of the member.</p> 
 /// <p>Applies only to Hyperledger Fabric.</p>
@@ -5012,6 +5044,13 @@ impl MemberConfiguration {
         self.kms_key_arn.as_deref()
     }
 }
+impl MemberConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemberConfiguration`](crate::model::MemberConfiguration).
+    pub fn builder() -> crate::model::member_configuration::Builder {
+        crate::model::member_configuration::Builder::default()
+    }
+}
+
 /// See [`MemberConfiguration`](crate::model::MemberConfiguration).
 pub mod member_configuration {
     
@@ -5120,12 +5159,6 @@ pub mod member_configuration {
     
     
 }
-impl MemberConfiguration {
-    /// Creates a new builder-style object to manufacture [`MemberConfiguration`](crate::model::MemberConfiguration).
-    pub fn builder() -> crate::model::member_configuration::Builder {
-        crate::model::member_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration properties relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
@@ -5141,6 +5174,13 @@ impl MemberFrameworkConfiguration {
         self.fabric.as_ref()
     }
 }
+impl MemberFrameworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
+    pub fn builder() -> crate::model::member_framework_configuration::Builder {
+        crate::model::member_framework_configuration::Builder::default()
+    }
+}
+
 /// See [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
 pub mod member_framework_configuration {
     
@@ -5170,12 +5210,6 @@ pub mod member_framework_configuration {
     }
     
     
-}
-impl MemberFrameworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`MemberFrameworkConfiguration`](crate::model::MemberFrameworkConfiguration).
-    pub fn builder() -> crate::model::member_framework_configuration::Builder {
-        crate::model::member_framework_configuration::Builder::default()
-    }
 }
 
 /// <p>Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
@@ -5207,6 +5241,13 @@ impl  std::fmt::Debug for MemberFabricConfiguration  {
         formatter.finish()
     }
 }
+impl MemberFabricConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
+    pub fn builder() -> crate::model::member_fabric_configuration::Builder {
+        crate::model::member_fabric_configuration::Builder::default()
+    }
+}
+
 /// See [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
 pub mod member_fabric_configuration {
     
@@ -5257,12 +5298,6 @@ pub mod member_fabric_configuration {
     
     
 }
-impl MemberFabricConfiguration {
-    /// Creates a new builder-style object to manufacture [`MemberFabricConfiguration`](crate::model::MemberFabricConfiguration).
-    pub fn builder() -> crate::model::member_fabric_configuration::Builder {
-        crate::model::member_fabric_configuration::Builder::default()
-    }
-}
 
 /// <p> Configuration properties relevant to the network for the blockchain framework that the network uses. </p>
 #[non_exhaustive]
@@ -5278,6 +5313,13 @@ impl NetworkFrameworkConfiguration {
         self.fabric.as_ref()
     }
 }
+impl NetworkFrameworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
+    pub fn builder() -> crate::model::network_framework_configuration::Builder {
+        crate::model::network_framework_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
 pub mod network_framework_configuration {
     
@@ -5308,12 +5350,6 @@ pub mod network_framework_configuration {
     
     
 }
-impl NetworkFrameworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkFrameworkConfiguration`](crate::model::NetworkFrameworkConfiguration).
-    pub fn builder() -> crate::model::network_framework_configuration::Builder {
-        crate::model::network_framework_configuration::Builder::default()
-    }
-}
 
 /// <p>Hyperledger Fabric configuration properties for the network.</p>
 #[non_exhaustive]
@@ -5329,6 +5365,13 @@ impl NetworkFabricConfiguration {
         self.edition.as_ref()
     }
 }
+impl NetworkFabricConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
+    pub fn builder() -> crate::model::network_fabric_configuration::Builder {
+        crate::model::network_fabric_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
 pub mod network_fabric_configuration {
     
@@ -5358,11 +5401,5 @@ pub mod network_fabric_configuration {
     }
     
     
-}
-impl NetworkFabricConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkFabricConfiguration`](crate::model::NetworkFabricConfiguration).
-    pub fn builder() -> crate::model::network_fabric_configuration::Builder {
-        crate::model::network_fabric_configuration::Builder::default()
-    }
 }
 

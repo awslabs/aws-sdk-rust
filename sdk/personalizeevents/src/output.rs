@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for PutUsersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutUsersOutput {
+    /// Creates a new builder-style object to manufacture [`PutUsersOutput`](crate::output::PutUsersOutput).
+    pub fn builder() -> crate::output::put_users_output::Builder {
+        crate::output::put_users_output::Builder::default()
+    }
+}
+
 /// See [`PutUsersOutput`](crate::output::PutUsersOutput).
 pub mod put_users_output {
     
@@ -39,12 +46,6 @@ pub mod put_users_output {
     
     
 }
-impl PutUsersOutput {
-    /// Creates a new builder-style object to manufacture [`PutUsersOutput`](crate::output::PutUsersOutput).
-    pub fn builder() -> crate::output::put_users_output::Builder {
-        crate::output::put_users_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for PutItemsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutItemsOutput {
+    /// Creates a new builder-style object to manufacture [`PutItemsOutput`](crate::output::PutItemsOutput).
+    pub fn builder() -> crate::output::put_items_output::Builder {
+        crate::output::put_items_output::Builder::default()
+    }
+}
+
 /// See [`PutItemsOutput`](crate::output::PutItemsOutput).
 pub mod put_items_output {
     
@@ -86,12 +94,6 @@ pub mod put_items_output {
     
     
 }
-impl PutItemsOutput {
-    /// Creates a new builder-style object to manufacture [`PutItemsOutput`](crate::output::PutItemsOutput).
-    pub fn builder() -> crate::output::put_items_output::Builder {
-        crate::output::put_items_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for PutEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutEventsOutput {
+    /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::output::PutEventsOutput).
+    pub fn builder() -> crate::output::put_events_output::Builder {
+        crate::output::put_events_output::Builder::default()
+    }
+}
+
 /// See [`PutEventsOutput`](crate::output::PutEventsOutput).
 pub mod put_events_output {
     
@@ -132,11 +141,5 @@ pub mod put_events_output {
     }
     
     
-}
-impl PutEventsOutput {
-    /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::output::PutEventsOutput).
-    pub fn builder() -> crate::output::put_events_output::Builder {
-        crate::output::put_events_output::Builder::default()
-    }
 }
 

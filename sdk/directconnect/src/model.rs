@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Information about a BGP peer.</p>
@@ -171,6 +172,13 @@ impl BgpPeer {
         self.aws_logical_device_id.as_deref()
     }
 }
+impl BgpPeer {
+    /// Creates a new builder-style object to manufacture [`BgpPeer`](crate::model::BgpPeer).
+    pub fn builder() -> crate::model::bgp_peer::Builder {
+        crate::model::bgp_peer::Builder::default()
+    }
+}
+
 /// See [`BgpPeer`](crate::model::BgpPeer).
 pub mod bgp_peer {
     
@@ -333,12 +341,6 @@ pub mod bgp_peer {
     }
     
     
-}
-impl BgpPeer {
-    /// Creates a new builder-style object to manufacture [`BgpPeer`](crate::model::BgpPeer).
-    pub fn builder() -> crate::model::bgp_peer::Builder {
-        crate::model::bgp_peer::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BgpStatus`, it is important to ensure
@@ -621,6 +623,13 @@ impl RouteFilterPrefix {
         self.cidr.as_deref()
     }
 }
+impl RouteFilterPrefix {
+    /// Creates a new builder-style object to manufacture [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
+    pub fn builder() -> crate::model::route_filter_prefix::Builder {
+        crate::model::route_filter_prefix::Builder::default()
+    }
+}
+
 /// See [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
 pub mod route_filter_prefix {
     
@@ -650,12 +659,6 @@ pub mod route_filter_prefix {
     }
     
     
-}
-impl RouteFilterPrefix {
-    /// Creates a new builder-style object to manufacture [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
-    pub fn builder() -> crate::model::route_filter_prefix::Builder {
-        crate::model::route_filter_prefix::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VirtualInterfaceState`, it is important to ensure
@@ -824,6 +827,13 @@ impl MacSecKey {
         self.start_on.as_deref()
     }
 }
+impl MacSecKey {
+    /// Creates a new builder-style object to manufacture [`MacSecKey`](crate::model::MacSecKey).
+    pub fn builder() -> crate::model::mac_sec_key::Builder {
+        crate::model::mac_sec_key::Builder::default()
+    }
+}
+
 /// See [`MacSecKey`](crate::model::MacSecKey).
 pub mod mac_sec_key {
     
@@ -903,12 +913,6 @@ pub mod mac_sec_key {
     }
     
     
-}
-impl MacSecKey {
-    /// Creates a new builder-style object to manufacture [`MacSecKey`](crate::model::MacSecKey).
-    pub fn builder() -> crate::model::mac_sec_key::Builder {
-        crate::model::mac_sec_key::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HasLogicalRedundancy`, it is important to ensure
@@ -1185,6 +1189,13 @@ impl Connection {
         self.mac_sec_keys.as_deref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
     
@@ -1506,12 +1517,6 @@ pub mod connection {
     
     
 }
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ConnectionState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1826,6 +1831,13 @@ impl DirectConnectGatewayAssociation {
         self.virtual_gateway_owner_account.as_deref()
     }
 }
+impl DirectConnectGatewayAssociation {
+    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
+    pub fn builder() -> crate::model::direct_connect_gateway_association::Builder {
+        crate::model::direct_connect_gateway_association::Builder::default()
+    }
+}
+
 /// See [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
 pub mod direct_connect_gateway_association {
     
@@ -1982,12 +1994,6 @@ pub mod direct_connect_gateway_association {
     
     
 }
-impl DirectConnectGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
-    pub fn builder() -> crate::model::direct_connect_gateway_association::Builder {
-        crate::model::direct_connect_gateway_association::Builder::default()
-    }
-}
 
 /// <p>Information about the associated gateway.</p>
 #[non_exhaustive]
@@ -2024,6 +2030,13 @@ impl AssociatedGateway {
         self.region.as_deref()
     }
 }
+impl AssociatedGateway {
+    /// Creates a new builder-style object to manufacture [`AssociatedGateway`](crate::model::AssociatedGateway).
+    pub fn builder() -> crate::model::associated_gateway::Builder {
+        crate::model::associated_gateway::Builder::default()
+    }
+}
+
 /// See [`AssociatedGateway`](crate::model::AssociatedGateway).
 pub mod associated_gateway {
     
@@ -2089,12 +2102,6 @@ pub mod associated_gateway {
     }
     
     
-}
-impl AssociatedGateway {
-    /// Creates a new builder-style object to manufacture [`AssociatedGateway`](crate::model::AssociatedGateway).
-    pub fn builder() -> crate::model::associated_gateway::Builder {
-        crate::model::associated_gateway::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GatewayType`, it is important to ensure
@@ -2337,6 +2344,13 @@ impl DirectConnectGateway {
         self.state_change_error.as_deref()
     }
 }
+impl DirectConnectGateway {
+    /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::model::DirectConnectGateway).
+    pub fn builder() -> crate::model::direct_connect_gateway::Builder {
+        crate::model::direct_connect_gateway::Builder::default()
+    }
+}
+
 /// See [`DirectConnectGateway`](crate::model::DirectConnectGateway).
 pub mod direct_connect_gateway {
     
@@ -2438,12 +2452,6 @@ pub mod direct_connect_gateway {
     }
     
     
-}
-impl DirectConnectGateway {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::model::DirectConnectGateway).
-    pub fn builder() -> crate::model::direct_connect_gateway::Builder {
-        crate::model::direct_connect_gateway::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DirectConnectGatewayState`, it is important to ensure
@@ -2601,6 +2609,13 @@ impl VirtualInterfaceTestHistory {
         self.end_time.as_ref()
     }
 }
+impl VirtualInterfaceTestHistory {
+    /// Creates a new builder-style object to manufacture [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
+    pub fn builder() -> crate::model::virtual_interface_test_history::Builder {
+        crate::model::virtual_interface_test_history::Builder::default()
+    }
+}
+
 /// See [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
 pub mod virtual_interface_test_history {
     
@@ -2720,12 +2735,6 @@ pub mod virtual_interface_test_history {
     }
     
     
-}
-impl VirtualInterfaceTestHistory {
-    /// Creates a new builder-style object to manufacture [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
-    pub fn builder() -> crate::model::virtual_interface_test_history::Builder {
-        crate::model::virtual_interface_test_history::Builder::default()
-    }
 }
 
 /// <p>Information about a virtual interface.</p>
@@ -2941,6 +2950,13 @@ impl VirtualInterface {
         self.site_link_enabled
     }
 }
+impl VirtualInterface {
+    /// Creates a new builder-style object to manufacture [`VirtualInterface`](crate::model::VirtualInterface).
+    pub fn builder() -> crate::model::virtual_interface::Builder {
+        crate::model::virtual_interface::Builder::default()
+    }
+}
+
 /// See [`VirtualInterface`](crate::model::VirtualInterface).
 pub mod virtual_interface {
     
@@ -3315,12 +3331,6 @@ pub mod virtual_interface {
     
     
 }
-impl VirtualInterface {
-    /// Creates a new builder-style object to manufacture [`VirtualInterface`](crate::model::VirtualInterface).
-    pub fn builder() -> crate::model::virtual_interface::Builder {
-        crate::model::virtual_interface::Builder::default()
-    }
-}
 
 /// <p>Information about a virtual private gateway for a private virtual interface.</p>
 #[non_exhaustive]
@@ -3355,6 +3365,13 @@ impl VirtualGateway {
         self.virtual_gateway_state.as_deref()
     }
 }
+impl VirtualGateway {
+    /// Creates a new builder-style object to manufacture [`VirtualGateway`](crate::model::VirtualGateway).
+    pub fn builder() -> crate::model::virtual_gateway::Builder {
+        crate::model::virtual_gateway::Builder::default()
+    }
+}
+
 /// See [`VirtualGateway`](crate::model::VirtualGateway).
 pub mod virtual_gateway {
     
@@ -3409,12 +3426,6 @@ pub mod virtual_gateway {
     
     
 }
-impl VirtualGateway {
-    /// Creates a new builder-style object to manufacture [`VirtualGateway`](crate::model::VirtualGateway).
-    pub fn builder() -> crate::model::virtual_gateway::Builder {
-        crate::model::virtual_gateway::Builder::default()
-    }
-}
 
 /// <p>Information about a tag associated with an Direct Connect resource.</p>
 #[non_exhaustive]
@@ -3437,6 +3448,13 @@ impl ResourceTag {
         self.tags.as_deref()
     }
 }
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
     
@@ -3484,12 +3502,6 @@ pub mod resource_tag {
     }
     
     
-}
-impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
-    pub fn builder() -> crate::model::resource_tag::Builder {
-        crate::model::resource_tag::Builder::default()
-    }
 }
 
 /// <p>Information about the virtual router.</p>
@@ -3541,6 +3553,13 @@ impl RouterType {
         self.router_type_identifier.as_deref()
     }
 }
+impl RouterType {
+    /// Creates a new builder-style object to manufacture [`RouterType`](crate::model::RouterType).
+    pub fn builder() -> crate::model::router_type::Builder {
+        crate::model::router_type::Builder::default()
+    }
+}
+
 /// See [`RouterType`](crate::model::RouterType).
 pub mod router_type {
     
@@ -3631,12 +3650,6 @@ pub mod router_type {
     
     
 }
-impl RouterType {
-    /// Creates a new builder-style object to manufacture [`RouterType`](crate::model::RouterType).
-    pub fn builder() -> crate::model::router_type::Builder {
-        crate::model::router_type::Builder::default()
-    }
-}
 
 /// <p>Information about an Direct Connect location.</p>
 #[non_exhaustive]
@@ -3687,6 +3700,13 @@ impl Location {
         self.available_mac_sec_port_speeds.as_deref()
     }
 }
+impl Location {
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
+    pub fn builder() -> crate::model::location::Builder {
+        crate::model::location::Builder::default()
+    }
+}
+
 /// See [`Location`](crate::model::Location).
 pub mod location {
     
@@ -3794,12 +3814,6 @@ pub mod location {
     }
     
     
-}
-impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
-    pub fn builder() -> crate::model::location::Builder {
-        crate::model::location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoaContentType`, it is important to ensure
@@ -4053,6 +4067,13 @@ impl Lag {
         self.mac_sec_keys.as_deref()
     }
 }
+impl Lag {
+    /// Creates a new builder-style object to manufacture [`Lag`](crate::model::Lag).
+    pub fn builder() -> crate::model::lag::Builder {
+        crate::model::lag::Builder::default()
+    }
+}
+
 /// See [`Lag`](crate::model::Lag).
 pub mod lag {
     
@@ -4364,12 +4385,6 @@ pub mod lag {
     
     
 }
-impl Lag {
-    /// Creates a new builder-style object to manufacture [`Lag`](crate::model::Lag).
-    pub fn builder() -> crate::model::lag::Builder {
-        crate::model::lag::Builder::default()
-    }
-}
 
 /// <p>Information about an interconnect.</p>
 #[non_exhaustive]
@@ -4501,6 +4516,13 @@ impl Interconnect {
         self.provider_name.as_deref()
     }
 }
+impl Interconnect {
+    /// Creates a new builder-style object to manufacture [`Interconnect`](crate::model::Interconnect).
+    pub fn builder() -> crate::model::interconnect::Builder {
+        crate::model::interconnect::Builder::default()
+    }
+}
+
 /// See [`Interconnect`](crate::model::Interconnect).
 pub mod interconnect {
     
@@ -4723,12 +4745,6 @@ pub mod interconnect {
     
     
 }
-impl Interconnect {
-    /// Creates a new builder-style object to manufacture [`Interconnect`](crate::model::Interconnect).
-    pub fn builder() -> crate::model::interconnect::Builder {
-        crate::model::interconnect::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InterconnectState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4858,6 +4874,13 @@ impl Loa {
         self.loa_content_type.as_ref()
     }
 }
+impl Loa {
+    /// Creates a new builder-style object to manufacture [`Loa`](crate::model::Loa).
+    pub fn builder() -> crate::model::loa::Builder {
+        crate::model::loa::Builder::default()
+    }
+}
+
 /// See [`Loa`](crate::model::Loa).
 pub mod loa {
     
@@ -4899,12 +4922,6 @@ pub mod loa {
     }
     
     
-}
-impl Loa {
-    /// Creates a new builder-style object to manufacture [`Loa`](crate::model::Loa).
-    pub fn builder() -> crate::model::loa::Builder {
-        crate::model::loa::Builder::default()
-    }
 }
 
 /// <p>Information about an attachment between a Direct Connect gateway and a virtual interface.</p>
@@ -4975,6 +4992,13 @@ impl DirectConnectGatewayAttachment {
         self.state_change_error.as_deref()
     }
 }
+impl DirectConnectGatewayAttachment {
+    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
+    pub fn builder() -> crate::model::direct_connect_gateway_attachment::Builder {
+        crate::model::direct_connect_gateway_attachment::Builder::default()
+    }
+}
+
 /// See [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
 pub mod direct_connect_gateway_attachment {
     
@@ -5088,12 +5112,6 @@ pub mod direct_connect_gateway_attachment {
     }
     
     
-}
-impl DirectConnectGatewayAttachment {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
-    pub fn builder() -> crate::model::direct_connect_gateway_attachment::Builder {
-        crate::model::direct_connect_gateway_attachment::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DirectConnectGatewayAttachmentType`, it is important to ensure
@@ -5336,6 +5354,13 @@ impl DirectConnectGatewayAssociationProposal {
         self.requested_allowed_prefixes_to_direct_connect_gateway.as_deref()
     }
 }
+impl DirectConnectGatewayAssociationProposal {
+    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
+    pub fn builder() -> crate::model::direct_connect_gateway_association_proposal::Builder {
+        crate::model::direct_connect_gateway_association_proposal::Builder::default()
+    }
+}
+
 /// See [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
 pub mod direct_connect_gateway_association_proposal {
     
@@ -5459,12 +5484,6 @@ pub mod direct_connect_gateway_association_proposal {
     }
     
     
-}
-impl DirectConnectGatewayAssociationProposal {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
-    pub fn builder() -> crate::model::direct_connect_gateway_association_proposal::Builder {
-        crate::model::direct_connect_gateway_association_proposal::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DirectConnectGatewayAssociationProposalState`, it is important to ensure
@@ -5662,6 +5681,13 @@ impl CustomerAgreement {
         self.status.as_deref()
     }
 }
+impl CustomerAgreement {
+    /// Creates a new builder-style object to manufacture [`CustomerAgreement`](crate::model::CustomerAgreement).
+    pub fn builder() -> crate::model::customer_agreement::Builder {
+        crate::model::customer_agreement::Builder::default()
+    }
+}
+
 /// See [`CustomerAgreement`](crate::model::CustomerAgreement).
 pub mod customer_agreement {
     
@@ -5703,12 +5729,6 @@ pub mod customer_agreement {
     }
     
     
-}
-impl CustomerAgreement {
-    /// Creates a new builder-style object to manufacture [`CustomerAgreement`](crate::model::CustomerAgreement).
-    pub fn builder() -> crate::model::customer_agreement::Builder {
-        crate::model::customer_agreement::Builder::default()
-    }
 }
 
 /// <p>Information about a transit virtual interface.</p>
@@ -5797,6 +5817,13 @@ impl NewTransitVirtualInterface {
         self.enable_site_link
     }
 }
+impl NewTransitVirtualInterface {
+    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
+    pub fn builder() -> crate::model::new_transit_virtual_interface::Builder {
+        crate::model::new_transit_virtual_interface::Builder::default()
+    }
+}
+
 /// See [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
 pub mod new_transit_virtual_interface {
     
@@ -5957,12 +5984,6 @@ pub mod new_transit_virtual_interface {
     
     
 }
-impl NewTransitVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
-    pub fn builder() -> crate::model::new_transit_virtual_interface::Builder {
-        crate::model::new_transit_virtual_interface::Builder::default()
-    }
-}
 
 /// <p>Information about a public virtual interface.</p>
 #[non_exhaustive]
@@ -6036,6 +6057,13 @@ impl NewPublicVirtualInterface {
         self.tags.as_deref()
     }
 }
+impl NewPublicVirtualInterface {
+    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
+    pub fn builder() -> crate::model::new_public_virtual_interface::Builder {
+        crate::model::new_public_virtual_interface::Builder::default()
+    }
+}
+
 /// See [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
 pub mod new_public_virtual_interface {
     
@@ -6178,12 +6206,6 @@ pub mod new_public_virtual_interface {
     
     
 }
-impl NewPublicVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
-    pub fn builder() -> crate::model::new_public_virtual_interface::Builder {
-        crate::model::new_public_virtual_interface::Builder::default()
-    }
-}
 
 /// <p>Information about a private virtual interface.</p>
 #[non_exhaustive]
@@ -6278,6 +6300,13 @@ impl NewPrivateVirtualInterface {
         self.enable_site_link
     }
 }
+impl NewPrivateVirtualInterface {
+    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
+    pub fn builder() -> crate::model::new_private_virtual_interface::Builder {
+        crate::model::new_private_virtual_interface::Builder::default()
+    }
+}
+
 /// See [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
 pub mod new_private_virtual_interface {
     
@@ -6450,12 +6479,6 @@ pub mod new_private_virtual_interface {
     
     
 }
-impl NewPrivateVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
-    pub fn builder() -> crate::model::new_private_virtual_interface::Builder {
-        crate::model::new_private_virtual_interface::Builder::default()
-    }
-}
 
 /// <p>Information about a new BGP peer.</p>
 #[non_exhaustive]
@@ -6499,6 +6522,13 @@ impl NewBgpPeer {
         self.customer_address.as_deref()
     }
 }
+impl NewBgpPeer {
+    /// Creates a new builder-style object to manufacture [`NewBgpPeer`](crate::model::NewBgpPeer).
+    pub fn builder() -> crate::model::new_bgp_peer::Builder {
+        crate::model::new_bgp_peer::Builder::default()
+    }
+}
+
 /// See [`NewBgpPeer`](crate::model::NewBgpPeer).
 pub mod new_bgp_peer {
     
@@ -6578,12 +6608,6 @@ pub mod new_bgp_peer {
     
     
 }
-impl NewBgpPeer {
-    /// Creates a new builder-style object to manufacture [`NewBgpPeer`](crate::model::NewBgpPeer).
-    pub fn builder() -> crate::model::new_bgp_peer::Builder {
-        crate::model::new_bgp_peer::Builder::default()
-    }
-}
 
 /// <p>Information about a transit virtual interface to be provisioned on a connection.</p>
 #[non_exhaustive]
@@ -6657,6 +6681,13 @@ impl NewTransitVirtualInterfaceAllocation {
         self.tags.as_deref()
     }
 }
+impl NewTransitVirtualInterfaceAllocation {
+    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
+    pub fn builder() -> crate::model::new_transit_virtual_interface_allocation::Builder {
+        crate::model::new_transit_virtual_interface_allocation::Builder::default()
+    }
+}
+
 /// See [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
 pub mod new_transit_virtual_interface_allocation {
     
@@ -6793,12 +6824,6 @@ pub mod new_transit_virtual_interface_allocation {
     
     
 }
-impl NewTransitVirtualInterfaceAllocation {
-    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
-    pub fn builder() -> crate::model::new_transit_virtual_interface_allocation::Builder {
-        crate::model::new_transit_virtual_interface_allocation::Builder::default()
-    }
-}
 
 /// <p>Information about a public virtual interface to be provisioned on a connection.</p>
 #[non_exhaustive]
@@ -6872,6 +6897,13 @@ impl NewPublicVirtualInterfaceAllocation {
         self.tags.as_deref()
     }
 }
+impl NewPublicVirtualInterfaceAllocation {
+    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
+    pub fn builder() -> crate::model::new_public_virtual_interface_allocation::Builder {
+        crate::model::new_public_virtual_interface_allocation::Builder::default()
+    }
+}
+
 /// See [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
 pub mod new_public_virtual_interface_allocation {
     
@@ -7014,12 +7046,6 @@ pub mod new_public_virtual_interface_allocation {
     
     
 }
-impl NewPublicVirtualInterfaceAllocation {
-    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
-    pub fn builder() -> crate::model::new_public_virtual_interface_allocation::Builder {
-        crate::model::new_public_virtual_interface_allocation::Builder::default()
-    }
-}
 
 /// <p>Information about a private virtual interface to be provisioned on a connection.</p>
 #[non_exhaustive]
@@ -7093,6 +7119,13 @@ impl NewPrivateVirtualInterfaceAllocation {
         self.tags.as_deref()
     }
 }
+impl NewPrivateVirtualInterfaceAllocation {
+    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
+    pub fn builder() -> crate::model::new_private_virtual_interface_allocation::Builder {
+        crate::model::new_private_virtual_interface_allocation::Builder::default()
+    }
+}
+
 /// See [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
 pub mod new_private_virtual_interface_allocation {
     
@@ -7228,11 +7261,5 @@ pub mod new_private_virtual_interface_allocation {
     }
     
     
-}
-impl NewPrivateVirtualInterfaceAllocation {
-    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
-    pub fn builder() -> crate::model::new_private_virtual_interface_allocation::Builder {
-        crate::model::new_private_virtual_interface_allocation::Builder::default()
-    }
 }
 

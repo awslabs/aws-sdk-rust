@@ -91,6 +91,13 @@ impl JobRunSummary {
         self.r#type.as_deref()
     }
 }
+impl JobRunSummary {
+    /// Creates a new builder-style object to manufacture [`JobRunSummary`](crate::model::JobRunSummary).
+    pub fn builder() -> crate::model::job_run_summary::Builder {
+        crate::model::job_run_summary::Builder::default()
+    }
+}
+
 /// See [`JobRunSummary`](crate::model::JobRunSummary).
 pub mod job_run_summary {
     
@@ -253,12 +260,6 @@ pub mod job_run_summary {
     
     
 }
-impl JobRunSummary {
-    /// Creates a new builder-style object to manufacture [`JobRunSummary`](crate::model::JobRunSummary).
-    pub fn builder() -> crate::model::job_run_summary::Builder {
-        crate::model::job_run_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `JobRunState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -393,6 +394,13 @@ impl ConfigurationOverrides {
         self.monitoring_configuration.as_ref()
     }
 }
+impl ConfigurationOverrides {
+    /// Creates a new builder-style object to manufacture [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
+    pub fn builder() -> crate::model::configuration_overrides::Builder {
+        crate::model::configuration_overrides::Builder::default()
+    }
+}
+
 /// See [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
 pub mod configuration_overrides {
     
@@ -441,12 +449,6 @@ pub mod configuration_overrides {
     
     
 }
-impl ConfigurationOverrides {
-    /// Creates a new builder-style object to manufacture [`ConfigurationOverrides`](crate::model::ConfigurationOverrides).
-    pub fn builder() -> crate::model::configuration_overrides::Builder {
-        crate::model::configuration_overrides::Builder::default()
-    }
-}
 
 /// <p>The configuration setting for monitoring.</p>
 #[non_exhaustive]
@@ -469,6 +471,13 @@ impl MonitoringConfiguration {
         self.managed_persistence_monitoring_configuration.as_ref()
     }
 }
+impl MonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
+    pub fn builder() -> crate::model::monitoring_configuration::Builder {
+        crate::model::monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
 pub mod monitoring_configuration {
     
@@ -511,12 +520,6 @@ pub mod monitoring_configuration {
     
     
 }
-impl MonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
-    pub fn builder() -> crate::model::monitoring_configuration::Builder {
-        crate::model::monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p>The managed log persistence configuration for a job run.</p>
 #[non_exhaustive]
@@ -539,6 +542,13 @@ impl ManagedPersistenceMonitoringConfiguration {
         self.encryption_key_arn.as_deref()
     }
 }
+impl ManagedPersistenceMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`ManagedPersistenceMonitoringConfiguration`](crate::model::ManagedPersistenceMonitoringConfiguration).
+    pub fn builder() -> crate::model::managed_persistence_monitoring_configuration::Builder {
+        crate::model::managed_persistence_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`ManagedPersistenceMonitoringConfiguration`](crate::model::ManagedPersistenceMonitoringConfiguration).
 pub mod managed_persistence_monitoring_configuration {
     
@@ -581,12 +591,6 @@ pub mod managed_persistence_monitoring_configuration {
     
     
 }
-impl ManagedPersistenceMonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`ManagedPersistenceMonitoringConfiguration`](crate::model::ManagedPersistenceMonitoringConfiguration).
-    pub fn builder() -> crate::model::managed_persistence_monitoring_configuration::Builder {
-        crate::model::managed_persistence_monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
@@ -609,6 +613,13 @@ impl S3MonitoringConfiguration {
         self.encryption_key_arn.as_deref()
     }
 }
+impl S3MonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
+    pub fn builder() -> crate::model::s3_monitoring_configuration::Builder {
+        crate::model::s3_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
 pub mod s3_monitoring_configuration {
     
@@ -651,12 +662,6 @@ pub mod s3_monitoring_configuration {
     
     
 }
-impl S3MonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3MonitoringConfiguration`](crate::model::S3MonitoringConfiguration).
-    pub fn builder() -> crate::model::s3_monitoring_configuration::Builder {
-        crate::model::s3_monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p>A configuration specification to be used when provisioning an application. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file.</p>
 #[non_exhaustive]
@@ -695,6 +700,13 @@ impl  std::fmt::Debug for Configuration  {
         formatter.finish()
     }
 }
+impl Configuration {
+    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
+    pub fn builder() -> crate::model::configuration::Builder {
+        crate::model::configuration::Builder::default()
+    }
+}
+
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
     
@@ -769,12 +781,6 @@ pub mod configuration {
     }
     
     
-}
-impl Configuration {
-    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
-    pub fn builder() -> crate::model::configuration::Builder {
-        crate::model::configuration::Builder::default()
-    }
 }
 
 /// <p>The driver that the job runs on.</p>
@@ -857,6 +863,13 @@ impl  std::fmt::Debug for Hive  {
         formatter.finish()
     }
 }
+impl Hive {
+    /// Creates a new builder-style object to manufacture [`Hive`](crate::model::Hive).
+    pub fn builder() -> crate::model::hive::Builder {
+        crate::model::hive::Builder::default()
+    }
+}
+
 /// See [`Hive`](crate::model::Hive).
 pub mod hive {
     
@@ -920,12 +933,6 @@ pub mod hive {
     
     
 }
-impl Hive {
-    /// Creates a new builder-style object to manufacture [`Hive`](crate::model::Hive).
-    pub fn builder() -> crate::model::hive::Builder {
-        crate::model::hive::Builder::default()
-    }
-}
 
 /// <p>The configurations for the Spark submit job driver.</p>
 #[non_exhaustive]
@@ -964,6 +971,13 @@ impl  std::fmt::Debug for SparkSubmit  {
         formatter.finish()
     }
 }
+impl SparkSubmit {
+    /// Creates a new builder-style object to manufacture [`SparkSubmit`](crate::model::SparkSubmit).
+    pub fn builder() -> crate::model::spark_submit::Builder {
+        crate::model::spark_submit::Builder::default()
+    }
+}
+
 /// See [`SparkSubmit`](crate::model::SparkSubmit).
 pub mod spark_submit {
     
@@ -1032,12 +1046,6 @@ pub mod spark_submit {
     }
     
     
-}
-impl SparkSubmit {
-    /// Creates a new builder-style object to manufacture [`SparkSubmit`](crate::model::SparkSubmit).
-    pub fn builder() -> crate::model::spark_submit::Builder {
-        crate::model::spark_submit::Builder::default()
-    }
 }
 
 /// <p>Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that you submit to an EMR Serverless application.</p>
@@ -1166,6 +1174,13 @@ impl JobRun {
         self.total_execution_duration_seconds
     }
 }
+impl JobRun {
+    /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
+    pub fn builder() -> crate::model::job_run::Builder {
+        crate::model::job_run::Builder::default()
+    }
+}
+
 /// See [`JobRun`](crate::model::JobRun).
 pub mod job_run {
     
@@ -1394,12 +1409,6 @@ pub mod job_run {
     
     
 }
-impl JobRun {
-    /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
-    pub fn builder() -> crate::model::job_run::Builder {
-        crate::model::job_run::Builder::default()
-    }
-}
 
 /// <p>The network configuration for customer VPC connectivity.</p>
 #[non_exhaustive]
@@ -1422,6 +1431,13 @@ impl NetworkConfiguration {
         self.security_group_ids.as_deref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
     
@@ -1476,12 +1492,6 @@ pub mod network_configuration {
     
     
 }
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
-    }
-}
 
 /// <p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>
 #[non_exhaustive]
@@ -1511,6 +1521,13 @@ impl TotalResourceUtilization {
         self.storage_gb_hour
     }
 }
+impl TotalResourceUtilization {
+    /// Creates a new builder-style object to manufacture [`TotalResourceUtilization`](crate::model::TotalResourceUtilization).
+    pub fn builder() -> crate::model::total_resource_utilization::Builder {
+        crate::model::total_resource_utilization::Builder::default()
+    }
+}
+
 /// See [`TotalResourceUtilization`](crate::model::TotalResourceUtilization).
 pub mod total_resource_utilization {
     
@@ -1564,12 +1581,6 @@ pub mod total_resource_utilization {
     }
     
     
-}
-impl TotalResourceUtilization {
-    /// Creates a new builder-style object to manufacture [`TotalResourceUtilization`](crate::model::TotalResourceUtilization).
-    pub fn builder() -> crate::model::total_resource_utilization::Builder {
-        crate::model::total_resource_utilization::Builder::default()
-    }
 }
 
 /// <p>The summary of attributes associated with an application.</p>
@@ -1649,6 +1660,13 @@ impl ApplicationSummary {
         self.architecture.as_ref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
     
@@ -1786,12 +1804,6 @@ pub mod application_summary {
     }
     
     
-}
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Architecture`, it is important to ensure
@@ -1997,6 +2009,13 @@ impl WorkerTypeSpecificationInput {
         self.image_configuration.as_ref()
     }
 }
+impl WorkerTypeSpecificationInput {
+    /// Creates a new builder-style object to manufacture [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
+    pub fn builder() -> crate::model::worker_type_specification_input::Builder {
+        crate::model::worker_type_specification_input::Builder::default()
+    }
+}
+
 /// See [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
 pub mod worker_type_specification_input {
     
@@ -2027,12 +2046,6 @@ pub mod worker_type_specification_input {
     
     
 }
-impl WorkerTypeSpecificationInput {
-    /// Creates a new builder-style object to manufacture [`WorkerTypeSpecificationInput`](crate::model::WorkerTypeSpecificationInput).
-    pub fn builder() -> crate::model::worker_type_specification_input::Builder {
-        crate::model::worker_type_specification_input::Builder::default()
-    }
-}
 
 /// <p>The image configuration.</p>
 #[non_exhaustive]
@@ -2048,6 +2061,13 @@ impl ImageConfigurationInput {
         self.image_uri.as_deref()
     }
 }
+impl ImageConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
+    pub fn builder() -> crate::model::image_configuration_input::Builder {
+        crate::model::image_configuration_input::Builder::default()
+    }
+}
+
 /// See [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
 pub mod image_configuration_input {
     
@@ -2078,12 +2098,6 @@ pub mod image_configuration_input {
     
     
 }
-impl ImageConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`ImageConfigurationInput`](crate::model::ImageConfigurationInput).
-    pub fn builder() -> crate::model::image_configuration_input::Builder {
-        crate::model::image_configuration_input::Builder::default()
-    }
-}
 
 /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
 #[non_exhaustive]
@@ -2106,6 +2120,13 @@ impl AutoStopConfig {
         self.idle_timeout_minutes
     }
 }
+impl AutoStopConfig {
+    /// Creates a new builder-style object to manufacture [`AutoStopConfig`](crate::model::AutoStopConfig).
+    pub fn builder() -> crate::model::auto_stop_config::Builder {
+        crate::model::auto_stop_config::Builder::default()
+    }
+}
+
 /// See [`AutoStopConfig`](crate::model::AutoStopConfig).
 pub mod auto_stop_config {
     
@@ -2148,12 +2169,6 @@ pub mod auto_stop_config {
     
     
 }
-impl AutoStopConfig {
-    /// Creates a new builder-style object to manufacture [`AutoStopConfig`](crate::model::AutoStopConfig).
-    pub fn builder() -> crate::model::auto_stop_config::Builder {
-        crate::model::auto_stop_config::Builder::default()
-    }
-}
 
 /// <p>The configuration for an application to automatically start on job submission.</p>
 #[non_exhaustive]
@@ -2169,6 +2184,13 @@ impl AutoStartConfig {
         self.enabled
     }
 }
+impl AutoStartConfig {
+    /// Creates a new builder-style object to manufacture [`AutoStartConfig`](crate::model::AutoStartConfig).
+    pub fn builder() -> crate::model::auto_start_config::Builder {
+        crate::model::auto_start_config::Builder::default()
+    }
+}
+
 /// See [`AutoStartConfig`](crate::model::AutoStartConfig).
 pub mod auto_start_config {
     
@@ -2199,12 +2221,6 @@ pub mod auto_start_config {
     
     
 }
-impl AutoStartConfig {
-    /// Creates a new builder-style object to manufacture [`AutoStartConfig`](crate::model::AutoStartConfig).
-    pub fn builder() -> crate::model::auto_start_config::Builder {
-        crate::model::auto_start_config::Builder::default()
-    }
-}
 
 /// <p>The maximum allowed cumulative resources for an application. No new resources will be created once the limit is hit.</p>
 #[non_exhaustive]
@@ -2234,6 +2250,13 @@ impl MaximumAllowedResources {
         self.disk.as_deref()
     }
 }
+impl MaximumAllowedResources {
+    /// Creates a new builder-style object to manufacture [`MaximumAllowedResources`](crate::model::MaximumAllowedResources).
+    pub fn builder() -> crate::model::maximum_allowed_resources::Builder {
+        crate::model::maximum_allowed_resources::Builder::default()
+    }
+}
+
 /// See [`MaximumAllowedResources`](crate::model::MaximumAllowedResources).
 pub mod maximum_allowed_resources {
     
@@ -2288,12 +2311,6 @@ pub mod maximum_allowed_resources {
     
     
 }
-impl MaximumAllowedResources {
-    /// Creates a new builder-style object to manufacture [`MaximumAllowedResources`](crate::model::MaximumAllowedResources).
-    pub fn builder() -> crate::model::maximum_allowed_resources::Builder {
-        crate::model::maximum_allowed_resources::Builder::default()
-    }
-}
 
 /// <p>The initial capacity configuration per worker.</p>
 #[non_exhaustive]
@@ -2316,6 +2333,13 @@ impl InitialCapacityConfig {
         self.worker_configuration.as_ref()
     }
 }
+impl InitialCapacityConfig {
+    /// Creates a new builder-style object to manufacture [`InitialCapacityConfig`](crate::model::InitialCapacityConfig).
+    pub fn builder() -> crate::model::initial_capacity_config::Builder {
+        crate::model::initial_capacity_config::Builder::default()
+    }
+}
+
 /// See [`InitialCapacityConfig`](crate::model::InitialCapacityConfig).
 pub mod initial_capacity_config {
     
@@ -2359,12 +2383,6 @@ pub mod initial_capacity_config {
     
     
 }
-impl InitialCapacityConfig {
-    /// Creates a new builder-style object to manufacture [`InitialCapacityConfig`](crate::model::InitialCapacityConfig).
-    pub fn builder() -> crate::model::initial_capacity_config::Builder {
-        crate::model::initial_capacity_config::Builder::default()
-    }
-}
 
 /// <p>The cumulative configuration requirements for every worker instance of the worker type.</p>
 #[non_exhaustive]
@@ -2394,6 +2412,13 @@ impl WorkerResourceConfig {
         self.disk.as_deref()
     }
 }
+impl WorkerResourceConfig {
+    /// Creates a new builder-style object to manufacture [`WorkerResourceConfig`](crate::model::WorkerResourceConfig).
+    pub fn builder() -> crate::model::worker_resource_config::Builder {
+        crate::model::worker_resource_config::Builder::default()
+    }
+}
+
 /// See [`WorkerResourceConfig`](crate::model::WorkerResourceConfig).
 pub mod worker_resource_config {
     
@@ -2447,12 +2472,6 @@ pub mod worker_resource_config {
     }
     
     
-}
-impl WorkerResourceConfig {
-    /// Creates a new builder-style object to manufacture [`WorkerResourceConfig`](crate::model::WorkerResourceConfig).
-    pub fn builder() -> crate::model::worker_resource_config::Builder {
-        crate::model::worker_resource_config::Builder::default()
-    }
 }
 
 /// <p>Information about an application. EMR Serverless uses applications to run jobs.</p>
@@ -2588,6 +2607,13 @@ impl Application {
         self.worker_type_specifications.as_ref()
     }
 }
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
 /// See [`Application`](crate::model::Application).
 pub mod application {
     
@@ -2840,12 +2866,6 @@ pub mod application {
     
     
 }
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
-    }
-}
 
 /// <p>The specifications for a worker type.</p>
 #[non_exhaustive]
@@ -2861,6 +2881,13 @@ impl WorkerTypeSpecification {
         self.image_configuration.as_ref()
     }
 }
+impl WorkerTypeSpecification {
+    /// Creates a new builder-style object to manufacture [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
+    pub fn builder() -> crate::model::worker_type_specification::Builder {
+        crate::model::worker_type_specification::Builder::default()
+    }
+}
+
 /// See [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
 pub mod worker_type_specification {
     
@@ -2891,12 +2918,6 @@ pub mod worker_type_specification {
     
     
 }
-impl WorkerTypeSpecification {
-    /// Creates a new builder-style object to manufacture [`WorkerTypeSpecification`](crate::model::WorkerTypeSpecification).
-    pub fn builder() -> crate::model::worker_type_specification::Builder {
-        crate::model::worker_type_specification::Builder::default()
-    }
-}
 
 /// <p>The applied image configuration.</p>
 #[non_exhaustive]
@@ -2919,6 +2940,13 @@ impl ImageConfiguration {
         self.resolved_image_digest.as_deref()
     }
 }
+impl ImageConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageConfiguration`](crate::model::ImageConfiguration).
+    pub fn builder() -> crate::model::image_configuration::Builder {
+        crate::model::image_configuration::Builder::default()
+    }
+}
+
 /// See [`ImageConfiguration`](crate::model::ImageConfiguration).
 pub mod image_configuration {
     
@@ -2960,11 +2988,5 @@ pub mod image_configuration {
     }
     
     
-}
-impl ImageConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImageConfiguration`](crate::model::ImageConfiguration).
-    pub fn builder() -> crate::model::image_configuration::Builder {
-        crate::model::image_configuration::Builder::default()
-    }
 }
 

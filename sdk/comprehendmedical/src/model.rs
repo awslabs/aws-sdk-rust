@@ -98,6 +98,13 @@ impl OutputDataConfig {
         self.s3_key.as_deref()
     }
 }
+impl OutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
+    pub fn builder() -> crate::model::output_data_config::Builder {
+        crate::model::output_data_config::Builder::default()
+    }
+}
+
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
     
@@ -140,12 +147,6 @@ pub mod output_data_config {
     
     
 }
-impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
-    pub fn builder() -> crate::model::output_data_config::Builder {
-        crate::model::output_data_config::Builder::default()
-    }
-}
 
 /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
 #[non_exhaustive]
@@ -170,6 +171,13 @@ impl InputDataConfig {
         self.s3_key.as_deref()
     }
 }
+impl InputDataConfig {
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
+    pub fn builder() -> crate::model::input_data_config::Builder {
+        crate::model::input_data_config::Builder::default()
+    }
+}
+
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
     
@@ -213,12 +221,6 @@ pub mod input_data_config {
     }
     
     
-}
-impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
-    pub fn builder() -> crate::model::input_data_config::Builder {
-        crate::model::input_data_config::Builder::default()
-    }
 }
 
 /// <p>Provides information about a detection job.</p>
@@ -326,6 +328,13 @@ impl ComprehendMedicalAsyncJobProperties {
         self.model_version.as_deref()
     }
 }
+impl ComprehendMedicalAsyncJobProperties {
+    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
+    pub fn builder() -> crate::model::comprehend_medical_async_job_properties::Builder {
+        crate::model::comprehend_medical_async_job_properties::Builder::default()
+    }
+}
+
 /// See [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
 pub mod comprehend_medical_async_job_properties {
     
@@ -512,12 +521,6 @@ pub mod comprehend_medical_async_job_properties {
     
     
 }
-impl ComprehendMedicalAsyncJobProperties {
-    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
-    pub fn builder() -> crate::model::comprehend_medical_async_job_properties::Builder {
-        crate::model::comprehend_medical_async_job_properties::Builder::default()
-    }
-}
 
 /// When writing a match expression against `JobStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -661,6 +664,13 @@ impl ComprehendMedicalAsyncJobFilter {
         self.submit_time_after.as_ref()
     }
 }
+impl ComprehendMedicalAsyncJobFilter {
+    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
+    pub fn builder() -> crate::model::comprehend_medical_async_job_filter::Builder {
+        crate::model::comprehend_medical_async_job_filter::Builder::default()
+    }
+}
+
 /// See [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
 pub mod comprehend_medical_async_job_filter {
     
@@ -727,12 +737,6 @@ pub mod comprehend_medical_async_job_filter {
     
     
 }
-impl ComprehendMedicalAsyncJobFilter {
-    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
-    pub fn builder() -> crate::model::comprehend_medical_async_job_filter::Builder {
-        crate::model::comprehend_medical_async_job_filter::Builder::default()
-    }
-}
 
 /// <p> The number of characters in the input text to be analyzed. </p>
 #[non_exhaustive]
@@ -748,6 +752,13 @@ impl Characters {
         self.original_text_characters
     }
 }
+impl Characters {
+    /// Creates a new builder-style object to manufacture [`Characters`](crate::model::Characters).
+    pub fn builder() -> crate::model::characters::Builder {
+        crate::model::characters::Builder::default()
+    }
+}
+
 /// See [`Characters`](crate::model::Characters).
 pub mod characters {
     
@@ -778,12 +789,6 @@ pub mod characters {
     
     
 }
-impl Characters {
-    /// Creates a new builder-style object to manufacture [`Characters`](crate::model::Characters).
-    pub fn builder() -> crate::model::characters::Builder {
-        crate::model::characters::Builder::default()
-    }
-}
 
 /// <p> The information about the revision of the SNOMED-CT ontology in the response. Specifically, the details include the SNOMED-CT edition, language, and version date. </p>
 #[non_exhaustive]
@@ -813,6 +818,13 @@ impl SnomedctDetails {
         self.version_date.as_deref()
     }
 }
+impl SnomedctDetails {
+    /// Creates a new builder-style object to manufacture [`SnomedctDetails`](crate::model::SnomedctDetails).
+    pub fn builder() -> crate::model::snomedct_details::Builder {
+        crate::model::snomedct_details::Builder::default()
+    }
+}
+
 /// See [`SnomedctDetails`](crate::model::SnomedctDetails).
 pub mod snomedct_details {
     
@@ -866,12 +878,6 @@ pub mod snomedct_details {
     }
     
     
-}
-impl SnomedctDetails {
-    /// Creates a new builder-style object to manufacture [`SnomedctDetails`](crate::model::SnomedctDetails).
-    pub fn builder() -> crate::model::snomedct_details::Builder {
-        crate::model::snomedct_details::Builder::default()
-    }
 }
 
 /// <p> The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
@@ -951,6 +957,13 @@ impl SnomedctEntity {
         self.snomedct_concepts.as_deref()
     }
 }
+impl SnomedctEntity {
+    /// Creates a new builder-style object to manufacture [`SnomedctEntity`](crate::model::SnomedctEntity).
+    pub fn builder() -> crate::model::snomedct_entity::Builder {
+        crate::model::snomedct_entity::Builder::default()
+    }
+}
+
 /// See [`SnomedctEntity`](crate::model::SnomedctEntity).
 pub mod snomedct_entity {
     
@@ -1107,12 +1120,6 @@ pub mod snomedct_entity {
     
     
 }
-impl SnomedctEntity {
-    /// Creates a new builder-style object to manufacture [`SnomedctEntity`](crate::model::SnomedctEntity).
-    pub fn builder() -> crate::model::snomedct_entity::Builder {
-        crate::model::snomedct_entity::Builder::default()
-    }
-}
 
 /// <p> The SNOMED-CT concepts that the entity could refer to, along with a score indicating the likelihood of the match. </p>
 #[non_exhaustive]
@@ -1142,6 +1149,13 @@ impl SnomedctConcept {
         self.score
     }
 }
+impl SnomedctConcept {
+    /// Creates a new builder-style object to manufacture [`SnomedctConcept`](crate::model::SnomedctConcept).
+    pub fn builder() -> crate::model::snomedct_concept::Builder {
+        crate::model::snomedct_concept::Builder::default()
+    }
+}
+
 /// See [`SnomedctConcept`](crate::model::SnomedctConcept).
 pub mod snomedct_concept {
     
@@ -1196,12 +1210,6 @@ pub mod snomedct_concept {
     
     
 }
-impl SnomedctConcept {
-    /// Creates a new builder-style object to manufacture [`SnomedctConcept`](crate::model::SnomedctConcept).
-    pub fn builder() -> crate::model::snomedct_concept::Builder {
-        crate::model::snomedct_concept::Builder::default()
-    }
-}
 
 /// <p> Contextual information for an entity. </p>
 #[non_exhaustive]
@@ -1224,6 +1232,13 @@ impl SnomedctTrait {
         self.score
     }
 }
+impl SnomedctTrait {
+    /// Creates a new builder-style object to manufacture [`SnomedctTrait`](crate::model::SnomedctTrait).
+    pub fn builder() -> crate::model::snomedct_trait::Builder {
+        crate::model::snomedct_trait::Builder::default()
+    }
+}
+
 /// See [`SnomedctTrait`](crate::model::SnomedctTrait).
 pub mod snomedct_trait {
     
@@ -1265,12 +1280,6 @@ pub mod snomedct_trait {
     }
     
     
-}
-impl SnomedctTrait {
-    /// Creates a new builder-style object to manufacture [`SnomedctTrait`](crate::model::SnomedctTrait).
-    pub fn builder() -> crate::model::snomedct_trait::Builder {
-        crate::model::snomedct_trait::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnomedctTraitName`, it is important to ensure
@@ -1474,6 +1483,13 @@ impl SnomedctAttribute {
         self.snomedct_concepts.as_deref()
     }
 }
+impl SnomedctAttribute {
+    /// Creates a new builder-style object to manufacture [`SnomedctAttribute`](crate::model::SnomedctAttribute).
+    pub fn builder() -> crate::model::snomedct_attribute::Builder {
+        crate::model::snomedct_attribute::Builder::default()
+    }
+}
+
 /// See [`SnomedctAttribute`](crate::model::SnomedctAttribute).
 pub mod snomedct_attribute {
     
@@ -1635,12 +1651,6 @@ pub mod snomedct_attribute {
     }
     
     
-}
-impl SnomedctAttribute {
-    /// Creates a new builder-style object to manufacture [`SnomedctAttribute`](crate::model::SnomedctAttribute).
-    pub fn builder() -> crate::model::snomedct_attribute::Builder {
-        crate::model::snomedct_attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SnomedctRelationshipType`, it is important to ensure
@@ -2103,6 +2113,13 @@ impl RxNormEntity {
         self.rx_norm_concepts.as_deref()
     }
 }
+impl RxNormEntity {
+    /// Creates a new builder-style object to manufacture [`RxNormEntity`](crate::model::RxNormEntity).
+    pub fn builder() -> crate::model::rx_norm_entity::Builder {
+        crate::model::rx_norm_entity::Builder::default()
+    }
+}
+
 /// See [`RxNormEntity`](crate::model::RxNormEntity).
 pub mod rx_norm_entity {
     
@@ -2259,12 +2276,6 @@ pub mod rx_norm_entity {
     
     
 }
-impl RxNormEntity {
-    /// Creates a new builder-style object to manufacture [`RxNormEntity`](crate::model::RxNormEntity).
-    pub fn builder() -> crate::model::rx_norm_entity::Builder {
-        crate::model::rx_norm_entity::Builder::default()
-    }
-}
 
 /// <p>The RxNorm concept that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
@@ -2294,6 +2305,13 @@ impl RxNormConcept {
         self.score
     }
 }
+impl RxNormConcept {
+    /// Creates a new builder-style object to manufacture [`RxNormConcept`](crate::model::RxNormConcept).
+    pub fn builder() -> crate::model::rx_norm_concept::Builder {
+        crate::model::rx_norm_concept::Builder::default()
+    }
+}
+
 /// See [`RxNormConcept`](crate::model::RxNormConcept).
 pub mod rx_norm_concept {
     
@@ -2348,12 +2366,6 @@ pub mod rx_norm_concept {
     
     
 }
-impl RxNormConcept {
-    /// Creates a new builder-style object to manufacture [`RxNormConcept`](crate::model::RxNormConcept).
-    pub fn builder() -> crate::model::rx_norm_concept::Builder {
-        crate::model::rx_norm_concept::Builder::default()
-    }
-}
 
 /// <p>The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication. </p>
 #[non_exhaustive]
@@ -2376,6 +2388,13 @@ impl RxNormTrait {
         self.score
     }
 }
+impl RxNormTrait {
+    /// Creates a new builder-style object to manufacture [`RxNormTrait`](crate::model::RxNormTrait).
+    pub fn builder() -> crate::model::rx_norm_trait::Builder {
+        crate::model::rx_norm_trait::Builder::default()
+    }
+}
+
 /// See [`RxNormTrait`](crate::model::RxNormTrait).
 pub mod rx_norm_trait {
     
@@ -2417,12 +2436,6 @@ pub mod rx_norm_trait {
     }
     
     
-}
-impl RxNormTrait {
-    /// Creates a new builder-style object to manufacture [`RxNormTrait`](crate::model::RxNormTrait).
-    pub fn builder() -> crate::model::rx_norm_trait::Builder {
-        crate::model::rx_norm_trait::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RxNormTraitName`, it is important to ensure
@@ -2565,6 +2578,13 @@ impl RxNormAttribute {
         self.traits.as_deref()
     }
 }
+impl RxNormAttribute {
+    /// Creates a new builder-style object to manufacture [`RxNormAttribute`](crate::model::RxNormAttribute).
+    pub fn builder() -> crate::model::rx_norm_attribute::Builder {
+        crate::model::rx_norm_attribute::Builder::default()
+    }
+}
+
 /// See [`RxNormAttribute`](crate::model::RxNormAttribute).
 pub mod rx_norm_attribute {
     
@@ -2684,12 +2704,6 @@ pub mod rx_norm_attribute {
     }
     
     
-}
-impl RxNormAttribute {
-    /// Creates a new builder-style object to manufacture [`RxNormAttribute`](crate::model::RxNormAttribute).
-    pub fn builder() -> crate::model::rx_norm_attribute::Builder {
-        crate::model::rx_norm_attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RxNormAttributeType`, it is important to ensure
@@ -3035,6 +3049,13 @@ impl Icd10CmEntity {
         self.icd10_cm_concepts.as_deref()
     }
 }
+impl Icd10CmEntity {
+    /// Creates a new builder-style object to manufacture [`Icd10CmEntity`](crate::model::Icd10CmEntity).
+    pub fn builder() -> crate::model::icd10_cm_entity::Builder {
+        crate::model::icd10_cm_entity::Builder::default()
+    }
+}
+
 /// See [`Icd10CmEntity`](crate::model::Icd10CmEntity).
 pub mod icd10_cm_entity {
     
@@ -3191,12 +3212,6 @@ pub mod icd10_cm_entity {
     
     
 }
-impl Icd10CmEntity {
-    /// Creates a new builder-style object to manufacture [`Icd10CmEntity`](crate::model::Icd10CmEntity).
-    pub fn builder() -> crate::model::icd10_cm_entity::Builder {
-        crate::model::icd10_cm_entity::Builder::default()
-    }
-}
 
 /// <p> The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
@@ -3226,6 +3241,13 @@ impl Icd10CmConcept {
         self.score
     }
 }
+impl Icd10CmConcept {
+    /// Creates a new builder-style object to manufacture [`Icd10CmConcept`](crate::model::Icd10CmConcept).
+    pub fn builder() -> crate::model::icd10_cm_concept::Builder {
+        crate::model::icd10_cm_concept::Builder::default()
+    }
+}
+
 /// See [`Icd10CmConcept`](crate::model::Icd10CmConcept).
 pub mod icd10_cm_concept {
     
@@ -3280,12 +3302,6 @@ pub mod icd10_cm_concept {
     
     
 }
-impl Icd10CmConcept {
-    /// Creates a new builder-style object to manufacture [`Icd10CmConcept`](crate::model::Icd10CmConcept).
-    pub fn builder() -> crate::model::icd10_cm_concept::Builder {
-        crate::model::icd10_cm_concept::Builder::default()
-    }
-}
 
 /// <p>Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
 #[non_exhaustive]
@@ -3308,6 +3324,13 @@ impl Icd10CmTrait {
         self.score
     }
 }
+impl Icd10CmTrait {
+    /// Creates a new builder-style object to manufacture [`Icd10CmTrait`](crate::model::Icd10CmTrait).
+    pub fn builder() -> crate::model::icd10_cm_trait::Builder {
+        crate::model::icd10_cm_trait::Builder::default()
+    }
+}
+
 /// See [`Icd10CmTrait`](crate::model::Icd10CmTrait).
 pub mod icd10_cm_trait {
     
@@ -3349,12 +3372,6 @@ pub mod icd10_cm_trait {
     }
     
     
-}
-impl Icd10CmTrait {
-    /// Creates a new builder-style object to manufacture [`Icd10CmTrait`](crate::model::Icd10CmTrait).
-    pub fn builder() -> crate::model::icd10_cm_trait::Builder {
-        crate::model::icd10_cm_trait::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Icd10CmTraitName`, it is important to ensure
@@ -3541,6 +3558,13 @@ impl Icd10CmAttribute {
         self.relationship_type.as_ref()
     }
 }
+impl Icd10CmAttribute {
+    /// Creates a new builder-style object to manufacture [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
+    pub fn builder() -> crate::model::icd10_cm_attribute::Builder {
+        crate::model::icd10_cm_attribute::Builder::default()
+    }
+}
+
 /// See [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
 pub mod icd10_cm_attribute {
     
@@ -3684,12 +3708,6 @@ pub mod icd10_cm_attribute {
     }
     
     
-}
-impl Icd10CmAttribute {
-    /// Creates a new builder-style object to manufacture [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
-    pub fn builder() -> crate::model::icd10_cm_attribute::Builder {
-        crate::model::icd10_cm_attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Icd10CmRelationshipType`, it is important to ensure
@@ -4110,6 +4128,13 @@ impl Entity {
         self.attributes.as_deref()
     }
 }
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
+    }
+}
+
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
     
@@ -4248,12 +4273,6 @@ pub mod entity {
     
     
 }
-impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
-    pub fn builder() -> crate::model::entity::Builder {
-        crate::model::entity::Builder::default()
-    }
-}
 
 /// <p> An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. It contains information about the attribute such as id, begin and end offset within the input text, and the segment of the input text. </p>
 #[non_exhaustive]
@@ -4332,6 +4351,13 @@ impl Attribute {
         self.traits.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
     
@@ -4476,12 +4502,6 @@ pub mod attribute {
     
     
 }
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
-    }
-}
 
 /// <p> Provides contextual information about the extracted entity. </p>
 #[non_exhaustive]
@@ -4504,6 +4524,13 @@ impl Trait {
         self.score
     }
 }
+impl Trait {
+    /// Creates a new builder-style object to manufacture [`Trait`](crate::model::Trait).
+    pub fn builder() -> crate::model::r#trait::Builder {
+        crate::model::r#trait::Builder::default()
+    }
+}
+
 /// See [`Trait`](crate::model::Trait).
 pub mod r#trait {
     
@@ -4545,12 +4572,6 @@ pub mod r#trait {
     }
     
     
-}
-impl Trait {
-    /// Creates a new builder-style object to manufacture [`Trait`](crate::model::Trait).
-    pub fn builder() -> crate::model::r#trait::Builder {
-        crate::model::r#trait::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AttributeName`, it is important to ensure
@@ -5267,6 +5288,13 @@ impl UnmappedAttribute {
         self.attribute.as_ref()
     }
 }
+impl UnmappedAttribute {
+    /// Creates a new builder-style object to manufacture [`UnmappedAttribute`](crate::model::UnmappedAttribute).
+    pub fn builder() -> crate::model::unmapped_attribute::Builder {
+        crate::model::unmapped_attribute::Builder::default()
+    }
+}
+
 /// See [`UnmappedAttribute`](crate::model::UnmappedAttribute).
 pub mod unmapped_attribute {
     
@@ -5308,11 +5336,5 @@ pub mod unmapped_attribute {
     }
     
     
-}
-impl UnmappedAttribute {
-    /// Creates a new builder-style object to manufacture [`UnmappedAttribute`](crate::model::UnmappedAttribute).
-    pub fn builder() -> crate::model::unmapped_attribute::Builder {
-        crate::model::unmapped_attribute::Builder::default()
-    }
 }
 

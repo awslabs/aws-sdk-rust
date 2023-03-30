@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateRumMetricDefinitionOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRumMetricDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
+    pub fn builder() -> crate::output::update_rum_metric_definition_output::Builder {
+        crate::output::update_rum_metric_definition_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
 pub mod update_rum_metric_definition_output {
     
@@ -39,12 +46,6 @@ pub mod update_rum_metric_definition_output {
     
     
 }
-impl UpdateRumMetricDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
-    pub fn builder() -> crate::output::update_rum_metric_definition_output::Builder {
-        crate::output::update_rum_metric_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for PutRumMetricsDestinationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutRumMetricsDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
+    pub fn builder() -> crate::output::put_rum_metrics_destination_output::Builder {
+        crate::output::put_rum_metrics_destination_output::Builder::default()
+    }
+}
+
 /// See [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
 pub mod put_rum_metrics_destination_output {
     
@@ -86,12 +94,6 @@ pub mod put_rum_metrics_destination_output {
     
     
 }
-impl PutRumMetricsDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
-    pub fn builder() -> crate::output::put_rum_metrics_destination_output::Builder {
-        crate::output::put_rum_metrics_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -120,6 +122,13 @@ impl aws_http::request_id::RequestId for ListRumMetricsDestinationsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRumMetricsDestinationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
+    pub fn builder() -> crate::output::list_rum_metrics_destinations_output::Builder {
+        crate::output::list_rum_metrics_destinations_output::Builder::default()
+    }
+}
+
 /// See [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
 pub mod list_rum_metrics_destinations_output {
     
@@ -179,12 +188,6 @@ pub mod list_rum_metrics_destinations_output {
     
     
 }
-impl ListRumMetricsDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
-    pub fn builder() -> crate::output::list_rum_metrics_destinations_output::Builder {
-        crate::output::list_rum_metrics_destinations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -213,6 +216,13 @@ impl aws_http::request_id::RequestId for GetAppMonitorDataOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAppMonitorDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
+    pub fn builder() -> crate::output::get_app_monitor_data_output::Builder {
+        crate::output::get_app_monitor_data_output::Builder::default()
+    }
+}
+
 /// See [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
 pub mod get_app_monitor_data_output {
     
@@ -272,12 +282,6 @@ pub mod get_app_monitor_data_output {
     
     
 }
-impl GetAppMonitorDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
-    pub fn builder() -> crate::output::get_app_monitor_data_output::Builder {
-        crate::output::get_app_monitor_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -290,6 +294,13 @@ impl aws_http::request_id::RequestId for DeleteRumMetricsDestinationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRumMetricsDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
+    pub fn builder() -> crate::output::delete_rum_metrics_destination_output::Builder {
+        crate::output::delete_rum_metrics_destination_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
 pub mod delete_rum_metrics_destination_output {
     
@@ -319,12 +330,6 @@ pub mod delete_rum_metrics_destination_output {
     
     
 }
-impl DeleteRumMetricsDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
-    pub fn builder() -> crate::output::delete_rum_metrics_destination_output::Builder {
-        crate::output::delete_rum_metrics_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -346,6 +351,13 @@ impl aws_http::request_id::RequestId for CreateAppMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateAppMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
+    pub fn builder() -> crate::output::create_app_monitor_output::Builder {
+        crate::output::create_app_monitor_output::Builder::default()
+    }
+}
+
 /// See [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
 pub mod create_app_monitor_output {
     
@@ -387,12 +399,6 @@ pub mod create_app_monitor_output {
     
     
 }
-impl CreateAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
-    pub fn builder() -> crate::output::create_app_monitor_output::Builder {
-        crate::output::create_app_monitor_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -421,6 +427,13 @@ impl aws_http::request_id::RequestId for BatchGetRumMetricDefinitionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchGetRumMetricDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
+    pub fn builder() -> crate::output::batch_get_rum_metric_definitions_output::Builder {
+        crate::output::batch_get_rum_metric_definitions_output::Builder::default()
+    }
+}
+
 /// See [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
 pub mod batch_get_rum_metric_definitions_output {
     
@@ -480,12 +493,6 @@ pub mod batch_get_rum_metric_definitions_output {
     
     
 }
-impl BatchGetRumMetricDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::output::batch_get_rum_metric_definitions_output::Builder {
-        crate::output::batch_get_rum_metric_definitions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -514,6 +521,13 @@ impl aws_http::request_id::RequestId for BatchDeleteRumMetricDefinitionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchDeleteRumMetricDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
+    pub fn builder() -> crate::output::batch_delete_rum_metric_definitions_output::Builder {
+        crate::output::batch_delete_rum_metric_definitions_output::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
 pub mod batch_delete_rum_metric_definitions_output {
     
@@ -579,12 +593,6 @@ pub mod batch_delete_rum_metric_definitions_output {
     
     
 }
-impl BatchDeleteRumMetricDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::output::batch_delete_rum_metric_definitions_output::Builder {
-        crate::output::batch_delete_rum_metric_definitions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -613,6 +621,13 @@ impl aws_http::request_id::RequestId for BatchCreateRumMetricDefinitionsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchCreateRumMetricDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
+    pub fn builder() -> crate::output::batch_create_rum_metric_definitions_output::Builder {
+        crate::output::batch_create_rum_metric_definitions_output::Builder::default()
+    }
+}
+
 /// See [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
 pub mod batch_create_rum_metric_definitions_output {
     
@@ -678,12 +693,6 @@ pub mod batch_create_rum_metric_definitions_output {
     
     
 }
-impl BatchCreateRumMetricDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
-    pub fn builder() -> crate::output::batch_create_rum_metric_definitions_output::Builder {
-        crate::output::batch_create_rum_metric_definitions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -712,6 +721,13 @@ impl aws_http::request_id::RequestId for ListAppMonitorsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListAppMonitorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
+    pub fn builder() -> crate::output::list_app_monitors_output::Builder {
+        crate::output::list_app_monitors_output::Builder::default()
+    }
+}
+
 /// See [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
 pub mod list_app_monitors_output {
     
@@ -771,12 +787,6 @@ pub mod list_app_monitors_output {
     
     
 }
-impl ListAppMonitorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
-    pub fn builder() -> crate::output::list_app_monitors_output::Builder {
-        crate::output::list_app_monitors_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -789,6 +799,13 @@ impl aws_http::request_id::RequestId for DeleteAppMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAppMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
+    pub fn builder() -> crate::output::delete_app_monitor_output::Builder {
+        crate::output::delete_app_monitor_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
 pub mod delete_app_monitor_output {
     
@@ -818,12 +835,6 @@ pub mod delete_app_monitor_output {
     
     
 }
-impl DeleteAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
-    pub fn builder() -> crate::output::delete_app_monitor_output::Builder {
-        crate::output::delete_app_monitor_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -836,6 +847,13 @@ impl aws_http::request_id::RequestId for UpdateAppMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateAppMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
+    pub fn builder() -> crate::output::update_app_monitor_output::Builder {
+        crate::output::update_app_monitor_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
 pub mod update_app_monitor_output {
     
@@ -865,12 +883,6 @@ pub mod update_app_monitor_output {
     
     
 }
-impl UpdateAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
-    pub fn builder() -> crate::output::update_app_monitor_output::Builder {
-        crate::output::update_app_monitor_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -892,6 +904,13 @@ impl aws_http::request_id::RequestId for GetAppMonitorOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAppMonitorOutput {
+    /// Creates a new builder-style object to manufacture [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
+    pub fn builder() -> crate::output::get_app_monitor_output::Builder {
+        crate::output::get_app_monitor_output::Builder::default()
+    }
+}
+
 /// See [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
 pub mod get_app_monitor_output {
     
@@ -933,12 +952,6 @@ pub mod get_app_monitor_output {
     
     
 }
-impl GetAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
-    pub fn builder() -> crate::output::get_app_monitor_output::Builder {
-        crate::output::get_app_monitor_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -951,6 +964,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -980,12 +1000,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -998,6 +1012,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -1027,12 +1048,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1045,6 +1060,13 @@ impl aws_http::request_id::RequestId for PutRumEventsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutRumEventsOutput {
+    /// Creates a new builder-style object to manufacture [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
+    pub fn builder() -> crate::output::put_rum_events_output::Builder {
+        crate::output::put_rum_events_output::Builder::default()
+    }
+}
+
 /// See [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
 pub mod put_rum_events_output {
     
@@ -1074,12 +1096,6 @@ pub mod put_rum_events_output {
     
     
 }
-impl PutRumEventsOutput {
-    /// Creates a new builder-style object to manufacture [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
-    pub fn builder() -> crate::output::put_rum_events_output::Builder {
-        crate::output::put_rum_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1108,6 +1124,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -1166,11 +1189,5 @@ pub mod list_tags_for_resource_output {
     }
     
     
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
 }
 

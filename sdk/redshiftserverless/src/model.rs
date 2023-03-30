@@ -105,6 +105,13 @@ impl Workgroup {
         self.port
     }
 }
+impl Workgroup {
+    /// Creates a new builder-style object to manufacture [`Workgroup`](crate::model::Workgroup).
+    pub fn builder() -> crate::model::workgroup::Builder {
+        crate::model::workgroup::Builder::default()
+    }
+}
+
 /// See [`Workgroup`](crate::model::Workgroup).
 pub mod workgroup {
     
@@ -309,12 +316,6 @@ pub mod workgroup {
     
     
 }
-impl Workgroup {
-    /// Creates a new builder-style object to manufacture [`Workgroup`](crate::model::Workgroup).
-    pub fn builder() -> crate::model::workgroup::Builder {
-        crate::model::workgroup::Builder::default()
-    }
-}
 
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
@@ -344,6 +345,13 @@ impl Endpoint {
         self.vpc_endpoints.as_deref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
     
@@ -404,12 +412,6 @@ pub mod endpoint {
     
     
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>The connection endpoint for connecting to Amazon Redshift Serverless through the proxy.</p>
 #[non_exhaustive]
@@ -439,6 +441,13 @@ impl VpcEndpoint {
         self.network_interfaces.as_deref()
     }
 }
+impl VpcEndpoint {
+    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
+    pub fn builder() -> crate::model::vpc_endpoint::Builder {
+        crate::model::vpc_endpoint::Builder::default()
+    }
+}
+
 /// See [`VpcEndpoint`](crate::model::VpcEndpoint).
 pub mod vpc_endpoint {
     
@@ -499,12 +508,6 @@ pub mod vpc_endpoint {
     
     
 }
-impl VpcEndpoint {
-    /// Creates a new builder-style object to manufacture [`VpcEndpoint`](crate::model::VpcEndpoint).
-    pub fn builder() -> crate::model::vpc_endpoint::Builder {
-        crate::model::vpc_endpoint::Builder::default()
-    }
-}
 
 /// <p>Contains information about a network interface in an Amazon Redshift Serverless managed VPC endpoint. </p>
 #[non_exhaustive]
@@ -541,6 +544,13 @@ impl NetworkInterface {
         self.availability_zone.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
     
@@ -606,12 +616,6 @@ pub mod network_interface {
     }
     
     
-}
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkgroupStatus`, it is important to ensure
@@ -727,6 +731,13 @@ impl ConfigParameter {
         self.parameter_value.as_deref()
     }
 }
+impl ConfigParameter {
+    /// Creates a new builder-style object to manufacture [`ConfigParameter`](crate::model::ConfigParameter).
+    pub fn builder() -> crate::model::config_parameter::Builder {
+        crate::model::config_parameter::Builder::default()
+    }
+}
+
 /// See [`ConfigParameter`](crate::model::ConfigParameter).
 pub mod config_parameter {
     
@@ -769,12 +780,6 @@ pub mod config_parameter {
     
     
 }
-impl ConfigParameter {
-    /// Creates a new builder-style object to manufacture [`ConfigParameter`](crate::model::ConfigParameter).
-    pub fn builder() -> crate::model::config_parameter::Builder {
-        crate::model::config_parameter::Builder::default()
-    }
-}
 
 /// <p>A map of key-value pairs.</p>
 #[non_exhaustive]
@@ -797,6 +802,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -838,12 +850,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>The usage limit object.</p>
@@ -902,6 +908,13 @@ impl UsageLimit {
         self.breach_action.as_ref()
     }
 }
+impl UsageLimit {
+    /// Creates a new builder-style object to manufacture [`UsageLimit`](crate::model::UsageLimit).
+    pub fn builder() -> crate::model::usage_limit::Builder {
+        crate::model::usage_limit::Builder::default()
+    }
+}
+
 /// See [`UsageLimit`](crate::model::UsageLimit).
 pub mod usage_limit {
     
@@ -1003,12 +1016,6 @@ pub mod usage_limit {
     }
     
     
-}
-impl UsageLimit {
-    /// Creates a new builder-style object to manufacture [`UsageLimit`](crate::model::UsageLimit).
-    pub fn builder() -> crate::model::usage_limit::Builder {
-        crate::model::usage_limit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UsageLimitBreachAction`, it is important to ensure
@@ -1414,6 +1421,13 @@ impl Snapshot {
         self.accounts_with_provisioned_restore_access.as_deref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
     
@@ -1684,12 +1698,6 @@ pub mod snapshot {
     
     
 }
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SnapshotStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1905,6 +1913,13 @@ impl TableRestoreStatus {
         self.new_table_name.as_deref()
     }
 }
+impl TableRestoreStatus {
+    /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
+    pub fn builder() -> crate::model::table_restore_status::Builder {
+        crate::model::table_restore_status::Builder::default()
+    }
+}
+
 /// See [`TableRestoreStatus`](crate::model::TableRestoreStatus).
 pub mod table_restore_status {
     
@@ -2103,12 +2118,6 @@ pub mod table_restore_status {
     
     
 }
-impl TableRestoreStatus {
-    /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::model::TableRestoreStatus).
-    pub fn builder() -> crate::model::table_restore_status::Builder {
-        crate::model::table_restore_status::Builder::default()
-    }
-}
 
 /// <p>A collection of database objects and users.</p>
 #[non_exhaustive]
@@ -2211,6 +2220,13 @@ impl  std::fmt::Debug for Namespace  {
         formatter.finish()
     }
 }
+impl Namespace {
+    /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace).
+    pub fn builder() -> crate::model::namespace::Builder {
+        crate::model::namespace::Builder::default()
+    }
+}
+
 /// See [`Namespace`](crate::model::Namespace).
 pub mod namespace {
     
@@ -2389,12 +2405,6 @@ pub mod namespace {
     }
     
     
-}
-impl Namespace {
-    /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace).
-    pub fn builder() -> crate::model::namespace::Builder {
-        crate::model::namespace::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NamespaceStatus`, it is important to ensure
@@ -2620,6 +2630,13 @@ impl RecoveryPoint {
         self.namespace_arn.as_deref()
     }
 }
+impl RecoveryPoint {
+    /// Creates a new builder-style object to manufacture [`RecoveryPoint`](crate::model::RecoveryPoint).
+    pub fn builder() -> crate::model::recovery_point::Builder {
+        crate::model::recovery_point::Builder::default()
+    }
+}
+
 /// See [`RecoveryPoint`](crate::model::RecoveryPoint).
 pub mod recovery_point {
     
@@ -2710,12 +2727,6 @@ pub mod recovery_point {
     
     
 }
-impl RecoveryPoint {
-    /// Creates a new builder-style object to manufacture [`RecoveryPoint`](crate::model::RecoveryPoint).
-    pub fn builder() -> crate::model::recovery_point::Builder {
-        crate::model::recovery_point::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon Redshift Serverless VPC endpoint.</p>
 #[non_exhaustive]
@@ -2794,6 +2805,13 @@ impl EndpointAccess {
         self.endpoint_arn.as_deref()
     }
 }
+impl EndpointAccess {
+    /// Creates a new builder-style object to manufacture [`EndpointAccess`](crate::model::EndpointAccess).
+    pub fn builder() -> crate::model::endpoint_access::Builder {
+        crate::model::endpoint_access::Builder::default()
+    }
+}
+
 /// See [`EndpointAccess`](crate::model::EndpointAccess).
 pub mod endpoint_access {
     
@@ -2944,12 +2962,6 @@ pub mod endpoint_access {
     
     
 }
-impl EndpointAccess {
-    /// Creates a new builder-style object to manufacture [`EndpointAccess`](crate::model::EndpointAccess).
-    pub fn builder() -> crate::model::endpoint_access::Builder {
-        crate::model::endpoint_access::Builder::default()
-    }
-}
 
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
@@ -2972,6 +2984,13 @@ impl VpcSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl VpcSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
+    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
+        crate::model::vpc_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
     
@@ -3014,12 +3033,6 @@ pub mod vpc_security_group_membership {
     
     
 }
-impl VpcSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
-    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
-        crate::model::vpc_security_group_membership::Builder::default()
-    }
-}
 
 /// <p>The resource policy object. Currently, you can use policies to share snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
@@ -3042,6 +3055,13 @@ impl ResourcePolicy {
         self.policy.as_deref()
     }
 }
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
     
@@ -3083,11 +3103,5 @@ pub mod resource_policy {
     }
     
     
-}
-impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
-    pub fn builder() -> crate::model::resource_policy::Builder {
-        crate::model::resource_policy::Builder::default()
-    }
 }
 

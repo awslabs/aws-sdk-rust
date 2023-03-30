@@ -96,6 +96,13 @@ impl CustomDomainConfigType {
         self.certificate_arn.as_deref()
     }
 }
+impl CustomDomainConfigType {
+    /// Creates a new builder-style object to manufacture [`CustomDomainConfigType`](crate::model::CustomDomainConfigType).
+    pub fn builder() -> crate::model::custom_domain_config_type::Builder {
+        crate::model::custom_domain_config_type::Builder::default()
+    }
+}
+
 /// See [`CustomDomainConfigType`](crate::model::CustomDomainConfigType).
 pub mod custom_domain_config_type {
     
@@ -125,12 +132,6 @@ pub mod custom_domain_config_type {
     }
     
     
-}
-impl CustomDomainConfigType {
-    /// Creates a new builder-style object to manufacture [`CustomDomainConfigType`](crate::model::CustomDomainConfigType).
-    pub fn builder() -> crate::model::custom_domain_config_type::Builder {
-        crate::model::custom_domain_config_type::Builder::default()
-    }
 }
 
 /// <p>Contains information about a user pool client.</p>
@@ -480,6 +481,13 @@ impl  std::fmt::Debug for UserPoolClientType  {
         formatter.finish()
     }
 }
+impl UserPoolClientType {
+    /// Creates a new builder-style object to manufacture [`UserPoolClientType`](crate::model::UserPoolClientType).
+    pub fn builder() -> crate::model::user_pool_client_type::Builder {
+        crate::model::user_pool_client_type::Builder::default()
+    }
+}
+
 /// See [`UserPoolClientType`](crate::model::UserPoolClientType).
 pub mod user_pool_client_type {
     
@@ -1012,12 +1020,6 @@ pub mod user_pool_client_type {
     
     
 }
-impl UserPoolClientType {
-    /// Creates a new builder-style object to manufacture [`UserPoolClientType`](crate::model::UserPoolClientType).
-    pub fn builder() -> crate::model::user_pool_client_type::Builder {
-        crate::model::user_pool_client_type::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PreventUserExistenceErrorTypes`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1145,6 +1147,13 @@ impl AnalyticsConfigurationType {
         self.user_data_shared
     }
 }
+impl AnalyticsConfigurationType {
+    /// Creates a new builder-style object to manufacture [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType).
+    pub fn builder() -> crate::model::analytics_configuration_type::Builder {
+        crate::model::analytics_configuration_type::Builder::default()
+    }
+}
+
 /// See [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType).
 pub mod analytics_configuration_type {
     
@@ -1223,12 +1232,6 @@ pub mod analytics_configuration_type {
     }
     
     
-}
-impl AnalyticsConfigurationType {
-    /// Creates a new builder-style object to manufacture [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType).
-    pub fn builder() -> crate::model::analytics_configuration_type::Builder {
-        crate::model::analytics_configuration_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OAuthFlowType`, it is important to ensure
@@ -1458,6 +1461,13 @@ impl TokenValidityUnitsType {
         self.refresh_token.as_ref()
     }
 }
+impl TokenValidityUnitsType {
+    /// Creates a new builder-style object to manufacture [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType).
+    pub fn builder() -> crate::model::token_validity_units_type::Builder {
+        crate::model::token_validity_units_type::Builder::default()
+    }
+}
+
 /// See [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType).
 pub mod token_validity_units_type {
     
@@ -1511,12 +1521,6 @@ pub mod token_validity_units_type {
     }
     
     
-}
-impl TokenValidityUnitsType {
-    /// Creates a new builder-style object to manufacture [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType).
-    pub fn builder() -> crate::model::token_validity_units_type::Builder {
-        crate::model::token_validity_units_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TimeUnitsType`, it is important to ensure
@@ -1625,6 +1629,13 @@ impl AccountRecoverySettingType {
         self.recovery_mechanisms.as_deref()
     }
 }
+impl AccountRecoverySettingType {
+    /// Creates a new builder-style object to manufacture [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType).
+    pub fn builder() -> crate::model::account_recovery_setting_type::Builder {
+        crate::model::account_recovery_setting_type::Builder::default()
+    }
+}
+
 /// See [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType).
 pub mod account_recovery_setting_type {
     
@@ -1661,12 +1672,6 @@ pub mod account_recovery_setting_type {
     
     
 }
-impl AccountRecoverySettingType {
-    /// Creates a new builder-style object to manufacture [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType).
-    pub fn builder() -> crate::model::account_recovery_setting_type::Builder {
-        crate::model::account_recovery_setting_type::Builder::default()
-    }
-}
 
 /// <p>A map containing a priority as a key, and recovery method name as a value.</p>
 #[non_exhaustive]
@@ -1689,6 +1694,13 @@ impl RecoveryOptionType {
         self.name.as_ref()
     }
 }
+impl RecoveryOptionType {
+    /// Creates a new builder-style object to manufacture [`RecoveryOptionType`](crate::model::RecoveryOptionType).
+    pub fn builder() -> crate::model::recovery_option_type::Builder {
+        crate::model::recovery_option_type::Builder::default()
+    }
+}
+
 /// See [`RecoveryOptionType`](crate::model::RecoveryOptionType).
 pub mod recovery_option_type {
     
@@ -1731,12 +1743,6 @@ pub mod recovery_option_type {
     }
     
     
-}
-impl RecoveryOptionType {
-    /// Creates a new builder-style object to manufacture [`RecoveryOptionType`](crate::model::RecoveryOptionType).
-    pub fn builder() -> crate::model::recovery_option_type::Builder {
-        crate::model::recovery_option_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecoveryOptionNameType`, it is important to ensure
@@ -1840,6 +1846,13 @@ impl UserPoolAddOnsType {
         self.advanced_security_mode.as_ref()
     }
 }
+impl UserPoolAddOnsType {
+    /// Creates a new builder-style object to manufacture [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType).
+    pub fn builder() -> crate::model::user_pool_add_ons_type::Builder {
+        crate::model::user_pool_add_ons_type::Builder::default()
+    }
+}
+
 /// See [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType).
 pub mod user_pool_add_ons_type {
     
@@ -1869,12 +1882,6 @@ pub mod user_pool_add_ons_type {
     }
     
     
-}
-impl UserPoolAddOnsType {
-    /// Creates a new builder-style object to manufacture [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType).
-    pub fn builder() -> crate::model::user_pool_add_ons_type::Builder {
-        crate::model::user_pool_add_ons_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AdvancedSecurityModeType`, it is important to ensure
@@ -1998,6 +2005,13 @@ impl AdminCreateUserConfigType {
         self.invite_message_template.as_ref()
     }
 }
+impl AdminCreateUserConfigType {
+    /// Creates a new builder-style object to manufacture [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType).
+    pub fn builder() -> crate::model::admin_create_user_config_type::Builder {
+        crate::model::admin_create_user_config_type::Builder::default()
+    }
+}
+
 /// See [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType).
 pub mod admin_create_user_config_type {
     
@@ -2060,12 +2074,6 @@ pub mod admin_create_user_config_type {
     
     
 }
-impl AdminCreateUserConfigType {
-    /// Creates a new builder-style object to manufacture [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType).
-    pub fn builder() -> crate::model::admin_create_user_config_type::Builder {
-        crate::model::admin_create_user_config_type::Builder::default()
-    }
-}
 
 /// <p>The message template structure.</p>
 #[non_exhaustive]
@@ -2095,6 +2103,13 @@ impl MessageTemplateType {
         self.email_subject.as_deref()
     }
 }
+impl MessageTemplateType {
+    /// Creates a new builder-style object to manufacture [`MessageTemplateType`](crate::model::MessageTemplateType).
+    pub fn builder() -> crate::model::message_template_type::Builder {
+        crate::model::message_template_type::Builder::default()
+    }
+}
+
 /// See [`MessageTemplateType`](crate::model::MessageTemplateType).
 pub mod message_template_type {
     
@@ -2149,12 +2164,6 @@ pub mod message_template_type {
     
     
 }
-impl MessageTemplateType {
-    /// Creates a new builder-style object to manufacture [`MessageTemplateType`](crate::model::MessageTemplateType).
-    pub fn builder() -> crate::model::message_template_type::Builder {
-        crate::model::message_template_type::Builder::default()
-    }
-}
 
 /// <p>The SMS configuration type is the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -2188,6 +2197,13 @@ impl SmsConfigurationType {
         self.sns_region.as_deref()
     }
 }
+impl SmsConfigurationType {
+    /// Creates a new builder-style object to manufacture [`SmsConfigurationType`](crate::model::SmsConfigurationType).
+    pub fn builder() -> crate::model::sms_configuration_type::Builder {
+        crate::model::sms_configuration_type::Builder::default()
+    }
+}
+
 /// See [`SmsConfigurationType`](crate::model::SmsConfigurationType).
 pub mod sms_configuration_type {
     
@@ -2245,12 +2261,6 @@ pub mod sms_configuration_type {
     }
     
     
-}
-impl SmsConfigurationType {
-    /// Creates a new builder-style object to manufacture [`SmsConfigurationType`](crate::model::SmsConfigurationType).
-    pub fn builder() -> crate::model::sms_configuration_type::Builder {
-        crate::model::sms_configuration_type::Builder::default()
-    }
 }
 
 /// <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p> <note> 
@@ -2373,6 +2383,13 @@ impl EmailConfigurationType {
         self.configuration_set.as_deref()
     }
 }
+impl EmailConfigurationType {
+    /// Creates a new builder-style object to manufacture [`EmailConfigurationType`](crate::model::EmailConfigurationType).
+    pub fn builder() -> crate::model::email_configuration_type::Builder {
+        crate::model::email_configuration_type::Builder::default()
+    }
+}
+
 /// See [`EmailConfigurationType`](crate::model::EmailConfigurationType).
 pub mod email_configuration_type {
     
@@ -2527,12 +2544,6 @@ pub mod email_configuration_type {
     
     
 }
-impl EmailConfigurationType {
-    /// Creates a new builder-style object to manufacture [`EmailConfigurationType`](crate::model::EmailConfigurationType).
-    pub fn builder() -> crate::model::email_configuration_type::Builder {
-        crate::model::email_configuration_type::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EmailSendingAccountType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2646,6 +2657,13 @@ impl DeviceConfigurationType {
         self.device_only_remembered_on_user_prompt
     }
 }
+impl DeviceConfigurationType {
+    /// Creates a new builder-style object to manufacture [`DeviceConfigurationType`](crate::model::DeviceConfigurationType).
+    pub fn builder() -> crate::model::device_configuration_type::Builder {
+        crate::model::device_configuration_type::Builder::default()
+    }
+}
+
 /// See [`DeviceConfigurationType`](crate::model::DeviceConfigurationType).
 pub mod device_configuration_type {
     
@@ -2695,12 +2713,6 @@ pub mod device_configuration_type {
     }
     
     
-}
-impl DeviceConfigurationType {
-    /// Creates a new builder-style object to manufacture [`DeviceConfigurationType`](crate::model::DeviceConfigurationType).
-    pub fn builder() -> crate::model::device_configuration_type::Builder {
-        crate::model::device_configuration_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UserPoolMfaType`, it is important to ensure
@@ -2808,6 +2820,13 @@ impl UserAttributeUpdateSettingsType {
         self.attributes_require_verification_before_update.as_deref()
     }
 }
+impl UserAttributeUpdateSettingsType {
+    /// Creates a new builder-style object to manufacture [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType).
+    pub fn builder() -> crate::model::user_attribute_update_settings_type::Builder {
+        crate::model::user_attribute_update_settings_type::Builder::default()
+    }
+}
+
 /// See [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType).
 pub mod user_attribute_update_settings_type {
     
@@ -2847,12 +2866,6 @@ pub mod user_attribute_update_settings_type {
     }
     
     
-}
-impl UserAttributeUpdateSettingsType {
-    /// Creates a new builder-style object to manufacture [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType).
-    pub fn builder() -> crate::model::user_attribute_update_settings_type::Builder {
-        crate::model::user_attribute_update_settings_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VerifiedAttributeType`, it is important to ensure
@@ -2986,6 +2999,13 @@ impl VerificationMessageTemplateType {
         self.default_email_option.as_ref()
     }
 }
+impl VerificationMessageTemplateType {
+    /// Creates a new builder-style object to manufacture [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType).
+    pub fn builder() -> crate::model::verification_message_template_type::Builder {
+        crate::model::verification_message_template_type::Builder::default()
+    }
+}
+
 /// See [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType).
 pub mod verification_message_template_type {
     
@@ -3075,12 +3095,6 @@ pub mod verification_message_template_type {
     }
     
     
-}
-impl VerificationMessageTemplateType {
-    /// Creates a new builder-style object to manufacture [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType).
-    pub fn builder() -> crate::model::verification_message_template_type::Builder {
-        crate::model::verification_message_template_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DefaultEmailOptionType`, it is important to ensure
@@ -3263,6 +3277,13 @@ impl LambdaConfigType {
         self.kms_key_id.as_deref()
     }
 }
+impl LambdaConfigType {
+    /// Creates a new builder-style object to manufacture [`LambdaConfigType`](crate::model::LambdaConfigType).
+    pub fn builder() -> crate::model::lambda_config_type::Builder {
+        crate::model::lambda_config_type::Builder::default()
+    }
+}
+
 /// See [`LambdaConfigType`](crate::model::LambdaConfigType).
 pub mod lambda_config_type {
     
@@ -3437,12 +3458,6 @@ pub mod lambda_config_type {
     
     
 }
-impl LambdaConfigType {
-    /// Creates a new builder-style object to manufacture [`LambdaConfigType`](crate::model::LambdaConfigType).
-    pub fn builder() -> crate::model::lambda_config_type::Builder {
-        crate::model::lambda_config_type::Builder::default()
-    }
-}
 
 /// <p>A custom email sender Lambda configuration type.</p>
 #[non_exhaustive]
@@ -3465,6 +3480,13 @@ impl CustomEmailLambdaVersionConfigType {
         self.lambda_arn.as_deref()
     }
 }
+impl CustomEmailLambdaVersionConfigType {
+    /// Creates a new builder-style object to manufacture [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType).
+    pub fn builder() -> crate::model::custom_email_lambda_version_config_type::Builder {
+        crate::model::custom_email_lambda_version_config_type::Builder::default()
+    }
+}
+
 /// See [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType).
 pub mod custom_email_lambda_version_config_type {
     
@@ -3506,12 +3528,6 @@ pub mod custom_email_lambda_version_config_type {
     }
     
     
-}
-impl CustomEmailLambdaVersionConfigType {
-    /// Creates a new builder-style object to manufacture [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType).
-    pub fn builder() -> crate::model::custom_email_lambda_version_config_type::Builder {
-        crate::model::custom_email_lambda_version_config_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomEmailSenderLambdaVersionType`, it is important to ensure
@@ -3612,6 +3628,13 @@ impl CustomSmsLambdaVersionConfigType {
         self.lambda_arn.as_deref()
     }
 }
+impl CustomSmsLambdaVersionConfigType {
+    /// Creates a new builder-style object to manufacture [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType).
+    pub fn builder() -> crate::model::custom_sms_lambda_version_config_type::Builder {
+        crate::model::custom_sms_lambda_version_config_type::Builder::default()
+    }
+}
+
 /// See [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType).
 pub mod custom_sms_lambda_version_config_type {
     
@@ -3653,12 +3676,6 @@ pub mod custom_sms_lambda_version_config_type {
     }
     
     
-}
-impl CustomSmsLambdaVersionConfigType {
-    /// Creates a new builder-style object to manufacture [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType).
-    pub fn builder() -> crate::model::custom_sms_lambda_version_config_type::Builder {
-        crate::model::custom_sms_lambda_version_config_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomSmsSenderLambdaVersionType`, it is important to ensure
@@ -3834,6 +3851,13 @@ impl UserPoolPolicyType {
         self.password_policy.as_ref()
     }
 }
+impl UserPoolPolicyType {
+    /// Creates a new builder-style object to manufacture [`UserPoolPolicyType`](crate::model::UserPoolPolicyType).
+    pub fn builder() -> crate::model::user_pool_policy_type::Builder {
+        crate::model::user_pool_policy_type::Builder::default()
+    }
+}
+
 /// See [`UserPoolPolicyType`](crate::model::UserPoolPolicyType).
 pub mod user_pool_policy_type {
     
@@ -3863,12 +3887,6 @@ pub mod user_pool_policy_type {
     }
     
     
-}
-impl UserPoolPolicyType {
-    /// Creates a new builder-style object to manufacture [`UserPoolPolicyType`](crate::model::UserPoolPolicyType).
-    pub fn builder() -> crate::model::user_pool_policy_type::Builder {
-        crate::model::user_pool_policy_type::Builder::default()
-    }
 }
 
 /// <p>The password policy type.</p>
@@ -3924,6 +3942,13 @@ impl PasswordPolicyType {
         self.temporary_password_validity_days
     }
 }
+impl PasswordPolicyType {
+    /// Creates a new builder-style object to manufacture [`PasswordPolicyType`](crate::model::PasswordPolicyType).
+    pub fn builder() -> crate::model::password_policy_type::Builder {
+        crate::model::password_policy_type::Builder::default()
+    }
+}
+
 /// See [`PasswordPolicyType`](crate::model::PasswordPolicyType).
 pub mod password_policy_type {
     
@@ -4024,12 +4049,6 @@ pub mod password_policy_type {
     
     
 }
-impl PasswordPolicyType {
-    /// Creates a new builder-style object to manufacture [`PasswordPolicyType`](crate::model::PasswordPolicyType).
-    pub fn builder() -> crate::model::password_policy_type::Builder {
-        crate::model::password_policy_type::Builder::default()
-    }
-}
 
 /// <p>The delivery details for an email or SMS message that Amazon Cognito sent for authentication or verification.</p>
 #[non_exhaustive]
@@ -4059,6 +4078,13 @@ impl CodeDeliveryDetailsType {
         self.attribute_name.as_deref()
     }
 }
+impl CodeDeliveryDetailsType {
+    /// Creates a new builder-style object to manufacture [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType).
+    pub fn builder() -> crate::model::code_delivery_details_type::Builder {
+        crate::model::code_delivery_details_type::Builder::default()
+    }
+}
+
 /// See [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType).
 pub mod code_delivery_details_type {
     
@@ -4112,12 +4138,6 @@ pub mod code_delivery_details_type {
     }
     
     
-}
-impl CodeDeliveryDetailsType {
-    /// Creates a new builder-style object to manufacture [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType).
-    pub fn builder() -> crate::model::code_delivery_details_type::Builder {
-        crate::model::code_delivery_details_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeliveryMediumType`, it is important to ensure
@@ -4231,6 +4251,13 @@ impl  std::fmt::Debug for AttributeType  {
         formatter.finish()
     }
 }
+impl AttributeType {
+    /// Creates a new builder-style object to manufacture [`AttributeType`](crate::model::AttributeType).
+    pub fn builder() -> crate::model::attribute_type::Builder {
+        crate::model::attribute_type::Builder::default()
+    }
+}
+
 /// See [`AttributeType`](crate::model::AttributeType).
 pub mod attribute_type {
     
@@ -4281,12 +4308,6 @@ pub mod attribute_type {
     
     
 }
-impl AttributeType {
-    /// Creates a new builder-style object to manufacture [`AttributeType`](crate::model::AttributeType).
-    pub fn builder() -> crate::model::attribute_type::Builder {
-        crate::model::attribute_type::Builder::default()
-    }
-}
 
 /// <p>A container for information about a resource server for a user pool.</p>
 #[non_exhaustive]
@@ -4323,6 +4344,13 @@ impl ResourceServerType {
         self.scopes.as_deref()
     }
 }
+impl ResourceServerType {
+    /// Creates a new builder-style object to manufacture [`ResourceServerType`](crate::model::ResourceServerType).
+    pub fn builder() -> crate::model::resource_server_type::Builder {
+        crate::model::resource_server_type::Builder::default()
+    }
+}
+
 /// See [`ResourceServerType`](crate::model::ResourceServerType).
 pub mod resource_server_type {
     
@@ -4395,12 +4423,6 @@ pub mod resource_server_type {
     
     
 }
-impl ResourceServerType {
-    /// Creates a new builder-style object to manufacture [`ResourceServerType`](crate::model::ResourceServerType).
-    pub fn builder() -> crate::model::resource_server_type::Builder {
-        crate::model::resource_server_type::Builder::default()
-    }
-}
 
 /// <p>A resource server scope.</p>
 #[non_exhaustive]
@@ -4423,6 +4445,13 @@ impl ResourceServerScopeType {
         self.scope_description.as_deref()
     }
 }
+impl ResourceServerScopeType {
+    /// Creates a new builder-style object to manufacture [`ResourceServerScopeType`](crate::model::ResourceServerScopeType).
+    pub fn builder() -> crate::model::resource_server_scope_type::Builder {
+        crate::model::resource_server_scope_type::Builder::default()
+    }
+}
+
 /// See [`ResourceServerScopeType`](crate::model::ResourceServerScopeType).
 pub mod resource_server_scope_type {
     
@@ -4464,12 +4493,6 @@ pub mod resource_server_scope_type {
     }
     
     
-}
-impl ResourceServerScopeType {
-    /// Creates a new builder-style object to manufacture [`ResourceServerScopeType`](crate::model::ResourceServerScopeType).
-    pub fn builder() -> crate::model::resource_server_scope_type::Builder {
-        crate::model::resource_server_scope_type::Builder::default()
-    }
 }
 
 /// <p>A container for information about an IdP.</p>
@@ -4629,6 +4652,13 @@ impl IdentityProviderType {
         self.creation_date.as_ref()
     }
 }
+impl IdentityProviderType {
+    /// Creates a new builder-style object to manufacture [`IdentityProviderType`](crate::model::IdentityProviderType).
+    pub fn builder() -> crate::model::identity_provider_type::Builder {
+        crate::model::identity_provider_type::Builder::default()
+    }
+}
+
 /// See [`IdentityProviderType`](crate::model::IdentityProviderType).
 pub mod identity_provider_type {
     
@@ -4855,12 +4885,6 @@ pub mod identity_provider_type {
     
     
 }
-impl IdentityProviderType {
-    /// Creates a new builder-style object to manufacture [`IdentityProviderType`](crate::model::IdentityProviderType).
-    pub fn builder() -> crate::model::identity_provider_type::Builder {
-        crate::model::identity_provider_type::Builder::default()
-    }
-}
 
 /// When writing a match expression against `IdentityProviderTypeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5024,6 +5048,13 @@ impl GroupType {
         self.creation_date.as_ref()
     }
 }
+impl GroupType {
+    /// Creates a new builder-style object to manufacture [`GroupType`](crate::model::GroupType).
+    pub fn builder() -> crate::model::group_type::Builder {
+        crate::model::group_type::Builder::default()
+    }
+}
+
 /// See [`GroupType`](crate::model::GroupType).
 pub mod group_type {
     
@@ -5129,12 +5160,6 @@ pub mod group_type {
     }
     
     
-}
-impl GroupType {
-    /// Creates a new builder-style object to manufacture [`GroupType`](crate::model::GroupType).
-    pub fn builder() -> crate::model::group_type::Builder {
-        crate::model::group_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DeviceRememberedStatusType`, it is important to ensure
@@ -5419,6 +5444,13 @@ impl UserImportJobType {
         self.completion_message.as_deref()
     }
 }
+impl UserImportJobType {
+    /// Creates a new builder-style object to manufacture [`UserImportJobType`](crate::model::UserImportJobType).
+    pub fn builder() -> crate::model::user_import_job_type::Builder {
+        crate::model::user_import_job_type::Builder::default()
+    }
+}
+
 /// See [`UserImportJobType`](crate::model::UserImportJobType).
 pub mod user_import_job_type {
     
@@ -5616,12 +5648,6 @@ pub mod user_import_job_type {
     
     
 }
-impl UserImportJobType {
-    /// Creates a new builder-style object to manufacture [`UserImportJobType`](crate::model::UserImportJobType).
-    pub fn builder() -> crate::model::user_import_job_type::Builder {
-        crate::model::user_import_job_type::Builder::default()
-    }
-}
 
 /// When writing a match expression against `UserImportJobStatusType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5756,6 +5782,13 @@ impl UserContextDataType {
         self.encoded_data.as_deref()
     }
 }
+impl UserContextDataType {
+    /// Creates a new builder-style object to manufacture [`UserContextDataType`](crate::model::UserContextDataType).
+    pub fn builder() -> crate::model::user_context_data_type::Builder {
+        crate::model::user_context_data_type::Builder::default()
+    }
+}
+
 /// See [`UserContextDataType`](crate::model::UserContextDataType).
 pub mod user_context_data_type {
     
@@ -5798,12 +5831,6 @@ pub mod user_context_data_type {
     
     
 }
-impl UserContextDataType {
-    /// Creates a new builder-style object to manufacture [`UserContextDataType`](crate::model::UserContextDataType).
-    pub fn builder() -> crate::model::user_context_data_type::Builder {
-        crate::model::user_context_data_type::Builder::default()
-    }
-}
 
 /// <p>An Amazon Pinpoint analytics endpoint.</p> 
 /// <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics. For more information about Amazon Web Services Regions that can contain Amazon Pinpoint resources for use with Amazon Cognito user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics with Amazon Cognito user pools</a>.</p>
@@ -5820,6 +5847,13 @@ impl AnalyticsMetadataType {
         self.analytics_endpoint_id.as_deref()
     }
 }
+impl AnalyticsMetadataType {
+    /// Creates a new builder-style object to manufacture [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType).
+    pub fn builder() -> crate::model::analytics_metadata_type::Builder {
+        crate::model::analytics_metadata_type::Builder::default()
+    }
+}
+
 /// See [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType).
 pub mod analytics_metadata_type {
     
@@ -5850,12 +5884,6 @@ pub mod analytics_metadata_type {
     
     
 }
-impl AnalyticsMetadataType {
-    /// Creates a new builder-style object to manufacture [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType).
-    pub fn builder() -> crate::model::analytics_metadata_type::Builder {
-        crate::model::analytics_metadata_type::Builder::default()
-    }
-}
 
 /// <p> <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication (MFA) configurations. Does not apply to time-based one-time password (TOTP) software token MFA configurations.</p>
 #[non_exhaustive]
@@ -5878,6 +5906,13 @@ impl MfaOptionType {
         self.attribute_name.as_deref()
     }
 }
+impl MfaOptionType {
+    /// Creates a new builder-style object to manufacture [`MfaOptionType`](crate::model::MfaOptionType).
+    pub fn builder() -> crate::model::mfa_option_type::Builder {
+        crate::model::mfa_option_type::Builder::default()
+    }
+}
+
 /// See [`MfaOptionType`](crate::model::MfaOptionType).
 pub mod mfa_option_type {
     
@@ -5920,12 +5955,6 @@ pub mod mfa_option_type {
     
     
 }
-impl MfaOptionType {
-    /// Creates a new builder-style object to manufacture [`MfaOptionType`](crate::model::MfaOptionType).
-    pub fn builder() -> crate::model::mfa_option_type::Builder {
-        crate::model::mfa_option_type::Builder::default()
-    }
-}
 
 /// <p>The type used for enabling software token MFA at the user pool level.</p>
 #[non_exhaustive]
@@ -5941,6 +5970,13 @@ impl SoftwareTokenMfaConfigType {
         self.enabled
     }
 }
+impl SoftwareTokenMfaConfigType {
+    /// Creates a new builder-style object to manufacture [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType).
+    pub fn builder() -> crate::model::software_token_mfa_config_type::Builder {
+        crate::model::software_token_mfa_config_type::Builder::default()
+    }
+}
+
 /// See [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType).
 pub mod software_token_mfa_config_type {
     
@@ -5972,12 +6008,6 @@ pub mod software_token_mfa_config_type {
     
     
 }
-impl SoftwareTokenMfaConfigType {
-    /// Creates a new builder-style object to manufacture [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType).
-    pub fn builder() -> crate::model::software_token_mfa_config_type::Builder {
-        crate::model::software_token_mfa_config_type::Builder::default()
-    }
-}
 
 /// <p>The SMS text message multi-factor authentication (MFA) configuration type.</p>
 #[non_exhaustive]
@@ -6000,6 +6030,13 @@ impl SmsMfaConfigType {
         self.sms_configuration.as_ref()
     }
 }
+impl SmsMfaConfigType {
+    /// Creates a new builder-style object to manufacture [`SmsMfaConfigType`](crate::model::SmsMfaConfigType).
+    pub fn builder() -> crate::model::sms_mfa_config_type::Builder {
+        crate::model::sms_mfa_config_type::Builder::default()
+    }
+}
+
 /// See [`SmsMfaConfigType`](crate::model::SmsMfaConfigType).
 pub mod sms_mfa_config_type {
     
@@ -6042,12 +6079,6 @@ pub mod sms_mfa_config_type {
     
     
 }
-impl SmsMfaConfigType {
-    /// Creates a new builder-style object to manufacture [`SmsMfaConfigType`](crate::model::SmsMfaConfigType).
-    pub fn builder() -> crate::model::sms_mfa_config_type::Builder {
-        crate::model::sms_mfa_config_type::Builder::default()
-    }
-}
 
 /// <p>The type used for enabling software token MFA at the user level. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[non_exhaustive]
@@ -6070,6 +6101,13 @@ impl SoftwareTokenMfaSettingsType {
         self.preferred_mfa
     }
 }
+impl SoftwareTokenMfaSettingsType {
+    /// Creates a new builder-style object to manufacture [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType).
+    pub fn builder() -> crate::model::software_token_mfa_settings_type::Builder {
+        crate::model::software_token_mfa_settings_type::Builder::default()
+    }
+}
+
 /// See [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType).
 pub mod software_token_mfa_settings_type {
     
@@ -6114,12 +6152,6 @@ pub mod software_token_mfa_settings_type {
     
     
 }
-impl SoftwareTokenMfaSettingsType {
-    /// Creates a new builder-style object to manufacture [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType).
-    pub fn builder() -> crate::model::software_token_mfa_settings_type::Builder {
-        crate::model::software_token_mfa_settings_type::Builder::default()
-    }
-}
 
 /// <p>The type used for enabling SMS multi-factor authentication (MFA) at the user level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[non_exhaustive]
@@ -6142,6 +6174,13 @@ impl SmsMfaSettingsType {
         self.preferred_mfa
     }
 }
+impl SmsMfaSettingsType {
+    /// Creates a new builder-style object to manufacture [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType).
+    pub fn builder() -> crate::model::sms_mfa_settings_type::Builder {
+        crate::model::sms_mfa_settings_type::Builder::default()
+    }
+}
+
 /// See [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType).
 pub mod sms_mfa_settings_type {
     
@@ -6185,12 +6224,6 @@ pub mod sms_mfa_settings_type {
     }
     
     
-}
-impl SmsMfaSettingsType {
-    /// Creates a new builder-style object to manufacture [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType).
-    pub fn builder() -> crate::model::sms_mfa_settings_type::Builder {
-        crate::model::sms_mfa_settings_type::Builder::default()
-    }
 }
 
 /// <p>A container for the UI customization information for a user pool's built-in app UI.</p>
@@ -6262,6 +6295,13 @@ impl  std::fmt::Debug for UiCustomizationType  {
         formatter.finish()
     }
 }
+impl UiCustomizationType {
+    /// Creates a new builder-style object to manufacture [`UiCustomizationType`](crate::model::UiCustomizationType).
+    pub fn builder() -> crate::model::ui_customization_type::Builder {
+        crate::model::ui_customization_type::Builder::default()
+    }
+}
+
 /// See [`UiCustomizationType`](crate::model::UiCustomizationType).
 pub mod ui_customization_type {
     
@@ -6377,12 +6417,6 @@ pub mod ui_customization_type {
     
     
 }
-impl UiCustomizationType {
-    /// Creates a new builder-style object to manufacture [`UiCustomizationType`](crate::model::UiCustomizationType).
-    pub fn builder() -> crate::model::ui_customization_type::Builder {
-        crate::model::ui_customization_type::Builder::default()
-    }
-}
 
 /// <p>The risk configuration type.</p>
 #[non_exhaustive]
@@ -6445,6 +6479,13 @@ impl  std::fmt::Debug for RiskConfigurationType  {
         formatter.finish()
     }
 }
+impl RiskConfigurationType {
+    /// Creates a new builder-style object to manufacture [`RiskConfigurationType`](crate::model::RiskConfigurationType).
+    pub fn builder() -> crate::model::risk_configuration_type::Builder {
+        crate::model::risk_configuration_type::Builder::default()
+    }
+}
+
 /// See [`RiskConfigurationType`](crate::model::RiskConfigurationType).
 pub mod risk_configuration_type {
     
@@ -6547,12 +6588,6 @@ pub mod risk_configuration_type {
     
     
 }
-impl RiskConfigurationType {
-    /// Creates a new builder-style object to manufacture [`RiskConfigurationType`](crate::model::RiskConfigurationType).
-    pub fn builder() -> crate::model::risk_configuration_type::Builder {
-        crate::model::risk_configuration_type::Builder::default()
-    }
-}
 
 /// <p>The type of the configuration to override the risk decision.</p>
 #[non_exhaustive]
@@ -6575,6 +6610,13 @@ impl RiskExceptionConfigurationType {
         self.skipped_ip_range_list.as_deref()
     }
 }
+impl RiskExceptionConfigurationType {
+    /// Creates a new builder-style object to manufacture [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType).
+    pub fn builder() -> crate::model::risk_exception_configuration_type::Builder {
+        crate::model::risk_exception_configuration_type::Builder::default()
+    }
+}
+
 /// See [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType).
 pub mod risk_exception_configuration_type {
     
@@ -6629,12 +6671,6 @@ pub mod risk_exception_configuration_type {
     
     
 }
-impl RiskExceptionConfigurationType {
-    /// Creates a new builder-style object to manufacture [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType).
-    pub fn builder() -> crate::model::risk_exception_configuration_type::Builder {
-        crate::model::risk_exception_configuration_type::Builder::default()
-    }
-}
 
 /// <p>Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.</p>
 #[non_exhaustive]
@@ -6657,6 +6693,13 @@ impl AccountTakeoverRiskConfigurationType {
         self.actions.as_ref()
     }
 }
+impl AccountTakeoverRiskConfigurationType {
+    /// Creates a new builder-style object to manufacture [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType).
+    pub fn builder() -> crate::model::account_takeover_risk_configuration_type::Builder {
+        crate::model::account_takeover_risk_configuration_type::Builder::default()
+    }
+}
+
 /// See [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType).
 pub mod account_takeover_risk_configuration_type {
     
@@ -6699,12 +6742,6 @@ pub mod account_takeover_risk_configuration_type {
     
     
 }
-impl AccountTakeoverRiskConfigurationType {
-    /// Creates a new builder-style object to manufacture [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType).
-    pub fn builder() -> crate::model::account_takeover_risk_configuration_type::Builder {
-        crate::model::account_takeover_risk_configuration_type::Builder::default()
-    }
-}
 
 /// <p>Account takeover actions type.</p>
 #[non_exhaustive]
@@ -6734,6 +6771,13 @@ impl AccountTakeoverActionsType {
         self.high_action.as_ref()
     }
 }
+impl AccountTakeoverActionsType {
+    /// Creates a new builder-style object to manufacture [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType).
+    pub fn builder() -> crate::model::account_takeover_actions_type::Builder {
+        crate::model::account_takeover_actions_type::Builder::default()
+    }
+}
+
 /// See [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType).
 pub mod account_takeover_actions_type {
     
@@ -6788,12 +6832,6 @@ pub mod account_takeover_actions_type {
     
     
 }
-impl AccountTakeoverActionsType {
-    /// Creates a new builder-style object to manufacture [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType).
-    pub fn builder() -> crate::model::account_takeover_actions_type::Builder {
-        crate::model::account_takeover_actions_type::Builder::default()
-    }
-}
 
 /// <p>Account takeover action type.</p>
 #[non_exhaustive]
@@ -6828,6 +6866,13 @@ impl AccountTakeoverActionType {
         self.event_action.as_ref()
     }
 }
+impl AccountTakeoverActionType {
+    /// Creates a new builder-style object to manufacture [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType).
+    pub fn builder() -> crate::model::account_takeover_action_type::Builder {
+        crate::model::account_takeover_action_type::Builder::default()
+    }
+}
+
 /// See [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType).
 pub mod account_takeover_action_type {
     
@@ -6882,12 +6927,6 @@ pub mod account_takeover_action_type {
     }
     
     
-}
-impl AccountTakeoverActionType {
-    /// Creates a new builder-style object to manufacture [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType).
-    pub fn builder() -> crate::model::account_takeover_action_type::Builder {
-        crate::model::account_takeover_action_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AccountTakeoverEventActionType`, it is important to ensure
@@ -7031,6 +7070,13 @@ impl NotifyConfigurationType {
         self.mfa_email.as_ref()
     }
 }
+impl NotifyConfigurationType {
+    /// Creates a new builder-style object to manufacture [`NotifyConfigurationType`](crate::model::NotifyConfigurationType).
+    pub fn builder() -> crate::model::notify_configuration_type::Builder {
+        crate::model::notify_configuration_type::Builder::default()
+    }
+}
+
 /// See [`NotifyConfigurationType`](crate::model::NotifyConfigurationType).
 pub mod notify_configuration_type {
     
@@ -7121,12 +7167,6 @@ pub mod notify_configuration_type {
     
     
 }
-impl NotifyConfigurationType {
-    /// Creates a new builder-style object to manufacture [`NotifyConfigurationType`](crate::model::NotifyConfigurationType).
-    pub fn builder() -> crate::model::notify_configuration_type::Builder {
-        crate::model::notify_configuration_type::Builder::default()
-    }
-}
 
 /// <p>The notify email type.</p>
 #[non_exhaustive]
@@ -7156,6 +7196,13 @@ impl NotifyEmailType {
         self.text_body.as_deref()
     }
 }
+impl NotifyEmailType {
+    /// Creates a new builder-style object to manufacture [`NotifyEmailType`](crate::model::NotifyEmailType).
+    pub fn builder() -> crate::model::notify_email_type::Builder {
+        crate::model::notify_email_type::Builder::default()
+    }
+}
+
 /// See [`NotifyEmailType`](crate::model::NotifyEmailType).
 pub mod notify_email_type {
     
@@ -7210,12 +7257,6 @@ pub mod notify_email_type {
     
     
 }
-impl NotifyEmailType {
-    /// Creates a new builder-style object to manufacture [`NotifyEmailType`](crate::model::NotifyEmailType).
-    pub fn builder() -> crate::model::notify_email_type::Builder {
-        crate::model::notify_email_type::Builder::default()
-    }
-}
 
 /// <p>The compromised credentials risk configuration type.</p>
 #[non_exhaustive]
@@ -7238,6 +7279,13 @@ impl CompromisedCredentialsRiskConfigurationType {
         self.actions.as_ref()
     }
 }
+impl CompromisedCredentialsRiskConfigurationType {
+    /// Creates a new builder-style object to manufacture [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType).
+    pub fn builder() -> crate::model::compromised_credentials_risk_configuration_type::Builder {
+        crate::model::compromised_credentials_risk_configuration_type::Builder::default()
+    }
+}
+
 /// See [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType).
 pub mod compromised_credentials_risk_configuration_type {
     
@@ -7286,12 +7334,6 @@ pub mod compromised_credentials_risk_configuration_type {
     
     
 }
-impl CompromisedCredentialsRiskConfigurationType {
-    /// Creates a new builder-style object to manufacture [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType).
-    pub fn builder() -> crate::model::compromised_credentials_risk_configuration_type::Builder {
-        crate::model::compromised_credentials_risk_configuration_type::Builder::default()
-    }
-}
 
 /// <p>The compromised credentials actions type.</p>
 #[non_exhaustive]
@@ -7307,6 +7349,13 @@ impl CompromisedCredentialsActionsType {
         self.event_action.as_ref()
     }
 }
+impl CompromisedCredentialsActionsType {
+    /// Creates a new builder-style object to manufacture [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType).
+    pub fn builder() -> crate::model::compromised_credentials_actions_type::Builder {
+        crate::model::compromised_credentials_actions_type::Builder::default()
+    }
+}
+
 /// See [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType).
 pub mod compromised_credentials_actions_type {
     
@@ -7336,12 +7385,6 @@ pub mod compromised_credentials_actions_type {
     }
     
     
-}
-impl CompromisedCredentialsActionsType {
-    /// Creates a new builder-style object to manufacture [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType).
-    pub fn builder() -> crate::model::compromised_credentials_actions_type::Builder {
-        crate::model::compromised_credentials_actions_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CompromisedCredentialsEventActionType`, it is important to ensure
@@ -7574,6 +7617,13 @@ impl  std::fmt::Debug for AuthenticationResultType  {
         formatter.finish()
     }
 }
+impl AuthenticationResultType {
+    /// Creates a new builder-style object to manufacture [`AuthenticationResultType`](crate::model::AuthenticationResultType).
+    pub fn builder() -> crate::model::authentication_result_type::Builder {
+        crate::model::authentication_result_type::Builder::default()
+    }
+}
+
 /// See [`AuthenticationResultType`](crate::model::AuthenticationResultType).
 pub mod authentication_result_type {
     
@@ -7677,12 +7727,6 @@ pub mod authentication_result_type {
     
     
 }
-impl AuthenticationResultType {
-    /// Creates a new builder-style object to manufacture [`AuthenticationResultType`](crate::model::AuthenticationResultType).
-    pub fn builder() -> crate::model::authentication_result_type::Builder {
-        crate::model::authentication_result_type::Builder::default()
-    }
-}
 
 /// <p>The new device metadata type.</p>
 #[non_exhaustive]
@@ -7705,6 +7749,13 @@ impl NewDeviceMetadataType {
         self.device_group_key.as_deref()
     }
 }
+impl NewDeviceMetadataType {
+    /// Creates a new builder-style object to manufacture [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType).
+    pub fn builder() -> crate::model::new_device_metadata_type::Builder {
+        crate::model::new_device_metadata_type::Builder::default()
+    }
+}
+
 /// See [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType).
 pub mod new_device_metadata_type {
     
@@ -7746,12 +7797,6 @@ pub mod new_device_metadata_type {
     }
     
     
-}
-impl NewDeviceMetadataType {
-    /// Creates a new builder-style object to manufacture [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType).
-    pub fn builder() -> crate::model::new_device_metadata_type::Builder {
-        crate::model::new_device_metadata_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChallengeNameType`, it is important to ensure
@@ -7963,6 +8008,13 @@ impl  std::fmt::Debug for UserType  {
         formatter.finish()
     }
 }
+impl UserType {
+    /// Creates a new builder-style object to manufacture [`UserType`](crate::model::UserType).
+    pub fn builder() -> crate::model::user_type::Builder {
+        crate::model::user_type::Builder::default()
+    }
+}
+
 /// See [`UserType`](crate::model::UserType).
 pub mod user_type {
     
@@ -8108,12 +8160,6 @@ pub mod user_type {
     }
     
     
-}
-impl UserType {
-    /// Creates a new builder-style object to manufacture [`UserType`](crate::model::UserType).
-    pub fn builder() -> crate::model::user_type::Builder {
-        crate::model::user_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UserStatusType`, it is important to ensure
@@ -8272,6 +8318,13 @@ impl UserPoolDescriptionType {
         self.creation_date.as_ref()
     }
 }
+impl UserPoolDescriptionType {
+    /// Creates a new builder-style object to manufacture [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType).
+    pub fn builder() -> crate::model::user_pool_description_type::Builder {
+        crate::model::user_pool_description_type::Builder::default()
+    }
+}
+
 /// See [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType).
 pub mod user_pool_description_type {
     
@@ -8361,12 +8414,6 @@ pub mod user_pool_description_type {
     }
     
     
-}
-impl UserPoolDescriptionType {
-    /// Creates a new builder-style object to manufacture [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType).
-    pub fn builder() -> crate::model::user_pool_description_type::Builder {
-        crate::model::user_pool_description_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StatusType`, it is important to ensure
@@ -8488,6 +8535,13 @@ impl  std::fmt::Debug for UserPoolClientDescription  {
         formatter.finish()
     }
 }
+impl UserPoolClientDescription {
+    /// Creates a new builder-style object to manufacture [`UserPoolClientDescription`](crate::model::UserPoolClientDescription).
+    pub fn builder() -> crate::model::user_pool_client_description::Builder {
+        crate::model::user_pool_client_description::Builder::default()
+    }
+}
+
 /// See [`UserPoolClientDescription`](crate::model::UserPoolClientDescription).
 pub mod user_pool_client_description {
     
@@ -8551,12 +8605,6 @@ pub mod user_pool_client_description {
     
     
 }
-impl UserPoolClientDescription {
-    /// Creates a new builder-style object to manufacture [`UserPoolClientDescription`](crate::model::UserPoolClientDescription).
-    pub fn builder() -> crate::model::user_pool_client_description::Builder {
-        crate::model::user_pool_client_description::Builder::default()
-    }
-}
 
 /// <p>A container for IdP details.</p>
 #[non_exhaustive]
@@ -8593,6 +8641,13 @@ impl ProviderDescription {
         self.creation_date.as_ref()
     }
 }
+impl ProviderDescription {
+    /// Creates a new builder-style object to manufacture [`ProviderDescription`](crate::model::ProviderDescription).
+    pub fn builder() -> crate::model::provider_description::Builder {
+        crate::model::provider_description::Builder::default()
+    }
+}
+
 /// See [`ProviderDescription`](crate::model::ProviderDescription).
 pub mod provider_description {
     
@@ -8659,12 +8714,6 @@ pub mod provider_description {
     
     
 }
-impl ProviderDescription {
-    /// Creates a new builder-style object to manufacture [`ProviderDescription`](crate::model::ProviderDescription).
-    pub fn builder() -> crate::model::provider_description::Builder {
-        crate::model::provider_description::Builder::default()
-    }
-}
 
 /// <p>The device type.</p>
 #[non_exhaustive]
@@ -8708,6 +8757,13 @@ impl DeviceType {
         self.device_last_authenticated_date.as_ref()
     }
 }
+impl DeviceType {
+    /// Creates a new builder-style object to manufacture [`DeviceType`](crate::model::DeviceType).
+    pub fn builder() -> crate::model::device_type::Builder {
+        crate::model::device_type::Builder::default()
+    }
+}
+
 /// See [`DeviceType`](crate::model::DeviceType).
 pub mod device_type {
     
@@ -8791,12 +8847,6 @@ pub mod device_type {
     }
     
     
-}
-impl DeviceType {
-    /// Creates a new builder-style object to manufacture [`DeviceType`](crate::model::DeviceType).
-    pub fn builder() -> crate::model::device_type::Builder {
-        crate::model::device_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AuthFlowType`, it is important to ensure
@@ -8969,6 +9019,13 @@ impl DomainDescriptionType {
         self.custom_domain_config.as_ref()
     }
 }
+impl DomainDescriptionType {
+    /// Creates a new builder-style object to manufacture [`DomainDescriptionType`](crate::model::DomainDescriptionType).
+    pub fn builder() -> crate::model::domain_description_type::Builder {
+        crate::model::domain_description_type::Builder::default()
+    }
+}
+
 /// See [`DomainDescriptionType`](crate::model::DomainDescriptionType).
 pub mod domain_description_type {
     
@@ -9082,12 +9139,6 @@ pub mod domain_description_type {
     }
     
     
-}
-impl DomainDescriptionType {
-    /// Creates a new builder-style object to manufacture [`DomainDescriptionType`](crate::model::DomainDescriptionType).
-    pub fn builder() -> crate::model::domain_description_type::Builder {
-        crate::model::domain_description_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DomainStatusType`, it is important to ensure
@@ -9473,6 +9524,13 @@ impl UserPoolType {
         self.account_recovery_setting.as_ref()
     }
 }
+impl UserPoolType {
+    /// Creates a new builder-style object to manufacture [`UserPoolType`](crate::model::UserPoolType).
+    pub fn builder() -> crate::model::user_pool_type::Builder {
+        crate::model::user_pool_type::Builder::default()
+    }
+}
+
 /// See [`UserPoolType`](crate::model::UserPoolType).
 pub mod user_pool_type {
     
@@ -9966,12 +10024,6 @@ pub mod user_pool_type {
     
     
 }
-impl UserPoolType {
-    /// Creates a new builder-style object to manufacture [`UserPoolType`](crate::model::UserPoolType).
-    pub fn builder() -> crate::model::user_pool_type::Builder {
-        crate::model::user_pool_type::Builder::default()
-    }
-}
 
 /// <p>The username configuration type. </p>
 #[non_exhaustive]
@@ -10017,6 +10069,13 @@ impl UsernameConfigurationType {
         self.case_sensitive
     }
 }
+impl UsernameConfigurationType {
+    /// Creates a new builder-style object to manufacture [`UsernameConfigurationType`](crate::model::UsernameConfigurationType).
+    pub fn builder() -> crate::model::username_configuration_type::Builder {
+        crate::model::username_configuration_type::Builder::default()
+    }
+}
+
 /// See [`UsernameConfigurationType`](crate::model::UsernameConfigurationType).
 pub mod username_configuration_type {
     
@@ -10076,12 +10135,6 @@ pub mod username_configuration_type {
     }
     
     
-}
-impl UsernameConfigurationType {
-    /// Creates a new builder-style object to manufacture [`UsernameConfigurationType`](crate::model::UsernameConfigurationType).
-    pub fn builder() -> crate::model::username_configuration_type::Builder {
-        crate::model::username_configuration_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `UsernameAttributeType`, it is important to ensure
@@ -10317,6 +10370,13 @@ impl SchemaAttributeType {
         self.string_attribute_constraints.as_ref()
     }
 }
+impl SchemaAttributeType {
+    /// Creates a new builder-style object to manufacture [`SchemaAttributeType`](crate::model::SchemaAttributeType).
+    pub fn builder() -> crate::model::schema_attribute_type::Builder {
+        crate::model::schema_attribute_type::Builder::default()
+    }
+}
+
 /// See [`SchemaAttributeType`](crate::model::SchemaAttributeType).
 pub mod schema_attribute_type {
     
@@ -10427,12 +10487,6 @@ pub mod schema_attribute_type {
     
     
 }
-impl SchemaAttributeType {
-    /// Creates a new builder-style object to manufacture [`SchemaAttributeType`](crate::model::SchemaAttributeType).
-    pub fn builder() -> crate::model::schema_attribute_type::Builder {
-        crate::model::schema_attribute_type::Builder::default()
-    }
-}
 
 /// <p>The constraints associated with a string attribute.</p>
 #[non_exhaustive]
@@ -10455,6 +10509,13 @@ impl StringAttributeConstraintsType {
         self.max_length.as_deref()
     }
 }
+impl StringAttributeConstraintsType {
+    /// Creates a new builder-style object to manufacture [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType).
+    pub fn builder() -> crate::model::string_attribute_constraints_type::Builder {
+        crate::model::string_attribute_constraints_type::Builder::default()
+    }
+}
+
 /// See [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType).
 pub mod string_attribute_constraints_type {
     
@@ -10497,12 +10558,6 @@ pub mod string_attribute_constraints_type {
     
     
 }
-impl StringAttributeConstraintsType {
-    /// Creates a new builder-style object to manufacture [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType).
-    pub fn builder() -> crate::model::string_attribute_constraints_type::Builder {
-        crate::model::string_attribute_constraints_type::Builder::default()
-    }
-}
 
 /// <p>The minimum and maximum values of an attribute that is of the number data type.</p>
 #[non_exhaustive]
@@ -10525,6 +10580,13 @@ impl NumberAttributeConstraintsType {
         self.max_value.as_deref()
     }
 }
+impl NumberAttributeConstraintsType {
+    /// Creates a new builder-style object to manufacture [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType).
+    pub fn builder() -> crate::model::number_attribute_constraints_type::Builder {
+        crate::model::number_attribute_constraints_type::Builder::default()
+    }
+}
+
 /// See [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType).
 pub mod number_attribute_constraints_type {
     
@@ -10566,12 +10628,6 @@ pub mod number_attribute_constraints_type {
     }
     
     
-}
-impl NumberAttributeConstraintsType {
-    /// Creates a new builder-style object to manufacture [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType).
-    pub fn builder() -> crate::model::number_attribute_constraints_type::Builder {
-        crate::model::number_attribute_constraints_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AttributeDataType`, it is important to ensure
@@ -10687,6 +10743,13 @@ impl DeviceSecretVerifierConfigType {
         self.salt.as_deref()
     }
 }
+impl DeviceSecretVerifierConfigType {
+    /// Creates a new builder-style object to manufacture [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType).
+    pub fn builder() -> crate::model::device_secret_verifier_config_type::Builder {
+        crate::model::device_secret_verifier_config_type::Builder::default()
+    }
+}
+
 /// See [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType).
 pub mod device_secret_verifier_config_type {
     
@@ -10728,12 +10791,6 @@ pub mod device_secret_verifier_config_type {
     }
     
     
-}
-impl DeviceSecretVerifierConfigType {
-    /// Creates a new builder-style object to manufacture [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType).
-    pub fn builder() -> crate::model::device_secret_verifier_config_type::Builder {
-        crate::model::device_secret_verifier_config_type::Builder::default()
-    }
 }
 
 /// <p>Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
@@ -10778,6 +10835,13 @@ impl ContextDataType {
         self.encoded_data.as_deref()
     }
 }
+impl ContextDataType {
+    /// Creates a new builder-style object to manufacture [`ContextDataType`](crate::model::ContextDataType).
+    pub fn builder() -> crate::model::context_data_type::Builder {
+        crate::model::context_data_type::Builder::default()
+    }
+}
+
 /// See [`ContextDataType`](crate::model::ContextDataType).
 pub mod context_data_type {
     
@@ -10862,12 +10926,6 @@ pub mod context_data_type {
     
     
 }
-impl ContextDataType {
-    /// Creates a new builder-style object to manufacture [`ContextDataType`](crate::model::ContextDataType).
-    pub fn builder() -> crate::model::context_data_type::Builder {
-        crate::model::context_data_type::Builder::default()
-    }
-}
 
 /// <p>The HTTP header.</p>
 #[non_exhaustive]
@@ -10890,6 +10948,13 @@ impl HttpHeader {
         self.header_value.as_deref()
     }
 }
+impl HttpHeader {
+    /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
+    pub fn builder() -> crate::model::http_header::Builder {
+        crate::model::http_header::Builder::default()
+    }
+}
+
 /// See [`HttpHeader`](crate::model::HttpHeader).
 pub mod http_header {
     
@@ -10931,12 +10996,6 @@ pub mod http_header {
     }
     
     
-}
-impl HttpHeader {
-    /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
-    pub fn builder() -> crate::model::http_header::Builder {
-        crate::model::http_header::Builder::default()
-    }
 }
 
 /// <p>The authentication event type.</p>
@@ -11002,6 +11061,13 @@ impl AuthEventType {
         self.event_feedback.as_ref()
     }
 }
+impl AuthEventType {
+    /// Creates a new builder-style object to manufacture [`AuthEventType`](crate::model::AuthEventType).
+    pub fn builder() -> crate::model::auth_event_type::Builder {
+        crate::model::auth_event_type::Builder::default()
+    }
+}
+
 /// See [`AuthEventType`](crate::model::AuthEventType).
 pub mod auth_event_type {
     
@@ -11122,12 +11188,6 @@ pub mod auth_event_type {
     
     
 }
-impl AuthEventType {
-    /// Creates a new builder-style object to manufacture [`AuthEventType`](crate::model::AuthEventType).
-    pub fn builder() -> crate::model::auth_event_type::Builder {
-        crate::model::auth_event_type::Builder::default()
-    }
-}
 
 /// <p>Specifies the event feedback type.</p>
 #[non_exhaustive]
@@ -11157,6 +11217,13 @@ impl EventFeedbackType {
         self.feedback_date.as_ref()
     }
 }
+impl EventFeedbackType {
+    /// Creates a new builder-style object to manufacture [`EventFeedbackType`](crate::model::EventFeedbackType).
+    pub fn builder() -> crate::model::event_feedback_type::Builder {
+        crate::model::event_feedback_type::Builder::default()
+    }
+}
+
 /// See [`EventFeedbackType`](crate::model::EventFeedbackType).
 pub mod event_feedback_type {
     
@@ -11211,12 +11278,6 @@ pub mod event_feedback_type {
     
     
 }
-impl EventFeedbackType {
-    /// Creates a new builder-style object to manufacture [`EventFeedbackType`](crate::model::EventFeedbackType).
-    pub fn builder() -> crate::model::event_feedback_type::Builder {
-        crate::model::event_feedback_type::Builder::default()
-    }
-}
 
 /// <p>Specifies the user context data captured at the time of an event request.</p>
 #[non_exhaustive]
@@ -11260,6 +11321,13 @@ impl EventContextDataType {
         self.country.as_deref()
     }
 }
+impl EventContextDataType {
+    /// Creates a new builder-style object to manufacture [`EventContextDataType`](crate::model::EventContextDataType).
+    pub fn builder() -> crate::model::event_context_data_type::Builder {
+        crate::model::event_context_data_type::Builder::default()
+    }
+}
+
 /// See [`EventContextDataType`](crate::model::EventContextDataType).
 pub mod event_context_data_type {
     
@@ -11338,12 +11406,6 @@ pub mod event_context_data_type {
     
     
 }
-impl EventContextDataType {
-    /// Creates a new builder-style object to manufacture [`EventContextDataType`](crate::model::EventContextDataType).
-    pub fn builder() -> crate::model::event_context_data_type::Builder {
-        crate::model::event_context_data_type::Builder::default()
-    }
-}
 
 /// <p>The challenge response type.</p>
 #[non_exhaustive]
@@ -11366,6 +11428,13 @@ impl ChallengeResponseType {
         self.challenge_response.as_ref()
     }
 }
+impl ChallengeResponseType {
+    /// Creates a new builder-style object to manufacture [`ChallengeResponseType`](crate::model::ChallengeResponseType).
+    pub fn builder() -> crate::model::challenge_response_type::Builder {
+        crate::model::challenge_response_type::Builder::default()
+    }
+}
+
 /// See [`ChallengeResponseType`](crate::model::ChallengeResponseType).
 pub mod challenge_response_type {
     
@@ -11407,12 +11476,6 @@ pub mod challenge_response_type {
     }
     
     
-}
-impl ChallengeResponseType {
-    /// Creates a new builder-style object to manufacture [`ChallengeResponseType`](crate::model::ChallengeResponseType).
-    pub fn builder() -> crate::model::challenge_response_type::Builder {
-        crate::model::challenge_response_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ChallengeResponse`, it is important to ensure
@@ -11607,6 +11670,13 @@ impl EventRiskType {
         self.compromised_credentials_detected
     }
 }
+impl EventRiskType {
+    /// Creates a new builder-style object to manufacture [`EventRiskType`](crate::model::EventRiskType).
+    pub fn builder() -> crate::model::event_risk_type::Builder {
+        crate::model::event_risk_type::Builder::default()
+    }
+}
+
 /// See [`EventRiskType`](crate::model::EventRiskType).
 pub mod event_risk_type {
     
@@ -11660,12 +11730,6 @@ pub mod event_risk_type {
     }
     
     
-}
-impl EventRiskType {
-    /// Creates a new builder-style object to manufacture [`EventRiskType`](crate::model::EventRiskType).
-    pub fn builder() -> crate::model::event_risk_type::Builder {
-        crate::model::event_risk_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RiskLevelType`, it is important to ensure
@@ -12054,6 +12118,13 @@ impl ProviderUserIdentifierType {
         self.provider_attribute_value.as_deref()
     }
 }
+impl ProviderUserIdentifierType {
+    /// Creates a new builder-style object to manufacture [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType).
+    pub fn builder() -> crate::model::provider_user_identifier_type::Builder {
+        crate::model::provider_user_identifier_type::Builder::default()
+    }
+}
+
 /// See [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType).
 pub mod provider_user_identifier_type {
     
@@ -12107,12 +12178,6 @@ pub mod provider_user_identifier_type {
     }
     
     
-}
-impl ProviderUserIdentifierType {
-    /// Creates a new builder-style object to manufacture [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType).
-    pub fn builder() -> crate::model::provider_user_identifier_type::Builder {
-        crate::model::provider_user_identifier_type::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MessageActionType`, it is important to ensure

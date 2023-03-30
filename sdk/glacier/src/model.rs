@@ -21,6 +21,13 @@ impl VaultNotificationConfig {
         self.events.as_deref()
     }
 }
+impl VaultNotificationConfig {
+    /// Creates a new builder-style object to manufacture [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
+    pub fn builder() -> crate::model::vault_notification_config::Builder {
+        crate::model::vault_notification_config::Builder::default()
+    }
+}
+
 /// See [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
 pub mod vault_notification_config {
     
@@ -69,12 +76,6 @@ pub mod vault_notification_config {
     
     
 }
-impl VaultNotificationConfig {
-    /// Creates a new builder-style object to manufacture [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
-    pub fn builder() -> crate::model::vault_notification_config::Builder {
-        crate::model::vault_notification_config::Builder::default()
-    }
-}
 
 /// <p>Contains the vault access policy.</p>
 #[non_exhaustive]
@@ -90,6 +91,13 @@ impl VaultAccessPolicy {
         self.policy.as_deref()
     }
 }
+impl VaultAccessPolicy {
+    /// Creates a new builder-style object to manufacture [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
+    pub fn builder() -> crate::model::vault_access_policy::Builder {
+        crate::model::vault_access_policy::Builder::default()
+    }
+}
+
 /// See [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
 pub mod vault_access_policy {
     
@@ -120,12 +128,6 @@ pub mod vault_access_policy {
     
     
 }
-impl VaultAccessPolicy {
-    /// Creates a new builder-style object to manufacture [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
-    pub fn builder() -> crate::model::vault_access_policy::Builder {
-        crate::model::vault_access_policy::Builder::default()
-    }
-}
 
 /// <p>Data retrieval policy.</p>
 #[non_exhaustive]
@@ -141,6 +143,13 @@ impl DataRetrievalPolicy {
         self.rules.as_deref()
     }
 }
+impl DataRetrievalPolicy {
+    /// Creates a new builder-style object to manufacture [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
+    pub fn builder() -> crate::model::data_retrieval_policy::Builder {
+        crate::model::data_retrieval_policy::Builder::default()
+    }
+}
+
 /// See [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
 pub mod data_retrieval_policy {
     
@@ -177,12 +186,6 @@ pub mod data_retrieval_policy {
     
     
 }
-impl DataRetrievalPolicy {
-    /// Creates a new builder-style object to manufacture [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
-    pub fn builder() -> crate::model::data_retrieval_policy::Builder {
-        crate::model::data_retrieval_policy::Builder::default()
-    }
-}
 
 /// <p>Data retrieval policy rule.</p>
 #[non_exhaustive]
@@ -209,6 +212,13 @@ impl DataRetrievalRule {
         self.bytes_per_hour
     }
 }
+impl DataRetrievalRule {
+    /// Creates a new builder-style object to manufacture [`DataRetrievalRule`](crate::model::DataRetrievalRule).
+    pub fn builder() -> crate::model::data_retrieval_rule::Builder {
+        crate::model::data_retrieval_rule::Builder::default()
+    }
+}
+
 /// See [`DataRetrievalRule`](crate::model::DataRetrievalRule).
 pub mod data_retrieval_rule {
     
@@ -254,12 +264,6 @@ pub mod data_retrieval_rule {
     }
     
     
-}
-impl DataRetrievalRule {
-    /// Creates a new builder-style object to manufacture [`DataRetrievalRule`](crate::model::DataRetrievalRule).
-    pub fn builder() -> crate::model::data_retrieval_rule::Builder {
-        crate::model::data_retrieval_rule::Builder::default()
-    }
 }
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
@@ -311,6 +315,13 @@ impl DescribeVaultOutput {
         self.size_in_bytes
     }
 }
+impl DescribeVaultOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
+    pub fn builder() -> crate::model::describe_vault_output::Builder {
+        crate::model::describe_vault_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
 pub mod describe_vault_output {
     
@@ -403,12 +414,6 @@ pub mod describe_vault_output {
     
     
 }
-impl DescribeVaultOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
-    pub fn builder() -> crate::model::describe_vault_output::Builder {
-        crate::model::describe_vault_output::Builder::default()
-    }
-}
 
 /// <p>The definition for a provisioned capacity unit.</p>
 #[non_exhaustive]
@@ -438,6 +443,13 @@ impl ProvisionedCapacityDescription {
         self.expiration_date.as_deref()
     }
 }
+impl ProvisionedCapacityDescription {
+    /// Creates a new builder-style object to manufacture [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
+    pub fn builder() -> crate::model::provisioned_capacity_description::Builder {
+        crate::model::provisioned_capacity_description::Builder::default()
+    }
+}
+
 /// See [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
 pub mod provisioned_capacity_description {
     
@@ -492,12 +504,6 @@ pub mod provisioned_capacity_description {
     
     
 }
-impl ProvisionedCapacityDescription {
-    /// Creates a new builder-style object to manufacture [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
-    pub fn builder() -> crate::model::provisioned_capacity_description::Builder {
-        crate::model::provisioned_capacity_description::Builder::default()
-    }
-}
 
 /// <p>A list of the part sizes of the multipart upload.</p>
 #[non_exhaustive]
@@ -520,6 +526,13 @@ impl PartListElement {
         self.sha256_tree_hash.as_deref()
     }
 }
+impl PartListElement {
+    /// Creates a new builder-style object to manufacture [`PartListElement`](crate::model::PartListElement).
+    pub fn builder() -> crate::model::part_list_element::Builder {
+        crate::model::part_list_element::Builder::default()
+    }
+}
+
 /// See [`PartListElement`](crate::model::PartListElement).
 pub mod part_list_element {
     
@@ -561,12 +574,6 @@ pub mod part_list_element {
     }
     
     
-}
-impl PartListElement {
-    /// Creates a new builder-style object to manufacture [`PartListElement`](crate::model::PartListElement).
-    pub fn builder() -> crate::model::part_list_element::Builder {
-        crate::model::part_list_element::Builder::default()
-    }
 }
 
 /// <p>A list of in-progress multipart uploads for a vault.</p>
@@ -611,6 +618,13 @@ impl UploadListElement {
         self.creation_date.as_deref()
     }
 }
+impl UploadListElement {
+    /// Creates a new builder-style object to manufacture [`UploadListElement`](crate::model::UploadListElement).
+    pub fn builder() -> crate::model::upload_list_element::Builder {
+        crate::model::upload_list_element::Builder::default()
+    }
+}
+
 /// See [`UploadListElement`](crate::model::UploadListElement).
 pub mod upload_list_element {
     
@@ -689,12 +703,6 @@ pub mod upload_list_element {
     }
     
     
-}
-impl UploadListElement {
-    /// Creates a new builder-style object to manufacture [`UploadListElement`](crate::model::UploadListElement).
-    pub fn builder() -> crate::model::upload_list_element::Builder {
-        crate::model::upload_list_element::Builder::default()
-    }
 }
 
 /// <p>Contains the description of an Amazon S3 Glacier job.</p>
@@ -877,6 +885,13 @@ impl GlacierJobDescription {
         self.output_location.as_ref()
     }
 }
+impl GlacierJobDescription {
+    /// Creates a new builder-style object to manufacture [`GlacierJobDescription`](crate::model::GlacierJobDescription).
+    pub fn builder() -> crate::model::glacier_job_description::Builder {
+        crate::model::glacier_job_description::Builder::default()
+    }
+}
+
 /// See [`GlacierJobDescription`](crate::model::GlacierJobDescription).
 pub mod glacier_job_description {
     
@@ -1174,12 +1189,6 @@ pub mod glacier_job_description {
     
     
 }
-impl GlacierJobDescription {
-    /// Creates a new builder-style object to manufacture [`GlacierJobDescription`](crate::model::GlacierJobDescription).
-    pub fn builder() -> crate::model::glacier_job_description::Builder {
-        crate::model::glacier_job_description::Builder::default()
-    }
-}
 
 /// <p>Contains information about the location where the select job results are stored.</p>
 #[non_exhaustive]
@@ -1195,6 +1204,13 @@ impl OutputLocation {
         self.s3.as_ref()
     }
 }
+impl OutputLocation {
+    /// Creates a new builder-style object to manufacture [`OutputLocation`](crate::model::OutputLocation).
+    pub fn builder() -> crate::model::output_location::Builder {
+        crate::model::output_location::Builder::default()
+    }
+}
+
 /// See [`OutputLocation`](crate::model::OutputLocation).
 pub mod output_location {
     
@@ -1224,12 +1240,6 @@ pub mod output_location {
     }
     
     
-}
-impl OutputLocation {
-    /// Creates a new builder-style object to manufacture [`OutputLocation`](crate::model::OutputLocation).
-    pub fn builder() -> crate::model::output_location::Builder {
-        crate::model::output_location::Builder::default()
-    }
 }
 
 /// <p>Contains information about the location in Amazon S3 where the select job results are stored.</p>
@@ -1295,6 +1305,13 @@ impl S3Location {
         self.storage_class.as_ref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -1427,12 +1444,6 @@ pub mod s3_location {
     
     
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// When writing a match expression against `StorageClass`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1542,6 +1553,13 @@ impl Grant {
         self.permission.as_ref()
     }
 }
+impl Grant {
+    /// Creates a new builder-style object to manufacture [`Grant`](crate::model::Grant).
+    pub fn builder() -> crate::model::grant::Builder {
+        crate::model::grant::Builder::default()
+    }
+}
+
 /// See [`Grant`](crate::model::Grant).
 pub mod grant {
     
@@ -1583,12 +1601,6 @@ pub mod grant {
     }
     
     
-}
-impl Grant {
-    /// Creates a new builder-style object to manufacture [`Grant`](crate::model::Grant).
-    pub fn builder() -> crate::model::grant::Builder {
-        crate::model::grant::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Permission`, it is important to ensure
@@ -1730,6 +1742,13 @@ impl Grantee {
         self.email_address.as_deref()
     }
 }
+impl Grantee {
+    /// Creates a new builder-style object to manufacture [`Grantee`](crate::model::Grantee).
+    pub fn builder() -> crate::model::grantee::Builder {
+        crate::model::grantee::Builder::default()
+    }
+}
+
 /// See [`Grantee`](crate::model::Grantee).
 pub mod grantee {
     
@@ -1807,12 +1826,6 @@ pub mod grantee {
     }
     
     
-}
-impl Grantee {
-    /// Creates a new builder-style object to manufacture [`Grantee`](crate::model::Grantee).
-    pub fn builder() -> crate::model::grantee::Builder {
-        crate::model::grantee::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Type`, it is important to ensure
@@ -2037,6 +2050,13 @@ impl Encryption {
         self.kms_context.as_deref()
     }
 }
+impl Encryption {
+    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
+    pub fn builder() -> crate::model::encryption::Builder {
+        crate::model::encryption::Builder::default()
+    }
+}
+
 /// See [`Encryption`](crate::model::Encryption).
 pub mod encryption {
     
@@ -2090,12 +2110,6 @@ pub mod encryption {
     }
     
     
-}
-impl Encryption {
-    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
-    pub fn builder() -> crate::model::encryption::Builder {
-        crate::model::encryption::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EncryptionType`, it is important to ensure
@@ -2215,6 +2229,13 @@ impl SelectParameters {
         self.output_serialization.as_ref()
     }
 }
+impl SelectParameters {
+    /// Creates a new builder-style object to manufacture [`SelectParameters`](crate::model::SelectParameters).
+    pub fn builder() -> crate::model::select_parameters::Builder {
+        crate::model::select_parameters::Builder::default()
+    }
+}
+
 /// See [`SelectParameters`](crate::model::SelectParameters).
 pub mod select_parameters {
     
@@ -2281,12 +2302,6 @@ pub mod select_parameters {
     
     
 }
-impl SelectParameters {
-    /// Creates a new builder-style object to manufacture [`SelectParameters`](crate::model::SelectParameters).
-    pub fn builder() -> crate::model::select_parameters::Builder {
-        crate::model::select_parameters::Builder::default()
-    }
-}
 
 /// <p>Describes how the select output is serialized.</p>
 #[non_exhaustive]
@@ -2302,6 +2317,13 @@ impl OutputSerialization {
         self.csv.as_ref()
     }
 }
+impl OutputSerialization {
+    /// Creates a new builder-style object to manufacture [`OutputSerialization`](crate::model::OutputSerialization).
+    pub fn builder() -> crate::model::output_serialization::Builder {
+        crate::model::output_serialization::Builder::default()
+    }
+}
+
 /// See [`OutputSerialization`](crate::model::OutputSerialization).
 pub mod output_serialization {
     
@@ -2331,12 +2353,6 @@ pub mod output_serialization {
     }
     
     
-}
-impl OutputSerialization {
-    /// Creates a new builder-style object to manufacture [`OutputSerialization`](crate::model::OutputSerialization).
-    pub fn builder() -> crate::model::output_serialization::Builder {
-        crate::model::output_serialization::Builder::default()
-    }
 }
 
 /// <p>Contains information about the comma-separated value (CSV) file that the job results are stored in.</p>
@@ -2381,6 +2397,13 @@ impl CsvOutput {
         self.quote_character.as_deref()
     }
 }
+impl CsvOutput {
+    /// Creates a new builder-style object to manufacture [`CsvOutput`](crate::model::CsvOutput).
+    pub fn builder() -> crate::model::csv_output::Builder {
+        crate::model::csv_output::Builder::default()
+    }
+}
+
 /// See [`CsvOutput`](crate::model::CsvOutput).
 pub mod csv_output {
     
@@ -2458,12 +2481,6 @@ pub mod csv_output {
     }
     
     
-}
-impl CsvOutput {
-    /// Creates a new builder-style object to manufacture [`CsvOutput`](crate::model::CsvOutput).
-    pub fn builder() -> crate::model::csv_output::Builder {
-        crate::model::csv_output::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QuoteFields`, it is important to ensure
@@ -2639,6 +2656,13 @@ impl InputSerialization {
         self.csv.as_ref()
     }
 }
+impl InputSerialization {
+    /// Creates a new builder-style object to manufacture [`InputSerialization`](crate::model::InputSerialization).
+    pub fn builder() -> crate::model::input_serialization::Builder {
+        crate::model::input_serialization::Builder::default()
+    }
+}
+
 /// See [`InputSerialization`](crate::model::InputSerialization).
 pub mod input_serialization {
     
@@ -2668,12 +2692,6 @@ pub mod input_serialization {
     }
     
     
-}
-impl InputSerialization {
-    /// Creates a new builder-style object to manufacture [`InputSerialization`](crate::model::InputSerialization).
-    pub fn builder() -> crate::model::input_serialization::Builder {
-        crate::model::input_serialization::Builder::default()
-    }
 }
 
 /// <p>Contains information about the comma-separated value (CSV) file to select from.</p>
@@ -2725,6 +2743,13 @@ impl CsvInput {
         self.quote_character.as_deref()
     }
 }
+impl CsvInput {
+    /// Creates a new builder-style object to manufacture [`CsvInput`](crate::model::CsvInput).
+    pub fn builder() -> crate::model::csv_input::Builder {
+        crate::model::csv_input::Builder::default()
+    }
+}
+
 /// See [`CsvInput`](crate::model::CsvInput).
 pub mod csv_input {
     
@@ -2814,12 +2839,6 @@ pub mod csv_input {
     }
     
     
-}
-impl CsvInput {
-    /// Creates a new builder-style object to manufacture [`CsvInput`](crate::model::CsvInput).
-    pub fn builder() -> crate::model::csv_input::Builder {
-        crate::model::csv_input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FileHeaderInfo`, it is important to ensure
@@ -2951,6 +2970,13 @@ impl InventoryRetrievalJobDescription {
         self.marker.as_deref()
     }
 }
+impl InventoryRetrievalJobDescription {
+    /// Creates a new builder-style object to manufacture [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
+    pub fn builder() -> crate::model::inventory_retrieval_job_description::Builder {
+        crate::model::inventory_retrieval_job_description::Builder::default()
+    }
+}
+
 /// See [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
 pub mod inventory_retrieval_job_description {
     
@@ -3028,12 +3054,6 @@ pub mod inventory_retrieval_job_description {
     }
     
     
-}
-impl InventoryRetrievalJobDescription {
-    /// Creates a new builder-style object to manufacture [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
-    pub fn builder() -> crate::model::inventory_retrieval_job_description::Builder {
-        crate::model::inventory_retrieval_job_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StatusCode`, it is important to ensure
@@ -3224,6 +3244,13 @@ impl VaultLockPolicy {
         self.policy.as_deref()
     }
 }
+impl VaultLockPolicy {
+    /// Creates a new builder-style object to manufacture [`VaultLockPolicy`](crate::model::VaultLockPolicy).
+    pub fn builder() -> crate::model::vault_lock_policy::Builder {
+        crate::model::vault_lock_policy::Builder::default()
+    }
+}
+
 /// See [`VaultLockPolicy`](crate::model::VaultLockPolicy).
 pub mod vault_lock_policy {
     
@@ -3253,12 +3280,6 @@ pub mod vault_lock_policy {
     }
     
     
-}
-impl VaultLockPolicy {
-    /// Creates a new builder-style object to manufacture [`VaultLockPolicy`](crate::model::VaultLockPolicy).
-    pub fn builder() -> crate::model::vault_lock_policy::Builder {
-        crate::model::vault_lock_policy::Builder::default()
-    }
 }
 
 /// <p>Provides options for defining a job.</p>
@@ -3340,6 +3361,13 @@ impl JobParameters {
         self.output_location.as_ref()
     }
 }
+impl JobParameters {
+    /// Creates a new builder-style object to manufacture [`JobParameters`](crate::model::JobParameters).
+    pub fn builder() -> crate::model::job_parameters::Builder {
+        crate::model::job_parameters::Builder::default()
+    }
+}
+
 /// See [`JobParameters`](crate::model::JobParameters).
 pub mod job_parameters {
     
@@ -3480,12 +3508,6 @@ pub mod job_parameters {
     
     
 }
-impl JobParameters {
-    /// Creates a new builder-style object to manufacture [`JobParameters`](crate::model::JobParameters).
-    pub fn builder() -> crate::model::job_parameters::Builder {
-        crate::model::job_parameters::Builder::default()
-    }
-}
 
 /// <p>Provides options for specifying a range inventory retrieval job.</p>
 #[non_exhaustive]
@@ -3522,6 +3544,13 @@ impl InventoryRetrievalJobInput {
         self.marker.as_deref()
     }
 }
+impl InventoryRetrievalJobInput {
+    /// Creates a new builder-style object to manufacture [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
+    pub fn builder() -> crate::model::inventory_retrieval_job_input::Builder {
+        crate::model::inventory_retrieval_job_input::Builder::default()
+    }
+}
+
 /// See [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
 pub mod inventory_retrieval_job_input {
     
@@ -3587,11 +3616,5 @@ pub mod inventory_retrieval_job_input {
     }
     
     
-}
-impl InventoryRetrievalJobInput {
-    /// Creates a new builder-style object to manufacture [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
-    pub fn builder() -> crate::model::inventory_retrieval_job_input::Builder {
-        crate::model::inventory_retrieval_job_input::Builder::default()
-    }
 }
 

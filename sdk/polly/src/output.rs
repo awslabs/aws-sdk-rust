@@ -46,6 +46,13 @@ impl aws_http::request_id::RequestId for SynthesizeSpeechOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SynthesizeSpeechOutput {
+    /// Creates a new builder-style object to manufacture [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput).
+    pub fn builder() -> crate::output::synthesize_speech_output::Builder {
+        crate::output::synthesize_speech_output::Builder::default()
+    }
+}
+
 /// See [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput).
 pub mod synthesize_speech_output {
     
@@ -127,12 +134,6 @@ pub mod synthesize_speech_output {
     
     
 }
-impl SynthesizeSpeechOutput {
-    /// Creates a new builder-style object to manufacture [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput).
-    pub fn builder() -> crate::output::synthesize_speech_output::Builder {
-        crate::output::synthesize_speech_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -154,6 +155,13 @@ impl aws_http::request_id::RequestId for StartSpeechSynthesisTaskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl StartSpeechSynthesisTaskOutput {
+    /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
+    pub fn builder() -> crate::output::start_speech_synthesis_task_output::Builder {
+        crate::output::start_speech_synthesis_task_output::Builder::default()
+    }
+}
+
 /// See [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
 pub mod start_speech_synthesis_task_output {
     
@@ -195,12 +203,6 @@ pub mod start_speech_synthesis_task_output {
     
     
 }
-impl StartSpeechSynthesisTaskOutput {
-    /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
-    pub fn builder() -> crate::output::start_speech_synthesis_task_output::Builder {
-        crate::output::start_speech_synthesis_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -213,6 +215,13 @@ impl aws_http::request_id::RequestId for PutLexiconOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutLexiconOutput {
+    /// Creates a new builder-style object to manufacture [`PutLexiconOutput`](crate::output::PutLexiconOutput).
+    pub fn builder() -> crate::output::put_lexicon_output::Builder {
+        crate::output::put_lexicon_output::Builder::default()
+    }
+}
+
 /// See [`PutLexiconOutput`](crate::output::PutLexiconOutput).
 pub mod put_lexicon_output {
     
@@ -242,12 +251,6 @@ pub mod put_lexicon_output {
     
     
 }
-impl PutLexiconOutput {
-    /// Creates a new builder-style object to manufacture [`PutLexiconOutput`](crate::output::PutLexiconOutput).
-    pub fn builder() -> crate::output::put_lexicon_output::Builder {
-        crate::output::put_lexicon_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -276,6 +279,13 @@ impl aws_http::request_id::RequestId for ListSpeechSynthesisTasksOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListSpeechSynthesisTasksOutput {
+    /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
+    pub fn builder() -> crate::output::list_speech_synthesis_tasks_output::Builder {
+        crate::output::list_speech_synthesis_tasks_output::Builder::default()
+    }
+}
+
 /// See [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
 pub mod list_speech_synthesis_tasks_output {
     
@@ -335,12 +345,6 @@ pub mod list_speech_synthesis_tasks_output {
     
     
 }
-impl ListSpeechSynthesisTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
-    pub fn builder() -> crate::output::list_speech_synthesis_tasks_output::Builder {
-        crate::output::list_speech_synthesis_tasks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -369,6 +373,13 @@ impl aws_http::request_id::RequestId for ListLexiconsOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListLexiconsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
+    pub fn builder() -> crate::output::list_lexicons_output::Builder {
+        crate::output::list_lexicons_output::Builder::default()
+    }
+}
+
 /// See [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
 pub mod list_lexicons_output {
     
@@ -428,12 +439,6 @@ pub mod list_lexicons_output {
     
     
 }
-impl ListLexiconsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
-    pub fn builder() -> crate::output::list_lexicons_output::Builder {
-        crate::output::list_lexicons_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -455,6 +460,13 @@ impl aws_http::request_id::RequestId for GetSpeechSynthesisTaskOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetSpeechSynthesisTaskOutput {
+    /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
+    pub fn builder() -> crate::output::get_speech_synthesis_task_output::Builder {
+        crate::output::get_speech_synthesis_task_output::Builder::default()
+    }
+}
+
 /// See [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
 pub mod get_speech_synthesis_task_output {
     
@@ -496,12 +508,6 @@ pub mod get_speech_synthesis_task_output {
     
     
 }
-impl GetSpeechSynthesisTaskOutput {
-    /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
-    pub fn builder() -> crate::output::get_speech_synthesis_task_output::Builder {
-        crate::output::get_speech_synthesis_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -530,6 +536,13 @@ impl aws_http::request_id::RequestId for GetLexiconOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetLexiconOutput {
+    /// Creates a new builder-style object to manufacture [`GetLexiconOutput`](crate::output::GetLexiconOutput).
+    pub fn builder() -> crate::output::get_lexicon_output::Builder {
+        crate::output::get_lexicon_output::Builder::default()
+    }
+}
+
 /// See [`GetLexiconOutput`](crate::output::GetLexiconOutput).
 pub mod get_lexicon_output {
     
@@ -583,12 +596,6 @@ pub mod get_lexicon_output {
     
     
 }
-impl GetLexiconOutput {
-    /// Creates a new builder-style object to manufacture [`GetLexiconOutput`](crate::output::GetLexiconOutput).
-    pub fn builder() -> crate::output::get_lexicon_output::Builder {
-        crate::output::get_lexicon_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -617,6 +624,13 @@ impl aws_http::request_id::RequestId for DescribeVoicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVoicesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
+    pub fn builder() -> crate::output::describe_voices_output::Builder {
+        crate::output::describe_voices_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
 pub mod describe_voices_output {
     
@@ -676,12 +690,6 @@ pub mod describe_voices_output {
     
     
 }
-impl DescribeVoicesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
-    pub fn builder() -> crate::output::describe_voices_output::Builder {
-        crate::output::describe_voices_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -694,6 +702,13 @@ impl aws_http::request_id::RequestId for DeleteLexiconOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteLexiconOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
+    pub fn builder() -> crate::output::delete_lexicon_output::Builder {
+        crate::output::delete_lexicon_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
 pub mod delete_lexicon_output {
     
@@ -722,11 +737,5 @@ pub mod delete_lexicon_output {
     }
     
     
-}
-impl DeleteLexiconOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
-    pub fn builder() -> crate::output::delete_lexicon_output::Builder {
-        crate::output::delete_lexicon_output::Builder::default()
-    }
 }
 

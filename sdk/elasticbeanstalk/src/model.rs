@@ -43,6 +43,13 @@ impl ValidationMessage {
         self.option_name.as_deref()
     }
 }
+impl ValidationMessage {
+    /// Creates a new builder-style object to manufacture [`ValidationMessage`](crate::model::ValidationMessage).
+    pub fn builder() -> crate::model::validation_message::Builder {
+        crate::model::validation_message::Builder::default()
+    }
+}
+
 /// See [`ValidationMessage`](crate::model::ValidationMessage).
 pub mod validation_message {
     
@@ -116,12 +123,6 @@ pub mod validation_message {
     }
     
     
-}
-impl ValidationMessage {
-    /// Creates a new builder-style object to manufacture [`ValidationMessage`](crate::model::ValidationMessage).
-    pub fn builder() -> crate::model::validation_message::Builder {
-        crate::model::validation_message::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ValidationSeverity`, it is important to ensure
@@ -241,6 +242,13 @@ impl ConfigurationOptionSetting {
         self.value.as_deref()
     }
 }
+impl ConfigurationOptionSetting {
+    /// Creates a new builder-style object to manufacture [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
+    pub fn builder() -> crate::model::configuration_option_setting::Builder {
+        crate::model::configuration_option_setting::Builder::default()
+    }
+}
+
 /// See [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
 pub mod configuration_option_setting {
     
@@ -307,12 +315,6 @@ pub mod configuration_option_setting {
     
     
 }
-impl ConfigurationOptionSetting {
-    /// Creates a new builder-style object to manufacture [`ConfigurationOptionSetting`](crate::model::ConfigurationOptionSetting).
-    pub fn builder() -> crate::model::configuration_option_setting::Builder {
-        crate::model::configuration_option_setting::Builder::default()
-    }
-}
 
 /// <p>Describes a tag applied to a resource in an environment.</p>
 #[non_exhaustive]
@@ -335,6 +337,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -377,12 +386,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
 #[non_exhaustive]
@@ -405,6 +408,13 @@ impl EnvironmentLink {
         self.environment_name.as_deref()
     }
 }
+impl EnvironmentLink {
+    /// Creates a new builder-style object to manufacture [`EnvironmentLink`](crate::model::EnvironmentLink).
+    pub fn builder() -> crate::model::environment_link::Builder {
+        crate::model::environment_link::Builder::default()
+    }
+}
+
 /// See [`EnvironmentLink`](crate::model::EnvironmentLink).
 pub mod environment_link {
     
@@ -446,12 +456,6 @@ pub mod environment_link {
     }
     
     
-}
-impl EnvironmentLink {
-    /// Creates a new builder-style object to manufacture [`EnvironmentLink`](crate::model::EnvironmentLink).
-    pub fn builder() -> crate::model::environment_link::Builder {
-        crate::model::environment_link::Builder::default()
-    }
 }
 
 /// <p>Describes the properties of an environment tier</p>
@@ -506,6 +510,13 @@ impl EnvironmentTier {
         self.version.as_deref()
     }
 }
+impl EnvironmentTier {
+    /// Creates a new builder-style object to manufacture [`EnvironmentTier`](crate::model::EnvironmentTier).
+    pub fn builder() -> crate::model::environment_tier::Builder {
+        crate::model::environment_tier::Builder::default()
+    }
+}
+
 /// See [`EnvironmentTier`](crate::model::EnvironmentTier).
 pub mod environment_tier {
     
@@ -584,12 +595,6 @@ pub mod environment_tier {
     
     
 }
-impl EnvironmentTier {
-    /// Creates a new builder-style object to manufacture [`EnvironmentTier`](crate::model::EnvironmentTier).
-    pub fn builder() -> crate::model::environment_tier::Builder {
-        crate::model::environment_tier::Builder::default()
-    }
-}
 
 /// <p>Describes the AWS resources in use by this environment. This data is not live data.</p>
 #[non_exhaustive]
@@ -605,6 +610,13 @@ impl EnvironmentResourcesDescription {
         self.load_balancer.as_ref()
     }
 }
+impl EnvironmentResourcesDescription {
+    /// Creates a new builder-style object to manufacture [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
+    pub fn builder() -> crate::model::environment_resources_description::Builder {
+        crate::model::environment_resources_description::Builder::default()
+    }
+}
+
 /// See [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
 pub mod environment_resources_description {
     
@@ -635,12 +647,6 @@ pub mod environment_resources_description {
     
     
 }
-impl EnvironmentResourcesDescription {
-    /// Creates a new builder-style object to manufacture [`EnvironmentResourcesDescription`](crate::model::EnvironmentResourcesDescription).
-    pub fn builder() -> crate::model::environment_resources_description::Builder {
-        crate::model::environment_resources_description::Builder::default()
-    }
-}
 
 /// <p>Describes the details of a LoadBalancer.</p>
 #[non_exhaustive]
@@ -670,6 +676,13 @@ impl LoadBalancerDescription {
         self.listeners.as_deref()
     }
 }
+impl LoadBalancerDescription {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
+    pub fn builder() -> crate::model::load_balancer_description::Builder {
+        crate::model::load_balancer_description::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
 pub mod load_balancer_description {
     
@@ -730,12 +743,6 @@ pub mod load_balancer_description {
     
     
 }
-impl LoadBalancerDescription {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
-    pub fn builder() -> crate::model::load_balancer_description::Builder {
-        crate::model::load_balancer_description::Builder::default()
-    }
-}
 
 /// <p>Describes the properties of a Listener for the LoadBalancer.</p>
 #[non_exhaustive]
@@ -758,6 +765,13 @@ impl Listener {
         self.port
     }
 }
+impl Listener {
+    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
+    pub fn builder() -> crate::model::listener::Builder {
+        crate::model::listener::Builder::default()
+    }
+}
+
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
     
@@ -800,12 +814,6 @@ pub mod listener {
     }
     
     
-}
-impl Listener {
-    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
-    pub fn builder() -> crate::model::listener::Builder {
-        crate::model::listener::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentHealthStatus`, it is important to ensure
@@ -1157,6 +1165,13 @@ impl OptionSpecification {
         self.option_name.as_deref()
     }
 }
+impl OptionSpecification {
+    /// Creates a new builder-style object to manufacture [`OptionSpecification`](crate::model::OptionSpecification).
+    pub fn builder() -> crate::model::option_specification::Builder {
+        crate::model::option_specification::Builder::default()
+    }
+}
+
 /// See [`OptionSpecification`](crate::model::OptionSpecification).
 pub mod option_specification {
     
@@ -1210,12 +1225,6 @@ pub mod option_specification {
     }
     
     
-}
-impl OptionSpecification {
-    /// Creates a new builder-style object to manufacture [`OptionSpecification`](crate::model::OptionSpecification).
-    pub fn builder() -> crate::model::option_specification::Builder {
-        crate::model::option_specification::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigurationDeploymentStatus`, it is important to ensure
@@ -1396,6 +1405,13 @@ impl ApplicationVersionDescription {
         self.status.as_ref()
     }
 }
+impl ApplicationVersionDescription {
+    /// Creates a new builder-style object to manufacture [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
+    pub fn builder() -> crate::model::application_version_description::Builder {
+        crate::model::application_version_description::Builder::default()
+    }
+}
+
 /// See [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
 pub mod application_version_description {
     
@@ -1548,12 +1564,6 @@ pub mod application_version_description {
     
     
 }
-impl ApplicationVersionDescription {
-    /// Creates a new builder-style object to manufacture [`ApplicationVersionDescription`](crate::model::ApplicationVersionDescription).
-    pub fn builder() -> crate::model::application_version_description::Builder {
-        crate::model::application_version_description::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ApplicationVersionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1673,6 +1683,13 @@ impl S3Location {
         self.s3_key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -1714,12 +1731,6 @@ pub mod s3_location {
     }
     
     
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
 }
 
 /// <p>Location of the source code for an application version.</p>
@@ -1774,6 +1785,13 @@ impl SourceBuildInformation {
         self.source_location.as_deref()
     }
 }
+impl SourceBuildInformation {
+    /// Creates a new builder-style object to manufacture [`SourceBuildInformation`](crate::model::SourceBuildInformation).
+    pub fn builder() -> crate::model::source_build_information::Builder {
+        crate::model::source_build_information::Builder::default()
+    }
+}
+
 /// See [`SourceBuildInformation`](crate::model::SourceBuildInformation).
 pub mod source_build_information {
     
@@ -1851,12 +1869,6 @@ pub mod source_build_information {
     }
     
     
-}
-impl SourceBuildInformation {
-    /// Creates a new builder-style object to manufacture [`SourceBuildInformation`](crate::model::SourceBuildInformation).
-    pub fn builder() -> crate::model::source_build_information::Builder {
-        crate::model::source_build_information::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SourceRepository`, it is important to ensure
@@ -2046,6 +2058,13 @@ impl ApplicationResourceLifecycleConfig {
         self.version_lifecycle_config.as_ref()
     }
 }
+impl ApplicationResourceLifecycleConfig {
+    /// Creates a new builder-style object to manufacture [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
+    pub fn builder() -> crate::model::application_resource_lifecycle_config::Builder {
+        crate::model::application_resource_lifecycle_config::Builder::default()
+    }
+}
+
 /// See [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
 pub mod application_resource_lifecycle_config {
     
@@ -2090,12 +2109,6 @@ pub mod application_resource_lifecycle_config {
     
     
 }
-impl ApplicationResourceLifecycleConfig {
-    /// Creates a new builder-style object to manufacture [`ApplicationResourceLifecycleConfig`](crate::model::ApplicationResourceLifecycleConfig).
-    pub fn builder() -> crate::model::application_resource_lifecycle_config::Builder {
-        crate::model::application_resource_lifecycle_config::Builder::default()
-    }
-}
 
 /// <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> 
 /// <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
@@ -2119,6 +2132,13 @@ impl ApplicationVersionLifecycleConfig {
         self.max_age_rule.as_ref()
     }
 }
+impl ApplicationVersionLifecycleConfig {
+    /// Creates a new builder-style object to manufacture [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
+    pub fn builder() -> crate::model::application_version_lifecycle_config::Builder {
+        crate::model::application_version_lifecycle_config::Builder::default()
+    }
+}
+
 /// See [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
 pub mod application_version_lifecycle_config {
     
@@ -2161,12 +2181,6 @@ pub mod application_version_lifecycle_config {
     
     
 }
-impl ApplicationVersionLifecycleConfig {
-    /// Creates a new builder-style object to manufacture [`ApplicationVersionLifecycleConfig`](crate::model::ApplicationVersionLifecycleConfig).
-    pub fn builder() -> crate::model::application_version_lifecycle_config::Builder {
-        crate::model::application_version_lifecycle_config::Builder::default()
-    }
-}
 
 /// <p>A lifecycle rule that deletes application versions after the specified number of days.</p>
 #[non_exhaustive]
@@ -2196,6 +2210,13 @@ impl MaxAgeRule {
         self.delete_source_from_s3
     }
 }
+impl MaxAgeRule {
+    /// Creates a new builder-style object to manufacture [`MaxAgeRule`](crate::model::MaxAgeRule).
+    pub fn builder() -> crate::model::max_age_rule::Builder {
+        crate::model::max_age_rule::Builder::default()
+    }
+}
+
 /// See [`MaxAgeRule`](crate::model::MaxAgeRule).
 pub mod max_age_rule {
     
@@ -2250,12 +2271,6 @@ pub mod max_age_rule {
     
     
 }
-impl MaxAgeRule {
-    /// Creates a new builder-style object to manufacture [`MaxAgeRule`](crate::model::MaxAgeRule).
-    pub fn builder() -> crate::model::max_age_rule::Builder {
-        crate::model::max_age_rule::Builder::default()
-    }
-}
 
 /// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
@@ -2285,6 +2300,13 @@ impl MaxCountRule {
         self.delete_source_from_s3
     }
 }
+impl MaxCountRule {
+    /// Creates a new builder-style object to manufacture [`MaxCountRule`](crate::model::MaxCountRule).
+    pub fn builder() -> crate::model::max_count_rule::Builder {
+        crate::model::max_count_rule::Builder::default()
+    }
+}
+
 /// See [`MaxCountRule`](crate::model::MaxCountRule).
 pub mod max_count_rule {
     
@@ -2338,12 +2360,6 @@ pub mod max_count_rule {
     }
     
     
-}
-impl MaxCountRule {
-    /// Creates a new builder-style object to manufacture [`MaxCountRule`](crate::model::MaxCountRule).
-    pub fn builder() -> crate::model::max_count_rule::Builder {
-        crate::model::max_count_rule::Builder::default()
-    }
 }
 
 /// <p>Describes the properties of an application.</p>
@@ -2409,6 +2425,13 @@ impl ApplicationDescription {
         self.resource_lifecycle_config.as_ref()
     }
 }
+impl ApplicationDescription {
+    /// Creates a new builder-style object to manufacture [`ApplicationDescription`](crate::model::ApplicationDescription).
+    pub fn builder() -> crate::model::application_description::Builder {
+        crate::model::application_description::Builder::default()
+    }
+}
+
 /// See [`ApplicationDescription`](crate::model::ApplicationDescription).
 pub mod application_description {
     
@@ -2535,12 +2558,6 @@ pub mod application_description {
     
     
 }
-impl ApplicationDescription {
-    /// Creates a new builder-style object to manufacture [`ApplicationDescription`](crate::model::ApplicationDescription).
-    pub fn builder() -> crate::model::application_description::Builder {
-        crate::model::application_description::Builder::default()
-    }
-}
 
 /// <p>The information retrieved from the Amazon EC2 instances.</p>
 #[non_exhaustive]
@@ -2579,6 +2596,13 @@ impl EnvironmentInfoDescription {
         self.message.as_deref()
     }
 }
+impl EnvironmentInfoDescription {
+    /// Creates a new builder-style object to manufacture [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
+    pub fn builder() -> crate::model::environment_info_description::Builder {
+        crate::model::environment_info_description::Builder::default()
+    }
+}
+
 /// See [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
 pub mod environment_info_description {
     
@@ -2646,12 +2670,6 @@ pub mod environment_info_description {
     }
     
     
-}
-impl EnvironmentInfoDescription {
-    /// Creates a new builder-style object to manufacture [`EnvironmentInfoDescription`](crate::model::EnvironmentInfoDescription).
-    pub fn builder() -> crate::model::environment_info_description::Builder {
-        crate::model::environment_info_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentInfoType`, it is important to ensure
@@ -2833,6 +2851,13 @@ impl PlatformSummary {
         self.platform_branch_lifecycle_state.as_deref()
     }
 }
+impl PlatformSummary {
+    /// Creates a new builder-style object to manufacture [`PlatformSummary`](crate::model::PlatformSummary).
+    pub fn builder() -> crate::model::platform_summary::Builder {
+        crate::model::platform_summary::Builder::default()
+    }
+}
+
 /// See [`PlatformSummary`](crate::model::PlatformSummary).
 pub mod platform_summary {
     
@@ -3013,12 +3038,6 @@ pub mod platform_summary {
     
     
 }
-impl PlatformSummary {
-    /// Creates a new builder-style object to manufacture [`PlatformSummary`](crate::model::PlatformSummary).
-    pub fn builder() -> crate::model::platform_summary::Builder {
-        crate::model::platform_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PlatformStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3164,6 +3183,13 @@ impl PlatformFilter {
         self.values.as_deref()
     }
 }
+impl PlatformFilter {
+    /// Creates a new builder-style object to manufacture [`PlatformFilter`](crate::model::PlatformFilter).
+    pub fn builder() -> crate::model::platform_filter::Builder {
+        crate::model::platform_filter::Builder::default()
+    }
+}
+
 /// See [`PlatformFilter`](crate::model::PlatformFilter).
 pub mod platform_filter {
     
@@ -3242,12 +3268,6 @@ pub mod platform_filter {
     
     
 }
-impl PlatformFilter {
-    /// Creates a new builder-style object to manufacture [`PlatformFilter`](crate::model::PlatformFilter).
-    pub fn builder() -> crate::model::platform_filter::Builder {
-        crate::model::platform_filter::Builder::default()
-    }
-}
 
 /// <p>Summary information about a platform branch.</p>
 #[non_exhaustive]
@@ -3297,6 +3317,13 @@ impl PlatformBranchSummary {
         self.supported_tier_list.as_deref()
     }
 }
+impl PlatformBranchSummary {
+    /// Creates a new builder-style object to manufacture [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
+    pub fn builder() -> crate::model::platform_branch_summary::Builder {
+        crate::model::platform_branch_summary::Builder::default()
+    }
+}
+
 /// See [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
 pub mod platform_branch_summary {
     
@@ -3388,12 +3415,6 @@ pub mod platform_branch_summary {
     
     
 }
-impl PlatformBranchSummary {
-    /// Creates a new builder-style object to manufacture [`PlatformBranchSummary`](crate::model::PlatformBranchSummary).
-    pub fn builder() -> crate::model::platform_branch_summary::Builder {
-        crate::model::platform_branch_summary::Builder::default()
-    }
-}
 
 /// <p>Describes criteria to restrict a list of results.</p> 
 /// <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p> 
@@ -3426,6 +3447,13 @@ impl SearchFilter {
         self.values.as_deref()
     }
 }
+impl SearchFilter {
+    /// Creates a new builder-style object to manufacture [`SearchFilter`](crate::model::SearchFilter).
+    pub fn builder() -> crate::model::search_filter::Builder {
+        crate::model::search_filter::Builder::default()
+    }
+}
+
 /// See [`SearchFilter`](crate::model::SearchFilter).
 pub mod search_filter {
     
@@ -3486,12 +3514,6 @@ pub mod search_filter {
     
     
 }
-impl SearchFilter {
-    /// Creates a new builder-style object to manufacture [`SearchFilter`](crate::model::SearchFilter).
-    pub fn builder() -> crate::model::search_filter::Builder {
-        crate::model::search_filter::Builder::default()
-    }
-}
 
 /// <p>Describes the solution stack.</p>
 #[non_exhaustive]
@@ -3514,6 +3536,13 @@ impl SolutionStackDescription {
         self.permitted_file_types.as_deref()
     }
 }
+impl SolutionStackDescription {
+    /// Creates a new builder-style object to manufacture [`SolutionStackDescription`](crate::model::SolutionStackDescription).
+    pub fn builder() -> crate::model::solution_stack_description::Builder {
+        crate::model::solution_stack_description::Builder::default()
+    }
+}
+
 /// See [`SolutionStackDescription`](crate::model::SolutionStackDescription).
 pub mod solution_stack_description {
     
@@ -3561,12 +3590,6 @@ pub mod solution_stack_description {
     }
     
     
-}
-impl SolutionStackDescription {
-    /// Creates a new builder-style object to manufacture [`SolutionStackDescription`](crate::model::SolutionStackDescription).
-    pub fn builder() -> crate::model::solution_stack_description::Builder {
-        crate::model::solution_stack_description::Builder::default()
-    }
 }
 
 /// <p>Detailed information about a platform version.</p>
@@ -3729,6 +3752,13 @@ impl PlatformDescription {
         self.platform_branch_lifecycle_state.as_deref()
     }
 }
+impl PlatformDescription {
+    /// Creates a new builder-style object to manufacture [`PlatformDescription`](crate::model::PlatformDescription).
+    pub fn builder() -> crate::model::platform_description::Builder {
+        crate::model::platform_description::Builder::default()
+    }
+}
+
 /// See [`PlatformDescription`](crate::model::PlatformDescription).
 pub mod platform_description {
     
@@ -4035,12 +4065,6 @@ pub mod platform_description {
     
     
 }
-impl PlatformDescription {
-    /// Creates a new builder-style object to manufacture [`PlatformDescription`](crate::model::PlatformDescription).
-    pub fn builder() -> crate::model::platform_description::Builder {
-        crate::model::platform_description::Builder::default()
-    }
-}
 
 /// <p>A custom AMI available to platforms.</p>
 #[non_exhaustive]
@@ -4063,6 +4087,13 @@ impl CustomAmi {
         self.image_id.as_deref()
     }
 }
+impl CustomAmi {
+    /// Creates a new builder-style object to manufacture [`CustomAmi`](crate::model::CustomAmi).
+    pub fn builder() -> crate::model::custom_ami::Builder {
+        crate::model::custom_ami::Builder::default()
+    }
+}
+
 /// See [`CustomAmi`](crate::model::CustomAmi).
 pub mod custom_ami {
     
@@ -4105,12 +4136,6 @@ pub mod custom_ami {
     
     
 }
-impl CustomAmi {
-    /// Creates a new builder-style object to manufacture [`CustomAmi`](crate::model::CustomAmi).
-    pub fn builder() -> crate::model::custom_ami::Builder {
-        crate::model::custom_ami::Builder::default()
-    }
-}
 
 /// <p>A framework supported by the platform.</p>
 #[non_exhaustive]
@@ -4133,6 +4158,13 @@ impl PlatformFramework {
         self.version.as_deref()
     }
 }
+impl PlatformFramework {
+    /// Creates a new builder-style object to manufacture [`PlatformFramework`](crate::model::PlatformFramework).
+    pub fn builder() -> crate::model::platform_framework::Builder {
+        crate::model::platform_framework::Builder::default()
+    }
+}
+
 /// See [`PlatformFramework`](crate::model::PlatformFramework).
 pub mod platform_framework {
     
@@ -4175,12 +4207,6 @@ pub mod platform_framework {
     
     
 }
-impl PlatformFramework {
-    /// Creates a new builder-style object to manufacture [`PlatformFramework`](crate::model::PlatformFramework).
-    pub fn builder() -> crate::model::platform_framework::Builder {
-        crate::model::platform_framework::Builder::default()
-    }
-}
 
 /// <p>A programming language supported by the platform.</p>
 #[non_exhaustive]
@@ -4203,6 +4229,13 @@ impl PlatformProgrammingLanguage {
         self.version.as_deref()
     }
 }
+impl PlatformProgrammingLanguage {
+    /// Creates a new builder-style object to manufacture [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
+    pub fn builder() -> crate::model::platform_programming_language::Builder {
+        crate::model::platform_programming_language::Builder::default()
+    }
+}
+
 /// See [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
 pub mod platform_programming_language {
     
@@ -4244,12 +4277,6 @@ pub mod platform_programming_language {
     }
     
     
-}
-impl PlatformProgrammingLanguage {
-    /// Creates a new builder-style object to manufacture [`PlatformProgrammingLanguage`](crate::model::PlatformProgrammingLanguage).
-    pub fn builder() -> crate::model::platform_programming_language::Builder {
-        crate::model::platform_programming_language::Builder::default()
-    }
 }
 
 /// <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.</p>
@@ -4329,6 +4356,13 @@ impl SingleInstanceHealth {
         self.instance_type.as_deref()
     }
 }
+impl SingleInstanceHealth {
+    /// Creates a new builder-style object to manufacture [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
+    pub fn builder() -> crate::model::single_instance_health::Builder {
+        crate::model::single_instance_health::Builder::default()
+    }
+}
+
 /// See [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
 pub mod single_instance_health {
     
@@ -4473,12 +4507,6 @@ pub mod single_instance_health {
     
     
 }
-impl SingleInstanceHealth {
-    /// Creates a new builder-style object to manufacture [`SingleInstanceHealth`](crate::model::SingleInstanceHealth).
-    pub fn builder() -> crate::model::single_instance_health::Builder {
-        crate::model::single_instance_health::Builder::default()
-    }
-}
 
 /// <p>Information about an application version deployment.</p>
 #[non_exhaustive]
@@ -4527,6 +4555,13 @@ impl Deployment {
         self.deployment_time.as_ref()
     }
 }
+impl Deployment {
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
+    pub fn builder() -> crate::model::deployment::Builder {
+        crate::model::deployment::Builder::default()
+    }
+}
+
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
     
@@ -4605,12 +4640,6 @@ pub mod deployment {
     
     
 }
-impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
-    pub fn builder() -> crate::model::deployment::Builder {
-        crate::model::deployment::Builder::default()
-    }
-}
 
 /// <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
 #[non_exhaustive]
@@ -4633,6 +4662,13 @@ impl SystemStatus {
         self.load_average.as_deref()
     }
 }
+impl SystemStatus {
+    /// Creates a new builder-style object to manufacture [`SystemStatus`](crate::model::SystemStatus).
+    pub fn builder() -> crate::model::system_status::Builder {
+        crate::model::system_status::Builder::default()
+    }
+}
+
 /// See [`SystemStatus`](crate::model::SystemStatus).
 pub mod system_status {
     
@@ -4680,12 +4716,6 @@ pub mod system_status {
     }
     
     
-}
-impl SystemStatus {
-    /// Creates a new builder-style object to manufacture [`SystemStatus`](crate::model::SystemStatus).
-    pub fn builder() -> crate::model::system_status::Builder {
-        crate::model::system_status::Builder::default()
-    }
 }
 
 /// <p>CPU utilization metrics for an instance.</p>
@@ -4763,6 +4793,13 @@ impl CpuUtilization {
         self.privileged
     }
 }
+impl CpuUtilization {
+    /// Creates a new builder-style object to manufacture [`CpuUtilization`](crate::model::CpuUtilization).
+    pub fn builder() -> crate::model::cpu_utilization::Builder {
+        crate::model::cpu_utilization::Builder::default()
+    }
+}
+
 /// See [`CpuUtilization`](crate::model::CpuUtilization).
 pub mod cpu_utilization {
     
@@ -4889,12 +4926,6 @@ pub mod cpu_utilization {
     
     
 }
-impl CpuUtilization {
-    /// Creates a new builder-style object to manufacture [`CpuUtilization`](crate::model::CpuUtilization).
-    pub fn builder() -> crate::model::cpu_utilization::Builder {
-        crate::model::cpu_utilization::Builder::default()
-    }
-}
 
 /// <p>Application request metrics for an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
@@ -4931,6 +4962,13 @@ impl ApplicationMetrics {
         self.latency.as_ref()
     }
 }
+impl ApplicationMetrics {
+    /// Creates a new builder-style object to manufacture [`ApplicationMetrics`](crate::model::ApplicationMetrics).
+    pub fn builder() -> crate::model::application_metrics::Builder {
+        crate::model::application_metrics::Builder::default()
+    }
+}
+
 /// See [`ApplicationMetrics`](crate::model::ApplicationMetrics).
 pub mod application_metrics {
     
@@ -4998,12 +5036,6 @@ pub mod application_metrics {
     
     
 }
-impl ApplicationMetrics {
-    /// Creates a new builder-style object to manufacture [`ApplicationMetrics`](crate::model::ApplicationMetrics).
-    pub fn builder() -> crate::model::application_metrics::Builder {
-        crate::model::application_metrics::Builder::default()
-    }
-}
 
 /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds.</p>
 #[non_exhaustive]
@@ -5068,6 +5100,13 @@ impl Latency {
         self.p10
     }
 }
+impl Latency {
+    /// Creates a new builder-style object to manufacture [`Latency`](crate::model::Latency).
+    pub fn builder() -> crate::model::latency::Builder {
+        crate::model::latency::Builder::default()
+    }
+}
+
 /// See [`Latency`](crate::model::Latency).
 pub mod latency {
     
@@ -5182,12 +5221,6 @@ pub mod latency {
     
     
 }
-impl Latency {
-    /// Creates a new builder-style object to manufacture [`Latency`](crate::model::Latency).
-    pub fn builder() -> crate::model::latency::Builder {
-        crate::model::latency::Builder::default()
-    }
-}
 
 /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
 #[non_exhaustive]
@@ -5224,6 +5257,13 @@ impl StatusCodes {
         self.status5xx
     }
 }
+impl StatusCodes {
+    /// Creates a new builder-style object to manufacture [`StatusCodes`](crate::model::StatusCodes).
+    pub fn builder() -> crate::model::status_codes::Builder {
+        crate::model::status_codes::Builder::default()
+    }
+}
+
 /// See [`StatusCodes`](crate::model::StatusCodes).
 pub mod status_codes {
     
@@ -5289,12 +5329,6 @@ pub mod status_codes {
     }
     
     
-}
-impl StatusCodes {
-    /// Creates a new builder-style object to manufacture [`StatusCodes`](crate::model::StatusCodes).
-    pub fn builder() -> crate::model::status_codes::Builder {
-        crate::model::status_codes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InstancesHealthAttribute`, it is important to ensure
@@ -5494,6 +5528,13 @@ impl EventDescription {
         self.severity.as_ref()
     }
 }
+impl EventDescription {
+    /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription).
+    pub fn builder() -> crate::model::event_description::Builder {
+        crate::model::event_description::Builder::default()
+    }
+}
+
 /// See [`EventDescription`](crate::model::EventDescription).
 pub mod event_description {
     
@@ -5619,12 +5660,6 @@ pub mod event_description {
     }
     
     
-}
-impl EventDescription {
-    /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription).
-    pub fn builder() -> crate::model::event_description::Builder {
-        crate::model::event_description::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EventSeverity`, it is important to ensure
@@ -5915,6 +5950,13 @@ impl EnvironmentDescription {
         self.operations_role.as_deref()
     }
 }
+impl EnvironmentDescription {
+    /// Creates a new builder-style object to manufacture [`EnvironmentDescription`](crate::model::EnvironmentDescription).
+    pub fn builder() -> crate::model::environment_description::Builder {
+        crate::model::environment_description::Builder::default()
+    }
+}
+
 /// See [`EnvironmentDescription`](crate::model::EnvironmentDescription).
 pub mod environment_description {
     
@@ -6223,12 +6265,6 @@ pub mod environment_description {
     
     
 }
-impl EnvironmentDescription {
-    /// Creates a new builder-style object to manufacture [`EnvironmentDescription`](crate::model::EnvironmentDescription).
-    pub fn builder() -> crate::model::environment_description::Builder {
-        crate::model::environment_description::Builder::default()
-    }
-}
 
 /// <p>Describes the AWS resources in use by this environment. This data is live.</p>
 #[non_exhaustive]
@@ -6293,6 +6329,13 @@ impl EnvironmentResourceDescription {
         self.queues.as_deref()
     }
 }
+impl EnvironmentResourceDescription {
+    /// Creates a new builder-style object to manufacture [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
+    pub fn builder() -> crate::model::environment_resource_description::Builder {
+        crate::model::environment_resource_description::Builder::default()
+    }
+}
+
 /// See [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
 pub mod environment_resource_description {
     
@@ -6449,12 +6492,6 @@ pub mod environment_resource_description {
     
     
 }
-impl EnvironmentResourceDescription {
-    /// Creates a new builder-style object to manufacture [`EnvironmentResourceDescription`](crate::model::EnvironmentResourceDescription).
-    pub fn builder() -> crate::model::environment_resource_description::Builder {
-        crate::model::environment_resource_description::Builder::default()
-    }
-}
 
 /// <p>Describes a queue.</p>
 #[non_exhaustive]
@@ -6477,6 +6514,13 @@ impl Queue {
         self.url.as_deref()
     }
 }
+impl Queue {
+    /// Creates a new builder-style object to manufacture [`Queue`](crate::model::Queue).
+    pub fn builder() -> crate::model::queue::Builder {
+        crate::model::queue::Builder::default()
+    }
+}
+
 /// See [`Queue`](crate::model::Queue).
 pub mod queue {
     
@@ -6519,12 +6563,6 @@ pub mod queue {
     
     
 }
-impl Queue {
-    /// Creates a new builder-style object to manufacture [`Queue`](crate::model::Queue).
-    pub fn builder() -> crate::model::queue::Builder {
-        crate::model::queue::Builder::default()
-    }
-}
 
 /// <p>Describes a trigger.</p>
 #[non_exhaustive]
@@ -6540,6 +6578,13 @@ impl Trigger {
         self.name.as_deref()
     }
 }
+impl Trigger {
+    /// Creates a new builder-style object to manufacture [`Trigger`](crate::model::Trigger).
+    pub fn builder() -> crate::model::trigger::Builder {
+        crate::model::trigger::Builder::default()
+    }
+}
+
 /// See [`Trigger`](crate::model::Trigger).
 pub mod trigger {
     
@@ -6570,12 +6615,6 @@ pub mod trigger {
     
     
 }
-impl Trigger {
-    /// Creates a new builder-style object to manufacture [`Trigger`](crate::model::Trigger).
-    pub fn builder() -> crate::model::trigger::Builder {
-        crate::model::trigger::Builder::default()
-    }
-}
 
 /// <p>Describes a LoadBalancer.</p>
 #[non_exhaustive]
@@ -6591,6 +6630,13 @@ impl LoadBalancer {
         self.name.as_deref()
     }
 }
+impl LoadBalancer {
+    /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
+    pub fn builder() -> crate::model::load_balancer::Builder {
+        crate::model::load_balancer::Builder::default()
+    }
+}
+
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
 pub mod load_balancer {
     
@@ -6621,12 +6667,6 @@ pub mod load_balancer {
     
     
 }
-impl LoadBalancer {
-    /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
-    pub fn builder() -> crate::model::load_balancer::Builder {
-        crate::model::load_balancer::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon EC2 launch template.</p>
 #[non_exhaustive]
@@ -6642,6 +6682,13 @@ impl LaunchTemplate {
         self.id.as_deref()
     }
 }
+impl LaunchTemplate {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplate`](crate::model::LaunchTemplate).
+    pub fn builder() -> crate::model::launch_template::Builder {
+        crate::model::launch_template::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplate`](crate::model::LaunchTemplate).
 pub mod launch_template {
     
@@ -6672,12 +6719,6 @@ pub mod launch_template {
     
     
 }
-impl LaunchTemplate {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplate`](crate::model::LaunchTemplate).
-    pub fn builder() -> crate::model::launch_template::Builder {
-        crate::model::launch_template::Builder::default()
-    }
-}
 
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
@@ -6693,6 +6734,13 @@ impl LaunchConfiguration {
         self.name.as_deref()
     }
 }
+impl LaunchConfiguration {
+    /// Creates a new builder-style object to manufacture [`LaunchConfiguration`](crate::model::LaunchConfiguration).
+    pub fn builder() -> crate::model::launch_configuration::Builder {
+        crate::model::launch_configuration::Builder::default()
+    }
+}
+
 /// See [`LaunchConfiguration`](crate::model::LaunchConfiguration).
 pub mod launch_configuration {
     
@@ -6723,12 +6771,6 @@ pub mod launch_configuration {
     
     
 }
-impl LaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`LaunchConfiguration`](crate::model::LaunchConfiguration).
-    pub fn builder() -> crate::model::launch_configuration::Builder {
-        crate::model::launch_configuration::Builder::default()
-    }
-}
 
 /// <p>The description of an Amazon EC2 instance.</p>
 #[non_exhaustive]
@@ -6744,6 +6786,13 @@ impl Instance {
         self.id.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -6774,12 +6823,6 @@ pub mod instance {
     
     
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// <p>Describes an Auto Scaling launch configuration.</p>
 #[non_exhaustive]
@@ -6795,6 +6838,13 @@ impl AutoScalingGroup {
         self.name.as_deref()
     }
 }
+impl AutoScalingGroup {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
+    pub fn builder() -> crate::model::auto_scaling_group::Builder {
+        crate::model::auto_scaling_group::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
 pub mod auto_scaling_group {
     
@@ -6824,12 +6874,6 @@ pub mod auto_scaling_group {
     }
     
     
-}
-impl AutoScalingGroup {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
-    pub fn builder() -> crate::model::auto_scaling_group::Builder {
-        crate::model::auto_scaling_group::Builder::default()
-    }
 }
 
 /// <p>The record of an upcoming or in-progress managed action.</p>
@@ -6874,6 +6918,13 @@ impl ManagedAction {
         self.window_start_time.as_ref()
     }
 }
+impl ManagedAction {
+    /// Creates a new builder-style object to manufacture [`ManagedAction`](crate::model::ManagedAction).
+    pub fn builder() -> crate::model::managed_action::Builder {
+        crate::model::managed_action::Builder::default()
+    }
+}
+
 /// See [`ManagedAction`](crate::model::ManagedAction).
 pub mod managed_action {
     
@@ -6951,12 +7002,6 @@ pub mod managed_action {
     }
     
     
-}
-impl ManagedAction {
-    /// Creates a new builder-style object to manufacture [`ManagedAction`](crate::model::ManagedAction).
-    pub fn builder() -> crate::model::managed_action::Builder {
-        crate::model::managed_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActionStatus`, it is important to ensure
@@ -7201,6 +7246,13 @@ impl ManagedActionHistoryItem {
         self.finished_time.as_ref()
     }
 }
+impl ManagedActionHistoryItem {
+    /// Creates a new builder-style object to manufacture [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
+    pub fn builder() -> crate::model::managed_action_history_item::Builder {
+        crate::model::managed_action_history_item::Builder::default()
+    }
+}
+
 /// See [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
 pub mod managed_action_history_item {
     
@@ -7314,12 +7366,6 @@ pub mod managed_action_history_item {
     }
     
     
-}
-impl ManagedActionHistoryItem {
-    /// Creates a new builder-style object to manufacture [`ManagedActionHistoryItem`](crate::model::ManagedActionHistoryItem).
-    pub fn builder() -> crate::model::managed_action_history_item::Builder {
-        crate::model::managed_action_history_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ActionHistoryStatus`, it is important to ensure
@@ -7579,6 +7625,13 @@ impl InstanceHealthSummary {
         self.severe
     }
 }
+impl InstanceHealthSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
+    pub fn builder() -> crate::model::instance_health_summary::Builder {
+        crate::model::instance_health_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
 pub mod instance_health_summary {
     
@@ -7692,12 +7745,6 @@ pub mod instance_health_summary {
     }
     
     
-}
-impl InstanceHealthSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceHealthSummary`](crate::model::InstanceHealthSummary).
-    pub fn builder() -> crate::model::instance_health_summary::Builder {
-        crate::model::instance_health_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnvironmentHealthAttribute`, it is important to ensure
@@ -7901,6 +7948,13 @@ impl ConfigurationSettingsDescription {
         self.option_settings.as_deref()
     }
 }
+impl ConfigurationSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
+    pub fn builder() -> crate::model::configuration_settings_description::Builder {
+        crate::model::configuration_settings_description::Builder::default()
+    }
+}
+
 /// See [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
 pub mod configuration_settings_description {
     
@@ -8057,12 +8111,6 @@ pub mod configuration_settings_description {
     
     
 }
-impl ConfigurationSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`ConfigurationSettingsDescription`](crate::model::ConfigurationSettingsDescription).
-    pub fn builder() -> crate::model::configuration_settings_description::Builder {
-        crate::model::configuration_settings_description::Builder::default()
-    }
-}
 
 /// <p>Describes the possible values for a configuration option.</p>
 #[non_exhaustive]
@@ -8182,6 +8230,13 @@ impl ConfigurationOptionDescription {
         self.regex.as_ref()
     }
 }
+impl ConfigurationOptionDescription {
+    /// Creates a new builder-style object to manufacture [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
+    pub fn builder() -> crate::model::configuration_option_description::Builder {
+        crate::model::configuration_option_description::Builder::default()
+    }
+}
+
 /// See [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
 pub mod configuration_option_description {
     
@@ -8372,12 +8427,6 @@ pub mod configuration_option_description {
     
     
 }
-impl ConfigurationOptionDescription {
-    /// Creates a new builder-style object to manufacture [`ConfigurationOptionDescription`](crate::model::ConfigurationOptionDescription).
-    pub fn builder() -> crate::model::configuration_option_description::Builder {
-        crate::model::configuration_option_description::Builder::default()
-    }
-}
 
 /// <p>A regular expression representing a restriction on a string configuration option value.</p>
 #[non_exhaustive]
@@ -8400,6 +8449,13 @@ impl OptionRestrictionRegex {
         self.label.as_deref()
     }
 }
+impl OptionRestrictionRegex {
+    /// Creates a new builder-style object to manufacture [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
+    pub fn builder() -> crate::model::option_restriction_regex::Builder {
+        crate::model::option_restriction_regex::Builder::default()
+    }
+}
+
 /// See [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
 pub mod option_restriction_regex {
     
@@ -8441,12 +8497,6 @@ pub mod option_restriction_regex {
     }
     
     
-}
-impl OptionRestrictionRegex {
-    /// Creates a new builder-style object to manufacture [`OptionRestrictionRegex`](crate::model::OptionRestrictionRegex).
-    pub fn builder() -> crate::model::option_restriction_regex::Builder {
-        crate::model::option_restriction_regex::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigurationOptionValueType`, it is important to ensure
@@ -8573,6 +8623,13 @@ impl ResourceQuotas {
         self.custom_platform_quota.as_ref()
     }
 }
+impl ResourceQuotas {
+    /// Creates a new builder-style object to manufacture [`ResourceQuotas`](crate::model::ResourceQuotas).
+    pub fn builder() -> crate::model::resource_quotas::Builder {
+        crate::model::resource_quotas::Builder::default()
+    }
+}
+
 /// See [`ResourceQuotas`](crate::model::ResourceQuotas).
 pub mod resource_quotas {
     
@@ -8651,12 +8708,6 @@ pub mod resource_quotas {
     
     
 }
-impl ResourceQuotas {
-    /// Creates a new builder-style object to manufacture [`ResourceQuotas`](crate::model::ResourceQuotas).
-    pub fn builder() -> crate::model::resource_quotas::Builder {
-        crate::model::resource_quotas::Builder::default()
-    }
-}
 
 /// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
 #[non_exhaustive]
@@ -8672,6 +8723,13 @@ impl ResourceQuota {
         self.maximum
     }
 }
+impl ResourceQuota {
+    /// Creates a new builder-style object to manufacture [`ResourceQuota`](crate::model::ResourceQuota).
+    pub fn builder() -> crate::model::resource_quota::Builder {
+        crate::model::resource_quota::Builder::default()
+    }
+}
+
 /// See [`ResourceQuota`](crate::model::ResourceQuota).
 pub mod resource_quota {
     
@@ -8702,12 +8760,6 @@ pub mod resource_quota {
     
     
 }
-impl ResourceQuota {
-    /// Creates a new builder-style object to manufacture [`ResourceQuota`](crate::model::ResourceQuota).
-    pub fn builder() -> crate::model::resource_quota::Builder {
-        crate::model::resource_quota::Builder::default()
-    }
-}
 
 /// <p>The builder used to build the custom platform.</p>
 #[non_exhaustive]
@@ -8723,6 +8775,13 @@ impl Builder {
         self.arn.as_deref()
     }
 }
+impl Builder {
+    /// Creates a new builder-style object to manufacture [`Builder`](crate::model::Builder).
+    pub fn builder() -> crate::model::builder::Builder {
+        crate::model::builder::Builder::default()
+    }
+}
+
 /// See [`Builder`](crate::model::Builder).
 pub mod builder {
     
@@ -8753,12 +8812,6 @@ pub mod builder {
     
     
 }
-impl Builder {
-    /// Creates a new builder-style object to manufacture [`Builder`](crate::model::Builder).
-    pub fn builder() -> crate::model::builder::Builder {
-        crate::model::builder::Builder::default()
-    }
-}
 
 /// <p>A specification for an environment configuration.</p>
 #[non_exhaustive]
@@ -8781,6 +8834,13 @@ impl SourceConfiguration {
         self.template_name.as_deref()
     }
 }
+impl SourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
+    pub fn builder() -> crate::model::source_configuration::Builder {
+        crate::model::source_configuration::Builder::default()
+    }
+}
+
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
 pub mod source_configuration {
     
@@ -8822,12 +8882,6 @@ pub mod source_configuration {
     }
     
     
-}
-impl SourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
-    pub fn builder() -> crate::model::source_configuration::Builder {
-        crate::model::source_configuration::Builder::default()
-    }
 }
 
 /// <p>Settings for an AWS CodeBuild build.</p>
@@ -8882,6 +8936,13 @@ impl BuildConfiguration {
         self.timeout_in_minutes
     }
 }
+impl BuildConfiguration {
+    /// Creates a new builder-style object to manufacture [`BuildConfiguration`](crate::model::BuildConfiguration).
+    pub fn builder() -> crate::model::build_configuration::Builder {
+        crate::model::build_configuration::Builder::default()
+    }
+}
+
 /// See [`BuildConfiguration`](crate::model::BuildConfiguration).
 pub mod build_configuration {
     
@@ -8969,12 +9030,6 @@ pub mod build_configuration {
     }
     
     
-}
-impl BuildConfiguration {
-    /// Creates a new builder-style object to manufacture [`BuildConfiguration`](crate::model::BuildConfiguration).
-    pub fn builder() -> crate::model::build_configuration::Builder {
-        crate::model::build_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComputeType`, it is important to ensure

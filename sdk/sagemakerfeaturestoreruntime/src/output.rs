@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for PutRecordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutRecordOutput {
+    /// Creates a new builder-style object to manufacture [`PutRecordOutput`](crate::output::PutRecordOutput).
+    pub fn builder() -> crate::output::put_record_output::Builder {
+        crate::output::put_record_output::Builder::default()
+    }
+}
+
 /// See [`PutRecordOutput`](crate::output::PutRecordOutput).
 pub mod put_record_output {
     
@@ -39,12 +46,6 @@ pub mod put_record_output {
     
     
 }
-impl PutRecordOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecordOutput`](crate::output::PutRecordOutput).
-    pub fn builder() -> crate::output::put_record_output::Builder {
-        crate::output::put_record_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -66,6 +67,13 @@ impl aws_http::request_id::RequestId for GetRecordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetRecordOutput {
+    /// Creates a new builder-style object to manufacture [`GetRecordOutput`](crate::output::GetRecordOutput).
+    pub fn builder() -> crate::output::get_record_output::Builder {
+        crate::output::get_record_output::Builder::default()
+    }
+}
+
 /// See [`GetRecordOutput`](crate::output::GetRecordOutput).
 pub mod get_record_output {
     
@@ -113,12 +121,6 @@ pub mod get_record_output {
     
     
 }
-impl GetRecordOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecordOutput`](crate::output::GetRecordOutput).
-    pub fn builder() -> crate::output::get_record_output::Builder {
-        crate::output::get_record_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -131,6 +133,13 @@ impl aws_http::request_id::RequestId for DeleteRecordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRecordOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
+    pub fn builder() -> crate::output::delete_record_output::Builder {
+        crate::output::delete_record_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
 pub mod delete_record_output {
     
@@ -159,12 +168,6 @@ pub mod delete_record_output {
     }
     
     
-}
-impl DeleteRecordOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
-    pub fn builder() -> crate::output::delete_record_output::Builder {
-        crate::output::delete_record_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -201,6 +204,13 @@ impl aws_http::request_id::RequestId for BatchGetRecordOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl BatchGetRecordOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
+    pub fn builder() -> crate::output::batch_get_record_output::Builder {
+        crate::output::batch_get_record_output::Builder::default()
+    }
+}
+
 /// See [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
 pub mod batch_get_record_output {
     
@@ -283,11 +293,5 @@ pub mod batch_get_record_output {
     }
     
     
-}
-impl BatchGetRecordOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
-    pub fn builder() -> crate::output::batch_get_record_output::Builder {
-        crate::output::batch_get_record_output::Builder::default()
-    }
 }
 

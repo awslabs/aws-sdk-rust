@@ -96,6 +96,13 @@ impl StreamProcessorDataSharingPreference {
         self.opt_in
     }
 }
+impl StreamProcessorDataSharingPreference {
+    /// Creates a new builder-style object to manufacture [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
+    pub fn builder() -> crate::model::stream_processor_data_sharing_preference::Builder {
+        crate::model::stream_processor_data_sharing_preference::Builder::default()
+    }
+}
+
 /// See [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
 pub mod stream_processor_data_sharing_preference {
     
@@ -127,12 +134,6 @@ pub mod stream_processor_data_sharing_preference {
     
     
 }
-impl StreamProcessorDataSharingPreference {
-    /// Creates a new builder-style object to manufacture [`StreamProcessorDataSharingPreference`](crate::model::StreamProcessorDataSharingPreference).
-    pub fn builder() -> crate::model::stream_processor_data_sharing_preference::Builder {
-        crate::model::stream_processor_data_sharing_preference::Builder::default()
-    }
-}
 
 /// <p>Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code> to set a region of the screen.</p> 
 /// <p>A word, face, or label is included in the region if it is more than half in that region. If there is more than one region, the word, face, or label is compared with all regions of the screen. Any object of interest that is more than half in a region is kept in the results.</p>
@@ -156,6 +157,13 @@ impl RegionOfInterest {
         self.polygon.as_deref()
     }
 }
+impl RegionOfInterest {
+    /// Creates a new builder-style object to manufacture [`RegionOfInterest`](crate::model::RegionOfInterest).
+    pub fn builder() -> crate::model::region_of_interest::Builder {
+        crate::model::region_of_interest::Builder::default()
+    }
+}
+
 /// See [`RegionOfInterest`](crate::model::RegionOfInterest).
 pub mod region_of_interest {
     
@@ -204,12 +212,6 @@ pub mod region_of_interest {
     
     
 }
-impl RegionOfInterest {
-    /// Creates a new builder-style object to manufacture [`RegionOfInterest`](crate::model::RegionOfInterest).
-    pub fn builder() -> crate::model::region_of_interest::Builder {
-        crate::model::region_of_interest::Builder::default()
-    }
-}
 
 /// <p>The X and Y coordinates of a point on an image or video frame. The X and Y values are ratios of the overall image size or video resolution. For example, if an input image is 700x200 and the values are X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.</p> 
 /// <p>An array of <code>Point</code> objects makes up a <code>Polygon</code>. A <code>Polygon</code> is returned by <code>DetectText</code> and by <code>DetectCustomLabels</code> <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide. </p>
@@ -233,6 +235,13 @@ impl Point {
         self.y
     }
 }
+impl Point {
+    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
+    pub fn builder() -> crate::model::point::Builder {
+        crate::model::point::Builder::default()
+    }
+}
+
 /// See [`Point`](crate::model::Point).
 pub mod point {
     
@@ -275,12 +284,6 @@ pub mod point {
     
     
 }
-impl Point {
-    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
-    pub fn builder() -> crate::model::point::Builder {
-        crate::model::point::Builder::default()
-    }
-}
 
 /// <p>Identifies the bounding box around the label, face, text, object of interest, or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> 
 /// <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> 
@@ -321,6 +324,13 @@ impl BoundingBox {
         self.top
     }
 }
+impl BoundingBox {
+    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
+    pub fn builder() -> crate::model::bounding_box::Builder {
+        crate::model::bounding_box::Builder::default()
+    }
+}
+
 /// See [`BoundingBox`](crate::model::BoundingBox).
 pub mod bounding_box {
     
@@ -387,12 +397,6 @@ pub mod bounding_box {
     
     
 }
-impl BoundingBox {
-    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
-    pub fn builder() -> crate::model::bounding_box::Builder {
-        crate::model::bounding_box::Builder::default()
-    }
-}
 
 /// <p> The stream processor settings that you want to update. <code>ConnectedHome</code> settings can be updated to detect different labels with a different minimum confidence. </p>
 #[non_exhaustive]
@@ -408,6 +412,13 @@ impl StreamProcessorSettingsForUpdate {
         self.connected_home_for_update.as_ref()
     }
 }
+impl StreamProcessorSettingsForUpdate {
+    /// Creates a new builder-style object to manufacture [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
+    pub fn builder() -> crate::model::stream_processor_settings_for_update::Builder {
+        crate::model::stream_processor_settings_for_update::Builder::default()
+    }
+}
+
 /// See [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
 pub mod stream_processor_settings_for_update {
     
@@ -438,12 +449,6 @@ pub mod stream_processor_settings_for_update {
     
     
 }
-impl StreamProcessorSettingsForUpdate {
-    /// Creates a new builder-style object to manufacture [`StreamProcessorSettingsForUpdate`](crate::model::StreamProcessorSettingsForUpdate).
-    pub fn builder() -> crate::model::stream_processor_settings_for_update::Builder {
-        crate::model::stream_processor_settings_for_update::Builder::default()
-    }
-}
 
 /// <p> The label detection settings you want to use in your stream processor. This includes the labels you want the stream processor to detect and the minimum confidence level allowed to label objects. </p>
 #[non_exhaustive]
@@ -466,6 +471,13 @@ impl ConnectedHomeSettingsForUpdate {
         self.min_confidence
     }
 }
+impl ConnectedHomeSettingsForUpdate {
+    /// Creates a new builder-style object to manufacture [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
+    pub fn builder() -> crate::model::connected_home_settings_for_update::Builder {
+        crate::model::connected_home_settings_for_update::Builder::default()
+    }
+}
+
 /// See [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
 pub mod connected_home_settings_for_update {
     
@@ -514,12 +526,6 @@ pub mod connected_home_settings_for_update {
     
     
 }
-impl ConnectedHomeSettingsForUpdate {
-    /// Creates a new builder-style object to manufacture [`ConnectedHomeSettingsForUpdate`](crate::model::ConnectedHomeSettingsForUpdate).
-    pub fn builder() -> crate::model::connected_home_settings_for_update::Builder {
-        crate::model::connected_home_settings_for_update::Builder::default()
-    }
-}
 
 /// <p> Describes updates or additions to a dataset. A Single update or addition is an entry (JSON Line) that provides information about a single image. To update an existing entry, you match the <code>source-ref</code> field of the update entry with the <code>source-ref</code> filed of the entry that you want to update. If the <code>source-ref</code> field doesn't match an existing entry, the entry is added to dataset as a new entry. </p>
 #[non_exhaustive]
@@ -537,6 +543,13 @@ impl DatasetChanges {
         self.ground_truth.as_ref()
     }
 }
+impl DatasetChanges {
+    /// Creates a new builder-style object to manufacture [`DatasetChanges`](crate::model::DatasetChanges).
+    pub fn builder() -> crate::model::dataset_changes::Builder {
+        crate::model::dataset_changes::Builder::default()
+    }
+}
+
 /// See [`DatasetChanges`](crate::model::DatasetChanges).
 pub mod dataset_changes {
     
@@ -568,12 +581,6 @@ pub mod dataset_changes {
     }
     
     
-}
-impl DatasetChanges {
-    /// Creates a new builder-style object to manufacture [`DatasetChanges`](crate::model::DatasetChanges).
-    pub fn builder() -> crate::model::dataset_changes::Builder {
-        crate::model::dataset_changes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProjectVersionStatus`, it is important to ensure
@@ -729,6 +736,13 @@ impl StartTextDetectionFilters {
         self.regions_of_interest.as_deref()
     }
 }
+impl StartTextDetectionFilters {
+    /// Creates a new builder-style object to manufacture [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
+    pub fn builder() -> crate::model::start_text_detection_filters::Builder {
+        crate::model::start_text_detection_filters::Builder::default()
+    }
+}
+
 /// See [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
 pub mod start_text_detection_filters {
     
@@ -777,12 +791,6 @@ pub mod start_text_detection_filters {
     
     
 }
-impl StartTextDetectionFilters {
-    /// Creates a new builder-style object to manufacture [`StartTextDetectionFilters`](crate::model::StartTextDetectionFilters).
-    pub fn builder() -> crate::model::start_text_detection_filters::Builder {
-        crate::model::start_text_detection_filters::Builder::default()
-    }
-}
 
 /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
 #[non_exhaustive]
@@ -812,6 +820,13 @@ impl DetectionFilter {
         self.min_bounding_box_width
     }
 }
+impl DetectionFilter {
+    /// Creates a new builder-style object to manufacture [`DetectionFilter`](crate::model::DetectionFilter).
+    pub fn builder() -> crate::model::detection_filter::Builder {
+        crate::model::detection_filter::Builder::default()
+    }
+}
+
 /// See [`DetectionFilter`](crate::model::DetectionFilter).
 pub mod detection_filter {
     
@@ -866,12 +881,6 @@ pub mod detection_filter {
     
     
 }
-impl DetectionFilter {
-    /// Creates a new builder-style object to manufacture [`DetectionFilter`](crate::model::DetectionFilter).
-    pub fn builder() -> crate::model::detection_filter::Builder {
-        crate::model::detection_filter::Builder::default()
-    }
-}
 
 /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
 #[non_exhaustive]
@@ -894,6 +903,13 @@ impl NotificationChannel {
         self.role_arn.as_deref()
     }
 }
+impl NotificationChannel {
+    /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
+    pub fn builder() -> crate::model::notification_channel::Builder {
+        crate::model::notification_channel::Builder::default()
+    }
+}
+
 /// See [`NotificationChannel`](crate::model::NotificationChannel).
 pub mod notification_channel {
     
@@ -936,12 +952,6 @@ pub mod notification_channel {
     
     
 }
-impl NotificationChannel {
-    /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
-    pub fn builder() -> crate::model::notification_channel::Builder {
-        crate::model::notification_channel::Builder::default()
-    }
-}
 
 /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 #[non_exhaustive]
@@ -957,6 +967,13 @@ impl Video {
         self.s3_object.as_ref()
     }
 }
+impl Video {
+    /// Creates a new builder-style object to manufacture [`Video`](crate::model::Video).
+    pub fn builder() -> crate::model::video::Builder {
+        crate::model::video::Builder::default()
+    }
+}
+
 /// See [`Video`](crate::model::Video).
 pub mod video {
     
@@ -986,12 +1003,6 @@ pub mod video {
     }
     
     
-}
-impl Video {
-    /// Creates a new builder-style object to manufacture [`Video`](crate::model::Video).
-    pub fn builder() -> crate::model::video::Builder {
-        crate::model::video::Builder::default()
-    }
 }
 
 /// <p>Provides the S3 bucket name and object name.</p> 
@@ -1024,6 +1035,13 @@ impl S3Object {
         self.version.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
     
@@ -1078,12 +1096,6 @@ pub mod s3_object {
     
     
 }
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
-    }
-}
 
 /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
 #[non_exhaustive]
@@ -1099,6 +1111,13 @@ impl StreamProcessingStopSelector {
         self.max_duration_in_seconds
     }
 }
+impl StreamProcessingStopSelector {
+    /// Creates a new builder-style object to manufacture [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
+    pub fn builder() -> crate::model::stream_processing_stop_selector::Builder {
+        crate::model::stream_processing_stop_selector::Builder::default()
+    }
+}
+
 /// See [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
 pub mod stream_processing_stop_selector {
     
@@ -1129,12 +1148,6 @@ pub mod stream_processing_stop_selector {
     
     
 }
-impl StreamProcessingStopSelector {
-    /// Creates a new builder-style object to manufacture [`StreamProcessingStopSelector`](crate::model::StreamProcessingStopSelector).
-    pub fn builder() -> crate::model::stream_processing_stop_selector::Builder {
-        crate::model::stream_processing_stop_selector::Builder::default()
-    }
-}
 
 /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
 #[non_exhaustive]
@@ -1150,6 +1163,13 @@ impl StreamProcessingStartSelector {
         self.kvs_stream_start_selector.as_ref()
     }
 }
+impl StreamProcessingStartSelector {
+    /// Creates a new builder-style object to manufacture [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
+    pub fn builder() -> crate::model::stream_processing_start_selector::Builder {
+        crate::model::stream_processing_start_selector::Builder::default()
+    }
+}
+
 /// See [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
 pub mod stream_processing_start_selector {
     
@@ -1180,12 +1200,6 @@ pub mod stream_processing_start_selector {
     
     
 }
-impl StreamProcessingStartSelector {
-    /// Creates a new builder-style object to manufacture [`StreamProcessingStartSelector`](crate::model::StreamProcessingStartSelector).
-    pub fn builder() -> crate::model::stream_processing_start_selector::Builder {
-        crate::model::stream_processing_start_selector::Builder::default()
-    }
-}
 
 /// <p>Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. One of either producer timestamp or fragment number is required. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>. </p>
 #[non_exhaustive]
@@ -1208,6 +1222,13 @@ impl KinesisVideoStreamStartSelector {
         self.fragment_number.as_deref()
     }
 }
+impl KinesisVideoStreamStartSelector {
+    /// Creates a new builder-style object to manufacture [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
+    pub fn builder() -> crate::model::kinesis_video_stream_start_selector::Builder {
+        crate::model::kinesis_video_stream_start_selector::Builder::default()
+    }
+}
+
 /// See [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
 pub mod kinesis_video_stream_start_selector {
     
@@ -1249,12 +1270,6 @@ pub mod kinesis_video_stream_start_selector {
     }
     
     
-}
-impl KinesisVideoStreamStartSelector {
-    /// Creates a new builder-style object to manufacture [`KinesisVideoStreamStartSelector`](crate::model::KinesisVideoStreamStartSelector).
-    pub fn builder() -> crate::model::kinesis_video_stream_start_selector::Builder {
-        crate::model::kinesis_video_stream_start_selector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SegmentType`, it is important to ensure
@@ -1360,6 +1375,13 @@ impl StartSegmentDetectionFilters {
         self.shot_filter.as_ref()
     }
 }
+impl StartSegmentDetectionFilters {
+    /// Creates a new builder-style object to manufacture [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
+    pub fn builder() -> crate::model::start_segment_detection_filters::Builder {
+        crate::model::start_segment_detection_filters::Builder::default()
+    }
+}
+
 /// See [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
 pub mod start_segment_detection_filters {
     
@@ -1402,12 +1424,6 @@ pub mod start_segment_detection_filters {
     
     
 }
-impl StartSegmentDetectionFilters {
-    /// Creates a new builder-style object to manufacture [`StartSegmentDetectionFilters`](crate::model::StartSegmentDetectionFilters).
-    pub fn builder() -> crate::model::start_segment_detection_filters::Builder {
-        crate::model::start_segment_detection_filters::Builder::default()
-    }
-}
 
 /// <p>Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
@@ -1425,6 +1441,13 @@ impl StartShotDetectionFilter {
         self.min_segment_confidence
     }
 }
+impl StartShotDetectionFilter {
+    /// Creates a new builder-style object to manufacture [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
+    pub fn builder() -> crate::model::start_shot_detection_filter::Builder {
+        crate::model::start_shot_detection_filter::Builder::default()
+    }
+}
+
 /// See [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
 pub mod start_shot_detection_filter {
     
@@ -1457,12 +1480,6 @@ pub mod start_shot_detection_filter {
     
     
 }
-impl StartShotDetectionFilter {
-    /// Creates a new builder-style object to manufacture [`StartShotDetectionFilter`](crate::model::StartShotDetectionFilter).
-    pub fn builder() -> crate::model::start_shot_detection_filter::Builder {
-        crate::model::start_shot_detection_filter::Builder::default()
-    }
-}
 
 /// <p>Filters for the technical segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
@@ -1487,6 +1504,13 @@ impl StartTechnicalCueDetectionFilter {
         self.black_frame.as_ref()
     }
 }
+impl StartTechnicalCueDetectionFilter {
+    /// Creates a new builder-style object to manufacture [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
+    pub fn builder() -> crate::model::start_technical_cue_detection_filter::Builder {
+        crate::model::start_technical_cue_detection_filter::Builder::default()
+    }
+}
+
 /// See [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
 pub mod start_technical_cue_detection_filter {
     
@@ -1531,12 +1555,6 @@ pub mod start_technical_cue_detection_filter {
     
     
 }
-impl StartTechnicalCueDetectionFilter {
-    /// Creates a new builder-style object to manufacture [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter).
-    pub fn builder() -> crate::model::start_technical_cue_detection_filter::Builder {
-        crate::model::start_technical_cue_detection_filter::Builder::default()
-    }
-}
 
 /// <p> A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. As videos can come from multiple sources, formats, and time periods, they may contain different standards and varying noise levels for black frames that need to be accounted for. For more information, see <code>StartSegmentDetection</code>. </p>
 #[non_exhaustive]
@@ -1565,6 +1583,13 @@ impl BlackFrame {
         self.min_coverage_percentage
     }
 }
+impl BlackFrame {
+    /// Creates a new builder-style object to manufacture [`BlackFrame`](crate::model::BlackFrame).
+    pub fn builder() -> crate::model::black_frame::Builder {
+        crate::model::black_frame::Builder::default()
+    }
+}
+
 /// See [`BlackFrame`](crate::model::BlackFrame).
 pub mod black_frame {
     
@@ -1613,12 +1638,6 @@ pub mod black_frame {
     
     
 }
-impl BlackFrame {
-    /// Creates a new builder-style object to manufacture [`BlackFrame`](crate::model::BlackFrame).
-    pub fn builder() -> crate::model::black_frame::Builder {
-        crate::model::black_frame::Builder::default()
-    }
-}
 
 /// <p>Contains the specified filters that should be applied to a list of returned GENERAL_LABELS.</p>
 #[non_exhaustive]
@@ -1634,6 +1653,13 @@ impl LabelDetectionSettings {
         self.general_labels.as_ref()
     }
 }
+impl LabelDetectionSettings {
+    /// Creates a new builder-style object to manufacture [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
+    pub fn builder() -> crate::model::label_detection_settings::Builder {
+        crate::model::label_detection_settings::Builder::default()
+    }
+}
+
 /// See [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
 pub mod label_detection_settings {
     
@@ -1663,12 +1689,6 @@ pub mod label_detection_settings {
     }
     
     
-}
-impl LabelDetectionSettings {
-    /// Creates a new builder-style object to manufacture [`LabelDetectionSettings`](crate::model::LabelDetectionSettings).
-    pub fn builder() -> crate::model::label_detection_settings::Builder {
-        crate::model::label_detection_settings::Builder::default()
-    }
 }
 
 /// <p>Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.</p>
@@ -1706,6 +1726,13 @@ impl GeneralLabelsSettings {
         self.label_category_exclusion_filters.as_deref()
     }
 }
+impl GeneralLabelsSettings {
+    /// Creates a new builder-style object to manufacture [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
+    pub fn builder() -> crate::model::general_labels_settings::Builder {
+        crate::model::general_labels_settings::Builder::default()
+    }
+}
+
 /// See [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
 pub mod general_labels_settings {
     
@@ -1795,12 +1822,6 @@ pub mod general_labels_settings {
     }
     
     
-}
-impl GeneralLabelsSettings {
-    /// Creates a new builder-style object to manufacture [`GeneralLabelsSettings`](crate::model::GeneralLabelsSettings).
-    pub fn builder() -> crate::model::general_labels_settings::Builder {
-        crate::model::general_labels_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LabelDetectionFeatureName`, it is important to ensure
@@ -1983,6 +2004,13 @@ impl FaceMatch {
         self.face.as_ref()
     }
 }
+impl FaceMatch {
+    /// Creates a new builder-style object to manufacture [`FaceMatch`](crate::model::FaceMatch).
+    pub fn builder() -> crate::model::face_match::Builder {
+        crate::model::face_match::Builder::default()
+    }
+}
+
 /// See [`FaceMatch`](crate::model::FaceMatch).
 pub mod face_match {
     
@@ -2024,12 +2052,6 @@ pub mod face_match {
     }
     
     
-}
-impl FaceMatch {
-    /// Creates a new builder-style object to manufacture [`FaceMatch`](crate::model::FaceMatch).
-    pub fn builder() -> crate::model::face_match::Builder {
-        crate::model::face_match::Builder::default()
-    }
 }
 
 /// <p>Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. </p>
@@ -2081,6 +2103,13 @@ impl Face {
         self.index_faces_model_version.as_deref()
     }
 }
+impl Face {
+    /// Creates a new builder-style object to manufacture [`Face`](crate::model::Face).
+    pub fn builder() -> crate::model::face::Builder {
+        crate::model::face::Builder::default()
+    }
+}
+
 /// See [`Face`](crate::model::Face).
 pub mod face {
     
@@ -2170,12 +2199,6 @@ pub mod face {
     }
     
     
-}
-impl Face {
-    /// Creates a new builder-style object to manufacture [`Face`](crate::model::Face).
-    pub fn builder() -> crate::model::face::Builder {
-        crate::model::face::Builder::default()
-    }
 }
 
 /// When writing a match expression against `QualityFilter`, it is important to ensure
@@ -2302,6 +2325,13 @@ impl Image {
         self.s3_object.as_ref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
     
@@ -2343,12 +2373,6 @@ pub mod image {
     }
     
     
-}
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OrientationCorrection`, it is important to ensure
@@ -2499,6 +2523,13 @@ impl ComparedFace {
         self.smile.as_ref()
     }
 }
+impl ComparedFace {
+    /// Creates a new builder-style object to manufacture [`ComparedFace`](crate::model::ComparedFace).
+    pub fn builder() -> crate::model::compared_face::Builder {
+        crate::model::compared_face::Builder::default()
+    }
+}
+
 /// See [`ComparedFace`](crate::model::ComparedFace).
 pub mod compared_face {
     
@@ -2613,12 +2644,6 @@ pub mod compared_face {
     
     
 }
-impl ComparedFace {
-    /// Creates a new builder-style object to manufacture [`ComparedFace`](crate::model::ComparedFace).
-    pub fn builder() -> crate::model::compared_face::Builder {
-        crate::model::compared_face::Builder::default()
-    }
-}
 
 /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
 #[non_exhaustive]
@@ -2641,6 +2666,13 @@ impl Smile {
         self.confidence
     }
 }
+impl Smile {
+    /// Creates a new builder-style object to manufacture [`Smile`](crate::model::Smile).
+    pub fn builder() -> crate::model::smile::Builder {
+        crate::model::smile::Builder::default()
+    }
+}
+
 /// See [`Smile`](crate::model::Smile).
 pub mod smile {
     
@@ -2684,12 +2716,6 @@ pub mod smile {
     
     
 }
-impl Smile {
-    /// Creates a new builder-style object to manufacture [`Smile`](crate::model::Smile).
-    pub fn builder() -> crate::model::smile::Builder {
-        crate::model::smile::Builder::default()
-    }
-}
 
 /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
 #[non_exhaustive]
@@ -2712,6 +2738,13 @@ impl Emotion {
         self.confidence
     }
 }
+impl Emotion {
+    /// Creates a new builder-style object to manufacture [`Emotion`](crate::model::Emotion).
+    pub fn builder() -> crate::model::emotion::Builder {
+        crate::model::emotion::Builder::default()
+    }
+}
+
 /// See [`Emotion`](crate::model::Emotion).
 pub mod emotion {
     
@@ -2753,12 +2786,6 @@ pub mod emotion {
     }
     
     
-}
-impl Emotion {
-    /// Creates a new builder-style object to manufacture [`Emotion`](crate::model::Emotion).
-    pub fn builder() -> crate::model::emotion::Builder {
-        crate::model::emotion::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EmotionName`, it is important to ensure
@@ -2899,6 +2926,13 @@ impl ImageQuality {
         self.sharpness
     }
 }
+impl ImageQuality {
+    /// Creates a new builder-style object to manufacture [`ImageQuality`](crate::model::ImageQuality).
+    pub fn builder() -> crate::model::image_quality::Builder {
+        crate::model::image_quality::Builder::default()
+    }
+}
+
 /// See [`ImageQuality`](crate::model::ImageQuality).
 pub mod image_quality {
     
@@ -2941,12 +2975,6 @@ pub mod image_quality {
     
     
 }
-impl ImageQuality {
-    /// Creates a new builder-style object to manufacture [`ImageQuality`](crate::model::ImageQuality).
-    pub fn builder() -> crate::model::image_quality::Builder {
-        crate::model::image_quality::Builder::default()
-    }
-}
 
 /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
 #[non_exhaustive]
@@ -2976,6 +3004,13 @@ impl Pose {
         self.pitch
     }
 }
+impl Pose {
+    /// Creates a new builder-style object to manufacture [`Pose`](crate::model::Pose).
+    pub fn builder() -> crate::model::pose::Builder {
+        crate::model::pose::Builder::default()
+    }
+}
+
 /// See [`Pose`](crate::model::Pose).
 pub mod pose {
     
@@ -3030,12 +3065,6 @@ pub mod pose {
     
     
 }
-impl Pose {
-    /// Creates a new builder-style object to manufacture [`Pose`](crate::model::Pose).
-    pub fn builder() -> crate::model::pose::Builder {
-        crate::model::pose::Builder::default()
-    }
-}
 
 /// <p>Indicates the location of the landmark on the face.</p>
 #[non_exhaustive]
@@ -3065,6 +3094,13 @@ impl Landmark {
         self.y
     }
 }
+impl Landmark {
+    /// Creates a new builder-style object to manufacture [`Landmark`](crate::model::Landmark).
+    pub fn builder() -> crate::model::landmark::Builder {
+        crate::model::landmark::Builder::default()
+    }
+}
+
 /// See [`Landmark`](crate::model::Landmark).
 pub mod landmark {
     
@@ -3118,12 +3154,6 @@ pub mod landmark {
     }
     
     
-}
-impl Landmark {
-    /// Creates a new builder-style object to manufacture [`Landmark`](crate::model::Landmark).
-    pub fn builder() -> crate::model::landmark::Builder {
-        crate::model::landmark::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LandmarkType`, it is important to ensure
@@ -3397,6 +3427,13 @@ impl Celebrity {
         self.known_gender.as_ref()
     }
 }
+impl Celebrity {
+    /// Creates a new builder-style object to manufacture [`Celebrity`](crate::model::Celebrity).
+    pub fn builder() -> crate::model::celebrity::Builder {
+        crate::model::celebrity::Builder::default()
+    }
+}
+
 /// See [`Celebrity`](crate::model::Celebrity).
 pub mod celebrity {
     
@@ -3493,12 +3530,6 @@ pub mod celebrity {
     
     
 }
-impl Celebrity {
-    /// Creates a new builder-style object to manufacture [`Celebrity`](crate::model::Celebrity).
-    pub fn builder() -> crate::model::celebrity::Builder {
-        crate::model::celebrity::Builder::default()
-    }
-}
 
 /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
 #[non_exhaustive]
@@ -3514,6 +3545,13 @@ impl KnownGender {
         self.r#type.as_ref()
     }
 }
+impl KnownGender {
+    /// Creates a new builder-style object to manufacture [`KnownGender`](crate::model::KnownGender).
+    pub fn builder() -> crate::model::known_gender::Builder {
+        crate::model::known_gender::Builder::default()
+    }
+}
+
 /// See [`KnownGender`](crate::model::KnownGender).
 pub mod known_gender {
     
@@ -3543,12 +3581,6 @@ pub mod known_gender {
     }
     
     
-}
-impl KnownGender {
-    /// Creates a new builder-style object to manufacture [`KnownGender`](crate::model::KnownGender).
-    pub fn builder() -> crate::model::known_gender::Builder {
-        crate::model::known_gender::Builder::default()
-    }
 }
 
 /// When writing a match expression against `KnownGenderType`, it is important to ensure
@@ -3664,6 +3696,13 @@ impl StreamProcessor {
         self.status.as_ref()
     }
 }
+impl StreamProcessor {
+    /// Creates a new builder-style object to manufacture [`StreamProcessor`](crate::model::StreamProcessor).
+    pub fn builder() -> crate::model::stream_processor::Builder {
+        crate::model::stream_processor::Builder::default()
+    }
+}
+
 /// See [`StreamProcessor`](crate::model::StreamProcessor).
 pub mod stream_processor {
     
@@ -3705,12 +3744,6 @@ pub mod stream_processor {
     }
     
     
-}
-impl StreamProcessor {
-    /// Creates a new builder-style object to manufacture [`StreamProcessor`](crate::model::StreamProcessor).
-    pub fn builder() -> crate::model::stream_processor::Builder {
-        crate::model::stream_processor::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StreamProcessorStatus`, it is important to ensure
@@ -3865,6 +3898,13 @@ impl ProjectPolicy {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl ProjectPolicy {
+    /// Creates a new builder-style object to manufacture [`ProjectPolicy`](crate::model::ProjectPolicy).
+    pub fn builder() -> crate::model::project_policy::Builder {
+        crate::model::project_policy::Builder::default()
+    }
+}
+
 /// See [`ProjectPolicy`](crate::model::ProjectPolicy).
 pub mod project_policy {
     
@@ -3955,12 +3995,6 @@ pub mod project_policy {
     
     
 }
-impl ProjectPolicy {
-    /// Creates a new builder-style object to manufacture [`ProjectPolicy`](crate::model::ProjectPolicy).
-    pub fn builder() -> crate::model::project_policy::Builder {
-        crate::model::project_policy::Builder::default()
-    }
-}
 
 /// <p> Describes a dataset label. For more information, see <code>ListDatasetLabels</code>. </p>
 #[non_exhaustive]
@@ -3983,6 +4017,13 @@ impl DatasetLabelDescription {
         self.label_stats.as_ref()
     }
 }
+impl DatasetLabelDescription {
+    /// Creates a new builder-style object to manufacture [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
+    pub fn builder() -> crate::model::dataset_label_description::Builder {
+        crate::model::dataset_label_description::Builder::default()
+    }
+}
+
 /// See [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
 pub mod dataset_label_description {
     
@@ -4025,12 +4066,6 @@ pub mod dataset_label_description {
     
     
 }
-impl DatasetLabelDescription {
-    /// Creates a new builder-style object to manufacture [`DatasetLabelDescription`](crate::model::DatasetLabelDescription).
-    pub fn builder() -> crate::model::dataset_label_description::Builder {
-        crate::model::dataset_label_description::Builder::default()
-    }
-}
 
 /// <p> Statistics about a label used in a dataset. For more information, see <code>DatasetLabelDescription</code>. </p>
 #[non_exhaustive]
@@ -4053,6 +4088,13 @@ impl DatasetLabelStats {
         self.bounding_box_count
     }
 }
+impl DatasetLabelStats {
+    /// Creates a new builder-style object to manufacture [`DatasetLabelStats`](crate::model::DatasetLabelStats).
+    pub fn builder() -> crate::model::dataset_label_stats::Builder {
+        crate::model::dataset_label_stats::Builder::default()
+    }
+}
+
 /// See [`DatasetLabelStats`](crate::model::DatasetLabelStats).
 pub mod dataset_label_stats {
     
@@ -4095,12 +4137,6 @@ pub mod dataset_label_stats {
     
     
 }
-impl DatasetLabelStats {
-    /// Creates a new builder-style object to manufacture [`DatasetLabelStats`](crate::model::DatasetLabelStats).
-    pub fn builder() -> crate::model::dataset_label_stats::Builder {
-        crate::model::dataset_label_stats::Builder::default()
-    }
-}
 
 /// <p>A face that <code>IndexFaces</code> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.</p>
 #[non_exhaustive]
@@ -4139,6 +4175,13 @@ impl UnindexedFace {
         self.face_detail.as_ref()
     }
 }
+impl UnindexedFace {
+    /// Creates a new builder-style object to manufacture [`UnindexedFace`](crate::model::UnindexedFace).
+    pub fn builder() -> crate::model::unindexed_face::Builder {
+        crate::model::unindexed_face::Builder::default()
+    }
+}
+
 /// See [`UnindexedFace`](crate::model::UnindexedFace).
 pub mod unindexed_face {
     
@@ -4202,12 +4245,6 @@ pub mod unindexed_face {
     }
     
     
-}
-impl UnindexedFace {
-    /// Creates a new builder-style object to manufacture [`UnindexedFace`](crate::model::UnindexedFace).
-    pub fn builder() -> crate::model::unindexed_face::Builder {
-        crate::model::unindexed_face::Builder::default()
-    }
 }
 
 /// <p>Structure containing attributes of the face that the algorithm detected.</p> 
@@ -4330,6 +4367,13 @@ impl FaceDetail {
         self.confidence
     }
 }
+impl FaceDetail {
+    /// Creates a new builder-style object to manufacture [`FaceDetail`](crate::model::FaceDetail).
+    pub fn builder() -> crate::model::face_detail::Builder {
+        crate::model::face_detail::Builder::default()
+    }
+}
+
 /// See [`FaceDetail`](crate::model::FaceDetail).
 pub mod face_detail {
     
@@ -4540,12 +4584,6 @@ pub mod face_detail {
     
     
 }
-impl FaceDetail {
-    /// Creates a new builder-style object to manufacture [`FaceDetail`](crate::model::FaceDetail).
-    pub fn builder() -> crate::model::face_detail::Builder {
-        crate::model::face_detail::Builder::default()
-    }
-}
 
 /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
 #[non_exhaustive]
@@ -4568,6 +4606,13 @@ impl MouthOpen {
         self.confidence
     }
 }
+impl MouthOpen {
+    /// Creates a new builder-style object to manufacture [`MouthOpen`](crate::model::MouthOpen).
+    pub fn builder() -> crate::model::mouth_open::Builder {
+        crate::model::mouth_open::Builder::default()
+    }
+}
+
 /// See [`MouthOpen`](crate::model::MouthOpen).
 pub mod mouth_open {
     
@@ -4611,12 +4656,6 @@ pub mod mouth_open {
     
     
 }
-impl MouthOpen {
-    /// Creates a new builder-style object to manufacture [`MouthOpen`](crate::model::MouthOpen).
-    pub fn builder() -> crate::model::mouth_open::Builder {
-        crate::model::mouth_open::Builder::default()
-    }
-}
 
 /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
 #[non_exhaustive]
@@ -4639,6 +4678,13 @@ impl EyeOpen {
         self.confidence
     }
 }
+impl EyeOpen {
+    /// Creates a new builder-style object to manufacture [`EyeOpen`](crate::model::EyeOpen).
+    pub fn builder() -> crate::model::eye_open::Builder {
+        crate::model::eye_open::Builder::default()
+    }
+}
+
 /// See [`EyeOpen`](crate::model::EyeOpen).
 pub mod eye_open {
     
@@ -4682,12 +4728,6 @@ pub mod eye_open {
     
     
 }
-impl EyeOpen {
-    /// Creates a new builder-style object to manufacture [`EyeOpen`](crate::model::EyeOpen).
-    pub fn builder() -> crate::model::eye_open::Builder {
-        crate::model::eye_open::Builder::default()
-    }
-}
 
 /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
 #[non_exhaustive]
@@ -4710,6 +4750,13 @@ impl Mustache {
         self.confidence
     }
 }
+impl Mustache {
+    /// Creates a new builder-style object to manufacture [`Mustache`](crate::model::Mustache).
+    pub fn builder() -> crate::model::mustache::Builder {
+        crate::model::mustache::Builder::default()
+    }
+}
+
 /// See [`Mustache`](crate::model::Mustache).
 pub mod mustache {
     
@@ -4753,12 +4800,6 @@ pub mod mustache {
     
     
 }
-impl Mustache {
-    /// Creates a new builder-style object to manufacture [`Mustache`](crate::model::Mustache).
-    pub fn builder() -> crate::model::mustache::Builder {
-        crate::model::mustache::Builder::default()
-    }
-}
 
 /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
 #[non_exhaustive]
@@ -4781,6 +4822,13 @@ impl Beard {
         self.confidence
     }
 }
+impl Beard {
+    /// Creates a new builder-style object to manufacture [`Beard`](crate::model::Beard).
+    pub fn builder() -> crate::model::beard::Builder {
+        crate::model::beard::Builder::default()
+    }
+}
+
 /// See [`Beard`](crate::model::Beard).
 pub mod beard {
     
@@ -4824,12 +4872,6 @@ pub mod beard {
     
     
 }
-impl Beard {
-    /// Creates a new builder-style object to manufacture [`Beard`](crate::model::Beard).
-    pub fn builder() -> crate::model::beard::Builder {
-        crate::model::beard::Builder::default()
-    }
-}
 
 /// <p>The predicted gender of a detected face. </p> 
 /// <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> 
@@ -4855,6 +4897,13 @@ impl Gender {
         self.confidence
     }
 }
+impl Gender {
+    /// Creates a new builder-style object to manufacture [`Gender`](crate::model::Gender).
+    pub fn builder() -> crate::model::gender::Builder {
+        crate::model::gender::Builder::default()
+    }
+}
+
 /// See [`Gender`](crate::model::Gender).
 pub mod gender {
     
@@ -4896,12 +4945,6 @@ pub mod gender {
     }
     
     
-}
-impl Gender {
-    /// Creates a new builder-style object to manufacture [`Gender`](crate::model::Gender).
-    pub fn builder() -> crate::model::gender::Builder {
-        crate::model::gender::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GenderType`, it is important to ensure
@@ -5007,6 +5050,13 @@ impl Sunglasses {
         self.confidence
     }
 }
+impl Sunglasses {
+    /// Creates a new builder-style object to manufacture [`Sunglasses`](crate::model::Sunglasses).
+    pub fn builder() -> crate::model::sunglasses::Builder {
+        crate::model::sunglasses::Builder::default()
+    }
+}
+
 /// See [`Sunglasses`](crate::model::Sunglasses).
 pub mod sunglasses {
     
@@ -5050,12 +5100,6 @@ pub mod sunglasses {
     
     
 }
-impl Sunglasses {
-    /// Creates a new builder-style object to manufacture [`Sunglasses`](crate::model::Sunglasses).
-    pub fn builder() -> crate::model::sunglasses::Builder {
-        crate::model::sunglasses::Builder::default()
-    }
-}
 
 /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
 #[non_exhaustive]
@@ -5078,6 +5122,13 @@ impl Eyeglasses {
         self.confidence
     }
 }
+impl Eyeglasses {
+    /// Creates a new builder-style object to manufacture [`Eyeglasses`](crate::model::Eyeglasses).
+    pub fn builder() -> crate::model::eyeglasses::Builder {
+        crate::model::eyeglasses::Builder::default()
+    }
+}
+
 /// See [`Eyeglasses`](crate::model::Eyeglasses).
 pub mod eyeglasses {
     
@@ -5121,12 +5172,6 @@ pub mod eyeglasses {
     
     
 }
-impl Eyeglasses {
-    /// Creates a new builder-style object to manufacture [`Eyeglasses`](crate::model::Eyeglasses).
-    pub fn builder() -> crate::model::eyeglasses::Builder {
-        crate::model::eyeglasses::Builder::default()
-    }
-}
 
 /// <p>Structure containing the estimated age range, in years, for a face.</p> 
 /// <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p>
@@ -5150,6 +5195,13 @@ impl AgeRange {
         self.high
     }
 }
+impl AgeRange {
+    /// Creates a new builder-style object to manufacture [`AgeRange`](crate::model::AgeRange).
+    pub fn builder() -> crate::model::age_range::Builder {
+        crate::model::age_range::Builder::default()
+    }
+}
+
 /// See [`AgeRange`](crate::model::AgeRange).
 pub mod age_range {
     
@@ -5191,12 +5243,6 @@ pub mod age_range {
     }
     
     
-}
-impl AgeRange {
-    /// Creates a new builder-style object to manufacture [`AgeRange`](crate::model::AgeRange).
-    pub fn builder() -> crate::model::age_range::Builder {
-        crate::model::age_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Reason`, it is important to ensure
@@ -5327,6 +5373,13 @@ impl FaceRecord {
         self.face_detail.as_ref()
     }
 }
+impl FaceRecord {
+    /// Creates a new builder-style object to manufacture [`FaceRecord`](crate::model::FaceRecord).
+    pub fn builder() -> crate::model::face_record::Builder {
+        crate::model::face_record::Builder::default()
+    }
+}
+
 /// See [`FaceRecord`](crate::model::FaceRecord).
 pub mod face_record {
     
@@ -5368,12 +5421,6 @@ pub mod face_record {
     }
     
     
-}
-impl FaceRecord {
-    /// Creates a new builder-style object to manufacture [`FaceRecord`](crate::model::FaceRecord).
-    pub fn builder() -> crate::model::face_record::Builder {
-        crate::model::face_record::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Attribute`, it is important to ensure
@@ -5479,6 +5526,13 @@ impl TextDetectionResult {
         self.text_detection.as_ref()
     }
 }
+impl TextDetectionResult {
+    /// Creates a new builder-style object to manufacture [`TextDetectionResult`](crate::model::TextDetectionResult).
+    pub fn builder() -> crate::model::text_detection_result::Builder {
+        crate::model::text_detection_result::Builder::default()
+    }
+}
+
 /// See [`TextDetectionResult`](crate::model::TextDetectionResult).
 pub mod text_detection_result {
     
@@ -5521,12 +5575,6 @@ pub mod text_detection_result {
     }
     
     
-}
-impl TextDetectionResult {
-    /// Creates a new builder-style object to manufacture [`TextDetectionResult`](crate::model::TextDetectionResult).
-    pub fn builder() -> crate::model::text_detection_result::Builder {
-        crate::model::text_detection_result::Builder::default()
-    }
 }
 
 /// <p>Information about a word or line of text detected by <code>DetectText</code>.</p> 
@@ -5581,6 +5629,13 @@ impl TextDetection {
         self.geometry.as_ref()
     }
 }
+impl TextDetection {
+    /// Creates a new builder-style object to manufacture [`TextDetection`](crate::model::TextDetection).
+    pub fn builder() -> crate::model::text_detection::Builder {
+        crate::model::text_detection::Builder::default()
+    }
+}
+
 /// See [`TextDetection`](crate::model::TextDetection).
 pub mod text_detection {
     
@@ -5671,12 +5726,6 @@ pub mod text_detection {
     
     
 }
-impl TextDetection {
-    /// Creates a new builder-style object to manufacture [`TextDetection`](crate::model::TextDetection).
-    pub fn builder() -> crate::model::text_detection::Builder {
-        crate::model::text_detection::Builder::default()
-    }
-}
 
 /// <p>Information about where an object (<code>DetectCustomLabels</code>) or text (<code>DetectText</code>) is located on an image.</p>
 #[non_exhaustive]
@@ -5699,6 +5748,13 @@ impl Geometry {
         self.polygon.as_deref()
     }
 }
+impl Geometry {
+    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
+    pub fn builder() -> crate::model::geometry::Builder {
+        crate::model::geometry::Builder::default()
+    }
+}
+
 /// See [`Geometry`](crate::model::Geometry).
 pub mod geometry {
     
@@ -5746,12 +5802,6 @@ pub mod geometry {
     }
     
     
-}
-impl Geometry {
-    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
-    pub fn builder() -> crate::model::geometry::Builder {
-        crate::model::geometry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TextTypes`, it is important to ensure
@@ -5892,6 +5942,13 @@ impl VideoMetadata {
         self.color_range.as_ref()
     }
 }
+impl VideoMetadata {
+    /// Creates a new builder-style object to manufacture [`VideoMetadata`](crate::model::VideoMetadata).
+    pub fn builder() -> crate::model::video_metadata::Builder {
+        crate::model::video_metadata::Builder::default()
+    }
+}
+
 /// See [`VideoMetadata`](crate::model::VideoMetadata).
 pub mod video_metadata {
     
@@ -5993,12 +6050,6 @@ pub mod video_metadata {
     }
     
     
-}
-impl VideoMetadata {
-    /// Creates a new builder-style object to manufacture [`VideoMetadata`](crate::model::VideoMetadata).
-    pub fn builder() -> crate::model::video_metadata::Builder {
-        crate::model::video_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `VideoColorRange`, it is important to ensure
@@ -6191,6 +6242,13 @@ impl SegmentTypeInfo {
         self.model_version.as_deref()
     }
 }
+impl SegmentTypeInfo {
+    /// Creates a new builder-style object to manufacture [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
+    pub fn builder() -> crate::model::segment_type_info::Builder {
+        crate::model::segment_type_info::Builder::default()
+    }
+}
+
 /// See [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
 pub mod segment_type_info {
     
@@ -6232,12 +6290,6 @@ pub mod segment_type_info {
     }
     
     
-}
-impl SegmentTypeInfo {
-    /// Creates a new builder-style object to manufacture [`SegmentTypeInfo`](crate::model::SegmentTypeInfo).
-    pub fn builder() -> crate::model::segment_type_info::Builder {
-        crate::model::segment_type_info::Builder::default()
-    }
 }
 
 /// <p>A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <code>GetSegmentDetection</code>. </p>
@@ -6331,6 +6383,13 @@ impl SegmentDetection {
         self.duration_frames
     }
 }
+impl SegmentDetection {
+    /// Creates a new builder-style object to manufacture [`SegmentDetection`](crate::model::SegmentDetection).
+    pub fn builder() -> crate::model::segment_detection::Builder {
+        crate::model::segment_detection::Builder::default()
+    }
+}
+
 /// See [`SegmentDetection`](crate::model::SegmentDetection).
 pub mod segment_detection {
     
@@ -6495,12 +6554,6 @@ pub mod segment_detection {
     
     
 }
-impl SegmentDetection {
-    /// Creates a new builder-style object to manufacture [`SegmentDetection`](crate::model::SegmentDetection).
-    pub fn builder() -> crate::model::segment_detection::Builder {
-        crate::model::segment_detection::Builder::default()
-    }
-}
 
 /// <p>Information about a shot detection segment detected in a video. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
@@ -6523,6 +6576,13 @@ impl ShotSegment {
         self.confidence
     }
 }
+impl ShotSegment {
+    /// Creates a new builder-style object to manufacture [`ShotSegment`](crate::model::ShotSegment).
+    pub fn builder() -> crate::model::shot_segment::Builder {
+        crate::model::shot_segment::Builder::default()
+    }
+}
+
 /// See [`ShotSegment`](crate::model::ShotSegment).
 pub mod shot_segment {
     
@@ -6565,12 +6625,6 @@ pub mod shot_segment {
     
     
 }
-impl ShotSegment {
-    /// Creates a new builder-style object to manufacture [`ShotSegment`](crate::model::ShotSegment).
-    pub fn builder() -> crate::model::shot_segment::Builder {
-        crate::model::shot_segment::Builder::default()
-    }
-}
 
 /// <p>Information about a technical cue segment. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
@@ -6593,6 +6647,13 @@ impl TechnicalCueSegment {
         self.confidence
     }
 }
+impl TechnicalCueSegment {
+    /// Creates a new builder-style object to manufacture [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
+    pub fn builder() -> crate::model::technical_cue_segment::Builder {
+        crate::model::technical_cue_segment::Builder::default()
+    }
+}
+
 /// See [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
 pub mod technical_cue_segment {
     
@@ -6634,12 +6695,6 @@ pub mod technical_cue_segment {
     }
     
     
-}
-impl TechnicalCueSegment {
-    /// Creates a new builder-style object to manufacture [`TechnicalCueSegment`](crate::model::TechnicalCueSegment).
-    pub fn builder() -> crate::model::technical_cue_segment::Builder {
-        crate::model::technical_cue_segment::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TechnicalCueType`, it is important to ensure
@@ -6784,6 +6839,13 @@ impl AudioMetadata {
         self.number_of_channels
     }
 }
+impl AudioMetadata {
+    /// Creates a new builder-style object to manufacture [`AudioMetadata`](crate::model::AudioMetadata).
+    pub fn builder() -> crate::model::audio_metadata::Builder {
+        crate::model::audio_metadata::Builder::default()
+    }
+}
+
 /// See [`AudioMetadata`](crate::model::AudioMetadata).
 pub mod audio_metadata {
     
@@ -6850,12 +6912,6 @@ pub mod audio_metadata {
     
     
 }
-impl AudioMetadata {
-    /// Creates a new builder-style object to manufacture [`AudioMetadata`](crate::model::AudioMetadata).
-    pub fn builder() -> crate::model::audio_metadata::Builder {
-        crate::model::audio_metadata::Builder::default()
-    }
-}
 
 /// <p>Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video. </p> 
 /// <p>For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide. </p>
@@ -6879,6 +6935,13 @@ impl PersonDetection {
         self.person.as_ref()
     }
 }
+impl PersonDetection {
+    /// Creates a new builder-style object to manufacture [`PersonDetection`](crate::model::PersonDetection).
+    pub fn builder() -> crate::model::person_detection::Builder {
+        crate::model::person_detection::Builder::default()
+    }
+}
+
 /// See [`PersonDetection`](crate::model::PersonDetection).
 pub mod person_detection {
     
@@ -6922,12 +6985,6 @@ pub mod person_detection {
     
     
 }
-impl PersonDetection {
-    /// Creates a new builder-style object to manufacture [`PersonDetection`](crate::model::PersonDetection).
-    pub fn builder() -> crate::model::person_detection::Builder {
-        crate::model::person_detection::Builder::default()
-    }
-}
 
 /// <p>Details about a person detected in a video analysis request.</p>
 #[non_exhaustive]
@@ -6957,6 +7014,13 @@ impl PersonDetail {
         self.face.as_ref()
     }
 }
+impl PersonDetail {
+    /// Creates a new builder-style object to manufacture [`PersonDetail`](crate::model::PersonDetail).
+    pub fn builder() -> crate::model::person_detail::Builder {
+        crate::model::person_detail::Builder::default()
+    }
+}
+
 /// See [`PersonDetail`](crate::model::PersonDetail).
 pub mod person_detail {
     
@@ -7011,12 +7075,6 @@ pub mod person_detail {
     }
     
     
-}
-impl PersonDetail {
-    /// Creates a new builder-style object to manufacture [`PersonDetail`](crate::model::PersonDetail).
-    pub fn builder() -> crate::model::person_detail::Builder {
-        crate::model::person_detail::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PersonTrackingSortBy`, it is important to ensure
@@ -7143,6 +7201,13 @@ impl LabelDetection {
         self.duration_millis
     }
 }
+impl LabelDetection {
+    /// Creates a new builder-style object to manufacture [`LabelDetection`](crate::model::LabelDetection).
+    pub fn builder() -> crate::model::label_detection::Builder {
+        crate::model::label_detection::Builder::default()
+    }
+}
+
 /// See [`LabelDetection`](crate::model::LabelDetection).
 pub mod label_detection {
     
@@ -7222,12 +7287,6 @@ pub mod label_detection {
     
     
 }
-impl LabelDetection {
-    /// Creates a new builder-style object to manufacture [`LabelDetection`](crate::model::LabelDetection).
-    pub fn builder() -> crate::model::label_detection::Builder {
-        crate::model::label_detection::Builder::default()
-    }
-}
 
 /// <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> 
 /// <p> </p>
@@ -7279,6 +7338,13 @@ impl Label {
         self.categories.as_deref()
     }
 }
+impl Label {
+    /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
+    pub fn builder() -> crate::model::label::Builder {
+        crate::model::label::Builder::default()
+    }
+}
+
 /// See [`Label`](crate::model::Label).
 pub mod label {
     
@@ -7393,12 +7459,6 @@ pub mod label {
     
     
 }
-impl Label {
-    /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
-    pub fn builder() -> crate::model::label::Builder {
-        crate::model::label::Builder::default()
-    }
-}
 
 /// <p>The category that applies to a given label.</p>
 #[non_exhaustive]
@@ -7414,6 +7474,13 @@ impl LabelCategory {
         self.name.as_deref()
     }
 }
+impl LabelCategory {
+    /// Creates a new builder-style object to manufacture [`LabelCategory`](crate::model::LabelCategory).
+    pub fn builder() -> crate::model::label_category::Builder {
+        crate::model::label_category::Builder::default()
+    }
+}
+
 /// See [`LabelCategory`](crate::model::LabelCategory).
 pub mod label_category {
     
@@ -7444,12 +7511,6 @@ pub mod label_category {
     
     
 }
-impl LabelCategory {
-    /// Creates a new builder-style object to manufacture [`LabelCategory`](crate::model::LabelCategory).
-    pub fn builder() -> crate::model::label_category::Builder {
-        crate::model::label_category::Builder::default()
-    }
-}
 
 /// <p>A potential alias of for a given label.</p>
 #[non_exhaustive]
@@ -7465,6 +7526,13 @@ impl LabelAlias {
         self.name.as_deref()
     }
 }
+impl LabelAlias {
+    /// Creates a new builder-style object to manufacture [`LabelAlias`](crate::model::LabelAlias).
+    pub fn builder() -> crate::model::label_alias::Builder {
+        crate::model::label_alias::Builder::default()
+    }
+}
+
 /// See [`LabelAlias`](crate::model::LabelAlias).
 pub mod label_alias {
     
@@ -7495,12 +7563,6 @@ pub mod label_alias {
     
     
 }
-impl LabelAlias {
-    /// Creates a new builder-style object to manufacture [`LabelAlias`](crate::model::LabelAlias).
-    pub fn builder() -> crate::model::label_alias::Builder {
-        crate::model::label_alias::Builder::default()
-    }
-}
 
 /// <p>A parent label for a label. A label can have 0, 1, or more parents. </p>
 #[non_exhaustive]
@@ -7516,6 +7578,13 @@ impl Parent {
         self.name.as_deref()
     }
 }
+impl Parent {
+    /// Creates a new builder-style object to manufacture [`Parent`](crate::model::Parent).
+    pub fn builder() -> crate::model::parent::Builder {
+        crate::model::parent::Builder::default()
+    }
+}
+
 /// See [`Parent`](crate::model::Parent).
 pub mod parent {
     
@@ -7546,12 +7615,6 @@ pub mod parent {
     
     
 }
-impl Parent {
-    /// Creates a new builder-style object to manufacture [`Parent`](crate::model::Parent).
-    pub fn builder() -> crate::model::parent::Builder {
-        crate::model::parent::Builder::default()
-    }
-}
 
 /// <p>An instance of a label returned by Amazon Rekognition Image (<code>DetectLabels</code>) or by Amazon Rekognition Video (<code>GetLabelDetection</code>).</p>
 #[non_exhaustive]
@@ -7581,6 +7644,13 @@ impl Instance {
         self.dominant_colors.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
     
@@ -7641,12 +7711,6 @@ pub mod instance {
     
     
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// <p>A description of the dominant colors in an image.</p>
 #[non_exhaustive]
@@ -7704,6 +7768,13 @@ impl DominantColor {
         self.pixel_percent
     }
 }
+impl DominantColor {
+    /// Creates a new builder-style object to manufacture [`DominantColor`](crate::model::DominantColor).
+    pub fn builder() -> crate::model::dominant_color::Builder {
+        crate::model::dominant_color::Builder::default()
+    }
+}
+
 /// See [`DominantColor`](crate::model::DominantColor).
 pub mod dominant_color {
     
@@ -7805,12 +7876,6 @@ pub mod dominant_color {
     }
     
     
-}
-impl DominantColor {
-    /// Creates a new builder-style object to manufacture [`DominantColor`](crate::model::DominantColor).
-    pub fn builder() -> crate::model::dominant_color::Builder {
-        crate::model::dominant_color::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LabelDetectionAggregateBy`, it is important to ensure
@@ -8005,6 +8070,13 @@ impl PersonMatch {
         self.face_matches.as_deref()
     }
 }
+impl PersonMatch {
+    /// Creates a new builder-style object to manufacture [`PersonMatch`](crate::model::PersonMatch).
+    pub fn builder() -> crate::model::person_match::Builder {
+        crate::model::person_match::Builder::default()
+    }
+}
+
 /// See [`PersonMatch`](crate::model::PersonMatch).
 pub mod person_match {
     
@@ -8065,12 +8137,6 @@ pub mod person_match {
     }
     
     
-}
-impl PersonMatch {
-    /// Creates a new builder-style object to manufacture [`PersonMatch`](crate::model::PersonMatch).
-    pub fn builder() -> crate::model::person_match::Builder {
-        crate::model::person_match::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FaceSearchSortBy`, it is important to ensure
@@ -8176,6 +8242,13 @@ impl FaceDetection {
         self.face.as_ref()
     }
 }
+impl FaceDetection {
+    /// Creates a new builder-style object to manufacture [`FaceDetection`](crate::model::FaceDetection).
+    pub fn builder() -> crate::model::face_detection::Builder {
+        crate::model::face_detection::Builder::default()
+    }
+}
+
 /// See [`FaceDetection`](crate::model::FaceDetection).
 pub mod face_detection {
     
@@ -8219,12 +8292,6 @@ pub mod face_detection {
     
     
 }
-impl FaceDetection {
-    /// Creates a new builder-style object to manufacture [`FaceDetection`](crate::model::FaceDetection).
-    pub fn builder() -> crate::model::face_detection::Builder {
-        crate::model::face_detection::Builder::default()
-    }
-}
 
 /// <p>Information about an inappropriate, unwanted, or offensive content label detection in a stored video.</p>
 #[non_exhaustive]
@@ -8247,6 +8314,13 @@ impl ContentModerationDetection {
         self.moderation_label.as_ref()
     }
 }
+impl ContentModerationDetection {
+    /// Creates a new builder-style object to manufacture [`ContentModerationDetection`](crate::model::ContentModerationDetection).
+    pub fn builder() -> crate::model::content_moderation_detection::Builder {
+        crate::model::content_moderation_detection::Builder::default()
+    }
+}
+
 /// See [`ContentModerationDetection`](crate::model::ContentModerationDetection).
 pub mod content_moderation_detection {
     
@@ -8290,12 +8364,6 @@ pub mod content_moderation_detection {
     
     
 }
-impl ContentModerationDetection {
-    /// Creates a new builder-style object to manufacture [`ContentModerationDetection`](crate::model::ContentModerationDetection).
-    pub fn builder() -> crate::model::content_moderation_detection::Builder {
-        crate::model::content_moderation_detection::Builder::default()
-    }
-}
 
 /// <p>Provides information about a single type of inappropriate, unwanted, or offensive content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Content moderation in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
@@ -8327,6 +8395,13 @@ impl ModerationLabel {
         self.parent_name.as_deref()
     }
 }
+impl ModerationLabel {
+    /// Creates a new builder-style object to manufacture [`ModerationLabel`](crate::model::ModerationLabel).
+    pub fn builder() -> crate::model::moderation_label::Builder {
+        crate::model::moderation_label::Builder::default()
+    }
+}
+
 /// See [`ModerationLabel`](crate::model::ModerationLabel).
 pub mod moderation_label {
     
@@ -8382,12 +8457,6 @@ pub mod moderation_label {
     }
     
     
-}
-impl ModerationLabel {
-    /// Creates a new builder-style object to manufacture [`ModerationLabel`](crate::model::ModerationLabel).
-    pub fn builder() -> crate::model::moderation_label::Builder {
-        crate::model::moderation_label::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContentModerationSortBy`, it is important to ensure
@@ -8493,6 +8562,13 @@ impl CelebrityRecognition {
         self.celebrity.as_ref()
     }
 }
+impl CelebrityRecognition {
+    /// Creates a new builder-style object to manufacture [`CelebrityRecognition`](crate::model::CelebrityRecognition).
+    pub fn builder() -> crate::model::celebrity_recognition::Builder {
+        crate::model::celebrity_recognition::Builder::default()
+    }
+}
+
 /// See [`CelebrityRecognition`](crate::model::CelebrityRecognition).
 pub mod celebrity_recognition {
     
@@ -8535,12 +8611,6 @@ pub mod celebrity_recognition {
     }
     
     
-}
-impl CelebrityRecognition {
-    /// Creates a new builder-style object to manufacture [`CelebrityRecognition`](crate::model::CelebrityRecognition).
-    pub fn builder() -> crate::model::celebrity_recognition::Builder {
-        crate::model::celebrity_recognition::Builder::default()
-    }
 }
 
 /// <p>Information about a recognized celebrity.</p>
@@ -8599,6 +8669,13 @@ impl CelebrityDetail {
         self.known_gender.as_ref()
     }
 }
+impl CelebrityDetail {
+    /// Creates a new builder-style object to manufacture [`CelebrityDetail`](crate::model::CelebrityDetail).
+    pub fn builder() -> crate::model::celebrity_detail::Builder {
+        crate::model::celebrity_detail::Builder::default()
+    }
+}
+
 /// See [`CelebrityDetail`](crate::model::CelebrityDetail).
 pub mod celebrity_detail {
     
@@ -8707,12 +8784,6 @@ pub mod celebrity_detail {
     
     
 }
-impl CelebrityDetail {
-    /// Creates a new builder-style object to manufacture [`CelebrityDetail`](crate::model::CelebrityDetail).
-    pub fn builder() -> crate::model::celebrity_detail::Builder {
-        crate::model::celebrity_detail::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CelebrityRecognitionSortBy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8810,6 +8881,13 @@ impl DistributeDataset {
         self.arn.as_deref()
     }
 }
+impl DistributeDataset {
+    /// Creates a new builder-style object to manufacture [`DistributeDataset`](crate::model::DistributeDataset).
+    pub fn builder() -> crate::model::distribute_dataset::Builder {
+        crate::model::distribute_dataset::Builder::default()
+    }
+}
+
 /// See [`DistributeDataset`](crate::model::DistributeDataset).
 pub mod distribute_dataset {
     
@@ -8840,12 +8918,6 @@ pub mod distribute_dataset {
     
     
 }
-impl DistributeDataset {
-    /// Creates a new builder-style object to manufacture [`DistributeDataset`](crate::model::DistributeDataset).
-    pub fn builder() -> crate::model::distribute_dataset::Builder {
-        crate::model::distribute_dataset::Builder::default()
-    }
-}
 
 /// <p>A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in. </p>
 #[non_exhaustive]
@@ -8868,6 +8940,13 @@ impl DetectTextFilters {
         self.regions_of_interest.as_deref()
     }
 }
+impl DetectTextFilters {
+    /// Creates a new builder-style object to manufacture [`DetectTextFilters`](crate::model::DetectTextFilters).
+    pub fn builder() -> crate::model::detect_text_filters::Builder {
+        crate::model::detect_text_filters::Builder::default()
+    }
+}
+
 /// See [`DetectTextFilters`](crate::model::DetectTextFilters).
 pub mod detect_text_filters {
     
@@ -8916,12 +8995,6 @@ pub mod detect_text_filters {
     
     
 }
-impl DetectTextFilters {
-    /// Creates a new builder-style object to manufacture [`DetectTextFilters`](crate::model::DetectTextFilters).
-    pub fn builder() -> crate::model::detect_text_filters::Builder {
-        crate::model::detect_text_filters::Builder::default()
-    }
-}
 
 /// <p>Summary information for required items of personal protective equipment (PPE) detected on persons by a call to <code>DetectProtectiveEquipment</code>. You specify the required type of PPE in the <code>SummarizationAttributes</code> (<code>ProtectiveEquipmentSummarizationAttributes</code>) input parameter. The summary includes which persons were detected wearing the required personal protective equipment (<code>PersonsWithRequiredEquipment</code>), which persons were detected as not wearing the required PPE (<code>PersonsWithoutRequiredEquipment</code>), and the persons in which a determination could not be made (<code>PersonsIndeterminate</code>).</p> 
 /// <p>To get a total for each category, use the size of the field array. For example, to find out how many people were detected as wearing the specified PPE, use the size of the <code>PersonsWithRequiredEquipment</code> array. If you want to find out more about a person, such as the location (<code>BoundingBox</code>) of the person on the image, use the person ID in each array element. Each person ID matches the ID field of a <code>ProtectiveEquipmentPerson</code> object returned in the <code>Persons</code> array by <code>DetectProtectiveEquipment</code>.</p>
@@ -8952,6 +9025,13 @@ impl ProtectiveEquipmentSummary {
         self.persons_indeterminate.as_deref()
     }
 }
+impl ProtectiveEquipmentSummary {
+    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
+    pub fn builder() -> crate::model::protective_equipment_summary::Builder {
+        crate::model::protective_equipment_summary::Builder::default()
+    }
+}
+
 /// See [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
 pub mod protective_equipment_summary {
     
@@ -9024,12 +9104,6 @@ pub mod protective_equipment_summary {
     
     
 }
-impl ProtectiveEquipmentSummary {
-    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentSummary`](crate::model::ProtectiveEquipmentSummary).
-    pub fn builder() -> crate::model::protective_equipment_summary::Builder {
-        crate::model::protective_equipment_summary::Builder::default()
-    }
-}
 
 /// <p>A person detected by a call to <code>DetectProtectiveEquipment</code>. The API returns all persons detected in the input image in an array of <code>ProtectiveEquipmentPerson</code> objects.</p>
 #[non_exhaustive]
@@ -9066,6 +9140,13 @@ impl ProtectiveEquipmentPerson {
         self.id
     }
 }
+impl ProtectiveEquipmentPerson {
+    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
+    pub fn builder() -> crate::model::protective_equipment_person::Builder {
+        crate::model::protective_equipment_person::Builder::default()
+    }
+}
+
 /// See [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
 pub mod protective_equipment_person {
     
@@ -9138,12 +9219,6 @@ pub mod protective_equipment_person {
     
     
 }
-impl ProtectiveEquipmentPerson {
-    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentPerson`](crate::model::ProtectiveEquipmentPerson).
-    pub fn builder() -> crate::model::protective_equipment_person::Builder {
-        crate::model::protective_equipment_person::Builder::default()
-    }
-}
 
 /// <p>Information about a body part detected by <code>DetectProtectiveEquipment</code> that contains PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for each person detected by <code>DetectProtectiveEquipment</code>. </p>
 #[non_exhaustive]
@@ -9173,6 +9248,13 @@ impl ProtectiveEquipmentBodyPart {
         self.equipment_detections.as_deref()
     }
 }
+impl ProtectiveEquipmentBodyPart {
+    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
+    pub fn builder() -> crate::model::protective_equipment_body_part::Builder {
+        crate::model::protective_equipment_body_part::Builder::default()
+    }
+}
+
 /// See [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
 pub mod protective_equipment_body_part {
     
@@ -9233,12 +9315,6 @@ pub mod protective_equipment_body_part {
     
     
 }
-impl ProtectiveEquipmentBodyPart {
-    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentBodyPart`](crate::model::ProtectiveEquipmentBodyPart).
-    pub fn builder() -> crate::model::protective_equipment_body_part::Builder {
-        crate::model::protective_equipment_body_part::Builder::default()
-    }
-}
 
 /// <p>Information about an item of Personal Protective Equipment (PPE) detected by <code>DetectProtectiveEquipment</code>. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
@@ -9275,6 +9351,13 @@ impl EquipmentDetection {
         self.covers_body_part.as_ref()
     }
 }
+impl EquipmentDetection {
+    /// Creates a new builder-style object to manufacture [`EquipmentDetection`](crate::model::EquipmentDetection).
+    pub fn builder() -> crate::model::equipment_detection::Builder {
+        crate::model::equipment_detection::Builder::default()
+    }
+}
+
 /// See [`EquipmentDetection`](crate::model::EquipmentDetection).
 pub mod equipment_detection {
     
@@ -9341,12 +9424,6 @@ pub mod equipment_detection {
     
     
 }
-impl EquipmentDetection {
-    /// Creates a new builder-style object to manufacture [`EquipmentDetection`](crate::model::EquipmentDetection).
-    pub fn builder() -> crate::model::equipment_detection::Builder {
-        crate::model::equipment_detection::Builder::default()
-    }
-}
 
 /// <p>Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
@@ -9369,6 +9446,13 @@ impl CoversBodyPart {
         self.value
     }
 }
+impl CoversBodyPart {
+    /// Creates a new builder-style object to manufacture [`CoversBodyPart`](crate::model::CoversBodyPart).
+    pub fn builder() -> crate::model::covers_body_part::Builder {
+        crate::model::covers_body_part::Builder::default()
+    }
+}
+
 /// See [`CoversBodyPart`](crate::model::CoversBodyPart).
 pub mod covers_body_part {
     
@@ -9411,12 +9495,6 @@ pub mod covers_body_part {
     }
     
     
-}
-impl CoversBodyPart {
-    /// Creates a new builder-style object to manufacture [`CoversBodyPart`](crate::model::CoversBodyPart).
-    pub fn builder() -> crate::model::covers_body_part::Builder {
-        crate::model::covers_body_part::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProtectiveEquipmentType`, it is important to ensure
@@ -9623,6 +9701,13 @@ impl ProtectiveEquipmentSummarizationAttributes {
         self.required_equipment_types.as_deref()
     }
 }
+impl ProtectiveEquipmentSummarizationAttributes {
+    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
+    pub fn builder() -> crate::model::protective_equipment_summarization_attributes::Builder {
+        crate::model::protective_equipment_summarization_attributes::Builder::default()
+    }
+}
+
 /// See [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
 pub mod protective_equipment_summarization_attributes {
     
@@ -9675,12 +9760,6 @@ pub mod protective_equipment_summarization_attributes {
     
     
 }
-impl ProtectiveEquipmentSummarizationAttributes {
-    /// Creates a new builder-style object to manufacture [`ProtectiveEquipmentSummarizationAttributes`](crate::model::ProtectiveEquipmentSummarizationAttributes).
-    pub fn builder() -> crate::model::protective_equipment_summarization_attributes::Builder {
-        crate::model::protective_equipment_summarization_attributes::Builder::default()
-    }
-}
 
 /// <p>Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.</p>
 #[non_exhaustive]
@@ -9710,6 +9789,13 @@ impl HumanLoopActivationOutput {
         self.human_loop_activation_conditions_evaluation_results.as_deref()
     }
 }
+impl HumanLoopActivationOutput {
+    /// Creates a new builder-style object to manufacture [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
+    pub fn builder() -> crate::model::human_loop_activation_output::Builder {
+        crate::model::human_loop_activation_output::Builder::default()
+    }
+}
+
 /// See [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
 pub mod human_loop_activation_output {
     
@@ -9770,12 +9856,6 @@ pub mod human_loop_activation_output {
     
     
 }
-impl HumanLoopActivationOutput {
-    /// Creates a new builder-style object to manufacture [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
-    pub fn builder() -> crate::model::human_loop_activation_output::Builder {
-        crate::model::human_loop_activation_output::Builder::default()
-    }
-}
 
 /// <p>Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review.</p>
 #[non_exhaustive]
@@ -9805,6 +9885,13 @@ impl HumanLoopConfig {
         self.data_attributes.as_ref()
     }
 }
+impl HumanLoopConfig {
+    /// Creates a new builder-style object to manufacture [`HumanLoopConfig`](crate::model::HumanLoopConfig).
+    pub fn builder() -> crate::model::human_loop_config::Builder {
+        crate::model::human_loop_config::Builder::default()
+    }
+}
+
 /// See [`HumanLoopConfig`](crate::model::HumanLoopConfig).
 pub mod human_loop_config {
     
@@ -9859,12 +9946,6 @@ pub mod human_loop_config {
     
     
 }
-impl HumanLoopConfig {
-    /// Creates a new builder-style object to manufacture [`HumanLoopConfig`](crate::model::HumanLoopConfig).
-    pub fn builder() -> crate::model::human_loop_config::Builder {
-        crate::model::human_loop_config::Builder::default()
-    }
-}
 
 /// <p>Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information.</p>
 #[non_exhaustive]
@@ -9880,6 +9961,13 @@ impl HumanLoopDataAttributes {
         self.content_classifiers.as_deref()
     }
 }
+impl HumanLoopDataAttributes {
+    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
+    pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
+        crate::model::human_loop_data_attributes::Builder::default()
+    }
+}
+
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
 pub mod human_loop_data_attributes {
     
@@ -9915,12 +10003,6 @@ pub mod human_loop_data_attributes {
     }
     
     
-}
-impl HumanLoopDataAttributes {
-    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
-    pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
-        crate::model::human_loop_data_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ContentClassifier`, it is important to ensure
@@ -10040,6 +10122,13 @@ impl DetectLabelsImageProperties {
         self.background.as_ref()
     }
 }
+impl DetectLabelsImageProperties {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
+    pub fn builder() -> crate::model::detect_labels_image_properties::Builder {
+        crate::model::detect_labels_image_properties::Builder::default()
+    }
+}
+
 /// See [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
 pub mod detect_labels_image_properties {
     
@@ -10112,12 +10201,6 @@ pub mod detect_labels_image_properties {
     
     
 }
-impl DetectLabelsImageProperties {
-    /// Creates a new builder-style object to manufacture [`DetectLabelsImageProperties`](crate::model::DetectLabelsImageProperties).
-    pub fn builder() -> crate::model::detect_labels_image_properties::Builder {
-        crate::model::detect_labels_image_properties::Builder::default()
-    }
-}
 
 /// <p>The background of the image with regard to image quality and dominant colors.</p>
 #[non_exhaustive]
@@ -10140,6 +10223,13 @@ impl DetectLabelsImageBackground {
         self.dominant_colors.as_deref()
     }
 }
+impl DetectLabelsImageBackground {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
+    pub fn builder() -> crate::model::detect_labels_image_background::Builder {
+        crate::model::detect_labels_image_background::Builder::default()
+    }
+}
+
 /// See [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
 pub mod detect_labels_image_background {
     
@@ -10188,12 +10278,6 @@ pub mod detect_labels_image_background {
     
     
 }
-impl DetectLabelsImageBackground {
-    /// Creates a new builder-style object to manufacture [`DetectLabelsImageBackground`](crate::model::DetectLabelsImageBackground).
-    pub fn builder() -> crate::model::detect_labels_image_background::Builder {
-        crate::model::detect_labels_image_background::Builder::default()
-    }
-}
 
 /// <p>The quality of an image provided for label detection, with regard to brightness, sharpness, and contrast.</p>
 #[non_exhaustive]
@@ -10223,6 +10307,13 @@ impl DetectLabelsImageQuality {
         self.contrast
     }
 }
+impl DetectLabelsImageQuality {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
+    pub fn builder() -> crate::model::detect_labels_image_quality::Builder {
+        crate::model::detect_labels_image_quality::Builder::default()
+    }
+}
+
 /// See [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
 pub mod detect_labels_image_quality {
     
@@ -10277,12 +10368,6 @@ pub mod detect_labels_image_quality {
     
     
 }
-impl DetectLabelsImageQuality {
-    /// Creates a new builder-style object to manufacture [`DetectLabelsImageQuality`](crate::model::DetectLabelsImageQuality).
-    pub fn builder() -> crate::model::detect_labels_image_quality::Builder {
-        crate::model::detect_labels_image_quality::Builder::default()
-    }
-}
 
 /// <p>The foreground of the image with regard to image quality and dominant colors.</p>
 #[non_exhaustive]
@@ -10305,6 +10390,13 @@ impl DetectLabelsImageForeground {
         self.dominant_colors.as_deref()
     }
 }
+impl DetectLabelsImageForeground {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
+    pub fn builder() -> crate::model::detect_labels_image_foreground::Builder {
+        crate::model::detect_labels_image_foreground::Builder::default()
+    }
+}
+
 /// See [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
 pub mod detect_labels_image_foreground {
     
@@ -10353,12 +10445,6 @@ pub mod detect_labels_image_foreground {
     
     
 }
-impl DetectLabelsImageForeground {
-    /// Creates a new builder-style object to manufacture [`DetectLabelsImageForeground`](crate::model::DetectLabelsImageForeground).
-    pub fn builder() -> crate::model::detect_labels_image_foreground::Builder {
-        crate::model::detect_labels_image_foreground::Builder::default()
-    }
-}
 
 /// <p>Settings for the DetectLabels request. Settings can include filters for both GENERAL_LABELS and IMAGE_PROPERTIES. GENERAL_LABELS filters can be inclusive or exclusive and applied to individual labels or label categories. IMAGE_PROPERTIES filters allow specification of a maximum number of dominant colors.</p>
 #[non_exhaustive]
@@ -10381,6 +10467,13 @@ impl DetectLabelsSettings {
         self.image_properties.as_ref()
     }
 }
+impl DetectLabelsSettings {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
+    pub fn builder() -> crate::model::detect_labels_settings::Builder {
+        crate::model::detect_labels_settings::Builder::default()
+    }
+}
+
 /// See [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
 pub mod detect_labels_settings {
     
@@ -10423,12 +10516,6 @@ pub mod detect_labels_settings {
     
     
 }
-impl DetectLabelsSettings {
-    /// Creates a new builder-style object to manufacture [`DetectLabelsSettings`](crate::model::DetectLabelsSettings).
-    pub fn builder() -> crate::model::detect_labels_settings::Builder {
-        crate::model::detect_labels_settings::Builder::default()
-    }
-}
 
 /// <p>Settings for the IMAGE_PROPERTIES feature type.</p>
 #[non_exhaustive]
@@ -10444,6 +10531,13 @@ impl DetectLabelsImagePropertiesSettings {
         self.max_dominant_colors
     }
 }
+impl DetectLabelsImagePropertiesSettings {
+    /// Creates a new builder-style object to manufacture [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
+    pub fn builder() -> crate::model::detect_labels_image_properties_settings::Builder {
+        crate::model::detect_labels_image_properties_settings::Builder::default()
+    }
+}
+
 /// See [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
 pub mod detect_labels_image_properties_settings {
     
@@ -10474,12 +10568,6 @@ pub mod detect_labels_image_properties_settings {
     }
     
     
-}
-impl DetectLabelsImagePropertiesSettings {
-    /// Creates a new builder-style object to manufacture [`DetectLabelsImagePropertiesSettings`](crate::model::DetectLabelsImagePropertiesSettings).
-    pub fn builder() -> crate::model::detect_labels_image_properties_settings::Builder {
-        crate::model::detect_labels_image_properties_settings::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DetectLabelsFeatureName`, it is important to ensure
@@ -10592,6 +10680,13 @@ impl CustomLabel {
         self.geometry.as_ref()
     }
 }
+impl CustomLabel {
+    /// Creates a new builder-style object to manufacture [`CustomLabel`](crate::model::CustomLabel).
+    pub fn builder() -> crate::model::custom_label::Builder {
+        crate::model::custom_label::Builder::default()
+    }
+}
+
 /// See [`CustomLabel`](crate::model::CustomLabel).
 pub mod custom_label {
     
@@ -10646,12 +10741,6 @@ pub mod custom_label {
     
     
 }
-impl CustomLabel {
-    /// Creates a new builder-style object to manufacture [`CustomLabel`](crate::model::CustomLabel).
-    pub fn builder() -> crate::model::custom_label::Builder {
-        crate::model::custom_label::Builder::default()
-    }
-}
 
 /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation.</p> 
 /// <p>Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4.</p> 
@@ -10669,6 +10758,13 @@ impl StreamProcessorNotificationChannel {
         self.sns_topic_arn.as_deref()
     }
 }
+impl StreamProcessorNotificationChannel {
+    /// Creates a new builder-style object to manufacture [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
+    pub fn builder() -> crate::model::stream_processor_notification_channel::Builder {
+        crate::model::stream_processor_notification_channel::Builder::default()
+    }
+}
+
 /// See [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
 pub mod stream_processor_notification_channel {
     
@@ -10699,12 +10795,6 @@ pub mod stream_processor_notification_channel {
     
     
 }
-impl StreamProcessorNotificationChannel {
-    /// Creates a new builder-style object to manufacture [`StreamProcessorNotificationChannel`](crate::model::StreamProcessorNotificationChannel).
-    pub fn builder() -> crate::model::stream_processor_notification_channel::Builder {
-        crate::model::stream_processor_notification_channel::Builder::default()
-    }
-}
 
 /// <p>Input parameters used in a streaming video analyzed by a Amazon Rekognition stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels. </p>
 #[non_exhaustive]
@@ -10727,6 +10817,13 @@ impl StreamProcessorSettings {
         self.connected_home.as_ref()
     }
 }
+impl StreamProcessorSettings {
+    /// Creates a new builder-style object to manufacture [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
+    pub fn builder() -> crate::model::stream_processor_settings::Builder {
+        crate::model::stream_processor_settings::Builder::default()
+    }
+}
+
 /// See [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
 pub mod stream_processor_settings {
     
@@ -10769,12 +10866,6 @@ pub mod stream_processor_settings {
     
     
 }
-impl StreamProcessorSettings {
-    /// Creates a new builder-style object to manufacture [`StreamProcessorSettings`](crate::model::StreamProcessorSettings).
-    pub fn builder() -> crate::model::stream_processor_settings::Builder {
-        crate::model::stream_processor_settings::Builder::default()
-    }
-}
 
 /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
 #[non_exhaustive]
@@ -10797,6 +10888,13 @@ impl ConnectedHomeSettings {
         self.min_confidence
     }
 }
+impl ConnectedHomeSettings {
+    /// Creates a new builder-style object to manufacture [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
+    pub fn builder() -> crate::model::connected_home_settings::Builder {
+        crate::model::connected_home_settings::Builder::default()
+    }
+}
+
 /// See [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
 pub mod connected_home_settings {
     
@@ -10845,12 +10943,6 @@ pub mod connected_home_settings {
     
     
 }
-impl ConnectedHomeSettings {
-    /// Creates a new builder-style object to manufacture [`ConnectedHomeSettings`](crate::model::ConnectedHomeSettings).
-    pub fn builder() -> crate::model::connected_home_settings::Builder {
-        crate::model::connected_home_settings::Builder::default()
-    }
-}
 
 /// <p>Input face recognition parameters for an Amazon Rekognition stream processor. Includes the collection to use for face recognition and the face attributes to detect. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>.</p>
 #[non_exhaustive]
@@ -10873,6 +10965,13 @@ impl FaceSearchSettings {
         self.face_match_threshold
     }
 }
+impl FaceSearchSettings {
+    /// Creates a new builder-style object to manufacture [`FaceSearchSettings`](crate::model::FaceSearchSettings).
+    pub fn builder() -> crate::model::face_search_settings::Builder {
+        crate::model::face_search_settings::Builder::default()
+    }
+}
+
 /// See [`FaceSearchSettings`](crate::model::FaceSearchSettings).
 pub mod face_search_settings {
     
@@ -10915,12 +11014,6 @@ pub mod face_search_settings {
     
     
 }
-impl FaceSearchSettings {
-    /// Creates a new builder-style object to manufacture [`FaceSearchSettings`](crate::model::FaceSearchSettings).
-    pub fn builder() -> crate::model::face_search_settings::Builder {
-        crate::model::face_search_settings::Builder::default()
-    }
-}
 
 /// <p>Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
@@ -10943,6 +11036,13 @@ impl StreamProcessorOutput {
         self.s3_destination.as_ref()
     }
 }
+impl StreamProcessorOutput {
+    /// Creates a new builder-style object to manufacture [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
+    pub fn builder() -> crate::model::stream_processor_output::Builder {
+        crate::model::stream_processor_output::Builder::default()
+    }
+}
+
 /// See [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
 pub mod stream_processor_output {
     
@@ -10985,12 +11085,6 @@ pub mod stream_processor_output {
     
     
 }
-impl StreamProcessorOutput {
-    /// Creates a new builder-style object to manufacture [`StreamProcessorOutput`](crate::model::StreamProcessorOutput).
-    pub fn builder() -> crate::model::stream_processor_output::Builder {
-        crate::model::stream_processor_output::Builder::default()
-    }
-}
 
 /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. These results include the name of the stream processor resource, the session ID of the stream processing session, and labeled timestamps and bounding boxes for detected labels. </p>
 #[non_exhaustive]
@@ -11013,6 +11107,13 @@ impl S3Destination {
         self.key_prefix.as_deref()
     }
 }
+impl S3Destination {
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
+    pub fn builder() -> crate::model::s3_destination::Builder {
+        crate::model::s3_destination::Builder::default()
+    }
+}
+
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
     
@@ -11055,12 +11156,6 @@ pub mod s3_destination {
     
     
 }
-impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
-    pub fn builder() -> crate::model::s3_destination::Builder {
-        crate::model::s3_destination::Builder::default()
-    }
-}
 
 /// <p>The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
@@ -11076,6 +11171,13 @@ impl KinesisDataStream {
         self.arn.as_deref()
     }
 }
+impl KinesisDataStream {
+    /// Creates a new builder-style object to manufacture [`KinesisDataStream`](crate::model::KinesisDataStream).
+    pub fn builder() -> crate::model::kinesis_data_stream::Builder {
+        crate::model::kinesis_data_stream::Builder::default()
+    }
+}
+
 /// See [`KinesisDataStream`](crate::model::KinesisDataStream).
 pub mod kinesis_data_stream {
     
@@ -11106,12 +11208,6 @@ pub mod kinesis_data_stream {
     
     
 }
-impl KinesisDataStream {
-    /// Creates a new builder-style object to manufacture [`KinesisDataStream`](crate::model::KinesisDataStream).
-    pub fn builder() -> crate::model::kinesis_data_stream::Builder {
-        crate::model::kinesis_data_stream::Builder::default()
-    }
-}
 
 /// <p>Information about the source streaming video. </p>
 #[non_exhaustive]
@@ -11127,6 +11223,13 @@ impl StreamProcessorInput {
         self.kinesis_video_stream.as_ref()
     }
 }
+impl StreamProcessorInput {
+    /// Creates a new builder-style object to manufacture [`StreamProcessorInput`](crate::model::StreamProcessorInput).
+    pub fn builder() -> crate::model::stream_processor_input::Builder {
+        crate::model::stream_processor_input::Builder::default()
+    }
+}
+
 /// See [`StreamProcessorInput`](crate::model::StreamProcessorInput).
 pub mod stream_processor_input {
     
@@ -11157,12 +11260,6 @@ pub mod stream_processor_input {
     
     
 }
-impl StreamProcessorInput {
-    /// Creates a new builder-style object to manufacture [`StreamProcessorInput`](crate::model::StreamProcessorInput).
-    pub fn builder() -> crate::model::stream_processor_input::Builder {
-        crate::model::stream_processor_input::Builder::default()
-    }
-}
 
 /// <p>Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
@@ -11178,6 +11275,13 @@ impl KinesisVideoStream {
         self.arn.as_deref()
     }
 }
+impl KinesisVideoStream {
+    /// Creates a new builder-style object to manufacture [`KinesisVideoStream`](crate::model::KinesisVideoStream).
+    pub fn builder() -> crate::model::kinesis_video_stream::Builder {
+        crate::model::kinesis_video_stream::Builder::default()
+    }
+}
+
 /// See [`KinesisVideoStream`](crate::model::KinesisVideoStream).
 pub mod kinesis_video_stream {
     
@@ -11207,12 +11311,6 @@ pub mod kinesis_video_stream {
     }
     
     
-}
-impl KinesisVideoStream {
-    /// Creates a new builder-style object to manufacture [`KinesisVideoStream`](crate::model::KinesisVideoStream).
-    pub fn builder() -> crate::model::kinesis_video_stream::Builder {
-        crate::model::kinesis_video_stream::Builder::default()
-    }
 }
 
 /// <p>A description of a version of an Amazon Rekognition Custom Labels model.</p>
@@ -11327,6 +11425,13 @@ impl ProjectVersionDescription {
         self.source_project_version_arn.as_deref()
     }
 }
+impl ProjectVersionDescription {
+    /// Creates a new builder-style object to manufacture [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
+    pub fn builder() -> crate::model::project_version_description::Builder {
+        crate::model::project_version_description::Builder::default()
+    }
+}
+
 /// See [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
 pub mod project_version_description {
     
@@ -11525,12 +11630,6 @@ pub mod project_version_description {
     
     
 }
-impl ProjectVersionDescription {
-    /// Creates a new builder-style object to manufacture [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
-    pub fn builder() -> crate::model::project_version_description::Builder {
-        crate::model::project_version_description::Builder::default()
-    }
-}
 
 /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
 #[non_exhaustive]
@@ -11550,6 +11649,13 @@ impl GroundTruthManifest {
         self.s3_object.as_ref()
     }
 }
+impl GroundTruthManifest {
+    /// Creates a new builder-style object to manufacture [`GroundTruthManifest`](crate::model::GroundTruthManifest).
+    pub fn builder() -> crate::model::ground_truth_manifest::Builder {
+        crate::model::ground_truth_manifest::Builder::default()
+    }
+}
+
 /// See [`GroundTruthManifest`](crate::model::GroundTruthManifest).
 pub mod ground_truth_manifest {
     
@@ -11584,12 +11690,6 @@ pub mod ground_truth_manifest {
     
     
 }
-impl GroundTruthManifest {
-    /// Creates a new builder-style object to manufacture [`GroundTruthManifest`](crate::model::GroundTruthManifest).
-    pub fn builder() -> crate::model::ground_truth_manifest::Builder {
-        crate::model::ground_truth_manifest::Builder::default()
-    }
-}
 
 /// <p>The evaluation results for the training of a model.</p>
 #[non_exhaustive]
@@ -11612,6 +11712,13 @@ impl EvaluationResult {
         self.summary.as_ref()
     }
 }
+impl EvaluationResult {
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
+    pub fn builder() -> crate::model::evaluation_result::Builder {
+        crate::model::evaluation_result::Builder::default()
+    }
+}
+
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
     
@@ -11654,12 +11761,6 @@ pub mod evaluation_result {
     
     
 }
-impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
-    pub fn builder() -> crate::model::evaluation_result::Builder {
-        crate::model::evaluation_result::Builder::default()
-    }
-}
 
 /// <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p> 
 /// <p>You get the training summary S3 bucket location by calling <code>DescribeProjectVersions</code>. </p>
@@ -11680,6 +11781,13 @@ impl Summary {
         self.s3_object.as_ref()
     }
 }
+impl Summary {
+    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
+    pub fn builder() -> crate::model::summary::Builder {
+        crate::model::summary::Builder::default()
+    }
+}
+
 /// See [`Summary`](crate::model::Summary).
 pub mod summary {
     
@@ -11714,12 +11822,6 @@ pub mod summary {
     
     
 }
-impl Summary {
-    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
-    pub fn builder() -> crate::model::summary::Builder {
-        crate::model::summary::Builder::default()
-    }
-}
 
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
@@ -11749,6 +11851,13 @@ impl TestingDataResult {
         self.validation.as_ref()
     }
 }
+impl TestingDataResult {
+    /// Creates a new builder-style object to manufacture [`TestingDataResult`](crate::model::TestingDataResult).
+    pub fn builder() -> crate::model::testing_data_result::Builder {
+        crate::model::testing_data_result::Builder::default()
+    }
+}
+
 /// See [`TestingDataResult`](crate::model::TestingDataResult).
 pub mod testing_data_result {
     
@@ -11803,12 +11912,6 @@ pub mod testing_data_result {
     
     
 }
-impl TestingDataResult {
-    /// Creates a new builder-style object to manufacture [`TestingDataResult`](crate::model::TestingDataResult).
-    pub fn builder() -> crate::model::testing_data_result::Builder {
-        crate::model::testing_data_result::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 bucket location of the validation data for a model training job. </p> 
 /// <p>The validation data includes error information for individual JSON Lines in the dataset. For more information, see <i>Debugging a Failed Model Training</i> in the Amazon Rekognition Custom Labels Developer Guide. </p> 
@@ -11827,6 +11930,13 @@ impl ValidationData {
         self.assets.as_deref()
     }
 }
+impl ValidationData {
+    /// Creates a new builder-style object to manufacture [`ValidationData`](crate::model::ValidationData).
+    pub fn builder() -> crate::model::validation_data::Builder {
+        crate::model::validation_data::Builder::default()
+    }
+}
+
 /// See [`ValidationData`](crate::model::ValidationData).
 pub mod validation_data {
     
@@ -11863,12 +11973,6 @@ pub mod validation_data {
     
     
 }
-impl ValidationData {
-    /// Creates a new builder-style object to manufacture [`ValidationData`](crate::model::ValidationData).
-    pub fn builder() -> crate::model::validation_data::Builder {
-        crate::model::validation_data::Builder::default()
-    }
-}
 
 /// <p>Assets are the images that you use to train and evaluate a model version. Assets can also contain validation information that you use to debug a failed model training. </p>
 #[non_exhaustive]
@@ -11884,6 +11988,13 @@ impl Asset {
         self.ground_truth_manifest.as_ref()
     }
 }
+impl Asset {
+    /// Creates a new builder-style object to manufacture [`Asset`](crate::model::Asset).
+    pub fn builder() -> crate::model::asset::Builder {
+        crate::model::asset::Builder::default()
+    }
+}
+
 /// See [`Asset`](crate::model::Asset).
 pub mod asset {
     
@@ -11914,12 +12025,6 @@ pub mod asset {
     
     
 }
-impl Asset {
-    /// Creates a new builder-style object to manufacture [`Asset`](crate::model::Asset).
-    pub fn builder() -> crate::model::asset::Builder {
-        crate::model::asset::Builder::default()
-    }
-}
 
 /// <p>The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels uses the training dataset to create a test dataset with a temporary split of the training dataset. </p>
 #[non_exhaustive]
@@ -11942,6 +12047,13 @@ impl TestingData {
         self.auto_create
     }
 }
+impl TestingData {
+    /// Creates a new builder-style object to manufacture [`TestingData`](crate::model::TestingData).
+    pub fn builder() -> crate::model::testing_data::Builder {
+        crate::model::testing_data::Builder::default()
+    }
+}
+
 /// See [`TestingData`](crate::model::TestingData).
 pub mod testing_data {
     
@@ -11991,12 +12103,6 @@ pub mod testing_data {
     
     
 }
-impl TestingData {
-    /// Creates a new builder-style object to manufacture [`TestingData`](crate::model::TestingData).
-    pub fn builder() -> crate::model::testing_data::Builder {
-        crate::model::testing_data::Builder::default()
-    }
-}
 
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
@@ -12026,6 +12132,13 @@ impl TrainingDataResult {
         self.validation.as_ref()
     }
 }
+impl TrainingDataResult {
+    /// Creates a new builder-style object to manufacture [`TrainingDataResult`](crate::model::TrainingDataResult).
+    pub fn builder() -> crate::model::training_data_result::Builder {
+        crate::model::training_data_result::Builder::default()
+    }
+}
+
 /// See [`TrainingDataResult`](crate::model::TrainingDataResult).
 pub mod training_data_result {
     
@@ -12080,12 +12193,6 @@ pub mod training_data_result {
     
     
 }
-impl TrainingDataResult {
-    /// Creates a new builder-style object to manufacture [`TrainingDataResult`](crate::model::TrainingDataResult).
-    pub fn builder() -> crate::model::training_data_result::Builder {
-        crate::model::training_data_result::Builder::default()
-    }
-}
 
 /// <p>The dataset used for training.</p>
 #[non_exhaustive]
@@ -12101,6 +12208,13 @@ impl TrainingData {
         self.assets.as_deref()
     }
 }
+impl TrainingData {
+    /// Creates a new builder-style object to manufacture [`TrainingData`](crate::model::TrainingData).
+    pub fn builder() -> crate::model::training_data::Builder {
+        crate::model::training_data::Builder::default()
+    }
+}
+
 /// See [`TrainingData`](crate::model::TrainingData).
 pub mod training_data {
     
@@ -12137,12 +12251,6 @@ pub mod training_data {
     
     
 }
-impl TrainingData {
-    /// Creates a new builder-style object to manufacture [`TrainingData`](crate::model::TrainingData).
-    pub fn builder() -> crate::model::training_data::Builder {
-        crate::model::training_data::Builder::default()
-    }
-}
 
 /// <p>The S3 bucket and folder location where training output is placed.</p>
 #[non_exhaustive]
@@ -12165,6 +12273,13 @@ impl OutputConfig {
         self.s3_key_prefix.as_deref()
     }
 }
+impl OutputConfig {
+    /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
+    pub fn builder() -> crate::model::output_config::Builder {
+        crate::model::output_config::Builder::default()
+    }
+}
+
 /// See [`OutputConfig`](crate::model::OutputConfig).
 pub mod output_config {
     
@@ -12207,12 +12322,6 @@ pub mod output_config {
     
     
 }
-impl OutputConfig {
-    /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
-    pub fn builder() -> crate::model::output_config::Builder {
-        crate::model::output_config::Builder::default()
-    }
-}
 
 /// <p>A description of an Amazon Rekognition Custom Labels project. For more information, see <code>DescribeProjects</code>.</p>
 #[non_exhaustive]
@@ -12249,6 +12358,13 @@ impl ProjectDescription {
         self.datasets.as_deref()
     }
 }
+impl ProjectDescription {
+    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
+    pub fn builder() -> crate::model::project_description::Builder {
+        crate::model::project_description::Builder::default()
+    }
+}
+
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
 pub mod project_description {
     
@@ -12321,12 +12437,6 @@ pub mod project_description {
     
     
 }
-impl ProjectDescription {
-    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
-    pub fn builder() -> crate::model::project_description::Builder {
-        crate::model::project_description::Builder::default()
-    }
-}
 
 /// <p> Summary information for an Amazon Rekognition Custom Labels dataset. For more information, see <code>ProjectDescription</code>. </p>
 #[non_exhaustive]
@@ -12377,6 +12487,13 @@ impl DatasetMetadata {
         self.status_message_code.as_ref()
     }
 }
+impl DatasetMetadata {
+    /// Creates a new builder-style object to manufacture [`DatasetMetadata`](crate::model::DatasetMetadata).
+    pub fn builder() -> crate::model::dataset_metadata::Builder {
+        crate::model::dataset_metadata::Builder::default()
+    }
+}
+
 /// See [`DatasetMetadata`](crate::model::DatasetMetadata).
 pub mod dataset_metadata {
     
@@ -12466,12 +12583,6 @@ pub mod dataset_metadata {
     }
     
     
-}
-impl DatasetMetadata {
-    /// Creates a new builder-style object to manufacture [`DatasetMetadata`](crate::model::DatasetMetadata).
-    pub fn builder() -> crate::model::dataset_metadata::Builder {
-        crate::model::dataset_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DatasetStatusMessageCode`, it is important to ensure
@@ -12887,6 +12998,13 @@ impl DatasetDescription {
         self.dataset_stats.as_ref()
     }
 }
+impl DatasetDescription {
+    /// Creates a new builder-style object to manufacture [`DatasetDescription`](crate::model::DatasetDescription).
+    pub fn builder() -> crate::model::dataset_description::Builder {
+        crate::model::dataset_description::Builder::default()
+    }
+}
+
 /// See [`DatasetDescription`](crate::model::DatasetDescription).
 pub mod dataset_description {
     
@@ -12977,12 +13095,6 @@ pub mod dataset_description {
     
     
 }
-impl DatasetDescription {
-    /// Creates a new builder-style object to manufacture [`DatasetDescription`](crate::model::DatasetDescription).
-    pub fn builder() -> crate::model::dataset_description::Builder {
-        crate::model::dataset_description::Builder::default()
-    }
-}
 
 /// <p> Provides statistics about a dataset. For more information, see <code>DescribeDataset</code>. </p>
 #[non_exhaustive]
@@ -13019,6 +13131,13 @@ impl DatasetStats {
         self.error_entries
     }
 }
+impl DatasetStats {
+    /// Creates a new builder-style object to manufacture [`DatasetStats`](crate::model::DatasetStats).
+    pub fn builder() -> crate::model::dataset_stats::Builder {
+        crate::model::dataset_stats::Builder::default()
+    }
+}
+
 /// See [`DatasetStats`](crate::model::DatasetStats).
 pub mod dataset_stats {
     
@@ -13085,12 +13204,6 @@ pub mod dataset_stats {
     
     
 }
-impl DatasetStats {
-    /// Creates a new builder-style object to manufacture [`DatasetStats`](crate::model::DatasetStats).
-    pub fn builder() -> crate::model::dataset_stats::Builder {
-        crate::model::dataset_stats::Builder::default()
-    }
-}
 
 /// <p> The source that Amazon Rekognition Custom Labels uses to create a dataset. To use an Amazon Sagemaker format manifest file, specify the S3 bucket location in the <code>GroundTruthManifest</code> field. The S3 bucket must be in your AWS account. To create a copy of an existing dataset, specify the Amazon Resource Name (ARN) of an existing dataset in <code>DatasetArn</code>.</p> 
 /// <p>You need to specify a value for <code>DatasetArn</code> or <code>GroundTruthManifest</code>, but not both. if you supply both values, or if you don't specify any values, an InvalidParameterException exception occurs. </p> 
@@ -13115,6 +13228,13 @@ impl DatasetSource {
         self.dataset_arn.as_deref()
     }
 }
+impl DatasetSource {
+    /// Creates a new builder-style object to manufacture [`DatasetSource`](crate::model::DatasetSource).
+    pub fn builder() -> crate::model::dataset_source::Builder {
+        crate::model::dataset_source::Builder::default()
+    }
+}
+
 /// See [`DatasetSource`](crate::model::DatasetSource).
 pub mod dataset_source {
     
@@ -13157,12 +13277,6 @@ pub mod dataset_source {
     
     
 }
-impl DatasetSource {
-    /// Creates a new builder-style object to manufacture [`DatasetSource`](crate::model::DatasetSource).
-    pub fn builder() -> crate::model::dataset_source::Builder {
-        crate::model::dataset_source::Builder::default()
-    }
-}
 
 /// <p>Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.</p>
 #[non_exhaustive]
@@ -13185,6 +13299,13 @@ impl CompareFacesMatch {
         self.face.as_ref()
     }
 }
+impl CompareFacesMatch {
+    /// Creates a new builder-style object to manufacture [`CompareFacesMatch`](crate::model::CompareFacesMatch).
+    pub fn builder() -> crate::model::compare_faces_match::Builder {
+        crate::model::compare_faces_match::Builder::default()
+    }
+}
+
 /// See [`CompareFacesMatch`](crate::model::CompareFacesMatch).
 pub mod compare_faces_match {
     
@@ -13227,12 +13348,6 @@ pub mod compare_faces_match {
     
     
 }
-impl CompareFacesMatch {
-    /// Creates a new builder-style object to manufacture [`CompareFacesMatch`](crate::model::CompareFacesMatch).
-    pub fn builder() -> crate::model::compare_faces_match::Builder {
-        crate::model::compare_faces_match::Builder::default()
-    }
-}
 
 /// <p>Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison. </p>
 #[non_exhaustive]
@@ -13255,6 +13370,13 @@ impl ComparedSourceImageFace {
         self.confidence
     }
 }
+impl ComparedSourceImageFace {
+    /// Creates a new builder-style object to manufacture [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
+    pub fn builder() -> crate::model::compared_source_image_face::Builder {
+        crate::model::compared_source_image_face::Builder::default()
+    }
+}
+
 /// See [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
 pub mod compared_source_image_face {
     
@@ -13296,11 +13418,5 @@ pub mod compared_source_image_face {
     }
     
     
-}
-impl ComparedSourceImageFace {
-    /// Creates a new builder-style object to manufacture [`ComparedSourceImageFace`](crate::model::ComparedSourceImageFace).
-    pub fn builder() -> crate::model::compared_source_image_face::Builder {
-        crate::model::compared_source_image_face::Builder::default()
-    }
 }
 

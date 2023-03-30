@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListMeshesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListMeshesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMeshesOutput`](crate::output::ListMeshesOutput).
+    pub fn builder() -> crate::output::list_meshes_output::Builder {
+        crate::output::list_meshes_output::Builder::default()
+    }
+}
+
 /// See [`ListMeshesOutput`](crate::output::ListMeshesOutput).
 pub mod list_meshes_output {
     
@@ -85,12 +92,6 @@ pub mod list_meshes_output {
     
     
 }
-impl ListMeshesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMeshesOutput`](crate::output::ListMeshesOutput).
-    pub fn builder() -> crate::output::list_meshes_output::Builder {
-        crate::output::list_meshes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -112,6 +113,13 @@ impl aws_http::request_id::RequestId for CreateMeshOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateMeshOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMeshOutput`](crate::output::CreateMeshOutput).
+    pub fn builder() -> crate::output::create_mesh_output::Builder {
+        crate::output::create_mesh_output::Builder::default()
+    }
+}
+
 /// See [`CreateMeshOutput`](crate::output::CreateMeshOutput).
 pub mod create_mesh_output {
     
@@ -153,12 +161,6 @@ pub mod create_mesh_output {
     
     
 }
-impl CreateMeshOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMeshOutput`](crate::output::CreateMeshOutput).
-    pub fn builder() -> crate::output::create_mesh_output::Builder {
-        crate::output::create_mesh_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -180,6 +182,13 @@ impl aws_http::request_id::RequestId for DeleteMeshOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteMeshOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
+    pub fn builder() -> crate::output::delete_mesh_output::Builder {
+        crate::output::delete_mesh_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
 pub mod delete_mesh_output {
     
@@ -221,12 +230,6 @@ pub mod delete_mesh_output {
     
     
 }
-impl DeleteMeshOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
-    pub fn builder() -> crate::output::delete_mesh_output::Builder {
-        crate::output::delete_mesh_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -248,6 +251,13 @@ impl aws_http::request_id::RequestId for UpdateMeshOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateMeshOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
+    pub fn builder() -> crate::output::update_mesh_output::Builder {
+        crate::output::update_mesh_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
 pub mod update_mesh_output {
     
@@ -289,12 +299,6 @@ pub mod update_mesh_output {
     
     
 }
-impl UpdateMeshOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
-    pub fn builder() -> crate::output::update_mesh_output::Builder {
-        crate::output::update_mesh_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -316,6 +320,13 @@ impl aws_http::request_id::RequestId for DescribeMeshOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeMeshOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
+    pub fn builder() -> crate::output::describe_mesh_output::Builder {
+        crate::output::describe_mesh_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
 pub mod describe_mesh_output {
     
@@ -357,12 +368,6 @@ pub mod describe_mesh_output {
     
     
 }
-impl DescribeMeshOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
-    pub fn builder() -> crate::output::describe_mesh_output::Builder {
-        crate::output::describe_mesh_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -391,6 +396,13 @@ impl aws_http::request_id::RequestId for ListVirtualServicesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVirtualServicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
+    pub fn builder() -> crate::output::list_virtual_services_output::Builder {
+        crate::output::list_virtual_services_output::Builder::default()
+    }
+}
+
 /// See [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
 pub mod list_virtual_services_output {
     
@@ -450,12 +462,6 @@ pub mod list_virtual_services_output {
     
     
 }
-impl ListVirtualServicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
-    pub fn builder() -> crate::output::list_virtual_services_output::Builder {
-        crate::output::list_virtual_services_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -477,6 +483,13 @@ impl aws_http::request_id::RequestId for CreateVirtualServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateVirtualServiceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
+    pub fn builder() -> crate::output::create_virtual_service_output::Builder {
+        crate::output::create_virtual_service_output::Builder::default()
+    }
+}
+
 /// See [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
 pub mod create_virtual_service_output {
     
@@ -518,12 +531,6 @@ pub mod create_virtual_service_output {
     
     
 }
-impl CreateVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
-    pub fn builder() -> crate::output::create_virtual_service_output::Builder {
-        crate::output::create_virtual_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -545,6 +552,13 @@ impl aws_http::request_id::RequestId for DeleteVirtualServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVirtualServiceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
+    pub fn builder() -> crate::output::delete_virtual_service_output::Builder {
+        crate::output::delete_virtual_service_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
 pub mod delete_virtual_service_output {
     
@@ -586,12 +600,6 @@ pub mod delete_virtual_service_output {
     
     
 }
-impl DeleteVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
-    pub fn builder() -> crate::output::delete_virtual_service_output::Builder {
-        crate::output::delete_virtual_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -613,6 +621,13 @@ impl aws_http::request_id::RequestId for UpdateVirtualServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVirtualServiceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
+    pub fn builder() -> crate::output::update_virtual_service_output::Builder {
+        crate::output::update_virtual_service_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
 pub mod update_virtual_service_output {
     
@@ -654,12 +669,6 @@ pub mod update_virtual_service_output {
     
     
 }
-impl UpdateVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
-    pub fn builder() -> crate::output::update_virtual_service_output::Builder {
-        crate::output::update_virtual_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -681,6 +690,13 @@ impl aws_http::request_id::RequestId for DescribeVirtualServiceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVirtualServiceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
+    pub fn builder() -> crate::output::describe_virtual_service_output::Builder {
+        crate::output::describe_virtual_service_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
 pub mod describe_virtual_service_output {
     
@@ -722,12 +738,6 @@ pub mod describe_virtual_service_output {
     
     
 }
-impl DescribeVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
-    pub fn builder() -> crate::output::describe_virtual_service_output::Builder {
-        crate::output::describe_virtual_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -756,6 +766,13 @@ impl aws_http::request_id::RequestId for ListVirtualRoutersOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVirtualRoutersOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
+    pub fn builder() -> crate::output::list_virtual_routers_output::Builder {
+        crate::output::list_virtual_routers_output::Builder::default()
+    }
+}
+
 /// See [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
 pub mod list_virtual_routers_output {
     
@@ -815,12 +832,6 @@ pub mod list_virtual_routers_output {
     
     
 }
-impl ListVirtualRoutersOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
-    pub fn builder() -> crate::output::list_virtual_routers_output::Builder {
-        crate::output::list_virtual_routers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -842,6 +853,13 @@ impl aws_http::request_id::RequestId for CreateVirtualRouterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateVirtualRouterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
+    pub fn builder() -> crate::output::create_virtual_router_output::Builder {
+        crate::output::create_virtual_router_output::Builder::default()
+    }
+}
+
 /// See [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
 pub mod create_virtual_router_output {
     
@@ -883,12 +901,6 @@ pub mod create_virtual_router_output {
     
     
 }
-impl CreateVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
-    pub fn builder() -> crate::output::create_virtual_router_output::Builder {
-        crate::output::create_virtual_router_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -910,6 +922,13 @@ impl aws_http::request_id::RequestId for DeleteVirtualRouterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVirtualRouterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
+    pub fn builder() -> crate::output::delete_virtual_router_output::Builder {
+        crate::output::delete_virtual_router_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
 pub mod delete_virtual_router_output {
     
@@ -951,12 +970,6 @@ pub mod delete_virtual_router_output {
     
     
 }
-impl DeleteVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
-    pub fn builder() -> crate::output::delete_virtual_router_output::Builder {
-        crate::output::delete_virtual_router_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -978,6 +991,13 @@ impl aws_http::request_id::RequestId for UpdateVirtualRouterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVirtualRouterOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
+    pub fn builder() -> crate::output::update_virtual_router_output::Builder {
+        crate::output::update_virtual_router_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
 pub mod update_virtual_router_output {
     
@@ -1019,12 +1039,6 @@ pub mod update_virtual_router_output {
     
     
 }
-impl UpdateVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
-    pub fn builder() -> crate::output::update_virtual_router_output::Builder {
-        crate::output::update_virtual_router_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1046,6 +1060,13 @@ impl aws_http::request_id::RequestId for DescribeVirtualRouterOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVirtualRouterOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
+    pub fn builder() -> crate::output::describe_virtual_router_output::Builder {
+        crate::output::describe_virtual_router_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
 pub mod describe_virtual_router_output {
     
@@ -1087,12 +1108,6 @@ pub mod describe_virtual_router_output {
     
     
 }
-impl DescribeVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
-    pub fn builder() -> crate::output::describe_virtual_router_output::Builder {
-        crate::output::describe_virtual_router_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1121,6 +1136,13 @@ impl aws_http::request_id::RequestId for ListRoutesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRoutesOutput`](crate::output::ListRoutesOutput).
+    pub fn builder() -> crate::output::list_routes_output::Builder {
+        crate::output::list_routes_output::Builder::default()
+    }
+}
+
 /// See [`ListRoutesOutput`](crate::output::ListRoutesOutput).
 pub mod list_routes_output {
     
@@ -1180,12 +1202,6 @@ pub mod list_routes_output {
     
     
 }
-impl ListRoutesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRoutesOutput`](crate::output::ListRoutesOutput).
-    pub fn builder() -> crate::output::list_routes_output::Builder {
-        crate::output::list_routes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1207,6 +1223,13 @@ impl aws_http::request_id::RequestId for CreateRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRouteOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRouteOutput`](crate::output::CreateRouteOutput).
+    pub fn builder() -> crate::output::create_route_output::Builder {
+        crate::output::create_route_output::Builder::default()
+    }
+}
+
 /// See [`CreateRouteOutput`](crate::output::CreateRouteOutput).
 pub mod create_route_output {
     
@@ -1248,12 +1271,6 @@ pub mod create_route_output {
     
     
 }
-impl CreateRouteOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRouteOutput`](crate::output::CreateRouteOutput).
-    pub fn builder() -> crate::output::create_route_output::Builder {
-        crate::output::create_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1275,6 +1292,13 @@ impl aws_http::request_id::RequestId for DeleteRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRouteOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
+    pub fn builder() -> crate::output::delete_route_output::Builder {
+        crate::output::delete_route_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
 pub mod delete_route_output {
     
@@ -1316,12 +1340,6 @@ pub mod delete_route_output {
     
     
 }
-impl DeleteRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
-    pub fn builder() -> crate::output::delete_route_output::Builder {
-        crate::output::delete_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1343,6 +1361,13 @@ impl aws_http::request_id::RequestId for UpdateRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRouteOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
+    pub fn builder() -> crate::output::update_route_output::Builder {
+        crate::output::update_route_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
 pub mod update_route_output {
     
@@ -1384,12 +1409,6 @@ pub mod update_route_output {
     
     
 }
-impl UpdateRouteOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
-    pub fn builder() -> crate::output::update_route_output::Builder {
-        crate::output::update_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1411,6 +1430,13 @@ impl aws_http::request_id::RequestId for DescribeRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRouteOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
+    pub fn builder() -> crate::output::describe_route_output::Builder {
+        crate::output::describe_route_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
 pub mod describe_route_output {
     
@@ -1452,12 +1478,6 @@ pub mod describe_route_output {
     
     
 }
-impl DescribeRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
-    pub fn builder() -> crate::output::describe_route_output::Builder {
-        crate::output::describe_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1486,6 +1506,13 @@ impl aws_http::request_id::RequestId for ListVirtualNodesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVirtualNodesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
+    pub fn builder() -> crate::output::list_virtual_nodes_output::Builder {
+        crate::output::list_virtual_nodes_output::Builder::default()
+    }
+}
+
 /// See [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
 pub mod list_virtual_nodes_output {
     
@@ -1545,12 +1572,6 @@ pub mod list_virtual_nodes_output {
     
     
 }
-impl ListVirtualNodesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
-    pub fn builder() -> crate::output::list_virtual_nodes_output::Builder {
-        crate::output::list_virtual_nodes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1572,6 +1593,13 @@ impl aws_http::request_id::RequestId for CreateVirtualNodeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateVirtualNodeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
+    pub fn builder() -> crate::output::create_virtual_node_output::Builder {
+        crate::output::create_virtual_node_output::Builder::default()
+    }
+}
+
 /// See [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
 pub mod create_virtual_node_output {
     
@@ -1613,12 +1641,6 @@ pub mod create_virtual_node_output {
     
     
 }
-impl CreateVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
-    pub fn builder() -> crate::output::create_virtual_node_output::Builder {
-        crate::output::create_virtual_node_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1640,6 +1662,13 @@ impl aws_http::request_id::RequestId for DeleteVirtualNodeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVirtualNodeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
+    pub fn builder() -> crate::output::delete_virtual_node_output::Builder {
+        crate::output::delete_virtual_node_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
 pub mod delete_virtual_node_output {
     
@@ -1681,12 +1710,6 @@ pub mod delete_virtual_node_output {
     
     
 }
-impl DeleteVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
-    pub fn builder() -> crate::output::delete_virtual_node_output::Builder {
-        crate::output::delete_virtual_node_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1708,6 +1731,13 @@ impl aws_http::request_id::RequestId for UpdateVirtualNodeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVirtualNodeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
+    pub fn builder() -> crate::output::update_virtual_node_output::Builder {
+        crate::output::update_virtual_node_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
 pub mod update_virtual_node_output {
     
@@ -1749,12 +1779,6 @@ pub mod update_virtual_node_output {
     
     
 }
-impl UpdateVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
-    pub fn builder() -> crate::output::update_virtual_node_output::Builder {
-        crate::output::update_virtual_node_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1776,6 +1800,13 @@ impl aws_http::request_id::RequestId for DescribeVirtualNodeOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVirtualNodeOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
+    pub fn builder() -> crate::output::describe_virtual_node_output::Builder {
+        crate::output::describe_virtual_node_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
 pub mod describe_virtual_node_output {
     
@@ -1817,12 +1848,6 @@ pub mod describe_virtual_node_output {
     
     
 }
-impl DescribeVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
-    pub fn builder() -> crate::output::describe_virtual_node_output::Builder {
-        crate::output::describe_virtual_node_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1851,6 +1876,13 @@ impl aws_http::request_id::RequestId for ListVirtualGatewaysOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListVirtualGatewaysOutput {
+    /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
+    pub fn builder() -> crate::output::list_virtual_gateways_output::Builder {
+        crate::output::list_virtual_gateways_output::Builder::default()
+    }
+}
+
 /// See [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
 pub mod list_virtual_gateways_output {
     
@@ -1910,12 +1942,6 @@ pub mod list_virtual_gateways_output {
     
     
 }
-impl ListVirtualGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
-    pub fn builder() -> crate::output::list_virtual_gateways_output::Builder {
-        crate::output::list_virtual_gateways_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1937,6 +1963,13 @@ impl aws_http::request_id::RequestId for CreateVirtualGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateVirtualGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
+    pub fn builder() -> crate::output::create_virtual_gateway_output::Builder {
+        crate::output::create_virtual_gateway_output::Builder::default()
+    }
+}
+
 /// See [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
 pub mod create_virtual_gateway_output {
     
@@ -1978,12 +2011,6 @@ pub mod create_virtual_gateway_output {
     
     
 }
-impl CreateVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
-    pub fn builder() -> crate::output::create_virtual_gateway_output::Builder {
-        crate::output::create_virtual_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2005,6 +2032,13 @@ impl aws_http::request_id::RequestId for DeleteVirtualGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteVirtualGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
+    pub fn builder() -> crate::output::delete_virtual_gateway_output::Builder {
+        crate::output::delete_virtual_gateway_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
 pub mod delete_virtual_gateway_output {
     
@@ -2046,12 +2080,6 @@ pub mod delete_virtual_gateway_output {
     
     
 }
-impl DeleteVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
-    pub fn builder() -> crate::output::delete_virtual_gateway_output::Builder {
-        crate::output::delete_virtual_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2073,6 +2101,13 @@ impl aws_http::request_id::RequestId for UpdateVirtualGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateVirtualGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
+    pub fn builder() -> crate::output::update_virtual_gateway_output::Builder {
+        crate::output::update_virtual_gateway_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
 pub mod update_virtual_gateway_output {
     
@@ -2114,12 +2149,6 @@ pub mod update_virtual_gateway_output {
     
     
 }
-impl UpdateVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
-    pub fn builder() -> crate::output::update_virtual_gateway_output::Builder {
-        crate::output::update_virtual_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2141,6 +2170,13 @@ impl aws_http::request_id::RequestId for DescribeVirtualGatewayOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeVirtualGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
+    pub fn builder() -> crate::output::describe_virtual_gateway_output::Builder {
+        crate::output::describe_virtual_gateway_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
 pub mod describe_virtual_gateway_output {
     
@@ -2182,12 +2218,6 @@ pub mod describe_virtual_gateway_output {
     
     
 }
-impl DescribeVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
-    pub fn builder() -> crate::output::describe_virtual_gateway_output::Builder {
-        crate::output::describe_virtual_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2216,6 +2246,13 @@ impl aws_http::request_id::RequestId for ListGatewayRoutesOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListGatewayRoutesOutput {
+    /// Creates a new builder-style object to manufacture [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
+    pub fn builder() -> crate::output::list_gateway_routes_output::Builder {
+        crate::output::list_gateway_routes_output::Builder::default()
+    }
+}
+
 /// See [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
 pub mod list_gateway_routes_output {
     
@@ -2275,12 +2312,6 @@ pub mod list_gateway_routes_output {
     
     
 }
-impl ListGatewayRoutesOutput {
-    /// Creates a new builder-style object to manufacture [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
-    pub fn builder() -> crate::output::list_gateway_routes_output::Builder {
-        crate::output::list_gateway_routes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2302,6 +2333,13 @@ impl aws_http::request_id::RequestId for CreateGatewayRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateGatewayRouteOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
+    pub fn builder() -> crate::output::create_gateway_route_output::Builder {
+        crate::output::create_gateway_route_output::Builder::default()
+    }
+}
+
 /// See [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
 pub mod create_gateway_route_output {
     
@@ -2343,12 +2381,6 @@ pub mod create_gateway_route_output {
     
     
 }
-impl CreateGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
-    pub fn builder() -> crate::output::create_gateway_route_output::Builder {
-        crate::output::create_gateway_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2370,6 +2402,13 @@ impl aws_http::request_id::RequestId for DeleteGatewayRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteGatewayRouteOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
+    pub fn builder() -> crate::output::delete_gateway_route_output::Builder {
+        crate::output::delete_gateway_route_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
 pub mod delete_gateway_route_output {
     
@@ -2411,12 +2450,6 @@ pub mod delete_gateway_route_output {
     
     
 }
-impl DeleteGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
-    pub fn builder() -> crate::output::delete_gateway_route_output::Builder {
-        crate::output::delete_gateway_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2438,6 +2471,13 @@ impl aws_http::request_id::RequestId for UpdateGatewayRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateGatewayRouteOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
+    pub fn builder() -> crate::output::update_gateway_route_output::Builder {
+        crate::output::update_gateway_route_output::Builder::default()
+    }
+}
+
 /// See [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
 pub mod update_gateway_route_output {
     
@@ -2479,12 +2519,6 @@ pub mod update_gateway_route_output {
     
     
 }
-impl UpdateGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
-    pub fn builder() -> crate::output::update_gateway_route_output::Builder {
-        crate::output::update_gateway_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2506,6 +2540,13 @@ impl aws_http::request_id::RequestId for DescribeGatewayRouteOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeGatewayRouteOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
+    pub fn builder() -> crate::output::describe_gateway_route_output::Builder {
+        crate::output::describe_gateway_route_output::Builder::default()
+    }
+}
+
 /// See [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
 pub mod describe_gateway_route_output {
     
@@ -2547,12 +2588,6 @@ pub mod describe_gateway_route_output {
     
     
 }
-impl DescribeGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
-    pub fn builder() -> crate::output::describe_gateway_route_output::Builder {
-        crate::output::describe_gateway_route_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2565,6 +2600,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -2594,12 +2636,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2612,6 +2648,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -2641,12 +2684,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2675,6 +2712,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -2733,11 +2777,5 @@ pub mod list_tags_for_resource_output {
     }
     
     
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
 }
 

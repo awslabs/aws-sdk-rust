@@ -55,6 +55,13 @@ impl DeviceDescription {
         self.tags.as_ref()
     }
 }
+impl DeviceDescription {
+    /// Creates a new builder-style object to manufacture [`DeviceDescription`](crate::model::DeviceDescription).
+    pub fn builder() -> crate::model::device_description::Builder {
+        crate::model::device_description::Builder::default()
+    }
+}
+
 /// See [`DeviceDescription`](crate::model::DeviceDescription).
 pub mod device_description {
     
@@ -171,12 +178,6 @@ pub mod device_description {
     
     
 }
-impl DeviceDescription {
-    /// Creates a new builder-style object to manufacture [`DeviceDescription`](crate::model::DeviceDescription).
-    pub fn builder() -> crate::model::device_description::Builder {
-        crate::model::device_description::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -199,6 +200,13 @@ impl DeviceEvent {
         self.std_event.as_deref()
     }
 }
+impl DeviceEvent {
+    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
+    pub fn builder() -> crate::model::device_event::Builder {
+        crate::model::device_event::Builder::default()
+    }
+}
+
 /// See [`DeviceEvent`](crate::model::DeviceEvent).
 pub mod device_event {
     
@@ -241,12 +249,6 @@ pub mod device_event {
     
     
 }
-impl DeviceEvent {
-    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
-    pub fn builder() -> crate::model::device_event::Builder {
-        crate::model::device_event::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -276,6 +278,13 @@ impl Device {
         self.r#type.as_deref()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
     
@@ -330,18 +339,19 @@ pub mod device {
     
     
 }
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Attributes  {
 }
+impl Attributes {
+    /// Creates a new builder-style object to manufacture [`Attributes`](crate::model::Attributes).
+    pub fn builder() -> crate::model::attributes::Builder {
+        crate::model::attributes::Builder::default()
+    }
+}
+
 /// See [`Attributes`](crate::model::Attributes).
 pub mod attributes {
     
@@ -359,12 +369,6 @@ pub mod attributes {
     }
     
     
-}
-impl Attributes {
-    /// Creates a new builder-style object to manufacture [`Attributes`](crate::model::Attributes).
-    pub fn builder() -> crate::model::attributes::Builder {
-        crate::model::attributes::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -388,6 +392,13 @@ impl DeviceMethod {
         self.method_name.as_deref()
     }
 }
+impl DeviceMethod {
+    /// Creates a new builder-style object to manufacture [`DeviceMethod`](crate::model::DeviceMethod).
+    pub fn builder() -> crate::model::device_method::Builder {
+        crate::model::device_method::Builder::default()
+    }
+}
+
 /// See [`DeviceMethod`](crate::model::DeviceMethod).
 pub mod device_method {
     
@@ -429,11 +440,5 @@ pub mod device_method {
     }
     
     
-}
-impl DeviceMethod {
-    /// Creates a new builder-style object to manufacture [`DeviceMethod`](crate::model::DeviceMethod).
-    pub fn builder() -> crate::model::device_method::Builder {
-        crate::model::device_method::Builder::default()
-    }
 }
 

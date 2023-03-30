@@ -63,6 +63,13 @@ impl ProjectDetails {
         self.resources.as_deref()
     }
 }
+impl ProjectDetails {
+    /// Creates a new builder-style object to manufacture [`ProjectDetails`](crate::model::ProjectDetails).
+    pub fn builder() -> crate::model::project_details::Builder {
+        crate::model::project_details::Builder::default()
+    }
+}
+
 /// See [`ProjectDetails`](crate::model::ProjectDetails).
 pub mod project_details {
     
@@ -183,12 +190,6 @@ pub mod project_details {
     
     
 }
-impl ProjectDetails {
-    /// Creates a new builder-style object to manufacture [`ProjectDetails`](crate::model::ProjectDetails).
-    pub fn builder() -> crate::model::project_details::Builder {
-        crate::model::project_details::Builder::default()
-    }
-}
 
 /// <p> Information about an instance of an AWS resource associated with a project. </p>
 #[non_exhaustive]
@@ -232,6 +233,13 @@ impl Resource {
         self.attributes.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -315,12 +323,6 @@ pub mod resource {
     }
     
     
-}
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ProjectState`, it is important to ensure
@@ -433,6 +435,13 @@ impl ProjectSummary {
         self.project_id.as_deref()
     }
 }
+impl ProjectSummary {
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
+    pub fn builder() -> crate::model::project_summary::Builder {
+        crate::model::project_summary::Builder::default()
+    }
+}
+
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
     
@@ -474,12 +483,6 @@ pub mod project_summary {
     }
     
     
-}
-impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
-    pub fn builder() -> crate::model::project_summary::Builder {
-        crate::model::project_summary::Builder::default()
-    }
 }
 
 /// <p> The details of the bundle. </p>
@@ -531,6 +534,13 @@ impl BundleDetails {
         self.available_platforms.as_deref()
     }
 }
+impl BundleDetails {
+    /// Creates a new builder-style object to manufacture [`BundleDetails`](crate::model::BundleDetails).
+    pub fn builder() -> crate::model::bundle_details::Builder {
+        crate::model::bundle_details::Builder::default()
+    }
+}
+
 /// See [`BundleDetails`](crate::model::BundleDetails).
 pub mod bundle_details {
     
@@ -626,12 +636,6 @@ pub mod bundle_details {
     }
     
     
-}
-impl BundleDetails {
-    /// Creates a new builder-style object to manufacture [`BundleDetails`](crate::model::BundleDetails).
-    pub fn builder() -> crate::model::bundle_details::Builder {
-        crate::model::bundle_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Platform`, it is important to ensure

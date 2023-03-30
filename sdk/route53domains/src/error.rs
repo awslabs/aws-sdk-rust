@@ -113,55 +113,6 @@ pub struct InvalidInput  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidInput {
-    /// Creates a new builder-style object to manufacture [`InvalidInput`](crate::error::InvalidInput).
-    pub fn builder() -> crate::error::invalid_input::Builder {
-        crate::error::invalid_input::Builder::default()
-    }
-}
-/// See [`InvalidInput`](crate::error::InvalidInput).
-pub mod invalid_input {
-    
-    /// A builder for [`InvalidInput`](crate::error::InvalidInput).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidInput`](crate::error::InvalidInput).
-        pub fn build(self) -> crate::error::InvalidInput {
-            crate::error::InvalidInput {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl InvalidInput {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -185,6 +136,56 @@ impl aws_http::request_id::RequestId for crate::error::InvalidInput {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidInput {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl InvalidInput {
+    /// Creates a new builder-style object to manufacture [`InvalidInput`](crate::error::InvalidInput).
+    pub fn builder() -> crate::error::invalid_input::Builder {
+        crate::error::invalid_input::Builder::default()
+    }
+}
+
+/// See [`InvalidInput`](crate::error::InvalidInput).
+pub mod invalid_input {
+    
+    /// A builder for [`InvalidInput`](crate::error::InvalidInput).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidInput`](crate::error::InvalidInput).
+        pub fn build(self) -> crate::error::InvalidInput {
+            crate::error::InvalidInput {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -333,55 +334,6 @@ pub struct UnsupportedTld  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedTld {
-    /// Creates a new builder-style object to manufacture [`UnsupportedTld`](crate::error::UnsupportedTld).
-    pub fn builder() -> crate::error::unsupported_tld::Builder {
-        crate::error::unsupported_tld::Builder::default()
-    }
-}
-/// See [`UnsupportedTld`](crate::error::UnsupportedTld).
-pub mod unsupported_tld {
-    
-    /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`UnsupportedTld`](crate::error::UnsupportedTld).
-        pub fn build(self) -> crate::error::UnsupportedTld {
-            crate::error::UnsupportedTld {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl UnsupportedTld {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -406,6 +358,56 @@ impl aws_http::request_id::RequestId for crate::error::UnsupportedTld {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedTld {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl UnsupportedTld {
+    /// Creates a new builder-style object to manufacture [`UnsupportedTld`](crate::error::UnsupportedTld).
+    pub fn builder() -> crate::error::unsupported_tld::Builder {
+        crate::error::unsupported_tld::Builder::default()
+    }
+}
+
+/// See [`UnsupportedTld`](crate::error::UnsupportedTld).
+pub mod unsupported_tld {
+    
+    /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>Amazon Route 53 does not support this top-level domain (TLD).</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`UnsupportedTld`](crate::error::UnsupportedTld).
+        pub fn build(self) -> crate::error::UnsupportedTld {
+            crate::error::UnsupportedTld {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
 #[non_exhaustive]
@@ -415,55 +417,6 @@ pub struct OperationLimitExceeded  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl OperationLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
-    pub fn builder() -> crate::error::operation_limit_exceeded::Builder {
-        crate::error::operation_limit_exceeded::Builder::default()
-    }
-}
-/// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
-pub mod operation_limit_exceeded {
-    
-    /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
-        pub fn build(self) -> crate::error::OperationLimitExceeded {
-            crate::error::OperationLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl OperationLimitExceeded {
     /// Returns the error message.
@@ -489,6 +442,56 @@ impl aws_http::request_id::RequestId for crate::error::OperationLimitExceeded {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OperationLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl OperationLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
+    pub fn builder() -> crate::error::operation_limit_exceeded::Builder {
+        crate::error::operation_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
+pub mod operation_limit_exceeded {
+    
+    /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
+        pub fn build(self) -> crate::error::OperationLimitExceeded {
+            crate::error::OperationLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -669,55 +672,6 @@ pub struct TldRulesViolation  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TldRulesViolation {
-    /// Creates a new builder-style object to manufacture [`TldRulesViolation`](crate::error::TldRulesViolation).
-    pub fn builder() -> crate::error::tld_rules_violation::Builder {
-        crate::error::tld_rules_violation::Builder::default()
-    }
-}
-/// See [`TldRulesViolation`](crate::error::TldRulesViolation).
-pub mod tld_rules_violation {
-    
-    /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The top-level domain does not support this operation.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The top-level domain does not support this operation.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`TldRulesViolation`](crate::error::TldRulesViolation).
-        pub fn build(self) -> crate::error::TldRulesViolation {
-            crate::error::TldRulesViolation {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl TldRulesViolation {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -742,6 +696,56 @@ impl aws_http::request_id::RequestId for crate::error::TldRulesViolation {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TldRulesViolation {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
+impl TldRulesViolation {
+    /// Creates a new builder-style object to manufacture [`TldRulesViolation`](crate::error::TldRulesViolation).
+    pub fn builder() -> crate::error::tld_rules_violation::Builder {
+        crate::error::tld_rules_violation::Builder::default()
+    }
+}
+
+/// See [`TldRulesViolation`](crate::error::TldRulesViolation).
+pub mod tld_rules_violation {
+    
+    /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The top-level domain does not support this operation.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The top-level domain does not support this operation.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`TldRulesViolation`](crate::error::TldRulesViolation).
+        pub fn build(self) -> crate::error::TldRulesViolation {
+            crate::error::TldRulesViolation {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
+}
 
 /// <p>The request is already in progress for the domain.</p>
 #[non_exhaustive]
@@ -751,55 +755,6 @@ pub struct DuplicateRequest  {
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl DuplicateRequest {
-    /// Creates a new builder-style object to manufacture [`DuplicateRequest`](crate::error::DuplicateRequest).
-    pub fn builder() -> crate::error::duplicate_request::Builder {
-        crate::error::duplicate_request::Builder::default()
-    }
-}
-/// See [`DuplicateRequest`](crate::error::DuplicateRequest).
-pub mod duplicate_request {
-    
-    /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The request is already in progress for the domain.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The request is already in progress for the domain.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DuplicateRequest`](crate::error::DuplicateRequest).
-        pub fn build(self) -> crate::error::DuplicateRequest {
-            crate::error::DuplicateRequest {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
 }
 impl DuplicateRequest {
     /// Returns the error message.
@@ -825,6 +780,56 @@ impl aws_http::request_id::RequestId for crate::error::DuplicateRequest {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateRequest {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DuplicateRequest {
+    /// Creates a new builder-style object to manufacture [`DuplicateRequest`](crate::error::DuplicateRequest).
+    pub fn builder() -> crate::error::duplicate_request::Builder {
+        crate::error::duplicate_request::Builder::default()
+    }
+}
+
+/// See [`DuplicateRequest`](crate::error::DuplicateRequest).
+pub mod duplicate_request {
+    
+    /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The request is already in progress for the domain.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The request is already in progress for the domain.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DuplicateRequest`](crate::error::DuplicateRequest).
+        pub fn build(self) -> crate::error::DuplicateRequest {
+            crate::error::DuplicateRequest {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1509,55 +1514,6 @@ pub struct DomainLimitExceeded  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DomainLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
-    pub fn builder() -> crate::error::domain_limit_exceeded::Builder {
-        crate::error::domain_limit_exceeded::Builder::default()
-    }
-}
-/// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
-pub mod domain_limit_exceeded {
-    
-    /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
-        pub fn build(self) -> crate::error::DomainLimitExceeded {
-            crate::error::DomainLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl DomainLimitExceeded {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1581,6 +1537,56 @@ impl aws_http::request_id::RequestId for crate::error::DomainLimitExceeded {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DomainLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DomainLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
+    pub fn builder() -> crate::error::domain_limit_exceeded::Builder {
+        crate::error::domain_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
+pub mod domain_limit_exceeded {
+    
+    /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The number of domains has exceeded the allowed threshold for the account.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
+        pub fn build(self) -> crate::error::DomainLimitExceeded {
+            crate::error::DomainLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -5129,55 +5135,6 @@ pub struct DnssecLimitExceeded  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DnssecLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
-    pub fn builder() -> crate::error::dnssec_limit_exceeded::Builder {
-        crate::error::dnssec_limit_exceeded::Builder::default()
-    }
-}
-/// See [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
-pub mod dnssec_limit_exceeded {
-    
-    /// A builder for [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
-        pub fn build(self) -> crate::error::DnssecLimitExceeded {
-            crate::error::DnssecLimitExceeded {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl DnssecLimitExceeded {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -5201,6 +5158,56 @@ impl aws_http::request_id::RequestId for crate::error::DnssecLimitExceeded {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DnssecLimitExceeded {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl DnssecLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+    pub fn builder() -> crate::error::dnssec_limit_exceeded::Builder {
+        crate::error::dnssec_limit_exceeded::Builder::default()
+    }
+}
+
+/// See [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+pub mod dnssec_limit_exceeded {
+    
+    /// A builder for [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
+        pub fn build(self) -> crate::error::DnssecLimitExceeded {
+            crate::error::DnssecLimitExceeded {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.

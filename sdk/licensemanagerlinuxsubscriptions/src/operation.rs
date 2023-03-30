@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_service_settings`](crate::client::Client::get_service_settings).
             ///
-            /// See [`crate::client::fluent_builders::GetServiceSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetServiceSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceSettings {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_linux_subscription_instances`](crate::client::Client::list_linux_subscription_instances).
             ///
-            /// See [`crate::client::fluent_builders::ListLinuxSubscriptionInstances`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLinuxSubscriptionInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLinuxSubscriptionInstances {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptionIns
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_linux_subscriptions`](crate::client::Client::list_linux_subscriptions).
             ///
-            /// See [`crate::client::fluent_builders::ListLinuxSubscriptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListLinuxSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLinuxSubscriptions {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_service_settings`](crate::client::Client::update_service_settings).
             ///
-            /// See [`crate::client::fluent_builders::UpdateServiceSettings`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateServiceSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateServiceSettings {
     _private: ()

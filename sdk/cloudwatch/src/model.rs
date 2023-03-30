@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StateValue`, it is important to ensure
@@ -184,6 +185,13 @@ impl MetricStreamStatisticsConfiguration {
         self.additional_statistics.as_deref()
     }
 }
+impl MetricStreamStatisticsConfiguration {
+    /// Creates a new builder-style object to manufacture [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration).
+    pub fn builder() -> crate::model::metric_stream_statistics_configuration::Builder {
+        crate::model::metric_stream_statistics_configuration::Builder::default()
+    }
+}
+
 /// See [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration).
 pub mod metric_stream_statistics_configuration {
     
@@ -244,12 +252,6 @@ pub mod metric_stream_statistics_configuration {
     
     
 }
-impl MetricStreamStatisticsConfiguration {
-    /// Creates a new builder-style object to manufacture [`MetricStreamStatisticsConfiguration`](crate::model::MetricStreamStatisticsConfiguration).
-    pub fn builder() -> crate::model::metric_stream_statistics_configuration::Builder {
-        crate::model::metric_stream_statistics_configuration::Builder::default()
-    }
-}
 
 /// <p>This object contains the information for one metric that is to be streamed with additional statistics.</p>
 #[non_exhaustive]
@@ -272,6 +274,13 @@ impl MetricStreamStatisticsMetric {
         self.metric_name.as_deref()
     }
 }
+impl MetricStreamStatisticsMetric {
+    /// Creates a new builder-style object to manufacture [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric).
+    pub fn builder() -> crate::model::metric_stream_statistics_metric::Builder {
+        crate::model::metric_stream_statistics_metric::Builder::default()
+    }
+}
+
 /// See [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric).
 pub mod metric_stream_statistics_metric {
     
@@ -313,12 +322,6 @@ pub mod metric_stream_statistics_metric {
     }
     
     
-}
-impl MetricStreamStatisticsMetric {
-    /// Creates a new builder-style object to manufacture [`MetricStreamStatisticsMetric`](crate::model::MetricStreamStatisticsMetric).
-    pub fn builder() -> crate::model::metric_stream_statistics_metric::Builder {
-        crate::model::metric_stream_statistics_metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MetricStreamOutputFormat`, it is important to ensure
@@ -417,6 +420,13 @@ impl MetricStreamFilter {
         self.namespace.as_deref()
     }
 }
+impl MetricStreamFilter {
+    /// Creates a new builder-style object to manufacture [`MetricStreamFilter`](crate::model::MetricStreamFilter).
+    pub fn builder() -> crate::model::metric_stream_filter::Builder {
+        crate::model::metric_stream_filter::Builder::default()
+    }
+}
+
 /// See [`MetricStreamFilter`](crate::model::MetricStreamFilter).
 pub mod metric_stream_filter {
     
@@ -446,12 +456,6 @@ pub mod metric_stream_filter {
     }
     
     
-}
-impl MetricStreamFilter {
-    /// Creates a new builder-style object to manufacture [`MetricStreamFilter`](crate::model::MetricStreamFilter).
-    pub fn builder() -> crate::model::metric_stream_filter::Builder {
-        crate::model::metric_stream_filter::Builder::default()
-    }
 }
 
 /// <p>Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric.</p>
@@ -534,6 +538,13 @@ impl MetricDatum {
         self.storage_resolution
     }
 }
+impl MetricDatum {
+    /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum).
+    pub fn builder() -> crate::model::metric_datum::Builder {
+        crate::model::metric_datum::Builder::default()
+    }
+}
+
 /// See [`MetricDatum`](crate::model::MetricDatum).
 pub mod metric_datum {
     
@@ -687,12 +698,6 @@ pub mod metric_datum {
     }
     
     
-}
-impl MetricDatum {
-    /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum).
-    pub fn builder() -> crate::model::metric_datum::Builder {
-        crate::model::metric_datum::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StandardUnit`, it is important to ensure
@@ -937,6 +942,13 @@ impl StatisticSet {
         self.maximum
     }
 }
+impl StatisticSet {
+    /// Creates a new builder-style object to manufacture [`StatisticSet`](crate::model::StatisticSet).
+    pub fn builder() -> crate::model::statistic_set::Builder {
+        crate::model::statistic_set::Builder::default()
+    }
+}
+
 /// See [`StatisticSet`](crate::model::StatisticSet).
 pub mod statistic_set {
     
@@ -1003,12 +1015,6 @@ pub mod statistic_set {
     
     
 }
-impl StatisticSet {
-    /// Creates a new builder-style object to manufacture [`StatisticSet`](crate::model::StatisticSet).
-    pub fn builder() -> crate::model::statistic_set::Builder {
-        crate::model::statistic_set::Builder::default()
-    }
-}
 
 /// <p>A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension name, and the actual instance ID as the value for that dimension.</p> 
 /// <p>You can assign up to 30 dimensions to a metric.</p>
@@ -1032,6 +1038,13 @@ impl Dimension {
         self.value.as_deref()
     }
 }
+impl Dimension {
+    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
+    pub fn builder() -> crate::model::dimension::Builder {
+        crate::model::dimension::Builder::default()
+    }
+}
+
 /// See [`Dimension`](crate::model::Dimension).
 pub mod dimension {
     
@@ -1073,12 +1086,6 @@ pub mod dimension {
     }
     
     
-}
-impl Dimension {
-    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
-    pub fn builder() -> crate::model::dimension::Builder {
-        crate::model::dimension::Builder::default()
-    }
 }
 
 /// <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p> 
@@ -1155,6 +1162,13 @@ impl MetricDataQuery {
         self.account_id.as_deref()
     }
 }
+impl MetricDataQuery {
+    /// Creates a new builder-style object to manufacture [`MetricDataQuery`](crate::model::MetricDataQuery).
+    pub fn builder() -> crate::model::metric_data_query::Builder {
+        crate::model::metric_data_query::Builder::default()
+    }
+}
+
 /// See [`MetricDataQuery`](crate::model::MetricDataQuery).
 pub mod metric_data_query {
     
@@ -1271,12 +1285,6 @@ pub mod metric_data_query {
     
     
 }
-impl MetricDataQuery {
-    /// Creates a new builder-style object to manufacture [`MetricDataQuery`](crate::model::MetricDataQuery).
-    pub fn builder() -> crate::model::metric_data_query::Builder {
-        crate::model::metric_data_query::Builder::default()
-    }
-}
 
 /// <p>This structure defines the metric to be returned, along with the statistics, period, and units.</p>
 #[non_exhaustive]
@@ -1327,6 +1335,13 @@ impl MetricStat {
         self.unit.as_ref()
     }
 }
+impl MetricStat {
+    /// Creates a new builder-style object to manufacture [`MetricStat`](crate::model::MetricStat).
+    pub fn builder() -> crate::model::metric_stat::Builder {
+        crate::model::metric_stat::Builder::default()
+    }
+}
+
 /// See [`MetricStat`](crate::model::MetricStat).
 pub mod metric_stat {
     
@@ -1407,12 +1422,6 @@ pub mod metric_stat {
     
     
 }
-impl MetricStat {
-    /// Creates a new builder-style object to manufacture [`MetricStat`](crate::model::MetricStat).
-    pub fn builder() -> crate::model::metric_stat::Builder {
-        crate::model::metric_stat::Builder::default()
-    }
-}
 
 /// <p>Represents a specific metric.</p>
 #[non_exhaustive]
@@ -1442,6 +1451,13 @@ impl Metric {
         self.dimensions.as_deref()
     }
 }
+impl Metric {
+    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
+    pub fn builder() -> crate::model::metric::Builder {
+        crate::model::metric::Builder::default()
+    }
+}
+
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
     
@@ -1501,12 +1517,6 @@ pub mod metric {
     }
     
     
-}
-impl Metric {
-    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
-    pub fn builder() -> crate::model::metric::Builder {
-        crate::model::metric::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
@@ -1748,6 +1758,13 @@ impl PartialFailure {
         self.failure_description.as_deref()
     }
 }
+impl PartialFailure {
+    /// Creates a new builder-style object to manufacture [`PartialFailure`](crate::model::PartialFailure).
+    pub fn builder() -> crate::model::partial_failure::Builder {
+        crate::model::partial_failure::Builder::default()
+    }
+}
+
 /// See [`PartialFailure`](crate::model::PartialFailure).
 pub mod partial_failure {
     
@@ -1814,12 +1831,6 @@ pub mod partial_failure {
     
     
 }
-impl PartialFailure {
-    /// Creates a new builder-style object to manufacture [`PartialFailure`](crate::model::PartialFailure).
-    pub fn builder() -> crate::model::partial_failure::Builder {
-        crate::model::partial_failure::Builder::default()
-    }
-}
 
 /// <p> Contains the information that's required to enable a managed Contributor Insights rule for an Amazon Web Services resource. </p>
 #[non_exhaustive]
@@ -1849,6 +1860,13 @@ impl ManagedRule {
         self.tags.as_deref()
     }
 }
+impl ManagedRule {
+    /// Creates a new builder-style object to manufacture [`ManagedRule`](crate::model::ManagedRule).
+    pub fn builder() -> crate::model::managed_rule::Builder {
+        crate::model::managed_rule::Builder::default()
+    }
+}
+
 /// See [`ManagedRule`](crate::model::ManagedRule).
 pub mod managed_rule {
     
@@ -1909,12 +1927,6 @@ pub mod managed_rule {
     
     
 }
-impl ManagedRule {
-    /// Creates a new builder-style object to manufacture [`ManagedRule`](crate::model::ManagedRule).
-    pub fn builder() -> crate::model::managed_rule::Builder {
-        crate::model::managed_rule::Builder::default()
-    }
-}
 
 /// <p>An error or warning for the operation.</p>
 #[non_exhaustive]
@@ -1937,6 +1949,13 @@ impl DashboardValidationMessage {
         self.message.as_deref()
     }
 }
+impl DashboardValidationMessage {
+    /// Creates a new builder-style object to manufacture [`DashboardValidationMessage`](crate::model::DashboardValidationMessage).
+    pub fn builder() -> crate::model::dashboard_validation_message::Builder {
+        crate::model::dashboard_validation_message::Builder::default()
+    }
+}
+
 /// See [`DashboardValidationMessage`](crate::model::DashboardValidationMessage).
 pub mod dashboard_validation_message {
     
@@ -1979,12 +1998,6 @@ pub mod dashboard_validation_message {
     
     
 }
-impl DashboardValidationMessage {
-    /// Creates a new builder-style object to manufacture [`DashboardValidationMessage`](crate::model::DashboardValidationMessage).
-    pub fn builder() -> crate::model::dashboard_validation_message::Builder {
-        crate::model::dashboard_validation_message::Builder::default()
-    }
-}
 
 /// <p>Indicates the CloudWatch math expression that provides the time series the anomaly detector uses as input. The designated math expression must return a single time series.</p>
 #[non_exhaustive]
@@ -2000,6 +2013,13 @@ impl MetricMathAnomalyDetector {
         self.metric_data_queries.as_deref()
     }
 }
+impl MetricMathAnomalyDetector {
+    /// Creates a new builder-style object to manufacture [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector).
+    pub fn builder() -> crate::model::metric_math_anomaly_detector::Builder {
+        crate::model::metric_math_anomaly_detector::Builder::default()
+    }
+}
+
 /// See [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector).
 pub mod metric_math_anomaly_detector {
     
@@ -2035,12 +2055,6 @@ pub mod metric_math_anomaly_detector {
     }
     
     
-}
-impl MetricMathAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`MetricMathAnomalyDetector`](crate::model::MetricMathAnomalyDetector).
-    pub fn builder() -> crate::model::metric_math_anomaly_detector::Builder {
-        crate::model::metric_math_anomaly_detector::Builder::default()
-    }
 }
 
 /// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.</p>
@@ -2078,6 +2092,13 @@ impl SingleMetricAnomalyDetector {
         self.stat.as_deref()
     }
 }
+impl SingleMetricAnomalyDetector {
+    /// Creates a new builder-style object to manufacture [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector).
+    pub fn builder() -> crate::model::single_metric_anomaly_detector::Builder {
+        crate::model::single_metric_anomaly_detector::Builder::default()
+    }
+}
+
 /// See [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector).
 pub mod single_metric_anomaly_detector {
     
@@ -2150,12 +2171,6 @@ pub mod single_metric_anomaly_detector {
     
     
 }
-impl SingleMetricAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`SingleMetricAnomalyDetector`](crate::model::SingleMetricAnomalyDetector).
-    pub fn builder() -> crate::model::single_metric_anomaly_detector::Builder {
-        crate::model::single_metric_anomaly_detector::Builder::default()
-    }
-}
 
 /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric.</p>
 #[non_exhaustive]
@@ -2180,6 +2195,13 @@ impl AnomalyDetectorConfiguration {
         self.metric_timezone.as_deref()
     }
 }
+impl AnomalyDetectorConfiguration {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfiguration`](crate::model::AnomalyDetectorConfiguration).
+    pub fn builder() -> crate::model::anomaly_detector_configuration::Builder {
+        crate::model::anomaly_detector_configuration::Builder::default()
+    }
+}
+
 /// See [`AnomalyDetectorConfiguration`](crate::model::AnomalyDetectorConfiguration).
 pub mod anomaly_detector_configuration {
     
@@ -2230,12 +2252,6 @@ pub mod anomaly_detector_configuration {
     
     
 }
-impl AnomalyDetectorConfiguration {
-    /// Creates a new builder-style object to manufacture [`AnomalyDetectorConfiguration`](crate::model::AnomalyDetectorConfiguration).
-    pub fn builder() -> crate::model::anomaly_detector_configuration::Builder {
-        crate::model::anomaly_detector_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies one range of days or times to exclude from use for training an anomaly detection model.</p>
 #[non_exhaustive]
@@ -2258,6 +2274,13 @@ impl Range {
         self.end_time.as_ref()
     }
 }
+impl Range {
+    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
+    pub fn builder() -> crate::model::range::Builder {
+        crate::model::range::Builder::default()
+    }
+}
+
 /// See [`Range`](crate::model::Range).
 pub mod range {
     
@@ -2299,12 +2322,6 @@ pub mod range {
     }
     
     
-}
-impl Range {
-    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
-    pub fn builder() -> crate::model::range::Builder {
-        crate::model::range::Builder::default()
-    }
 }
 
 /// <p>This structure contains the configuration information about one metric stream.</p>
@@ -2363,6 +2380,13 @@ impl MetricStreamEntry {
         self.output_format.as_ref()
     }
 }
+impl MetricStreamEntry {
+    /// Creates a new builder-style object to manufacture [`MetricStreamEntry`](crate::model::MetricStreamEntry).
+    pub fn builder() -> crate::model::metric_stream_entry::Builder {
+        crate::model::metric_stream_entry::Builder::default()
+    }
+}
+
 /// See [`MetricStreamEntry`](crate::model::MetricStreamEntry).
 pub mod metric_stream_entry {
     
@@ -2465,12 +2489,6 @@ pub mod metric_stream_entry {
     
     
 }
-impl MetricStreamEntry {
-    /// Creates a new builder-style object to manufacture [`MetricStreamEntry`](crate::model::MetricStreamEntry).
-    pub fn builder() -> crate::model::metric_stream_entry::Builder {
-        crate::model::metric_stream_entry::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RecentlyActive`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2570,6 +2588,13 @@ impl DimensionFilter {
         self.value.as_deref()
     }
 }
+impl DimensionFilter {
+    /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter).
+    pub fn builder() -> crate::model::dimension_filter::Builder {
+        crate::model::dimension_filter::Builder::default()
+    }
+}
+
 /// See [`DimensionFilter`](crate::model::DimensionFilter).
 pub mod dimension_filter {
     
@@ -2612,12 +2637,6 @@ pub mod dimension_filter {
     
     
 }
-impl DimensionFilter {
-    /// Creates a new builder-style object to manufacture [`DimensionFilter`](crate::model::DimensionFilter).
-    pub fn builder() -> crate::model::dimension_filter::Builder {
-        crate::model::dimension_filter::Builder::default()
-    }
-}
 
 /// <p> Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>. </p>
 #[non_exhaustive]
@@ -2647,6 +2666,13 @@ impl ManagedRuleDescription {
         self.rule_state.as_ref()
     }
 }
+impl ManagedRuleDescription {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
+    pub fn builder() -> crate::model::managed_rule_description::Builder {
+        crate::model::managed_rule_description::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
 pub mod managed_rule_description {
     
@@ -2701,12 +2727,6 @@ pub mod managed_rule_description {
     
     
 }
-impl ManagedRuleDescription {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleDescription`](crate::model::ManagedRuleDescription).
-    pub fn builder() -> crate::model::managed_rule_description::Builder {
-        crate::model::managed_rule_description::Builder::default()
-    }
-}
 
 /// <p> The status of a managed Contributor Insights rule. </p>
 #[non_exhaustive]
@@ -2729,6 +2749,13 @@ impl ManagedRuleState {
         self.state.as_deref()
     }
 }
+impl ManagedRuleState {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleState`](crate::model::ManagedRuleState).
+    pub fn builder() -> crate::model::managed_rule_state::Builder {
+        crate::model::managed_rule_state::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleState`](crate::model::ManagedRuleState).
 pub mod managed_rule_state {
     
@@ -2771,12 +2798,6 @@ pub mod managed_rule_state {
     
     
 }
-impl ManagedRuleState {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleState`](crate::model::ManagedRuleState).
-    pub fn builder() -> crate::model::managed_rule_state::Builder {
-        crate::model::managed_rule_state::Builder::default()
-    }
-}
 
 /// <p>Represents a specific dashboard.</p>
 #[non_exhaustive]
@@ -2813,6 +2834,13 @@ impl DashboardEntry {
         self.size
     }
 }
+impl DashboardEntry {
+    /// Creates a new builder-style object to manufacture [`DashboardEntry`](crate::model::DashboardEntry).
+    pub fn builder() -> crate::model::dashboard_entry::Builder {
+        crate::model::dashboard_entry::Builder::default()
+    }
+}
+
 /// See [`DashboardEntry`](crate::model::DashboardEntry).
 pub mod dashboard_entry {
     
@@ -2880,12 +2908,6 @@ pub mod dashboard_entry {
     
     
 }
-impl DashboardEntry {
-    /// Creates a new builder-style object to manufacture [`DashboardEntry`](crate::model::DashboardEntry).
-    pub fn builder() -> crate::model::dashboard_entry::Builder {
-        crate::model::dashboard_entry::Builder::default()
-    }
-}
 
 /// <p>Encapsulates the statistical data that CloudWatch computes from metric data.</p>
 #[non_exhaustive]
@@ -2950,6 +2972,13 @@ impl Datapoint {
         self.extended_statistics.as_ref()
     }
 }
+impl Datapoint {
+    /// Creates a new builder-style object to manufacture [`Datapoint`](crate::model::Datapoint).
+    pub fn builder() -> crate::model::datapoint::Builder {
+        crate::model::datapoint::Builder::default()
+    }
+}
+
 /// See [`Datapoint`](crate::model::Datapoint).
 pub mod datapoint {
     
@@ -3070,12 +3099,6 @@ pub mod datapoint {
     
     
 }
-impl Datapoint {
-    /// Creates a new builder-style object to manufacture [`Datapoint`](crate::model::Datapoint).
-    pub fn builder() -> crate::model::datapoint::Builder {
-        crate::model::datapoint::Builder::default()
-    }
-}
 
 /// <p>A message returned by the <code>GetMetricData</code>API, including a code and a description.</p> 
 /// <p>If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a value of <code>Authentication too complex to retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code> operation in the same Region where the metric data is.</p>
@@ -3099,6 +3122,13 @@ impl MessageData {
         self.value.as_deref()
     }
 }
+impl MessageData {
+    /// Creates a new builder-style object to manufacture [`MessageData`](crate::model::MessageData).
+    pub fn builder() -> crate::model::message_data::Builder {
+        crate::model::message_data::Builder::default()
+    }
+}
+
 /// See [`MessageData`](crate::model::MessageData).
 pub mod message_data {
     
@@ -3140,12 +3170,6 @@ pub mod message_data {
     }
     
     
-}
-impl MessageData {
-    /// Creates a new builder-style object to manufacture [`MessageData`](crate::model::MessageData).
-    pub fn builder() -> crate::model::message_data::Builder {
-        crate::model::message_data::Builder::default()
-    }
 }
 
 /// <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information.</p>
@@ -3197,6 +3221,13 @@ impl MetricDataResult {
         self.messages.as_deref()
     }
 }
+impl MetricDataResult {
+    /// Creates a new builder-style object to manufacture [`MetricDataResult`](crate::model::MetricDataResult).
+    pub fn builder() -> crate::model::metric_data_result::Builder {
+        crate::model::metric_data_result::Builder::default()
+    }
+}
+
 /// See [`MetricDataResult`](crate::model::MetricDataResult).
 pub mod metric_data_result {
     
@@ -3304,12 +3335,6 @@ pub mod metric_data_result {
     }
     
     
-}
-impl MetricDataResult {
-    /// Creates a new builder-style object to manufacture [`MetricDataResult`](crate::model::MetricDataResult).
-    pub fn builder() -> crate::model::metric_data_result::Builder {
-        crate::model::metric_data_result::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StatusCode`, it is important to ensure
@@ -3419,6 +3444,13 @@ impl LabelOptions {
         self.timezone.as_deref()
     }
 }
+impl LabelOptions {
+    /// Creates a new builder-style object to manufacture [`LabelOptions`](crate::model::LabelOptions).
+    pub fn builder() -> crate::model::label_options::Builder {
+        crate::model::label_options::Builder::default()
+    }
+}
+
 /// See [`LabelOptions`](crate::model::LabelOptions).
 pub mod label_options {
     
@@ -3448,12 +3480,6 @@ pub mod label_options {
     }
     
     
-}
-impl LabelOptions {
-    /// Creates a new builder-style object to manufacture [`LabelOptions`](crate::model::LabelOptions).
-    pub fn builder() -> crate::model::label_options::Builder {
-        crate::model::label_options::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScanBy`, it is important to ensure
@@ -3616,6 +3642,13 @@ impl InsightRuleMetricDatapoint {
         self.maximum
     }
 }
+impl InsightRuleMetricDatapoint {
+    /// Creates a new builder-style object to manufacture [`InsightRuleMetricDatapoint`](crate::model::InsightRuleMetricDatapoint).
+    pub fn builder() -> crate::model::insight_rule_metric_datapoint::Builder {
+        crate::model::insight_rule_metric_datapoint::Builder::default()
+    }
+}
+
 /// See [`InsightRuleMetricDatapoint`](crate::model::InsightRuleMetricDatapoint).
 pub mod insight_rule_metric_datapoint {
     
@@ -3744,12 +3777,6 @@ pub mod insight_rule_metric_datapoint {
     
     
 }
-impl InsightRuleMetricDatapoint {
-    /// Creates a new builder-style object to manufacture [`InsightRuleMetricDatapoint`](crate::model::InsightRuleMetricDatapoint).
-    pub fn builder() -> crate::model::insight_rule_metric_datapoint::Builder {
-        crate::model::insight_rule_metric_datapoint::Builder::default()
-    }
-}
 
 /// <p>One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.</p> 
 /// <p>If the rule contains a single key, then each unique contributor is each unique value for this key.</p> 
@@ -3781,6 +3808,13 @@ impl InsightRuleContributor {
         self.datapoints.as_deref()
     }
 }
+impl InsightRuleContributor {
+    /// Creates a new builder-style object to manufacture [`InsightRuleContributor`](crate::model::InsightRuleContributor).
+    pub fn builder() -> crate::model::insight_rule_contributor::Builder {
+        crate::model::insight_rule_contributor::Builder::default()
+    }
+}
+
 /// See [`InsightRuleContributor`](crate::model::InsightRuleContributor).
 pub mod insight_rule_contributor {
     
@@ -3847,12 +3881,6 @@ pub mod insight_rule_contributor {
     
     
 }
-impl InsightRuleContributor {
-    /// Creates a new builder-style object to manufacture [`InsightRuleContributor`](crate::model::InsightRuleContributor).
-    pub fn builder() -> crate::model::insight_rule_contributor::Builder {
-        crate::model::insight_rule_contributor::Builder::default()
-    }
-}
 
 /// <p>One data point related to one contributor.</p> 
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
@@ -3876,6 +3904,13 @@ impl InsightRuleContributorDatapoint {
         self.approximate_value
     }
 }
+impl InsightRuleContributorDatapoint {
+    /// Creates a new builder-style object to manufacture [`InsightRuleContributorDatapoint`](crate::model::InsightRuleContributorDatapoint).
+    pub fn builder() -> crate::model::insight_rule_contributor_datapoint::Builder {
+        crate::model::insight_rule_contributor_datapoint::Builder::default()
+    }
+}
+
 /// See [`InsightRuleContributorDatapoint`](crate::model::InsightRuleContributorDatapoint).
 pub mod insight_rule_contributor_datapoint {
     
@@ -3917,12 +3952,6 @@ pub mod insight_rule_contributor_datapoint {
     }
     
     
-}
-impl InsightRuleContributorDatapoint {
-    /// Creates a new builder-style object to manufacture [`InsightRuleContributorDatapoint`](crate::model::InsightRuleContributorDatapoint).
-    pub fn builder() -> crate::model::insight_rule_contributor_datapoint::Builder {
-        crate::model::insight_rule_contributor_datapoint::Builder::default()
-    }
 }
 
 /// <p>This structure contains the definition for a Contributor Insights rule. For more information about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"> Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -3967,6 +3996,13 @@ impl InsightRule {
         self.managed_rule
     }
 }
+impl InsightRule {
+    /// Creates a new builder-style object to manufacture [`InsightRule`](crate::model::InsightRule).
+    pub fn builder() -> crate::model::insight_rule::Builder {
+        crate::model::insight_rule::Builder::default()
+    }
+}
+
 /// See [`InsightRule`](crate::model::InsightRule).
 pub mod insight_rule {
     
@@ -4046,12 +4082,6 @@ pub mod insight_rule {
     
     
 }
-impl InsightRule {
-    /// Creates a new builder-style object to manufacture [`InsightRule`](crate::model::InsightRule).
-    pub fn builder() -> crate::model::insight_rule::Builder {
-        crate::model::insight_rule::Builder::default()
-    }
-}
 
 /// <p>An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression. You can use the model to display a band of expected, normal values when the metric is graphed.</p>
 #[non_exhaustive]
@@ -4124,6 +4154,13 @@ impl AnomalyDetector {
         self.metric_math_anomaly_detector.as_ref()
     }
 }
+impl AnomalyDetector {
+    /// Creates a new builder-style object to manufacture [`AnomalyDetector`](crate::model::AnomalyDetector).
+    pub fn builder() -> crate::model::anomaly_detector::Builder {
+        crate::model::anomaly_detector::Builder::default()
+    }
+}
+
 /// See [`AnomalyDetector`](crate::model::AnomalyDetector).
 pub mod anomaly_detector {
     
@@ -4251,12 +4288,6 @@ pub mod anomaly_detector {
     }
     
     
-}
-impl AnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`AnomalyDetector`](crate::model::AnomalyDetector).
-    pub fn builder() -> crate::model::anomaly_detector::Builder {
-        crate::model::anomaly_detector::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnomalyDetectorStateValue`, it is important to ensure
@@ -4640,6 +4671,13 @@ impl MetricAlarm {
         self.state_transitioned_timestamp.as_ref()
     }
 }
+impl MetricAlarm {
+    /// Creates a new builder-style object to manufacture [`MetricAlarm`](crate::model::MetricAlarm).
+    pub fn builder() -> crate::model::metric_alarm::Builder {
+        crate::model::metric_alarm::Builder::default()
+    }
+}
+
 /// See [`MetricAlarm`](crate::model::MetricAlarm).
 pub mod metric_alarm {
     
@@ -5038,12 +5076,6 @@ pub mod metric_alarm {
     
     
 }
-impl MetricAlarm {
-    /// Creates a new builder-style object to manufacture [`MetricAlarm`](crate::model::MetricAlarm).
-    pub fn builder() -> crate::model::metric_alarm::Builder {
-        crate::model::metric_alarm::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EvaluationState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5270,6 +5302,13 @@ impl CompositeAlarm {
         self.actions_suppressor_extension_period
     }
 }
+impl CompositeAlarm {
+    /// Creates a new builder-style object to manufacture [`CompositeAlarm`](crate::model::CompositeAlarm).
+    pub fn builder() -> crate::model::composite_alarm::Builder {
+        crate::model::composite_alarm::Builder::default()
+    }
+}
+
 /// See [`CompositeAlarm`](crate::model::CompositeAlarm).
 pub mod composite_alarm {
     
@@ -5542,12 +5581,6 @@ pub mod composite_alarm {
     
     
 }
-impl CompositeAlarm {
-    /// Creates a new builder-style object to manufacture [`CompositeAlarm`](crate::model::CompositeAlarm).
-    pub fn builder() -> crate::model::composite_alarm::Builder {
-        crate::model::composite_alarm::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ActionsSuppressedBy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5767,6 +5800,13 @@ impl AlarmHistoryItem {
         self.history_data.as_deref()
     }
 }
+impl AlarmHistoryItem {
+    /// Creates a new builder-style object to manufacture [`AlarmHistoryItem`](crate::model::AlarmHistoryItem).
+    pub fn builder() -> crate::model::alarm_history_item::Builder {
+        crate::model::alarm_history_item::Builder::default()
+    }
+}
+
 /// See [`AlarmHistoryItem`](crate::model::AlarmHistoryItem).
 pub mod alarm_history_item {
     
@@ -5856,12 +5896,6 @@ pub mod alarm_history_item {
     }
     
     
-}
-impl AlarmHistoryItem {
-    /// Creates a new builder-style object to manufacture [`AlarmHistoryItem`](crate::model::AlarmHistoryItem).
-    pub fn builder() -> crate::model::alarm_history_item::Builder {
-        crate::model::alarm_history_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `HistoryItemType`, it is important to ensure

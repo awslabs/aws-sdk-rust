@@ -893,6 +893,13 @@ impl AwsSecurityFindingFilters {
         self.sample.as_deref()
     }
 }
+impl AwsSecurityFindingFilters {
+    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
+    pub fn builder() -> crate::model::aws_security_finding_filters::Builder {
+        crate::model::aws_security_finding_filters::Builder::default()
+    }
+}
+
 /// See [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
 pub mod aws_security_finding_filters {
     
@@ -2677,12 +2684,6 @@ pub mod aws_security_finding_filters {
     
     
 }
-impl AwsSecurityFindingFilters {
-    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
-    pub fn builder() -> crate::model::aws_security_finding_filters::Builder {
-        crate::model::aws_security_finding_filters::Builder::default()
-    }
-}
 
 /// <p>Boolean filter for querying findings.</p>
 #[non_exhaustive]
@@ -2698,6 +2699,13 @@ impl BooleanFilter {
         self.value
     }
 }
+impl BooleanFilter {
+    /// Creates a new builder-style object to manufacture [`BooleanFilter`](crate::model::BooleanFilter).
+    pub fn builder() -> crate::model::boolean_filter::Builder {
+        crate::model::boolean_filter::Builder::default()
+    }
+}
+
 /// See [`BooleanFilter`](crate::model::BooleanFilter).
 pub mod boolean_filter {
     
@@ -2728,12 +2736,6 @@ pub mod boolean_filter {
     }
     
     
-}
-impl BooleanFilter {
-    /// Creates a new builder-style object to manufacture [`BooleanFilter`](crate::model::BooleanFilter).
-    pub fn builder() -> crate::model::boolean_filter::Builder {
-        crate::model::boolean_filter::Builder::default()
-    }
 }
 
 /// <p>A string filter for querying findings.</p>
@@ -2797,6 +2799,13 @@ impl StringFilter {
         self.comparison.as_ref()
     }
 }
+impl StringFilter {
+    /// Creates a new builder-style object to manufacture [`StringFilter`](crate::model::StringFilter).
+    pub fn builder() -> crate::model::string_filter::Builder {
+        crate::model::string_filter::Builder::default()
+    }
+}
+
 /// See [`StringFilter`](crate::model::StringFilter).
 pub mod string_filter {
     
@@ -2878,12 +2887,6 @@ pub mod string_filter {
     }
     
     
-}
-impl StringFilter {
-    /// Creates a new builder-style object to manufacture [`StringFilter`](crate::model::StringFilter).
-    pub fn builder() -> crate::model::string_filter::Builder {
-        crate::model::string_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StringFilterComparison`, it is important to ensure
@@ -3006,6 +3009,13 @@ impl NumberFilter {
         self.eq
     }
 }
+impl NumberFilter {
+    /// Creates a new builder-style object to manufacture [`NumberFilter`](crate::model::NumberFilter).
+    pub fn builder() -> crate::model::number_filter::Builder {
+        crate::model::number_filter::Builder::default()
+    }
+}
+
 /// See [`NumberFilter`](crate::model::NumberFilter).
 pub mod number_filter {
     
@@ -3063,12 +3073,6 @@ pub mod number_filter {
     
     
 }
-impl NumberFilter {
-    /// Creates a new builder-style object to manufacture [`NumberFilter`](crate::model::NumberFilter).
-    pub fn builder() -> crate::model::number_filter::Builder {
-        crate::model::number_filter::Builder::default()
-    }
-}
 
 /// <p>A keyword filter for querying findings.</p>
 #[non_exhaustive]
@@ -3084,6 +3088,13 @@ impl KeywordFilter {
         self.value.as_deref()
     }
 }
+impl KeywordFilter {
+    /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter).
+    pub fn builder() -> crate::model::keyword_filter::Builder {
+        crate::model::keyword_filter::Builder::default()
+    }
+}
+
 /// See [`KeywordFilter`](crate::model::KeywordFilter).
 pub mod keyword_filter {
     
@@ -3114,12 +3125,6 @@ pub mod keyword_filter {
     
     
 }
-impl KeywordFilter {
-    /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter).
-    pub fn builder() -> crate::model::keyword_filter::Builder {
-        crate::model::keyword_filter::Builder::default()
-    }
-}
 
 /// <p>A date filter for querying findings.</p>
 #[non_exhaustive]
@@ -3149,6 +3154,13 @@ impl DateFilter {
         self.date_range.as_ref()
     }
 }
+impl DateFilter {
+    /// Creates a new builder-style object to manufacture [`DateFilter`](crate::model::DateFilter).
+    pub fn builder() -> crate::model::date_filter::Builder {
+        crate::model::date_filter::Builder::default()
+    }
+}
+
 /// See [`DateFilter`](crate::model::DateFilter).
 pub mod date_filter {
     
@@ -3203,12 +3215,6 @@ pub mod date_filter {
     
     
 }
-impl DateFilter {
-    /// Creates a new builder-style object to manufacture [`DateFilter`](crate::model::DateFilter).
-    pub fn builder() -> crate::model::date_filter::Builder {
-        crate::model::date_filter::Builder::default()
-    }
-}
 
 /// <p>A date range for the date filter.</p>
 #[non_exhaustive]
@@ -3231,6 +3237,13 @@ impl DateRange {
         self.unit.as_ref()
     }
 }
+impl DateRange {
+    /// Creates a new builder-style object to manufacture [`DateRange`](crate::model::DateRange).
+    pub fn builder() -> crate::model::date_range::Builder {
+        crate::model::date_range::Builder::default()
+    }
+}
+
 /// See [`DateRange`](crate::model::DateRange).
 pub mod date_range {
     
@@ -3273,12 +3286,6 @@ pub mod date_range {
     }
     
     
-}
-impl DateRange {
-    /// Creates a new builder-style object to manufacture [`DateRange`](crate::model::DateRange).
-    pub fn builder() -> crate::model::date_range::Builder {
-        crate::model::date_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `DateRangeUnit`, it is important to ensure
@@ -3396,6 +3403,13 @@ impl MapFilter {
         self.comparison.as_ref()
     }
 }
+impl MapFilter {
+    /// Creates a new builder-style object to manufacture [`MapFilter`](crate::model::MapFilter).
+    pub fn builder() -> crate::model::map_filter::Builder {
+        crate::model::map_filter::Builder::default()
+    }
+}
+
 /// See [`MapFilter`](crate::model::MapFilter).
 pub mod map_filter {
     
@@ -3459,12 +3473,6 @@ pub mod map_filter {
     }
     
     
-}
-impl MapFilter {
-    /// Creates a new builder-style object to manufacture [`MapFilter`](crate::model::MapFilter).
-    pub fn builder() -> crate::model::map_filter::Builder {
-        crate::model::map_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MapFilterComparison`, it is important to ensure
@@ -3563,6 +3571,13 @@ impl IpFilter {
         self.cidr.as_deref()
     }
 }
+impl IpFilter {
+    /// Creates a new builder-style object to manufacture [`IpFilter`](crate::model::IpFilter).
+    pub fn builder() -> crate::model::ip_filter::Builder {
+        crate::model::ip_filter::Builder::default()
+    }
+}
+
 /// See [`IpFilter`](crate::model::IpFilter).
 pub mod ip_filter {
     
@@ -3592,12 +3607,6 @@ pub mod ip_filter {
     }
     
     
-}
-impl IpFilter {
-    /// Creates a new builder-style object to manufacture [`IpFilter`](crate::model::IpFilter).
-    pub fn builder() -> crate::model::ip_filter::Builder {
-        crate::model::ip_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RecordState`, it is important to ensure
@@ -3703,6 +3712,13 @@ impl NoteUpdate {
         self.updated_by.as_deref()
     }
 }
+impl NoteUpdate {
+    /// Creates a new builder-style object to manufacture [`NoteUpdate`](crate::model::NoteUpdate).
+    pub fn builder() -> crate::model::note_update::Builder {
+        crate::model::note_update::Builder::default()
+    }
+}
+
 /// See [`NoteUpdate`](crate::model::NoteUpdate).
 pub mod note_update {
     
@@ -3745,12 +3761,6 @@ pub mod note_update {
     
     
 }
-impl NoteUpdate {
-    /// Creates a new builder-style object to manufacture [`NoteUpdate`](crate::model::NoteUpdate).
-    pub fn builder() -> crate::model::note_update::Builder {
-        crate::model::note_update::Builder::default()
-    }
-}
 
 /// <p>Represents a Security Hub administrator account designated by an organization management account.</p>
 #[non_exhaustive]
@@ -3773,6 +3783,13 @@ impl AdminAccount {
         self.status.as_ref()
     }
 }
+impl AdminAccount {
+    /// Creates a new builder-style object to manufacture [`AdminAccount`](crate::model::AdminAccount).
+    pub fn builder() -> crate::model::admin_account::Builder {
+        crate::model::admin_account::Builder::default()
+    }
+}
+
 /// See [`AdminAccount`](crate::model::AdminAccount).
 pub mod admin_account {
     
@@ -3814,12 +3831,6 @@ pub mod admin_account {
     }
     
     
-}
-impl AdminAccount {
-    /// Creates a new builder-style object to manufacture [`AdminAccount`](crate::model::AdminAccount).
-    pub fn builder() -> crate::model::admin_account::Builder {
-        crate::model::admin_account::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AdminStatus`, it is important to ensure
@@ -3984,6 +3995,13 @@ impl Member {
         self.updated_at.as_ref()
     }
 }
+impl Member {
+    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
+    pub fn builder() -> crate::model::member::Builder {
+        crate::model::member::Builder::default()
+    }
+}
+
 /// See [`Member`](crate::model::Member).
 pub mod member {
     
@@ -4110,12 +4128,6 @@ pub mod member {
     
     
 }
-impl Member {
-    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
-    pub fn builder() -> crate::model::member::Builder {
-        crate::model::member::Builder::default()
-    }
-}
 
 /// <p>Details about an invitation.</p>
 #[non_exhaustive]
@@ -4152,6 +4164,13 @@ impl Invitation {
         self.member_status.as_deref()
     }
 }
+impl Invitation {
+    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
+    pub fn builder() -> crate::model::invitation::Builder {
+        crate::model::invitation::Builder::default()
+    }
+}
+
 /// See [`Invitation`](crate::model::Invitation).
 pub mod invitation {
     
@@ -4218,12 +4237,6 @@ pub mod invitation {
     
     
 }
-impl Invitation {
-    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
-    pub fn builder() -> crate::model::invitation::Builder {
-        crate::model::invitation::Builder::default()
-    }
-}
 
 /// <p>A finding aggregator. A finding aggregator contains the configuration for finding aggregation.</p>
 #[non_exhaustive]
@@ -4239,6 +4252,13 @@ impl FindingAggregator {
         self.finding_aggregator_arn.as_deref()
     }
 }
+impl FindingAggregator {
+    /// Creates a new builder-style object to manufacture [`FindingAggregator`](crate::model::FindingAggregator).
+    pub fn builder() -> crate::model::finding_aggregator::Builder {
+        crate::model::finding_aggregator::Builder::default()
+    }
+}
+
 /// See [`FindingAggregator`](crate::model::FindingAggregator).
 pub mod finding_aggregator {
     
@@ -4269,12 +4289,6 @@ pub mod finding_aggregator {
     
     
 }
-impl FindingAggregator {
-    /// Creates a new builder-style object to manufacture [`FindingAggregator`](crate::model::FindingAggregator).
-    pub fn builder() -> crate::model::finding_aggregator::Builder {
-        crate::model::finding_aggregator::Builder::default()
-    }
-}
 
 /// <p>Details about the account that was not processed.</p>
 #[non_exhaustive]
@@ -4297,6 +4311,13 @@ impl Result {
         self.processing_result.as_deref()
     }
 }
+impl Result {
+    /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result).
+    pub fn builder() -> crate::model::result::Builder {
+        crate::model::result::Builder::default()
+    }
+}
+
 /// See [`Result`](crate::model::Result).
 pub mod result {
     
@@ -4339,12 +4360,6 @@ pub mod result {
     
     
 }
-impl Result {
-    /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result).
-    pub fn builder() -> crate::model::result::Builder {
-        crate::model::result::Builder::default()
-    }
-}
 
 /// <p>Contains information about a Security Hub insight.</p>
 #[non_exhaustive]
@@ -4381,6 +4396,13 @@ impl Insight {
         self.group_by_attribute.as_deref()
     }
 }
+impl Insight {
+    /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight).
+    pub fn builder() -> crate::model::insight::Builder {
+        crate::model::insight::Builder::default()
+    }
+}
+
 /// See [`Insight`](crate::model::Insight).
 pub mod insight {
     
@@ -4447,12 +4469,6 @@ pub mod insight {
     
     
 }
-impl Insight {
-    /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight).
-    pub fn builder() -> crate::model::insight::Builder {
-        crate::model::insight::Builder::default()
-    }
-}
 
 /// <p>The insight results returned by the <code>GetInsightResults</code> operation.</p>
 #[non_exhaustive]
@@ -4482,6 +4498,13 @@ impl InsightResults {
         self.result_values.as_deref()
     }
 }
+impl InsightResults {
+    /// Creates a new builder-style object to manufacture [`InsightResults`](crate::model::InsightResults).
+    pub fn builder() -> crate::model::insight_results::Builder {
+        crate::model::insight_results::Builder::default()
+    }
+}
+
 /// See [`InsightResults`](crate::model::InsightResults).
 pub mod insight_results {
     
@@ -4542,12 +4565,6 @@ pub mod insight_results {
     
     
 }
-impl InsightResults {
-    /// Creates a new builder-style object to manufacture [`InsightResults`](crate::model::InsightResults).
-    pub fn builder() -> crate::model::insight_results::Builder {
-        crate::model::insight_results::Builder::default()
-    }
-}
 
 /// <p>The insight result values returned by the <code>GetInsightResults</code> operation.</p>
 #[non_exhaustive]
@@ -4570,6 +4587,13 @@ impl InsightResultValue {
         self.count
     }
 }
+impl InsightResultValue {
+    /// Creates a new builder-style object to manufacture [`InsightResultValue`](crate::model::InsightResultValue).
+    pub fn builder() -> crate::model::insight_result_value::Builder {
+        crate::model::insight_result_value::Builder::default()
+    }
+}
+
 /// See [`InsightResultValue`](crate::model::InsightResultValue).
 pub mod insight_result_value {
     
@@ -4612,12 +4636,6 @@ pub mod insight_result_value {
     }
     
     
-}
-impl InsightResultValue {
-    /// Creates a new builder-style object to manufacture [`InsightResultValue`](crate::model::InsightResultValue).
-    pub fn builder() -> crate::model::insight_result_value::Builder {
-        crate::model::insight_result_value::Builder::default()
-    }
 }
 
 /// <p>Provides a consistent format for Security Hub findings. <code>AwsSecurityFinding</code> format allows you to share findings between Amazon Web Services security services and third-party solutions.</p> <note> 
@@ -4950,6 +4968,13 @@ impl AwsSecurityFinding {
         self.sample
     }
 }
+impl AwsSecurityFinding {
+    /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
+    pub fn builder() -> crate::model::aws_security_finding::Builder {
+        crate::model::aws_security_finding::Builder::default()
+    }
+}
+
 /// See [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
 pub mod aws_security_finding {
     
@@ -5557,12 +5582,6 @@ pub mod aws_security_finding {
     
     
 }
-impl AwsSecurityFinding {
-    /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
-    pub fn builder() -> crate::model::aws_security_finding::Builder {
-        crate::model::aws_security_finding::Builder::default()
-    }
-}
 
 /// <p>In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update values for confidence, criticality, related findings, severity, and types.</p>
 #[non_exhaustive]
@@ -5612,6 +5631,13 @@ impl FindingProviderFields {
         self.types.as_deref()
     }
 }
+impl FindingProviderFields {
+    /// Creates a new builder-style object to manufacture [`FindingProviderFields`](crate::model::FindingProviderFields).
+    pub fn builder() -> crate::model::finding_provider_fields::Builder {
+        crate::model::finding_provider_fields::Builder::default()
+    }
+}
+
 /// See [`FindingProviderFields`](crate::model::FindingProviderFields).
 pub mod finding_provider_fields {
     
@@ -5710,12 +5736,6 @@ pub mod finding_provider_fields {
     
     
 }
-impl FindingProviderFields {
-    /// Creates a new builder-style object to manufacture [`FindingProviderFields`](crate::model::FindingProviderFields).
-    pub fn builder() -> crate::model::finding_provider_fields::Builder {
-        crate::model::finding_provider_fields::Builder::default()
-    }
-}
 
 /// <p>The severity assigned to the finding by the finding provider.</p>
 #[non_exhaustive]
@@ -5738,6 +5758,13 @@ impl FindingProviderSeverity {
         self.original.as_deref()
     }
 }
+impl FindingProviderSeverity {
+    /// Creates a new builder-style object to manufacture [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
+    pub fn builder() -> crate::model::finding_provider_severity::Builder {
+        crate::model::finding_provider_severity::Builder::default()
+    }
+}
+
 /// See [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
 pub mod finding_provider_severity {
     
@@ -5779,12 +5806,6 @@ pub mod finding_provider_severity {
     }
     
     
-}
-impl FindingProviderSeverity {
-    /// Creates a new builder-style object to manufacture [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
-    pub fn builder() -> crate::model::finding_provider_severity::Builder {
-        crate::model::finding_provider_severity::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SeverityLabel`, it is important to ensure
@@ -5905,6 +5926,13 @@ impl RelatedFinding {
         self.id.as_deref()
     }
 }
+impl RelatedFinding {
+    /// Creates a new builder-style object to manufacture [`RelatedFinding`](crate::model::RelatedFinding).
+    pub fn builder() -> crate::model::related_finding::Builder {
+        crate::model::related_finding::Builder::default()
+    }
+}
+
 /// See [`RelatedFinding`](crate::model::RelatedFinding).
 pub mod related_finding {
     
@@ -5946,12 +5974,6 @@ pub mod related_finding {
     }
     
     
-}
-impl RelatedFinding {
-    /// Creates a new builder-style object to manufacture [`RelatedFinding`](crate::model::RelatedFinding).
-    pub fn builder() -> crate::model::related_finding::Builder {
-        crate::model::related_finding::Builder::default()
-    }
 }
 
 /// <p>Provides details about one of the following actions that affects or that was taken on a resource:</p> 
@@ -6014,6 +6036,13 @@ impl Action {
         self.port_probe_action.as_ref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
     
@@ -6104,12 +6133,6 @@ pub mod action {
     
     
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p>Provided if <code>ActionType</code> is <code>PORT_PROBE</code>. It provides details about the attempted port probe that was detected.</p>
 #[non_exhaustive]
@@ -6132,6 +6155,13 @@ impl PortProbeAction {
         self.blocked
     }
 }
+impl PortProbeAction {
+    /// Creates a new builder-style object to manufacture [`PortProbeAction`](crate::model::PortProbeAction).
+    pub fn builder() -> crate::model::port_probe_action::Builder {
+        crate::model::port_probe_action::Builder::default()
+    }
+}
+
 /// See [`PortProbeAction`](crate::model::PortProbeAction).
 pub mod port_probe_action {
     
@@ -6181,12 +6211,6 @@ pub mod port_probe_action {
     
     
 }
-impl PortProbeAction {
-    /// Creates a new builder-style object to manufacture [`PortProbeAction`](crate::model::PortProbeAction).
-    pub fn builder() -> crate::model::port_probe_action::Builder {
-        crate::model::port_probe_action::Builder::default()
-    }
-}
 
 /// <p>A port scan that was part of the port probe. For each scan, PortProbeDetails provides information about the local IP address and port that were scanned, and the remote IP address that the scan originated from.</p>
 #[non_exhaustive]
@@ -6216,6 +6240,13 @@ impl PortProbeDetail {
         self.remote_ip_details.as_ref()
     }
 }
+impl PortProbeDetail {
+    /// Creates a new builder-style object to manufacture [`PortProbeDetail`](crate::model::PortProbeDetail).
+    pub fn builder() -> crate::model::port_probe_detail::Builder {
+        crate::model::port_probe_detail::Builder::default()
+    }
+}
+
 /// See [`PortProbeDetail`](crate::model::PortProbeDetail).
 pub mod port_probe_detail {
     
@@ -6270,12 +6301,6 @@ pub mod port_probe_detail {
     
     
 }
-impl PortProbeDetail {
-    /// Creates a new builder-style object to manufacture [`PortProbeDetail`](crate::model::PortProbeDetail).
-    pub fn builder() -> crate::model::port_probe_detail::Builder {
-        crate::model::port_probe_detail::Builder::default()
-    }
-}
 
 /// <p>For <code>AwsApiAction</code>, <code>NetworkConnectionAction</code>, and <code>PortProbeAction</code>, <code>RemoteIpDetails</code> provides information about the remote IP address that was involved in the action.</p>
 #[non_exhaustive]
@@ -6319,6 +6344,13 @@ impl ActionRemoteIpDetails {
         self.geo_location.as_ref()
     }
 }
+impl ActionRemoteIpDetails {
+    /// Creates a new builder-style object to manufacture [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
+    pub fn builder() -> crate::model::action_remote_ip_details::Builder {
+        crate::model::action_remote_ip_details::Builder::default()
+    }
+}
+
 /// See [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
 pub mod action_remote_ip_details {
     
@@ -6397,12 +6429,6 @@ pub mod action_remote_ip_details {
     
     
 }
-impl ActionRemoteIpDetails {
-    /// Creates a new builder-style object to manufacture [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
-    pub fn builder() -> crate::model::action_remote_ip_details::Builder {
-        crate::model::action_remote_ip_details::Builder::default()
-    }
-}
 
 /// <p>Provides the latitude and longitude coordinates of a location.</p>
 #[non_exhaustive]
@@ -6425,6 +6451,13 @@ impl GeoLocation {
         self.lat
     }
 }
+impl GeoLocation {
+    /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation).
+    pub fn builder() -> crate::model::geo_location::Builder {
+        crate::model::geo_location::Builder::default()
+    }
+}
+
 /// See [`GeoLocation`](crate::model::GeoLocation).
 pub mod geo_location {
     
@@ -6469,12 +6502,6 @@ pub mod geo_location {
     
     
 }
-impl GeoLocation {
-    /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation).
-    pub fn builder() -> crate::model::geo_location::Builder {
-        crate::model::geo_location::Builder::default()
-    }
-}
 
 /// <p>Information about a city.</p>
 #[non_exhaustive]
@@ -6490,6 +6517,13 @@ impl City {
         self.city_name.as_deref()
     }
 }
+impl City {
+    /// Creates a new builder-style object to manufacture [`City`](crate::model::City).
+    pub fn builder() -> crate::model::city::Builder {
+        crate::model::city::Builder::default()
+    }
+}
+
 /// See [`City`](crate::model::City).
 pub mod city {
     
@@ -6520,12 +6554,6 @@ pub mod city {
     
     
 }
-impl City {
-    /// Creates a new builder-style object to manufacture [`City`](crate::model::City).
-    pub fn builder() -> crate::model::city::Builder {
-        crate::model::city::Builder::default()
-    }
-}
 
 /// <p>Information about a country.</p>
 #[non_exhaustive]
@@ -6548,6 +6576,13 @@ impl Country {
         self.country_name.as_deref()
     }
 }
+impl Country {
+    /// Creates a new builder-style object to manufacture [`Country`](crate::model::Country).
+    pub fn builder() -> crate::model::country::Builder {
+        crate::model::country::Builder::default()
+    }
+}
+
 /// See [`Country`](crate::model::Country).
 pub mod country {
     
@@ -6590,12 +6625,6 @@ pub mod country {
     
     
 }
-impl Country {
-    /// Creates a new builder-style object to manufacture [`Country`](crate::model::Country).
-    pub fn builder() -> crate::model::country::Builder {
-        crate::model::country::Builder::default()
-    }
-}
 
 /// <p>Provides information about an internet provider.</p>
 #[non_exhaustive]
@@ -6632,6 +6661,13 @@ impl IpOrganizationDetails {
         self.org.as_deref()
     }
 }
+impl IpOrganizationDetails {
+    /// Creates a new builder-style object to manufacture [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
+    pub fn builder() -> crate::model::ip_organization_details::Builder {
+        crate::model::ip_organization_details::Builder::default()
+    }
+}
+
 /// See [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
 pub mod ip_organization_details {
     
@@ -6699,12 +6735,6 @@ pub mod ip_organization_details {
     
     
 }
-impl IpOrganizationDetails {
-    /// Creates a new builder-style object to manufacture [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
-    pub fn builder() -> crate::model::ip_organization_details::Builder {
-        crate::model::ip_organization_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the IP address where the scanned port is located.</p>
 #[non_exhaustive]
@@ -6720,6 +6750,13 @@ impl ActionLocalIpDetails {
         self.ip_address_v4.as_deref()
     }
 }
+impl ActionLocalIpDetails {
+    /// Creates a new builder-style object to manufacture [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
+    pub fn builder() -> crate::model::action_local_ip_details::Builder {
+        crate::model::action_local_ip_details::Builder::default()
+    }
+}
+
 /// See [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
 pub mod action_local_ip_details {
     
@@ -6750,12 +6787,6 @@ pub mod action_local_ip_details {
     
     
 }
-impl ActionLocalIpDetails {
-    /// Creates a new builder-style object to manufacture [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
-    pub fn builder() -> crate::model::action_local_ip_details::Builder {
-        crate::model::action_local_ip_details::Builder::default()
-    }
-}
 
 /// <p>For <code>NetworkConnectionAction</code> and <code>PortProbeDetails</code>, <code>LocalPortDetails</code> provides information about the local port that was involved in the action.</p>
 #[non_exhaustive]
@@ -6778,6 +6809,13 @@ impl ActionLocalPortDetails {
         self.port_name.as_deref()
     }
 }
+impl ActionLocalPortDetails {
+    /// Creates a new builder-style object to manufacture [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
+    pub fn builder() -> crate::model::action_local_port_details::Builder {
+        crate::model::action_local_port_details::Builder::default()
+    }
+}
+
 /// See [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
 pub mod action_local_port_details {
     
@@ -6821,12 +6859,6 @@ pub mod action_local_port_details {
     
     
 }
-impl ActionLocalPortDetails {
-    /// Creates a new builder-style object to manufacture [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
-    pub fn builder() -> crate::model::action_local_port_details::Builder {
-        crate::model::action_local_port_details::Builder::default()
-    }
-}
 
 /// <p>Provided if <code>ActionType</code> is <code>DNS_REQUEST</code>. It provides details about the DNS request that was detected.</p>
 #[non_exhaustive]
@@ -6856,6 +6888,13 @@ impl DnsRequestAction {
         self.blocked
     }
 }
+impl DnsRequestAction {
+    /// Creates a new builder-style object to manufacture [`DnsRequestAction`](crate::model::DnsRequestAction).
+    pub fn builder() -> crate::model::dns_request_action::Builder {
+        crate::model::dns_request_action::Builder::default()
+    }
+}
+
 /// See [`DnsRequestAction`](crate::model::DnsRequestAction).
 pub mod dns_request_action {
     
@@ -6910,12 +6949,6 @@ pub mod dns_request_action {
     }
     
     
-}
-impl DnsRequestAction {
-    /// Creates a new builder-style object to manufacture [`DnsRequestAction`](crate::model::DnsRequestAction).
-    pub fn builder() -> crate::model::dns_request_action::Builder {
-        crate::model::dns_request_action::Builder::default()
-    }
 }
 
 /// <p>Provided if <code>ActionType</code> is <code>AWS_API_CALL</code>. It provides details about the API call that was detected.</p>
@@ -6981,6 +7014,13 @@ impl AwsApiCallAction {
         self.last_seen.as_deref()
     }
 }
+impl AwsApiCallAction {
+    /// Creates a new builder-style object to manufacture [`AwsApiCallAction`](crate::model::AwsApiCallAction).
+    pub fn builder() -> crate::model::aws_api_call_action::Builder {
+        crate::model::aws_api_call_action::Builder::default()
+    }
+}
+
 /// See [`AwsApiCallAction`](crate::model::AwsApiCallAction).
 pub mod aws_api_call_action {
     
@@ -7101,12 +7141,6 @@ pub mod aws_api_call_action {
     
     
 }
-impl AwsApiCallAction {
-    /// Creates a new builder-style object to manufacture [`AwsApiCallAction`](crate::model::AwsApiCallAction).
-    pub fn builder() -> crate::model::aws_api_call_action::Builder {
-        crate::model::aws_api_call_action::Builder::default()
-    }
-}
 
 /// <p>Provided if <code>CallerType</code> is <code>domain</code>. It provides information about the DNS domain that issued the API call.</p>
 #[non_exhaustive]
@@ -7122,6 +7156,13 @@ impl AwsApiCallActionDomainDetails {
         self.domain.as_deref()
     }
 }
+impl AwsApiCallActionDomainDetails {
+    /// Creates a new builder-style object to manufacture [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
+    pub fn builder() -> crate::model::aws_api_call_action_domain_details::Builder {
+        crate::model::aws_api_call_action_domain_details::Builder::default()
+    }
+}
+
 /// See [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
 pub mod aws_api_call_action_domain_details {
     
@@ -7151,12 +7192,6 @@ pub mod aws_api_call_action_domain_details {
     }
     
     
-}
-impl AwsApiCallActionDomainDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
-    pub fn builder() -> crate::model::aws_api_call_action_domain_details::Builder {
-        crate::model::aws_api_call_action_domain_details::Builder::default()
-    }
 }
 
 /// <p>Provided if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. It provides details about the attempted network connection that was detected.</p>
@@ -7208,6 +7243,13 @@ impl NetworkConnectionAction {
         self.blocked
     }
 }
+impl NetworkConnectionAction {
+    /// Creates a new builder-style object to manufacture [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
+    pub fn builder() -> crate::model::network_connection_action::Builder {
+        crate::model::network_connection_action::Builder::default()
+    }
+}
+
 /// See [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
 pub mod network_connection_action {
     
@@ -7299,12 +7341,6 @@ pub mod network_connection_action {
     
     
 }
-impl NetworkConnectionAction {
-    /// Creates a new builder-style object to manufacture [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
-    pub fn builder() -> crate::model::network_connection_action::Builder {
-        crate::model::network_connection_action::Builder::default()
-    }
-}
 
 /// <p>Provides information about the remote port that was involved in an attempted network connection.</p>
 #[non_exhaustive]
@@ -7327,6 +7363,13 @@ impl ActionRemotePortDetails {
         self.port_name.as_deref()
     }
 }
+impl ActionRemotePortDetails {
+    /// Creates a new builder-style object to manufacture [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
+    pub fn builder() -> crate::model::action_remote_port_details::Builder {
+        crate::model::action_remote_port_details::Builder::default()
+    }
+}
+
 /// See [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
 pub mod action_remote_port_details {
     
@@ -7369,12 +7412,6 @@ pub mod action_remote_port_details {
     }
     
     
-}
-impl ActionRemotePortDetails {
-    /// Creates a new builder-style object to manufacture [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
-    pub fn builder() -> crate::model::action_remote_port_details::Builder {
-        crate::model::action_remote_port_details::Builder::default()
-    }
 }
 
 /// <p>Provides an overview of the patch compliance status for an instance against a selected compliance standard.</p>
@@ -7465,6 +7502,13 @@ impl PatchSummary {
         self.operation.as_deref()
     }
 }
+impl PatchSummary {
+    /// Creates a new builder-style object to manufacture [`PatchSummary`](crate::model::PatchSummary).
+    pub fn builder() -> crate::model::patch_summary::Builder {
+        crate::model::patch_summary::Builder::default()
+    }
+}
+
 /// See [`PatchSummary`](crate::model::PatchSummary).
 pub mod patch_summary {
     
@@ -7625,12 +7669,6 @@ pub mod patch_summary {
     
     
 }
-impl PatchSummary {
-    /// Creates a new builder-style object to manufacture [`PatchSummary`](crate::model::PatchSummary).
-    pub fn builder() -> crate::model::patch_summary::Builder {
-        crate::model::patch_summary::Builder::default()
-    }
-}
 
 /// <p>A vulnerability associated with a finding.</p>
 #[non_exhaustive]
@@ -7698,6 +7736,13 @@ impl Vulnerability {
         self.fix_available.as_ref()
     }
 }
+impl Vulnerability {
+    /// Creates a new builder-style object to manufacture [`Vulnerability`](crate::model::Vulnerability).
+    pub fn builder() -> crate::model::vulnerability::Builder {
+        crate::model::vulnerability::Builder::default()
+    }
+}
+
 /// See [`Vulnerability`](crate::model::Vulnerability).
 pub mod vulnerability {
     
@@ -7834,12 +7879,6 @@ pub mod vulnerability {
     
     
 }
-impl Vulnerability {
-    /// Creates a new builder-style object to manufacture [`Vulnerability`](crate::model::Vulnerability).
-    pub fn builder() -> crate::model::vulnerability::Builder {
-        crate::model::vulnerability::Builder::default()
-    }
-}
 
 /// When writing a match expression against `VulnerabilityFixAvailable`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7974,6 +8013,13 @@ impl VulnerabilityVendor {
         self.vendor_updated_at.as_deref()
     }
 }
+impl VulnerabilityVendor {
+    /// Creates a new builder-style object to manufacture [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
+    pub fn builder() -> crate::model::vulnerability_vendor::Builder {
+        crate::model::vulnerability_vendor::Builder::default()
+    }
+}
+
 /// See [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
 pub mod vulnerability_vendor {
     
@@ -8056,12 +8102,6 @@ pub mod vulnerability_vendor {
     
     
 }
-impl VulnerabilityVendor {
-    /// Creates a new builder-style object to manufacture [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
-    pub fn builder() -> crate::model::vulnerability_vendor::Builder {
-        crate::model::vulnerability_vendor::Builder::default()
-    }
-}
 
 /// <p>CVSS scores from the advisory related to the vulnerability.</p>
 #[non_exhaustive]
@@ -8105,6 +8145,13 @@ impl Cvss {
         self.adjustments.as_deref()
     }
 }
+impl Cvss {
+    /// Creates a new builder-style object to manufacture [`Cvss`](crate::model::Cvss).
+    pub fn builder() -> crate::model::cvss::Builder {
+        crate::model::cvss::Builder::default()
+    }
+}
+
 /// See [`Cvss`](crate::model::Cvss).
 pub mod cvss {
     
@@ -8190,12 +8237,6 @@ pub mod cvss {
     
     
 }
-impl Cvss {
-    /// Creates a new builder-style object to manufacture [`Cvss`](crate::model::Cvss).
-    pub fn builder() -> crate::model::cvss::Builder {
-        crate::model::cvss::Builder::default()
-    }
-}
 
 /// <p>An adjustment to the CVSS metric.</p>
 #[non_exhaustive]
@@ -8218,6 +8259,13 @@ impl Adjustment {
         self.reason.as_deref()
     }
 }
+impl Adjustment {
+    /// Creates a new builder-style object to manufacture [`Adjustment`](crate::model::Adjustment).
+    pub fn builder() -> crate::model::adjustment::Builder {
+        crate::model::adjustment::Builder::default()
+    }
+}
+
 /// See [`Adjustment`](crate::model::Adjustment).
 pub mod adjustment {
     
@@ -8259,12 +8307,6 @@ pub mod adjustment {
     }
     
     
-}
-impl Adjustment {
-    /// Creates a new builder-style object to manufacture [`Adjustment`](crate::model::Adjustment).
-    pub fn builder() -> crate::model::adjustment::Builder {
-        crate::model::adjustment::Builder::default()
-    }
 }
 
 /// <p>Information about a software package.</p>
@@ -8351,6 +8393,13 @@ impl SoftwarePackage {
         self.source_layer_arn.as_deref()
     }
 }
+impl SoftwarePackage {
+    /// Creates a new builder-style object to manufacture [`SoftwarePackage`](crate::model::SoftwarePackage).
+    pub fn builder() -> crate::model::software_package::Builder {
+        crate::model::software_package::Builder::default()
+    }
+}
+
 /// See [`SoftwarePackage`](crate::model::SoftwarePackage).
 pub mod software_package {
     
@@ -8501,12 +8550,6 @@ pub mod software_package {
     
     
 }
-impl SoftwarePackage {
-    /// Creates a new builder-style object to manufacture [`SoftwarePackage`](crate::model::SoftwarePackage).
-    pub fn builder() -> crate::model::software_package::Builder {
-        crate::model::software_package::Builder::default()
-    }
-}
 
 /// <p>A user-defined note added to a finding.</p>
 #[non_exhaustive]
@@ -8538,6 +8581,13 @@ impl Note {
         self.updated_at.as_deref()
     }
 }
+impl Note {
+    /// Creates a new builder-style object to manufacture [`Note`](crate::model::Note).
+    pub fn builder() -> crate::model::note::Builder {
+        crate::model::note::Builder::default()
+    }
+}
+
 /// See [`Note`](crate::model::Note).
 pub mod note {
     
@@ -8594,12 +8644,6 @@ pub mod note {
     
     
 }
-impl Note {
-    /// Creates a new builder-style object to manufacture [`Note`](crate::model::Note).
-    pub fn builder() -> crate::model::note::Builder {
-        crate::model::note::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status of the investigation into a finding.</p>
 #[non_exhaustive]
@@ -8637,6 +8681,13 @@ impl Workflow {
         self.status.as_ref()
     }
 }
+impl Workflow {
+    /// Creates a new builder-style object to manufacture [`Workflow`](crate::model::Workflow).
+    pub fn builder() -> crate::model::workflow::Builder {
+        crate::model::workflow::Builder::default()
+    }
+}
+
 /// See [`Workflow`](crate::model::Workflow).
 pub mod workflow {
     
@@ -8688,12 +8739,6 @@ pub mod workflow {
     }
     
     
-}
-impl Workflow {
-    /// Creates a new builder-style object to manufacture [`Workflow`](crate::model::Workflow).
-    pub fn builder() -> crate::model::workflow::Builder {
-        crate::model::workflow::Builder::default()
-    }
 }
 
 /// When writing a match expression against `WorkflowStatus`, it is important to ensure
@@ -9026,6 +9071,13 @@ impl Compliance {
         self.status_reasons.as_deref()
     }
 }
+impl Compliance {
+    /// Creates a new builder-style object to manufacture [`Compliance`](crate::model::Compliance).
+    pub fn builder() -> crate::model::compliance::Builder {
+        crate::model::compliance::Builder::default()
+    }
+}
+
 /// See [`Compliance`](crate::model::Compliance).
 pub mod compliance {
     
@@ -9112,12 +9164,6 @@ pub mod compliance {
     
     
 }
-impl Compliance {
-    /// Creates a new builder-style object to manufacture [`Compliance`](crate::model::Compliance).
-    pub fn builder() -> crate::model::compliance::Builder {
-        crate::model::compliance::Builder::default()
-    }
-}
 
 /// <p>Provides additional context for the value of <code>Compliance.Status</code>.</p>
 #[non_exhaustive]
@@ -9140,6 +9186,13 @@ impl StatusReason {
         self.description.as_deref()
     }
 }
+impl StatusReason {
+    /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason).
+    pub fn builder() -> crate::model::status_reason::Builder {
+        crate::model::status_reason::Builder::default()
+    }
+}
+
 /// See [`StatusReason`](crate::model::StatusReason).
 pub mod status_reason {
     
@@ -9181,12 +9234,6 @@ pub mod status_reason {
     }
     
     
-}
-impl StatusReason {
-    /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason).
-    pub fn builder() -> crate::model::status_reason::Builder {
-        crate::model::status_reason::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComplianceStatus`, it is important to ensure
@@ -9346,6 +9393,13 @@ impl Resource {
         self.details.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -9467,12 +9521,6 @@ pub mod resource {
     }
     
     
-}
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
 }
 
 /// <p>Additional details about a resource related to a finding.</p> 
@@ -10074,6 +10122,13 @@ impl ResourceDetails {
         self.aws_wafv2_rule_group.as_ref()
     }
 }
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
     
@@ -11102,12 +11157,6 @@ pub mod resource_details {
     
     
 }
-impl ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
-    pub fn builder() -> crate::model::resource_details::Builder {
-        crate::model::resource_details::Builder::default()
-    }
-}
 
 /// <p> Details about an WAFv2 rule group. </p>
 #[non_exhaustive]
@@ -11172,6 +11221,13 @@ impl AwsWafv2RuleGroupDetails {
         self.visibility_config.as_ref()
     }
 }
+impl AwsWafv2RuleGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2RuleGroupDetails`](crate::model::AwsWafv2RuleGroupDetails).
+    pub fn builder() -> crate::model::aws_wafv2_rule_group_details::Builder {
+        crate::model::aws_wafv2_rule_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2RuleGroupDetails`](crate::model::AwsWafv2RuleGroupDetails).
 pub mod aws_wafv2_rule_group_details {
     
@@ -11293,12 +11349,6 @@ pub mod aws_wafv2_rule_group_details {
     
     
 }
-impl AwsWafv2RuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2RuleGroupDetails`](crate::model::AwsWafv2RuleGroupDetails).
-    pub fn builder() -> crate::model::aws_wafv2_rule_group_details::Builder {
-        crate::model::aws_wafv2_rule_group_details::Builder::default()
-    }
-}
 
 /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
 #[non_exhaustive]
@@ -11328,6 +11378,13 @@ impl AwsWafv2VisibilityConfigDetails {
         self.sampled_requests_enabled
     }
 }
+impl AwsWafv2VisibilityConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2VisibilityConfigDetails`](crate::model::AwsWafv2VisibilityConfigDetails).
+    pub fn builder() -> crate::model::aws_wafv2_visibility_config_details::Builder {
+        crate::model::aws_wafv2_visibility_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2VisibilityConfigDetails`](crate::model::AwsWafv2VisibilityConfigDetails).
 pub mod aws_wafv2_visibility_config_details {
     
@@ -11384,12 +11441,6 @@ pub mod aws_wafv2_visibility_config_details {
     
     
 }
-impl AwsWafv2VisibilityConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2VisibilityConfigDetails`](crate::model::AwsWafv2VisibilityConfigDetails).
-    pub fn builder() -> crate::model::aws_wafv2_visibility_config_details::Builder {
-        crate::model::aws_wafv2_visibility_config_details::Builder::default()
-    }
-}
 
 /// <p> Provides details about rules in a rule group. A rule identifies web requests that you want to allow, block, or count. Each rule includes one top-level Statement that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them. </p>
 #[non_exhaustive]
@@ -11433,6 +11484,13 @@ impl AwsWafv2RulesDetails {
         self.visibility_config.as_ref()
     }
 }
+impl AwsWafv2RulesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesDetails`](crate::model::AwsWafv2RulesDetails).
+    pub fn builder() -> crate::model::aws_wafv2_rules_details::Builder {
+        crate::model::aws_wafv2_rules_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2RulesDetails`](crate::model::AwsWafv2RulesDetails).
 pub mod aws_wafv2_rules_details {
     
@@ -11512,12 +11570,6 @@ pub mod aws_wafv2_rules_details {
     
     
 }
-impl AwsWafv2RulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesDetails`](crate::model::AwsWafv2RulesDetails).
-    pub fn builder() -> crate::model::aws_wafv2_rules_details::Builder {
-        crate::model::aws_wafv2_rules_details::Builder::default()
-    }
-}
 
 /// <p> The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
 #[non_exhaustive]
@@ -11554,6 +11606,13 @@ impl AwsWafv2RulesActionDetails {
         self.count.as_ref()
     }
 }
+impl AwsWafv2RulesActionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesActionDetails`](crate::model::AwsWafv2RulesActionDetails).
+    pub fn builder() -> crate::model::aws_wafv2_rules_action_details::Builder {
+        crate::model::aws_wafv2_rules_action_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2RulesActionDetails`](crate::model::AwsWafv2RulesActionDetails).
 pub mod aws_wafv2_rules_action_details {
     
@@ -11620,12 +11679,6 @@ pub mod aws_wafv2_rules_action_details {
     
     
 }
-impl AwsWafv2RulesActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesActionDetails`](crate::model::AwsWafv2RulesActionDetails).
-    pub fn builder() -> crate::model::aws_wafv2_rules_action_details::Builder {
-        crate::model::aws_wafv2_rules_action_details::Builder::default()
-    }
-}
 
 /// <p> Specifies that WAF should count the request. </p>
 #[non_exhaustive]
@@ -11641,6 +11694,13 @@ impl AwsWafv2RulesActionCountDetails {
         self.custom_request_handling.as_ref()
     }
 }
+impl AwsWafv2RulesActionCountDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesActionCountDetails`](crate::model::AwsWafv2RulesActionCountDetails).
+    pub fn builder() -> crate::model::aws_wafv2_rules_action_count_details::Builder {
+        crate::model::aws_wafv2_rules_action_count_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2RulesActionCountDetails`](crate::model::AwsWafv2RulesActionCountDetails).
 pub mod aws_wafv2_rules_action_count_details {
     
@@ -11671,12 +11731,6 @@ pub mod aws_wafv2_rules_action_count_details {
     
     
 }
-impl AwsWafv2RulesActionCountDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesActionCountDetails`](crate::model::AwsWafv2RulesActionCountDetails).
-    pub fn builder() -> crate::model::aws_wafv2_rules_action_count_details::Builder {
-        crate::model::aws_wafv2_rules_action_count_details::Builder::default()
-    }
-}
 
 /// <p> Custom request handling behavior that inserts custom headers into a web request. WAF uses custom request handling when the rule action doesn't block the request. </p>
 #[non_exhaustive]
@@ -11692,6 +11746,13 @@ impl AwsWafv2CustomRequestHandlingDetails {
         self.insert_headers.as_deref()
     }
 }
+impl AwsWafv2CustomRequestHandlingDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2CustomRequestHandlingDetails`](crate::model::AwsWafv2CustomRequestHandlingDetails).
+    pub fn builder() -> crate::model::aws_wafv2_custom_request_handling_details::Builder {
+        crate::model::aws_wafv2_custom_request_handling_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2CustomRequestHandlingDetails`](crate::model::AwsWafv2CustomRequestHandlingDetails).
 pub mod aws_wafv2_custom_request_handling_details {
     
@@ -11728,12 +11789,6 @@ pub mod aws_wafv2_custom_request_handling_details {
     
     
 }
-impl AwsWafv2CustomRequestHandlingDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2CustomRequestHandlingDetails`](crate::model::AwsWafv2CustomRequestHandlingDetails).
-    pub fn builder() -> crate::model::aws_wafv2_custom_request_handling_details::Builder {
-        crate::model::aws_wafv2_custom_request_handling_details::Builder::default()
-    }
-}
 
 /// <p> A custom header for custom request and response handling. </p>
 #[non_exhaustive]
@@ -11756,6 +11811,13 @@ impl AwsWafv2CustomHttpHeader {
         self.value.as_deref()
     }
 }
+impl AwsWafv2CustomHttpHeader {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2CustomHttpHeader`](crate::model::AwsWafv2CustomHttpHeader).
+    pub fn builder() -> crate::model::aws_wafv2_custom_http_header::Builder {
+        crate::model::aws_wafv2_custom_http_header::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2CustomHttpHeader`](crate::model::AwsWafv2CustomHttpHeader).
 pub mod aws_wafv2_custom_http_header {
     
@@ -11798,12 +11860,6 @@ pub mod aws_wafv2_custom_http_header {
     
     
 }
-impl AwsWafv2CustomHttpHeader {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2CustomHttpHeader`](crate::model::AwsWafv2CustomHttpHeader).
-    pub fn builder() -> crate::model::aws_wafv2_custom_http_header::Builder {
-        crate::model::aws_wafv2_custom_http_header::Builder::default()
-    }
-}
 
 /// <p> Specifies that WAF should run a CAPTCHA check against the request. </p>
 #[non_exhaustive]
@@ -11819,6 +11875,13 @@ impl AwsWafv2RulesActionCaptchaDetails {
         self.custom_request_handling.as_ref()
     }
 }
+impl AwsWafv2RulesActionCaptchaDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesActionCaptchaDetails`](crate::model::AwsWafv2RulesActionCaptchaDetails).
+    pub fn builder() -> crate::model::aws_wafv2_rules_action_captcha_details::Builder {
+        crate::model::aws_wafv2_rules_action_captcha_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2RulesActionCaptchaDetails`](crate::model::AwsWafv2RulesActionCaptchaDetails).
 pub mod aws_wafv2_rules_action_captcha_details {
     
@@ -11849,12 +11912,6 @@ pub mod aws_wafv2_rules_action_captcha_details {
     
     
 }
-impl AwsWafv2RulesActionCaptchaDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2RulesActionCaptchaDetails`](crate::model::AwsWafv2RulesActionCaptchaDetails).
-    pub fn builder() -> crate::model::aws_wafv2_rules_action_captcha_details::Builder {
-        crate::model::aws_wafv2_rules_action_captcha_details::Builder::default()
-    }
-}
 
 /// <p> Specifies that WAF should block the request and optionally defines additional custom handling for the response to the web request. </p>
 #[non_exhaustive]
@@ -11870,6 +11927,13 @@ impl AwsWafv2ActionBlockDetails {
         self.custom_response.as_ref()
     }
 }
+impl AwsWafv2ActionBlockDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2ActionBlockDetails`](crate::model::AwsWafv2ActionBlockDetails).
+    pub fn builder() -> crate::model::aws_wafv2_action_block_details::Builder {
+        crate::model::aws_wafv2_action_block_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2ActionBlockDetails`](crate::model::AwsWafv2ActionBlockDetails).
 pub mod aws_wafv2_action_block_details {
     
@@ -11900,12 +11964,6 @@ pub mod aws_wafv2_action_block_details {
     
     
 }
-impl AwsWafv2ActionBlockDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2ActionBlockDetails`](crate::model::AwsWafv2ActionBlockDetails).
-    pub fn builder() -> crate::model::aws_wafv2_action_block_details::Builder {
-        crate::model::aws_wafv2_action_block_details::Builder::default()
-    }
-}
 
 /// <p> A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to block. </p>
 #[non_exhaustive]
@@ -11935,6 +11993,13 @@ impl AwsWafv2CustomResponseDetails {
         self.response_headers.as_deref()
     }
 }
+impl AwsWafv2CustomResponseDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2CustomResponseDetails`](crate::model::AwsWafv2CustomResponseDetails).
+    pub fn builder() -> crate::model::aws_wafv2_custom_response_details::Builder {
+        crate::model::aws_wafv2_custom_response_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2CustomResponseDetails`](crate::model::AwsWafv2CustomResponseDetails).
 pub mod aws_wafv2_custom_response_details {
     
@@ -11996,12 +12061,6 @@ pub mod aws_wafv2_custom_response_details {
     
     
 }
-impl AwsWafv2CustomResponseDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2CustomResponseDetails`](crate::model::AwsWafv2CustomResponseDetails).
-    pub fn builder() -> crate::model::aws_wafv2_custom_response_details::Builder {
-        crate::model::aws_wafv2_custom_response_details::Builder::default()
-    }
-}
 
 /// <p> Specifies that WAF should allow the request and optionally defines additional custom handling for the request. </p>
 #[non_exhaustive]
@@ -12017,6 +12076,13 @@ impl AwsWafv2ActionAllowDetails {
         self.custom_request_handling.as_ref()
     }
 }
+impl AwsWafv2ActionAllowDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2ActionAllowDetails`](crate::model::AwsWafv2ActionAllowDetails).
+    pub fn builder() -> crate::model::aws_wafv2_action_allow_details::Builder {
+        crate::model::aws_wafv2_action_allow_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2ActionAllowDetails`](crate::model::AwsWafv2ActionAllowDetails).
 pub mod aws_wafv2_action_allow_details {
     
@@ -12046,12 +12112,6 @@ pub mod aws_wafv2_action_allow_details {
     }
     
     
-}
-impl AwsWafv2ActionAllowDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2ActionAllowDetails`](crate::model::AwsWafv2ActionAllowDetails).
-    pub fn builder() -> crate::model::aws_wafv2_action_allow_details::Builder {
-        crate::model::aws_wafv2_action_allow_details::Builder::default()
-    }
 }
 
 /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
@@ -12131,6 +12191,13 @@ impl AwsWafv2WebAclDetails {
         self.visibility_config.as_ref()
     }
 }
+impl AwsWafv2WebAclDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclDetails`](crate::model::AwsWafv2WebAclDetails).
+    pub fn builder() -> crate::model::aws_wafv2_web_acl_details::Builder {
+        crate::model::aws_wafv2_web_acl_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2WebAclDetails`](crate::model::AwsWafv2WebAclDetails).
 pub mod aws_wafv2_web_acl_details {
     
@@ -12277,12 +12344,6 @@ pub mod aws_wafv2_web_acl_details {
     
     
 }
-impl AwsWafv2WebAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclDetails`](crate::model::AwsWafv2WebAclDetails).
-    pub fn builder() -> crate::model::aws_wafv2_web_acl_details::Builder {
-        crate::model::aws_wafv2_web_acl_details::Builder::default()
-    }
-}
 
 /// <p> Specifies the action that Amazon CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
 #[non_exhaustive]
@@ -12305,6 +12366,13 @@ impl AwsWafv2WebAclActionDetails {
         self.block.as_ref()
     }
 }
+impl AwsWafv2WebAclActionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclActionDetails`](crate::model::AwsWafv2WebAclActionDetails).
+    pub fn builder() -> crate::model::aws_wafv2_web_acl_action_details::Builder {
+        crate::model::aws_wafv2_web_acl_action_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2WebAclActionDetails`](crate::model::AwsWafv2WebAclActionDetails).
 pub mod aws_wafv2_web_acl_action_details {
     
@@ -12347,12 +12415,6 @@ pub mod aws_wafv2_web_acl_action_details {
     
     
 }
-impl AwsWafv2WebAclActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclActionDetails`](crate::model::AwsWafv2WebAclActionDetails).
-    pub fn builder() -> crate::model::aws_wafv2_web_acl_action_details::Builder {
-        crate::model::aws_wafv2_web_acl_action_details::Builder::default()
-    }
-}
 
 /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
 #[non_exhaustive]
@@ -12368,6 +12430,13 @@ impl AwsWafv2WebAclCaptchaConfigDetails {
         self.immunity_time_property.as_ref()
     }
 }
+impl AwsWafv2WebAclCaptchaConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclCaptchaConfigDetails`](crate::model::AwsWafv2WebAclCaptchaConfigDetails).
+    pub fn builder() -> crate::model::aws_wafv2_web_acl_captcha_config_details::Builder {
+        crate::model::aws_wafv2_web_acl_captcha_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2WebAclCaptchaConfigDetails`](crate::model::AwsWafv2WebAclCaptchaConfigDetails).
 pub mod aws_wafv2_web_acl_captcha_config_details {
     
@@ -12398,12 +12467,6 @@ pub mod aws_wafv2_web_acl_captcha_config_details {
     
     
 }
-impl AwsWafv2WebAclCaptchaConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclCaptchaConfigDetails`](crate::model::AwsWafv2WebAclCaptchaConfigDetails).
-    pub fn builder() -> crate::model::aws_wafv2_web_acl_captcha_config_details::Builder {
-        crate::model::aws_wafv2_web_acl_captcha_config_details::Builder::default()
-    }
-}
 
 /// <p> Used for CAPTCHA and challenge token settings. Determines how long a CAPTCHA or challenge timestamp remains valid after WAF updates it for a successful CAPTCHA or challenge response. </p>
 #[non_exhaustive]
@@ -12419,6 +12482,13 @@ impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
         self.immunity_time
     }
 }
+impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::model::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
+    pub fn builder() -> crate::model::aws_wafv2_web_acl_captcha_config_immunity_time_property_details::Builder {
+        crate::model::aws_wafv2_web_acl_captcha_config_immunity_time_property_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::model::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
 pub mod aws_wafv2_web_acl_captcha_config_immunity_time_property_details {
     
@@ -12449,12 +12519,6 @@ pub mod aws_wafv2_web_acl_captcha_config_immunity_time_property_details {
     }
     
     
-}
-impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::model::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
-    pub fn builder() -> crate::model::aws_wafv2_web_acl_captcha_config_immunity_time_property_details::Builder {
-        crate::model::aws_wafv2_web_acl_captcha_config_immunity_time_property_details::Builder::default()
-    }
 }
 
 /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
@@ -12604,6 +12668,13 @@ impl AwsSageMakerNotebookInstanceDetails {
         self.volume_size_in_gb
     }
 }
+impl AwsSageMakerNotebookInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsSageMakerNotebookInstanceDetails`](crate::model::AwsSageMakerNotebookInstanceDetails).
+    pub fn builder() -> crate::model::aws_sage_maker_notebook_instance_details::Builder {
+        crate::model::aws_sage_maker_notebook_instance_details::Builder::default()
+    }
+}
+
 /// See [`AwsSageMakerNotebookInstanceDetails`](crate::model::AwsSageMakerNotebookInstanceDetails).
 pub mod aws_sage_maker_notebook_instance_details {
     
@@ -12881,12 +12952,6 @@ pub mod aws_sage_maker_notebook_instance_details {
     
     
 }
-impl AwsSageMakerNotebookInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSageMakerNotebookInstanceDetails`](crate::model::AwsSageMakerNotebookInstanceDetails).
-    pub fn builder() -> crate::model::aws_sage_maker_notebook_instance_details::Builder {
-        crate::model::aws_sage_maker_notebook_instance_details::Builder::default()
-    }
-}
 
 /// <p> Information on the instance metadata service (IMDS) configuration of the notebook instance. </p>
 #[non_exhaustive]
@@ -12902,6 +12967,13 @@ impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
         self.minimum_instance_metadata_service_version.as_deref()
     }
 }
+impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::model::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
+    pub fn builder() -> crate::model::aws_sage_maker_notebook_instance_metadata_service_configuration_details::Builder {
+        crate::model::aws_sage_maker_notebook_instance_metadata_service_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::model::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
 pub mod aws_sage_maker_notebook_instance_metadata_service_configuration_details {
     
@@ -12931,12 +13003,6 @@ pub mod aws_sage_maker_notebook_instance_metadata_service_configuration_details 
     }
     
     
-}
-impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::model::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
-    pub fn builder() -> crate::model::aws_sage_maker_notebook_instance_metadata_service_configuration_details::Builder {
-        crate::model::aws_sage_maker_notebook_instance_metadata_service_configuration_details::Builder::default()
-    }
 }
 
 /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
@@ -12981,6 +13047,13 @@ impl AwsEc2LaunchTemplateDetails {
         self.latest_version_number
     }
 }
+impl AwsEc2LaunchTemplateDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDetails`](crate::model::AwsEc2LaunchTemplateDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_details::Builder {
+        crate::model::aws_ec2_launch_template_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDetails`](crate::model::AwsEc2LaunchTemplateDetails).
 pub mod aws_ec2_launch_template_details {
     
@@ -13060,12 +13133,6 @@ pub mod aws_ec2_launch_template_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDetails`](crate::model::AwsEc2LaunchTemplateDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_details::Builder {
-        crate::model::aws_ec2_launch_template_details::Builder::default()
-    }
 }
 
 /// <p> The information to include in an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
@@ -13285,6 +13352,13 @@ impl AwsEc2LaunchTemplateDataDetails {
         self.user_data.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataDetails`](crate::model::AwsEc2LaunchTemplateDataDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_details::Builder {
+        crate::model::aws_ec2_launch_template_data_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataDetails`](crate::model::AwsEc2LaunchTemplateDataDetails).
 pub mod aws_ec2_launch_template_data_details {
     
@@ -13708,12 +13782,6 @@ pub mod aws_ec2_launch_template_data_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataDetails`](crate::model::AwsEc2LaunchTemplateDataDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_details::Builder {
-        crate::model::aws_ec2_launch_template_data_details::Builder::default()
-    }
-}
 
 /// <p> Describes the options for Amazon EC2 instance hostnames. </p>
 #[non_exhaustive]
@@ -13743,6 +13811,13 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
         self.hostname_type.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_private_dns_name_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_private_dns_name_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
 pub mod aws_ec2_launch_template_data_private_dns_name_options_details {
     
@@ -13798,12 +13873,6 @@ pub mod aws_ec2_launch_template_data_private_dns_name_options_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_private_dns_name_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_private_dns_name_options_details::Builder::default()
-    }
 }
 
 /// <p> Provides details about the placement of an Amazon EC2 instance. </p>
@@ -13869,6 +13938,13 @@ impl AwsEc2LaunchTemplateDataPlacementDetails {
         self.tenancy.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataPlacementDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::model::AwsEc2LaunchTemplateDataPlacementDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_placement_details::Builder {
+        crate::model::aws_ec2_launch_template_data_placement_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::model::AwsEc2LaunchTemplateDataPlacementDetails).
 pub mod aws_ec2_launch_template_data_placement_details {
     
@@ -13983,12 +14059,6 @@ pub mod aws_ec2_launch_template_data_placement_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDataPlacementDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::model::AwsEc2LaunchTemplateDataPlacementDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_placement_details::Builder {
-        crate::model::aws_ec2_launch_template_data_placement_details::Builder::default()
-    }
 }
 
 /// <p> One or more network interfaces to attach to an Amazon EC2 instance. If you specify a network interface, you must specify security groups and subnets as part of the network interface. </p>
@@ -14131,6 +14201,13 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
         self.subnet_id.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_details::Builder {
+        crate::model::aws_ec2_launch_template_data_network_interface_set_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
 pub mod aws_ec2_launch_template_data_network_interface_set_details {
     
@@ -14416,12 +14493,6 @@ pub mod aws_ec2_launch_template_data_network_interface_set_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_details::Builder {
-        crate::model::aws_ec2_launch_template_data_network_interface_set_details::Builder::default()
-    }
-}
 
 /// <p> One or more private IPv4 addresses. </p>
 #[non_exhaustive]
@@ -14444,6 +14515,13 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
         self.private_ip_address.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::Builder {
+        crate::model::aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
 pub mod aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details {
     
@@ -14487,12 +14565,6 @@ pub mod aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_
     
     
 }
-impl AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::Builder {
-        crate::model::aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details::Builder::default()
-    }
-}
 
 /// <p> Provides details on one or more IPv6 prefixes to be assigned to the network interface. </p>
 #[non_exhaustive]
@@ -14508,6 +14580,13 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
         self.ipv6_prefix.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::Builder {
+        crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
 pub mod aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details {
     
@@ -14538,12 +14617,6 @@ pub mod aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details
     
     
 }
-impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::Builder {
-        crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_prefixes_details::Builder::default()
-    }
-}
 
 /// <p> Specifies an IPv6 address in an Amazon EC2 launch template. </p>
 #[non_exhaustive]
@@ -14559,6 +14632,13 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
         self.ipv6_address.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::Builder {
+        crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails).
 pub mod aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details {
     
@@ -14589,12 +14669,6 @@ pub mod aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_detail
     
     
 }
-impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::Builder {
-        crate::model::aws_ec2_launch_template_data_network_interface_set_ipv6_addresses_details::Builder::default()
-    }
-}
 
 /// <p> Provides details on one or more IPv4 prefixes for a network interface. </p>
 #[non_exhaustive]
@@ -14610,6 +14684,13 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails {
         self.ipv4_prefix.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::Builder {
+        crate::model::aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails).
 pub mod aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details {
     
@@ -14640,12 +14721,6 @@ pub mod aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details
     
     
 }
-impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails`](crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::Builder {
-        crate::model::aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details::Builder::default()
-    }
-}
 
 /// <p> The monitoring for an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -14661,6 +14736,13 @@ impl AwsEc2LaunchTemplateDataMonitoringDetails {
         self.enabled
     }
 }
+impl AwsEc2LaunchTemplateDataMonitoringDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMonitoringDetails`](crate::model::AwsEc2LaunchTemplateDataMonitoringDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_monitoring_details::Builder {
+        crate::model::aws_ec2_launch_template_data_monitoring_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataMonitoringDetails`](crate::model::AwsEc2LaunchTemplateDataMonitoringDetails).
 pub mod aws_ec2_launch_template_data_monitoring_details {
     
@@ -14691,12 +14773,6 @@ pub mod aws_ec2_launch_template_data_monitoring_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDataMonitoringDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMonitoringDetails`](crate::model::AwsEc2LaunchTemplateDataMonitoringDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_monitoring_details::Builder {
-        crate::model::aws_ec2_launch_template_data_monitoring_details::Builder::default()
-    }
 }
 
 /// <p> Specifies the metadata options for an Amazon EC2 instance. </p>
@@ -14741,6 +14817,13 @@ impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
         self.instance_metadata_tags.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_metadata_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_metadata_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
 pub mod aws_ec2_launch_template_data_metadata_options_details {
     
@@ -14820,12 +14903,6 @@ pub mod aws_ec2_launch_template_data_metadata_options_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataMetadataOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMetadataOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMetadataOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_metadata_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_metadata_options_details::Builder::default()
-    }
-}
 
 /// <p> The maintenance options of an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -14841,6 +14918,13 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
         self.auto_recovery.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_maintenance_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_maintenance_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
 pub mod aws_ec2_launch_template_data_maintenance_options_details {
     
@@ -14871,12 +14955,6 @@ pub mod aws_ec2_launch_template_data_maintenance_options_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_maintenance_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_maintenance_options_details::Builder::default()
-    }
-}
 
 /// <p> Provides details about the license configuration for an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -14892,6 +14970,13 @@ impl AwsEc2LaunchTemplateDataLicenseSetDetails {
         self.license_configuration_arn.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataLicenseSetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataLicenseSetDetails`](crate::model::AwsEc2LaunchTemplateDataLicenseSetDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_license_set_details::Builder {
+        crate::model::aws_ec2_launch_template_data_license_set_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataLicenseSetDetails`](crate::model::AwsEc2LaunchTemplateDataLicenseSetDetails).
 pub mod aws_ec2_launch_template_data_license_set_details {
     
@@ -14921,12 +15006,6 @@ pub mod aws_ec2_launch_template_data_license_set_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDataLicenseSetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataLicenseSetDetails`](crate::model::AwsEc2LaunchTemplateDataLicenseSetDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_license_set_details::Builder {
-        crate::model::aws_ec2_launch_template_data_license_set_details::Builder::default()
-    }
 }
 
 /// <p> The attributes for the Amazon EC2 instance types. </p>
@@ -15091,6 +15170,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.v_cpu_count.as_ref()
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_details {
     
@@ -15414,12 +15500,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum number of vCPUs for an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -15442,6 +15522,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details {
     
@@ -15486,12 +15573,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_v_cpu_count_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum amount of total local storage, in GB, that an Amazon EC2 instance uses. </p>
 #[non_exhaustive]
@@ -15514,6 +15595,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details {
     
@@ -15558,12 +15646,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_total_local_storage_g
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_total_local_storage_gb_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum number of network interfaces to be attached to an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -15586,6 +15668,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_network_interface_count_details {
     
@@ -15630,12 +15719,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_network_interface_cou
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_network_interface_count_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum amount of memory, in MiB, for an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -15658,6 +15741,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details {
     
@@ -15702,12 +15792,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
 #[non_exhaustive]
@@ -15730,6 +15814,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details {
     
@@ -15774,12 +15865,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum baseline bandwidth to Amazon Elastic Block Store (Amazon EBS), in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances </a> in the <i>Amazon EC2 User Guide</i>. </p>
 #[non_exhaustive]
@@ -15802,6 +15887,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details {
     
@@ -15846,12 +15938,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidt
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsBaselineEbsBandwidthMbpsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_baseline_ebs_bandwidth_mbps_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum amount of memory, in MiB, for the accelerators on an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -15874,6 +15960,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetail
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details {
     
@@ -15918,12 +16011,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_accelerator_total_mem
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::Builder::default()
-    }
-}
 
 /// <p> The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -15946,6 +16033,13 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
         self.min
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
 pub mod aws_ec2_launch_template_data_instance_requirements_accelerator_count_details {
     
@@ -15990,12 +16084,6 @@ pub mod aws_ec2_launch_template_data_instance_requirements_accelerator_count_det
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_requirements_accelerator_count_details::Builder::default()
-    }
-}
 
 /// <p> Provides details about the market (purchasing) option for an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -16018,6 +16106,13 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
         self.spot_options.as_ref()
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_market_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_market_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
 pub mod aws_ec2_launch_template_data_instance_market_options_details {
     
@@ -16059,12 +16154,6 @@ pub mod aws_ec2_launch_template_data_instance_market_options_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_market_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_market_options_details::Builder::default()
-    }
 }
 
 /// <p> Provides details about the market (purchasing) options for Spot Instances. </p>
@@ -16109,6 +16198,13 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
         self.valid_until.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_market_options_spot_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_instance_market_options_spot_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
 pub mod aws_ec2_launch_template_data_instance_market_options_spot_options_details {
     
@@ -16188,12 +16284,6 @@ pub mod aws_ec2_launch_template_data_instance_market_options_spot_options_detail
     
     
 }
-impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_instance_market_options_spot_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_instance_market_options_spot_options_details::Builder::default()
-    }
-}
 
 /// <p> Provides details for an Identity and Access Management (IAM) instance profile, which is a container for an IAM role for your instance. </p>
 #[non_exhaustive]
@@ -16216,6 +16306,13 @@ impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
         self.name.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::model::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_iam_instance_profile_details::Builder {
+        crate::model::aws_ec2_launch_template_data_iam_instance_profile_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::model::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
 pub mod aws_ec2_launch_template_data_iam_instance_profile_details {
     
@@ -16258,12 +16355,6 @@ pub mod aws_ec2_launch_template_data_iam_instance_profile_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataIamInstanceProfileDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataIamInstanceProfileDetails`](crate::model::AwsEc2LaunchTemplateDataIamInstanceProfileDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_iam_instance_profile_details::Builder {
-        crate::model::aws_ec2_launch_template_data_iam_instance_profile_details::Builder::default()
-    }
-}
 
 /// <p> Specifies whether your Amazon EC2 instance is configured for hibernation. </p>
 #[non_exhaustive]
@@ -16279,6 +16370,13 @@ impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
         self.configured
     }
 }
+impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_hibernation_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_hibernation_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
 pub mod aws_ec2_launch_template_data_hibernation_options_details {
     
@@ -16310,12 +16408,6 @@ pub mod aws_ec2_launch_template_data_hibernation_options_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataHibernationOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataHibernationOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataHibernationOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_hibernation_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_hibernation_options_details::Builder::default()
-    }
-}
 
 /// <p> Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. </p>
 #[non_exhaustive]
@@ -16331,6 +16423,13 @@ impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
         self.enabled
     }
 }
+impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_enclave_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_enclave_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
 pub mod aws_ec2_launch_template_data_enclave_options_details {
     
@@ -16362,12 +16461,6 @@ pub mod aws_ec2_launch_template_data_enclave_options_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataEnclaveOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataEnclaveOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataEnclaveOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_enclave_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_enclave_options_details::Builder::default()
-    }
-}
 
 /// <p> Provides details for an Amazon Elastic Inference accelerator. </p>
 #[non_exhaustive]
@@ -16390,6 +16483,13 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::Builder {
+        crate::model::aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
 pub mod aws_ec2_launch_template_data_elastic_inference_accelerator_set_details {
     
@@ -16433,12 +16533,6 @@ pub mod aws_ec2_launch_template_data_elastic_inference_accelerator_set_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::Builder {
-        crate::model::aws_ec2_launch_template_data_elastic_inference_accelerator_set_details::Builder::default()
-    }
-}
 
 /// <p> Provides details about an Elastic Graphics specification for an Amazon EC2 launch template. </p>
 #[non_exhaustive]
@@ -16454,6 +16548,13 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_elastic_gpu_specification_set_details::Builder {
+        crate::model::aws_ec2_launch_template_data_elastic_gpu_specification_set_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
 pub mod aws_ec2_launch_template_data_elastic_gpu_specification_set_details {
     
@@ -16484,12 +16585,6 @@ pub mod aws_ec2_launch_template_data_elastic_gpu_specification_set_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::model::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_elastic_gpu_specification_set_details::Builder {
-        crate::model::aws_ec2_launch_template_data_elastic_gpu_specification_set_details::Builder::default()
-    }
-}
 
 /// <p> Specifies the credit option for CPU usage of a T2, T3, or T3a Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -16505,6 +16600,13 @@ impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
         self.cpu_credits.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_credit_specification_details::Builder {
+        crate::model::aws_ec2_launch_template_data_credit_specification_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
 pub mod aws_ec2_launch_template_data_credit_specification_details {
     
@@ -16535,12 +16637,6 @@ pub mod aws_ec2_launch_template_data_credit_specification_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataCreditSpecificationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCreditSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCreditSpecificationDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_credit_specification_details::Builder {
-        crate::model::aws_ec2_launch_template_data_credit_specification_details::Builder::default()
-    }
-}
 
 /// <p> Specifies the CPU options for an Amazon EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p>
 #[non_exhaustive]
@@ -16563,6 +16659,13 @@ impl AwsEc2LaunchTemplateDataCpuOptionsDetails {
         self.threads_per_core
     }
 }
+impl AwsEc2LaunchTemplateDataCpuOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataCpuOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_cpu_options_details::Builder {
+        crate::model::aws_ec2_launch_template_data_cpu_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataCpuOptionsDetails).
 pub mod aws_ec2_launch_template_data_cpu_options_details {
     
@@ -16607,12 +16710,6 @@ pub mod aws_ec2_launch_template_data_cpu_options_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataCpuOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCpuOptionsDetails`](crate::model::AwsEc2LaunchTemplateDataCpuOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_cpu_options_details::Builder {
-        crate::model::aws_ec2_launch_template_data_cpu_options_details::Builder::default()
-    }
-}
 
 /// <p> Specifies the Capacity Reservation targeting option of an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -16635,6 +16732,13 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
         self.capacity_reservation_target.as_ref()
     }
 }
+impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_details::Builder {
+        crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails).
 pub mod aws_ec2_launch_template_data_capacity_reservation_specification_details {
     
@@ -16677,12 +16781,6 @@ pub mod aws_ec2_launch_template_data_capacity_reservation_specification_details 
     
     
 }
-impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_details::Builder {
-        crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_details::Builder::default()
-    }
-}
 
 /// <p> Information about the target Capacity Reservation or Capacity Reservation group in which to run an Amazon EC2 instance. </p>
 #[non_exhaustive]
@@ -16705,6 +16803,13 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservation
         self.capacity_reservation_resource_group_arn.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::Builder {
+        crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
 pub mod aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details {
     
@@ -16747,12 +16852,6 @@ pub mod aws_ec2_launch_template_data_capacity_reservation_specification_capacity
     
     
 }
-impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::model::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::Builder {
-        crate::model::aws_ec2_launch_template_data_capacity_reservation_specification_capacity_reservation_target_details::Builder::default()
-    }
-}
 
 /// <p> Information about a block device mapping for an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
 #[non_exhaustive]
@@ -16789,6 +16888,13 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
         self.virtual_name.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_block_device_mapping_set_details::Builder {
+        crate::model::aws_ec2_launch_template_data_block_device_mapping_set_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
 pub mod aws_ec2_launch_template_data_block_device_mapping_set_details {
     
@@ -16855,12 +16961,6 @@ pub mod aws_ec2_launch_template_data_block_device_mapping_set_details {
     
     
 }
-impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_block_device_mapping_set_details::Builder {
-        crate::model::aws_ec2_launch_template_data_block_device_mapping_set_details::Builder::default()
-    }
-}
 
 /// <p> Parameters for a block device for an Amazon Elastic Block Store (Amazon EBS) volume in an Amazon EC2 launch template. </p>
 #[non_exhaustive]
@@ -16925,6 +17025,13 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
         self.volume_type.as_deref()
     }
 }
+impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
+    pub fn builder() -> crate::model::aws_ec2_launch_template_data_block_device_mapping_set_ebs_details::Builder {
+        crate::model::aws_ec2_launch_template_data_block_device_mapping_set_ebs_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
 pub mod aws_ec2_launch_template_data_block_device_mapping_set_ebs_details {
     
@@ -17043,12 +17150,6 @@ pub mod aws_ec2_launch_template_data_block_device_mapping_set_ebs_details {
     }
     
     
-}
-impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::model::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
-    pub fn builder() -> crate::model::aws_ec2_launch_template_data_block_device_mapping_set_ebs_details::Builder {
-        crate::model::aws_ec2_launch_template_data_block_device_mapping_set_ebs_details::Builder::default()
-    }
 }
 
 /// <p>Contains detailed information about the recovery points stored in an Backup backup vault. A backup, or recovery point, represents the content of a resource at a specified time. </p>
@@ -17213,6 +17314,13 @@ impl AwsBackupRecoveryPointDetails {
         self.storage_class.as_deref()
     }
 }
+impl AwsBackupRecoveryPointDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_details::Builder {
+        crate::model::aws_backup_recovery_point_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
 pub mod aws_backup_recovery_point_details {
     
@@ -17483,12 +17591,6 @@ pub mod aws_backup_recovery_point_details {
     
     
 }
-impl AwsBackupRecoveryPointDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointDetails`](crate::model::AwsBackupRecoveryPointDetails).
-    pub fn builder() -> crate::model::aws_backup_recovery_point_details::Builder {
-        crate::model::aws_backup_recovery_point_details::Builder::default()
-    }
-}
 
 /// <p>Contains an array of Transition objects specifying how long in days before a recovery point transitions to cold storage or is deleted. </p>
 #[non_exhaustive]
@@ -17511,6 +17613,13 @@ impl AwsBackupRecoveryPointLifecycleDetails {
         self.move_to_cold_storage_after_days
     }
 }
+impl AwsBackupRecoveryPointLifecycleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_lifecycle_details::Builder {
+        crate::model::aws_backup_recovery_point_lifecycle_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
 pub mod aws_backup_recovery_point_lifecycle_details {
     
@@ -17555,12 +17664,6 @@ pub mod aws_backup_recovery_point_lifecycle_details {
     
     
 }
-impl AwsBackupRecoveryPointLifecycleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointLifecycleDetails`](crate::model::AwsBackupRecoveryPointLifecycleDetails).
-    pub fn builder() -> crate::model::aws_backup_recovery_point_lifecycle_details::Builder {
-        crate::model::aws_backup_recovery_point_lifecycle_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup. </p>
 #[non_exhaustive]
@@ -17597,6 +17700,13 @@ impl AwsBackupRecoveryPointCreatedByDetails {
         self.backup_rule_id.as_deref()
     }
 }
+impl AwsBackupRecoveryPointCreatedByDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_created_by_details::Builder {
+        crate::model::aws_backup_recovery_point_created_by_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
 pub mod aws_backup_recovery_point_created_by_details {
     
@@ -17663,12 +17773,6 @@ pub mod aws_backup_recovery_point_created_by_details {
     
     
 }
-impl AwsBackupRecoveryPointCreatedByDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCreatedByDetails`](crate::model::AwsBackupRecoveryPointCreatedByDetails).
-    pub fn builder() -> crate::model::aws_backup_recovery_point_created_by_details::Builder {
-        crate::model::aws_backup_recovery_point_created_by_details::Builder::default()
-    }
-}
 
 /// <p>Specifies how long in days before a recovery point transitions to cold storage or is deleted. </p>
 #[non_exhaustive]
@@ -17691,6 +17795,13 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
         self.move_to_cold_storage_at.as_deref()
     }
 }
+impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
+    pub fn builder() -> crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder {
+        crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
 pub mod aws_backup_recovery_point_calculated_lifecycle_details {
     
@@ -17733,12 +17844,6 @@ pub mod aws_backup_recovery_point_calculated_lifecycle_details {
     
     
 }
-impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::model::AwsBackupRecoveryPointCalculatedLifecycleDetails).
-    pub fn builder() -> crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder {
-        crate::model::aws_backup_recovery_point_calculated_lifecycle_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about an Backup backup plan and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. </p>
 #[non_exhaustive]
@@ -17775,6 +17880,13 @@ impl AwsBackupBackupPlanDetails {
         self.version_id.as_deref()
     }
 }
+impl AwsBackupBackupPlanDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_details::Builder {
+        crate::model::aws_backup_backup_plan_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
 pub mod aws_backup_backup_plan_details {
     
@@ -17841,12 +17953,6 @@ pub mod aws_backup_backup_plan_details {
     
     
 }
-impl AwsBackupBackupPlanDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanDetails`](crate::model::AwsBackupBackupPlanDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_plan_details::Builder {
-        crate::model::aws_backup_backup_plan_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about an Backup backup plan and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. </p>
 #[non_exhaustive]
@@ -17876,6 +17982,13 @@ impl AwsBackupBackupPlanBackupPlanDetails {
         self.backup_plan_rule.as_deref()
     }
 }
+impl AwsBackupBackupPlanBackupPlanDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_backup_plan_details::Builder {
+        crate::model::aws_backup_backup_plan_backup_plan_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
 pub mod aws_backup_backup_plan_backup_plan_details {
     
@@ -17941,12 +18054,6 @@ pub mod aws_backup_backup_plan_backup_plan_details {
     }
     
     
-}
-impl AwsBackupBackupPlanBackupPlanDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanBackupPlanDetails`](crate::model::AwsBackupBackupPlanBackupPlanDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_plan_backup_plan_details::Builder {
-        crate::model::aws_backup_backup_plan_backup_plan_details::Builder::default()
-    }
 }
 
 /// <p>Provides details about an array of <code>BackupRule</code> objects, each of which specifies a scheduled task that is used to back up a selection of resources. </p>
@@ -18021,6 +18128,13 @@ impl AwsBackupBackupPlanRuleDetails {
         self.lifecycle.as_ref()
     }
 }
+impl AwsBackupBackupPlanRuleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_rule_details::Builder {
+        crate::model::aws_backup_backup_plan_rule_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
 pub mod aws_backup_backup_plan_rule_details {
     
@@ -18158,12 +18272,6 @@ pub mod aws_backup_backup_plan_rule_details {
     
     
 }
-impl AwsBackupBackupPlanRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanRuleDetails`](crate::model::AwsBackupBackupPlanRuleDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_plan_rule_details::Builder {
-        crate::model::aws_backup_backup_plan_rule_details::Builder::default()
-    }
-}
 
 /// <p>Provides lifecycle details for the backup plan. A lifecycle defines when a backup is transitioned to cold storage and when it expires. </p>
 #[non_exhaustive]
@@ -18186,6 +18294,13 @@ impl AwsBackupBackupPlanLifecycleDetails {
         self.move_to_cold_storage_after_days
     }
 }
+impl AwsBackupBackupPlanLifecycleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_lifecycle_details::Builder {
+        crate::model::aws_backup_backup_plan_lifecycle_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
 pub mod aws_backup_backup_plan_lifecycle_details {
     
@@ -18230,12 +18345,6 @@ pub mod aws_backup_backup_plan_lifecycle_details {
     
     
 }
-impl AwsBackupBackupPlanLifecycleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanLifecycleDetails`](crate::model::AwsBackupBackupPlanLifecycleDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_plan_lifecycle_details::Builder {
-        crate::model::aws_backup_backup_plan_lifecycle_details::Builder::default()
-    }
-}
 
 /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
 #[non_exhaustive]
@@ -18260,6 +18369,13 @@ impl AwsBackupBackupPlanRuleCopyActionsDetails {
         self.lifecycle.as_ref()
     }
 }
+impl AwsBackupBackupPlanRuleCopyActionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_rule_copy_actions_details::Builder {
+        crate::model::aws_backup_backup_plan_rule_copy_actions_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
 pub mod aws_backup_backup_plan_rule_copy_actions_details {
     
@@ -18304,12 +18420,6 @@ pub mod aws_backup_backup_plan_rule_copy_actions_details {
     
     
 }
-impl AwsBackupBackupPlanRuleCopyActionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::model::AwsBackupBackupPlanRuleCopyActionsDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_plan_rule_copy_actions_details::Builder {
-        crate::model::aws_backup_backup_plan_rule_copy_actions_details::Builder::default()
-    }
-}
 
 /// <p>Provides a list of backup options for each resource type. </p>
 #[non_exhaustive]
@@ -18342,6 +18452,13 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
         self.resource_type.as_deref()
     }
 }
+impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder {
+        crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
 pub mod aws_backup_backup_plan_advanced_backup_settings_details {
     
@@ -18400,12 +18517,6 @@ pub mod aws_backup_backup_plan_advanced_backup_settings_details {
     
     
 }
-impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder {
-        crate::model::aws_backup_backup_plan_advanced_backup_settings_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about an Backup backup vault. In Backup, a backup vault is a container that stores and organizes your backups. </p>
 #[non_exhaustive]
@@ -18449,6 +18560,13 @@ impl AwsBackupBackupVaultDetails {
         self.access_policy.as_deref()
     }
 }
+impl AwsBackupBackupVaultDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_vault_details::Builder {
+        crate::model::aws_backup_backup_vault_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
 pub mod aws_backup_backup_vault_details {
     
@@ -18527,12 +18645,6 @@ pub mod aws_backup_backup_vault_details {
     
     
 }
-impl AwsBackupBackupVaultDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupVaultDetails`](crate::model::AwsBackupBackupVaultDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_vault_details::Builder {
-        crate::model::aws_backup_backup_vault_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the Amazon SNS event notifications for the specified backup vault. </p>
 #[non_exhaustive]
@@ -18567,6 +18679,13 @@ impl AwsBackupBackupVaultNotificationsDetails {
         self.sns_topic_arn.as_deref()
     }
 }
+impl AwsBackupBackupVaultNotificationsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
+    pub fn builder() -> crate::model::aws_backup_backup_vault_notifications_details::Builder {
+        crate::model::aws_backup_backup_vault_notifications_details::Builder::default()
+    }
+}
+
 /// See [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
 pub mod aws_backup_backup_vault_notifications_details {
     
@@ -18626,12 +18745,6 @@ pub mod aws_backup_backup_vault_notifications_details {
     }
     
     
-}
-impl AwsBackupBackupVaultNotificationsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsBackupBackupVaultNotificationsDetails`](crate::model::AwsBackupBackupVaultNotificationsDetails).
-    pub fn builder() -> crate::model::aws_backup_backup_vault_notifications_details::Builder {
-        crate::model::aws_backup_backup_vault_notifications_details::Builder::default()
-    }
 }
 
 /// <p>Provides details about a task in a cluster. </p>
@@ -18704,6 +18817,13 @@ impl AwsEcsTaskDetails {
         self.containers.as_deref()
     }
 }
+impl AwsEcsTaskDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_details::Builder {
+        crate::model::aws_ecs_task_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
 pub mod aws_ecs_task_details {
     
@@ -18842,12 +18962,6 @@ pub mod aws_ecs_task_details {
     
     
 }
-impl AwsEcsTaskDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_details::Builder {
-        crate::model::aws_ecs_task_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Amazon ECS container. </p>
 #[non_exhaustive]
@@ -18884,6 +18998,13 @@ impl AwsEcsContainerDetails {
         self.privileged
     }
 }
+impl AwsEcsContainerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
+    pub fn builder() -> crate::model::aws_ecs_container_details::Builder {
+        crate::model::aws_ecs_container_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
 pub mod aws_ecs_container_details {
     
@@ -18957,12 +19078,6 @@ pub mod aws_ecs_container_details {
     
     
 }
-impl AwsEcsContainerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
-    pub fn builder() -> crate::model::aws_ecs_container_details::Builder {
-        crate::model::aws_ecs_container_details::Builder::default()
-    }
-}
 
 /// <p>Details for a volume mount point that's used in a container definition. </p>
 #[non_exhaustive]
@@ -18985,6 +19100,13 @@ impl AwsMountPoint {
         self.container_path.as_deref()
     }
 }
+impl AwsMountPoint {
+    /// Creates a new builder-style object to manufacture [`AwsMountPoint`](crate::model::AwsMountPoint).
+    pub fn builder() -> crate::model::aws_mount_point::Builder {
+        crate::model::aws_mount_point::Builder::default()
+    }
+}
+
 /// See [`AwsMountPoint`](crate::model::AwsMountPoint).
 pub mod aws_mount_point {
     
@@ -19027,12 +19149,6 @@ pub mod aws_mount_point {
     
     
 }
-impl AwsMountPoint {
-    /// Creates a new builder-style object to manufacture [`AwsMountPoint`](crate::model::AwsMountPoint).
-    pub fn builder() -> crate::model::aws_mount_point::Builder {
-        crate::model::aws_mount_point::Builder::default()
-    }
-}
 
 /// <p>Provides information about a data volume that's used in a task definition. </p>
 #[non_exhaustive]
@@ -19055,6 +19171,13 @@ impl AwsEcsTaskVolumeDetails {
         self.host.as_ref()
     }
 }
+impl AwsEcsTaskVolumeDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_volume_details::Builder {
+        crate::model::aws_ecs_task_volume_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
 pub mod aws_ecs_task_volume_details {
     
@@ -19097,12 +19220,6 @@ pub mod aws_ecs_task_volume_details {
     
     
 }
-impl AwsEcsTaskVolumeDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_volume_details::Builder {
-        crate::model::aws_ecs_task_volume_details::Builder::default()
-    }
-}
 
 /// <p>Provides details on a container instance bind mount host volume. </p>
 #[non_exhaustive]
@@ -19118,6 +19235,13 @@ impl AwsEcsTaskVolumeHostDetails {
         self.source_path.as_deref()
     }
 }
+impl AwsEcsTaskVolumeHostDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_volume_host_details::Builder {
+        crate::model::aws_ecs_task_volume_host_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
 pub mod aws_ecs_task_volume_host_details {
     
@@ -19147,12 +19271,6 @@ pub mod aws_ecs_task_volume_host_details {
     }
     
     
-}
-impl AwsEcsTaskVolumeHostDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_volume_host_details::Builder {
-        crate::model::aws_ecs_task_volume_host_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about an WAF rule group. A rule group is a collection of rules for inspecting and controlling web requests. </p>
@@ -19190,6 +19308,13 @@ impl AwsWafRuleGroupDetails {
         self.rules.as_deref()
     }
 }
+impl AwsWafRuleGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
+    pub fn builder() -> crate::model::aws_waf_rule_group_details::Builder {
+        crate::model::aws_waf_rule_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
 pub mod aws_waf_rule_group_details {
     
@@ -19262,12 +19387,6 @@ pub mod aws_waf_rule_group_details {
     
     
 }
-impl AwsWafRuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
-    pub fn builder() -> crate::model::aws_waf_rule_group_details::Builder {
-        crate::model::aws_waf_rule_group_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
 #[non_exhaustive]
@@ -19304,6 +19423,13 @@ impl AwsWafRuleGroupRulesDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRuleGroupRulesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
+    pub fn builder() -> crate::model::aws_waf_rule_group_rules_details::Builder {
+        crate::model::aws_waf_rule_group_rules_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
 pub mod aws_waf_rule_group_rules_details {
     
@@ -19371,12 +19497,6 @@ pub mod aws_waf_rule_group_rules_details {
     
     
 }
-impl AwsWafRuleGroupRulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
-    pub fn builder() -> crate::model::aws_waf_rule_group_rules_details::Builder {
-        crate::model::aws_waf_rule_group_rules_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
 #[non_exhaustive]
@@ -19392,6 +19512,13 @@ impl AwsWafRuleGroupRulesActionDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRuleGroupRulesActionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
+    pub fn builder() -> crate::model::aws_waf_rule_group_rules_action_details::Builder {
+        crate::model::aws_waf_rule_group_rules_action_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
 pub mod aws_waf_rule_group_rules_action_details {
     
@@ -19421,12 +19548,6 @@ pub mod aws_waf_rule_group_rules_action_details {
     }
     
     
-}
-impl AwsWafRuleGroupRulesActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
-    pub fn builder() -> crate::model::aws_waf_rule_group_rules_action_details::Builder {
-        crate::model::aws_waf_rule_group_rules_action_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about a WAF rule. This rule specifies the web requests that you want to allow, block, or count. </p>
@@ -19464,6 +19585,13 @@ impl AwsWafRuleDetails {
         self.rule_id.as_deref()
     }
 }
+impl AwsWafRuleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
+    pub fn builder() -> crate::model::aws_waf_rule_details::Builder {
+        crate::model::aws_waf_rule_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
 pub mod aws_waf_rule_details {
     
@@ -19536,12 +19664,6 @@ pub mod aws_waf_rule_details {
     
     
 }
-impl AwsWafRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
-    pub fn builder() -> crate::model::aws_waf_rule_details::Builder {
-        crate::model::aws_waf_rule_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
 #[non_exhaustive]
@@ -19571,6 +19693,13 @@ impl AwsWafRulePredicateListDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRulePredicateListDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
+    pub fn builder() -> crate::model::aws_waf_rule_predicate_list_details::Builder {
+        crate::model::aws_waf_rule_predicate_list_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
 pub mod aws_waf_rule_predicate_list_details {
     
@@ -19626,12 +19755,6 @@ pub mod aws_waf_rule_predicate_list_details {
     
     
 }
-impl AwsWafRulePredicateListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
-    pub fn builder() -> crate::model::aws_waf_rule_predicate_list_details::Builder {
-        crate::model::aws_waf_rule_predicate_list_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the web access control list (web ACL). The web ACL contains the rules that identify the requests that you want to allow, block, or count. </p>
 #[non_exhaustive]
@@ -19675,6 +19798,13 @@ impl AwsWafRegionalWebAclDetails {
         self.web_acl_id.as_deref()
     }
 }
+impl AwsWafRegionalWebAclDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_web_acl_details::Builder {
+        crate::model::aws_waf_regional_web_acl_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
 pub mod aws_waf_regional_web_acl_details {
     
@@ -19759,12 +19889,6 @@ pub mod aws_waf_regional_web_acl_details {
     
     
 }
-impl AwsWafRegionalWebAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_web_acl_details::Builder {
-        crate::model::aws_waf_regional_web_acl_details::Builder::default()
-    }
-}
 
 /// <p>A combination of <code>ByteMatchSet</code>, <code>IPSet</code>, and/or <code>SqlInjectionMatchSet</code> objects that identify the web requests that you want to allow, block, or count. </p>
 #[non_exhaustive]
@@ -19808,6 +19932,13 @@ impl AwsWafRegionalWebAclRulesListDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalWebAclRulesListDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_details::Builder {
+        crate::model::aws_waf_regional_web_acl_rules_list_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
 pub mod aws_waf_regional_web_acl_rules_list_details {
     
@@ -19887,12 +20018,6 @@ pub mod aws_waf_regional_web_acl_rules_list_details {
     
     
 }
-impl AwsWafRegionalWebAclRulesListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_details::Builder {
-        crate::model::aws_waf_regional_web_acl_rules_list_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the action to use in the place of the action that results from the rule group evaluation. </p>
 #[non_exhaustive]
@@ -19908,6 +20033,13 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder {
+        crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
 pub mod aws_waf_regional_web_acl_rules_list_override_action_details {
     
@@ -19938,12 +20070,6 @@ pub mod aws_waf_regional_web_acl_rules_list_override_action_details {
     
     
 }
-impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder {
-        crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder::default()
-    }
-}
 
 /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
 #[non_exhaustive]
@@ -19959,6 +20085,13 @@ impl AwsWafRegionalWebAclRulesListActionDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalWebAclRulesListActionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_action_details::Builder {
+        crate::model::aws_waf_regional_web_acl_rules_list_action_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
 pub mod aws_waf_regional_web_acl_rules_list_action_details {
     
@@ -19988,12 +20121,6 @@ pub mod aws_waf_regional_web_acl_rules_list_action_details {
     }
     
     
-}
-impl AwsWafRegionalWebAclRulesListActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_action_details::Builder {
-        crate::model::aws_waf_regional_web_acl_rules_list_action_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about an WAF Regional rule. This rule identifies the web requests that you want to allow, block, or count. </p>
@@ -20031,6 +20158,13 @@ impl AwsWafRegionalRuleDetails {
         self.rule_id.as_deref()
     }
 }
+impl AwsWafRegionalRuleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_rule_details::Builder {
+        crate::model::aws_waf_regional_rule_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
 pub mod aws_waf_regional_rule_details {
     
@@ -20103,12 +20237,6 @@ pub mod aws_waf_regional_rule_details {
     
     
 }
-impl AwsWafRegionalRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_rule_details::Builder {
-        crate::model::aws_waf_regional_rule_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
 #[non_exhaustive]
@@ -20138,6 +20266,13 @@ impl AwsWafRegionalRulePredicateListDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalRulePredicateListDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_rule_predicate_list_details::Builder {
+        crate::model::aws_waf_regional_rule_predicate_list_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
 pub mod aws_waf_regional_rule_predicate_list_details {
     
@@ -20193,12 +20328,6 @@ pub mod aws_waf_regional_rule_predicate_list_details {
     
     
 }
-impl AwsWafRegionalRulePredicateListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_rule_predicate_list_details::Builder {
-        crate::model::aws_waf_regional_rule_predicate_list_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about an WAF Regional rule group. The rule group is a collection of rules for inspecting and controlling web requests. </p>
 #[non_exhaustive]
@@ -20235,6 +20364,13 @@ impl AwsWafRegionalRuleGroupDetails {
         self.rules.as_deref()
     }
 }
+impl AwsWafRegionalRuleGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_rule_group_details::Builder {
+        crate::model::aws_waf_regional_rule_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
 pub mod aws_waf_regional_rule_group_details {
     
@@ -20307,12 +20443,6 @@ pub mod aws_waf_regional_rule_group_details {
     
     
 }
-impl AwsWafRegionalRuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_rule_group_details::Builder {
-        crate::model::aws_waf_regional_rule_group_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the rules attached to a rule group </p>
 #[non_exhaustive]
@@ -20349,6 +20479,13 @@ impl AwsWafRegionalRuleGroupRulesDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalRuleGroupRulesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_rule_group_rules_details::Builder {
+        crate::model::aws_waf_regional_rule_group_rules_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
 pub mod aws_waf_regional_rule_group_rules_details {
     
@@ -20416,12 +20553,6 @@ pub mod aws_waf_regional_rule_group_rules_details {
     
     
 }
-impl AwsWafRegionalRuleGroupRulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_rule_group_rules_details::Builder {
-        crate::model::aws_waf_regional_rule_group_rules_details::Builder::default()
-    }
-}
 
 /// <p>Describes the action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
 #[non_exhaustive]
@@ -20437,6 +20568,13 @@ impl AwsWafRegionalRuleGroupRulesActionDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalRuleGroupRulesActionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_rule_group_rules_action_details::Builder {
+        crate::model::aws_waf_regional_rule_group_rules_action_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
 pub mod aws_waf_regional_rule_group_rules_action_details {
     
@@ -20466,12 +20604,6 @@ pub mod aws_waf_regional_rule_group_rules_action_details {
     }
     
     
-}
-impl AwsWafRegionalRuleGroupRulesActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_rule_group_rules_action_details::Builder {
-        crate::model::aws_waf_regional_rule_group_rules_action_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. </p>
@@ -20516,6 +20648,13 @@ impl AwsEc2VpcPeeringConnectionDetails {
         self.vpc_peering_connection_id.as_deref()
     }
 }
+impl AwsEc2VpcPeeringConnectionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_details::Builder {
+        crate::model::aws_ec2_vpc_peering_connection_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
 pub mod aws_ec2_vpc_peering_connection_details {
     
@@ -20594,12 +20733,6 @@ pub mod aws_ec2_vpc_peering_connection_details {
     
     
 }
-impl AwsEc2VpcPeeringConnectionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_details::Builder {
-        crate::model::aws_ec2_vpc_peering_connection_details::Builder::default()
-    }
-}
 
 /// <p>Details about the status of the VPC peering connection. </p>
 #[non_exhaustive]
@@ -20622,6 +20755,13 @@ impl AwsEc2VpcPeeringConnectionStatusDetails {
         self.message.as_deref()
     }
 }
+impl AwsEc2VpcPeeringConnectionStatusDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_status_details::Builder {
+        crate::model::aws_ec2_vpc_peering_connection_status_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
 pub mod aws_ec2_vpc_peering_connection_status_details {
     
@@ -20663,12 +20803,6 @@ pub mod aws_ec2_vpc_peering_connection_status_details {
     }
     
     
-}
-impl AwsEc2VpcPeeringConnectionStatusDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_status_details::Builder {
-        crate::model::aws_ec2_vpc_peering_connection_status_details::Builder::default()
-    }
 }
 
 /// <p>Describes a VPC in a VPC peering connection. </p>
@@ -20727,6 +20861,13 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
         self.vpc_id.as_deref()
     }
 }
+impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_vpc_info_details::Builder {
+        crate::model::aws_ec2_vpc_peering_connection_vpc_info_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
 pub mod aws_ec2_vpc_peering_connection_vpc_info_details {
     
@@ -20841,12 +20982,6 @@ pub mod aws_ec2_vpc_peering_connection_vpc_info_details {
     
     
 }
-impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_vpc_info_details::Builder {
-        crate::model::aws_ec2_vpc_peering_connection_vpc_info_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the VPC peering connection options for the accepter or requester VPC. </p>
 #[non_exhaustive]
@@ -20876,6 +21011,13 @@ impl VpcInfoPeeringOptionsDetails {
         self.allow_egress_from_local_vpc_to_remote_classic_link
     }
 }
+impl VpcInfoPeeringOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
+    pub fn builder() -> crate::model::vpc_info_peering_options_details::Builder {
+        crate::model::vpc_info_peering_options_details::Builder::default()
+    }
+}
+
 /// See [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
 pub mod vpc_info_peering_options_details {
     
@@ -20933,12 +21075,6 @@ pub mod vpc_info_peering_options_details {
     
     
 }
-impl VpcInfoPeeringOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
-    pub fn builder() -> crate::model::vpc_info_peering_options_details::Builder {
-        crate::model::vpc_info_peering_options_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the IPv6 CIDR blocks for the VPC. </p>
 #[non_exhaustive]
@@ -20954,6 +21090,13 @@ impl VpcInfoIpv6CidrBlockSetDetails {
         self.ipv6_cidr_block.as_deref()
     }
 }
+impl VpcInfoIpv6CidrBlockSetDetails {
+    /// Creates a new builder-style object to manufacture [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
+    pub fn builder() -> crate::model::vpc_info_ipv6_cidr_block_set_details::Builder {
+        crate::model::vpc_info_ipv6_cidr_block_set_details::Builder::default()
+    }
+}
+
 /// See [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
 pub mod vpc_info_ipv6_cidr_block_set_details {
     
@@ -20984,12 +21127,6 @@ pub mod vpc_info_ipv6_cidr_block_set_details {
     
     
 }
-impl VpcInfoIpv6CidrBlockSetDetails {
-    /// Creates a new builder-style object to manufacture [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
-    pub fn builder() -> crate::model::vpc_info_ipv6_cidr_block_set_details::Builder {
-        crate::model::vpc_info_ipv6_cidr_block_set_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the IPv4 CIDR blocks for the VPC. </p>
 #[non_exhaustive]
@@ -21005,6 +21142,13 @@ impl VpcInfoCidrBlockSetDetails {
         self.cidr_block.as_deref()
     }
 }
+impl VpcInfoCidrBlockSetDetails {
+    /// Creates a new builder-style object to manufacture [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
+    pub fn builder() -> crate::model::vpc_info_cidr_block_set_details::Builder {
+        crate::model::vpc_info_cidr_block_set_details::Builder::default()
+    }
+}
+
 /// See [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
 pub mod vpc_info_cidr_block_set_details {
     
@@ -21034,12 +21178,6 @@ pub mod vpc_info_cidr_block_set_details {
     }
     
     
-}
-impl VpcInfoCidrBlockSetDetails {
-    /// Creates a new builder-style object to manufacture [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
-    pub fn builder() -> crate::model::vpc_info_cidr_block_set_details::Builder {
-        crate::model::vpc_info_cidr_block_set_details::Builder::default()
-    }
 }
 
 /// <p>Specifies an alarm and associates it with the specified metric or metric math expression. </p>
@@ -21207,6 +21345,13 @@ impl AwsCloudWatchAlarmDetails {
         self.unit.as_deref()
     }
 }
+impl AwsCloudWatchAlarmDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
+    pub fn builder() -> crate::model::aws_cloud_watch_alarm_details::Builder {
+        crate::model::aws_cloud_watch_alarm_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
 pub mod aws_cloud_watch_alarm_details {
     
@@ -21522,12 +21667,6 @@ pub mod aws_cloud_watch_alarm_details {
     
     
 }
-impl AwsCloudWatchAlarmDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
-    pub fn builder() -> crate::model::aws_cloud_watch_alarm_details::Builder {
-        crate::model::aws_cloud_watch_alarm_details::Builder::default()
-    }
-}
 
 /// <p>Details about the dimensions for the metric associated with the alarm. </p>
 #[non_exhaustive]
@@ -21550,6 +21689,13 @@ impl AwsCloudWatchAlarmDimensionsDetails {
         self.value.as_deref()
     }
 }
+impl AwsCloudWatchAlarmDimensionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
+    pub fn builder() -> crate::model::aws_cloud_watch_alarm_dimensions_details::Builder {
+        crate::model::aws_cloud_watch_alarm_dimensions_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
 pub mod aws_cloud_watch_alarm_dimensions_details {
     
@@ -21591,12 +21737,6 @@ pub mod aws_cloud_watch_alarm_dimensions_details {
     }
     
     
-}
-impl AwsCloudWatchAlarmDimensionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
-    pub fn builder() -> crate::model::aws_cloud_watch_alarm_dimensions_details::Builder {
-        crate::model::aws_cloud_watch_alarm_dimensions_details::Builder::default()
-    }
 }
 
 /// <p>Nests a stack as a resource in a top-level template. Nested stacks are stacks created as resources for another stack.</p>
@@ -21711,6 +21851,13 @@ impl AwsCloudFormationStackDetails {
         self.timeout_in_minutes
     }
 }
+impl AwsCloudFormationStackDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
+    pub fn builder() -> crate::model::aws_cloud_formation_stack_details::Builder {
+        crate::model::aws_cloud_formation_stack_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
 pub mod aws_cloud_formation_stack_details {
     
@@ -21930,12 +22077,6 @@ pub mod aws_cloud_formation_stack_details {
     
     
 }
-impl AwsCloudFormationStackDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
-    pub fn builder() -> crate::model::aws_cloud_formation_stack_details::Builder {
-        crate::model::aws_cloud_formation_stack_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the CloudFormation stack output. </p>
 #[non_exhaustive]
@@ -21965,6 +22106,13 @@ impl AwsCloudFormationStackOutputsDetails {
         self.output_value.as_deref()
     }
 }
+impl AwsCloudFormationStackOutputsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
+    pub fn builder() -> crate::model::aws_cloud_formation_stack_outputs_details::Builder {
+        crate::model::aws_cloud_formation_stack_outputs_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
 pub mod aws_cloud_formation_stack_outputs_details {
     
@@ -22019,12 +22167,6 @@ pub mod aws_cloud_formation_stack_outputs_details {
     
     
 }
-impl AwsCloudFormationStackOutputsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
-    pub fn builder() -> crate::model::aws_cloud_formation_stack_outputs_details::Builder {
-        crate::model::aws_cloud_formation_stack_outputs_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the stack's conformity to its expected template configuration. </p>
 #[non_exhaustive]
@@ -22040,6 +22182,13 @@ impl AwsCloudFormationStackDriftInformationDetails {
         self.stack_drift_status.as_deref()
     }
 }
+impl AwsCloudFormationStackDriftInformationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
+    pub fn builder() -> crate::model::aws_cloud_formation_stack_drift_information_details::Builder {
+        crate::model::aws_cloud_formation_stack_drift_information_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
 pub mod aws_cloud_formation_stack_drift_information_details {
     
@@ -22069,12 +22218,6 @@ pub mod aws_cloud_formation_stack_drift_information_details {
     }
     
     
-}
-impl AwsCloudFormationStackDriftInformationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
-    pub fn builder() -> crate::model::aws_cloud_formation_stack_drift_information_details::Builder {
-        crate::model::aws_cloud_formation_stack_drift_information_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about an Amazon EFS access point. </p>
@@ -22126,6 +22269,13 @@ impl AwsEfsAccessPointDetails {
         self.root_directory.as_ref()
     }
 }
+impl AwsEfsAccessPointDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
+    pub fn builder() -> crate::model::aws_efs_access_point_details::Builder {
+        crate::model::aws_efs_access_point_details::Builder::default()
+    }
+}
+
 /// See [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
 pub mod aws_efs_access_point_details {
     
@@ -22216,12 +22366,6 @@ pub mod aws_efs_access_point_details {
     
     
 }
-impl AwsEfsAccessPointDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
-    pub fn builder() -> crate::model::aws_efs_access_point_details::Builder {
-        crate::model::aws_efs_access_point_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
 #[non_exhaustive]
@@ -22244,6 +22388,13 @@ impl AwsEfsAccessPointRootDirectoryDetails {
         self.path.as_deref()
     }
 }
+impl AwsEfsAccessPointRootDirectoryDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
+    pub fn builder() -> crate::model::aws_efs_access_point_root_directory_details::Builder {
+        crate::model::aws_efs_access_point_root_directory_details::Builder::default()
+    }
+}
+
 /// See [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
 pub mod aws_efs_access_point_root_directory_details {
     
@@ -22286,12 +22437,6 @@ pub mod aws_efs_access_point_root_directory_details {
     
     
 }
-impl AwsEfsAccessPointRootDirectoryDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
-    pub fn builder() -> crate::model::aws_efs_access_point_root_directory_details::Builder {
-        crate::model::aws_efs_access_point_root_directory_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the settings that Amazon EFS uses to create the root directory when a client connects to an access point. </p>
 #[non_exhaustive]
@@ -22321,6 +22466,13 @@ impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
         self.permissions.as_deref()
     }
 }
+impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
+    pub fn builder() -> crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder {
+        crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder::default()
+    }
+}
+
 /// See [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
 pub mod aws_efs_access_point_root_directory_creation_info_details {
     
@@ -22375,12 +22527,6 @@ pub mod aws_efs_access_point_root_directory_creation_info_details {
     
     
 }
-impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
-    pub fn builder() -> crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder {
-        crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder::default()
-    }
-}
 
 /// <p>Provides details for all file system operations using this Amazon EFS access point. </p>
 #[non_exhaustive]
@@ -22410,6 +22556,13 @@ impl AwsEfsAccessPointPosixUserDetails {
         self.uid.as_deref()
     }
 }
+impl AwsEfsAccessPointPosixUserDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
+    pub fn builder() -> crate::model::aws_efs_access_point_posix_user_details::Builder {
+        crate::model::aws_efs_access_point_posix_user_details::Builder::default()
+    }
+}
+
 /// See [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
 pub mod aws_efs_access_point_posix_user_details {
     
@@ -22469,12 +22622,6 @@ pub mod aws_efs_access_point_posix_user_details {
     }
     
     
-}
-impl AwsEfsAccessPointPosixUserDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
-    pub fn builder() -> crate::model::aws_efs_access_point_posix_user_details::Builder {
-        crate::model::aws_efs_access_point_posix_user_details::Builder::default()
-    }
 }
 
 /// <p>Information about an Amazon Web Services Amazon EC2 Transit Gateway that interconnects virtual private clouds (VPCs) and on-premises networks. </p>
@@ -22568,6 +22715,13 @@ impl AwsEc2TransitGatewayDetails {
         self.amazon_side_asn
     }
 }
+impl AwsEc2TransitGatewayDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
+    pub fn builder() -> crate::model::aws_ec2_transit_gateway_details::Builder {
+        crate::model::aws_ec2_transit_gateway_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
 pub mod aws_ec2_transit_gateway_details {
     
@@ -22737,12 +22891,6 @@ pub mod aws_ec2_transit_gateway_details {
     
     
 }
-impl AwsEc2TransitGatewayDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
-    pub fn builder() -> crate::model::aws_ec2_transit_gateway_details::Builder {
-        crate::model::aws_ec2_transit_gateway_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Amazon Kinesis data stream. </p>
 #[non_exhaustive]
@@ -22786,6 +22934,13 @@ impl AwsKinesisStreamDetails {
         self.retention_period_hours
     }
 }
+impl AwsKinesisStreamDetails {
+    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
+    pub fn builder() -> crate::model::aws_kinesis_stream_details::Builder {
+        crate::model::aws_kinesis_stream_details::Builder::default()
+    }
+}
+
 /// See [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
 pub mod aws_kinesis_stream_details {
     
@@ -22866,12 +23021,6 @@ pub mod aws_kinesis_stream_details {
     
     
 }
-impl AwsKinesisStreamDetails {
-    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
-    pub fn builder() -> crate::model::aws_kinesis_stream_details::Builder {
-        crate::model::aws_kinesis_stream_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about stream encryption. </p>
 #[non_exhaustive]
@@ -22894,6 +23043,13 @@ impl AwsKinesisStreamStreamEncryptionDetails {
         self.key_id.as_deref()
     }
 }
+impl AwsKinesisStreamStreamEncryptionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
+    pub fn builder() -> crate::model::aws_kinesis_stream_stream_encryption_details::Builder {
+        crate::model::aws_kinesis_stream_stream_encryption_details::Builder::default()
+    }
+}
+
 /// See [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
 pub mod aws_kinesis_stream_stream_encryption_details {
     
@@ -22935,12 +23091,6 @@ pub mod aws_kinesis_stream_stream_encryption_details {
     }
     
     
-}
-impl AwsKinesisStreamStreamEncryptionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
-    pub fn builder() -> crate::model::aws_kinesis_stream_stream_encryption_details::Builder {
-        crate::model::aws_kinesis_stream_stream_encryption_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about an Amazon RDS DB security group.</p>
@@ -22999,6 +23149,13 @@ impl AwsRdsDbSecurityGroupDetails {
         self.vpc_id.as_deref()
     }
 }
+impl AwsRdsDbSecurityGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
+    pub fn builder() -> crate::model::aws_rds_db_security_group_details::Builder {
+        crate::model::aws_rds_db_security_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
 pub mod aws_rds_db_security_group_details {
     
@@ -23113,12 +23270,6 @@ pub mod aws_rds_db_security_group_details {
     
     
 }
-impl AwsRdsDbSecurityGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
-    pub fn builder() -> crate::model::aws_rds_db_security_group_details::Builder {
-        crate::model::aws_rds_db_security_group_details::Builder::default()
-    }
-}
 
 /// <p>IP range information for an RDS DB security group.</p>
 #[non_exhaustive]
@@ -23141,6 +23292,13 @@ impl AwsRdsDbSecurityGroupIpRange {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbSecurityGroupIpRange {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
+    pub fn builder() -> crate::model::aws_rds_db_security_group_ip_range::Builder {
+        crate::model::aws_rds_db_security_group_ip_range::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
 pub mod aws_rds_db_security_group_ip_range {
     
@@ -23183,12 +23341,6 @@ pub mod aws_rds_db_security_group_ip_range {
     
     
 }
-impl AwsRdsDbSecurityGroupIpRange {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
-    pub fn builder() -> crate::model::aws_rds_db_security_group_ip_range::Builder {
-        crate::model::aws_rds_db_security_group_ip_range::Builder::default()
-    }
-}
 
 /// <p>EC2 security group information for an RDS DB security group.</p>
 #[non_exhaustive]
@@ -23225,6 +23377,13 @@ impl AwsRdsDbSecurityGroupEc2SecurityGroup {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbSecurityGroupEc2SecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
+    pub fn builder() -> crate::model::aws_rds_db_security_group_ec2_security_group::Builder {
+        crate::model::aws_rds_db_security_group_ec2_security_group::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
 pub mod aws_rds_db_security_group_ec2_security_group {
     
@@ -23291,12 +23450,6 @@ pub mod aws_rds_db_security_group_ec2_security_group {
     
     
 }
-impl AwsRdsDbSecurityGroupEc2SecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
-    pub fn builder() -> crate::model::aws_rds_db_security_group_ec2_security_group::Builder {
-        crate::model::aws_rds_db_security_group_ec2_security_group::Builder::default()
-    }
-}
 
 /// <p>Details about an Network Firewall rule group. Rule groups are used to inspect and control network traffic. Stateless rule groups apply to individual packets. Stateful rule groups apply to packets in the context of their traffic flow.</p> 
 /// <p>Rule groups are referenced in firewall policies. </p>
@@ -23355,6 +23508,13 @@ impl AwsNetworkFirewallRuleGroupDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsNetworkFirewallRuleGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
+    pub fn builder() -> crate::model::aws_network_firewall_rule_group_details::Builder {
+        crate::model::aws_network_firewall_rule_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
 pub mod aws_network_firewall_rule_group_details {
     
@@ -23458,12 +23618,6 @@ pub mod aws_network_firewall_rule_group_details {
     
     
 }
-impl AwsNetworkFirewallRuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
-    pub fn builder() -> crate::model::aws_network_firewall_rule_group_details::Builder {
-        crate::model::aws_network_firewall_rule_group_details::Builder::default()
-    }
-}
 
 /// <p>Details about the rule group.</p>
 #[non_exhaustive]
@@ -23490,6 +23644,13 @@ impl RuleGroupDetails {
         self.rules_source.as_ref()
     }
 }
+impl RuleGroupDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupDetails`](crate::model::RuleGroupDetails).
+    pub fn builder() -> crate::model::rule_group_details::Builder {
+        crate::model::rule_group_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupDetails`](crate::model::RuleGroupDetails).
 pub mod rule_group_details {
     
@@ -23536,12 +23697,6 @@ pub mod rule_group_details {
     
     
 }
-impl RuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupDetails`](crate::model::RuleGroupDetails).
-    pub fn builder() -> crate::model::rule_group_details::Builder {
-        crate::model::rule_group_details::Builder::default()
-    }
-}
 
 /// <p>The rules and actions for the rule group.</p>
 #[non_exhaustive]
@@ -23578,6 +23733,13 @@ impl RuleGroupSource {
         self.stateless_rules_and_custom_actions.as_ref()
     }
 }
+impl RuleGroupSource {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSource`](crate::model::RuleGroupSource).
+    pub fn builder() -> crate::model::rule_group_source::Builder {
+        crate::model::rule_group_source::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSource`](crate::model::RuleGroupSource).
 pub mod rule_group_source {
     
@@ -23650,12 +23812,6 @@ pub mod rule_group_source {
     
     
 }
-impl RuleGroupSource {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSource`](crate::model::RuleGroupSource).
-    pub fn builder() -> crate::model::rule_group_source::Builder {
-        crate::model::rule_group_source::Builder::default()
-    }
-}
 
 /// <p>Stateless rules and custom actions for a stateless rule group.</p>
 #[non_exhaustive]
@@ -23678,6 +23834,13 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
         self.stateless_rules.as_deref()
     }
 }
+impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder {
+        crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
 pub mod rule_group_source_stateless_rules_and_custom_actions_details {
     
@@ -23732,12 +23895,6 @@ pub mod rule_group_source_stateless_rules_and_custom_actions_details {
     
     
 }
-impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder {
-        crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder::default()
-    }
-}
 
 /// <p>A stateless rule in the rule group.</p>
 #[non_exhaustive]
@@ -23760,6 +23917,13 @@ impl RuleGroupSourceStatelessRulesDetails {
         self.rule_definition.as_ref()
     }
 }
+impl RuleGroupSourceStatelessRulesDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rules_details::Builder {
+        crate::model::rule_group_source_stateless_rules_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
 pub mod rule_group_source_stateless_rules_details {
     
@@ -23803,12 +23967,6 @@ pub mod rule_group_source_stateless_rules_details {
     
     
 }
-impl RuleGroupSourceStatelessRulesDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rules_details::Builder {
-        crate::model::rule_group_source_stateless_rules_details::Builder::default()
-    }
-}
 
 /// <p>The definition of the stateless rule.</p>
 #[non_exhaustive]
@@ -23831,6 +23989,13 @@ impl RuleGroupSourceStatelessRuleDefinition {
         self.match_attributes.as_ref()
     }
 }
+impl RuleGroupSourceStatelessRuleDefinition {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_definition::Builder {
+        crate::model::rule_group_source_stateless_rule_definition::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
 pub mod rule_group_source_stateless_rule_definition {
     
@@ -23878,12 +24043,6 @@ pub mod rule_group_source_stateless_rule_definition {
     }
     
     
-}
-impl RuleGroupSourceStatelessRuleDefinition {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_definition::Builder {
-        crate::model::rule_group_source_stateless_rule_definition::Builder::default()
-    }
 }
 
 /// <p>Criteria for the stateless rule.</p>
@@ -23935,6 +24094,13 @@ impl RuleGroupSourceStatelessRuleMatchAttributes {
         self.tcp_flags.as_deref()
     }
 }
+impl RuleGroupSourceStatelessRuleMatchAttributes {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes::Builder {
+        crate::model::rule_group_source_stateless_rule_match_attributes::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
 pub mod rule_group_source_stateless_rule_match_attributes {
     
@@ -24061,12 +24227,6 @@ pub mod rule_group_source_stateless_rule_match_attributes {
     
     
 }
-impl RuleGroupSourceStatelessRuleMatchAttributes {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes::Builder {
-        crate::model::rule_group_source_stateless_rule_match_attributes::Builder::default()
-    }
-}
 
 /// <p>A set of TCP flags and masks to inspect for.</p>
 #[non_exhaustive]
@@ -24089,6 +24249,13 @@ impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
         self.masks.as_deref()
     }
 }
+impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder {
+        crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
 pub mod rule_group_source_stateless_rule_match_attributes_tcp_flags {
     
@@ -24143,12 +24310,6 @@ pub mod rule_group_source_stateless_rule_match_attributes_tcp_flags {
     
     
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder {
-        crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder::default()
-    }
-}
 
 /// <p>A source IP addresses and address range to inspect for.</p>
 #[non_exhaustive]
@@ -24164,6 +24325,13 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSources {
         self.address_definition.as_deref()
     }
 }
+impl RuleGroupSourceStatelessRuleMatchAttributesSources {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder {
+        crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
 pub mod rule_group_source_stateless_rule_match_attributes_sources {
     
@@ -24194,12 +24362,6 @@ pub mod rule_group_source_stateless_rule_match_attributes_sources {
     
     
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesSources {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder {
-        crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder::default()
-    }
-}
 
 /// <p>A port range to specify the source ports to inspect for.</p>
 #[non_exhaustive]
@@ -24222,6 +24384,13 @@ impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
         self.to_port
     }
 }
+impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder {
+        crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
 pub mod rule_group_source_stateless_rule_match_attributes_source_ports {
     
@@ -24266,12 +24435,6 @@ pub mod rule_group_source_stateless_rule_match_attributes_source_ports {
     
     
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder {
-        crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder::default()
-    }
-}
 
 /// <p>A destination IP address or range.</p>
 #[non_exhaustive]
@@ -24287,6 +24450,13 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
         self.address_definition.as_deref()
     }
 }
+impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder {
+        crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
 pub mod rule_group_source_stateless_rule_match_attributes_destinations {
     
@@ -24317,12 +24487,6 @@ pub mod rule_group_source_stateless_rule_match_attributes_destinations {
     
     
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder {
-        crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder::default()
-    }
-}
 
 /// <p>A port range to specify the destination ports to inspect for.</p>
 #[non_exhaustive]
@@ -24345,6 +24509,13 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
         self.to_port
     }
 }
+impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
+    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder {
+        crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
 pub mod rule_group_source_stateless_rule_match_attributes_destination_ports {
     
@@ -24389,12 +24560,6 @@ pub mod rule_group_source_stateless_rule_match_attributes_destination_ports {
     
     
 }
-impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
-    pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder {
-        crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder::default()
-    }
-}
 
 /// <p>A custom action definition. A custom action is an optional, non-standard action to use for stateless packet handling.</p>
 #[non_exhaustive]
@@ -24417,6 +24582,13 @@ impl RuleGroupSourceCustomActionsDetails {
         self.action_name.as_deref()
     }
 }
+impl RuleGroupSourceCustomActionsDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
+    pub fn builder() -> crate::model::rule_group_source_custom_actions_details::Builder {
+        crate::model::rule_group_source_custom_actions_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
 pub mod rule_group_source_custom_actions_details {
     
@@ -24459,12 +24631,6 @@ pub mod rule_group_source_custom_actions_details {
     
     
 }
-impl RuleGroupSourceCustomActionsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
-    pub fn builder() -> crate::model::rule_group_source_custom_actions_details::Builder {
-        crate::model::rule_group_source_custom_actions_details::Builder::default()
-    }
-}
 
 /// <p>The definition of a custom action that can be used for stateless packet handling.</p>
 #[non_exhaustive]
@@ -24480,6 +24646,13 @@ impl StatelessCustomActionDefinition {
         self.publish_metric_action.as_ref()
     }
 }
+impl StatelessCustomActionDefinition {
+    /// Creates a new builder-style object to manufacture [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
+    pub fn builder() -> crate::model::stateless_custom_action_definition::Builder {
+        crate::model::stateless_custom_action_definition::Builder::default()
+    }
+}
+
 /// See [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
 pub mod stateless_custom_action_definition {
     
@@ -24510,12 +24683,6 @@ pub mod stateless_custom_action_definition {
     
     
 }
-impl StatelessCustomActionDefinition {
-    /// Creates a new builder-style object to manufacture [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
-    pub fn builder() -> crate::model::stateless_custom_action_definition::Builder {
-        crate::model::stateless_custom_action_definition::Builder::default()
-    }
-}
 
 /// <p>Information about metrics to publish to CloudWatch.</p>
 #[non_exhaustive]
@@ -24531,6 +24698,13 @@ impl StatelessCustomPublishMetricAction {
         self.dimensions.as_deref()
     }
 }
+impl StatelessCustomPublishMetricAction {
+    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
+    pub fn builder() -> crate::model::stateless_custom_publish_metric_action::Builder {
+        crate::model::stateless_custom_publish_metric_action::Builder::default()
+    }
+}
+
 /// See [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
 pub mod stateless_custom_publish_metric_action {
     
@@ -24567,12 +24741,6 @@ pub mod stateless_custom_publish_metric_action {
     
     
 }
-impl StatelessCustomPublishMetricAction {
-    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
-    pub fn builder() -> crate::model::stateless_custom_publish_metric_action::Builder {
-        crate::model::stateless_custom_publish_metric_action::Builder::default()
-    }
-}
 
 /// <p>Defines a CloudWatch dimension value to publish.</p>
 #[non_exhaustive]
@@ -24588,6 +24756,13 @@ impl StatelessCustomPublishMetricActionDimension {
         self.value.as_deref()
     }
 }
+impl StatelessCustomPublishMetricActionDimension {
+    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
+    pub fn builder() -> crate::model::stateless_custom_publish_metric_action_dimension::Builder {
+        crate::model::stateless_custom_publish_metric_action_dimension::Builder::default()
+    }
+}
+
 /// See [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
 pub mod stateless_custom_publish_metric_action_dimension {
     
@@ -24618,12 +24793,6 @@ pub mod stateless_custom_publish_metric_action_dimension {
     
     
 }
-impl StatelessCustomPublishMetricActionDimension {
-    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
-    pub fn builder() -> crate::model::stateless_custom_publish_metric_action_dimension::Builder {
-        crate::model::stateless_custom_publish_metric_action_dimension::Builder::default()
-    }
-}
 
 /// <p>A Suricata rule specification.</p>
 #[non_exhaustive]
@@ -24653,6 +24822,13 @@ impl RuleGroupSourceStatefulRulesDetails {
         self.rule_options.as_deref()
     }
 }
+impl RuleGroupSourceStatefulRulesDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
+    pub fn builder() -> crate::model::rule_group_source_stateful_rules_details::Builder {
+        crate::model::rule_group_source_stateful_rules_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
 pub mod rule_group_source_stateful_rules_details {
     
@@ -24713,12 +24889,6 @@ pub mod rule_group_source_stateful_rules_details {
     
     
 }
-impl RuleGroupSourceStatefulRulesDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
-    pub fn builder() -> crate::model::rule_group_source_stateful_rules_details::Builder {
-        crate::model::rule_group_source_stateful_rules_details::Builder::default()
-    }
-}
 
 /// <p>A rule option for a stateful rule.</p>
 #[non_exhaustive]
@@ -24741,6 +24911,13 @@ impl RuleGroupSourceStatefulRulesOptionsDetails {
         self.settings.as_deref()
     }
 }
+impl RuleGroupSourceStatefulRulesOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
+    pub fn builder() -> crate::model::rule_group_source_stateful_rules_options_details::Builder {
+        crate::model::rule_group_source_stateful_rules_options_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
 pub mod rule_group_source_stateful_rules_options_details {
     
@@ -24788,12 +24965,6 @@ pub mod rule_group_source_stateful_rules_options_details {
     }
     
     
-}
-impl RuleGroupSourceStatefulRulesOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
-    pub fn builder() -> crate::model::rule_group_source_stateful_rules_options_details::Builder {
-        crate::model::rule_group_source_stateful_rules_options_details::Builder::default()
-    }
 }
 
 /// <p>The inspection criteria for a stateful rule.</p>
@@ -24845,6 +25016,13 @@ impl RuleGroupSourceStatefulRulesHeaderDetails {
         self.source_port.as_deref()
     }
 }
+impl RuleGroupSourceStatefulRulesHeaderDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
+    pub fn builder() -> crate::model::rule_group_source_stateful_rules_header_details::Builder {
+        crate::model::rule_group_source_stateful_rules_header_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
 pub mod rule_group_source_stateful_rules_header_details {
     
@@ -24935,12 +25113,6 @@ pub mod rule_group_source_stateful_rules_header_details {
     
     
 }
-impl RuleGroupSourceStatefulRulesHeaderDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
-    pub fn builder() -> crate::model::rule_group_source_stateful_rules_header_details::Builder {
-        crate::model::rule_group_source_stateful_rules_header_details::Builder::default()
-    }
-}
 
 /// <p>Stateful inspection criteria for a domain list rule group.</p>
 #[non_exhaustive]
@@ -24970,6 +25142,13 @@ impl RuleGroupSourceListDetails {
         self.targets.as_deref()
     }
 }
+impl RuleGroupSourceListDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
+    pub fn builder() -> crate::model::rule_group_source_list_details::Builder {
+        crate::model::rule_group_source_list_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
 pub mod rule_group_source_list_details {
     
@@ -25036,12 +25215,6 @@ pub mod rule_group_source_list_details {
     
     
 }
-impl RuleGroupSourceListDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
-    pub fn builder() -> crate::model::rule_group_source_list_details::Builder {
-        crate::model::rule_group_source_list_details::Builder::default()
-    }
-}
 
 /// <p>Additional settings to use in the specified rules.</p>
 #[non_exhaustive]
@@ -25064,6 +25237,13 @@ impl RuleGroupVariables {
         self.port_sets.as_ref()
     }
 }
+impl RuleGroupVariables {
+    /// Creates a new builder-style object to manufacture [`RuleGroupVariables`](crate::model::RuleGroupVariables).
+    pub fn builder() -> crate::model::rule_group_variables::Builder {
+        crate::model::rule_group_variables::Builder::default()
+    }
+}
+
 /// See [`RuleGroupVariables`](crate::model::RuleGroupVariables).
 pub mod rule_group_variables {
     
@@ -25106,12 +25286,6 @@ pub mod rule_group_variables {
     
     
 }
-impl RuleGroupVariables {
-    /// Creates a new builder-style object to manufacture [`RuleGroupVariables`](crate::model::RuleGroupVariables).
-    pub fn builder() -> crate::model::rule_group_variables::Builder {
-        crate::model::rule_group_variables::Builder::default()
-    }
-}
 
 /// <p>A list of port ranges.</p>
 #[non_exhaustive]
@@ -25127,6 +25301,13 @@ impl RuleGroupVariablesPortSetsDetails {
         self.definition.as_deref()
     }
 }
+impl RuleGroupVariablesPortSetsDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
+    pub fn builder() -> crate::model::rule_group_variables_port_sets_details::Builder {
+        crate::model::rule_group_variables_port_sets_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
 pub mod rule_group_variables_port_sets_details {
     
@@ -25163,12 +25344,6 @@ pub mod rule_group_variables_port_sets_details {
     
     
 }
-impl RuleGroupVariablesPortSetsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
-    pub fn builder() -> crate::model::rule_group_variables_port_sets_details::Builder {
-        crate::model::rule_group_variables_port_sets_details::Builder::default()
-    }
-}
 
 /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
 #[non_exhaustive]
@@ -25184,6 +25359,13 @@ impl RuleGroupVariablesIpSetsDetails {
         self.definition.as_deref()
     }
 }
+impl RuleGroupVariablesIpSetsDetails {
+    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
+    pub fn builder() -> crate::model::rule_group_variables_ip_sets_details::Builder {
+        crate::model::rule_group_variables_ip_sets_details::Builder::default()
+    }
+}
+
 /// See [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
 pub mod rule_group_variables_ip_sets_details {
     
@@ -25219,12 +25401,6 @@ pub mod rule_group_variables_ip_sets_details {
     }
     
     
-}
-impl RuleGroupVariablesIpSetsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
-    pub fn builder() -> crate::model::rule_group_variables_ip_sets_details::Builder {
-        crate::model::rule_group_variables_ip_sets_details::Builder::default()
-    }
 }
 
 /// <p>Details about an Network Firewall firewall.</p>
@@ -25304,6 +25480,13 @@ impl AwsNetworkFirewallFirewallDetails {
         self.vpc_id.as_deref()
     }
 }
+impl AwsNetworkFirewallFirewallDetails {
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
+    pub fn builder() -> crate::model::aws_network_firewall_firewall_details::Builder {
+        crate::model::aws_network_firewall_firewall_details::Builder::default()
+    }
+}
+
 /// See [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
 pub mod aws_network_firewall_firewall_details {
     
@@ -25451,12 +25634,6 @@ pub mod aws_network_firewall_firewall_details {
     
     
 }
-impl AwsNetworkFirewallFirewallDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
-    pub fn builder() -> crate::model::aws_network_firewall_firewall_details::Builder {
-        crate::model::aws_network_firewall_firewall_details::Builder::default()
-    }
-}
 
 /// <p>A public subnet that Network Firewall uses for the firewall.</p>
 #[non_exhaustive]
@@ -25472,6 +25649,13 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
         self.subnet_id.as_deref()
     }
 }
+impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
+    pub fn builder() -> crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder {
+        crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder::default()
+    }
+}
+
 /// See [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
 pub mod aws_network_firewall_firewall_subnet_mappings_details {
     
@@ -25501,12 +25685,6 @@ pub mod aws_network_firewall_firewall_subnet_mappings_details {
     }
     
     
-}
-impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
-    pub fn builder() -> crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder {
-        crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder::default()
-    }
 }
 
 /// <p>Details about a firewall policy. A firewall policy defines the behavior of a network firewall.</p>
@@ -25551,6 +25729,13 @@ impl AwsNetworkFirewallFirewallPolicyDetails {
         self.description.as_deref()
     }
 }
+impl AwsNetworkFirewallFirewallPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
+    pub fn builder() -> crate::model::aws_network_firewall_firewall_policy_details::Builder {
+        crate::model::aws_network_firewall_firewall_policy_details::Builder::default()
+    }
+}
+
 /// See [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
 pub mod aws_network_firewall_firewall_policy_details {
     
@@ -25629,12 +25814,6 @@ pub mod aws_network_firewall_firewall_policy_details {
     
     
 }
-impl AwsNetworkFirewallFirewallPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
-    pub fn builder() -> crate::model::aws_network_firewall_firewall_policy_details::Builder {
-        crate::model::aws_network_firewall_firewall_policy_details::Builder::default()
-    }
-}
 
 /// <p>Defines the behavior of the firewall.</p>
 #[non_exhaustive]
@@ -25682,6 +25861,13 @@ impl FirewallPolicyDetails {
         self.stateless_rule_group_references.as_deref()
     }
 }
+impl FirewallPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
+    pub fn builder() -> crate::model::firewall_policy_details::Builder {
+        crate::model::firewall_policy_details::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
 pub mod firewall_policy_details {
     
@@ -25794,12 +25980,6 @@ pub mod firewall_policy_details {
     
     
 }
-impl FirewallPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
-    pub fn builder() -> crate::model::firewall_policy_details::Builder {
-        crate::model::firewall_policy_details::Builder::default()
-    }
-}
 
 /// <p>A stateless rule group that is used by the firewall policy.</p>
 #[non_exhaustive]
@@ -25822,6 +26002,13 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
         self.resource_arn.as_deref()
     }
 }
+impl FirewallPolicyStatelessRuleGroupReferencesDetails {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
+    pub fn builder() -> crate::model::firewall_policy_stateless_rule_group_references_details::Builder {
+        crate::model::firewall_policy_stateless_rule_group_references_details::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
 pub mod firewall_policy_stateless_rule_group_references_details {
     
@@ -25865,12 +26052,6 @@ pub mod firewall_policy_stateless_rule_group_references_details {
     
     
 }
-impl FirewallPolicyStatelessRuleGroupReferencesDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
-    pub fn builder() -> crate::model::firewall_policy_stateless_rule_group_references_details::Builder {
-        crate::model::firewall_policy_stateless_rule_group_references_details::Builder::default()
-    }
-}
 
 /// <p>A custom action that can be used for stateless packet handling.</p>
 #[non_exhaustive]
@@ -25893,6 +26074,13 @@ impl FirewallPolicyStatelessCustomActionsDetails {
         self.action_name.as_deref()
     }
 }
+impl FirewallPolicyStatelessCustomActionsDetails {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
+    pub fn builder() -> crate::model::firewall_policy_stateless_custom_actions_details::Builder {
+        crate::model::firewall_policy_stateless_custom_actions_details::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
 pub mod firewall_policy_stateless_custom_actions_details {
     
@@ -25935,12 +26123,6 @@ pub mod firewall_policy_stateless_custom_actions_details {
     
     
 }
-impl FirewallPolicyStatelessCustomActionsDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
-    pub fn builder() -> crate::model::firewall_policy_stateless_custom_actions_details::Builder {
-        crate::model::firewall_policy_stateless_custom_actions_details::Builder::default()
-    }
-}
 
 /// <p>A stateful rule group that is used by the firewall policy.</p>
 #[non_exhaustive]
@@ -25956,6 +26138,13 @@ impl FirewallPolicyStatefulRuleGroupReferencesDetails {
         self.resource_arn.as_deref()
     }
 }
+impl FirewallPolicyStatefulRuleGroupReferencesDetails {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
+    pub fn builder() -> crate::model::firewall_policy_stateful_rule_group_references_details::Builder {
+        crate::model::firewall_policy_stateful_rule_group_references_details::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
 pub mod firewall_policy_stateful_rule_group_references_details {
     
@@ -25985,12 +26174,6 @@ pub mod firewall_policy_stateful_rule_group_references_details {
     }
     
     
-}
-impl FirewallPolicyStatefulRuleGroupReferencesDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
-    pub fn builder() -> crate::model::firewall_policy_stateful_rule_group_references_details::Builder {
-        crate::model::firewall_policy_stateful_rule_group_references_details::Builder::default()
-    }
 }
 
 /// <p>Provides details about an Amazon EKS cluster.</p>
@@ -26079,6 +26262,13 @@ impl AwsEksClusterDetails {
         self.logging.as_ref()
     }
 }
+impl AwsEksClusterDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
+    pub fn builder() -> crate::model::aws_eks_cluster_details::Builder {
+        crate::model::aws_eks_cluster_details::Builder::default()
+    }
+}
+
 /// See [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
 pub mod aws_eks_cluster_details {
     
@@ -26221,12 +26411,6 @@ pub mod aws_eks_cluster_details {
     
     
 }
-impl AwsEksClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
-    pub fn builder() -> crate::model::aws_eks_cluster_details::Builder {
-        crate::model::aws_eks_cluster_details::Builder::default()
-    }
-}
 
 /// <p>The logging configuration for an Amazon EKS cluster.</p>
 #[non_exhaustive]
@@ -26242,6 +26426,13 @@ impl AwsEksClusterLoggingDetails {
         self.cluster_logging.as_deref()
     }
 }
+impl AwsEksClusterLoggingDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
+    pub fn builder() -> crate::model::aws_eks_cluster_logging_details::Builder {
+        crate::model::aws_eks_cluster_logging_details::Builder::default()
+    }
+}
+
 /// See [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
 pub mod aws_eks_cluster_logging_details {
     
@@ -26277,12 +26468,6 @@ pub mod aws_eks_cluster_logging_details {
     }
     
     
-}
-impl AwsEksClusterLoggingDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
-    pub fn builder() -> crate::model::aws_eks_cluster_logging_details::Builder {
-        crate::model::aws_eks_cluster_logging_details::Builder::default()
-    }
 }
 
 /// <p>Details for a cluster logging configuration.</p>
@@ -26320,6 +26505,13 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
         self.types.as_deref()
     }
 }
+impl AwsEksClusterLoggingClusterLoggingDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
+    pub fn builder() -> crate::model::aws_eks_cluster_logging_cluster_logging_details::Builder {
+        crate::model::aws_eks_cluster_logging_cluster_logging_details::Builder::default()
+    }
+}
+
 /// See [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
 pub mod aws_eks_cluster_logging_cluster_logging_details {
     
@@ -26383,12 +26575,6 @@ pub mod aws_eks_cluster_logging_cluster_logging_details {
     
     
 }
-impl AwsEksClusterLoggingClusterLoggingDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
-    pub fn builder() -> crate::model::aws_eks_cluster_logging_cluster_logging_details::Builder {
-        crate::model::aws_eks_cluster_logging_cluster_logging_details::Builder::default()
-    }
-}
 
 /// <p>Information about the VPC configuration used by the cluster control plane.</p>
 #[non_exhaustive]
@@ -26411,6 +26597,13 @@ impl AwsEksClusterResourcesVpcConfigDetails {
         self.subnet_ids.as_deref()
     }
 }
+impl AwsEksClusterResourcesVpcConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
+    pub fn builder() -> crate::model::aws_eks_cluster_resources_vpc_config_details::Builder {
+        crate::model::aws_eks_cluster_resources_vpc_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
 pub mod aws_eks_cluster_resources_vpc_config_details {
     
@@ -26465,12 +26658,6 @@ pub mod aws_eks_cluster_resources_vpc_config_details {
     
     
 }
-impl AwsEksClusterResourcesVpcConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
-    pub fn builder() -> crate::model::aws_eks_cluster_resources_vpc_config_details::Builder {
-        crate::model::aws_eks_cluster_resources_vpc_config_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Amazon Elastic Container Registry repository.</p>
 #[non_exhaustive]
@@ -26521,6 +26708,13 @@ impl AwsEcrRepositoryDetails {
         self.repository_policy_text.as_deref()
     }
 }
+impl AwsEcrRepositoryDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
+    pub fn builder() -> crate::model::aws_ecr_repository_details::Builder {
+        crate::model::aws_ecr_repository_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
 pub mod aws_ecr_repository_details {
     
@@ -26611,12 +26805,6 @@ pub mod aws_ecr_repository_details {
     
     
 }
-impl AwsEcrRepositoryDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
-    pub fn builder() -> crate::model::aws_ecr_repository_details::Builder {
-        crate::model::aws_ecr_repository_details::Builder::default()
-    }
-}
 
 /// <p>Information about the lifecycle policy for the repository.</p>
 #[non_exhaustive]
@@ -26639,6 +26827,13 @@ impl AwsEcrRepositoryLifecyclePolicyDetails {
         self.registry_id.as_deref()
     }
 }
+impl AwsEcrRepositoryLifecyclePolicyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
+    pub fn builder() -> crate::model::aws_ecr_repository_lifecycle_policy_details::Builder {
+        crate::model::aws_ecr_repository_lifecycle_policy_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
 pub mod aws_ecr_repository_lifecycle_policy_details {
     
@@ -26681,12 +26876,6 @@ pub mod aws_ecr_repository_lifecycle_policy_details {
     
     
 }
-impl AwsEcrRepositoryLifecyclePolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
-    pub fn builder() -> crate::model::aws_ecr_repository_lifecycle_policy_details::Builder {
-        crate::model::aws_ecr_repository_lifecycle_policy_details::Builder::default()
-    }
-}
 
 /// <p>The image scanning configuration for a repository.</p>
 #[non_exhaustive]
@@ -26702,6 +26891,13 @@ impl AwsEcrRepositoryImageScanningConfigurationDetails {
         self.scan_on_push
     }
 }
+impl AwsEcrRepositoryImageScanningConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder {
+        crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
 pub mod aws_ecr_repository_image_scanning_configuration_details {
     
@@ -26732,12 +26928,6 @@ pub mod aws_ecr_repository_image_scanning_configuration_details {
     }
     
     
-}
-impl AwsEcrRepositoryImageScanningConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder {
-        crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder::default()
-    }
 }
 
 /// <p>contains details about a rate-based rule for Regional resources. A rate-based rule provides settings to indicate when to allow, block, or count a request. Rate-based rules include the number of requests that arrive over a specified period of time.</p>
@@ -26789,6 +26979,13 @@ impl AwsWafRegionalRateBasedRuleDetails {
         self.match_predicates.as_deref()
     }
 }
+impl AwsWafRegionalRateBasedRuleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
+    pub fn builder() -> crate::model::aws_waf_regional_rate_based_rule_details::Builder {
+        crate::model::aws_waf_regional_rate_based_rule_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
 pub mod aws_waf_regional_rate_based_rule_details {
     
@@ -26886,12 +27083,6 @@ pub mod aws_waf_regional_rate_based_rule_details {
     
     
 }
-impl AwsWafRegionalRateBasedRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
-    pub fn builder() -> crate::model::aws_waf_regional_rate_based_rule_details::Builder {
-        crate::model::aws_waf_regional_rate_based_rule_details::Builder::default()
-    }
-}
 
 /// <p>Details for a match predicate. A predicate might look for characteristics such as specific IP addresses, geographic locations, or sizes.</p>
 #[non_exhaustive]
@@ -26941,6 +27132,13 @@ impl AwsWafRegionalRateBasedRuleMatchPredicate {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRegionalRateBasedRuleMatchPredicate {
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
+    pub fn builder() -> crate::model::aws_waf_regional_rate_based_rule_match_predicate::Builder {
+        crate::model::aws_waf_regional_rate_based_rule_match_predicate::Builder::default()
+    }
+}
+
 /// See [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
 pub mod aws_waf_regional_rate_based_rule_match_predicate {
     
@@ -27016,12 +27214,6 @@ pub mod aws_waf_regional_rate_based_rule_match_predicate {
     
     
 }
-impl AwsWafRegionalRateBasedRuleMatchPredicate {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
-    pub fn builder() -> crate::model::aws_waf_regional_rate_based_rule_match_predicate::Builder {
-        crate::model::aws_waf_regional_rate_based_rule_match_predicate::Builder::default()
-    }
-}
 
 /// <p>Details about a rate-based rule for global resources. A rate-based rule provides settings to indicate when to allow, block, or count a request. Rate-based rules include the number of requests that arrive over a specified period of time.</p>
 #[non_exhaustive]
@@ -27072,6 +27264,13 @@ impl AwsWafRateBasedRuleDetails {
         self.match_predicates.as_deref()
     }
 }
+impl AwsWafRateBasedRuleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
+    pub fn builder() -> crate::model::aws_waf_rate_based_rule_details::Builder {
+        crate::model::aws_waf_rate_based_rule_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
 pub mod aws_waf_rate_based_rule_details {
     
@@ -27169,12 +27368,6 @@ pub mod aws_waf_rate_based_rule_details {
     
     
 }
-impl AwsWafRateBasedRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
-    pub fn builder() -> crate::model::aws_waf_rate_based_rule_details::Builder {
-        crate::model::aws_waf_rate_based_rule_details::Builder::default()
-    }
-}
 
 /// <p>A match predicate. A predicate might look for characteristics such as specific IP addresses, geographic locations, or sizes.</p>
 #[non_exhaustive]
@@ -27224,6 +27417,13 @@ impl AwsWafRateBasedRuleMatchPredicate {
         self.r#type.as_deref()
     }
 }
+impl AwsWafRateBasedRuleMatchPredicate {
+    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
+    pub fn builder() -> crate::model::aws_waf_rate_based_rule_match_predicate::Builder {
+        crate::model::aws_waf_rate_based_rule_match_predicate::Builder::default()
+    }
+}
+
 /// See [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
 pub mod aws_waf_rate_based_rule_match_predicate {
     
@@ -27299,12 +27499,6 @@ pub mod aws_waf_rate_based_rule_match_predicate {
     
     
 }
-impl AwsWafRateBasedRuleMatchPredicate {
-    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
-    pub fn builder() -> crate::model::aws_waf_rate_based_rule_match_predicate::Builder {
-        crate::model::aws_waf_rate_based_rule_match_predicate::Builder::default()
-    }
-}
 
 /// <p>Information about the encryption configuration for X-Ray.</p>
 #[non_exhaustive]
@@ -27336,6 +27530,13 @@ impl AwsXrayEncryptionConfigDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsXrayEncryptionConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
+    pub fn builder() -> crate::model::aws_xray_encryption_config_details::Builder {
+        crate::model::aws_xray_encryption_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
 pub mod aws_xray_encryption_config_details {
     
@@ -27391,12 +27592,6 @@ pub mod aws_xray_encryption_config_details {
     }
     
     
-}
-impl AwsXrayEncryptionConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
-    pub fn builder() -> crate::model::aws_xray_encryption_config_details::Builder {
-        crate::model::aws_xray_encryption_config_details::Builder::default()
-    }
 }
 
 /// <p>Contains details about the service configuration for a VPC endpoint service.</p>
@@ -27497,6 +27692,13 @@ impl AwsEc2VpcEndpointServiceDetails {
         self.service_type.as_deref()
     }
 }
+impl AwsEc2VpcEndpointServiceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpc_endpoint_service_details::Builder {
+        crate::model::aws_ec2_vpc_endpoint_service_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
 pub mod aws_ec2_vpc_endpoint_service_details {
     
@@ -27693,12 +27895,6 @@ pub mod aws_ec2_vpc_endpoint_service_details {
     
     
 }
-impl AwsEc2VpcEndpointServiceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpc_endpoint_service_details::Builder {
-        crate::model::aws_ec2_vpc_endpoint_service_details::Builder::default()
-    }
-}
 
 /// <p>The service type information for a VPC endpoint service.</p>
 #[non_exhaustive]
@@ -27714,6 +27910,13 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetails {
         self.service_type.as_deref()
     }
 }
+impl AwsEc2VpcEndpointServiceServiceTypeDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpc_endpoint_service_service_type_details::Builder {
+        crate::model::aws_ec2_vpc_endpoint_service_service_type_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
 pub mod aws_ec2_vpc_endpoint_service_service_type_details {
     
@@ -27743,12 +27946,6 @@ pub mod aws_ec2_vpc_endpoint_service_service_type_details {
     }
     
     
-}
-impl AwsEc2VpcEndpointServiceServiceTypeDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpc_endpoint_service_service_type_details::Builder {
-        crate::model::aws_ec2_vpc_endpoint_service_service_type_details::Builder::default()
-    }
 }
 
 /// <p>Information about an Amazon OpenSearch Service domain.</p>
@@ -27865,6 +28062,13 @@ impl AwsOpenSearchServiceDomainDetails {
         self.advanced_security_options.as_ref()
     }
 }
+impl AwsOpenSearchServiceDomainDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_details::Builder {
+        crate::model::aws_open_search_service_domain_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
 pub mod aws_open_search_service_domain_details {
     
@@ -28071,12 +28275,6 @@ pub mod aws_open_search_service_domain_details {
     
     
 }
-impl AwsOpenSearchServiceDomainDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_details::Builder {
-        crate::model::aws_open_search_service_domain_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about domain access control options. </p>
 #[non_exhaustive]
@@ -28106,6 +28304,13 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
         self.master_user_options.as_ref()
     }
 }
+impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder {
+        crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
 pub mod aws_open_search_service_domain_advanced_security_options_details {
     
@@ -28162,12 +28367,6 @@ pub mod aws_open_search_service_domain_advanced_security_options_details {
     
     
 }
-impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder {
-        crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder::default()
-    }
-}
 
 /// <p>Specifies information about the master user of the domain. </p>
 #[non_exhaustive]
@@ -28197,6 +28396,13 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
         self.master_user_password.as_deref()
     }
 }
+impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_master_user_options_details::Builder {
+        crate::model::aws_open_search_service_domain_master_user_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
 pub mod aws_open_search_service_domain_master_user_options_details {
     
@@ -28251,12 +28457,6 @@ pub mod aws_open_search_service_domain_master_user_options_details {
     
     
 }
-impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_master_user_options_details::Builder {
-        crate::model::aws_open_search_service_domain_master_user_options_details::Builder::default()
-    }
-}
 
 /// <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
 #[non_exhaustive]
@@ -28286,6 +28486,13 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
         self.audit_logs.as_ref()
     }
 }
+impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder {
+        crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
 pub mod aws_open_search_service_domain_log_publishing_options_details {
     
@@ -28340,12 +28547,6 @@ pub mod aws_open_search_service_domain_log_publishing_options_details {
     
     
 }
-impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder {
-        crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder::default()
-    }
-}
 
 /// <p>Configuration details for a log publishing option.</p>
 #[non_exhaustive]
@@ -28368,6 +28569,13 @@ impl AwsOpenSearchServiceDomainLogPublishingOption {
         self.enabled
     }
 }
+impl AwsOpenSearchServiceDomainLogPublishingOption {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_log_publishing_option::Builder {
+        crate::model::aws_open_search_service_domain_log_publishing_option::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
 pub mod aws_open_search_service_domain_log_publishing_option {
     
@@ -28411,12 +28619,6 @@ pub mod aws_open_search_service_domain_log_publishing_option {
     
     
 }
-impl AwsOpenSearchServiceDomainLogPublishingOption {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_log_publishing_option::Builder {
-        crate::model::aws_open_search_service_domain_log_publishing_option::Builder::default()
-    }
-}
 
 /// <p>Contains information that OpenSearch Service derives based on the <code>VPCOptions</code> for the domain.</p>
 #[non_exhaustive]
@@ -28439,6 +28641,13 @@ impl AwsOpenSearchServiceDomainVpcOptionsDetails {
         self.subnet_ids.as_deref()
     }
 }
+impl AwsOpenSearchServiceDomainVpcOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_vpc_options_details::Builder {
+        crate::model::aws_open_search_service_domain_vpc_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
 pub mod aws_open_search_service_domain_vpc_options_details {
     
@@ -28493,12 +28702,6 @@ pub mod aws_open_search_service_domain_vpc_options_details {
     
     
 }
-impl AwsOpenSearchServiceDomainVpcOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_vpc_options_details::Builder {
-        crate::model::aws_open_search_service_domain_vpc_options_details::Builder::default()
-    }
-}
 
 /// <p>Information about additional options for the domain endpoint.</p>
 #[non_exhaustive]
@@ -28542,6 +28745,13 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
         self.tls_security_policy.as_deref()
     }
 }
+impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder {
+        crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
 pub mod aws_open_search_service_domain_domain_endpoint_options_details {
     
@@ -28621,12 +28831,6 @@ pub mod aws_open_search_service_domain_domain_endpoint_options_details {
     }
     
     
-}
-impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder {
-        crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder::default()
-    }
 }
 
 /// <p>Details about the configuration of an OpenSearch cluster.</p>
@@ -28710,6 +28914,13 @@ impl AwsOpenSearchServiceDomainClusterConfigDetails {
         self.dedicated_master_type.as_deref()
     }
 }
+impl AwsOpenSearchServiceDomainClusterConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_cluster_config_details::Builder {
+        crate::model::aws_open_search_service_domain_cluster_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
 pub mod aws_open_search_service_domain_cluster_config_details {
     
@@ -28858,12 +29069,6 @@ pub mod aws_open_search_service_domain_cluster_config_details {
     
     
 }
-impl AwsOpenSearchServiceDomainClusterConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_cluster_config_details::Builder {
-        crate::model::aws_open_search_service_domain_cluster_config_details::Builder::default()
-    }
-}
 
 /// <p>Configuration options for zone awareness.</p>
 #[non_exhaustive]
@@ -28879,6 +29084,13 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
         self.availability_zone_count
     }
 }
+impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder {
+        crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
 pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_details {
     
@@ -28909,12 +29121,6 @@ pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_deta
     }
     
     
-}
-impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder {
-        crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about the state of the domain relative to the latest service software.</p>
@@ -28994,6 +29200,13 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
         self.optional_deployment
     }
 }
+impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_service_software_options_details::Builder {
+        crate::model::aws_open_search_service_domain_service_software_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
 pub mod aws_open_search_service_domain_service_software_options_details {
     
@@ -29125,12 +29338,6 @@ pub mod aws_open_search_service_domain_service_software_options_details {
     
     
 }
-impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_service_software_options_details::Builder {
-        crate::model::aws_open_search_service_domain_service_software_options_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the configuration for node-to-node encryption.</p>
 #[non_exhaustive]
@@ -29146,6 +29353,13 @@ impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
         self.enabled
     }
 }
+impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder {
+        crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
 pub mod aws_open_search_service_domain_node_to_node_encryption_options_details {
     
@@ -29177,12 +29391,6 @@ pub mod aws_open_search_service_domain_node_to_node_encryption_options_details {
     
     
 }
-impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder {
-        crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder::default()
-    }
-}
 
 /// <p>Details about the configuration for encryption at rest for the OpenSearch domain.</p>
 #[non_exhaustive]
@@ -29205,6 +29413,13 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
         self.kms_key_id.as_deref()
     }
 }
+impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
+    pub fn builder() -> crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder {
+        crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
 pub mod aws_open_search_service_domain_encryption_at_rest_options_details {
     
@@ -29247,12 +29462,6 @@ pub mod aws_open_search_service_domain_encryption_at_rest_options_details {
     }
     
     
-}
-impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
-    pub fn builder() -> crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder {
-        crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder::default()
-    }
 }
 
 /// <p>Information about an Amazon ECR image.</p>
@@ -29316,6 +29525,13 @@ impl AwsEcrContainerImageDetails {
         self.image_published_at.as_deref()
     }
 }
+impl AwsEcrContainerImageDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
+    pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
+        crate::model::aws_ecr_container_image_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
 pub mod aws_ecr_container_image_details {
     
@@ -29424,12 +29640,6 @@ pub mod aws_ecr_container_image_details {
     
     
 }
-impl AwsEcrContainerImageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
-    pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
-        crate::model::aws_ecr_container_image_details::Builder::default()
-    }
-}
 
 /// <p>Details about an Amazon EC2 VPN connection.</p>
 #[non_exhaustive]
@@ -29527,6 +29737,13 @@ impl AwsEc2VpnConnectionDetails {
         self.transit_gateway_id.as_deref()
     }
 }
+impl AwsEc2VpnConnectionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_details::Builder {
+        crate::model::aws_ec2_vpn_connection_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
 pub mod aws_ec2_vpn_connection_details {
     
@@ -29701,12 +29918,6 @@ pub mod aws_ec2_vpn_connection_details {
     
     
 }
-impl AwsEc2VpnConnectionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpn_connection_details::Builder {
-        crate::model::aws_ec2_vpn_connection_details::Builder::default()
-    }
-}
 
 /// <p>A static routes associated with the VPN connection.</p>
 #[non_exhaustive]
@@ -29729,6 +29940,13 @@ impl AwsEc2VpnConnectionRoutesDetails {
         self.state.as_deref()
     }
 }
+impl AwsEc2VpnConnectionRoutesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_routes_details::Builder {
+        crate::model::aws_ec2_vpn_connection_routes_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
 pub mod aws_ec2_vpn_connection_routes_details {
     
@@ -29771,12 +29989,6 @@ pub mod aws_ec2_vpn_connection_routes_details {
     
     
 }
-impl AwsEc2VpnConnectionRoutesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpn_connection_routes_details::Builder {
-        crate::model::aws_ec2_vpn_connection_routes_details::Builder::default()
-    }
-}
 
 /// <p>VPN connection options.</p>
 #[non_exhaustive]
@@ -29799,6 +30011,13 @@ impl AwsEc2VpnConnectionOptionsDetails {
         self.tunnel_options.as_deref()
     }
 }
+impl AwsEc2VpnConnectionOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_details::Builder {
+        crate::model::aws_ec2_vpn_connection_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
 pub mod aws_ec2_vpn_connection_options_details {
     
@@ -29847,12 +30066,6 @@ pub mod aws_ec2_vpn_connection_options_details {
     }
     
     
-}
-impl AwsEc2VpnConnectionOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_details::Builder {
-        crate::model::aws_ec2_vpn_connection_options_details::Builder::default()
-    }
 }
 
 /// <p>The VPN tunnel options.</p>
@@ -29974,6 +30187,13 @@ impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         self.tunnel_inside_cidr.as_deref()
     }
 }
+impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder {
+        crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
 pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
     
@@ -30232,12 +30452,6 @@ pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
     
     
 }
-impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder {
-        crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder::default()
-    }
-}
 
 /// <p>Information about the VPN tunnel.</p>
 #[non_exhaustive]
@@ -30290,6 +30504,13 @@ impl AwsEc2VpnConnectionVgwTelemetryDetails {
         self.status_message.as_deref()
     }
 }
+impl AwsEc2VpnConnectionVgwTelemetryDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder {
+        crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
 pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
     
@@ -30382,12 +30603,6 @@ pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
     }
     
     
-}
-impl AwsEc2VpnConnectionVgwTelemetryDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder {
-        crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder::default()
-    }
 }
 
 /// <p>Details about a launch configuration.</p>
@@ -30532,6 +30747,13 @@ impl AwsAutoScalingLaunchConfigurationDetails {
         self.metadata_options.as_ref()
     }
 }
+impl AwsAutoScalingLaunchConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_details::Builder {
+        crate::model::aws_auto_scaling_launch_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
 pub mod aws_auto_scaling_launch_configuration_details {
     
@@ -30800,12 +31022,6 @@ pub mod aws_auto_scaling_launch_configuration_details {
     
     
 }
-impl AwsAutoScalingLaunchConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_details::Builder {
-        crate::model::aws_auto_scaling_launch_configuration_details::Builder::default()
-    }
-}
 
 /// <p>The metadata options for the instances.</p>
 #[non_exhaustive]
@@ -30835,6 +31051,13 @@ impl AwsAutoScalingLaunchConfigurationMetadataOptions {
         self.http_tokens.as_deref()
     }
 }
+impl AwsAutoScalingLaunchConfigurationMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder {
+        crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
 pub mod aws_auto_scaling_launch_configuration_metadata_options {
     
@@ -30890,12 +31113,6 @@ pub mod aws_auto_scaling_launch_configuration_metadata_options {
     
     
 }
-impl AwsAutoScalingLaunchConfigurationMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
-    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder {
-        crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder::default()
-    }
-}
 
 /// <p>Information about the type of monitoring for instances in the group.</p>
 #[non_exhaustive]
@@ -30913,6 +31130,13 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
         self.enabled
     }
 }
+impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder {
+        crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
 pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
     
@@ -30945,12 +31169,6 @@ pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
     }
     
     
-}
-impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder {
-        crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder::default()
-    }
 }
 
 /// <p>A block device for the instance.</p>
@@ -30992,6 +31210,13 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
         self.virtual_name.as_deref()
     }
 }
+impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder {
+        crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
 pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
     
@@ -31062,12 +31287,6 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
     }
     
     
-}
-impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder {
-        crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder::default()
-    }
 }
 
 /// <p>Parameters that are used to automatically set up EBS volumes when an instance is launched.</p>
@@ -31153,6 +31372,13 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
         self.volume_type.as_deref()
     }
 }
+impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder {
+        crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
 pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details {
     
@@ -31280,12 +31506,6 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details 
     }
     
     
-}
-impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder {
-        crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder::default()
-    }
 }
 
 /// <p>Provides details about a service within an ECS cluster.</p>
@@ -31461,6 +31681,13 @@ impl AwsEcsServiceDetails {
         self.task_definition.as_deref()
     }
 }
+impl AwsEcsServiceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_details::Builder {
+        crate::model::aws_ecs_service_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
 pub mod aws_ecs_service_details {
     
@@ -31789,12 +32016,6 @@ pub mod aws_ecs_service_details {
     
     
 }
-impl AwsEcsServiceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_details::Builder {
-        crate::model::aws_ecs_service_details::Builder::default()
-    }
-}
 
 /// <p>Information about a service discovery registry to assign to the service.</p>
 #[non_exhaustive]
@@ -31839,6 +32060,13 @@ impl AwsEcsServiceServiceRegistriesDetails {
         self.registry_arn.as_deref()
     }
 }
+impl AwsEcsServiceServiceRegistriesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_service_registries_details::Builder {
+        crate::model::aws_ecs_service_service_registries_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
 pub mod aws_ecs_service_service_registries_details {
     
@@ -31915,12 +32143,6 @@ pub mod aws_ecs_service_service_registries_details {
     
     
 }
-impl AwsEcsServiceServiceRegistriesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_service_registries_details::Builder {
-        crate::model::aws_ecs_service_service_registries_details::Builder::default()
-    }
-}
 
 /// <p>A placement strategy that determines how to place the tasks for the service.</p>
 #[non_exhaustive]
@@ -31957,6 +32179,13 @@ impl AwsEcsServicePlacementStrategiesDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEcsServicePlacementStrategiesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_placement_strategies_details::Builder {
+        crate::model::aws_ecs_service_placement_strategies_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
 pub mod aws_ecs_service_placement_strategies_details {
     
@@ -32013,12 +32242,6 @@ pub mod aws_ecs_service_placement_strategies_details {
     
     
 }
-impl AwsEcsServicePlacementStrategiesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_placement_strategies_details::Builder {
-        crate::model::aws_ecs_service_placement_strategies_details::Builder::default()
-    }
-}
 
 /// <p>A placement constraint for the tasks in the service.</p>
 #[non_exhaustive]
@@ -32043,6 +32266,13 @@ impl AwsEcsServicePlacementConstraintsDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEcsServicePlacementConstraintsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_placement_constraints_details::Builder {
+        crate::model::aws_ecs_service_placement_constraints_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
 pub mod aws_ecs_service_placement_constraints_details {
     
@@ -32087,12 +32317,6 @@ pub mod aws_ecs_service_placement_constraints_details {
     
     
 }
-impl AwsEcsServicePlacementConstraintsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_placement_constraints_details::Builder {
-        crate::model::aws_ecs_service_placement_constraints_details::Builder::default()
-    }
-}
 
 /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
 #[non_exhaustive]
@@ -32108,6 +32332,13 @@ impl AwsEcsServiceNetworkConfigurationDetails {
         self.aws_vpc_configuration.as_ref()
     }
 }
+impl AwsEcsServiceNetworkConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_network_configuration_details::Builder {
+        crate::model::aws_ecs_service_network_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
 pub mod aws_ecs_service_network_configuration_details {
     
@@ -32137,12 +32368,6 @@ pub mod aws_ecs_service_network_configuration_details {
     }
     
     
-}
-impl AwsEcsServiceNetworkConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_network_configuration_details::Builder {
-        crate::model::aws_ecs_service_network_configuration_details::Builder::default()
-    }
 }
 
 /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
@@ -32179,6 +32404,13 @@ impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
         self.subnets.as_deref()
     }
 }
+impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder {
+        crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
 pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
     
@@ -32251,12 +32483,6 @@ pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
     
     
 }
-impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder {
-        crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder::default()
-    }
-}
 
 /// <p>Information about a load balancer that the service uses.</p>
 #[non_exhaustive]
@@ -32297,6 +32523,13 @@ impl AwsEcsServiceLoadBalancersDetails {
         self.target_group_arn.as_deref()
     }
 }
+impl AwsEcsServiceLoadBalancersDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_load_balancers_details::Builder {
+        crate::model::aws_ecs_service_load_balancers_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
 pub mod aws_ecs_service_load_balancers_details {
     
@@ -32368,12 +32601,6 @@ pub mod aws_ecs_service_load_balancers_details {
     
     
 }
-impl AwsEcsServiceLoadBalancersDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_load_balancers_details::Builder {
-        crate::model::aws_ecs_service_load_balancers_details::Builder::default()
-    }
-}
 
 /// <p>Information about the deployment controller type that the service uses.</p>
 #[non_exhaustive]
@@ -32395,6 +32622,13 @@ impl AwsEcsServiceDeploymentControllerDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEcsServiceDeploymentControllerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_deployment_controller_details::Builder {
+        crate::model::aws_ecs_service_deployment_controller_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
 pub mod aws_ecs_service_deployment_controller_details {
     
@@ -32430,12 +32664,6 @@ pub mod aws_ecs_service_deployment_controller_details {
     }
     
     
-}
-impl AwsEcsServiceDeploymentControllerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_deployment_controller_details::Builder {
-        crate::model::aws_ecs_service_deployment_controller_details::Builder::default()
-    }
 }
 
 /// <p>Optional deployment parameters for the service.</p>
@@ -32474,6 +32702,13 @@ impl AwsEcsServiceDeploymentConfigurationDetails {
         self.minimum_healthy_percent
     }
 }
+impl AwsEcsServiceDeploymentConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_details::Builder {
+        crate::model::aws_ecs_service_deployment_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
 pub mod aws_ecs_service_deployment_configuration_details {
     
@@ -32538,12 +32773,6 @@ pub mod aws_ecs_service_deployment_configuration_details {
     
     
 }
-impl AwsEcsServiceDeploymentConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_details::Builder {
-        crate::model::aws_ecs_service_deployment_configuration_details::Builder::default()
-    }
-}
 
 /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
 #[non_exhaustive]
@@ -32566,6 +32795,13 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
         self.rollback
     }
 }
+impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder {
+        crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
 pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details {
     
@@ -32610,12 +32846,6 @@ pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_deta
     
     
 }
-impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder {
-        crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder::default()
-    }
-}
 
 /// <p>Strategy item for the capacity provider strategy that the service uses.</p>
 #[non_exhaustive]
@@ -32651,6 +32881,13 @@ impl AwsEcsServiceCapacityProviderStrategyDetails {
         self.weight
     }
 }
+impl AwsEcsServiceCapacityProviderStrategyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
+    pub fn builder() -> crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder {
+        crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
 pub mod aws_ecs_service_capacity_provider_strategy_details {
     
@@ -32712,12 +32949,6 @@ pub mod aws_ecs_service_capacity_provider_strategy_details {
     }
     
     
-}
-impl AwsEcsServiceCapacityProviderStrategyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
-    pub fn builder() -> crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder {
-        crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder::default()
-    }
 }
 
 /// <p>Details about an Amazon RDS event notification subscription. The subscription allows Amazon RDS to post events to an SNS topic.</p>
@@ -32801,6 +33032,13 @@ impl AwsRdsEventSubscriptionDetails {
         self.subscription_creation_time.as_deref()
     }
 }
+impl AwsRdsEventSubscriptionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
+    pub fn builder() -> crate::model::aws_rds_event_subscription_details::Builder {
+        crate::model::aws_rds_event_subscription_details::Builder::default()
+    }
+}
+
 /// See [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
 pub mod aws_rds_event_subscription_details {
     
@@ -32956,12 +33194,6 @@ pub mod aws_rds_event_subscription_details {
     
     
 }
-impl AwsRdsEventSubscriptionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
-    pub fn builder() -> crate::model::aws_rds_event_subscription_details::Builder {
-        crate::model::aws_rds_event_subscription_details::Builder::default()
-    }
-}
 
 /// <p>Container details related to a finding.</p>
 #[non_exhaustive]
@@ -33021,6 +33253,13 @@ impl ContainerDetails {
         self.privileged
     }
 }
+impl ContainerDetails {
+    /// Creates a new builder-style object to manufacture [`ContainerDetails`](crate::model::ContainerDetails).
+    pub fn builder() -> crate::model::container_details::Builder {
+        crate::model::container_details::Builder::default()
+    }
+}
+
 /// See [`ContainerDetails`](crate::model::ContainerDetails).
 pub mod container_details {
     
@@ -33132,12 +33371,6 @@ pub mod container_details {
     
     
 }
-impl ContainerDetails {
-    /// Creates a new builder-style object to manufacture [`ContainerDetails`](crate::model::ContainerDetails).
-    pub fn builder() -> crate::model::container_details::Builder {
-        crate::model::container_details::Builder::default()
-    }
-}
 
 /// <p>Describes the mounting of a volume in a container. </p>
 #[non_exhaustive]
@@ -33160,6 +33393,13 @@ impl VolumeMount {
         self.mount_path.as_deref()
     }
 }
+impl VolumeMount {
+    /// Creates a new builder-style object to manufacture [`VolumeMount`](crate::model::VolumeMount).
+    pub fn builder() -> crate::model::volume_mount::Builder {
+        crate::model::volume_mount::Builder::default()
+    }
+}
+
 /// See [`VolumeMount`](crate::model::VolumeMount).
 pub mod volume_mount {
     
@@ -33201,12 +33441,6 @@ pub mod volume_mount {
     }
     
     
-}
-impl VolumeMount {
-    /// Creates a new builder-style object to manufacture [`VolumeMount`](crate::model::VolumeMount).
-    pub fn builder() -> crate::model::volume_mount::Builder {
-        crate::model::volume_mount::Builder::default()
-    }
 }
 
 /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
@@ -33352,6 +33586,13 @@ impl AwsEcsTaskDefinitionDetails {
         self.volumes.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_details::Builder {
+        crate::model::aws_ecs_task_definition_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
 pub mod aws_ecs_task_definition_details {
     
@@ -33606,12 +33847,6 @@ pub mod aws_ecs_task_definition_details {
     
     
 }
-impl AwsEcsTaskDefinitionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_details::Builder {
-        crate::model::aws_ecs_task_definition_details::Builder::default()
-    }
-}
 
 /// <p>A data volume to mount from another container.</p>
 #[non_exhaustive]
@@ -33648,6 +33883,13 @@ impl AwsEcsTaskDefinitionVolumesDetails {
         self.name.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionVolumesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_details::Builder {
+        crate::model::aws_ecs_task_definition_volumes_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
 pub mod aws_ecs_task_definition_volumes_details {
     
@@ -33714,12 +33956,6 @@ pub mod aws_ecs_task_definition_volumes_details {
     
     
 }
-impl AwsEcsTaskDefinitionVolumesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_details::Builder {
-        crate::model::aws_ecs_task_definition_volumes_details::Builder::default()
-    }
-}
 
 /// <p>Information about a bind mount host volume.</p>
 #[non_exhaustive]
@@ -33735,6 +33971,13 @@ impl AwsEcsTaskDefinitionVolumesHostDetails {
         self.source_path.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionVolumesHostDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_host_details::Builder {
+        crate::model::aws_ecs_task_definition_volumes_host_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
 pub mod aws_ecs_task_definition_volumes_host_details {
     
@@ -33764,12 +34007,6 @@ pub mod aws_ecs_task_definition_volumes_host_details {
     }
     
     
-}
-impl AwsEcsTaskDefinitionVolumesHostDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_host_details::Builder {
-        crate::model::aws_ecs_task_definition_volumes_host_details::Builder::default()
-    }
 }
 
 /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
@@ -33814,6 +34051,13 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
         self.transit_encryption_port
     }
 }
+impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder {
+        crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
 pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_details {
     
@@ -33893,12 +34137,6 @@ pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_details {
     
     
 }
-impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder {
-        crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -33921,6 +34159,13 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
         self.iam.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder {
+        crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
 pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details {
     
@@ -33962,12 +34207,6 @@ pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_c
     }
     
     
-}
-impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder {
-        crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder::default()
-    }
 }
 
 /// <p>Information about a Docker volume.</p>
@@ -34012,6 +34251,13 @@ impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
         self.scope.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder {
+        crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
 pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
     
@@ -34103,12 +34349,6 @@ pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
     
     
 }
-impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder {
-        crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder::default()
-    }
-}
 
 /// <p>The configuration details for the App Mesh proxy.</p>
 #[non_exhaustive]
@@ -34138,6 +34378,13 @@ impl AwsEcsTaskDefinitionProxyConfigurationDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionProxyConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_proxy_configuration_details::Builder {
+        crate::model::aws_ecs_task_definition_proxy_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
 pub mod aws_ecs_task_definition_proxy_configuration_details {
     
@@ -34198,12 +34445,6 @@ pub mod aws_ecs_task_definition_proxy_configuration_details {
     
     
 }
-impl AwsEcsTaskDefinitionProxyConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_proxy_configuration_details::Builder {
-        crate::model::aws_ecs_task_definition_proxy_configuration_details::Builder::default()
-    }
-}
 
 /// <p>A network configuration parameter to provide to the Container Network Interface (CNI) plugin.</p>
 #[non_exhaustive]
@@ -34226,6 +34467,13 @@ impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
         self.value.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder {
+        crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
 pub mod aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details {
     
@@ -34268,12 +34516,6 @@ pub mod aws_ecs_task_definition_proxy_configuration_proxy_configuration_properti
     
     
 }
-impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder {
-        crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder::default()
-    }
-}
 
 /// <p>A placement constraint object to use for tasks.</p>
 #[non_exhaustive]
@@ -34296,6 +34538,13 @@ impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_placement_constraints_details::Builder {
+        crate::model::aws_ecs_task_definition_placement_constraints_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
 pub mod aws_ecs_task_definition_placement_constraints_details {
     
@@ -34338,12 +34587,6 @@ pub mod aws_ecs_task_definition_placement_constraints_details {
     
     
 }
-impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_placement_constraints_details::Builder {
-        crate::model::aws_ecs_task_definition_placement_constraints_details::Builder::default()
-    }
-}
 
 /// <p>An Elastic Inference accelerator to use for the containers in the task.</p>
 #[non_exhaustive]
@@ -34366,6 +34609,13 @@ impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
         self.device_type.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder {
+        crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
 pub mod aws_ecs_task_definition_inference_accelerators_details {
     
@@ -34407,12 +34657,6 @@ pub mod aws_ecs_task_definition_inference_accelerators_details {
     }
     
     
-}
-impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder {
-        crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder::default()
-    }
 }
 
 /// <p>A container definition that describes a container in the task.</p>
@@ -34713,6 +34957,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
         self.working_directory.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
 pub mod aws_ecs_task_definition_container_definitions_details {
     
@@ -35336,12 +35587,6 @@ pub mod aws_ecs_task_definition_container_definitions_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_details::Builder::default()
-    }
-}
 
 /// <p>A data volume to mount from another container.</p>
 #[non_exhaustive]
@@ -35364,6 +35609,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
         self.source_container.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
 pub mod aws_ecs_task_definition_container_definitions_volumes_from_details {
     
@@ -35406,12 +35658,6 @@ pub mod aws_ecs_task_definition_container_definitions_volumes_from_details {
     }
     
     
-}
-impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder::default()
-    }
 }
 
 /// <p>A ulimit to set in the container.</p>
@@ -35476,6 +35722,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
         self.soft_limit
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
 pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
     
@@ -35566,12 +35819,6 @@ pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder::default()
-    }
-}
 
 /// <p>A namespaced kernel parameter to set in the container.</p>
 #[non_exhaustive]
@@ -35594,6 +35841,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
         self.value.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
 pub mod aws_ecs_task_definition_container_definitions_system_controls_details {
     
@@ -35636,12 +35890,6 @@ pub mod aws_ecs_task_definition_container_definitions_system_controls_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder::default()
-    }
-}
 
 /// <p>A secret to pass to the container.</p>
 #[non_exhaustive]
@@ -35664,6 +35912,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
         self.value_from.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
 pub mod aws_ecs_task_definition_container_definitions_secrets_details {
     
@@ -35706,12 +35961,6 @@ pub mod aws_ecs_task_definition_container_definitions_secrets_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder::default()
-    }
-}
 
 /// <p>A resource to assign to a container.</p>
 #[non_exhaustive]
@@ -35738,6 +35987,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
         self.value.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
 pub mod aws_ecs_task_definition_container_definitions_resource_requirements_details {
     
@@ -35784,12 +36040,6 @@ pub mod aws_ecs_task_definition_container_definitions_resource_requirements_deta
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder::default()
-    }
-}
 
 /// <p>The private repository authentication credentials to use.</p>
 #[non_exhaustive]
@@ -35805,6 +36055,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
         self.credentials_parameter.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
 pub mod aws_ecs_task_definition_container_definitions_repository_credentials_details {
     
@@ -35835,12 +36092,6 @@ pub mod aws_ecs_task_definition_container_definitions_repository_credentials_det
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder::default()
-    }
-}
 
 /// <p>A port mapping for the container.</p>
 #[non_exhaustive]
@@ -35870,6 +36121,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
         self.protocol.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
 pub mod aws_ecs_task_definition_container_definitions_port_mappings_details {
     
@@ -35926,12 +36184,6 @@ pub mod aws_ecs_task_definition_container_definitions_port_mappings_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder::default()
-    }
-}
 
 /// <p>A mount point for the data volumes in the container.</p>
 #[non_exhaustive]
@@ -35961,6 +36213,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
         self.source_volume.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
 pub mod aws_ecs_task_definition_container_definitions_mount_points_details {
     
@@ -36015,12 +36274,6 @@ pub mod aws_ecs_task_definition_container_definitions_mount_points_details {
     }
     
     
-}
-impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder::default()
-    }
 }
 
 /// <p>The log configuration specification for the container.</p>
@@ -36087,6 +36340,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
         self.secret_options.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
 pub mod aws_ecs_task_definition_container_definitions_log_configuration_details {
     
@@ -36189,12 +36449,6 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_details 
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder::default()
-    }
-}
 
 /// <p>A secret to pass to the log configuration.</p>
 #[non_exhaustive]
@@ -36219,6 +36473,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetail
         self.value_from.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
 pub mod aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details {
     
@@ -36262,12 +36523,6 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_secret_o
     }
     
     
-}
-impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder::default()
-    }
 }
 
 /// <p>&gt;Linux-specific modifications that are applied to the container, such as Linux kernel capabilities.</p>
@@ -36326,6 +36581,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
         self.tmpfs.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_details {
     
@@ -36444,12 +36706,6 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder::default()
-    }
-}
 
 /// <p>The container path, mount options, and size (in MiB) of a tmpfs mount.</p>
 #[non_exhaustive]
@@ -36481,6 +36737,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
         self.size
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details {
     
@@ -36544,12 +36807,6 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_det
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder::default()
-    }
-}
 
 /// <p>A host device to expose to the container.</p>
 #[non_exhaustive]
@@ -36579,6 +36836,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
         self.permissions.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_devices_details {
     
@@ -36639,12 +36903,6 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_devices_d
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder::default()
-    }
-}
 
 /// <p>The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.</p>
 #[non_exhaustive]
@@ -36671,6 +36929,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails 
         self.drop.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details {
     
@@ -36729,12 +36994,6 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilit
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder::default()
-    }
-}
 
 /// <p>The container health check command and associated configuration parameters for the container.</p>
 #[non_exhaustive]
@@ -36778,6 +37037,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
         self.timeout
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
 pub mod aws_ecs_task_definition_container_definitions_health_check_details {
     
@@ -36866,12 +37132,6 @@ pub mod aws_ecs_task_definition_container_definitions_health_check_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder::default()
-    }
-}
 
 /// <p>The FireLens configuration for the container. The configuration specifies and configures a log router for container logs.</p>
 #[non_exhaustive]
@@ -36906,6 +37166,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
 pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_details {
     
@@ -36966,12 +37233,6 @@ pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_det
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder::default()
-    }
-}
 
 /// <p>A hostname and IP address mapping to append to the <b>/etc/hosts</b> file on the container.</p>
 #[non_exhaustive]
@@ -36994,6 +37255,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
         self.ip_address.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
 pub mod aws_ecs_task_definition_container_definitions_extra_hosts_details {
     
@@ -37036,12 +37304,6 @@ pub mod aws_ecs_task_definition_container_definitions_extra_hosts_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder::default()
-    }
-}
 
 /// <p>A file that contain environment variables to pass to a container.</p>
 #[non_exhaustive]
@@ -37064,6 +37326,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
         self.value.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
 pub mod aws_ecs_task_definition_container_definitions_environment_files_details {
     
@@ -37106,12 +37375,6 @@ pub mod aws_ecs_task_definition_container_definitions_environment_files_details 
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder::default()
-    }
-}
 
 /// <p>An environment variable to pass to the container.</p>
 #[non_exhaustive]
@@ -37134,6 +37397,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
         self.value.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
 pub mod aws_ecs_task_definition_container_definitions_environment_details {
     
@@ -37176,12 +37446,6 @@ pub mod aws_ecs_task_definition_container_definitions_environment_details {
     
     
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder::default()
-    }
-}
 
 /// <p>A dependency that is defined for container startup and shutdown.</p>
 #[non_exhaustive]
@@ -37216,6 +37480,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
         self.container_name.as_deref()
     }
 }
+impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
+    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder {
+        crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
 pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
     
@@ -37269,12 +37540,6 @@ pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
     }
     
     
-}
-impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
-    pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder {
-        crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder::default()
-    }
 }
 
 /// <p>Provides details about an Amazon ECS cluster.</p>
@@ -37354,6 +37619,13 @@ impl AwsEcsClusterDetails {
         self.status.as_deref()
     }
 }
+impl AwsEcsClusterDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
+    pub fn builder() -> crate::model::aws_ecs_cluster_details::Builder {
+        crate::model::aws_ecs_cluster_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
 pub mod aws_ecs_cluster_details {
     
@@ -37513,12 +37785,6 @@ pub mod aws_ecs_cluster_details {
     
     
 }
-impl AwsEcsClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
-    pub fn builder() -> crate::model::aws_ecs_cluster_details::Builder {
-        crate::model::aws_ecs_cluster_details::Builder::default()
-    }
-}
 
 /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
 #[non_exhaustive]
@@ -37548,6 +37814,13 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
         self.weight
     }
 }
+impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
+    pub fn builder() -> crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder {
+        crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
 pub mod aws_ecs_cluster_default_capacity_provider_strategy_details {
     
@@ -37604,12 +37877,6 @@ pub mod aws_ecs_cluster_default_capacity_provider_strategy_details {
     
     
 }
-impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
-    pub fn builder() -> crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder {
-        crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder::default()
-    }
-}
 
 /// <p>The run command configuration for the cluster.</p>
 #[non_exhaustive]
@@ -37625,6 +37892,13 @@ impl AwsEcsClusterConfigurationDetails {
         self.execute_command_configuration.as_ref()
     }
 }
+impl AwsEcsClusterConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_cluster_configuration_details::Builder {
+        crate::model::aws_ecs_cluster_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
 pub mod aws_ecs_cluster_configuration_details {
     
@@ -37655,12 +37929,6 @@ pub mod aws_ecs_cluster_configuration_details {
     
     
 }
-impl AwsEcsClusterConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_cluster_configuration_details::Builder {
-        crate::model::aws_ecs_cluster_configuration_details::Builder::default()
-    }
-}
 
 /// <p>Contains the run command configuration for the cluster.</p>
 #[non_exhaustive]
@@ -37690,6 +37958,13 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
         self.logging.as_deref()
     }
 }
+impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder {
+        crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
 pub mod aws_ecs_cluster_configuration_execute_command_configuration_details {
     
@@ -37744,12 +38019,6 @@ pub mod aws_ecs_cluster_configuration_execute_command_configuration_details {
     
     
 }
-impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder {
-        crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder::default()
-    }
-}
 
 /// <p>The log configuration for the results of the run command actions.</p>
 #[non_exhaustive]
@@ -37793,6 +38062,13 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.s3_key_prefix.as_deref()
     }
 }
+impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
+    pub fn builder() -> crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder {
+        crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
 pub mod aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details {
     
@@ -37873,12 +38149,6 @@ pub mod aws_ecs_cluster_configuration_execute_command_configuration_log_configur
     
     
 }
-impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
-    pub fn builder() -> crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder {
-        crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder::default()
-    }
-}
 
 /// <p>Indicates whether to enable CloudWatch Container Insights for the ECS cluster.</p>
 #[non_exhaustive]
@@ -37901,6 +38171,13 @@ impl AwsEcsClusterClusterSettingsDetails {
         self.value.as_deref()
     }
 }
+impl AwsEcsClusterClusterSettingsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
+    pub fn builder() -> crate::model::aws_ecs_cluster_cluster_settings_details::Builder {
+        crate::model::aws_ecs_cluster_cluster_settings_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
 pub mod aws_ecs_cluster_cluster_settings_details {
     
@@ -37942,12 +38219,6 @@ pub mod aws_ecs_cluster_cluster_settings_details {
     }
     
     
-}
-impl AwsEcsClusterClusterSettingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
-    pub fn builder() -> crate::model::aws_ecs_cluster_cluster_settings_details::Builder {
-        crate::model::aws_ecs_cluster_cluster_settings_details::Builder::default()
-    }
 }
 
 /// <p>Information about an Amazon RDS DB cluster.</p>
@@ -38274,6 +38545,13 @@ impl AwsRdsDbClusterDetails {
         self.iam_database_authentication_enabled
     }
 }
+impl AwsRdsDbClusterDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
+    pub fn builder() -> crate::model::aws_rds_db_cluster_details::Builder {
+        crate::model::aws_rds_db_cluster_details::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
 pub mod aws_rds_db_cluster_details {
     
@@ -38858,12 +39136,6 @@ pub mod aws_rds_db_cluster_details {
     
     
 }
-impl AwsRdsDbClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
-    pub fn builder() -> crate::model::aws_rds_db_cluster_details::Builder {
-        crate::model::aws_rds_db_cluster_details::Builder::default()
-    }
-}
 
 /// <p>Information about an instance in the DB cluster.</p>
 #[non_exhaustive]
@@ -38900,6 +39172,13 @@ impl AwsRdsDbClusterMember {
         self.db_cluster_parameter_group_status.as_deref()
     }
 }
+impl AwsRdsDbClusterMember {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
+    pub fn builder() -> crate::model::aws_rds_db_cluster_member::Builder {
+        crate::model::aws_rds_db_cluster_member::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
 pub mod aws_rds_db_cluster_member {
     
@@ -38968,12 +39247,6 @@ pub mod aws_rds_db_cluster_member {
     
     
 }
-impl AwsRdsDbClusterMember {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
-    pub fn builder() -> crate::model::aws_rds_db_cluster_member::Builder {
-        crate::model::aws_rds_db_cluster_member::Builder::default()
-    }
-}
 
 /// <p>Information about an option group membership for a DB cluster.</p>
 #[non_exhaustive]
@@ -38996,6 +39269,13 @@ impl AwsRdsDbClusterOptionGroupMembership {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbClusterOptionGroupMembership {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
+    pub fn builder() -> crate::model::aws_rds_db_cluster_option_group_membership::Builder {
+        crate::model::aws_rds_db_cluster_option_group_membership::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
 pub mod aws_rds_db_cluster_option_group_membership {
     
@@ -39038,12 +39318,6 @@ pub mod aws_rds_db_cluster_option_group_membership {
     
     
 }
-impl AwsRdsDbClusterOptionGroupMembership {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
-    pub fn builder() -> crate::model::aws_rds_db_cluster_option_group_membership::Builder {
-        crate::model::aws_rds_db_cluster_option_group_membership::Builder::default()
-    }
-}
 
 /// <p>Information about an Active Directory domain membership record associated with the DB instance.</p>
 #[non_exhaustive]
@@ -39080,6 +39354,13 @@ impl AwsRdsDbDomainMembership {
         self.iam_role_name.as_deref()
     }
 }
+impl AwsRdsDbDomainMembership {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
+    pub fn builder() -> crate::model::aws_rds_db_domain_membership::Builder {
+        crate::model::aws_rds_db_domain_membership::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
 pub mod aws_rds_db_domain_membership {
     
@@ -39146,12 +39427,6 @@ pub mod aws_rds_db_domain_membership {
     
     
 }
-impl AwsRdsDbDomainMembership {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
-    pub fn builder() -> crate::model::aws_rds_db_domain_membership::Builder {
-        crate::model::aws_rds_db_domain_membership::Builder::default()
-    }
-}
 
 /// <p>An IAM role that is associated with the Amazon RDS DB cluster.</p>
 #[non_exhaustive]
@@ -39184,6 +39459,13 @@ impl AwsRdsDbClusterAssociatedRole {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbClusterAssociatedRole {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
+    pub fn builder() -> crate::model::aws_rds_db_cluster_associated_role::Builder {
+        crate::model::aws_rds_db_cluster_associated_role::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
 pub mod aws_rds_db_cluster_associated_role {
     
@@ -39236,12 +39518,6 @@ pub mod aws_rds_db_cluster_associated_role {
     
     
 }
-impl AwsRdsDbClusterAssociatedRole {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
-    pub fn builder() -> crate::model::aws_rds_db_cluster_associated_role::Builder {
-        crate::model::aws_rds_db_cluster_associated_role::Builder::default()
-    }
-}
 
 /// <p>A VPC security groups that the DB instance belongs to.</p>
 #[non_exhaustive]
@@ -39264,6 +39540,13 @@ impl AwsRdsDbInstanceVpcSecurityGroup {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbInstanceVpcSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
+    pub fn builder() -> crate::model::aws_rds_db_instance_vpc_security_group::Builder {
+        crate::model::aws_rds_db_instance_vpc_security_group::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
 pub mod aws_rds_db_instance_vpc_security_group {
     
@@ -39305,12 +39588,6 @@ pub mod aws_rds_db_instance_vpc_security_group {
     }
     
     
-}
-impl AwsRdsDbInstanceVpcSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
-    pub fn builder() -> crate::model::aws_rds_db_instance_vpc_security_group::Builder {
-        crate::model::aws_rds_db_instance_vpc_security_group::Builder::default()
-    }
 }
 
 /// <p>Information about an Amazon RDS DB cluster snapshot.</p>
@@ -39450,6 +39727,13 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.iam_database_authentication_enabled
     }
 }
+impl AwsRdsDbClusterSnapshotDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
+    pub fn builder() -> crate::model::aws_rds_db_cluster_snapshot_details::Builder {
+        crate::model::aws_rds_db_cluster_snapshot_details::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
 pub mod aws_rds_db_cluster_snapshot_details {
     
@@ -39699,12 +39983,6 @@ pub mod aws_rds_db_cluster_snapshot_details {
     
     
 }
-impl AwsRdsDbClusterSnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
-    pub fn builder() -> crate::model::aws_rds_db_cluster_snapshot_details::Builder {
-        crate::model::aws_rds_db_cluster_snapshot_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about an Amazon RDS DB cluster snapshot.</p>
 #[non_exhaustive]
@@ -39944,6 +40222,13 @@ impl AwsRdsDbSnapshotDetails {
         self.dbi_resource_id.as_deref()
     }
 }
+impl AwsRdsDbSnapshotDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
+    pub fn builder() -> crate::model::aws_rds_db_snapshot_details::Builder {
+        crate::model::aws_rds_db_snapshot_details::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
 pub mod aws_rds_db_snapshot_details {
     
@@ -40340,12 +40625,6 @@ pub mod aws_rds_db_snapshot_details {
     
     
 }
-impl AwsRdsDbSnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
-    pub fn builder() -> crate::model::aws_rds_db_snapshot_details::Builder {
-        crate::model::aws_rds_db_snapshot_details::Builder::default()
-    }
-}
 
 /// <p>A processor feature.</p>
 #[non_exhaustive]
@@ -40368,6 +40647,13 @@ impl AwsRdsDbProcessorFeature {
         self.value.as_deref()
     }
 }
+impl AwsRdsDbProcessorFeature {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
+    pub fn builder() -> crate::model::aws_rds_db_processor_feature::Builder {
+        crate::model::aws_rds_db_processor_feature::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
 pub mod aws_rds_db_processor_feature {
     
@@ -40410,12 +40696,6 @@ pub mod aws_rds_db_processor_feature {
     
     
 }
-impl AwsRdsDbProcessorFeature {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
-    pub fn builder() -> crate::model::aws_rds_db_processor_feature::Builder {
-        crate::model::aws_rds_db_processor_feature::Builder::default()
-    }
-}
 
 /// <p>Provides information about an WAF web access control list (web ACL).</p>
 #[non_exhaustive]
@@ -40452,6 +40732,13 @@ impl AwsWafWebAclDetails {
         self.web_acl_id.as_deref()
     }
 }
+impl AwsWafWebAclDetails {
+    /// Creates a new builder-style object to manufacture [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
+    pub fn builder() -> crate::model::aws_waf_web_acl_details::Builder {
+        crate::model::aws_waf_web_acl_details::Builder::default()
+    }
+}
+
 /// See [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
 pub mod aws_waf_web_acl_details {
     
@@ -40524,12 +40811,6 @@ pub mod aws_waf_web_acl_details {
     
     
 }
-impl AwsWafWebAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
-    pub fn builder() -> crate::model::aws_waf_web_acl_details::Builder {
-        crate::model::aws_waf_web_acl_details::Builder::default()
-    }
-}
 
 /// <p>Details for a rule in an WAF web ACL.</p>
 #[non_exhaustive]
@@ -40590,6 +40871,13 @@ impl AwsWafWebAclRule {
         self.r#type.as_deref()
     }
 }
+impl AwsWafWebAclRule {
+    /// Creates a new builder-style object to manufacture [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
+    pub fn builder() -> crate::model::aws_waf_web_acl_rule::Builder {
+        crate::model::aws_waf_web_acl_rule::Builder::default()
+    }
+}
+
 /// See [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
 pub mod aws_waf_web_acl_rule {
     
@@ -40697,12 +40985,6 @@ pub mod aws_waf_web_acl_rule {
     
     
 }
-impl AwsWafWebAclRule {
-    /// Creates a new builder-style object to manufacture [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
-    pub fn builder() -> crate::model::aws_waf_web_acl_rule::Builder {
-        crate::model::aws_waf_web_acl_rule::Builder::default()
-    }
-}
 
 /// <p>Details about an override action for a rule.</p>
 #[non_exhaustive]
@@ -40720,6 +41002,13 @@ impl WafOverrideAction {
         self.r#type.as_deref()
     }
 }
+impl WafOverrideAction {
+    /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction).
+    pub fn builder() -> crate::model::waf_override_action::Builder {
+        crate::model::waf_override_action::Builder::default()
+    }
+}
+
 /// See [`WafOverrideAction`](crate::model::WafOverrideAction).
 pub mod waf_override_action {
     
@@ -40752,12 +41041,6 @@ pub mod waf_override_action {
     
     
 }
-impl WafOverrideAction {
-    /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction).
-    pub fn builder() -> crate::model::waf_override_action::Builder {
-        crate::model::waf_override_action::Builder::default()
-    }
-}
 
 /// <p>Details about a rule to exclude from a rule group.</p>
 #[non_exhaustive]
@@ -40773,6 +41056,13 @@ impl WafExcludedRule {
         self.rule_id.as_deref()
     }
 }
+impl WafExcludedRule {
+    /// Creates a new builder-style object to manufacture [`WafExcludedRule`](crate::model::WafExcludedRule).
+    pub fn builder() -> crate::model::waf_excluded_rule::Builder {
+        crate::model::waf_excluded_rule::Builder::default()
+    }
+}
+
 /// See [`WafExcludedRule`](crate::model::WafExcludedRule).
 pub mod waf_excluded_rule {
     
@@ -40803,12 +41093,6 @@ pub mod waf_excluded_rule {
     
     
 }
-impl WafExcludedRule {
-    /// Creates a new builder-style object to manufacture [`WafExcludedRule`](crate::model::WafExcludedRule).
-    pub fn builder() -> crate::model::waf_excluded_rule::Builder {
-        crate::model::waf_excluded_rule::Builder::default()
-    }
-}
 
 /// <p>Details about the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
 #[non_exhaustive]
@@ -40836,6 +41120,13 @@ impl WafAction {
         self.r#type.as_deref()
     }
 }
+impl WafAction {
+    /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction).
+    pub fn builder() -> crate::model::waf_action::Builder {
+        crate::model::waf_action::Builder::default()
+    }
+}
+
 /// See [`WafAction`](crate::model::WafAction).
 pub mod waf_action {
     
@@ -40878,12 +41169,6 @@ pub mod waf_action {
     
     
 }
-impl WafAction {
-    /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction).
-    pub fn builder() -> crate::model::waf_action::Builder {
-        crate::model::waf_action::Builder::default()
-    }
-}
 
 /// <p>Data about a queue.</p>
 #[non_exhaustive]
@@ -40920,6 +41205,13 @@ impl AwsSqsQueueDetails {
         self.dead_letter_target_arn.as_deref()
     }
 }
+impl AwsSqsQueueDetails {
+    /// Creates a new builder-style object to manufacture [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
+    pub fn builder() -> crate::model::aws_sqs_queue_details::Builder {
+        crate::model::aws_sqs_queue_details::Builder::default()
+    }
+}
+
 /// See [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
 pub mod aws_sqs_queue_details {
     
@@ -40986,12 +41278,6 @@ pub mod aws_sqs_queue_details {
     }
     
     
-}
-impl AwsSqsQueueDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
-    pub fn builder() -> crate::model::aws_sqs_queue_details::Builder {
-        crate::model::aws_sqs_queue_details::Builder::default()
-    }
 }
 
 /// <p>Provides information about an Amazon SNS topic to which notifications can be published.</p>
@@ -41078,6 +41364,13 @@ impl AwsSnsTopicDetails {
         self.http_failure_feedback_role_arn.as_deref()
     }
 }
+impl AwsSnsTopicDetails {
+    /// Creates a new builder-style object to manufacture [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
+    pub fn builder() -> crate::model::aws_sns_topic_details::Builder {
+        crate::model::aws_sns_topic_details::Builder::default()
+    }
+}
+
 /// See [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
 pub mod aws_sns_topic_details {
     
@@ -41234,12 +41527,6 @@ pub mod aws_sns_topic_details {
     
     
 }
-impl AwsSnsTopicDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
-    pub fn builder() -> crate::model::aws_sns_topic_details::Builder {
-        crate::model::aws_sns_topic_details::Builder::default()
-    }
-}
 
 /// <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
 #[non_exhaustive]
@@ -41262,6 +41549,13 @@ impl AwsSnsTopicSubscription {
         self.protocol.as_deref()
     }
 }
+impl AwsSnsTopicSubscription {
+    /// Creates a new builder-style object to manufacture [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
+    pub fn builder() -> crate::model::aws_sns_topic_subscription::Builder {
+        crate::model::aws_sns_topic_subscription::Builder::default()
+    }
+}
+
 /// See [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
 pub mod aws_sns_topic_subscription {
     
@@ -41303,12 +41597,6 @@ pub mod aws_sns_topic_subscription {
     }
     
     
-}
-impl AwsSnsTopicSubscription {
-    /// Creates a new builder-style object to manufacture [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
-    pub fn builder() -> crate::model::aws_sns_topic_subscription::Builder {
-        crate::model::aws_sns_topic_subscription::Builder::default()
-    }
 }
 
 /// <p>Contains the details of an Amazon RDS DB instance.</p>
@@ -41767,6 +42055,13 @@ impl AwsRdsDbInstanceDetails {
         self.max_allocated_storage
     }
 }
+impl AwsRdsDbInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
+    pub fn builder() -> crate::model::aws_rds_db_instance_details::Builder {
+        crate::model::aws_rds_db_instance_details::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
 pub mod aws_rds_db_instance_details {
     
@@ -42601,12 +42896,6 @@ pub mod aws_rds_db_instance_details {
     
     
 }
-impl AwsRdsDbInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
-    pub fn builder() -> crate::model::aws_rds_db_instance_details::Builder {
-        crate::model::aws_rds_db_instance_details::Builder::default()
-    }
-}
 
 /// <p>Specifies the connection endpoint.</p>
 #[non_exhaustive]
@@ -42636,6 +42925,13 @@ impl AwsRdsDbInstanceEndpoint {
         self.hosted_zone_id.as_deref()
     }
 }
+impl AwsRdsDbInstanceEndpoint {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
+    pub fn builder() -> crate::model::aws_rds_db_instance_endpoint::Builder {
+        crate::model::aws_rds_db_instance_endpoint::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
 pub mod aws_rds_db_instance_endpoint {
     
@@ -42691,12 +42987,6 @@ pub mod aws_rds_db_instance_endpoint {
     
     
 }
-impl AwsRdsDbInstanceEndpoint {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
-    pub fn builder() -> crate::model::aws_rds_db_instance_endpoint::Builder {
-        crate::model::aws_rds_db_instance_endpoint::Builder::default()
-    }
-}
 
 /// <p>Information about the status of a read replica.</p>
 #[non_exhaustive]
@@ -42733,6 +43023,13 @@ impl AwsRdsDbStatusInfo {
         self.message.as_deref()
     }
 }
+impl AwsRdsDbStatusInfo {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
+    pub fn builder() -> crate::model::aws_rds_db_status_info::Builder {
+        crate::model::aws_rds_db_status_info::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
 pub mod aws_rds_db_status_info {
     
@@ -42800,12 +43097,6 @@ pub mod aws_rds_db_status_info {
     
     
 }
-impl AwsRdsDbStatusInfo {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
-    pub fn builder() -> crate::model::aws_rds_db_status_info::Builder {
-        crate::model::aws_rds_db_status_info::Builder::default()
-    }
-}
 
 /// <p>An option group membership.</p>
 #[non_exhaustive]
@@ -42828,6 +43119,13 @@ impl AwsRdsDbOptionGroupMembership {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbOptionGroupMembership {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
+    pub fn builder() -> crate::model::aws_rds_db_option_group_membership::Builder {
+        crate::model::aws_rds_db_option_group_membership::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
 pub mod aws_rds_db_option_group_membership {
     
@@ -42869,12 +43167,6 @@ pub mod aws_rds_db_option_group_membership {
     }
     
     
-}
-impl AwsRdsDbOptionGroupMembership {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
-    pub fn builder() -> crate::model::aws_rds_db_option_group_membership::Builder {
-        crate::model::aws_rds_db_option_group_membership::Builder::default()
-    }
 }
 
 /// <p>Changes to a DB instance that are currently pending.</p>
@@ -42989,6 +43281,13 @@ impl AwsRdsDbPendingModifiedValues {
         self.processor_features.as_deref()
     }
 }
+impl AwsRdsDbPendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
+    pub fn builder() -> crate::model::aws_rds_db_pending_modified_values::Builder {
+        crate::model::aws_rds_db_pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
 pub mod aws_rds_db_pending_modified_values {
     
@@ -43198,12 +43497,6 @@ pub mod aws_rds_db_pending_modified_values {
     
     
 }
-impl AwsRdsDbPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
-    pub fn builder() -> crate::model::aws_rds_db_pending_modified_values::Builder {
-        crate::model::aws_rds_db_pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>Identifies the log types to enable and disable.</p>
 #[non_exhaustive]
@@ -43226,6 +43519,13 @@ impl AwsRdsPendingCloudWatchLogsExports {
         self.log_types_to_disable.as_deref()
     }
 }
+impl AwsRdsPendingCloudWatchLogsExports {
+    /// Creates a new builder-style object to manufacture [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
+    pub fn builder() -> crate::model::aws_rds_pending_cloud_watch_logs_exports::Builder {
+        crate::model::aws_rds_pending_cloud_watch_logs_exports::Builder::default()
+    }
+}
+
 /// See [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
 pub mod aws_rds_pending_cloud_watch_logs_exports {
     
@@ -43280,12 +43580,6 @@ pub mod aws_rds_pending_cloud_watch_logs_exports {
     
     
 }
-impl AwsRdsPendingCloudWatchLogsExports {
-    /// Creates a new builder-style object to manufacture [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
-    pub fn builder() -> crate::model::aws_rds_pending_cloud_watch_logs_exports::Builder {
-        crate::model::aws_rds_pending_cloud_watch_logs_exports::Builder::default()
-    }
-}
 
 /// <p>Information about the subnet group for the database instance.</p>
 #[non_exhaustive]
@@ -43336,6 +43630,13 @@ impl AwsRdsDbSubnetGroup {
         self.db_subnet_group_arn.as_deref()
     }
 }
+impl AwsRdsDbSubnetGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
+    pub fn builder() -> crate::model::aws_rds_db_subnet_group::Builder {
+        crate::model::aws_rds_db_subnet_group::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
 pub mod aws_rds_db_subnet_group {
     
@@ -43432,12 +43733,6 @@ pub mod aws_rds_db_subnet_group {
     
     
 }
-impl AwsRdsDbSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
-    pub fn builder() -> crate::model::aws_rds_db_subnet_group::Builder {
-        crate::model::aws_rds_db_subnet_group::Builder::default()
-    }
-}
 
 /// <p>Information about a subnet in a subnet group.</p>
 #[non_exhaustive]
@@ -43467,6 +43762,13 @@ impl AwsRdsDbSubnetGroupSubnet {
         self.subnet_status.as_deref()
     }
 }
+impl AwsRdsDbSubnetGroupSubnet {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
+    pub fn builder() -> crate::model::aws_rds_db_subnet_group_subnet::Builder {
+        crate::model::aws_rds_db_subnet_group_subnet::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
 pub mod aws_rds_db_subnet_group_subnet {
     
@@ -43521,12 +43823,6 @@ pub mod aws_rds_db_subnet_group_subnet {
     
     
 }
-impl AwsRdsDbSubnetGroupSubnet {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
-    pub fn builder() -> crate::model::aws_rds_db_subnet_group_subnet::Builder {
-        crate::model::aws_rds_db_subnet_group_subnet::Builder::default()
-    }
-}
 
 /// <p>An Availability Zone for a subnet in a subnet group.</p>
 #[non_exhaustive]
@@ -43542,6 +43838,13 @@ impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {
         self.name.as_deref()
     }
 }
+impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
+    pub fn builder() -> crate::model::aws_rds_db_subnet_group_subnet_availability_zone::Builder {
+        crate::model::aws_rds_db_subnet_group_subnet_availability_zone::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
 pub mod aws_rds_db_subnet_group_subnet_availability_zone {
     
@@ -43572,12 +43875,6 @@ pub mod aws_rds_db_subnet_group_subnet_availability_zone {
     
     
 }
-impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
-    pub fn builder() -> crate::model::aws_rds_db_subnet_group_subnet_availability_zone::Builder {
-        crate::model::aws_rds_db_subnet_group_subnet_availability_zone::Builder::default()
-    }
-}
 
 /// <p>Provides information about a parameter group for a DB instance.</p>
 #[non_exhaustive]
@@ -43600,6 +43897,13 @@ impl AwsRdsDbParameterGroup {
         self.parameter_apply_status.as_deref()
     }
 }
+impl AwsRdsDbParameterGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
+    pub fn builder() -> crate::model::aws_rds_db_parameter_group::Builder {
+        crate::model::aws_rds_db_parameter_group::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
 pub mod aws_rds_db_parameter_group {
     
@@ -43642,12 +43946,6 @@ pub mod aws_rds_db_parameter_group {
     
     
 }
-impl AwsRdsDbParameterGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
-    pub fn builder() -> crate::model::aws_rds_db_parameter_group::Builder {
-        crate::model::aws_rds_db_parameter_group::Builder::default()
-    }
-}
 
 /// <p>An IAM role associated with the DB instance.</p>
 #[non_exhaustive]
@@ -43687,6 +43985,13 @@ impl AwsRdsDbInstanceAssociatedRole {
         self.status.as_deref()
     }
 }
+impl AwsRdsDbInstanceAssociatedRole {
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
+    pub fn builder() -> crate::model::aws_rds_db_instance_associated_role::Builder {
+        crate::model::aws_rds_db_instance_associated_role::Builder::default()
+    }
+}
+
 /// See [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
 pub mod aws_rds_db_instance_associated_role {
     
@@ -43751,12 +44056,6 @@ pub mod aws_rds_db_instance_associated_role {
     
     
 }
-impl AwsRdsDbInstanceAssociatedRole {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
-    pub fn builder() -> crate::model::aws_rds_db_instance_associated_role::Builder {
-        crate::model::aws_rds_db_instance_associated_role::Builder::default()
-    }
-}
 
 /// <p>Details about a Lambda layer version.</p>
 #[non_exhaustive]
@@ -43790,6 +44089,13 @@ impl AwsLambdaLayerVersionDetails {
         self.created_date.as_deref()
     }
 }
+impl AwsLambdaLayerVersionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
+    pub fn builder() -> crate::model::aws_lambda_layer_version_details::Builder {
+        crate::model::aws_lambda_layer_version_details::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
 pub mod aws_lambda_layer_version_details {
     
@@ -43854,12 +44160,6 @@ pub mod aws_lambda_layer_version_details {
     }
     
     
-}
-impl AwsLambdaLayerVersionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
-    pub fn builder() -> crate::model::aws_lambda_layer_version_details::Builder {
-        crate::model::aws_lambda_layer_version_details::Builder::default()
-    }
 }
 
 /// <p>Details about an Lambda function's configuration.</p>
@@ -44011,6 +44311,13 @@ impl AwsLambdaFunctionDetails {
         self.package_type.as_deref()
     }
 }
+impl AwsLambdaFunctionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
+    pub fn builder() -> crate::model::aws_lambda_function_details::Builder {
+        crate::model::aws_lambda_function_details::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
 pub mod aws_lambda_function_details {
     
@@ -44285,12 +44592,6 @@ pub mod aws_lambda_function_details {
     
     
 }
-impl AwsLambdaFunctionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
-    pub fn builder() -> crate::model::aws_lambda_function_details::Builder {
-        crate::model::aws_lambda_function_details::Builder::default()
-    }
-}
 
 /// <p>The VPC security groups and subnets that are attached to a Lambda function.</p>
 #[non_exhaustive]
@@ -44320,6 +44621,13 @@ impl AwsLambdaFunctionVpcConfig {
         self.vpc_id.as_deref()
     }
 }
+impl AwsLambdaFunctionVpcConfig {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
+    pub fn builder() -> crate::model::aws_lambda_function_vpc_config::Builder {
+        crate::model::aws_lambda_function_vpc_config::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
 pub mod aws_lambda_function_vpc_config {
     
@@ -44386,12 +44694,6 @@ pub mod aws_lambda_function_vpc_config {
     
     
 }
-impl AwsLambdaFunctionVpcConfig {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
-    pub fn builder() -> crate::model::aws_lambda_function_vpc_config::Builder {
-        crate::model::aws_lambda_function_vpc_config::Builder::default()
-    }
-}
 
 /// <p>The function's X-Ray tracing configuration.</p>
 #[non_exhaustive]
@@ -44407,6 +44709,13 @@ impl AwsLambdaFunctionTracingConfig {
         self.mode.as_deref()
     }
 }
+impl AwsLambdaFunctionTracingConfig {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
+    pub fn builder() -> crate::model::aws_lambda_function_tracing_config::Builder {
+        crate::model::aws_lambda_function_tracing_config::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
 pub mod aws_lambda_function_tracing_config {
     
@@ -44437,12 +44746,6 @@ pub mod aws_lambda_function_tracing_config {
     
     
 }
-impl AwsLambdaFunctionTracingConfig {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
-    pub fn builder() -> crate::model::aws_lambda_function_tracing_config::Builder {
-        crate::model::aws_lambda_function_tracing_config::Builder::default()
-    }
-}
 
 /// <p>An Lambda layer.</p>
 #[non_exhaustive]
@@ -44465,6 +44768,13 @@ impl AwsLambdaFunctionLayer {
         self.code_size
     }
 }
+impl AwsLambdaFunctionLayer {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
+    pub fn builder() -> crate::model::aws_lambda_function_layer::Builder {
+        crate::model::aws_lambda_function_layer::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
 pub mod aws_lambda_function_layer {
     
@@ -44508,12 +44818,6 @@ pub mod aws_lambda_function_layer {
     
     
 }
-impl AwsLambdaFunctionLayer {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
-    pub fn builder() -> crate::model::aws_lambda_function_layer::Builder {
-        crate::model::aws_lambda_function_layer::Builder::default()
-    }
-}
 
 /// <p>A function's environment variable settings.</p>
 #[non_exhaustive]
@@ -44536,6 +44840,13 @@ impl AwsLambdaFunctionEnvironment {
         self.error.as_ref()
     }
 }
+impl AwsLambdaFunctionEnvironment {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
+    pub fn builder() -> crate::model::aws_lambda_function_environment::Builder {
+        crate::model::aws_lambda_function_environment::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
 pub mod aws_lambda_function_environment {
     
@@ -44584,12 +44895,6 @@ pub mod aws_lambda_function_environment {
     
     
 }
-impl AwsLambdaFunctionEnvironment {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
-    pub fn builder() -> crate::model::aws_lambda_function_environment::Builder {
-        crate::model::aws_lambda_function_environment::Builder::default()
-    }
-}
 
 /// <p>Error messages for environment variables that could not be applied.</p>
 #[non_exhaustive]
@@ -44612,6 +44917,13 @@ impl AwsLambdaFunctionEnvironmentError {
         self.message.as_deref()
     }
 }
+impl AwsLambdaFunctionEnvironmentError {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
+    pub fn builder() -> crate::model::aws_lambda_function_environment_error::Builder {
+        crate::model::aws_lambda_function_environment_error::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
 pub mod aws_lambda_function_environment_error {
     
@@ -44654,12 +44966,6 @@ pub mod aws_lambda_function_environment_error {
     
     
 }
-impl AwsLambdaFunctionEnvironmentError {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
-    pub fn builder() -> crate::model::aws_lambda_function_environment_error::Builder {
-        crate::model::aws_lambda_function_environment_error::Builder::default()
-    }
-}
 
 /// <p>The dead-letter queue for failed asynchronous invocations.</p>
 #[non_exhaustive]
@@ -44675,6 +44981,13 @@ impl AwsLambdaFunctionDeadLetterConfig {
         self.target_arn.as_deref()
     }
 }
+impl AwsLambdaFunctionDeadLetterConfig {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
+    pub fn builder() -> crate::model::aws_lambda_function_dead_letter_config::Builder {
+        crate::model::aws_lambda_function_dead_letter_config::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
 pub mod aws_lambda_function_dead_letter_config {
     
@@ -44704,12 +45017,6 @@ pub mod aws_lambda_function_dead_letter_config {
     }
     
     
-}
-impl AwsLambdaFunctionDeadLetterConfig {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
-    pub fn builder() -> crate::model::aws_lambda_function_dead_letter_config::Builder {
-        crate::model::aws_lambda_function_dead_letter_config::Builder::default()
-    }
 }
 
 /// <p>The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.</p>
@@ -44747,6 +45054,13 @@ impl AwsLambdaFunctionCode {
         self.zip_file.as_deref()
     }
 }
+impl AwsLambdaFunctionCode {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
+    pub fn builder() -> crate::model::aws_lambda_function_code::Builder {
+        crate::model::aws_lambda_function_code::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
 pub mod aws_lambda_function_code {
     
@@ -44812,12 +45126,6 @@ pub mod aws_lambda_function_code {
     }
     
     
-}
-impl AwsLambdaFunctionCode {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
-    pub fn builder() -> crate::model::aws_lambda_function_code::Builder {
-        crate::model::aws_lambda_function_code::Builder::default()
-    }
 }
 
 /// <p>Contains metadata about an KMS key.</p>
@@ -44905,6 +45213,13 @@ impl AwsKmsKeyDetails {
         self.key_rotation_status
     }
 }
+impl AwsKmsKeyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
+    pub fn builder() -> crate::model::aws_kms_key_details::Builder {
+        crate::model::aws_kms_key_details::Builder::default()
+    }
+}
+
 /// See [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
 pub mod aws_kms_key_details {
     
@@ -45043,12 +45358,6 @@ pub mod aws_kms_key_details {
     
     
 }
-impl AwsKmsKeyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
-    pub fn builder() -> crate::model::aws_kms_key_details::Builder {
-        crate::model::aws_kms_key_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM role, including all of the role's policies.</p>
 #[non_exhaustive]
@@ -45129,6 +45438,13 @@ impl AwsIamRoleDetails {
         self.path.as_deref()
     }
 }
+impl AwsIamRoleDetails {
+    /// Creates a new builder-style object to manufacture [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
+    pub fn builder() -> crate::model::aws_iam_role_details::Builder {
+        crate::model::aws_iam_role_details::Builder::default()
+    }
+}
+
 /// See [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
 pub mod aws_iam_role_details {
     
@@ -45288,12 +45604,6 @@ pub mod aws_iam_role_details {
     
     
 }
-impl AwsIamRoleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
-    pub fn builder() -> crate::model::aws_iam_role_details::Builder {
-        crate::model::aws_iam_role_details::Builder::default()
-    }
-}
 
 /// <p>An inline policy that is embedded in the role.</p>
 #[non_exhaustive]
@@ -45309,6 +45619,13 @@ impl AwsIamRolePolicy {
         self.policy_name.as_deref()
     }
 }
+impl AwsIamRolePolicy {
+    /// Creates a new builder-style object to manufacture [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
+    pub fn builder() -> crate::model::aws_iam_role_policy::Builder {
+        crate::model::aws_iam_role_policy::Builder::default()
+    }
+}
+
 /// See [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
 pub mod aws_iam_role_policy {
     
@@ -45339,12 +45656,6 @@ pub mod aws_iam_role_policy {
     
     
 }
-impl AwsIamRolePolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
-    pub fn builder() -> crate::model::aws_iam_role_policy::Builder {
-        crate::model::aws_iam_role_policy::Builder::default()
-    }
-}
 
 /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
 #[non_exhaustive]
@@ -45367,6 +45678,13 @@ impl AwsIamPermissionsBoundary {
         self.permissions_boundary_type.as_deref()
     }
 }
+impl AwsIamPermissionsBoundary {
+    /// Creates a new builder-style object to manufacture [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
+    pub fn builder() -> crate::model::aws_iam_permissions_boundary::Builder {
+        crate::model::aws_iam_permissions_boundary::Builder::default()
+    }
+}
+
 /// See [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
 pub mod aws_iam_permissions_boundary {
     
@@ -45408,12 +45726,6 @@ pub mod aws_iam_permissions_boundary {
     }
     
     
-}
-impl AwsIamPermissionsBoundary {
-    /// Creates a new builder-style object to manufacture [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
-    pub fn builder() -> crate::model::aws_iam_permissions_boundary::Builder {
-        crate::model::aws_iam_permissions_boundary::Builder::default()
-    }
 }
 
 /// <p>Information about an instance profile.</p>
@@ -45467,6 +45779,13 @@ impl AwsIamInstanceProfile {
         self.roles.as_deref()
     }
 }
+impl AwsIamInstanceProfile {
+    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
+    pub fn builder() -> crate::model::aws_iam_instance_profile::Builder {
+        crate::model::aws_iam_instance_profile::Builder::default()
+    }
+}
+
 /// See [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
 pub mod aws_iam_instance_profile {
     
@@ -45565,12 +45884,6 @@ pub mod aws_iam_instance_profile {
     
     
 }
-impl AwsIamInstanceProfile {
-    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
-    pub fn builder() -> crate::model::aws_iam_instance_profile::Builder {
-        crate::model::aws_iam_instance_profile::Builder::default()
-    }
-}
 
 /// <p>Information about a role associated with an instance profile.</p>
 #[non_exhaustive]
@@ -45623,6 +45936,13 @@ impl AwsIamInstanceProfileRole {
         self.role_name.as_deref()
     }
 }
+impl AwsIamInstanceProfileRole {
+    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
+    pub fn builder() -> crate::model::aws_iam_instance_profile_role::Builder {
+        crate::model::aws_iam_instance_profile_role::Builder::default()
+    }
+}
+
 /// See [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
 pub mod aws_iam_instance_profile_role {
     
@@ -45715,12 +46035,6 @@ pub mod aws_iam_instance_profile_role {
     
     
 }
-impl AwsIamInstanceProfileRole {
-    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
-    pub fn builder() -> crate::model::aws_iam_instance_profile_role::Builder {
-        crate::model::aws_iam_instance_profile_role::Builder::default()
-    }
-}
 
 /// <p>A managed policy that is attached to an IAM principal.</p>
 #[non_exhaustive]
@@ -45743,6 +46057,13 @@ impl AwsIamAttachedManagedPolicy {
         self.policy_arn.as_deref()
     }
 }
+impl AwsIamAttachedManagedPolicy {
+    /// Creates a new builder-style object to manufacture [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
+    pub fn builder() -> crate::model::aws_iam_attached_managed_policy::Builder {
+        crate::model::aws_iam_attached_managed_policy::Builder::default()
+    }
+}
+
 /// See [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
 pub mod aws_iam_attached_managed_policy {
     
@@ -45784,12 +46105,6 @@ pub mod aws_iam_attached_managed_policy {
     }
     
     
-}
-impl AwsIamAttachedManagedPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
-    pub fn builder() -> crate::model::aws_iam_attached_managed_policy::Builder {
-        crate::model::aws_iam_attached_managed_policy::Builder::default()
-    }
 }
 
 /// <p>Contains details about an IAM group.</p>
@@ -45843,6 +46158,13 @@ impl AwsIamGroupDetails {
         self.path.as_deref()
     }
 }
+impl AwsIamGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
+    pub fn builder() -> crate::model::aws_iam_group_details::Builder {
+        crate::model::aws_iam_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
 pub mod aws_iam_group_details {
     
@@ -45947,12 +46269,6 @@ pub mod aws_iam_group_details {
     
     
 }
-impl AwsIamGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
-    pub fn builder() -> crate::model::aws_iam_group_details::Builder {
-        crate::model::aws_iam_group_details::Builder::default()
-    }
-}
 
 /// <p>A managed policy that is attached to the IAM group.</p>
 #[non_exhaustive]
@@ -45968,6 +46284,13 @@ impl AwsIamGroupPolicy {
         self.policy_name.as_deref()
     }
 }
+impl AwsIamGroupPolicy {
+    /// Creates a new builder-style object to manufacture [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
+    pub fn builder() -> crate::model::aws_iam_group_policy::Builder {
+        crate::model::aws_iam_group_policy::Builder::default()
+    }
+}
+
 /// See [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
 pub mod aws_iam_group_policy {
     
@@ -45997,12 +46320,6 @@ pub mod aws_iam_group_policy {
     }
     
     
-}
-impl AwsIamGroupPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
-    pub fn builder() -> crate::model::aws_iam_group_policy::Builder {
-        crate::model::aws_iam_group_policy::Builder::default()
-    }
 }
 
 /// <p>Contains details about a Classic Load Balancer.</p>
@@ -46137,6 +46454,13 @@ impl AwsElbLoadBalancerDetails {
         self.vpc_id.as_deref()
     }
 }
+impl AwsElbLoadBalancerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_details::Builder {
+        crate::model::aws_elb_load_balancer_details::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
 pub mod aws_elb_load_balancer_details {
     
@@ -46401,12 +46725,6 @@ pub mod aws_elb_load_balancer_details {
     
     
 }
-impl AwsElbLoadBalancerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_details::Builder {
-        crate::model::aws_elb_load_balancer_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about the security group for the load balancer.</p>
 #[non_exhaustive]
@@ -46429,6 +46747,13 @@ impl AwsElbLoadBalancerSourceSecurityGroup {
         self.owner_alias.as_deref()
     }
 }
+impl AwsElbLoadBalancerSourceSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_source_security_group::Builder {
+        crate::model::aws_elb_load_balancer_source_security_group::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
 pub mod aws_elb_load_balancer_source_security_group {
     
@@ -46471,12 +46796,6 @@ pub mod aws_elb_load_balancer_source_security_group {
     
     
 }
-impl AwsElbLoadBalancerSourceSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_source_security_group::Builder {
-        crate::model::aws_elb_load_balancer_source_security_group::Builder::default()
-    }
-}
 
 /// <p>Contains information about the policies for a load balancer.</p>
 #[non_exhaustive]
@@ -46506,6 +46825,13 @@ impl AwsElbLoadBalancerPolicies {
         self.other_policies.as_deref()
     }
 }
+impl AwsElbLoadBalancerPolicies {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_policies::Builder {
+        crate::model::aws_elb_load_balancer_policies::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
 pub mod aws_elb_load_balancer_policies {
     
@@ -46578,12 +46904,6 @@ pub mod aws_elb_load_balancer_policies {
     
     
 }
-impl AwsElbLoadBalancerPolicies {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_policies::Builder {
-        crate::model::aws_elb_load_balancer_policies::Builder::default()
-    }
-}
 
 /// <p>Contains information about a stickiness policy that was created using <code>CreateLBCookieStickinessPolicy</code>.</p>
 #[non_exhaustive]
@@ -46606,6 +46926,13 @@ impl AwsElbLbCookieStickinessPolicy {
         self.policy_name.as_deref()
     }
 }
+impl AwsElbLbCookieStickinessPolicy {
+    /// Creates a new builder-style object to manufacture [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
+    pub fn builder() -> crate::model::aws_elb_lb_cookie_stickiness_policy::Builder {
+        crate::model::aws_elb_lb_cookie_stickiness_policy::Builder::default()
+    }
+}
+
 /// See [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
 pub mod aws_elb_lb_cookie_stickiness_policy {
     
@@ -46649,12 +46976,6 @@ pub mod aws_elb_lb_cookie_stickiness_policy {
     
     
 }
-impl AwsElbLbCookieStickinessPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
-    pub fn builder() -> crate::model::aws_elb_lb_cookie_stickiness_policy::Builder {
-        crate::model::aws_elb_lb_cookie_stickiness_policy::Builder::default()
-    }
-}
 
 /// <p>Contains information about a stickiness policy that was created using <code>CreateAppCookieStickinessPolicy</code>.</p>
 #[non_exhaustive]
@@ -46677,6 +46998,13 @@ impl AwsElbAppCookieStickinessPolicy {
         self.policy_name.as_deref()
     }
 }
+impl AwsElbAppCookieStickinessPolicy {
+    /// Creates a new builder-style object to manufacture [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
+    pub fn builder() -> crate::model::aws_elb_app_cookie_stickiness_policy::Builder {
+        crate::model::aws_elb_app_cookie_stickiness_policy::Builder::default()
+    }
+}
+
 /// See [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
 pub mod aws_elb_app_cookie_stickiness_policy {
     
@@ -46718,12 +47046,6 @@ pub mod aws_elb_app_cookie_stickiness_policy {
     }
     
     
-}
-impl AwsElbAppCookieStickinessPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
-    pub fn builder() -> crate::model::aws_elb_app_cookie_stickiness_policy::Builder {
-        crate::model::aws_elb_app_cookie_stickiness_policy::Builder::default()
-    }
 }
 
 /// <p>Contains attributes for the load balancer.</p>
@@ -46776,6 +47098,13 @@ impl AwsElbLoadBalancerAttributes {
         self.additional_attributes.as_deref()
     }
 }
+impl AwsElbLoadBalancerAttributes {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_attributes::Builder {
+        crate::model::aws_elb_load_balancer_attributes::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
 pub mod aws_elb_load_balancer_attributes {
     
@@ -46868,12 +47197,6 @@ pub mod aws_elb_load_balancer_attributes {
     
     
 }
-impl AwsElbLoadBalancerAttributes {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_attributes::Builder {
-        crate::model::aws_elb_load_balancer_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides information about additional attributes for the load balancer.</p>
 #[non_exhaustive]
@@ -46896,6 +47219,13 @@ impl AwsElbLoadBalancerAdditionalAttribute {
         self.value.as_deref()
     }
 }
+impl AwsElbLoadBalancerAdditionalAttribute {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_additional_attribute::Builder {
+        crate::model::aws_elb_load_balancer_additional_attribute::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
 pub mod aws_elb_load_balancer_additional_attribute {
     
@@ -46938,12 +47268,6 @@ pub mod aws_elb_load_balancer_additional_attribute {
     
     
 }
-impl AwsElbLoadBalancerAdditionalAttribute {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_additional_attribute::Builder {
-        crate::model::aws_elb_load_balancer_additional_attribute::Builder::default()
-    }
-}
 
 /// <p>Contains cross-zone load balancing settings for the load balancer.</p>
 #[non_exhaustive]
@@ -46959,6 +47283,13 @@ impl AwsElbLoadBalancerCrossZoneLoadBalancing {
         self.enabled
     }
 }
+impl AwsElbLoadBalancerCrossZoneLoadBalancing {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_cross_zone_load_balancing::Builder {
+        crate::model::aws_elb_load_balancer_cross_zone_load_balancing::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
 pub mod aws_elb_load_balancer_cross_zone_load_balancing {
     
@@ -46990,12 +47321,6 @@ pub mod aws_elb_load_balancer_cross_zone_load_balancing {
     
     
 }
-impl AwsElbLoadBalancerCrossZoneLoadBalancing {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_cross_zone_load_balancing::Builder {
-        crate::model::aws_elb_load_balancer_cross_zone_load_balancing::Builder::default()
-    }
-}
 
 /// <p>Contains connection settings for the load balancer.</p>
 #[non_exhaustive]
@@ -47011,6 +47336,13 @@ impl AwsElbLoadBalancerConnectionSettings {
         self.idle_timeout
     }
 }
+impl AwsElbLoadBalancerConnectionSettings {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_connection_settings::Builder {
+        crate::model::aws_elb_load_balancer_connection_settings::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
 pub mod aws_elb_load_balancer_connection_settings {
     
@@ -47042,12 +47374,6 @@ pub mod aws_elb_load_balancer_connection_settings {
     
     
 }
-impl AwsElbLoadBalancerConnectionSettings {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_connection_settings::Builder {
-        crate::model::aws_elb_load_balancer_connection_settings::Builder::default()
-    }
-}
 
 /// <p>Contains information about the connection draining configuration for the load balancer.</p>
 #[non_exhaustive]
@@ -47070,6 +47396,13 @@ impl AwsElbLoadBalancerConnectionDraining {
         self.timeout
     }
 }
+impl AwsElbLoadBalancerConnectionDraining {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_connection_draining::Builder {
+        crate::model::aws_elb_load_balancer_connection_draining::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
 pub mod aws_elb_load_balancer_connection_draining {
     
@@ -47114,12 +47447,6 @@ pub mod aws_elb_load_balancer_connection_draining {
     
     
 }
-impl AwsElbLoadBalancerConnectionDraining {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_connection_draining::Builder {
-        crate::model::aws_elb_load_balancer_connection_draining::Builder::default()
-    }
-}
 
 /// <p>Contains information about the access log configuration for the load balancer.</p>
 #[non_exhaustive]
@@ -47160,6 +47487,13 @@ impl AwsElbLoadBalancerAccessLog {
         self.s3_bucket_prefix.as_deref()
     }
 }
+impl AwsElbLoadBalancerAccessLog {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_access_log::Builder {
+        crate::model::aws_elb_load_balancer_access_log::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
 pub mod aws_elb_load_balancer_access_log {
     
@@ -47232,12 +47566,6 @@ pub mod aws_elb_load_balancer_access_log {
     
     
 }
-impl AwsElbLoadBalancerAccessLog {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_access_log::Builder {
-        crate::model::aws_elb_load_balancer_access_log::Builder::default()
-    }
-}
 
 /// <p>Lists the policies that are enabled for a load balancer listener.</p>
 #[non_exhaustive]
@@ -47260,6 +47588,13 @@ impl AwsElbLoadBalancerListenerDescription {
         self.policy_names.as_deref()
     }
 }
+impl AwsElbLoadBalancerListenerDescription {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_listener_description::Builder {
+        crate::model::aws_elb_load_balancer_listener_description::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
 pub mod aws_elb_load_balancer_listener_description {
     
@@ -47307,12 +47642,6 @@ pub mod aws_elb_load_balancer_listener_description {
     }
     
     
-}
-impl AwsElbLoadBalancerListenerDescription {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_listener_description::Builder {
-        crate::model::aws_elb_load_balancer_listener_description::Builder::default()
-    }
 }
 
 /// <p>Information about a load balancer listener.</p>
@@ -47365,6 +47694,13 @@ impl AwsElbLoadBalancerListener {
         self.ssl_certificate_id.as_deref()
     }
 }
+impl AwsElbLoadBalancerListener {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_listener::Builder {
+        crate::model::aws_elb_load_balancer_listener::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
 pub mod aws_elb_load_balancer_listener {
     
@@ -47453,12 +47789,6 @@ pub mod aws_elb_load_balancer_listener {
     
     
 }
-impl AwsElbLoadBalancerListener {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_listener::Builder {
-        crate::model::aws_elb_load_balancer_listener::Builder::default()
-    }
-}
 
 /// <p>Provides information about an EC2 instance for a load balancer.</p>
 #[non_exhaustive]
@@ -47474,6 +47804,13 @@ impl AwsElbLoadBalancerInstance {
         self.instance_id.as_deref()
     }
 }
+impl AwsElbLoadBalancerInstance {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_instance::Builder {
+        crate::model::aws_elb_load_balancer_instance::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
 pub mod aws_elb_load_balancer_instance {
     
@@ -47503,12 +47840,6 @@ pub mod aws_elb_load_balancer_instance {
     }
     
     
-}
-impl AwsElbLoadBalancerInstance {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_instance::Builder {
-        crate::model::aws_elb_load_balancer_instance::Builder::default()
-    }
 }
 
 /// <p>Contains information about the health checks that are conducted on the load balancer.</p>
@@ -47571,6 +47902,13 @@ impl AwsElbLoadBalancerHealthCheck {
         self.unhealthy_threshold
     }
 }
+impl AwsElbLoadBalancerHealthCheck {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_health_check::Builder {
+        crate::model::aws_elb_load_balancer_health_check::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
 pub mod aws_elb_load_balancer_health_check {
     
@@ -47671,12 +48009,6 @@ pub mod aws_elb_load_balancer_health_check {
     
     
 }
-impl AwsElbLoadBalancerHealthCheck {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_health_check::Builder {
-        crate::model::aws_elb_load_balancer_health_check::Builder::default()
-    }
-}
 
 /// <p>Provides information about the configuration of an EC2 instance for the load balancer.</p>
 #[non_exhaustive]
@@ -47699,6 +48031,13 @@ impl AwsElbLoadBalancerBackendServerDescription {
         self.policy_names.as_deref()
     }
 }
+impl AwsElbLoadBalancerBackendServerDescription {
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
+    pub fn builder() -> crate::model::aws_elb_load_balancer_backend_server_description::Builder {
+        crate::model::aws_elb_load_balancer_backend_server_description::Builder::default()
+    }
+}
+
 /// See [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
 pub mod aws_elb_load_balancer_backend_server_description {
     
@@ -47747,12 +48086,6 @@ pub mod aws_elb_load_balancer_backend_server_description {
     }
     
     
-}
-impl AwsElbLoadBalancerBackendServerDescription {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
-    pub fn builder() -> crate::model::aws_elb_load_balancer_backend_server_description::Builder {
-        crate::model::aws_elb_load_balancer_backend_server_description::Builder::default()
-    }
 }
 
 /// <p>Details about an Amazon Redshift cluster.</p>
@@ -48116,6 +48449,13 @@ impl AwsRedshiftClusterDetails {
         self.logging_status.as_ref()
     }
 }
+impl AwsRedshiftClusterDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
+    pub fn builder() -> crate::model::aws_redshift_cluster_details::Builder {
+        crate::model::aws_redshift_cluster_details::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
 pub mod aws_redshift_cluster_details {
     
@@ -48757,12 +49097,6 @@ pub mod aws_redshift_cluster_details {
     
     
 }
-impl AwsRedshiftClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
-    pub fn builder() -> crate::model::aws_redshift_cluster_details::Builder {
-        crate::model::aws_redshift_cluster_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the logging status of the cluster.</p>
 #[non_exhaustive]
@@ -48817,6 +49151,13 @@ impl AwsRedshiftClusterLoggingStatus {
         self.s3_key_prefix.as_deref()
     }
 }
+impl AwsRedshiftClusterLoggingStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
+    pub fn builder() -> crate::model::aws_redshift_cluster_logging_status::Builder {
+        crate::model::aws_redshift_cluster_logging_status::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
 pub mod aws_redshift_cluster_logging_status {
     
@@ -48912,12 +49253,6 @@ pub mod aws_redshift_cluster_logging_status {
     
     
 }
-impl AwsRedshiftClusterLoggingStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
-    pub fn builder() -> crate::model::aws_redshift_cluster_logging_status::Builder {
-        crate::model::aws_redshift_cluster_logging_status::Builder::default()
-    }
-}
 
 /// <p>A VPC security group that the cluster belongs to, if the cluster is in a VPC.</p>
 #[non_exhaustive]
@@ -48940,6 +49275,13 @@ impl AwsRedshiftClusterVpcSecurityGroup {
         self.vpc_security_group_id.as_deref()
     }
 }
+impl AwsRedshiftClusterVpcSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
+    pub fn builder() -> crate::model::aws_redshift_cluster_vpc_security_group::Builder {
+        crate::model::aws_redshift_cluster_vpc_security_group::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
 pub mod aws_redshift_cluster_vpc_security_group {
     
@@ -48981,12 +49323,6 @@ pub mod aws_redshift_cluster_vpc_security_group {
     }
     
     
-}
-impl AwsRedshiftClusterVpcSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
-    pub fn builder() -> crate::model::aws_redshift_cluster_vpc_security_group::Builder {
-        crate::model::aws_redshift_cluster_vpc_security_group::Builder::default()
-    }
 }
 
 /// <p>Information about the status of a cluster restore action. It only applies if the cluster was created by restoring a snapshot.</p>
@@ -49050,6 +49386,13 @@ impl AwsRedshiftClusterRestoreStatus {
         self.status.as_deref()
     }
 }
+impl AwsRedshiftClusterRestoreStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
+    pub fn builder() -> crate::model::aws_redshift_cluster_restore_status::Builder {
+        crate::model::aws_redshift_cluster_restore_status::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
 pub mod aws_redshift_cluster_restore_status {
     
@@ -49157,12 +49500,6 @@ pub mod aws_redshift_cluster_restore_status {
     
     
 }
-impl AwsRedshiftClusterRestoreStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
-    pub fn builder() -> crate::model::aws_redshift_cluster_restore_status::Builder {
-        crate::model::aws_redshift_cluster_restore_status::Builder::default()
-    }
-}
 
 /// <p>Information about the resize operation for the cluster.</p>
 #[non_exhaustive]
@@ -49187,6 +49524,13 @@ impl AwsRedshiftClusterResizeInfo {
         self.resize_type.as_deref()
     }
 }
+impl AwsRedshiftClusterResizeInfo {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
+    pub fn builder() -> crate::model::aws_redshift_cluster_resize_info::Builder {
+        crate::model::aws_redshift_cluster_resize_info::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
 pub mod aws_redshift_cluster_resize_info {
     
@@ -49231,12 +49575,6 @@ pub mod aws_redshift_cluster_resize_info {
     }
     
     
-}
-impl AwsRedshiftClusterResizeInfo {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
-    pub fn builder() -> crate::model::aws_redshift_cluster_resize_info::Builder {
-        crate::model::aws_redshift_cluster_resize_info::Builder::default()
-    }
 }
 
 /// <p>Changes to the Amazon Redshift cluster that are currently pending.</p>
@@ -49323,6 +49661,13 @@ impl AwsRedshiftClusterPendingModifiedValues {
         self.publicly_accessible
     }
 }
+impl AwsRedshiftClusterPendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
+    pub fn builder() -> crate::model::aws_redshift_cluster_pending_modified_values::Builder {
+        crate::model::aws_redshift_cluster_pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
 pub mod aws_redshift_cluster_pending_modified_values {
     
@@ -49477,12 +49822,6 @@ pub mod aws_redshift_cluster_pending_modified_values {
     
     
 }
-impl AwsRedshiftClusterPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
-    pub fn builder() -> crate::model::aws_redshift_cluster_pending_modified_values::Builder {
-        crate::model::aws_redshift_cluster_pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>An IAM role that the cluster can use to access other Amazon Web Services services.</p>
 #[non_exhaustive]
@@ -49507,6 +49846,13 @@ impl AwsRedshiftClusterIamRole {
         self.iam_role_arn.as_deref()
     }
 }
+impl AwsRedshiftClusterIamRole {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
+    pub fn builder() -> crate::model::aws_redshift_cluster_iam_role::Builder {
+        crate::model::aws_redshift_cluster_iam_role::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
 pub mod aws_redshift_cluster_iam_role {
     
@@ -49551,12 +49897,6 @@ pub mod aws_redshift_cluster_iam_role {
     
     
 }
-impl AwsRedshiftClusterIamRole {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
-    pub fn builder() -> crate::model::aws_redshift_cluster_iam_role::Builder {
-        crate::model::aws_redshift_cluster_iam_role::Builder::default()
-    }
-}
 
 /// <p>Information about whether an Amazon Redshift cluster finished applying any hardware changes to security module (HSM) settings that were specified in a modify cluster command.</p>
 #[non_exhaustive]
@@ -49590,6 +49930,13 @@ impl AwsRedshiftClusterHsmStatus {
         self.status.as_deref()
     }
 }
+impl AwsRedshiftClusterHsmStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
+    pub fn builder() -> crate::model::aws_redshift_cluster_hsm_status::Builder {
+        crate::model::aws_redshift_cluster_hsm_status::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
 pub mod aws_redshift_cluster_hsm_status {
     
@@ -49648,12 +49995,6 @@ pub mod aws_redshift_cluster_hsm_status {
     
     
 }
-impl AwsRedshiftClusterHsmStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
-    pub fn builder() -> crate::model::aws_redshift_cluster_hsm_status::Builder {
-        crate::model::aws_redshift_cluster_hsm_status::Builder::default()
-    }
-}
 
 /// <p>The connection endpoint for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -49676,6 +50017,13 @@ impl AwsRedshiftClusterEndpoint {
         self.port
     }
 }
+impl AwsRedshiftClusterEndpoint {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
+    pub fn builder() -> crate::model::aws_redshift_cluster_endpoint::Builder {
+        crate::model::aws_redshift_cluster_endpoint::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
 pub mod aws_redshift_cluster_endpoint {
     
@@ -49719,12 +50067,6 @@ pub mod aws_redshift_cluster_endpoint {
     
     
 }
-impl AwsRedshiftClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
-    pub fn builder() -> crate::model::aws_redshift_cluster_endpoint::Builder {
-        crate::model::aws_redshift_cluster_endpoint::Builder::default()
-    }
-}
 
 /// <p>The status of the elastic IP (EIP) address for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -49747,6 +50089,13 @@ impl AwsRedshiftClusterElasticIpStatus {
         self.status.as_deref()
     }
 }
+impl AwsRedshiftClusterElasticIpStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
+    pub fn builder() -> crate::model::aws_redshift_cluster_elastic_ip_status::Builder {
+        crate::model::aws_redshift_cluster_elastic_ip_status::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
 pub mod aws_redshift_cluster_elastic_ip_status {
     
@@ -49789,12 +50138,6 @@ pub mod aws_redshift_cluster_elastic_ip_status {
     
     
 }
-impl AwsRedshiftClusterElasticIpStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
-    pub fn builder() -> crate::model::aws_redshift_cluster_elastic_ip_status::Builder {
-        crate::model::aws_redshift_cluster_elastic_ip_status::Builder::default()
-    }
-}
 
 /// <p>A time windows during which maintenance was deferred for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -49828,6 +50171,13 @@ impl AwsRedshiftClusterDeferredMaintenanceWindow {
         self.defer_maintenance_start_time.as_deref()
     }
 }
+impl AwsRedshiftClusterDeferredMaintenanceWindow {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
+    pub fn builder() -> crate::model::aws_redshift_cluster_deferred_maintenance_window::Builder {
+        crate::model::aws_redshift_cluster_deferred_maintenance_window::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
 pub mod aws_redshift_cluster_deferred_maintenance_window {
     
@@ -49886,12 +50236,6 @@ pub mod aws_redshift_cluster_deferred_maintenance_window {
     
     
 }
-impl AwsRedshiftClusterDeferredMaintenanceWindow {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
-    pub fn builder() -> crate::model::aws_redshift_cluster_deferred_maintenance_window::Builder {
-        crate::model::aws_redshift_cluster_deferred_maintenance_window::Builder::default()
-    }
-}
 
 /// <p>Information about a cross-Region snapshot copy.</p>
 #[non_exhaustive]
@@ -49932,6 +50276,13 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
+impl AwsRedshiftClusterClusterSnapshotCopyStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
+    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_snapshot_copy_status::Builder {
+        crate::model::aws_redshift_cluster_cluster_snapshot_copy_status::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
 pub mod aws_redshift_cluster_cluster_snapshot_copy_status {
     
@@ -50004,12 +50355,6 @@ pub mod aws_redshift_cluster_cluster_snapshot_copy_status {
     
     
 }
-impl AwsRedshiftClusterClusterSnapshotCopyStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
-    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_snapshot_copy_status::Builder {
-        crate::model::aws_redshift_cluster_cluster_snapshot_copy_status::Builder::default()
-    }
-}
 
 /// <p>A security group that is associated with the cluster.</p>
 #[non_exhaustive]
@@ -50032,6 +50377,13 @@ impl AwsRedshiftClusterClusterSecurityGroup {
         self.status.as_deref()
     }
 }
+impl AwsRedshiftClusterClusterSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
+    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_security_group::Builder {
+        crate::model::aws_redshift_cluster_cluster_security_group::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
 pub mod aws_redshift_cluster_cluster_security_group {
     
@@ -50074,12 +50426,6 @@ pub mod aws_redshift_cluster_cluster_security_group {
     
     
 }
-impl AwsRedshiftClusterClusterSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
-    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_security_group::Builder {
-        crate::model::aws_redshift_cluster_cluster_security_group::Builder::default()
-    }
-}
 
 /// <p>A cluster parameter group that is associated with an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -50109,6 +50455,13 @@ impl AwsRedshiftClusterClusterParameterGroup {
         self.parameter_group_name.as_deref()
     }
 }
+impl AwsRedshiftClusterClusterParameterGroup {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
+    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_parameter_group::Builder {
+        crate::model::aws_redshift_cluster_cluster_parameter_group::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
 pub mod aws_redshift_cluster_cluster_parameter_group {
     
@@ -50169,12 +50522,6 @@ pub mod aws_redshift_cluster_cluster_parameter_group {
     
     
 }
-impl AwsRedshiftClusterClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
-    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_parameter_group::Builder {
-        crate::model::aws_redshift_cluster_cluster_parameter_group::Builder::default()
-    }
-}
 
 /// <p>The status of a parameter in a cluster parameter group for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -50206,6 +50553,13 @@ impl AwsRedshiftClusterClusterParameterStatus {
         self.parameter_apply_error_description.as_deref()
     }
 }
+impl AwsRedshiftClusterClusterParameterStatus {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
+    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_parameter_status::Builder {
+        crate::model::aws_redshift_cluster_cluster_parameter_status::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
 pub mod aws_redshift_cluster_cluster_parameter_status {
     
@@ -50262,12 +50616,6 @@ pub mod aws_redshift_cluster_cluster_parameter_status {
     
     
 }
-impl AwsRedshiftClusterClusterParameterStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
-    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_parameter_status::Builder {
-        crate::model::aws_redshift_cluster_cluster_parameter_status::Builder::default()
-    }
-}
 
 /// <p>A node in an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -50297,6 +50645,13 @@ impl AwsRedshiftClusterClusterNode {
         self.public_ip_address.as_deref()
     }
 }
+impl AwsRedshiftClusterClusterNode {
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
+    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_node::Builder {
+        crate::model::aws_redshift_cluster_cluster_node::Builder::default()
+    }
+}
+
 /// See [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
 pub mod aws_redshift_cluster_cluster_node {
     
@@ -50350,12 +50705,6 @@ pub mod aws_redshift_cluster_cluster_node {
     }
     
     
-}
-impl AwsRedshiftClusterClusterNode {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
-    pub fn builder() -> crate::model::aws_redshift_cluster_cluster_node::Builder {
-        crate::model::aws_redshift_cluster_cluster_node::Builder::default()
-    }
 }
 
 /// <p>Provides details about an Certificate Manager certificate.</p>
@@ -50550,6 +50899,13 @@ impl AwsCertificateManagerCertificateDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_details::Builder {
+        crate::model::aws_certificate_manager_certificate_details::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
 pub mod aws_certificate_manager_certificate_details {
     
@@ -50898,12 +51254,6 @@ pub mod aws_certificate_manager_certificate_details {
     
     
 }
-impl AwsCertificateManagerCertificateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_details::Builder {
-        crate::model::aws_certificate_manager_certificate_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about the Certificate Manager managed renewal for an <code>AMAZON_ISSUED</code> certificate.</p>
 #[non_exhaustive]
@@ -50946,6 +51296,13 @@ impl AwsCertificateManagerCertificateRenewalSummary {
         self.updated_at.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateRenewalSummary {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_renewal_summary::Builder {
+        crate::model::aws_certificate_manager_certificate_renewal_summary::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
 pub mod aws_certificate_manager_certificate_renewal_summary {
     
@@ -51024,12 +51381,6 @@ pub mod aws_certificate_manager_certificate_renewal_summary {
     
     
 }
-impl AwsCertificateManagerCertificateRenewalSummary {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_renewal_summary::Builder {
-        crate::model::aws_certificate_manager_certificate_renewal_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about one of the following:</p> 
 /// <ul> 
@@ -51084,6 +51435,13 @@ impl AwsCertificateManagerCertificateDomainValidationOption {
         self.validation_status.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateDomainValidationOption {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder {
+        crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
 pub mod aws_certificate_manager_certificate_domain_validation_option {
     
@@ -51180,12 +51538,6 @@ pub mod aws_certificate_manager_certificate_domain_validation_option {
     
     
 }
-impl AwsCertificateManagerCertificateDomainValidationOption {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder {
-        crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder::default()
-    }
-}
 
 /// <p>Provides details about the CNAME record that is added to the DNS database for domain validation.</p>
 #[non_exhaustive]
@@ -51215,6 +51567,13 @@ impl AwsCertificateManagerCertificateResourceRecord {
         self.value.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateResourceRecord {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_resource_record::Builder {
+        crate::model::aws_certificate_manager_certificate_resource_record::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
 pub mod aws_certificate_manager_certificate_resource_record {
     
@@ -51269,12 +51628,6 @@ pub mod aws_certificate_manager_certificate_resource_record {
     
     
 }
-impl AwsCertificateManagerCertificateResourceRecord {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_resource_record::Builder {
-        crate::model::aws_certificate_manager_certificate_resource_record::Builder::default()
-    }
-}
 
 /// <p>Contains other options for the certificate.</p>
 #[non_exhaustive]
@@ -51292,6 +51645,13 @@ impl AwsCertificateManagerCertificateOptions {
         self.certificate_transparency_logging_preference.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateOptions {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_options::Builder {
+        crate::model::aws_certificate_manager_certificate_options::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
 pub mod aws_certificate_manager_certificate_options {
     
@@ -51324,12 +51684,6 @@ pub mod aws_certificate_manager_certificate_options {
     
     
 }
-impl AwsCertificateManagerCertificateOptions {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_options::Builder {
-        crate::model::aws_certificate_manager_certificate_options::Builder::default()
-    }
-}
 
 /// <p>Contains information about a key usage X.509 v3 extension object.</p>
 #[non_exhaustive]
@@ -51345,6 +51699,13 @@ impl AwsCertificateManagerCertificateKeyUsage {
         self.name.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateKeyUsage {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_key_usage::Builder {
+        crate::model::aws_certificate_manager_certificate_key_usage::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
 pub mod aws_certificate_manager_certificate_key_usage {
     
@@ -51375,12 +51736,6 @@ pub mod aws_certificate_manager_certificate_key_usage {
     
     
 }
-impl AwsCertificateManagerCertificateKeyUsage {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_key_usage::Builder {
-        crate::model::aws_certificate_manager_certificate_key_usage::Builder::default()
-    }
-}
 
 /// <p>Contains information about an extended key usage X.509 v3 extension object.</p>
 #[non_exhaustive]
@@ -51405,6 +51760,13 @@ impl AwsCertificateManagerCertificateExtendedKeyUsage {
         self.o_id.as_deref()
     }
 }
+impl AwsCertificateManagerCertificateExtendedKeyUsage {
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
+    pub fn builder() -> crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder {
+        crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder::default()
+    }
+}
+
 /// See [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
 pub mod aws_certificate_manager_certificate_extended_key_usage {
     
@@ -51449,12 +51811,6 @@ pub mod aws_certificate_manager_certificate_extended_key_usage {
     
     
 }
-impl AwsCertificateManagerCertificateExtendedKeyUsage {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
-    pub fn builder() -> crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder {
-        crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder::default()
-    }
-}
 
 /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
 #[non_exhaustive]
@@ -51470,6 +51826,13 @@ impl AwsSsmPatchComplianceDetails {
         self.patch.as_ref()
     }
 }
+impl AwsSsmPatchComplianceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
+    pub fn builder() -> crate::model::aws_ssm_patch_compliance_details::Builder {
+        crate::model::aws_ssm_patch_compliance_details::Builder::default()
+    }
+}
+
 /// See [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
 pub mod aws_ssm_patch_compliance_details {
     
@@ -51500,12 +51863,6 @@ pub mod aws_ssm_patch_compliance_details {
     
     
 }
-impl AwsSsmPatchComplianceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
-    pub fn builder() -> crate::model::aws_ssm_patch_compliance_details::Builder {
-        crate::model::aws_ssm_patch_compliance_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about the compliance for a patch.</p>
 #[non_exhaustive]
@@ -51521,6 +51878,13 @@ impl AwsSsmPatch {
         self.compliance_summary.as_ref()
     }
 }
+impl AwsSsmPatch {
+    /// Creates a new builder-style object to manufacture [`AwsSsmPatch`](crate::model::AwsSsmPatch).
+    pub fn builder() -> crate::model::aws_ssm_patch::Builder {
+        crate::model::aws_ssm_patch::Builder::default()
+    }
+}
+
 /// See [`AwsSsmPatch`](crate::model::AwsSsmPatch).
 pub mod aws_ssm_patch {
     
@@ -51550,12 +51914,6 @@ pub mod aws_ssm_patch {
     }
     
     
-}
-impl AwsSsmPatch {
-    /// Creates a new builder-style object to manufacture [`AwsSsmPatch`](crate::model::AwsSsmPatch).
-    pub fn builder() -> crate::model::aws_ssm_patch::Builder {
-        crate::model::aws_ssm_patch::Builder::default()
-    }
 }
 
 /// <p>Provides the details about the compliance status for a patch.</p>
@@ -51717,6 +52075,13 @@ impl AwsSsmComplianceSummary {
         self.patch_group.as_deref()
     }
 }
+impl AwsSsmComplianceSummary {
+    /// Creates a new builder-style object to manufacture [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
+    pub fn builder() -> crate::model::aws_ssm_compliance_summary::Builder {
+        crate::model::aws_ssm_compliance_summary::Builder::default()
+    }
+}
+
 /// See [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
 pub mod aws_ssm_compliance_summary {
     
@@ -51989,12 +52354,6 @@ pub mod aws_ssm_compliance_summary {
     
     
 }
-impl AwsSsmComplianceSummary {
-    /// Creates a new builder-style object to manufacture [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
-    pub fn builder() -> crate::model::aws_ssm_compliance_summary::Builder {
-        crate::model::aws_ssm_compliance_summary::Builder::default()
-    }
-}
 
 /// <p>Provides details about a CloudTrail trail.</p>
 #[non_exhaustive]
@@ -52108,6 +52467,13 @@ impl AwsCloudTrailTrailDetails {
         self.trail_arn.as_deref()
     }
 }
+impl AwsCloudTrailTrailDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
+    pub fn builder() -> crate::model::aws_cloud_trail_trail_details::Builder {
+        crate::model::aws_cloud_trail_trail_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
 pub mod aws_cloud_trail_trail_details {
     
@@ -52311,12 +52677,6 @@ pub mod aws_cloud_trail_trail_details {
     
     
 }
-impl AwsCloudTrailTrailDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
-    pub fn builder() -> crate::model::aws_cloud_trail_trail_details::Builder {
-        crate::model::aws_cloud_trail_trail_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about a REST API in version 1 of Amazon API Gateway.</p>
 #[non_exhaustive]
@@ -52398,6 +52758,13 @@ impl AwsApiGatewayRestApiDetails {
         self.endpoint_configuration.as_ref()
     }
 }
+impl AwsApiGatewayRestApiDetails {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
+    pub fn builder() -> crate::model::aws_api_gateway_rest_api_details::Builder {
+        crate::model::aws_api_gateway_rest_api_details::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
 pub mod aws_api_gateway_rest_api_details {
     
@@ -52541,12 +52908,6 @@ pub mod aws_api_gateway_rest_api_details {
     
     
 }
-impl AwsApiGatewayRestApiDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
-    pub fn builder() -> crate::model::aws_api_gateway_rest_api_details::Builder {
-        crate::model::aws_api_gateway_rest_api_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about the endpoints for the API.</p>
 #[non_exhaustive]
@@ -52564,6 +52925,13 @@ impl AwsApiGatewayEndpointConfiguration {
         self.types.as_deref()
     }
 }
+impl AwsApiGatewayEndpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
+    pub fn builder() -> crate::model::aws_api_gateway_endpoint_configuration::Builder {
+        crate::model::aws_api_gateway_endpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
 pub mod aws_api_gateway_endpoint_configuration {
     
@@ -52601,12 +52969,6 @@ pub mod aws_api_gateway_endpoint_configuration {
     }
     
     
-}
-impl AwsApiGatewayEndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
-    pub fn builder() -> crate::model::aws_api_gateway_endpoint_configuration::Builder {
-        crate::model::aws_api_gateway_endpoint_configuration::Builder::default()
-    }
 }
 
 /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
@@ -52746,6 +53108,13 @@ impl AwsApiGatewayStageDetails {
         self.web_acl_arn.as_deref()
     }
 }
+impl AwsApiGatewayStageDetails {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
+    pub fn builder() -> crate::model::aws_api_gateway_stage_details::Builder {
+        crate::model::aws_api_gateway_stage_details::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
 pub mod aws_api_gateway_stage_details {
     
@@ -52988,12 +53357,6 @@ pub mod aws_api_gateway_stage_details {
     
     
 }
-impl AwsApiGatewayStageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
-    pub fn builder() -> crate::model::aws_api_gateway_stage_details::Builder {
-        crate::model::aws_api_gateway_stage_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about settings for canary deployment in the stage.</p>
 #[non_exhaustive]
@@ -53032,6 +53395,13 @@ impl AwsApiGatewayCanarySettings {
         self.use_stage_cache
     }
 }
+impl AwsApiGatewayCanarySettings {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
+    pub fn builder() -> crate::model::aws_api_gateway_canary_settings::Builder {
+        crate::model::aws_api_gateway_canary_settings::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
 pub mod aws_api_gateway_canary_settings {
     
@@ -53108,12 +53478,6 @@ pub mod aws_api_gateway_canary_settings {
     
     
 }
-impl AwsApiGatewayCanarySettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
-    pub fn builder() -> crate::model::aws_api_gateway_canary_settings::Builder {
-        crate::model::aws_api_gateway_canary_settings::Builder::default()
-    }
-}
 
 /// <p>Contains information about settings for logging access for the stage.</p>
 #[non_exhaustive]
@@ -53136,6 +53500,13 @@ impl AwsApiGatewayAccessLogSettings {
         self.destination_arn.as_deref()
     }
 }
+impl AwsApiGatewayAccessLogSettings {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
+    pub fn builder() -> crate::model::aws_api_gateway_access_log_settings::Builder {
+        crate::model::aws_api_gateway_access_log_settings::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
 pub mod aws_api_gateway_access_log_settings {
     
@@ -53177,12 +53548,6 @@ pub mod aws_api_gateway_access_log_settings {
     }
     
     
-}
-impl AwsApiGatewayAccessLogSettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
-    pub fn builder() -> crate::model::aws_api_gateway_access_log_settings::Builder {
-        crate::model::aws_api_gateway_access_log_settings::Builder::default()
-    }
 }
 
 /// <p>Defines settings for a method for the stage.</p>
@@ -53288,6 +53653,13 @@ impl AwsApiGatewayMethodSettings {
         self.resource_path.as_deref()
     }
 }
+impl AwsApiGatewayMethodSettings {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
+    pub fn builder() -> crate::model::aws_api_gateway_method_settings::Builder {
+        crate::model::aws_api_gateway_method_settings::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
 pub mod aws_api_gateway_method_settings {
     
@@ -53470,12 +53842,6 @@ pub mod aws_api_gateway_method_settings {
     
     
 }
-impl AwsApiGatewayMethodSettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
-    pub fn builder() -> crate::model::aws_api_gateway_method_settings::Builder {
-        crate::model::aws_api_gateway_method_settings::Builder::default()
-    }
-}
 
 /// <p>Provides details about a DynamoDB table.</p>
 #[non_exhaustive]
@@ -53637,6 +54003,13 @@ impl AwsDynamoDbTableDetails {
         self.table_status.as_deref()
     }
 }
+impl AwsDynamoDbTableDetails {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_details::Builder {
+        crate::model::aws_dynamo_db_table_details::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
 pub mod aws_dynamo_db_table_details {
     
@@ -53935,12 +54308,6 @@ pub mod aws_dynamo_db_table_details {
     
     
 }
-impl AwsDynamoDbTableDetails {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_details::Builder {
-        crate::model::aws_dynamo_db_table_details::Builder::default()
-    }
-}
 
 /// <p>The current DynamoDB Streams configuration for the table.</p>
 #[non_exhaustive]
@@ -53963,6 +54330,13 @@ impl AwsDynamoDbTableStreamSpecification {
         self.stream_view_type.as_deref()
     }
 }
+impl AwsDynamoDbTableStreamSpecification {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_stream_specification::Builder {
+        crate::model::aws_dynamo_db_table_stream_specification::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
 pub mod aws_dynamo_db_table_stream_specification {
     
@@ -54006,12 +54380,6 @@ pub mod aws_dynamo_db_table_stream_specification {
     
     
 }
-impl AwsDynamoDbTableStreamSpecification {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_stream_specification::Builder {
-        crate::model::aws_dynamo_db_table_stream_specification::Builder::default()
-    }
-}
 
 /// <p>Information about the server-side encryption for the table.</p>
 #[non_exhaustive]
@@ -54050,6 +54418,13 @@ impl AwsDynamoDbTableSseDescription {
         self.kms_master_key_arn.as_deref()
     }
 }
+impl AwsDynamoDbTableSseDescription {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_sse_description::Builder {
+        crate::model::aws_dynamo_db_table_sse_description::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
 pub mod aws_dynamo_db_table_sse_description {
     
@@ -54118,12 +54493,6 @@ pub mod aws_dynamo_db_table_sse_description {
     
     
 }
-impl AwsDynamoDbTableSseDescription {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_sse_description::Builder {
-        crate::model::aws_dynamo_db_table_sse_description::Builder::default()
-    }
-}
 
 /// <p>Information about the restore for the table.</p>
 #[non_exhaustive]
@@ -54162,6 +54531,13 @@ impl AwsDynamoDbTableRestoreSummary {
         self.restore_in_progress
     }
 }
+impl AwsDynamoDbTableRestoreSummary {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_restore_summary::Builder {
+        crate::model::aws_dynamo_db_table_restore_summary::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
 pub mod aws_dynamo_db_table_restore_summary {
     
@@ -54231,12 +54607,6 @@ pub mod aws_dynamo_db_table_restore_summary {
     
     
 }
-impl AwsDynamoDbTableRestoreSummary {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_restore_summary::Builder {
-        crate::model::aws_dynamo_db_table_restore_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a replica of a DynamoDB table.</p>
 #[non_exhaustive]
@@ -54301,6 +54671,13 @@ impl AwsDynamoDbTableReplica {
         self.replica_status_description.as_deref()
     }
 }
+impl AwsDynamoDbTableReplica {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_replica::Builder {
+        crate::model::aws_dynamo_db_table_replica::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
 pub mod aws_dynamo_db_table_replica {
     
@@ -54411,12 +54788,6 @@ pub mod aws_dynamo_db_table_replica {
     
     
 }
-impl AwsDynamoDbTableReplica {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_replica::Builder {
-        crate::model::aws_dynamo_db_table_replica::Builder::default()
-    }
-}
 
 /// <p>Replica-specific configuration for the provisioned throughput.</p>
 #[non_exhaustive]
@@ -54432,6 +54803,13 @@ impl AwsDynamoDbTableProvisionedThroughputOverride {
         self.read_capacity_units
     }
 }
+impl AwsDynamoDbTableProvisionedThroughputOverride {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_provisioned_throughput_override::Builder {
+        crate::model::aws_dynamo_db_table_provisioned_throughput_override::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
 pub mod aws_dynamo_db_table_provisioned_throughput_override {
     
@@ -54463,12 +54841,6 @@ pub mod aws_dynamo_db_table_provisioned_throughput_override {
     
     
 }
-impl AwsDynamoDbTableProvisionedThroughputOverride {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_provisioned_throughput_override::Builder {
-        crate::model::aws_dynamo_db_table_provisioned_throughput_override::Builder::default()
-    }
-}
 
 /// <p>Information about a global secondary index for a DynamoDB table replica.</p>
 #[non_exhaustive]
@@ -54491,6 +54863,13 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
         self.provisioned_throughput_override.as_ref()
     }
 }
+impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_replica_global_secondary_index::Builder {
+        crate::model::aws_dynamo_db_table_replica_global_secondary_index::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
 pub mod aws_dynamo_db_table_replica_global_secondary_index {
     
@@ -54532,12 +54911,6 @@ pub mod aws_dynamo_db_table_replica_global_secondary_index {
     }
     
     
-}
-impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_replica_global_secondary_index::Builder {
-        crate::model::aws_dynamo_db_table_replica_global_secondary_index::Builder::default()
-    }
 }
 
 /// <p>Information about the provisioned throughput for the table or for a global secondary index.</p>
@@ -54586,6 +54959,13 @@ impl AwsDynamoDbTableProvisionedThroughput {
         self.write_capacity_units
     }
 }
+impl AwsDynamoDbTableProvisionedThroughput {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_provisioned_throughput::Builder {
+        crate::model::aws_dynamo_db_table_provisioned_throughput::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
 pub mod aws_dynamo_db_table_provisioned_throughput {
     
@@ -54671,12 +55051,6 @@ pub mod aws_dynamo_db_table_provisioned_throughput {
     
     
 }
-impl AwsDynamoDbTableProvisionedThroughput {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_provisioned_throughput::Builder {
-        crate::model::aws_dynamo_db_table_provisioned_throughput::Builder::default()
-    }
-}
 
 /// <p>Information about a local secondary index for a DynamoDB table.</p>
 #[non_exhaustive]
@@ -54713,6 +55087,13 @@ impl AwsDynamoDbTableLocalSecondaryIndex {
         self.projection.as_ref()
     }
 }
+impl AwsDynamoDbTableLocalSecondaryIndex {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_local_secondary_index::Builder {
+        crate::model::aws_dynamo_db_table_local_secondary_index::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
 pub mod aws_dynamo_db_table_local_secondary_index {
     
@@ -54785,12 +55166,6 @@ pub mod aws_dynamo_db_table_local_secondary_index {
     
     
 }
-impl AwsDynamoDbTableLocalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_local_secondary_index::Builder {
-        crate::model::aws_dynamo_db_table_local_secondary_index::Builder::default()
-    }
-}
 
 /// <p>For global and local secondary indexes, identifies the attributes that are copied from the table into the index.</p>
 #[non_exhaustive]
@@ -54823,6 +55198,13 @@ impl AwsDynamoDbTableProjection {
         self.projection_type.as_deref()
     }
 }
+impl AwsDynamoDbTableProjection {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_projection::Builder {
+        crate::model::aws_dynamo_db_table_projection::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
 pub mod aws_dynamo_db_table_projection {
     
@@ -54881,12 +55263,6 @@ pub mod aws_dynamo_db_table_projection {
     
     
 }
-impl AwsDynamoDbTableProjection {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_projection::Builder {
-        crate::model::aws_dynamo_db_table_projection::Builder::default()
-    }
-}
 
 /// <p>A component of the key schema for the DynamoDB table, a global secondary index, or a local secondary index.</p>
 #[non_exhaustive]
@@ -54909,6 +55285,13 @@ impl AwsDynamoDbTableKeySchema {
         self.key_type.as_deref()
     }
 }
+impl AwsDynamoDbTableKeySchema {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_key_schema::Builder {
+        crate::model::aws_dynamo_db_table_key_schema::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
 pub mod aws_dynamo_db_table_key_schema {
     
@@ -54950,12 +55333,6 @@ pub mod aws_dynamo_db_table_key_schema {
     }
     
     
-}
-impl AwsDynamoDbTableKeySchema {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_key_schema::Builder {
-        crate::model::aws_dynamo_db_table_key_schema::Builder::default()
-    }
 }
 
 /// <p>Information abut a global secondary index for the table.</p>
@@ -55040,6 +55417,13 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.provisioned_throughput.as_ref()
     }
 }
+impl AwsDynamoDbTableGlobalSecondaryIndex {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_global_secondary_index::Builder {
+        crate::model::aws_dynamo_db_table_global_secondary_index::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
 pub mod aws_dynamo_db_table_global_secondary_index {
     
@@ -55187,12 +55571,6 @@ pub mod aws_dynamo_db_table_global_secondary_index {
     
     
 }
-impl AwsDynamoDbTableGlobalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_global_secondary_index::Builder {
-        crate::model::aws_dynamo_db_table_global_secondary_index::Builder::default()
-    }
-}
 
 /// <p>Provides information about the billing for read/write capacity on the table.</p>
 #[non_exhaustive]
@@ -55217,6 +55595,13 @@ impl AwsDynamoDbTableBillingModeSummary {
         self.last_update_to_pay_per_request_date_time.as_deref()
     }
 }
+impl AwsDynamoDbTableBillingModeSummary {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_billing_mode_summary::Builder {
+        crate::model::aws_dynamo_db_table_billing_mode_summary::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
 pub mod aws_dynamo_db_table_billing_mode_summary {
     
@@ -55261,12 +55646,6 @@ pub mod aws_dynamo_db_table_billing_mode_summary {
     
     
 }
-impl AwsDynamoDbTableBillingModeSummary {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_billing_mode_summary::Builder {
-        crate::model::aws_dynamo_db_table_billing_mode_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a definition of an attribute for the table.</p>
 #[non_exhaustive]
@@ -55289,6 +55668,13 @@ impl AwsDynamoDbTableAttributeDefinition {
         self.attribute_type.as_deref()
     }
 }
+impl AwsDynamoDbTableAttributeDefinition {
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
+    pub fn builder() -> crate::model::aws_dynamo_db_table_attribute_definition::Builder {
+        crate::model::aws_dynamo_db_table_attribute_definition::Builder::default()
+    }
+}
+
 /// See [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
 pub mod aws_dynamo_db_table_attribute_definition {
     
@@ -55330,12 +55716,6 @@ pub mod aws_dynamo_db_table_attribute_definition {
     }
     
     
-}
-impl AwsDynamoDbTableAttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
-    pub fn builder() -> crate::model::aws_dynamo_db_table_attribute_definition::Builder {
-        crate::model::aws_dynamo_db_table_attribute_definition::Builder::default()
-    }
 }
 
 /// <p>Contains information about a version 2 API in Amazon API Gateway.</p>
@@ -55431,6 +55811,13 @@ impl AwsApiGatewayV2ApiDetails {
         self.cors_configuration.as_ref()
     }
 }
+impl AwsApiGatewayV2ApiDetails {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
+    pub fn builder() -> crate::model::aws_api_gateway_v2_api_details::Builder {
+        crate::model::aws_api_gateway_v2_api_details::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
 pub mod aws_api_gateway_v2_api_details {
     
@@ -55585,12 +55972,6 @@ pub mod aws_api_gateway_v2_api_details {
     
     
 }
-impl AwsApiGatewayV2ApiDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
-    pub fn builder() -> crate::model::aws_api_gateway_v2_api_details::Builder {
-        crate::model::aws_api_gateway_v2_api_details::Builder::default()
-    }
-}
 
 /// <p>Contains the cross-origin resource sharing (CORS) configuration for the API. CORS is only supported for HTTP APIs.</p>
 #[non_exhaustive]
@@ -55641,6 +56022,13 @@ impl AwsCorsConfiguration {
         self.allow_headers.as_deref()
     }
 }
+impl AwsCorsConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
+    pub fn builder() -> crate::model::aws_cors_configuration::Builder {
+        crate::model::aws_cors_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
 pub mod aws_cors_configuration {
     
@@ -55756,12 +56144,6 @@ pub mod aws_cors_configuration {
     }
     
     
-}
-impl AwsCorsConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
-    pub fn builder() -> crate::model::aws_cors_configuration::Builder {
-        crate::model::aws_cors_configuration::Builder::default()
-    }
 }
 
 /// <p>Contains information about a version 2 stage for Amazon API Gateway.</p>
@@ -55880,6 +56262,13 @@ impl AwsApiGatewayV2StageDetails {
         self.api_gateway_managed
     }
 }
+impl AwsApiGatewayV2StageDetails {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
+    pub fn builder() -> crate::model::aws_api_gateway_v2_stage_details::Builder {
+        crate::model::aws_api_gateway_v2_stage_details::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
 pub mod aws_api_gateway_v2_stage_details {
     
@@ -56080,12 +56469,6 @@ pub mod aws_api_gateway_v2_stage_details {
     
     
 }
-impl AwsApiGatewayV2StageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
-    pub fn builder() -> crate::model::aws_api_gateway_v2_stage_details::Builder {
-        crate::model::aws_api_gateway_v2_stage_details::Builder::default()
-    }
-}
 
 /// <p>Contains route settings for a stage.</p>
 #[non_exhaustive]
@@ -56135,6 +56518,13 @@ impl AwsApiGatewayV2RouteSettings {
         self.throttling_rate_limit
     }
 }
+impl AwsApiGatewayV2RouteSettings {
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
+    pub fn builder() -> crate::model::aws_api_gateway_v2_route_settings::Builder {
+        crate::model::aws_api_gateway_v2_route_settings::Builder::default()
+    }
+}
+
 /// See [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
 pub mod aws_api_gateway_v2_route_settings {
     
@@ -56222,12 +56612,6 @@ pub mod aws_api_gateway_v2_route_settings {
     }
     
     
-}
-impl AwsApiGatewayV2RouteSettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
-    pub fn builder() -> crate::model::aws_api_gateway_v2_route_settings::Builder {
-        crate::model::aws_api_gateway_v2_route_settings::Builder::default()
-    }
 }
 
 /// <p>Represents an IAM permissions policy.</p>
@@ -56318,6 +56702,13 @@ impl AwsIamPolicyDetails {
         self.update_date.as_deref()
     }
 }
+impl AwsIamPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
+    pub fn builder() -> crate::model::aws_iam_policy_details::Builder {
+        crate::model::aws_iam_policy_details::Builder::default()
+    }
+}
+
 /// See [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
 pub mod aws_iam_policy_details {
     
@@ -56481,12 +56872,6 @@ pub mod aws_iam_policy_details {
     
     
 }
-impl AwsIamPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
-    pub fn builder() -> crate::model::aws_iam_policy_details::Builder {
-        crate::model::aws_iam_policy_details::Builder::default()
-    }
-}
 
 /// <p>A version of an IAM policy.</p>
 #[non_exhaustive]
@@ -56518,6 +56903,13 @@ impl AwsIamPolicyVersion {
         self.create_date.as_deref()
     }
 }
+impl AwsIamPolicyVersion {
+    /// Creates a new builder-style object to manufacture [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
+    pub fn builder() -> crate::model::aws_iam_policy_version::Builder {
+        crate::model::aws_iam_policy_version::Builder::default()
+    }
+}
+
 /// See [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
 pub mod aws_iam_policy_version {
     
@@ -56574,12 +56966,6 @@ pub mod aws_iam_policy_version {
     }
     
     
-}
-impl AwsIamPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
-    pub fn builder() -> crate::model::aws_iam_policy_version::Builder {
-        crate::model::aws_iam_policy_version::Builder::default()
-    }
 }
 
 /// <p>Information about an IAM user.</p>
@@ -56647,6 +57033,13 @@ impl AwsIamUserDetails {
         self.user_policy_list.as_deref()
     }
 }
+impl AwsIamUserDetails {
+    /// Creates a new builder-style object to manufacture [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
+    pub fn builder() -> crate::model::aws_iam_user_details::Builder {
+        crate::model::aws_iam_user_details::Builder::default()
+    }
+}
+
 /// See [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
 pub mod aws_iam_user_details {
     
@@ -56781,12 +57174,6 @@ pub mod aws_iam_user_details {
     
     
 }
-impl AwsIamUserDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
-    pub fn builder() -> crate::model::aws_iam_user_details::Builder {
-        crate::model::aws_iam_user_details::Builder::default()
-    }
-}
 
 /// <p>Information about an inline policy that is embedded in the user.</p>
 #[non_exhaustive]
@@ -56802,6 +57189,13 @@ impl AwsIamUserPolicy {
         self.policy_name.as_deref()
     }
 }
+impl AwsIamUserPolicy {
+    /// Creates a new builder-style object to manufacture [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
+    pub fn builder() -> crate::model::aws_iam_user_policy::Builder {
+        crate::model::aws_iam_user_policy::Builder::default()
+    }
+}
+
 /// See [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
 pub mod aws_iam_user_policy {
     
@@ -56831,12 +57225,6 @@ pub mod aws_iam_user_policy {
     }
     
     
-}
-impl AwsIamUserPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
-    pub fn builder() -> crate::model::aws_iam_user_policy::Builder {
-        crate::model::aws_iam_user_policy::Builder::default()
-    }
 }
 
 /// <p>IAM access key details related to a finding.</p>
@@ -56915,6 +57303,13 @@ impl AwsIamAccessKeyDetails {
         self.session_context.as_ref()
     }
 }
+impl AwsIamAccessKeyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
+    pub fn builder() -> crate::model::aws_iam_access_key_details::Builder {
+        crate::model::aws_iam_access_key_details::Builder::default()
+    }
+}
+
 /// See [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
 pub mod aws_iam_access_key_details {
     
@@ -57047,12 +57442,6 @@ pub mod aws_iam_access_key_details {
     
     
 }
-impl AwsIamAccessKeyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
-    pub fn builder() -> crate::model::aws_iam_access_key_details::Builder {
-        crate::model::aws_iam_access_key_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the session that the key was used for.</p>
 #[non_exhaustive]
@@ -57075,6 +57464,13 @@ impl AwsIamAccessKeySessionContext {
         self.session_issuer.as_ref()
     }
 }
+impl AwsIamAccessKeySessionContext {
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
+    pub fn builder() -> crate::model::aws_iam_access_key_session_context::Builder {
+        crate::model::aws_iam_access_key_session_context::Builder::default()
+    }
+}
+
 /// See [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
 pub mod aws_iam_access_key_session_context {
     
@@ -57116,12 +57512,6 @@ pub mod aws_iam_access_key_session_context {
     }
     
     
-}
-impl AwsIamAccessKeySessionContext {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
-    pub fn builder() -> crate::model::aws_iam_access_key_session_context::Builder {
-        crate::model::aws_iam_access_key_session_context::Builder::default()
-    }
 }
 
 /// <p>Information about the entity that created the session.</p>
@@ -57166,6 +57556,13 @@ impl AwsIamAccessKeySessionContextSessionIssuer {
         self.user_name.as_deref()
     }
 }
+impl AwsIamAccessKeySessionContextSessionIssuer {
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
+    pub fn builder() -> crate::model::aws_iam_access_key_session_context_session_issuer::Builder {
+        crate::model::aws_iam_access_key_session_context_session_issuer::Builder::default()
+    }
+}
+
 /// See [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
 pub mod aws_iam_access_key_session_context_session_issuer {
     
@@ -57244,12 +57641,6 @@ pub mod aws_iam_access_key_session_context_session_issuer {
     
     
 }
-impl AwsIamAccessKeySessionContextSessionIssuer {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
-    pub fn builder() -> crate::model::aws_iam_access_key_session_context_session_issuer::Builder {
-        crate::model::aws_iam_access_key_session_context_session_issuer::Builder::default()
-    }
-}
 
 /// <p>Attributes of the session that the key was used for.</p>
 #[non_exhaustive]
@@ -57274,6 +57665,13 @@ impl AwsIamAccessKeySessionContextAttributes {
         self.creation_date.as_deref()
     }
 }
+impl AwsIamAccessKeySessionContextAttributes {
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
+    pub fn builder() -> crate::model::aws_iam_access_key_session_context_attributes::Builder {
+        crate::model::aws_iam_access_key_session_context_attributes::Builder::default()
+    }
+}
+
 /// See [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
 pub mod aws_iam_access_key_session_context_attributes {
     
@@ -57318,12 +57716,6 @@ pub mod aws_iam_access_key_session_context_attributes {
     }
     
     
-}
-impl AwsIamAccessKeySessionContextAttributes {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
-    pub fn builder() -> crate::model::aws_iam_access_key_session_context_attributes::Builder {
-        crate::model::aws_iam_access_key_session_context_attributes::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AwsIamAccessKeyStatus`, it is important to ensure
@@ -57471,6 +57863,13 @@ impl AwsSecretsManagerSecretDetails {
         self.description.as_deref()
     }
 }
+impl AwsSecretsManagerSecretDetails {
+    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
+    pub fn builder() -> crate::model::aws_secrets_manager_secret_details::Builder {
+        crate::model::aws_secrets_manager_secret_details::Builder::default()
+    }
+}
+
 /// See [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
 pub mod aws_secrets_manager_secret_details {
     
@@ -57588,12 +57987,6 @@ pub mod aws_secrets_manager_secret_details {
     
     
 }
-impl AwsSecretsManagerSecretDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
-    pub fn builder() -> crate::model::aws_secrets_manager_secret_details::Builder {
-        crate::model::aws_secrets_manager_secret_details::Builder::default()
-    }
-}
 
 /// <p>Defines the rotation schedule for the secret.</p>
 #[non_exhaustive]
@@ -57609,6 +58002,13 @@ impl AwsSecretsManagerSecretRotationRules {
         self.automatically_after_days
     }
 }
+impl AwsSecretsManagerSecretRotationRules {
+    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
+    pub fn builder() -> crate::model::aws_secrets_manager_secret_rotation_rules::Builder {
+        crate::model::aws_secrets_manager_secret_rotation_rules::Builder::default()
+    }
+}
+
 /// See [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
 pub mod aws_secrets_manager_secret_rotation_rules {
     
@@ -57639,12 +58039,6 @@ pub mod aws_secrets_manager_secret_rotation_rules {
     }
     
     
-}
-impl AwsSecretsManagerSecretRotationRules {
-    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
-    pub fn builder() -> crate::model::aws_secrets_manager_secret_rotation_rules::Builder {
-        crate::model::aws_secrets_manager_secret_rotation_rules::Builder::default()
-    }
 }
 
 /// <p>Details about an Amazon S3 object.</p>
@@ -57698,6 +58092,13 @@ impl AwsS3ObjectDetails {
         self.ssekms_key_id.as_deref()
     }
 }
+impl AwsS3ObjectDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
+    pub fn builder() -> crate::model::aws_s3_object_details::Builder {
+        crate::model::aws_s3_object_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
 pub mod aws_s3_object_details {
     
@@ -57790,12 +58191,6 @@ pub mod aws_s3_object_details {
     
     
 }
-impl AwsS3ObjectDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
-    pub fn builder() -> crate::model::aws_s3_object_details::Builder {
-        crate::model::aws_s3_object_details::Builder::default()
-    }
-}
 
 /// <p>provides information about the Amazon S3 Public Access Block configuration for accounts.</p>
 #[non_exhaustive]
@@ -57832,6 +58227,13 @@ impl AwsS3AccountPublicAccessBlockDetails {
         self.restrict_public_buckets
     }
 }
+impl AwsS3AccountPublicAccessBlockDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
+    pub fn builder() -> crate::model::aws_s3_account_public_access_block_details::Builder {
+        crate::model::aws_s3_account_public_access_block_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
 pub mod aws_s3_account_public_access_block_details {
     
@@ -57901,12 +58303,6 @@ pub mod aws_s3_account_public_access_block_details {
     }
     
     
-}
-impl AwsS3AccountPublicAccessBlockDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
-    pub fn builder() -> crate::model::aws_s3_account_public_access_block_details::Builder {
-        crate::model::aws_s3_account_public_access_block_details::Builder::default()
-    }
 }
 
 /// <p>The details of an Amazon S3 bucket.</p>
@@ -58002,6 +58398,13 @@ impl AwsS3BucketDetails {
         self.bucket_versioning_configuration.as_ref()
     }
 }
+impl AwsS3BucketDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_details::Builder {
+        crate::model::aws_s3_bucket_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
 pub mod aws_s3_bucket_details {
     
@@ -58166,12 +58569,6 @@ pub mod aws_s3_bucket_details {
     
     
 }
-impl AwsS3BucketDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_details::Builder {
-        crate::model::aws_s3_bucket_details::Builder::default()
-    }
-}
 
 /// <p>Describes the versioning state of an S3 bucket.</p>
 #[non_exhaustive]
@@ -58194,6 +58591,13 @@ impl AwsS3BucketBucketVersioningConfiguration {
         self.status.as_deref()
     }
 }
+impl AwsS3BucketBucketVersioningConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_versioning_configuration::Builder {
+        crate::model::aws_s3_bucket_bucket_versioning_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
 pub mod aws_s3_bucket_bucket_versioning_configuration {
     
@@ -58237,12 +58641,6 @@ pub mod aws_s3_bucket_bucket_versioning_configuration {
     
     
 }
-impl AwsS3BucketBucketVersioningConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_versioning_configuration::Builder {
-        crate::model::aws_s3_bucket_bucket_versioning_configuration::Builder::default()
-    }
-}
 
 /// <p>The notification configuration for the S3 bucket.</p>
 #[non_exhaustive]
@@ -58258,6 +58656,13 @@ impl AwsS3BucketNotificationConfiguration {
         self.configurations.as_deref()
     }
 }
+impl AwsS3BucketNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration::Builder {
+        crate::model::aws_s3_bucket_notification_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
 pub mod aws_s3_bucket_notification_configuration {
     
@@ -58293,12 +58698,6 @@ pub mod aws_s3_bucket_notification_configuration {
     }
     
     
-}
-impl AwsS3BucketNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
-    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration::Builder {
-        crate::model::aws_s3_bucket_notification_configuration::Builder::default()
-    }
 }
 
 /// <p>Details for an S3 bucket notification configuration.</p>
@@ -58346,6 +58745,13 @@ impl AwsS3BucketNotificationConfigurationDetail {
         self.r#type.as_deref()
     }
 }
+impl AwsS3BucketNotificationConfigurationDetail {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_detail::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_detail::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
 pub mod aws_s3_bucket_notification_configuration_detail {
     
@@ -58428,12 +58834,6 @@ pub mod aws_s3_bucket_notification_configuration_detail {
     
     
 }
-impl AwsS3BucketNotificationConfigurationDetail {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
-    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_detail::Builder {
-        crate::model::aws_s3_bucket_notification_configuration_detail::Builder::default()
-    }
-}
 
 /// <p>Filtering information for the notifications. The filtering is based on Amazon S3 key names.</p>
 #[non_exhaustive]
@@ -58449,6 +58849,13 @@ impl AwsS3BucketNotificationConfigurationFilter {
         self.s3_key_filter.as_ref()
     }
 }
+impl AwsS3BucketNotificationConfigurationFilter {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_filter::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_filter::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
 pub mod aws_s3_bucket_notification_configuration_filter {
     
@@ -58479,12 +58886,6 @@ pub mod aws_s3_bucket_notification_configuration_filter {
     
     
 }
-impl AwsS3BucketNotificationConfigurationFilter {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
-    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_filter::Builder {
-        crate::model::aws_s3_bucket_notification_configuration_filter::Builder::default()
-    }
-}
 
 /// <p>Details for an Amazon S3 filter.</p>
 #[non_exhaustive]
@@ -58500,6 +58901,13 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilter {
         self.filter_rules.as_deref()
     }
 }
+impl AwsS3BucketNotificationConfigurationS3KeyFilter {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
 pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
     
@@ -58536,12 +58944,6 @@ pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
     
     
 }
-impl AwsS3BucketNotificationConfigurationS3KeyFilter {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
-    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder {
-        crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder::default()
-    }
-}
 
 /// <p>Details for a filter rule.</p>
 #[non_exhaustive]
@@ -58564,6 +58966,13 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
         self.value.as_deref()
     }
 }
+impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
+    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder {
+        crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
 pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
     
@@ -58605,12 +59014,6 @@ pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
     }
     
     
-}
-impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
-    pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder {
-        crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AwsS3BucketNotificationConfigurationS3KeyFilterRuleName`, it is important to ensure
@@ -58730,6 +59133,13 @@ impl AwsS3BucketWebsiteConfiguration {
         self.routing_rules.as_deref()
     }
 }
+impl AwsS3BucketWebsiteConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration::Builder {
+        crate::model::aws_s3_bucket_website_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
 pub mod aws_s3_bucket_website_configuration {
     
@@ -58802,12 +59212,6 @@ pub mod aws_s3_bucket_website_configuration {
     
     
 }
-impl AwsS3BucketWebsiteConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
-    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration::Builder {
-        crate::model::aws_s3_bucket_website_configuration::Builder::default()
-    }
-}
 
 /// <p>A rule for redirecting requests to the website.</p>
 #[non_exhaustive]
@@ -58830,6 +59234,13 @@ impl AwsS3BucketWebsiteConfigurationRoutingRule {
         self.redirect.as_ref()
     }
 }
+impl AwsS3BucketWebsiteConfigurationRoutingRule {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder {
+        crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
 pub mod aws_s3_bucket_website_configuration_routing_rule {
     
@@ -58871,12 +59282,6 @@ pub mod aws_s3_bucket_website_configuration_routing_rule {
     }
     
     
-}
-impl AwsS3BucketWebsiteConfigurationRoutingRule {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
-    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder {
-        crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder::default()
-    }
 }
 
 /// <p>The rules to redirect the request if the condition in <code>Condition</code> is met.</p>
@@ -58925,6 +59330,13 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
         self.replace_key_with.as_deref()
     }
 }
+impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder {
+        crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
 pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
     
@@ -59007,12 +59419,6 @@ pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
     
     
 }
-impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
-    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder {
-        crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder::default()
-    }
-}
 
 /// <p>The condition that must be met in order to apply the routing rule.</p>
 #[non_exhaustive]
@@ -59035,6 +59441,13 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
         self.key_prefix_equals.as_deref()
     }
 }
+impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder {
+        crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
 pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
     
@@ -59077,12 +59490,6 @@ pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
     
     
 }
-impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
-    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder {
-        crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder::default()
-    }
-}
 
 /// <p>The redirect behavior for requests to the website.</p>
 #[non_exhaustive]
@@ -59105,6 +59512,13 @@ impl AwsS3BucketWebsiteConfigurationRedirectTo {
         self.protocol.as_deref()
     }
 }
+impl AwsS3BucketWebsiteConfigurationRedirectTo {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
+    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder {
+        crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
 pub mod aws_s3_bucket_website_configuration_redirect_to {
     
@@ -59147,12 +59561,6 @@ pub mod aws_s3_bucket_website_configuration_redirect_to {
     
     
 }
-impl AwsS3BucketWebsiteConfigurationRedirectTo {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
-    pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder {
-        crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder::default()
-    }
-}
 
 /// <p>Information about logging for the S3 bucket</p>
 #[non_exhaustive]
@@ -59175,6 +59583,13 @@ impl AwsS3BucketLoggingConfiguration {
         self.log_file_prefix.as_deref()
     }
 }
+impl AwsS3BucketLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
+    pub fn builder() -> crate::model::aws_s3_bucket_logging_configuration::Builder {
+        crate::model::aws_s3_bucket_logging_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
 pub mod aws_s3_bucket_logging_configuration {
     
@@ -59217,12 +59632,6 @@ pub mod aws_s3_bucket_logging_configuration {
     
     
 }
-impl AwsS3BucketLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
-    pub fn builder() -> crate::model::aws_s3_bucket_logging_configuration::Builder {
-        crate::model::aws_s3_bucket_logging_configuration::Builder::default()
-    }
-}
 
 /// <p>The lifecycle configuration for the objects in the S3 bucket.</p>
 #[non_exhaustive]
@@ -59238,6 +59647,13 @@ impl AwsS3BucketBucketLifecycleConfigurationDetails {
         self.rules.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_details {
     
@@ -59273,12 +59689,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_details {
     }
     
     
-}
-impl AwsS3BucketBucketLifecycleConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder::default()
-    }
 }
 
 /// <p>Configuration for a lifecycle rule.</p>
@@ -59369,6 +59779,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         self.transitions.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_details {
     
@@ -59538,12 +59955,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_details {
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder::default()
-    }
-}
 
 /// <p>A rule for when objects transition to specific storage classes.</p>
 #[non_exhaustive]
@@ -59589,6 +60000,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
         self.storage_class.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
     
@@ -59660,12 +60078,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder::default()
-    }
-}
 
 /// <p>A transition rule that describes when noncurrent objects transition to a specified storage class.</p>
 #[non_exhaustive]
@@ -59688,6 +60100,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
         self.storage_class.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details {
     
@@ -59731,12 +60150,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_tr
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder::default()
-    }
-}
 
 /// <p>Identifies the objects that a rule applies to.</p>
 #[non_exhaustive]
@@ -59752,6 +60165,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
         self.predicate.as_ref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details {
     
@@ -59781,12 +60201,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details {
     }
     
     
-}
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder::default()
-    }
 }
 
 /// <p>The configuration for the filter.</p>
@@ -59824,6 +60238,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details {
     
@@ -59896,12 +60317,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_deta
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder::default()
-    }
-}
 
 /// <p>A tag filter.</p>
 #[non_exhaustive]
@@ -59924,6 +60339,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
         self.value.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details {
     
@@ -59966,12 +60388,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder::default()
-    }
-}
 
 /// <p>A value to use for the filter.</p>
 #[non_exhaustive]
@@ -60001,6 +60417,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails 
         self.r#type.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details {
     
@@ -60055,12 +60478,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder::default()
-    }
-}
 
 /// <p>A tag that is assigned to matching objects.</p>
 #[non_exhaustive]
@@ -60083,6 +60500,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetai
         self.value.as_deref()
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details {
     
@@ -60125,12 +60549,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder::default()
-    }
-}
 
 /// <p>Information about what Amazon S3 does when a multipart upload is incomplete.</p>
 #[non_exhaustive]
@@ -60146,6 +60564,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
         self.days_after_initiation
     }
 }
+impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
+    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder {
+        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details {
     
@@ -60177,12 +60602,6 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_mult
     
     
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
-    pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder {
-        crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder::default()
-    }
-}
 
 /// <p>The encryption configuration for the S3 bucket.</p>
 #[non_exhaustive]
@@ -60198,6 +60617,13 @@ impl AwsS3BucketServerSideEncryptionConfiguration {
         self.rules.as_deref()
     }
 }
+impl AwsS3BucketServerSideEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
+    pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_configuration::Builder {
+        crate::model::aws_s3_bucket_server_side_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
 pub mod aws_s3_bucket_server_side_encryption_configuration {
     
@@ -60234,12 +60660,6 @@ pub mod aws_s3_bucket_server_side_encryption_configuration {
     
     
 }
-impl AwsS3BucketServerSideEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
-    pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_configuration::Builder {
-        crate::model::aws_s3_bucket_server_side_encryption_configuration::Builder::default()
-    }
-}
 
 /// <p>An encryption rule to apply to the S3 bucket.</p>
 #[non_exhaustive]
@@ -60255,6 +60675,13 @@ impl AwsS3BucketServerSideEncryptionRule {
         self.apply_server_side_encryption_by_default.as_ref()
     }
 }
+impl AwsS3BucketServerSideEncryptionRule {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
+    pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_rule::Builder {
+        crate::model::aws_s3_bucket_server_side_encryption_rule::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
 pub mod aws_s3_bucket_server_side_encryption_rule {
     
@@ -60285,12 +60712,6 @@ pub mod aws_s3_bucket_server_side_encryption_rule {
     
     
 }
-impl AwsS3BucketServerSideEncryptionRule {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
-    pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_rule::Builder {
-        crate::model::aws_s3_bucket_server_side_encryption_rule::Builder::default()
-    }
-}
 
 /// <p>Specifies the default server-side encryption to apply to new objects in the bucket.</p>
 #[non_exhaustive]
@@ -60313,6 +60734,13 @@ impl AwsS3BucketServerSideEncryptionByDefault {
         self.kms_master_key_id.as_deref()
     }
 }
+impl AwsS3BucketServerSideEncryptionByDefault {
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
+    pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_by_default::Builder {
+        crate::model::aws_s3_bucket_server_side_encryption_by_default::Builder::default()
+    }
+}
+
 /// See [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
 pub mod aws_s3_bucket_server_side_encryption_by_default {
     
@@ -60354,12 +60782,6 @@ pub mod aws_s3_bucket_server_side_encryption_by_default {
     }
     
     
-}
-impl AwsS3BucketServerSideEncryptionByDefault {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
-    pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_by_default::Builder {
-        crate::model::aws_s3_bucket_server_side_encryption_by_default::Builder::default()
-    }
 }
 
 /// <p>Information about an Elasticsearch domain.</p>
@@ -60468,6 +60890,13 @@ impl AwsElasticsearchDomainDetails {
         self.vpc_options.as_ref()
     }
 }
+impl AwsElasticsearchDomainDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_details::Builder {
+        crate::model::aws_elasticsearch_domain_details::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
 pub mod aws_elasticsearch_domain_details {
     
@@ -60656,12 +61085,6 @@ pub mod aws_elasticsearch_domain_details {
     
     
 }
-impl AwsElasticsearchDomainDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_details::Builder {
-        crate::model::aws_elasticsearch_domain_details::Builder::default()
-    }
-}
 
 /// <p>Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.</p>
 #[non_exhaustive]
@@ -60698,6 +61121,13 @@ impl AwsElasticsearchDomainVpcOptions {
         self.vpc_id.as_deref()
     }
 }
+impl AwsElasticsearchDomainVpcOptions {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_vpc_options::Builder {
+        crate::model::aws_elasticsearch_domain_vpc_options::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
 pub mod aws_elasticsearch_domain_vpc_options {
     
@@ -60782,12 +61212,6 @@ pub mod aws_elasticsearch_domain_vpc_options {
     
     
 }
-impl AwsElasticsearchDomainVpcOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_vpc_options::Builder {
-        crate::model::aws_elasticsearch_domain_vpc_options::Builder::default()
-    }
-}
 
 /// <p>Information about the state of the domain relative to the latest service software.</p>
 #[non_exhaustive]
@@ -60859,6 +61283,13 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
         self.update_status.as_deref()
     }
 }
+impl AwsElasticsearchDomainServiceSoftwareOptions {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_service_software_options::Builder {
+        crate::model::aws_elasticsearch_domain_service_software_options::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
 pub mod aws_elasticsearch_domain_service_software_options {
     
@@ -60977,12 +61408,6 @@ pub mod aws_elasticsearch_domain_service_software_options {
     
     
 }
-impl AwsElasticsearchDomainServiceSoftwareOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_service_software_options::Builder {
-        crate::model::aws_elasticsearch_domain_service_software_options::Builder::default()
-    }
-}
 
 /// <p>Details about the configuration for node-to-node encryption.</p>
 #[non_exhaustive]
@@ -60998,6 +61423,13 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
         self.enabled
     }
 }
+impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder {
+        crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
 pub mod aws_elasticsearch_domain_node_to_node_encryption_options {
     
@@ -61029,12 +61461,6 @@ pub mod aws_elasticsearch_domain_node_to_node_encryption_options {
     
     
 }
-impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder {
-        crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder::default()
-    }
-}
 
 /// <p>configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
 #[non_exhaustive]
@@ -61064,6 +61490,13 @@ impl AwsElasticsearchDomainLogPublishingOptions {
         self.audit_logs.as_ref()
     }
 }
+impl AwsElasticsearchDomainLogPublishingOptions {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_log_publishing_options::Builder {
+        crate::model::aws_elasticsearch_domain_log_publishing_options::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
 pub mod aws_elasticsearch_domain_log_publishing_options {
     
@@ -61118,12 +61551,6 @@ pub mod aws_elasticsearch_domain_log_publishing_options {
     
     
 }
-impl AwsElasticsearchDomainLogPublishingOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_log_publishing_options::Builder {
-        crate::model::aws_elasticsearch_domain_log_publishing_options::Builder::default()
-    }
-}
 
 /// <p>The log configuration.</p>
 #[non_exhaustive]
@@ -61146,6 +61573,13 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
         self.enabled
     }
 }
+impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder {
+        crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
 pub mod aws_elasticsearch_domain_log_publishing_options_log_config {
     
@@ -61189,12 +61623,6 @@ pub mod aws_elasticsearch_domain_log_publishing_options_log_config {
     
     
 }
-impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder {
-        crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder::default()
-    }
-}
 
 /// <p>Details about the configuration for encryption at rest.</p>
 #[non_exhaustive]
@@ -61217,6 +61645,13 @@ impl AwsElasticsearchDomainEncryptionAtRestOptions {
         self.kms_key_id.as_deref()
     }
 }
+impl AwsElasticsearchDomainEncryptionAtRestOptions {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder {
+        crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
 pub mod aws_elasticsearch_domain_encryption_at_rest_options {
     
@@ -61259,12 +61694,6 @@ pub mod aws_elasticsearch_domain_encryption_at_rest_options {
     }
     
     
-}
-impl AwsElasticsearchDomainEncryptionAtRestOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder {
-        crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder::default()
-    }
 }
 
 /// <p>details about the configuration of an OpenSearch cluster.</p>
@@ -61327,6 +61756,13 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
         self.zone_awareness_enabled
     }
 }
+impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder {
+        crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
 pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
     
@@ -61437,12 +61873,6 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
     
     
 }
-impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder {
-        crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder::default()
-    }
-}
 
 /// <p>Configuration options for zone awareness.</p>
 #[non_exhaustive]
@@ -61458,6 +61888,13 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails 
         self.availability_zone_count
     }
 }
+impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder {
+        crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
 pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details {
     
@@ -61488,12 +61925,6 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_con
     }
     
     
-}
-impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder {
-        crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder::default()
-    }
 }
 
 /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
@@ -61527,6 +61958,13 @@ impl AwsElasticsearchDomainDomainEndpointOptions {
         self.tls_security_policy.as_deref()
     }
 }
+impl AwsElasticsearchDomainDomainEndpointOptions {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_domain_endpoint_options::Builder {
+        crate::model::aws_elasticsearch_domain_domain_endpoint_options::Builder::default()
+    }
+}
+
 /// See [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
 pub mod aws_elasticsearch_domain_domain_endpoint_options {
     
@@ -61579,12 +62017,6 @@ pub mod aws_elasticsearch_domain_domain_endpoint_options {
     }
     
     
-}
-impl AwsElasticsearchDomainDomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
-    pub fn builder() -> crate::model::aws_elasticsearch_domain_domain_endpoint_options::Builder {
-        crate::model::aws_elasticsearch_domain_domain_endpoint_options::Builder::default()
-    }
 }
 
 /// <p>Contains details about an Elastic Beanstalk environment.</p>
@@ -61726,6 +62158,13 @@ impl AwsElasticBeanstalkEnvironmentDetails {
         self.version_label.as_deref()
     }
 }
+impl AwsElasticBeanstalkEnvironmentDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
+    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_details::Builder {
+        crate::model::aws_elastic_beanstalk_environment_details::Builder::default()
+    }
+}
+
 /// See [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
 pub mod aws_elastic_beanstalk_environment_details {
     
@@ -61968,12 +62407,6 @@ pub mod aws_elastic_beanstalk_environment_details {
     
     
 }
-impl AwsElasticBeanstalkEnvironmentDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
-    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_details::Builder {
-        crate::model::aws_elastic_beanstalk_environment_details::Builder::default()
-    }
-}
 
 /// <p>Contains information about the tier of the environment.</p>
 #[non_exhaustive]
@@ -62003,6 +62436,13 @@ impl AwsElasticBeanstalkEnvironmentTier {
         self.version.as_deref()
     }
 }
+impl AwsElasticBeanstalkEnvironmentTier {
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
+    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_tier::Builder {
+        crate::model::aws_elastic_beanstalk_environment_tier::Builder::default()
+    }
+}
+
 /// See [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
 pub mod aws_elastic_beanstalk_environment_tier {
     
@@ -62057,12 +62497,6 @@ pub mod aws_elastic_beanstalk_environment_tier {
     
     
 }
-impl AwsElasticBeanstalkEnvironmentTier {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
-    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_tier::Builder {
-        crate::model::aws_elastic_beanstalk_environment_tier::Builder::default()
-    }
-}
 
 /// <p>A configuration option setting for the environment.</p>
 #[non_exhaustive]
@@ -62099,6 +62533,13 @@ impl AwsElasticBeanstalkEnvironmentOptionSetting {
         self.value.as_deref()
     }
 }
+impl AwsElasticBeanstalkEnvironmentOptionSetting {
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
+    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_option_setting::Builder {
+        crate::model::aws_elastic_beanstalk_environment_option_setting::Builder::default()
+    }
+}
+
 /// See [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
 pub mod aws_elastic_beanstalk_environment_option_setting {
     
@@ -62165,12 +62606,6 @@ pub mod aws_elastic_beanstalk_environment_option_setting {
     
     
 }
-impl AwsElasticBeanstalkEnvironmentOptionSetting {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
-    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_option_setting::Builder {
-        crate::model::aws_elastic_beanstalk_environment_option_setting::Builder::default()
-    }
-}
 
 /// <p>Contains information about a link to another environment that is in the same group.</p>
 #[non_exhaustive]
@@ -62193,6 +62628,13 @@ impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
         self.link_name.as_deref()
     }
 }
+impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
+    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_environment_link::Builder {
+        crate::model::aws_elastic_beanstalk_environment_environment_link::Builder::default()
+    }
+}
+
 /// See [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
 pub mod aws_elastic_beanstalk_environment_environment_link {
     
@@ -62234,12 +62676,6 @@ pub mod aws_elastic_beanstalk_environment_environment_link {
     }
     
     
-}
-impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
-    pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_environment_link::Builder {
-        crate::model::aws_elastic_beanstalk_environment_environment_link::Builder::default()
-    }
 }
 
 /// <p>Information about a load balancer.</p>
@@ -62328,6 +62764,13 @@ impl AwsElbv2LoadBalancerDetails {
         self.load_balancer_attributes.as_deref()
     }
 }
+impl AwsElbv2LoadBalancerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
+    pub fn builder() -> crate::model::aws_elbv2_load_balancer_details::Builder {
+        crate::model::aws_elbv2_load_balancer_details::Builder::default()
+    }
+}
+
 /// See [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
 pub mod aws_elbv2_load_balancer_details {
     
@@ -62498,12 +62941,6 @@ pub mod aws_elbv2_load_balancer_details {
     
     
 }
-impl AwsElbv2LoadBalancerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
-    pub fn builder() -> crate::model::aws_elbv2_load_balancer_details::Builder {
-        crate::model::aws_elbv2_load_balancer_details::Builder::default()
-    }
-}
 
 /// <p>A load balancer attribute.</p>
 #[non_exhaustive]
@@ -62526,6 +62963,13 @@ impl AwsElbv2LoadBalancerAttribute {
         self.value.as_deref()
     }
 }
+impl AwsElbv2LoadBalancerAttribute {
+    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
+    pub fn builder() -> crate::model::aws_elbv2_load_balancer_attribute::Builder {
+        crate::model::aws_elbv2_load_balancer_attribute::Builder::default()
+    }
+}
+
 /// See [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
 pub mod aws_elbv2_load_balancer_attribute {
     
@@ -62568,12 +63012,6 @@ pub mod aws_elbv2_load_balancer_attribute {
     
     
 }
-impl AwsElbv2LoadBalancerAttribute {
-    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
-    pub fn builder() -> crate::model::aws_elbv2_load_balancer_attribute::Builder {
-        crate::model::aws_elbv2_load_balancer_attribute::Builder::default()
-    }
-}
 
 /// <p>Information about the state of the load balancer.</p>
 #[non_exhaustive]
@@ -62600,6 +63038,13 @@ impl LoadBalancerState {
         self.reason.as_deref()
     }
 }
+impl LoadBalancerState {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
+    pub fn builder() -> crate::model::load_balancer_state::Builder {
+        crate::model::load_balancer_state::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerState`](crate::model::LoadBalancerState).
 pub mod load_balancer_state {
     
@@ -62646,12 +63091,6 @@ pub mod load_balancer_state {
     
     
 }
-impl LoadBalancerState {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
-    pub fn builder() -> crate::model::load_balancer_state::Builder {
-        crate::model::load_balancer_state::Builder::default()
-    }
-}
 
 /// <p>Information about an Availability Zone.</p>
 #[non_exhaustive]
@@ -62674,6 +63113,13 @@ impl AvailabilityZone {
         self.subnet_id.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
     
@@ -62715,12 +63161,6 @@ pub mod availability_zone {
     }
     
     
-}
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
-    }
 }
 
 /// <p>Contains details about an Amazon EC2 network access control list (ACL).</p>
@@ -62772,6 +63212,13 @@ impl AwsEc2NetworkAclDetails {
         self.entries.as_deref()
     }
 }
+impl AwsEc2NetworkAclDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
+    pub fn builder() -> crate::model::aws_ec2_network_acl_details::Builder {
+        crate::model::aws_ec2_network_acl_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
 pub mod aws_ec2_network_acl_details {
     
@@ -62875,12 +63322,6 @@ pub mod aws_ec2_network_acl_details {
     
     
 }
-impl AwsEc2NetworkAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
-    pub fn builder() -> crate::model::aws_ec2_network_acl_details::Builder {
-        crate::model::aws_ec2_network_acl_details::Builder::default()
-    }
-}
 
 /// <p>A rule for the network ACL. Each rule allows or denies access based on the IP address, traffic direction, port, and protocol.</p>
 #[non_exhaustive]
@@ -62945,6 +63386,13 @@ impl AwsEc2NetworkAclEntry {
         self.rule_number
     }
 }
+impl AwsEc2NetworkAclEntry {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
+    pub fn builder() -> crate::model::aws_ec2_network_acl_entry::Builder {
+        crate::model::aws_ec2_network_acl_entry::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
 pub mod aws_ec2_network_acl_entry {
     
@@ -63061,12 +63509,6 @@ pub mod aws_ec2_network_acl_entry {
     
     
 }
-impl AwsEc2NetworkAclEntry {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
-    pub fn builder() -> crate::model::aws_ec2_network_acl_entry::Builder {
-        crate::model::aws_ec2_network_acl_entry::Builder::default()
-    }
-}
 
 /// <p>A range of ports.</p>
 #[non_exhaustive]
@@ -63089,6 +63531,13 @@ impl PortRangeFromTo {
         self.to
     }
 }
+impl PortRangeFromTo {
+    /// Creates a new builder-style object to manufacture [`PortRangeFromTo`](crate::model::PortRangeFromTo).
+    pub fn builder() -> crate::model::port_range_from_to::Builder {
+        crate::model::port_range_from_to::Builder::default()
+    }
+}
+
 /// See [`PortRangeFromTo`](crate::model::PortRangeFromTo).
 pub mod port_range_from_to {
     
@@ -63133,12 +63582,6 @@ pub mod port_range_from_to {
     
     
 }
-impl PortRangeFromTo {
-    /// Creates a new builder-style object to manufacture [`PortRangeFromTo`](crate::model::PortRangeFromTo).
-    pub fn builder() -> crate::model::port_range_from_to::Builder {
-        crate::model::port_range_from_to::Builder::default()
-    }
-}
 
 /// <p>An Internet Control Message Protocol (ICMP) type and code.</p>
 #[non_exhaustive]
@@ -63161,6 +63604,13 @@ impl IcmpTypeCode {
         self.r#type
     }
 }
+impl IcmpTypeCode {
+    /// Creates a new builder-style object to manufacture [`IcmpTypeCode`](crate::model::IcmpTypeCode).
+    pub fn builder() -> crate::model::icmp_type_code::Builder {
+        crate::model::icmp_type_code::Builder::default()
+    }
+}
+
 /// See [`IcmpTypeCode`](crate::model::IcmpTypeCode).
 pub mod icmp_type_code {
     
@@ -63205,12 +63655,6 @@ pub mod icmp_type_code {
     
     
 }
-impl IcmpTypeCode {
-    /// Creates a new builder-style object to manufacture [`IcmpTypeCode`](crate::model::IcmpTypeCode).
-    pub fn builder() -> crate::model::icmp_type_code::Builder {
-        crate::model::icmp_type_code::Builder::default()
-    }
-}
 
 /// <p>An association between the network ACL and a subnet.</p>
 #[non_exhaustive]
@@ -63240,6 +63684,13 @@ impl AwsEc2NetworkAclAssociation {
         self.subnet_id.as_deref()
     }
 }
+impl AwsEc2NetworkAclAssociation {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
+    pub fn builder() -> crate::model::aws_ec2_network_acl_association::Builder {
+        crate::model::aws_ec2_network_acl_association::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
 pub mod aws_ec2_network_acl_association {
     
@@ -63293,12 +63744,6 @@ pub mod aws_ec2_network_acl_association {
     }
     
     
-}
-impl AwsEc2NetworkAclAssociation {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
-    pub fn builder() -> crate::model::aws_ec2_network_acl_association::Builder {
-        crate::model::aws_ec2_network_acl_association::Builder::default()
-    }
 }
 
 /// <p>Contains information about a subnet in Amazon EC2.</p>
@@ -63399,6 +63844,13 @@ impl AwsEc2SubnetDetails {
         self.ipv6_cidr_block_association_set.as_deref()
     }
 }
+impl AwsEc2SubnetDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
+    pub fn builder() -> crate::model::aws_ec2_subnet_details::Builder {
+        crate::model::aws_ec2_subnet_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
 pub mod aws_ec2_subnet_details {
     
@@ -63583,12 +64035,6 @@ pub mod aws_ec2_subnet_details {
     
     
 }
-impl AwsEc2SubnetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
-    pub fn builder() -> crate::model::aws_ec2_subnet_details::Builder {
-        crate::model::aws_ec2_subnet_details::Builder::default()
-    }
-}
 
 /// <p>An IPV6 CIDR block association.</p>
 #[non_exhaustive]
@@ -63634,6 +64080,13 @@ impl Ipv6CidrBlockAssociation {
         self.cidr_block_state.as_deref()
     }
 }
+impl Ipv6CidrBlockAssociation {
+    /// Creates a new builder-style object to manufacture [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
+    pub fn builder() -> crate::model::ipv6_cidr_block_association::Builder {
+        crate::model::ipv6_cidr_block_association::Builder::default()
+    }
+}
+
 /// See [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
 pub mod ipv6_cidr_block_association {
     
@@ -63703,12 +64156,6 @@ pub mod ipv6_cidr_block_association {
     }
     
     
-}
-impl Ipv6CidrBlockAssociation {
-    /// Creates a new builder-style object to manufacture [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
-    pub fn builder() -> crate::model::ipv6_cidr_block_association::Builder {
-        crate::model::ipv6_cidr_block_association::Builder::default()
-    }
 }
 
 /// <p>Information about an Elastic IP address.</p>
@@ -63790,6 +64237,13 @@ impl AwsEc2EipDetails {
         self.private_ip_address.as_deref()
     }
 }
+impl AwsEc2EipDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
+    pub fn builder() -> crate::model::aws_ec2_eip_details::Builder {
+        crate::model::aws_ec2_eip_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
 pub mod aws_ec2_eip_details {
     
@@ -63930,12 +64384,6 @@ pub mod aws_ec2_eip_details {
     
     
 }
-impl AwsEc2EipDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
-    pub fn builder() -> crate::model::aws_ec2_eip_details::Builder {
-        crate::model::aws_ec2_eip_details::Builder::default()
-    }
-}
 
 /// <p>Details about an EC2 VPC.</p>
 #[non_exhaustive]
@@ -63972,6 +64420,13 @@ impl AwsEc2VpcDetails {
         self.state.as_deref()
     }
 }
+impl AwsEc2VpcDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
+    pub fn builder() -> crate::model::aws_ec2_vpc_details::Builder {
+        crate::model::aws_ec2_vpc_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
 pub mod aws_ec2_vpc_details {
     
@@ -64050,12 +64505,6 @@ pub mod aws_ec2_vpc_details {
     
     
 }
-impl AwsEc2VpcDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
-    pub fn builder() -> crate::model::aws_ec2_vpc_details::Builder {
-        crate::model::aws_ec2_vpc_details::Builder::default()
-    }
-}
 
 /// <p>An IPv4 CIDR block association.</p>
 #[non_exhaustive]
@@ -64085,6 +64534,13 @@ impl CidrBlockAssociation {
         self.cidr_block_state.as_deref()
     }
 }
+impl CidrBlockAssociation {
+    /// Creates a new builder-style object to manufacture [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
+    pub fn builder() -> crate::model::cidr_block_association::Builder {
+        crate::model::cidr_block_association::Builder::default()
+    }
+}
+
 /// See [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
 pub mod cidr_block_association {
     
@@ -64138,12 +64594,6 @@ pub mod cidr_block_association {
     }
     
     
-}
-impl CidrBlockAssociation {
-    /// Creates a new builder-style object to manufacture [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
-    pub fn builder() -> crate::model::cidr_block_association::Builder {
-        crate::model::cidr_block_association::Builder::default()
-    }
 }
 
 /// <p>Details about an EC2 volume.</p>
@@ -64248,6 +64698,13 @@ impl AwsEc2VolumeDetails {
         self.volume_scan_status.as_deref()
     }
 }
+impl AwsEc2VolumeDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
+    pub fn builder() -> crate::model::aws_ec2_volume_details::Builder {
+        crate::model::aws_ec2_volume_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
 pub mod aws_ec2_volume_details {
     
@@ -64424,12 +64881,6 @@ pub mod aws_ec2_volume_details {
     
     
 }
-impl AwsEc2VolumeDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
-    pub fn builder() -> crate::model::aws_ec2_volume_details::Builder {
-        crate::model::aws_ec2_volume_details::Builder::default()
-    }
-}
 
 /// <p>An attachment to an Amazon EC2 volume.</p>
 #[non_exhaustive]
@@ -64480,6 +64931,13 @@ impl AwsEc2VolumeAttachment {
         self.status.as_deref()
     }
 }
+impl AwsEc2VolumeAttachment {
+    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
+    pub fn builder() -> crate::model::aws_ec2_volume_attachment::Builder {
+        crate::model::aws_ec2_volume_attachment::Builder::default()
+    }
+}
+
 /// See [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
 pub mod aws_ec2_volume_attachment {
     
@@ -64561,12 +65019,6 @@ pub mod aws_ec2_volume_attachment {
     
     
 }
-impl AwsEc2VolumeAttachment {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
-    pub fn builder() -> crate::model::aws_ec2_volume_attachment::Builder {
-        crate::model::aws_ec2_volume_attachment::Builder::default()
-    }
-}
 
 /// <p>Details about an Amazon EC2 security group.</p>
 #[non_exhaustive]
@@ -64617,6 +65069,13 @@ impl AwsEc2SecurityGroupDetails {
         self.ip_permissions_egress.as_deref()
     }
 }
+impl AwsEc2SecurityGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
+    pub fn builder() -> crate::model::aws_ec2_security_group_details::Builder {
+        crate::model::aws_ec2_security_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
 pub mod aws_ec2_security_group_details {
     
@@ -64719,12 +65178,6 @@ pub mod aws_ec2_security_group_details {
     
     
 }
-impl AwsEc2SecurityGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
-    pub fn builder() -> crate::model::aws_ec2_security_group_details::Builder {
-        crate::model::aws_ec2_security_group_details::Builder::default()
-    }
-}
 
 /// <p>An IP permission for an EC2 security group.</p>
 #[non_exhaustive]
@@ -64794,6 +65247,13 @@ impl AwsEc2SecurityGroupIpPermission {
         self.prefix_list_ids.as_deref()
     }
 }
+impl AwsEc2SecurityGroupIpPermission {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
+    pub fn builder() -> crate::model::aws_ec2_security_group_ip_permission::Builder {
+        crate::model::aws_ec2_security_group_ip_permission::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
 pub mod aws_ec2_security_group_ip_permission {
     
@@ -64934,12 +65394,6 @@ pub mod aws_ec2_security_group_ip_permission {
     
     
 }
-impl AwsEc2SecurityGroupIpPermission {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
-    pub fn builder() -> crate::model::aws_ec2_security_group_ip_permission::Builder {
-        crate::model::aws_ec2_security_group_ip_permission::Builder::default()
-    }
-}
 
 /// <p>A prefix list ID.</p>
 #[non_exhaustive]
@@ -64955,6 +65409,13 @@ impl AwsEc2SecurityGroupPrefixListId {
         self.prefix_list_id.as_deref()
     }
 }
+impl AwsEc2SecurityGroupPrefixListId {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
+    pub fn builder() -> crate::model::aws_ec2_security_group_prefix_list_id::Builder {
+        crate::model::aws_ec2_security_group_prefix_list_id::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
 pub mod aws_ec2_security_group_prefix_list_id {
     
@@ -64985,12 +65446,6 @@ pub mod aws_ec2_security_group_prefix_list_id {
     
     
 }
-impl AwsEc2SecurityGroupPrefixListId {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
-    pub fn builder() -> crate::model::aws_ec2_security_group_prefix_list_id::Builder {
-        crate::model::aws_ec2_security_group_prefix_list_id::Builder::default()
-    }
-}
 
 /// <p>A range of IPv6 addresses.</p>
 #[non_exhaustive]
@@ -65006,6 +65461,13 @@ impl AwsEc2SecurityGroupIpv6Range {
         self.cidr_ipv6.as_deref()
     }
 }
+impl AwsEc2SecurityGroupIpv6Range {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
+    pub fn builder() -> crate::model::aws_ec2_security_group_ipv6_range::Builder {
+        crate::model::aws_ec2_security_group_ipv6_range::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
 pub mod aws_ec2_security_group_ipv6_range {
     
@@ -65036,12 +65498,6 @@ pub mod aws_ec2_security_group_ipv6_range {
     
     
 }
-impl AwsEc2SecurityGroupIpv6Range {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
-    pub fn builder() -> crate::model::aws_ec2_security_group_ipv6_range::Builder {
-        crate::model::aws_ec2_security_group_ipv6_range::Builder::default()
-    }
-}
 
 /// <p>A range of IPv4 addresses.</p>
 #[non_exhaustive]
@@ -65057,6 +65513,13 @@ impl AwsEc2SecurityGroupIpRange {
         self.cidr_ip.as_deref()
     }
 }
+impl AwsEc2SecurityGroupIpRange {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
+    pub fn builder() -> crate::model::aws_ec2_security_group_ip_range::Builder {
+        crate::model::aws_ec2_security_group_ip_range::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
 pub mod aws_ec2_security_group_ip_range {
     
@@ -65086,12 +65549,6 @@ pub mod aws_ec2_security_group_ip_range {
     }
     
     
-}
-impl AwsEc2SecurityGroupIpRange {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
-    pub fn builder() -> crate::model::aws_ec2_security_group_ip_range::Builder {
-        crate::model::aws_ec2_security_group_ip_range::Builder::default()
-    }
 }
 
 /// <p>A relationship between a security group and a user.</p>
@@ -65147,6 +65604,13 @@ impl AwsEc2SecurityGroupUserIdGroupPair {
         self.vpc_peering_connection_id.as_deref()
     }
 }
+impl AwsEc2SecurityGroupUserIdGroupPair {
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
+    pub fn builder() -> crate::model::aws_ec2_security_group_user_id_group_pair::Builder {
+        crate::model::aws_ec2_security_group_user_id_group_pair::Builder::default()
+    }
+}
+
 /// See [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
 pub mod aws_ec2_security_group_user_id_group_pair {
     
@@ -65241,12 +65705,6 @@ pub mod aws_ec2_security_group_user_id_group_pair {
     
     
 }
-impl AwsEc2SecurityGroupUserIdGroupPair {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
-    pub fn builder() -> crate::model::aws_ec2_security_group_user_id_group_pair::Builder {
-        crate::model::aws_ec2_security_group_user_id_group_pair::Builder::default()
-    }
-}
 
 /// <p>Details about the network interface</p>
 #[non_exhaustive]
@@ -65311,6 +65769,13 @@ impl AwsEc2NetworkInterfaceDetails {
         self.public_ip.as_deref()
     }
 }
+impl AwsEc2NetworkInterfaceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
+    pub fn builder() -> crate::model::aws_ec2_network_interface_details::Builder {
+        crate::model::aws_ec2_network_interface_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
 pub mod aws_ec2_network_interface_details {
     
@@ -65444,12 +65909,6 @@ pub mod aws_ec2_network_interface_details {
     
     
 }
-impl AwsEc2NetworkInterfaceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
-    pub fn builder() -> crate::model::aws_ec2_network_interface_details::Builder {
-        crate::model::aws_ec2_network_interface_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about a private IPv4 address that is with the network interface.</p>
 #[non_exhaustive]
@@ -65472,6 +65931,13 @@ impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
         self.private_dns_name.as_deref()
     }
 }
+impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
+    pub fn builder() -> crate::model::aws_ec2_network_interface_private_ip_address_detail::Builder {
+        crate::model::aws_ec2_network_interface_private_ip_address_detail::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
 pub mod aws_ec2_network_interface_private_ip_address_detail {
     
@@ -65514,12 +65980,6 @@ pub mod aws_ec2_network_interface_private_ip_address_detail {
     
     
 }
-impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
-    pub fn builder() -> crate::model::aws_ec2_network_interface_private_ip_address_detail::Builder {
-        crate::model::aws_ec2_network_interface_private_ip_address_detail::Builder::default()
-    }
-}
 
 /// <p>Provides information about an IPV6 address that is associated with the network interface.</p>
 #[non_exhaustive]
@@ -65535,6 +65995,13 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetail {
         self.ip_v6_address.as_deref()
     }
 }
+impl AwsEc2NetworkInterfaceIpV6AddressDetail {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
+    pub fn builder() -> crate::model::aws_ec2_network_interface_ip_v6_address_detail::Builder {
+        crate::model::aws_ec2_network_interface_ip_v6_address_detail::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
 pub mod aws_ec2_network_interface_ip_v6_address_detail {
     
@@ -65565,12 +66032,6 @@ pub mod aws_ec2_network_interface_ip_v6_address_detail {
     
     
 }
-impl AwsEc2NetworkInterfaceIpV6AddressDetail {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
-    pub fn builder() -> crate::model::aws_ec2_network_interface_ip_v6_address_detail::Builder {
-        crate::model::aws_ec2_network_interface_ip_v6_address_detail::Builder::default()
-    }
-}
 
 /// <p>A security group associated with the network interface.</p>
 #[non_exhaustive]
@@ -65593,6 +66054,13 @@ impl AwsEc2NetworkInterfaceSecurityGroup {
         self.group_id.as_deref()
     }
 }
+impl AwsEc2NetworkInterfaceSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
+    pub fn builder() -> crate::model::aws_ec2_network_interface_security_group::Builder {
+        crate::model::aws_ec2_network_interface_security_group::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
 pub mod aws_ec2_network_interface_security_group {
     
@@ -65634,12 +66102,6 @@ pub mod aws_ec2_network_interface_security_group {
     }
     
     
-}
-impl AwsEc2NetworkInterfaceSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
-    pub fn builder() -> crate::model::aws_ec2_network_interface_security_group::Builder {
-        crate::model::aws_ec2_network_interface_security_group::Builder::default()
-    }
 }
 
 /// <p>Information about the network interface attachment.</p>
@@ -65702,6 +66164,13 @@ impl AwsEc2NetworkInterfaceAttachment {
         self.status.as_deref()
     }
 }
+impl AwsEc2NetworkInterfaceAttachment {
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
+    pub fn builder() -> crate::model::aws_ec2_network_interface_attachment::Builder {
+        crate::model::aws_ec2_network_interface_attachment::Builder::default()
+    }
+}
+
 /// See [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
 pub mod aws_ec2_network_interface_attachment {
     
@@ -65810,12 +66279,6 @@ pub mod aws_ec2_network_interface_attachment {
     
     
 }
-impl AwsEc2NetworkInterfaceAttachment {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
-    pub fn builder() -> crate::model::aws_ec2_network_interface_attachment::Builder {
-        crate::model::aws_ec2_network_interface_attachment::Builder::default()
-    }
-}
 
 /// <p>The details of an Amazon EC2 instance.</p>
 #[non_exhaustive]
@@ -65910,6 +66373,13 @@ impl AwsEc2InstanceDetails {
         self.metadata_options.as_ref()
     }
 }
+impl AwsEc2InstanceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
+    pub fn builder() -> crate::model::aws_ec2_instance_details::Builder {
+        crate::model::aws_ec2_instance_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
 pub mod aws_ec2_instance_details {
     
@@ -66092,12 +66562,6 @@ pub mod aws_ec2_instance_details {
     
     
 }
-impl AwsEc2InstanceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
-    pub fn builder() -> crate::model::aws_ec2_instance_details::Builder {
-        crate::model::aws_ec2_instance_details::Builder::default()
-    }
-}
 
 /// <p>Metadata options that allow you to configure and secure the Amazon EC2 instance.</p>
 #[non_exhaustive]
@@ -66141,6 +66605,13 @@ impl AwsEc2InstanceMetadataOptions {
         self.instance_metadata_tags.as_deref()
     }
 }
+impl AwsEc2InstanceMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
+    pub fn builder() -> crate::model::aws_ec2_instance_metadata_options::Builder {
+        crate::model::aws_ec2_instance_metadata_options::Builder::default()
+    }
+}
+
 /// See [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
 pub mod aws_ec2_instance_metadata_options {
     
@@ -66220,12 +66691,6 @@ pub mod aws_ec2_instance_metadata_options {
     
     
 }
-impl AwsEc2InstanceMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
-    pub fn builder() -> crate::model::aws_ec2_instance_metadata_options::Builder {
-        crate::model::aws_ec2_instance_metadata_options::Builder::default()
-    }
-}
 
 /// <p>Identifies a network interface for the Amazon EC2 instance.</p>
 #[non_exhaustive]
@@ -66241,6 +66706,13 @@ impl AwsEc2InstanceNetworkInterfacesDetails {
         self.network_interface_id.as_deref()
     }
 }
+impl AwsEc2InstanceNetworkInterfacesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
+    pub fn builder() -> crate::model::aws_ec2_instance_network_interfaces_details::Builder {
+        crate::model::aws_ec2_instance_network_interfaces_details::Builder::default()
+    }
+}
+
 /// See [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
 pub mod aws_ec2_instance_network_interfaces_details {
     
@@ -66270,12 +66742,6 @@ pub mod aws_ec2_instance_network_interfaces_details {
     }
     
     
-}
-impl AwsEc2InstanceNetworkInterfacesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
-    pub fn builder() -> crate::model::aws_ec2_instance_network_interfaces_details::Builder {
-        crate::model::aws_ec2_instance_network_interfaces_details::Builder::default()
-    }
 }
 
 /// <p>A CloudFront distribution configuration.</p>
@@ -66371,6 +66837,13 @@ impl AwsCloudFrontDistributionDetails {
         self.web_acl_id.as_deref()
     }
 }
+impl AwsCloudFrontDistributionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_details::Builder {
+        crate::model::aws_cloud_front_distribution_details::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
 pub mod aws_cloud_front_distribution_details {
     
@@ -66535,12 +67008,6 @@ pub mod aws_cloud_front_distribution_details {
     
     
 }
-impl AwsCloudFrontDistributionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_details::Builder {
-        crate::model::aws_cloud_front_distribution_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the TLS/SSL configuration that the CloudFront distribution uses to communicate with viewers.</p>
 #[non_exhaustive]
@@ -66598,6 +67065,13 @@ impl AwsCloudFrontDistributionViewerCertificate {
         self.ssl_support_method.as_deref()
     }
 }
+impl AwsCloudFrontDistributionViewerCertificate {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_viewer_certificate::Builder {
+        crate::model::aws_cloud_front_distribution_viewer_certificate::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
 pub mod aws_cloud_front_distribution_viewer_certificate {
     
@@ -66701,12 +67175,6 @@ pub mod aws_cloud_front_distribution_viewer_certificate {
     
     
 }
-impl AwsCloudFrontDistributionViewerCertificate {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_viewer_certificate::Builder {
-        crate::model::aws_cloud_front_distribution_viewer_certificate::Builder::default()
-    }
-}
 
 /// <p>Provides information about origin groups that are associated with the CloudFront distribution.</p>
 #[non_exhaustive]
@@ -66722,6 +67190,13 @@ impl AwsCloudFrontDistributionOriginGroups {
         self.items.as_deref()
     }
 }
+impl AwsCloudFrontDistributionOriginGroups {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_groups::Builder {
+        crate::model::aws_cloud_front_distribution_origin_groups::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
 pub mod aws_cloud_front_distribution_origin_groups {
     
@@ -66758,12 +67233,6 @@ pub mod aws_cloud_front_distribution_origin_groups {
     
     
 }
-impl AwsCloudFrontDistributionOriginGroups {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_groups::Builder {
-        crate::model::aws_cloud_front_distribution_origin_groups::Builder::default()
-    }
-}
 
 /// <p>Information about an origin group for the CloudFront distribution.</p>
 #[non_exhaustive]
@@ -66779,6 +67248,13 @@ impl AwsCloudFrontDistributionOriginGroup {
         self.failover_criteria.as_ref()
     }
 }
+impl AwsCloudFrontDistributionOriginGroup {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group::Builder {
+        crate::model::aws_cloud_front_distribution_origin_group::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
 pub mod aws_cloud_front_distribution_origin_group {
     
@@ -66809,12 +67285,6 @@ pub mod aws_cloud_front_distribution_origin_group {
     
     
 }
-impl AwsCloudFrontDistributionOriginGroup {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group::Builder {
-        crate::model::aws_cloud_front_distribution_origin_group::Builder::default()
-    }
-}
 
 /// <p>Provides information about when an origin group fails over.</p>
 #[non_exhaustive]
@@ -66830,6 +67300,13 @@ impl AwsCloudFrontDistributionOriginGroupFailover {
         self.status_codes.as_ref()
     }
 }
+impl AwsCloudFrontDistributionOriginGroupFailover {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group_failover::Builder {
+        crate::model::aws_cloud_front_distribution_origin_group_failover::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
 pub mod aws_cloud_front_distribution_origin_group_failover {
     
@@ -66860,12 +67337,6 @@ pub mod aws_cloud_front_distribution_origin_group_failover {
     
     
 }
-impl AwsCloudFrontDistributionOriginGroupFailover {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group_failover::Builder {
-        crate::model::aws_cloud_front_distribution_origin_group_failover::Builder::default()
-    }
-}
 
 /// <p>The status codes that cause an origin group to fail over.</p>
 #[non_exhaustive]
@@ -66888,6 +67359,13 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
         self.quantity
     }
 }
+impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder {
+        crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
 pub mod aws_cloud_front_distribution_origin_group_failover_status_codes {
     
@@ -66937,12 +67415,6 @@ pub mod aws_cloud_front_distribution_origin_group_failover_status_codes {
     
     
 }
-impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder {
-        crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about origins and origin groups for this CloudFront distribution.</p>
 #[non_exhaustive]
@@ -66958,6 +67430,13 @@ impl AwsCloudFrontDistributionOrigins {
         self.items.as_deref()
     }
 }
+impl AwsCloudFrontDistributionOrigins {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origins::Builder {
+        crate::model::aws_cloud_front_distribution_origins::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
 pub mod aws_cloud_front_distribution_origins {
     
@@ -66993,12 +67472,6 @@ pub mod aws_cloud_front_distribution_origins {
     }
     
     
-}
-impl AwsCloudFrontDistributionOrigins {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origins::Builder {
-        crate::model::aws_cloud_front_distribution_origins::Builder::default()
-    }
 }
 
 /// <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), AWS Elemental MediaStore, or other server from which CloudFront gets your files.</p>
@@ -67043,6 +67516,13 @@ impl AwsCloudFrontDistributionOriginItem {
         self.custom_origin_config.as_ref()
     }
 }
+impl AwsCloudFrontDistributionOriginItem {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_item::Builder {
+        crate::model::aws_cloud_front_distribution_origin_item::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
 pub mod aws_cloud_front_distribution_origin_item {
     
@@ -67121,12 +67601,6 @@ pub mod aws_cloud_front_distribution_origin_item {
     
     
 }
-impl AwsCloudFrontDistributionOriginItem {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_item::Builder {
-        crate::model::aws_cloud_front_distribution_origin_item::Builder::default()
-    }
-}
 
 /// <p>A custom origin. A custom origin is any origin that is not an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> is a custom origin. </p>
 #[non_exhaustive]
@@ -67177,6 +67651,13 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
         self.origin_ssl_protocols.as_ref()
     }
 }
+impl AwsCloudFrontDistributionOriginCustomOriginConfig {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder {
+        crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
 pub mod aws_cloud_front_distribution_origin_custom_origin_config {
     
@@ -67271,12 +67752,6 @@ pub mod aws_cloud_front_distribution_origin_custom_origin_config {
     
     
 }
-impl AwsCloudFrontDistributionOriginCustomOriginConfig {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder {
-        crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin. </p>
 #[non_exhaustive]
@@ -67299,6 +67774,13 @@ impl AwsCloudFrontDistributionOriginSslProtocols {
         self.quantity
     }
 }
+impl AwsCloudFrontDistributionOriginSslProtocols {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_ssl_protocols::Builder {
+        crate::model::aws_cloud_front_distribution_origin_ssl_protocols::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
 pub mod aws_cloud_front_distribution_origin_ssl_protocols {
     
@@ -67348,12 +67830,6 @@ pub mod aws_cloud_front_distribution_origin_ssl_protocols {
     
     
 }
-impl AwsCloudFrontDistributionOriginSslProtocols {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_ssl_protocols::Builder {
-        crate::model::aws_cloud_front_distribution_origin_ssl_protocols::Builder::default()
-    }
-}
 
 /// <p>Information about an origin that is an Amazon S3 bucket that is not configured with static website hosting.</p>
 #[non_exhaustive]
@@ -67369,6 +67845,13 @@ impl AwsCloudFrontDistributionOriginS3OriginConfig {
         self.origin_access_identity.as_deref()
     }
 }
+impl AwsCloudFrontDistributionOriginS3OriginConfig {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder {
+        crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
 pub mod aws_cloud_front_distribution_origin_s3_origin_config {
     
@@ -67398,12 +67881,6 @@ pub mod aws_cloud_front_distribution_origin_s3_origin_config {
     }
     
     
-}
-impl AwsCloudFrontDistributionOriginS3OriginConfig {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder {
-        crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder::default()
-    }
 }
 
 /// <p>A complex type that controls whether access logs are written for the CloudFront distribution.</p>
@@ -67441,6 +67918,13 @@ impl AwsCloudFrontDistributionLogging {
         self.prefix.as_deref()
     }
 }
+impl AwsCloudFrontDistributionLogging {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_logging::Builder {
+        crate::model::aws_cloud_front_distribution_logging::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
 pub mod aws_cloud_front_distribution_logging {
     
@@ -67509,12 +67993,6 @@ pub mod aws_cloud_front_distribution_logging {
     
     
 }
-impl AwsCloudFrontDistributionLogging {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_logging::Builder {
-        crate::model::aws_cloud_front_distribution_logging::Builder::default()
-    }
-}
 
 /// <p>Contains information about the default cache configuration for the CloudFront distribution.</p>
 #[non_exhaustive]
@@ -67540,6 +68018,13 @@ impl AwsCloudFrontDistributionDefaultCacheBehavior {
         self.viewer_protocol_policy.as_deref()
     }
 }
+impl AwsCloudFrontDistributionDefaultCacheBehavior {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_default_cache_behavior::Builder {
+        crate::model::aws_cloud_front_distribution_default_cache_behavior::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
 pub mod aws_cloud_front_distribution_default_cache_behavior {
     
@@ -67580,12 +68065,6 @@ pub mod aws_cloud_front_distribution_default_cache_behavior {
     
     
 }
-impl AwsCloudFrontDistributionDefaultCacheBehavior {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_default_cache_behavior::Builder {
-        crate::model::aws_cloud_front_distribution_default_cache_behavior::Builder::default()
-    }
-}
 
 /// <p>Provides information about caching for the CloudFront distribution.</p>
 #[non_exhaustive]
@@ -67601,6 +68080,13 @@ impl AwsCloudFrontDistributionCacheBehaviors {
         self.items.as_deref()
     }
 }
+impl AwsCloudFrontDistributionCacheBehaviors {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_cache_behaviors::Builder {
+        crate::model::aws_cloud_front_distribution_cache_behaviors::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
 pub mod aws_cloud_front_distribution_cache_behaviors {
     
@@ -67637,12 +68123,6 @@ pub mod aws_cloud_front_distribution_cache_behaviors {
     
     
 }
-impl AwsCloudFrontDistributionCacheBehaviors {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_cache_behaviors::Builder {
-        crate::model::aws_cloud_front_distribution_cache_behaviors::Builder::default()
-    }
-}
 
 /// <p>Information about a cache behavior for the distribution.</p>
 #[non_exhaustive]
@@ -67668,6 +68148,13 @@ impl AwsCloudFrontDistributionCacheBehavior {
         self.viewer_protocol_policy.as_deref()
     }
 }
+impl AwsCloudFrontDistributionCacheBehavior {
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
+    pub fn builder() -> crate::model::aws_cloud_front_distribution_cache_behavior::Builder {
+        crate::model::aws_cloud_front_distribution_cache_behavior::Builder::default()
+    }
+}
+
 /// See [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
 pub mod aws_cloud_front_distribution_cache_behavior {
     
@@ -67707,12 +68194,6 @@ pub mod aws_cloud_front_distribution_cache_behavior {
     }
     
     
-}
-impl AwsCloudFrontDistributionCacheBehavior {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
-    pub fn builder() -> crate::model::aws_cloud_front_distribution_cache_behavior::Builder {
-        crate::model::aws_cloud_front_distribution_cache_behavior::Builder::default()
-    }
 }
 
 /// <p>Information about an CodeBuild project.</p>
@@ -67787,6 +68268,13 @@ impl AwsCodeBuildProjectDetails {
         self.secondary_artifacts.as_deref()
     }
 }
+impl AwsCodeBuildProjectDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
+    pub fn builder() -> crate::model::aws_code_build_project_details::Builder {
+        crate::model::aws_code_build_project_details::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
 pub mod aws_code_build_project_details {
     
@@ -67927,12 +68415,6 @@ pub mod aws_code_build_project_details {
     
     
 }
-impl AwsCodeBuildProjectDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
-    pub fn builder() -> crate::model::aws_code_build_project_details::Builder {
-        crate::model::aws_code_build_project_details::Builder::default()
-    }
-}
 
 /// <p>Information about the build artifacts for the CodeBuild project.</p>
 #[non_exhaustive]
@@ -68004,6 +68486,13 @@ impl AwsCodeBuildProjectArtifactsDetails {
         self.r#type.as_deref()
     }
 }
+impl AwsCodeBuildProjectArtifactsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
+    pub fn builder() -> crate::model::aws_code_build_project_artifacts_details::Builder {
+        crate::model::aws_code_build_project_artifacts_details::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
 pub mod aws_code_build_project_artifacts_details {
     
@@ -68132,12 +68621,6 @@ pub mod aws_code_build_project_artifacts_details {
     
     
 }
-impl AwsCodeBuildProjectArtifactsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
-    pub fn builder() -> crate::model::aws_code_build_project_artifacts_details::Builder {
-        crate::model::aws_code_build_project_artifacts_details::Builder::default()
-    }
-}
 
 /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
 #[non_exhaustive]
@@ -68167,6 +68650,13 @@ impl AwsCodeBuildProjectVpcConfig {
         self.security_group_ids.as_deref()
     }
 }
+impl AwsCodeBuildProjectVpcConfig {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
+    pub fn builder() -> crate::model::aws_code_build_project_vpc_config::Builder {
+        crate::model::aws_code_build_project_vpc_config::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
 pub mod aws_code_build_project_vpc_config {
     
@@ -68233,12 +68723,6 @@ pub mod aws_code_build_project_vpc_config {
     
     
 }
-impl AwsCodeBuildProjectVpcConfig {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
-    pub fn builder() -> crate::model::aws_code_build_project_vpc_config::Builder {
-        crate::model::aws_code_build_project_vpc_config::Builder::default()
-    }
-}
 
 /// <p>Information about logs for the build project.</p>
 #[non_exhaustive]
@@ -68261,6 +68745,13 @@ impl AwsCodeBuildProjectLogsConfigDetails {
         self.s3_logs.as_ref()
     }
 }
+impl AwsCodeBuildProjectLogsConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
+    pub fn builder() -> crate::model::aws_code_build_project_logs_config_details::Builder {
+        crate::model::aws_code_build_project_logs_config_details::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
 pub mod aws_code_build_project_logs_config_details {
     
@@ -68303,12 +68794,6 @@ pub mod aws_code_build_project_logs_config_details {
     
     
 }
-impl AwsCodeBuildProjectLogsConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
-    pub fn builder() -> crate::model::aws_code_build_project_logs_config_details::Builder {
-        crate::model::aws_code_build_project_logs_config_details::Builder::default()
-    }
-}
 
 /// <p>Information about logs built to an S3 bucket for a build project.</p>
 #[non_exhaustive]
@@ -68338,6 +68823,13 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
         self.status.as_deref()
     }
 }
+impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
+    pub fn builder() -> crate::model::aws_code_build_project_logs_config_s3_logs_details::Builder {
+        crate::model::aws_code_build_project_logs_config_s3_logs_details::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
 pub mod aws_code_build_project_logs_config_s3_logs_details {
     
@@ -68393,12 +68885,6 @@ pub mod aws_code_build_project_logs_config_s3_logs_details {
     
     
 }
-impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
-    pub fn builder() -> crate::model::aws_code_build_project_logs_config_s3_logs_details::Builder {
-        crate::model::aws_code_build_project_logs_config_s3_logs_details::Builder::default()
-    }
-}
 
 /// <p>Information about CloudWatch Logs for the build project.</p>
 #[non_exhaustive]
@@ -68428,6 +68914,13 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
         self.stream_name.as_deref()
     }
 }
+impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
+    pub fn builder() -> crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder {
+        crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
 pub mod aws_code_build_project_logs_config_cloud_watch_logs_details {
     
@@ -68481,12 +68974,6 @@ pub mod aws_code_build_project_logs_config_cloud_watch_logs_details {
     }
     
     
-}
-impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
-    pub fn builder() -> crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder {
-        crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder::default()
-    }
 }
 
 /// <p>Information about the build input source code for this build project.</p>
@@ -68566,6 +69053,13 @@ impl AwsCodeBuildProjectSource {
         self.insecure_ssl
     }
 }
+impl AwsCodeBuildProjectSource {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
+    pub fn builder() -> crate::model::aws_code_build_project_source::Builder {
+        crate::model::aws_code_build_project_source::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
 pub mod aws_code_build_project_source {
     
@@ -68676,12 +69170,6 @@ pub mod aws_code_build_project_source {
     
     
 }
-impl AwsCodeBuildProjectSource {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
-    pub fn builder() -> crate::model::aws_code_build_project_source::Builder {
-        crate::model::aws_code_build_project_source::Builder::default()
-    }
-}
 
 /// <p>Information about the build environment for this build project.</p>
 #[non_exhaustive]
@@ -68752,6 +69240,13 @@ impl AwsCodeBuildProjectEnvironment {
         self.r#type.as_deref()
     }
 }
+impl AwsCodeBuildProjectEnvironment {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
+    pub fn builder() -> crate::model::aws_code_build_project_environment::Builder {
+        crate::model::aws_code_build_project_environment::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
 pub mod aws_code_build_project_environment {
     
@@ -68869,12 +69364,6 @@ pub mod aws_code_build_project_environment {
     
     
 }
-impl AwsCodeBuildProjectEnvironment {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
-    pub fn builder() -> crate::model::aws_code_build_project_environment::Builder {
-        crate::model::aws_code_build_project_environment::Builder::default()
-    }
-}
 
 /// <p>The credentials for access to a private registry.</p>
 #[non_exhaustive]
@@ -68903,6 +69392,13 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredential {
         self.credential_provider.as_deref()
     }
 }
+impl AwsCodeBuildProjectEnvironmentRegistryCredential {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
+    pub fn builder() -> crate::model::aws_code_build_project_environment_registry_credential::Builder {
+        crate::model::aws_code_build_project_environment_registry_credential::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
 pub mod aws_code_build_project_environment_registry_credential {
     
@@ -68951,12 +69447,6 @@ pub mod aws_code_build_project_environment_registry_credential {
     
     
 }
-impl AwsCodeBuildProjectEnvironmentRegistryCredential {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
-    pub fn builder() -> crate::model::aws_code_build_project_environment_registry_credential::Builder {
-        crate::model::aws_code_build_project_environment_registry_credential::Builder::default()
-    }
-}
 
 /// <p>Information about an environment variable that is available to builds for the build project.</p>
 #[non_exhaustive]
@@ -68986,6 +69476,13 @@ impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
         self.value.as_deref()
     }
 }
+impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
+    pub fn builder() -> crate::model::aws_code_build_project_environment_environment_variables_details::Builder {
+        crate::model::aws_code_build_project_environment_environment_variables_details::Builder::default()
+    }
+}
+
 /// See [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
 pub mod aws_code_build_project_environment_environment_variables_details {
     
@@ -69039,12 +69536,6 @@ pub mod aws_code_build_project_environment_environment_variables_details {
     }
     
     
-}
-impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
-    pub fn builder() -> crate::model::aws_code_build_project_environment_environment_variables_details::Builder {
-        crate::model::aws_code_build_project_environment_environment_variables_details::Builder::default()
-    }
 }
 
 /// <p>Provides details about an auto scaling group.</p>
@@ -69119,6 +69610,13 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.capacity_rebalance
     }
 }
+impl AwsAutoScalingAutoScalingGroupDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_details::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
 pub mod aws_auto_scaling_auto_scaling_group_details {
     
@@ -69261,12 +69759,6 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
     
     
 }
-impl AwsAutoScalingAutoScalingGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_details::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_details::Builder::default()
-    }
-}
 
 /// <p>Details about the launch template to use.</p>
 #[non_exhaustive]
@@ -69296,6 +69788,13 @@ impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
         self.version.as_deref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
 pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification {
     
@@ -69350,12 +69849,6 @@ pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_spec
     
     
 }
-impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder::default()
-    }
-}
 
 /// <p>An Availability Zone for the automatic scaling group.</p>
 #[non_exhaustive]
@@ -69371,6 +69864,13 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
         self.value.as_deref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
 pub mod aws_auto_scaling_auto_scaling_group_availability_zones_list_details {
     
@@ -69401,12 +69901,6 @@ pub mod aws_auto_scaling_auto_scaling_group_availability_zones_list_details {
     
     
 }
-impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder::default()
-    }
-}
 
 /// <p>The mixed instances policy for the automatic scaling group.</p>
 #[non_exhaustive]
@@ -69429,6 +69923,13 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
         self.launch_template.as_ref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details {
     
@@ -69471,12 +69972,6 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details {
     
     
 }
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder::default()
-    }
-}
 
 /// <p>Describes a launch template and overrides for a mixed instances policy.</p>
 #[non_exhaustive]
@@ -69499,6 +69994,13 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
         self.overrides.as_deref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details {
     
@@ -69547,12 +70049,6 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
     
     
 }
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder::default()
-    }
-}
 
 /// <p>Property values to use to override the values in the launch template.</p>
 #[non_exhaustive]
@@ -69575,6 +70071,13 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesLi
         self.weighted_capacity.as_deref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details {
     
@@ -69617,12 +70120,6 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
     
     
 }
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder::default()
-    }
-}
 
 /// <p>Details about the launch template to use for a mixed instances policy.</p>
 #[non_exhaustive]
@@ -69652,6 +70149,13 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
         self.version.as_deref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification {
     
@@ -69705,12 +70209,6 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
     }
     
     
-}
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder::default()
-    }
 }
 
 /// <p>Information about the instances distribution.</p>
@@ -69772,6 +70270,13 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDeta
         self.spot_max_price.as_deref()
     }
 }
+impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
+    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder {
+        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder::default()
+    }
+}
+
 /// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details {
     
@@ -69875,12 +70380,6 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_dis
     
     
 }
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
-    pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder {
-        crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder::default()
-    }
-}
 
 /// <p>Provides details about sensitive data that was detected on a resource.</p>
 #[non_exhaustive]
@@ -69903,6 +70402,13 @@ impl DataClassificationDetails {
         self.result.as_ref()
     }
 }
+impl DataClassificationDetails {
+    /// Creates a new builder-style object to manufacture [`DataClassificationDetails`](crate::model::DataClassificationDetails).
+    pub fn builder() -> crate::model::data_classification_details::Builder {
+        crate::model::data_classification_details::Builder::default()
+    }
+}
+
 /// See [`DataClassificationDetails`](crate::model::DataClassificationDetails).
 pub mod data_classification_details {
     
@@ -69944,12 +70450,6 @@ pub mod data_classification_details {
     }
     
     
-}
-impl DataClassificationDetails {
-    /// Creates a new builder-style object to manufacture [`DataClassificationDetails`](crate::model::DataClassificationDetails).
-    pub fn builder() -> crate::model::data_classification_details::Builder {
-        crate::model::data_classification_details::Builder::default()
-    }
 }
 
 /// <p>Details about the sensitive data that was detected on the resource.</p>
@@ -70001,6 +70501,13 @@ impl ClassificationResult {
         self.custom_data_identifiers.as_ref()
     }
 }
+impl ClassificationResult {
+    /// Creates a new builder-style object to manufacture [`ClassificationResult`](crate::model::ClassificationResult).
+    pub fn builder() -> crate::model::classification_result::Builder {
+        crate::model::classification_result::Builder::default()
+    }
+}
+
 /// See [`ClassificationResult`](crate::model::ClassificationResult).
 pub mod classification_result {
     
@@ -70099,12 +70606,6 @@ pub mod classification_result {
     
     
 }
-impl ClassificationResult {
-    /// Creates a new builder-style object to manufacture [`ClassificationResult`](crate::model::ClassificationResult).
-    pub fn builder() -> crate::model::classification_result::Builder {
-        crate::model::classification_result::Builder::default()
-    }
-}
 
 /// <p>Contains an instance of sensitive data that was detected by a customer-defined identifier.</p>
 #[non_exhaustive]
@@ -70127,6 +70628,13 @@ impl CustomDataIdentifiersResult {
         self.total_count
     }
 }
+impl CustomDataIdentifiersResult {
+    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
+    pub fn builder() -> crate::model::custom_data_identifiers_result::Builder {
+        crate::model::custom_data_identifiers_result::Builder::default()
+    }
+}
+
 /// See [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
 pub mod custom_data_identifiers_result {
     
@@ -70176,12 +70684,6 @@ pub mod custom_data_identifiers_result {
     
     
 }
-impl CustomDataIdentifiersResult {
-    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
-    pub fn builder() -> crate::model::custom_data_identifiers_result::Builder {
-        crate::model::custom_data_identifiers_result::Builder::default()
-    }
-}
 
 /// <p>The list of detected instances of sensitive data.</p>
 #[non_exhaustive]
@@ -70218,6 +70720,13 @@ impl CustomDataIdentifiersDetections {
         self.occurrences.as_ref()
     }
 }
+impl CustomDataIdentifiersDetections {
+    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
+    pub fn builder() -> crate::model::custom_data_identifiers_detections::Builder {
+        crate::model::custom_data_identifiers_detections::Builder::default()
+    }
+}
+
 /// See [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
 pub mod custom_data_identifiers_detections {
     
@@ -70285,12 +70794,6 @@ pub mod custom_data_identifiers_detections {
     
     
 }
-impl CustomDataIdentifiersDetections {
-    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
-    pub fn builder() -> crate::model::custom_data_identifiers_detections::Builder {
-        crate::model::custom_data_identifiers_detections::Builder::default()
-    }
-}
 
 /// <p>The detected occurrences of sensitive data.</p>
 #[non_exhaustive]
@@ -70334,6 +70837,13 @@ impl Occurrences {
         self.cells.as_deref()
     }
 }
+impl Occurrences {
+    /// Creates a new builder-style object to manufacture [`Occurrences`](crate::model::Occurrences).
+    pub fn builder() -> crate::model::occurrences::Builder {
+        crate::model::occurrences::Builder::default()
+    }
+}
+
 /// See [`Occurrences`](crate::model::Occurrences).
 pub mod occurrences {
     
@@ -70442,12 +70952,6 @@ pub mod occurrences {
     
     
 }
-impl Occurrences {
-    /// Creates a new builder-style object to manufacture [`Occurrences`](crate::model::Occurrences).
-    pub fn builder() -> crate::model::occurrences::Builder {
-        crate::model::occurrences::Builder::default()
-    }
-}
 
 /// <p>An occurrence of sensitive data detected in a Microsoft Excel workbook, comma-separated value (CSV) file, or tab-separated value (TSV) file.</p>
 #[non_exhaustive]
@@ -70484,6 +70988,13 @@ impl Cell {
         self.cell_reference.as_deref()
     }
 }
+impl Cell {
+    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
+    pub fn builder() -> crate::model::cell::Builder {
+        crate::model::cell::Builder::default()
+    }
+}
+
 /// See [`Cell`](crate::model::Cell).
 pub mod cell {
     
@@ -70552,12 +71063,6 @@ pub mod cell {
     
     
 }
-impl Cell {
-    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
-    pub fn builder() -> crate::model::cell::Builder {
-        crate::model::cell::Builder::default()
-    }
-}
 
 /// <p>An occurrence of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
 #[non_exhaustive]
@@ -70580,6 +71085,13 @@ impl Record {
         self.record_index
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
     
@@ -70623,12 +71135,6 @@ pub mod record {
     
     
 }
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
-    }
-}
 
 /// <p>An occurrence of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
 #[non_exhaustive]
@@ -70658,6 +71164,13 @@ impl Page {
         self.offset_range.as_ref()
     }
 }
+impl Page {
+    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
+    pub fn builder() -> crate::model::page::Builder {
+        crate::model::page::Builder::default()
+    }
+}
+
 /// See [`Page`](crate::model::Page).
 pub mod page {
     
@@ -70713,12 +71226,6 @@ pub mod page {
     
     
 }
-impl Page {
-    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
-    pub fn builder() -> crate::model::page::Builder {
-        crate::model::page::Builder::default()
-    }
-}
 
 /// <p>Identifies where the sensitive data begins and ends.</p>
 #[non_exhaustive]
@@ -70748,6 +71255,13 @@ impl Range {
         self.start_column
     }
 }
+impl Range {
+    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
+    pub fn builder() -> crate::model::range::Builder {
+        crate::model::range::Builder::default()
+    }
+}
+
 /// See [`Range`](crate::model::Range).
 pub mod range {
     
@@ -70805,12 +71319,6 @@ pub mod range {
     
     
 }
-impl Range {
-    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
-    pub fn builder() -> crate::model::range::Builder {
-        crate::model::range::Builder::default()
-    }
-}
 
 /// <p>Contains a detected instance of sensitive data that are based on built-in identifiers.</p>
 #[non_exhaustive]
@@ -70840,6 +71348,13 @@ impl SensitiveDataResult {
         self.total_count
     }
 }
+impl SensitiveDataResult {
+    /// Creates a new builder-style object to manufacture [`SensitiveDataResult`](crate::model::SensitiveDataResult).
+    pub fn builder() -> crate::model::sensitive_data_result::Builder {
+        crate::model::sensitive_data_result::Builder::default()
+    }
+}
+
 /// See [`SensitiveDataResult`](crate::model::SensitiveDataResult).
 pub mod sensitive_data_result {
     
@@ -70901,12 +71416,6 @@ pub mod sensitive_data_result {
     
     
 }
-impl SensitiveDataResult {
-    /// Creates a new builder-style object to manufacture [`SensitiveDataResult`](crate::model::SensitiveDataResult).
-    pub fn builder() -> crate::model::sensitive_data_result::Builder {
-        crate::model::sensitive_data_result::Builder::default()
-    }
-}
 
 /// <p>The list of detected instances of sensitive data.</p>
 #[non_exhaustive]
@@ -70936,6 +71445,13 @@ impl SensitiveDataDetections {
         self.occurrences.as_ref()
     }
 }
+impl SensitiveDataDetections {
+    /// Creates a new builder-style object to manufacture [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
+    pub fn builder() -> crate::model::sensitive_data_detections::Builder {
+        crate::model::sensitive_data_detections::Builder::default()
+    }
+}
+
 /// See [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
 pub mod sensitive_data_detections {
     
@@ -70991,12 +71507,6 @@ pub mod sensitive_data_detections {
     
     
 }
-impl SensitiveDataDetections {
-    /// Creates a new builder-style object to manufacture [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
-    pub fn builder() -> crate::model::sensitive_data_detections::Builder {
-        crate::model::sensitive_data_detections::Builder::default()
-    }
-}
 
 /// <p>Provides details about the current status of the sensitive data detection.</p>
 #[non_exhaustive]
@@ -71019,6 +71529,13 @@ impl ClassificationStatus {
         self.reason.as_deref()
     }
 }
+impl ClassificationStatus {
+    /// Creates a new builder-style object to manufacture [`ClassificationStatus`](crate::model::ClassificationStatus).
+    pub fn builder() -> crate::model::classification_status::Builder {
+        crate::model::classification_status::Builder::default()
+    }
+}
+
 /// See [`ClassificationStatus`](crate::model::ClassificationStatus).
 pub mod classification_status {
     
@@ -71060,12 +71577,6 @@ pub mod classification_status {
     }
     
     
-}
-impl ClassificationStatus {
-    /// Creates a new builder-style object to manufacture [`ClassificationStatus`](crate::model::ClassificationStatus).
-    pub fn builder() -> crate::model::classification_status::Builder {
-        crate::model::classification_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Partition`, it is important to ensure
@@ -71206,6 +71717,13 @@ impl ThreatIntelIndicator {
         self.source_url.as_deref()
     }
 }
+impl ThreatIntelIndicator {
+    /// Creates a new builder-style object to manufacture [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
+    pub fn builder() -> crate::model::threat_intel_indicator::Builder {
+        crate::model::threat_intel_indicator::Builder::default()
+    }
+}
+
 /// See [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
 pub mod threat_intel_indicator {
     
@@ -71297,12 +71815,6 @@ pub mod threat_intel_indicator {
     }
     
     
-}
-impl ThreatIntelIndicator {
-    /// Creates a new builder-style object to manufacture [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
-    pub fn builder() -> crate::model::threat_intel_indicator::Builder {
-        crate::model::threat_intel_indicator::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ThreatIntelIndicatorCategory`, it is important to ensure
@@ -71569,6 +72081,13 @@ impl Threat {
         self.file_paths.as_deref()
     }
 }
+impl Threat {
+    /// Creates a new builder-style object to manufacture [`Threat`](crate::model::Threat).
+    pub fn builder() -> crate::model::threat::Builder {
+        crate::model::threat::Builder::default()
+    }
+}
+
 /// See [`Threat`](crate::model::Threat).
 pub mod threat {
     
@@ -71642,12 +72161,6 @@ pub mod threat {
     
     
 }
-impl Threat {
-    /// Creates a new builder-style object to manufacture [`Threat`](crate::model::Threat).
-    pub fn builder() -> crate::model::threat::Builder {
-        crate::model::threat::Builder::default()
-    }
-}
 
 /// <p>Provides information about the file paths that were affected by the threat. </p>
 #[non_exhaustive]
@@ -71684,6 +72197,13 @@ impl FilePaths {
         self.hash.as_deref()
     }
 }
+impl FilePaths {
+    /// Creates a new builder-style object to manufacture [`FilePaths`](crate::model::FilePaths).
+    pub fn builder() -> crate::model::file_paths::Builder {
+        crate::model::file_paths::Builder::default()
+    }
+}
+
 /// See [`FilePaths`](crate::model::FilePaths).
 pub mod file_paths {
     
@@ -71750,12 +72270,6 @@ pub mod file_paths {
     
     
 }
-impl FilePaths {
-    /// Creates a new builder-style object to manufacture [`FilePaths`](crate::model::FilePaths).
-    pub fn builder() -> crate::model::file_paths::Builder {
-        crate::model::file_paths::Builder::default()
-    }
-}
 
 /// <p>The details of process-related information about a finding.</p>
 #[non_exhaustive]
@@ -71810,6 +72324,13 @@ impl ProcessDetails {
         self.terminated_at.as_deref()
     }
 }
+impl ProcessDetails {
+    /// Creates a new builder-style object to manufacture [`ProcessDetails`](crate::model::ProcessDetails).
+    pub fn builder() -> crate::model::process_details::Builder {
+        crate::model::process_details::Builder::default()
+    }
+}
+
 /// See [`ProcessDetails`](crate::model::ProcessDetails).
 pub mod process_details {
     
@@ -71906,12 +72427,6 @@ pub mod process_details {
     
     
 }
-impl ProcessDetails {
-    /// Creates a new builder-style object to manufacture [`ProcessDetails`](crate::model::ProcessDetails).
-    pub fn builder() -> crate::model::process_details::Builder {
-        crate::model::process_details::Builder::default()
-    }
-}
 
 /// <p>Information about a network path component.</p>
 #[non_exhaustive]
@@ -71948,6 +72463,13 @@ impl NetworkPathComponent {
         self.ingress.as_ref()
     }
 }
+impl NetworkPathComponent {
+    /// Creates a new builder-style object to manufacture [`NetworkPathComponent`](crate::model::NetworkPathComponent).
+    pub fn builder() -> crate::model::network_path_component::Builder {
+        crate::model::network_path_component::Builder::default()
+    }
+}
+
 /// See [`NetworkPathComponent`](crate::model::NetworkPathComponent).
 pub mod network_path_component {
     
@@ -72014,12 +72536,6 @@ pub mod network_path_component {
     
     
 }
-impl NetworkPathComponent {
-    /// Creates a new builder-style object to manufacture [`NetworkPathComponent`](crate::model::NetworkPathComponent).
-    pub fn builder() -> crate::model::network_path_component::Builder {
-        crate::model::network_path_component::Builder::default()
-    }
-}
 
 /// <p>Details about a network path component that occurs before or after the current component.</p>
 #[non_exhaustive]
@@ -72049,6 +72565,13 @@ impl NetworkHeader {
         self.source.as_ref()
     }
 }
+impl NetworkHeader {
+    /// Creates a new builder-style object to manufacture [`NetworkHeader`](crate::model::NetworkHeader).
+    pub fn builder() -> crate::model::network_header::Builder {
+        crate::model::network_header::Builder::default()
+    }
+}
+
 /// See [`NetworkHeader`](crate::model::NetworkHeader).
 pub mod network_header {
     
@@ -72103,12 +72626,6 @@ pub mod network_header {
     
     
 }
-impl NetworkHeader {
-    /// Creates a new builder-style object to manufacture [`NetworkHeader`](crate::model::NetworkHeader).
-    pub fn builder() -> crate::model::network_header::Builder {
-        crate::model::network_header::Builder::default()
-    }
-}
 
 /// <p>Information about the destination of the next component in the network path.</p>
 #[non_exhaustive]
@@ -72131,6 +72648,13 @@ impl NetworkPathComponentDetails {
         self.port_ranges.as_deref()
     }
 }
+impl NetworkPathComponentDetails {
+    /// Creates a new builder-style object to manufacture [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
+    pub fn builder() -> crate::model::network_path_component_details::Builder {
+        crate::model::network_path_component_details::Builder::default()
+    }
+}
+
 /// See [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
 pub mod network_path_component_details {
     
@@ -72185,12 +72709,6 @@ pub mod network_path_component_details {
     
     
 }
-impl NetworkPathComponentDetails {
-    /// Creates a new builder-style object to manufacture [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
-    pub fn builder() -> crate::model::network_path_component_details::Builder {
-        crate::model::network_path_component_details::Builder::default()
-    }
-}
 
 /// <p>A range of ports.</p>
 #[non_exhaustive]
@@ -72213,6 +72731,13 @@ impl PortRange {
         self.end
     }
 }
+impl PortRange {
+    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
+    pub fn builder() -> crate::model::port_range::Builder {
+        crate::model::port_range::Builder::default()
+    }
+}
+
 /// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
     
@@ -72256,12 +72781,6 @@ pub mod port_range {
     }
     
     
-}
-impl PortRange {
-    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
-    pub fn builder() -> crate::model::port_range::Builder {
-        crate::model::port_range::Builder::default()
-    }
 }
 
 /// <p>The details of network-related information about a finding.</p>
@@ -72355,6 +72874,13 @@ impl Network {
         self.destination_domain.as_deref()
     }
 }
+impl Network {
+    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
+    pub fn builder() -> crate::model::network::Builder {
+        crate::model::network::Builder::default()
+    }
+}
+
 /// See [`Network`](crate::model::Network).
 pub mod network {
     
@@ -72519,12 +73045,6 @@ pub mod network {
     
     
 }
-impl Network {
-    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
-    pub fn builder() -> crate::model::network::Builder {
-        crate::model::network::Builder::default()
-    }
-}
 
 /// When writing a match expression against `NetworkDirection`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -72643,6 +73163,13 @@ impl Malware {
         self.state.as_ref()
     }
 }
+impl Malware {
+    /// Creates a new builder-style object to manufacture [`Malware`](crate::model::Malware).
+    pub fn builder() -> crate::model::malware::Builder {
+        crate::model::malware::Builder::default()
+    }
+}
+
 /// See [`Malware`](crate::model::Malware).
 pub mod malware {
     
@@ -72708,12 +73235,6 @@ pub mod malware {
     }
     
     
-}
-impl Malware {
-    /// Creates a new builder-style object to manufacture [`Malware`](crate::model::Malware).
-    pub fn builder() -> crate::model::malware::Builder {
-        crate::model::malware::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MalwareState`, it is important to ensure
@@ -72964,6 +73485,13 @@ impl Remediation {
         self.recommendation.as_ref()
     }
 }
+impl Remediation {
+    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation).
+    pub fn builder() -> crate::model::remediation::Builder {
+        crate::model::remediation::Builder::default()
+    }
+}
+
 /// See [`Remediation`](crate::model::Remediation).
 pub mod remediation {
     
@@ -72994,12 +73522,6 @@ pub mod remediation {
     
     
 }
-impl Remediation {
-    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation).
-    pub fn builder() -> crate::model::remediation::Builder {
-        crate::model::remediation::Builder::default()
-    }
-}
 
 /// <p>A recommendation on how to remediate the issue identified in a finding.</p>
 #[non_exhaustive]
@@ -73022,6 +73544,13 @@ impl Recommendation {
         self.url.as_deref()
     }
 }
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
     
@@ -73063,12 +73592,6 @@ pub mod recommendation {
     }
     
     
-}
-impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
-    pub fn builder() -> crate::model::recommendation::Builder {
-        crate::model::recommendation::Builder::default()
-    }
 }
 
 /// <p>The severity of the finding.</p> 
@@ -73156,6 +73679,13 @@ impl Severity {
         self.original.as_deref()
     }
 }
+impl Severity {
+    /// Creates a new builder-style object to manufacture [`Severity`](crate::model::Severity).
+    pub fn builder() -> crate::model::severity::Builder {
+        crate::model::severity::Builder::default()
+    }
+}
+
 /// See [`Severity`](crate::model::Severity).
 pub mod severity {
     
@@ -73272,12 +73802,6 @@ pub mod severity {
     
     
 }
-impl Severity {
-    /// Creates a new builder-style object to manufacture [`Severity`](crate::model::Severity).
-    pub fn builder() -> crate::model::severity::Builder {
-        crate::model::severity::Builder::default()
-    }
-}
 
 /// <p>A collection of finding attributes used to sort findings.</p>
 #[non_exhaustive]
@@ -73300,6 +73824,13 @@ impl SortCriterion {
         self.sort_order.as_ref()
     }
 }
+impl SortCriterion {
+    /// Creates a new builder-style object to manufacture [`SortCriterion`](crate::model::SortCriterion).
+    pub fn builder() -> crate::model::sort_criterion::Builder {
+        crate::model::sort_criterion::Builder::default()
+    }
+}
+
 /// See [`SortCriterion`](crate::model::SortCriterion).
 pub mod sort_criterion {
     
@@ -73341,12 +73872,6 @@ pub mod sort_criterion {
     }
     
     
-}
-impl SortCriterion {
-    /// Creates a new builder-style object to manufacture [`SortCriterion`](crate::model::SortCriterion).
-    pub fn builder() -> crate::model::sort_criterion::Builder {
-        crate::model::sort_criterion::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
@@ -73489,6 +74014,13 @@ impl StandardsSubscription {
         self.standards_status_reason.as_ref()
     }
 }
+impl StandardsSubscription {
+    /// Creates a new builder-style object to manufacture [`StandardsSubscription`](crate::model::StandardsSubscription).
+    pub fn builder() -> crate::model::standards_subscription::Builder {
+        crate::model::standards_subscription::Builder::default()
+    }
+}
+
 /// See [`StandardsSubscription`](crate::model::StandardsSubscription).
 pub mod standards_subscription {
     
@@ -73589,12 +74121,6 @@ pub mod standards_subscription {
     
     
 }
-impl StandardsSubscription {
-    /// Creates a new builder-style object to manufacture [`StandardsSubscription`](crate::model::StandardsSubscription).
-    pub fn builder() -> crate::model::standards_subscription::Builder {
-        crate::model::standards_subscription::Builder::default()
-    }
-}
 
 /// <p>The reason for the current status of a standard subscription.</p>
 #[non_exhaustive]
@@ -73610,6 +74136,13 @@ impl StandardsStatusReason {
         self.status_reason_code.as_ref()
     }
 }
+impl StandardsStatusReason {
+    /// Creates a new builder-style object to manufacture [`StandardsStatusReason`](crate::model::StandardsStatusReason).
+    pub fn builder() -> crate::model::standards_status_reason::Builder {
+        crate::model::standards_status_reason::Builder::default()
+    }
+}
+
 /// See [`StandardsStatusReason`](crate::model::StandardsStatusReason).
 pub mod standards_status_reason {
     
@@ -73639,12 +74172,6 @@ pub mod standards_status_reason {
     }
     
     
-}
-impl StandardsStatusReason {
-    /// Creates a new builder-style object to manufacture [`StandardsStatusReason`](crate::model::StandardsStatusReason).
-    pub fn builder() -> crate::model::standards_status_reason::Builder {
-        crate::model::standards_status_reason::Builder::default()
-    }
 }
 
 /// When writing a match expression against `StatusReasonCode`, it is important to ensure
@@ -73905,6 +74432,13 @@ impl StandardsControl {
         self.related_requirements.as_deref()
     }
 }
+impl StandardsControl {
+    /// Creates a new builder-style object to manufacture [`StandardsControl`](crate::model::StandardsControl).
+    pub fn builder() -> crate::model::standards_control::Builder {
+        crate::model::standards_control::Builder::default()
+    }
+}
+
 /// See [`StandardsControl`](crate::model::StandardsControl).
 pub mod standards_control {
     
@@ -74051,12 +74585,6 @@ pub mod standards_control {
     
     
 }
-impl StandardsControl {
-    /// Creates a new builder-style object to manufacture [`StandardsControl`](crate::model::StandardsControl).
-    pub fn builder() -> crate::model::standards_control::Builder {
-        crate::model::standards_control::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SeverityRating`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -74194,6 +74722,13 @@ impl Standard {
         self.standards_managed_by.as_ref()
     }
 }
+impl Standard {
+    /// Creates a new builder-style object to manufacture [`Standard`](crate::model::Standard).
+    pub fn builder() -> crate::model::standard::Builder {
+        crate::model::standard::Builder::default()
+    }
+}
+
 /// See [`Standard`](crate::model::Standard).
 pub mod standard {
     
@@ -74275,12 +74810,6 @@ pub mod standard {
     
     
 }
-impl Standard {
-    /// Creates a new builder-style object to manufacture [`Standard`](crate::model::Standard).
-    pub fn builder() -> crate::model::standard::Builder {
-        crate::model::standard::Builder::default()
-    }
-}
 
 /// <p>Provides details about the management of a security standard.</p>
 #[non_exhaustive]
@@ -74303,6 +74832,13 @@ impl StandardsManagedBy {
         self.product.as_deref()
     }
 }
+impl StandardsManagedBy {
+    /// Creates a new builder-style object to manufacture [`StandardsManagedBy`](crate::model::StandardsManagedBy).
+    pub fn builder() -> crate::model::standards_managed_by::Builder {
+        crate::model::standards_managed_by::Builder::default()
+    }
+}
+
 /// See [`StandardsManagedBy`](crate::model::StandardsManagedBy).
 pub mod standards_managed_by {
     
@@ -74344,12 +74880,6 @@ pub mod standards_managed_by {
     }
     
     
-}
-impl StandardsManagedBy {
-    /// Creates a new builder-style object to manufacture [`StandardsManagedBy`](crate::model::StandardsManagedBy).
-    pub fn builder() -> crate::model::standards_managed_by::Builder {
-        crate::model::standards_managed_by::Builder::default()
-    }
 }
 
 /// <p>Contains details about a product.</p>
@@ -74434,6 +74964,13 @@ impl Product {
         self.product_subscription_resource_policy.as_deref()
     }
 }
+impl Product {
+    /// Creates a new builder-style object to manufacture [`Product`](crate::model::Product).
+    pub fn builder() -> crate::model::product::Builder {
+        crate::model::product::Builder::default()
+    }
+}
+
 /// See [`Product`](crate::model::Product).
 pub mod product {
     
@@ -74584,12 +75121,6 @@ pub mod product {
     
     
 }
-impl Product {
-    /// Creates a new builder-style object to manufacture [`Product`](crate::model::Product).
-    pub fn builder() -> crate::model::product::Builder {
-        crate::model::product::Builder::default()
-    }
-}
 
 /// When writing a match expression against `IntegrationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -74706,6 +75237,13 @@ impl ActionTarget {
         self.description.as_deref()
     }
 }
+impl ActionTarget {
+    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
+    pub fn builder() -> crate::model::action_target::Builder {
+        crate::model::action_target::Builder::default()
+    }
+}
+
 /// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
     
@@ -74760,12 +75298,6 @@ pub mod action_target {
     
     
 }
-impl ActionTarget {
-    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
-    pub fn builder() -> crate::model::action_target::Builder {
-        crate::model::action_target::Builder::default()
-    }
-}
 
 /// <p>The details of an Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -74788,6 +75320,13 @@ impl AccountDetails {
         self.email.as_deref()
     }
 }
+impl AccountDetails {
+    /// Creates a new builder-style object to manufacture [`AccountDetails`](crate::model::AccountDetails).
+    pub fn builder() -> crate::model::account_details::Builder {
+        crate::model::account_details::Builder::default()
+    }
+}
+
 /// See [`AccountDetails`](crate::model::AccountDetails).
 pub mod account_details {
     
@@ -74829,12 +75368,6 @@ pub mod account_details {
     }
     
     
-}
-impl AccountDetails {
-    /// Creates a new builder-style object to manufacture [`AccountDetails`](crate::model::AccountDetails).
-    pub fn builder() -> crate::model::account_details::Builder {
-        crate::model::account_details::Builder::default()
-    }
 }
 
 /// <p>A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update.</p>
@@ -74897,6 +75430,13 @@ impl BatchUpdateFindingsUnprocessedFinding {
         self.error_message.as_deref()
     }
 }
+impl BatchUpdateFindingsUnprocessedFinding {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
+    pub fn builder() -> crate::model::batch_update_findings_unprocessed_finding::Builder {
+        crate::model::batch_update_findings_unprocessed_finding::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
 pub mod batch_update_findings_unprocessed_finding {
     
@@ -74983,12 +75523,6 @@ pub mod batch_update_findings_unprocessed_finding {
     
     
 }
-impl BatchUpdateFindingsUnprocessedFinding {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
-    pub fn builder() -> crate::model::batch_update_findings_unprocessed_finding::Builder {
-        crate::model::batch_update_findings_unprocessed_finding::Builder::default()
-    }
-}
 
 /// <p>Identifies a finding to update using <code>BatchUpdateFindings</code>.</p>
 #[non_exhaustive]
@@ -75011,6 +75545,13 @@ impl AwsSecurityFindingIdentifier {
         self.product_arn.as_deref()
     }
 }
+impl AwsSecurityFindingIdentifier {
+    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
+    pub fn builder() -> crate::model::aws_security_finding_identifier::Builder {
+        crate::model::aws_security_finding_identifier::Builder::default()
+    }
+}
+
 /// See [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
 pub mod aws_security_finding_identifier {
     
@@ -75053,12 +75594,6 @@ pub mod aws_security_finding_identifier {
     
     
 }
-impl AwsSecurityFindingIdentifier {
-    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
-    pub fn builder() -> crate::model::aws_security_finding_identifier::Builder {
-        crate::model::aws_security_finding_identifier::Builder::default()
-    }
-}
 
 /// <p>Used to update information about the investigation into the finding.</p>
 #[non_exhaustive]
@@ -75096,6 +75631,13 @@ impl WorkflowUpdate {
         self.status.as_ref()
     }
 }
+impl WorkflowUpdate {
+    /// Creates a new builder-style object to manufacture [`WorkflowUpdate`](crate::model::WorkflowUpdate).
+    pub fn builder() -> crate::model::workflow_update::Builder {
+        crate::model::workflow_update::Builder::default()
+    }
+}
+
 /// See [`WorkflowUpdate`](crate::model::WorkflowUpdate).
 pub mod workflow_update {
     
@@ -75147,12 +75689,6 @@ pub mod workflow_update {
     }
     
     
-}
-impl WorkflowUpdate {
-    /// Creates a new builder-style object to manufacture [`WorkflowUpdate`](crate::model::WorkflowUpdate).
-    pub fn builder() -> crate::model::workflow_update::Builder {
-        crate::model::workflow_update::Builder::default()
-    }
 }
 
 /// <p>Updates to the severity information for a finding.</p>
@@ -75213,6 +75749,13 @@ impl SeverityUpdate {
         self.label.as_ref()
     }
 }
+impl SeverityUpdate {
+    /// Creates a new builder-style object to manufacture [`SeverityUpdate`](crate::model::SeverityUpdate).
+    pub fn builder() -> crate::model::severity_update::Builder {
+        crate::model::severity_update::Builder::default()
+    }
+}
+
 /// See [`SeverityUpdate`](crate::model::SeverityUpdate).
 pub mod severity_update {
     
@@ -75299,12 +75842,6 @@ pub mod severity_update {
     
     
 }
-impl SeverityUpdate {
-    /// Creates a new builder-style object to manufacture [`SeverityUpdate`](crate::model::SeverityUpdate).
-    pub fn builder() -> crate::model::severity_update::Builder {
-        crate::model::severity_update::Builder::default()
-    }
-}
 
 /// <p>The list of the findings that cannot be imported. For each finding, the list provides the error.</p>
 #[non_exhaustive]
@@ -75334,6 +75871,13 @@ impl ImportFindingsError {
         self.error_message.as_deref()
     }
 }
+impl ImportFindingsError {
+    /// Creates a new builder-style object to manufacture [`ImportFindingsError`](crate::model::ImportFindingsError).
+    pub fn builder() -> crate::model::import_findings_error::Builder {
+        crate::model::import_findings_error::Builder::default()
+    }
+}
+
 /// See [`ImportFindingsError`](crate::model::ImportFindingsError).
 pub mod import_findings_error {
     
@@ -75388,12 +75932,6 @@ pub mod import_findings_error {
     
     
 }
-impl ImportFindingsError {
-    /// Creates a new builder-style object to manufacture [`ImportFindingsError`](crate::model::ImportFindingsError).
-    pub fn builder() -> crate::model::import_findings_error::Builder {
-        crate::model::import_findings_error::Builder::default()
-    }
-}
 
 /// <p>The standard that you want to enable.</p>
 #[non_exhaustive]
@@ -75416,6 +75954,13 @@ impl StandardsSubscriptionRequest {
         self.standards_input.as_ref()
     }
 }
+impl StandardsSubscriptionRequest {
+    /// Creates a new builder-style object to manufacture [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
+    pub fn builder() -> crate::model::standards_subscription_request::Builder {
+        crate::model::standards_subscription_request::Builder::default()
+    }
+}
+
 /// See [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
 pub mod standards_subscription_request {
     
@@ -75463,11 +76008,5 @@ pub mod standards_subscription_request {
     }
     
     
-}
-impl StandardsSubscriptionRequest {
-    /// Creates a new builder-style object to manufacture [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
-    pub fn builder() -> crate::model::standards_subscription_request::Builder {
-        crate::model::standards_subscription_request::Builder::default()
-    }
 }
 

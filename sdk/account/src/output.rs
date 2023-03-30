@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for PutContactInformationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutContactInformationOutput {
+    /// Creates a new builder-style object to manufacture [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
+    pub fn builder() -> crate::output::put_contact_information_output::Builder {
+        crate::output::put_contact_information_output::Builder::default()
+    }
+}
+
 /// See [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
 pub mod put_contact_information_output {
     
@@ -39,12 +46,6 @@ pub mod put_contact_information_output {
     
     
 }
-impl PutContactInformationOutput {
-    /// Creates a new builder-style object to manufacture [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
-    pub fn builder() -> crate::output::put_contact_information_output::Builder {
-        crate::output::put_contact_information_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -66,6 +67,13 @@ impl aws_http::request_id::RequestId for GetContactInformationOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetContactInformationOutput {
+    /// Creates a new builder-style object to manufacture [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
+    pub fn builder() -> crate::output::get_contact_information_output::Builder {
+        crate::output::get_contact_information_output::Builder::default()
+    }
+}
+
 /// See [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
 pub mod get_contact_information_output {
     
@@ -107,12 +115,6 @@ pub mod get_contact_information_output {
     
     
 }
-impl GetContactInformationOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
-    pub fn builder() -> crate::output::get_contact_information_output::Builder {
-        crate::output::get_contact_information_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -125,6 +127,13 @@ impl aws_http::request_id::RequestId for PutAlternateContactOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl PutAlternateContactOutput {
+    /// Creates a new builder-style object to manufacture [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
+    pub fn builder() -> crate::output::put_alternate_contact_output::Builder {
+        crate::output::put_alternate_contact_output::Builder::default()
+    }
+}
+
 /// See [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
 pub mod put_alternate_contact_output {
     
@@ -154,12 +163,6 @@ pub mod put_alternate_contact_output {
     
     
 }
-impl PutAlternateContactOutput {
-    /// Creates a new builder-style object to manufacture [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
-    pub fn builder() -> crate::output::put_alternate_contact_output::Builder {
-        crate::output::put_alternate_contact_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -172,6 +175,13 @@ impl aws_http::request_id::RequestId for DeleteAlternateContactOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteAlternateContactOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
+    pub fn builder() -> crate::output::delete_alternate_contact_output::Builder {
+        crate::output::delete_alternate_contact_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
 pub mod delete_alternate_contact_output {
     
@@ -201,12 +211,6 @@ pub mod delete_alternate_contact_output {
     
     
 }
-impl DeleteAlternateContactOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
-    pub fn builder() -> crate::output::delete_alternate_contact_output::Builder {
-        crate::output::delete_alternate_contact_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -228,6 +232,13 @@ impl aws_http::request_id::RequestId for GetAlternateContactOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl GetAlternateContactOutput {
+    /// Creates a new builder-style object to manufacture [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
+    pub fn builder() -> crate::output::get_alternate_contact_output::Builder {
+        crate::output::get_alternate_contact_output::Builder::default()
+    }
+}
+
 /// See [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
 pub mod get_alternate_contact_output {
     
@@ -268,11 +279,5 @@ pub mod get_alternate_contact_output {
     }
     
     
-}
-impl GetAlternateContactOutput {
-    /// Creates a new builder-style object to manufacture [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
-    pub fn builder() -> crate::output::get_alternate_contact_output::Builder {
-        crate::output::get_alternate_contact_output::Builder::default()
-    }
 }
 

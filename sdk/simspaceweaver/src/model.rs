@@ -14,6 +14,13 @@ impl LaunchOverrides {
         self.launch_commands.as_deref()
     }
 }
+impl LaunchOverrides {
+    /// Creates a new builder-style object to manufacture [`LaunchOverrides`](crate::model::LaunchOverrides).
+    pub fn builder() -> crate::model::launch_overrides::Builder {
+        crate::model::launch_overrides::Builder::default()
+    }
+}
+
 /// See [`LaunchOverrides`](crate::model::LaunchOverrides).
 pub mod launch_overrides {
     
@@ -49,12 +56,6 @@ pub mod launch_overrides {
     }
     
     
-}
-impl LaunchOverrides {
-    /// Creates a new builder-style object to manufacture [`LaunchOverrides`](crate::model::LaunchOverrides).
-    pub fn builder() -> crate::model::launch_overrides::Builder {
-        crate::model::launch_overrides::Builder::default()
-    }
 }
 
 /// <p>A collection of metadata about an app.</p>
@@ -99,6 +100,13 @@ impl SimulationAppMetadata {
         self.target_status.as_ref()
     }
 }
+impl SimulationAppMetadata {
+    /// Creates a new builder-style object to manufacture [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
+    pub fn builder() -> crate::model::simulation_app_metadata::Builder {
+        crate::model::simulation_app_metadata::Builder::default()
+    }
+}
+
 /// See [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
 pub mod simulation_app_metadata {
     
@@ -176,12 +184,6 @@ pub mod simulation_app_metadata {
     }
     
     
-}
-impl SimulationAppMetadata {
-    /// Creates a new builder-style object to manufacture [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
-    pub fn builder() -> crate::model::simulation_app_metadata::Builder {
-        crate::model::simulation_app_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SimulationAppTargetStatus`, it is important to ensure
@@ -394,6 +396,13 @@ impl SimulationAppEndpointInfo {
         self.ingress_port_mappings.as_deref()
     }
 }
+impl SimulationAppEndpointInfo {
+    /// Creates a new builder-style object to manufacture [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
+    pub fn builder() -> crate::model::simulation_app_endpoint_info::Builder {
+        crate::model::simulation_app_endpoint_info::Builder::default()
+    }
+}
+
 /// See [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
 pub mod simulation_app_endpoint_info {
     
@@ -442,12 +451,6 @@ pub mod simulation_app_endpoint_info {
     
     
 }
-impl SimulationAppEndpointInfo {
-    /// Creates a new builder-style object to manufacture [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
-    pub fn builder() -> crate::model::simulation_app_endpoint_info::Builder {
-        crate::model::simulation_app_endpoint_info::Builder::default()
-    }
-}
 
 /// <p>A collection of TCP/UDP ports for a custom or service app.</p>
 #[non_exhaustive]
@@ -470,6 +473,13 @@ impl SimulationAppPortMapping {
         self.actual
     }
 }
+impl SimulationAppPortMapping {
+    /// Creates a new builder-style object to manufacture [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
+    pub fn builder() -> crate::model::simulation_app_port_mapping::Builder {
+        crate::model::simulation_app_port_mapping::Builder::default()
+    }
+}
+
 /// See [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
 pub mod simulation_app_port_mapping {
     
@@ -511,12 +521,6 @@ pub mod simulation_app_port_mapping {
     }
     
     
-}
-impl SimulationAppPortMapping {
-    /// Creates a new builder-style object to manufacture [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
-    pub fn builder() -> crate::model::simulation_app_port_mapping::Builder {
-        crate::model::simulation_app_port_mapping::Builder::default()
-    }
 }
 
 /// <p>A collection of data about the simulation.</p>
@@ -561,6 +565,13 @@ impl SimulationMetadata {
         self.target_status.as_ref()
     }
 }
+impl SimulationMetadata {
+    /// Creates a new builder-style object to manufacture [`SimulationMetadata`](crate::model::SimulationMetadata).
+    pub fn builder() -> crate::model::simulation_metadata::Builder {
+        crate::model::simulation_metadata::Builder::default()
+    }
+}
+
 /// See [`SimulationMetadata`](crate::model::SimulationMetadata).
 pub mod simulation_metadata {
     
@@ -638,12 +649,6 @@ pub mod simulation_metadata {
     }
     
     
-}
-impl SimulationMetadata {
-    /// Creates a new builder-style object to manufacture [`SimulationMetadata`](crate::model::SimulationMetadata).
-    pub fn builder() -> crate::model::simulation_metadata::Builder {
-        crate::model::simulation_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SimulationTargetStatus`, it is important to ensure
@@ -871,6 +876,13 @@ impl S3Location {
         self.object_key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
     
@@ -913,12 +925,6 @@ pub mod s3_location {
     
     
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>A collection of additional state information, such as domain and clock configuration.</p>
 #[non_exhaustive]
@@ -945,6 +951,13 @@ impl LiveSimulationState {
         self.clocks.as_deref()
     }
 }
+impl LiveSimulationState {
+    /// Creates a new builder-style object to manufacture [`LiveSimulationState`](crate::model::LiveSimulationState).
+    pub fn builder() -> crate::model::live_simulation_state::Builder {
+        crate::model::live_simulation_state::Builder::default()
+    }
+}
+
 /// See [`LiveSimulationState`](crate::model::LiveSimulationState).
 pub mod live_simulation_state {
     
@@ -1003,12 +1016,6 @@ pub mod live_simulation_state {
     
     
 }
-impl LiveSimulationState {
-    /// Creates a new builder-style object to manufacture [`LiveSimulationState`](crate::model::LiveSimulationState).
-    pub fn builder() -> crate::model::live_simulation_state::Builder {
-        crate::model::live_simulation_state::Builder::default()
-    }
-}
 
 /// <p>Status information about the simulation clock.</p>
 #[non_exhaustive]
@@ -1031,6 +1038,13 @@ impl SimulationClock {
         self.target_status.as_ref()
     }
 }
+impl SimulationClock {
+    /// Creates a new builder-style object to manufacture [`SimulationClock`](crate::model::SimulationClock).
+    pub fn builder() -> crate::model::simulation_clock::Builder {
+        crate::model::simulation_clock::Builder::default()
+    }
+}
+
 /// See [`SimulationClock`](crate::model::SimulationClock).
 pub mod simulation_clock {
     
@@ -1072,12 +1086,6 @@ pub mod simulation_clock {
     }
     
     
-}
-impl SimulationClock {
-    /// Creates a new builder-style object to manufacture [`SimulationClock`](crate::model::SimulationClock).
-    pub fn builder() -> crate::model::simulation_clock::Builder {
-        crate::model::simulation_clock::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClockTargetStatus`, it is important to ensure
@@ -1302,6 +1310,13 @@ impl Domain {
         self.lifecycle.as_ref()
     }
 }
+impl Domain {
+    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
+    pub fn builder() -> crate::model::domain::Builder {
+        crate::model::domain::Builder::default()
+    }
+}
+
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
     
@@ -1359,12 +1374,6 @@ pub mod domain {
     }
     
     
-}
-impl Domain {
-    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
-    pub fn builder() -> crate::model::domain::Builder {
-        crate::model::domain::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LifecycleManagementStrategy`, it is important to ensure
@@ -1473,6 +1482,13 @@ impl LoggingConfiguration {
         self.destinations.as_deref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
     
@@ -1509,12 +1525,6 @@ pub mod logging_configuration {
     
     
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 /// <p>The location where SimSpace Weaver sends simulation log data.</p>
 #[non_exhaustive]
@@ -1530,6 +1540,13 @@ impl LogDestination {
         self.cloud_watch_logs_log_group.as_ref()
     }
 }
+impl LogDestination {
+    /// Creates a new builder-style object to manufacture [`LogDestination`](crate::model::LogDestination).
+    pub fn builder() -> crate::model::log_destination::Builder {
+        crate::model::log_destination::Builder::default()
+    }
+}
+
 /// See [`LogDestination`](crate::model::LogDestination).
 pub mod log_destination {
     
@@ -1560,12 +1577,6 @@ pub mod log_destination {
     
     
 }
-impl LogDestination {
-    /// Creates a new builder-style object to manufacture [`LogDestination`](crate::model::LogDestination).
-    pub fn builder() -> crate::model::log_destination::Builder {
-        crate::model::log_destination::Builder::default()
-    }
-}
 
 /// <p>The Amazon CloudWatch Logs log group for the simulation. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
 #[non_exhaustive]
@@ -1581,6 +1592,13 @@ impl CloudWatchLogsLogGroup {
         self.log_group_arn.as_deref()
     }
 }
+impl CloudWatchLogsLogGroup {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
+    pub fn builder() -> crate::model::cloud_watch_logs_log_group::Builder {
+        crate::model::cloud_watch_logs_log_group::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
 pub mod cloud_watch_logs_log_group {
     
@@ -1610,11 +1628,5 @@ pub mod cloud_watch_logs_log_group {
     }
     
     
-}
-impl CloudWatchLogsLogGroup {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
-    pub fn builder() -> crate::model::cloud_watch_logs_log_group::Builder {
-        crate::model::cloud_watch_logs_log_group::Builder::default()
-    }
 }
 

@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`convert_recovery_point_to_snapshot`](crate::client::Client::convert_recovery_point_to_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::ConvertRecoveryPointToSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ConvertRecoveryPointToSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConvertRecoveryPointToSnapshot {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConvertRecoveryPointToSn
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_endpoint_access`](crate::client::Client::create_endpoint_access).
             ///
-            /// See [`crate::client::fluent_builders::CreateEndpointAccess`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEndpointAccess {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpointAccess {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_namespace`](crate::client::Client::create_namespace).
             ///
-            /// See [`crate::client::fluent_builders::CreateNamespace`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNamespace {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNamespace {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_snapshot`](crate::client::Client::create_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::CreateSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSnapshot {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_usage_limit`](crate::client::Client::create_usage_limit).
             ///
-            /// See [`crate::client::fluent_builders::CreateUsageLimit`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateUsageLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUsageLimit {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUsageLimit {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_workgroup`](crate::client::Client::create_workgroup).
             ///
-            /// See [`crate::client::fluent_builders::CreateWorkgroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateWorkgroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkgroup {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkgroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_endpoint_access`](crate::client::Client::delete_endpoint_access).
             ///
-            /// See [`crate::client::fluent_builders::DeleteEndpointAccess`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEndpointAccess {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpointAccess {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_namespace`](crate::client::Client::delete_namespace).
             ///
-            /// See [`crate::client::fluent_builders::DeleteNamespace`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNamespace {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamespace {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResourcePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourcePolicy {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_snapshot`](crate::client::Client::delete_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::DeleteSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSnapshot {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_usage_limit`](crate::client::Client::delete_usage_limit).
             ///
-            /// See [`crate::client::fluent_builders::DeleteUsageLimit`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteUsageLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUsageLimit {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUsageLimit {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_workgroup`](crate::client::Client::delete_workgroup).
             ///
-            /// See [`crate::client::fluent_builders::DeleteWorkgroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteWorkgroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkgroup {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkgroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_credentials`](crate::client::Client::get_credentials).
             ///
-            /// See [`crate::client::fluent_builders::GetCredentials`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCredentials {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCredentials {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_endpoint_access`](crate::client::Client::get_endpoint_access).
             ///
-            /// See [`crate::client::fluent_builders::GetEndpointAccess`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEndpointAccess {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEndpointAccess {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_namespace`](crate::client::Client::get_namespace).
             ///
-            /// See [`crate::client::fluent_builders::GetNamespace`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNamespace {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamespace {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_recovery_point`](crate::client::Client::get_recovery_point).
             ///
-            /// See [`crate::client::fluent_builders::GetRecoveryPoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecoveryPoint {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryPoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resource_policy`](crate::client::Client::get_resource_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetResourcePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResourcePolicy {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_snapshot`](crate::client::Client::get_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::GetSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSnapshot {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshot {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_table_restore_status`](crate::client::Client::get_table_restore_status).
             ///
-            /// See [`crate::client::fluent_builders::GetTableRestoreStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetTableRestoreStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTableRestoreStatus {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTableRestoreStatus {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_usage_limit`](crate::client::Client::get_usage_limit).
             ///
-            /// See [`crate::client::fluent_builders::GetUsageLimit`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetUsageLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUsageLimit {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageLimit {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_workgroup`](crate::client::Client::get_workgroup).
             ///
-            /// See [`crate::client::fluent_builders::GetWorkgroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetWorkgroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkgroup {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkgroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_endpoint_access`](crate::client::Client::list_endpoint_access).
             ///
-            /// See [`crate::client::fluent_builders::ListEndpointAccess`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEndpointAccess {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointAccess {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_namespaces`](crate::client::Client::list_namespaces).
             ///
-            /// See [`crate::client::fluent_builders::ListNamespaces`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListNamespaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNamespaces {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamespaces {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_recovery_points`](crate::client::Client::list_recovery_points).
             ///
-            /// See [`crate::client::fluent_builders::ListRecoveryPoints`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListRecoveryPoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecoveryPoints {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPoints {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_snapshots`](crate::client::Client::list_snapshots).
             ///
-            /// See [`crate::client::fluent_builders::ListSnapshots`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSnapshots {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshots {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_table_restore_status`](crate::client::Client::list_table_restore_status).
             ///
-            /// See [`crate::client::fluent_builders::ListTableRestoreStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTableRestoreStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTableRestoreStatus {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableRestoreStatus {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_usage_limits`](crate::client::Client::list_usage_limits).
             ///
-            /// See [`crate::client::fluent_builders::ListUsageLimits`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListUsageLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsageLimits {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageLimits {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_workgroups`](crate::client::Client::list_workgroups).
             ///
-            /// See [`crate::client::fluent_builders::ListWorkgroups`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListWorkgroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkgroups {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkgroups {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_resource_policy`](crate::client::Client::put_resource_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutResourcePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResourcePolicy {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`restore_from_recovery_point`](crate::client::Client::restore_from_recovery_point).
             ///
-            /// See [`crate::client::fluent_builders::RestoreFromRecoveryPoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RestoreFromRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreFromRecoveryPoint {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreFromRecoveryPoint
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`restore_from_snapshot`](crate::client::Client::restore_from_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::RestoreFromSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RestoreFromSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreFromSnapshot {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreFromSnapshot {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`restore_table_from_snapshot`](crate::client::Client::restore_table_from_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::RestoreTableFromSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `RestoreTableFromSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreTableFromSnapshot {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreTableFromSnapshot
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_endpoint_access`](crate::client::Client::update_endpoint_access).
             ///
-            /// See [`crate::client::fluent_builders::UpdateEndpointAccess`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEndpointAccess {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointAccess {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_namespace`](crate::client::Client::update_namespace).
             ///
-            /// See [`crate::client::fluent_builders::UpdateNamespace`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNamespace {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNamespace {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_snapshot`](crate::client::Client::update_snapshot).
             ///
-            /// See [`crate::client::fluent_builders::UpdateSnapshot`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSnapshot {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_usage_limit`](crate::client::Client::update_usage_limit).
             ///
-            /// See [`crate::client::fluent_builders::UpdateUsageLimit`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateUsageLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUsageLimit {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUsageLimit {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_workgroup`](crate::client::Client::update_workgroup).
             ///
-            /// See [`crate::client::fluent_builders::UpdateWorkgroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateWorkgroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkgroup {
     _private: ()

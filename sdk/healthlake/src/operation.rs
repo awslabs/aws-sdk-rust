@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_fhir_datastore`](crate::client::Client::create_fhir_datastore).
             ///
-            /// See [`crate::client::fluent_builders::CreateFHIRDatastore`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateFHIRDatastore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFHIRDatastore {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFHIRDatastore {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_fhir_datastore`](crate::client::Client::delete_fhir_datastore).
             ///
-            /// See [`crate::client::fluent_builders::DeleteFHIRDatastore`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteFHIRDatastore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFHIRDatastore {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFHIRDatastore {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_fhir_datastore`](crate::client::Client::describe_fhir_datastore).
             ///
-            /// See [`crate::client::fluent_builders::DescribeFHIRDatastore`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeFHIRDatastore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFHIRDatastore {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRDatastore {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_fhir_export_job`](crate::client::Client::describe_fhir_export_job).
             ///
-            /// See [`crate::client::fluent_builders::DescribeFHIRExportJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeFHIRExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFHIRExportJob {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRExportJob {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_fhir_import_job`](crate::client::Client::describe_fhir_import_job).
             ///
-            /// See [`crate::client::fluent_builders::DescribeFHIRImportJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeFHIRImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFHIRImportJob {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFHIRImportJob {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_fhir_datastores`](crate::client::Client::list_fhir_datastores).
             ///
-            /// See [`crate::client::fluent_builders::ListFHIRDatastores`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFHIRDatastores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFHIRDatastores {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRDatastores {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_fhir_export_jobs`](crate::client::Client::list_fhir_export_jobs).
             ///
-            /// See [`crate::client::fluent_builders::ListFHIRExportJobs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFHIRExportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFHIRExportJobs {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRExportJobs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_fhir_import_jobs`](crate::client::Client::list_fhir_import_jobs).
             ///
-            /// See [`crate::client::fluent_builders::ListFHIRImportJobs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFHIRImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFHIRImportJobs {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRImportJobs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_fhir_export_job`](crate::client::Client::start_fhir_export_job).
             ///
-            /// See [`crate::client::fluent_builders::StartFHIRExportJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartFHIRExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartFHIRExportJob {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFHIRExportJob {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_fhir_import_job`](crate::client::Client::start_fhir_import_job).
             ///
-            /// See [`crate::client::fluent_builders::StartFHIRImportJob`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartFHIRImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartFHIRImportJob {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFHIRImportJob {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()

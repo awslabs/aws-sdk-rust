@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateRescoreExecutionPlanOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UpdateRescoreExecutionPlanOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput).
+    pub fn builder() -> crate::output::update_rescore_execution_plan_output::Builder {
+        crate::output::update_rescore_execution_plan_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput).
 pub mod update_rescore_execution_plan_output {
     
@@ -39,12 +46,6 @@ pub mod update_rescore_execution_plan_output {
     
     
 }
-impl UpdateRescoreExecutionPlanOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::output::update_rescore_execution_plan_output::Builder {
-        crate::output::update_rescore_execution_plan_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -57,6 +58,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
     
@@ -86,12 +94,6 @@ pub mod untag_resource_output {
     
     
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -104,6 +106,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
     
@@ -133,12 +142,6 @@ pub mod tag_resource_output {
     
     
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -167,6 +170,13 @@ impl aws_http::request_id::RequestId for RescoreOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl RescoreOutput {
+    /// Creates a new builder-style object to manufacture [`RescoreOutput`](crate::output::RescoreOutput).
+    pub fn builder() -> crate::output::rescore_output::Builder {
+        crate::output::rescore_output::Builder::default()
+    }
+}
+
 /// See [`RescoreOutput`](crate::output::RescoreOutput).
 pub mod rescore_output {
     
@@ -226,12 +236,6 @@ pub mod rescore_output {
     
     
 }
-impl RescoreOutput {
-    /// Creates a new builder-style object to manufacture [`RescoreOutput`](crate::output::RescoreOutput).
-    pub fn builder() -> crate::output::rescore_output::Builder {
-        crate::output::rescore_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response.</p>
 #[non_exhaustive]
@@ -253,6 +257,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
     
@@ -300,12 +311,6 @@ pub mod list_tags_for_resource_output {
     
     
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -334,6 +339,13 @@ impl aws_http::request_id::RequestId for ListRescoreExecutionPlansOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl ListRescoreExecutionPlansOutput {
+    /// Creates a new builder-style object to manufacture [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput).
+    pub fn builder() -> crate::output::list_rescore_execution_plans_output::Builder {
+        crate::output::list_rescore_execution_plans_output::Builder::default()
+    }
+}
+
 /// See [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput).
 pub mod list_rescore_execution_plans_output {
     
@@ -392,12 +404,6 @@ pub mod list_rescore_execution_plans_output {
     }
     
     
-}
-impl ListRescoreExecutionPlansOutput {
-    /// Creates a new builder-style object to manufacture [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput).
-    pub fn builder() -> crate::output::list_rescore_execution_plans_output::Builder {
-        crate::output::list_rescore_execution_plans_output::Builder::default()
-    }
 }
 
 #[allow(missing_docs)] // documentation missing in model
@@ -476,6 +482,13 @@ impl aws_http::request_id::RequestId for DescribeRescoreExecutionPlanOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DescribeRescoreExecutionPlanOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput).
+    pub fn builder() -> crate::output::describe_rescore_execution_plan_output::Builder {
+        crate::output::describe_rescore_execution_plan_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput).
 pub mod describe_rescore_execution_plan_output {
     
@@ -613,12 +626,6 @@ pub mod describe_rescore_execution_plan_output {
     
     
 }
-impl DescribeRescoreExecutionPlanOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::output::describe_rescore_execution_plan_output::Builder {
-        crate::output::describe_rescore_execution_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -631,6 +638,13 @@ impl aws_http::request_id::RequestId for DeleteRescoreExecutionPlanOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl DeleteRescoreExecutionPlanOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput).
+    pub fn builder() -> crate::output::delete_rescore_execution_plan_output::Builder {
+        crate::output::delete_rescore_execution_plan_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput).
 pub mod delete_rescore_execution_plan_output {
     
@@ -660,12 +674,6 @@ pub mod delete_rescore_execution_plan_output {
     
     
 }
-impl DeleteRescoreExecutionPlanOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::output::delete_rescore_execution_plan_output::Builder {
-        crate::output::delete_rescore_execution_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -694,6 +702,13 @@ impl aws_http::request_id::RequestId for CreateRescoreExecutionPlanOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl CreateRescoreExecutionPlanOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput).
+    pub fn builder() -> crate::output::create_rescore_execution_plan_output::Builder {
+        crate::output::create_rescore_execution_plan_output::Builder::default()
+    }
+}
+
 /// See [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput).
 pub mod create_rescore_execution_plan_output {
     
@@ -746,11 +761,5 @@ pub mod create_rescore_execution_plan_output {
     }
     
     
-}
-impl CreateRescoreExecutionPlanOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::output::create_rescore_execution_plan_output::Builder {
-        crate::output::create_rescore_execution_plan_output::Builder::default()
-    }
 }
 

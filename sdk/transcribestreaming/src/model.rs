@@ -518,6 +518,13 @@ impl TranscriptEvent {
         self.transcript.as_ref()
     }
 }
+impl TranscriptEvent {
+    /// Creates a new builder-style object to manufacture [`TranscriptEvent`](crate::model::TranscriptEvent).
+    pub fn builder() -> crate::model::transcript_event::Builder {
+        crate::model::transcript_event::Builder::default()
+    }
+}
+
 /// See [`TranscriptEvent`](crate::model::TranscriptEvent).
 pub mod transcript_event {
     
@@ -548,12 +555,6 @@ pub mod transcript_event {
     
     
 }
-impl TranscriptEvent {
-    /// Creates a new builder-style object to manufacture [`TranscriptEvent`](crate::model::TranscriptEvent).
-    pub fn builder() -> crate::model::transcript_event::Builder {
-        crate::model::transcript_event::Builder::default()
-    }
-}
 
 /// <p>The <code>Transcript</code> associated with a <code></code>.</p> 
 /// <p> <code>Transcript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
@@ -570,6 +571,13 @@ impl Transcript {
         self.results.as_deref()
     }
 }
+impl Transcript {
+    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
+    pub fn builder() -> crate::model::transcript::Builder {
+        crate::model::transcript::Builder::default()
+    }
+}
+
 /// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
     
@@ -605,12 +613,6 @@ pub mod transcript {
     }
     
     
-}
-impl Transcript {
-    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
-    pub fn builder() -> crate::model::transcript::Builder {
-        crate::model::transcript::Builder::default()
-    }
 }
 
 /// <p>The <code>Result</code> associated with a <code></code>.</p> 
@@ -681,6 +683,13 @@ impl Result {
         self.language_identification.as_deref()
     }
 }
+impl Result {
+    /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result).
+    pub fn builder() -> crate::model::result::Builder {
+        crate::model::result::Builder::default()
+    }
+}
+
 /// See [`Result`](crate::model::Result).
 pub mod result {
     
@@ -814,12 +823,6 @@ pub mod result {
     
     
 }
-impl Result {
-    /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result).
-    pub fn builder() -> crate::model::result::Builder {
-        crate::model::result::Builder::default()
-    }
-}
 
 /// <p>The language code that represents the language identified in your audio, including the associated confidence score. If you enabled channel identification in your request and each channel contained a different language, you will have more than one <code>LanguageWithScore</code> result.</p>
 #[non_exhaustive]
@@ -842,6 +845,13 @@ impl LanguageWithScore {
         self.score
     }
 }
+impl LanguageWithScore {
+    /// Creates a new builder-style object to manufacture [`LanguageWithScore`](crate::model::LanguageWithScore).
+    pub fn builder() -> crate::model::language_with_score::Builder {
+        crate::model::language_with_score::Builder::default()
+    }
+}
+
 /// See [`LanguageWithScore`](crate::model::LanguageWithScore).
 pub mod language_with_score {
     
@@ -885,12 +895,6 @@ pub mod language_with_score {
     
     
 }
-impl LanguageWithScore {
-    /// Creates a new builder-style object to manufacture [`LanguageWithScore`](crate::model::LanguageWithScore).
-    pub fn builder() -> crate::model::language_with_score::Builder {
-        crate::model::language_with_score::Builder::default()
-    }
-}
 
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
@@ -920,6 +924,13 @@ impl Alternative {
         self.entities.as_deref()
     }
 }
+impl Alternative {
+    /// Creates a new builder-style object to manufacture [`Alternative`](crate::model::Alternative).
+    pub fn builder() -> crate::model::alternative::Builder {
+        crate::model::alternative::Builder::default()
+    }
+}
+
 /// See [`Alternative`](crate::model::Alternative).
 pub mod alternative {
     
@@ -986,12 +997,6 @@ pub mod alternative {
     
     
 }
-impl Alternative {
-    /// Creates a new builder-style object to manufacture [`Alternative`](crate::model::Alternative).
-    pub fn builder() -> crate::model::alternative::Builder {
-        crate::model::alternative::Builder::default()
-    }
-}
 
 /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
@@ -1044,6 +1049,13 @@ impl Entity {
         self.confidence
     }
 }
+impl Entity {
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
+    pub fn builder() -> crate::model::entity::Builder {
+        crate::model::entity::Builder::default()
+    }
+}
+
 /// See [`Entity`](crate::model::Entity).
 pub mod entity {
     
@@ -1138,12 +1150,6 @@ pub mod entity {
     
     
 }
-impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
-    pub fn builder() -> crate::model::entity::Builder {
-        crate::model::entity::Builder::default()
-    }
-}
 
 /// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
@@ -1210,6 +1216,13 @@ impl Item {
         self.stable
     }
 }
+impl Item {
+    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
+    pub fn builder() -> crate::model::item::Builder {
+        crate::model::item::Builder::default()
+    }
+}
+
 /// See [`Item`](crate::model::Item).
 pub mod item {
     
@@ -1328,12 +1341,6 @@ pub mod item {
     }
     
     
-}
-impl Item {
-    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
-    pub fn builder() -> crate::model::item::Builder {
-        crate::model::item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ItemType`, it is important to ensure
@@ -1571,6 +1578,13 @@ impl ConfigurationEvent {
         self.post_call_analytics_settings.as_ref()
     }
 }
+impl ConfigurationEvent {
+    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    pub fn builder() -> crate::model::configuration_event::Builder {
+        crate::model::configuration_event::Builder::default()
+    }
+}
+
 /// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
 pub mod configuration_event {
     
@@ -1618,12 +1632,6 @@ pub mod configuration_event {
     }
     
     
-}
-impl ConfigurationEvent {
-    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
-    pub fn builder() -> crate::model::configuration_event::Builder {
-        crate::model::configuration_event::Builder::default()
-    }
 }
 
 /// <p>Allows you to specify additional settings for your streaming Call Analytics post-call request, including output locations for your redacted and unredacted transcript, which IAM role to use, and, optionally, which encryption key to use.</p> 
@@ -1702,6 +1710,13 @@ impl PostCallAnalyticsSettings {
         self.output_encryption_kms_key_id.as_deref()
     }
 }
+impl PostCallAnalyticsSettings {
+    /// Creates a new builder-style object to manufacture [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
+    pub fn builder() -> crate::model::post_call_analytics_settings::Builder {
+        crate::model::post_call_analytics_settings::Builder::default()
+    }
+}
+
 /// See [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
 pub mod post_call_analytics_settings {
     
@@ -1808,12 +1823,6 @@ pub mod post_call_analytics_settings {
     
     
 }
-impl PostCallAnalyticsSettings {
-    /// Creates a new builder-style object to manufacture [`PostCallAnalyticsSettings`](crate::model::PostCallAnalyticsSettings).
-    pub fn builder() -> crate::model::post_call_analytics_settings::Builder {
-        crate::model::post_call_analytics_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ContentRedactionOutput`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1918,6 +1927,13 @@ impl ChannelDefinition {
         self.participant_role.as_ref()
     }
 }
+impl ChannelDefinition {
+    /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition).
+    pub fn builder() -> crate::model::channel_definition::Builder {
+        crate::model::channel_definition::Builder::default()
+    }
+}
+
 /// See [`ChannelDefinition`](crate::model::ChannelDefinition).
 pub mod channel_definition {
     
@@ -1960,12 +1976,6 @@ pub mod channel_definition {
     }
     
     
-}
-impl ChannelDefinition {
-    /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition).
-    pub fn builder() -> crate::model::channel_definition::Builder {
-        crate::model::channel_definition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ParticipantRole`, it is important to ensure
@@ -2065,6 +2075,13 @@ impl AudioEvent {
         self.audio_chunk.as_ref()
     }
 }
+impl AudioEvent {
+    /// Creates a new builder-style object to manufacture [`AudioEvent`](crate::model::AudioEvent).
+    pub fn builder() -> crate::model::audio_event::Builder {
+        crate::model::audio_event::Builder::default()
+    }
+}
+
 /// See [`AudioEvent`](crate::model::AudioEvent).
 pub mod audio_event {
     
@@ -2094,12 +2111,6 @@ pub mod audio_event {
     }
     
     
-}
-impl AudioEvent {
-    /// Creates a new builder-style object to manufacture [`AudioEvent`](crate::model::AudioEvent).
-    pub fn builder() -> crate::model::audio_event::Builder {
-        crate::model::audio_event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MedicalContentIdentificationType`, it is important to ensure
@@ -2228,6 +2239,13 @@ impl MedicalTranscriptEvent {
         self.transcript.as_ref()
     }
 }
+impl MedicalTranscriptEvent {
+    /// Creates a new builder-style object to manufacture [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
+    pub fn builder() -> crate::model::medical_transcript_event::Builder {
+        crate::model::medical_transcript_event::Builder::default()
+    }
+}
+
 /// See [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
 pub mod medical_transcript_event {
     
@@ -2258,12 +2276,6 @@ pub mod medical_transcript_event {
     
     
 }
-impl MedicalTranscriptEvent {
-    /// Creates a new builder-style object to manufacture [`MedicalTranscriptEvent`](crate::model::MedicalTranscriptEvent).
-    pub fn builder() -> crate::model::medical_transcript_event::Builder {
-        crate::model::medical_transcript_event::Builder::default()
-    }
-}
 
 /// <p>The <code>MedicalTranscript</code> associated with a <code></code>.</p> 
 /// <p> <code>MedicalTranscript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
@@ -2280,6 +2292,13 @@ impl MedicalTranscript {
         self.results.as_deref()
     }
 }
+impl MedicalTranscript {
+    /// Creates a new builder-style object to manufacture [`MedicalTranscript`](crate::model::MedicalTranscript).
+    pub fn builder() -> crate::model::medical_transcript::Builder {
+        crate::model::medical_transcript::Builder::default()
+    }
+}
+
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript).
 pub mod medical_transcript {
     
@@ -2315,12 +2334,6 @@ pub mod medical_transcript {
     }
     
     
-}
-impl MedicalTranscript {
-    /// Creates a new builder-style object to manufacture [`MedicalTranscript`](crate::model::MedicalTranscript).
-    pub fn builder() -> crate::model::medical_transcript::Builder {
-        crate::model::medical_transcript::Builder::default()
-    }
 }
 
 /// <p>The <code>Result</code> associated with a <code></code>.</p> 
@@ -2375,6 +2388,13 @@ impl MedicalResult {
         self.channel_id.as_deref()
     }
 }
+impl MedicalResult {
+    /// Creates a new builder-style object to manufacture [`MedicalResult`](crate::model::MedicalResult).
+    pub fn builder() -> crate::model::medical_result::Builder {
+        crate::model::medical_result::Builder::default()
+    }
+}
+
 /// See [`MedicalResult`](crate::model::MedicalResult).
 pub mod medical_result {
     
@@ -2476,12 +2496,6 @@ pub mod medical_result {
     
     
 }
-impl MedicalResult {
-    /// Creates a new builder-style object to manufacture [`MedicalResult`](crate::model::MedicalResult).
-    pub fn builder() -> crate::model::medical_result::Builder {
-        crate::model::medical_result::Builder::default()
-    }
-}
 
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
@@ -2511,6 +2525,13 @@ impl MedicalAlternative {
         self.entities.as_deref()
     }
 }
+impl MedicalAlternative {
+    /// Creates a new builder-style object to manufacture [`MedicalAlternative`](crate::model::MedicalAlternative).
+    pub fn builder() -> crate::model::medical_alternative::Builder {
+        crate::model::medical_alternative::Builder::default()
+    }
+}
+
 /// See [`MedicalAlternative`](crate::model::MedicalAlternative).
 pub mod medical_alternative {
     
@@ -2577,12 +2598,6 @@ pub mod medical_alternative {
     
     
 }
-impl MedicalAlternative {
-    /// Creates a new builder-style object to manufacture [`MedicalAlternative`](crate::model::MedicalAlternative).
-    pub fn builder() -> crate::model::medical_alternative::Builder {
-        crate::model::medical_alternative::Builder::default()
-    }
-}
 
 /// <p>Contains entities identified as personal health information (PHI) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
@@ -2628,6 +2643,13 @@ impl MedicalEntity {
         self.confidence
     }
 }
+impl MedicalEntity {
+    /// Creates a new builder-style object to manufacture [`MedicalEntity`](crate::model::MedicalEntity).
+    pub fn builder() -> crate::model::medical_entity::Builder {
+        crate::model::medical_entity::Builder::default()
+    }
+}
+
 /// See [`MedicalEntity`](crate::model::MedicalEntity).
 pub mod medical_entity {
     
@@ -2710,12 +2732,6 @@ pub mod medical_entity {
     
     
 }
-impl MedicalEntity {
-    /// Creates a new builder-style object to manufacture [`MedicalEntity`](crate::model::MedicalEntity).
-    pub fn builder() -> crate::model::medical_entity::Builder {
-        crate::model::medical_entity::Builder::default()
-    }
-}
 
 /// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
@@ -2768,6 +2784,13 @@ impl MedicalItem {
         self.speaker.as_deref()
     }
 }
+impl MedicalItem {
+    /// Creates a new builder-style object to manufacture [`MedicalItem`](crate::model::MedicalItem).
+    pub fn builder() -> crate::model::medical_item::Builder {
+        crate::model::medical_item::Builder::default()
+    }
+}
+
 /// See [`MedicalItem`](crate::model::MedicalItem).
 pub mod medical_item {
     
@@ -2861,12 +2884,6 @@ pub mod medical_item {
     }
     
     
-}
-impl MedicalItem {
-    /// Creates a new builder-style object to manufacture [`MedicalItem`](crate::model::MedicalItem).
-    pub fn builder() -> crate::model::medical_item::Builder {
-        crate::model::medical_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Type`, it is important to ensure
@@ -3117,6 +3134,13 @@ impl CategoryEvent {
         self.matched_details.as_ref()
     }
 }
+impl CategoryEvent {
+    /// Creates a new builder-style object to manufacture [`CategoryEvent`](crate::model::CategoryEvent).
+    pub fn builder() -> crate::model::category_event::Builder {
+        crate::model::category_event::Builder::default()
+    }
+}
+
 /// See [`CategoryEvent`](crate::model::CategoryEvent).
 pub mod category_event {
     
@@ -3171,12 +3195,6 @@ pub mod category_event {
     
     
 }
-impl CategoryEvent {
-    /// Creates a new builder-style object to manufacture [`CategoryEvent`](crate::model::CategoryEvent).
-    pub fn builder() -> crate::model::category_event::Builder {
-        crate::model::category_event::Builder::default()
-    }
-}
 
 /// <p>Contains the timestamps of matched categories.</p>
 #[non_exhaustive]
@@ -3192,6 +3210,13 @@ impl PointsOfInterest {
         self.timestamp_ranges.as_deref()
     }
 }
+impl PointsOfInterest {
+    /// Creates a new builder-style object to manufacture [`PointsOfInterest`](crate::model::PointsOfInterest).
+    pub fn builder() -> crate::model::points_of_interest::Builder {
+        crate::model::points_of_interest::Builder::default()
+    }
+}
+
 /// See [`PointsOfInterest`](crate::model::PointsOfInterest).
 pub mod points_of_interest {
     
@@ -3228,12 +3253,6 @@ pub mod points_of_interest {
     
     
 }
-impl PointsOfInterest {
-    /// Creates a new builder-style object to manufacture [`PointsOfInterest`](crate::model::PointsOfInterest).
-    pub fn builder() -> crate::model::points_of_interest::Builder {
-        crate::model::points_of_interest::Builder::default()
-    }
-}
 
 /// <p>Contains the timestamp range (start time through end time) of a matched category.</p>
 #[non_exhaustive]
@@ -3256,6 +3275,13 @@ impl TimestampRange {
         self.end_offset_millis
     }
 }
+impl TimestampRange {
+    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
+    pub fn builder() -> crate::model::timestamp_range::Builder {
+        crate::model::timestamp_range::Builder::default()
+    }
+}
+
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
     
@@ -3297,12 +3323,6 @@ pub mod timestamp_range {
     }
     
     
-}
-impl TimestampRange {
-    /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
-    pub fn builder() -> crate::model::timestamp_range::Builder {
-        crate::model::timestamp_range::Builder::default()
-    }
 }
 
 /// <p>Contains set of transcription results from one or more audio segments, along with additional information about the parameters included in your request. For example, channel definitions, partial result stabilization, sentiment, and issue detection.</p>
@@ -3382,6 +3402,13 @@ impl UtteranceEvent {
         self.issues_detected.as_deref()
     }
 }
+impl UtteranceEvent {
+    /// Creates a new builder-style object to manufacture [`UtteranceEvent`](crate::model::UtteranceEvent).
+    pub fn builder() -> crate::model::utterance_event::Builder {
+        crate::model::utterance_event::Builder::default()
+    }
+}
+
 /// See [`UtteranceEvent`](crate::model::UtteranceEvent).
 pub mod utterance_event {
     
@@ -3539,12 +3566,6 @@ pub mod utterance_event {
     
     
 }
-impl UtteranceEvent {
-    /// Creates a new builder-style object to manufacture [`UtteranceEvent`](crate::model::UtteranceEvent).
-    pub fn builder() -> crate::model::utterance_event::Builder {
-        crate::model::utterance_event::Builder::default()
-    }
-}
 
 /// <p>Lists the issues that were identified in your audio segment.</p>
 #[non_exhaustive]
@@ -3560,6 +3581,13 @@ impl IssueDetected {
         self.character_offsets.as_ref()
     }
 }
+impl IssueDetected {
+    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
+    pub fn builder() -> crate::model::issue_detected::Builder {
+        crate::model::issue_detected::Builder::default()
+    }
+}
+
 /// See [`IssueDetected`](crate::model::IssueDetected).
 pub mod issue_detected {
     
@@ -3590,12 +3618,6 @@ pub mod issue_detected {
     
     
 }
-impl IssueDetected {
-    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
-    pub fn builder() -> crate::model::issue_detected::Builder {
-        crate::model::issue_detected::Builder::default()
-    }
-}
 
 /// <p>Provides the location, using character count, in your transcript where a match is identified. For example, the location of an issue or a category match within a segment.</p>
 #[non_exhaustive]
@@ -3618,6 +3640,13 @@ impl CharacterOffsets {
         self.end
     }
 }
+impl CharacterOffsets {
+    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
+    pub fn builder() -> crate::model::character_offsets::Builder {
+        crate::model::character_offsets::Builder::default()
+    }
+}
+
 /// See [`CharacterOffsets`](crate::model::CharacterOffsets).
 pub mod character_offsets {
     
@@ -3659,12 +3688,6 @@ pub mod character_offsets {
     }
     
     
-}
-impl CharacterOffsets {
-    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
-    pub fn builder() -> crate::model::character_offsets::Builder {
-        crate::model::character_offsets::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Sentiment`, it is important to ensure
@@ -3810,6 +3833,13 @@ impl CallAnalyticsEntity {
         self.confidence
     }
 }
+impl CallAnalyticsEntity {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
+    pub fn builder() -> crate::model::call_analytics_entity::Builder {
+        crate::model::call_analytics_entity::Builder::default()
+    }
+}
+
 /// See [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
 pub mod call_analytics_entity {
     
@@ -3902,12 +3932,6 @@ pub mod call_analytics_entity {
     
     
 }
-impl CallAnalyticsEntity {
-    /// Creates a new builder-style object to manufacture [`CallAnalyticsEntity`](crate::model::CallAnalyticsEntity).
-    pub fn builder() -> crate::model::call_analytics_entity::Builder {
-        crate::model::call_analytics_entity::Builder::default()
-    }
-}
 
 /// <p>A word, phrase, or punctuation mark in your Call Analytics transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
@@ -3967,6 +3991,13 @@ impl CallAnalyticsItem {
         self.stable
     }
 }
+impl CallAnalyticsItem {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
+    pub fn builder() -> crate::model::call_analytics_item::Builder {
+        crate::model::call_analytics_item::Builder::default()
+    }
+}
+
 /// See [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
 pub mod call_analytics_item {
     
@@ -4071,12 +4102,6 @@ pub mod call_analytics_item {
     }
     
     
-}
-impl CallAnalyticsItem {
-    /// Creates a new builder-style object to manufacture [`CallAnalyticsItem`](crate::model::CallAnalyticsItem).
-    pub fn builder() -> crate::model::call_analytics_item::Builder {
-        crate::model::call_analytics_item::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CallAnalyticsLanguageCode`, it is important to ensure

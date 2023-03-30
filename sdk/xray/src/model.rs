@@ -28,6 +28,13 @@ impl SamplingRuleRecord {
         self.modified_at.as_ref()
     }
 }
+impl SamplingRuleRecord {
+    /// Creates a new builder-style object to manufacture [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
+    pub fn builder() -> crate::model::sampling_rule_record::Builder {
+        crate::model::sampling_rule_record::Builder::default()
+    }
+}
+
 /// See [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
 pub mod sampling_rule_record {
     
@@ -81,12 +88,6 @@ pub mod sampling_rule_record {
     }
     
     
-}
-impl SamplingRuleRecord {
-    /// Creates a new builder-style object to manufacture [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
-    pub fn builder() -> crate::model::sampling_rule_record::Builder {
-        crate::model::sampling_rule_record::Builder::default()
-    }
 }
 
 /// <p>A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.</p>
@@ -187,6 +188,13 @@ impl SamplingRule {
         self.attributes.as_ref()
     }
 }
+impl SamplingRule {
+    /// Creates a new builder-style object to manufacture [`SamplingRule`](crate::model::SamplingRule).
+    pub fn builder() -> crate::model::sampling_rule::Builder {
+        crate::model::sampling_rule::Builder::default()
+    }
+}
+
 /// See [`SamplingRule`](crate::model::SamplingRule).
 pub mod sampling_rule {
     
@@ -371,12 +379,6 @@ pub mod sampling_rule {
     
     
 }
-impl SamplingRule {
-    /// Creates a new builder-style object to manufacture [`SamplingRule`](crate::model::SamplingRule).
-    pub fn builder() -> crate::model::sampling_rule::Builder {
-        crate::model::sampling_rule::Builder::default()
-    }
-}
 
 /// <p>A document specifying changes to a sampling rule's configuration.</p>
 #[non_exhaustive]
@@ -469,6 +471,13 @@ impl SamplingRuleUpdate {
         self.attributes.as_ref()
     }
 }
+impl SamplingRuleUpdate {
+    /// Creates a new builder-style object to manufacture [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
+    pub fn builder() -> crate::model::sampling_rule_update::Builder {
+        crate::model::sampling_rule_update::Builder::default()
+    }
+}
+
 /// See [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
 pub mod sampling_rule_update {
     
@@ -637,12 +646,6 @@ pub mod sampling_rule_update {
     
     
 }
-impl SamplingRuleUpdate {
-    /// Creates a new builder-style object to manufacture [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
-    pub fn builder() -> crate::model::sampling_rule_update::Builder {
-        crate::model::sampling_rule_update::Builder::default()
-    }
-}
 
 /// <p>Details and metadata for a group.</p>
 #[non_exhaustive]
@@ -687,6 +690,13 @@ impl Group {
         self.insights_configuration.as_ref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
     
@@ -761,12 +771,6 @@ pub mod group {
     
     
 }
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
-}
 
 /// <p>The structure containing configurations related to insights.</p>
 #[non_exhaustive]
@@ -789,6 +793,13 @@ impl InsightsConfiguration {
         self.notifications_enabled
     }
 }
+impl InsightsConfiguration {
+    /// Creates a new builder-style object to manufacture [`InsightsConfiguration`](crate::model::InsightsConfiguration).
+    pub fn builder() -> crate::model::insights_configuration::Builder {
+        crate::model::insights_configuration::Builder::default()
+    }
+}
+
 /// See [`InsightsConfiguration`](crate::model::InsightsConfiguration).
 pub mod insights_configuration {
     
@@ -831,12 +842,6 @@ pub mod insights_configuration {
     
     
 }
-impl InsightsConfiguration {
-    /// Creates a new builder-style object to manufacture [`InsightsConfiguration`](crate::model::InsightsConfiguration).
-    pub fn builder() -> crate::model::insights_configuration::Builder {
-        crate::model::insights_configuration::Builder::default()
-    }
-}
 
 /// <p>A map that contains tag keys and tag values to attach to an Amazon Web Services X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p> 
 /// <p>The following restrictions apply to tags:</p> 
@@ -865,6 +870,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -907,12 +919,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Information about a segment that failed processing.</p>
 #[non_exhaustive]
@@ -942,6 +948,13 @@ impl UnprocessedTraceSegment {
         self.message.as_deref()
     }
 }
+impl UnprocessedTraceSegment {
+    /// Creates a new builder-style object to manufacture [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
+    pub fn builder() -> crate::model::unprocessed_trace_segment::Builder {
+        crate::model::unprocessed_trace_segment::Builder::default()
+    }
+}
+
 /// See [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
 pub mod unprocessed_trace_segment {
     
@@ -996,12 +1009,6 @@ pub mod unprocessed_trace_segment {
     
     
 }
-impl UnprocessedTraceSegment {
-    /// Creates a new builder-style object to manufacture [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
-    pub fn builder() -> crate::model::unprocessed_trace_segment::Builder {
-        crate::model::unprocessed_trace_segment::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1052,6 +1059,13 @@ impl TelemetryRecord {
         self.backend_connection_errors.as_ref()
     }
 }
+impl TelemetryRecord {
+    /// Creates a new builder-style object to manufacture [`TelemetryRecord`](crate::model::TelemetryRecord).
+    pub fn builder() -> crate::model::telemetry_record::Builder {
+        crate::model::telemetry_record::Builder::default()
+    }
+}
+
 /// See [`TelemetryRecord`](crate::model::TelemetryRecord).
 pub mod telemetry_record {
     
@@ -1142,12 +1156,6 @@ pub mod telemetry_record {
     
     
 }
-impl TelemetryRecord {
-    /// Creates a new builder-style object to manufacture [`TelemetryRecord`](crate::model::TelemetryRecord).
-    pub fn builder() -> crate::model::telemetry_record::Builder {
-        crate::model::telemetry_record::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1198,6 +1206,13 @@ impl BackendConnectionErrors {
         self.other_count
     }
 }
+impl BackendConnectionErrors {
+    /// Creates a new builder-style object to manufacture [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
+    pub fn builder() -> crate::model::backend_connection_errors::Builder {
+        crate::model::backend_connection_errors::Builder::default()
+    }
+}
+
 /// See [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
 pub mod backend_connection_errors {
     
@@ -1288,12 +1303,6 @@ pub mod backend_connection_errors {
     
     
 }
-impl BackendConnectionErrors {
-    /// Creates a new builder-style object to manufacture [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
-    pub fn builder() -> crate::model::backend_connection_errors::Builder {
-        crate::model::backend_connection_errors::Builder::default()
-    }
-}
 
 /// <p>A resource policy grants one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy is associated with a specific Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -1330,6 +1339,13 @@ impl ResourcePolicy {
         self.last_updated_time.as_ref()
     }
 }
+impl ResourcePolicy {
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
+    pub fn builder() -> crate::model::resource_policy::Builder {
+        crate::model::resource_policy::Builder::default()
+    }
+}
+
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
     
@@ -1396,12 +1412,6 @@ pub mod resource_policy {
     
     
 }
-impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
-    pub fn builder() -> crate::model::resource_policy::Builder {
-        crate::model::resource_policy::Builder::default()
-    }
-}
 
 /// <p>A configuration document that specifies encryption configuration settings.</p>
 #[non_exhaustive]
@@ -1431,6 +1441,13 @@ impl EncryptionConfig {
         self.r#type.as_ref()
     }
 }
+impl EncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
+    pub fn builder() -> crate::model::encryption_config::Builder {
+        crate::model::encryption_config::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
     
@@ -1484,12 +1501,6 @@ pub mod encryption_config {
     }
     
     
-}
-impl EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
-    pub fn builder() -> crate::model::encryption_config::Builder {
-        crate::model::encryption_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EncryptionType`, it is important to ensure
@@ -1803,6 +1814,13 @@ impl TraceSummary {
         self.matched_event_time.as_ref()
     }
 }
+impl TraceSummary {
+    /// Creates a new builder-style object to manufacture [`TraceSummary`](crate::model::TraceSummary).
+    pub fn builder() -> crate::model::trace_summary::Builder {
+        crate::model::trace_summary::Builder::default()
+    }
+}
+
 /// See [`TraceSummary`](crate::model::TraceSummary).
 pub mod trace_summary {
     
@@ -2116,12 +2134,6 @@ pub mod trace_summary {
     
     
 }
-impl TraceSummary {
-    /// Creates a new builder-style object to manufacture [`TraceSummary`](crate::model::TraceSummary).
-    pub fn builder() -> crate::model::trace_summary::Builder {
-        crate::model::trace_summary::Builder::default()
-    }
-}
 
 /// <p>The root cause information for a response time warning.</p>
 #[non_exhaustive]
@@ -2144,6 +2156,13 @@ impl ResponseTimeRootCause {
         self.client_impacting
     }
 }
+impl ResponseTimeRootCause {
+    /// Creates a new builder-style object to manufacture [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
+    pub fn builder() -> crate::model::response_time_root_cause::Builder {
+        crate::model::response_time_root_cause::Builder::default()
+    }
+}
+
 /// See [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
 pub mod response_time_root_cause {
     
@@ -2191,12 +2210,6 @@ pub mod response_time_root_cause {
     }
     
     
-}
-impl ResponseTimeRootCause {
-    /// Creates a new builder-style object to manufacture [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
-    pub fn builder() -> crate::model::response_time_root_cause::Builder {
-        crate::model::response_time_root_cause::Builder::default()
-    }
 }
 
 /// <p>A collection of fields identifying the service in a response time warning.</p>
@@ -2248,6 +2261,13 @@ impl ResponseTimeRootCauseService {
         self.inferred
     }
 }
+impl ResponseTimeRootCauseService {
+    /// Creates a new builder-style object to manufacture [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
+    pub fn builder() -> crate::model::response_time_root_cause_service::Builder {
+        crate::model::response_time_root_cause_service::Builder::default()
+    }
+}
+
 /// See [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
 pub mod response_time_root_cause_service {
     
@@ -2350,12 +2370,6 @@ pub mod response_time_root_cause_service {
     
     
 }
-impl ResponseTimeRootCauseService {
-    /// Creates a new builder-style object to manufacture [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
-    pub fn builder() -> crate::model::response_time_root_cause_service::Builder {
-        crate::model::response_time_root_cause_service::Builder::default()
-    }
-}
 
 /// <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
 #[non_exhaustive]
@@ -2385,6 +2399,13 @@ impl ResponseTimeRootCauseEntity {
         self.remote
     }
 }
+impl ResponseTimeRootCauseEntity {
+    /// Creates a new builder-style object to manufacture [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
+    pub fn builder() -> crate::model::response_time_root_cause_entity::Builder {
+        crate::model::response_time_root_cause_entity::Builder::default()
+    }
+}
+
 /// See [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
 pub mod response_time_root_cause_entity {
     
@@ -2439,12 +2460,6 @@ pub mod response_time_root_cause_entity {
     
     
 }
-impl ResponseTimeRootCauseEntity {
-    /// Creates a new builder-style object to manufacture [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
-    pub fn builder() -> crate::model::response_time_root_cause_entity::Builder {
-        crate::model::response_time_root_cause_entity::Builder::default()
-    }
-}
 
 /// <p>The root cause of a trace summary error.</p>
 #[non_exhaustive]
@@ -2467,6 +2482,13 @@ impl ErrorRootCause {
         self.client_impacting
     }
 }
+impl ErrorRootCause {
+    /// Creates a new builder-style object to manufacture [`ErrorRootCause`](crate::model::ErrorRootCause).
+    pub fn builder() -> crate::model::error_root_cause::Builder {
+        crate::model::error_root_cause::Builder::default()
+    }
+}
+
 /// See [`ErrorRootCause`](crate::model::ErrorRootCause).
 pub mod error_root_cause {
     
@@ -2514,12 +2536,6 @@ pub mod error_root_cause {
     }
     
     
-}
-impl ErrorRootCause {
-    /// Creates a new builder-style object to manufacture [`ErrorRootCause`](crate::model::ErrorRootCause).
-    pub fn builder() -> crate::model::error_root_cause::Builder {
-        crate::model::error_root_cause::Builder::default()
-    }
 }
 
 /// <p>A collection of fields identifying the services in a trace summary error.</p>
@@ -2571,6 +2587,13 @@ impl ErrorRootCauseService {
         self.inferred
     }
 }
+impl ErrorRootCauseService {
+    /// Creates a new builder-style object to manufacture [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
+    pub fn builder() -> crate::model::error_root_cause_service::Builder {
+        crate::model::error_root_cause_service::Builder::default()
+    }
+}
+
 /// See [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
 pub mod error_root_cause_service {
     
@@ -2673,12 +2696,6 @@ pub mod error_root_cause_service {
     
     
 }
-impl ErrorRootCauseService {
-    /// Creates a new builder-style object to manufacture [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
-    pub fn builder() -> crate::model::error_root_cause_service::Builder {
-        crate::model::error_root_cause_service::Builder::default()
-    }
-}
 
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary error.</p>
 #[non_exhaustive]
@@ -2708,6 +2725,13 @@ impl ErrorRootCauseEntity {
         self.remote
     }
 }
+impl ErrorRootCauseEntity {
+    /// Creates a new builder-style object to manufacture [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
+    pub fn builder() -> crate::model::error_root_cause_entity::Builder {
+        crate::model::error_root_cause_entity::Builder::default()
+    }
+}
+
 /// See [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
 pub mod error_root_cause_entity {
     
@@ -2768,12 +2792,6 @@ pub mod error_root_cause_entity {
     
     
 }
-impl ErrorRootCauseEntity {
-    /// Creates a new builder-style object to manufacture [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
-    pub fn builder() -> crate::model::error_root_cause_entity::Builder {
-        crate::model::error_root_cause_entity::Builder::default()
-    }
-}
 
 /// <p>The exception associated with a root cause.</p>
 #[non_exhaustive]
@@ -2796,6 +2814,13 @@ impl RootCauseException {
         self.message.as_deref()
     }
 }
+impl RootCauseException {
+    /// Creates a new builder-style object to manufacture [`RootCauseException`](crate::model::RootCauseException).
+    pub fn builder() -> crate::model::root_cause_exception::Builder {
+        crate::model::root_cause_exception::Builder::default()
+    }
+}
+
 /// See [`RootCauseException`](crate::model::RootCauseException).
 pub mod root_cause_exception {
     
@@ -2838,12 +2863,6 @@ pub mod root_cause_exception {
     
     
 }
-impl RootCauseException {
-    /// Creates a new builder-style object to manufacture [`RootCauseException`](crate::model::RootCauseException).
-    pub fn builder() -> crate::model::root_cause_exception::Builder {
-        crate::model::root_cause_exception::Builder::default()
-    }
-}
 
 /// <p>The root cause information for a trace summary fault.</p>
 #[non_exhaustive]
@@ -2866,6 +2885,13 @@ impl FaultRootCause {
         self.client_impacting
     }
 }
+impl FaultRootCause {
+    /// Creates a new builder-style object to manufacture [`FaultRootCause`](crate::model::FaultRootCause).
+    pub fn builder() -> crate::model::fault_root_cause::Builder {
+        crate::model::fault_root_cause::Builder::default()
+    }
+}
+
 /// See [`FaultRootCause`](crate::model::FaultRootCause).
 pub mod fault_root_cause {
     
@@ -2913,12 +2939,6 @@ pub mod fault_root_cause {
     }
     
     
-}
-impl FaultRootCause {
-    /// Creates a new builder-style object to manufacture [`FaultRootCause`](crate::model::FaultRootCause).
-    pub fn builder() -> crate::model::fault_root_cause::Builder {
-        crate::model::fault_root_cause::Builder::default()
-    }
 }
 
 /// <p>A collection of fields identifying the services in a trace summary fault.</p>
@@ -2970,6 +2990,13 @@ impl FaultRootCauseService {
         self.inferred
     }
 }
+impl FaultRootCauseService {
+    /// Creates a new builder-style object to manufacture [`FaultRootCauseService`](crate::model::FaultRootCauseService).
+    pub fn builder() -> crate::model::fault_root_cause_service::Builder {
+        crate::model::fault_root_cause_service::Builder::default()
+    }
+}
+
 /// See [`FaultRootCauseService`](crate::model::FaultRootCauseService).
 pub mod fault_root_cause_service {
     
@@ -3072,12 +3099,6 @@ pub mod fault_root_cause_service {
     
     
 }
-impl FaultRootCauseService {
-    /// Creates a new builder-style object to manufacture [`FaultRootCauseService`](crate::model::FaultRootCauseService).
-    pub fn builder() -> crate::model::fault_root_cause_service::Builder {
-        crate::model::fault_root_cause_service::Builder::default()
-    }
-}
 
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary fault error.</p>
 #[non_exhaustive]
@@ -3107,6 +3128,13 @@ impl FaultRootCauseEntity {
         self.remote
     }
 }
+impl FaultRootCauseEntity {
+    /// Creates a new builder-style object to manufacture [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
+    pub fn builder() -> crate::model::fault_root_cause_entity::Builder {
+        crate::model::fault_root_cause_entity::Builder::default()
+    }
+}
+
 /// See [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
 pub mod fault_root_cause_entity {
     
@@ -3167,12 +3195,6 @@ pub mod fault_root_cause_entity {
     
     
 }
-impl FaultRootCauseEntity {
-    /// Creates a new builder-style object to manufacture [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
-    pub fn builder() -> crate::model::fault_root_cause_entity::Builder {
-        crate::model::fault_root_cause_entity::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -3209,6 +3231,13 @@ impl ServiceId {
         self.r#type.as_deref()
     }
 }
+impl ServiceId {
+    /// Creates a new builder-style object to manufacture [`ServiceId`](crate::model::ServiceId).
+    pub fn builder() -> crate::model::service_id::Builder {
+        crate::model::service_id::Builder::default()
+    }
+}
+
 /// See [`ServiceId`](crate::model::ServiceId).
 pub mod service_id {
     
@@ -3281,12 +3310,6 @@ pub mod service_id {
     
     
 }
-impl ServiceId {
-    /// Creates a new builder-style object to manufacture [`ServiceId`](crate::model::ServiceId).
-    pub fn builder() -> crate::model::service_id::Builder {
-        crate::model::service_id::Builder::default()
-    }
-}
 
 /// <p>A list of Availability Zones corresponding to the segments in a trace.</p>
 #[non_exhaustive]
@@ -3302,6 +3325,13 @@ impl AvailabilityZoneDetail {
         self.name.as_deref()
     }
 }
+impl AvailabilityZoneDetail {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
+    pub fn builder() -> crate::model::availability_zone_detail::Builder {
+        crate::model::availability_zone_detail::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
 pub mod availability_zone_detail {
     
@@ -3332,12 +3362,6 @@ pub mod availability_zone_detail {
     
     
 }
-impl AvailabilityZoneDetail {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
-    pub fn builder() -> crate::model::availability_zone_detail::Builder {
-        crate::model::availability_zone_detail::Builder::default()
-    }
-}
 
 /// <p>A list of EC2 instance IDs corresponding to the segments in a trace. </p>
 #[non_exhaustive]
@@ -3353,6 +3377,13 @@ impl InstanceIdDetail {
         self.id.as_deref()
     }
 }
+impl InstanceIdDetail {
+    /// Creates a new builder-style object to manufacture [`InstanceIdDetail`](crate::model::InstanceIdDetail).
+    pub fn builder() -> crate::model::instance_id_detail::Builder {
+        crate::model::instance_id_detail::Builder::default()
+    }
+}
+
 /// See [`InstanceIdDetail`](crate::model::InstanceIdDetail).
 pub mod instance_id_detail {
     
@@ -3383,12 +3414,6 @@ pub mod instance_id_detail {
     
     
 }
-impl InstanceIdDetail {
-    /// Creates a new builder-style object to manufacture [`InstanceIdDetail`](crate::model::InstanceIdDetail).
-    pub fn builder() -> crate::model::instance_id_detail::Builder {
-        crate::model::instance_id_detail::Builder::default()
-    }
-}
 
 /// <p>A list of resources ARNs corresponding to the segments in a trace.</p>
 #[non_exhaustive]
@@ -3404,6 +3429,13 @@ impl ResourceArnDetail {
         self.arn.as_deref()
     }
 }
+impl ResourceArnDetail {
+    /// Creates a new builder-style object to manufacture [`ResourceArnDetail`](crate::model::ResourceArnDetail).
+    pub fn builder() -> crate::model::resource_arn_detail::Builder {
+        crate::model::resource_arn_detail::Builder::default()
+    }
+}
+
 /// See [`ResourceArnDetail`](crate::model::ResourceArnDetail).
 pub mod resource_arn_detail {
     
@@ -3434,12 +3466,6 @@ pub mod resource_arn_detail {
     
     
 }
-impl ResourceArnDetail {
-    /// Creates a new builder-style object to manufacture [`ResourceArnDetail`](crate::model::ResourceArnDetail).
-    pub fn builder() -> crate::model::resource_arn_detail::Builder {
-        crate::model::resource_arn_detail::Builder::default()
-    }
-}
 
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
@@ -3462,6 +3488,13 @@ impl TraceUser {
         self.service_ids.as_deref()
     }
 }
+impl TraceUser {
+    /// Creates a new builder-style object to manufacture [`TraceUser`](crate::model::TraceUser).
+    pub fn builder() -> crate::model::trace_user::Builder {
+        crate::model::trace_user::Builder::default()
+    }
+}
+
 /// See [`TraceUser`](crate::model::TraceUser).
 pub mod trace_user {
     
@@ -3510,12 +3543,6 @@ pub mod trace_user {
     
     
 }
-impl TraceUser {
-    /// Creates a new builder-style object to manufacture [`TraceUser`](crate::model::TraceUser).
-    pub fn builder() -> crate::model::trace_user::Builder {
-        crate::model::trace_user::Builder::default()
-    }
-}
 
 /// <p>Information about a segment annotation.</p>
 #[non_exhaustive]
@@ -3538,6 +3565,13 @@ impl ValueWithServiceIds {
         self.service_ids.as_deref()
     }
 }
+impl ValueWithServiceIds {
+    /// Creates a new builder-style object to manufacture [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
+    pub fn builder() -> crate::model::value_with_service_ids::Builder {
+        crate::model::value_with_service_ids::Builder::default()
+    }
+}
+
 /// See [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
 pub mod value_with_service_ids {
     
@@ -3585,12 +3619,6 @@ pub mod value_with_service_ids {
     }
     
     
-}
-impl ValueWithServiceIds {
-    /// Creates a new builder-style object to manufacture [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
-    pub fn builder() -> crate::model::value_with_service_ids::Builder {
-        crate::model::value_with_service_ids::Builder::default()
-    }
 }
 
 /// <p>Value of a segment annotation. Has one of three value types: Number, Boolean, or String.</p>
@@ -3689,6 +3717,13 @@ impl Http {
         self.client_ip.as_deref()
     }
 }
+impl Http {
+    /// Creates a new builder-style object to manufacture [`Http`](crate::model::Http).
+    pub fn builder() -> crate::model::http::Builder {
+        crate::model::http::Builder::default()
+    }
+}
+
 /// See [`Http`](crate::model::Http).
 pub mod http {
     
@@ -3767,12 +3802,6 @@ pub mod http {
     
     
 }
-impl Http {
-    /// Creates a new builder-style object to manufacture [`Http`](crate::model::Http).
-    pub fn builder() -> crate::model::http::Builder {
-        crate::model::http::Builder::default()
-    }
-}
 
 /// <p>The name and value of a sampling rule to apply to a trace summary.</p>
 #[non_exhaustive]
@@ -3795,6 +3824,13 @@ impl SamplingStrategy {
         self.value
     }
 }
+impl SamplingStrategy {
+    /// Creates a new builder-style object to manufacture [`SamplingStrategy`](crate::model::SamplingStrategy).
+    pub fn builder() -> crate::model::sampling_strategy::Builder {
+        crate::model::sampling_strategy::Builder::default()
+    }
+}
+
 /// See [`SamplingStrategy`](crate::model::SamplingStrategy).
 pub mod sampling_strategy {
     
@@ -3836,12 +3872,6 @@ pub mod sampling_strategy {
     }
     
     
-}
-impl SamplingStrategy {
-    /// Creates a new builder-style object to manufacture [`SamplingStrategy`](crate::model::SamplingStrategy).
-    pub fn builder() -> crate::model::sampling_strategy::Builder {
-        crate::model::sampling_strategy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `SamplingStrategyName`, it is important to ensure
@@ -4118,6 +4148,13 @@ impl Service {
         self.response_time_histogram.as_deref()
     }
 }
+impl Service {
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
+    pub fn builder() -> crate::model::service::Builder {
+        crate::model::service::Builder::default()
+    }
+}
+
 /// See [`Service`](crate::model::Service).
 pub mod service {
     
@@ -4328,12 +4365,6 @@ pub mod service {
     
     
 }
-impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
-    pub fn builder() -> crate::model::service::Builder {
-        crate::model::service::Builder::default()
-    }
-}
 
 /// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
@@ -4356,6 +4387,13 @@ impl HistogramEntry {
         self.count
     }
 }
+impl HistogramEntry {
+    /// Creates a new builder-style object to manufacture [`HistogramEntry`](crate::model::HistogramEntry).
+    pub fn builder() -> crate::model::histogram_entry::Builder {
+        crate::model::histogram_entry::Builder::default()
+    }
+}
+
 /// See [`HistogramEntry`](crate::model::HistogramEntry).
 pub mod histogram_entry {
     
@@ -4400,12 +4438,6 @@ pub mod histogram_entry {
     
     
 }
-impl HistogramEntry {
-    /// Creates a new builder-style object to manufacture [`HistogramEntry`](crate::model::HistogramEntry).
-    pub fn builder() -> crate::model::histogram_entry::Builder {
-        crate::model::histogram_entry::Builder::default()
-    }
-}
 
 /// <p>Response statistics for a service.</p>
 #[non_exhaustive]
@@ -4449,6 +4481,13 @@ impl ServiceStatistics {
         self.total_response_time
     }
 }
+impl ServiceStatistics {
+    /// Creates a new builder-style object to manufacture [`ServiceStatistics`](crate::model::ServiceStatistics).
+    pub fn builder() -> crate::model::service_statistics::Builder {
+        crate::model::service_statistics::Builder::default()
+    }
+}
+
 /// See [`ServiceStatistics`](crate::model::ServiceStatistics).
 pub mod service_statistics {
     
@@ -4527,12 +4566,6 @@ pub mod service_statistics {
     
     
 }
-impl ServiceStatistics {
-    /// Creates a new builder-style object to manufacture [`ServiceStatistics`](crate::model::ServiceStatistics).
-    pub fn builder() -> crate::model::service_statistics::Builder {
-        crate::model::service_statistics::Builder::default()
-    }
-}
 
 /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
 #[non_exhaustive]
@@ -4555,6 +4588,13 @@ impl FaultStatistics {
         self.total_count
     }
 }
+impl FaultStatistics {
+    /// Creates a new builder-style object to manufacture [`FaultStatistics`](crate::model::FaultStatistics).
+    pub fn builder() -> crate::model::fault_statistics::Builder {
+        crate::model::fault_statistics::Builder::default()
+    }
+}
+
 /// See [`FaultStatistics`](crate::model::FaultStatistics).
 pub mod fault_statistics {
     
@@ -4597,12 +4637,6 @@ pub mod fault_statistics {
     
     
 }
-impl FaultStatistics {
-    /// Creates a new builder-style object to manufacture [`FaultStatistics`](crate::model::FaultStatistics).
-    pub fn builder() -> crate::model::fault_statistics::Builder {
-        crate::model::fault_statistics::Builder::default()
-    }
-}
 
 /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
 #[non_exhaustive]
@@ -4632,6 +4666,13 @@ impl ErrorStatistics {
         self.total_count
     }
 }
+impl ErrorStatistics {
+    /// Creates a new builder-style object to manufacture [`ErrorStatistics`](crate::model::ErrorStatistics).
+    pub fn builder() -> crate::model::error_statistics::Builder {
+        crate::model::error_statistics::Builder::default()
+    }
+}
+
 /// See [`ErrorStatistics`](crate::model::ErrorStatistics).
 pub mod error_statistics {
     
@@ -4685,12 +4726,6 @@ pub mod error_statistics {
     }
     
     
-}
-impl ErrorStatistics {
-    /// Creates a new builder-style object to manufacture [`ErrorStatistics`](crate::model::ErrorStatistics).
-    pub fn builder() -> crate::model::error_statistics::Builder {
-        crate::model::error_statistics::Builder::default()
-    }
 }
 
 /// <p>Information about a connection between two services. An edge can be a synchronous connection, such as typical call between client and service, or an asynchronous link, such as a Lambda function which retrieves an event from an SNS queue.</p>
@@ -4756,6 +4791,13 @@ impl Edge {
         self.received_event_age_histogram.as_deref()
     }
 }
+impl Edge {
+    /// Creates a new builder-style object to manufacture [`Edge`](crate::model::Edge).
+    pub fn builder() -> crate::model::edge::Builder {
+        crate::model::edge::Builder::default()
+    }
+}
+
 /// See [`Edge`](crate::model::Edge).
 pub mod edge {
     
@@ -4888,12 +4930,6 @@ pub mod edge {
     
     
 }
-impl Edge {
-    /// Creates a new builder-style object to manufacture [`Edge`](crate::model::Edge).
-    pub fn builder() -> crate::model::edge::Builder {
-        crate::model::edge::Builder::default()
-    }
-}
 
 /// <p>An alias for an edge.</p>
 #[non_exhaustive]
@@ -4923,6 +4959,13 @@ impl Alias {
         self.r#type.as_deref()
     }
 }
+impl Alias {
+    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
+    pub fn builder() -> crate::model::alias::Builder {
+        crate::model::alias::Builder::default()
+    }
+}
+
 /// See [`Alias`](crate::model::Alias).
 pub mod alias {
     
@@ -4983,12 +5026,6 @@ pub mod alias {
     
     
 }
-impl Alias {
-    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
-    pub fn builder() -> crate::model::alias::Builder {
-        crate::model::alias::Builder::default()
-    }
-}
 
 /// <p>Response statistics for an edge.</p>
 #[non_exhaustive]
@@ -5032,6 +5069,13 @@ impl EdgeStatistics {
         self.total_response_time
     }
 }
+impl EdgeStatistics {
+    /// Creates a new builder-style object to manufacture [`EdgeStatistics`](crate::model::EdgeStatistics).
+    pub fn builder() -> crate::model::edge_statistics::Builder {
+        crate::model::edge_statistics::Builder::default()
+    }
+}
+
 /// See [`EdgeStatistics`](crate::model::EdgeStatistics).
 pub mod edge_statistics {
     
@@ -5110,12 +5154,6 @@ pub mod edge_statistics {
     
     
 }
-impl EdgeStatistics {
-    /// Creates a new builder-style object to manufacture [`EdgeStatistics`](crate::model::EdgeStatistics).
-    pub fn builder() -> crate::model::edge_statistics::Builder {
-        crate::model::edge_statistics::Builder::default()
-    }
-}
 
 /// <p>A list of TimeSeriesStatistic structures.</p>
 #[non_exhaustive]
@@ -5159,6 +5197,13 @@ impl TimeSeriesServiceStatistics {
         self.response_time_histogram.as_deref()
     }
 }
+impl TimeSeriesServiceStatistics {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
+    pub fn builder() -> crate::model::time_series_service_statistics::Builder {
+        crate::model::time_series_service_statistics::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
 pub mod time_series_service_statistics {
     
@@ -5243,12 +5288,6 @@ pub mod time_series_service_statistics {
     
     
 }
-impl TimeSeriesServiceStatistics {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
-    pub fn builder() -> crate::model::time_series_service_statistics::Builder {
-        crate::model::time_series_service_statistics::Builder::default()
-    }
-}
 
 /// <p>The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.</p>
 #[non_exhaustive]
@@ -5271,6 +5310,13 @@ impl ForecastStatistics {
         self.fault_count_low
     }
 }
+impl ForecastStatistics {
+    /// Creates a new builder-style object to manufacture [`ForecastStatistics`](crate::model::ForecastStatistics).
+    pub fn builder() -> crate::model::forecast_statistics::Builder {
+        crate::model::forecast_statistics::Builder::default()
+    }
+}
+
 /// See [`ForecastStatistics`](crate::model::ForecastStatistics).
 pub mod forecast_statistics {
     
@@ -5313,12 +5359,6 @@ pub mod forecast_statistics {
     
     
 }
-impl ForecastStatistics {
-    /// Creates a new builder-style object to manufacture [`ForecastStatistics`](crate::model::ForecastStatistics).
-    pub fn builder() -> crate::model::forecast_statistics::Builder {
-        crate::model::forecast_statistics::Builder::default()
-    }
-}
 
 /// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray could not process.</p>
 #[non_exhaustive]
@@ -5348,6 +5388,13 @@ impl UnprocessedStatistics {
         self.message.as_deref()
     }
 }
+impl UnprocessedStatistics {
+    /// Creates a new builder-style object to manufacture [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
+    pub fn builder() -> crate::model::unprocessed_statistics::Builder {
+        crate::model::unprocessed_statistics::Builder::default()
+    }
+}
+
 /// See [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
 pub mod unprocessed_statistics {
     
@@ -5402,12 +5449,6 @@ pub mod unprocessed_statistics {
     
     
 }
-impl UnprocessedStatistics {
-    /// Creates a new builder-style object to manufacture [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
-    pub fn builder() -> crate::model::unprocessed_statistics::Builder {
-        crate::model::unprocessed_statistics::Builder::default()
-    }
-}
 
 /// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
@@ -5451,6 +5492,13 @@ impl SamplingTargetDocument {
         self.interval
     }
 }
+impl SamplingTargetDocument {
+    /// Creates a new builder-style object to manufacture [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
+    pub fn builder() -> crate::model::sampling_target_document::Builder {
+        crate::model::sampling_target_document::Builder::default()
+    }
+}
+
 /// See [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
 pub mod sampling_target_document {
     
@@ -5530,12 +5578,6 @@ pub mod sampling_target_document {
     
     
 }
-impl SamplingTargetDocument {
-    /// Creates a new builder-style object to manufacture [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
-    pub fn builder() -> crate::model::sampling_target_document::Builder {
-        crate::model::sampling_target_document::Builder::default()
-    }
-}
 
 /// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
@@ -5586,6 +5628,13 @@ impl SamplingStatisticsDocument {
         self.borrow_count
     }
 }
+impl SamplingStatisticsDocument {
+    /// Creates a new builder-style object to manufacture [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
+    pub fn builder() -> crate::model::sampling_statistics_document::Builder {
+        crate::model::sampling_statistics_document::Builder::default()
+    }
+}
+
 /// See [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
 pub mod sampling_statistics_document {
     
@@ -5679,12 +5728,6 @@ pub mod sampling_statistics_document {
     
     
 }
-impl SamplingStatisticsDocument {
-    /// Creates a new builder-style object to manufacture [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
-    pub fn builder() -> crate::model::sampling_statistics_document::Builder {
-        crate::model::sampling_statistics_document::Builder::default()
-    }
-}
 
 /// <p>Aggregated request sampling data for a sampling rule across all services for a 10-second window.</p>
 #[non_exhaustive]
@@ -5728,6 +5771,13 @@ impl SamplingStatisticSummary {
         self.sampled_count
     }
 }
+impl SamplingStatisticSummary {
+    /// Creates a new builder-style object to manufacture [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
+    pub fn builder() -> crate::model::sampling_statistic_summary::Builder {
+        crate::model::sampling_statistic_summary::Builder::default()
+    }
+}
+
 /// See [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
 pub mod sampling_statistic_summary {
     
@@ -5808,12 +5858,6 @@ pub mod sampling_statistic_summary {
     }
     
     
-}
-impl SamplingStatisticSummary {
-    /// Creates a new builder-style object to manufacture [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
-    pub fn builder() -> crate::model::sampling_statistic_summary::Builder {
-        crate::model::sampling_statistic_summary::Builder::default()
-    }
 }
 
 /// <p>Information that describes an insight.</p>
@@ -5914,6 +5958,13 @@ impl InsightSummary {
         self.last_update_time.as_ref()
     }
 }
+impl InsightSummary {
+    /// Creates a new builder-style object to manufacture [`InsightSummary`](crate::model::InsightSummary).
+    pub fn builder() -> crate::model::insight_summary::Builder {
+        crate::model::insight_summary::Builder::default()
+    }
+}
+
 /// See [`InsightSummary`](crate::model::InsightSummary).
 pub mod insight_summary {
     
@@ -6100,12 +6151,6 @@ pub mod insight_summary {
     
     
 }
-impl InsightSummary {
-    /// Creates a new builder-style object to manufacture [`InsightSummary`](crate::model::InsightSummary).
-    pub fn builder() -> crate::model::insight_summary::Builder {
-        crate::model::insight_summary::Builder::default()
-    }
-}
 
 /// <p>The service within the service graph that has anomalously high fault rates. </p>
 #[non_exhaustive]
@@ -6121,6 +6166,13 @@ impl AnomalousService {
         self.service_id.as_ref()
     }
 }
+impl AnomalousService {
+    /// Creates a new builder-style object to manufacture [`AnomalousService`](crate::model::AnomalousService).
+    pub fn builder() -> crate::model::anomalous_service::Builder {
+        crate::model::anomalous_service::Builder::default()
+    }
+}
+
 /// See [`AnomalousService`](crate::model::AnomalousService).
 pub mod anomalous_service {
     
@@ -6151,12 +6203,6 @@ pub mod anomalous_service {
     
     
 }
-impl AnomalousService {
-    /// Creates a new builder-style object to manufacture [`AnomalousService`](crate::model::AnomalousService).
-    pub fn builder() -> crate::model::anomalous_service::Builder {
-        crate::model::anomalous_service::Builder::default()
-    }
-}
 
 /// <p>Statistics that describe how the incident has impacted a service.</p>
 #[non_exhaustive]
@@ -6186,6 +6232,13 @@ impl RequestImpactStatistics {
         self.total_count
     }
 }
+impl RequestImpactStatistics {
+    /// Creates a new builder-style object to manufacture [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
+    pub fn builder() -> crate::model::request_impact_statistics::Builder {
+        crate::model::request_impact_statistics::Builder::default()
+    }
+}
+
 /// See [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
 pub mod request_impact_statistics {
     
@@ -6239,12 +6292,6 @@ pub mod request_impact_statistics {
     }
     
     
-}
-impl RequestImpactStatistics {
-    /// Creates a new builder-style object to manufacture [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
-    pub fn builder() -> crate::model::request_impact_statistics::Builder {
-        crate::model::request_impact_statistics::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InsightState`, it is important to ensure
@@ -6467,6 +6514,13 @@ impl InsightImpactGraphService {
         self.edges.as_deref()
     }
 }
+impl InsightImpactGraphService {
+    /// Creates a new builder-style object to manufacture [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
+    pub fn builder() -> crate::model::insight_impact_graph_service::Builder {
+        crate::model::insight_impact_graph_service::Builder::default()
+    }
+}
+
 /// See [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
 pub mod insight_impact_graph_service {
     
@@ -6581,12 +6635,6 @@ pub mod insight_impact_graph_service {
     
     
 }
-impl InsightImpactGraphService {
-    /// Creates a new builder-style object to manufacture [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
-    pub fn builder() -> crate::model::insight_impact_graph_service::Builder {
-        crate::model::insight_impact_graph_service::Builder::default()
-    }
-}
 
 /// <p>The connection between two service in an insight impact graph.</p>
 #[non_exhaustive]
@@ -6602,6 +6650,13 @@ impl InsightImpactGraphEdge {
         self.reference_id
     }
 }
+impl InsightImpactGraphEdge {
+    /// Creates a new builder-style object to manufacture [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
+    pub fn builder() -> crate::model::insight_impact_graph_edge::Builder {
+        crate::model::insight_impact_graph_edge::Builder::default()
+    }
+}
+
 /// See [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
 pub mod insight_impact_graph_edge {
     
@@ -6631,12 +6686,6 @@ pub mod insight_impact_graph_edge {
     }
     
     
-}
-impl InsightImpactGraphEdge {
-    /// Creates a new builder-style object to manufacture [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
-    pub fn builder() -> crate::model::insight_impact_graph_edge::Builder {
-        crate::model::insight_impact_graph_edge::Builder::default()
-    }
 }
 
 /// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
@@ -6681,6 +6730,13 @@ impl InsightEvent {
         self.top_anomalous_services.as_deref()
     }
 }
+impl InsightEvent {
+    /// Creates a new builder-style object to manufacture [`InsightEvent`](crate::model::InsightEvent).
+    pub fn builder() -> crate::model::insight_event::Builder {
+        crate::model::insight_event::Builder::default()
+    }
+}
+
 /// See [`InsightEvent`](crate::model::InsightEvent).
 pub mod insight_event {
     
@@ -6764,12 +6820,6 @@ pub mod insight_event {
     }
     
     
-}
-impl InsightEvent {
-    /// Creates a new builder-style object to manufacture [`InsightEvent`](crate::model::InsightEvent).
-    pub fn builder() -> crate::model::insight_event::Builder {
-        crate::model::insight_event::Builder::default()
-    }
 }
 
 /// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
@@ -6863,6 +6913,13 @@ impl Insight {
         self.top_anomalous_services.as_deref()
     }
 }
+impl Insight {
+    /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight).
+    pub fn builder() -> crate::model::insight::Builder {
+        crate::model::insight::Builder::default()
+    }
+}
+
 /// See [`Insight`](crate::model::Insight).
 pub mod insight {
     
@@ -7037,12 +7094,6 @@ pub mod insight {
     
     
 }
-impl Insight {
-    /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight).
-    pub fn builder() -> crate::model::insight::Builder {
-        crate::model::insight::Builder::default()
-    }
-}
 
 /// <p>Details for a group without metadata.</p>
 #[non_exhaustive]
@@ -7087,6 +7138,13 @@ impl GroupSummary {
         self.insights_configuration.as_ref()
     }
 }
+impl GroupSummary {
+    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
+    pub fn builder() -> crate::model::group_summary::Builder {
+        crate::model::group_summary::Builder::default()
+    }
+}
+
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
     
@@ -7161,12 +7219,6 @@ pub mod group_summary {
     
     
 }
-impl GroupSummary {
-    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
-    pub fn builder() -> crate::model::group_summary::Builder {
-        crate::model::group_summary::Builder::default()
-    }
-}
 
 /// <p>A collection of segment documents with matching trace IDs.</p>
 #[non_exhaustive]
@@ -7203,6 +7255,13 @@ impl Trace {
         self.segments.as_deref()
     }
 }
+impl Trace {
+    /// Creates a new builder-style object to manufacture [`Trace`](crate::model::Trace).
+    pub fn builder() -> crate::model::trace::Builder {
+        crate::model::trace::Builder::default()
+    }
+}
+
 /// See [`Trace`](crate::model::Trace).
 pub mod trace {
     
@@ -7275,12 +7334,6 @@ pub mod trace {
     
     
 }
-impl Trace {
-    /// Creates a new builder-style object to manufacture [`Trace`](crate::model::Trace).
-    pub fn builder() -> crate::model::trace::Builder {
-        crate::model::trace::Builder::default()
-    }
-}
 
 /// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p> 
 /// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
@@ -7304,6 +7357,13 @@ impl Segment {
         self.document.as_deref()
     }
 }
+impl Segment {
+    /// Creates a new builder-style object to manufacture [`Segment`](crate::model::Segment).
+    pub fn builder() -> crate::model::segment::Builder {
+        crate::model::segment::Builder::default()
+    }
+}
+
 /// See [`Segment`](crate::model::Segment).
 pub mod segment {
     
@@ -7345,11 +7405,5 @@ pub mod segment {
     }
     
     
-}
-impl Segment {
-    /// Creates a new builder-style object to manufacture [`Segment`](crate::model::Segment).
-    pub fn builder() -> crate::model::segment::Builder {
-        crate::model::segment::Builder::default()
-    }
 }
 

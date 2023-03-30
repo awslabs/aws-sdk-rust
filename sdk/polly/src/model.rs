@@ -1185,6 +1185,13 @@ impl SynthesisTask {
         self.language_code.as_ref()
     }
 }
+impl SynthesisTask {
+    /// Creates a new builder-style object to manufacture [`SynthesisTask`](crate::model::SynthesisTask).
+    pub fn builder() -> crate::model::synthesis_task::Builder {
+        crate::model::synthesis_task::Builder::default()
+    }
+}
+
 /// See [`SynthesisTask`](crate::model::SynthesisTask).
 pub mod synthesis_task {
     
@@ -1402,12 +1409,6 @@ pub mod synthesis_task {
     
     
 }
-impl SynthesisTask {
-    /// Creates a new builder-style object to manufacture [`SynthesisTask`](crate::model::SynthesisTask).
-    pub fn builder() -> crate::model::synthesis_task::Builder {
-        crate::model::synthesis_task::Builder::default()
-    }
-}
 
 /// When writing a match expression against `TaskStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1522,6 +1523,13 @@ impl LexiconDescription {
         self.attributes.as_ref()
     }
 }
+impl LexiconDescription {
+    /// Creates a new builder-style object to manufacture [`LexiconDescription`](crate::model::LexiconDescription).
+    pub fn builder() -> crate::model::lexicon_description::Builder {
+        crate::model::lexicon_description::Builder::default()
+    }
+}
+
 /// See [`LexiconDescription`](crate::model::LexiconDescription).
 pub mod lexicon_description {
     
@@ -1563,12 +1571,6 @@ pub mod lexicon_description {
     }
     
     
-}
-impl LexiconDescription {
-    /// Creates a new builder-style object to manufacture [`LexiconDescription`](crate::model::LexiconDescription).
-    pub fn builder() -> crate::model::lexicon_description::Builder {
-        crate::model::lexicon_description::Builder::default()
-    }
 }
 
 /// <p>Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
@@ -1620,6 +1622,13 @@ impl LexiconAttributes {
         self.size
     }
 }
+impl LexiconAttributes {
+    /// Creates a new builder-style object to manufacture [`LexiconAttributes`](crate::model::LexiconAttributes).
+    pub fn builder() -> crate::model::lexicon_attributes::Builder {
+        crate::model::lexicon_attributes::Builder::default()
+    }
+}
+
 /// See [`LexiconAttributes`](crate::model::LexiconAttributes).
 pub mod lexicon_attributes {
     
@@ -1712,12 +1721,6 @@ pub mod lexicon_attributes {
     
     
 }
-impl LexiconAttributes {
-    /// Creates a new builder-style object to manufacture [`LexiconAttributes`](crate::model::LexiconAttributes).
-    pub fn builder() -> crate::model::lexicon_attributes::Builder {
-        crate::model::lexicon_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>.</p>
 #[non_exhaustive]
@@ -1748,6 +1751,13 @@ impl  std::fmt::Debug for Lexicon  {
         formatter.finish()
     }
 }
+impl Lexicon {
+    /// Creates a new builder-style object to manufacture [`Lexicon`](crate::model::Lexicon).
+    pub fn builder() -> crate::model::lexicon::Builder {
+        crate::model::lexicon::Builder::default()
+    }
+}
+
 /// See [`Lexicon`](crate::model::Lexicon).
 pub mod lexicon {
     
@@ -1797,12 +1807,6 @@ pub mod lexicon {
     }
     
     
-}
-impl Lexicon {
-    /// Creates a new builder-style object to manufacture [`Lexicon`](crate::model::Lexicon).
-    pub fn builder() -> crate::model::lexicon::Builder {
-        crate::model::lexicon::Builder::default()
-    }
 }
 
 /// <p>Description of the voice.</p>
@@ -1863,6 +1867,13 @@ impl Voice {
         self.supported_engines.as_deref()
     }
 }
+impl Voice {
+    /// Creates a new builder-style object to manufacture [`Voice`](crate::model::Voice).
+    pub fn builder() -> crate::model::voice::Builder {
+        crate::model::voice::Builder::default()
+    }
+}
+
 /// See [`Voice`](crate::model::Voice).
 pub mod voice {
     
@@ -1978,12 +1989,6 @@ pub mod voice {
     }
     
     
-}
-impl Voice {
-    /// Creates a new builder-style object to manufacture [`Voice`](crate::model::Voice).
-    pub fn builder() -> crate::model::voice::Builder {
-        crate::model::voice::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Gender`, it is important to ensure

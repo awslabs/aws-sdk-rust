@@ -209,55 +209,6 @@ pub struct ThrottlingException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
-    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
-    pub fn builder() -> crate::error::throttling_exception::Builder {
-        crate::error::throttling_exception::Builder::default()
-    }
-}
-/// See [`ThrottlingException`](crate::error::ThrottlingException).
-pub mod throttling_exception {
-    
-    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
-        pub fn build(self) -> crate::error::ThrottlingException {
-            crate::error::ThrottlingException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl ThrottlingException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -282,26 +233,17 @@ impl aws_http::request_id::RequestId for crate::error::ThrottlingException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl ServiceException {
-    /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException).
-    pub fn builder() -> crate::error::service_exception::Builder {
-        crate::error::service_exception::Builder::default()
+impl ThrottlingException {
+    /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
+    pub fn builder() -> crate::error::throttling_exception::Builder {
+        crate::error::throttling_exception::Builder::default()
     }
 }
-/// See [`ServiceException`](crate::error::ServiceException).
-pub mod service_exception {
+
+/// See [`ThrottlingException`](crate::error::ThrottlingException).
+pub mod throttling_exception {
     
-    /// A builder for [`ServiceException`](crate::error::ServiceException).
+    /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -319,19 +261,19 @@ pub mod service_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`ServiceException`](crate::error::ServiceException).
-        pub fn build(self) -> crate::error::ServiceException {
-            crate::error::ServiceException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
+        pub fn build(self) -> crate::error::ThrottlingException {
+            crate::error::ThrottlingException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -340,6 +282,16 @@ pub mod service_exception {
     }
     
     
+}
+
+/// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct ServiceException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceException {
     /// Returns the error message.
@@ -366,26 +318,17 @@ impl aws_http::request_id::RequestId for crate::error::ServiceException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>One of the parameters is not valid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArgsException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl InvalidArgsException {
-    /// Creates a new builder-style object to manufacture [`InvalidArgsException`](crate::error::InvalidArgsException).
-    pub fn builder() -> crate::error::invalid_args_exception::Builder {
-        crate::error::invalid_args_exception::Builder::default()
+impl ServiceException {
+    /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException).
+    pub fn builder() -> crate::error::service_exception::Builder {
+        crate::error::service_exception::Builder::default()
     }
 }
-/// See [`InvalidArgsException`](crate::error::InvalidArgsException).
-pub mod invalid_args_exception {
+
+/// See [`ServiceException`](crate::error::ServiceException).
+pub mod service_exception {
     
-    /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException).
+    /// A builder for [`ServiceException`](crate::error::ServiceException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -403,19 +346,19 @@ pub mod invalid_args_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`InvalidArgsException`](crate::error::InvalidArgsException).
-        pub fn build(self) -> crate::error::InvalidArgsException {
-            crate::error::InvalidArgsException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`ServiceException`](crate::error::ServiceException).
+        pub fn build(self) -> crate::error::ServiceException {
+            crate::error::ServiceException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -424,6 +367,16 @@ pub mod invalid_args_exception {
     }
     
     
+}
+
+/// <p>One of the parameters is not valid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct InvalidArgsException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidArgsException {
     /// Returns the error message.
@@ -450,26 +403,17 @@ impl aws_http::request_id::RequestId for crate::error::InvalidArgsException {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgsException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The instance is currently unavailable. Wait a few minutes and try again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceUnavailableException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl Ec2InstanceUnavailableException {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
-    pub fn builder() -> crate::error::ec2_instance_unavailable_exception::Builder {
-        crate::error::ec2_instance_unavailable_exception::Builder::default()
+impl InvalidArgsException {
+    /// Creates a new builder-style object to manufacture [`InvalidArgsException`](crate::error::InvalidArgsException).
+    pub fn builder() -> crate::error::invalid_args_exception::Builder {
+        crate::error::invalid_args_exception::Builder::default()
     }
 }
-/// See [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
-pub mod ec2_instance_unavailable_exception {
+
+/// See [`InvalidArgsException`](crate::error::InvalidArgsException).
+pub mod invalid_args_exception {
     
-    /// A builder for [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
+    /// A builder for [`InvalidArgsException`](crate::error::InvalidArgsException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,19 +431,19 @@ pub mod ec2_instance_unavailable_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
-        pub fn build(self) -> crate::error::Ec2InstanceUnavailableException {
-            crate::error::Ec2InstanceUnavailableException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`InvalidArgsException`](crate::error::InvalidArgsException).
+        pub fn build(self) -> crate::error::InvalidArgsException {
+            crate::error::InvalidArgsException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -508,6 +452,16 @@ pub mod ec2_instance_unavailable_exception {
     }
     
     
+}
+
+/// <p>The instance is currently unavailable. Wait a few minutes and try again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Ec2InstanceUnavailableException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceUnavailableException {
     /// Returns the error message.
@@ -534,26 +488,17 @@ impl aws_http::request_id::RequestId for crate::error::Ec2InstanceUnavailableExc
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceUnavailableException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceStateInvalidException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl Ec2InstanceStateInvalidException {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
-    pub fn builder() -> crate::error::ec2_instance_state_invalid_exception::Builder {
-        crate::error::ec2_instance_state_invalid_exception::Builder::default()
+impl Ec2InstanceUnavailableException {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
+    pub fn builder() -> crate::error::ec2_instance_unavailable_exception::Builder {
+        crate::error::ec2_instance_unavailable_exception::Builder::default()
     }
 }
-/// See [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
-pub mod ec2_instance_state_invalid_exception {
+
+/// See [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
+pub mod ec2_instance_unavailable_exception {
     
-    /// A builder for [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
+    /// A builder for [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -571,19 +516,19 @@ pub mod ec2_instance_state_invalid_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
-        pub fn build(self) -> crate::error::Ec2InstanceStateInvalidException {
-            crate::error::Ec2InstanceStateInvalidException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
+        pub fn build(self) -> crate::error::Ec2InstanceUnavailableException {
+            crate::error::Ec2InstanceUnavailableException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -592,6 +537,16 @@ pub mod ec2_instance_state_invalid_exception {
     }
     
     
+}
+
+/// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Ec2InstanceStateInvalidException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceStateInvalidException {
     /// Returns the error message.
@@ -618,26 +573,17 @@ impl aws_http::request_id::RequestId for crate::error::Ec2InstanceStateInvalidEx
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceStateInvalidException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The specified instance was not found.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceNotFoundException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl Ec2InstanceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
-    pub fn builder() -> crate::error::ec2_instance_not_found_exception::Builder {
-        crate::error::ec2_instance_not_found_exception::Builder::default()
+impl Ec2InstanceStateInvalidException {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
+    pub fn builder() -> crate::error::ec2_instance_state_invalid_exception::Builder {
+        crate::error::ec2_instance_state_invalid_exception::Builder::default()
     }
 }
-/// See [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
-pub mod ec2_instance_not_found_exception {
+
+/// See [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
+pub mod ec2_instance_state_invalid_exception {
     
-    /// A builder for [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
+    /// A builder for [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -655,19 +601,19 @@ pub mod ec2_instance_not_found_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
-        pub fn build(self) -> crate::error::Ec2InstanceNotFoundException {
-            crate::error::Ec2InstanceNotFoundException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
+        pub fn build(self) -> crate::error::Ec2InstanceStateInvalidException {
+            crate::error::Ec2InstanceStateInvalidException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -676,6 +622,16 @@ pub mod ec2_instance_not_found_exception {
     }
     
     
+}
+
+/// <p>The specified instance was not found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Ec2InstanceNotFoundException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceNotFoundException {
     /// Returns the error message.
@@ -702,26 +658,17 @@ impl aws_http::request_id::RequestId for crate::error::Ec2InstanceNotFoundExcept
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceNotFoundException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Either your AWS credentials are not valid or you do not have access to the EC2 instance.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl AuthException {
-    /// Creates a new builder-style object to manufacture [`AuthException`](crate::error::AuthException).
-    pub fn builder() -> crate::error::auth_exception::Builder {
-        crate::error::auth_exception::Builder::default()
+impl Ec2InstanceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
+    pub fn builder() -> crate::error::ec2_instance_not_found_exception::Builder {
+        crate::error::ec2_instance_not_found_exception::Builder::default()
     }
 }
-/// See [`AuthException`](crate::error::AuthException).
-pub mod auth_exception {
+
+/// See [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
+pub mod ec2_instance_not_found_exception {
     
-    /// A builder for [`AuthException`](crate::error::AuthException).
+    /// A builder for [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -739,19 +686,19 @@ pub mod auth_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`AuthException`](crate::error::AuthException).
-        pub fn build(self) -> crate::error::AuthException {
-            crate::error::AuthException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
+        pub fn build(self) -> crate::error::Ec2InstanceNotFoundException {
+            crate::error::Ec2InstanceNotFoundException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -760,6 +707,16 @@ pub mod auth_exception {
     }
     
     
+}
+
+/// <p>Either your AWS credentials are not valid or you do not have access to the EC2 instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct AuthException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthException {
     /// Returns the error message.
@@ -785,6 +742,56 @@ impl aws_http::request_id::RequestId for crate::error::AuthException {
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl AuthException {
+    /// Creates a new builder-style object to manufacture [`AuthException`](crate::error::AuthException).
+    pub fn builder() -> crate::error::auth_exception::Builder {
+        crate::error::auth_exception::Builder::default()
+    }
+}
+
+/// See [`AuthException`](crate::error::AuthException).
+pub mod auth_exception {
+    
+    /// A builder for [`AuthException`](crate::error::AuthException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`AuthException`](crate::error::AuthException).
+        pub fn build(self) -> crate::error::AuthException {
+            crate::error::AuthException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 
 /// Do not use this.
@@ -1061,55 +1068,6 @@ pub struct SerialConsoleSessionUnavailableException  {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SerialConsoleSessionUnavailableException {
-    /// Creates a new builder-style object to manufacture [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
-    pub fn builder() -> crate::error::serial_console_session_unavailable_exception::Builder {
-        crate::error::serial_console_session_unavailable_exception::Builder::default()
-    }
-}
-/// See [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
-pub mod serial_console_session_unavailable_exception {
-    
-    /// A builder for [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
-    #[non_exhaustive]
-    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-        meta: Option<aws_smithy_types::error::ErrorMetadata>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input; self
-        }
-        /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-        
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
-        pub fn build(self) -> crate::error::SerialConsoleSessionUnavailableException {
-            crate::error::SerialConsoleSessionUnavailableException {
-                message: self.message
-                ,
-                meta: self.meta.unwrap_or_default(),
-            }
-        }
-    }
-    
-    
-}
-impl SerialConsoleSessionUnavailableException {
     /// Returns the error message.
                         pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
@@ -1134,26 +1092,17 @@ impl aws_http::request_id::RequestId for crate::error::SerialConsoleSessionUnava
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SerialConsoleSessionUnavailableException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SerialConsoleSessionLimitExceededException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SerialConsoleSessionLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
-    pub fn builder() -> crate::error::serial_console_session_limit_exceeded_exception::Builder {
-        crate::error::serial_console_session_limit_exceeded_exception::Builder::default()
+impl SerialConsoleSessionUnavailableException {
+    /// Creates a new builder-style object to manufacture [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
+    pub fn builder() -> crate::error::serial_console_session_unavailable_exception::Builder {
+        crate::error::serial_console_session_unavailable_exception::Builder::default()
     }
 }
-/// See [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
-pub mod serial_console_session_limit_exceeded_exception {
+
+/// See [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
+pub mod serial_console_session_unavailable_exception {
     
-    /// A builder for [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
+    /// A builder for [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1171,19 +1120,19 @@ pub mod serial_console_session_limit_exceeded_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
-        pub fn build(self) -> crate::error::SerialConsoleSessionLimitExceededException {
-            crate::error::SerialConsoleSessionLimitExceededException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
+        pub fn build(self) -> crate::error::SerialConsoleSessionUnavailableException {
+            crate::error::SerialConsoleSessionUnavailableException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1192,6 +1141,16 @@ pub mod serial_console_session_limit_exceeded_exception {
     }
     
     
+}
+
+/// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SerialConsoleSessionLimitExceededException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SerialConsoleSessionLimitExceededException {
     /// Returns the error message.
@@ -1218,26 +1177,17 @@ impl aws_http::request_id::RequestId for crate::error::SerialConsoleSessionLimit
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SerialConsoleSessionLimitExceededException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SerialConsoleAccessDisabledException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl SerialConsoleAccessDisabledException {
-    /// Creates a new builder-style object to manufacture [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
-    pub fn builder() -> crate::error::serial_console_access_disabled_exception::Builder {
-        crate::error::serial_console_access_disabled_exception::Builder::default()
+impl SerialConsoleSessionLimitExceededException {
+    /// Creates a new builder-style object to manufacture [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
+    pub fn builder() -> crate::error::serial_console_session_limit_exceeded_exception::Builder {
+        crate::error::serial_console_session_limit_exceeded_exception::Builder::default()
     }
 }
-/// See [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
-pub mod serial_console_access_disabled_exception {
+
+/// See [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
+pub mod serial_console_session_limit_exceeded_exception {
     
-    /// A builder for [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
+    /// A builder for [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1255,19 +1205,19 @@ pub mod serial_console_access_disabled_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
-        pub fn build(self) -> crate::error::SerialConsoleAccessDisabledException {
-            crate::error::SerialConsoleAccessDisabledException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
+        pub fn build(self) -> crate::error::SerialConsoleSessionLimitExceededException {
+            crate::error::SerialConsoleSessionLimitExceededException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1276,6 +1226,16 @@ pub mod serial_console_access_disabled_exception {
     }
     
     
+}
+
+/// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct SerialConsoleAccessDisabledException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SerialConsoleAccessDisabledException {
     /// Returns the error message.
@@ -1302,26 +1262,17 @@ impl aws_http::request_id::RequestId for crate::error::SerialConsoleAccessDisabl
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SerialConsoleAccessDisabledException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
-
-/// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2InstanceTypeInvalidException  {
-    #[allow(missing_docs)] // documentation missing in model
-    #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
-}
-impl Ec2InstanceTypeInvalidException {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
-    pub fn builder() -> crate::error::ec2_instance_type_invalid_exception::Builder {
-        crate::error::ec2_instance_type_invalid_exception::Builder::default()
+impl SerialConsoleAccessDisabledException {
+    /// Creates a new builder-style object to manufacture [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
+    pub fn builder() -> crate::error::serial_console_access_disabled_exception::Builder {
+        crate::error::serial_console_access_disabled_exception::Builder::default()
     }
 }
-/// See [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
-pub mod ec2_instance_type_invalid_exception {
+
+/// See [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
+pub mod serial_console_access_disabled_exception {
     
-    /// A builder for [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
+    /// A builder for [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1339,19 +1290,19 @@ pub mod ec2_instance_type_invalid_exception {
             self.message = input; self
         }
         /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
         
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
-        /// Consumes the builder and constructs a [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
-        pub fn build(self) -> crate::error::Ec2InstanceTypeInvalidException {
-            crate::error::Ec2InstanceTypeInvalidException {
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
+        pub fn build(self) -> crate::error::SerialConsoleAccessDisabledException {
+            crate::error::SerialConsoleAccessDisabledException {
                 message: self.message
                 ,
                 meta: self.meta.unwrap_or_default(),
@@ -1360,6 +1311,16 @@ pub mod ec2_instance_type_invalid_exception {
     }
     
     
+}
+
+/// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub struct Ec2InstanceTypeInvalidException  {
+    #[allow(missing_docs)] // documentation missing in model
+    #[doc(hidden)]
+    pub message: std::option::Option<std::string::String>,
+    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceTypeInvalidException {
     /// Returns the error message.
@@ -1385,5 +1346,55 @@ impl aws_http::request_id::RequestId for crate::error::Ec2InstanceTypeInvalidExc
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceTypeInvalidException {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+}
+impl Ec2InstanceTypeInvalidException {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
+    pub fn builder() -> crate::error::ec2_instance_type_invalid_exception::Builder {
+        crate::error::ec2_instance_type_invalid_exception::Builder::default()
+    }
+}
+
+/// See [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
+pub mod ec2_instance_type_invalid_exception {
+    
+    /// A builder for [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
+    #[non_exhaustive]
+    #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        meta: Option<aws_smithy_types::error::ErrorMetadata>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input; self
+        }
+        /// Sets error metadata
+                                                pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+        
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
+        /// Consumes the builder and constructs a [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
+        pub fn build(self) -> crate::error::Ec2InstanceTypeInvalidException {
+            crate::error::Ec2InstanceTypeInvalidException {
+                message: self.message
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        }
+    }
+    
+    
 }
 

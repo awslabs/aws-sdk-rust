@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_anomaly_monitor`](crate::client::Client::create_anomaly_monitor).
             ///
-            /// See [`crate::client::fluent_builders::CreateAnomalyMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAnomalyMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAnomalyMonitor {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnomalyMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_anomaly_subscription`](crate::client::Client::create_anomaly_subscription).
             ///
-            /// See [`crate::client::fluent_builders::CreateAnomalySubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateAnomalySubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAnomalySubscription {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnomalySubscriptio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_cost_category_definition`](crate::client::Client::create_cost_category_definition).
             ///
-            /// See [`crate::client::fluent_builders::CreateCostCategoryDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateCostCategoryDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCostCategoryDefinition {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCostCategoryDefini
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_anomaly_monitor`](crate::client::Client::delete_anomaly_monitor).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAnomalyMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAnomalyMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAnomalyMonitor {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalyMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_anomaly_subscription`](crate::client::Client::delete_anomaly_subscription).
             ///
-            /// See [`crate::client::fluent_builders::DeleteAnomalySubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteAnomalySubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAnomalySubscription {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalySubscriptio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_cost_category_definition`](crate::client::Client::delete_cost_category_definition).
             ///
-            /// See [`crate::client::fluent_builders::DeleteCostCategoryDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteCostCategoryDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinition {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCostCategoryDefini
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`describe_cost_category_definition`](crate::client::Client::describe_cost_category_definition).
             ///
-            /// See [`crate::client::fluent_builders::DescribeCostCategoryDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DescribeCostCategoryDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinition {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCostCategoryDefi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_anomalies`](crate::client::Client::get_anomalies).
             ///
-            /// See [`crate::client::fluent_builders::GetAnomalies`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAnomalies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAnomalies {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalies {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_anomaly_monitors`](crate::client::Client::get_anomaly_monitors).
             ///
-            /// See [`crate::client::fluent_builders::GetAnomalyMonitors`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAnomalyMonitors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAnomalyMonitors {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalyMonitors {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_anomaly_subscriptions`](crate::client::Client::get_anomaly_subscriptions).
             ///
-            /// See [`crate::client::fluent_builders::GetAnomalySubscriptions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAnomalySubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAnomalySubscriptions {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalySubscriptions 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_cost_and_usage`](crate::client::Client::get_cost_and_usage).
             ///
-            /// See [`crate::client::fluent_builders::GetCostAndUsage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCostAndUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCostAndUsage {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCostAndUsage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_cost_and_usage_with_resources`](crate::client::Client::get_cost_and_usage_with_resources).
             ///
-            /// See [`crate::client::fluent_builders::GetCostAndUsageWithResources`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCostAndUsageWithResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCostAndUsageWithResources {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCostAndUsageWithResou
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_cost_categories`](crate::client::Client::get_cost_categories).
             ///
-            /// See [`crate::client::fluent_builders::GetCostCategories`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCostCategories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCostCategories {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCostCategories {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_cost_forecast`](crate::client::Client::get_cost_forecast).
             ///
-            /// See [`crate::client::fluent_builders::GetCostForecast`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetCostForecast`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCostForecast {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCostForecast {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_dimension_values`](crate::client::Client::get_dimension_values).
             ///
-            /// See [`crate::client::fluent_builders::GetDimensionValues`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetDimensionValues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDimensionValues {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDimensionValues {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_reservation_coverage`](crate::client::Client::get_reservation_coverage).
             ///
-            /// See [`crate::client::fluent_builders::GetReservationCoverage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetReservationCoverage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetReservationCoverage {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservationCoverage {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_reservation_purchase_recommendation`](crate::client::Client::get_reservation_purchase_recommendation).
             ///
-            /// See [`crate::client::fluent_builders::GetReservationPurchaseRecommendation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetReservationPurchaseRecommendation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetReservationPurchaseRecommendation {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservationPurchaseRe
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_reservation_utilization`](crate::client::Client::get_reservation_utilization).
             ///
-            /// See [`crate::client::fluent_builders::GetReservationUtilization`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetReservationUtilization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetReservationUtilization {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservationUtilizatio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_rightsizing_recommendation`](crate::client::Client::get_rightsizing_recommendation).
             ///
-            /// See [`crate::client::fluent_builders::GetRightsizingRecommendation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetRightsizingRecommendation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRightsizingRecommendation {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRightsizingRecommenda
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_savings_plans_coverage`](crate::client::Client::get_savings_plans_coverage).
             ///
-            /// See [`crate::client::fluent_builders::GetSavingsPlansCoverage`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSavingsPlansCoverage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansCoverage {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansCoverage 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_savings_plans_purchase_recommendation`](crate::client::Client::get_savings_plans_purchase_recommendation).
             ///
-            /// See [`crate::client::fluent_builders::GetSavingsPlansPurchaseRecommendation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSavingsPlansPurchaseRecommendation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansPurchaseRecommendation {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansPurchaseR
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_savings_plans_utilization`](crate::client::Client::get_savings_plans_utilization).
             ///
-            /// See [`crate::client::fluent_builders::GetSavingsPlansUtilization`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSavingsPlansUtilization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilization {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansUtilizati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_savings_plans_utilization_details`](crate::client::Client::get_savings_plans_utilization_details).
             ///
-            /// See [`crate::client::fluent_builders::GetSavingsPlansUtilizationDetails`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetSavingsPlansUtilizationDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetails {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSavingsPlansUtilizati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_tags`](crate::client::Client::get_tags).
             ///
-            /// See [`crate::client::fluent_builders::GetTags`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTags {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTags {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_usage_forecast`](crate::client::Client::get_usage_forecast).
             ///
-            /// See [`crate::client::fluent_builders::GetUsageForecast`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetUsageForecast`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUsageForecast {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageForecast {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_cost_allocation_tags`](crate::client::Client::list_cost_allocation_tags).
             ///
-            /// See [`crate::client::fluent_builders::ListCostAllocationTags`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCostAllocationTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCostAllocationTags {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCostAllocationTags {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_cost_category_definitions`](crate::client::Client::list_cost_category_definitions).
             ///
-            /// See [`crate::client::fluent_builders::ListCostCategoryDefinitions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListCostCategoryDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCostCategoryDefinitions {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCostCategoryDefiniti
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_savings_plans_purchase_recommendation_generation`](crate::client::Client::list_savings_plans_purchase_recommendation_generation).
             ///
-            /// See [`crate::client::fluent_builders::ListSavingsPlansPurchaseRecommendationGeneration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListSavingsPlansPurchaseRecommendationGeneration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGeneration {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSavingsPlansPurchase
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`provide_anomaly_feedback`](crate::client::Client::provide_anomaly_feedback).
             ///
-            /// See [`crate::client::fluent_builders::ProvideAnomalyFeedback`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ProvideAnomalyFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ProvideAnomalyFeedback {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvideAnomalyFeedback {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_savings_plans_purchase_recommendation_generation`](crate::client::Client::start_savings_plans_purchase_recommendation_generation).
             ///
-            /// See [`crate::client::fluent_builders::StartSavingsPlansPurchaseRecommendationGeneration`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartSavingsPlansPurchaseRecommendationGeneration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSavingsPlansPurchaseRecommendationGeneration {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSavingsPlansPurchas
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_anomaly_monitor`](crate::client::Client::update_anomaly_monitor).
             ///
-            /// See [`crate::client::fluent_builders::UpdateAnomalyMonitor`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateAnomalyMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAnomalyMonitor {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnomalyMonitor {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_anomaly_subscription`](crate::client::Client::update_anomaly_subscription).
             ///
-            /// See [`crate::client::fluent_builders::UpdateAnomalySubscription`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateAnomalySubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAnomalySubscription {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnomalySubscriptio
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_cost_allocation_tags_status`](crate::client::Client::update_cost_allocation_tags_status).
             ///
-            /// See [`crate::client::fluent_builders::UpdateCostAllocationTagsStatus`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateCostAllocationTagsStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatus {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCostAllocationTags
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_cost_category_definition`](crate::client::Client::update_cost_category_definition).
             ///
-            /// See [`crate::client::fluent_builders::UpdateCostCategoryDefinition`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateCostCategoryDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinition {
     _private: ()

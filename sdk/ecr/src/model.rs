@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LifecyclePolicyPreviewStatus`, it is important to ensure
@@ -183,6 +184,13 @@ impl ImageScanStatus {
         self.description.as_deref()
     }
 }
+impl ImageScanStatus {
+    /// Creates a new builder-style object to manufacture [`ImageScanStatus`](crate::model::ImageScanStatus).
+    pub fn builder() -> crate::model::image_scan_status::Builder {
+        crate::model::image_scan_status::Builder::default()
+    }
+}
+
 /// See [`ImageScanStatus`](crate::model::ImageScanStatus).
 pub mod image_scan_status {
     
@@ -224,12 +232,6 @@ pub mod image_scan_status {
     }
     
     
-}
-impl ImageScanStatus {
-    /// Creates a new builder-style object to manufacture [`ImageScanStatus`](crate::model::ImageScanStatus).
-    pub fn builder() -> crate::model::image_scan_status::Builder {
-        crate::model::image_scan_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScanStatus`, it is important to ensure
@@ -365,6 +367,13 @@ impl ImageIdentifier {
         self.image_tag.as_deref()
     }
 }
+impl ImageIdentifier {
+    /// Creates a new builder-style object to manufacture [`ImageIdentifier`](crate::model::ImageIdentifier).
+    pub fn builder() -> crate::model::image_identifier::Builder {
+        crate::model::image_identifier::Builder::default()
+    }
+}
+
 /// See [`ImageIdentifier`](crate::model::ImageIdentifier).
 pub mod image_identifier {
     
@@ -407,12 +416,6 @@ pub mod image_identifier {
     
     
 }
-impl ImageIdentifier {
-    /// Creates a new builder-style object to manufacture [`ImageIdentifier`](crate::model::ImageIdentifier).
-    pub fn builder() -> crate::model::image_identifier::Builder {
-        crate::model::image_identifier::Builder::default()
-    }
-}
 
 /// <p>The replication configuration for a registry.</p>
 #[non_exhaustive]
@@ -428,6 +431,13 @@ impl ReplicationConfiguration {
         self.rules.as_deref()
     }
 }
+impl ReplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ReplicationConfiguration`](crate::model::ReplicationConfiguration).
+    pub fn builder() -> crate::model::replication_configuration::Builder {
+        crate::model::replication_configuration::Builder::default()
+    }
+}
+
 /// See [`ReplicationConfiguration`](crate::model::ReplicationConfiguration).
 pub mod replication_configuration {
     
@@ -464,12 +474,6 @@ pub mod replication_configuration {
     
     
 }
-impl ReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ReplicationConfiguration`](crate::model::ReplicationConfiguration).
-    pub fn builder() -> crate::model::replication_configuration::Builder {
-        crate::model::replication_configuration::Builder::default()
-    }
-}
 
 /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
 #[non_exhaustive]
@@ -492,6 +496,13 @@ impl ReplicationRule {
         self.repository_filters.as_deref()
     }
 }
+impl ReplicationRule {
+    /// Creates a new builder-style object to manufacture [`ReplicationRule`](crate::model::ReplicationRule).
+    pub fn builder() -> crate::model::replication_rule::Builder {
+        crate::model::replication_rule::Builder::default()
+    }
+}
+
 /// See [`ReplicationRule`](crate::model::ReplicationRule).
 pub mod replication_rule {
     
@@ -546,12 +557,6 @@ pub mod replication_rule {
     
     
 }
-impl ReplicationRule {
-    /// Creates a new builder-style object to manufacture [`ReplicationRule`](crate::model::ReplicationRule).
-    pub fn builder() -> crate::model::replication_rule::Builder {
-        crate::model::replication_rule::Builder::default()
-    }
-}
 
 /// <p>The filter settings used with image replication. Specifying a repository filter to a replication rule provides a method for controlling which repositories in a private registry are replicated. If no repository filter is specified, all images in the repository are replicated.</p>
 #[non_exhaustive]
@@ -574,6 +579,13 @@ impl RepositoryFilter {
         self.filter_type.as_ref()
     }
 }
+impl RepositoryFilter {
+    /// Creates a new builder-style object to manufacture [`RepositoryFilter`](crate::model::RepositoryFilter).
+    pub fn builder() -> crate::model::repository_filter::Builder {
+        crate::model::repository_filter::Builder::default()
+    }
+}
+
 /// See [`RepositoryFilter`](crate::model::RepositoryFilter).
 pub mod repository_filter {
     
@@ -615,12 +627,6 @@ pub mod repository_filter {
     }
     
     
-}
-impl RepositoryFilter {
-    /// Creates a new builder-style object to manufacture [`RepositoryFilter`](crate::model::RepositoryFilter).
-    pub fn builder() -> crate::model::repository_filter::Builder {
-        crate::model::repository_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `RepositoryFilterType`, it is important to ensure
@@ -721,6 +727,13 @@ impl ReplicationDestination {
         self.registry_id.as_deref()
     }
 }
+impl ReplicationDestination {
+    /// Creates a new builder-style object to manufacture [`ReplicationDestination`](crate::model::ReplicationDestination).
+    pub fn builder() -> crate::model::replication_destination::Builder {
+        crate::model::replication_destination::Builder::default()
+    }
+}
+
 /// See [`ReplicationDestination`](crate::model::ReplicationDestination).
 pub mod replication_destination {
     
@@ -763,12 +776,6 @@ pub mod replication_destination {
     
     
 }
-impl ReplicationDestination {
-    /// Creates a new builder-style object to manufacture [`ReplicationDestination`](crate::model::ReplicationDestination).
-    pub fn builder() -> crate::model::replication_destination::Builder {
-        crate::model::replication_destination::Builder::default()
-    }
-}
 
 /// <p>The scanning configuration for a private registry.</p>
 #[non_exhaustive]
@@ -791,6 +798,13 @@ impl RegistryScanningConfiguration {
         self.rules.as_deref()
     }
 }
+impl RegistryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration).
+    pub fn builder() -> crate::model::registry_scanning_configuration::Builder {
+        crate::model::registry_scanning_configuration::Builder::default()
+    }
+}
+
 /// See [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration).
 pub mod registry_scanning_configuration {
     
@@ -839,12 +853,6 @@ pub mod registry_scanning_configuration {
     
     
 }
-impl RegistryScanningConfiguration {
-    /// Creates a new builder-style object to manufacture [`RegistryScanningConfiguration`](crate::model::RegistryScanningConfiguration).
-    pub fn builder() -> crate::model::registry_scanning_configuration::Builder {
-        crate::model::registry_scanning_configuration::Builder::default()
-    }
-}
 
 /// <p>The details of a scanning rule for a private registry.</p>
 #[non_exhaustive]
@@ -867,6 +875,13 @@ impl RegistryScanningRule {
         self.repository_filters.as_deref()
     }
 }
+impl RegistryScanningRule {
+    /// Creates a new builder-style object to manufacture [`RegistryScanningRule`](crate::model::RegistryScanningRule).
+    pub fn builder() -> crate::model::registry_scanning_rule::Builder {
+        crate::model::registry_scanning_rule::Builder::default()
+    }
+}
+
 /// See [`RegistryScanningRule`](crate::model::RegistryScanningRule).
 pub mod registry_scanning_rule {
     
@@ -915,12 +930,6 @@ pub mod registry_scanning_rule {
     
     
 }
-impl RegistryScanningRule {
-    /// Creates a new builder-style object to manufacture [`RegistryScanningRule`](crate::model::RegistryScanningRule).
-    pub fn builder() -> crate::model::registry_scanning_rule::Builder {
-        crate::model::registry_scanning_rule::Builder::default()
-    }
-}
 
 /// <p>The details of a scanning repository filter. For more information on how to use filters, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html#image-scanning-filters">Using filters</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
@@ -943,6 +952,13 @@ impl ScanningRepositoryFilter {
         self.filter_type.as_ref()
     }
 }
+impl ScanningRepositoryFilter {
+    /// Creates a new builder-style object to manufacture [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter).
+    pub fn builder() -> crate::model::scanning_repository_filter::Builder {
+        crate::model::scanning_repository_filter::Builder::default()
+    }
+}
+
 /// See [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter).
 pub mod scanning_repository_filter {
     
@@ -984,12 +1000,6 @@ pub mod scanning_repository_filter {
     }
     
     
-}
-impl ScanningRepositoryFilter {
-    /// Creates a new builder-style object to manufacture [`ScanningRepositoryFilter`](crate::model::ScanningRepositoryFilter).
-    pub fn builder() -> crate::model::scanning_repository_filter::Builder {
-        crate::model::scanning_repository_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScanningRepositoryFilterType`, it is important to ensure
@@ -1334,6 +1344,13 @@ impl ImageScanningConfiguration {
         self.scan_on_push
     }
 }
+impl ImageScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageScanningConfiguration`](crate::model::ImageScanningConfiguration).
+    pub fn builder() -> crate::model::image_scanning_configuration::Builder {
+        crate::model::image_scanning_configuration::Builder::default()
+    }
+}
+
 /// See [`ImageScanningConfiguration`](crate::model::ImageScanningConfiguration).
 pub mod image_scanning_configuration {
     
@@ -1364,12 +1381,6 @@ pub mod image_scanning_configuration {
     }
     
     
-}
-impl ImageScanningConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImageScanningConfiguration`](crate::model::ImageScanningConfiguration).
-    pub fn builder() -> crate::model::image_scanning_configuration::Builder {
-        crate::model::image_scanning_configuration::Builder::default()
-    }
 }
 
 /// <p>An object representing an Amazon ECR image.</p>
@@ -1414,6 +1425,13 @@ impl Image {
         self.image_manifest_media_type.as_deref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
     
@@ -1492,12 +1510,6 @@ pub mod image {
     
     
 }
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
-}
 
 /// <p>An object representing a filter on a <code>ListImages</code> operation.</p>
 #[non_exhaustive]
@@ -1513,6 +1525,13 @@ impl ListImagesFilter {
         self.tag_status.as_ref()
     }
 }
+impl ListImagesFilter {
+    /// Creates a new builder-style object to manufacture [`ListImagesFilter`](crate::model::ListImagesFilter).
+    pub fn builder() -> crate::model::list_images_filter::Builder {
+        crate::model::list_images_filter::Builder::default()
+    }
+}
+
 /// See [`ListImagesFilter`](crate::model::ListImagesFilter).
 pub mod list_images_filter {
     
@@ -1542,12 +1561,6 @@ pub mod list_images_filter {
     }
     
     
-}
-impl ListImagesFilter {
-    /// Creates a new builder-style object to manufacture [`ListImagesFilter`](crate::model::ListImagesFilter).
-    pub fn builder() -> crate::model::list_images_filter::Builder {
-        crate::model::list_images_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TagStatus`, it is important to ensure
@@ -1651,6 +1664,13 @@ impl LifecyclePolicyPreviewSummary {
         self.expiring_image_total_count
     }
 }
+impl LifecyclePolicyPreviewSummary {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewSummary`](crate::model::LifecyclePolicyPreviewSummary).
+    pub fn builder() -> crate::model::lifecycle_policy_preview_summary::Builder {
+        crate::model::lifecycle_policy_preview_summary::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicyPreviewSummary`](crate::model::LifecyclePolicyPreviewSummary).
 pub mod lifecycle_policy_preview_summary {
     
@@ -1680,12 +1700,6 @@ pub mod lifecycle_policy_preview_summary {
     }
     
     
-}
-impl LifecyclePolicyPreviewSummary {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewSummary`](crate::model::LifecyclePolicyPreviewSummary).
-    pub fn builder() -> crate::model::lifecycle_policy_preview_summary::Builder {
-        crate::model::lifecycle_policy_preview_summary::Builder::default()
-    }
 }
 
 /// <p>The result of the lifecycle policy preview.</p>
@@ -1730,6 +1744,13 @@ impl LifecyclePolicyPreviewResult {
         self.applied_rule_priority
     }
 }
+impl LifecyclePolicyPreviewResult {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewResult`](crate::model::LifecyclePolicyPreviewResult).
+    pub fn builder() -> crate::model::lifecycle_policy_preview_result::Builder {
+        crate::model::lifecycle_policy_preview_result::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicyPreviewResult`](crate::model::LifecyclePolicyPreviewResult).
 pub mod lifecycle_policy_preview_result {
     
@@ -1814,12 +1835,6 @@ pub mod lifecycle_policy_preview_result {
     
     
 }
-impl LifecyclePolicyPreviewResult {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewResult`](crate::model::LifecyclePolicyPreviewResult).
-    pub fn builder() -> crate::model::lifecycle_policy_preview_result::Builder {
-        crate::model::lifecycle_policy_preview_result::Builder::default()
-    }
-}
 
 /// <p>The type of action to be taken.</p>
 #[non_exhaustive]
@@ -1835,6 +1850,13 @@ impl LifecyclePolicyRuleAction {
         self.r#type.as_ref()
     }
 }
+impl LifecyclePolicyRuleAction {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicyRuleAction`](crate::model::LifecyclePolicyRuleAction).
+    pub fn builder() -> crate::model::lifecycle_policy_rule_action::Builder {
+        crate::model::lifecycle_policy_rule_action::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicyRuleAction`](crate::model::LifecyclePolicyRuleAction).
 pub mod lifecycle_policy_rule_action {
     
@@ -1864,12 +1886,6 @@ pub mod lifecycle_policy_rule_action {
     }
     
     
-}
-impl LifecyclePolicyRuleAction {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicyRuleAction`](crate::model::LifecyclePolicyRuleAction).
-    pub fn builder() -> crate::model::lifecycle_policy_rule_action::Builder {
-        crate::model::lifecycle_policy_rule_action::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImageActionType`, it is important to ensure
@@ -1963,6 +1979,13 @@ impl LifecyclePolicyPreviewFilter {
         self.tag_status.as_ref()
     }
 }
+impl LifecyclePolicyPreviewFilter {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewFilter`](crate::model::LifecyclePolicyPreviewFilter).
+    pub fn builder() -> crate::model::lifecycle_policy_preview_filter::Builder {
+        crate::model::lifecycle_policy_preview_filter::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicyPreviewFilter`](crate::model::LifecyclePolicyPreviewFilter).
 pub mod lifecycle_policy_preview_filter {
     
@@ -1993,12 +2016,6 @@ pub mod lifecycle_policy_preview_filter {
     
     
 }
-impl LifecyclePolicyPreviewFilter {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicyPreviewFilter`](crate::model::LifecyclePolicyPreviewFilter).
-    pub fn builder() -> crate::model::lifecycle_policy_preview_filter::Builder {
-        crate::model::lifecycle_policy_preview_filter::Builder::default()
-    }
-}
 
 /// <p>An object representing authorization data for an Amazon ECR registry.</p>
 #[non_exhaustive]
@@ -2028,6 +2045,13 @@ impl AuthorizationData {
         self.proxy_endpoint.as_deref()
     }
 }
+impl AuthorizationData {
+    /// Creates a new builder-style object to manufacture [`AuthorizationData`](crate::model::AuthorizationData).
+    pub fn builder() -> crate::model::authorization_data::Builder {
+        crate::model::authorization_data::Builder::default()
+    }
+}
+
 /// See [`AuthorizationData`](crate::model::AuthorizationData).
 pub mod authorization_data {
     
@@ -2081,12 +2105,6 @@ pub mod authorization_data {
     }
     
     
-}
-impl AuthorizationData {
-    /// Creates a new builder-style object to manufacture [`AuthorizationData`](crate::model::AuthorizationData).
-    pub fn builder() -> crate::model::authorization_data::Builder {
-        crate::model::authorization_data::Builder::default()
-    }
 }
 
 /// <p>An object representing a repository.</p>
@@ -2152,6 +2170,13 @@ impl Repository {
         self.encryption_configuration.as_ref()
     }
 }
+impl Repository {
+    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
+    pub fn builder() -> crate::model::repository::Builder {
+        crate::model::repository::Builder::default()
+    }
+}
+
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
     
@@ -2266,12 +2291,6 @@ pub mod repository {
     
     
 }
-impl Repository {
-    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
-    pub fn builder() -> crate::model::repository::Builder {
-        crate::model::repository::Builder::default()
-    }
-}
 
 /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p> 
 /// <p>By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.</p> 
@@ -2300,6 +2319,13 @@ impl EncryptionConfiguration {
         self.kms_key.as_deref()
     }
 }
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
     
@@ -2345,12 +2371,6 @@ pub mod encryption_configuration {
     }
     
     
-}
-impl EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    pub fn builder() -> crate::model::encryption_configuration::Builder {
-        crate::model::encryption_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EncryptionType`, it is important to ensure
@@ -2470,6 +2490,13 @@ impl PullThroughCacheRule {
         self.registry_id.as_deref()
     }
 }
+impl PullThroughCacheRule {
+    /// Creates a new builder-style object to manufacture [`PullThroughCacheRule`](crate::model::PullThroughCacheRule).
+    pub fn builder() -> crate::model::pull_through_cache_rule::Builder {
+        crate::model::pull_through_cache_rule::Builder::default()
+    }
+}
+
 /// See [`PullThroughCacheRule`](crate::model::PullThroughCacheRule).
 pub mod pull_through_cache_rule {
     
@@ -2536,12 +2563,6 @@ pub mod pull_through_cache_rule {
     
     
 }
-impl PullThroughCacheRule {
-    /// Creates a new builder-style object to manufacture [`PullThroughCacheRule`](crate::model::PullThroughCacheRule).
-    pub fn builder() -> crate::model::pull_through_cache_rule::Builder {
-        crate::model::pull_through_cache_rule::Builder::default()
-    }
-}
 
 /// <p>The details of an image scan.</p>
 #[non_exhaustive]
@@ -2585,6 +2606,13 @@ impl ImageScanFindings {
         self.enhanced_findings.as_deref()
     }
 }
+impl ImageScanFindings {
+    /// Creates a new builder-style object to manufacture [`ImageScanFindings`](crate::model::ImageScanFindings).
+    pub fn builder() -> crate::model::image_scan_findings::Builder {
+        crate::model::image_scan_findings::Builder::default()
+    }
+}
+
 /// See [`ImageScanFindings`](crate::model::ImageScanFindings).
 pub mod image_scan_findings {
     
@@ -2680,12 +2708,6 @@ pub mod image_scan_findings {
     }
     
     
-}
-impl ImageScanFindings {
-    /// Creates a new builder-style object to manufacture [`ImageScanFindings`](crate::model::ImageScanFindings).
-    pub fn builder() -> crate::model::image_scan_findings::Builder {
-        crate::model::image_scan_findings::Builder::default()
-    }
 }
 
 /// <p>The details of an enhanced image scan. This is returned when enhanced scanning is enabled for your private registry.</p>
@@ -2800,6 +2822,13 @@ impl EnhancedImageScanFinding {
         self.updated_at.as_ref()
     }
 }
+impl EnhancedImageScanFinding {
+    /// Creates a new builder-style object to manufacture [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding).
+    pub fn builder() -> crate::model::enhanced_image_scan_finding::Builder {
+        crate::model::enhanced_image_scan_finding::Builder::default()
+    }
+}
+
 /// See [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding).
 pub mod enhanced_image_scan_finding {
     
@@ -3005,12 +3034,6 @@ pub mod enhanced_image_scan_finding {
     
     
 }
-impl EnhancedImageScanFinding {
-    /// Creates a new builder-style object to manufacture [`EnhancedImageScanFinding`](crate::model::EnhancedImageScanFinding).
-    pub fn builder() -> crate::model::enhanced_image_scan_finding::Builder {
-        crate::model::enhanced_image_scan_finding::Builder::default()
-    }
-}
 
 /// <p>Information about the Amazon Inspector score given to a finding.</p>
 #[non_exhaustive]
@@ -3026,6 +3049,13 @@ impl ScoreDetails {
         self.cvss.as_ref()
     }
 }
+impl ScoreDetails {
+    /// Creates a new builder-style object to manufacture [`ScoreDetails`](crate::model::ScoreDetails).
+    pub fn builder() -> crate::model::score_details::Builder {
+        crate::model::score_details::Builder::default()
+    }
+}
+
 /// See [`ScoreDetails`](crate::model::ScoreDetails).
 pub mod score_details {
     
@@ -3055,12 +3085,6 @@ pub mod score_details {
     }
     
     
-}
-impl ScoreDetails {
-    /// Creates a new builder-style object to manufacture [`ScoreDetails`](crate::model::ScoreDetails).
-    pub fn builder() -> crate::model::score_details::Builder {
-        crate::model::score_details::Builder::default()
-    }
 }
 
 /// <p>Information about the CVSS score.</p>
@@ -3105,6 +3129,13 @@ impl CvssScoreDetails {
         self.version.as_deref()
     }
 }
+impl CvssScoreDetails {
+    /// Creates a new builder-style object to manufacture [`CvssScoreDetails`](crate::model::CvssScoreDetails).
+    pub fn builder() -> crate::model::cvss_score_details::Builder {
+        crate::model::cvss_score_details::Builder::default()
+    }
+}
+
 /// See [`CvssScoreDetails`](crate::model::CvssScoreDetails).
 pub mod cvss_score_details {
     
@@ -3190,12 +3221,6 @@ pub mod cvss_score_details {
     
     
 }
-impl CvssScoreDetails {
-    /// Creates a new builder-style object to manufacture [`CvssScoreDetails`](crate::model::CvssScoreDetails).
-    pub fn builder() -> crate::model::cvss_score_details::Builder {
-        crate::model::cvss_score_details::Builder::default()
-    }
-}
 
 /// <p>Details on adjustments Amazon Inspector made to the CVSS score for a finding.</p>
 #[non_exhaustive]
@@ -3218,6 +3243,13 @@ impl CvssScoreAdjustment {
         self.reason.as_deref()
     }
 }
+impl CvssScoreAdjustment {
+    /// Creates a new builder-style object to manufacture [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment).
+    pub fn builder() -> crate::model::cvss_score_adjustment::Builder {
+        crate::model::cvss_score_adjustment::Builder::default()
+    }
+}
+
 /// See [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment).
 pub mod cvss_score_adjustment {
     
@@ -3260,12 +3292,6 @@ pub mod cvss_score_adjustment {
     
     
 }
-impl CvssScoreAdjustment {
-    /// Creates a new builder-style object to manufacture [`CvssScoreAdjustment`](crate::model::CvssScoreAdjustment).
-    pub fn builder() -> crate::model::cvss_score_adjustment::Builder {
-        crate::model::cvss_score_adjustment::Builder::default()
-    }
-}
 
 /// <p>Details about the resource involved in a finding.</p>
 #[non_exhaustive]
@@ -3302,6 +3328,13 @@ impl Resource {
         self.r#type.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
     
@@ -3374,12 +3407,6 @@ pub mod resource {
     
     
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>Contains details about the resource involved in the finding.</p>
 #[non_exhaustive]
@@ -3395,6 +3422,13 @@ impl ResourceDetails {
         self.aws_ecr_container_image.as_ref()
     }
 }
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
     
@@ -3424,12 +3458,6 @@ pub mod resource_details {
     }
     
     
-}
-impl ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
-    pub fn builder() -> crate::model::resource_details::Builder {
-        crate::model::resource_details::Builder::default()
-    }
 }
 
 /// <p>The image details of the Amazon ECR container image.</p>
@@ -3495,6 +3523,13 @@ impl AwsEcrContainerImageDetails {
         self.repository_name.as_deref()
     }
 }
+impl AwsEcrContainerImageDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
+    pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
+        crate::model::aws_ecr_container_image_details::Builder::default()
+    }
+}
+
 /// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
 pub mod aws_ecr_container_image_details {
     
@@ -3615,12 +3650,6 @@ pub mod aws_ecr_container_image_details {
     
     
 }
-impl AwsEcrContainerImageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
-    pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
-        crate::model::aws_ecr_container_image_details::Builder::default()
-    }
-}
 
 /// <p>Information on how to remediate a finding.</p>
 #[non_exhaustive]
@@ -3636,6 +3665,13 @@ impl Remediation {
         self.recommendation.as_ref()
     }
 }
+impl Remediation {
+    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation).
+    pub fn builder() -> crate::model::remediation::Builder {
+        crate::model::remediation::Builder::default()
+    }
+}
+
 /// See [`Remediation`](crate::model::Remediation).
 pub mod remediation {
     
@@ -3666,12 +3702,6 @@ pub mod remediation {
     
     
 }
-impl Remediation {
-    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation).
-    pub fn builder() -> crate::model::remediation::Builder {
-        crate::model::remediation::Builder::default()
-    }
-}
 
 /// <p>Details about the recommended course of action to remediate the finding.</p>
 #[non_exhaustive]
@@ -3694,6 +3724,13 @@ impl Recommendation {
         self.text.as_deref()
     }
 }
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
     
@@ -3735,12 +3772,6 @@ pub mod recommendation {
     }
     
     
-}
-impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
-    pub fn builder() -> crate::model::recommendation::Builder {
-        crate::model::recommendation::Builder::default()
-    }
 }
 
 /// <p>Information about a package vulnerability finding.</p>
@@ -3820,6 +3851,13 @@ impl PackageVulnerabilityDetails {
         self.vulnerable_packages.as_deref()
     }
 }
+impl PackageVulnerabilityDetails {
+    /// Creates a new builder-style object to manufacture [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails).
+    pub fn builder() -> crate::model::package_vulnerability_details::Builder {
+        crate::model::package_vulnerability_details::Builder::default()
+    }
+}
+
 /// See [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails).
 pub mod package_vulnerability_details {
     
@@ -3982,12 +4020,6 @@ pub mod package_vulnerability_details {
     
     
 }
-impl PackageVulnerabilityDetails {
-    /// Creates a new builder-style object to manufacture [`PackageVulnerabilityDetails`](crate::model::PackageVulnerabilityDetails).
-    pub fn builder() -> crate::model::package_vulnerability_details::Builder {
-        crate::model::package_vulnerability_details::Builder::default()
-    }
-}
 
 /// <p>Information on the vulnerable package identified by a finding.</p>
 #[non_exhaustive]
@@ -4052,6 +4084,13 @@ impl VulnerablePackage {
         self.version.as_deref()
     }
 }
+impl VulnerablePackage {
+    /// Creates a new builder-style object to manufacture [`VulnerablePackage`](crate::model::VulnerablePackage).
+    pub fn builder() -> crate::model::vulnerable_package::Builder {
+        crate::model::vulnerable_package::Builder::default()
+    }
+}
+
 /// See [`VulnerablePackage`](crate::model::VulnerablePackage).
 pub mod vulnerable_package {
     
@@ -4166,12 +4205,6 @@ pub mod vulnerable_package {
     
     
 }
-impl VulnerablePackage {
-    /// Creates a new builder-style object to manufacture [`VulnerablePackage`](crate::model::VulnerablePackage).
-    pub fn builder() -> crate::model::vulnerable_package::Builder {
-        crate::model::vulnerable_package::Builder::default()
-    }
-}
 
 /// <p>The CVSS score for a finding.</p>
 #[non_exhaustive]
@@ -4208,6 +4241,13 @@ impl CvssScore {
         self.version.as_deref()
     }
 }
+impl CvssScore {
+    /// Creates a new builder-style object to manufacture [`CvssScore`](crate::model::CvssScore).
+    pub fn builder() -> crate::model::cvss_score::Builder {
+        crate::model::cvss_score::Builder::default()
+    }
+}
+
 /// See [`CvssScore`](crate::model::CvssScore).
 pub mod cvss_score {
     
@@ -4275,12 +4315,6 @@ pub mod cvss_score {
     
     
 }
-impl CvssScore {
-    /// Creates a new builder-style object to manufacture [`CvssScore`](crate::model::CvssScore).
-    pub fn builder() -> crate::model::cvss_score::Builder {
-        crate::model::cvss_score::Builder::default()
-    }
-}
 
 /// <p>Contains information about an image scan finding.</p>
 #[non_exhaustive]
@@ -4324,6 +4358,13 @@ impl ImageScanFinding {
         self.attributes.as_deref()
     }
 }
+impl ImageScanFinding {
+    /// Creates a new builder-style object to manufacture [`ImageScanFinding`](crate::model::ImageScanFinding).
+    pub fn builder() -> crate::model::image_scan_finding::Builder {
+        crate::model::image_scan_finding::Builder::default()
+    }
+}
+
 /// See [`ImageScanFinding`](crate::model::ImageScanFinding).
 pub mod image_scan_finding {
     
@@ -4408,12 +4449,6 @@ pub mod image_scan_finding {
     
     
 }
-impl ImageScanFinding {
-    /// Creates a new builder-style object to manufacture [`ImageScanFinding`](crate::model::ImageScanFinding).
-    pub fn builder() -> crate::model::image_scan_finding::Builder {
-        crate::model::image_scan_finding::Builder::default()
-    }
-}
 
 /// <p>This data type is used in the <code>ImageScanFinding</code> data type.</p>
 #[non_exhaustive]
@@ -4436,6 +4471,13 @@ impl Attribute {
         self.value.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
     
@@ -4477,12 +4519,6 @@ pub mod attribute {
     }
     
     
-}
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FindingSeverity`, it is important to ensure
@@ -4681,6 +4717,13 @@ impl ImageDetail {
         self.last_recorded_pull_time.as_ref()
     }
 }
+impl ImageDetail {
+    /// Creates a new builder-style object to manufacture [`ImageDetail`](crate::model::ImageDetail).
+    pub fn builder() -> crate::model::image_detail::Builder {
+        crate::model::image_detail::Builder::default()
+    }
+}
+
 /// See [`ImageDetail`](crate::model::ImageDetail).
 pub mod image_detail {
     
@@ -4847,12 +4890,6 @@ pub mod image_detail {
     
     
 }
-impl ImageDetail {
-    /// Creates a new builder-style object to manufacture [`ImageDetail`](crate::model::ImageDetail).
-    pub fn builder() -> crate::model::image_detail::Builder {
-        crate::model::image_detail::Builder::default()
-    }
-}
 
 /// <p>A summary of the last completed image scan.</p>
 #[non_exhaustive]
@@ -4882,6 +4919,13 @@ impl ImageScanFindingsSummary {
         self.finding_severity_counts.as_ref()
     }
 }
+impl ImageScanFindingsSummary {
+    /// Creates a new builder-style object to manufacture [`ImageScanFindingsSummary`](crate::model::ImageScanFindingsSummary).
+    pub fn builder() -> crate::model::image_scan_findings_summary::Builder {
+        crate::model::image_scan_findings_summary::Builder::default()
+    }
+}
+
 /// See [`ImageScanFindingsSummary`](crate::model::ImageScanFindingsSummary).
 pub mod image_scan_findings_summary {
     
@@ -4942,12 +4986,6 @@ pub mod image_scan_findings_summary {
     
     
 }
-impl ImageScanFindingsSummary {
-    /// Creates a new builder-style object to manufacture [`ImageScanFindingsSummary`](crate::model::ImageScanFindingsSummary).
-    pub fn builder() -> crate::model::image_scan_findings_summary::Builder {
-        crate::model::image_scan_findings_summary::Builder::default()
-    }
-}
 
 /// <p>An object representing a filter on a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
@@ -4963,6 +5001,13 @@ impl DescribeImagesFilter {
         self.tag_status.as_ref()
     }
 }
+impl DescribeImagesFilter {
+    /// Creates a new builder-style object to manufacture [`DescribeImagesFilter`](crate::model::DescribeImagesFilter).
+    pub fn builder() -> crate::model::describe_images_filter::Builder {
+        crate::model::describe_images_filter::Builder::default()
+    }
+}
+
 /// See [`DescribeImagesFilter`](crate::model::DescribeImagesFilter).
 pub mod describe_images_filter {
     
@@ -4992,12 +5037,6 @@ pub mod describe_images_filter {
     }
     
     
-}
-impl DescribeImagesFilter {
-    /// Creates a new builder-style object to manufacture [`DescribeImagesFilter`](crate::model::DescribeImagesFilter).
-    pub fn builder() -> crate::model::describe_images_filter::Builder {
-        crate::model::describe_images_filter::Builder::default()
-    }
 }
 
 /// <p>The status of the replication process for an image.</p>
@@ -5035,6 +5074,13 @@ impl ImageReplicationStatus {
         self.failure_code.as_deref()
     }
 }
+impl ImageReplicationStatus {
+    /// Creates a new builder-style object to manufacture [`ImageReplicationStatus`](crate::model::ImageReplicationStatus).
+    pub fn builder() -> crate::model::image_replication_status::Builder {
+        crate::model::image_replication_status::Builder::default()
+    }
+}
+
 /// See [`ImageReplicationStatus`](crate::model::ImageReplicationStatus).
 pub mod image_replication_status {
     
@@ -5100,12 +5146,6 @@ pub mod image_replication_status {
     }
     
     
-}
-impl ImageReplicationStatus {
-    /// Creates a new builder-style object to manufacture [`ImageReplicationStatus`](crate::model::ImageReplicationStatus).
-    pub fn builder() -> crate::model::image_replication_status::Builder {
-        crate::model::image_replication_status::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationStatus`, it is important to ensure
@@ -5223,6 +5263,13 @@ impl RepositoryScanningConfigurationFailure {
         self.failure_reason.as_deref()
     }
 }
+impl RepositoryScanningConfigurationFailure {
+    /// Creates a new builder-style object to manufacture [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure).
+    pub fn builder() -> crate::model::repository_scanning_configuration_failure::Builder {
+        crate::model::repository_scanning_configuration_failure::Builder::default()
+    }
+}
+
 /// See [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure).
 pub mod repository_scanning_configuration_failure {
     
@@ -5276,12 +5323,6 @@ pub mod repository_scanning_configuration_failure {
     }
     
     
-}
-impl RepositoryScanningConfigurationFailure {
-    /// Creates a new builder-style object to manufacture [`RepositoryScanningConfigurationFailure`](crate::model::RepositoryScanningConfigurationFailure).
-    pub fn builder() -> crate::model::repository_scanning_configuration_failure::Builder {
-        crate::model::repository_scanning_configuration_failure::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ScanningConfigurationFailureCode`, it is important to ensure
@@ -5403,6 +5444,13 @@ impl RepositoryScanningConfiguration {
         self.applied_scan_filters.as_deref()
     }
 }
+impl RepositoryScanningConfiguration {
+    /// Creates a new builder-style object to manufacture [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration).
+    pub fn builder() -> crate::model::repository_scanning_configuration::Builder {
+        crate::model::repository_scanning_configuration::Builder::default()
+    }
+}
+
 /// See [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration).
 pub mod repository_scanning_configuration {
     
@@ -5488,12 +5536,6 @@ pub mod repository_scanning_configuration {
     
     
 }
-impl RepositoryScanningConfiguration {
-    /// Creates a new builder-style object to manufacture [`RepositoryScanningConfiguration`](crate::model::RepositoryScanningConfiguration).
-    pub fn builder() -> crate::model::repository_scanning_configuration::Builder {
-        crate::model::repository_scanning_configuration::Builder::default()
-    }
-}
 
 /// <p>An object representing an Amazon ECR image failure.</p>
 #[non_exhaustive]
@@ -5523,6 +5565,13 @@ impl ImageFailure {
         self.failure_reason.as_deref()
     }
 }
+impl ImageFailure {
+    /// Creates a new builder-style object to manufacture [`ImageFailure`](crate::model::ImageFailure).
+    pub fn builder() -> crate::model::image_failure::Builder {
+        crate::model::image_failure::Builder::default()
+    }
+}
+
 /// See [`ImageFailure`](crate::model::ImageFailure).
 pub mod image_failure {
     
@@ -5576,12 +5625,6 @@ pub mod image_failure {
     }
     
     
-}
-impl ImageFailure {
-    /// Creates a new builder-style object to manufacture [`ImageFailure`](crate::model::ImageFailure).
-    pub fn builder() -> crate::model::image_failure::Builder {
-        crate::model::image_failure::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ImageFailureCode`, it is important to ensure
@@ -5719,6 +5762,13 @@ impl LayerFailure {
         self.failure_reason.as_deref()
     }
 }
+impl LayerFailure {
+    /// Creates a new builder-style object to manufacture [`LayerFailure`](crate::model::LayerFailure).
+    pub fn builder() -> crate::model::layer_failure::Builder {
+        crate::model::layer_failure::Builder::default()
+    }
+}
+
 /// See [`LayerFailure`](crate::model::LayerFailure).
 pub mod layer_failure {
     
@@ -5772,12 +5822,6 @@ pub mod layer_failure {
     }
     
     
-}
-impl LayerFailure {
-    /// Creates a new builder-style object to manufacture [`LayerFailure`](crate::model::LayerFailure).
-    pub fn builder() -> crate::model::layer_failure::Builder {
-        crate::model::layer_failure::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LayerFailureCode`, it is important to ensure
@@ -5897,6 +5941,13 @@ impl Layer {
         self.media_type.as_deref()
     }
 }
+impl Layer {
+    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
+    pub fn builder() -> crate::model::layer::Builder {
+        crate::model::layer::Builder::default()
+    }
+}
+
 /// See [`Layer`](crate::model::Layer).
 pub mod layer {
     
@@ -5962,12 +6013,6 @@ pub mod layer {
     }
     
     
-}
-impl Layer {
-    /// Creates a new builder-style object to manufacture [`Layer`](crate::model::Layer).
-    pub fn builder() -> crate::model::layer::Builder {
-        crate::model::layer::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LayerAvailability`, it is important to ensure

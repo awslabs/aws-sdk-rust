@@ -42,6 +42,13 @@ impl SatelliteListItem {
         self.current_ephemeris.as_ref()
     }
 }
+impl SatelliteListItem {
+    /// Creates a new builder-style object to manufacture [`SatelliteListItem`](crate::model::SatelliteListItem).
+    pub fn builder() -> crate::model::satellite_list_item::Builder {
+        crate::model::satellite_list_item::Builder::default()
+    }
+}
+
 /// See [`SatelliteListItem`](crate::model::SatelliteListItem).
 pub mod satellite_list_item {
     
@@ -127,12 +134,6 @@ pub mod satellite_list_item {
     
     
 }
-impl SatelliteListItem {
-    /// Creates a new builder-style object to manufacture [`SatelliteListItem`](crate::model::SatelliteListItem).
-    pub fn builder() -> crate::model::satellite_list_item::Builder {
-        crate::model::satellite_list_item::Builder::default()
-    }
-}
 
 /// <p>Metadata describing a particular ephemeris.</p>
 #[non_exhaustive]
@@ -175,6 +176,13 @@ impl EphemerisMetaData {
         self.name.as_deref()
     }
 }
+impl EphemerisMetaData {
+    /// Creates a new builder-style object to manufacture [`EphemerisMetaData`](crate::model::EphemerisMetaData).
+    pub fn builder() -> crate::model::ephemeris_meta_data::Builder {
+        crate::model::ephemeris_meta_data::Builder::default()
+    }
+}
+
 /// See [`EphemerisMetaData`](crate::model::EphemerisMetaData).
 pub mod ephemeris_meta_data {
     
@@ -246,12 +254,6 @@ pub mod ephemeris_meta_data {
     }
     
     
-}
-impl EphemerisMetaData {
-    /// Creates a new builder-style object to manufacture [`EphemerisMetaData`](crate::model::EphemerisMetaData).
-    pub fn builder() -> crate::model::ephemeris_meta_data::Builder {
-        crate::model::ephemeris_meta_data::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EphemerisSource`, it is important to ensure
@@ -371,6 +373,13 @@ impl MissionProfileListItem {
         self.name.as_deref()
     }
 }
+impl MissionProfileListItem {
+    /// Creates a new builder-style object to manufacture [`MissionProfileListItem`](crate::model::MissionProfileListItem).
+    pub fn builder() -> crate::model::mission_profile_list_item::Builder {
+        crate::model::mission_profile_list_item::Builder::default()
+    }
+}
+
 /// See [`MissionProfileListItem`](crate::model::MissionProfileListItem).
 pub mod mission_profile_list_item {
     
@@ -437,12 +446,6 @@ pub mod mission_profile_list_item {
     
     
 }
-impl MissionProfileListItem {
-    /// Creates a new builder-style object to manufacture [`MissionProfileListItem`](crate::model::MissionProfileListItem).
-    pub fn builder() -> crate::model::mission_profile_list_item::Builder {
-        crate::model::mission_profile_list_item::Builder::default()
-    }
-}
 
 /// <p>Information about the ground station data.</p>
 #[non_exhaustive]
@@ -472,6 +475,13 @@ impl GroundStationData {
         self.region.as_deref()
     }
 }
+impl GroundStationData {
+    /// Creates a new builder-style object to manufacture [`GroundStationData`](crate::model::GroundStationData).
+    pub fn builder() -> crate::model::ground_station_data::Builder {
+        crate::model::ground_station_data::Builder::default()
+    }
+}
+
 /// See [`GroundStationData`](crate::model::GroundStationData).
 pub mod ground_station_data {
     
@@ -525,12 +535,6 @@ pub mod ground_station_data {
     }
     
     
-}
-impl GroundStationData {
-    /// Creates a new builder-style object to manufacture [`GroundStationData`](crate::model::GroundStationData).
-    pub fn builder() -> crate::model::ground_station_data::Builder {
-        crate::model::ground_station_data::Builder::default()
-    }
 }
 
 /// <p>Ephemeris item.</p>
@@ -593,6 +597,13 @@ impl EphemerisItem {
         self.source_s3_object.as_ref()
     }
 }
+impl EphemerisItem {
+    /// Creates a new builder-style object to manufacture [`EphemerisItem`](crate::model::EphemerisItem).
+    pub fn builder() -> crate::model::ephemeris_item::Builder {
+        crate::model::ephemeris_item::Builder::default()
+    }
+}
+
 /// See [`EphemerisItem`](crate::model::EphemerisItem).
 pub mod ephemeris_item {
     
@@ -699,12 +710,6 @@ pub mod ephemeris_item {
     
     
 }
-impl EphemerisItem {
-    /// Creates a new builder-style object to manufacture [`EphemerisItem`](crate::model::EphemerisItem).
-    pub fn builder() -> crate::model::ephemeris_item::Builder {
-        crate::model::ephemeris_item::Builder::default()
-    }
-}
 
 /// <p>Object stored in S3 containing ephemeris data.</p>
 #[non_exhaustive]
@@ -734,6 +739,13 @@ impl S3Object {
         self.version.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
     
@@ -787,12 +799,6 @@ pub mod s3_object {
     }
     
     
-}
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EphemerisStatus`, it is important to ensure
@@ -961,6 +967,13 @@ impl OemEphemeris {
         self.oem_data.as_deref()
     }
 }
+impl OemEphemeris {
+    /// Creates a new builder-style object to manufacture [`OemEphemeris`](crate::model::OemEphemeris).
+    pub fn builder() -> crate::model::oem_ephemeris::Builder {
+        crate::model::oem_ephemeris::Builder::default()
+    }
+}
+
 /// See [`OemEphemeris`](crate::model::OemEphemeris).
 pub mod oem_ephemeris {
     
@@ -1003,12 +1016,6 @@ pub mod oem_ephemeris {
     
     
 }
-impl OemEphemeris {
-    /// Creates a new builder-style object to manufacture [`OemEphemeris`](crate::model::OemEphemeris).
-    pub fn builder() -> crate::model::oem_ephemeris::Builder {
-        crate::model::oem_ephemeris::Builder::default()
-    }
-}
 
 /// <p>Two-line element set (TLE) ephemeris.</p>
 #[non_exhaustive]
@@ -1031,6 +1038,13 @@ impl TleEphemeris {
         self.tle_data.as_deref()
     }
 }
+impl TleEphemeris {
+    /// Creates a new builder-style object to manufacture [`TleEphemeris`](crate::model::TleEphemeris).
+    pub fn builder() -> crate::model::tle_ephemeris::Builder {
+        crate::model::tle_ephemeris::Builder::default()
+    }
+}
+
 /// See [`TleEphemeris`](crate::model::TleEphemeris).
 pub mod tle_ephemeris {
     
@@ -1079,12 +1093,6 @@ pub mod tle_ephemeris {
     
     
 }
-impl TleEphemeris {
-    /// Creates a new builder-style object to manufacture [`TleEphemeris`](crate::model::TleEphemeris).
-    pub fn builder() -> crate::model::tle_ephemeris::Builder {
-        crate::model::tle_ephemeris::Builder::default()
-    }
-}
 
 /// <p>Two-line element set (TLE) data.</p>
 #[non_exhaustive]
@@ -1114,6 +1122,13 @@ impl TleData {
         self.valid_time_range.as_ref()
     }
 }
+impl TleData {
+    /// Creates a new builder-style object to manufacture [`TleData`](crate::model::TleData).
+    pub fn builder() -> crate::model::tle_data::Builder {
+        crate::model::tle_data::Builder::default()
+    }
+}
+
 /// See [`TleData`](crate::model::TleData).
 pub mod tle_data {
     
@@ -1168,12 +1183,6 @@ pub mod tle_data {
     
     
 }
-impl TleData {
-    /// Creates a new builder-style object to manufacture [`TleData`](crate::model::TleData).
-    pub fn builder() -> crate::model::tle_data::Builder {
-        crate::model::tle_data::Builder::default()
-    }
-}
 
 /// <p>A time range with a start and end time.</p>
 #[non_exhaustive]
@@ -1196,6 +1205,13 @@ impl TimeRange {
         self.end_time.as_ref()
     }
 }
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
     
@@ -1237,12 +1253,6 @@ pub mod time_range {
     }
     
     
-}
-impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
-    pub fn builder() -> crate::model::time_range::Builder {
-        crate::model::time_range::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EphemerisInvalidReason`, it is important to ensure
@@ -1406,6 +1416,13 @@ impl EphemerisDescription {
         self.ephemeris_data.as_deref()
     }
 }
+impl EphemerisDescription {
+    /// Creates a new builder-style object to manufacture [`EphemerisDescription`](crate::model::EphemerisDescription).
+    pub fn builder() -> crate::model::ephemeris_description::Builder {
+        crate::model::ephemeris_description::Builder::default()
+    }
+}
+
 /// See [`EphemerisDescription`](crate::model::EphemerisDescription).
 pub mod ephemeris_description {
     
@@ -1448,12 +1465,6 @@ pub mod ephemeris_description {
     
     
 }
-impl EphemerisDescription {
-    /// Creates a new builder-style object to manufacture [`EphemerisDescription`](crate::model::EphemerisDescription).
-    pub fn builder() -> crate::model::ephemeris_description::Builder {
-        crate::model::ephemeris_description::Builder::default()
-    }
-}
 
 /// <p>Item in a list of <code>DataflowEndpoint</code> groups.</p>
 #[non_exhaustive]
@@ -1476,6 +1487,13 @@ impl DataflowEndpointListItem {
         self.dataflow_endpoint_group_arn.as_deref()
     }
 }
+impl DataflowEndpointListItem {
+    /// Creates a new builder-style object to manufacture [`DataflowEndpointListItem`](crate::model::DataflowEndpointListItem).
+    pub fn builder() -> crate::model::dataflow_endpoint_list_item::Builder {
+        crate::model::dataflow_endpoint_list_item::Builder::default()
+    }
+}
+
 /// See [`DataflowEndpointListItem`](crate::model::DataflowEndpointListItem).
 pub mod dataflow_endpoint_list_item {
     
@@ -1518,12 +1536,6 @@ pub mod dataflow_endpoint_list_item {
     
     
 }
-impl DataflowEndpointListItem {
-    /// Creates a new builder-style object to manufacture [`DataflowEndpointListItem`](crate::model::DataflowEndpointListItem).
-    pub fn builder() -> crate::model::dataflow_endpoint_list_item::Builder {
-        crate::model::dataflow_endpoint_list_item::Builder::default()
-    }
-}
 
 /// <p>Information about the endpoint details.</p>
 #[non_exhaustive]
@@ -1546,6 +1558,13 @@ impl EndpointDetails {
         self.endpoint.as_ref()
     }
 }
+impl EndpointDetails {
+    /// Creates a new builder-style object to manufacture [`EndpointDetails`](crate::model::EndpointDetails).
+    pub fn builder() -> crate::model::endpoint_details::Builder {
+        crate::model::endpoint_details::Builder::default()
+    }
+}
+
 /// See [`EndpointDetails`](crate::model::EndpointDetails).
 pub mod endpoint_details {
     
@@ -1588,12 +1607,6 @@ pub mod endpoint_details {
     
     
 }
-impl EndpointDetails {
-    /// Creates a new builder-style object to manufacture [`EndpointDetails`](crate::model::EndpointDetails).
-    pub fn builder() -> crate::model::endpoint_details::Builder {
-        crate::model::endpoint_details::Builder::default()
-    }
-}
 
 /// <p>Information about a dataflow endpoint.</p>
 #[non_exhaustive]
@@ -1630,6 +1643,13 @@ impl DataflowEndpoint {
         self.mtu
     }
 }
+impl DataflowEndpoint {
+    /// Creates a new builder-style object to manufacture [`DataflowEndpoint`](crate::model::DataflowEndpoint).
+    pub fn builder() -> crate::model::dataflow_endpoint::Builder {
+        crate::model::dataflow_endpoint::Builder::default()
+    }
+}
+
 /// See [`DataflowEndpoint`](crate::model::DataflowEndpoint).
 pub mod dataflow_endpoint {
     
@@ -1695,12 +1715,6 @@ pub mod dataflow_endpoint {
     }
     
     
-}
-impl DataflowEndpoint {
-    /// Creates a new builder-style object to manufacture [`DataflowEndpoint`](crate::model::DataflowEndpoint).
-    pub fn builder() -> crate::model::dataflow_endpoint::Builder {
-        crate::model::dataflow_endpoint::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EndpointStatus`, it is important to ensure
@@ -1821,6 +1835,13 @@ impl SocketAddress {
         self.port
     }
 }
+impl SocketAddress {
+    /// Creates a new builder-style object to manufacture [`SocketAddress`](crate::model::SocketAddress).
+    pub fn builder() -> crate::model::socket_address::Builder {
+        crate::model::socket_address::Builder::default()
+    }
+}
+
 /// See [`SocketAddress`](crate::model::SocketAddress).
 pub mod socket_address {
     
@@ -1863,12 +1884,6 @@ pub mod socket_address {
     
     
 }
-impl SocketAddress {
-    /// Creates a new builder-style object to manufacture [`SocketAddress`](crate::model::SocketAddress).
-    pub fn builder() -> crate::model::socket_address::Builder {
-        crate::model::socket_address::Builder::default()
-    }
-}
 
 /// <p>Information about endpoints.</p>
 #[non_exhaustive]
@@ -1898,6 +1913,13 @@ impl SecurityDetails {
         self.role_arn.as_deref()
     }
 }
+impl SecurityDetails {
+    /// Creates a new builder-style object to manufacture [`SecurityDetails`](crate::model::SecurityDetails).
+    pub fn builder() -> crate::model::security_details::Builder {
+        crate::model::security_details::Builder::default()
+    }
+}
+
 /// See [`SecurityDetails`](crate::model::SecurityDetails).
 pub mod security_details {
     
@@ -1963,12 +1985,6 @@ pub mod security_details {
     }
     
     
-}
-impl SecurityDetails {
-    /// Creates a new builder-style object to manufacture [`SecurityDetails`](crate::model::SecurityDetails).
-    pub fn builder() -> crate::model::security_details::Builder {
-        crate::model::security_details::Builder::default()
-    }
 }
 
 /// <p>Data describing a contact.</p>
@@ -2069,6 +2085,13 @@ impl ContactData {
         self.tags.as_ref()
     }
 }
+impl ContactData {
+    /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
+    pub fn builder() -> crate::model::contact_data::Builder {
+        crate::model::contact_data::Builder::default()
+    }
+}
+
 /// See [`ContactData`](crate::model::ContactData).
 pub mod contact_data {
     
@@ -2249,12 +2272,6 @@ pub mod contact_data {
     
     
 }
-impl ContactData {
-    /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
-    pub fn builder() -> crate::model::contact_data::Builder {
-        crate::model::contact_data::Builder::default()
-    }
-}
 
 /// <p>Elevation angle of the satellite in the sky during a contact.</p>
 #[non_exhaustive]
@@ -2277,6 +2294,13 @@ impl Elevation {
         self.unit.as_ref()
     }
 }
+impl Elevation {
+    /// Creates a new builder-style object to manufacture [`Elevation`](crate::model::Elevation).
+    pub fn builder() -> crate::model::elevation::Builder {
+        crate::model::elevation::Builder::default()
+    }
+}
+
 /// See [`Elevation`](crate::model::Elevation).
 pub mod elevation {
     
@@ -2318,12 +2342,6 @@ pub mod elevation {
     }
     
     
-}
-impl Elevation {
-    /// Creates a new builder-style object to manufacture [`Elevation`](crate::model::Elevation).
-    pub fn builder() -> crate::model::elevation::Builder {
-        crate::model::elevation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AngleUnits`, it is important to ensure
@@ -2573,6 +2591,13 @@ impl DataflowDetail {
         self.error_message.as_deref()
     }
 }
+impl DataflowDetail {
+    /// Creates a new builder-style object to manufacture [`DataflowDetail`](crate::model::DataflowDetail).
+    pub fn builder() -> crate::model::dataflow_detail::Builder {
+        crate::model::dataflow_detail::Builder::default()
+    }
+}
+
 /// See [`DataflowDetail`](crate::model::DataflowDetail).
 pub mod dataflow_detail {
     
@@ -2627,12 +2652,6 @@ pub mod dataflow_detail {
     
     
 }
-impl DataflowDetail {
-    /// Creates a new builder-style object to manufacture [`DataflowDetail`](crate::model::DataflowDetail).
-    pub fn builder() -> crate::model::dataflow_detail::Builder {
-        crate::model::dataflow_detail::Builder::default()
-    }
-}
 
 /// <p>Dataflow details for the destination side.</p>
 #[non_exhaustive]
@@ -2669,6 +2688,13 @@ impl Destination {
         self.dataflow_destination_region.as_deref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
     
@@ -2734,12 +2760,6 @@ pub mod destination {
     }
     
     
-}
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
 }
 
 /// <p>Details for certain <code>Config</code> object types in a contact.</p>
@@ -2817,6 +2837,13 @@ impl S3RecordingDetails {
         self.key_template.as_deref()
     }
 }
+impl S3RecordingDetails {
+    /// Creates a new builder-style object to manufacture [`S3RecordingDetails`](crate::model::S3RecordingDetails).
+    pub fn builder() -> crate::model::s3_recording_details::Builder {
+        crate::model::s3_recording_details::Builder::default()
+    }
+}
+
 /// See [`S3RecordingDetails`](crate::model::S3RecordingDetails).
 pub mod s3_recording_details {
     
@@ -2859,12 +2886,6 @@ pub mod s3_recording_details {
     
     
 }
-impl S3RecordingDetails {
-    /// Creates a new builder-style object to manufacture [`S3RecordingDetails`](crate::model::S3RecordingDetails).
-    pub fn builder() -> crate::model::s3_recording_details::Builder {
-        crate::model::s3_recording_details::Builder::default()
-    }
-}
 
 /// <p>Details about an antenna demod decode <code>Config</code> used in a contact.</p>
 #[non_exhaustive]
@@ -2880,6 +2901,13 @@ impl AntennaDemodDecodeDetails {
         self.output_node.as_deref()
     }
 }
+impl AntennaDemodDecodeDetails {
+    /// Creates a new builder-style object to manufacture [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
+    pub fn builder() -> crate::model::antenna_demod_decode_details::Builder {
+        crate::model::antenna_demod_decode_details::Builder::default()
+    }
+}
+
 /// See [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
 pub mod antenna_demod_decode_details {
     
@@ -2909,12 +2937,6 @@ pub mod antenna_demod_decode_details {
     }
     
     
-}
-impl AntennaDemodDecodeDetails {
-    /// Creates a new builder-style object to manufacture [`AntennaDemodDecodeDetails`](crate::model::AntennaDemodDecodeDetails).
-    pub fn builder() -> crate::model::antenna_demod_decode_details::Builder {
-        crate::model::antenna_demod_decode_details::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigCapabilityType`, it is important to ensure
@@ -3059,6 +3081,13 @@ impl Source {
         self.dataflow_source_region.as_deref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
     
@@ -3125,12 +3154,6 @@ pub mod source {
     
     
 }
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
-    }
-}
 
 /// <p>An item in a list of <code>Config</code> objects.</p>
 #[non_exhaustive]
@@ -3167,6 +3190,13 @@ impl ConfigListItem {
         self.name.as_deref()
     }
 }
+impl ConfigListItem {
+    /// Creates a new builder-style object to manufacture [`ConfigListItem`](crate::model::ConfigListItem).
+    pub fn builder() -> crate::model::config_list_item::Builder {
+        crate::model::config_list_item::Builder::default()
+    }
+}
+
 /// See [`ConfigListItem`](crate::model::ConfigListItem).
 pub mod config_list_item {
     
@@ -3232,12 +3262,6 @@ pub mod config_list_item {
     }
     
     
-}
-impl ConfigListItem {
-    /// Creates a new builder-style object to manufacture [`ConfigListItem`](crate::model::ConfigListItem).
-    pub fn builder() -> crate::model::config_list_item::Builder {
-        crate::model::config_list_item::Builder::default()
-    }
 }
 
 /// <p>Object containing the parameters of a <code>Config</code>.</p> 
@@ -3368,6 +3392,13 @@ impl S3RecordingConfig {
         self.prefix.as_deref()
     }
 }
+impl S3RecordingConfig {
+    /// Creates a new builder-style object to manufacture [`S3RecordingConfig`](crate::model::S3RecordingConfig).
+    pub fn builder() -> crate::model::s3_recording_config::Builder {
+        crate::model::s3_recording_config::Builder::default()
+    }
+}
+
 /// See [`S3RecordingConfig`](crate::model::S3RecordingConfig).
 pub mod s3_recording_config {
     
@@ -3422,12 +3453,6 @@ pub mod s3_recording_config {
     
     
 }
-impl S3RecordingConfig {
-    /// Creates a new builder-style object to manufacture [`S3RecordingConfig`](crate::model::S3RecordingConfig).
-    pub fn builder() -> crate::model::s3_recording_config::Builder {
-        crate::model::s3_recording_config::Builder::default()
-    }
-}
 
 /// <p>Information about an uplink echo <code>Config</code>.</p> 
 /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
@@ -3451,6 +3476,13 @@ impl UplinkEchoConfig {
         self.antenna_uplink_config_arn.as_deref()
     }
 }
+impl UplinkEchoConfig {
+    /// Creates a new builder-style object to manufacture [`UplinkEchoConfig`](crate::model::UplinkEchoConfig).
+    pub fn builder() -> crate::model::uplink_echo_config::Builder {
+        crate::model::uplink_echo_config::Builder::default()
+    }
+}
+
 /// See [`UplinkEchoConfig`](crate::model::UplinkEchoConfig).
 pub mod uplink_echo_config {
     
@@ -3493,12 +3525,6 @@ pub mod uplink_echo_config {
     
     
 }
-impl UplinkEchoConfig {
-    /// Creates a new builder-style object to manufacture [`UplinkEchoConfig`](crate::model::UplinkEchoConfig).
-    pub fn builder() -> crate::model::uplink_echo_config::Builder {
-        crate::model::uplink_echo_config::Builder::default()
-    }
-}
 
 /// <p>Information about the uplink <code>Config</code> of an antenna.</p>
 #[non_exhaustive]
@@ -3528,6 +3554,13 @@ impl AntennaUplinkConfig {
         self.target_eirp.as_ref()
     }
 }
+impl AntennaUplinkConfig {
+    /// Creates a new builder-style object to manufacture [`AntennaUplinkConfig`](crate::model::AntennaUplinkConfig).
+    pub fn builder() -> crate::model::antenna_uplink_config::Builder {
+        crate::model::antenna_uplink_config::Builder::default()
+    }
+}
+
 /// See [`AntennaUplinkConfig`](crate::model::AntennaUplinkConfig).
 pub mod antenna_uplink_config {
     
@@ -3582,12 +3615,6 @@ pub mod antenna_uplink_config {
     
     
 }
-impl AntennaUplinkConfig {
-    /// Creates a new builder-style object to manufacture [`AntennaUplinkConfig`](crate::model::AntennaUplinkConfig).
-    pub fn builder() -> crate::model::antenna_uplink_config::Builder {
-        crate::model::antenna_uplink_config::Builder::default()
-    }
-}
 
 /// <p>Object that represents EIRP.</p>
 #[non_exhaustive]
@@ -3610,6 +3637,13 @@ impl Eirp {
         self.units.as_ref()
     }
 }
+impl Eirp {
+    /// Creates a new builder-style object to manufacture [`Eirp`](crate::model::Eirp).
+    pub fn builder() -> crate::model::eirp::Builder {
+        crate::model::eirp::Builder::default()
+    }
+}
+
 /// See [`Eirp`](crate::model::Eirp).
 pub mod eirp {
     
@@ -3651,12 +3685,6 @@ pub mod eirp {
     }
     
     
-}
-impl Eirp {
-    /// Creates a new builder-style object to manufacture [`Eirp`](crate::model::Eirp).
-    pub fn builder() -> crate::model::eirp::Builder {
-        crate::model::eirp::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EirpUnits`, it is important to ensure
@@ -3757,6 +3785,13 @@ impl UplinkSpectrumConfig {
         self.polarization.as_ref()
     }
 }
+impl UplinkSpectrumConfig {
+    /// Creates a new builder-style object to manufacture [`UplinkSpectrumConfig`](crate::model::UplinkSpectrumConfig).
+    pub fn builder() -> crate::model::uplink_spectrum_config::Builder {
+        crate::model::uplink_spectrum_config::Builder::default()
+    }
+}
+
 /// See [`UplinkSpectrumConfig`](crate::model::UplinkSpectrumConfig).
 pub mod uplink_spectrum_config {
     
@@ -3798,12 +3833,6 @@ pub mod uplink_spectrum_config {
     }
     
     
-}
-impl UplinkSpectrumConfig {
-    /// Creates a new builder-style object to manufacture [`UplinkSpectrumConfig`](crate::model::UplinkSpectrumConfig).
-    pub fn builder() -> crate::model::uplink_spectrum_config::Builder {
-        crate::model::uplink_spectrum_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Polarization`, it is important to ensure
@@ -3914,6 +3943,13 @@ impl Frequency {
         self.units.as_ref()
     }
 }
+impl Frequency {
+    /// Creates a new builder-style object to manufacture [`Frequency`](crate::model::Frequency).
+    pub fn builder() -> crate::model::frequency::Builder {
+        crate::model::frequency::Builder::default()
+    }
+}
+
 /// See [`Frequency`](crate::model::Frequency).
 pub mod frequency {
     
@@ -3955,12 +3991,6 @@ pub mod frequency {
     }
     
     
-}
-impl Frequency {
-    /// Creates a new builder-style object to manufacture [`Frequency`](crate::model::Frequency).
-    pub fn builder() -> crate::model::frequency::Builder {
-        crate::model::frequency::Builder::default()
-    }
 }
 
 /// When writing a match expression against `FrequencyUnits`, it is important to ensure
@@ -4078,6 +4108,13 @@ impl AntennaDownlinkDemodDecodeConfig {
         self.decode_config.as_ref()
     }
 }
+impl AntennaDownlinkDemodDecodeConfig {
+    /// Creates a new builder-style object to manufacture [`AntennaDownlinkDemodDecodeConfig`](crate::model::AntennaDownlinkDemodDecodeConfig).
+    pub fn builder() -> crate::model::antenna_downlink_demod_decode_config::Builder {
+        crate::model::antenna_downlink_demod_decode_config::Builder::default()
+    }
+}
+
 /// See [`AntennaDownlinkDemodDecodeConfig`](crate::model::AntennaDownlinkDemodDecodeConfig).
 pub mod antenna_downlink_demod_decode_config {
     
@@ -4132,12 +4169,6 @@ pub mod antenna_downlink_demod_decode_config {
     
     
 }
-impl AntennaDownlinkDemodDecodeConfig {
-    /// Creates a new builder-style object to manufacture [`AntennaDownlinkDemodDecodeConfig`](crate::model::AntennaDownlinkDemodDecodeConfig).
-    pub fn builder() -> crate::model::antenna_downlink_demod_decode_config::Builder {
-        crate::model::antenna_downlink_demod_decode_config::Builder::default()
-    }
-}
 
 /// <p>Information about the decode <code>Config</code>.</p>
 #[non_exhaustive]
@@ -4153,6 +4184,13 @@ impl DecodeConfig {
         self.unvalidated_json.as_deref()
     }
 }
+impl DecodeConfig {
+    /// Creates a new builder-style object to manufacture [`DecodeConfig`](crate::model::DecodeConfig).
+    pub fn builder() -> crate::model::decode_config::Builder {
+        crate::model::decode_config::Builder::default()
+    }
+}
+
 /// See [`DecodeConfig`](crate::model::DecodeConfig).
 pub mod decode_config {
     
@@ -4183,12 +4221,6 @@ pub mod decode_config {
     
     
 }
-impl DecodeConfig {
-    /// Creates a new builder-style object to manufacture [`DecodeConfig`](crate::model::DecodeConfig).
-    pub fn builder() -> crate::model::decode_config::Builder {
-        crate::model::decode_config::Builder::default()
-    }
-}
 
 /// <p>Information about the demodulation <code>Config</code>.</p>
 #[non_exhaustive]
@@ -4204,6 +4236,13 @@ impl DemodulationConfig {
         self.unvalidated_json.as_deref()
     }
 }
+impl DemodulationConfig {
+    /// Creates a new builder-style object to manufacture [`DemodulationConfig`](crate::model::DemodulationConfig).
+    pub fn builder() -> crate::model::demodulation_config::Builder {
+        crate::model::demodulation_config::Builder::default()
+    }
+}
+
 /// See [`DemodulationConfig`](crate::model::DemodulationConfig).
 pub mod demodulation_config {
     
@@ -4233,12 +4272,6 @@ pub mod demodulation_config {
     }
     
     
-}
-impl DemodulationConfig {
-    /// Creates a new builder-style object to manufacture [`DemodulationConfig`](crate::model::DemodulationConfig).
-    pub fn builder() -> crate::model::demodulation_config::Builder {
-        crate::model::demodulation_config::Builder::default()
-    }
 }
 
 /// <p>Object that describes a spectral <code>Config</code>.</p>
@@ -4279,6 +4312,13 @@ impl SpectrumConfig {
         self.polarization.as_ref()
     }
 }
+impl SpectrumConfig {
+    /// Creates a new builder-style object to manufacture [`SpectrumConfig`](crate::model::SpectrumConfig).
+    pub fn builder() -> crate::model::spectrum_config::Builder {
+        crate::model::spectrum_config::Builder::default()
+    }
+}
+
 /// See [`SpectrumConfig`](crate::model::SpectrumConfig).
 pub mod spectrum_config {
     
@@ -4343,12 +4383,6 @@ pub mod spectrum_config {
     
     
 }
-impl SpectrumConfig {
-    /// Creates a new builder-style object to manufacture [`SpectrumConfig`](crate::model::SpectrumConfig).
-    pub fn builder() -> crate::model::spectrum_config::Builder {
-        crate::model::spectrum_config::Builder::default()
-    }
-}
 
 /// <p>Object that describes the frequency bandwidth. </p>
 #[non_exhaustive]
@@ -4381,6 +4415,13 @@ impl FrequencyBandwidth {
         self.units.as_ref()
     }
 }
+impl FrequencyBandwidth {
+    /// Creates a new builder-style object to manufacture [`FrequencyBandwidth`](crate::model::FrequencyBandwidth).
+    pub fn builder() -> crate::model::frequency_bandwidth::Builder {
+        crate::model::frequency_bandwidth::Builder::default()
+    }
+}
+
 /// See [`FrequencyBandwidth`](crate::model::FrequencyBandwidth).
 pub mod frequency_bandwidth {
     
@@ -4432,12 +4473,6 @@ pub mod frequency_bandwidth {
     }
     
     
-}
-impl FrequencyBandwidth {
-    /// Creates a new builder-style object to manufacture [`FrequencyBandwidth`](crate::model::FrequencyBandwidth).
-    pub fn builder() -> crate::model::frequency_bandwidth::Builder {
-        crate::model::frequency_bandwidth::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BandwidthUnits`, it is important to ensure
@@ -4548,6 +4583,13 @@ impl DataflowEndpointConfig {
         self.dataflow_endpoint_region.as_deref()
     }
 }
+impl DataflowEndpointConfig {
+    /// Creates a new builder-style object to manufacture [`DataflowEndpointConfig`](crate::model::DataflowEndpointConfig).
+    pub fn builder() -> crate::model::dataflow_endpoint_config::Builder {
+        crate::model::dataflow_endpoint_config::Builder::default()
+    }
+}
+
 /// See [`DataflowEndpointConfig`](crate::model::DataflowEndpointConfig).
 pub mod dataflow_endpoint_config {
     
@@ -4590,12 +4632,6 @@ pub mod dataflow_endpoint_config {
     
     
 }
-impl DataflowEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`DataflowEndpointConfig`](crate::model::DataflowEndpointConfig).
-    pub fn builder() -> crate::model::dataflow_endpoint_config::Builder {
-        crate::model::dataflow_endpoint_config::Builder::default()
-    }
-}
 
 /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
 #[non_exhaustive]
@@ -4611,6 +4647,13 @@ impl TrackingConfig {
         self.autotrack.as_ref()
     }
 }
+impl TrackingConfig {
+    /// Creates a new builder-style object to manufacture [`TrackingConfig`](crate::model::TrackingConfig).
+    pub fn builder() -> crate::model::tracking_config::Builder {
+        crate::model::tracking_config::Builder::default()
+    }
+}
+
 /// See [`TrackingConfig`](crate::model::TrackingConfig).
 pub mod tracking_config {
     
@@ -4640,12 +4683,6 @@ pub mod tracking_config {
     }
     
     
-}
-impl TrackingConfig {
-    /// Creates a new builder-style object to manufacture [`TrackingConfig`](crate::model::TrackingConfig).
-    pub fn builder() -> crate::model::tracking_config::Builder {
-        crate::model::tracking_config::Builder::default()
-    }
 }
 
 /// When writing a match expression against `Criticality`, it is important to ensure
@@ -4749,6 +4786,13 @@ impl AntennaDownlinkConfig {
         self.spectrum_config.as_ref()
     }
 }
+impl AntennaDownlinkConfig {
+    /// Creates a new builder-style object to manufacture [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).
+    pub fn builder() -> crate::model::antenna_downlink_config::Builder {
+        crate::model::antenna_downlink_config::Builder::default()
+    }
+}
+
 /// See [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).
 pub mod antenna_downlink_config {
     
@@ -4778,11 +4822,5 @@ pub mod antenna_downlink_config {
     }
     
     
-}
-impl AntennaDownlinkConfig {
-    /// Creates a new builder-style object to manufacture [`AntennaDownlinkConfig`](crate::model::AntennaDownlinkConfig).
-    pub fn builder() -> crate::model::antenna_downlink_config::Builder {
-        crate::model::antenna_downlink_config::Builder::default()
-    }
 }
 

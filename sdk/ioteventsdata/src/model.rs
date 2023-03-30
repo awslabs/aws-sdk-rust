@@ -49,6 +49,13 @@ impl DetectorSummary {
         self.last_update_time.as_ref()
     }
 }
+impl DetectorSummary {
+    /// Creates a new builder-style object to manufacture [`DetectorSummary`](crate::model::DetectorSummary).
+    pub fn builder() -> crate::model::detector_summary::Builder {
+        crate::model::detector_summary::Builder::default()
+    }
+}
+
 /// See [`DetectorSummary`](crate::model::DetectorSummary).
 pub mod detector_summary {
     
@@ -139,12 +146,6 @@ pub mod detector_summary {
     
     
 }
-impl DetectorSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorSummary`](crate::model::DetectorSummary).
-    pub fn builder() -> crate::model::detector_summary::Builder {
-        crate::model::detector_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the detector state.</p>
 #[non_exhaustive]
@@ -160,6 +161,13 @@ impl DetectorStateSummary {
         self.state_name.as_deref()
     }
 }
+impl DetectorStateSummary {
+    /// Creates a new builder-style object to manufacture [`DetectorStateSummary`](crate::model::DetectorStateSummary).
+    pub fn builder() -> crate::model::detector_state_summary::Builder {
+        crate::model::detector_state_summary::Builder::default()
+    }
+}
+
 /// See [`DetectorStateSummary`](crate::model::DetectorStateSummary).
 pub mod detector_state_summary {
     
@@ -189,12 +197,6 @@ pub mod detector_state_summary {
     }
     
     
-}
-impl DetectorStateSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorStateSummary`](crate::model::DetectorStateSummary).
-    pub fn builder() -> crate::model::detector_state_summary::Builder {
-        crate::model::detector_state_summary::Builder::default()
-    }
 }
 
 /// <p>Contains a summary of an alarm.</p>
@@ -262,6 +264,13 @@ impl AlarmSummary {
         self.last_update_time.as_ref()
     }
 }
+impl AlarmSummary {
+    /// Creates a new builder-style object to manufacture [`AlarmSummary`](crate::model::AlarmSummary).
+    pub fn builder() -> crate::model::alarm_summary::Builder {
+        crate::model::alarm_summary::Builder::default()
+    }
+}
+
 /// See [`AlarmSummary`](crate::model::AlarmSummary).
 pub mod alarm_summary {
     
@@ -367,12 +376,6 @@ pub mod alarm_summary {
     }
     
     
-}
-impl AlarmSummary {
-    /// Creates a new builder-style object to manufacture [`AlarmSummary`](crate::model::AlarmSummary).
-    pub fn builder() -> crate::model::alarm_summary::Builder {
-        crate::model::alarm_summary::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlarmStateName`, it is important to ensure
@@ -526,6 +529,13 @@ impl Detector {
         self.last_update_time.as_ref()
     }
 }
+impl Detector {
+    /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector).
+    pub fn builder() -> crate::model::detector::Builder {
+        crate::model::detector::Builder::default()
+    }
+}
+
 /// See [`Detector`](crate::model::Detector).
 pub mod detector {
     
@@ -616,12 +626,6 @@ pub mod detector {
     
     
 }
-impl Detector {
-    /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector).
-    pub fn builder() -> crate::model::detector::Builder {
-        crate::model::detector::Builder::default()
-    }
-}
 
 /// <p>Information about the current state of the detector instance.</p>
 #[non_exhaustive]
@@ -651,6 +655,13 @@ impl DetectorState {
         self.timers.as_deref()
     }
 }
+impl DetectorState {
+    /// Creates a new builder-style object to manufacture [`DetectorState`](crate::model::DetectorState).
+    pub fn builder() -> crate::model::detector_state::Builder {
+        crate::model::detector_state::Builder::default()
+    }
+}
+
 /// See [`DetectorState`](crate::model::DetectorState).
 pub mod detector_state {
     
@@ -717,12 +728,6 @@ pub mod detector_state {
     
     
 }
-impl DetectorState {
-    /// Creates a new builder-style object to manufacture [`DetectorState`](crate::model::DetectorState).
-    pub fn builder() -> crate::model::detector_state::Builder {
-        crate::model::detector_state::Builder::default()
-    }
-}
 
 /// <p>The current state of a timer.</p>
 #[non_exhaustive]
@@ -745,6 +750,13 @@ impl Timer {
         self.timestamp.as_ref()
     }
 }
+impl Timer {
+    /// Creates a new builder-style object to manufacture [`Timer`](crate::model::Timer).
+    pub fn builder() -> crate::model::timer::Builder {
+        crate::model::timer::Builder::default()
+    }
+}
+
 /// See [`Timer`](crate::model::Timer).
 pub mod timer {
     
@@ -787,12 +799,6 @@ pub mod timer {
     
     
 }
-impl Timer {
-    /// Creates a new builder-style object to manufacture [`Timer`](crate::model::Timer).
-    pub fn builder() -> crate::model::timer::Builder {
-        crate::model::timer::Builder::default()
-    }
-}
 
 /// <p>The current state of the variable.</p>
 #[non_exhaustive]
@@ -815,6 +821,13 @@ impl Variable {
         self.value.as_deref()
     }
 }
+impl Variable {
+    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
+    pub fn builder() -> crate::model::variable::Builder {
+        crate::model::variable::Builder::default()
+    }
+}
+
 /// See [`Variable`](crate::model::Variable).
 pub mod variable {
     
@@ -856,12 +869,6 @@ pub mod variable {
     }
     
     
-}
-impl Variable {
-    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
-    pub fn builder() -> crate::model::variable::Builder {
-        crate::model::variable::Builder::default()
-    }
 }
 
 /// <p>Contains information about an alarm.</p>
@@ -920,6 +927,13 @@ impl Alarm {
         self.last_update_time.as_ref()
     }
 }
+impl Alarm {
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
+    pub fn builder() -> crate::model::alarm::Builder {
+        crate::model::alarm::Builder::default()
+    }
+}
+
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
     
@@ -1022,12 +1036,6 @@ pub mod alarm {
     
     
 }
-impl Alarm {
-    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
-    pub fn builder() -> crate::model::alarm::Builder {
-        crate::model::alarm::Builder::default()
-    }
-}
 
 /// <p>Contains information about the current state of the alarm.</p>
 #[non_exhaustive]
@@ -1080,6 +1088,13 @@ impl AlarmState {
         self.system_event.as_ref()
     }
 }
+impl AlarmState {
+    /// Creates a new builder-style object to manufacture [`AlarmState`](crate::model::AlarmState).
+    pub fn builder() -> crate::model::alarm_state::Builder {
+        crate::model::alarm_state::Builder::default()
+    }
+}
+
 /// See [`AlarmState`](crate::model::AlarmState).
 pub mod alarm_state {
     
@@ -1162,12 +1177,6 @@ pub mod alarm_state {
     
     
 }
-impl AlarmState {
-    /// Creates a new builder-style object to manufacture [`AlarmState`](crate::model::AlarmState).
-    pub fn builder() -> crate::model::alarm_state::Builder {
-        crate::model::alarm_state::Builder::default()
-    }
-}
 
 /// <p>Contains information about alarm state changes.</p>
 #[non_exhaustive]
@@ -1190,6 +1199,13 @@ impl SystemEvent {
         self.state_change_configuration.as_ref()
     }
 }
+impl SystemEvent {
+    /// Creates a new builder-style object to manufacture [`SystemEvent`](crate::model::SystemEvent).
+    pub fn builder() -> crate::model::system_event::Builder {
+        crate::model::system_event::Builder::default()
+    }
+}
+
 /// See [`SystemEvent`](crate::model::SystemEvent).
 pub mod system_event {
     
@@ -1232,12 +1248,6 @@ pub mod system_event {
     
     
 }
-impl SystemEvent {
-    /// Creates a new builder-style object to manufacture [`SystemEvent`](crate::model::SystemEvent).
-    pub fn builder() -> crate::model::system_event::Builder {
-        crate::model::system_event::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of alarm state changes.</p>
 #[non_exhaustive]
@@ -1253,6 +1263,13 @@ impl StateChangeConfiguration {
         self.trigger_type.as_ref()
     }
 }
+impl StateChangeConfiguration {
+    /// Creates a new builder-style object to manufacture [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
+    pub fn builder() -> crate::model::state_change_configuration::Builder {
+        crate::model::state_change_configuration::Builder::default()
+    }
+}
+
 /// See [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
 pub mod state_change_configuration {
     
@@ -1282,12 +1299,6 @@ pub mod state_change_configuration {
     }
     
     
-}
-impl StateChangeConfiguration {
-    /// Creates a new builder-style object to manufacture [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
-    pub fn builder() -> crate::model::state_change_configuration::Builder {
-        crate::model::state_change_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TriggerType`, it is important to ensure
@@ -1509,6 +1520,13 @@ impl CustomerAction {
         self.reset_action_configuration.as_ref()
     }
 }
+impl CustomerAction {
+    /// Creates a new builder-style object to manufacture [`CustomerAction`](crate::model::CustomerAction).
+    pub fn builder() -> crate::model::customer_action::Builder {
+        crate::model::customer_action::Builder::default()
+    }
+}
+
 /// See [`CustomerAction`](crate::model::CustomerAction).
 pub mod customer_action {
     
@@ -1615,12 +1633,6 @@ pub mod customer_action {
     
     
 }
-impl CustomerAction {
-    /// Creates a new builder-style object to manufacture [`CustomerAction`](crate::model::CustomerAction).
-    pub fn builder() -> crate::model::customer_action::Builder {
-        crate::model::customer_action::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of a reset action.</p>
 #[non_exhaustive]
@@ -1636,6 +1648,13 @@ impl ResetActionConfiguration {
         self.note.as_deref()
     }
 }
+impl ResetActionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
+    pub fn builder() -> crate::model::reset_action_configuration::Builder {
+        crate::model::reset_action_configuration::Builder::default()
+    }
+}
+
 /// See [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
 pub mod reset_action_configuration {
     
@@ -1666,12 +1685,6 @@ pub mod reset_action_configuration {
     
     
 }
-impl ResetActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
-    pub fn builder() -> crate::model::reset_action_configuration::Builder {
-        crate::model::reset_action_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of an acknowledge action.</p>
 #[non_exhaustive]
@@ -1687,6 +1700,13 @@ impl AcknowledgeActionConfiguration {
         self.note.as_deref()
     }
 }
+impl AcknowledgeActionConfiguration {
+    /// Creates a new builder-style object to manufacture [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
+    pub fn builder() -> crate::model::acknowledge_action_configuration::Builder {
+        crate::model::acknowledge_action_configuration::Builder::default()
+    }
+}
+
 /// See [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
 pub mod acknowledge_action_configuration {
     
@@ -1717,12 +1737,6 @@ pub mod acknowledge_action_configuration {
     
     
 }
-impl AcknowledgeActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
-    pub fn builder() -> crate::model::acknowledge_action_configuration::Builder {
-        crate::model::acknowledge_action_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of a disable action.</p>
 #[non_exhaustive]
@@ -1738,6 +1752,13 @@ impl DisableActionConfiguration {
         self.note.as_deref()
     }
 }
+impl DisableActionConfiguration {
+    /// Creates a new builder-style object to manufacture [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
+    pub fn builder() -> crate::model::disable_action_configuration::Builder {
+        crate::model::disable_action_configuration::Builder::default()
+    }
+}
+
 /// See [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
 pub mod disable_action_configuration {
     
@@ -1768,12 +1789,6 @@ pub mod disable_action_configuration {
     
     
 }
-impl DisableActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
-    pub fn builder() -> crate::model::disable_action_configuration::Builder {
-        crate::model::disable_action_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of an enable action.</p>
 #[non_exhaustive]
@@ -1789,6 +1804,13 @@ impl EnableActionConfiguration {
         self.note.as_deref()
     }
 }
+impl EnableActionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
+    pub fn builder() -> crate::model::enable_action_configuration::Builder {
+        crate::model::enable_action_configuration::Builder::default()
+    }
+}
+
 /// See [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
 pub mod enable_action_configuration {
     
@@ -1819,12 +1841,6 @@ pub mod enable_action_configuration {
     
     
 }
-impl EnableActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
-    pub fn builder() -> crate::model::enable_action_configuration::Builder {
-        crate::model::enable_action_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of a snooze action.</p>
 #[non_exhaustive]
@@ -1847,6 +1863,13 @@ impl SnoozeActionConfiguration {
         self.note.as_deref()
     }
 }
+impl SnoozeActionConfiguration {
+    /// Creates a new builder-style object to manufacture [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
+    pub fn builder() -> crate::model::snooze_action_configuration::Builder {
+        crate::model::snooze_action_configuration::Builder::default()
+    }
+}
+
 /// See [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
 pub mod snooze_action_configuration {
     
@@ -1888,12 +1911,6 @@ pub mod snooze_action_configuration {
     }
     
     
-}
-impl SnoozeActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
-    pub fn builder() -> crate::model::snooze_action_configuration::Builder {
-        crate::model::snooze_action_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `CustomerActionName`, it is important to ensure
@@ -2007,6 +2024,13 @@ impl RuleEvaluation {
         self.simple_rule_evaluation.as_ref()
     }
 }
+impl RuleEvaluation {
+    /// Creates a new builder-style object to manufacture [`RuleEvaluation`](crate::model::RuleEvaluation).
+    pub fn builder() -> crate::model::rule_evaluation::Builder {
+        crate::model::rule_evaluation::Builder::default()
+    }
+}
+
 /// See [`RuleEvaluation`](crate::model::RuleEvaluation).
 pub mod rule_evaluation {
     
@@ -2037,12 +2061,6 @@ pub mod rule_evaluation {
     
     
 }
-impl RuleEvaluation {
-    /// Creates a new builder-style object to manufacture [`RuleEvaluation`](crate::model::RuleEvaluation).
-    pub fn builder() -> crate::model::rule_evaluation::Builder {
-        crate::model::rule_evaluation::Builder::default()
-    }
-}
 
 /// <p>Information needed to compare two values with a comparison operator.</p>
 #[non_exhaustive]
@@ -2072,6 +2090,13 @@ impl SimpleRuleEvaluation {
         self.threshold_value.as_deref()
     }
 }
+impl SimpleRuleEvaluation {
+    /// Creates a new builder-style object to manufacture [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
+    pub fn builder() -> crate::model::simple_rule_evaluation::Builder {
+        crate::model::simple_rule_evaluation::Builder::default()
+    }
+}
+
 /// See [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
 pub mod simple_rule_evaluation {
     
@@ -2125,12 +2150,6 @@ pub mod simple_rule_evaluation {
     }
     
     
-}
-impl SimpleRuleEvaluation {
-    /// Creates a new builder-style object to manufacture [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
-    pub fn builder() -> crate::model::simple_rule_evaluation::Builder {
-        crate::model::simple_rule_evaluation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
@@ -2263,6 +2282,13 @@ impl BatchUpdateDetectorErrorEntry {
         self.error_message.as_deref()
     }
 }
+impl BatchUpdateDetectorErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
+    pub fn builder() -> crate::model::batch_update_detector_error_entry::Builder {
+        crate::model::batch_update_detector_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
 pub mod batch_update_detector_error_entry {
     
@@ -2316,12 +2342,6 @@ pub mod batch_update_detector_error_entry {
     }
     
     
-}
-impl BatchUpdateDetectorErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
-    pub fn builder() -> crate::model::batch_update_detector_error_entry::Builder {
-        crate::model::batch_update_detector_error_entry::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorCode`, it is important to ensure
@@ -2456,6 +2476,13 @@ impl UpdateDetectorRequest {
         self.state.as_ref()
     }
 }
+impl UpdateDetectorRequest {
+    /// Creates a new builder-style object to manufacture [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
+    pub fn builder() -> crate::model::update_detector_request::Builder {
+        crate::model::update_detector_request::Builder::default()
+    }
+}
+
 /// See [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
 pub mod update_detector_request {
     
@@ -2522,12 +2549,6 @@ pub mod update_detector_request {
     
     
 }
-impl UpdateDetectorRequest {
-    /// Creates a new builder-style object to manufacture [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
-    pub fn builder() -> crate::model::update_detector_request::Builder {
-        crate::model::update_detector_request::Builder::default()
-    }
-}
 
 /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
 #[non_exhaustive]
@@ -2557,6 +2578,13 @@ impl DetectorStateDefinition {
         self.timers.as_deref()
     }
 }
+impl DetectorStateDefinition {
+    /// Creates a new builder-style object to manufacture [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
+    pub fn builder() -> crate::model::detector_state_definition::Builder {
+        crate::model::detector_state_definition::Builder::default()
+    }
+}
+
 /// See [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
 pub mod detector_state_definition {
     
@@ -2623,12 +2651,6 @@ pub mod detector_state_definition {
     
     
 }
-impl DetectorStateDefinition {
-    /// Creates a new builder-style object to manufacture [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
-    pub fn builder() -> crate::model::detector_state_definition::Builder {
-        crate::model::detector_state_definition::Builder::default()
-    }
-}
 
 /// <p>The new setting of a timer.</p>
 #[non_exhaustive]
@@ -2651,6 +2673,13 @@ impl TimerDefinition {
         self.seconds
     }
 }
+impl TimerDefinition {
+    /// Creates a new builder-style object to manufacture [`TimerDefinition`](crate::model::TimerDefinition).
+    pub fn builder() -> crate::model::timer_definition::Builder {
+        crate::model::timer_definition::Builder::default()
+    }
+}
+
 /// See [`TimerDefinition`](crate::model::TimerDefinition).
 pub mod timer_definition {
     
@@ -2693,12 +2722,6 @@ pub mod timer_definition {
     
     
 }
-impl TimerDefinition {
-    /// Creates a new builder-style object to manufacture [`TimerDefinition`](crate::model::TimerDefinition).
-    pub fn builder() -> crate::model::timer_definition::Builder {
-        crate::model::timer_definition::Builder::default()
-    }
-}
 
 /// <p>The new value of the variable.</p>
 #[non_exhaustive]
@@ -2721,6 +2744,13 @@ impl VariableDefinition {
         self.value.as_deref()
     }
 }
+impl VariableDefinition {
+    /// Creates a new builder-style object to manufacture [`VariableDefinition`](crate::model::VariableDefinition).
+    pub fn builder() -> crate::model::variable_definition::Builder {
+        crate::model::variable_definition::Builder::default()
+    }
+}
+
 /// See [`VariableDefinition`](crate::model::VariableDefinition).
 pub mod variable_definition {
     
@@ -2763,12 +2793,6 @@ pub mod variable_definition {
     
     
 }
-impl VariableDefinition {
-    /// Creates a new builder-style object to manufacture [`VariableDefinition`](crate::model::VariableDefinition).
-    pub fn builder() -> crate::model::variable_definition::Builder {
-        crate::model::variable_definition::Builder::default()
-    }
-}
 
 /// <p>Contains error messages associated with one of the following requests:</p> 
 /// <ul> 
@@ -2805,6 +2829,13 @@ impl BatchAlarmActionErrorEntry {
         self.error_message.as_deref()
     }
 }
+impl BatchAlarmActionErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
+    pub fn builder() -> crate::model::batch_alarm_action_error_entry::Builder {
+        crate::model::batch_alarm_action_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
 pub mod batch_alarm_action_error_entry {
     
@@ -2859,12 +2890,6 @@ pub mod batch_alarm_action_error_entry {
     
     
 }
-impl BatchAlarmActionErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
-    pub fn builder() -> crate::model::batch_alarm_action_error_entry::Builder {
-        crate::model::batch_alarm_action_error_entry::Builder::default()
-    }
-}
 
 /// <p>Information needed to snooze the alarm.</p>
 #[non_exhaustive]
@@ -2908,6 +2933,13 @@ impl SnoozeAlarmActionRequest {
         self.snooze_duration
     }
 }
+impl SnoozeAlarmActionRequest {
+    /// Creates a new builder-style object to manufacture [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
+    pub fn builder() -> crate::model::snooze_alarm_action_request::Builder {
+        crate::model::snooze_alarm_action_request::Builder::default()
+    }
+}
+
 /// See [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
 pub mod snooze_alarm_action_request {
     
@@ -2986,12 +3018,6 @@ pub mod snooze_alarm_action_request {
     
     
 }
-impl SnoozeAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
-    pub fn builder() -> crate::model::snooze_alarm_action_request::Builder {
-        crate::model::snooze_alarm_action_request::Builder::default()
-    }
-}
 
 /// <p>Information needed to reset the alarm.</p>
 #[non_exhaustive]
@@ -3028,6 +3054,13 @@ impl ResetAlarmActionRequest {
         self.note.as_deref()
     }
 }
+impl ResetAlarmActionRequest {
+    /// Creates a new builder-style object to manufacture [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
+    pub fn builder() -> crate::model::reset_alarm_action_request::Builder {
+        crate::model::reset_alarm_action_request::Builder::default()
+    }
+}
+
 /// See [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
 pub mod reset_alarm_action_request {
     
@@ -3094,12 +3127,6 @@ pub mod reset_alarm_action_request {
     
     
 }
-impl ResetAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
-    pub fn builder() -> crate::model::reset_alarm_action_request::Builder {
-        crate::model::reset_alarm_action_request::Builder::default()
-    }
-}
 
 /// <p>Contains information about the errors encountered.</p>
 #[non_exhaustive]
@@ -3129,6 +3156,13 @@ impl BatchPutMessageErrorEntry {
         self.error_message.as_deref()
     }
 }
+impl BatchPutMessageErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
+    pub fn builder() -> crate::model::batch_put_message_error_entry::Builder {
+        crate::model::batch_put_message_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
 pub mod batch_put_message_error_entry {
     
@@ -3183,12 +3217,6 @@ pub mod batch_put_message_error_entry {
     
     
 }
-impl BatchPutMessageErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
-    pub fn builder() -> crate::model::batch_put_message_error_entry::Builder {
-        crate::model::batch_put_message_error_entry::Builder::default()
-    }
-}
 
 /// <p>Information about a message.</p>
 #[non_exhaustive]
@@ -3225,6 +3253,13 @@ impl Message {
         self.timestamp.as_ref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
     
@@ -3291,12 +3326,6 @@ pub mod message {
     
     
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// <p>Contains information about a timestamp.</p>
 #[non_exhaustive]
@@ -3312,6 +3341,13 @@ impl TimestampValue {
         self.time_in_millis
     }
 }
+impl TimestampValue {
+    /// Creates a new builder-style object to manufacture [`TimestampValue`](crate::model::TimestampValue).
+    pub fn builder() -> crate::model::timestamp_value::Builder {
+        crate::model::timestamp_value::Builder::default()
+    }
+}
+
 /// See [`TimestampValue`](crate::model::TimestampValue).
 pub mod timestamp_value {
     
@@ -3341,12 +3377,6 @@ pub mod timestamp_value {
     }
     
     
-}
-impl TimestampValue {
-    /// Creates a new builder-style object to manufacture [`TimestampValue`](crate::model::TimestampValue).
-    pub fn builder() -> crate::model::timestamp_value::Builder {
-        crate::model::timestamp_value::Builder::default()
-    }
 }
 
 /// <p>Information needed to enable the alarm.</p>
@@ -3384,6 +3414,13 @@ impl EnableAlarmActionRequest {
         self.note.as_deref()
     }
 }
+impl EnableAlarmActionRequest {
+    /// Creates a new builder-style object to manufacture [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
+    pub fn builder() -> crate::model::enable_alarm_action_request::Builder {
+        crate::model::enable_alarm_action_request::Builder::default()
+    }
+}
+
 /// See [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
 pub mod enable_alarm_action_request {
     
@@ -3450,12 +3487,6 @@ pub mod enable_alarm_action_request {
     
     
 }
-impl EnableAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
-    pub fn builder() -> crate::model::enable_alarm_action_request::Builder {
-        crate::model::enable_alarm_action_request::Builder::default()
-    }
-}
 
 /// <p>Information used to disable the alarm.</p>
 #[non_exhaustive]
@@ -3492,6 +3523,13 @@ impl DisableAlarmActionRequest {
         self.note.as_deref()
     }
 }
+impl DisableAlarmActionRequest {
+    /// Creates a new builder-style object to manufacture [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
+    pub fn builder() -> crate::model::disable_alarm_action_request::Builder {
+        crate::model::disable_alarm_action_request::Builder::default()
+    }
+}
+
 /// See [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
 pub mod disable_alarm_action_request {
     
@@ -3558,12 +3596,6 @@ pub mod disable_alarm_action_request {
     
     
 }
-impl DisableAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
-    pub fn builder() -> crate::model::disable_alarm_action_request::Builder {
-        crate::model::disable_alarm_action_request::Builder::default()
-    }
-}
 
 /// <p>Contains error messages associated with the deletion request.</p>
 #[non_exhaustive]
@@ -3593,6 +3625,13 @@ impl BatchDeleteDetectorErrorEntry {
         self.error_message.as_deref()
     }
 }
+impl BatchDeleteDetectorErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
+    pub fn builder() -> crate::model::batch_delete_detector_error_entry::Builder {
+        crate::model::batch_delete_detector_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
 pub mod batch_delete_detector_error_entry {
     
@@ -3647,12 +3686,6 @@ pub mod batch_delete_detector_error_entry {
     
     
 }
-impl BatchDeleteDetectorErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
-    pub fn builder() -> crate::model::batch_delete_detector_error_entry::Builder {
-        crate::model::batch_delete_detector_error_entry::Builder::default()
-    }
-}
 
 /// <p>Information used to delete the detector model.</p>
 #[non_exhaustive]
@@ -3682,6 +3715,13 @@ impl DeleteDetectorRequest {
         self.key_value.as_deref()
     }
 }
+impl DeleteDetectorRequest {
+    /// Creates a new builder-style object to manufacture [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
+    pub fn builder() -> crate::model::delete_detector_request::Builder {
+        crate::model::delete_detector_request::Builder::default()
+    }
+}
+
 /// See [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
 pub mod delete_detector_request {
     
@@ -3736,12 +3776,6 @@ pub mod delete_detector_request {
     
     
 }
-impl DeleteDetectorRequest {
-    /// Creates a new builder-style object to manufacture [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
-    pub fn builder() -> crate::model::delete_detector_request::Builder {
-        crate::model::delete_detector_request::Builder::default()
-    }
-}
 
 /// <p>Information needed to acknowledge the alarm.</p>
 #[non_exhaustive]
@@ -3778,6 +3812,13 @@ impl AcknowledgeAlarmActionRequest {
         self.note.as_deref()
     }
 }
+impl AcknowledgeAlarmActionRequest {
+    /// Creates a new builder-style object to manufacture [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
+    pub fn builder() -> crate::model::acknowledge_alarm_action_request::Builder {
+        crate::model::acknowledge_alarm_action_request::Builder::default()
+    }
+}
+
 /// See [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
 pub mod acknowledge_alarm_action_request {
     
@@ -3843,11 +3884,5 @@ pub mod acknowledge_alarm_action_request {
     }
     
     
-}
-impl AcknowledgeAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
-    pub fn builder() -> crate::model::acknowledge_alarm_action_request::Builder {
-        crate::model::acknowledge_alarm_action_request::Builder::default()
-    }
 }
 

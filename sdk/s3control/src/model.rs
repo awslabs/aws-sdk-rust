@@ -256,6 +256,13 @@ impl MultiRegionAccessPointRoute {
         self.traffic_dial_percentage
     }
 }
+impl MultiRegionAccessPointRoute {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
+    pub fn builder() -> crate::model::multi_region_access_point_route::Builder {
+        crate::model::multi_region_access_point_route::Builder::default()
+    }
+}
+
 /// See [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
 pub mod multi_region_access_point_route {
     
@@ -318,12 +325,6 @@ pub mod multi_region_access_point_route {
     
     
 }
-impl MultiRegionAccessPointRoute {
-    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRoute`](crate::model::MultiRegionAccessPointRoute).
-    pub fn builder() -> crate::model::multi_region_access_point_route::Builder {
-        crate::model::multi_region_access_point_route::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -346,6 +347,13 @@ impl StorageLensTag {
         self.value.as_deref()
     }
 }
+impl StorageLensTag {
+    /// Creates a new builder-style object to manufacture [`StorageLensTag`](crate::model::StorageLensTag).
+    pub fn builder() -> crate::model::storage_lens_tag::Builder {
+        crate::model::storage_lens_tag::Builder::default()
+    }
+}
+
 /// See [`StorageLensTag`](crate::model::StorageLensTag).
 pub mod storage_lens_tag {
     
@@ -387,12 +395,6 @@ pub mod storage_lens_tag {
     }
     
     
-}
-impl StorageLensTag {
-    /// Creates a new builder-style object to manufacture [`StorageLensTag`](crate::model::StorageLensTag).
-    pub fn builder() -> crate::model::storage_lens_tag::Builder {
-        crate::model::storage_lens_tag::Builder::default()
-    }
 }
 
 /// <p>A container for the Amazon S3 Storage Lens configuration.</p>
@@ -458,6 +460,13 @@ impl StorageLensConfiguration {
         self.storage_lens_arn.as_deref()
     }
 }
+impl StorageLensConfiguration {
+    /// Creates a new builder-style object to manufacture [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
+    pub fn builder() -> crate::model::storage_lens_configuration::Builder {
+        crate::model::storage_lens_configuration::Builder::default()
+    }
+}
+
 /// See [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
 pub mod storage_lens_configuration {
     
@@ -573,12 +582,6 @@ pub mod storage_lens_configuration {
     
     
 }
-impl StorageLensConfiguration {
-    /// Creates a new builder-style object to manufacture [`StorageLensConfiguration`](crate::model::StorageLensConfiguration).
-    pub fn builder() -> crate::model::storage_lens_configuration::Builder {
-        crate::model::storage_lens_configuration::Builder::default()
-    }
-}
 
 /// <p>The Amazon Web Services organization for your S3 Storage Lens.</p>
 #[non_exhaustive]
@@ -594,6 +597,13 @@ impl StorageLensAwsOrg {
         self.arn.as_deref()
     }
 }
+impl StorageLensAwsOrg {
+    /// Creates a new builder-style object to manufacture [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
+    pub fn builder() -> crate::model::storage_lens_aws_org::Builder {
+        crate::model::storage_lens_aws_org::Builder::default()
+    }
+}
+
 /// See [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
 pub mod storage_lens_aws_org {
     
@@ -624,12 +634,6 @@ pub mod storage_lens_aws_org {
     
     
 }
-impl StorageLensAwsOrg {
-    /// Creates a new builder-style object to manufacture [`StorageLensAwsOrg`](crate::model::StorageLensAwsOrg).
-    pub fn builder() -> crate::model::storage_lens_aws_org::Builder {
-        crate::model::storage_lens_aws_org::Builder::default()
-    }
-}
 
 /// <p>A container to specify the properties of your S3 Storage Lens metrics export, including the destination, schema, and format.</p>
 #[non_exhaustive]
@@ -656,6 +660,13 @@ impl StorageLensDataExport {
         self.cloud_watch_metrics.as_ref()
     }
 }
+impl StorageLensDataExport {
+    /// Creates a new builder-style object to manufacture [`StorageLensDataExport`](crate::model::StorageLensDataExport).
+    pub fn builder() -> crate::model::storage_lens_data_export::Builder {
+        crate::model::storage_lens_data_export::Builder::default()
+    }
+}
+
 /// See [`StorageLensDataExport`](crate::model::StorageLensDataExport).
 pub mod storage_lens_data_export {
     
@@ -702,12 +713,6 @@ pub mod storage_lens_data_export {
     
     
 }
-impl StorageLensDataExport {
-    /// Creates a new builder-style object to manufacture [`StorageLensDataExport`](crate::model::StorageLensDataExport).
-    pub fn builder() -> crate::model::storage_lens_data_export::Builder {
-        crate::model::storage_lens_data_export::Builder::default()
-    }
-}
 
 /// <p>A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.</p> 
 /// <p>For more information about publishing S3 Storage Lens metrics to CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_view_metrics_cloudwatch.html">Monitor S3 Storage Lens metrics in CloudWatch</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -724,6 +729,13 @@ impl CloudWatchMetrics {
         self.is_enabled
     }
 }
+impl CloudWatchMetrics {
+    /// Creates a new builder-style object to manufacture [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
+    pub fn builder() -> crate::model::cloud_watch_metrics::Builder {
+        crate::model::cloud_watch_metrics::Builder::default()
+    }
+}
+
 /// See [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
 pub mod cloud_watch_metrics {
     
@@ -754,12 +766,6 @@ pub mod cloud_watch_metrics {
     }
     
     
-}
-impl CloudWatchMetrics {
-    /// Creates a new builder-style object to manufacture [`CloudWatchMetrics`](crate::model::CloudWatchMetrics).
-    pub fn builder() -> crate::model::cloud_watch_metrics::Builder {
-        crate::model::cloud_watch_metrics::Builder::default()
-    }
 }
 
 /// <p>A container for the bucket where the Amazon S3 Storage Lens metrics export files are located.</p>
@@ -811,6 +817,13 @@ impl S3BucketDestination {
         self.encryption.as_ref()
     }
 }
+impl S3BucketDestination {
+    /// Creates a new builder-style object to manufacture [`S3BucketDestination`](crate::model::S3BucketDestination).
+    pub fn builder() -> crate::model::s3_bucket_destination::Builder {
+        crate::model::s3_bucket_destination::Builder::default()
+    }
+}
+
 /// See [`S3BucketDestination`](crate::model::S3BucketDestination).
 pub mod s3_bucket_destination {
     
@@ -901,12 +914,6 @@ pub mod s3_bucket_destination {
     
     
 }
-impl S3BucketDestination {
-    /// Creates a new builder-style object to manufacture [`S3BucketDestination`](crate::model::S3BucketDestination).
-    pub fn builder() -> crate::model::s3_bucket_destination::Builder {
-        crate::model::s3_bucket_destination::Builder::default()
-    }
-}
 
 /// <p>A container for the encryption of the S3 Storage Lens metrics exports.</p>
 #[non_exhaustive]
@@ -929,6 +936,13 @@ impl StorageLensDataExportEncryption {
         self.ssekms.as_ref()
     }
 }
+impl StorageLensDataExportEncryption {
+    /// Creates a new builder-style object to manufacture [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
+    pub fn builder() -> crate::model::storage_lens_data_export_encryption::Builder {
+        crate::model::storage_lens_data_export_encryption::Builder::default()
+    }
+}
+
 /// See [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
 pub mod storage_lens_data_export_encryption {
     
@@ -971,12 +985,6 @@ pub mod storage_lens_data_export_encryption {
     
     
 }
-impl StorageLensDataExportEncryption {
-    /// Creates a new builder-style object to manufacture [`StorageLensDataExportEncryption`](crate::model::StorageLensDataExportEncryption).
-    pub fn builder() -> crate::model::storage_lens_data_export_encryption::Builder {
-        crate::model::storage_lens_data_export_encryption::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -992,6 +1000,13 @@ impl Ssekms {
         self.key_id.as_deref()
     }
 }
+impl Ssekms {
+    /// Creates a new builder-style object to manufacture [`Ssekms`](crate::model::Ssekms).
+    pub fn builder() -> crate::model::ssekms::Builder {
+        crate::model::ssekms::Builder::default()
+    }
+}
+
 /// See [`Ssekms`](crate::model::Ssekms).
 pub mod ssekms {
     
@@ -1022,18 +1037,19 @@ pub mod ssekms {
     
     
 }
-impl Ssekms {
-    /// Creates a new builder-style object to manufacture [`Ssekms`](crate::model::Ssekms).
-    pub fn builder() -> crate::model::ssekms::Builder {
-        crate::model::ssekms::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sses3  {
 }
+impl Sses3 {
+    /// Creates a new builder-style object to manufacture [`Sses3`](crate::model::Sses3).
+    pub fn builder() -> crate::model::sses3::Builder {
+        crate::model::sses3::Builder::default()
+    }
+}
+
 /// See [`Sses3`](crate::model::Sses3).
 pub mod sses3 {
     
@@ -1051,12 +1067,6 @@ pub mod sses3 {
     }
     
     
-}
-impl Sses3 {
-    /// Creates a new builder-style object to manufacture [`Sses3`](crate::model::Sses3).
-    pub fn builder() -> crate::model::sses3::Builder {
-        crate::model::sses3::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OutputSchemaVersion`, it is important to ensure
@@ -1239,6 +1249,13 @@ impl Exclude {
         self.regions.as_deref()
     }
 }
+impl Exclude {
+    /// Creates a new builder-style object to manufacture [`Exclude`](crate::model::Exclude).
+    pub fn builder() -> crate::model::exclude::Builder {
+        crate::model::exclude::Builder::default()
+    }
+}
+
 /// See [`Exclude`](crate::model::Exclude).
 pub mod exclude {
     
@@ -1293,12 +1310,6 @@ pub mod exclude {
     
     
 }
-impl Exclude {
-    /// Creates a new builder-style object to manufacture [`Exclude`](crate::model::Exclude).
-    pub fn builder() -> crate::model::exclude::Builder {
-        crate::model::exclude::Builder::default()
-    }
-}
 
 /// <p>A container for what Amazon S3 Storage Lens configuration includes.</p>
 #[non_exhaustive]
@@ -1321,6 +1332,13 @@ impl Include {
         self.regions.as_deref()
     }
 }
+impl Include {
+    /// Creates a new builder-style object to manufacture [`Include`](crate::model::Include).
+    pub fn builder() -> crate::model::include::Builder {
+        crate::model::include::Builder::default()
+    }
+}
+
 /// See [`Include`](crate::model::Include).
 pub mod include {
     
@@ -1375,12 +1393,6 @@ pub mod include {
     
     
 }
-impl Include {
-    /// Creates a new builder-style object to manufacture [`Include`](crate::model::Include).
-    pub fn builder() -> crate::model::include::Builder {
-        crate::model::include::Builder::default()
-    }
-}
 
 /// <p>A container for the account-level Amazon S3 Storage Lens configuration.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1425,6 +1437,13 @@ impl AccountLevel {
         self.detailed_status_codes_metrics.as_ref()
     }
 }
+impl AccountLevel {
+    /// Creates a new builder-style object to manufacture [`AccountLevel`](crate::model::AccountLevel).
+    pub fn builder() -> crate::model::account_level::Builder {
+        crate::model::account_level::Builder::default()
+    }
+}
+
 /// See [`AccountLevel`](crate::model::AccountLevel).
 pub mod account_level {
     
@@ -1503,12 +1522,6 @@ pub mod account_level {
     
     
 }
-impl AccountLevel {
-    /// Creates a new builder-style object to manufacture [`AccountLevel`](crate::model::AccountLevel).
-    pub fn builder() -> crate::model::account_level::Builder {
-        crate::model::account_level::Builder::default()
-    }
-}
 
 /// <p>The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>, <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. </p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1525,6 +1538,13 @@ impl DetailedStatusCodesMetrics {
         self.is_enabled
     }
 }
+impl DetailedStatusCodesMetrics {
+    /// Creates a new builder-style object to manufacture [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
+    pub fn builder() -> crate::model::detailed_status_codes_metrics::Builder {
+        crate::model::detailed_status_codes_metrics::Builder::default()
+    }
+}
+
 /// See [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
 pub mod detailed_status_codes_metrics {
     
@@ -1556,12 +1576,6 @@ pub mod detailed_status_codes_metrics {
     
     
 }
-impl DetailedStatusCodesMetrics {
-    /// Creates a new builder-style object to manufacture [`DetailedStatusCodesMetrics`](crate::model::DetailedStatusCodesMetrics).
-    pub fn builder() -> crate::model::detailed_status_codes_metrics::Builder {
-        crate::model::detailed_status_codes_metrics::Builder::default()
-    }
-}
 
 /// <p>The container element for Amazon S3 Storage Lens advanced data-protection metrics. Advanced data-protection metrics provide insights that you can use to perform audits and protect your data, for example replication rule counts within and across Regions.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1578,6 +1592,13 @@ impl AdvancedDataProtectionMetrics {
         self.is_enabled
     }
 }
+impl AdvancedDataProtectionMetrics {
+    /// Creates a new builder-style object to manufacture [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
+    pub fn builder() -> crate::model::advanced_data_protection_metrics::Builder {
+        crate::model::advanced_data_protection_metrics::Builder::default()
+    }
+}
+
 /// See [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
 pub mod advanced_data_protection_metrics {
     
@@ -1609,12 +1630,6 @@ pub mod advanced_data_protection_metrics {
     
     
 }
-impl AdvancedDataProtectionMetrics {
-    /// Creates a new builder-style object to manufacture [`AdvancedDataProtectionMetrics`](crate::model::AdvancedDataProtectionMetrics).
-    pub fn builder() -> crate::model::advanced_data_protection_metrics::Builder {
-        crate::model::advanced_data_protection_metrics::Builder::default()
-    }
-}
 
 /// <p>The container element for Amazon S3 Storage Lens advanced cost-optimization metrics. Advanced cost-optimization metrics provide insights that you can use to manage and optimize your storage costs, for example, lifecycle rule counts for transitions, expirations, and incomplete multipart uploads.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -1631,6 +1646,13 @@ impl AdvancedCostOptimizationMetrics {
         self.is_enabled
     }
 }
+impl AdvancedCostOptimizationMetrics {
+    /// Creates a new builder-style object to manufacture [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
+    pub fn builder() -> crate::model::advanced_cost_optimization_metrics::Builder {
+        crate::model::advanced_cost_optimization_metrics::Builder::default()
+    }
+}
+
 /// See [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
 pub mod advanced_cost_optimization_metrics {
     
@@ -1661,12 +1683,6 @@ pub mod advanced_cost_optimization_metrics {
     }
     
     
-}
-impl AdvancedCostOptimizationMetrics {
-    /// Creates a new builder-style object to manufacture [`AdvancedCostOptimizationMetrics`](crate::model::AdvancedCostOptimizationMetrics).
-    pub fn builder() -> crate::model::advanced_cost_optimization_metrics::Builder {
-        crate::model::advanced_cost_optimization_metrics::Builder::default()
-    }
 }
 
 /// <p>A container for the bucket-level configuration for Amazon S3 Storage Lens.</p> 
@@ -1712,6 +1728,13 @@ impl BucketLevel {
         self.detailed_status_codes_metrics.as_ref()
     }
 }
+impl BucketLevel {
+    /// Creates a new builder-style object to manufacture [`BucketLevel`](crate::model::BucketLevel).
+    pub fn builder() -> crate::model::bucket_level::Builder {
+        crate::model::bucket_level::Builder::default()
+    }
+}
+
 /// See [`BucketLevel`](crate::model::BucketLevel).
 pub mod bucket_level {
     
@@ -1790,12 +1813,6 @@ pub mod bucket_level {
     
     
 }
-impl BucketLevel {
-    /// Creates a new builder-style object to manufacture [`BucketLevel`](crate::model::BucketLevel).
-    pub fn builder() -> crate::model::bucket_level::Builder {
-        crate::model::bucket_level::Builder::default()
-    }
-}
 
 /// <p>A container for the prefix-level configuration.</p>
 #[non_exhaustive]
@@ -1811,6 +1828,13 @@ impl PrefixLevel {
         self.storage_metrics.as_ref()
     }
 }
+impl PrefixLevel {
+    /// Creates a new builder-style object to manufacture [`PrefixLevel`](crate::model::PrefixLevel).
+    pub fn builder() -> crate::model::prefix_level::Builder {
+        crate::model::prefix_level::Builder::default()
+    }
+}
+
 /// See [`PrefixLevel`](crate::model::PrefixLevel).
 pub mod prefix_level {
     
@@ -1841,12 +1865,6 @@ pub mod prefix_level {
     
     
 }
-impl PrefixLevel {
-    /// Creates a new builder-style object to manufacture [`PrefixLevel`](crate::model::PrefixLevel).
-    pub fn builder() -> crate::model::prefix_level::Builder {
-        crate::model::prefix_level::Builder::default()
-    }
-}
 
 /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
 #[non_exhaustive]
@@ -1869,6 +1887,13 @@ impl PrefixLevelStorageMetrics {
         self.selection_criteria.as_ref()
     }
 }
+impl PrefixLevelStorageMetrics {
+    /// Creates a new builder-style object to manufacture [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
+    pub fn builder() -> crate::model::prefix_level_storage_metrics::Builder {
+        crate::model::prefix_level_storage_metrics::Builder::default()
+    }
+}
+
 /// See [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
 pub mod prefix_level_storage_metrics {
     
@@ -1912,12 +1937,6 @@ pub mod prefix_level_storage_metrics {
     
     
 }
-impl PrefixLevelStorageMetrics {
-    /// Creates a new builder-style object to manufacture [`PrefixLevelStorageMetrics`](crate::model::PrefixLevelStorageMetrics).
-    pub fn builder() -> crate::model::prefix_level_storage_metrics::Builder {
-        crate::model::prefix_level_storage_metrics::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1951,6 +1970,13 @@ impl SelectionCriteria {
         self.min_storage_bytes_percentage
     }
 }
+impl SelectionCriteria {
+    /// Creates a new builder-style object to manufacture [`SelectionCriteria`](crate::model::SelectionCriteria).
+    pub fn builder() -> crate::model::selection_criteria::Builder {
+        crate::model::selection_criteria::Builder::default()
+    }
+}
+
 /// See [`SelectionCriteria`](crate::model::SelectionCriteria).
 pub mod selection_criteria {
     
@@ -2011,12 +2037,6 @@ pub mod selection_criteria {
     
     
 }
-impl SelectionCriteria {
-    /// Creates a new builder-style object to manufacture [`SelectionCriteria`](crate::model::SelectionCriteria).
-    pub fn builder() -> crate::model::selection_criteria::Builder {
-        crate::model::selection_criteria::Builder::default()
-    }
-}
 
 /// <p>The container element for Amazon S3 Storage Lens activity metrics. Activity metrics show details about how your storage is requested, such as requests (for example, All requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.</p> 
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -2033,6 +2053,13 @@ impl ActivityMetrics {
         self.is_enabled
     }
 }
+impl ActivityMetrics {
+    /// Creates a new builder-style object to manufacture [`ActivityMetrics`](crate::model::ActivityMetrics).
+    pub fn builder() -> crate::model::activity_metrics::Builder {
+        crate::model::activity_metrics::Builder::default()
+    }
+}
+
 /// See [`ActivityMetrics`](crate::model::ActivityMetrics).
 pub mod activity_metrics {
     
@@ -2063,12 +2090,6 @@ pub mod activity_metrics {
     }
     
     
-}
-impl ActivityMetrics {
-    /// Creates a new builder-style object to manufacture [`ActivityMetrics`](crate::model::ActivityMetrics).
-    pub fn builder() -> crate::model::activity_metrics::Builder {
-        crate::model::activity_metrics::Builder::default()
-    }
 }
 
 /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
@@ -2133,6 +2154,13 @@ impl PublicAccessBlockConfiguration {
         self.restrict_public_buckets
     }
 }
+impl PublicAccessBlockConfiguration {
+    /// Creates a new builder-style object to manufacture [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
+    pub fn builder() -> crate::model::public_access_block_configuration::Builder {
+        crate::model::public_access_block_configuration::Builder::default()
+    }
+}
+
 /// See [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
 pub mod public_access_block_configuration {
     
@@ -2229,12 +2257,6 @@ pub mod public_access_block_configuration {
     
     
 }
-impl PublicAccessBlockConfiguration {
-    /// Creates a new builder-style object to manufacture [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration).
-    pub fn builder() -> crate::model::public_access_block_configuration::Builder {
-        crate::model::public_access_block_configuration::Builder::default()
-    }
-}
 
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
 #[non_exhaustive]
@@ -2257,6 +2279,13 @@ impl PutMultiRegionAccessPointPolicyInput {
         self.policy.as_deref()
     }
 }
+impl PutMultiRegionAccessPointPolicyInput {
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
+    pub fn builder() -> crate::model::put_multi_region_access_point_policy_input::Builder {
+        crate::model::put_multi_region_access_point_policy_input::Builder::default()
+    }
+}
+
 /// See [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
 pub mod put_multi_region_access_point_policy_input {
     
@@ -2299,12 +2328,6 @@ pub mod put_multi_region_access_point_policy_input {
     
     
 }
-impl PutMultiRegionAccessPointPolicyInput {
-    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::model::PutMultiRegionAccessPointPolicyInput).
-    pub fn builder() -> crate::model::put_multi_region_access_point_policy_input::Builder {
-        crate::model::put_multi_region_access_point_policy_input::Builder::default()
-    }
-}
 
 /// <p>A container for a key-value name pair.</p>
 #[non_exhaustive]
@@ -2327,6 +2350,13 @@ impl S3Tag {
         self.value.as_deref()
     }
 }
+impl S3Tag {
+    /// Creates a new builder-style object to manufacture [`S3Tag`](crate::model::S3Tag).
+    pub fn builder() -> crate::model::s3_tag::Builder {
+        crate::model::s3_tag::Builder::default()
+    }
+}
+
 /// See [`S3Tag`](crate::model::S3Tag).
 pub mod s3_tag {
     
@@ -2369,12 +2399,6 @@ pub mod s3_tag {
     
     
 }
-impl S3Tag {
-    /// Creates a new builder-style object to manufacture [`S3Tag`](crate::model::S3Tag).
-    pub fn builder() -> crate::model::s3_tag::Builder {
-        crate::model::s3_tag::Builder::default()
-    }
-}
 
 /// <p>Describes the versioning state of an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html">PutBucketVersioning</a>.</p>
 #[non_exhaustive]
@@ -2397,6 +2421,13 @@ impl VersioningConfiguration {
         self.status.as_ref()
     }
 }
+impl VersioningConfiguration {
+    /// Creates a new builder-style object to manufacture [`VersioningConfiguration`](crate::model::VersioningConfiguration).
+    pub fn builder() -> crate::model::versioning_configuration::Builder {
+        crate::model::versioning_configuration::Builder::default()
+    }
+}
+
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
 pub mod versioning_configuration {
     
@@ -2438,12 +2469,6 @@ pub mod versioning_configuration {
     }
     
     
-}
-impl VersioningConfiguration {
-    /// Creates a new builder-style object to manufacture [`VersioningConfiguration`](crate::model::VersioningConfiguration).
-    pub fn builder() -> crate::model::versioning_configuration::Builder {
-        crate::model::versioning_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BucketVersioningStatus`, it is important to ensure
@@ -2624,6 +2649,13 @@ impl Tagging {
         self.tag_set.as_deref()
     }
 }
+impl Tagging {
+    /// Creates a new builder-style object to manufacture [`Tagging`](crate::model::Tagging).
+    pub fn builder() -> crate::model::tagging::Builder {
+        crate::model::tagging::Builder::default()
+    }
+}
+
 /// See [`Tagging`](crate::model::Tagging).
 pub mod tagging {
     
@@ -2660,12 +2692,6 @@ pub mod tagging {
     
     
 }
-impl Tagging {
-    /// Creates a new builder-style object to manufacture [`Tagging`](crate::model::Tagging).
-    pub fn builder() -> crate::model::tagging::Builder {
-        crate::model::tagging::Builder::default()
-    }
-}
 
 /// <p>The container for the Outposts bucket lifecycle configuration.</p>
 #[non_exhaustive]
@@ -2681,6 +2707,13 @@ impl LifecycleConfiguration {
         self.rules.as_deref()
     }
 }
+impl LifecycleConfiguration {
+    /// Creates a new builder-style object to manufacture [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
+    pub fn builder() -> crate::model::lifecycle_configuration::Builder {
+        crate::model::lifecycle_configuration::Builder::default()
+    }
+}
+
 /// See [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
 pub mod lifecycle_configuration {
     
@@ -2716,12 +2749,6 @@ pub mod lifecycle_configuration {
     }
     
     
-}
-impl LifecycleConfiguration {
-    /// Creates a new builder-style object to manufacture [`LifecycleConfiguration`](crate::model::LifecycleConfiguration).
-    pub fn builder() -> crate::model::lifecycle_configuration::Builder {
-        crate::model::lifecycle_configuration::Builder::default()
-    }
 }
 
 /// <p>The container for the Outposts bucket lifecycle rule.</p>
@@ -2795,6 +2822,13 @@ impl LifecycleRule {
         self.abort_incomplete_multipart_upload.as_ref()
     }
 }
+impl LifecycleRule {
+    /// Creates a new builder-style object to manufacture [`LifecycleRule`](crate::model::LifecycleRule).
+    pub fn builder() -> crate::model::lifecycle_rule::Builder {
+        crate::model::lifecycle_rule::Builder::default()
+    }
+}
+
 /// See [`LifecycleRule`](crate::model::LifecycleRule).
 pub mod lifecycle_rule {
     
@@ -2929,12 +2963,6 @@ pub mod lifecycle_rule {
     
     
 }
-impl LifecycleRule {
-    /// Creates a new builder-style object to manufacture [`LifecycleRule`](crate::model::LifecycleRule).
-    pub fn builder() -> crate::model::lifecycle_rule::Builder {
-        crate::model::lifecycle_rule::Builder::default()
-    }
-}
 
 /// <p>The container for abort incomplete multipart upload</p>
 #[non_exhaustive]
@@ -2950,6 +2978,13 @@ impl AbortIncompleteMultipartUpload {
         self.days_after_initiation
     }
 }
+impl AbortIncompleteMultipartUpload {
+    /// Creates a new builder-style object to manufacture [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
+    pub fn builder() -> crate::model::abort_incomplete_multipart_upload::Builder {
+        crate::model::abort_incomplete_multipart_upload::Builder::default()
+    }
+}
+
 /// See [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
 pub mod abort_incomplete_multipart_upload {
     
@@ -2981,12 +3016,6 @@ pub mod abort_incomplete_multipart_upload {
     
     
 }
-impl AbortIncompleteMultipartUpload {
-    /// Creates a new builder-style object to manufacture [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload).
-    pub fn builder() -> crate::model::abort_incomplete_multipart_upload::Builder {
-        crate::model::abort_incomplete_multipart_upload::Builder::default()
-    }
-}
 
 /// <p>The container of the noncurrent version expiration.</p>
 #[non_exhaustive]
@@ -3009,6 +3038,13 @@ impl NoncurrentVersionExpiration {
         self.newer_noncurrent_versions
     }
 }
+impl NoncurrentVersionExpiration {
+    /// Creates a new builder-style object to manufacture [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
+    pub fn builder() -> crate::model::noncurrent_version_expiration::Builder {
+        crate::model::noncurrent_version_expiration::Builder::default()
+    }
+}
+
 /// See [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
 pub mod noncurrent_version_expiration {
     
@@ -3052,12 +3088,6 @@ pub mod noncurrent_version_expiration {
     
     
 }
-impl NoncurrentVersionExpiration {
-    /// Creates a new builder-style object to manufacture [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration).
-    pub fn builder() -> crate::model::noncurrent_version_expiration::Builder {
-        crate::model::noncurrent_version_expiration::Builder::default()
-    }
-}
 
 /// <p>The container for the noncurrent version transition.</p>
 #[non_exhaustive]
@@ -3080,6 +3110,13 @@ impl NoncurrentVersionTransition {
         self.storage_class.as_ref()
     }
 }
+impl NoncurrentVersionTransition {
+    /// Creates a new builder-style object to manufacture [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
+    pub fn builder() -> crate::model::noncurrent_version_transition::Builder {
+        crate::model::noncurrent_version_transition::Builder::default()
+    }
+}
+
 /// See [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
 pub mod noncurrent_version_transition {
     
@@ -3122,12 +3159,6 @@ pub mod noncurrent_version_transition {
     }
     
     
-}
-impl NoncurrentVersionTransition {
-    /// Creates a new builder-style object to manufacture [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition).
-    pub fn builder() -> crate::model::noncurrent_version_transition::Builder {
-        crate::model::noncurrent_version_transition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `TransitionStorageClass`, it is important to ensure
@@ -3255,6 +3286,13 @@ impl Transition {
         self.storage_class.as_ref()
     }
 }
+impl Transition {
+    /// Creates a new builder-style object to manufacture [`Transition`](crate::model::Transition).
+    pub fn builder() -> crate::model::transition::Builder {
+        crate::model::transition::Builder::default()
+    }
+}
+
 /// See [`Transition`](crate::model::Transition).
 pub mod transition {
     
@@ -3309,12 +3347,6 @@ pub mod transition {
     }
     
     
-}
-impl Transition {
-    /// Creates a new builder-style object to manufacture [`Transition`](crate::model::Transition).
-    pub fn builder() -> crate::model::transition::Builder {
-        crate::model::transition::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ExpirationStatus`, it is important to ensure
@@ -3445,6 +3477,13 @@ impl LifecycleRuleFilter {
         self.object_size_less_than
     }
 }
+impl LifecycleRuleFilter {
+    /// Creates a new builder-style object to manufacture [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
+    pub fn builder() -> crate::model::lifecycle_rule_filter::Builder {
+        crate::model::lifecycle_rule_filter::Builder::default()
+    }
+}
+
 /// See [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
 pub mod lifecycle_rule_filter {
     
@@ -3527,12 +3566,6 @@ pub mod lifecycle_rule_filter {
     
     
 }
-impl LifecycleRuleFilter {
-    /// Creates a new builder-style object to manufacture [`LifecycleRuleFilter`](crate::model::LifecycleRuleFilter).
-    pub fn builder() -> crate::model::lifecycle_rule_filter::Builder {
-        crate::model::lifecycle_rule_filter::Builder::default()
-    }
-}
 
 /// <p>The container for the Outposts bucket lifecycle rule and operator.</p>
 #[non_exhaustive]
@@ -3569,6 +3602,13 @@ impl LifecycleRuleAndOperator {
         self.object_size_less_than
     }
 }
+impl LifecycleRuleAndOperator {
+    /// Creates a new builder-style object to manufacture [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
+    pub fn builder() -> crate::model::lifecycle_rule_and_operator::Builder {
+        crate::model::lifecycle_rule_and_operator::Builder::default()
+    }
+}
+
 /// See [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
 pub mod lifecycle_rule_and_operator {
     
@@ -3641,12 +3681,6 @@ pub mod lifecycle_rule_and_operator {
     
     
 }
-impl LifecycleRuleAndOperator {
-    /// Creates a new builder-style object to manufacture [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator).
-    pub fn builder() -> crate::model::lifecycle_rule_and_operator::Builder {
-        crate::model::lifecycle_rule_and_operator::Builder::default()
-    }
-}
 
 /// <p>The container of the Outposts bucket lifecycle expiration.</p>
 #[non_exhaustive]
@@ -3676,6 +3710,13 @@ impl LifecycleExpiration {
         self.expired_object_delete_marker
     }
 }
+impl LifecycleExpiration {
+    /// Creates a new builder-style object to manufacture [`LifecycleExpiration`](crate::model::LifecycleExpiration).
+    pub fn builder() -> crate::model::lifecycle_expiration::Builder {
+        crate::model::lifecycle_expiration::Builder::default()
+    }
+}
+
 /// See [`LifecycleExpiration`](crate::model::LifecycleExpiration).
 pub mod lifecycle_expiration {
     
@@ -3732,12 +3773,6 @@ pub mod lifecycle_expiration {
     
     
 }
-impl LifecycleExpiration {
-    /// Creates a new builder-style object to manufacture [`LifecycleExpiration`](crate::model::LifecycleExpiration).
-    pub fn builder() -> crate::model::lifecycle_expiration::Builder {
-        crate::model::lifecycle_expiration::Builder::default()
-    }
-}
 
 /// <p>A configuration used when creating an Object Lambda Access Point.</p>
 #[non_exhaustive]
@@ -3774,6 +3809,13 @@ impl ObjectLambdaConfiguration {
         self.transformation_configurations.as_deref()
     }
 }
+impl ObjectLambdaConfiguration {
+    /// Creates a new builder-style object to manufacture [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
+    pub fn builder() -> crate::model::object_lambda_configuration::Builder {
+        crate::model::object_lambda_configuration::Builder::default()
+    }
+}
+
 /// See [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
 pub mod object_lambda_configuration {
     
@@ -3853,12 +3895,6 @@ pub mod object_lambda_configuration {
     
     
 }
-impl ObjectLambdaConfiguration {
-    /// Creates a new builder-style object to manufacture [`ObjectLambdaConfiguration`](crate::model::ObjectLambdaConfiguration).
-    pub fn builder() -> crate::model::object_lambda_configuration::Builder {
-        crate::model::object_lambda_configuration::Builder::default()
-    }
-}
 
 /// <p>A configuration used when creating an Object Lambda Access Point transformation.</p>
 #[non_exhaustive]
@@ -3881,6 +3917,13 @@ impl ObjectLambdaTransformationConfiguration {
         self.content_transformation.as_ref()
     }
 }
+impl ObjectLambdaTransformationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
+    pub fn builder() -> crate::model::object_lambda_transformation_configuration::Builder {
+        crate::model::object_lambda_transformation_configuration::Builder::default()
+    }
+}
+
 /// See [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
 pub mod object_lambda_transformation_configuration {
     
@@ -3928,12 +3971,6 @@ pub mod object_lambda_transformation_configuration {
     }
     
     
-}
-impl ObjectLambdaTransformationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ObjectLambdaTransformationConfiguration`](crate::model::ObjectLambdaTransformationConfiguration).
-    pub fn builder() -> crate::model::object_lambda_transformation_configuration::Builder {
-        crate::model::object_lambda_transformation_configuration::Builder::default()
-    }
 }
 
 /// <p>A container for AwsLambdaTransformation.</p>
@@ -3990,6 +4027,13 @@ impl AwsLambdaTransformation {
         self.function_payload.as_deref()
     }
 }
+impl AwsLambdaTransformation {
+    /// Creates a new builder-style object to manufacture [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
+    pub fn builder() -> crate::model::aws_lambda_transformation::Builder {
+        crate::model::aws_lambda_transformation::Builder::default()
+    }
+}
+
 /// See [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
 pub mod aws_lambda_transformation {
     
@@ -4031,12 +4075,6 @@ pub mod aws_lambda_transformation {
     }
     
     
-}
-impl AwsLambdaTransformation {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaTransformation`](crate::model::AwsLambdaTransformation).
-    pub fn builder() -> crate::model::aws_lambda_transformation::Builder {
-        crate::model::aws_lambda_transformation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ObjectLambdaTransformationConfigurationAction`, it is important to ensure
@@ -4258,6 +4296,13 @@ impl ListStorageLensConfigurationEntry {
         self.is_enabled
     }
 }
+impl ListStorageLensConfigurationEntry {
+    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
+    pub fn builder() -> crate::model::list_storage_lens_configuration_entry::Builder {
+        crate::model::list_storage_lens_configuration_entry::Builder::default()
+    }
+}
+
 /// See [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
 pub mod list_storage_lens_configuration_entry {
     
@@ -4325,12 +4370,6 @@ pub mod list_storage_lens_configuration_entry {
     
     
 }
-impl ListStorageLensConfigurationEntry {
-    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationEntry`](crate::model::ListStorageLensConfigurationEntry).
-    pub fn builder() -> crate::model::list_storage_lens_configuration_entry::Builder {
-        crate::model::list_storage_lens_configuration_entry::Builder::default()
-    }
-}
 
 /// <p>The container for the regional bucket.</p>
 #[non_exhaustive]
@@ -4374,6 +4413,13 @@ impl RegionalBucket {
         self.outpost_id.as_deref()
     }
 }
+impl RegionalBucket {
+    /// Creates a new builder-style object to manufacture [`RegionalBucket`](crate::model::RegionalBucket).
+    pub fn builder() -> crate::model::regional_bucket::Builder {
+        crate::model::regional_bucket::Builder::default()
+    }
+}
+
 /// See [`RegionalBucket`](crate::model::RegionalBucket).
 pub mod regional_bucket {
     
@@ -4453,12 +4499,6 @@ pub mod regional_bucket {
     
     
 }
-impl RegionalBucket {
-    /// Creates a new builder-style object to manufacture [`RegionalBucket`](crate::model::RegionalBucket).
-    pub fn builder() -> crate::model::regional_bucket::Builder {
-        crate::model::regional_bucket::Builder::default()
-    }
-}
 
 /// <p>A collection of statuses for a Multi-Region Access Point in the various Regions it supports.</p>
 #[non_exhaustive]
@@ -4513,6 +4553,13 @@ impl MultiRegionAccessPointReport {
         self.regions.as_deref()
     }
 }
+impl MultiRegionAccessPointReport {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
+    pub fn builder() -> crate::model::multi_region_access_point_report::Builder {
+        crate::model::multi_region_access_point_report::Builder::default()
+    }
+}
+
 /// See [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
 pub mod multi_region_access_point_report {
     
@@ -4613,12 +4660,6 @@ pub mod multi_region_access_point_report {
     
     
 }
-impl MultiRegionAccessPointReport {
-    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointReport`](crate::model::MultiRegionAccessPointReport).
-    pub fn builder() -> crate::model::multi_region_access_point_report::Builder {
-        crate::model::multi_region_access_point_report::Builder::default()
-    }
-}
 
 /// <p>A combination of a bucket and Region that's part of a Multi-Region Access Point.</p>
 #[non_exhaustive]
@@ -4641,6 +4682,13 @@ impl RegionReport {
         self.region.as_deref()
     }
 }
+impl RegionReport {
+    /// Creates a new builder-style object to manufacture [`RegionReport`](crate::model::RegionReport).
+    pub fn builder() -> crate::model::region_report::Builder {
+        crate::model::region_report::Builder::default()
+    }
+}
+
 /// See [`RegionReport`](crate::model::RegionReport).
 pub mod region_report {
     
@@ -4682,12 +4730,6 @@ pub mod region_report {
     }
     
     
-}
-impl RegionReport {
-    /// Creates a new builder-style object to manufacture [`RegionReport`](crate::model::RegionReport).
-    pub fn builder() -> crate::model::region_report::Builder {
-        crate::model::region_report::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MultiRegionAccessPointStatus`, it is important to ensure
@@ -4855,6 +4897,13 @@ impl JobListDescriptor {
         self.progress_summary.as_ref()
     }
 }
+impl JobListDescriptor {
+    /// Creates a new builder-style object to manufacture [`JobListDescriptor`](crate::model::JobListDescriptor).
+    pub fn builder() -> crate::model::job_list_descriptor::Builder {
+        crate::model::job_list_descriptor::Builder::default()
+    }
+}
+
 /// See [`JobListDescriptor`](crate::model::JobListDescriptor).
 pub mod job_list_descriptor {
     
@@ -4970,12 +5019,6 @@ pub mod job_list_descriptor {
     
     
 }
-impl JobListDescriptor {
-    /// Creates a new builder-style object to manufacture [`JobListDescriptor`](crate::model::JobListDescriptor).
-    pub fn builder() -> crate::model::job_list_descriptor::Builder {
-        crate::model::job_list_descriptor::Builder::default()
-    }
-}
 
 /// <p>Describes the total number of tasks that the specified job has started, the number of tasks that succeeded, and the number of tasks that failed.</p>
 #[non_exhaustive]
@@ -5012,6 +5055,13 @@ impl JobProgressSummary {
         self.timers.as_ref()
     }
 }
+impl JobProgressSummary {
+    /// Creates a new builder-style object to manufacture [`JobProgressSummary`](crate::model::JobProgressSummary).
+    pub fn builder() -> crate::model::job_progress_summary::Builder {
+        crate::model::job_progress_summary::Builder::default()
+    }
+}
+
 /// See [`JobProgressSummary`](crate::model::JobProgressSummary).
 pub mod job_progress_summary {
     
@@ -5078,12 +5128,6 @@ pub mod job_progress_summary {
     
     
 }
-impl JobProgressSummary {
-    /// Creates a new builder-style object to manufacture [`JobProgressSummary`](crate::model::JobProgressSummary).
-    pub fn builder() -> crate::model::job_progress_summary::Builder {
-        crate::model::job_progress_summary::Builder::default()
-    }
-}
 
 /// <p>Provides timing details for the job.</p>
 #[non_exhaustive]
@@ -5099,6 +5143,13 @@ impl JobTimers {
         self.elapsed_time_in_active_seconds
     }
 }
+impl JobTimers {
+    /// Creates a new builder-style object to manufacture [`JobTimers`](crate::model::JobTimers).
+    pub fn builder() -> crate::model::job_timers::Builder {
+        crate::model::job_timers::Builder::default()
+    }
+}
+
 /// See [`JobTimers`](crate::model::JobTimers).
 pub mod job_timers {
     
@@ -5128,12 +5179,6 @@ pub mod job_timers {
     }
     
     
-}
-impl JobTimers {
-    /// Creates a new builder-style object to manufacture [`JobTimers`](crate::model::JobTimers).
-    pub fn builder() -> crate::model::job_timers::Builder {
-        crate::model::job_timers::Builder::default()
-    }
 }
 
 /// When writing a match expression against `OperationName`, it is important to ensure
@@ -5274,6 +5319,13 @@ impl ObjectLambdaAccessPoint {
         self.object_lambda_access_point_arn.as_deref()
     }
 }
+impl ObjectLambdaAccessPoint {
+    /// Creates a new builder-style object to manufacture [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
+    pub fn builder() -> crate::model::object_lambda_access_point::Builder {
+        crate::model::object_lambda_access_point::Builder::default()
+    }
+}
+
 /// See [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
 pub mod object_lambda_access_point {
     
@@ -5315,12 +5367,6 @@ pub mod object_lambda_access_point {
     }
     
     
-}
-impl ObjectLambdaAccessPoint {
-    /// Creates a new builder-style object to manufacture [`ObjectLambdaAccessPoint`](crate::model::ObjectLambdaAccessPoint).
-    pub fn builder() -> crate::model::object_lambda_access_point::Builder {
-        crate::model::object_lambda_access_point::Builder::default()
-    }
 }
 
 /// <p>An access point used to access a bucket.</p>
@@ -5383,6 +5429,13 @@ impl AccessPoint {
         self.bucket_account_id.as_deref()
     }
 }
+impl AccessPoint {
+    /// Creates a new builder-style object to manufacture [`AccessPoint`](crate::model::AccessPoint).
+    pub fn builder() -> crate::model::access_point::Builder {
+        crate::model::access_point::Builder::default()
+    }
+}
+
 /// See [`AccessPoint`](crate::model::AccessPoint).
 pub mod access_point {
     
@@ -5489,12 +5542,6 @@ pub mod access_point {
     
     
 }
-impl AccessPoint {
-    /// Creates a new builder-style object to manufacture [`AccessPoint`](crate::model::AccessPoint).
-    pub fn builder() -> crate::model::access_point::Builder {
-        crate::model::access_point::Builder::default()
-    }
-}
 
 /// <p>The virtual private cloud (VPC) configuration for an access point.</p>
 #[non_exhaustive]
@@ -5510,6 +5557,13 @@ impl VpcConfiguration {
         self.vpc_id.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
     
@@ -5539,12 +5593,6 @@ pub mod vpc_configuration {
     }
     
     
-}
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NetworkOrigin`, it is important to ensure
@@ -5643,6 +5691,13 @@ impl PolicyStatus {
         self.is_public
     }
 }
+impl PolicyStatus {
+    /// Creates a new builder-style object to manufacture [`PolicyStatus`](crate::model::PolicyStatus).
+    pub fn builder() -> crate::model::policy_status::Builder {
+        crate::model::policy_status::Builder::default()
+    }
+}
+
 /// See [`PolicyStatus`](crate::model::PolicyStatus).
 pub mod policy_status {
     
@@ -5674,12 +5729,6 @@ pub mod policy_status {
     
     
 }
-impl PolicyStatus {
-    /// Creates a new builder-style object to manufacture [`PolicyStatus`](crate::model::PolicyStatus).
-    pub fn builder() -> crate::model::policy_status::Builder {
-        crate::model::policy_status::Builder::default()
-    }
-}
 
 /// <p>The Multi-Region Access Point access control policy.</p> 
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
@@ -5703,6 +5752,13 @@ impl MultiRegionAccessPointPolicyDocument {
         self.proposed.as_ref()
     }
 }
+impl MultiRegionAccessPointPolicyDocument {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
+    pub fn builder() -> crate::model::multi_region_access_point_policy_document::Builder {
+        crate::model::multi_region_access_point_policy_document::Builder::default()
+    }
+}
+
 /// See [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
 pub mod multi_region_access_point_policy_document {
     
@@ -5745,12 +5801,6 @@ pub mod multi_region_access_point_policy_document {
     
     
 }
-impl MultiRegionAccessPointPolicyDocument {
-    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointPolicyDocument`](crate::model::MultiRegionAccessPointPolicyDocument).
-    pub fn builder() -> crate::model::multi_region_access_point_policy_document::Builder {
-        crate::model::multi_region_access_point_policy_document::Builder::default()
-    }
-}
 
 /// <p>The proposed access control policy for the Multi-Region Access Point.</p> 
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
@@ -5767,6 +5817,13 @@ impl ProposedMultiRegionAccessPointPolicy {
         self.policy.as_deref()
     }
 }
+impl ProposedMultiRegionAccessPointPolicy {
+    /// Creates a new builder-style object to manufacture [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
+    pub fn builder() -> crate::model::proposed_multi_region_access_point_policy::Builder {
+        crate::model::proposed_multi_region_access_point_policy::Builder::default()
+    }
+}
+
 /// See [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
 pub mod proposed_multi_region_access_point_policy {
     
@@ -5797,12 +5854,6 @@ pub mod proposed_multi_region_access_point_policy {
     
     
 }
-impl ProposedMultiRegionAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`ProposedMultiRegionAccessPointPolicy`](crate::model::ProposedMultiRegionAccessPointPolicy).
-    pub fn builder() -> crate::model::proposed_multi_region_access_point_policy::Builder {
-        crate::model::proposed_multi_region_access_point_policy::Builder::default()
-    }
-}
 
 /// <p>The last established access control policy for a Multi-Region Access Point.</p> 
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
@@ -5819,6 +5870,13 @@ impl EstablishedMultiRegionAccessPointPolicy {
         self.policy.as_deref()
     }
 }
+impl EstablishedMultiRegionAccessPointPolicy {
+    /// Creates a new builder-style object to manufacture [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
+    pub fn builder() -> crate::model::established_multi_region_access_point_policy::Builder {
+        crate::model::established_multi_region_access_point_policy::Builder::default()
+    }
+}
+
 /// See [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
 pub mod established_multi_region_access_point_policy {
     
@@ -5848,12 +5906,6 @@ pub mod established_multi_region_access_point_policy {
     }
     
     
-}
-impl EstablishedMultiRegionAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`EstablishedMultiRegionAccessPointPolicy`](crate::model::EstablishedMultiRegionAccessPointPolicy).
-    pub fn builder() -> crate::model::established_multi_region_access_point_policy::Builder {
-        crate::model::established_multi_region_access_point_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `MfaDeleteStatus`, it is important to ensure
@@ -5987,6 +6039,13 @@ impl AsyncOperation {
         self.response_details.as_ref()
     }
 }
+impl AsyncOperation {
+    /// Creates a new builder-style object to manufacture [`AsyncOperation`](crate::model::AsyncOperation).
+    pub fn builder() -> crate::model::async_operation::Builder {
+        crate::model::async_operation::Builder::default()
+    }
+}
+
 /// See [`AsyncOperation`](crate::model::AsyncOperation).
 pub mod async_operation {
     
@@ -6077,12 +6136,6 @@ pub mod async_operation {
     
     
 }
-impl AsyncOperation {
-    /// Creates a new builder-style object to manufacture [`AsyncOperation`](crate::model::AsyncOperation).
-    pub fn builder() -> crate::model::async_operation::Builder {
-        crate::model::async_operation::Builder::default()
-    }
-}
 
 /// <p>A container for the response details that are returned when querying about an asynchronous request.</p>
 #[non_exhaustive]
@@ -6105,6 +6158,13 @@ impl AsyncResponseDetails {
         self.error_details.as_ref()
     }
 }
+impl AsyncResponseDetails {
+    /// Creates a new builder-style object to manufacture [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
+    pub fn builder() -> crate::model::async_response_details::Builder {
+        crate::model::async_response_details::Builder::default()
+    }
+}
+
 /// See [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
 pub mod async_response_details {
     
@@ -6147,12 +6207,6 @@ pub mod async_response_details {
     
     
 }
-impl AsyncResponseDetails {
-    /// Creates a new builder-style object to manufacture [`AsyncResponseDetails`](crate::model::AsyncResponseDetails).
-    pub fn builder() -> crate::model::async_response_details::Builder {
-        crate::model::async_response_details::Builder::default()
-    }
-}
 
 /// <p>Error details for the failed asynchronous operation.</p>
 #[non_exhaustive]
@@ -6189,6 +6243,13 @@ impl AsyncErrorDetails {
         self.request_id.as_deref()
     }
 }
+impl AsyncErrorDetails {
+    /// Creates a new builder-style object to manufacture [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
+    pub fn builder() -> crate::model::async_error_details::Builder {
+        crate::model::async_error_details::Builder::default()
+    }
+}
+
 /// See [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
 pub mod async_error_details {
     
@@ -6255,12 +6316,6 @@ pub mod async_error_details {
     
     
 }
-impl AsyncErrorDetails {
-    /// Creates a new builder-style object to manufacture [`AsyncErrorDetails`](crate::model::AsyncErrorDetails).
-    pub fn builder() -> crate::model::async_error_details::Builder {
-        crate::model::async_error_details::Builder::default()
-    }
-}
 
 /// <p>The Multi-Region Access Point details that are returned when querying about an asynchronous request.</p>
 #[non_exhaustive]
@@ -6276,6 +6331,13 @@ impl MultiRegionAccessPointsAsyncResponse {
         self.regions.as_deref()
     }
 }
+impl MultiRegionAccessPointsAsyncResponse {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
+    pub fn builder() -> crate::model::multi_region_access_points_async_response::Builder {
+        crate::model::multi_region_access_points_async_response::Builder::default()
+    }
+}
+
 /// See [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
 pub mod multi_region_access_points_async_response {
     
@@ -6312,12 +6374,6 @@ pub mod multi_region_access_points_async_response {
     
     
 }
-impl MultiRegionAccessPointsAsyncResponse {
-    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointsAsyncResponse`](crate::model::MultiRegionAccessPointsAsyncResponse).
-    pub fn builder() -> crate::model::multi_region_access_points_async_response::Builder {
-        crate::model::multi_region_access_points_async_response::Builder::default()
-    }
-}
 
 /// <p>Status information for a single Multi-Region Access Point Region.</p>
 #[non_exhaustive]
@@ -6340,6 +6396,13 @@ impl MultiRegionAccessPointRegionalResponse {
         self.request_status.as_deref()
     }
 }
+impl MultiRegionAccessPointRegionalResponse {
+    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
+    pub fn builder() -> crate::model::multi_region_access_point_regional_response::Builder {
+        crate::model::multi_region_access_point_regional_response::Builder::default()
+    }
+}
+
 /// See [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
 pub mod multi_region_access_point_regional_response {
     
@@ -6382,12 +6445,6 @@ pub mod multi_region_access_point_regional_response {
     
     
 }
-impl MultiRegionAccessPointRegionalResponse {
-    /// Creates a new builder-style object to manufacture [`MultiRegionAccessPointRegionalResponse`](crate::model::MultiRegionAccessPointRegionalResponse).
-    pub fn builder() -> crate::model::multi_region_access_point_regional_response::Builder {
-        crate::model::multi_region_access_point_regional_response::Builder::default()
-    }
-}
 
 /// <p>A container for the request parameters associated with an asynchronous request.</p>
 #[non_exhaustive]
@@ -6417,6 +6474,13 @@ impl AsyncRequestParameters {
         self.put_multi_region_access_point_policy_request.as_ref()
     }
 }
+impl AsyncRequestParameters {
+    /// Creates a new builder-style object to manufacture [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
+    pub fn builder() -> crate::model::async_request_parameters::Builder {
+        crate::model::async_request_parameters::Builder::default()
+    }
+}
+
 /// See [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
 pub mod async_request_parameters {
     
@@ -6471,12 +6535,6 @@ pub mod async_request_parameters {
     
     
 }
-impl AsyncRequestParameters {
-    /// Creates a new builder-style object to manufacture [`AsyncRequestParameters`](crate::model::AsyncRequestParameters).
-    pub fn builder() -> crate::model::async_request_parameters::Builder {
-        crate::model::async_request_parameters::Builder::default()
-    }
-}
 
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
 #[non_exhaustive]
@@ -6492,6 +6550,13 @@ impl DeleteMultiRegionAccessPointInput {
         self.name.as_deref()
     }
 }
+impl DeleteMultiRegionAccessPointInput {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
+    pub fn builder() -> crate::model::delete_multi_region_access_point_input::Builder {
+        crate::model::delete_multi_region_access_point_input::Builder::default()
+    }
+}
+
 /// See [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
 pub mod delete_multi_region_access_point_input {
     
@@ -6521,12 +6586,6 @@ pub mod delete_multi_region_access_point_input {
     }
     
     
-}
-impl DeleteMultiRegionAccessPointInput {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::model::DeleteMultiRegionAccessPointInput).
-    pub fn builder() -> crate::model::delete_multi_region_access_point_input::Builder {
-        crate::model::delete_multi_region_access_point_input::Builder::default()
-    }
 }
 
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request. </p>
@@ -6559,6 +6618,13 @@ impl CreateMultiRegionAccessPointInput {
         self.regions.as_deref()
     }
 }
+impl CreateMultiRegionAccessPointInput {
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
+    pub fn builder() -> crate::model::create_multi_region_access_point_input::Builder {
+        crate::model::create_multi_region_access_point_input::Builder::default()
+    }
+}
+
 /// See [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
 pub mod create_multi_region_access_point_input {
     
@@ -6621,12 +6687,6 @@ pub mod create_multi_region_access_point_input {
     
     
 }
-impl CreateMultiRegionAccessPointInput {
-    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::model::CreateMultiRegionAccessPointInput).
-    pub fn builder() -> crate::model::create_multi_region_access_point_input::Builder {
-        crate::model::create_multi_region_access_point_input::Builder::default()
-    }
-}
 
 /// <p>A Region that supports a Multi-Region Access Point as well as the associated bucket for the Region.</p>
 #[non_exhaustive]
@@ -6642,6 +6702,13 @@ impl Region {
         self.bucket.as_deref()
     }
 }
+impl Region {
+    /// Creates a new builder-style object to manufacture [`Region`](crate::model::Region).
+    pub fn builder() -> crate::model::region::Builder {
+        crate::model::region::Builder::default()
+    }
+}
+
 /// See [`Region`](crate::model::Region).
 pub mod region {
     
@@ -6671,12 +6738,6 @@ pub mod region {
     }
     
     
-}
-impl Region {
-    /// Creates a new builder-style object to manufacture [`Region`](crate::model::Region).
-    pub fn builder() -> crate::model::region::Builder {
-        crate::model::region::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AsyncOperationName`, it is important to ensure
@@ -6906,6 +6967,13 @@ impl JobDescriptor {
         self.generated_manifest_descriptor.as_ref()
     }
 }
+impl JobDescriptor {
+    /// Creates a new builder-style object to manufacture [`JobDescriptor`](crate::model::JobDescriptor).
+    pub fn builder() -> crate::model::job_descriptor::Builder {
+        crate::model::job_descriptor::Builder::default()
+    }
+}
+
 /// See [`JobDescriptor`](crate::model::JobDescriptor).
 pub mod job_descriptor {
     
@@ -7159,12 +7227,6 @@ pub mod job_descriptor {
     
     
 }
-impl JobDescriptor {
-    /// Creates a new builder-style object to manufacture [`JobDescriptor`](crate::model::JobDescriptor).
-    pub fn builder() -> crate::model::job_descriptor::Builder {
-        crate::model::job_descriptor::Builder::default()
-    }
-}
 
 /// <p>Describes the specified job's generated manifest. Batch Operations jobs created with a ManifestGenerator populate details of this descriptor after execution of the ManifestGenerator.</p>
 #[non_exhaustive]
@@ -7187,6 +7249,13 @@ impl S3GeneratedManifestDescriptor {
         self.location.as_ref()
     }
 }
+impl S3GeneratedManifestDescriptor {
+    /// Creates a new builder-style object to manufacture [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
+    pub fn builder() -> crate::model::s3_generated_manifest_descriptor::Builder {
+        crate::model::s3_generated_manifest_descriptor::Builder::default()
+    }
+}
+
 /// See [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
 pub mod s3_generated_manifest_descriptor {
     
@@ -7229,12 +7298,6 @@ pub mod s3_generated_manifest_descriptor {
     
     
 }
-impl S3GeneratedManifestDescriptor {
-    /// Creates a new builder-style object to manufacture [`S3GeneratedManifestDescriptor`](crate::model::S3GeneratedManifestDescriptor).
-    pub fn builder() -> crate::model::s3_generated_manifest_descriptor::Builder {
-        crate::model::s3_generated_manifest_descriptor::Builder::default()
-    }
-}
 
 /// <p>Contains the information required to locate a manifest object.</p>
 #[non_exhaustive]
@@ -7268,6 +7331,13 @@ impl JobManifestLocation {
         self.e_tag.as_deref()
     }
 }
+impl JobManifestLocation {
+    /// Creates a new builder-style object to manufacture [`JobManifestLocation`](crate::model::JobManifestLocation).
+    pub fn builder() -> crate::model::job_manifest_location::Builder {
+        crate::model::job_manifest_location::Builder::default()
+    }
+}
+
 /// See [`JobManifestLocation`](crate::model::JobManifestLocation).
 pub mod job_manifest_location {
     
@@ -7325,12 +7395,6 @@ pub mod job_manifest_location {
     }
     
     
-}
-impl JobManifestLocation {
-    /// Creates a new builder-style object to manufacture [`JobManifestLocation`](crate::model::JobManifestLocation).
-    pub fn builder() -> crate::model::job_manifest_location::Builder {
-        crate::model::job_manifest_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `GeneratedManifestFormat`, it is important to ensure
@@ -7485,6 +7549,13 @@ impl S3JobManifestGenerator {
         self.enable_manifest_output
     }
 }
+impl S3JobManifestGenerator {
+    /// Creates a new builder-style object to manufacture [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
+    pub fn builder() -> crate::model::s3_job_manifest_generator::Builder {
+        crate::model::s3_job_manifest_generator::Builder::default()
+    }
+}
+
 /// See [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
 pub mod s3_job_manifest_generator {
     
@@ -7564,12 +7635,6 @@ pub mod s3_job_manifest_generator {
     
     
 }
-impl S3JobManifestGenerator {
-    /// Creates a new builder-style object to manufacture [`S3JobManifestGenerator`](crate::model::S3JobManifestGenerator).
-    pub fn builder() -> crate::model::s3_job_manifest_generator::Builder {
-        crate::model::s3_job_manifest_generator::Builder::default()
-    }
-}
 
 /// <p>The filter used to describe a set of objects for the job's manifest.</p>
 #[non_exhaustive]
@@ -7606,6 +7671,13 @@ impl JobManifestGeneratorFilter {
         self.object_replication_statuses.as_deref()
     }
 }
+impl JobManifestGeneratorFilter {
+    /// Creates a new builder-style object to manufacture [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
+    pub fn builder() -> crate::model::job_manifest_generator_filter::Builder {
+        crate::model::job_manifest_generator_filter::Builder::default()
+    }
+}
+
 /// See [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
 pub mod job_manifest_generator_filter {
     
@@ -7677,12 +7749,6 @@ pub mod job_manifest_generator_filter {
     }
     
     
-}
-impl JobManifestGeneratorFilter {
-    /// Creates a new builder-style object to manufacture [`JobManifestGeneratorFilter`](crate::model::JobManifestGeneratorFilter).
-    pub fn builder() -> crate::model::job_manifest_generator_filter::Builder {
-        crate::model::job_manifest_generator_filter::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ReplicationStatus`, it is important to ensure
@@ -7819,6 +7885,13 @@ impl S3ManifestOutputLocation {
         self.manifest_format.as_ref()
     }
 }
+impl S3ManifestOutputLocation {
+    /// Creates a new builder-style object to manufacture [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
+    pub fn builder() -> crate::model::s3_manifest_output_location::Builder {
+        crate::model::s3_manifest_output_location::Builder::default()
+    }
+}
+
 /// See [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
 pub mod s3_manifest_output_location {
     
@@ -7897,12 +7970,6 @@ pub mod s3_manifest_output_location {
     
     
 }
-impl S3ManifestOutputLocation {
-    /// Creates a new builder-style object to manufacture [`S3ManifestOutputLocation`](crate::model::S3ManifestOutputLocation).
-    pub fn builder() -> crate::model::s3_manifest_output_location::Builder {
-        crate::model::s3_manifest_output_location::Builder::default()
-    }
-}
 
 /// <p>The encryption configuration to use when storing the generated manifest.</p>
 #[non_exhaustive]
@@ -7925,6 +7992,13 @@ impl GeneratedManifestEncryption {
         self.ssekms.as_ref()
     }
 }
+impl GeneratedManifestEncryption {
+    /// Creates a new builder-style object to manufacture [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
+    pub fn builder() -> crate::model::generated_manifest_encryption::Builder {
+        crate::model::generated_manifest_encryption::Builder::default()
+    }
+}
+
 /// See [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
 pub mod generated_manifest_encryption {
     
@@ -7967,12 +8041,6 @@ pub mod generated_manifest_encryption {
     
     
 }
-impl GeneratedManifestEncryption {
-    /// Creates a new builder-style object to manufacture [`GeneratedManifestEncryption`](crate::model::GeneratedManifestEncryption).
-    pub fn builder() -> crate::model::generated_manifest_encryption::Builder {
-        crate::model::generated_manifest_encryption::Builder::default()
-    }
-}
 
 /// <p>Configuration for the use of SSE-KMS to encrypt generated manifest objects.</p>
 #[non_exhaustive]
@@ -7988,6 +8056,13 @@ impl SsekmsEncryption {
         self.key_id.as_deref()
     }
 }
+impl SsekmsEncryption {
+    /// Creates a new builder-style object to manufacture [`SsekmsEncryption`](crate::model::SsekmsEncryption).
+    pub fn builder() -> crate::model::ssekms_encryption::Builder {
+        crate::model::ssekms_encryption::Builder::default()
+    }
+}
+
 /// See [`SsekmsEncryption`](crate::model::SsekmsEncryption).
 pub mod ssekms_encryption {
     
@@ -8018,18 +8093,19 @@ pub mod ssekms_encryption {
     
     
 }
-impl SsekmsEncryption {
-    /// Creates a new builder-style object to manufacture [`SsekmsEncryption`](crate::model::SsekmsEncryption).
-    pub fn builder() -> crate::model::ssekms_encryption::Builder {
-        crate::model::ssekms_encryption::Builder::default()
-    }
-}
 
 /// <p>Configuration for the use of SSE-S3 to encrypt generated manifest objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sses3Encryption  {
 }
+impl Sses3Encryption {
+    /// Creates a new builder-style object to manufacture [`Sses3Encryption`](crate::model::Sses3Encryption).
+    pub fn builder() -> crate::model::sses3_encryption::Builder {
+        crate::model::sses3_encryption::Builder::default()
+    }
+}
+
 /// See [`Sses3Encryption`](crate::model::Sses3Encryption).
 pub mod sses3_encryption {
     
@@ -8047,12 +8123,6 @@ pub mod sses3_encryption {
     }
     
     
-}
-impl Sses3Encryption {
-    /// Creates a new builder-style object to manufacture [`Sses3Encryption`](crate::model::Sses3Encryption).
-    pub fn builder() -> crate::model::sses3_encryption::Builder {
-        crate::model::sses3_encryption::Builder::default()
-    }
 }
 
 /// <p>Contains the configuration parameters for a job-completion report.</p>
@@ -8109,6 +8179,13 @@ impl JobReport {
         self.report_scope.as_ref()
     }
 }
+impl JobReport {
+    /// Creates a new builder-style object to manufacture [`JobReport`](crate::model::JobReport).
+    pub fn builder() -> crate::model::job_report::Builder {
+        crate::model::job_report::Builder::default()
+    }
+}
+
 /// See [`JobReport`](crate::model::JobReport).
 pub mod job_report {
     
@@ -8199,12 +8276,6 @@ pub mod job_report {
     }
     
     
-}
-impl JobReport {
-    /// Creates a new builder-style object to manufacture [`JobReport`](crate::model::JobReport).
-    pub fn builder() -> crate::model::job_report::Builder {
-        crate::model::job_report::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobReportScope`, it is important to ensure
@@ -8387,6 +8458,13 @@ impl JobFailure {
         self.failure_reason.as_deref()
     }
 }
+impl JobFailure {
+    /// Creates a new builder-style object to manufacture [`JobFailure`](crate::model::JobFailure).
+    pub fn builder() -> crate::model::job_failure::Builder {
+        crate::model::job_failure::Builder::default()
+    }
+}
+
 /// See [`JobFailure`](crate::model::JobFailure).
 pub mod job_failure {
     
@@ -8428,12 +8506,6 @@ pub mod job_failure {
     }
     
     
-}
-impl JobFailure {
-    /// Creates a new builder-style object to manufacture [`JobFailure`](crate::model::JobFailure).
-    pub fn builder() -> crate::model::job_failure::Builder {
-        crate::model::job_failure::Builder::default()
-    }
 }
 
 /// <p>The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -8506,6 +8578,13 @@ impl JobOperation {
         self.s3_replicate_object.as_ref()
     }
 }
+impl JobOperation {
+    /// Creates a new builder-style object to manufacture [`JobOperation`](crate::model::JobOperation).
+    pub fn builder() -> crate::model::job_operation::Builder {
+        crate::model::job_operation::Builder::default()
+    }
+}
+
 /// See [`JobOperation`](crate::model::JobOperation).
 pub mod job_operation {
     
@@ -8632,18 +8711,19 @@ pub mod job_operation {
     
     
 }
-impl JobOperation {
-    /// Creates a new builder-style object to manufacture [`JobOperation`](crate::model::JobOperation).
-    pub fn builder() -> crate::model::job_operation::Builder {
-        crate::model::job_operation::Builder::default()
-    }
-}
 
 /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ReplicateObjectOperation  {
 }
+impl S3ReplicateObjectOperation {
+    /// Creates a new builder-style object to manufacture [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
+    pub fn builder() -> crate::model::s3_replicate_object_operation::Builder {
+        crate::model::s3_replicate_object_operation::Builder::default()
+    }
+}
+
 /// See [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
 pub mod s3_replicate_object_operation {
     
@@ -8661,12 +8741,6 @@ pub mod s3_replicate_object_operation {
     }
     
     
-}
-impl S3ReplicateObjectOperation {
-    /// Creates a new builder-style object to manufacture [`S3ReplicateObjectOperation`](crate::model::S3ReplicateObjectOperation).
-    pub fn builder() -> crate::model::s3_replicate_object_operation::Builder {
-        crate::model::s3_replicate_object_operation::Builder::default()
-    }
 }
 
 /// <p>Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -8690,6 +8764,13 @@ impl S3SetObjectRetentionOperation {
         self.retention.as_ref()
     }
 }
+impl S3SetObjectRetentionOperation {
+    /// Creates a new builder-style object to manufacture [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
+    pub fn builder() -> crate::model::s3_set_object_retention_operation::Builder {
+        crate::model::s3_set_object_retention_operation::Builder::default()
+    }
+}
+
 /// See [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
 pub mod s3_set_object_retention_operation {
     
@@ -8732,12 +8813,6 @@ pub mod s3_set_object_retention_operation {
     
     
 }
-impl S3SetObjectRetentionOperation {
-    /// Creates a new builder-style object to manufacture [`S3SetObjectRetentionOperation`](crate::model::S3SetObjectRetentionOperation).
-    pub fn builder() -> crate::model::s3_set_object_retention_operation::Builder {
-        crate::model::s3_set_object_retention_operation::Builder::default()
-    }
-}
 
 /// <p>Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
@@ -8760,6 +8835,13 @@ impl S3Retention {
         self.mode.as_ref()
     }
 }
+impl S3Retention {
+    /// Creates a new builder-style object to manufacture [`S3Retention`](crate::model::S3Retention).
+    pub fn builder() -> crate::model::s3_retention::Builder {
+        crate::model::s3_retention::Builder::default()
+    }
+}
+
 /// See [`S3Retention`](crate::model::S3Retention).
 pub mod s3_retention {
     
@@ -8801,12 +8883,6 @@ pub mod s3_retention {
     }
     
     
-}
-impl S3Retention {
-    /// Creates a new builder-style object to manufacture [`S3Retention`](crate::model::S3Retention).
-    pub fn builder() -> crate::model::s3_retention::Builder {
-        crate::model::s3_retention::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3ObjectLockRetentionMode`, it is important to ensure
@@ -8905,6 +8981,13 @@ impl S3SetObjectLegalHoldOperation {
         self.legal_hold.as_ref()
     }
 }
+impl S3SetObjectLegalHoldOperation {
+    /// Creates a new builder-style object to manufacture [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
+    pub fn builder() -> crate::model::s3_set_object_legal_hold_operation::Builder {
+        crate::model::s3_set_object_legal_hold_operation::Builder::default()
+    }
+}
+
 /// See [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
 pub mod s3_set_object_legal_hold_operation {
     
@@ -8935,12 +9018,6 @@ pub mod s3_set_object_legal_hold_operation {
     
     
 }
-impl S3SetObjectLegalHoldOperation {
-    /// Creates a new builder-style object to manufacture [`S3SetObjectLegalHoldOperation`](crate::model::S3SetObjectLegalHoldOperation).
-    pub fn builder() -> crate::model::s3_set_object_legal_hold_operation::Builder {
-        crate::model::s3_set_object_legal_hold_operation::Builder::default()
-    }
-}
 
 /// <p>Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch Operations job.</p>
 #[non_exhaustive]
@@ -8956,6 +9033,13 @@ impl S3ObjectLockLegalHold {
         self.status.as_ref()
     }
 }
+impl S3ObjectLockLegalHold {
+    /// Creates a new builder-style object to manufacture [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
+    pub fn builder() -> crate::model::s3_object_lock_legal_hold::Builder {
+        crate::model::s3_object_lock_legal_hold::Builder::default()
+    }
+}
+
 /// See [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
 pub mod s3_object_lock_legal_hold {
     
@@ -8985,12 +9069,6 @@ pub mod s3_object_lock_legal_hold {
     }
     
     
-}
-impl S3ObjectLockLegalHold {
-    /// Creates a new builder-style object to manufacture [`S3ObjectLockLegalHold`](crate::model::S3ObjectLockLegalHold).
-    pub fn builder() -> crate::model::s3_object_lock_legal_hold::Builder {
-        crate::model::s3_object_lock_legal_hold::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3ObjectLockLegalHoldStatus`, it is important to ensure
@@ -9100,6 +9178,13 @@ impl S3InitiateRestoreObjectOperation {
         self.glacier_job_tier.as_ref()
     }
 }
+impl S3InitiateRestoreObjectOperation {
+    /// Creates a new builder-style object to manufacture [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
+    pub fn builder() -> crate::model::s3_initiate_restore_object_operation::Builder {
+        crate::model::s3_initiate_restore_object_operation::Builder::default()
+    }
+}
+
 /// See [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
 pub mod s3_initiate_restore_object_operation {
     
@@ -9145,12 +9230,6 @@ pub mod s3_initiate_restore_object_operation {
     }
     
     
-}
-impl S3InitiateRestoreObjectOperation {
-    /// Creates a new builder-style object to manufacture [`S3InitiateRestoreObjectOperation`](crate::model::S3InitiateRestoreObjectOperation).
-    pub fn builder() -> crate::model::s3_initiate_restore_object_operation::Builder {
-        crate::model::s3_initiate_restore_object_operation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3GlacierJobTier`, it is important to ensure
@@ -9240,6 +9319,13 @@ impl AsRef<str> for S3GlacierJobTier {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DeleteObjectTaggingOperation  {
 }
+impl S3DeleteObjectTaggingOperation {
+    /// Creates a new builder-style object to manufacture [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
+    pub fn builder() -> crate::model::s3_delete_object_tagging_operation::Builder {
+        crate::model::s3_delete_object_tagging_operation::Builder::default()
+    }
+}
+
 /// See [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
 pub mod s3_delete_object_tagging_operation {
     
@@ -9258,12 +9344,6 @@ pub mod s3_delete_object_tagging_operation {
     
     
 }
-impl S3DeleteObjectTaggingOperation {
-    /// Creates a new builder-style object to manufacture [`S3DeleteObjectTaggingOperation`](crate::model::S3DeleteObjectTaggingOperation).
-    pub fn builder() -> crate::model::s3_delete_object_tagging_operation::Builder {
-        crate::model::s3_delete_object_tagging_operation::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration parameters for a Set Object Tagging operation. S3 Batch Operations passes every object to the underlying PUT Object tagging API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT Object tagging</a>.</p>
 #[non_exhaustive]
@@ -9279,6 +9359,13 @@ impl S3SetObjectTaggingOperation {
         self.tag_set.as_deref()
     }
 }
+impl S3SetObjectTaggingOperation {
+    /// Creates a new builder-style object to manufacture [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
+    pub fn builder() -> crate::model::s3_set_object_tagging_operation::Builder {
+        crate::model::s3_set_object_tagging_operation::Builder::default()
+    }
+}
+
 /// See [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
 pub mod s3_set_object_tagging_operation {
     
@@ -9315,12 +9402,6 @@ pub mod s3_set_object_tagging_operation {
     
     
 }
-impl S3SetObjectTaggingOperation {
-    /// Creates a new builder-style object to manufacture [`S3SetObjectTaggingOperation`](crate::model::S3SetObjectTaggingOperation).
-    pub fn builder() -> crate::model::s3_set_object_tagging_operation::Builder {
-        crate::model::s3_set_object_tagging_operation::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations passes every object to the underlying <code>PutObjectAcl</code> API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html"> <code>PutObjectAcl</code> </a>.</p>
 #[non_exhaustive]
@@ -9336,6 +9417,13 @@ impl S3SetObjectAclOperation {
         self.access_control_policy.as_ref()
     }
 }
+impl S3SetObjectAclOperation {
+    /// Creates a new builder-style object to manufacture [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
+    pub fn builder() -> crate::model::s3_set_object_acl_operation::Builder {
+        crate::model::s3_set_object_acl_operation::Builder::default()
+    }
+}
+
 /// See [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
 pub mod s3_set_object_acl_operation {
     
@@ -9366,12 +9454,6 @@ pub mod s3_set_object_acl_operation {
     
     
 }
-impl S3SetObjectAclOperation {
-    /// Creates a new builder-style object to manufacture [`S3SetObjectAclOperation`](crate::model::S3SetObjectAclOperation).
-    pub fn builder() -> crate::model::s3_set_object_acl_operation::Builder {
-        crate::model::s3_set_object_acl_operation::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -9394,6 +9476,13 @@ impl S3AccessControlPolicy {
         self.canned_access_control_list.as_ref()
     }
 }
+impl S3AccessControlPolicy {
+    /// Creates a new builder-style object to manufacture [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
+    pub fn builder() -> crate::model::s3_access_control_policy::Builder {
+        crate::model::s3_access_control_policy::Builder::default()
+    }
+}
+
 /// See [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
 pub mod s3_access_control_policy {
     
@@ -9435,12 +9524,6 @@ pub mod s3_access_control_policy {
     }
     
     
-}
-impl S3AccessControlPolicy {
-    /// Creates a new builder-style object to manufacture [`S3AccessControlPolicy`](crate::model::S3AccessControlPolicy).
-    pub fn builder() -> crate::model::s3_access_control_policy::Builder {
-        crate::model::s3_access_control_policy::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3CannedAccessControlList`, it is important to ensure
@@ -9571,6 +9654,13 @@ impl S3AccessControlList {
         self.grants.as_deref()
     }
 }
+impl S3AccessControlList {
+    /// Creates a new builder-style object to manufacture [`S3AccessControlList`](crate::model::S3AccessControlList).
+    pub fn builder() -> crate::model::s3_access_control_list::Builder {
+        crate::model::s3_access_control_list::Builder::default()
+    }
+}
+
 /// See [`S3AccessControlList`](crate::model::S3AccessControlList).
 pub mod s3_access_control_list {
     
@@ -9619,12 +9709,6 @@ pub mod s3_access_control_list {
     
     
 }
-impl S3AccessControlList {
-    /// Creates a new builder-style object to manufacture [`S3AccessControlList`](crate::model::S3AccessControlList).
-    pub fn builder() -> crate::model::s3_access_control_list::Builder {
-        crate::model::s3_access_control_list::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -9647,6 +9731,13 @@ impl S3Grant {
         self.permission.as_ref()
     }
 }
+impl S3Grant {
+    /// Creates a new builder-style object to manufacture [`S3Grant`](crate::model::S3Grant).
+    pub fn builder() -> crate::model::s3_grant::Builder {
+        crate::model::s3_grant::Builder::default()
+    }
+}
+
 /// See [`S3Grant`](crate::model::S3Grant).
 pub mod s3_grant {
     
@@ -9688,12 +9779,6 @@ pub mod s3_grant {
     }
     
     
-}
-impl S3Grant {
-    /// Creates a new builder-style object to manufacture [`S3Grant`](crate::model::S3Grant).
-    pub fn builder() -> crate::model::s3_grant::Builder {
-        crate::model::s3_grant::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3Permission`, it is important to ensure
@@ -9821,6 +9906,13 @@ impl S3Grantee {
         self.display_name.as_deref()
     }
 }
+impl S3Grantee {
+    /// Creates a new builder-style object to manufacture [`S3Grantee`](crate::model::S3Grantee).
+    pub fn builder() -> crate::model::s3_grantee::Builder {
+        crate::model::s3_grantee::Builder::default()
+    }
+}
+
 /// See [`S3Grantee`](crate::model::S3Grantee).
 pub mod s3_grantee {
     
@@ -9874,12 +9966,6 @@ pub mod s3_grantee {
     }
     
     
-}
-impl S3Grantee {
-    /// Creates a new builder-style object to manufacture [`S3Grantee`](crate::model::S3Grantee).
-    pub fn builder() -> crate::model::s3_grantee::Builder {
-        crate::model::s3_grantee::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3GranteeTypeIdentifier`, it is important to ensure
@@ -9990,6 +10076,13 @@ impl S3ObjectOwner {
         self.display_name.as_deref()
     }
 }
+impl S3ObjectOwner {
+    /// Creates a new builder-style object to manufacture [`S3ObjectOwner`](crate::model::S3ObjectOwner).
+    pub fn builder() -> crate::model::s3_object_owner::Builder {
+        crate::model::s3_object_owner::Builder::default()
+    }
+}
+
 /// See [`S3ObjectOwner`](crate::model::S3ObjectOwner).
 pub mod s3_object_owner {
     
@@ -10031,12 +10124,6 @@ pub mod s3_object_owner {
     }
     
     
-}
-impl S3ObjectOwner {
-    /// Creates a new builder-style object to manufacture [`S3ObjectOwner`](crate::model::S3ObjectOwner).
-    pub fn builder() -> crate::model::s3_object_owner::Builder {
-        crate::model::s3_object_owner::Builder::default()
-    }
 }
 
 /// <p>Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes every object to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>.</p>
@@ -10174,6 +10261,13 @@ impl S3CopyObjectOperation {
         self.checksum_algorithm.as_ref()
     }
 }
+impl S3CopyObjectOperation {
+    /// Creates a new builder-style object to manufacture [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
+    pub fn builder() -> crate::model::s3_copy_object_operation::Builder {
+        crate::model::s3_copy_object_operation::Builder::default()
+    }
+}
+
 /// See [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
 pub mod s3_copy_object_operation {
     
@@ -10423,12 +10517,6 @@ pub mod s3_copy_object_operation {
     }
     
     
-}
-impl S3CopyObjectOperation {
-    /// Creates a new builder-style object to manufacture [`S3CopyObjectOperation`](crate::model::S3CopyObjectOperation).
-    pub fn builder() -> crate::model::s3_copy_object_operation::Builder {
-        crate::model::s3_copy_object_operation::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3ChecksumAlgorithm`, it is important to ensure
@@ -10796,6 +10884,13 @@ impl S3ObjectMetadata {
         self.sse_algorithm.as_ref()
     }
 }
+impl S3ObjectMetadata {
+    /// Creates a new builder-style object to manufacture [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
+    pub fn builder() -> crate::model::s3_object_metadata::Builder {
+        crate::model::s3_object_metadata::Builder::default()
+    }
+}
+
 /// See [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
 pub mod s3_object_metadata {
     
@@ -10952,12 +11047,6 @@ pub mod s3_object_metadata {
     }
     
     
-}
-impl S3ObjectMetadata {
-    /// Creates a new builder-style object to manufacture [`S3ObjectMetadata`](crate::model::S3ObjectMetadata).
-    pub fn builder() -> crate::model::s3_object_metadata::Builder {
-        crate::model::s3_object_metadata::Builder::default()
-    }
 }
 
 /// When writing a match expression against `S3SseAlgorithm`, it is important to ensure
@@ -11138,6 +11227,13 @@ impl LambdaInvokeOperation {
         self.function_arn.as_deref()
     }
 }
+impl LambdaInvokeOperation {
+    /// Creates a new builder-style object to manufacture [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
+    pub fn builder() -> crate::model::lambda_invoke_operation::Builder {
+        crate::model::lambda_invoke_operation::Builder::default()
+    }
+}
+
 /// See [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
 pub mod lambda_invoke_operation {
     
@@ -11168,12 +11264,6 @@ pub mod lambda_invoke_operation {
     
     
 }
-impl LambdaInvokeOperation {
-    /// Creates a new builder-style object to manufacture [`LambdaInvokeOperation`](crate::model::LambdaInvokeOperation).
-    pub fn builder() -> crate::model::lambda_invoke_operation::Builder {
-        crate::model::lambda_invoke_operation::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information for a job's manifest.</p>
 #[non_exhaustive]
@@ -11196,6 +11286,13 @@ impl JobManifest {
         self.location.as_ref()
     }
 }
+impl JobManifest {
+    /// Creates a new builder-style object to manufacture [`JobManifest`](crate::model::JobManifest).
+    pub fn builder() -> crate::model::job_manifest::Builder {
+        crate::model::job_manifest::Builder::default()
+    }
+}
+
 /// See [`JobManifest`](crate::model::JobManifest).
 pub mod job_manifest {
     
@@ -11238,12 +11335,6 @@ pub mod job_manifest {
     
     
 }
-impl JobManifest {
-    /// Creates a new builder-style object to manufacture [`JobManifest`](crate::model::JobManifest).
-    pub fn builder() -> crate::model::job_manifest::Builder {
-        crate::model::job_manifest::Builder::default()
-    }
-}
 
 /// <p>Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
 #[non_exhaustive]
@@ -11266,6 +11357,13 @@ impl JobManifestSpec {
         self.fields.as_deref()
     }
 }
+impl JobManifestSpec {
+    /// Creates a new builder-style object to manufacture [`JobManifestSpec`](crate::model::JobManifestSpec).
+    pub fn builder() -> crate::model::job_manifest_spec::Builder {
+        crate::model::job_manifest_spec::Builder::default()
+    }
+}
+
 /// See [`JobManifestSpec`](crate::model::JobManifestSpec).
 pub mod job_manifest_spec {
     
@@ -11313,12 +11411,6 @@ pub mod job_manifest_spec {
     }
     
     
-}
-impl JobManifestSpec {
-    /// Creates a new builder-style object to manufacture [`JobManifestSpec`](crate::model::JobManifestSpec).
-    pub fn builder() -> crate::model::job_manifest_spec::Builder {
-        crate::model::job_manifest_spec::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobManifestFieldName`, it is important to ensure
@@ -11515,6 +11607,13 @@ impl CreateBucketConfiguration {
         self.location_constraint.as_ref()
     }
 }
+impl CreateBucketConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
+    pub fn builder() -> crate::model::create_bucket_configuration::Builder {
+        crate::model::create_bucket_configuration::Builder::default()
+    }
+}
+
 /// See [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
 pub mod create_bucket_configuration {
     
@@ -11548,12 +11647,6 @@ pub mod create_bucket_configuration {
     }
     
     
-}
-impl CreateBucketConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration).
-    pub fn builder() -> crate::model::create_bucket_configuration::Builder {
-        crate::model::create_bucket_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BucketLocationConstraint`, it is important to ensure

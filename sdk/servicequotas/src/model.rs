@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -62,12 +69,6 @@ pub mod tag {
     }
     
     
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
 }
 
 /// <p>Information about a quota increase request.</p>
@@ -175,6 +176,13 @@ impl RequestedServiceQuotaChange {
         self.unit.as_deref()
     }
 }
+impl RequestedServiceQuotaChange {
+    /// Creates a new builder-style object to manufacture [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
+    pub fn builder() -> crate::model::requested_service_quota_change::Builder {
+        crate::model::requested_service_quota_change::Builder::default()
+    }
+}
+
 /// See [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
 pub mod requested_service_quota_change {
     
@@ -362,12 +370,6 @@ pub mod requested_service_quota_change {
     
     
 }
-impl RequestedServiceQuotaChange {
-    /// Creates a new builder-style object to manufacture [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
-    pub fn builder() -> crate::model::requested_service_quota_change::Builder {
-        crate::model::requested_service_quota_change::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RequestStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -529,6 +531,13 @@ impl ServiceQuotaIncreaseRequestInTemplate {
         self.global_quota
     }
 }
+impl ServiceQuotaIncreaseRequestInTemplate {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
+    pub fn builder() -> crate::model::service_quota_increase_request_in_template::Builder {
+        crate::model::service_quota_increase_request_in_template::Builder::default()
+    }
+}
+
 /// See [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
 pub mod service_quota_increase_request_in_template {
     
@@ -644,12 +653,6 @@ pub mod service_quota_increase_request_in_template {
     
     
 }
-impl ServiceQuotaIncreaseRequestInTemplate {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
-    pub fn builder() -> crate::model::service_quota_increase_request_in_template::Builder {
-        crate::model::service_quota_increase_request_in_template::Builder::default()
-    }
-}
 
 /// <p>Information about a service.</p>
 #[non_exhaustive]
@@ -672,6 +675,13 @@ impl ServiceInfo {
         self.service_name.as_deref()
     }
 }
+impl ServiceInfo {
+    /// Creates a new builder-style object to manufacture [`ServiceInfo`](crate::model::ServiceInfo).
+    pub fn builder() -> crate::model::service_info::Builder {
+        crate::model::service_info::Builder::default()
+    }
+}
+
 /// See [`ServiceInfo`](crate::model::ServiceInfo).
 pub mod service_info {
     
@@ -713,12 +723,6 @@ pub mod service_info {
     }
     
     
-}
-impl ServiceInfo {
-    /// Creates a new builder-style object to manufacture [`ServiceInfo`](crate::model::ServiceInfo).
-    pub fn builder() -> crate::model::service_info::Builder {
-        crate::model::service_info::Builder::default()
-    }
 }
 
 /// <p>Information about a quota.</p>
@@ -812,6 +816,13 @@ impl ServiceQuota {
         self.error_reason.as_ref()
     }
 }
+impl ServiceQuota {
+    /// Creates a new builder-style object to manufacture [`ServiceQuota`](crate::model::ServiceQuota).
+    pub fn builder() -> crate::model::service_quota::Builder {
+        crate::model::service_quota::Builder::default()
+    }
+}
+
 /// See [`ServiceQuota`](crate::model::ServiceQuota).
 pub mod service_quota {
     
@@ -976,12 +987,6 @@ pub mod service_quota {
     
     
 }
-impl ServiceQuota {
-    /// Creates a new builder-style object to manufacture [`ServiceQuota`](crate::model::ServiceQuota).
-    pub fn builder() -> crate::model::service_quota::Builder {
-        crate::model::service_quota::Builder::default()
-    }
-}
 
 /// <p>An error that explains why an action did not succeed.</p>
 #[non_exhaustive]
@@ -1016,6 +1021,13 @@ impl ErrorReason {
         self.error_message.as_deref()
     }
 }
+impl ErrorReason {
+    /// Creates a new builder-style object to manufacture [`ErrorReason`](crate::model::ErrorReason).
+    pub fn builder() -> crate::model::error_reason::Builder {
+        crate::model::error_reason::Builder::default()
+    }
+}
+
 /// See [`ErrorReason`](crate::model::ErrorReason).
 pub mod error_reason {
     
@@ -1069,12 +1081,6 @@ pub mod error_reason {
     }
     
     
-}
-impl ErrorReason {
-    /// Creates a new builder-style object to manufacture [`ErrorReason`](crate::model::ErrorReason).
-    pub fn builder() -> crate::model::error_reason::Builder {
-        crate::model::error_reason::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ErrorCode`, it is important to ensure
@@ -1190,6 +1196,13 @@ impl QuotaPeriod {
         self.period_unit.as_ref()
     }
 }
+impl QuotaPeriod {
+    /// Creates a new builder-style object to manufacture [`QuotaPeriod`](crate::model::QuotaPeriod).
+    pub fn builder() -> crate::model::quota_period::Builder {
+        crate::model::quota_period::Builder::default()
+    }
+}
+
 /// See [`QuotaPeriod`](crate::model::QuotaPeriod).
 pub mod quota_period {
     
@@ -1231,12 +1244,6 @@ pub mod quota_period {
     }
     
     
-}
-impl QuotaPeriod {
-    /// Creates a new builder-style object to manufacture [`QuotaPeriod`](crate::model::QuotaPeriod).
-    pub fn builder() -> crate::model::quota_period::Builder {
-        crate::model::quota_period::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PeriodUnit`, it is important to ensure
@@ -1381,6 +1388,13 @@ impl MetricInfo {
         self.metric_statistic_recommendation.as_deref()
     }
 }
+impl MetricInfo {
+    /// Creates a new builder-style object to manufacture [`MetricInfo`](crate::model::MetricInfo).
+    pub fn builder() -> crate::model::metric_info::Builder {
+        crate::model::metric_info::Builder::default()
+    }
+}
+
 /// See [`MetricInfo`](crate::model::MetricInfo).
 pub mod metric_info {
     
@@ -1452,12 +1466,6 @@ pub mod metric_info {
     }
     
     
-}
-impl MetricInfo {
-    /// Creates a new builder-style object to manufacture [`MetricInfo`](crate::model::MetricInfo).
-    pub fn builder() -> crate::model::metric_info::Builder {
-        crate::model::metric_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ServiceQuotaTemplateAssociationStatus`, it is important to ensure

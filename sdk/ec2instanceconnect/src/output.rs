@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for SendSshPublicKeyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendSshPublicKeyOutput {
+    /// Creates a new builder-style object to manufacture [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
+    pub fn builder() -> crate::output::send_ssh_public_key_output::Builder {
+        crate::output::send_ssh_public_key_output::Builder::default()
+    }
+}
+
 /// See [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
 pub mod send_ssh_public_key_output {
     
@@ -80,12 +87,6 @@ pub mod send_ssh_public_key_output {
     
     
 }
-impl SendSshPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
-    pub fn builder() -> crate::output::send_ssh_public_key_output::Builder {
-        crate::output::send_ssh_public_key_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -114,6 +115,13 @@ impl aws_http::request_id::RequestId for SendSerialConsoleSshPublicKeyOutput {
                                     self._request_id.as_deref()
                                 }
                             }
+impl SendSerialConsoleSshPublicKeyOutput {
+    /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
+    pub fn builder() -> crate::output::send_serial_console_ssh_public_key_output::Builder {
+        crate::output::send_serial_console_ssh_public_key_output::Builder::default()
+    }
+}
+
 /// See [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
 pub mod send_serial_console_ssh_public_key_output {
     
@@ -167,11 +175,5 @@ pub mod send_serial_console_ssh_public_key_output {
     }
     
     
-}
-impl SendSerialConsoleSshPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
-    pub fn builder() -> crate::output::send_serial_console_ssh_public_key_output::Builder {
-        crate::output::send_serial_console_ssh_public_key_output::Builder::default()
-    }
 }
 

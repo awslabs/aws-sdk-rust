@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_firewall_rule_group`](crate::client::Client::associate_firewall_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::AssociateFirewallRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateFirewallRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateFirewallRuleGroup {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateFirewallRuleGro
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_resolver_endpoint_ip_address`](crate::client::Client::associate_resolver_endpoint_ip_address).
             ///
-            /// See [`crate::client::fluent_builders::AssociateResolverEndpointIpAddress`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateResolverEndpointIpAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateResolverEndpointIpAddress {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverEndpoin
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_resolver_query_log_config`](crate::client::Client::associate_resolver_query_log_config).
             ///
-            /// See [`crate::client::fluent_builders::AssociateResolverQueryLogConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateResolverQueryLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateResolverQueryLogConfig {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverQueryLo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`associate_resolver_rule`](crate::client::Client::associate_resolver_rule).
             ///
-            /// See [`crate::client::fluent_builders::AssociateResolverRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `AssociateResolverRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateResolverRule {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_firewall_domain_list`](crate::client::Client::create_firewall_domain_list).
             ///
-            /// See [`crate::client::fluent_builders::CreateFirewallDomainList`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateFirewallDomainList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFirewallDomainList {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallDomainList
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_firewall_rule`](crate::client::Client::create_firewall_rule).
             ///
-            /// See [`crate::client::fluent_builders::CreateFirewallRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateFirewallRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFirewallRule {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_firewall_rule_group`](crate::client::Client::create_firewall_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::CreateFirewallRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateFirewallRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFirewallRuleGroup {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallRuleGroup 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_resolver_endpoint`](crate::client::Client::create_resolver_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::CreateResolverEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateResolverEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResolverEndpoint {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_resolver_query_log_config`](crate::client::Client::create_resolver_query_log_config).
             ///
-            /// See [`crate::client::fluent_builders::CreateResolverQueryLogConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateResolverQueryLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResolverQueryLogConfig {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverQueryLogCo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_resolver_rule`](crate::client::Client::create_resolver_rule).
             ///
-            /// See [`crate::client::fluent_builders::CreateResolverRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateResolverRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResolverRule {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_firewall_domain_list`](crate::client::Client::delete_firewall_domain_list).
             ///
-            /// See [`crate::client::fluent_builders::DeleteFirewallDomainList`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteFirewallDomainList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFirewallDomainList {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallDomainList
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_firewall_rule`](crate::client::Client::delete_firewall_rule).
             ///
-            /// See [`crate::client::fluent_builders::DeleteFirewallRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteFirewallRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFirewallRule {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_firewall_rule_group`](crate::client::Client::delete_firewall_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::DeleteFirewallRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteFirewallRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFirewallRuleGroup {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallRuleGroup 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resolver_endpoint`](crate::client::Client::delete_resolver_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResolverEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResolverEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResolverEndpoint {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolverEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resolver_query_log_config`](crate::client::Client::delete_resolver_query_log_config).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResolverQueryLogConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResolverQueryLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResolverQueryLogConfig {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolverQueryLogCo
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_resolver_rule`](crate::client::Client::delete_resolver_rule).
             ///
-            /// See [`crate::client::fluent_builders::DeleteResolverRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteResolverRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResolverRule {
     _private: ()
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolverRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_firewall_rule_group`](crate::client::Client::disassociate_firewall_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateFirewallRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateFirewallRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateFirewallRuleGroup {
     _private: ()
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFirewallRule
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_resolver_endpoint_ip_address`](crate::client::Client::disassociate_resolver_endpoint_ip_address).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateResolverEndpointIpAddress`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateResolverEndpointIpAddress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResolverEndpointIpAddress {
     _private: ()
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverEndp
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_resolver_query_log_config`](crate::client::Client::disassociate_resolver_query_log_config).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateResolverQueryLogConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateResolverQueryLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResolverQueryLogConfig {
     _private: ()
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverQuer
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`disassociate_resolver_rule`](crate::client::Client::disassociate_resolver_rule).
             ///
-            /// See [`crate::client::fluent_builders::DisassociateResolverRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DisassociateResolverRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateResolverRule {
     _private: ()
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverRule
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_firewall_config`](crate::client::Client::get_firewall_config).
             ///
-            /// See [`crate::client::fluent_builders::GetFirewallConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetFirewallConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFirewallConfig {
     _private: ()
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_firewall_domain_list`](crate::client::Client::get_firewall_domain_list).
             ///
-            /// See [`crate::client::fluent_builders::GetFirewallDomainList`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetFirewallDomainList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFirewallDomainList {
     _private: ()
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallDomainList {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_firewall_rule_group`](crate::client::Client::get_firewall_rule_group).
             ///
-            /// See [`crate::client::fluent_builders::GetFirewallRuleGroup`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetFirewallRuleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFirewallRuleGroup {
     _private: ()
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroup {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_firewall_rule_group_association`](crate::client::Client::get_firewall_rule_group_association).
             ///
-            /// See [`crate::client::fluent_builders::GetFirewallRuleGroupAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetFirewallRuleGroupAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociation {
     _private: ()
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupAsso
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_firewall_rule_group_policy`](crate::client::Client::get_firewall_rule_group_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetFirewallRuleGroupPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetFirewallRuleGroupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicy {
     _private: ()
@@ -804,7 +804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupPoli
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_config`](crate::client::Client::get_resolver_config).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverConfig {
     _private: ()
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_dnssec_config`](crate::client::Client::get_resolver_dnssec_config).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverDnssecConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverDnssecConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverDnssecConfig {
     _private: ()
@@ -868,7 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverDnssecConfig 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_endpoint`](crate::client::Client::get_resolver_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverEndpoint {
     _private: ()
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_query_log_config`](crate::client::Client::get_resolver_query_log_config).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverQueryLogConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverQueryLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfig {
     _private: ()
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_query_log_config_association`](crate::client::Client::get_resolver_query_log_config_association).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverQueryLogConfigAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverQueryLogConfigAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigAssociation {
     _private: ()
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_query_log_config_policy`](crate::client::Client::get_resolver_query_log_config_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverQueryLogConfigPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverQueryLogConfigPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigPolicy {
     _private: ()
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_rule`](crate::client::Client::get_resolver_rule).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverRule {
     _private: ()
@@ -1028,7 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_rule_association`](crate::client::Client::get_resolver_rule_association).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverRuleAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverRuleAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverRuleAssociation {
     _private: ()
@@ -1060,7 +1060,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRuleAssociati
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_resolver_rule_policy`](crate::client::Client::get_resolver_rule_policy).
             ///
-            /// See [`crate::client::fluent_builders::GetResolverRulePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetResolverRulePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetResolverRulePolicy {
     _private: ()
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRulePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`import_firewall_domains`](crate::client::Client::import_firewall_domains).
             ///
-            /// See [`crate::client::fluent_builders::ImportFirewallDomains`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ImportFirewallDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportFirewallDomains {
     _private: ()
@@ -1124,7 +1124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportFirewallDomains {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_firewall_configs`](crate::client::Client::list_firewall_configs).
             ///
-            /// See [`crate::client::fluent_builders::ListFirewallConfigs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFirewallConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallConfigs {
     _private: ()
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallConfigs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_firewall_domain_lists`](crate::client::Client::list_firewall_domain_lists).
             ///
-            /// See [`crate::client::fluent_builders::ListFirewallDomainLists`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFirewallDomainLists`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallDomainLists {
     _private: ()
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallDomainLists 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_firewall_domains`](crate::client::Client::list_firewall_domains).
             ///
-            /// See [`crate::client::fluent_builders::ListFirewallDomains`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFirewallDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallDomains {
     _private: ()
@@ -1220,7 +1220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallDomains {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_firewall_rule_group_associations`](crate::client::Client::list_firewall_rule_group_associations).
             ///
-            /// See [`crate::client::fluent_builders::ListFirewallRuleGroupAssociations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFirewallRuleGroupAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallRuleGroupAssociations {
     _private: ()
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRuleGroupAss
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_firewall_rule_groups`](crate::client::Client::list_firewall_rule_groups).
             ///
-            /// See [`crate::client::fluent_builders::ListFirewallRuleGroups`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFirewallRuleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallRuleGroups {
     _private: ()
@@ -1284,7 +1284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRuleGroups {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_firewall_rules`](crate::client::Client::list_firewall_rules).
             ///
-            /// See [`crate::client::fluent_builders::ListFirewallRules`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListFirewallRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFirewallRules {
     _private: ()
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRules {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_configs`](crate::client::Client::list_resolver_configs).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverConfigs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverConfigs {
     _private: ()
@@ -1348,7 +1348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverConfigs {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_dnssec_configs`](crate::client::Client::list_resolver_dnssec_configs).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverDnssecConfigs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverDnssecConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverDnssecConfigs {
     _private: ()
@@ -1380,7 +1380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverDnssecConfig
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_endpoint_ip_addresses`](crate::client::Client::list_resolver_endpoint_ip_addresses).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverEndpointIpAddresses`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverEndpointIpAddresses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverEndpointIpAddresses {
     _private: ()
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverEndpointIpAd
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_endpoints`](crate::client::Client::list_resolver_endpoints).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverEndpoints`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverEndpoints {
     _private: ()
@@ -1444,7 +1444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverEndpoints {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_query_log_config_associations`](crate::client::Client::list_resolver_query_log_config_associations).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverQueryLogConfigAssociations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverQueryLogConfigAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigAssociations {
     _private: ()
@@ -1476,7 +1476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverQueryLogConf
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_query_log_configs`](crate::client::Client::list_resolver_query_log_configs).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverQueryLogConfigs`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverQueryLogConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverQueryLogConfigs {
     _private: ()
@@ -1508,7 +1508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverQueryLogConf
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_rule_associations`](crate::client::Client::list_resolver_rule_associations).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverRuleAssociations`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverRuleAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverRuleAssociations {
     _private: ()
@@ -1540,7 +1540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverRuleAssociat
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_resolver_rules`](crate::client::Client::list_resolver_rules).
             ///
-            /// See [`crate::client::fluent_builders::ListResolverRules`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListResolverRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResolverRules {
     _private: ()
@@ -1572,7 +1572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverRules {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -1604,7 +1604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_firewall_rule_group_policy`](crate::client::Client::put_firewall_rule_group_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutFirewallRuleGroupPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutFirewallRuleGroupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicy {
     _private: ()
@@ -1636,7 +1636,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFirewallRuleGroupPoli
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_resolver_query_log_config_policy`](crate::client::Client::put_resolver_query_log_config_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutResolverQueryLogConfigPolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutResolverQueryLogConfigPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicy {
     _private: ()
@@ -1668,7 +1668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResolverQueryLogConfi
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`put_resolver_rule_policy`](crate::client::Client::put_resolver_rule_policy).
             ///
-            /// See [`crate::client::fluent_builders::PutResolverRulePolicy`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `PutResolverRulePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutResolverRulePolicy {
     _private: ()
@@ -1700,7 +1700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResolverRulePolicy {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -1732,7 +1732,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -1764,7 +1764,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_firewall_config`](crate::client::Client::update_firewall_config).
             ///
-            /// See [`crate::client::fluent_builders::UpdateFirewallConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateFirewallConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallConfig {
     _private: ()
@@ -1796,7 +1796,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_firewall_domains`](crate::client::Client::update_firewall_domains).
             ///
-            /// See [`crate::client::fluent_builders::UpdateFirewallDomains`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateFirewallDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallDomains {
     _private: ()
@@ -1828,7 +1828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDomains {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_firewall_rule`](crate::client::Client::update_firewall_rule).
             ///
-            /// See [`crate::client::fluent_builders::UpdateFirewallRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateFirewallRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallRule {
     _private: ()
@@ -1860,7 +1860,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallRule {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_firewall_rule_group_association`](crate::client::Client::update_firewall_rule_group_association).
             ///
-            /// See [`crate::client::fluent_builders::UpdateFirewallRuleGroupAssociation`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateFirewallRuleGroupAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFirewallRuleGroupAssociation {
     _private: ()
@@ -1892,7 +1892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallRuleGroupA
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resolver_config`](crate::client::Client::update_resolver_config).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResolverConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResolverConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResolverConfig {
     _private: ()
@@ -1924,7 +1924,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverConfig {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resolver_dnssec_config`](crate::client::Client::update_resolver_dnssec_config).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResolverDnssecConfig`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResolverDnssecConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResolverDnssecConfig {
     _private: ()
@@ -1956,7 +1956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverDnssecConf
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resolver_endpoint`](crate::client::Client::update_resolver_endpoint).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResolverEndpoint`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResolverEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResolverEndpoint {
     _private: ()
@@ -1988,7 +1988,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverEndpoint {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_resolver_rule`](crate::client::Client::update_resolver_rule).
             ///
-            /// See [`crate::client::fluent_builders::UpdateResolverRule`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateResolverRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResolverRule {
     _private: ()

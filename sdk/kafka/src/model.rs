@@ -103,6 +103,13 @@ impl ProvisionedThroughput {
         self.volume_throughput
     }
 }
+impl ProvisionedThroughput {
+    /// Creates a new builder-style object to manufacture [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
+    pub fn builder() -> crate::model::provisioned_throughput::Builder {
+        crate::model::provisioned_throughput::Builder::default()
+    }
+}
+
 /// See [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
 pub mod provisioned_throughput {
     
@@ -147,12 +154,6 @@ pub mod provisioned_throughput {
     
     
 }
-impl ProvisionedThroughput {
-    /// Creates a new builder-style object to manufacture [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
-    pub fn builder() -> crate::model::provisioned_throughput::Builder {
-        crate::model::provisioned_throughput::Builder::default()
-    }
-}
 
 /// <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 #[non_exhaustive]
@@ -175,6 +176,13 @@ impl EncryptionInfo {
         self.encryption_in_transit.as_ref()
     }
 }
+impl EncryptionInfo {
+    /// Creates a new builder-style object to manufacture [`EncryptionInfo`](crate::model::EncryptionInfo).
+    pub fn builder() -> crate::model::encryption_info::Builder {
+        crate::model::encryption_info::Builder::default()
+    }
+}
+
 /// See [`EncryptionInfo`](crate::model::EncryptionInfo).
 pub mod encryption_info {
     
@@ -217,12 +225,6 @@ pub mod encryption_info {
     
     
 }
-impl EncryptionInfo {
-    /// Creates a new builder-style object to manufacture [`EncryptionInfo`](crate::model::EncryptionInfo).
-    pub fn builder() -> crate::model::encryption_info::Builder {
-        crate::model::encryption_info::Builder::default()
-    }
-}
 
 /// <p>The settings for encrypting data in transit.</p>
 #[non_exhaustive]
@@ -255,6 +257,13 @@ impl EncryptionInTransit {
         self.in_cluster
     }
 }
+impl EncryptionInTransit {
+    /// Creates a new builder-style object to manufacture [`EncryptionInTransit`](crate::model::EncryptionInTransit).
+    pub fn builder() -> crate::model::encryption_in_transit::Builder {
+        crate::model::encryption_in_transit::Builder::default()
+    }
+}
+
 /// See [`EncryptionInTransit`](crate::model::EncryptionInTransit).
 pub mod encryption_in_transit {
     
@@ -307,12 +316,6 @@ pub mod encryption_in_transit {
     }
     
     
-}
-impl EncryptionInTransit {
-    /// Creates a new builder-style object to manufacture [`EncryptionInTransit`](crate::model::EncryptionInTransit).
-    pub fn builder() -> crate::model::encryption_in_transit::Builder {
-        crate::model::encryption_in_transit::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClientBroker`, it is important to ensure
@@ -416,6 +419,13 @@ impl EncryptionAtRest {
         self.data_volume_kms_key_id.as_deref()
     }
 }
+impl EncryptionAtRest {
+    /// Creates a new builder-style object to manufacture [`EncryptionAtRest`](crate::model::EncryptionAtRest).
+    pub fn builder() -> crate::model::encryption_at_rest::Builder {
+        crate::model::encryption_at_rest::Builder::default()
+    }
+}
+
 /// See [`EncryptionAtRest`](crate::model::EncryptionAtRest).
 pub mod encryption_at_rest {
     
@@ -446,12 +456,6 @@ pub mod encryption_at_rest {
     
     
 }
-impl EncryptionAtRest {
-    /// Creates a new builder-style object to manufacture [`EncryptionAtRest`](crate::model::EncryptionAtRest).
-    pub fn builder() -> crate::model::encryption_at_rest::Builder {
-        crate::model::encryption_at_rest::Builder::default()
-    }
-}
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
@@ -481,6 +485,13 @@ impl ClientAuthentication {
         self.unauthenticated.as_ref()
     }
 }
+impl ClientAuthentication {
+    /// Creates a new builder-style object to manufacture [`ClientAuthentication`](crate::model::ClientAuthentication).
+    pub fn builder() -> crate::model::client_authentication::Builder {
+        crate::model::client_authentication::Builder::default()
+    }
+}
+
 /// See [`ClientAuthentication`](crate::model::ClientAuthentication).
 pub mod client_authentication {
     
@@ -535,12 +546,6 @@ pub mod client_authentication {
     
     
 }
-impl ClientAuthentication {
-    /// Creates a new builder-style object to manufacture [`ClientAuthentication`](crate::model::ClientAuthentication).
-    pub fn builder() -> crate::model::client_authentication::Builder {
-        crate::model::client_authentication::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -556,6 +561,13 @@ impl Unauthenticated {
         self.enabled
     }
 }
+impl Unauthenticated {
+    /// Creates a new builder-style object to manufacture [`Unauthenticated`](crate::model::Unauthenticated).
+    pub fn builder() -> crate::model::unauthenticated::Builder {
+        crate::model::unauthenticated::Builder::default()
+    }
+}
+
 /// See [`Unauthenticated`](crate::model::Unauthenticated).
 pub mod unauthenticated {
     
@@ -587,12 +599,6 @@ pub mod unauthenticated {
     
     
 }
-impl Unauthenticated {
-    /// Creates a new builder-style object to manufacture [`Unauthenticated`](crate::model::Unauthenticated).
-    pub fn builder() -> crate::model::unauthenticated::Builder {
-        crate::model::unauthenticated::Builder::default()
-    }
-}
 
 /// <p>Details for client authentication using TLS.</p>
 #[non_exhaustive]
@@ -615,6 +621,13 @@ impl Tls {
         self.enabled
     }
 }
+impl Tls {
+    /// Creates a new builder-style object to manufacture [`Tls`](crate::model::Tls).
+    pub fn builder() -> crate::model::tls::Builder {
+        crate::model::tls::Builder::default()
+    }
+}
+
 /// See [`Tls`](crate::model::Tls).
 pub mod tls {
     
@@ -664,12 +677,6 @@ pub mod tls {
     
     
 }
-impl Tls {
-    /// Creates a new builder-style object to manufacture [`Tls`](crate::model::Tls).
-    pub fn builder() -> crate::model::tls::Builder {
-        crate::model::tls::Builder::default()
-    }
-}
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
@@ -692,6 +699,13 @@ impl Sasl {
         self.iam.as_ref()
     }
 }
+impl Sasl {
+    /// Creates a new builder-style object to manufacture [`Sasl`](crate::model::Sasl).
+    pub fn builder() -> crate::model::sasl::Builder {
+        crate::model::sasl::Builder::default()
+    }
+}
+
 /// See [`Sasl`](crate::model::Sasl).
 pub mod sasl {
     
@@ -734,12 +748,6 @@ pub mod sasl {
     
     
 }
-impl Sasl {
-    /// Creates a new builder-style object to manufacture [`Sasl`](crate::model::Sasl).
-    pub fn builder() -> crate::model::sasl::Builder {
-        crate::model::sasl::Builder::default()
-    }
-}
 
 /// <p>Details for IAM access control.</p>
 #[non_exhaustive]
@@ -755,6 +763,13 @@ impl Iam {
         self.enabled
     }
 }
+impl Iam {
+    /// Creates a new builder-style object to manufacture [`Iam`](crate::model::Iam).
+    pub fn builder() -> crate::model::iam::Builder {
+        crate::model::iam::Builder::default()
+    }
+}
+
 /// See [`Iam`](crate::model::Iam).
 pub mod iam {
     
@@ -786,12 +801,6 @@ pub mod iam {
     
     
 }
-impl Iam {
-    /// Creates a new builder-style object to manufacture [`Iam`](crate::model::Iam).
-    pub fn builder() -> crate::model::iam::Builder {
-        crate::model::iam::Builder::default()
-    }
-}
 
 /// <p>Details for SASL/SCRAM client authentication.</p>
 #[non_exhaustive]
@@ -807,6 +816,13 @@ impl Scram {
         self.enabled
     }
 }
+impl Scram {
+    /// Creates a new builder-style object to manufacture [`Scram`](crate::model::Scram).
+    pub fn builder() -> crate::model::scram::Builder {
+        crate::model::scram::Builder::default()
+    }
+}
+
 /// See [`Scram`](crate::model::Scram).
 pub mod scram {
     
@@ -838,12 +854,6 @@ pub mod scram {
     
     
 }
-impl Scram {
-    /// Creates a new builder-style object to manufacture [`Scram`](crate::model::Scram).
-    pub fn builder() -> crate::model::scram::Builder {
-        crate::model::scram::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -859,6 +869,13 @@ impl LoggingInfo {
         self.broker_logs.as_ref()
     }
 }
+impl LoggingInfo {
+    /// Creates a new builder-style object to manufacture [`LoggingInfo`](crate::model::LoggingInfo).
+    pub fn builder() -> crate::model::logging_info::Builder {
+        crate::model::logging_info::Builder::default()
+    }
+}
+
 /// See [`LoggingInfo`](crate::model::LoggingInfo).
 pub mod logging_info {
     
@@ -889,12 +906,6 @@ pub mod logging_info {
     
     
 }
-impl LoggingInfo {
-    /// Creates a new builder-style object to manufacture [`LoggingInfo`](crate::model::LoggingInfo).
-    pub fn builder() -> crate::model::logging_info::Builder {
-        crate::model::logging_info::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -924,6 +935,13 @@ impl BrokerLogs {
         self.s3.as_ref()
     }
 }
+impl BrokerLogs {
+    /// Creates a new builder-style object to manufacture [`BrokerLogs`](crate::model::BrokerLogs).
+    pub fn builder() -> crate::model::broker_logs::Builder {
+        crate::model::broker_logs::Builder::default()
+    }
+}
+
 /// See [`BrokerLogs`](crate::model::BrokerLogs).
 pub mod broker_logs {
     
@@ -978,12 +996,6 @@ pub mod broker_logs {
     
     
 }
-impl BrokerLogs {
-    /// Creates a new builder-style object to manufacture [`BrokerLogs`](crate::model::BrokerLogs).
-    pub fn builder() -> crate::model::broker_logs::Builder {
-        crate::model::broker_logs::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1013,6 +1025,13 @@ impl S3 {
         self.prefix.as_deref()
     }
 }
+impl S3 {
+    /// Creates a new builder-style object to manufacture [`S3`](crate::model::S3).
+    pub fn builder() -> crate::model::s3::Builder {
+        crate::model::s3::Builder::default()
+    }
+}
+
 /// See [`S3`](crate::model::S3).
 pub mod s3 {
     
@@ -1068,12 +1087,6 @@ pub mod s3 {
     
     
 }
-impl S3 {
-    /// Creates a new builder-style object to manufacture [`S3`](crate::model::S3).
-    pub fn builder() -> crate::model::s3::Builder {
-        crate::model::s3::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1096,6 +1109,13 @@ impl Firehose {
         self.enabled
     }
 }
+impl Firehose {
+    /// Creates a new builder-style object to manufacture [`Firehose`](crate::model::Firehose).
+    pub fn builder() -> crate::model::firehose::Builder {
+        crate::model::firehose::Builder::default()
+    }
+}
+
 /// See [`Firehose`](crate::model::Firehose).
 pub mod firehose {
     
@@ -1139,12 +1159,6 @@ pub mod firehose {
     
     
 }
-impl Firehose {
-    /// Creates a new builder-style object to manufacture [`Firehose`](crate::model::Firehose).
-    pub fn builder() -> crate::model::firehose::Builder {
-        crate::model::firehose::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1167,6 +1181,13 @@ impl CloudWatchLogs {
         self.log_group.as_deref()
     }
 }
+impl CloudWatchLogs {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogs`](crate::model::CloudWatchLogs).
+    pub fn builder() -> crate::model::cloud_watch_logs::Builder {
+        crate::model::cloud_watch_logs::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogs`](crate::model::CloudWatchLogs).
 pub mod cloud_watch_logs {
     
@@ -1210,12 +1231,6 @@ pub mod cloud_watch_logs {
     
     
 }
-impl CloudWatchLogs {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogs`](crate::model::CloudWatchLogs).
-    pub fn builder() -> crate::model::cloud_watch_logs::Builder {
-        crate::model::cloud_watch_logs::Builder::default()
-    }
-}
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
@@ -1231,6 +1246,13 @@ impl OpenMonitoringInfo {
         self.prometheus.as_ref()
     }
 }
+impl OpenMonitoringInfo {
+    /// Creates a new builder-style object to manufacture [`OpenMonitoringInfo`](crate::model::OpenMonitoringInfo).
+    pub fn builder() -> crate::model::open_monitoring_info::Builder {
+        crate::model::open_monitoring_info::Builder::default()
+    }
+}
+
 /// See [`OpenMonitoringInfo`](crate::model::OpenMonitoringInfo).
 pub mod open_monitoring_info {
     
@@ -1261,12 +1283,6 @@ pub mod open_monitoring_info {
     
     
 }
-impl OpenMonitoringInfo {
-    /// Creates a new builder-style object to manufacture [`OpenMonitoringInfo`](crate::model::OpenMonitoringInfo).
-    pub fn builder() -> crate::model::open_monitoring_info::Builder {
-        crate::model::open_monitoring_info::Builder::default()
-    }
-}
 
 /// <p>Prometheus settings.</p>
 #[non_exhaustive]
@@ -1289,6 +1305,13 @@ impl PrometheusInfo {
         self.node_exporter.as_ref()
     }
 }
+impl PrometheusInfo {
+    /// Creates a new builder-style object to manufacture [`PrometheusInfo`](crate::model::PrometheusInfo).
+    pub fn builder() -> crate::model::prometheus_info::Builder {
+        crate::model::prometheus_info::Builder::default()
+    }
+}
+
 /// See [`PrometheusInfo`](crate::model::PrometheusInfo).
 pub mod prometheus_info {
     
@@ -1331,12 +1354,6 @@ pub mod prometheus_info {
     
     
 }
-impl PrometheusInfo {
-    /// Creates a new builder-style object to manufacture [`PrometheusInfo`](crate::model::PrometheusInfo).
-    pub fn builder() -> crate::model::prometheus_info::Builder {
-        crate::model::prometheus_info::Builder::default()
-    }
-}
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
@@ -1352,6 +1369,13 @@ impl NodeExporterInfo {
         self.enabled_in_broker
     }
 }
+impl NodeExporterInfo {
+    /// Creates a new builder-style object to manufacture [`NodeExporterInfo`](crate::model::NodeExporterInfo).
+    pub fn builder() -> crate::model::node_exporter_info::Builder {
+        crate::model::node_exporter_info::Builder::default()
+    }
+}
+
 /// See [`NodeExporterInfo`](crate::model::NodeExporterInfo).
 pub mod node_exporter_info {
     
@@ -1383,12 +1407,6 @@ pub mod node_exporter_info {
     
     
 }
-impl NodeExporterInfo {
-    /// Creates a new builder-style object to manufacture [`NodeExporterInfo`](crate::model::NodeExporterInfo).
-    pub fn builder() -> crate::model::node_exporter_info::Builder {
-        crate::model::node_exporter_info::Builder::default()
-    }
-}
 
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
@@ -1404,6 +1422,13 @@ impl JmxExporterInfo {
         self.enabled_in_broker
     }
 }
+impl JmxExporterInfo {
+    /// Creates a new builder-style object to manufacture [`JmxExporterInfo`](crate::model::JmxExporterInfo).
+    pub fn builder() -> crate::model::jmx_exporter_info::Builder {
+        crate::model::jmx_exporter_info::Builder::default()
+    }
+}
+
 /// See [`JmxExporterInfo`](crate::model::JmxExporterInfo).
 pub mod jmx_exporter_info {
     
@@ -1434,12 +1459,6 @@ pub mod jmx_exporter_info {
     }
     
     
-}
-impl JmxExporterInfo {
-    /// Creates a new builder-style object to manufacture [`JmxExporterInfo`](crate::model::JmxExporterInfo).
-    pub fn builder() -> crate::model::jmx_exporter_info::Builder {
-        crate::model::jmx_exporter_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EnhancedMonitoring`, it is important to ensure
@@ -1548,6 +1567,13 @@ impl ConnectivityInfo {
         self.public_access.as_ref()
     }
 }
+impl ConnectivityInfo {
+    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
+    pub fn builder() -> crate::model::connectivity_info::Builder {
+        crate::model::connectivity_info::Builder::default()
+    }
+}
+
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
 pub mod connectivity_info {
     
@@ -1578,12 +1604,6 @@ pub mod connectivity_info {
     
     
 }
-impl ConnectivityInfo {
-    /// Creates a new builder-style object to manufacture [`ConnectivityInfo`](crate::model::ConnectivityInfo).
-    pub fn builder() -> crate::model::connectivity_info::Builder {
-        crate::model::connectivity_info::Builder::default()
-    }
-}
 
 /// Public access control for brokers.
 #[non_exhaustive]
@@ -1599,6 +1619,13 @@ impl PublicAccess {
         self.r#type.as_deref()
     }
 }
+impl PublicAccess {
+    /// Creates a new builder-style object to manufacture [`PublicAccess`](crate::model::PublicAccess).
+    pub fn builder() -> crate::model::public_access::Builder {
+        crate::model::public_access::Builder::default()
+    }
+}
+
 /// See [`PublicAccess`](crate::model::PublicAccess).
 pub mod public_access {
     
@@ -1629,12 +1656,6 @@ pub mod public_access {
     
     
 }
-impl PublicAccess {
-    /// Creates a new builder-style object to manufacture [`PublicAccess`](crate::model::PublicAccess).
-    pub fn builder() -> crate::model::public_access::Builder {
-        crate::model::public_access::Builder::default()
-    }
-}
 
 /// <p>Describes a configuration revision.</p>
 #[non_exhaustive]
@@ -1664,6 +1685,13 @@ impl ConfigurationRevision {
         self.revision
     }
 }
+impl ConfigurationRevision {
+    /// Creates a new builder-style object to manufacture [`ConfigurationRevision`](crate::model::ConfigurationRevision).
+    pub fn builder() -> crate::model::configuration_revision::Builder {
+        crate::model::configuration_revision::Builder::default()
+    }
+}
+
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
 pub mod configuration_revision {
     
@@ -1719,12 +1747,6 @@ pub mod configuration_revision {
     
     
 }
-impl ConfigurationRevision {
-    /// Creates a new builder-style object to manufacture [`ConfigurationRevision`](crate::model::ConfigurationRevision).
-    pub fn builder() -> crate::model::configuration_revision::Builder {
-        crate::model::configuration_revision::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration to use for the brokers.</p>
 #[non_exhaustive]
@@ -1747,6 +1769,13 @@ impl ConfigurationInfo {
         self.revision
     }
 }
+impl ConfigurationInfo {
+    /// Creates a new builder-style object to manufacture [`ConfigurationInfo`](crate::model::ConfigurationInfo).
+    pub fn builder() -> crate::model::configuration_info::Builder {
+        crate::model::configuration_info::Builder::default()
+    }
+}
+
 /// See [`ConfigurationInfo`](crate::model::ConfigurationInfo).
 pub mod configuration_info {
     
@@ -1790,12 +1819,6 @@ pub mod configuration_info {
     
     
 }
-impl ConfigurationInfo {
-    /// Creates a new builder-style object to manufacture [`ConfigurationInfo`](crate::model::ConfigurationInfo).
-    pub fn builder() -> crate::model::configuration_info::Builder {
-        crate::model::configuration_info::Builder::default()
-    }
-}
 
 /// <p>Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.</p>
 #[non_exhaustive]
@@ -1825,6 +1848,13 @@ impl BrokerEbsVolumeInfo {
         self.volume_size_gb
     }
 }
+impl BrokerEbsVolumeInfo {
+    /// Creates a new builder-style object to manufacture [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo).
+    pub fn builder() -> crate::model::broker_ebs_volume_info::Builder {
+        crate::model::broker_ebs_volume_info::Builder::default()
+    }
+}
+
 /// See [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo).
 pub mod broker_ebs_volume_info {
     
@@ -1880,12 +1910,6 @@ pub mod broker_ebs_volume_info {
     
     
 }
-impl BrokerEbsVolumeInfo {
-    /// Creates a new builder-style object to manufacture [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo).
-    pub fn builder() -> crate::model::broker_ebs_volume_info::Builder {
-        crate::model::broker_ebs_volume_info::Builder::default()
-    }
-}
 
 /// <p>The node information object.</p>
 #[non_exhaustive]
@@ -1936,6 +1960,13 @@ impl NodeInfo {
         self.zookeeper_node_info.as_ref()
     }
 }
+impl NodeInfo {
+    /// Creates a new builder-style object to manufacture [`NodeInfo`](crate::model::NodeInfo).
+    pub fn builder() -> crate::model::node_info::Builder {
+        crate::model::node_info::Builder::default()
+    }
+}
+
 /// See [`NodeInfo`](crate::model::NodeInfo).
 pub mod node_info {
     
@@ -2026,12 +2057,6 @@ pub mod node_info {
     
     
 }
-impl NodeInfo {
-    /// Creates a new builder-style object to manufacture [`NodeInfo`](crate::model::NodeInfo).
-    pub fn builder() -> crate::model::node_info::Builder {
-        crate::model::node_info::Builder::default()
-    }
-}
 
 /// <p>Zookeeper node information.</p>
 #[non_exhaustive]
@@ -2075,6 +2100,13 @@ impl ZookeeperNodeInfo {
         self.zookeeper_version.as_deref()
     }
 }
+impl ZookeeperNodeInfo {
+    /// Creates a new builder-style object to manufacture [`ZookeeperNodeInfo`](crate::model::ZookeeperNodeInfo).
+    pub fn builder() -> crate::model::zookeeper_node_info::Builder {
+        crate::model::zookeeper_node_info::Builder::default()
+    }
+}
+
 /// See [`ZookeeperNodeInfo`](crate::model::ZookeeperNodeInfo).
 pub mod zookeeper_node_info {
     
@@ -2159,12 +2191,6 @@ pub mod zookeeper_node_info {
     }
     
     
-}
-impl ZookeeperNodeInfo {
-    /// Creates a new builder-style object to manufacture [`ZookeeperNodeInfo`](crate::model::ZookeeperNodeInfo).
-    pub fn builder() -> crate::model::zookeeper_node_info::Builder {
-        crate::model::zookeeper_node_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `NodeType`, it is important to ensure
@@ -2293,6 +2319,13 @@ impl BrokerNodeInfo {
         self.endpoints.as_deref()
     }
 }
+impl BrokerNodeInfo {
+    /// Creates a new builder-style object to manufacture [`BrokerNodeInfo`](crate::model::BrokerNodeInfo).
+    pub fn builder() -> crate::model::broker_node_info::Builder {
+        crate::model::broker_node_info::Builder::default()
+    }
+}
+
 /// See [`BrokerNodeInfo`](crate::model::BrokerNodeInfo).
 pub mod broker_node_info {
     
@@ -2390,12 +2423,6 @@ pub mod broker_node_info {
     
     
 }
-impl BrokerNodeInfo {
-    /// Creates a new builder-style object to manufacture [`BrokerNodeInfo`](crate::model::BrokerNodeInfo).
-    pub fn builder() -> crate::model::broker_node_info::Builder {
-        crate::model::broker_node_info::Builder::default()
-    }
-}
 
 /// <p>Information about the current software installed on the cluster.</p>
 #[non_exhaustive]
@@ -2425,6 +2452,13 @@ impl BrokerSoftwareInfo {
         self.kafka_version.as_deref()
     }
 }
+impl BrokerSoftwareInfo {
+    /// Creates a new builder-style object to manufacture [`BrokerSoftwareInfo`](crate::model::BrokerSoftwareInfo).
+    pub fn builder() -> crate::model::broker_software_info::Builder {
+        crate::model::broker_software_info::Builder::default()
+    }
+}
+
 /// See [`BrokerSoftwareInfo`](crate::model::BrokerSoftwareInfo).
 pub mod broker_software_info {
     
@@ -2480,12 +2514,6 @@ pub mod broker_software_info {
     
     
 }
-impl BrokerSoftwareInfo {
-    /// Creates a new builder-style object to manufacture [`BrokerSoftwareInfo`](crate::model::BrokerSoftwareInfo).
-    pub fn builder() -> crate::model::broker_software_info::Builder {
-        crate::model::broker_software_info::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2508,6 +2536,13 @@ impl KafkaVersion {
         self.status.as_ref()
     }
 }
+impl KafkaVersion {
+    /// Creates a new builder-style object to manufacture [`KafkaVersion`](crate::model::KafkaVersion).
+    pub fn builder() -> crate::model::kafka_version::Builder {
+        crate::model::kafka_version::Builder::default()
+    }
+}
+
 /// See [`KafkaVersion`](crate::model::KafkaVersion).
 pub mod kafka_version {
     
@@ -2549,12 +2584,6 @@ pub mod kafka_version {
     }
     
     
-}
-impl KafkaVersion {
-    /// Creates a new builder-style object to manufacture [`KafkaVersion`](crate::model::KafkaVersion).
-    pub fn builder() -> crate::model::kafka_version::Builder {
-        crate::model::kafka_version::Builder::default()
-    }
 }
 
 /// When writing a match expression against `KafkaVersionStatus`, it is important to ensure
@@ -2695,6 +2724,13 @@ impl Configuration {
         self.state.as_ref()
     }
 }
+impl Configuration {
+    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
+    pub fn builder() -> crate::model::configuration::Builder {
+        crate::model::configuration::Builder::default()
+    }
+}
+
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
     
@@ -2802,12 +2838,6 @@ pub mod configuration {
     }
     
     
-}
-impl Configuration {
-    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
-    pub fn builder() -> crate::model::configuration::Builder {
-        crate::model::configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ConfigurationState`, it is important to ensure
@@ -2981,6 +3011,13 @@ impl Cluster {
         self.serverless.as_ref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
     
@@ -3137,12 +3174,6 @@ pub mod cluster {
     
     
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// <p>Serverless cluster.</p>
 #[non_exhaustive]
@@ -3165,6 +3196,13 @@ impl Serverless {
         self.client_authentication.as_ref()
     }
 }
+impl Serverless {
+    /// Creates a new builder-style object to manufacture [`Serverless`](crate::model::Serverless).
+    pub fn builder() -> crate::model::serverless::Builder {
+        crate::model::serverless::Builder::default()
+    }
+}
+
 /// See [`Serverless`](crate::model::Serverless).
 pub mod serverless {
     
@@ -3213,12 +3251,6 @@ pub mod serverless {
     
     
 }
-impl Serverless {
-    /// Creates a new builder-style object to manufacture [`Serverless`](crate::model::Serverless).
-    pub fn builder() -> crate::model::serverless::Builder {
-        crate::model::serverless::Builder::default()
-    }
-}
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
@@ -3234,6 +3266,13 @@ impl ServerlessClientAuthentication {
         self.sasl.as_ref()
     }
 }
+impl ServerlessClientAuthentication {
+    /// Creates a new builder-style object to manufacture [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication).
+    pub fn builder() -> crate::model::serverless_client_authentication::Builder {
+        crate::model::serverless_client_authentication::Builder::default()
+    }
+}
+
 /// See [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication).
 pub mod serverless_client_authentication {
     
@@ -3264,12 +3303,6 @@ pub mod serverless_client_authentication {
     
     
 }
-impl ServerlessClientAuthentication {
-    /// Creates a new builder-style object to manufacture [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication).
-    pub fn builder() -> crate::model::serverless_client_authentication::Builder {
-        crate::model::serverless_client_authentication::Builder::default()
-    }
-}
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
@@ -3285,6 +3318,13 @@ impl ServerlessSasl {
         self.iam.as_ref()
     }
 }
+impl ServerlessSasl {
+    /// Creates a new builder-style object to manufacture [`ServerlessSasl`](crate::model::ServerlessSasl).
+    pub fn builder() -> crate::model::serverless_sasl::Builder {
+        crate::model::serverless_sasl::Builder::default()
+    }
+}
+
 /// See [`ServerlessSasl`](crate::model::ServerlessSasl).
 pub mod serverless_sasl {
     
@@ -3315,12 +3355,6 @@ pub mod serverless_sasl {
     
     
 }
-impl ServerlessSasl {
-    /// Creates a new builder-style object to manufacture [`ServerlessSasl`](crate::model::ServerlessSasl).
-    pub fn builder() -> crate::model::serverless_sasl::Builder {
-        crate::model::serverless_sasl::Builder::default()
-    }
-}
 
 /// <p>The configuration of the Amazon VPCs for the cluster.</p>
 #[non_exhaustive]
@@ -3343,6 +3377,13 @@ impl VpcConfig {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
     
@@ -3396,12 +3437,6 @@ pub mod vpc_config {
     }
     
     
-}
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
-    }
 }
 
 /// <p>Provisioned cluster.</p>
@@ -3488,6 +3523,13 @@ impl Provisioned {
         self.storage_mode.as_ref()
     }
 }
+impl Provisioned {
+    /// Creates a new builder-style object to manufacture [`Provisioned`](crate::model::Provisioned).
+    pub fn builder() -> crate::model::provisioned::Builder {
+        crate::model::provisioned::Builder::default()
+    }
+}
+
 /// See [`Provisioned`](crate::model::Provisioned).
 pub mod provisioned {
     
@@ -3639,12 +3681,6 @@ pub mod provisioned {
     
     
 }
-impl Provisioned {
-    /// Creates a new builder-style object to manufacture [`Provisioned`](crate::model::Provisioned).
-    pub fn builder() -> crate::model::provisioned::Builder {
-        crate::model::provisioned::Builder::default()
-    }
-}
 
 /// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
 #[non_exhaustive]
@@ -3697,6 +3733,13 @@ impl BrokerNodeGroupInfo {
         self.connectivity_info.as_ref()
     }
 }
+impl BrokerNodeGroupInfo {
+    /// Creates a new builder-style object to manufacture [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo).
+    pub fn builder() -> crate::model::broker_node_group_info::Builder {
+        crate::model::broker_node_group_info::Builder::default()
+    }
+}
+
 /// See [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo).
 pub mod broker_node_group_info {
     
@@ -3801,12 +3844,6 @@ pub mod broker_node_group_info {
     
     
 }
-impl BrokerNodeGroupInfo {
-    /// Creates a new builder-style object to manufacture [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo).
-    pub fn builder() -> crate::model::broker_node_group_info::Builder {
-        crate::model::broker_node_group_info::Builder::default()
-    }
-}
 
 /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 #[non_exhaustive]
@@ -3822,6 +3859,13 @@ impl StorageInfo {
         self.ebs_storage_info.as_ref()
     }
 }
+impl StorageInfo {
+    /// Creates a new builder-style object to manufacture [`StorageInfo`](crate::model::StorageInfo).
+    pub fn builder() -> crate::model::storage_info::Builder {
+        crate::model::storage_info::Builder::default()
+    }
+}
+
 /// See [`StorageInfo`](crate::model::StorageInfo).
 pub mod storage_info {
     
@@ -3852,12 +3896,6 @@ pub mod storage_info {
     
     
 }
-impl StorageInfo {
-    /// Creates a new builder-style object to manufacture [`StorageInfo`](crate::model::StorageInfo).
-    pub fn builder() -> crate::model::storage_info::Builder {
-        crate::model::storage_info::Builder::default()
-    }
-}
 
 /// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
 #[non_exhaustive]
@@ -3880,6 +3918,13 @@ impl EbsStorageInfo {
         self.volume_size
     }
 }
+impl EbsStorageInfo {
+    /// Creates a new builder-style object to manufacture [`EbsStorageInfo`](crate::model::EbsStorageInfo).
+    pub fn builder() -> crate::model::ebs_storage_info::Builder {
+        crate::model::ebs_storage_info::Builder::default()
+    }
+}
+
 /// See [`EbsStorageInfo`](crate::model::EbsStorageInfo).
 pub mod ebs_storage_info {
     
@@ -3922,12 +3967,6 @@ pub mod ebs_storage_info {
     }
     
     
-}
-impl EbsStorageInfo {
-    /// Creates a new builder-style object to manufacture [`EbsStorageInfo`](crate::model::EbsStorageInfo).
-    pub fn builder() -> crate::model::ebs_storage_info::Builder {
-        crate::model::ebs_storage_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `BrokerAzDistribution`, it is important to ensure
@@ -4029,6 +4068,13 @@ impl StateInfo {
         self.message.as_deref()
     }
 }
+impl StateInfo {
+    /// Creates a new builder-style object to manufacture [`StateInfo`](crate::model::StateInfo).
+    pub fn builder() -> crate::model::state_info::Builder {
+        crate::model::state_info::Builder::default()
+    }
+}
+
 /// See [`StateInfo`](crate::model::StateInfo).
 pub mod state_info {
     
@@ -4070,12 +4116,6 @@ pub mod state_info {
     }
     
     
-}
-impl StateInfo {
-    /// Creates a new builder-style object to manufacture [`StateInfo`](crate::model::StateInfo).
-    pub fn builder() -> crate::model::state_info::Builder {
-        crate::model::state_info::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ClusterState`, it is important to ensure
@@ -4412,6 +4452,13 @@ impl ClusterInfo {
         self.storage_mode.as_ref()
     }
 }
+impl ClusterInfo {
+    /// Creates a new builder-style object to manufacture [`ClusterInfo`](crate::model::ClusterInfo).
+    pub fn builder() -> crate::model::cluster_info::Builder {
+        crate::model::cluster_info::Builder::default()
+    }
+}
+
 /// See [`ClusterInfo`](crate::model::ClusterInfo).
 pub mod cluster_info {
     
@@ -4665,12 +4712,6 @@ pub mod cluster_info {
     
     
 }
-impl ClusterInfo {
-    /// Creates a new builder-style object to manufacture [`ClusterInfo`](crate::model::ClusterInfo).
-    pub fn builder() -> crate::model::cluster_info::Builder {
-        crate::model::cluster_info::Builder::default()
-    }
-}
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
@@ -4686,6 +4727,13 @@ impl OpenMonitoring {
         self.prometheus.as_ref()
     }
 }
+impl OpenMonitoring {
+    /// Creates a new builder-style object to manufacture [`OpenMonitoring`](crate::model::OpenMonitoring).
+    pub fn builder() -> crate::model::open_monitoring::Builder {
+        crate::model::open_monitoring::Builder::default()
+    }
+}
+
 /// See [`OpenMonitoring`](crate::model::OpenMonitoring).
 pub mod open_monitoring {
     
@@ -4716,12 +4764,6 @@ pub mod open_monitoring {
     
     
 }
-impl OpenMonitoring {
-    /// Creates a new builder-style object to manufacture [`OpenMonitoring`](crate::model::OpenMonitoring).
-    pub fn builder() -> crate::model::open_monitoring::Builder {
-        crate::model::open_monitoring::Builder::default()
-    }
-}
 
 /// <p>Prometheus settings.</p>
 #[non_exhaustive]
@@ -4744,6 +4786,13 @@ impl Prometheus {
         self.node_exporter.as_ref()
     }
 }
+impl Prometheus {
+    /// Creates a new builder-style object to manufacture [`Prometheus`](crate::model::Prometheus).
+    pub fn builder() -> crate::model::prometheus::Builder {
+        crate::model::prometheus::Builder::default()
+    }
+}
+
 /// See [`Prometheus`](crate::model::Prometheus).
 pub mod prometheus {
     
@@ -4786,12 +4835,6 @@ pub mod prometheus {
     
     
 }
-impl Prometheus {
-    /// Creates a new builder-style object to manufacture [`Prometheus`](crate::model::Prometheus).
-    pub fn builder() -> crate::model::prometheus::Builder {
-        crate::model::prometheus::Builder::default()
-    }
-}
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
@@ -4807,6 +4850,13 @@ impl NodeExporter {
         self.enabled_in_broker
     }
 }
+impl NodeExporter {
+    /// Creates a new builder-style object to manufacture [`NodeExporter`](crate::model::NodeExporter).
+    pub fn builder() -> crate::model::node_exporter::Builder {
+        crate::model::node_exporter::Builder::default()
+    }
+}
+
 /// See [`NodeExporter`](crate::model::NodeExporter).
 pub mod node_exporter {
     
@@ -4838,12 +4888,6 @@ pub mod node_exporter {
     
     
 }
-impl NodeExporter {
-    /// Creates a new builder-style object to manufacture [`NodeExporter`](crate::model::NodeExporter).
-    pub fn builder() -> crate::model::node_exporter::Builder {
-        crate::model::node_exporter::Builder::default()
-    }
-}
 
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
@@ -4859,6 +4903,13 @@ impl JmxExporter {
         self.enabled_in_broker
     }
 }
+impl JmxExporter {
+    /// Creates a new builder-style object to manufacture [`JmxExporter`](crate::model::JmxExporter).
+    pub fn builder() -> crate::model::jmx_exporter::Builder {
+        crate::model::jmx_exporter::Builder::default()
+    }
+}
+
 /// See [`JmxExporter`](crate::model::JmxExporter).
 pub mod jmx_exporter {
     
@@ -4889,12 +4940,6 @@ pub mod jmx_exporter {
     }
     
     
-}
-impl JmxExporter {
-    /// Creates a new builder-style object to manufacture [`JmxExporter`](crate::model::JmxExporter).
-    pub fn builder() -> crate::model::jmx_exporter::Builder {
-        crate::model::jmx_exporter::Builder::default()
-    }
 }
 
 /// <p>Returns information about a cluster operation.</p>
@@ -4981,6 +5026,13 @@ impl ClusterOperationInfo {
         self.target_cluster_info.as_ref()
     }
 }
+impl ClusterOperationInfo {
+    /// Creates a new builder-style object to manufacture [`ClusterOperationInfo`](crate::model::ClusterOperationInfo).
+    pub fn builder() -> crate::model::cluster_operation_info::Builder {
+        crate::model::cluster_operation_info::Builder::default()
+    }
+}
+
 /// See [`ClusterOperationInfo`](crate::model::ClusterOperationInfo).
 pub mod cluster_operation_info {
     
@@ -5137,12 +5189,6 @@ pub mod cluster_operation_info {
     
     
 }
-impl ClusterOperationInfo {
-    /// Creates a new builder-style object to manufacture [`ClusterOperationInfo`](crate::model::ClusterOperationInfo).
-    pub fn builder() -> crate::model::cluster_operation_info::Builder {
-        crate::model::cluster_operation_info::Builder::default()
-    }
-}
 
 /// <p>Information about cluster attributes that can be updated via update APIs.</p>
 #[non_exhaustive]
@@ -5235,6 +5281,13 @@ impl MutableClusterInfo {
         self.storage_mode.as_ref()
     }
 }
+impl MutableClusterInfo {
+    /// Creates a new builder-style object to manufacture [`MutableClusterInfo`](crate::model::MutableClusterInfo).
+    pub fn builder() -> crate::model::mutable_cluster_info::Builder {
+        crate::model::mutable_cluster_info::Builder::default()
+    }
+}
+
 /// See [`MutableClusterInfo`](crate::model::MutableClusterInfo).
 pub mod mutable_cluster_info {
     
@@ -5404,12 +5457,6 @@ pub mod mutable_cluster_info {
     
     
 }
-impl MutableClusterInfo {
-    /// Creates a new builder-style object to manufacture [`MutableClusterInfo`](crate::model::MutableClusterInfo).
-    pub fn builder() -> crate::model::mutable_cluster_info::Builder {
-        crate::model::mutable_cluster_info::Builder::default()
-    }
-}
 
 /// <p>Step taken during a cluster operation.</p>
 #[non_exhaustive]
@@ -5432,6 +5479,13 @@ impl ClusterOperationStep {
         self.step_name.as_deref()
     }
 }
+impl ClusterOperationStep {
+    /// Creates a new builder-style object to manufacture [`ClusterOperationStep`](crate::model::ClusterOperationStep).
+    pub fn builder() -> crate::model::cluster_operation_step::Builder {
+        crate::model::cluster_operation_step::Builder::default()
+    }
+}
+
 /// See [`ClusterOperationStep`](crate::model::ClusterOperationStep).
 pub mod cluster_operation_step {
     
@@ -5474,12 +5528,6 @@ pub mod cluster_operation_step {
     
     
 }
-impl ClusterOperationStep {
-    /// Creates a new builder-style object to manufacture [`ClusterOperationStep`](crate::model::ClusterOperationStep).
-    pub fn builder() -> crate::model::cluster_operation_step::Builder {
-        crate::model::cluster_operation_step::Builder::default()
-    }
-}
 
 /// <p>State information about the operation step.</p>
 #[non_exhaustive]
@@ -5495,6 +5543,13 @@ impl ClusterOperationStepInfo {
         self.step_status.as_deref()
     }
 }
+impl ClusterOperationStepInfo {
+    /// Creates a new builder-style object to manufacture [`ClusterOperationStepInfo`](crate::model::ClusterOperationStepInfo).
+    pub fn builder() -> crate::model::cluster_operation_step_info::Builder {
+        crate::model::cluster_operation_step_info::Builder::default()
+    }
+}
+
 /// See [`ClusterOperationStepInfo`](crate::model::ClusterOperationStepInfo).
 pub mod cluster_operation_step_info {
     
@@ -5525,12 +5580,6 @@ pub mod cluster_operation_step_info {
     
     
 }
-impl ClusterOperationStepInfo {
-    /// Creates a new builder-style object to manufacture [`ClusterOperationStepInfo`](crate::model::ClusterOperationStepInfo).
-    pub fn builder() -> crate::model::cluster_operation_step_info::Builder {
-        crate::model::cluster_operation_step_info::Builder::default()
-    }
-}
 
 /// <p>Returns information about an error state of the cluster.</p>
 #[non_exhaustive]
@@ -5553,6 +5602,13 @@ impl ErrorInfo {
         self.error_string.as_deref()
     }
 }
+impl ErrorInfo {
+    /// Creates a new builder-style object to manufacture [`ErrorInfo`](crate::model::ErrorInfo).
+    pub fn builder() -> crate::model::error_info::Builder {
+        crate::model::error_info::Builder::default()
+    }
+}
+
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
 pub mod error_info {
     
@@ -5595,12 +5651,6 @@ pub mod error_info {
     
     
 }
-impl ErrorInfo {
-    /// Creates a new builder-style object to manufacture [`ErrorInfo`](crate::model::ErrorInfo).
-    pub fn builder() -> crate::model::error_info::Builder {
-        crate::model::error_info::Builder::default()
-    }
-}
 
 /// <p>Contains source Apache Kafka versions and compatible target Apache Kafka versions.</p>
 #[non_exhaustive]
@@ -5623,6 +5673,13 @@ impl CompatibleKafkaVersion {
         self.target_versions.as_deref()
     }
 }
+impl CompatibleKafkaVersion {
+    /// Creates a new builder-style object to manufacture [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion).
+    pub fn builder() -> crate::model::compatible_kafka_version::Builder {
+        crate::model::compatible_kafka_version::Builder::default()
+    }
+}
+
 /// See [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion).
 pub mod compatible_kafka_version {
     
@@ -5671,12 +5728,6 @@ pub mod compatible_kafka_version {
     
     
 }
-impl CompatibleKafkaVersion {
-    /// Creates a new builder-style object to manufacture [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion).
-    pub fn builder() -> crate::model::compatible_kafka_version::Builder {
-        crate::model::compatible_kafka_version::Builder::default()
-    }
-}
 
 /// <p>Serverless cluster request.</p>
 #[non_exhaustive]
@@ -5699,6 +5750,13 @@ impl ServerlessRequest {
         self.client_authentication.as_ref()
     }
 }
+impl ServerlessRequest {
+    /// Creates a new builder-style object to manufacture [`ServerlessRequest`](crate::model::ServerlessRequest).
+    pub fn builder() -> crate::model::serverless_request::Builder {
+        crate::model::serverless_request::Builder::default()
+    }
+}
+
 /// See [`ServerlessRequest`](crate::model::ServerlessRequest).
 pub mod serverless_request {
     
@@ -5746,12 +5804,6 @@ pub mod serverless_request {
     }
     
     
-}
-impl ServerlessRequest {
-    /// Creates a new builder-style object to manufacture [`ServerlessRequest`](crate::model::ServerlessRequest).
-    pub fn builder() -> crate::model::serverless_request::Builder {
-        crate::model::serverless_request::Builder::default()
-    }
 }
 
 /// <p>Provisioned cluster request.</p>
@@ -5831,6 +5883,13 @@ impl ProvisionedRequest {
         self.storage_mode.as_ref()
     }
 }
+impl ProvisionedRequest {
+    /// Creates a new builder-style object to manufacture [`ProvisionedRequest`](crate::model::ProvisionedRequest).
+    pub fn builder() -> crate::model::provisioned_request::Builder {
+        crate::model::provisioned_request::Builder::default()
+    }
+}
+
 /// See [`ProvisionedRequest`](crate::model::ProvisionedRequest).
 pub mod provisioned_request {
     
@@ -5970,12 +6029,6 @@ pub mod provisioned_request {
     
     
 }
-impl ProvisionedRequest {
-    /// Creates a new builder-style object to manufacture [`ProvisionedRequest`](crate::model::ProvisionedRequest).
-    pub fn builder() -> crate::model::provisioned_request::Builder {
-        crate::model::provisioned_request::Builder::default()
-    }
-}
 
 /// <p>Error info for scram secret associate/disassociate failure.</p>
 #[non_exhaustive]
@@ -6005,6 +6058,13 @@ impl UnprocessedScramSecret {
         self.secret_arn.as_deref()
     }
 }
+impl UnprocessedScramSecret {
+    /// Creates a new builder-style object to manufacture [`UnprocessedScramSecret`](crate::model::UnprocessedScramSecret).
+    pub fn builder() -> crate::model::unprocessed_scram_secret::Builder {
+        crate::model::unprocessed_scram_secret::Builder::default()
+    }
+}
+
 /// See [`UnprocessedScramSecret`](crate::model::UnprocessedScramSecret).
 pub mod unprocessed_scram_secret {
     
@@ -6058,11 +6118,5 @@ pub mod unprocessed_scram_secret {
     }
     
     
-}
-impl UnprocessedScramSecret {
-    /// Creates a new builder-style object to manufacture [`UnprocessedScramSecret`](crate::model::UnprocessedScramSecret).
-    pub fn builder() -> crate::model::unprocessed_scram_secret::Builder {
-        crate::model::unprocessed_scram_secret::Builder::default()
-    }
 }
 

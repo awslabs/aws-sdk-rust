@@ -49,6 +49,13 @@ impl InputConfiguration {
         self.status.as_ref()
     }
 }
+impl InputConfiguration {
+    /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration).
+    pub fn builder() -> crate::model::input_configuration::Builder {
+        crate::model::input_configuration::Builder::default()
+    }
+}
+
 /// See [`InputConfiguration`](crate::model::InputConfiguration).
 pub mod input_configuration {
     
@@ -138,12 +145,6 @@ pub mod input_configuration {
     }
     
     
-}
-impl InputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration).
-    pub fn builder() -> crate::model::input_configuration::Builder {
-        crate::model::input_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `InputStatus`, it is important to ensure
@@ -252,6 +253,13 @@ impl InputDefinition {
         self.attributes.as_deref()
     }
 }
+impl InputDefinition {
+    /// Creates a new builder-style object to manufacture [`InputDefinition`](crate::model::InputDefinition).
+    pub fn builder() -> crate::model::input_definition::Builder {
+        crate::model::input_definition::Builder::default()
+    }
+}
+
 /// See [`InputDefinition`](crate::model::InputDefinition).
 pub mod input_definition {
     
@@ -288,12 +296,6 @@ pub mod input_definition {
     
     
 }
-impl InputDefinition {
-    /// Creates a new builder-style object to manufacture [`InputDefinition`](crate::model::InputDefinition).
-    pub fn builder() -> crate::model::input_definition::Builder {
-        crate::model::input_definition::Builder::default()
-    }
-}
 
 /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
 #[non_exhaustive]
@@ -323,6 +325,13 @@ impl Attribute {
         self.json_path.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
     
@@ -366,12 +375,6 @@ pub mod attribute {
     }
     
     
-}
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
-    }
 }
 
 /// <p>Information about how the detector model is configured.</p>
@@ -453,6 +456,13 @@ impl DetectorModelConfiguration {
         self.evaluation_method.as_ref()
     }
 }
+impl DetectorModelConfiguration {
+    /// Creates a new builder-style object to manufacture [`DetectorModelConfiguration`](crate::model::DetectorModelConfiguration).
+    pub fn builder() -> crate::model::detector_model_configuration::Builder {
+        crate::model::detector_model_configuration::Builder::default()
+    }
+}
+
 /// See [`DetectorModelConfiguration`](crate::model::DetectorModelConfiguration).
 pub mod detector_model_configuration {
     
@@ -592,12 +602,6 @@ pub mod detector_model_configuration {
     }
     
     
-}
-impl DetectorModelConfiguration {
-    /// Creates a new builder-style object to manufacture [`DetectorModelConfiguration`](crate::model::DetectorModelConfiguration).
-    pub fn builder() -> crate::model::detector_model_configuration::Builder {
-        crate::model::detector_model_configuration::Builder::default()
-    }
 }
 
 /// When writing a match expression against `EvaluationMethod`, it is important to ensure
@@ -810,6 +814,13 @@ impl DetectorModelDefinition {
         self.initial_state_name.as_deref()
     }
 }
+impl DetectorModelDefinition {
+    /// Creates a new builder-style object to manufacture [`DetectorModelDefinition`](crate::model::DetectorModelDefinition).
+    pub fn builder() -> crate::model::detector_model_definition::Builder {
+        crate::model::detector_model_definition::Builder::default()
+    }
+}
+
 /// See [`DetectorModelDefinition`](crate::model::DetectorModelDefinition).
 pub mod detector_model_definition {
     
@@ -858,12 +869,6 @@ pub mod detector_model_definition {
     
     
 }
-impl DetectorModelDefinition {
-    /// Creates a new builder-style object to manufacture [`DetectorModelDefinition`](crate::model::DetectorModelDefinition).
-    pub fn builder() -> crate::model::detector_model_definition::Builder {
-        crate::model::detector_model_definition::Builder::default()
-    }
-}
 
 /// <p>Information that defines a state of a detector.</p>
 #[non_exhaustive]
@@ -900,6 +905,13 @@ impl State {
         self.on_exit.as_ref()
     }
 }
+impl State {
+    /// Creates a new builder-style object to manufacture [`State`](crate::model::State).
+    pub fn builder() -> crate::model::state::Builder {
+        crate::model::state::Builder::default()
+    }
+}
+
 /// See [`State`](crate::model::State).
 pub mod state {
     
@@ -966,12 +978,6 @@ pub mod state {
     
     
 }
-impl State {
-    /// Creates a new builder-style object to manufacture [`State`](crate::model::State).
-    pub fn builder() -> crate::model::state::Builder {
-        crate::model::state::Builder::default()
-    }
-}
 
 /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
 #[non_exhaustive]
@@ -987,6 +993,13 @@ impl OnExitLifecycle {
         self.events.as_deref()
     }
 }
+impl OnExitLifecycle {
+    /// Creates a new builder-style object to manufacture [`OnExitLifecycle`](crate::model::OnExitLifecycle).
+    pub fn builder() -> crate::model::on_exit_lifecycle::Builder {
+        crate::model::on_exit_lifecycle::Builder::default()
+    }
+}
+
 /// See [`OnExitLifecycle`](crate::model::OnExitLifecycle).
 pub mod on_exit_lifecycle {
     
@@ -1023,12 +1036,6 @@ pub mod on_exit_lifecycle {
     
     
 }
-impl OnExitLifecycle {
-    /// Creates a new builder-style object to manufacture [`OnExitLifecycle`](crate::model::OnExitLifecycle).
-    pub fn builder() -> crate::model::on_exit_lifecycle::Builder {
-        crate::model::on_exit_lifecycle::Builder::default()
-    }
-}
 
 /// <p>Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
@@ -1058,6 +1065,13 @@ impl Event {
         self.actions.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
     
@@ -1117,12 +1131,6 @@ pub mod event {
     }
     
     
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
 }
 
 /// <p>An action to be performed when the <code>condition</code> is TRUE.</p>
@@ -1223,6 +1231,13 @@ impl Action {
         self.iot_site_wise.as_ref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
     
@@ -1397,12 +1412,6 @@ pub mod action {
     
     
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p> 
 /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.</p> 
@@ -1455,6 +1464,13 @@ impl IotSiteWiseAction {
         self.property_value.as_ref()
     }
 }
+impl IotSiteWiseAction {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseAction`](crate::model::IotSiteWiseAction).
+    pub fn builder() -> crate::model::iot_site_wise_action::Builder {
+        crate::model::iot_site_wise_action::Builder::default()
+    }
+}
+
 /// See [`IotSiteWiseAction`](crate::model::IotSiteWiseAction).
 pub mod iot_site_wise_action {
     
@@ -1533,12 +1549,6 @@ pub mod iot_site_wise_action {
     
     
 }
-impl IotSiteWiseAction {
-    /// Creates a new builder-style object to manufacture [`IotSiteWiseAction`](crate::model::IotSiteWiseAction).
-    pub fn builder() -> crate::model::iot_site_wise_action::Builder {
-        crate::model::iot_site_wise_action::Builder::default()
-    }
-}
 
 /// <p>A structure that contains value information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html">AssetPropertyValue</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> 
 /// <p>You must use expressions for all parameters in <code>AssetPropertyValue</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p> 
@@ -1575,6 +1585,13 @@ impl AssetPropertyValue {
         self.quality.as_deref()
     }
 }
+impl AssetPropertyValue {
+    /// Creates a new builder-style object to manufacture [`AssetPropertyValue`](crate::model::AssetPropertyValue).
+    pub fn builder() -> crate::model::asset_property_value::Builder {
+        crate::model::asset_property_value::Builder::default()
+    }
+}
+
 /// See [`AssetPropertyValue`](crate::model::AssetPropertyValue).
 pub mod asset_property_value {
     
@@ -1629,12 +1646,6 @@ pub mod asset_property_value {
     
     
 }
-impl AssetPropertyValue {
-    /// Creates a new builder-style object to manufacture [`AssetPropertyValue`](crate::model::AssetPropertyValue).
-    pub fn builder() -> crate::model::asset_property_value::Builder {
-        crate::model::asset_property_value::Builder::default()
-    }
-}
 
 /// <p>A structure that contains timestamp information. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html">TimeInNanos</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> 
 /// <p>You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p> 
@@ -1665,6 +1676,13 @@ impl AssetPropertyTimestamp {
         self.offset_in_nanos.as_deref()
     }
 }
+impl AssetPropertyTimestamp {
+    /// Creates a new builder-style object to manufacture [`AssetPropertyTimestamp`](crate::model::AssetPropertyTimestamp).
+    pub fn builder() -> crate::model::asset_property_timestamp::Builder {
+        crate::model::asset_property_timestamp::Builder::default()
+    }
+}
+
 /// See [`AssetPropertyTimestamp`](crate::model::AssetPropertyTimestamp).
 pub mod asset_property_timestamp {
     
@@ -1706,12 +1724,6 @@ pub mod asset_property_timestamp {
     }
     
     
-}
-impl AssetPropertyTimestamp {
-    /// Creates a new builder-style object to manufacture [`AssetPropertyTimestamp`](crate::model::AssetPropertyTimestamp).
-    pub fn builder() -> crate::model::asset_property_timestamp::Builder {
-        crate::model::asset_property_timestamp::Builder::default()
-    }
 }
 
 /// <p>A structure that contains an asset property value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html">Variant</a> in the <i>AWS IoT SiteWise API Reference</i>.</p> 
@@ -1758,6 +1770,13 @@ impl AssetPropertyVariant {
         self.boolean_value.as_deref()
     }
 }
+impl AssetPropertyVariant {
+    /// Creates a new builder-style object to manufacture [`AssetPropertyVariant`](crate::model::AssetPropertyVariant).
+    pub fn builder() -> crate::model::asset_property_variant::Builder {
+        crate::model::asset_property_variant::Builder::default()
+    }
+}
+
 /// See [`AssetPropertyVariant`](crate::model::AssetPropertyVariant).
 pub mod asset_property_variant {
     
@@ -1824,12 +1843,6 @@ pub mod asset_property_variant {
     
     
 }
-impl AssetPropertyVariant {
-    /// Creates a new builder-style object to manufacture [`AssetPropertyVariant`](crate::model::AssetPropertyVariant).
-    pub fn builder() -> crate::model::asset_property_variant::Builder {
-        crate::model::asset_property_variant::Builder::default()
-    }
-}
 
 /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p> 
 /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p> 
@@ -1864,6 +1877,13 @@ impl DynamoDBv2Action {
         self.payload.as_ref()
     }
 }
+impl DynamoDBv2Action {
+    /// Creates a new builder-style object to manufacture [`DynamoDBv2Action`](crate::model::DynamoDBv2Action).
+    pub fn builder() -> crate::model::dynamo_d_bv2_action::Builder {
+        crate::model::dynamo_d_bv2_action::Builder::default()
+    }
+}
+
 /// See [`DynamoDBv2Action`](crate::model::DynamoDBv2Action).
 pub mod dynamo_d_bv2_action {
     
@@ -1908,12 +1928,6 @@ pub mod dynamo_d_bv2_action {
     
     
 }
-impl DynamoDBv2Action {
-    /// Creates a new builder-style object to manufacture [`DynamoDBv2Action`](crate::model::DynamoDBv2Action).
-    pub fn builder() -> crate::model::dynamo_d_bv2_action::Builder {
-        crate::model::dynamo_d_bv2_action::Builder::default()
-    }
-}
 
 /// <p>Information needed to configure the payload.</p> 
 /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
@@ -1953,6 +1967,13 @@ impl Payload {
         self.r#type.as_ref()
     }
 }
+impl Payload {
+    /// Creates a new builder-style object to manufacture [`Payload`](crate::model::Payload).
+    pub fn builder() -> crate::model::payload::Builder {
+        crate::model::payload::Builder::default()
+    }
+}
+
 /// See [`Payload`](crate::model::Payload).
 pub mod payload {
     
@@ -2010,12 +2031,6 @@ pub mod payload {
     }
     
     
-}
-impl Payload {
-    /// Creates a new builder-style object to manufacture [`Payload`](crate::model::Payload).
-    pub fn builder() -> crate::model::payload::Builder {
-        crate::model::payload::Builder::default()
-    }
 }
 
 /// When writing a match expression against `PayloadType`, it is important to ensure
@@ -2226,6 +2241,13 @@ impl DynamoDbAction {
         self.payload.as_ref()
     }
 }
+impl DynamoDbAction {
+    /// Creates a new builder-style object to manufacture [`DynamoDbAction`](crate::model::DynamoDbAction).
+    pub fn builder() -> crate::model::dynamo_db_action::Builder {
+        crate::model::dynamo_db_action::Builder::default()
+    }
+}
+
 /// See [`DynamoDbAction`](crate::model::DynamoDbAction).
 pub mod dynamo_db_action {
     
@@ -2400,12 +2422,6 @@ pub mod dynamo_db_action {
     
     
 }
-impl DynamoDbAction {
-    /// Creates a new builder-style object to manufacture [`DynamoDbAction`](crate::model::DynamoDbAction).
-    pub fn builder() -> crate::model::dynamo_db_action::Builder {
-        crate::model::dynamo_db_action::Builder::default()
-    }
-}
 
 /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
@@ -2435,6 +2451,13 @@ impl FirehoseAction {
         self.payload.as_ref()
     }
 }
+impl FirehoseAction {
+    /// Creates a new builder-style object to manufacture [`FirehoseAction`](crate::model::FirehoseAction).
+    pub fn builder() -> crate::model::firehose_action::Builder {
+        crate::model::firehose_action::Builder::default()
+    }
+}
+
 /// See [`FirehoseAction`](crate::model::FirehoseAction).
 pub mod firehose_action {
     
@@ -2489,12 +2512,6 @@ pub mod firehose_action {
     
     
 }
-impl FirehoseAction {
-    /// Creates a new builder-style object to manufacture [`FirehoseAction`](crate::model::FirehoseAction).
-    pub fn builder() -> crate::model::firehose_action::Builder {
-        crate::model::firehose_action::Builder::default()
-    }
-}
 
 /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
 #[non_exhaustive]
@@ -2524,6 +2541,13 @@ impl SqsAction {
         self.payload.as_ref()
     }
 }
+impl SqsAction {
+    /// Creates a new builder-style object to manufacture [`SqsAction`](crate::model::SqsAction).
+    pub fn builder() -> crate::model::sqs_action::Builder {
+        crate::model::sqs_action::Builder::default()
+    }
+}
+
 /// See [`SqsAction`](crate::model::SqsAction).
 pub mod sqs_action {
     
@@ -2578,12 +2602,6 @@ pub mod sqs_action {
     
     
 }
-impl SqsAction {
-    /// Creates a new builder-style object to manufacture [`SqsAction`](crate::model::SqsAction).
-    pub fn builder() -> crate::model::sqs_action::Builder {
-        crate::model::sqs_action::Builder::default()
-    }
-}
 
 /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
@@ -2606,6 +2624,13 @@ impl IotEventsAction {
         self.payload.as_ref()
     }
 }
+impl IotEventsAction {
+    /// Creates a new builder-style object to manufacture [`IotEventsAction`](crate::model::IotEventsAction).
+    pub fn builder() -> crate::model::iot_events_action::Builder {
+        crate::model::iot_events_action::Builder::default()
+    }
+}
+
 /// See [`IotEventsAction`](crate::model::IotEventsAction).
 pub mod iot_events_action {
     
@@ -2648,12 +2673,6 @@ pub mod iot_events_action {
     
     
 }
-impl IotEventsAction {
-    /// Creates a new builder-style object to manufacture [`IotEventsAction`](crate::model::IotEventsAction).
-    pub fn builder() -> crate::model::iot_events_action::Builder {
-        crate::model::iot_events_action::Builder::default()
-    }
-}
 
 /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
@@ -2676,6 +2695,13 @@ impl LambdaAction {
         self.payload.as_ref()
     }
 }
+impl LambdaAction {
+    /// Creates a new builder-style object to manufacture [`LambdaAction`](crate::model::LambdaAction).
+    pub fn builder() -> crate::model::lambda_action::Builder {
+        crate::model::lambda_action::Builder::default()
+    }
+}
+
 /// See [`LambdaAction`](crate::model::LambdaAction).
 pub mod lambda_action {
     
@@ -2718,12 +2744,6 @@ pub mod lambda_action {
     
     
 }
-impl LambdaAction {
-    /// Creates a new builder-style object to manufacture [`LambdaAction`](crate::model::LambdaAction).
-    pub fn builder() -> crate::model::lambda_action::Builder {
-        crate::model::lambda_action::Builder::default()
-    }
-}
 
 /// <p>Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer.</p>
 #[non_exhaustive]
@@ -2739,6 +2759,13 @@ impl ResetTimerAction {
         self.timer_name.as_deref()
     }
 }
+impl ResetTimerAction {
+    /// Creates a new builder-style object to manufacture [`ResetTimerAction`](crate::model::ResetTimerAction).
+    pub fn builder() -> crate::model::reset_timer_action::Builder {
+        crate::model::reset_timer_action::Builder::default()
+    }
+}
+
 /// See [`ResetTimerAction`](crate::model::ResetTimerAction).
 pub mod reset_timer_action {
     
@@ -2769,12 +2796,6 @@ pub mod reset_timer_action {
     
     
 }
-impl ResetTimerAction {
-    /// Creates a new builder-style object to manufacture [`ResetTimerAction`](crate::model::ResetTimerAction).
-    pub fn builder() -> crate::model::reset_timer_action::Builder {
-        crate::model::reset_timer_action::Builder::default()
-    }
-}
 
 /// <p>Information needed to clear the timer.</p>
 #[non_exhaustive]
@@ -2790,6 +2811,13 @@ impl ClearTimerAction {
         self.timer_name.as_deref()
     }
 }
+impl ClearTimerAction {
+    /// Creates a new builder-style object to manufacture [`ClearTimerAction`](crate::model::ClearTimerAction).
+    pub fn builder() -> crate::model::clear_timer_action::Builder {
+        crate::model::clear_timer_action::Builder::default()
+    }
+}
+
 /// See [`ClearTimerAction`](crate::model::ClearTimerAction).
 pub mod clear_timer_action {
     
@@ -2819,12 +2847,6 @@ pub mod clear_timer_action {
     }
     
     
-}
-impl ClearTimerAction {
-    /// Creates a new builder-style object to manufacture [`ClearTimerAction`](crate::model::ClearTimerAction).
-    pub fn builder() -> crate::model::clear_timer_action::Builder {
-        crate::model::clear_timer_action::Builder::default()
-    }
 }
 
 /// <p>Information needed to set the timer.</p>
@@ -2867,6 +2889,13 @@ impl SetTimerAction {
         self.duration_expression.as_deref()
     }
 }
+impl SetTimerAction {
+    /// Creates a new builder-style object to manufacture [`SetTimerAction`](crate::model::SetTimerAction).
+    pub fn builder() -> crate::model::set_timer_action::Builder {
+        crate::model::set_timer_action::Builder::default()
+    }
+}
+
 /// See [`SetTimerAction`](crate::model::SetTimerAction).
 pub mod set_timer_action {
     
@@ -2933,12 +2962,6 @@ pub mod set_timer_action {
     
     
 }
-impl SetTimerAction {
-    /// Creates a new builder-style object to manufacture [`SetTimerAction`](crate::model::SetTimerAction).
-    pub fn builder() -> crate::model::set_timer_action::Builder {
-        crate::model::set_timer_action::Builder::default()
-    }
-}
 
 /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
 #[non_exhaustive]
@@ -2971,6 +2994,13 @@ impl IotTopicPublishAction {
         self.payload.as_ref()
     }
 }
+impl IotTopicPublishAction {
+    /// Creates a new builder-style object to manufacture [`IotTopicPublishAction`](crate::model::IotTopicPublishAction).
+    pub fn builder() -> crate::model::iot_topic_publish_action::Builder {
+        crate::model::iot_topic_publish_action::Builder::default()
+    }
+}
+
 /// See [`IotTopicPublishAction`](crate::model::IotTopicPublishAction).
 pub mod iot_topic_publish_action {
     
@@ -3023,12 +3053,6 @@ pub mod iot_topic_publish_action {
     
     
 }
-impl IotTopicPublishAction {
-    /// Creates a new builder-style object to manufacture [`IotTopicPublishAction`](crate::model::IotTopicPublishAction).
-    pub fn builder() -> crate::model::iot_topic_publish_action::Builder {
-        crate::model::iot_topic_publish_action::Builder::default()
-    }
-}
 
 /// <p>Information required to publish the Amazon SNS message.</p>
 #[non_exhaustive]
@@ -3051,6 +3075,13 @@ impl SnsTopicPublishAction {
         self.payload.as_ref()
     }
 }
+impl SnsTopicPublishAction {
+    /// Creates a new builder-style object to manufacture [`SnsTopicPublishAction`](crate::model::SnsTopicPublishAction).
+    pub fn builder() -> crate::model::sns_topic_publish_action::Builder {
+        crate::model::sns_topic_publish_action::Builder::default()
+    }
+}
+
 /// See [`SnsTopicPublishAction`](crate::model::SnsTopicPublishAction).
 pub mod sns_topic_publish_action {
     
@@ -3093,12 +3124,6 @@ pub mod sns_topic_publish_action {
     
     
 }
-impl SnsTopicPublishAction {
-    /// Creates a new builder-style object to manufacture [`SnsTopicPublishAction`](crate::model::SnsTopicPublishAction).
-    pub fn builder() -> crate::model::sns_topic_publish_action::Builder {
-        crate::model::sns_topic_publish_action::Builder::default()
-    }
-}
 
 /// <p>Information about the variable and its new value.</p>
 #[non_exhaustive]
@@ -3121,6 +3146,13 @@ impl SetVariableAction {
         self.value.as_deref()
     }
 }
+impl SetVariableAction {
+    /// Creates a new builder-style object to manufacture [`SetVariableAction`](crate::model::SetVariableAction).
+    pub fn builder() -> crate::model::set_variable_action::Builder {
+        crate::model::set_variable_action::Builder::default()
+    }
+}
+
 /// See [`SetVariableAction`](crate::model::SetVariableAction).
 pub mod set_variable_action {
     
@@ -3163,12 +3195,6 @@ pub mod set_variable_action {
     
     
 }
-impl SetVariableAction {
-    /// Creates a new builder-style object to manufacture [`SetVariableAction`](crate::model::SetVariableAction).
-    pub fn builder() -> crate::model::set_variable_action::Builder {
-        crate::model::set_variable_action::Builder::default()
-    }
-}
 
 /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
 #[non_exhaustive]
@@ -3184,6 +3210,13 @@ impl OnEnterLifecycle {
         self.events.as_deref()
     }
 }
+impl OnEnterLifecycle {
+    /// Creates a new builder-style object to manufacture [`OnEnterLifecycle`](crate::model::OnEnterLifecycle).
+    pub fn builder() -> crate::model::on_enter_lifecycle::Builder {
+        crate::model::on_enter_lifecycle::Builder::default()
+    }
+}
+
 /// See [`OnEnterLifecycle`](crate::model::OnEnterLifecycle).
 pub mod on_enter_lifecycle {
     
@@ -3220,12 +3253,6 @@ pub mod on_enter_lifecycle {
     
     
 }
-impl OnEnterLifecycle {
-    /// Creates a new builder-style object to manufacture [`OnEnterLifecycle`](crate::model::OnEnterLifecycle).
-    pub fn builder() -> crate::model::on_enter_lifecycle::Builder {
-        crate::model::on_enter_lifecycle::Builder::default()
-    }
-}
 
 /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
@@ -3248,6 +3275,13 @@ impl OnInputLifecycle {
         self.transition_events.as_deref()
     }
 }
+impl OnInputLifecycle {
+    /// Creates a new builder-style object to manufacture [`OnInputLifecycle`](crate::model::OnInputLifecycle).
+    pub fn builder() -> crate::model::on_input_lifecycle::Builder {
+        crate::model::on_input_lifecycle::Builder::default()
+    }
+}
+
 /// See [`OnInputLifecycle`](crate::model::OnInputLifecycle).
 pub mod on_input_lifecycle {
     
@@ -3302,12 +3336,6 @@ pub mod on_input_lifecycle {
     
     
 }
-impl OnInputLifecycle {
-    /// Creates a new builder-style object to manufacture [`OnInputLifecycle`](crate::model::OnInputLifecycle).
-    pub fn builder() -> crate::model::on_input_lifecycle::Builder {
-        crate::model::on_input_lifecycle::Builder::default()
-    }
-}
 
 /// <p>Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
@@ -3344,6 +3372,13 @@ impl TransitionEvent {
         self.next_state.as_deref()
     }
 }
+impl TransitionEvent {
+    /// Creates a new builder-style object to manufacture [`TransitionEvent`](crate::model::TransitionEvent).
+    pub fn builder() -> crate::model::transition_event::Builder {
+        crate::model::transition_event::Builder::default()
+    }
+}
+
 /// See [`TransitionEvent`](crate::model::TransitionEvent).
 pub mod transition_event {
     
@@ -3415,12 +3450,6 @@ pub mod transition_event {
     }
     
     
-}
-impl TransitionEvent {
-    /// Creates a new builder-style object to manufacture [`TransitionEvent`](crate::model::TransitionEvent).
-    pub fn builder() -> crate::model::transition_event::Builder {
-        crate::model::transition_event::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AlarmModelVersionStatus`, it is important to ensure
@@ -3536,6 +3565,13 @@ impl AlarmCapabilities {
         self.acknowledge_flow.as_ref()
     }
 }
+impl AlarmCapabilities {
+    /// Creates a new builder-style object to manufacture [`AlarmCapabilities`](crate::model::AlarmCapabilities).
+    pub fn builder() -> crate::model::alarm_capabilities::Builder {
+        crate::model::alarm_capabilities::Builder::default()
+    }
+}
+
 /// See [`AlarmCapabilities`](crate::model::AlarmCapabilities).
 pub mod alarm_capabilities {
     
@@ -3578,12 +3614,6 @@ pub mod alarm_capabilities {
     
     
 }
-impl AlarmCapabilities {
-    /// Creates a new builder-style object to manufacture [`AlarmCapabilities`](crate::model::AlarmCapabilities).
-    pub fn builder() -> crate::model::alarm_capabilities::Builder {
-        crate::model::alarm_capabilities::Builder::default()
-    }
-}
 
 /// <p>Specifies whether to get notified for alarm state changes.</p>
 #[non_exhaustive]
@@ -3599,6 +3629,13 @@ impl AcknowledgeFlow {
         self.enabled
     }
 }
+impl AcknowledgeFlow {
+    /// Creates a new builder-style object to manufacture [`AcknowledgeFlow`](crate::model::AcknowledgeFlow).
+    pub fn builder() -> crate::model::acknowledge_flow::Builder {
+        crate::model::acknowledge_flow::Builder::default()
+    }
+}
+
 /// See [`AcknowledgeFlow`](crate::model::AcknowledgeFlow).
 pub mod acknowledge_flow {
     
@@ -3629,12 +3666,6 @@ pub mod acknowledge_flow {
     
     
 }
-impl AcknowledgeFlow {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeFlow`](crate::model::AcknowledgeFlow).
-    pub fn builder() -> crate::model::acknowledge_flow::Builder {
-        crate::model::acknowledge_flow::Builder::default()
-    }
-}
 
 /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
 #[non_exhaustive]
@@ -3650,6 +3681,13 @@ impl InitializationConfiguration {
         self.disabled_on_initialization
     }
 }
+impl InitializationConfiguration {
+    /// Creates a new builder-style object to manufacture [`InitializationConfiguration`](crate::model::InitializationConfiguration).
+    pub fn builder() -> crate::model::initialization_configuration::Builder {
+        crate::model::initialization_configuration::Builder::default()
+    }
+}
+
 /// See [`InitializationConfiguration`](crate::model::InitializationConfiguration).
 pub mod initialization_configuration {
     
@@ -3680,12 +3718,6 @@ pub mod initialization_configuration {
     
     
 }
-impl InitializationConfiguration {
-    /// Creates a new builder-style object to manufacture [`InitializationConfiguration`](crate::model::InitializationConfiguration).
-    pub fn builder() -> crate::model::initialization_configuration::Builder {
-        crate::model::initialization_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains information about one or more alarm actions.</p>
 #[non_exhaustive]
@@ -3701,6 +3733,13 @@ impl AlarmEventActions {
         self.alarm_actions.as_deref()
     }
 }
+impl AlarmEventActions {
+    /// Creates a new builder-style object to manufacture [`AlarmEventActions`](crate::model::AlarmEventActions).
+    pub fn builder() -> crate::model::alarm_event_actions::Builder {
+        crate::model::alarm_event_actions::Builder::default()
+    }
+}
+
 /// See [`AlarmEventActions`](crate::model::AlarmEventActions).
 pub mod alarm_event_actions {
     
@@ -3736,12 +3775,6 @@ pub mod alarm_event_actions {
     }
     
     
-}
-impl AlarmEventActions {
-    /// Creates a new builder-style object to manufacture [`AlarmEventActions`](crate::model::AlarmEventActions).
-    pub fn builder() -> crate::model::alarm_event_actions::Builder {
-        crate::model::alarm_event_actions::Builder::default()
-    }
 }
 
 /// <p>Specifies one of the following actions to receive notifications when the alarm state changes.</p>
@@ -3878,6 +3911,13 @@ impl AlarmAction {
         self.iot_site_wise.as_ref()
     }
 }
+impl AlarmAction {
+    /// Creates a new builder-style object to manufacture [`AlarmAction`](crate::model::AlarmAction).
+    pub fn builder() -> crate::model::alarm_action::Builder {
+        crate::model::alarm_action::Builder::default()
+    }
+}
+
 /// See [`AlarmAction`](crate::model::AlarmAction).
 pub mod alarm_action {
     
@@ -4068,12 +4108,6 @@ pub mod alarm_action {
     
     
 }
-impl AlarmAction {
-    /// Creates a new builder-style object to manufacture [`AlarmAction`](crate::model::AlarmAction).
-    pub fn builder() -> crate::model::alarm_action::Builder {
-        crate::model::alarm_action::Builder::default()
-    }
-}
 
 /// <p>Contains information about one or more notification actions.</p>
 #[non_exhaustive]
@@ -4089,6 +4123,13 @@ impl AlarmNotification {
         self.notification_actions.as_deref()
     }
 }
+impl AlarmNotification {
+    /// Creates a new builder-style object to manufacture [`AlarmNotification`](crate::model::AlarmNotification).
+    pub fn builder() -> crate::model::alarm_notification::Builder {
+        crate::model::alarm_notification::Builder::default()
+    }
+}
+
 /// See [`AlarmNotification`](crate::model::AlarmNotification).
 pub mod alarm_notification {
     
@@ -4125,12 +4166,6 @@ pub mod alarm_notification {
     
     
 }
-impl AlarmNotification {
-    /// Creates a new builder-style object to manufacture [`AlarmNotification`](crate::model::AlarmNotification).
-    pub fn builder() -> crate::model::alarm_notification::Builder {
-        crate::model::alarm_notification::Builder::default()
-    }
-}
 
 /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
 #[non_exhaustive]
@@ -4160,6 +4195,13 @@ impl NotificationAction {
         self.email_configurations.as_deref()
     }
 }
+impl NotificationAction {
+    /// Creates a new builder-style object to manufacture [`NotificationAction`](crate::model::NotificationAction).
+    pub fn builder() -> crate::model::notification_action::Builder {
+        crate::model::notification_action::Builder::default()
+    }
+}
+
 /// See [`NotificationAction`](crate::model::NotificationAction).
 pub mod notification_action {
     
@@ -4226,12 +4268,6 @@ pub mod notification_action {
     
     
 }
-impl NotificationAction {
-    /// Creates a new builder-style object to manufacture [`NotificationAction`](crate::model::NotificationAction).
-    pub fn builder() -> crate::model::notification_action::Builder {
-        crate::model::notification_action::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of email notifications.</p>
 #[non_exhaustive]
@@ -4269,6 +4305,13 @@ impl EmailConfiguration {
         self.recipients.as_ref()
     }
 }
+impl EmailConfiguration {
+    /// Creates a new builder-style object to manufacture [`EmailConfiguration`](crate::model::EmailConfiguration).
+    pub fn builder() -> crate::model::email_configuration::Builder {
+        crate::model::email_configuration::Builder::default()
+    }
+}
+
 /// See [`EmailConfiguration`](crate::model::EmailConfiguration).
 pub mod email_configuration {
     
@@ -4331,12 +4374,6 @@ pub mod email_configuration {
     
     
 }
-impl EmailConfiguration {
-    /// Creates a new builder-style object to manufacture [`EmailConfiguration`](crate::model::EmailConfiguration).
-    pub fn builder() -> crate::model::email_configuration::Builder {
-        crate::model::email_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the information of one or more recipients who receive the emails.</p> <important> 
 /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p> 
@@ -4354,6 +4391,13 @@ impl EmailRecipients {
         self.to.as_deref()
     }
 }
+impl EmailRecipients {
+    /// Creates a new builder-style object to manufacture [`EmailRecipients`](crate::model::EmailRecipients).
+    pub fn builder() -> crate::model::email_recipients::Builder {
+        crate::model::email_recipients::Builder::default()
+    }
+}
+
 /// See [`EmailRecipients`](crate::model::EmailRecipients).
 pub mod email_recipients {
     
@@ -4390,12 +4434,6 @@ pub mod email_recipients {
     
     
 }
-impl EmailRecipients {
-    /// Creates a new builder-style object to manufacture [`EmailRecipients`](crate::model::EmailRecipients).
-    pub fn builder() -> crate::model::email_recipients::Builder {
-        crate::model::email_recipients::Builder::default()
-    }
-}
 
 /// <p>The information that identifies the recipient.</p>
 #[non_exhaustive]
@@ -4411,6 +4449,13 @@ impl RecipientDetail {
         self.sso_identity.as_ref()
     }
 }
+impl RecipientDetail {
+    /// Creates a new builder-style object to manufacture [`RecipientDetail`](crate::model::RecipientDetail).
+    pub fn builder() -> crate::model::recipient_detail::Builder {
+        crate::model::recipient_detail::Builder::default()
+    }
+}
+
 /// See [`RecipientDetail`](crate::model::RecipientDetail).
 pub mod recipient_detail {
     
@@ -4441,12 +4486,6 @@ pub mod recipient_detail {
     
     
 }
-impl RecipientDetail {
-    /// Creates a new builder-style object to manufacture [`RecipientDetail`](crate::model::RecipientDetail).
-    pub fn builder() -> crate::model::recipient_detail::Builder {
-        crate::model::recipient_detail::Builder::default()
-    }
-}
 
 /// <p>Contains information about your identity source in AWS Single Sign-On. For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.</p>
 #[non_exhaustive]
@@ -4469,6 +4508,13 @@ impl SsoIdentity {
         self.user_id.as_deref()
     }
 }
+impl SsoIdentity {
+    /// Creates a new builder-style object to manufacture [`SsoIdentity`](crate::model::SsoIdentity).
+    pub fn builder() -> crate::model::sso_identity::Builder {
+        crate::model::sso_identity::Builder::default()
+    }
+}
+
 /// See [`SsoIdentity`](crate::model::SsoIdentity).
 pub mod sso_identity {
     
@@ -4511,12 +4557,6 @@ pub mod sso_identity {
     
     
 }
-impl SsoIdentity {
-    /// Creates a new builder-style object to manufacture [`SsoIdentity`](crate::model::SsoIdentity).
-    pub fn builder() -> crate::model::sso_identity::Builder {
-        crate::model::sso_identity::Builder::default()
-    }
-}
 
 /// <p>Contains the subject and message of an email.</p>
 #[non_exhaustive]
@@ -4539,6 +4579,13 @@ impl EmailContent {
         self.additional_message.as_deref()
     }
 }
+impl EmailContent {
+    /// Creates a new builder-style object to manufacture [`EmailContent`](crate::model::EmailContent).
+    pub fn builder() -> crate::model::email_content::Builder {
+        crate::model::email_content::Builder::default()
+    }
+}
+
 /// See [`EmailContent`](crate::model::EmailContent).
 pub mod email_content {
     
@@ -4581,12 +4628,6 @@ pub mod email_content {
     
     
 }
-impl EmailContent {
-    /// Creates a new builder-style object to manufacture [`EmailContent`](crate::model::EmailContent).
-    pub fn builder() -> crate::model::email_content::Builder {
-        crate::model::email_content::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of SMS notifications.</p>
 #[non_exhaustive]
@@ -4620,6 +4661,13 @@ impl SmsConfiguration {
         self.recipients.as_deref()
     }
 }
+impl SmsConfiguration {
+    /// Creates a new builder-style object to manufacture [`SmsConfiguration`](crate::model::SmsConfiguration).
+    pub fn builder() -> crate::model::sms_configuration::Builder {
+        crate::model::sms_configuration::Builder::default()
+    }
+}
+
 /// See [`SmsConfiguration`](crate::model::SmsConfiguration).
 pub mod sms_configuration {
     
@@ -4684,12 +4732,6 @@ pub mod sms_configuration {
     
     
 }
-impl SmsConfiguration {
-    /// Creates a new builder-style object to manufacture [`SmsConfiguration`](crate::model::SmsConfiguration).
-    pub fn builder() -> crate::model::sms_configuration::Builder {
-        crate::model::sms_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
 #[non_exhaustive]
@@ -4705,6 +4747,13 @@ impl NotificationTargetActions {
         self.lambda_action.as_ref()
     }
 }
+impl NotificationTargetActions {
+    /// Creates a new builder-style object to manufacture [`NotificationTargetActions`](crate::model::NotificationTargetActions).
+    pub fn builder() -> crate::model::notification_target_actions::Builder {
+        crate::model::notification_target_actions::Builder::default()
+    }
+}
+
 /// See [`NotificationTargetActions`](crate::model::NotificationTargetActions).
 pub mod notification_target_actions {
     
@@ -4735,12 +4784,6 @@ pub mod notification_target_actions {
     
     
 }
-impl NotificationTargetActions {
-    /// Creates a new builder-style object to manufacture [`NotificationTargetActions`](crate::model::NotificationTargetActions).
-    pub fn builder() -> crate::model::notification_target_actions::Builder {
-        crate::model::notification_target_actions::Builder::default()
-    }
-}
 
 /// <p>Defines when your alarm is invoked.</p>
 #[non_exhaustive]
@@ -4756,6 +4799,13 @@ impl AlarmRule {
         self.simple_rule.as_ref()
     }
 }
+impl AlarmRule {
+    /// Creates a new builder-style object to manufacture [`AlarmRule`](crate::model::AlarmRule).
+    pub fn builder() -> crate::model::alarm_rule::Builder {
+        crate::model::alarm_rule::Builder::default()
+    }
+}
+
 /// See [`AlarmRule`](crate::model::AlarmRule).
 pub mod alarm_rule {
     
@@ -4786,12 +4836,6 @@ pub mod alarm_rule {
     
     
 }
-impl AlarmRule {
-    /// Creates a new builder-style object to manufacture [`AlarmRule`](crate::model::AlarmRule).
-    pub fn builder() -> crate::model::alarm_rule::Builder {
-        crate::model::alarm_rule::Builder::default()
-    }
-}
 
 /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
 #[non_exhaustive]
@@ -4821,6 +4865,13 @@ impl SimpleRule {
         self.threshold.as_deref()
     }
 }
+impl SimpleRule {
+    /// Creates a new builder-style object to manufacture [`SimpleRule`](crate::model::SimpleRule).
+    pub fn builder() -> crate::model::simple_rule::Builder {
+        crate::model::simple_rule::Builder::default()
+    }
+}
+
 /// See [`SimpleRule`](crate::model::SimpleRule).
 pub mod simple_rule {
     
@@ -4874,12 +4925,6 @@ pub mod simple_rule {
     }
     
     
-}
-impl SimpleRule {
-    /// Creates a new builder-style object to manufacture [`SimpleRule`](crate::model::SimpleRule).
-    pub fn builder() -> crate::model::simple_rule::Builder {
-        crate::model::simple_rule::Builder::default()
-    }
 }
 
 /// When writing a match expression against `ComparisonOperator`, it is important to ensure
@@ -5005,6 +5050,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
     
@@ -5047,12 +5099,6 @@ pub mod tag {
     
     
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The values of the AWS IoT Events logging options.</p>
 #[non_exhaustive]
@@ -5089,6 +5135,13 @@ impl LoggingOptions {
         self.detector_debug_options.as_deref()
     }
 }
+impl LoggingOptions {
+    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
+    pub fn builder() -> crate::model::logging_options::Builder {
+        crate::model::logging_options::Builder::default()
+    }
+}
+
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
 pub mod logging_options {
     
@@ -5162,12 +5215,6 @@ pub mod logging_options {
     
     
 }
-impl LoggingOptions {
-    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
-    pub fn builder() -> crate::model::logging_options::Builder {
-        crate::model::logging_options::Builder::default()
-    }
-}
 
 /// <p>The detector model and the specific detectors (instances) for which the logging level is given.</p>
 #[non_exhaustive]
@@ -5190,6 +5237,13 @@ impl DetectorDebugOption {
         self.key_value.as_deref()
     }
 }
+impl DetectorDebugOption {
+    /// Creates a new builder-style object to manufacture [`DetectorDebugOption`](crate::model::DetectorDebugOption).
+    pub fn builder() -> crate::model::detector_debug_option::Builder {
+        crate::model::detector_debug_option::Builder::default()
+    }
+}
+
 /// See [`DetectorDebugOption`](crate::model::DetectorDebugOption).
 pub mod detector_debug_option {
     
@@ -5231,12 +5285,6 @@ pub mod detector_debug_option {
     }
     
     
-}
-impl DetectorDebugOption {
-    /// Creates a new builder-style object to manufacture [`DetectorDebugOption`](crate::model::DetectorDebugOption).
-    pub fn builder() -> crate::model::detector_debug_option::Builder {
-        crate::model::detector_debug_option::Builder::default()
-    }
 }
 
 /// When writing a match expression against `LoggingLevel`, it is important to ensure
@@ -5375,6 +5423,13 @@ impl InputSummary {
         self.status.as_ref()
     }
 }
+impl InputSummary {
+    /// Creates a new builder-style object to manufacture [`InputSummary`](crate::model::InputSummary).
+    pub fn builder() -> crate::model::input_summary::Builder {
+        crate::model::input_summary::Builder::default()
+    }
+}
+
 /// See [`InputSummary`](crate::model::InputSummary).
 pub mod input_summary {
     
@@ -5465,12 +5520,6 @@ pub mod input_summary {
     
     
 }
-impl InputSummary {
-    /// Creates a new builder-style object to manufacture [`InputSummary`](crate::model::InputSummary).
-    pub fn builder() -> crate::model::input_summary::Builder {
-        crate::model::input_summary::Builder::default()
-    }
-}
 
 /// <p> Contains information about the routed resource. </p>
 #[non_exhaustive]
@@ -5493,6 +5542,13 @@ impl RoutedResource {
         self.arn.as_deref()
     }
 }
+impl RoutedResource {
+    /// Creates a new builder-style object to manufacture [`RoutedResource`](crate::model::RoutedResource).
+    pub fn builder() -> crate::model::routed_resource::Builder {
+        crate::model::routed_resource::Builder::default()
+    }
+}
+
 /// See [`RoutedResource`](crate::model::RoutedResource).
 pub mod routed_resource {
     
@@ -5535,12 +5591,6 @@ pub mod routed_resource {
     
     
 }
-impl RoutedResource {
-    /// Creates a new builder-style object to manufacture [`RoutedResource`](crate::model::RoutedResource).
-    pub fn builder() -> crate::model::routed_resource::Builder {
-        crate::model::routed_resource::Builder::default()
-    }
-}
 
 /// <p> The identifer of the input. </p>
 #[non_exhaustive]
@@ -5563,6 +5613,13 @@ impl InputIdentifier {
         self.iot_site_wise_input_identifier.as_ref()
     }
 }
+impl InputIdentifier {
+    /// Creates a new builder-style object to manufacture [`InputIdentifier`](crate::model::InputIdentifier).
+    pub fn builder() -> crate::model::input_identifier::Builder {
+        crate::model::input_identifier::Builder::default()
+    }
+}
+
 /// See [`InputIdentifier`](crate::model::InputIdentifier).
 pub mod input_identifier {
     
@@ -5605,12 +5662,6 @@ pub mod input_identifier {
     
     
 }
-impl InputIdentifier {
-    /// Creates a new builder-style object to manufacture [`InputIdentifier`](crate::model::InputIdentifier).
-    pub fn builder() -> crate::model::input_identifier::Builder {
-        crate::model::input_identifier::Builder::default()
-    }
-}
 
 /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
 #[non_exhaustive]
@@ -5626,6 +5677,13 @@ impl IotSiteWiseInputIdentifier {
         self.iot_site_wise_asset_model_property_identifier.as_ref()
     }
 }
+impl IotSiteWiseInputIdentifier {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseInputIdentifier`](crate::model::IotSiteWiseInputIdentifier).
+    pub fn builder() -> crate::model::iot_site_wise_input_identifier::Builder {
+        crate::model::iot_site_wise_input_identifier::Builder::default()
+    }
+}
+
 /// See [`IotSiteWiseInputIdentifier`](crate::model::IotSiteWiseInputIdentifier).
 pub mod iot_site_wise_input_identifier {
     
@@ -5656,12 +5714,6 @@ pub mod iot_site_wise_input_identifier {
     
     
 }
-impl IotSiteWiseInputIdentifier {
-    /// Creates a new builder-style object to manufacture [`IotSiteWiseInputIdentifier`](crate::model::IotSiteWiseInputIdentifier).
-    pub fn builder() -> crate::model::iot_site_wise_input_identifier::Builder {
-        crate::model::iot_site_wise_input_identifier::Builder::default()
-    }
-}
 
 /// <p> The asset model property identifer of the input routed from AWS IoT SiteWise. </p>
 #[non_exhaustive]
@@ -5684,6 +5736,13 @@ impl IotSiteWiseAssetModelPropertyIdentifier {
         self.property_id.as_deref()
     }
 }
+impl IotSiteWiseAssetModelPropertyIdentifier {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseAssetModelPropertyIdentifier`](crate::model::IotSiteWiseAssetModelPropertyIdentifier).
+    pub fn builder() -> crate::model::iot_site_wise_asset_model_property_identifier::Builder {
+        crate::model::iot_site_wise_asset_model_property_identifier::Builder::default()
+    }
+}
+
 /// See [`IotSiteWiseAssetModelPropertyIdentifier`](crate::model::IotSiteWiseAssetModelPropertyIdentifier).
 pub mod iot_site_wise_asset_model_property_identifier {
     
@@ -5726,12 +5785,6 @@ pub mod iot_site_wise_asset_model_property_identifier {
     
     
 }
-impl IotSiteWiseAssetModelPropertyIdentifier {
-    /// Creates a new builder-style object to manufacture [`IotSiteWiseAssetModelPropertyIdentifier`](crate::model::IotSiteWiseAssetModelPropertyIdentifier).
-    pub fn builder() -> crate::model::iot_site_wise_asset_model_property_identifier::Builder {
-        crate::model::iot_site_wise_asset_model_property_identifier::Builder::default()
-    }
-}
 
 /// <p> The identifier of the input routed to AWS IoT Events. </p>
 #[non_exhaustive]
@@ -5747,6 +5800,13 @@ impl IotEventsInputIdentifier {
         self.input_name.as_deref()
     }
 }
+impl IotEventsInputIdentifier {
+    /// Creates a new builder-style object to manufacture [`IotEventsInputIdentifier`](crate::model::IotEventsInputIdentifier).
+    pub fn builder() -> crate::model::iot_events_input_identifier::Builder {
+        crate::model::iot_events_input_identifier::Builder::default()
+    }
+}
+
 /// See [`IotEventsInputIdentifier`](crate::model::IotEventsInputIdentifier).
 pub mod iot_events_input_identifier {
     
@@ -5776,12 +5836,6 @@ pub mod iot_events_input_identifier {
     }
     
     
-}
-impl IotEventsInputIdentifier {
-    /// Creates a new builder-style object to manufacture [`IotEventsInputIdentifier`](crate::model::IotEventsInputIdentifier).
-    pub fn builder() -> crate::model::iot_events_input_identifier::Builder {
-        crate::model::iot_events_input_identifier::Builder::default()
-    }
 }
 
 /// <p>Information about the detector model version.</p>
@@ -5847,6 +5901,13 @@ impl DetectorModelVersionSummary {
         self.evaluation_method.as_ref()
     }
 }
+impl DetectorModelVersionSummary {
+    /// Creates a new builder-style object to manufacture [`DetectorModelVersionSummary`](crate::model::DetectorModelVersionSummary).
+    pub fn builder() -> crate::model::detector_model_version_summary::Builder {
+        crate::model::detector_model_version_summary::Builder::default()
+    }
+}
+
 /// See [`DetectorModelVersionSummary`](crate::model::DetectorModelVersionSummary).
 pub mod detector_model_version_summary {
     
@@ -5961,12 +6022,6 @@ pub mod detector_model_version_summary {
     
     
 }
-impl DetectorModelVersionSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorModelVersionSummary`](crate::model::DetectorModelVersionSummary).
-    pub fn builder() -> crate::model::detector_model_version_summary::Builder {
-        crate::model::detector_model_version_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the detector model.</p>
 #[non_exhaustive]
@@ -5996,6 +6051,13 @@ impl DetectorModelSummary {
         self.creation_time.as_ref()
     }
 }
+impl DetectorModelSummary {
+    /// Creates a new builder-style object to manufacture [`DetectorModelSummary`](crate::model::DetectorModelSummary).
+    pub fn builder() -> crate::model::detector_model_summary::Builder {
+        crate::model::detector_model_summary::Builder::default()
+    }
+}
+
 /// See [`DetectorModelSummary`](crate::model::DetectorModelSummary).
 pub mod detector_model_summary {
     
@@ -6049,12 +6111,6 @@ pub mod detector_model_summary {
     }
     
     
-}
-impl DetectorModelSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorModelSummary`](crate::model::DetectorModelSummary).
-    pub fn builder() -> crate::model::detector_model_summary::Builder {
-        crate::model::detector_model_summary::Builder::default()
-    }
 }
 
 /// <p>Contains a summary of an alarm model version.</p>
@@ -6132,6 +6188,13 @@ impl AlarmModelVersionSummary {
         self.status_message.as_deref()
     }
 }
+impl AlarmModelVersionSummary {
+    /// Creates a new builder-style object to manufacture [`AlarmModelVersionSummary`](crate::model::AlarmModelVersionSummary).
+    pub fn builder() -> crate::model::alarm_model_version_summary::Builder {
+        crate::model::alarm_model_version_summary::Builder::default()
+    }
+}
+
 /// See [`AlarmModelVersionSummary`](crate::model::AlarmModelVersionSummary).
 pub mod alarm_model_version_summary {
     
@@ -6258,12 +6321,6 @@ pub mod alarm_model_version_summary {
     
     
 }
-impl AlarmModelVersionSummary {
-    /// Creates a new builder-style object to manufacture [`AlarmModelVersionSummary`](crate::model::AlarmModelVersionSummary).
-    pub fn builder() -> crate::model::alarm_model_version_summary::Builder {
-        crate::model::alarm_model_version_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of an alarm model.</p>
 #[non_exhaustive]
@@ -6293,6 +6350,13 @@ impl AlarmModelSummary {
         self.alarm_model_name.as_deref()
     }
 }
+impl AlarmModelSummary {
+    /// Creates a new builder-style object to manufacture [`AlarmModelSummary`](crate::model::AlarmModelSummary).
+    pub fn builder() -> crate::model::alarm_model_summary::Builder {
+        crate::model::alarm_model_summary::Builder::default()
+    }
+}
+
 /// See [`AlarmModelSummary`](crate::model::AlarmModelSummary).
 pub mod alarm_model_summary {
     
@@ -6346,12 +6410,6 @@ pub mod alarm_model_summary {
     }
     
     
-}
-impl AlarmModelSummary {
-    /// Creates a new builder-style object to manufacture [`AlarmModelSummary`](crate::model::AlarmModelSummary).
-    pub fn builder() -> crate::model::alarm_model_summary::Builder {
-        crate::model::alarm_model_summary::Builder::default()
-    }
 }
 
 /// <p>Contains the result of the analysis.</p>
@@ -6419,6 +6477,13 @@ impl AnalysisResult {
         self.locations.as_deref()
     }
 }
+impl AnalysisResult {
+    /// Creates a new builder-style object to manufacture [`AnalysisResult`](crate::model::AnalysisResult).
+    pub fn builder() -> crate::model::analysis_result::Builder {
+        crate::model::analysis_result::Builder::default()
+    }
+}
+
 /// See [`AnalysisResult`](crate::model::AnalysisResult).
 pub mod analysis_result {
     
@@ -6521,12 +6586,6 @@ pub mod analysis_result {
     
     
 }
-impl AnalysisResult {
-    /// Creates a new builder-style object to manufacture [`AnalysisResult`](crate::model::AnalysisResult).
-    pub fn builder() -> crate::model::analysis_result::Builder {
-        crate::model::analysis_result::Builder::default()
-    }
-}
 
 /// <p>Contains information that you can use to locate the field in your detector model that the analysis result references.</p>
 #[non_exhaustive]
@@ -6542,6 +6601,13 @@ impl AnalysisResultLocation {
         self.path.as_deref()
     }
 }
+impl AnalysisResultLocation {
+    /// Creates a new builder-style object to manufacture [`AnalysisResultLocation`](crate::model::AnalysisResultLocation).
+    pub fn builder() -> crate::model::analysis_result_location::Builder {
+        crate::model::analysis_result_location::Builder::default()
+    }
+}
+
 /// See [`AnalysisResultLocation`](crate::model::AnalysisResultLocation).
 pub mod analysis_result_location {
     
@@ -6571,12 +6637,6 @@ pub mod analysis_result_location {
     }
     
     
-}
-impl AnalysisResultLocation {
-    /// Creates a new builder-style object to manufacture [`AnalysisResultLocation`](crate::model::AnalysisResultLocation).
-    pub fn builder() -> crate::model::analysis_result_location::Builder {
-        crate::model::analysis_result_location::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnalysisResultLevel`, it is important to ensure
@@ -6687,6 +6747,13 @@ impl Input {
         self.input_definition.as_ref()
     }
 }
+impl Input {
+    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
+    pub fn builder() -> crate::model::input::Builder {
+        crate::model::input::Builder::default()
+    }
+}
+
 /// See [`Input`](crate::model::Input).
 pub mod input {
     
@@ -6728,12 +6795,6 @@ pub mod input {
     }
     
     
-}
-impl Input {
-    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
-    pub fn builder() -> crate::model::input::Builder {
-        crate::model::input::Builder::default()
-    }
 }
 
 /// When writing a match expression against `AnalysisStatus`, it is important to ensure
@@ -6844,6 +6905,13 @@ impl DetectorModel {
         self.detector_model_configuration.as_ref()
     }
 }
+impl DetectorModel {
+    /// Creates a new builder-style object to manufacture [`DetectorModel`](crate::model::DetectorModel).
+    pub fn builder() -> crate::model::detector_model::Builder {
+        crate::model::detector_model::Builder::default()
+    }
+}
+
 /// See [`DetectorModel`](crate::model::DetectorModel).
 pub mod detector_model {
     
@@ -6885,11 +6953,5 @@ pub mod detector_model {
     }
     
     
-}
-impl DetectorModel {
-    /// Creates a new builder-style object to manufacture [`DetectorModel`](crate::model::DetectorModel).
-    pub fn builder() -> crate::model::detector_model::Builder {
-        crate::model::detector_model::Builder::default()
-    }
 }
 

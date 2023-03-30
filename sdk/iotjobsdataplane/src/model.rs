@@ -28,6 +28,13 @@ impl JobExecutionState {
         self.version_number
     }
 }
+impl JobExecutionState {
+    /// Creates a new builder-style object to manufacture [`JobExecutionState`](crate::model::JobExecutionState).
+    pub fn builder() -> crate::model::job_execution_state::Builder {
+        crate::model::job_execution_state::Builder::default()
+    }
+}
+
 /// See [`JobExecutionState`](crate::model::JobExecutionState).
 pub mod job_execution_state {
     
@@ -88,12 +95,6 @@ pub mod job_execution_state {
     }
     
     
-}
-impl JobExecutionState {
-    /// Creates a new builder-style object to manufacture [`JobExecutionState`](crate::model::JobExecutionState).
-    pub fn builder() -> crate::model::job_execution_state::Builder {
-        crate::model::job_execution_state::Builder::default()
-    }
 }
 
 /// When writing a match expression against `JobExecutionStatus`, it is important to ensure
@@ -292,6 +293,13 @@ impl JobExecution {
         self.job_document.as_deref()
     }
 }
+impl JobExecution {
+    /// Creates a new builder-style object to manufacture [`JobExecution`](crate::model::JobExecution).
+    pub fn builder() -> crate::model::job_execution::Builder {
+        crate::model::job_execution::Builder::default()
+    }
+}
+
 /// See [`JobExecution`](crate::model::JobExecution).
 pub mod job_execution {
     
@@ -451,12 +459,6 @@ pub mod job_execution {
     
     
 }
-impl JobExecution {
-    /// Creates a new builder-style object to manufacture [`JobExecution`](crate::model::JobExecution).
-    pub fn builder() -> crate::model::job_execution::Builder {
-        crate::model::job_execution::Builder::default()
-    }
-}
 
 /// <p>Contains a subset of information about a job execution.</p>
 #[non_exhaustive]
@@ -507,6 +509,13 @@ impl JobExecutionSummary {
         self.execution_number
     }
 }
+impl JobExecutionSummary {
+    /// Creates a new builder-style object to manufacture [`JobExecutionSummary`](crate::model::JobExecutionSummary).
+    pub fn builder() -> crate::model::job_execution_summary::Builder {
+        crate::model::job_execution_summary::Builder::default()
+    }
+}
+
 /// See [`JobExecutionSummary`](crate::model::JobExecutionSummary).
 pub mod job_execution_summary {
     
@@ -599,11 +608,5 @@ pub mod job_execution_summary {
     }
     
     
-}
-impl JobExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`JobExecutionSummary`](crate::model::JobExecutionSummary).
-    pub fn builder() -> crate::model::job_execution_summary::Builder {
-        crate::model::job_execution_summary::Builder::default()
-    }
 }
 

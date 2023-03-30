@@ -4,7 +4,7 @@
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`create_experiment_template`](crate::client::Client::create_experiment_template).
             ///
-            /// See [`crate::client::fluent_builders::CreateExperimentTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `CreateExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateExperimentTemplate {
     _private: ()
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExperimentTemplate
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`delete_experiment_template`](crate::client::Client::delete_experiment_template).
             ///
-            /// See [`crate::client::fluent_builders::DeleteExperimentTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `DeleteExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteExperimentTemplate {
     _private: ()
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExperimentTemplate
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_action`](crate::client::Client::get_action).
             ///
-            /// See [`crate::client::fluent_builders::GetAction`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAction {
     _private: ()
@@ -100,7 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAction {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_experiment`](crate::client::Client::get_experiment).
             ///
-            /// See [`crate::client::fluent_builders::GetExperiment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExperiment {
     _private: ()
@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperiment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_experiment_template`](crate::client::Client::get_experiment_template).
             ///
-            /// See [`crate::client::fluent_builders::GetExperimentTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExperimentTemplate {
     _private: ()
@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperimentTemplate {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`get_target_resource_type`](crate::client::Client::get_target_resource_type).
             ///
-            /// See [`crate::client::fluent_builders::GetTargetResourceType`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `GetTargetResourceType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTargetResourceType {
     _private: ()
@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTargetResourceType {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_actions`](crate::client::Client::list_actions).
             ///
-            /// See [`crate::client::fluent_builders::ListActions`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListActions {
     _private: ()
@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActions {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_experiments`](crate::client::Client::list_experiments).
             ///
-            /// See [`crate::client::fluent_builders::ListExperiments`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListExperiments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExperiments {
     _private: ()
@@ -260,7 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExperiments {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_experiment_templates`](crate::client::Client::list_experiment_templates).
             ///
-            /// See [`crate::client::fluent_builders::ListExperimentTemplates`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListExperimentTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListExperimentTemplates {
     _private: ()
@@ -292,7 +292,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExperimentTemplates 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
             ///
-            /// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: ()
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`list_target_resource_types`](crate::client::Client::list_target_resource_types).
             ///
-            /// See [`crate::client::fluent_builders::ListTargetResourceTypes`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `ListTargetResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTargetResourceTypes {
     _private: ()
@@ -356,7 +356,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargetResourceTypes 
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`start_experiment`](crate::client::Client::start_experiment).
             ///
-            /// See [`crate::client::fluent_builders::StartExperiment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StartExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartExperiment {
     _private: ()
@@ -388,7 +388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExperiment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`stop_experiment`](crate::client::Client::stop_experiment).
             ///
-            /// See [`crate::client::fluent_builders::StopExperiment`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `StopExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopExperiment {
     _private: ()
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopExperiment {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`tag_resource`](crate::client::Client::tag_resource).
             ///
-            /// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: ()
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`untag_resource`](crate::client::Client::untag_resource).
             ///
-            /// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: ()
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             /// This is usually constructed for you using the the fluent builder returned by
             /// [`update_experiment_template`](crate::client::Client::update_experiment_template).
             ///
-            /// See [`crate::client::fluent_builders::UpdateExperimentTemplate`] for more details about the operation.
+            /// `ParseStrictResponse` impl for `UpdateExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateExperimentTemplate {
     _private: ()
